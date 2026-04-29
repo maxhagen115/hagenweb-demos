@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installatiebedrijf Donderwinkel — Apeldoorn</title>
+  <meta name="description" content="24/7 spoedservice voor lekkages, CV-onderhoud en badkamerrenovaties. Eerlijk tarief, garantie op werk.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --accent: #fb923c;
+  --accent-dark: #1d4ed8;
+  --accent-light: rgba(251,146,60,0.12);
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --border: #262626;
+  --text: #f0f0f0;
+  --muted: #9ca3af;
+  --radius: 14px;
+}
+h1, h2, h3 { line-height: 1.15; font-weight: 800; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
+h3 { font-size: 1.1rem; font-weight: 700; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Nav ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 68px; display: flex; align-items: center;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+}
+nav.scrolled {
+  background: rgba(10,10,10,0.95);
+  border-bottom-color: var(--border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+}
+.nav-inner {
+  width: 100%; max-width: 1280px; margin: 0 auto;
+  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
+.nav-logo span { color: var(--accent); }
+nav.scrolled .nav-logo { color: #fff; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.75); font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+nav.scrolled .nav-links a { color: rgba(255,255,255,0.75); }
+nav.scrolled .nav-links a:hover { color: #fff; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
+nav.scrolled .nav-hamburger span { background: #fff; }
+.nav-mobile-menu {
+  display: none; position: fixed; top: 68px; left: 0; right: 0;
+  background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border); z-index: 99;
+  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a {
+  padding: 12px 4px; font-size: 1rem; font-weight: 500;
+  color: var(--text); border-bottom: 1px solid var(--border);
+}
+
+/* ── Hero ── */
+.hero {
+  min-height: 100vh; padding-top: 68px;
+  position: relative; display: flex; align-items: center; overflow: hidden;
+}
+.hero-video-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  z-index: 1;
+}
+.hero-photo-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  animation: kenburns 20s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes kenburns {
+  0%   { transform: scale(1.05) translate(0, 0); }
+  100% { transform: scale(1.15) translate(-2%, -1%); }
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.3) 100%);
+}
+.hero-fade-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 180px;
+  background: linear-gradient(to top, #0a0a0a, transparent);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
+}
+.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
+.hero-inner h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  color: rgba(255,255,255,0.82); font-size: 1.1rem;
+  margin-bottom: 44px; max-width: 520px; line-height: 1.8;
+}
+.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 28px; border-radius: 0; font-weight: 700;
+  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none;
+  letter-spacing: 0.02em;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
+.btn-ghost {
+  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
+  color: #fff; backdrop-filter: blur(8px);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent; border: 2px solid var(--accent); color: var(--accent);
+}
+.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+
+/* ── Gedeelde secties ── */
+section { padding: 100px 32px; }
+.container { max-width: 1280px; margin: 0 auto; }
+.section-label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+}
+.section-title { margin-bottom: 18px; color: var(--text); }
+.section-sub { color: var(--muted); max-width: 520px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
+
+/* ── Diensten ── */
+#diensten { background: #0a0a0a; }
+.diensten-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.dienst-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 0; overflow: hidden; cursor: pointer;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  display: flex; flex-direction: column;
+}
+.dienst-card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+.dienst-foto-wrap { overflow: hidden; position: relative; }
+.dienst-foto { width: 100%; height: 200px; object-fit: cover; transition: transform 0.5s; display: block; }
+.dienst-card:hover .dienst-foto { transform: scale(1.06); }
+.dienst-foto-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.45));
+}
+.dienst-body { padding: 28px 28px 24px; flex: 1; display: flex; flex-direction: column; }
+.dienst-nummer {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--accent); text-transform: uppercase; margin-bottom: 10px;
+}
+.dienst-card h3 { margin-bottom: 10px; font-size: 1.1rem; color: var(--text); }
+.dienst-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.65; flex: 1; }
+.dienst-lees-meer {
+  display: inline-block; margin-top: 18px;
+  padding: 9px 20px; font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1.5px solid var(--accent); color: var(--accent);
+  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
+  text-decoration: none; align-self: flex-start;
+}
+.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
+
+/* ── Werkwijze ── */
+#werkwijze { background: #141414; }
+.werkwijze-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.stap-card {
+  background: var(--bg);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 28px;
+}
+.stap-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: 1rem; margin-bottom: 20px;
+}
+.stap-card h3 { margin-bottom: 10px; color: var(--text); }
+.stap-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
+
+/* ── Over ons ── */
+#over-ons { background: #0a0a0a; }
+.over-ons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.over-ons-beelden { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.over-ons-img { width: 100%; object-fit: cover; border-radius: 12px; display: block; }
+.over-ons-img.groot { height: 300px; grid-column: 1 / -1; }
+.over-ons-img.klein { height: 160px; }
+.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px; }
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+.check-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.95rem; color: var(--text); }
+.check-list li::before {
+  content: ''; display: inline-block; width: 20px; height: 20px;
+  border-radius: 50%; flex-shrink: 0; margin-top: 2px;
+  background: var(--accent-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23fb923c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center / 12px;
+  border: 1.5px solid var(--accent);
+}
+
+/* ── Testimonial ── */
+#referenties { background: #141414; }
+.testimonial-wrap {
+  background: var(--bg);
+  border: 1px solid var(--border); border-radius: 20px;
+  padding: 56px 64px; max-width: 800px; margin: 0 auto; text-align: center; position: relative;
+}
+.quote-mark {
+  font-size: 6rem; line-height: 0.6; color: var(--accent);
+  opacity: 0.15; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px;
+}
+.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
+.testimonial-tekst {
+  font-size: 1.2rem; line-height: 1.75; font-style: italic;
+  color: var(--text); margin-bottom: 28px; position: relative; z-index: 1;
+}
+.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+
+/* ── FAQ ── */
+#faq { background: #0a0a0a; }
+.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+details {
+  background: #141414; border: 1px solid var(--border);
+  border-radius: 0; overflow: hidden; transition: border-color 0.2s;
+}
+details[open] { border-color: var(--accent); }
+summary {
+  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.95rem; color: var(--text);
+}
+summary::-webkit-details-marker { display: none; }
+.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
+details[open] .faq-icon { transform: rotate(45deg); }
+.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
+
+/* ── Contact ── */
+#contact { background: #141414; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-info p { color: var(--muted); margin-bottom: 40px; line-height: 1.75; font-size: 1rem; }
+.contact-details { display: flex; flex-direction: column; gap: 18px; }
+.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
+.contact-icon-wrap {
+  width: 44px; height: 44px; border-radius: 11px;
+  background: #0a0a0a; border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.contact-form {
+  background: #0a0a0a; border: 1px solid var(--border);
+  border-radius: 18px; padding: 40px;
+}
+.form-row { margin-bottom: 20px; }
+.form-row label { display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 8px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.form-row input, .form-row textarea {
+  width: 100%; padding: 13px 16px;
+  background: var(--surface);
+  border: 1.5px solid var(--border); border-radius: 9px;
+  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
+}
+.form-row input:focus, .form-row textarea:focus { border-color: var(--accent); }
+.form-row textarea { min-height: 130px; resize: vertical; }
+.form-submit {
+  width: 100%; padding: 15px; background: var(--accent); color: #fff;
+  border: none; border-radius: 0; font-weight: 700; font-size: 0.95rem;
+  cursor: pointer; transition: all 0.22s; font-family: inherit;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+/* ── Footer ── */
+footer {
+  background: #050505; border-top: 1px solid #262626;
+  padding: 48px 32px 32px;
+}
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px; margin-bottom: 32px;
+}
+.footer-logo { font-weight: 800; font-size: 1rem; color: #fff; }
+.footer-logo span { color: var(--accent); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
+.footer-links a:hover { color: #fff; }
+.footer-copy {
+  max-width: 1280px; margin: 0 auto;
+  color: #444; font-size: 0.8rem;
+  border-top: 1px solid #262626; padding-top: 24px;
+}
+
+/* ── Demo banner ── */
+.demo-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+  background: #111; color: #fff; text-align: center;
+  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
+  border-top: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+}
+.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
+
+/* ── Reveal ── */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .werkwijze-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  section { padding: 64px 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero-inner { padding: 0 20px; }
+  .diensten-grid { grid-template-columns: 1fr; }
+  .werkwijze-grid { grid-template-columns: 1fr; }
+  .over-ons-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .over-ons-beelden { display: none; }
+  .testimonial-wrap { padding: 36px 24px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">Installatiebedrijf<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#over-ons">Over ons</a></li>
+      <li><a href="#werkwijze">Werkwijze</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <a href="#diensten">Diensten</a>
+  <a href="#over-ons">Over ons</a>
+  <a href="#werkwijze">Werkwijze</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</div>
+<section class="hero" id="hero">
+  <div class="hero-photo-bg" style="background-image:url('https://pixabay.com/get/g4eac3d9b0ff999cbf983aad92632f00c865522d622925199eb2d22546ee6b5f19c778dea5981a175e6e21895fc322d0ab4ae2358be232fe15da919786aed0376_1280.jpg');"></div>
+  <video class="hero-video-bg" autoplay muted loop playsinline poster="https://pixabay.com/get/g4eac3d9b0ff999cbf983aad92632f00c865522d622925199eb2d22546ee6b5f19c778dea5981a175e6e21895fc322d0ab4ae2358be232fe15da919786aed0376_1280.jpg">
+    <source src="https://cdn.pixabay.com/video/2016/12/14/6772-195696632_medium.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-fade-bottom"></div>
+  <div class="hero-inner">
+    <h1 class="reveal">Donderwinkel. Uw loodgieter in<br><em>Apeldoorn</em></h1>
+    <p class="hero-sub reveal reveal-delay-1">24/7 spoedservice voor lekkages, CV-onderhoud en badkamerrenovaties. Eerlijk tarief, garantie op werk.</p>
+    <div class="hero-cta reveal reveal-delay-2">
+      <a href="#diensten" class="btn btn-primary">Diensten</a>
+      <a href="#contact" class="btn btn-ghost">Contact</a>
+    </div>
+  </div>
+</section>
+<section id="diensten">
+  <div class="container">
+    <div class="section-label">Wat wij doen</div>
+    <h2 class="section-title reveal">Onze diensten</h2>
+    <p class="section-sub reveal reveal-delay-1">Installatiebedrijf Donderwinkel biedt een breed scala aan diensten op maat.</p>
+    <div class="diensten-grid">
+      <div class="dienst-card reveal ">
+        <div class="dienst-foto-wrap">
+        <img class="dienst-foto" src="https://pixabay.com/get/gaaaf89ebe1c7f0a939b62cafabfe3780eaf929353c521202c2d28f75e512760745a1bec493ecd0cf332d26291a9a6d1510fe9904511c41205ed0c1e5ecfed8c3_1280.jpg" alt="Lekkagebestrijding" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-svc-0/800/600'">
+        <div class="dienst-foto-overlay"></div>
+      </div>
+        <div class="dienst-body">
+          <div class="dienst-nummer">01 / Lekkagebestrijding</div>
+          <h3>Lekkagebestrijding</h3>
+          <p>Snelle diagnose en reparatie van alle soorten lekkages.</p>
+          <a href="#" class="dienst-lees-meer" onclick="return false;">Lees meer</a>
+        </div>
+      </div>
+      <div class="dienst-card reveal reveal-delay-2">
+        <div class="dienst-foto-wrap">
+        <img class="dienst-foto" src="https://pixabay.com/get/g470cb758dcdfa6bd4a7873a80b8bf3db30a15bbbdf508289ffcd28210ccdf8540df7415c65caa94d1da3dff2fe2838ce2d8d16771532ec317e27cb50fb1ec349_1280.jpg" alt="CV-ketel installatie en onderhoud" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-svc-1/800/600'">
+        <div class="dienst-foto-overlay"></div>
+      </div>
+        <div class="dienst-body">
+          <div class="dienst-nummer">02 / CV-ketel</div>
+          <h3>CV-ketel installatie en onderhoud</h3>
+          <p>Installatie, onderhoudsbeurt en storingshulp het hele jaar.</p>
+          <a href="#" class="dienst-lees-meer" onclick="return false;">Lees meer</a>
+        </div>
+      </div>
+      <div class="dienst-card reveal reveal-delay-3">
+        <div class="dienst-foto-wrap">
+        <img class="dienst-foto" src="https://pixabay.com/get/geb8ec1189b2304176b8660f2b7679fae376dd61746a4a3afa44b3a4ed948819fe96ec62d8a40582b46760f2cb9f5e2c308ba5380aa2b297c707bffb370a9639b_1280.jpg" alt="Badkamerrenovatie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-svc-2/800/600'">
+        <div class="dienst-foto-overlay"></div>
+      </div>
+        <div class="dienst-body">
+          <div class="dienst-nummer">03 / Badkamerrenovatie</div>
+          <h3>Badkamerrenovatie</h3>
+          <p>Compleet pakket: ontwerp tot afwerking met vakwerk.</p>
+          <a href="#" class="dienst-lees-meer" onclick="return false;">Lees meer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="werkwijze">
+  <div class="container">
+    <div class="section-label">Hoe het werkt</div>
+    <h2 class="section-title reveal">Onze aanpak</h2>
+    
+    <div class="werkwijze-grid">
+      <div class="stap-card reveal ">
+        <div class="stap-num">1</div>
+        <h3>Bel of mail ons</h3>
+        <p>Beschrijf het probleem kort.</p>
+      </div>
+      <div class="stap-card reveal reveal-delay-1">
+        <div class="stap-num">2</div>
+        <h3>Inspectie ter plaatse</h3>
+        <p>We bekijken het en geven eerlijk advies.</p>
+      </div>
+      <div class="stap-card reveal reveal-delay-2">
+        <div class="stap-num">3</div>
+        <h3>Reparatie of renovatie</h3>
+        <p>We voeren het werk professioneel uit.</p>
+      </div>
+      <div class="stap-card reveal reveal-delay-3">
+        <div class="stap-num">4</div>
+        <h3>Nazorg en garantie</h3>
+        <p>Vragen daarna? We staan voor ons werk in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="over-ons">
+  <div class="container">
+    <div class="over-ons-grid">
+      <div class="over-ons-beelden reveal">
+        <img class="over-ons-img groot" src="https://pixabay.com/get/gc90de41c4ac61dc7c5461ddbe8c6c618bbf38acba24b29c3e7dc550931c7f0004036b6e1d26e46ae2e220cd7f256c863a97672662fb9ed4715cf3799e662632b_1280.jpg" alt="Installatiebedrijf Donderwinkel" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo-1/1200/600'">
+        <img class="over-ons-img klein" src="https://pixabay.com/get/g7c1db450ace1493689d75891933d838a12830d0b5c13b1d06a84dd37feed8fbf3980af17b3248c8d2cc5a0a6b13075b1d3856fc99aa5b83d66b47d6eec48356b_1280.jpg" alt="Installatiebedrijf Donderwinkel" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo-2/600/320'">
+        <img class="over-ons-img klein" src="https://pixabay.com/get/g095aee411a880d81b4e6455f28deb38e8857dff75b419df603eb94ca84a1d9065f7eb7b8d3c2ddcbada736d2aed6ddac294d125ee5005bff93a081d40c7bd342_1280.jpg" alt="Installatiebedrijf Donderwinkel" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo-3/600/320'">
+      </div>
+      <div class="over-ons-tekst">
+        <div class="section-label">Over ons</div>
+        <h2 class="section-title reveal">Installatiebedrijf Donderwinkel</h2>
+        <p class="reveal reveal-delay-1">Installatiebedrijf Donderwinkel is uw betrouwbare loodgieter in Apeldoorn. Met jarenlange ervaring en een hands-on aanpak helpen we huishoudens en bedrijven uit de nood. Geen gedoe, geen beloftes die niet waar zijn, gewoon professioneel vakwerk.</p>
+        
+        <ul class="check-list reveal reveal-delay-2"><li>24/7 spoedservice zonder opslag</li><li>Eerlijk tarief, geen verrassingen achteraf</li><li>Garantie op al ons werk</li></ul>
+        <a href="#contact" class="btn btn-primary reveal reveal-delay-3">Neem contact op</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="referenties">
+  <div class="container">
+    <div class="section-label" style="text-align:center;">Ervaringen</div>
+    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
+    <div class="testimonial-wrap reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-tekst">"Donderwinkel was er op een zaterdagavond toen de verwarming uitviel. Professioneel, snel en schoon werk."</p>
+      <div class="testimonial-naam">Marcel de Vries</div>
+      <div class="testimonial-functie">Klant, Apeldoorn</div>
+    </div>
+    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
+      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
+        display:inline-flex;align-items:center;gap:10px;
+        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
+        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
+        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
+      ">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        Bekijk Google reviews
+      </a>
+      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
+        display:inline-flex;align-items:center;gap:10px;
+        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
+        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
+        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
+      ">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+        Trustpilot beoordelingen
+      </a>
+    </div>
+  </div>
+</section>
+<section id="faq">
+  <div class="container">
+    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
+    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
+    <div class="faq-list reveal"><details>
+      <summary>Hoe snel komt Donderwinkel bij een spoedgeval?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+      <div class="faq-answer">Bij spoedgevallen streven we naar een reactie binnen 2 uur. Bel 055 506 2710 voor directe beschikbaarheid.</div>
+    </details><details>
+      <summary>Wat kost een lekkage reparatie ongeveer?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+      <div class="faq-answer">Dit hangt af van het soort en de omvang. We geven altijd eerst een duidelijk voorstel, zonder verborgen kosten.</div>
+    </details><details>
+      <summary>Biedt Donderwinkel onderhoud voor CV-ketels?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+      <div class="faq-answer">Ja, we doen regelmatig onderhoud, vervangen onderdelen en helpen bij storingen. Zowel voor particulieren als bedrijven.</div>
+    </details><details>
+      <summary>Werkt Donderwinkel ook buiten kantooruren?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+      <div class="faq-answer">Ja, we zijn 24/7 bereikbaar voor spoedgevallen. Bel of mail, wij reageren snel.</div>
+    </details></div>
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title reveal">Bel voor kennismaking</h2>
+        <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte of afspraak. Wij reageren binnen 24 uur.</p>
+        <div class="contact-details reveal reveal-delay-2">
+          <div class="contact-row">
+            <div class="contact-icon-wrap"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <a href="tel:0555062710">055 506 2710</a>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon-wrap"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <a href="mailto:info@installatiebedrijfdonderwinkel.nl">info@installatiebedrijfdonderwinkel.nl</a>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <span>Apeldoorn</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal reveal-delay-2">
+        <div class="form-row"><label>Naam</label><input type="text" placeholder="Uw naam" autocomplete="name"></div>
+        <div class="form-row"><label>E-mailadres</label><input type="email" placeholder="u@voorbeeld.nl" autocomplete="email"></div>
+        <div class="form-row"><label>Telefoonnummer</label><input type="tel" placeholder="06 12 34 56 78"></div>
+        <div class="form-row"><label>Bericht</label><textarea placeholder="Vertel ons over uw vraag of project..."></textarea></div>
+        <button class="form-submit" type="button">Bel voor kennismaking</button>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Installatiebedrijf<span>.</span></div>
+    <ul class="footer-links">
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#over-ons">Over ons</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <p class="footer-copy">&copy; 2025 Installatiebedrijf Donderwinkel. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
+</footer>
+<div class="demo-banner">
+  <span>&#9889; DEMO voor Installatiebedrijf Donderwinkel &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var nav = document.getElementById('navbar');
+
+  // Nav scroll: transparant → gekleurd
+  function updateNav() {
+    if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  // Scroll reveal
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  // Hamburger menu
+  var hamburger = document.getElementById('nav-hamburger');
+  var mobileMenu = document.getElementById('nav-mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
+    });
+  }
+
+  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
+  var video = document.querySelector('.hero-video-bg');
+  if (video) {
+    function hideVideo() { video.style.display = 'none'; }
+    video.addEventListener('error', hideVideo);
+    // Browsers vuren error op <source>, niet op <video> — beide afvangen
+    video.querySelectorAll('source').forEach(function(s) {
+      s.addEventListener('error', hideVideo);
+    });
+    setTimeout(function() {
+      if (video.readyState < 2) { hideVideo(); }
+    }, 4000);
+  }
+
+  // Hero foto fallback: als background-image niet laadt → picsum
+  var heroBg = document.querySelector('.hero-photo-bg');
+  if (heroBg) {
+    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
+    if (m && m[1]) {
+      var pi = new Image();
+      pi.onerror = function() {
+        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
+      };
+      pi.src = m[1];
+    }
+  }
+});
+</script>
+</body>
+</html>
