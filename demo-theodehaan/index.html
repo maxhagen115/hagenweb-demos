@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DTNL Innovative B.V. — Wageningen</title>
-  <meta name="description" content="Lekkages verhelpen, CV-ketels installeren en badkamers renoveren. 24/7 beschikbaar.">
+  <title>theodehaan</title>
+  <meta name="description" content="theodehaan: precisie en vakmanschap voor voeding, transport en carrosserie.">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,20 +13,20 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0a0a0a;
-  color: #f0f0f0;
+  background: #f8fafc;
+  color: #0f172a;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 :root {
-  --accent: #fb923c;
-  --accent-dark: #1d4ed8;
-  --accent-light: rgba(251,146,60,0.12);
-  --bg: #0a0a0a;
-  --surface: #141414;
-  --border: #262626;
-  --text: #f0f0f0;
-  --muted: #9ca3af;
+  --accent: #f59e0b;
+  --accent-dark: #d97706;
+  --accent-light: #e0f7fa;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --muted: #64748b;
   --radius: 14px;
 }
 h1, h2, h3 { line-height: 1.15; font-weight: 800; }
@@ -44,11 +44,11 @@ nav {
   transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
 }
 nav.scrolled {
-  background: rgba(10,10,10,0.95);
+  background: rgba(255,255,255,0.97);
   border-bottom-color: var(--border);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
 .nav-inner {
   width: 100%; max-width: 1280px; margin: 0 auto;
@@ -56,18 +56,18 @@ nav.scrolled {
 }
 .nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
 .nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #fff; }
+nav.scrolled .nav-logo { color: #0f172a; }
 .nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.75); font-weight: 500; transition: color 0.2s; }
+.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.8); font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: #fff; }
-nav.scrolled .nav-links a { color: rgba(255,255,255,0.75); }
-nav.scrolled .nav-links a:hover { color: #fff; }
+nav.scrolled .nav-links a { color: #64748b; }
+nav.scrolled .nav-links a:hover { color: #0f172a; }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
 .nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #fff; }
+nav.scrolled .nav-hamburger span { background: #0f172a; }
 .nav-mobile-menu {
   display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(10,10,10,0.97);
+  background: rgba(255,255,255,0.98);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border); z-index: 99;
   padding: 16px 24px 24px; flex-direction: column; gap: 4px;
@@ -105,11 +105,11 @@ nav.scrolled .nav-hamburger span { background: #fff; }
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(135deg, rgba(10,30,60,0.82) 0%, rgba(10,30,60,0.55) 60%, rgba(10,30,60,0.3) 100%);
 }
 .hero-fade-bottom {
   position: absolute; bottom: 0; left: 0; right: 0; height: 180px;
-  background: linear-gradient(to top, #0a0a0a, transparent);
+  background: linear-gradient(to top, #f8fafc, transparent);
 }
 .hero-inner {
   position: relative; z-index: 2;
@@ -151,7 +151,7 @@ section { padding: 100px 32px; }
 .section-sub { color: var(--muted); max-width: 520px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
 
 /* ── Diensten ── */
-#diensten { background: #0a0a0a; }
+#diensten { background: #ffffff; }
 .diensten-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .dienst-card {
   background: var(--surface); border: 1px solid var(--border);
@@ -185,10 +185,10 @@ section { padding: 100px 32px; }
 .dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
 
 /* ── Werkwijze ── */
-#werkwijze { background: #141414; }
+#werkwijze { background: #f8fafc; }
 .werkwijze-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .stap-card {
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 28px;
 }
 .stap-num {
@@ -200,7 +200,7 @@ section { padding: 100px 32px; }
 .stap-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
 
 /* ── Over ons ── */
-#over-ons { background: #0a0a0a; }
+#over-ons { background: #ffffff; }
 .over-ons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .over-ons-beelden { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .over-ons-img { width: 100%; object-fit: cover; border-radius: 12px; display: block; }
@@ -212,14 +212,14 @@ section { padding: 100px 32px; }
 .check-list li::before {
   content: ''; display: inline-block; width: 20px; height: 20px;
   border-radius: 50%; flex-shrink: 0; margin-top: 2px;
-  background: var(--accent-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23fb923c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center / 12px;
+  background: var(--accent-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center / 12px;
   border: 1.5px solid var(--accent);
 }
 
 /* ── Testimonial ── */
-#referenties { background: #141414; }
+#referenties { background: #f8fafc; }
 .testimonial-wrap {
-  background: var(--bg);
+  background: var(--surface);
   border: 1px solid var(--border); border-radius: 20px;
   padding: 56px 64px; max-width: 800px; margin: 0 auto; text-align: center; position: relative;
 }
@@ -236,10 +236,10 @@ section { padding: 100px 32px; }
 .testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
 
 /* ── FAQ ── */
-#faq { background: #0a0a0a; }
+#faq { background: #ffffff; }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
 details {
-  background: #141414; border: 1px solid var(--border);
+  background: #f8fafc; border: 1px solid var(--border);
   border-radius: 0; overflow: hidden; transition: border-color 0.2s;
 }
 details[open] { border-color: var(--accent); }
@@ -254,26 +254,26 @@ details[open] .faq-icon { transform: rotate(45deg); }
 .faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
 
 /* ── Contact ── */
-#contact { background: #141414; }
+#contact { background: #f8fafc; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .contact-info p { color: var(--muted); margin-bottom: 40px; line-height: 1.75; font-size: 1rem; }
 .contact-details { display: flex; flex-direction: column; gap: 18px; }
 .contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
 .contact-icon-wrap {
   width: 44px; height: 44px; border-radius: 11px;
-  background: #0a0a0a; border: 1px solid var(--border);
+  background: #ffffff; border: 1px solid var(--border);
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .contact-form {
-  background: #0a0a0a; border: 1px solid var(--border);
+  background: #ffffff; border: 1px solid var(--border);
   border-radius: 18px; padding: 40px;
 }
 .form-row { margin-bottom: 20px; }
 .form-row label { display: block; font-size: 0.78rem; font-weight: 700; margin-bottom: 8px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
 .form-row input, .form-row textarea {
   width: 100%; padding: 13px 16px;
-  background: var(--surface);
+  background: var(--bg);
   border: 1.5px solid var(--border); border-radius: 9px;
   color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
 }
@@ -289,7 +289,7 @@ details[open] .faq-icon { transform: rotate(45deg); }
 
 /* ── Footer ── */
 footer {
-  background: #050505; border-top: 1px solid #262626;
+  background: #0f172a; border-top: 1px solid #1e293b;
   padding: 48px 32px 32px;
 }
 .footer-inner {
@@ -304,8 +304,8 @@ footer {
 .footer-links a:hover { color: #fff; }
 .footer-copy {
   max-width: 1280px; margin: 0 auto;
-  color: #444; font-size: 0.8rem;
-  border-top: 1px solid #262626; padding-top: 24px;
+  color: #334155; font-size: 0.8rem;
+  border-top: 1px solid #1e293b; padding-top: 24px;
 }
 
 /* ── Demo banner ── */
@@ -347,7 +347,7 @@ footer {
 <body>
 <nav id="navbar">
   <div class="nav-inner">
-    <div class="nav-logo">DTNL<span>.</span></div>
+    <div class="nav-logo">theodehaan<span>.</span></div>
     <ul class="nav-links">
       <li><a href="#diensten">Diensten</a></li>
       <li><a href="#over-ons">Over ons</a></li>
@@ -370,13 +370,13 @@ footer {
 <section class="hero" id="hero">
   <div class="hero-photo-bg" style="background-image:url('stock/img-0.jpg');"></div>
   <video class="hero-video-bg" autoplay muted loop playsinline poster="stock/img-0.jpg">
-    <source src="https://videos.pexels.com/video-files/30615533/13106457_3840_2160_30fps.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/4480595/4480595-hd_1920_1080_25fps.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-fade-bottom"></div>
   <div class="hero-inner">
-    <h1 class="reveal">DTNL: uw loodgieter in<br><em>Wageningen</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Lekkages verhelpen, CV-ketels installeren en badkamers renoveren. 24/7 beschikbaar.</p>
+    <h1 class="reveal">Metaal waar het moet<br><em>zitten</em></h1>
+    <p class="hero-sub reveal reveal-delay-1">theodehaan: precisie en vakmanschap voor voeding, transport en carrosserie.</p>
     <div class="hero-cta reveal reveal-delay-2">
       <a href="#diensten" class="btn btn-primary">Diensten</a>
       <a href="#contact" class="btn btn-ghost">Contact</a>
@@ -387,41 +387,41 @@ footer {
   <div class="container">
     <div class="section-label">Wat wij doen</div>
     <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1">DTNL Innovative B.V. biedt een breed scala aan diensten op maat.</p>
+    <p class="section-sub reveal reveal-delay-1">theodehaan biedt een breed scala aan diensten op maat.</p>
     <div class="diensten-grid">
       <div class="dienst-card reveal ">
         <div class="dienst-foto-wrap">
-        <img class="dienst-foto" src="stock/img-0.jpg" alt="Lekkage verhelpen" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-svc-0/800/600'">
+        <img class="dienst-foto" src="stock/img-0.jpg" alt="Metaalbewerking voedselindustrie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-svc-0/800/600'">
         <div class="dienst-foto-overlay"></div>
       </div>
         <div class="dienst-body">
-          <div class="dienst-nummer">01 / Lekkage</div>
-          <h3>Lekkage verhelpen</h3>
-          <p>Snelle diagnose en reparatie van water- en gaslekken.</p>
+          <div class="dienst-nummer">01 / Metaalbewerking</div>
+          <h3>Metaalbewerking voedselindustrie</h3>
+          <p>Hygiënische onderdelen en constructies volgens strenge normen.</p>
           <a href="#" class="dienst-lees-meer" onclick="return false;">Lees meer</a>
         </div>
       </div>
       <div class="dienst-card reveal reveal-delay-2">
         <div class="dienst-foto-wrap">
-        <img class="dienst-foto" src="stock/img-1.jpg" alt="CV-ketel installatie en onderhoud" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-svc-1/800/600'">
+        <img class="dienst-foto" src="stock/img-1.jpg" alt="Carrosseriebewerking" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-svc-1/800/600'">
         <div class="dienst-foto-overlay"></div>
       </div>
         <div class="dienst-body">
-          <div class="dienst-nummer">02 / CV-ketel</div>
-          <h3>CV-ketel installatie en onderhoud</h3>
-          <p>Nieuwe installaties, onderhoudscontracten en vervangingen.</p>
+          <div class="dienst-nummer">02 / Carrosseriebewerking</div>
+          <h3>Carrosseriebewerking</h3>
+          <p>Vrachtwagens en transport aangepast op maat en robuust.</p>
           <a href="#" class="dienst-lees-meer" onclick="return false;">Lees meer</a>
         </div>
       </div>
       <div class="dienst-card reveal reveal-delay-3">
         <div class="dienst-foto-wrap">
-        <img class="dienst-foto" src="stock/img-2.jpg" alt="Badkamer renovatie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-svc-2/800/600'">
+        <img class="dienst-foto" src="stock/img-2.jpg" alt="Maatwerk in metaal" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-svc-2/800/600'">
         <div class="dienst-foto-overlay"></div>
       </div>
         <div class="dienst-body">
-          <div class="dienst-nummer">03 / Badkamer</div>
-          <h3>Badkamer renovatie</h3>
-          <p>Complete badkamerrenovaties van ontwerp tot oplevering.</p>
+          <div class="dienst-nummer">03 / Maatwerk</div>
+          <h3>Maatwerk in metaal</h3>
+          <p>Van schets tot gereed: specifieke oplossingen voor uw behoefte.</p>
           <a href="#" class="dienst-lees-meer" onclick="return false;">Lees meer</a>
         </div>
       </div>
@@ -436,23 +436,23 @@ footer {
     <div class="werkwijze-grid">
       <div class="stap-card reveal ">
         <div class="stap-num">1</div>
-        <h3>Bel of WhatsApp</h3>
-        <p>Beschrijf het probleem en wij maken afspraak.</p>
+        <h3>Contact en voorstel</h3>
+        <p>U beschrijft het werk, wij bespreken mogelijkheden.</p>
       </div>
       <div class="stap-card reveal reveal-delay-1">
         <div class="stap-num">2</div>
-        <h3>Inspectie ter plekke</h3>
-        <p>We beoordelen de situatie en geven openheid.</p>
+        <h3>Offerte en planning</h3>
+        <p>Duidelijke prijs en doorlooptijd op papier.</p>
       </div>
       <div class="stap-card reveal reveal-delay-2">
         <div class="stap-num">3</div>
-        <h3>Vakwerk uitvoering</h3>
-        <p>Wij repareren of installeren met aandacht.</p>
+        <h3>Productie</h3>
+        <p>Vakkundig maken en controle op kwaliteit.</p>
       </div>
       <div class="stap-card reveal reveal-delay-3">
         <div class="stap-num">4</div>
-        <h3>Controle en nazorg</h3>
-        <p>Alles wordt getest en u krijgt advies mee.</p>
+        <h3>Aflevering en nazorg</h3>
+        <p></p>
       </div>
     </div>
   </div>
@@ -461,16 +461,16 @@ footer {
   <div class="container">
     <div class="over-ons-grid">
       <div class="over-ons-beelden reveal">
-        <img class="over-ons-img groot" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&amp;fit=crop&amp;w=1600&amp;h=1000&amp;q=80" alt="DTNL Innovative B.V." loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo-1/1200/600'">
-        <img class="over-ons-img klein" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&amp;fit=crop&amp;w=1600&amp;h=1000&amp;q=80" alt="DTNL Innovative B.V." loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo-2/600/320'">
-        <img class="over-ons-img klein" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&amp;fit=crop&amp;w=1600&amp;h=1000&amp;q=80" alt="DTNL Innovative B.V." loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo-3/600/320'">
+        <img class="over-ons-img groot" src="https://picsum.photos/seed/hagenweb-def-2/1200/800" alt="theodehaan" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo-1/1200/600'">
+        <img class="over-ons-img klein" src="https://picsum.photos/seed/hagenweb-def-3/1200/800" alt="theodehaan" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo-2/600/320'">
+        <img class="over-ons-img klein" src="https://picsum.photos/seed/hagenweb-pad-6/1200/800" alt="theodehaan" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo-3/600/320'">
       </div>
       <div class="over-ons-tekst">
         <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">DTNL Innovative B.V.</h2>
-        <p class="reveal reveal-delay-1">DTNL Innovative B.V. is een allround installatiebedrijf in Wageningen, gespecialiseerd in loodgieterwerk, CV-installaties en badkamerrenovaties.</p>
-        <p class="reveal reveal-delay-1">Wij werken met vakmanschap en oog voor detail sinds dag één. Uw installateur op wie u kunt rekenen.</p>
-        <ul class="check-list reveal reveal-delay-2"><li>24/7 spoedservice bij nood</li><li>Eerlijke tarieven zonder verrassingen</li><li>Garantie op al ons vakwerk</li></ul>
+        <h2 class="section-title reveal">theodehaan</h2>
+        <p class="reveal reveal-delay-1">theodehaan staat sinds jaren bekend om betrouwbare metaalbewerking. Wij combineren handwerk met precisie en begrijpen wat bedrijven nodig hebben: onderdelen die meteen kloppen, geen gedoe, geen uitstel. Of het voedselkeurig moet of roestvast, wij leveren.</p>
+        
+        <ul class="check-list reveal reveal-delay-2"><li>Decennialange ervaring in moeilijke toepassingen</li><li>Vakmanschap dat standaarden overstijgt</li><li>Van idee tot levering zonder omwegen</li></ul>
         <a href="#contact" class="btn btn-primary reveal reveal-delay-3">Neem contact op</a>
       </div>
     </div>
@@ -483,9 +483,9 @@ footer {
     <div class="testimonial-wrap reveal">
       <div class="quote-mark">"</div>
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"DTNL heeft ons huis volledig gemoderniseerd en alles ging professioneel en snel."</p>
-      <div class="testimonial-naam">Marieke de Vries</div>
-      <div class="testimonial-functie">Klant, Wageningen</div>
+      <p class="testimonial-tekst">"theodehaan levert altijd op tijd en de kwaliteit is consistent goed; geen gedoe, gewoon vakwerk."</p>
+      <div class="testimonial-naam">Jan Ploeger</div>
+      <div class="testimonial-functie">Logistiekbedrijf, Noord-Nederland</div>
     </div>
     <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
       <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
@@ -521,17 +521,17 @@ footer {
     <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
     <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
     <div class="faq-list reveal"><details>
-      <summary>Bent u ook buiten kantoortijden bereikbaar?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, wij hebben 24/7 spoedservice. Bel 0318 850033 voor urgente werkzaamheden.</div>
+      <summary>Wat is de doorlooptijd voor een maatwerk opdracht?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+      <div class="faq-answer">Afhankelijk van complexiteit meestal twee tot vier weken. Bij spoedwerk overleggen we direct.</div>
     </details><details>
-      <summary>Werkt u ook in Wageningen en directe omgeving?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Absoluut. Wageningen en de regio zijn ons werkgebied. Snelle uitruk verzekerd.</div>
+      <summary>Werkt theodehaan ook voor eenmalige klussen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+      <div class="faq-answer">Ja. Of het een groot project of eenmalige reparatie is, wij pakken het aan met dezelfde zorg.</div>
     </details><details>
-      <summary>Wat kost een loodgietersbezoek?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Wij hanteren eerlijke tarieven zonder verrassingen. Offerte wordt altijd vooraf besproken.</div>
+      <summary>Kunnen jullie ook aan voedselkwaliteit voldoen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+      <div class="faq-answer">Ja, we werken regelmatig voor voedingsbedrijven en kennen de hygiëne en materiaalvereisten.</div>
     </details><details>
-      <summary>Geeft u garantie op het werk?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, alle installaties en reparaties hebben garantie. Uw zekerheid is onze standaard.</div>
+      <summary>Hoe kan ik een offerte aanvragen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
+      <div class="faq-answer">Stuur een mail naar info@theodehaan.eu met uw vraag of bel voor een snelle afstemming.</div>
     </details></div>
   </div>
 </section>
@@ -540,21 +540,15 @@ footer {
     <div class="contact-grid">
       <div class="contact-info">
         <div class="section-label">Contact</div>
-        <h2 class="section-title reveal">Bel nu 0318 850033</h2>
+        <h2 class="section-title reveal">Vraag offerte aan</h2>
         <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte of afspraak. Wij reageren binnen 24 uur.</p>
         <div class="contact-details reveal reveal-delay-2">
-          <div class="contact-row">
-            <div class="contact-icon-wrap"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-            <a href="tel:0318850033">0318 850 033</a>
-          </div>
+          
           <div class="contact-row">
             <div class="contact-icon-wrap"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <a href="mailto:info@dtnl.nl">info@dtnl.nl</a>
+            <a href="mailto:info@theodehaan.eu">info@theodehaan.eu</a>
           </div>
-          <div class="contact-row">
-            <div class="contact-icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <span>Wageningen</span>
-          </div>
+          
         </div>
       </div>
       <div class="contact-form reveal reveal-delay-2">
@@ -562,24 +556,24 @@ footer {
         <div class="form-row"><label>E-mailadres</label><input type="email" placeholder="u@voorbeeld.nl" autocomplete="email"></div>
         <div class="form-row"><label>Telefoonnummer</label><input type="tel" placeholder="06 12 34 56 78"></div>
         <div class="form-row"><label>Bericht</label><textarea placeholder="Vertel ons over uw vraag of project..."></textarea></div>
-        <button class="form-submit" type="button">Bel nu 0318 850033</button>
+        <button class="form-submit" type="button">Vraag offerte aan</button>
       </div>
     </div>
   </div>
 </section>
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">DTNL<span>.</span></div>
+    <div class="footer-logo">theodehaan<span>.</span></div>
     <ul class="footer-links">
       <li><a href="#diensten">Diensten</a></li>
       <li><a href="#over-ons">Over ons</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
-  <p class="footer-copy">&copy; 2025 DTNL Innovative B.V.. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
+  <p class="footer-copy">&copy; 2025 theodehaan. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
 </footer>
 <div class="demo-banner">
-  <span>&#9889; DEMO voor DTNL Innovative B.V. &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
+  <span>&#9889; DEMO voor theodehaan &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
