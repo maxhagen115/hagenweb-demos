@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hagenweb — Sector Demo Overzicht</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #0f172a; color: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
+    .header { text-align: center; margin-bottom: 56px; }
+    .logo { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+    .logo span { color: #3b82f6; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
+    .sub { color: #64748b; font-size: 1.05rem; max-width: 480px; margin: 0 auto; line-height: 1.7; }
+    .grid { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 600px; }
+    .sector-card {
+      display: flex; align-items: center; gap: 20px;
+      background: #1e293b; border: 1px solid #334155;
+      padding: 22px 24px; text-decoration: none; color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .sector-card:hover { border-color: #3b82f6; transform: translateX(4px); }
+    .sector-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .sector-info { flex: 1; }
+    .sector-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #64748b; margin-bottom: 4px; }
+    .sector-name { font-size: 1rem; font-weight: 700; color: #f1f5f9; margin-bottom: 2px; }
+    .sector-stad { font-size: 0.82rem; color: #64748b; }
+    .sector-arrow { color: #334155; font-size: 1.2rem; }
+    .footer { margin-top: 56px; color: #334155; font-size: 0.8rem; text-align: center; }
+    .footer strong { color: #64748b; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">Hagen<span>web</span>.</div>
+    <h1>Sector Demo's</h1>
+    <p class="sub">Voorbeeldwebsites per branche — klik op een sector om de demo te bekijken.</p>
+  </div>
+  <div class="grid">
+      <a href="https://demos.hagenweb.nl/demo-showcase-sectoren/bakkerij.html" class="sector-card" target="_blank">
+        <div class="sector-dot" style="background:#b45309;"></div>
+        <div class="sector-info">
+          <div class="sector-label">Bakkerij</div>
+          <div class="sector-name">Bakkerij De Morgen</div>
+          <div class="sector-stad">Nijmegen</div>
+        </div>
+        <div class="sector-arrow">&rarr;</div>
+      </a>
+      <a href="https://demos.hagenweb.nl/demo-showcase-sectoren/fysiotherapie.html" class="sector-card" target="_blank">
+        <div class="sector-dot" style="background:#0891b2;"></div>
+        <div class="sector-info">
+          <div class="sector-label">Fysiotherapie</div>
+          <div class="sector-name">Fysiotherapie Centraal</div>
+          <div class="sector-stad">Arnhem</div>
+        </div>
+        <div class="sector-arrow">&rarr;</div>
+      </a>
+      <a href="https://demos.hagenweb.nl/demo-showcase-sectoren/kapper.html" class="sector-card" target="_blank">
+        <div class="sector-dot" style="background:#7c3aed;"></div>
+        <div class="sector-info">
+          <div class="sector-label">Kapper</div>
+          <div class="sector-name">Barbershop Noble</div>
+          <div class="sector-stad">Utrecht</div>
+        </div>
+        <div class="sector-arrow">&rarr;</div>
+      </a>
+      <a href="https://demos.hagenweb.nl/demo-showcase-sectoren/loodgieter.html" class="sector-card" target="_blank">
+        <div class="sector-dot" style="background:#3b82f6;"></div>
+        <div class="sector-info">
+          <div class="sector-label">Loodgieter</div>
+          <div class="sector-name">Installatiebedrijf Janssen</div>
+          <div class="sector-stad">Eindhoven</div>
+        </div>
+        <div class="sector-arrow">&rarr;</div>
+      </a>
+      <a href="https://demos.hagenweb.nl/demo-showcase-sectoren/restaurant.html" class="sector-card" target="_blank">
+        <div class="sector-dot" style="background:#f59e0b;"></div>
+        <div class="sector-info">
+          <div class="sector-label">Restaurant</div>
+          <div class="sector-name">Restaurant De Smederij</div>
+          <div class="sector-stad">Den Bosch</div>
+        </div>
+        <div class="sector-arrow">&rarr;</div>
+      </a>
+  </div>
+  <div class="footer">
+    Gegenereerd door <strong>Hagenweb Website Generator</strong> &mdash; voor intern gebruik
+  </div>
+</body>
+</html>
