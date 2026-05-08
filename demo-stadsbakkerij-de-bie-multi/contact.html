@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Openingstijden — Stadsbakkerij De Bie Nijmegen</title>
+  <meta name="description" content="Stadsbakkerij De Bie in Nijmegen. Dagvers brood, ambachtelijk gebak en heerlijke taarten. Al jaren een begrip in de stad.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fdf8f0;
+  color: #1c1007;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+:root {
+  --accent: #b45309;
+  --accent-dark: #92400e;
+  --accent-lite: #fef3c7;
+  --bg: #fdf8f0;
+  --surface: #ffffff;
+  --border: #e8d9c5;
+  --text: #1c1007;
+  --muted: #78614d;
+}
+h1, h2, h3 { line-height: 1.15; font-weight: 800; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Nav ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 68px; display: flex; align-items: center;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
+nav.scrolled {
+  background: rgba(253,248,240,0.97);
+  border-bottom-color: #e8d9c5;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+nav.solid {
+  background: rgba(253,248,240,0.97);
+  border-bottom-color: #e8d9c5;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+.nav-inner {
+  width: 100%; max-width: 1280px; margin: 0 auto;
+  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
+nav.scrolled .nav-logo, nav.solid .nav-logo { color: #1c1007; }
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: 0.875rem; color: rgba(255,255,255,0.85); font-weight: 500;
+  transition: color 0.2s; padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover, .nav-links a.actief {
+  color: #fff; border-bottom-color: var(--accent);
+}
+nav.scrolled .nav-links a, nav.solid .nav-links a { color: #78614d; }
+nav.scrolled .nav-links a:hover, nav.solid .nav-links a:hover,
+nav.scrolled .nav-links a.actief, nav.solid .nav-links a.actief {
+  color: var(--accent); border-bottom-color: var(--accent);
+}
+.nav-cta {
+  padding: 9px 22px; background: var(--accent); color: #fff !important;
+  border-radius: 0 !important; font-weight: 700 !important; border-bottom: none !important;
+  font-size: 0.82rem !important; letter-spacing: 0.04em; text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s !important;
+}
+.nav-cta:hover { background: var(--accent-dark) !important; transform: translateY(-1px) !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
+nav.scrolled .nav-hamburger span, nav.solid .nav-hamburger span { background: #1c1007; }
+.nav-mobile-menu {
+  display: none; position: fixed; top: 68px; left: 0; right: 0;
+  background: rgba(253,248,240,0.97); backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e8d9c5; z-index: 99;
+  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: #1c1007; border-bottom: 1px solid #e8d9c5; }
+
+/* ── Knoppen ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 30px; font-weight: 700; font-size: 0.9rem;
+  cursor: pointer; transition: all 0.22s; border: none;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+.btn-ghost {
+  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.4);
+  color: #fff; backdrop-filter: blur(8px);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
+.btn-outline {
+  background: transparent; border: 2px solid var(--accent); color: var(--accent);
+}
+.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+
+/* ── Secties ── */
+section { padding: 100px 32px; }
+.container { max-width: 1280px; margin: 0 auto; }
+.section-label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+}
+.section-title { margin-bottom: 18px; color: var(--text); }
+.section-sub { color: var(--muted); max-width: 560px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.8; }
+
+/* ── Page hero (niet de homepage hero) ── */
+.page-hero {
+  min-height: 340px; padding-top: 68px;
+  position: relative; display: flex; align-items: center;
+  background: #1c1007;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  opacity: 0.35;
+}
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(28,16,7,0.85) 0%, rgba(28,16,7,0.5) 100%);
+}
+.page-hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1280px; margin: 0 auto; padding: 64px 32px;
+}
+.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+.page-hero-inner p { color: rgba(255,255,255,0.75); font-size: 1.1rem; max-width: 520px; }
+.breadcrumb {
+  display: flex; gap: 8px; align-items: center;
+  color: rgba(255,255,255,0.55); font-size: 0.8rem; margin-bottom: 20px;
+}
+.breadcrumb a { color: rgba(255,255,255,0.55); transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { color: rgba(255,255,255,0.35); }
+
+/* ── Product kaarten ── */
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.product-card {
+  background: #ffffff; border: 1px solid #e8d9c5;
+  overflow: hidden; transition: transform 0.25s, box-shadow 0.25s;
+  display: flex; flex-direction: column;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.12); }
+.product-foto { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s; display: block; }
+.product-card:hover .product-foto { transform: scale(1.05); }
+.product-foto-wrap { overflow: hidden; }
+.product-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+.product-tag {
+  display: inline-block; padding: 4px 10px;
+  background: #fef3c7; color: #b45309;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 14px; align-self: flex-start;
+}
+.product-card h3 { margin-bottom: 10px; color: #1c1007; font-size: 1.15rem; }
+.product-card p { color: #78614d; font-size: 0.9rem; line-height: 1.7; flex: 1; }
+.product-lees-meer {
+  display: inline-block; margin-top: 20px;
+  font-size: 0.8rem; font-weight: 700; color: var(--accent);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  border-bottom: 2px solid var(--accent); padding-bottom: 2px;
+  align-self: flex-start;
+}
+
+/* ── Stats strip ── */
+.stats-strip {
+  background: #1c1007; padding: 56px 32px;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1280px; margin: 0 auto; }
+.stat-item { text-align: center; }
+.stat-waarde { font-size: 2.5rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); font-weight: 500; letter-spacing: 0.04em; }
+
+/* ── Over ons preview / tekst ── */
+.over-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.over-foto-wrap { position: relative; }
+.over-foto-groot { width: 100%; height: 440px; object-fit: cover; display: block; }
+.over-foto-badge {
+  position: absolute; bottom: -24px; right: -24px;
+  background: var(--accent); color: #fff;
+  padding: 28px 32px; text-align: center;
+}
+.over-foto-badge .badge-num { font-size: 2.2rem; font-weight: 800; line-height: 1; }
+.over-foto-badge .badge-txt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.85; }
+.over-tekst p { color: #78614d; font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px; }
+.check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+.check-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 0.95rem; color: #1c1007;
+}
+.check-icon {
+  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
+  background: #fef3c7; border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; color: var(--accent); font-weight: 900;
+}
+
+/* ── Waarden / pilaren ── */
+.pilaren-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.pilaar-card {
+  background: #ffffff; border: 1px solid #e8d9c5;
+  padding: 44px 36px; text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.pilaar-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+.pilaar-icoon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: #fef3c7; margin: 0 auto 24px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem;
+}
+.pilaar-card h3 { margin-bottom: 14px; font-size: 1.2rem; }
+.pilaar-card p { color: #78614d; font-size: 0.92rem; line-height: 1.75; }
+
+/* ── Testimonial ── */
+.testimonial-wrap {
+  background: #ffffff; border: 1px solid #e8d9c5;
+  padding: 56px 64px; max-width: 800px; margin: 0 auto; text-align: center; position: relative;
+}
+.quote-mark { font-size: 7rem; line-height: 0.6; color: var(--accent); opacity: 0.1; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
+.stars { color: #f59e0b; font-size: 1.1rem; letter-spacing: 3px; margin-bottom: 24px; }
+.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: #1c1007; margin-bottom: 28px; position: relative; z-index: 1; }
+.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.testimonial-sub { color: #78614d; font-size: 0.82rem; margin-top: 4px; }
+
+/* ── Openingstijden ── */
+.tijden-tabel { width: 100%; border-collapse: collapse; }
+.tijden-tabel tr { border-bottom: 1px solid #e8d9c5; }
+.tijden-tabel td { padding: 14px 0; font-size: 0.95rem; }
+.tijden-tabel td:first-child { color: #1c1007; font-weight: 600; }
+.tijden-tabel td:last-child { color: #78614d; text-align: right; }
+.tijden-tabel tr.vandaag td { color: var(--accent); font-weight: 700; }
+
+/* ── Contact form ── */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.contact-info p { color: #78614d; margin-bottom: 40px; line-height: 1.75; font-size: 1rem; }
+.contact-details { display: flex; flex-direction: column; gap: 20px; }
+.contact-row { display: flex; align-items: flex-start; gap: 16px; font-size: 0.95rem; color: #1c1007; }
+.contact-icoon-wrap {
+  width: 46px; height: 46px; flex-shrink: 0;
+  background: #fef3c7; border: 1px solid #e8d9c5;
+  display: flex; align-items: center; justify-content: center;
+}
+.contact-icoon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.contact-row-txt { display: flex; flex-direction: column; gap: 2px; padding-top: 4px; }
+.contact-row-lbl { font-size: 0.72rem; color: #78614d; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+.contact-form-wrap {
+  background: #ffffff; border: 1px solid #e8d9c5; padding: 44px;
+}
+.form-row { margin-bottom: 20px; }
+.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 8px; color: #78614d; text-transform: uppercase; letter-spacing: 0.08em; }
+.form-row input, .form-row textarea, .form-row select {
+  width: 100%; padding: 13px 16px;
+  background: #fdf8f0; border: 1.5px solid #e8d9c5;
+  color: #1c1007; font-size: 0.95rem; font-family: inherit; outline: none;
+  transition: border-color 0.2s;
+}
+.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
+.form-row textarea { min-height: 130px; resize: vertical; }
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-submit {
+  width: 100%; padding: 16px; background: var(--accent); color: #fff;
+  border: none; font-weight: 700; font-size: 0.9rem;
+  cursor: pointer; transition: all 0.22s; font-family: inherit;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+/* ── CTA banner ── */
+.cta-banner {
+  background: #1c1007; padding: 80px 32px; text-align: center;
+}
+.cta-banner h2 { color: #fff; margin-bottom: 16px; }
+.cta-banner p { color: rgba(255,255,255,0.6); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
+
+/* ── Assortiment sectie ── */
+.assortiment-sectie { padding: 80px 32px; }
+.assortiment-sectie:nth-child(even) { background: #ffffff; }
+.assortiment-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
+.assortiment-header .section-sub { margin-bottom: 0; }
+
+/* ── Seizoens callout ── */
+.seizoens-band {
+  background: var(--accent); padding: 64px 32px;
+}
+.seizoens-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.seizoens-inner h2 { color: #fff; margin-bottom: 16px; }
+.seizoens-inner p { color: rgba(255,255,255,0.8); line-height: 1.75; font-size: 1.05rem; margin-bottom: 28px; }
+
+/* ── Foto gallerij ── */
+.foto-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap: 16px; }
+.foto-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.foto-grid img:first-child { grid-row: 1 / 3; }
+
+/* ── Footer ── */
+footer {
+  background: #1c1007; border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 60px 32px 32px;
+}
+.footer-grid {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px;
+}
+.footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.875rem; line-height: 1.75; margin-top: 16px; max-width: 260px; }
+.footer-logo { font-weight: 800; font-size: 1.1rem; color: #fff; }
+.footer-logo span { color: var(--accent); }
+.footer-col-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
+.footer-links-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links-list a { color: rgba(255,255,255,0.5); font-size: 0.875rem; transition: color 0.2s; }
+.footer-links-list a:hover { color: #fff; }
+.footer-bottom {
+  max-width: 1280px; margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-copy { color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+.footer-made { color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+.footer-made a { color: var(--accent); font-weight: 600; }
+
+/* ── Demo banner ── */
+.demo-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+  background: #111; color: #fff; text-align: center;
+  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
+  border-top: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+}
+.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
+
+/* ── Reveal ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.rd1 { transition-delay: 0.1s; }
+.rd2 { transition-delay: 0.2s; }
+.rd3 { transition-delay: 0.3s; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  section { padding: 64px 20px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .product-grid { grid-template-columns: 1fr; }
+  .pilaren-grid { grid-template-columns: 1fr; }
+  .over-grid, .contact-grid, .seizoens-inner { grid-template-columns: 1fr; gap: 40px; }
+  .over-foto-badge { right: 0; bottom: 0; }
+  .foto-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .foto-grid img:first-child { grid-row: auto; grid-column: 1 / -1; height: 240px; }
+  .testimonial-wrap { padding: 36px 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .assortiment-header { flex-direction: column; align-items: flex-start; }
+  .form-row-2 { grid-template-columns: 1fr; }
+  .hero-cta { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+.map-placeholder {
+  width: 100%; height: 320px;
+  background: #e8d9c5;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 40px; position: relative; overflow: hidden;
+}
+.map-inner {
+  text-align: center; color: #78614d;
+}
+.map-inner svg { margin-bottom: 12px; }
+.map-label { font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<nav id="navbar" class="solid">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">De Bie<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="assortiment.html">Assortiment</a></li>
+      <li><a href="over-ons.html">Over ons</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact &rarr;</a></li>
+    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="nav-mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="assortiment.html">Assortiment</a>
+  <a href="over-ons.html">Over ons</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&h=800&q=80');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span>Contact</span>
+    </div>
+    <h1>Contact &amp; Openingstijden</h1>
+    <p>Kom langs, bel ons of stuur een berichtje. We helpen u graag.</p>
+  </div>
+</div>
+
+<section style="background:#fdf8f0; padding: 100px 32px;">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Bereikbaarheid</div>
+        <h2 class="section-title reveal">Neem contact op</h2>
+        <p class="reveal rd1">Voor bestellingen, vragen over ons assortiment of informatie over speciale wensen &mdash; bel ons gerust of stuur een e-mail. We reageren zo snel mogelijk.</p>
+        <div class="contact-details reveal rd2">
+          <div class="contact-row">
+            <div class="contact-icoon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-row-txt">
+              <span class="contact-row-lbl">Telefoon</span>
+              <a href="tel:0247676026" style="font-weight:600;">024 767 6026</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icoon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-row-txt">
+              <span class="contact-row-lbl">E-mailadres</span>
+              <a href="mailto:info@stadsbakkerijdebie.nl" style="font-weight:600;">info@stadsbakkerijdebie.nl</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icoon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-row-txt">
+              <span class="contact-row-lbl">Adres</span>
+              <span style="font-weight:600;">Nijmegen, Gelderland</span>
+            </div>
+          </div>
+        </div>
+        <div class="map-placeholder reveal rd3">
+          <div class="map-inner">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#78614d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <div class="map-label">Stadsbakkerij De Bie &mdash; Nijmegen</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal rd1">
+        <div class="contact-form-wrap">
+          <div class="section-label" style="margin-bottom:24px;">Stuur een bericht</div>
+          <div class="form-row-2">
+            <div class="form-row"><label>Voornaam</label><input type="text" placeholder="Uw voornaam" autocomplete="given-name"></div>
+            <div class="form-row"><label>Achternaam</label><input type="text" placeholder="Uw achternaam" autocomplete="family-name"></div>
+          </div>
+          <div class="form-row"><label>E-mailadres</label><input type="email" placeholder="u@voorbeeld.nl" autocomplete="email"></div>
+          <div class="form-row"><label>Telefoonnummer</label><input type="tel" placeholder="06 12 34 56 78"></div>
+          <div class="form-row">
+            <label>Onderwerp</label>
+            <select>
+              <option value="">Kies een onderwerp...</option>
+              <option>Bestelling taart of gebak</option>
+              <option>Vraag over assortiment</option>
+              <option>Catering of grote bestelling</option>
+              <option>Overig</option>
+            </select>
+          </div>
+          <div class="form-row"><label>Bericht</label><textarea placeholder="Uw vraag of bestelling..."></textarea></div>
+          <button class="form-submit" type="button">Bericht versturen &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#ffffff; padding: 100px 32px;">
+  <div class="container">
+    <div class="section-label">Wanneer kunt u langskomen</div>
+    <h2 class="section-title reveal" style="margin-bottom:48px;">Openingstijden</h2>
+    <div style="max-width:560px;" class="reveal rd1">
+      <table class="tijden-tabel">
+        <tr>
+          <td>Maandag</td>
+          <td>07:30 &ndash; 17:30</td>
+        </tr>
+        <tr>
+          <td>Dinsdag</td>
+          <td>07:30 &ndash; 17:30</td>
+        </tr>
+        <tr>
+          <td>Woensdag</td>
+          <td>07:30 &ndash; 17:30</td>
+        </tr>
+        <tr>
+          <td>Donderdag</td>
+          <td>07:30 &ndash; 17:30</td>
+        </tr>
+        <tr>
+          <td>Vrijdag</td>
+          <td>07:30 &ndash; 18:00</td>
+        </tr>
+        <tr>
+          <td>Zaterdag</td>
+          <td>07:00 &ndash; 16:00</td>
+        </tr>
+        <tr>
+          <td>Zondag</td>
+          <td>Gesloten</td>
+        </tr>
+      </table>
+      <p style="margin-top:28px; color:#78614d; font-size:0.88rem;">Op feestdagen kunnen de tijden afwijken. Bel ons voor de actuele openingstijden op 024 767 6026.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <h2 class="reveal">Taart of speciale bestelling?</h2>
+  <p class="reveal rd1">Neem minimaal 48 uur van tevoren contact op voor taarten op bestelling, bruidstaarten of grotere hoeveelheden.</p>
+  <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;" class="reveal rd2">
+    <a href="tel:0247676026" class="btn btn-primary">Bel 024 767 6026</a>
+    <a href="mailto:info@stadsbakkerijdebie.nl" class="btn btn-ghost">Stuur een e-mail</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Stadsbakkerij De Bie<span>.</span></div>
+      <p>Dagvers brood en ambachtelijk gebak, elke dag vers uit onze oven. Al jaren een begrip in Nijmegen.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigatie</div>
+      <ul class="footer-links-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="assortiment.html">Assortiment</a></li>
+        <li><a href="over-ons.html">Over ons</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Assortiment</div>
+      <ul class="footer-links-list">
+        <li><a href="assortiment.html#brood">Vers Brood</a></li>
+        <li><a href="assortiment.html#gebak">Gebak & Taarten</a></li>
+        <li><a href="assortiment.html#lunch">Lunch & Broodjes</a></li>
+        <li><a href="assortiment.html#seizoen">Seizoensproducten</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links-list">
+        <li><a href="tel:0247676026">024 767 6026</a></li>
+        <li><a href="mailto:info@stadsbakkerijdebie.nl">info@stadsbakkerijdebie.nl</a></li>
+        <li><a href="contact.html">Openingstijden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2025 Stadsbakkerij De Bie. Alle rechten voorbehouden.</p>
+    <p class="footer-made">Website door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></p>
+  </div>
+</footer>
+<div class="demo-banner">
+  <span>&#9889; DEMO voor Stadsbakkerij De Bie &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var nav = document.getElementById('navbar');
+
+  function updateNav() {
+    if (nav.classList.contains('solid')) return;
+    if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  var hamburger = document.getElementById('nav-hamburger');
+  var mobileMenu = document.getElementById('nav-mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
+    });
+  }
+});
+</script>
+</body>
+</html>
