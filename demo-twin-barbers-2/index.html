@@ -3,31 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Twin Barbers 2 — Premium Barbershop Arnhem</title>
+<title>Twin Barbers 2 — Barbershop Arnhem</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
   :root {
-    --red: #b81c1c;
-    --red-dark: #8b1212;
-    --red-light: #d42020;
+    --red: #c0392b;
+    --red-dark: #96281b;
+    --red-light: #e74c3c;
     --gold: #c9a84c;
-    --gold-light: #e8c96a;
-    --black: #0e0e0e;
+    --gold-light: #f0d080;
+    --black: #0d0d0d;
     --dark: #1a1a1a;
-    --dark-2: #242424;
+    --dark2: #242424;
     --gray: #2e2e2e;
-    --gray-light: #555;
+    --light-gray: #888;
+    --off-white: #f5f1ec;
     --white: #ffffff;
-    --off-white: #f5f2ee;
-    --text-muted: #999;
-    --font-display: 'Playfair Display', serif;
-    --font-heading: 'Bebas Neue', cursive;
+    --font-head: 'Playfair Display', serif;
+    --font-display: 'Bebas Neue', sans-serif;
     --font-body: 'Inter', sans-serif;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 7rem;
     --radius: 4px;
     --transition: 0.3s ease;
-    --shadow: 0 8px 40px rgba(0,0,0,0.4);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,1170 +40,1027 @@
   body {
     font-family: var(--font-body);
     background: var(--black);
-    color: var(--white);
+    color: var(--off-white);
     overflow-x: hidden;
-    padding-bottom: 40px;
   }
 
-  /* ── UTILITIES ── */
-  .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  img { display: block; max-width: 100%; }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* ── UTILITY ── */
   .section-label {
     font-family: var(--font-body);
-    font-size: 11px;
+    font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 4px;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--gold);
-    display: block;
-    margin-bottom: 12px;
+    margin-bottom: var(--space-sm);
   }
+
   .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
     line-height: 1.1;
     color: var(--white);
   }
+
   .section-title span { color: var(--red-light); }
+
   .btn {
     display: inline-block;
-    padding: 14px 36px;
+    padding: 0.85rem 2.2rem;
     font-family: var(--font-body);
-    font-size: 13px;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    text-decoration: none;
     border-radius: var(--radius);
+    transition: background var(--transition), color var(--transition), transform var(--transition);
     cursor: pointer;
-    transition: var(--transition);
+    border: none;
   }
+
   .btn-primary {
     background: var(--red);
     color: var(--white);
-    border: 2px solid var(--red);
   }
-  .btn-primary:hover { background: var(--red-dark); border-color: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,28,28,0.4); }
+  .btn-primary:hover { background: var(--red-light); transform: translateY(-2px); }
+
   .btn-outline {
     background: transparent;
-    color: var(--gold);
+    color: var(--white);
     border: 2px solid var(--gold);
   }
   .btn-outline:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); }
 
-  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .gold-line {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    margin: var(--space-sm) 0 var(--space-md);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── NAVBAR ── */
-  #navbar {
+  /* ── NAV ── */
+  nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
-    padding: 0 24px;
-    transition: background 0.4s ease, box-shadow 0.4s ease;
-  }
-  #navbar.scrolled {
-    background: rgba(14,14,14,0.97);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.6);
-  }
-  .nav-inner {
-    max-width: 1160px;
-    margin: 0 auto;
+    padding: 1.2rem var(--space-md);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 72px;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
   }
+
+  nav.scrolled {
+    background: rgba(13,13,13,0.97);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+
   .nav-logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
-  .nav-logo-main {
-    font-family: var(--font-display);
-    font-size: 22px;
+    font-family: var(--font-head);
+    font-size: 1.3rem;
     font-weight: 900;
     color: var(--white);
-    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
   }
-  .nav-logo-main span { color: var(--red-light); }
-  .nav-logo-sub {
-    font-size: 9px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+
+  .nav-logo em {
+    font-style: normal;
     color: var(--gold);
-    margin-top: 2px;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 600;
   }
+
   .nav-links {
     display: flex;
-    gap: 36px;
+    gap: var(--space-md);
     list-style: none;
+    align-items: center;
   }
-  .nav-links a {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.75);
-    text-decoration: none;
-    transition: color var(--transition);
-    position: relative;
-  }
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; left: 0; right: 0;
-    height: 1px;
-    background: var(--red-light);
-    transform: scaleX(0);
-    transition: transform var(--transition);
-  }
-  .nav-links a:hover { color: var(--white); }
-  .nav-links a:hover::after { transform: scaleX(1); }
-  .nav-cta { display: flex; align-items: center; }
-  .nav-cta .btn { padding: 10px 24px; font-size: 11px; }
 
-  .hamburger {
+  .nav-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-links .btn { padding: 0.6rem 1.4rem; font-size: 0.78rem; }
+
+  .nav-hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
     padding: 4px;
   }
-  .hamburger span {
-    display: block;
-    width: 26px;
-    height: 2px;
+  .nav-hamburger span {
+    width: 26px; height: 2px;
     background: var(--white);
-    transition: var(--transition);
+    border-radius: 2px;
+    transition: transform var(--transition), opacity var(--transition);
   }
-
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 72px; left: 0; right: 0;
-    background: rgba(14,14,14,0.98);
-    padding: 24px;
-    z-index: 999;
-    border-top: 1px solid var(--gray);
-  }
-  .mobile-menu.open { display: block; }
-  .mobile-menu ul { list-style: none; }
-  .mobile-menu ul li { border-bottom: 1px solid var(--gray); }
-  .mobile-menu ul li a {
-    display: block;
-    padding: 16px 0;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--white);
-    text-decoration: none;
-  }
-  .mobile-menu .btn { width: 100%; text-align: center; margin-top: 20px; }
 
   /* ── HERO ── */
   #hero {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 600px;
     background-image:
-      linear-gradient(to bottom, rgba(14,14,14,0.55) 0%, rgba(14,14,14,0.65) 60%, rgba(14,14,14,0.92) 100%),
-      url('https://images.pexels.com/photos/33841601/pexels-photo-33841601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+      linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.75) 60%, rgba(13,13,13,1) 100%),
+      url('https://images.pexels.com/photos/7518715/pexels-photo-7518715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: center top;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
   }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 720px;
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    padding-top: 80px;
   }
-  .hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
-    animation: fadeUp 0.8s ease 0.2s both;
-  }
-  .hero-eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
-  .hero-eyebrow span {
-    font-size: 11px;
-    letter-spacing: 4px;
+
+  .hero-sub {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
-    font-weight: 600;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.8s ease both;
   }
+
   .hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-family: var(--font-head);
+    font-size: clamp(2.8rem, 8vw, 6rem);
     font-weight: 900;
     line-height: 1.0;
     color: var(--white);
-    margin-bottom: 24px;
-    animation: fadeUp 0.8s ease 0.4s both;
+    max-width: 750px;
+    animation: fadeUp 0.9s 0.15s ease both;
   }
-  .hero-title span { color: var(--red-light); display: block; }
-  .hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.15rem);
+
+  .hero-title span { color: var(--red-light); }
+
+  .hero-desc {
+    margin-top: 1.5rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     font-weight: 300;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.75);
     max-width: 520px;
-    margin-bottom: 40px;
-    animation: fadeUp 0.8s ease 0.6s both;
+    line-height: 1.7;
+    animation: fadeUp 1s 0.3s ease both;
   }
+
   .hero-actions {
+    margin-top: 2.5rem;
     display: flex;
-    gap: 16px;
+    gap: 1rem;
     flex-wrap: wrap;
-    animation: fadeUp 0.8s ease 0.8s both;
+    animation: fadeUp 1.1s 0.45s ease both;
   }
-  .hero-badge {
-    position: absolute;
-    right: 40px;
-    bottom: 80px;
-    width: 110px;
-    height: 110px;
-    background: var(--red);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: 3px solid var(--gold);
-    animation: spin-slow 20s linear infinite;
-  }
-  .hero-badge-num {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    color: var(--white);
-    line-height: 1;
-  }
-  .hero-badge-text {
-    font-size: 9px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    line-height: 1.3;
-  }
+
   .hero-scroll {
     position: absolute;
-    bottom: 32px;
+    bottom: 2.5rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    animation: bounce 2s ease infinite;
+    gap: 6px;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s 1s ease both;
   }
-  .hero-scroll span { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-  .scroll-arrow { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); }
 
-  /* ── STRIP ── */
-  .info-strip {
-    background: var(--red);
-    padding: 0;
-    overflow: hidden;
+  .scroll-dot {
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s infinite;
   }
-  .info-strip-inner {
-    display: flex;
-    align-items: stretch;
-  }
-  .info-strip-item {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 20px 28px;
-    border-right: 1px solid rgba(255,255,255,0.15);
-  }
-  .info-strip-item:last-child { border-right: none; }
-  .strip-icon { font-size: 22px; flex-shrink: 0; }
-  .strip-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 2px; }
-  .strip-value { font-size: 14px; font-weight: 600; color: var(--white); }
 
   /* ── SERVICES ── */
   #diensten {
-    padding: 100px 0;
     background: var(--dark);
-  }
-  .services-header {
-    text-align: center;
-    margin-bottom: 64px;
-  }
-  .services-header p {
-    font-size: 16px;
-    color: var(--text-muted);
-    margin-top: 16px;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2px;
-  }
-  .service-card {
-    background: var(--dark-2);
-    padding: 40px 36px;
-    position: relative;
-    overflow: hidden;
-    transition: background var(--transition);
-    cursor: default;
-  }
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--red);
-    transition: height 0.4s ease;
-  }
-  .service-card:hover::before { height: 100%; }
-  .service-card:hover { background: var(--gray); }
-  .service-icon {
-    font-size: 32px;
-    margin-bottom: 20px;
-    display: block;
-  }
-  .service-name {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-  .service-desc {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  .price-list { list-style: none; }
-  .price-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .price-item:last-child { border-bottom: none; }
-  .price-name { font-size: 13px; color: rgba(255,255,255,0.8); }
-  .price-sub { font-size: 11px; color: var(--text-muted); display: block; margin-top: 2px; }
-  .price-amount {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--gold);
-    white-space: nowrap;
-  }
-  .stamp-card {
-    grid-column: 1 / -1;
-    background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 50%, var(--red-dark) 100%);
-    padding: 40px 36px;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-  .stamp-icon { font-size: 48px; }
-  .stamp-content { flex: 1; min-width: 200px; }
-  .stamp-title {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-  .stamp-text { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; }
-  .stamp-badge {
-    background: var(--gold);
-    color: var(--black);
-    padding: 12px 24px;
-    border-radius: var(--radius);
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 1px;
-    white-space: nowrap;
+    padding: var(--space-xl) var(--space-md);
   }
 
-  /* ── ABOUT ── */
-  #over-ons {
-    padding: 100px 0;
-    background: var(--black);
+  .services-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
   }
-  .about-grid {
+
+  .services-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+    gap: var(--space-lg);
+    align-items: end;
+    margin-bottom: var(--space-lg);
   }
-  .about-images {
-    position: relative;
+
+  .services-header p {
+    color: var(--light-gray);
+    line-height: 1.7;
+    font-size: 0.95rem;
   }
-  .about-img-main {
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    border-radius: var(--radius);
-    display: block;
-  }
-  .about-img-accent {
-    position: absolute;
-    bottom: -24px;
-    right: -24px;
-    width: 55%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: var(--radius);
-    border: 4px solid var(--black);
-  }
-  .about-img-placeholder {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background: var(--dark-2);
-    border-radius: var(--radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-    position: relative;
-    overflow: hidden;
-  }
-  .about-img-placeholder::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--red-dark) 0%, transparent 60%);
-    opacity: 0.3;
-  }
-  .about-img-overlay {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 50%;
-    background: var(--red);
-    padding: 24px;
-    border-radius: var(--radius);
-    border: 4px solid var(--black);
-    text-align: center;
-  }
-  .about-stat-num {
-    font-family: var(--font-heading);
-    font-size: 48px;
-    color: var(--white);
-    line-height: 1;
-  }
-  .about-stat-text {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    margin-top: 4px;
-  }
-  .about-content { display: flex; flex-direction: column; gap: 24px; }
-  .about-content p {
-    font-size: 15px;
-    color: rgba(255,255,255,0.72);
-    line-height: 1.8;
-  }
-  .about-stats {
+
+  .price-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
-  .stat-box {
-    background: var(--dark-2);
-    padding: 20px 16px;
-    border-radius: var(--radius);
-    text-align: center;
-    border-bottom: 2px solid var(--red);
+
+  .price-category {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color var(--transition), transform var(--transition);
   }
-  .stat-box-num {
-    font-family: var(--font-heading);
-    font-size: 36px;
-    color: var(--gold);
-    line-height: 1;
-  }
-  .stat-box-label {
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-top: 6px;
-  }
-  .team-card {
-    background: var(--dark-2);
-    padding: 24px;
-    border-radius: var(--radius);
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border-left: 3px solid var(--gold);
-  }
-  .team-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--gray);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    flex-shrink: 0;
-  }
-  .team-name {
-    font-family: var(--font-display);
+  .price-category:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+
+  .price-category-header {
+    background: linear-gradient(135deg, var(--red-dark), var(--red));
+    padding: 1rem 1.5rem;
+    font-family: var(--font-head);
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--white);
-    margin-bottom: 4px;
-  }
-  .team-role { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
-
-  /* ── USPs ── */
-  #waarom-wij {
-    padding: 100px 0;
-    background: var(--dark);
-    position: relative;
-    overflow: hidden;
-  }
-  #waarom-wij::before {
-    content: 'TWIN';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-heading);
-    font-size: 280px;
-    color: rgba(255,255,255,0.02);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: none;
-  }
-  .usp-header {
-    text-align: center;
-    margin-bottom: 64px;
-    position: relative;
-    z-index: 1;
-  }
-  .usp-header p {
-    font-size: 16px;
-    color: var(--text-muted);
-    margin-top: 16px;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .usp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    position: relative;
-    z-index: 1;
-  }
-  .usp-card {
-    background: var(--dark-2);
-    padding: 36px 28px;
-    border-radius: var(--radius);
-    position: relative;
-    overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
-  }
-  .usp-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--red), var(--gold));
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
-    transform-origin: left;
-  }
-  .usp-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-  .usp-card:hover::after { transform: scaleX(1); }
-  .usp-num {
-    font-family: var(--font-heading);
-    font-size: 56px;
-    color: rgba(184,28,28,0.15);
-    line-height: 1;
-    position: absolute;
-    top: 16px;
-    right: 20px;
-  }
-  .usp-icon { font-size: 36px; margin-bottom: 20px; display: block; }
-  .usp-title {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 10px;
-  }
-  .usp-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
-
-  .reviews-section {
-    margin-top: 80px;
-    position: relative;
-    z-index: 1;
-  }
-  .reviews-header { text-align: center; margin-bottom: 40px; }
-  .reviews-header h3 {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--white);
-  }
-  .stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; margin: 8px 0; }
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  .review-card {
-    background: var(--dark-2);
-    padding: 28px;
-    border-radius: var(--radius);
-    border-top: 2px solid var(--red);
-  }
-  .review-text {
-    font-size: 14px;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.7;
-    font-style: italic;
-    margin-bottom: 20px;
-  }
-  .review-author {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.6rem;
   }
-  .review-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+
+  .price-category-header::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .price-list { padding: 1.2rem 1.5rem; }
+
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    gap: 1rem;
+  }
+  .price-item:last-child { border-bottom: none; }
+
+  .price-name {
+    font-size: 0.9rem;
+    color: var(--off-white);
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .price-note {
+    font-size: 0.72rem;
+    color: var(--light-gray);
+    margin-top: 2px;
+  }
+
+  .price-amount {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  .price-stamp {
+    background: linear-gradient(135deg, var(--dark2), var(--gray));
+    border: 2px dashed var(--gold);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    grid-column: 1 / -1;
+  }
+
+  .price-stamp h3 {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-stamp p {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    line-height: 1.6;
+    max-width: 450px;
+    margin: 0 auto 1.2rem;
+  }
+
+  /* ── OVER ONS ── */
+  #over-ons {
+    background: var(--black);
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .about-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+
+  .about-images {
+    position: relative;
+    height: 560px;
+  }
+
+  .about-img-main {
+    position: absolute;
+    top: 0; left: 0;
+    width: 72%;
+    height: 78%;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: brightness(0.92);
+  }
+
+  .about-img-accent {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 58%;
+    height: 52%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 4px solid var(--dark);
+    filter: brightness(0.9);
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: 38%;
+    left: 64%;
     background: var(--red);
+    color: var(--white);
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    border: 3px solid var(--gold);
+    z-index: 2;
+  }
+
+  .about-badge strong {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+
+  .about-content p {
+    color: var(--light-gray);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: var(--space-md);
+  }
+
+  .stat-box {
+    text-align: center;
+    padding: 1.2rem 0.5rem;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 6px;
+    background: var(--dark2);
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--light-gray);
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .team-section {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .team-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--dark2);
+    border-radius: 8px;
+    padding: 1.2rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  .team-avatar {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+  }
+
+  .team-info h4 {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    color: var(--white);
+  }
+
+  .team-info span {
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── USPs / SOCIAL PROOF ── */
+  #usps {
+    background: var(--red-dark);
+    padding: var(--space-xl) var(--space-md);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #usps::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.15);
+    pointer-events: none;
+  }
+
+  .usps-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .usps-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+  }
+
+  .usps-header .gold-line { margin: var(--space-sm) auto var(--space-md); }
+
+  .usps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .usp-card {
+    background: rgba(0,0,0,0.25);
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    border-top: 3px solid var(--gold);
+    transition: background var(--transition), transform var(--transition);
+  }
+  .usp-card:hover { background: rgba(0,0,0,0.4); transform: translateY(-4px); }
+
+  .usp-icon {
+    width: 48px; height: 48px;
+    background: var(--gold);
+    border-radius: 6px;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    font-weight: 700;
-    flex-shrink: 0;
   }
-  .review-name { font-size: 13px; font-weight: 600; color: var(--white); }
-  .review-date { font-size: 11px; color: var(--text-muted); }
+
+  .usp-icon svg { width: 24px; height: 24px; fill: var(--black); }
+
+  .usp-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .usp-card p { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  .reviews-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .review-card {
+    background: var(--dark);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  .review-stars {
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+  }
+
+  .review-text {
+    font-size: 0.88rem;
+    color: var(--off-white);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .review-author {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--light-gray);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── OPENINGSTIJDEN STRIP ── */
+  .hours-strip {
+    background: var(--dark2);
+    padding: var(--space-md) var(--space-md);
+    border-top: 1px solid rgba(201,168,76,0.2);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .hours-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hours-title {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    color: var(--white);
+    white-space: nowrap;
+  }
+
+  .hours-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+  }
+
+  .hour-item {
+    font-size: 0.8rem;
+    color: var(--light-gray);
+    display: flex;
+    gap: 0.4rem;
+    white-space: nowrap;
+  }
+
+  .hour-item strong { color: var(--off-white); }
 
   /* ── CONTACT ── */
   #contact {
-    padding: 100px 0;
     background: var(--black);
+    padding: var(--space-xl) var(--space-md);
   }
-  .contact-grid {
+
+  .contact-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
+    gap: var(--space-lg);
   }
-  .contact-info { display: flex; flex-direction: column; gap: 32px; }
-  .contact-info-item {
+
+  .contact-info p {
+    color: var(--light-gray);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .contact-details { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-detail {
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: var(--dark2);
+    border-radius: 6px;
+    border-left: 3px solid var(--red);
+    transition: border-color var(--transition);
   }
-  .contact-info-icon {
-    width: 48px;
-    height: 48px;
+  .contact-detail:hover { border-color: var(--gold); }
+
+  .contact-detail-icon {
+    width: 40px; height: 40px;
     background: var(--red);
-    border-radius: var(--radius);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
     flex-shrink: 0;
   }
-  .contact-info-label {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
-  .contact-info-value { font-size: 15px; color: var(--white); line-height: 1.5; }
-  .contact-info-value a { color: var(--white); text-decoration: none; }
-  .contact-info-value a:hover { color: var(--gold); }
+  .contact-detail-icon svg { width: 18px; height: 18px; fill: var(--white); }
 
-  .hours-grid {
-    display: grid;
-    gap: 0;
-    background: var(--dark-2);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-  .hours-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 13px;
-  }
-  .hours-row:last-child { border-bottom: none; }
-  .hours-day { color: rgba(255,255,255,0.6); }
-  .hours-time { color: var(--white); font-weight: 500; }
-  .hours-today .hours-day { color: var(--gold); font-weight: 600; }
-  .hours-today .hours-time { color: var(--gold); }
-  .hours-today { background: rgba(201,168,76,0.08); }
+  .contact-detail-text { font-size: 0.88rem; }
+  .contact-detail-text span { display: block; color: var(--light-gray); font-size: 0.72rem; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .contact-detail-text a { color: var(--off-white); transition: color var(--transition); }
+  .contact-detail-text a:hover { color: var(--gold); }
 
-  .contact-form-wrap {
-    background: var(--dark-2);
-    padding: 40px;
-    border-radius: var(--radius);
-  }
-  .contact-form-title {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 700;
+  .contact-form { background: var(--dark2); border-radius: 10px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.07); }
+
+  .contact-form h3 {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
     color: var(--white);
-    margin-bottom: 8px;
+    margin-bottom: 0.4rem;
   }
-  .contact-form-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
-  .form-group { margin-bottom: 20px; }
-  .form-group label {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-  }
+
+  .contact-form p { font-size: 0.85rem; color: var(--light-gray); margin-bottom: 1.8rem; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.2rem; }
+
+  .form-group label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--light-gray); }
+
   .form-group input,
   .form-group select,
   .form-group textarea {
-    width: 100%;
     background: var(--gray);
     border: 1px solid rgba(255,255,255,0.08);
-    color: var(--white);
-    padding: 14px 16px;
-    font-family: var(--font-body);
-    font-size: 14px;
     border-radius: var(--radius);
+    padding: 0.8rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--white);
     outline: none;
     transition: border-color var(--transition);
-    -webkit-appearance: none;
   }
   .form-group input:focus,
   .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--red); }
-  .form-group textarea { resize: vertical; min-height: 100px; }
-  .form-group select option { background: var(--dark); }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .form-submit { width: 100%; padding: 16px; font-size: 13px; letter-spacing: 3px; }
+  .form-group textarea:focus { border-color: var(--gold); }
 
-  .cta-section {
-    background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
-    padding: 80px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: -40%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  .cta-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 900;
-    color: var(--white);
-    margin-bottom: 16px;
-    position: relative;
-    z-index: 1;
-  }
-  .cta-text {
-    font-size: 16px;
-    color: rgba(255,255,255,0.85);
-    max-width: 480px;
-    margin: 0 auto 36px;
-    line-height: 1.7;
-    position: relative;
-    z-index: 1;
-  }
-  .cta-actions {
+  .form-group select option { background: var(--gray); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit { width: 100%; padding: 1rem; font-size: 0.9rem; }
+
+  .social-row {
     display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
+    gap: 1rem;
+    margin-top: var(--space-md);
   }
-  .btn-white {
-    background: var(--white);
-    color: var(--red);
-    border: 2px solid var(--white);
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: var(--dark2);
+    color: var(--off-white);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: background var(--transition), border-color var(--transition);
   }
-  .btn-white:hover { background: var(--off-white); transform: translateY(-2px); }
-  .btn-gold-outline {
-    background: transparent;
-    color: var(--gold-light);
-    border: 2px solid var(--gold-light);
-  }
-  .btn-gold-outline:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); }
+  .social-btn:hover { background: var(--gray); border-color: var(--gold); }
+  .social-btn svg { width: 16px; height: 16px; fill: currentColor; }
 
   /* ── FOOTER ── */
   footer {
-    background: var(--dark);
-    padding: 48px 0 32px;
-    border-top: 1px solid var(--gray);
+    background: var(--dark2);
+    padding: var(--space-md);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
   }
-  .footer-inner {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 48px;
-    margin-bottom: 40px;
-  }
-  .footer-brand-name {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
+
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+  .footer-logo {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
     font-weight: 900;
     color: var(--white);
-    margin-bottom: 12px;
+    margin-bottom: 0.3rem;
   }
-  .footer-brand-name span { color: var(--red-light); }
-  .footer-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; max-width: 300px; margin-bottom: 20px; }
-  .social-links { display: flex; gap: 12px; }
-  .social-link {
-    width: 40px;
-    height: 40px;
-    background: var(--dark-2);
-    border-radius: var(--radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    text-decoration: none;
-    transition: background var(--transition);
-    border: 1px solid var(--gray);
-  }
-  .social-link:hover { background: var(--red); border-color: var(--red); }
-  .footer-col-title {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    font-weight: 600;
-  }
-  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .footer-links a {
-    font-size: 13px;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color var(--transition);
-  }
-  .footer-links a:hover { color: var(--white); }
-  .footer-bottom {
-    border-top: 1px solid var(--gray);
-    padding-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: gap;
-  }
-  .footer-copy { font-size: 12px; color: var(--text-muted); }
+
+  .footer-logo span { color: var(--red-light); }
+
+  footer p { font-size: 0.78rem; color: var(--light-gray); }
 
   /* ── ANIMATIONS ── */
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
-  @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(0.6); }
+  }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(13,13,13,0.98);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 1.5rem;
+    font-family: var(--font-head);
+    color: var(--white);
+    font-weight: 700;
+    transition: color var(--transition);
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-close {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+  }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .nav-links, .nav-cta { display: none; }
-    .hamburger { display: flex; }
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .footer-inner { grid-template-columns: 1fr 1fr; }
-    .info-strip-inner { flex-wrap: wrap; }
-    .info-strip-item { flex: 1 1 45%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .hero-badge { display: none; }
+    .services-header { grid-template-columns: 1fr; gap: var(--space-md); }
+    .about-wrapper { grid-template-columns: 1fr; }
+    .about-images { height: 340px; margin-bottom: 1rem; }
+    .contact-wrapper { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .form-row { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 600px) {
-    .about-stats { grid-template-columns: 1fr 1fr; }
-    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
-    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-    .contact-form-wrap { padding: 28px 20px; }
-    .form-row { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
-    .usp-grid { grid-template-columns: 1fr; }
-    .stamp-card { flex-direction: column; text-align: center; }
+    :root { --space-xl: 4rem; --space-lg: 2.5rem; }
+    .about-stats { grid-template-columns: repeat(3,1fr); }
+    .about-images { height: 280px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()">&#215;</button>
+  <a href="#diensten" onclick="closeMobileMenu()">Diensten</a>
+  <a href="#over-ons" onclick="closeMobileMenu()">Over Ons</a>
+  <a href="#usps" onclick="closeMobileMenu()">Waarom Wij</a>
+  <a href="#contact" onclick="closeMobileMenu()" class="btn btn-primary">Afspraak Maken</a>
+</div>
+
+<!-- NAV -->
 <nav id="navbar">
-  <div class="nav-inner">
-    <div class="nav-logo">
-      <span class="nav-logo-main">Twin <span>Barbers</span> 2</span>
-      <span class="nav-logo-sub">Arnhem · Steenstraat</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over Ons</a></li>
-      <li><a href="#waarom-wij">Reviews</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="tel:0626267893" class="btn btn-primary">📞 Bel Nu</a>
-    </div>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
+  <div class="nav-logo">
+    Twin Barbers 2
+    <em>Arnhem — Steenstraat</em>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#diensten">Diensten</a></li>
+    <li><a href="#over-ons">Over Ons</a></li>
+    <li><a href="#usps">Waarom Wij</a></li>
+    <li><a href="#contact" class="btn btn-primary">Afspraak Maken</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="openMobileMenu()">
+    <span></span><span></span><span></span>
   </div>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="#diensten" onclick="toggleMenu()">Diensten & Tarieven</a></li>
-    <li><a href="#over-ons" onclick="toggleMenu()">Over Ons</a></li>
-    <li><a href="#waarom-wij" onclick="toggleMenu()">Reviews</a></li>
-    <li><a href="#contact" onclick="toggleMenu()">Contact & Openingstijden</a></li>
-  </ul>
-  <a href="tel:0626267893" class="btn btn-primary">📞 Direct Bellen</a>
-</div>
-
 <!-- HERO -->
 <section id="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <span class="hero-eyebrow-line"></span>
-        <span>Arnhem · Steenstraat 25</span>
-      </div>
-      <h1 class="hero-title">
-        Twin
-        <span>Barbers 2</span>
-      </h1>
-      <p class="hero-subtitle">Traditionele barbershop in het hart van Arnhem. Wij combineren klassieke vakmanschap met moderne stijl — voor de man die het beste verdient.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Maak een Afspraak</a>
-        <a href="#diensten" class="btn btn-outline">Bekijk Tarieven</a>
-      </div>
+  <div class="hero-inner">
+    <div class="hero-sub">Barbershop Arnhem — Steenstraat 25</div>
+    <h1 class="hero-title">Vakmanschap dat <span>spreekt</span> voor zichzelf</h1>
+    <p class="hero-desc">Twin Barbers 2 is de traditionele barbershop in het hart van Arnhem. Klassieke herenkapsels, perfecte baardtrimmen en een sfeer waar je tot rust komt — elke keer opnieuw.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Maak een Afspraak</a>
+      <a href="#diensten" class="btn btn-outline">Bekijk Diensten</a>
     </div>
   </div>
-  <div class="hero-badge">
-    <span class="hero-badge-num">3</span>
-    <span class="hero-badge-text">Locaties<br>Arnhem</span>
-  </div>
   <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-arrow"></div>
+    <div class="scroll-dot"></div>
+    Scroll
   </div>
 </section>
 
-<!-- INFO STRIP -->
-<div class="info-strip">
-  <div class="info-strip-inner">
-    <div class="info-strip-item">
-      <span class="strip-icon">📍</span>
-      <div>
-        <div class="strip-label">Adres</div>
-        <div class="strip-value">Steenstraat 25, Arnhem</div>
-      </div>
-    </div>
-    <div class="info-strip-item">
-      <span class="strip-icon">📞</span>
-      <div>
-        <div class="strip-label">Telefoon</div>
-        <div class="strip-value">06 262 67 893</div>
-      </div>
-    </div>
-    <div class="info-strip-item">
-      <span class="strip-icon">🕐</span>
-      <div>
-        <div class="strip-label">Vandaag open</div>
-        <div class="strip-value">09:30 – 18:00 uur</div>
-      </div>
-    </div>
-    <div class="info-strip-item">
-      <span class="strip-icon">✂️</span>
-      <div>
-        <div class="strip-label">Vakmanschap</div>
-        <div class="strip-value">Knippen & Baard Trim</div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- DIENSTEN -->
 <section id="diensten">
-  <div class="container">
+  <div class="services-wrapper">
     <div class="services-header reveal">
-      <span class="section-label">Wat wij voor jou doen</span>
-      <h2 class="section-title">Onze <span>Diensten</span></h2>
-      <p>Van een scherpe knipbeurt tot een verzorgde baard — bij Twin Barbers 2 ben je in goede handen.</p>
+      <div>
+        <div class="section-label">Wat wij voor jou doen</div>
+        <h2 class="section-title">Onze <span>Diensten</span></h2>
+        <div class="gold-line"></div>
+      </div>
+      <p>Van een klassieke knipbeurt tot een volledige baardbehandeling met gezichtsverzorging — bij Twin Barbers 2 op de Steenstraat in Arnhem leveren we kwaliteit zonder compromis. Vaste prijzen, geen verrassingen.</p>
     </div>
 
-    <div class="services-grid">
+    <div class="price-grid">
+
       <!-- Knippen -->
-      <div class="service-card reveal">
-        <span class="service-icon">✂️</span>
-        <div class="service-name">Knippen</div>
-        <p class="service-desc">Vakkundig geknipt door onze ervaren barbiers. Van klassiek tot modern — altijd op maat.</p>
-        <ul class="price-list">
-          <li class="price-item">
+      <div class="price-category reveal">
+        <div class="price-category-header">Knippen</div>
+        <div class="price-list">
+          <div class="price-item">
             <div>
-              <span class="price-name">Knippen Volwassenen</span>
+              <div class="price-name">Knippen Volwassenen</div>
             </div>
-            <span class="price-amount">€22,50</span>
-          </li>
-          <li class="price-item">
+            <div class="price-amount">€22,50</div>
+          </div>
+          <div class="price-item">
             <div>
-              <span class="price-name">Knippen & Baard</span>
-              <span class="price-sub">Knippen + baard modelleren/scheren</span>
+              <div class="price-name">Knippen &amp; Baard</div>
+              <div class="price-note">Knippen en baard modelleren / scheren</div>
             </div>
-            <span class="price-amount">€32,50</span>
-          </li>
-          <li class="price-item">
+            <div class="price-amount">€32,50</div>
+          </div>
+          <div class="price-item">
             <div>
-              <span class="price-name">Knippen & Lange Baard</span>
-              <span class="price-sub">Knippen + baard modelleren/scheren</span>
+              <div class="price-name">Knippen Lange Baard</div>
+              <div class="price-note">Knippen en baard modelleren / scheren</div>
             </div>
-            <span class="price-amount">€37,50</span>
-          </li>
-          <li class="price-item">
+            <div class="price-amount">€37,50</div>
+          </div>
+          <div class="price-item">
             <div>
-              <span class="price-name">Knippen Kinderen t/m 8 jaar</span>
+              <div class="price-name">Speciale Behandeling</div>
+              <div class="price-note">Knippen, scheren, baard modelleren, neus- en oorhaar waxen, gezichtsbehandeling</div>
             </div>
-            <span class="price-amount">€17,50</span>
-          </li>
-          <li class="price-item">
+            <div class="price-amount">€50,00</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kinderen -->
+      <div class="price-category reveal">
+        <div class="price-category-header">Kinderen</div>
+        <div class="price-list">
+          <div class="price-item">
             <div>
-              <span class="price-name">Knippen Kinderen t/m 12 jaar</span>
+              <div class="price-name">Knippen t/m 8 jaar</div>
             </div>
-            <span class="price-amount">€20,00</span>
-          </li>
-        </ul>
+            <div class="price-amount">€17,50</div>
+          </div>
+          <div class="price-item">
+            <div>
+              <div class="price-name">Knippen t/m 12 jaar</div>
+            </div>
+            <div class="price-amount">€20,00</div>
+          </div>
+        </div>
       </div>
 
       <!-- Baard -->
-      <div class="service-card reveal">
-        <span class="service-icon">🪒</span>
-        <div class="service-name">Baard</div>
-        <p class="service-desc">Laat je baard professioneel verzorgen. Van strakke contouren tot een klassieke scheerbeurt met warm schuim.</p>
-        <ul class="price-list">
-          <li class="price-item">
+      <div class="price-category reveal">
+        <div class="price-category-header">Baard</div>
+        <div class="price-list">
+          <div class="price-item">
             <div>
-              <span class="price-name">Baard Trimmen</span>
-              <span class="price-sub">Modelleren, contouren & baardolie</span>
+              <div class="price-name">Baard Trimmen</div>
+              <div class="price-note">Modelleren, contouren en baardolie</div>
             </div>
-            <span class="price-amount">€12,50</span>
-          </li>
-          <li class="price-item">
+            <div class="price-amount">€12,50</div>
+          </div>
+          <div class="price-item">
             <div>
-              <span class="price-name">Baard Scheren</span>
-              <span class="price-sub">Klassiek scheermes met warm schuim</span>
+              <div class="price-name">Baard Scheren</div>
             </div>
-            <span class="price-amount">€15,00</span>
-          </li>
-          <li class="price-item">
+            <div class="price-amount">€15,00</div>
+          </div>
+          <div class="price-item">
             <div>
-              <span class="price-name">Contouren</span>
-              <span class="price-sub">Strakke lijnafwerking</span>
+              <div class="price-name">Contouren</div>
             </div>
-            <span class="price-amount">€12,50</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Speciale behandeling -->
-      <div class="service-card reveal">
-        <span class="service-icon">👑</span>
-        <div class="service-name">Speciale Behandeling</div>
-        <p class="service-desc">De ultieme ervaring — alles in één sessie. Verwennerij van top tot teen voor de veeleisende man.</p>
-        <ul class="price-list">
-          <li class="price-item">
-            <div>
-              <span class="price-name">Complete Behandeling</span>
-              <span class="price-sub">Knippen, scheren/baard modelleren, neus- & oorhaar waxen, gezichtsbehandeling</span>
-            </div>
-            <span class="price-amount">€50,00</span>
-          </li>
-        </ul>
-        <div style="margin-top:20px;padding:16px;background:rgba(184,28,28,0.1);border-left:3px solid var(--red);border-radius:var(--radius);">
-          <p style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;">Inclusief volledige ontspanning, premium producten en een verfrissend eindresultaat dat voor zich spreekt.</p>
+            <div class="price-amount">€12,50</div>
+          </div>
         </div>
       </div>
 
-      <!-- Stamp Card - full width -->
-      <div class="stamp-card reveal">
-        <span class="stamp-icon">🏆</span>
-        <div class="stamp-content">
-          <div class="stamp-title">Twin Stempel Kaart</div>
-          <p class="stamp-text">Spaar jouw stempels en ontvang diverse voordelen zoals kortingen bij elke bezoek. Vol kaart? Dan is jouw volgende knipbeurt <strong>helemaal GRATIS!</strong> Vraag de kaart aan bij de balie.</p>
-        </div>
-        <div class="stamp-badge">🎁 Vraag Nu Aan!</div>
+      <!-- Stempelkaart -->
+      <div class="price-stamp reveal">
+        <h3>Twin Stempel Kaart</h3>
+        <p>Spaar bij elke knipbeurt een stempel. Bij een volle stempelkaart ontvang je een gratis knipbeurt. Bovendien profiteer je van exclusieve kortingen en voordelen als vaste klant van Twin Barbers 2.</p>
+        <a href="#contact" class="btn btn-outline">Vraag je kaart aan</a>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- OVER ONS -->
 <section id="over-ons">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-images reveal">
-        <div class="about-img-placeholder">
-          ✂️
-          <div class="about-img-overlay">
-            <div class="about-stat-num">3</div>
-            <div class="about-stat-text">Locaties<br>in Arnhem</div>
-          </div>
+  <div class="about-wrapper">
+    <div class="about-images reveal">
+      <img class="about-img-main" src="https://images.pexels.com/photos/7518715/pexels-photo-7518715.jpeg?auto=compress&cs=tinysrgb&w=800&h=600" alt="Twin Barbers 2 interieur Arnhem">
+      <img class="about-img-accent" src="https://picsum.photos/seed/barberchair/600/400" alt="Klassieke kappersstoel Twin Barbers">
+      <div class="about-badge">
+        <strong>3</strong>
+        Locaties<br>Arnhem
+      </div>
+    </div>
+    <div class="about-content reveal">
+      <div class="section-label">Ons verhaal</div>
+      <h2 class="section-title">Trots op elke <span>knipbeurt</span></h2>
+      <div class="gold-line"></div>
+      <p>Bij Twin Barbers 2 op de Steenstraat in Arnhem staan professionele kappers voor je klaar die echt begrijpen wat jij wilt. We zijn al jaren actief in Arnhem en hebben inmiddels drie locaties in de stad — waaronder deze aan de Steenstraat.</p>
+      <p>Onze kapperszaken zijn plekken waar je kunt ontspannen, bijkletsen en genieten van hoogwaardige dienstverlening. We werken uitsluitend met de beste producten zodat jouw haar en baard er dag na dag verzorgd uitzien.</p>
+      <p>We staan altijd open voor feedback en passen onze aanpak aan op jouw wensen. Dat is de Twin Barbers-belofte.</p>
+
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Locaties</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Klanten/mnd</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Jaar ervaring</div>
         </div>
       </div>
-      <div class="about-content reveal">
-        <div>
-          <span class="section-label">Ons Verhaal</span>
-          <h2 class="section-title">Vakmanschap<br>& <span>Passie</span></h2>
-        </div>
-        <p>Bij Twin Barbers 2 aan de Steenstraat in Arnhem zijn we trots op onze professionele en ervaren kappers. Wij zijn gespecialiseerd in klassieke herenkapsels en staan bekend om onze kwaliteit én moderne aanpak.</p>
-        <p>Al jaren zijn wij een vertrouwd gezicht in Arnhem. Met inmiddels drie locaties in de stad bieden wij iedere man de mogelijkheid om dichtbij een échte barbershopervaring te beleven. Onze kapperszaken zijn plaatsen waar je kunt ontspannen en genieten van hoogwaardige diensten.</p>
-        <p>We gebruiken uitsluitend de beste producten om ervoor te zorgen dat jouw haar en baard gezond, glanzend en verzorgd blijven. Feedback van onze klanten nemen wij serieus — wij doen ons uiterste best om aan al je wensen te voldoen.</p>
-        <div class="about-stats">
-          <div class="stat-box">
-            <div class="stat-box-num">3</div>
-            <div class="stat-box-label">Locaties</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-box-num">10+</div>
-            <div class="stat-box-label">Jaar Ervaring</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-box-num">500+</div>
-            <div class="stat-box-label">Klanten p/m</div>
-          </div>
-        </div>
+
+      <div class="team-section">
         <div class="team-card">
-          <div class="team-avatar">👤</div>
-          <div>
-            <div class="team-name">Hogir Mohamed</div>
-            <div class="team-role">Eigenaar & Head Barber</div>
+          <img class="team-avatar" src="https://picsum.photos/seed/barber-hogir/200/200" alt="Hogir Mohamed">
+          <div class="team-info">
+            <h4>Hogir Mohamed</h4>
+            <span>Eigenaar &amp; Master Barber</span>
           </div>
         </div>
       </div>
@@ -1208,255 +1068,180 @@
   </div>
 </section>
 
-<!-- WAAROM WIJ / USPs + REVIEWS -->
-<section id="waarom-wij">
-  <div class="container">
-    <div class="usp-header reveal">
-      <span class="section-label">Waarom kiezen voor ons?</span>
-      <h2 class="section-title">De Twin <span>Ervaring</span></h2>
-      <p>Meer dan een knipbeurt — een moment voor jezelf, elke keer weer.</p>
+<!-- USPS / SOCIAL PROOF -->
+<section id="usps">
+  <div class="usps-wrapper">
+    <div class="usps-header reveal">
+      <div class="section-label">Waarom Twin Barbers 2</div>
+      <h2 class="section-title">Wat ons <span>onderscheidt</span></h2>
+      <div class="gold-line"></div>
     </div>
 
-    <div class="usp-grid">
+    <div class="usps-grid">
       <div class="usp-card reveal">
-        <span class="usp-num">01</span>
-        <span class="usp-icon">🎯</span>
-        <div class="usp-title">Klassiek Vakmanschap</div>
-        <p class="usp-text">Wij beheersen zowel traditionele als moderne technieken. Van fade tot klassiek opgeschoren — altijd perfecte resultaten.</p>
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        </div>
+        <h3>Klassiek vakmanschap</h3>
+        <p>Van skin fade tot klassieke zij-scheiding — onze kappers beheersen elke techniek en leveren altijd een strak resultaat.</p>
       </div>
       <div class="usp-card reveal">
-        <span class="usp-num">02</span>
-        <span class="usp-icon">🏆</span>
-        <div class="usp-title">Premium Producten</div>
-        <p class="usp-text">We werken uitsluitend met de beste producten voor haar en baard, zodat jij er lang mee vooruit kunt en alles er fris uitziet.</p>
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-11 .5.92-2.84 8-4.5 8-4.5z"/></svg>
+        </div>
+        <h3>Premium producten</h3>
+        <p>We werken uitsluitend met professionele haar- en baardproducten zodat jouw look langer meegaat en je haar gezond blijft.</p>
       </div>
       <div class="usp-card reveal">
-        <span class="usp-num">03</span>
-        <span class="usp-icon">😌</span>
-        <div class="usp-title">Ontspannen Sfeer</div>
-        <p class="usp-text">Onze barbershop is een plek om even te ontspannen. Vriendelijke service, gezellige atmosfeer en aandacht voor elk detail.</p>
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 110 10A5 5 0 0112 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
+        </div>
+        <h3>Persoonlijke aanpak</h3>
+        <p>Iedere klant is anders. We nemen de tijd voor een consult en stemmen de knipbeurt volledig af op jouw gezichtsvorm en stijl.</p>
       </div>
       <div class="usp-card reveal">
-        <span class="usp-num">04</span>
-        <span class="usp-icon">📍</span>
-        <div class="usp-title">Centraal in Arnhem</div>
-        <p class="usp-text">Aan de drukke Steenstraat, makkelijk bereikbaar in het centrum van Arnhem. Ook met 3 andere locaties altijd een barber bij jou in de buurt.</p>
-      </div>
-      <div class="usp-card reveal">
-        <span class="usp-num">05</span>
-        <span class="usp-icon">✅</span>
-        <div class="usp-title">Eerlijke Prijzen</div>
-        <p class="usp-text">Hoge kwaliteit hoeft niet duur te zijn. Onze tarieven zijn transparant en eerlijk, voor iedereen — van kind tot volwassene.</p>
-      </div>
-      <div class="usp-card reveal">
-        <span class="usp-num">06</span>
-        <span class="usp-icon">🎁</span>
-        <div class="usp-title">Twin Stempelkaart</div>
-        <p class="usp-text">Loyaliteit wordt beloond. Spaar stempels, ontvang kortingen en bij een volle kaart knap je gratis opgeknipt. Simpel en eerlijk.</p>
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        </div>
+        <h3>Hygiëne &amp; veiligheid</h3>
+        <p>Desinfectie na elke klant is voor ons vanzelfsprekend. Schoon materiaal, frisse handdoeken en een verzorgde werkplek — altijd.</p>
       </div>
     </div>
 
-    <div class="reviews-section reveal">
-      <div class="reviews-header">
-        <h3>Wat onze klanten zeggen</h3>
-        <div class="stars">★★★★★</div>
-        <p style="color:var(--text-muted);font-size:14px;">Gemiddeld 4.9 / 5 — meer dan 200 Google Reviews</p>
+    <!-- Reviews -->
+    <div class="section-label" style="margin-top: var(--space-lg); text-align:center;">Wat onze klanten zeggen</div>
+    <div class="reviews-row">
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Beste barbershop van Arnhem. Altijd netjes geholpen, de kappers weten precies wat je wilt. Kom hier al meer dan twee jaar."</p>
+        <div class="review-author">— Mohammed A., Arnhem</div>
       </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <p class="review-text">"Absoluut de beste barbershop van Arnhem. Hogir weet precies wat je wil, ook als je het zelf niet goed kunt uitleggen. Ben er al jaren vaste klant!"</p>
-          <div class="review-author">
-            <div class="review-avatar">M</div>
-            <div>
-              <div class="review-name">Mohammed A.</div>
-              <div class="review-date stars" style="font-size:12px;">★★★★★</div>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <p class="review-text">"Geweldige sfeer, vriendelijk personeel en mijn baard ziet er altijd perfect uit als ik wegga. Stempelkaart is ook top — gratis knipbeurt verdiend! 🏆"</p>
-          <div class="review-author">
-            <div class="review-avatar">R</div>
-            <div>
-              <div class="review-name">Rayan B.</div>
-              <div class="review-date stars" style="font-size:12px;">★★★★★</div>
-            </div>
-          </div>
-        </div>
-        <div class="review-card">
-          <p class="review-text">"De speciale behandeling van €50 is echt een aanrader. Knippen, scheren, waxen en gezichtsbehandeling — ga je er als een nieuwe man uit. Het is het meer dan waard."</p>
-          <div class="review-author">
-            <div class="review-avatar">D</div>
-            <div>
-              <div class="review-name">Davide K.</div>
-              <div class="review-date stars" style="font-size:12px;">★★★★★</div>
-            </div>
-          </div>
-        </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Geweldige sfeer, scherpe prijzen en een resultaat waar ik altijd blij van word. De speciale behandeling is het zeker waard."</p>
+        <div class="review-author">— Kevin D., Arnhem</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Eindelijk een plek waar ze ook mijn baard serieus nemen. Fantastisch werk, super vriendelijk personeel. Aanrader voor iedereen."</p>
+        <div class="review-author">— Daniël V., Arnhem</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT + CTA -->
+<!-- OPENINGSTIJDEN STRIP -->
+<div class="hours-strip">
+  <div class="hours-inner">
+    <div class="hours-title">Openingstijden</div>
+    <div class="hours-list">
+      <div class="hour-item"><strong>Ma</strong> 12:00 – 18:00</div>
+      <div class="hour-item"><strong>Di</strong> 09:30 – 18:00</div>
+      <div class="hour-item"><strong>Wo</strong> 09:30 – 18:00</div>
+      <div class="hour-item"><strong>Do</strong> 09:30 – 20:00</div>
+      <div class="hour-item"><strong>Vr</strong> 09:30 – 18:00</div>
+      <div class="hour-item"><strong>Za</strong> 09:30 – 18:00</div>
+    </div>
+    <a href="tel:0626267893" class="btn btn-primary">Bel Ons</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
 <section id="contact">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:60px;" class="reveal">
-      <span class="section-label">Kom langs of bel ons</span>
-      <h2 class="section-title">Contact & <span>Openingstijden</span></h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <div class="contact-info-item">
-          <div class="contact-info-icon">📍</div>
-          <div>
-            <div class="contact-info-label">Adres</div>
-            <div class="contact-info-value">Steenstraat 25<br>6828 CB Arnhem</div>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-icon">📞</div>
-          <div>
-            <div class="contact-info-label">Telefoon</div>
-            <div class="contact-info-value"><a href="tel:0626267893">06 262 67 893</a></div>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <div class="contact-info-icon">✉️</div>
-          <div>
-            <div class="contact-info-label">E-mail</div>
-            <div class="contact-info-value"><a href="mailto:barbershoptwin@hotmail.com">barbershoptwin@hotmail.com</a></div>
-          </div>
-        </div>
+  <div class="contact-wrapper">
+    <div class="contact-info reveal">
+      <div class="section-label">Kom langs</div>
+      <h2 class="section-title">Maak een <span>Afspraak</span></h2>
+      <div class="gold-line"></div>
+      <p>Loop gewoon binnen of stuur ons een berichtje. We zijn zes dagen per week voor je open op de Steenstraat in het centrum van Arnhem. Op donderdag tot 20:00 uur.</p>
 
-        <div>
-          <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:600;">Openingstijden</div>
-          <div class="hours-grid">
-            <div class="hours-row">
-              <span class="hours-day">Maandag</span>
-              <span class="hours-time">12:00 – 18:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Dinsdag</span>
-              <span class="hours-time">09:30 – 18:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Woensdag</span>
-              <span class="hours-time">09:30 – 18:00</span>
-            </div>
-            <div class="hours-row hours-today">
-              <span class="hours-day">Donderdag ⭐</span>
-              <span class="hours-time">09:30 – 20:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Vrijdag</span>
-              <span class="hours-time">09:30 – 18:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Zaterdag</span>
-              <span class="hours-time">09:30 – 18:00</span>
-            </div>
-            <div class="hours-row">
-              <span class="hours-day">Zondag</span>
-              <span class="hours-time" style="color:var(--text-muted);">Gesloten</span>
-            </div>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <span>Adres</span>
+            <a href="https://maps.google.com/?q=Steenstraat+25+Arnhem" target="_blank">Steenstraat 25, 6828 CB Arnhem</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <span>Telefoon</span>
+            <a href="tel:0626267893">06 26 26 78 93</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <span>E-mail</span>
+            <a href="mailto:barbershoptwin@hotmail.com">barbershoptwin@hotmail.com</a>
           </div>
         </div>
       </div>
 
-      <div class="contact-form-wrap reveal">
-        <div class="contact-form-title">Maak een Afspraak</div>
-        <p class="contact-form-sub">Vul het formulier in en wij nemen zo snel mogelijk contact met je op.</p>
-        <form onsubmit="handleForm(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Voornaam</label>
-              <input type="text" placeholder="Jouw voornaam" required>
-            </div>
-            <div class="form-group">
-              <label>Achternaam</label>
-              <input type="text" placeholder="Jouw achternaam" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Telefoon</label>
-            <input type="tel" placeholder="06 xx xx xx xx" required>
-          </div>
-          <div class="form-group">
-            <label>Gewenste Dienst</label>
-            <select required>
-              <option value="" disabled selected>Selecteer een dienst</option>
-              <option>Knippen Volwassenen — €22,50</option>
-              <option>Knippen & Baard — €32,50</option>
-              <option>Knippen & Lange Baard — €37,50</option>
-              <option>Speciale Behandeling — €50,00</option>
-              <option>Knippen Kinderen t/m 8 jaar — €17,50</option>
-              <option>Knippen Kinderen t/m 12 jaar — €20,00</option>
-              <option>Baard Trimmen — €12,50</option>
-              <option>Baard Scheren — €15,00</option>
-              <option>Contouren — €12,50</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Bericht (optioneel)</label>
-            <textarea placeholder="Speciale wensen of vragen..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary form-submit">✂️ Afspraak Aanvragen</button>
-        </form>
+      <div class="social-row">
+        <a href="https://facebook.com" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Facebook
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          Instagram
+        </a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- CTA SECTION -->
-<section class="cta-section">
-  <div class="container">
-    <h2 class="cta-title reveal">Klaar voor jouw transformatie?</h2>
-    <p class="cta-text reveal">Kom langs bij Twin Barbers 2 aan de Steenstraat in Arnhem en ontdek wat échte barbershop vakmanschap inhoudt.</p>
-    <div class="cta-actions reveal">
-      <a href="tel:0626267893" class="btn btn-white">📞 Bel Direct: 06 262 67 893</a>
-      <a href="https://twinbarbers2.nl" target="_blank" class="btn btn-gold-outline">🌐 Bezoek Website</a>
+    <div class="contact-form reveal">
+      <h3>Stuur een bericht</h3>
+      <p>Wil je een specifieke dag of tijd reserveren? Laat het ons weten en we bevestigen zo snel mogelijk.</p>
+      <form onsubmit="handleForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Naam</label>
+            <input type="text" id="name" placeholder="Jouw naam" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefoon</label>
+            <input type="tel" id="phone" placeholder="06 ..." >
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="service">Dienst</label>
+          <select id="service">
+            <option value="">Selecteer een dienst</option>
+            <option>Knippen Volwassenen — €22,50</option>
+            <option>Knippen &amp; Baard — €32,50</option>
+            <option>Knippen Lange Baard — €37,50</option>
+            <option>Speciale Behandeling — €50,00</option>
+            <option>Knippen Kind t/m 8 jaar — €17,50</option>
+            <option>Knippen Kind t/m 12 jaar — €20,00</option>
+            <option>Baard Trimmen — €12,50</option>
+            <option>Baard Scheren — €15,00</option>
+            <option>Contouren — €12,50</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Bericht (optioneel)</label>
+          <textarea id="message" placeholder="Bijzonderheden, gewenste dag of tijd..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Verstuur Bericht</button>
+      </form>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-brand-name">Twin <span>Barbers</span> 2</div>
-        <p class="footer-text">Traditionele barbershop in het hart van Arnhem. Gespecialiseerd in klassieke herenkapsels en moderne stijlen. Al jaren een vertrouwd adres aan de Steenstraat.</p>
-        <div class="social-links">
-          <a href="https://facebook.com" target="_blank" class="social-link" title="Facebook">📘</a>
-          <a href="https://instagram.com" target="_blank" class="social-link" title="Instagram">📸</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Diensten</div>
-        <ul class="footer-links">
-          <li><a href="#diensten">Knippen</a></li>
-          <li><a href="#diensten">Baard Trimmen</a></li>
-          <li><a href="#diensten">Baard Scheren</a></li>
-          <li><a href="#diensten">Speciale Behandeling</a></li>
-          <li><a href="#diensten">Twin Stempelkaart</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Navigatie</div>
-        <ul class="footer-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#over-ons">Over Ons</a></li>
-          <li><a href="#waarom-wij">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="https://twinbarbers2.nl" target="_blank">Officiële Website</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2024 Twin Barbers 2 — Steenstraat 25, Arnhem. Alle rechten voorbehouden.</span>
-      <span class="footer-copy">📧 barbershoptwin@hotmail.com</span>
-    </div>
+  <div class="footer-inner">
+    <div class="footer-logo">Twin <span>Barbers</span> 2</div>
+    <p style="color: var(--gold); font-size:0.72rem; margin-bottom:0.5rem;">Steenstraat 25, 6828 CB Arnhem</p>
+    <p>Copyright &copy; 2024 Twin Barbers 2. Alle rechten voorbehouden.</p>
   </div>
 </footer>
 
@@ -1464,62 +1249,50 @@
 <div style="position:fixed;bottom:0;left:0;right:0;background:#0f172a;color:#94a3b8;text-align:center;padding:8px;font-size:12px;z-index:9999;font-family:sans-serif;">Demo gemaakt door <a href="https://hagenweb.nl" target="_blank" style="color:#818cf8;">Hagenweb</a></div>
 
 <script>
-  // Navbar scroll effect
+  // NAV SCROLL
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  // Mobile menu toggle
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('open');
+  // MOBILE MENU
+  function openMobileMenu() {
+    document.getElementById('mobileMenu').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
   }
 
-  // IntersectionObserver for reveal animations
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, 80 * (entry.target.dataset.delay || 0));
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
 
-  document.querySelectorAll('.reveal').forEach((el, i) => {
-    el.dataset.delay = i % 4;
-    observer.observe(el);
-  });
-
-  // Form submit handler
+  // FORM
   function handleForm(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.form-submit');
-    const original = btn.textContent;
-    btn.textContent = '✅ Aanvraag Verzonden!';
-    btn.style.background = '#1a7a3c';
-    btn.style.borderColor = '#1a7a3c';
+    btn.textContent = 'Bericht verzonden!';
+    btn.style.background = 'var(--gold)';
+    btn.style.color = 'var(--black)';
     btn.disabled = true;
     setTimeout(() => {
-      btn.textContent = original;
+      btn.textContent = 'Verstuur Bericht';
       btn.style.background = '';
-      btn.style.borderColor = '';
+      btn.style.color = '';
       btn.disabled = false;
       e.target.reset();
     }, 3500);
   }
-
-  // Highlight today's opening hours
-  const days = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'];
-  const today = days[new Date().getDay()];
-  document.querySelectorAll('.hours-row').forEach(row => {
-    const dayEl = row.querySelector('.hours-day');
-    if (dayEl && dayEl.textContent.includes(today) && !dayEl.textContent.includes('⭐')) {
-      row.classList.add('hours-today');
-    }
-  });
 </script>
 </body>
 </html>
