@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Herenkapsalon Arkadas – Spijkerkwartier Arnhem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --clr-bg: #0d0d0d;
+    --clr-surface: #141414;
+    --clr-card: #1a1a1a;
+    --clr-border: #2a2a2a;
+    --clr-gold: #c9a84c;
+    --clr-gold-light: #e2c278;
+    --clr-text: #f0ede8;
+    --clr-muted: #8a8178;
+    --clr-white: #ffffff;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    --sp-xs: 0.5rem;
+    --sp-sm: 1rem;
+    --sp-md: 2rem;
+    --sp-lg: 4rem;
+    --sp-xl: 7rem;
+    --radius: 4px;
+    --transition: 0.3s ease;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  img { display: block; max-width: 100%; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ── UTILITY ── */
+  .gold { color: var(--clr-gold); }
+  .section-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clr-gold);
+    margin-bottom: var(--sp-sm);
+  }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: var(--sp-sm);
+  }
+  .section-body {
+    color: var(--clr-muted);
+    font-size: 1rem;
+    max-width: 52ch;
+    line-height: 1.8;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 2.2rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--clr-gold);
+    color: var(--clr-gold);
+    background: transparent;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    border-radius: var(--radius);
+  }
+  .btn:hover { background: var(--clr-gold); color: #0d0d0d; }
+  .btn-solid {
+    background: var(--clr-gold);
+    color: #0d0d0d;
+  }
+  .btn-solid:hover { background: var(--clr-gold-light); border-color: var(--clr-gold-light); }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.2rem 0;
+    transition: background 0.4s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(13,13,13,0.96);
+    backdrop-filter: blur(12px);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--clr-border);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--clr-white);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--clr-gold); }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clr-muted);
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--clr-gold); }
+  .nav-cta { font-size: 0.78rem; }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--clr-text);
+    transition: transform var(--transition), opacity var(--transition);
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--clr-bg);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--clr-text);
+    transition: color var(--transition);
+  }
+  .mobile-menu a:hover { color: var(--clr-gold); }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background-image: url('https://images.pexels.com/photos/18999559/pexels-photo-18999559.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.72) 50%,
+      rgba(13,13,13,0.95) 100%
+    );
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+  }
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--clr-white);
+    margin-bottom: var(--sp-md);
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--clr-gold);
+  }
+  .hero-actions {
+    display: flex;
+    gap: var(--sp-sm);
+    flex-wrap: wrap;
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--clr-muted);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .hero-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--clr-gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.4; transform: scaleY(0.7); }
+  }
+
+  /* ── DIENSTEN ── */
+  #diensten {
+    padding: var(--sp-xl) 0;
+    background: var(--clr-bg);
+  }
+  .diensten-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-md);
+    align-items: end;
+    margin-bottom: var(--sp-lg);
+  }
+  .diensten-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--clr-border);
+    border: 1.5px solid var(--clr-border);
+  }
+  .dienst-card {
+    background: var(--clr-card);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background var(--transition);
+  }
+  .dienst-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--clr-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .dienst-card:hover { background: #1f1f1f; }
+  .dienst-card:hover::before { transform: scaleX(1); }
+  .dienst-number {
+    font-family: var(--font-serif);
+    font-size: 0.7rem;
+    color: var(--clr-gold);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+  .dienst-name {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--clr-text);
+  }
+  .dienst-desc {
+    font-size: 0.88rem;
+    color: var(--clr-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .dienst-price {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--clr-gold);
+    text-transform: uppercase;
+  }
+
+  /* ── OVER ONS ── */
+  #over {
+    padding: var(--sp-xl) 0;
+    background: var(--clr-surface);
+  }
+  .over-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .over-img-wrap {
+    position: relative;
+  }
+  .over-img-wrap img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+  }
+  .over-img-accent {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 180px;
+    height: 180px;
+    border: 2px solid var(--clr-gold);
+    z-index: -1;
+  }
+  .over-img-badge {
+    position: absolute;
+    top: 2rem;
+    left: -2rem;
+    background: var(--clr-gold);
+    color: #0d0d0d;
+    padding: 1.2rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .over-img-badge strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .over-content .section-body { max-width: 100%; }
+  .over-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-sm);
+    margin-top: var(--sp-md);
+  }
+  .over-fact {
+    padding: 1.2rem;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+  }
+  .over-fact-value {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--clr-gold);
+    display: block;
+  }
+  .over-fact-label {
+    font-size: 0.78rem;
+    color: var(--clr-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SOCIAL PROOF / USPs ── */
+  #reviews {
+    padding: var(--sp-xl) 0;
+    background: var(--clr-bg);
+  }
+  .reviews-header {
+    text-align: center;
+    margin-bottom: var(--sp-lg);
+  }
+  .reviews-header .section-body {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    padding: 0.6rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-gold);
+    margin-bottom: 1.5rem;
+  }
+  .rating-stars { letter-spacing: 0.05em; font-size: 0.75rem; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-sm);
+    margin-bottom: var(--sp-lg);
+  }
+  .review-card {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    padding: 2rem;
+    border-radius: var(--radius);
+    position: relative;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .review-card:hover {
+    border-color: var(--clr-gold);
+    transform: translateY(-4px);
+  }
+  .review-quote {
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--clr-gold);
+    font-family: var(--font-serif);
+    margin-bottom: 0.8rem;
+  }
+  .review-text {
+    font-size: 0.9rem;
+    color: var(--clr-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .review-author {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--clr-text);
+    letter-spacing: 0.05em;
+  }
+  .review-since {
+    font-size: 0.72rem;
+    color: var(--clr-muted);
+  }
+
+  .usps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--clr-border);
+    border: 1px solid var(--clr-border);
+    margin-top: var(--sp-lg);
+  }
+  .usp-item {
+    background: var(--clr-surface);
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .usp-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--clr-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    color: var(--clr-gold);
+    font-size: 1.1rem;
+  }
+  .usp-icon svg { width: 20px; height: 20px; stroke: var(--clr-gold); fill: none; stroke-width: 1.5; }
+  .usp-title {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: var(--clr-text);
+  }
+  .usp-text {
+    font-size: 0.82rem;
+    color: var(--clr-muted);
+    line-height: 1.65;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    padding: var(--sp-xl) 0;
+    background: var(--clr-surface);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .contact-info-block {
+    margin-top: var(--sp-md);
+  }
+  .contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--clr-border);
+  }
+  .contact-row:first-child { border-top: 1px solid var(--clr-border); }
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-icon svg { width: 18px; height: 18px; stroke: var(--clr-gold); fill: none; stroke-width: 1.5; }
+  .contact-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--clr-muted);
+    margin-bottom: 0.2rem;
+  }
+  .contact-value {
+    font-size: 0.95rem;
+    color: var(--clr-text);
+    font-weight: 500;
+  }
+  .contact-value a { color: var(--clr-text); transition: color var(--transition); }
+  .contact-value a:hover { color: var(--clr-gold); }
+
+  .hours-table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+  }
+  .hours-table tr { border-bottom: 1px solid var(--clr-border); }
+  .hours-table td {
+    padding: 0.6rem 0;
+    font-size: 0.85rem;
+  }
+  .hours-table td:first-child { color: var(--clr-muted); }
+  .hours-table td:last-child { text-align: right; color: var(--clr-text); font-weight: 500; }
+  .hours-today td { color: var(--clr-gold) !important; }
+
+  .cta-panel {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    padding: 3rem;
+    border-radius: var(--radius);
+  }
+  .cta-panel .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+  .cta-panel .section-body { font-size: 0.9rem; margin-bottom: var(--sp-md); }
+  .cta-tel-big {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: var(--clr-gold);
+    margin: var(--sp-sm) 0 var(--sp-md);
+    transition: color var(--transition);
+  }
+  .cta-tel-big:hover { color: var(--clr-gold-light); }
+  .cta-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: var(--sp-sm) 0;
+    color: var(--clr-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .cta-divider::before, .cta-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--clr-border);
+  }
+  .map-container {
+    margin-top: var(--sp-md);
+    border: 1px solid var(--clr-border);
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+  .map-container iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+    filter: grayscale(1) invert(0.9) contrast(0.85);
+    display: block;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--clr-bg);
+    border-top: 1px solid var(--clr-border);
+    padding: 2.5rem 0 5rem;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--sp-sm);
+  }
+  .footer-logo {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--clr-text);
+  }
+  .footer-logo span { color: var(--clr-gold); }
+  .footer-text {
+    font-size: 0.78rem;
+    color: var(--clr-muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .diensten-grid { grid-template-columns: repeat(2, 1fr); }
+    .usps-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid .review-card:last-child { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-toggle { display: flex; }
+    .diensten-header { grid-template-columns: 1fr; }
+    .diensten-header .btn { align-self: flex-start; }
+    .diensten-grid { grid-template-columns: 1fr; }
+    .over-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .over-img-badge { left: var(--sp-sm); }
+    .over-img-accent { display: none; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .reviews-grid .review-card:last-child { display: block; }
+    .usps-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    #hero { background-attachment: scroll; }
+  }
+
+  @media (max-width: 480px) {
+    .usps-grid { grid-template-columns: 1fr; }
+    .over-facts { grid-template-columns: 1fr 1fr; }
+    .cta-panel { padding: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">Arkadas<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#over">Over ons</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:0264430578" class="btn nav-cta">026 443 0578</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu openen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#diensten" class="mobile-link">Diensten</a>
+  <a href="#over" class="mobile-link">Over ons</a>
+  <a href="#reviews" class="mobile-link">Reviews</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="tel:0264430578" class="btn btn-solid" style="margin-top:1rem;">026 443 0578</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title reveal">
+        Vakmanschap<br>in het hart van<br><em>Spijkerkwartier</em>
+      </h1>
+      <div class="hero-actions reveal reveal-delay-1">
+        <a href="tel:0264430578" class="btn btn-solid">Afspraak maken</a>
+        <a href="#over" class="btn">Ons verhaal</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten">
+  <div class="container">
+    <div class="diensten-header">
+      <div class="reveal">
+        <span class="section-label">Onze diensten</span>
+        <h2 class="section-title">Klassiek vakwerk,<br>elke keer opnieuw</h2>
+      </div>
+      <div class="reveal reveal-delay-1" style="text-align:right;">
+        <p class="section-body" style="margin-left:auto;">Bij Arkadas staat kwaliteit boven snelheid. Geen lopende band, maar persoonlijke aandacht voor elk hoofd dat de stoel neemt.</p>
+      </div>
+    </div>
+
+    <div class="diensten-grid">
+      <div class="dienst-card reveal">
+        <span class="dienst-number">01</span>
+        <div class="dienst-name">Klassiek Knippen</div>
+        <p class="dienst-desc">Een zorgvuldige knipbeurt op maat, afgestemd op jouw haartype en stijl. Precies bijgewerkt tot in de details.</p>
+        <span class="dienst-price">Vanaf 15,–</span>
+      </div>
+      <div class="dienst-card reveal reveal-delay-1">
+        <span class="dienst-number">02</span>
+        <div class="dienst-name">Knippen &amp; Baard</div>
+        <p class="dienst-desc">Haar en baard in één sessie verzorgd. Strak afgewerkt met scheermesje voor een scherp resultaat.</p>
+        <span class="dienst-price">Vanaf 22,–</span>
+      </div>
+      <div class="dienst-card reveal reveal-delay-2">
+        <span class="dienst-number">03</span>
+        <div class="dienst-name">Scheren &amp; Contour</div>
+        <p class="dienst-desc">Traditioneel nat scheren met warm schuim. De contouren van nek en slaap worden nauwkeurig bijgehouden.</p>
+        <span class="dienst-price">Vanaf 12,–</span>
+      </div>
+      <div class="dienst-card reveal">
+        <span class="dienst-number">04</span>
+        <div class="dienst-name">Kinderknippen</div>
+        <p class="dienst-desc">Een rustige, vriendelijke knipbeurt voor de jongste bezoekers. Wij nemen de tijd zodat ook de kleinsten op hun gemak zitten.</p>
+        <span class="dienst-price">Vanaf 10,–</span>
+      </div>
+      <div class="dienst-card reveal reveal-delay-1">
+        <span class="dienst-number">05</span>
+        <div class="dienst-name">Fade &amp; Blend</div>
+        <p class="dienst-desc">Strakke fade langs de zijkanten met een vloeiende overgang naar boven — modern vakwerk met een klassieke basis.</p>
+        <span class="dienst-price">Vanaf 18,–</span>
+      </div>
+      <div class="dienst-card reveal reveal-delay-2">
+        <span class="dienst-number">06</span>
+        <div class="dienst-name">Senioren Knippen</div>
+        <p class="dienst-desc">Extra aandacht en een rustig tempo voor onze trouwe oudere klanten. Altijd een kop verse koffie erbij.</p>
+        <span class="dienst-price">Reductie van toepassing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVER ONS -->
+<section id="over">
+  <div class="container">
+    <div class="over-grid">
+      <div class="over-img-wrap reveal">
+        <img src="https://picsum.photos/seed/barbershop/800/500" alt="Interieur Herenkapsalon Arkadas Arnhem">
+        <div class="over-img-accent"></div>
+        <div class="over-img-badge">
+          <strong>25+</strong>
+          jaar<br>vakmanschap
+        </div>
+      </div>
+      <div class="over-content reveal reveal-delay-1">
+        <span class="section-label">Over Arkadas</span>
+        <h2 class="section-title">Meer dan een kapper. Een vaste plek in de wijk.</h2>
+        <p class="section-body">Herenkapsalon Arkadas staat al meer dan 25 jaar op de Spijkerlaan in Arnhem. Wat begon als een kleine zaak in het Spijkerkwartier, groeide uit tot een begrip in de buurt. Klanten komen niet alleen voor het knippen — ze komen voor het welkomstgevoel, de verse koffie en de vertrouwde gezichten achter de spiegel.</p>
+        <p class="section-body" style="margin-top:1rem;">Het retro interieur, de persoonlijke aanpak en het vakmanschap dat van generatie op generatie wordt doorgegeven: dat is wat Arkadas onderscheidt. Hier word je niet afgespeeld als een nummer, maar behandeld als een vaste gast.</p>
+        <div class="over-facts">
+          <div class="over-fact">
+            <span class="over-fact-value">4,8</span>
+            <span class="over-fact-label">Google beoordeling</span>
+          </div>
+          <div class="over-fact">
+            <span class="over-fact-value">25+</span>
+            <span class="over-fact-label">Jaar in bedrijf</span>
+          </div>
+          <div class="over-fact">
+            <span class="over-fact-value">100%</span>
+            <span class="over-fact-label">Persoonlijke service</span>
+          </div>
+          <div class="over-fact">
+            <span class="over-fact-value">42</span>
+            <span class="over-fact-label">Positieve reviews</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS & USPs -->
+<section id="reviews">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <div class="rating-badge">
+        <span class="rating-stars">★★★★★</span>
+        4,8 op Google — 42 recensies
+      </div>
+      <span class="section-label">Wat klanten zeggen</span>
+      <h2 class="section-title">Trouwe klanten spreken voor zich</h2>
+      <p class="section-body">Van Spijkerkwartier tot Apeldoorn — mensen rijden voor Arkadas. Lees wat vaste klanten na soms wel twintig jaar nog over de zaak te zeggen hebben.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <p class="review-text">Al jaren lang vaste klant, fijne mensen en altijd een welkom gevoel — en je loopt er met mooie haren uit. Zou niet weten waarom ik ooit ergens anders heen zou gaan.</p>
+        <div class="review-author">Richard Verheijen</div>
+        <div class="review-since">Vaste klant, jaren geleden begonnen</div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-quote">"</div>
+        <p class="review-text">Hele fijne kapsalon, neemt netjes de tijd en brand je oren er niet af zoals de meeste anderen ongevraagd doen. Ik kom hier zeker al 20 jaar en altijd naar tevredenheid. Er is altijd heerlijk verse koffie.</p>
+        <div class="review-author">R. Artz</div>
+        <div class="review-since">Local Guide — meer dan 20 jaar klant</div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-quote">"</div>
+        <p class="review-text">Toen ik van Arnhem naar Apeldoorn verhuisde, was er geen haar op mijn hoofd dat aan een overstap naar een andere kapper dacht. Vakkundige, geïnteresseerde mensen met rustige klassieke muziek op de achtergrond.</p>
+        <div class="review-author">Dirk Jan van Zoest</div>
+        <div class="review-since">Local Guide — al meer dan 11 jaar</div>
+      </div>
+    </div>
+
+    <div class="usps-grid">
+      <div class="usp-item reveal">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        </div>
+        <div class="usp-title">Geen haast</div>
+        <p class="usp-text">Wij nemen de tijd voor elke klant. Geen lopende band, maar de aandacht die jouw haar verdient.</p>
+      </div>
+      <div class="usp-item reveal reveal-delay-1">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 7H4c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-9 5.5c0 .83-.67 1.5-1.5 1.5S8 13.33 8 12.5v-1c0-.83.67-1.5 1.5-1.5S11 10.67 11 11.5v1zm4 0c0 .83-.67 1.5-1.5 1.5S12 13.33 12 12.5v-1c0-.83.67-1.5 1.5-1.5S15 10.67 15 11.5v1z"/></svg>
+        </div>
+        <div class="usp-title">Verse koffie</div>
+        <p class="usp-text">Altijd een bakje ouderwetse koffie klaar voor je. Het begin van een prettig bezoek.</p>
+      </div>
+      <div class="usp-item reveal reveal-delay-2">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="usp-title">25 jaar ervaring</div>
+        <p class="usp-text">Vakmanschap dat je voelt. Meer dan 25 jaar betrouwbare service in het Spijkerkwartier.</p>
+      </div>
+      <div class="usp-item reveal reveal-delay-3">
+        <div class="usp-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div class="usp-title">Vaste gezichten</div>
+        <p class="usp-text">Dezelfde vertrouwde handen, elke keer. Klanten die al tientallen jaren terugkomen, zeggen genoeg.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="section-label">Bezoek ons</span>
+        <h2 class="section-title">Vind ons in het Spijkerkwartier</h2>
+        <p class="section-body">Loop gerust binnen of bel vooraf voor een indicatie van de wachttijd. Wij staan klaar voor een goede knipbeurt en een bak verse koffie.</p>
+
+        <div class="contact-info-block">
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Adres</div>
+              <div class="contact-value">Spijkerlaan 17, 6828 EB Arnhem</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Telefoon</div>
+              <div class="contact-value"><a href="tel:0264430578">026 443 0578</a></div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Openingstijden</div>
+              <div class="contact-value" style="margin-top:0.3rem;">
+                <table class="hours-table">
+                  <tr><td>Maandag</td><td>09:00 – 18:00</td></tr>
+                  <tr><td>Dinsdag</td><td>09:00 – 18:00</td></tr>
+                  <tr><td>Woensdag</td><td>09:00 – 18:00</td></tr>
+                  <tr class="hours-today"><td>Donderdag</td><td>09:00 – 18:00</td></tr>
+                  <tr><td>Vrijdag</td><td>09:00 – 18:00</td></tr>
+                  <tr><td>Zaterdag</td><td>09:00 – 17:00</td></tr>
+                  <tr><td>Zondag</td><td>Gesloten</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-container" style="margin-top:var(--sp-md);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2460.9!2d5.9235!3d51.9769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7ac3e4b1e7c5f%3A0x0!2sSpijkerlaan%2017%2C%206828%20EB%20Arnhem!5e0!3m2!1snl!2snl!4v1699000000000!5m2!1snl!2snl"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Locatie Herenkapsalon Arkadas Arnhem">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="cta-panel reveal reveal-delay-1">
+        <span class="section-label">Afspraak of inlopen</span>
+        <h3 class="section-title">Klaar voor een goede knipbeurt?</h3>
+        <p class="section-body">Bij Arkadas ben je altijd welkom — loop gewoon binnen of bel even vooraf voor de wachttijd. Wij helpen je graag verder.</p>
+
+        <a href="tel:0264430578" class="cta-tel-big">026 443 0578</a>
+
+        <a href="tel:0264430578" class="btn btn-solid" style="width:100%;text-align:center;display:block;">Bel direct</a>
+
+        <div class="cta-divider">of loop binnen</div>
+
+        <a href="https://maps.google.com/?q=Spijkerlaan+17+Arnhem" target="_blank" class="btn" style="width:100%;text-align:center;display:block;">Routebeschrijving</a>
+
+        <div style="margin-top:var(--sp-md);padding-top:var(--sp-md);border-top:1px solid var(--clr-border);">
+          <img src="https://picsum.photos/seed/arnhem-barbershop/800/400" alt="Herenkapsalon Arkadas Spijkerlaan Arnhem" style="width:100%;height:180px;object-fit:cover;border-radius:var(--radius);">
+          <p style="font-size:0.75rem;color:var(--clr-muted);margin-top:0.8rem;line-height:1.6;">Spijkerlaan 17 · 6828 EB Arnhem · Spijkerkwartier. Op loopafstand van het centrum, met parkeermogelijkheden in de directe omgeving.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-logo">Arkadas<span>.</span></div>
+    <div class="footer-text">Spijkerlaan 17 · 6828 EB Arnhem · 026 443 0578</div>
+    <div class="footer-text">Herenkapsalon Arkadas &copy; 2025</div>
+  </div>
+</footer>
+
+<!-- DEMO BANNER -->
+<div style="position:fixed;bottom:0;left:0;right:0;background:#0f172a;color:#94a3b8;text-align:center;padding:8px;font-size:12px;z-index:9999;font-family:sans-serif;">Demo gemaakt door <a href="https://hagenweb.nl" target="_blank" style="color:#818cf8;">Hagenweb</a></div>
+
+<script>
+  // NAV scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link, .mobile-menu .btn').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Hero reveal on load
+  document.querySelectorAll('#hero .reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 400 + i * 200);
+  });
+</script>
+</body>
+</html>
