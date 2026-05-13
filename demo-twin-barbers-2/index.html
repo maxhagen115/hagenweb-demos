@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twin Barbers 2 — Premium Barbershop Arnhem</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --red: #c0392b;
+    --red-dark: #96281b;
+    --red-light: #e74c3c;
+    --gold: #c9a84c;
+    --gold-light: #f0c040;
+    --black: #0a0a0a;
+    --dark: #111111;
+    --dark2: #1a1a1a;
+    --dark3: #222222;
+    --grey: #2e2e2e;
+    --light-grey: #888;
+    --white: #ffffff;
+    --off-white: #f5f0eb;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ===== SCROLLBAR ===== */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--dark); }
+  ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 72px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(192,57,43,0.25);
+    transition: all 0.3s ease;
+  }
+
+  nav.scrolled {
+    height: 60px;
+    background: rgba(10,10,10,0.98);
+    border-bottom-color: rgba(192,57,43,0.5);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-logo:hover .nav-logo-icon { transform: rotate(-5deg) scale(1.1); }
+
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .nav-logo-text span:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+  }
+
+  .nav-logo-text span:last-child {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.75);
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--red);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    background: var(--red);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--red-light) !important;
+    transform: translateY(-1px) !important;
+    color: var(--white) !important;
+  }
+
+  .nav-cta::after { display: none !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(12px);
+    padding: 24px 40px;
+    border-bottom: 1px solid rgba(192,57,43,0.3);
+    z-index: 999;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: color 0.3s ease;
+  }
+
+  .mobile-menu a:hover { color: var(--red); }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('https://images.pexels.com/photos/20785318/pexels-photo-20785318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0,0,0,0.88) 0%,
+      rgba(10,10,10,0.75) 40%,
+      rgba(192,57,43,0.25) 100%
+    );
+  }
+
+  .hero-overlay-2 {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 60%,
+      rgba(10,10,10,0.95) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 860px;
+    padding: 0 24px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(192,57,43,0.2);
+    border: 1px solid rgba(192,57,43,0.5);
+    padding: 8px 20px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    animation: fadeInDown 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-badge::before, .hero-badge::after {
+    content: '✦';
+    font-size: 8px;
+    color: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 9vw, 110px);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    color: var(--white);
+    animation: fadeInUp 0.9s 0.2s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-title span {
+    color: var(--red);
+    display: block;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    margin-top: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.9s 0.4s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.9s 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .btn-primary {
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 16px 36px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(192,57,43,0.4); }
+  .btn-primary:hover::before { transform: translateX(0); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    padding: 16px 36px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 1s 1.2s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-scroll span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--red), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeInRight 1s 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .stat-item {
+    text-align: right;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ===== SECTION BASE ===== */
+  section { padding: 100px 0; }
+
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--red);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .section-title span { color: var(--red); }
+
+  .section-desc {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+    max-width: 560px;
+  }
+
+  /* ===== DIENSTEN ===== */
+  .diensten {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diensten::before {
+    content: 'DIENSTEN';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 160px;
+    font-weight: 900;
+    color: rgba(192,57,43,0.04);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .diensten-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .diensten-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .dienst-card {
+    background: var(--dark2);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: default;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .dienst-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .dienst-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .dienst-card::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 0; height: 0;
+    border-top: 40px solid rgba(192,57,43,0.1);
+    border-left: 40px solid transparent;
+    transition: all 0.4s ease;
+  }
+
+  .dienst-card:hover { background: #1e1e1e; transform: translateY(-4px); }
+  .dienst-card:hover::before { transform: scaleX(1); }
+  .dienst-card:hover::after { border-top-color: rgba(192,57,43,0.25); }
+
+  .dienst-card.featured {
+    background: var(--red);
+    grid-column: span 1;
+  }
+
+  .dienst-card.featured:hover { background: var(--red-dark); }
+  .dienst-card.featured::before { background: var(--gold); }
+
+  .dienst-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(192,57,43,0.15);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+  }
+
+  .dienst-card.featured .dienst-icon {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .dienst-card:hover .dienst-icon { background: rgba(192,57,43,0.3); }
+
+  .dienst-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .dienst-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .dienst-card.featured .dienst-desc { color: rgba(255,255,255,0.75); }
+
+  .dienst-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .dienst-card.featured .dienst-price { color: var(--white); }
+
+  .price-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .dienst-divider {
+    grid-column: span 3;
+    height: 2px;
+    background: linear-gradient(to right, var(--red), transparent);
+    margin: 20px 0;
+    opacity: 0.4;
+  }
+
+  /* STEMPEL KAART */
+  .stempel-banner {
+    margin-top: 40px;
+    background: linear-gradient(135deg, var(--dark2), var(--grey));
+    border: 1px solid rgba(192,57,43,0.3);
+    border-radius: 4px;
+    padding: 36px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+
+  .stempel-banner.visible { opacity: 1; transform: translateY(0); }
+
+  .stempel-banner::before {
+    content: '✦ ✦ ✦';
+    position: absolute;
+    right: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: rgba(192,57,43,0.08);
+    letter-spacing: 20px;
+    pointer-events: none;
+  }
+
+  .stempel-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .stempel-info p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    max-width: 480px;
+  }
+
+  .stempel-highlight {
+    background: var(--red);
+    color: white;
+    padding: 14px 28px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .stempel-highlight:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+  /* ===== OVER ONS ===== */
+  .over-ons {
+    background: var(--black);
+    position: relative;
+  }
+
+  .over-ons-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .over-ons-visual {
+    position: relative;
+  }
+
+  .over-main-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    background: var(--dark2);
+    overflow: hidden;
+  }
+
+  .over-main-img-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--dark2), var(--grey));
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .shop-img-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6) saturate(0.8);
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+  }
+
+  .over-frame {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid rgba(192,57,43,0.3);
+    border-radius: 4px;
+    z-index: 0;
+  }
+
+  .over-tag {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--red);
+    color: white;
+    padding: 20px 24px;
+    z-index: 2;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  .over-tag strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .over-tag span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .over-text { }
+
+  .over-features {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feature-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.5s ease;
+  }
+
+  .feature-row.visible { opacity: 1; transform: translateX(0); }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(192,57,43,0.12);
+    border: 1px solid rgba(192,57,43,0.25);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .feature-row:hover .feature-icon { background: rgba(192,57,43,0.25); border-color: var(--red); }
+
+  .feature-text h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .feature-text p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  .locaties-strip {
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .loc-badge {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.6);
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  .loc-badge:hover { border-color: var(--red); color: var(--white); }
+  .loc-badge.active { background: var(--red); border-color: var(--red); color: var(--white); }
+
+  /* ===== TEAM ===== */
+  .team-section {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-section::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(192,57,43,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .team-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .team-header .section-label {
+    justify-content: center;
+  }
+
+  .team-header .section-label::before { display: none; }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .team-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .team-card.visible { opacity: 1; transform: translateY(0); }
+  .team-card:hover { border-color: rgba(192,57,43,0.4); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+
+  .team-img-wrap {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: var(--grey);
+  }
+
+  .team-img-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+    transition: transform 0.5s ease;
+    filter: brightness(0.75) saturate(0.8);
+  }
+
+  .team-card:hover .team-img-bg { transform: scale(1.05); filter: brightness(0.6) saturate(0.7); }
+
+  .team-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  }
+
+  .team-role-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--red);
+    color: white;
+    padding: 6px 14px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  .team-info {
+    padding: 24px;
+  }
+
+  .team-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .team-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .team-bio {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+  }
+
+  /* ===== USPs ===== */
+  .usps {
+    background: var(--red);
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .usps::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .usps-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .usp-item {
+    padding: 60px 36px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    transition: background 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+  }
+
+  .usp-item.visible { opacity: 1; transform: translateY(0); }
+  .usp-item:hover { background: rgba(0,0,0,0.15); }
+  .usp-item:last-child { border-right: none; }
+
+  .usp-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .usp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .usp-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+  }
+
+  /* ===== REVIEWS ===== */
+  .reviews {
+    background: var(--black);
+    position: relative;
+  }
+
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .reviews-header .section-label { justify-content: center; }
+  .reviews-header .section-label::before { display: none; }
+  .reviews-header .section-desc { margin: 0 auto; text-align: center; }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .review-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 4px;
+    padding: 32px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .review-card.visible { opacity: 1; transform: translateY(0); }
+
+  .review-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: rgba(192,57,43,0.07);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .review-card:hover { border-color: rgba(192,57,43,0.3); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.25); }
+
+  .review-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .star { color: var(--gold); font-size: 14px; }
+
+  .review-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .reviewer-info strong {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .reviewer-info span {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ===== OPENINGSTIJDEN ===== */
+  .openingstijden {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .openingstijden::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, transparent, var(--red), transparent);
+  }
+
+  .openingstijden-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .uren-grid {
+    margin-top: 36px;
+  }
+
+  .uur-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .uur-row.visible { opacity: 1; transform: translateX(0); }
+  .uur-row:hover { padding-left: 8px; border-bottom-color: rgba(192,57,43,0.3); }
+
+  .dag {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .uur-row.today .dag { color: var(--white); font-weight: 600; }
+
+  .tijden {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .uur-row.today .tijden { color: var(--gold); }
+
+  .today-badge {
+    background: var(--red);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-left: 8px;
+  }
+
+  /* CONTACT SIDE */
+  .contact-side { }
+
+  .contact-block {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+  }
+
+  .contact-item.visible { opacity: 1; transform: translateY(0); }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(192,57,43,0.12);
+    border: 1px solid rgba(192,57,43,0.25);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .contact-item:hover .contact-icon { background: rgba(192,57,43,0.25); border-color: var(--red); }
+
+  .contact-detail strong {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+  }
+
+  .contact-detail a, .contact-detail span {
+    font-size: 15px;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .contact-detail a:hover { color: var(--red); }
+
+  /* SOCIAL */
+  .social-row {
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-btn {
+    width: 44px;
+    height: 44px;
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .social-btn:hover { background: var(--red); border-color: var(--red); color: white; transform: translateY(-2px); }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    background: var(--black);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-inner {
+    background: linear-gradient(135deg, var(--dark2) 0%, var(--dark) 50%, rgba(192,57,43,0.08) 100%);
+    border: 1px solid rgba(192,57,43,0.2);
+    border-radius: 8px;
+    padding: 80px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin: 80px 0;
+  }
+
+  .cta-inner::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(192,57,43,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-inner h2 span { color: var(--red); }
+
+  .cta-inner p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-large {
+    padding: 18px 44px;
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  .cta-phone {
+    margin-top: 28px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-phone a { color: var(--gold); text-decoration: none; }
+  .cta-phone a:hover { text-decoration: underline; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 60px 0 100px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand {}
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .footer-logo span { color: var(--red); }
+
+  .footer-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .footer-brand p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.8;
+    max-width: 260px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li { margin-bottom: 10px; }
+
+  .footer-col ul li a {
+    text-decoration: none;
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    transition: color 0.3s ease;
+  }
+
+  .footer-col ul li a:hover { color: var(--red); }
+
+  .footer-col p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+  }
+
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--red); }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .diensten-grid { grid-template-columns: repeat(2, 1fr); }
+    .dienst-divider { grid-column: span 2; }
+    .usps-inner { grid-template-columns: repeat(2, 1fr); }
+    .usp-item:nth-child(2) { border-right: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { display: none; }
+    .over-ons-inner { grid-template-columns: 1fr; gap: 48px; }
+    .over-ons-visual { max-width: 480px; margin: 0 auto; }
+    .openingstijden-inner { grid-template-columns: 1fr; gap: 60px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .container { padding: 0 24px; }
+    section { padding: 72px 0; }
+    .diensten-grid { grid-template-columns: 1fr; }
+    .dienst-divider { grid-column: span 1; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .usps-inner { grid-template-columns: 1fr; }
+    .usp-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .usp-item:last-child { border-bottom: none; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .cta-inner { padding: 48px 24px; }
+    .stempel-banner { padding: 28px 24px; flex-direction: column; text-align: center; }
+    .hero-title { font-size: 52px; letter-spacing: -1px; }
+    .diensten-header { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 42px; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary { width: 100%; max-width: 280px; text-align: center; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">T</div>
+    <div class="nav-logo-text">
+      <span>Twin Barbers 2</span>
+      <span>Arnhem · Steenstraat</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#diensten">Diensten</a></li>
+    <li><a href="#over-ons">Over Ons</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:0626267893" class="nav-cta">Bel Ons</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu openen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#diensten" onclick="closeMobile()">Diensten</a>
+  <a href="#over-ons" onclick="closeMobile()">Over Ons</a>
+  <a href="#reviews" onclick="closeMobile()">Reviews</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="tel:0626267893" style="color:var(--red);">📞 06 262 67 893</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Premium Barbershop · Arnhem</div>
+    <h1 class="hero-title">
+      Twin
+      <span>Barbers</span>
+      <em>2</em>
+    </h1>
+    <p class="hero-sub">Klassieke herenkapsels met een moderne twist. Op de Steenstraat in hartje Arnhem staan wij klaar voor jouw perfecte look — elke keer weer.</p>
+    <div class="hero-actions">
+      <a href="tel:0626267893" class="btn-primary btn-large">Maak een Afspraak</a>
+      <a href="#diensten" class="btn-secondary btn-large">Bekijk Diensten</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-number">3+</div>
+      <div class="stat-label">Locaties</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">10+</div>
+      <div class="stat-label">Jaar Ervaring</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">★ 5.0</div>
+      <div class="stat-label">Klantbeoordeling</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ===== DIENSTEN ===== -->
+<section class="diensten" id="diensten">
+  <div class="container">
+    <div class="diensten-header">
+      <div>
+        <div class="section-label">Wat wij bieden</div>
+        <h2 class="section-title">Onze <span>Diensten</span></h2>
+        <p class="section-desc">Van een klassieke knipbeurt tot een volledige behandeling — wij zorgen dat je er altijd scherp uitziet.</p>
+      </div>
+      <a href="tel:0626267893" class="btn-primary">Direct Boeken</a>
+    </div>
+
+    <div class="diensten-grid">
+
+      <!-- KNIPPEN -->
+      <div class="dienst-card reveal-card">
+        <div class="dienst-icon">✂️</div>
+        <div class="dienst-name">Knippen Volwassenen</div>
+        <div class="dienst-desc">Professionele knipbeurt op maat, afgestemd op jouw gezichtsvorm en stijl.</div>
+        <div class="dienst-price">€22,50</div>
+        <div class="price-sub">Standaard knipbeurt</div>
+      </div>
+
+      <div class="dienst-card reveal-card">
+        <div class="dienst-icon">🧔</div>
+        <div class="dienst-name">Knippen & Baard</div>
+        <div class="dienst-desc">Knipbeurt gecombineerd met baard modelleren of scheren voor de complete look.</div>
+        <div class="dienst-price">€32,50</div>
+        <div class="price-sub">Haar + baard behandeling</div>
+      </div>
+
+      <div class="dienst-card featured reveal-card">
+        <div class="dienst-icon">👑</div>
+        <div class="dienst-name">Speciale Behandeling</div>
+        <div class="dienst-desc">Knippen, scheren/baard modelleren, neus- en oorhaar waxen én een gezichtsbehandeling.</div>
+        <div class="dienst-price">€50,00</div>
+        <div class="price-sub">De complete VIP ervaring</div>
+      </div>
+
+      <div class="dienst-card reveal-card">
+        <div class="dienst-icon">✂️</div>
+        <div class="dienst-name">Knippen Lange Baard</div>
+        <div class="dienst-desc">Knippen gecombineerd met professioneel modelleren van een langere baard.</div>
+        <div class="dienst-price">€37,50</div>
+        <div class="price-sub">Haar + lange baard</div>
+      </div>
+
+      <div class="dienst-card reveal-card">
+        <div class="dienst-icon">👦</div>
+        <div class="dienst-name">Knippen Kinderen</div>
+        <div class="dienst-desc">Kindvriendelijke knipbeurt in een ontspannen sfeer. T/m 8 jaar €17,50 — t/m 12 jaar €20,00.</div>
+        <div class="dienst-price">€17,50</div>
+        <div class="price-sub">Kinderen t/m 12 jaar</div>
+      </div>
+
+      <!-- BAARD -->
+      <div class="dienst-card reveal-card">
+        <div class="dienst-icon">🪒</div>
+        <div class="dienst-name">Baard Behandelingen</div>
+        <div class="dienst-desc">Baard trimmen incl. baardolie €12,50 · Baard scheren €15,00 · Contouren €12,50.</div>
+        <div class="dienst-price">v.a. €12,50</div>
+        <div class="price-sub">Diverse baard opties</div>
+      </div>
+
+    </div>
+
+    <!-- STEMPEL KAART -->
+    <div class="stempel-banner reveal-banner">
+      <div class="stempel-info">
+        <h3>🎟 Twin Stempel Kaart</h3>
+        <p>Spaar stempels bij elke knipbeurt en profiteer van exclusieve kortingen. Vul je kaart en krijg een volledige knipbeurt compleet <strong>GRATIS</strong>! Vraag ernaar bij je volgende bezoek.</p>
+      </div>
+      <a href="tel:0626267893" class="stempel-highlight">Meer Info</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== OVER ONS ===== -->
+<section class="over-ons" id="over-ons">
+  <div class="container">
+    <div class="over-ons-inner">
+
+      <div class="over-ons-visual">
+        <div class="over-frame"></div>
+        <div class="over-main-img-placeholder">
+          <div class="shop-img-bg"></div>
+        </div>
+        <div class="over-tag">
+          <strong>10+</strong>
+          <span>Jaar in Arnhem</span>
+        </div>
+      </div>
+
+      <div class="over-text">
+        <div class="section-label">Ons verhaal</div>
+        <h2 class="section-title">Traditie Ontmoet <span>Vakmanschap</span></h2>
+        <p class="section-desc">Twin Barbers is een traditionele barbershop die gespecialiseerd is in klassieke herenkapsels. Wij staan bekend om zowel onze kwaliteit als moderne kapsels. Bij ons ben je niet zomaar een klant — jij bent een gast.</p>
+
+        <div class="over-features">
+          <div class="feature-row reveal-feature">
+            <div class="feature-icon">🏆</div>
+            <div class="feature-text">
