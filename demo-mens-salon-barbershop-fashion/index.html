@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Men's Salon Barbershop & Fashion — Arnhem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    :root {
+      --color-obsidian: #0a0a0a;
+      --color-charcoal: #1a1a1a;
+      --color-graphite: #2c2c2c;
+      --color-steel: #4a4a4a;
+      --color-silver: #8a8a8a;
+      --color-ash: #c8c8c8;
+      --color-ivory: #f5f0e8;
+      --color-gold: #b8966e;
+      --color-gold-light: #d4b08a;
+      --color-gold-dark: #8a6a44;
+      --color-white: #ffffff;
+
+      --shadow-card: 0 2px 8px rgba(0,0,0,0.35), 0 8px 32px rgba(0,0,0,0.25), 0 1px 0 rgba(184,150,110,0.08);
+      --shadow-elevated: 0 4px 16px rgba(0,0,0,0.45), 0 16px 48px rgba(0,0,0,0.3), 0 1px 0 rgba(184,150,110,0.12);
+      --shadow-nav: 0 1px 0 rgba(184,150,110,0.08), 0 4px 24px rgba(0,0,0,0.6);
+      --shadow-btn: 0 2px 8px rgba(184,150,110,0.25), 0 4px 16px rgba(0,0,0,0.3);
+
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      line-height: 1.65;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    /* HEXAGON LOGO */
+    .hex-logo {
+      width: 48px;
+      height: 48px;
+      background: var(--color-obsidian);
+      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(184,150,110,0.3);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(10,10,10,0.85);
+      box-shadow: var(--shadow-nav);
+      border-bottom: 1px solid rgba(184,150,110,0.12);
+    }
+
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-ash);
+      text-decoration: none;
+      padding: 6px 0;
+      position: relative;
+      transition: color 200ms ease-out;
+      cursor: pointer;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 100%;
+      height: 1px;
+      background: var(--color-gold);
+      transition: right 200ms ease-out;
+    }
+
+    .nav-link:hover { color: var(--color-gold-light); }
+    .nav-link:hover::after { right: 0; }
+    .nav-link:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; border-radius: 2px; }
+    .nav-link:active { color: var(--color-gold-dark); }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(184,150,110,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(44,44,44,0.9) 0%, transparent 70%),
+        radial-gradient(ellipse 100% 100% at 50% 100%, rgba(10,10,10,1) 40%, transparent 100%),
+        radial-gradient(ellipse 120% 80% at 50% 50%, #1a1410 0%, #0a0a0a 100%);
+    }
+
+    .hero-noise {
+      position: absolute;
+      inset: 0;
+      opacity: 0.045;
+      pointer-events: none;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+      margin: var(--space-8) auto;
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+      color: var(--color-obsidian);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      cursor: pointer;
+      border: none;
+      box-shadow: var(--shadow-btn);
+      transition: background 200ms ease-out, box-shadow 200ms ease-out, transform 150ms ease-out;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+      box-shadow: 0 4px 16px rgba(184,150,110,0.4), 0 8px 24px rgba(0,0,0,0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; }
+    .btn-primary:active { transform: translateY(0); box-shadow: var(--shadow-btn); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: transparent;
+      color: var(--color-ash);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 13px 32px;
+      cursor: pointer;
+      border: 1px solid rgba(184,150,110,0.4);
+      transition: border-color 200ms ease-out, color 200ms ease-out, background 200ms ease-out, transform 150ms ease-out;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold-light);
+      background: rgba(184,150,110,0.05);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; }
+    .btn-ghost:active { transform: translateY(0); }
+
+    /* SECTION */
+    section { position: relative; }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      display: block;
+      margin-bottom: var(--space-4);
+    }
+
+    .gold-line {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+      margin-bottom: var(--space-6);
+    }
+
+    /* CARDS */
+    .service-card {
+      background: var(--color-charcoal);
+      border: 1px solid rgba(184,150,110,0.1);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      transition: transform 200ms ease-out, box-shadow 200ms ease-out, border-color 200ms ease-out;
+      cursor: default;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-elevated);
+      border-color: rgba(184,150,110,0.25);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%) contrast(1.05);
+      transition: transform 400ms ease-out, filter 400ms ease-out;
+    }
+
+    .service-card:hover img {
+      transform: scale(1.03);
+      filter: grayscale(0%) contrast(1.08);
+    }
+
+    /* GALLERY */
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(25%) contrast(1.05);
+      transition: transform 500ms ease-out, filter 400ms ease-out;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: grayscale(0%) contrast(1.1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.6) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 300ms ease-out;
+    }
+
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* REVIEWS */
+    .review-card {
+      background: var(--color-charcoal);
+      border: 1px solid rgba(184,150,110,0.1);
+      box-shadow: var(--shadow-card);
+      padding: var(--space-8);
+      position: relative;
+    }
+
+    .review-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      line-height: 1;
+      color: rgba(184,150,110,0.15);
+      pointer-events: none;
+    }
+
+    /* FORM */
+    .form-input {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,150,110,0.2);
+      color: var(--color-ivory);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      padding: 13px 16px;
+      outline: none;
+      transition: border-color 200ms ease-out, background 200ms ease-out;
+    }
+
+    .form-input::placeholder { color: var(--color-steel); }
+    .form-input:focus { border-color: var(--color-gold); background: rgba(255,255,255,0.06); }
+    .form-input:focus-visible { outline: 1px solid var(--color-gold); outline-offset: 0; }
+
+    .form-label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-silver);
+      margin-bottom: var(--space-2);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--color-obsidian);
+      border-top: 1px solid rgba(184,150,110,0.12);
+    }
+
+    /* VACATURE CARD */
+    .vacature-card {
+      background: var(--color-charcoal);
+      border: 1px solid rgba(184,150,110,0.1);
+      box-shadow: var(--shadow-card);
+      padding: var(--space-8);
+      transition: border-color 200ms ease-out, box-shadow 200ms ease-out, transform 150ms ease-out;
+    }
+
+    .vacature-card:hover {
+      border-color: rgba(184,150,110,0.3);
+      box-shadow: var(--shadow-elevated);
+      transform: translateY(-2px);
+    }
+
+    /* USP */
+    .usp-item {
+      border-left: 2px solid var(--color-gold);
+      padding-left: var(--space-6);
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,10,0.97);
+      z-index: 30;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-8);
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu .nav-link {
+      font-size: 20px;
+      letter-spacing: 0.12em;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--color-ash);
+      transition: background 200ms ease-out;
+    }
+
+    .hamburger:hover span { background: var(--color-gold); }
+    .hamburger:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 4px; border-radius: 2px; }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--color-obsidian); }
+    ::-webkit-scrollbar-thumb { background: var(--color-graphite); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-dark); }
+
+    /* SPACING FOR FIXED NAV */
+    .nav-offset { padding-top: 72px; }
+
+    /* PRICE TAG */
+    .price-tag {
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--color-gold);
+    }
+  </style>
+</head>
+<body>
+
+<!-- SVG Noise Filter Definition (hidden) -->
+<svg width="0" height="0" style="position:absolute;">
+  <filter id="noise">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+    <feColorMatrix type="saturate" values="0" />
+  </filter>
+</svg>
+
+<!-- NAVIGATIE -->
+<nav aria-label="Hoofdnavigatie">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px;">
+    <!-- LOGO -->
+    <a href="#home" style="display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0;" aria-label="Men's Salon Barbershop & Fashion — naar homepage">
+      <div style="width:44px;height:44px;background:var(--color-obsidian);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(184,150,110,0.5);">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--color-ivory);line-height:1;">M</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1px;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-ivory);line-height:1.2;">Men's Salon</span>
+        <span style="font-family:'Inter',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-gold);line-height:1;">Barbershop & Fashion</span>
+      </div>
+    </a>
+
+    <!-- DESKTOP NAV LINKS -->
+    <div style="display:flex;align-items:center;gap:32px;" class="hidden-mobile">
+      <a href="#over-ons" class="nav-link">Over ons</a>
+      <a href="#diensten" class="nav-link">Diensten</a>
+      <a href="#galerij" class="nav-link">Galerij</a>
+      <a href="#vacatures" class="nav-link">Vacatures</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="btn-primary" style="padding:10px 22px;font-size:11px;">Afspraak maken</a>
+    </div>
+
+    <!-- HAMBURGER MOBILE -->
+    <button class="hamburger show-mobile" id="menuBtn" aria-label="Menu openen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobiel navigatiemenu">
+  <button style="position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;color:var(--color-ash);font-size:28px;line-height:1;" id="menuClose" aria-label="Menu sluiten">&times;</button>
+  <a href="#over-ons" class="nav-link" onclick="closeMenu()">Over ons</a>
+  <a href="#diensten" class="nav-link" onclick="closeMenu()">Diensten</a>
+  <a href="#galerij" class="nav-link" onclick="closeMenu()">Galerij</a>
+  <a href="#vacatures" class="nav-link" onclick="closeMenu()">Vacatures</a>
+  <a href="#contact" class="nav-link" onclick="closeMenu()">Contact</a>
+  <a href="#contact" class="btn-primary" onclick="closeMenu()">Afspraak maken</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home" aria-labelledby="hero-heading">
+  <div class="hero-bg"></div>
+
+  <!-- Grain texture -->
+  <div class="hero-noise" style="background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\"><filter id=\"n\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"4\" stitchTiles=\"stitch\"/><feColorMatrix type=\"saturate\" values=\"0\"/></filter><rect width=\"200\" height=\"200\" filter=\"url(%23n)\" opacity=\"1\"/></svg>');background-size:200px 200px;"></div>
+
+  <!-- Hero content -->
+  <div style="position:relative;z-index:1;text-align:center;padding:0 24px;max-width:900px;margin:0 auto;">
+    <!-- Hexagon emblem -->
+    <div style="display:flex;justify-content:center;margin-bottom:40px;">
+      <div style="width:96px;height:96px;background:rgba(26,20,16,0.8);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;border:1px solid rgba(184,150,110,0.35);box-shadow:0 0 40px rgba(184,150,110,0.15),inset 0 1px 0 rgba(184,150,110,0.2);">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--color-ivory);line-height:1;">M</span>
+      </div>
+    </div>
+
+    <h1 id="hero-heading" style="font-family:'Cormorant Garamond',serif;font-size:clamp(48px,8vw,96px);font-weight:700;color:var(--color-ivory);letter-spacing:-0.04em;line-height:0.95;margin-bottom:16px;">
+      Men's Salon<br />
+      <span style="color:var(--color-gold);">Barbershop</span> &amp; Fashion
+    </h1>
+
+    <div class="hero-divider"></div>
+
+    <p style="font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--color-silver);margin-bottom:48px;">Gent's Only &mdash; Arnhem</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <a href="#contact" class="btn-primary">Afspraak maken</a>
+      <a href="#diensten" class="btn-ghost">Bekijk diensten</a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.5;">
+    <span style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-silver);">Scroll</span>
+    <div style="width:1px;height:40px;background:linear-gradient(to bottom,var(--color-gold),transparent);"></div>
+  </div>
+</section>
+
+<!-- OVER ONS -->
+<section id="over-ons" style="padding:120px 0;background:var(--color-charcoal);" aria-labelledby="about-heading">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="about-grid">
+
+      <!-- Afbeelding -->
+      <div class="about-img-wrap" style="position:relative;">
+        <div style="position:relative;overflow:hidden;">
+          <img src="https://picsum.photos/seed/barber-interior-shop/800/600" alt="Interieur van Men's Salon Barbershop & Fashion in Arnhem" style="width:100%;height:520px;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.08);" />
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(184,150,110,0.08) 0%,transparent 60%);pointer-events:none;"></div>
+        </div>
+        <!-- Accent border -->
+        <div style="position:absolute;top:24px;left:24px;right:-24px;bottom:-24px;border:1px solid rgba(184,150,110,0.25);z-index:-1;pointer-events:none;"></div>
+        <!-- Gold badge -->
+        <div style="position:absolute;bottom:-20px;right:40px;background:var(--color-gold);padding:16px 24px;box-shadow:0 4px 20px rgba(184,150,110,0.35);">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--color-obsidian);display:block;line-height:1;">10+</span>
+          <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-obsidian);opacity:0.75;">Jaar ervaring</span>
+        </div>
+      </div>
+
+      <!-- Tekst -->
+      <div class="about-text-wrap">
+        <span class="section-label">Over ons</span>
+        <div class="gold-line"></div>
+        <h2 id="about-heading" style="font-size:clamp(36px,4vw,52px);color:var(--color-ivory);margin-bottom:24px;">De premier barbershop van Arnhem</h2>
+        <p style="color:var(--color-silver);font-size:15px;margin-bottom:20px;max-width:520px;">
+          Men's Salon Barbershop &amp; Fashion is de exclusieve bestemming voor de moderne heer in Arnhem. Gelegen aan de Ingenieur J.P. van Muijlwijkstraat, bieden wij een complete grooming-ervaring in een verfijnde, mannelijke omgeving.
+        </p>
+        <p style="color:var(--color-silver);font-size:15px;margin-bottom:20px;max-width:520px;">
+          Onze vakmensen combineren klassieke barbierkunst met hedendaagse technieken. Van een strakke fade tot een traditioneel scheermes-scheerbeurt — elk detail wordt met precisie en toewijding uitgevoerd.
+        </p>
+        <p style="color:var(--color-silver);font-size:15px;margin-bottom:40px;max-width:520px;">
+          Naast onze salon-diensten bieden wij een curated collectie fashion en grooming-producten, zodat u er niet alleen in de stoel, maar ook thuis op uw best uitziet. Gent's Only — kwaliteit zonder compromis.
+        </p>
+
+        <!-- USP's -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+          <div class="usp-item">
+            <h3 style="font-size:16px;color:var(--color-ivory);margin-bottom:4px;">Vakmanschap</h3>
+            <p style="font-size:13px;color:var(--color-steel);">Gecertificeerde kappers met jarenlange ervaring</p>
+          </div>
+          <div class="usp-item">
+            <h3 style="font-size:16px;color:var(--color-ivory);margin-bottom:4px;">Premium producten</h3>
+            <p style="font-size:13px;color:var(--color-steel);">Uitsluitend kwalitatieve grooming-merken</p>
+          </div>
+          <div class="usp-item">
+            <h3 style="font-size:16px;color:var(--color-ivory);margin-bottom:4px;">Gent's Only</h3>
+            <p style="font-size:13px;color:var(--color-steel);">Een exclusieve ruimte voor de moderne man</p>
+          </div>
+          <div class="usp-item">
+            <h3 style="font-size:16px;color:var(--color-ivory);margin-bottom:4px;">Fashion collectie</h3>
+            <p style="font-size:13px;color:var(--color-steel);">Kleding en accessoires in onze winkel</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten" style="padding:120px 0;background:var(--color-obsidian);" aria-labelledby="services-heading">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="text-align:center;margin-bottom:64px;" class="services-header">
+      <span class="section-label">Wat wij bieden</span>
+      <div class="gold-line" style="margin:0 auto 24px;"></div>
+      <h2 id="services-heading" style="font-size:clamp(36px,4vw,56px);color:var(--color-ivory);">Onze diensten</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="services-grid">
+
+      <!-- Dienst 1: Haircut -->
+      <article class="service-card" aria-labelledby="service-1-title">
+        <div style="overflow:hidden;">
+          <img src="https://picsum.photos/seed/barber-haircut-classic/600/600" alt="Klassieke haarknippen bij Men's Salon Barbershop in Arnhem" />
+        </div>
+        <div style="padding:28px;">
+          <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Haarverzorging</span>
+          <h3 id="service-1-title" style="font-size:24px;color:var(--color-ivory);margin-bottom:12px;">Knippen &amp; Stylen</h3>
+          <p style="font-size:14px;color:var(--color-steel);margin-bottom:20px;line-height:1.7;">Van strakke fades tot klassieke herenkapsels. Onze barbers stemmen de coupe precies af op uw gezichtsvorm en leefstijl.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span class="price-tag">v.a. &euro;18</span>
+            <a href="#contact" class="btn-ghost" style="padding:9px 18px;font-size:11px;">Boeken</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dienst 2: Scheren -->
+      <article class="service-card" aria-labelledby="service-2-title">
+        <div style="overflow:hidden;">
+          <img src="https://picsum.photos/seed/straight-razor-shave/600/600" alt="Traditioneel scheermes scheren bij Men's Salon in Arnhem" />
+        </div>
+        <div style="padding:28px;">
+          <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Scheerbeurt</span>
+          <h3 id="service-2-title" style="font-size:24px;color:var(--color-ivory);margin-bottom:12px;">Klassiek Scheren</h3>
+          <p style="font-size:14px;color:var(--color-steel);margin-bottom:20px;line-height:1.7;">Een echte hot-towel scheerbeurt met het traditionele scheermes. Ontspannend, nauwkeurig en voor een strak resultaat.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span class="price-tag">v.a. &euro;25</span>
+            <a href="#contact" class="btn-ghost" style="padding:9px 18px;font-size:11px;">Boeken</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dienst 3: Baard -->
+      <article class="service-card" aria-labelledby="service-3-title">
+        <div style="overflow:hidden;">
+          <img src="https://picsum.photos/seed/beard-trim-grooming/600/600" alt="Baardverzorging en trimmen bij Men's Salon Barbershop Arnhem" />
+        </div>
+        <div style="padding:28px;">
+          <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Baard</span>
+          <h3 id="service-3-title" style="font-size:24px;color:var(--color-ivory);margin-bottom:12px;">Baard trimmen &amp; vormgeven</h3>
+          <p style="font-size:14px;color:var(--color-steel);margin-bottom:20px;line-height:1.7;">Lijn uw baard perfect in of laat hem professioneel bijwerken. Inclusief conditioneringsbehandeling voor een verzorgde look.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span class="price-tag">v.a. &euro;15</span>
+            <a href="#contact" class="btn-ghost" style="padding:9px 18px;font-size:11px;">Boeken</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dienst 4: Combo deal -->
+      <article class="service-card" aria-labelledby="service-4-title">
+        <div style="overflow:hidden;">
+          <img src="https://picsum.photos/seed/mens-grooming-combo/600/600" alt="Complete grooming behandeling bij Men's Salon Arnhem" />
+        </div>
+        <div style="padding:28px;">
+          <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Combipakket</span>
+          <h3 id="service-4-title" style="font-size:24px;color:var(--color-ivory);margin-bottom:12px;">Knip &amp; Baard Combo</h3>
+          <p style="font-size:14px;color:var(--color-steel);margin-bottom:20px;line-height:1.7;">Complete verzorging in één bezoek. Knippen gecombineerd met baard- of snorverzorging voor de complete look.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span class="price-tag">v.a. &euro;30</span>
+            <a href="#contact" class="btn-ghost" style="padding:9px 18px;font-size:11px;">Boeken</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dienst 5: Fashion -->
+      <article class="service-card" aria-labelledby="service-5-title">
+        <div style="overflow:hidden;">
+          <img src="https://picsum.photos/seed/mens-fashion-clothing/600/600" alt="Fashion collectie voor heren bij Men's Salon Arnhem" />
+        </div>
+        <div style="padding:28px;">
+          <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Fashion</span>
+          <h3 id="service-5-title" style="font-size:24px;color:var(--color-ivory);margin-bottom:12px;">Herenmode Collectie</h3>
+          <p style="font-size:14px;color:var(--color-steel);margin-bottom:20px;line-height:1.7;">Gecureerde fashion items en accessoires voor de stijlvolle man. Zowel in onze winkel als via onze webshop verkrijgbaar.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span class="price-tag">Webshop</span>
+            <a href="http://www.menssalonbarbershopandfashion.nl/" target="_blank" rel="noopener" class="btn-ghost" style="padding:9px 18px;font-size:11px;">Bekijken</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dienst 6: Grooming producten -->
+      <article class="service-card" aria-labelledby="service-6-title">
+        <div style="overflow:hidden;">
+          <img src="https://picsum.photos/seed/grooming-products-pomade/600/600" alt="Premium grooming producten bij Men's Salon Arnhem" />
+        </div>
+        <div style="padding:28px;">
+          <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Producten</span>
+          <h3 id="service-6-title" style="font-size:24px;color:var(--color-ivory);margin-bottom:12px;">Grooming Producten</h3>
+          <p style="font-size:14px;color:var(--color-steel);margin-bottom:20px;line-height:1.7;">Pomades, baardoliën, shampoos en meer. Uitsluitend premium merken die wij zelf gebruiken en aanbevelen in de salon.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span class="price-tag">In salon</span>
+            <a href="#contact" class="btn-ghost" style="padding:9px 18px;font-size:11px;">Info</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALERIJ -->
+<section id="galerij" style="padding:120px 0;background:var(--color-charcoal);" aria-labelledby="gallery-heading">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="text-align:center;margin-bottom:64px;" class="gallery-header">
+      <span class="section-label">Ons werk</span>
+      <div class="gold-line" style="margin:0 auto 24px;"></div>
+      <h2 id="gallery-heading" style="font-size:clamp(36px,4vw,56px);color:var(--color-ivory);">Galerij</h2>
+      <p style="font-size:15px;color:var(--color-silver);max-width:480px;margin:16px auto 0;">Bekijk een selectie van ons werk — van strakke fades tot klassieke kappersstijlen.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px;gap:16px;" class="gallery-grid">
+      <div class="gallery-item" style="grid-row:1/3;border-radius:0;" aria-label="Galerij foto 1: Kapper aan het werk">
+        <img src="https://picsum.photos/seed/barber-work-detail/600/800" alt="Barber nauwkeurig aan het werk in Men's Salon Arnhem" style="height:100%;" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" aria-label="Galerij foto 2: Fade kapsel resultaat">
+        <img src="https://picsum.photos/seed/fade-haircut-result/600/400" alt="Strak fade kapsel resultaat van Men's Salon Arnhem" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" aria-label="Galerij foto 3: Barbershop interieur">
+        <img src="https://picsum.photos/seed/barbershop-chairs-interior/600/400" alt="Luxe kappersstoelen in de barbershop van Men's Salon Arnhem" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" aria-label="Galerij foto 4: Baard verzorging">
+        <img src="https://picsum.photos/seed/beard-styling-precision/600/400" alt="Nauwkeurige baardverzorging bij Men's Salon Arnhem" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item" aria-label="Galerij foto 5: Scheerbeurt met handdoek">
+        <img src="https://picsum.photos/seed/hot-towel-razor-shave/600/400" alt="Hot towel scheerbeurt in de stijlvolle barbershop van Arnhem" />
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF / USPs -->
+<section id="reviews" style="padding:120px 0;background:var(--color-obsidian);" aria-labelledby="reviews-heading">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="text-align:center;margin-bottom:64px;" class="reviews-header">
+      <span class="section-label">Klantreviews</span>
+      <div class="gold-line" style="margin:0 auto 24px;"></div>
+      <h2 id="reviews-heading" style="font-size:clamp(32px,4vw,52px);color:var(--color-ivory);">Wat onze klanten zeggen</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:80px;" class="reviews-grid">
+
+      <article class="review-card" aria-label="Review van Daan V.">
+        <div style="display:flex;gap:4px;margin-bottom:16px;padding-top:8px;">
+          <span style="color:var(--color-gold);font-size:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <p style="font-size:14px;color:var(--color-silver);line-height:1.75;margin-bottom:20px;">"Beste barbershop van Arnhem, zonder twijfel. Altijd strak, altijd professioneel. Ik kom al drie jaar en ga nergens anders meer naartoe."</p>
+        <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(184,150,110,0.1);padding-top:16px;">
+          <div style="width:36px;height:36px;background:var(--color-graphite);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--color-gold);">D</span>
+          </div>
+          <div>
+            <span style="font-size:13px;font-weight:600;color:var(--color-ivory);display:block;">Daan V.</span>
+            <span style="font-size:11px;color:var(--color-steel);">Vaste klant</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card" aria-label="Review van Marouan B.">
+        <div style="display:flex;gap:4px;margin-bottom:16px;padding-top:8px;">
+          <span style="color:var(--color-gold);font-size:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <p style="font-size:14px;color:var(--color-silver);line-height:1.75;margin-bottom:20px;">"Super tevreden met mijn fade en baard. De sfeer in de salon is geweldig, prettige barbers en ook de fashion collectie is top."</p>
+        <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(184,150,110,0.1);padding-top:16px;">
+          <div style="width:36px;height:36px;background:var(--color-graphite);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--color-gold);">M</span>
+          </div>
+          <div>
+            <span style="font-size:13px;font-weight:600;color:var(--color-ivory);display:block;">Marouan B.</span>
+            <span style="font-size:11px;color:var(--color-steel);">Google Review</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="review-card" aria-label="Review van Kevin S.">
+        <div style="display:flex;gap:4px;margin-bottom:16px;padding-top:8px;">
+          <span style="color:var(--color-gold);font-size:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </div>
+        <p style="font-size:14px;color:var(--color-silver);line-height:1.75;margin-bottom:20px;">"Eindelijk een barbershop die echt verstand heeft van zijn vak. Het resultaat overtreft iedere keer mijn verwachtingen. Toplocatie in Arnhem."</p>
+        <div style="display:flex;align-items:center;gap:12px;border-top:1px solid rgba(184,150,110,0.1);padding-top:16px;">
+          <div style="width:36px;height:36px;background:var(--color-graphite);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--color-gold);">K</span>
+          </div>
+          <div>
+            <span style="font-size:13px;font-weight:600;color:var(--color-ivory);display:block;">Kevin S.</span>
+            <span style="font-size:11px;color:var(--color-steel);">Vaste klant</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- USP BANNER -->
+    <div style="background:var(--color-charcoal);border:1px solid rgba(184,150,110,0.12);padding:48px;box-shadow:var(--shadow-card);" class="usp-banner">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;">
+        <div style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:var(--color-gold);line-height:1;margin-bottom:8px;">500+</div>
+          <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-silver);">Tevreden klanten</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:var(--color-gold);line-height:1;margin-bottom:8px;">10+</div>
+          <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-silver);">Jaar ervaring</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:var(--color-gold);line-height:1;margin-bottom:8px;">6</div>
+          <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-silver);">Unieke diensten</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:var(--color-gold);line-height:1;margin-bottom:8px;">5.0</div>
+          <div style="font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-silver);">Gemiddelde beoordeling</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VACATURES -->
+<section id="vacatures" style="padding:120px 0;background:var(--color-charcoal);" aria-labelledby="jobs-heading">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;" class="jobs-grid">
+
+      <div class="jobs-text">
+        <span class="section-label">Carrière</span>
+        <div class="gold-line"></div>
+        <h2 id="jobs-heading" style="font-size:clamp(36px,4vw,52px);color:var(--color-ivory);margin-bottom:24px;">Kom ons team versterken</h2>
+        <p style="font-size:15px;color:var(--color-silver);margin-bottom:20px;max-width:480px;">
+          Bij Men's Salon Barbershop &amp; Fashion werken wij met een team van gepassioneerde vakmannen. We zijn altijd op zoek naar talent dat ons hoge standaard deelt.
+        </p>
+        <p style="font-size:15px;color:var(--color-silver);margin-bottom:36px;max-width:480px;">
+          Ben jij een gediplomeerd kapper of barber met hart voor het vak? Voel je dan welkom om te solliciteren. Wij bieden een professionele werkplek, goede arbeidsvoorwaarden en ruimte om te groeien.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="usp-item">
+            <h3 style="font-size:15px;color:var(--color-ivory);margin-bottom:4px;">Professionele omgeving</h3>
+            <p style="font-size:13px;color:var(--color-steel);">Werk in een moderne, goed uitgeruste barbershop</p>
+          </div>
+          <div class="usp-item">
+            <h3 style="font-size:15px;color:var(--color-ivory);margin-bottom:4px;">Groei en ontwikkeling</h3>
+            <p style="font-size:13px;color:var(--color-steel);">Ruimte voor trainingen en bijscholing</p>
+          </div>
+          <div class="usp-item">
+            <h3 style="font-size:15px;color:var(--color-ivory);margin-bottom:4px;">Leuk team</h3>
+            <p style="font-size:13px;color:var(--color-steel);">Fijne collegiale sfeer in een drukke, gezellige salon</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="jobs-cards" style="display:flex;flex-direction:column;gap:20px;">
+
+        <article class="vacature-card" aria-labelledby="job-1-title">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+            <div>
+              <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:6px;">Fulltime / Parttime</span>
+              <h3 id="job-1-title" style="font-size:22px;color:var(--color-ivory);">Gediplomeerde Kapper / Barber</h3>
+            </div>
+            <div style="background:rgba(184,150,110,0.1);padding:6px 12px;border:1px solid rgba(184,150,110,0.2);">
+              <span style="font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gold);">Open</span>
+            </div>
+          </div>
+          <p style="font-size:13px;color:var(--color-steel);margin-bottom:20px;line-height:1.7;">Je bezit een kappersdiploam en hebt affiniteit met de barbiersstijl. Ervaring met fades en baardtrimmen is een pré. Je bent klantvriendelijk en werkt nauwkeurig.</p>
+          <a href="mailto:info@menssalonbarbershopandfashion.nl?subject=Sollicitatie Kapper/Barber" class="btn-primary" style="font-size:11px;padding:11px 22px;">Solliciteer direct</a>
+        </article>
+
+        <article class="vacature-card" aria-labelledby="job-2-title">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+            <div>
+              <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:6px;">Parttime</span>
+              <h3 id="job-2-title" style="font-size:22px;color:var(--color-ivory);">Winkelmedewerker Fashion</h3>
+            </div>
+            <div style="background:rgba(184,150,110,0.1);padding:6px 12px;border:1px solid rgba(184,150,110,0.2);">
+              <span style="font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-gold);">Open</span>
+            </div>
+          </div>
+          <p style="font-size:13px;color:var(--color-steel);margin-bottom:20px;line-height:1.7;">Je helpt klanten bij het vinden van de juiste kleding en accessoires. Affiniteit met herenmode is vereist. Ervaring in retail is een voordeel maar geen verplichting.</p>
+          <a href="mailto:info@menssalonbarbershopandfashion.nl?subject=Sollicitatie Winkelmedewerker Fashion" class="btn-primary" style="font-size:11px;padding:11px 22px;">Solliciteer direct</a>
+        </article>
+
+        <div style="background:rgba(184,150,110,0.05);border:1px dashed rgba(184,150,110,0.2);padding:24px;text-align:center;">
+          <p style="font-size:13px;color:var(--color-silver);margin-bottom:12px;">Staat jouw functie er niet bij? Stuur een open sollicitatie.</p>
+          <a href="mailto:info@menssalonbarbershopandfashion.nl?subject=Open sollicitatie" class="btn-ghost" style="font-size:11px;padding:10px 20px;">Open sollicitatie</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:120px 0;background:var(--color-obsidian);" aria-labelledby="contact-heading">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="text-align:center;margin-bottom:64px;" class="contact-header">
+      <span class="section-label">Contact</span>
+      <div class="gold-line" style="margin:0 auto 24px;"></div>
+      <h2 id="contact-heading" style="font-size:clamp(36px,4vw,56px);color:var(--color-ivory);">Neem contact op</h2>
+      <p style="font-size:15px;color:var(--color-silver);max-width:480px;margin:16px auto 0;">Maak een afspraak, stel een vraag of kom gerust langs in onze salon in Arnhem.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;" class="contact-grid">
+
+      <!-- Contact info -->
+      <div class="contact-info">
+        <div style="margin-bottom:48px;">
+          <h3 style="font-size:28px;color:var(--color-ivory);margin-bottom:32px;">Bezoekadres</h3>
+          <div style="display:flex;flex-direction:column;gap:24px;">
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:40px;height:40px;background:rgba(184,150,110,0.1);border:1px solid rgba(184,150,110,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-gold);" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <span style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:4px;">Adres</span>
+                <p style="font-size:14px;color:var(--color-ash);line-height:1.6;">Ingenieur J.P. van Muijlwijkstraat 41<br />6828 BR Arnhem</p>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:40px;height:40px;background:rgba(184,150,110,0.1);border:1px solid rgba(184,150,110,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-gold);" aria-hidden="true"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <span style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:4px;">Telefoon</span>
+                <a href="tel:0649788881" style="font-size:14px;color:var(--color-ash);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-ash)'">06 49 78 88 81</a>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="width:40px;height:40px;background:rgba(184,150,110,0.1);border:1px solid rgba(184,150,110,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--color-gold);" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <span style="font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:4px;">E-mail</span>
+                <a href="mailto:info@menssalonbarbershopandfashion.nl" style="font-size:14px;color:var(--color-ash);text-decoration:none;transition:color 200ms ease-out;word-break:break-all;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-ash)'">info@menssalonbarbershopandfashion.nl</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Openingstijden -->
+        <div style="background:var(--color-charcoal);border:1px solid rgba(184,150,110,0.1);padding:32px;">
+          <h3 style="font-size:20px;color:var(--color-ivory);margin-bottom:20px;">Openingstijden</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.05);">
+              <span style="font-size:13px;color:var(--color-silver);">Maandag – Vrijdag</span>
+              <span style="font-size:13px;color:var(--color-ash);font-weight:500;">09:00 – 18:30</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.05);">
+              <span style="font-size:13px;color:var(--color-silver);">Zaterdag</span>
+              <span style="font-size:13px;color:var(--color-ash);font-weight:500;">09:00 – 17:00</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="font-size:13px;color:var(--color-silver);">Zondag</span>
+              <span style="font-size:13px;color:var(--color-steel);font-weight:500;">Gesloten</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact formulier -->
+      <div class="contact-form-wrap">
+        <form style="display:flex;flex-direction:column;gap:20px;" onsubmit="handleSubmit(event)" novalidate>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div>
+              <label class="form-label" for="name">Naam</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Uw volledige naam" required />
+            </div>
+            <div>
+              <label class="form-label" for="phone">Telefoon</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" />
+            </div>
+          </div>
+          <div>
+            <label class="form-label" for="email">E-mailadres</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="uw@email.nl" required />
+          </div>
+          <div>
+            <label class="form-label" for="service">Gewenste dienst</label>
+            <select class="form-input" id="service" name="service" style="cursor:pointer;appearance:none;background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"8\" viewBox=\"0 0 12 8\"><path d=\"M1 1l5 5 5-5\" stroke=\"%238a8a8a\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"/></svg>');background-repeat:no-repeat;background-position:right 14px center;">
+              <option value="" style="background:var(--color-charcoal);">Selecteer een dienst</option>
+              <option value="knip" style="background:var(--color-charcoal);">Knippen & Stylen</option>
+              <option value="scheer" style="background:var(--color-charcoal);">Klassiek Scheren</option>
+              <option value="baard" style="background:var(--color-charcoal);">Baard trimmen & vormgeven</option>
+              <option value="combo" style="background:var(--color-charcoal);">Knip & Baard Combo</option>
+              <option value="anders" style="background:var(--color-charcoal);">Anders / algemene vraag</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="message">Bericht</label>
+            <textarea class="form-input" id="message" name="message" rows="5" placeholder="Uw vraag of opmerking..." style="resize:vertical;min-height:120px;"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="justify-content:center;">Afspraak aanvragen</button>
+          <p id="formMsg" style="font-size:13px;color:var(--color-gold);text-align:center;display:none;"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="padding:64px 0 96px;background:var(--color-obsidian);" role="contentinfo">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+
+    <!-- Top footer -->
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid rgba(184,150,110,0.1);" class="footer-grid">
+
+      <!-- Brand column -->
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+          <div style="width:44px;height:44px;background:rgba(26,20,16,0.9);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(184,150,110,0.4);">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--color-ivory);line-height:1;">M</span>
+          </div>
+          <div>
+            <span style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-ivory);display:block;">Men's Salon</span>
+            <span style="font-family:'Inter',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-gold);">Barbershop & Fashion</span>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--color-steel);max-width:280px;line-height:1.7;margin-bottom:20px;">De premium barbershop en fashion bestemming voor de moderne man in Arnhem. Gent's Only.</p>
+        <p style="font-size:11px;color:var(--color-graphite);">KVK: 65624963 &bull; BTW: NL002295310B82</p>
+      </div>
+
+      <!-- Diensten -->
+      <div>
+        <h4 style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-ash);margin-bottom:20px;">Diensten</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="#diensten" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">Knippen & Stylen</a></li>
+          <li><a href="#diensten" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">Klassiek Scheren</a></li>
+          <li><a href="#diensten" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">Baard trimmen</a></li>
+          <li><a href="#diensten" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">Fashion collectie</a></li>
+        </ul>
+      </div>
+
+      <!-- Navigatie -->
+      <div>
+        <h4 style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-ash);margin-bottom:20px;">Navigatie</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="#over-ons" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">Over ons</a></li>
+          <li><a href="#galerij" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">Galerij</a></li>
+          <li><a href="#vacatures" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">Vacatures</a></li>
+          <li><a href="#contact" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-ash);margin-bottom:20px;">Contact</h4>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li><a href="tel:0649788881" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">06 49 78 88 81</a></li>
+          <li><a href="mailto:info@menssalonbarbershopandfashion.nl" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;word-break:break-all;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">info@menssalon...</a></li>
+          <li><span style="font-size:13px;color:var(--color-steel);">Arnhem, 6828 BR</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom footer -->
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+      <p style="font-size:12px;color:var(--color-graphite);">&copy; 2021 – 2026 Men's Salon Barbershop &amp; Fashion. Alle rechten voorbehouden.</p>
+      <div style="display:flex;gap:24px;">
+        <a href="http://www.menssalonbarbershopandfashion.nl/" target="_blank" rel="noopener" style="font-size:12px;color:var(--color-graphite);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold)'" onmouseout="this.style.color='var(--color-graphite)'">Webshop</a>
+        <a href="mailto:info@menssalonbarbershopandfashion.nl" style="font-size:12px;color:var(--color-graphite);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold)'" onmouseout="this.style.color='var(--color-graphite)'">Retour &amp; Garantie</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- DEMO BANNER -->
+<div style="position:fixed;bottom:0;left:0;right:0;background:#0f172a;color:#94a3b8;text-align:center;padding:8px 16px;font-size:12px;z-index:9999;font-family:sans-serif;">Demo gemaakt door <a href="https://hagenweb.nl" target="_blank" style="color:#818cf8;text-decoration:none;">Hagenweb</a></div>
+
+<style>
+  @media (max-width: 768px) {
+    .hidden-mobile { display: none !important; }
+    .show-mobile { display: flex !important; }
+    .about-grid { grid-template-columns: 1fr !important; gap: 60px !important; }
+    .services-grid { grid-template-columns: 1fr !important; }
+    .gallery-grid { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
+    .gallery-grid > :first-child { grid-row: auto !important; }
+    .reviews-grid { grid-template-columns: 1fr !important; }
+    .usp-banner > div { grid-template-columns: 1fr 1fr !important; }
+    .jobs-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+    .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+    .footer-grid { grid-template-columns: 1fr 1fr !important; }
+    .about-img-wrap { margin-right: 24px; }
+  }
+
+  @media (min-width: 769px) {
+    .show-mobile { display: none !important; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr !important; }
+    .usp-banner > div { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
+    .gallery-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuClose = document.getElementById('menuClose');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const msg = document.getElementById('formMsg');
+    msg.textContent = 'Bedankt! Uw bericht is ontvangen. Wij nemen zo snel mogelijk contact met u op.';
+    msg.style.display = 'block';
+    e.target.reset();
+    setTimeout(() => { msg.style.display = 'none'; }, 6000);
+  }
+
+  // Scroll animations
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // No animations
+  } else {
+
+    // About section
+    gsap.from('.about-img-wrap', {
+      opacity: 0,
+      x: -60,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.about-img-wrap',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    gsap.from('.about-text-wrap', {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.about-text-wrap',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    // Services header
+    gsap.from('.services-header', {
+      opacity: 0,
+      y: 40,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.services-header',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    // Service cards
+    gsap.from('.service-card', {
+      opacity: 0,
+      y: 50,
+      duration: 0.7,
+      ease: 'power2.out',
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: '.services-grid',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    // Gallery
+    gsap.from('.gallery-header', {
+      opacity: 0,
+      y: 40,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.gallery-header',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    gsap.from('.gallery-item', {
+      opacity: 0,
+      y: 40,
+      duration: 0.7,
+      ease: 'power2.out',
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: '.gallery-grid',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    // Reviews
+    gsap.from('.reviews-header', {
+      opacity: 0,
+      y: 40,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.reviews-header',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    gsap.from('.review-card', {
+      opacity: 0,
+      y: 50,
+      duration: 0.7,
+      ease: 'power2.out',
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: '.reviews-grid',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    gsap.from('.usp-banner', {
+      opacity: 0,
+      y: 40,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.usp-banner',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    // Vacatures
+    gsap.from('.jobs-text', {
+      opacity: 0,
+      x: -40,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.jobs-grid',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    gsap.from('.vacature-card', {
+      opacity: 0,
+      y: 50,
+      duration: 0.7,
+      ease: 'power2.out',
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: '.jobs-cards',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    // Contact
+    gsap.from('.contact-header', {
+      opacity: 0,
+      y: 40,
+      duration: 0.7,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.contact-header',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    gsap.from('.contact-info', {
+      opacity: 0,
+      x: -40,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.contact-grid',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    gsap.from('.contact-form-wrap', {
+      opacity: 0,
+      x: 40,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.contact-grid',
+        start: 'top 82%',
+        once: true
+      }
+    });
+
+    // Hero entrance
+    gsap.from('#home > div[style*="z-index:1"]', {
+      opacity: 0,
+      y: 30,
+      duration: 1.2,
+      ease: 'power2.out',
+      delay: 0.3
+    });
+  }
+</script>
+
+</html>
