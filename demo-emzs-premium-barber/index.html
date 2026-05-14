@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emzs Premium Barber — Arnhem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    :root {
+      --brand-gold: #c9a84c;
+      --brand-gold-light: #e2c47a;
+      --brand-gold-dark: #9b7b2e;
+      --brand-black: #0a0a0a;
+      --brand-dark: #111111;
+      --brand-charcoal: #1c1c1c;
+      --brand-surface: #181818;
+      --brand-muted: #6b6b6b;
+      --brand-light: #f5f0e8;
+      --brand-white: #fdfaf5;
+
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-14: 56px;
+      --space-16: 64px;
+
+      --shadow-card: 0 2px 8px rgba(0,0,0,0.45), 0 8px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(201,168,76,0.08);
+      --shadow-elevated: 0 4px 16px rgba(0,0,0,0.5), 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.12);
+      --shadow-gold: 0 0 24px rgba(201,168,76,0.18), 0 4px 16px rgba(0,0,0,0.5);
+
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--brand-black);
+      color: var(--brand-white);
+      line-height: 1.65;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    /* NAV */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(10,10,10,0.82);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      transition: background 250ms ease-out, border-color 250ms ease-out;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--brand-gold);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .logo-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      font-weight: 500;
+      color: var(--brand-muted);
+      display: block;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-8);
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(253,250,245,0.72);
+      text-decoration: none;
+      transition: color 180ms ease-out;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 1px;
+      background: var(--brand-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 200ms ease-out;
+    }
+
+    .nav-links a:hover { color: var(--brand-gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-links a:focus-visible { outline: 2px solid var(--brand-gold); outline-offset: 4px; border-radius: 2px; }
+
+    .btn-nav {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-black);
+      background: var(--brand-gold);
+      border: none;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 180ms ease-out, color 180ms ease-out, box-shadow 180ms ease-out;
+    }
+    .btn-nav:hover { background: var(--brand-gold-light); box-shadow: 0 4px 20px rgba(201,168,76,0.35); }
+    .btn-nav:active { background: var(--brand-gold-dark); }
+    .btn-nav:focus-visible { outline: 2px solid var(--brand-gold-light); outline-offset: 3px; }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: var(--space-2);
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--brand-gold);
+      border-radius: 2px;
+      transition: transform 200ms ease-out, opacity 200ms ease-out;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(10,10,10,0.97);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      padding: var(--space-6);
+      gap: var(--space-5);
+    }
+    .mobile-menu a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(253,250,245,0.8);
+      text-decoration: none;
+      transition: color 180ms ease-out;
+    }
+    .mobile-menu a:hover { color: var(--brand-gold); }
+    .mobile-menu.open { display: flex; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .btn-nav-desktop { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* HERO */
+    #hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.28) 60%, rgba(10,10,10,0.85) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 860px;
+      padding: 0 var(--space-6);
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      color: var(--brand-white);
+      margin-bottom: var(--space-5);
+    }
+
+    .hero-title span {
+      color: var(--brand-gold);
+      display: block;
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--brand-gold);
+      margin: 0 auto var(--space-8);
+      opacity: 0.7;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand-black);
+      background: var(--brand-gold);
+      border: none;
+      padding: 16px 38px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: var(--shadow-gold);
+      transition: background 180ms ease-out, box-shadow 180ms ease-out, transform 180ms ease-out;
+    }
+    .hero-cta:hover { background: var(--brand-gold-light); box-shadow: 0 0 40px rgba(201,168,76,0.4), 0 8px 32px rgba(0,0,0,0.5); transform: translateY(-2px); }
+    .hero-cta:active { transform: translateY(0); background: var(--brand-gold-dark); }
+    .hero-cta:focus-visible { outline: 2px solid var(--brand-gold-light); outline-offset: 4px; }
+
+    .hero-cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand-white);
+      background: transparent;
+      border: 1px solid rgba(253,250,245,0.3);
+      padding: 15px 38px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 180ms ease-out, color 180ms ease-out, background 180ms ease-out;
+    }
+    .hero-cta-ghost:hover { border-color: var(--brand-gold); color: var(--brand-gold); background: rgba(201,168,76,0.06); }
+    .hero-cta-ghost:focus-visible { outline: 2px solid var(--brand-gold); outline-offset: 4px; }
+
+    /* SECTIONS */
+    section { padding: 100px 0; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brand-gold);
+      margin-bottom: var(--space-4);
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      color: var(--brand-white);
+      margin-bottom: var(--space-6);
+    }
+
+    .section-body {
+      font-size: 1rem;
+      color: rgba(253,250,245,0.65);
+      max-width: 58ch;
+      line-height: 1.75;
+    }
+
+    .gold-line {
+      width: 48px;
+      height: 2px;
+      background: var(--brand-gold);
+      margin-bottom: var(--space-6);
+      border-radius: 2px;
+    }
+
+    /* DIENSTEN */
+    #diensten { background: var(--brand-dark); }
+
+    .dienst-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+
+    .dienst-card {
+      background: var(--brand-charcoal);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(201,168,76,0.08);
+      transition: transform 200ms ease-out, box-shadow 200ms ease-out, border-color 200ms ease-out;
+      cursor: pointer;
+    }
+    .dienst-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-elevated);
+      border-color: rgba(201,168,76,0.22);
+    }
+
+    .dienst-img-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .dienst-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 400ms ease-out;
+      filter: brightness(0.88) saturate(0.75);
+      mix-blend-mode: normal;
+    }
+
+    .dienst-card:hover .dienst-img-wrap img { transform: scale(1.04); }
+
+    .dienst-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(28,28,28,0.85) 100%);
+    }
+
+    .dienst-body {
+      padding: var(--space-6);
+    }
+
+    .dienst-cat {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand-gold);
+      font-weight: 500;
+      margin-bottom: var(--space-2);
+      display: block;
+    }
+
+    .dienst-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--brand-white);
+      margin-bottom: var(--space-2);
+      letter-spacing: -0.02em;
+    }
+
+    .dienst-desc {
+      font-size: 0.82rem;
+      color: rgba(253,250,245,0.55);
+      line-height: 1.65;
+      margin-bottom: var(--space-4);
+    }
+
+    .dienst-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding-top: var(--space-4);
+    }
+
+    .dienst-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--brand-gold);
+    }
+
+    .dienst-duration {
+      font-size: 0.75rem;
+      color: var(--brand-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* OVER ONS */
+    #over { background: var(--brand-black); }
+
+    .over-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .over-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    .over-img-wrap {
+      position: relative;
+    }
+
+    .over-img-wrap img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      filter: brightness(0.9) saturate(0.7);
+      display: block;
+    }
+
+    .over-img-border {
+      position: absolute;
+      inset: -12px -12px 12px 12px;
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: var(--radius-lg);
+      z-index: -1;
+    }
+
+    .over-badge {
+      position: absolute;
+      bottom: var(--space-6);
+      right: var(--space-6);
+      background: var(--brand-gold);
+      color: var(--brand-black);
+      padding: var(--space-4) var(--space-6);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .over-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+    }
+
+    .over-badge-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* GALERIJ */
+    #galerij { background: var(--brand-surface); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: var(--space-4);
+      margin-top: var(--space-12);
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.85) saturate(0.65);
+      transition: transform 400ms ease-out, filter 400ms ease-out;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: brightness(0.95) saturate(0.85);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
+    }
+
+    /* SOCIAL PROOF */
+    #social-proof { background: var(--brand-dark); }
+
+    .usp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+
+    .usp-card {
+      background: var(--brand-charcoal);
+      border: 1px solid rgba(201,168,76,0.09);
+      border-radius: var(--radius-md);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-card);
+      transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+    }
+    .usp-card:hover { border-color: rgba(201,168,76,0.25); box-shadow: var(--shadow-elevated); }
+
+    .usp-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-5);
+    }
+
+    .usp-icon svg { stroke: var(--brand-gold); }
+
+    .usp-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brand-white);
+      margin-bottom: var(--space-3);
+    }
+
+    .usp-body {
+      font-size: 0.85rem;
+      color: rgba(253,250,245,0.55);
+      line-height: 1.7;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-10);
+    }
+
+    .review-card {
+      background: var(--brand-surface);
+      border: 1px solid rgba(201,168,76,0.08);
+      border-radius: var(--radius-md);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-card);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: var(--space-4);
+    }
+
+    .star { color: var(--brand-gold); font-size: 0.85rem; }
+
+    .review-text {
+      font-size: 0.88rem;
+      color: rgba(253,250,245,0.68);
+      line-height: 1.75;
+      margin-bottom: var(--space-5);
+      font-style: italic;
+    }
+
+    .review-author {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--brand-gold);
+      letter-spacing: 0.05em;
+    }
+
+    /* OPENINGSTIJDEN */
+    #openingstijden { background: var(--brand-black); }
+
+    .tijden-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+      max-width: 480px;
+    }
+
+    @media (max-width: 480px) {
+      .tijden-grid { grid-template-columns: 1fr; }
+    }
+
+    .tijden-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid rgba(201,168,76,0.08);
+    }
+
+    .tijden-dag {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: rgba(253,250,245,0.7);
+      letter-spacing: 0.04em;
+    }
+
+    .tijden-tijd {
+      font-size: 0.82rem;
+      color: var(--brand-gold);
+      font-weight: 500;
+    }
+
+    .tijden-closed {
+      font-size: 0.82rem;
+      color: var(--brand-muted);
+    }
+
+    /* CONTACT */
+    #contact { background: var(--brand-surface); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    .contact-info-item {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+      margin-bottom: var(--space-6);
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-icon svg { stroke: var(--brand-gold); }
+
+    .contact-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brand-muted);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      color: var(--brand-white);
+      line-height: 1.5;
+    }
+
+    /* CTA SECTION */
+    #afspraak { background: var(--brand-dark); }
+
+    .afspraak-inner {
+      background: linear-gradient(135deg, var(--brand-charcoal) 0%, #1a160a 100%);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius-lg);
+      padding: 80px var(--space-12);
+      text-align: center;
+      box-shadow: var(--shadow-elevated), inset 0 1px 0 rgba(201,168,76,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .afspraak-inner::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .afspraak-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--brand-white);
+      margin-bottom: var(--space-5);
+      position: relative;
+    }
+
+    .afspraak-body {
+      font-size: 1rem;
+      color: rgba(253,250,245,0.6);
+      max-width: 50ch;
+      margin: 0 auto var(--space-10);
+      line-height: 1.75;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand-black);
+      background: var(--brand-gold);
+      border: none;
+      padding: 18px 48px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: var(--shadow-gold);
+      transition: background 180ms ease-out, box-shadow 180ms ease-out, transform 180ms ease-out;
+    }
+    .btn-primary:hover { background: var(--brand-gold-light); box-shadow: 0 0 48px rgba(201,168,76,0.45), 0 8px 32px rgba(0,0,0,0.5); transform: translateY(-2px); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid var(--brand-gold-light); outline-offset: 4px; }
+
+    /* FOOTER */
+    footer {
+      background: var(--brand-black);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 60px 0 100px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--brand-gold);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: var(--space-3);
+    }
+
+    .footer-brand-desc {
+      font-size: 0.85rem;
+      color: rgba(253,250,245,0.45);
+      line-height: 1.75;
+      max-width: 36ch;
+    }
+
+    .footer-heading {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand-gold);
+      font-weight: 500;
+      margin-bottom: var(--space-5);
+      display: block;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: rgba(253,250,245,0.5);
+      text-decoration: none;
+      transition: color 180ms ease-out;
+    }
+    .footer-links a:hover { color: var(--brand-gold); }
+    .footer-links a:focus-visible { outline: 2px solid var(--brand-gold); outline-offset: 3px; border-radius: 2px; }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: var(--space-6) var(--space-6) 0;
+      border-top: 1px solid rgba(201,168,76,0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(253,250,245,0.3);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      section { padding: 72px 0; }
+      .afspraak-inner { padding: 56px var(--space-6); }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:first-child { grid-row: span 1; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATIEBALK -->
+  <nav id="navbar" aria-label="Hoofdnavigatie">
+    <div class="nav-inner">
+      <a href="#hero" class="logo-wordmark" aria-label="Emzs Premium Barber homepage">
+        Emzs
+        <span class="logo-sub">Premium Barber — Arnhem</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#diensten">Diensten</a></li>
+        <li><a href="#over">Over ons</a></li>
+        <li><a href="#galerij">Galerij</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://emzs-premium-barber.salonized.com" target="_blank" rel="noopener" class="btn-nav btn-nav-desktop">Afspraak boeken</a>
+      <button class="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" role="menu">
+      <a href="#diensten" onclick="closeMobileMenu()">Diensten</a>
+      <a href="#over" onclick="closeMobileMenu()">Over ons</a>
+      <a href="#galerij" onclick="closeMobileMenu()">Galerij</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+      <a href="https://emzs-premium-barber.salonized.com" target="_blank" rel="noopener" class="btn-nav" style="text-align:center;">Afspraak boeken</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" aria-label="Hero sectie">
+      <video autoplay loop muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" aria-hidden="true">
+        <source src="https://videos.pexels.com/video-files/7697049/7697049-hd_1280_720_30fps.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-title" id="hero-title">
+          Emzs
+          <span>Premium Barber</span>
+        </h1>
+        <div class="hero-divider" aria-hidden="true"></div>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a href="https://emzs-premium-barber.salonized.com" target="_blank" rel="noopener" class="hero-cta">Afspraak boeken</a>
+          <a href="#diensten" class="hero-cta-ghost">Bekijk diensten</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIENSTEN -->
+    <section id="diensten" aria-labelledby="diensten-title">
+      <div class="container">
+        <span class="section-label">Ons aanbod</span>
+        <h2 class="section-title" id="diensten-title">Premium diensten,<br>op maat voor jou</h2>
+        <div class="gold-line" aria-hidden="true"></div>
+        <p class="section-body">Bij Emzs Premium Barber in Arnhem combineren we vakmanschap met exclusieve verzorging. Elk bezoek is een complete ervaring — van knipbeurt tot gezichtsbehandeling.</p>
+
+        <div class="dienst-grid">
+
+          <article class="dienst-card" data-animate>
+            <div class="dienst-img-wrap">
+              <img src="https://images.pexels.com/photos/7919445/pexels-photo-7919445.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Premium haarknipbeurt bij Emzs barber" loading="lazy" />
+              <div class="dienst-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="dienst-body">
+              <span class="dienst-cat">Heren</span>
+              <h3 class="dienst-name">Premium Cut</h3>
+              <p class="dienst-desc">Knippen en wassen — een verzorgde klassieke knipbeurt met een professionele wasbeurt inbegrepen.</p>
+              <div class="dienst-meta">
+                <span class="dienst-price">v.a. €55,-</span>
+                <span class="dienst-duration">60 minuten</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dienst-card" data-animate>
+            <div class="dienst-img-wrap">
+              <img src="https://images.pexels.com/photos/8867547/pexels-photo-8867547.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Baard trimmen met warme doek behandeling" loading="lazy" />
+              <div class="dienst-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="dienst-body">
+              <span class="dienst-cat">Heren</span>
+              <h3 class="dienst-name">Premium Cut plus Beard</h3>
+              <p class="dienst-desc">Knippen, wassen, baardverzorging en een ontspannende warme doek — de complete gentlemen-behandeling.</p>
+              <div class="dienst-meta">
+                <span class="dienst-price">v.a. €70,85</span>
+                <span class="dienst-duration">75 minuten</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dienst-card" data-animate>
+            <div class="dienst-img-wrap">
+              <img src="https://images.pexels.com/photos/7518739/pexels-photo-7518739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Premium Plus gezichtsbehandeling in de barbershop" loading="lazy" />
+              <div class="dienst-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="dienst-body">
+              <span class="dienst-cat">Heren — Exclusief</span>
+              <h3 class="dienst-name">Premium Plus</h3>
+              <p class="dienst-desc">Knippen, baard, warme doek, stoombehandeling, wenkbrauw styling én facial cleaning — het allerbeste pakket.</p>
+              <div class="dienst-meta">
+                <span class="dienst-price">€120,-</span>
+                <span class="dienst-duration">90 minuten</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dienst-card" data-animate>
+            <div class="dienst-img-wrap">
+              <img src="https://images.pexels.com/photos/7697639/pexels-photo-7697639.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Vader en zoon samen bij de kapper" loading="lazy" />
+              <div class="dienst-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="dienst-body">
+              <span class="dienst-cat">Heren</span>
+              <h3 class="dienst-name">Vader + Zoon Knippen</h3>
+              <p class="dienst-desc">Knippen plus wassen voor vader en zijn zoon (t/m 17 jaar). Geldig uitsluitend in combinatie met een kind.</p>
+              <div class="dienst-meta">
+                <span class="dienst-price">v.a. €87,50</span>
+                <span class="dienst-duration">90 minuten</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dienst-card" data-animate>
+            <div class="dienst-img-wrap">
+              <img src="https://images.pexels.com/photos/35160056/pexels-photo-35160056.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Haar of baard verven bij de barber" loading="lazy" />
+              <div class="dienst-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="dienst-body">
+              <span class="dienst-cat">Heren — Kleur</span>
+              <h3 class="dienst-name">Premium Cut + Beard + Dye</h3>
+              <p class="dienst-desc">Knippen plus verven van haar of baard in zwart of bruin — voor een verzorgde, frisse uitstraling.</p>
+              <div class="dienst-meta">
+                <span class="dienst-price">€125,-</span>
+                <span class="dienst-duration">90 minuten</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="dienst-card" data-animate>
+            <div class="dienst-img-wrap">
+              <img src="https://images.pexels.com/photos/15745823/pexels-photo-15745823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Kind knippen bij Emzs premium barber" loading="lazy" />
+              <div class="dienst-img-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="dienst-body">
+              <span class="dienst-cat">Kinderen</span>
+              <h3 class="dienst-name">Premium Kids Cut</h3>
+              <p class="dienst-desc">Knippen plus wassen voor kinderen tot en met 17 jaar. Vakkundig en rustig, zodat ook jongsten genieten.</p>
+              <div class="dienst-meta">
+                <span class="dienst-price">v.a. €40,-</span>
+                <span class="dienst-duration">45 minuten</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="margin-top:48px;text-align:center;">
+          <a href="https://emzs-premium-barber.salonized.com" target="_blank" rel="noopener" class="btn-primary">Boek jouw behandeling</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVER ONS -->
+    <section id="over" aria-labelledby="over-title">
+      <div class="container">
+        <div class="over-grid">
+          <div class="over-img-wrap" id="over-img">
+            <img src="https://images.pexels.com/photos/7697222/pexels-photo-7697222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Emzs Premium Barber interieur en vakmanschap in Arnhem" loading="lazy" />
+            <div class="over-img-border" aria-hidden="true"></div>
+            <div class="over-badge">
+              <span class="over-badge-num">100%</span>
+              <span class="over-badge-label">Premium kwaliteit</span>
+            </div>
+          </div>
+          <div id="over-text">
+            <span class="section-label">Over ons</span>
+            <h2 class="section-title" id="over-title">Vakmanschap dat<br>voor zichzelf spreekt</h2>
+            <div class="gold-line" aria-hidden="true"></div>
+            <p class="section-body" style="margin-bottom:24px;">Emzs Premium Barber is de meest exclusieve barbershop van Arnhem. Gevestigd aan de Hommelstraat 44, bieden wij een ervaring die ver voorbij een gewone knipbeurt gaat. Stijl, verfijning en vakmanschap zijn de pijlers waarop onze zaak is gebouwd.</p>
+            <p class="section-body" style="margin-bottom:24px;">Elke klant verdient volledige aandacht en een op maat gesneden behandeling. Of je nu kiest voor onze Premium Cut, een complete baardbehandeling of een luxueuze Premium Plus sessie met facial cleaning en stoom — wij zorgen ervoor dat je de deur uitloopt met het allerbeste resultaat.</p>
+            <p class="section-body">Wij werken uitsluitend op afspraak, zodat je nooit lang hoeft te wachten en wij jou de volledige tijd en zorg kunnen geven die jij verdient. Arnhem heeft zijn premium barbershop — en die heet Emzs.</p>
+            <div style="margin-top:40px;">
+              <a href="#afspraak" class="btn-primary">Maak een afspraak</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIJ -->
+    <section id="galerij" aria-labelledby="galerij-title">
+      <div class="container">
+        <span class="section-label">Galerij</span>
+        <h2 class="section-title" id="galerij-title">De sfeer van Emzs</h2>
+        <div class="gold-line" aria-hidden="true"></div>
+        <p class="section-body">Een blik achter de schermen van onze premium barbershop in Arnhem — waar elke knipbeurt een kunstwerk is.</p>
+
+        <div class="gallery-grid" id="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/7697329/pexels-photo-7697329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Barber aan het werk in Emzs barbershop" loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/8867548/pexels-photo-8867548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Gedetailleerde baardverzorging bij Emzs" loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/20785318/pexels-photo-20785318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Stijlvolle kapsel resultaten bij Emzs Premium Barber" loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Luxueus barbershop interieur Arnhem" loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.pexels.com/photos/32069627/pexels-photo-32069627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Precisieknipbeurt bij Emzs barber" loading="lazy" />
+            <div class="gallery-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF / USPs -->
+    <section id="social-proof" aria-labelledby="social-title">
+      <div class="container">
+        <span class="section-label">Waarom Emzs</span>
+        <h2 class="section-title" id="social-title">De Emzs belofte</h2>
+        <div class="gold-line" aria-hidden="true"></div>
+
+        <div class="usp-grid">
+
+          <div class="usp-card" data-animate-usp>
+            <div class="usp-icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="usp-title">Exclusieve ervaring</h3>
+            <p class="usp-body">Elk bezoek aan Emzs Premium Barber is een volwaardige luxe-ervaring. Van het moment dat je binnenstapt tot het moment dat je vertrekt, staat jouw comfort centraal.</p>
+          </div>
+
+          <div class="usp-card" data-animate-usp>
+            <div class="usp-icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="usp-title">Altijd op tijd</h3>
+            <p class="usp-body">Wij werken uitsluitend op afspraak. Geen wachtrijen, geen verloren tijd. Jouw afspraak begint wanneer jij arriveert en wij zijn volledig beschikbaar voor jou.</p>
+          </div>
+
+          <div class="usp-card" data-animate-usp>
+            <div class="usp-icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="usp-title">Vakkundig en persoonlijk</h3>
+            <p class="usp-body">Met jarenlange ervaring en een passie voor het vak wordt elke knipbeurt op maat gesneden. Jouw persoonlijke stijl en wensen zijn de basis van elk resultaat.</p>
+          </div>
+
+          <div class="usp-card" data-animate-usp>
+            <div class="usp-icon" aria-hidden="true">
+              <svg width="18" height="18" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="usp-title">Hart van Arnhem</h3>
+            <p class="usp-body">Gelegen aan de Hommelstraat 44 in het bruisende centrum van Arnhem, zijn wij makkelijk bereikbaar en altijd klaar om je te verwelkomen.</p>
+          </div>
+
+        </div>
+
+        <div style="margin-top:72px;">
+          <span class="section-label" style="text-align:center;display:block;">Wat klanten zeggen</span>
+          <div class="reviews-grid">
+
+            <article class="review-card" data-animate-review>
+              <div class="review-stars" aria-label="5 van 5 sterren">
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+              </div>
+              <p class="review-text">"Absoluut de beste barbershop in Arnhem. De Premium Plus behandeling was subliem — ik heb nog nooit zo ontspannen in een kappersstoel gezeten. De aandacht voor detail is ongeëvenaard."</p>
+              <span class="review-author">— Youssef R., Arnhem</span>
+            </article>
+
+            <article class="review-card" data-animate-review>
+              <div class="review-stars" aria-label="5 van 5 sterren">
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+              </div>
+              <p class="review-text">"Met mijn zoon geknipt via het Vader + Zoon pakket — een geweldige ervaring voor ons allebei. Professioneel, snel en een topresultaat. Absoluut onze vaste plek."</p>
+              <span class="review-author">— Karim B., Arnhem</span>
+            </article>
+
+            <article class="review-card" data-animate-review>
+              <div class="review-stars" aria-label="5 van 5 sterren">
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+                <span class="star" aria-hidden="true">&#9733;</span>
+              </div>
+              <p class="review-text">"De warme doek en stoombehandeling zijn écht next level. Je betaalt voor premium en dat krijg je ook. Dit is geen gewone kapper — dit is een echte ervaring."</p>
+              <span class="review-author">— Daan H., Nijmegen</span>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPENINGSTIJDEN + CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-grid">
+          <div id="contact-info">
+            <span class="section-label">Bereikbaarheid</span>
+            <h2 class="section-title" id="contact-title">Vind ons in<br>Arnhem</h2>
+            <div class="gold-line" aria-hidden="true"></div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="16" height="16" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="var(--brand-gold)" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="var(--brand-gold)" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Adres</span>
+                <span class="contact-value">Hommelstraat 44<br>6828 AK Arnhem</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="16" height="16" fill="none" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="var(--brand-gold)" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 6v6l4 2" stroke="var(--brand-gold)" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <span class="contact-label">Openingstijden</span>
+                <span class="contact-value">Dagelijks geopend (ma gesloten)</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 8px;">
+              <div style="background:var(--brand-charcoal);border:1px solid rgba(201,168,76,0.1);border-radius:var(--radius-md);padding:var(--space-6);max-width:380px;">
+                <div class="tijden-row"><span class="tijden-dag">Dinsdag</span><span class="tijden-tijd">10:00 – 19:00</span></div>
+                <div class="tijden-row"><span class="tijden-dag">Woensdag</span><span class="tijden-tijd">10:00 – 19:00</span></div>
+                <div class="tijden-row"><span class="tijden-dag">Donderdag</span><span class="tijden-tijd">10:00 – 19:00</span></div>
+                <div class="tijden-row"><span class="tijden-dag">Vrijdag</span><span class="tijden-tijd">10:00 – 19:00</span></div>
+                <div class="tijden-row"><span class="tijden-dag">Zaterdag</span><span class="tijden-tijd">09:00 – 18:00</span></div>
+                <div class="tijden-row"><span class="tijden-dag">Zondag</span><span class="tijden-tijd">12:00 – 16:00</span></div>
+                <div class="tijden-row"><span class="tijden-dag">Maandag</span><span class="tijden-closed">Gesloten</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="contact-map">
+            <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-elevated);border:1px solid rgba(201,168,76,0.12);">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453.0!2d5.9156!3d51.9844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7a05c5c5c5c5c%3A0x0!2sHommelstraat%2044%2C%206828%20AK%20Arnhem!5e0!3m2!1snl!2snl!4v1700000000000"
+                width="100%"
+                height="380"
+                style="border:0;display:block;filter:grayscale(1) invert(0.9) contrast(0.85);"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Locatie Emzs Premium Barber Arnhem"
+                aria-label="Google Maps kaart van Emzs Premium Barber, Hommelstraat 44 Arnhem"
+              ></iframe>
+            </div>
+            <div style="margin-top:var(--space-6);">
+              <a
+                href="https://maps.google.com/?q=Hommelstraat+44,+6828+AK+Arnhem"
+                target="_blank"
+                rel="noopener"
+                class="btn-primary"
+                style="width:100%;justify-content:center;"
+              >Route plannen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AFSPRAAK BOEKEN CTA -->
+    <section id="afspraak" aria-labelledby="afspraak-title">
+      <div class="container">
+        <div class="afspraak-inner" id="afspraak-inner">
+          <span class="section-label" style="justify-content:center;display:block;text-align:center;">Klaar voor de beste versie van jezelf?</span>
+          <h2 class="afspraak-title" id="afspraak-title">Boek jouw premium<br>ervaring vandaag</h2>
+          <p class="afspraak-body">Reserveer jouw plek bij Emzs Premium Barber in Arnhem en ontdek waarom vakmanschap, stijl en verfijning centraal staan bij elke behandeling. Beperkte plekken beschikbaar per dag.</p>
+          <a href="https://emzs-premium-barber.salonized.com" target="_blank" rel="noopener" class="btn-primary">Afspraak boeken</a>
+          <p style="margin-top:20px;font-size:0.78rem;color:rgba(253,250,245,0.35);letter-spacing:0.05em;">Hommelstraat 44, 6828 AK Arnhem — Geopend vanaf 10:00</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <span class="footer-brand-name">Emzs Premium Barber</span>
+        <p class="footer-brand-desc">De meest exclusieve barbershop van Arnhem, waar vakmanschap, stijl en verfijning centraal staan. Gelegen aan de Hommelstraat in het hart van de stad.</p>
+      </div>
+      <nav aria-label="Footer navigatie">
+        <span class="footer-heading">Navigatie</span>
+        <ul class="footer-links" role="list">
+          <li><a href="#diensten">Diensten</a></li>
+          <li><a href="#over">Over ons</a></li>
+          <li><a href="#galerij">Galerij</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#afspraak">Afspraak boeken</a></li>
+        </ul>
+      </nav>
+      <div>
+        <span class="footer-heading">Contact</span>
+        <ul class="footer-links" role="list">
+          <li><a href="https://maps.google.com/?q=Hommelstraat+44,+6828+AK+Arnhem" target="_blank" rel="noopener">Hommelstraat 44, Arnhem</a></li>
+          <li><a href="https://emzs-premium-barber.salonized.com" target="_blank" rel="noopener">Online afspraak</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2024 Emzs Premium Barber, Arnhem. Alle rechten voorbehouden.</span>
+      <span class="footer-copy">Hommelstraat 44, 6828 AK Arnhem</span>
+    </div>
+  </footer>
+
+  <!-- DEMO BANNER -->
+  <div style="position:fixed;bottom:0;left:0;right:0;background:#0f172a;color:#94a3b8;text-align:center;padding:8px 16px;font-size:12px;z-index:9999;font-family:sans-serif;">Demo gemaakt door <a href="https://hagenweb.nl" target="_blank" style="color:#818cf8;text-decoration:none;">Hagenweb</a></div>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Mobile menu
+    function toggleMenu(btn) {
+      const menu = document.getElementById('mobile-menu');
+      const isOpen = menu.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.querySelector('.hamburger');
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    // Reduced motion check
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced) {
+      gsap.set('[data-animate], [data-animate-usp], [data-animate-review], #over-img, #over-text, #contact-info, #contact-map, #afspraak-inner, .gallery-item', { opacity: 1, x: 0, y: 0 });
+    } else {
+
+      // Hero entrance
+      gsap.from('#hero-title', { opacity: 0, y: 40, duration: 0.9, ease: 'power2.out', delay: 0.3 });
+      gsap.from('.hero-divider', { opacity: 0, scaleX: 0, duration: 0.6, ease: 'power2.out', delay: 0.65 });
+      gsap.from('.hero-cta, .hero-cta-ghost', { opacity: 0, y: 24, duration: 0.7, ease: 'power2.out', stagger: 0.12, delay: 0.85 });
+
+      // Diensten cards
+      gsap.from('[data-animate]', {
+        opacity: 0,
+        y: 50,
+        duration: 0.7,
+        ease: 'power2.out',
+        stagger: 0.12,
+        scrollTrigger: {
+          trigger: '[data-animate]',
+          start: 'top 82%',
+          once: true
+        }
+      });
+
+      // Over ons
+      gsap.from('#over-img', {
+        opacity: 0,
+        x: -60,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#over-img',
+          start: 'top 82%',
+          once: true
+        }
+      });
+
+      gsap.from('#over-text', {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        ease: 'power2.out',
+        delay: 0.15,
+        scrollTrigger: {
+          trigger: '#over-text',
+          start: 'top 82%',
+          once: true
+        }
+      });
+
+      // Gallery
+      gsap.from('.gallery-item', {
+        opacity: 0,
+        y: 40,
+        duration: 0.65,
+        ease: 'power2.out',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '#gallery-grid',
+          start: 'top 82%',
+          once: true
+        }
+      });
+
+      // USPs
+      gsap.from('[data-animate-usp]', {
+        opacity: 0,
+        y: 40,
+        duration: 0.65,
+        ease: 'power2.out',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '[data-animate-usp]',
+          start: 'top 82%',
+          once: true
+        }
+      });
+
+      // Reviews
+      gsap.from('[data-animate-review]', {
+        opacity: 0,
+        y: 40,
+        duration: 0.65,
+        ease: 'power2.out',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '[data-animate-review]',
+          start: 'top 82%',
+          once: true
+        }
+      });
+
+      // Contact
+      gsap.from('#contact-info', {
+        opacity: 0,
+        x: -40,
+        duration: 0.75,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#contact-info',
+          start: 'top 82%',
+          once: true
+        }
+      });
+
+      gsap.from('#contact-map', {
+        opacity: 0,
+        x: 40,
+        duration: 0.75,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#contact-map',
+          start: 'top 82%',
+          once: true
+        }
+      });
+
+      // Afspraak CTA
+      gsap.from('#afspraak-inner', {
+        opacity: 0,
+        y: 50,
+        duration: 0.75,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#afspraak-inner',
+          start: 'top 82%',
+          once: true
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
