@@ -61,18 +61,6 @@
       line-height: 1.1;
     }
 
-    /* HEXAGON LOGO */
-    .hex-logo {
-      width: 48px;
-      height: 48px;
-      background: var(--color-obsidian);
-      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(184,150,110,0.3);
-    }
-
     /* NAV */
     nav {
       position: fixed;
@@ -127,20 +115,28 @@
       overflow: hidden;
     }
 
-    .hero-bg {
+    /* VIDEO BACKGROUND */
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Overlay lagen op de video */
+    .hero-video-overlay {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(184,150,110,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(44,44,44,0.9) 0%, transparent 70%),
-        radial-gradient(ellipse 100% 100% at 50% 100%, rgba(10,10,10,1) 40%, transparent 100%),
-        radial-gradient(ellipse 120% 80% at 50% 50%, #1a1410 0%, #0a0a0a 100%);
-    }
-
-    .hero-noise {
-      position: absolute;
-      inset: 0;
-      opacity: 0.045;
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(184,150,110,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 50% at 50% 100%, rgba(10,10,10,0.95) 0%, transparent 80%),
+        radial-gradient(ellipse 120% 80% at 50% 50%, rgba(10,10,10,0.55) 0%, transparent 100%);
       pointer-events: none;
     }
 
@@ -414,7 +410,6 @@
     ::-webkit-scrollbar-thumb { background: var(--color-graphite); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-dark); }
 
-    /* SPACING FOR FIXED NAV */
     .nav-offset { padding-top: 72px; }
 
     /* PRICE TAG */
@@ -425,22 +420,25 @@
       font-weight: 600;
       color: var(--color-gold);
     }
+
+    /* VIDEO FALLBACK */
+    .hero-video-fallback {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 50%, rgba(184,150,110,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(44,44,44,0.9) 0%, transparent 70%),
+        radial-gradient(ellipse 100% 100% at 50% 100%, rgba(10,10,10,1) 40%, transparent 100%),
+        radial-gradient(ellipse 120% 80% at 50% 50%, #1a1410 0%, #0a0a0a 100%);
+      z-index: 0;
+    }
   </style>
 </head>
 <body>
 
-<!-- SVG Noise Filter Definition (hidden) -->
-<svg width="0" height="0" style="position:absolute;">
-  <filter id="noise">
-    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-    <feColorMatrix type="saturate" values="0" />
-  </filter>
-</svg>
-
 <!-- NAVIGATIE -->
 <nav aria-label="Hoofdnavigatie">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px;">
-    <!-- LOGO -->
     <a href="#home" style="display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0;" aria-label="Men's Salon Barbershop & Fashion — naar homepage">
       <div style="width:44px;height:44px;background:var(--color-obsidian);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(184,150,110,0.5);">
         <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--color-ivory);line-height:1;">M</span>
@@ -451,7 +449,6 @@
       </div>
     </a>
 
-    <!-- DESKTOP NAV LINKS -->
     <div style="display:flex;align-items:center;gap:32px;" class="hidden-mobile">
       <a href="#over-ons" class="nav-link">Over ons</a>
       <a href="#diensten" class="nav-link">Diensten</a>
@@ -461,7 +458,6 @@
       <a href="#contact" class="btn-primary" style="padding:10px 22px;font-size:11px;">Afspraak maken</a>
     </div>
 
-    <!-- HAMBURGER MOBILE -->
     <button class="hamburger show-mobile" id="menuBtn" aria-label="Menu openen" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -483,21 +479,38 @@
 
 <!-- HERO -->
 <section class="hero" id="home" aria-labelledby="hero-heading">
-  <div class="hero-bg"></div>
 
-  <!-- Grain texture -->
-  <div class="hero-noise" style="background-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\"><filter id=\"n\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"4\" stitchTiles=\"stitch\"/><feColorMatrix type=\"saturate\" values=\"0\"/></filter><rect width=\"200\" height=\"200\" filter=\"url(%23n)\" opacity=\"1\"/></svg>');background-size:200px 200px;"></div>
+  <!-- VIDEO ACHTERGROND -->
+  <div class="hero-video-wrap" aria-hidden="true">
+    <!--
+      Pexels gratis barbershop stockvideo's — geen API-key vereist.
+      Drie bronformaten voor maximale browsercompatibiliteit.
+    -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="https://images.pexels.com/videos/3998018/free-video-3998018.jpg?auto=compress&cs=tinysrgb&w=1280"
+      aria-hidden="true"
+    >
+      <source src="https://videos.pexels.com/video-files/3998018/3998018-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+      <source src="https://videos.pexels.com/video-files/3998018/3998018-hd_1920_1080_25fps.mp4" type="video/mp4" />
+    </video>
+    <!-- Gradient overlay bovenop de video -->
+    <div class="hero-video-overlay"></div>
+  </div>
 
   <!-- Hero content -->
   <div style="position:relative;z-index:1;text-align:center;padding:0 24px;max-width:900px;margin:0 auto;">
-    <!-- Hexagon emblem -->
     <div style="display:flex;justify-content:center;margin-bottom:40px;">
-      <div style="width:96px;height:96px;background:rgba(26,20,16,0.8);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;border:1px solid rgba(184,150,110,0.35);box-shadow:0 0 40px rgba(184,150,110,0.15),inset 0 1px 0 rgba(184,150,110,0.2);">
+      <div style="width:96px;height:96px;background:rgba(26,20,16,0.7);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;border:1px solid rgba(184,150,110,0.5);box-shadow:0 0 60px rgba(184,150,110,0.2),inset 0 1px 0 rgba(184,150,110,0.25);">
         <span style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--color-ivory);line-height:1;">M</span>
       </div>
     </div>
 
-    <h1 id="hero-heading" style="font-family:'Cormorant Garamond',serif;font-size:clamp(48px,8vw,96px);font-weight:700;color:var(--color-ivory);letter-spacing:-0.04em;line-height:0.95;margin-bottom:16px;">
+    <h1 id="hero-heading" style="font-family:'Cormorant Garamond',serif;font-size:clamp(48px,8vw,96px);font-weight:700;color:var(--color-ivory);letter-spacing:-0.04em;line-height:0.95;margin-bottom:16px;text-shadow:0 4px 40px rgba(0,0,0,0.7);">
       Men's Salon<br />
       <span style="color:var(--color-gold);">Barbershop</span> &amp; Fashion
     </h1>
@@ -513,7 +526,7 @@
   </div>
 
   <!-- Scroll indicator -->
-  <div style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.5;">
+  <div style="position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.5;z-index:1;">
     <span style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-silver);">Scroll</span>
     <div style="width:1px;height:40px;background:linear-gradient(to bottom,var(--color-gold),transparent);"></div>
   </div>
@@ -524,22 +537,22 @@
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="about-grid">
 
-      <!-- Afbeelding -->
       <div class="about-img-wrap" style="position:relative;">
         <div style="position:relative;overflow:hidden;">
-          <img src="https://picsum.photos/seed/barber-interior-shop/800/600" alt="Interieur van Men's Salon Barbershop & Fashion in Arnhem" style="width:100%;height:520px;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.08);" />
+          <img
+            src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Interieur van Men's Salon Barbershop & Fashion in Arnhem — klassieke kappersstoelen en sfeervolle verlichting"
+            style="width:100%;height:520px;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.08);"
+          />
           <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(184,150,110,0.08) 0%,transparent 60%);pointer-events:none;"></div>
         </div>
-        <!-- Accent border -->
         <div style="position:absolute;top:24px;left:24px;right:-24px;bottom:-24px;border:1px solid rgba(184,150,110,0.25);z-index:-1;pointer-events:none;"></div>
-        <!-- Gold badge -->
         <div style="position:absolute;bottom:-20px;right:40px;background:var(--color-gold);padding:16px 24px;box-shadow:0 4px 20px rgba(184,150,110,0.35);">
           <span style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--color-obsidian);display:block;line-height:1;">10+</span>
           <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-obsidian);opacity:0.75;">Jaar ervaring</span>
         </div>
       </div>
 
-      <!-- Tekst -->
       <div class="about-text-wrap">
         <span class="section-label">Over ons</span>
         <div class="gold-line"></div>
@@ -554,7 +567,6 @@
           Naast onze salon-diensten bieden wij een curated collectie fashion en grooming-producten, zodat u er niet alleen in de stoel, maar ook thuis op uw best uitziet. Gent's Only — kwaliteit zonder compromis.
         </p>
 
-        <!-- USP's -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
           <div class="usp-item">
             <h3 style="font-size:16px;color:var(--color-ivory);margin-bottom:4px;">Vakmanschap</h3>
@@ -592,7 +604,10 @@
       <!-- Dienst 1: Haircut -->
       <article class="service-card" aria-labelledby="service-1-title">
         <div style="overflow:hidden;">
-          <img src="https://picsum.photos/seed/barber-haircut-classic/600/600" alt="Klassieke haarknippen bij Men's Salon Barbershop in Arnhem" />
+          <img
+            src="https://images.pexels.com/photos/1453005/pexels-photo-1453005.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop"
+            alt="Kapper knipt het haar van een klant in Men's Salon Arnhem"
+          />
         </div>
         <div style="padding:28px;">
           <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Haarverzorging</span>
@@ -608,7 +623,10 @@
       <!-- Dienst 2: Scheren -->
       <article class="service-card" aria-labelledby="service-2-title">
         <div style="overflow:hidden;">
-          <img src="https://picsum.photos/seed/straight-razor-shave/600/600" alt="Traditioneel scheermes scheren bij Men's Salon in Arnhem" />
+          <img
+            src="https://images.pexels.com/photos/2076047/pexels-photo-2076047.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop"
+            alt="Traditionele scheerbeurt met scheermes bij Men's Salon Arnhem"
+          />
         </div>
         <div style="padding:28px;">
           <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Scheerbeurt</span>
@@ -624,7 +642,10 @@
       <!-- Dienst 3: Baard -->
       <article class="service-card" aria-labelledby="service-3-title">
         <div style="overflow:hidden;">
-          <img src="https://picsum.photos/seed/beard-trim-grooming/600/600" alt="Baardverzorging en trimmen bij Men's Salon Barbershop Arnhem" />
+          <img
+            src="https://images.pexels.com/photos/1570807/pexels-photo-1570807.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop"
+            alt="Barber vormt en trimt een baard bij Men's Salon Barbershop Arnhem"
+          />
         </div>
         <div style="padding:28px;">
           <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Baard</span>
@@ -640,7 +661,10 @@
       <!-- Dienst 4: Combo deal -->
       <article class="service-card" aria-labelledby="service-4-title">
         <div style="overflow:hidden;">
-          <img src="https://picsum.photos/seed/mens-grooming-combo/600/600" alt="Complete grooming behandeling bij Men's Salon Arnhem" />
+          <img
+            src="https://images.pexels.com/photos/3998429/pexels-photo-3998429.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop"
+            alt="Barber werkt aan een complete knip en baard behandeling in Arnhem"
+          />
         </div>
         <div style="padding:28px;">
           <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Combipakket</span>
@@ -656,7 +680,10 @@
       <!-- Dienst 5: Fashion -->
       <article class="service-card" aria-labelledby="service-5-title">
         <div style="overflow:hidden;">
-          <img src="https://picsum.photos/seed/mens-fashion-clothing/600/600" alt="Fashion collectie voor heren bij Men's Salon Arnhem" />
+          <img
+            src="https://images.pexels.com/photos/1192609/pexels-photo-1192609.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop"
+            alt="Stijlvolle herenmode collectie bij Men's Salon Fashion Arnhem"
+          />
         </div>
         <div style="padding:28px;">
           <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Fashion</span>
@@ -672,7 +699,10 @@
       <!-- Dienst 6: Grooming producten -->
       <article class="service-card" aria-labelledby="service-6-title">
         <div style="overflow:hidden;">
-          <img src="https://picsum.photos/seed/grooming-products-pomade/600/600" alt="Premium grooming producten bij Men's Salon Arnhem" />
+          <img
+            src="https://images.pexels.com/photos/3998023/pexels-photo-3998023.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop"
+            alt="Premium grooming producten en pomades bij Men's Salon Arnhem"
+          />
         </div>
         <div style="padding:28px;">
           <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-gold);display:block;margin-bottom:8px;">Producten</span>
@@ -700,26 +730,48 @@
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px;gap:16px;" class="gallery-grid">
-      <div class="gallery-item" style="grid-row:1/3;border-radius:0;" aria-label="Galerij foto 1: Kapper aan het werk">
-        <img src="https://picsum.photos/seed/barber-work-detail/600/800" alt="Barber nauwkeurig aan het werk in Men's Salon Arnhem" style="height:100%;" />
+
+      <div class="gallery-item" style="grid-row:1/3;" aria-label="Galerij foto 1: Barber vakkundig aan het werk">
+        <img
+          src="https://images.pexels.com/photos/3998022/pexels-photo-3998022.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop"
+          alt="Barber nauwkeurig aan het werk in Men's Salon Arnhem"
+          style="height:100%;"
+        />
         <div class="gallery-overlay"></div>
       </div>
-      <div class="gallery-item" aria-label="Galerij foto 2: Fade kapsel resultaat">
-        <img src="https://picsum.photos/seed/fade-haircut-result/600/400" alt="Strak fade kapsel resultaat van Men's Salon Arnhem" />
+
+      <div class="gallery-item" aria-label="Galerij foto 2: Strak fade kapsel resultaat">
+        <img
+          src="https://images.pexels.com/photos/2881199/pexels-photo-2881199.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+          alt="Strak fade kapsel resultaat van Men's Salon Arnhem"
+        />
         <div class="gallery-overlay"></div>
       </div>
-      <div class="gallery-item" aria-label="Galerij foto 3: Barbershop interieur">
-        <img src="https://picsum.photos/seed/barbershop-chairs-interior/600/400" alt="Luxe kappersstoelen in de barbershop van Men's Salon Arnhem" />
+
+      <div class="gallery-item" aria-label="Galerij foto 3: Sfeervolle barbershop stoelen">
+        <img
+          src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+          alt="Klassieke kappersstoelen in Men's Salon Arnhem"
+        />
         <div class="gallery-overlay"></div>
       </div>
-      <div class="gallery-item" aria-label="Galerij foto 4: Baard verzorging">
-        <img src="https://picsum.photos/seed/beard-styling-precision/600/400" alt="Nauwkeurige baardverzorging bij Men's Salon Arnhem" />
+
+      <div class="gallery-item" aria-label="Galerij foto 4: Nauwkeurige baardverzorging">
+        <img
+          src="https://images.pexels.com/photos/1570807/pexels-photo-1570807.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+          alt="Nauwkeurige baardverzorging bij Men's Salon Arnhem"
+        />
         <div class="gallery-overlay"></div>
       </div>
-      <div class="gallery-item" aria-label="Galerij foto 5: Scheerbeurt met handdoek">
-        <img src="https://picsum.photos/seed/hot-towel-razor-shave/600/400" alt="Hot towel scheerbeurt in de stijlvolle barbershop van Arnhem" />
+
+      <div class="gallery-item" aria-label="Galerij foto 5: Hot towel scheerbeurt ervaring">
+        <img
+          src="https://images.pexels.com/photos/2076047/pexels-photo-2076047.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+          alt="Hot towel scheerbeurt in de stijlvolle barbershop van Arnhem"
+        />
         <div class="gallery-overlay"></div>
       </div>
+
     </div>
   </div>
 </section>
@@ -892,7 +944,6 @@
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;" class="contact-grid">
 
-      <!-- Contact info -->
       <div class="contact-info">
         <div style="margin-bottom:48px;">
           <h3 style="font-size:28px;color:var(--color-ivory);margin-bottom:32px;">Bezoekadres</h3>
@@ -927,7 +978,6 @@
           </div>
         </div>
 
-        <!-- Openingstijden -->
         <div style="background:var(--color-charcoal);border:1px solid rgba(184,150,110,0.1);padding:32px;">
           <h3 style="font-size:20px;color:var(--color-ivory);margin-bottom:20px;">Openingstijden</h3>
           <div style="display:flex;flex-direction:column;gap:10px;">
@@ -947,7 +997,6 @@
         </div>
       </div>
 
-      <!-- Contact formulier -->
       <div class="contact-form-wrap">
         <form style="display:flex;flex-direction:column;gap:20px;" onsubmit="handleSubmit(event)" novalidate>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
@@ -994,10 +1043,8 @@
 <footer style="padding:64px 0 96px;background:var(--color-obsidian);" role="contentinfo">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
 
-    <!-- Top footer -->
     <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid rgba(184,150,110,0.1);" class="footer-grid">
 
-      <!-- Brand column -->
       <div>
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
           <div style="width:44px;height:44px;background:rgba(26,20,16,0.9);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(184,150,110,0.4);">
@@ -1012,7 +1059,6 @@
         <p style="font-size:11px;color:var(--color-graphite);">KVK: 65624963 &bull; BTW: NL002295310B82</p>
       </div>
 
-      <!-- Diensten -->
       <div>
         <h4 style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-ash);margin-bottom:20px;">Diensten</h4>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
@@ -1023,7 +1069,6 @@
         </ul>
       </div>
 
-      <!-- Navigatie -->
       <div>
         <h4 style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-ash);margin-bottom:20px;">Navigatie</h4>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
@@ -1034,18 +1079,16 @@
         </ul>
       </div>
 
-      <!-- Contact -->
       <div>
         <h4 style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-ash);margin-bottom:20px;">Contact</h4>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
           <li><a href="tel:0649788881" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">06 49 78 88 81</a></li>
-          <li><a href="mailto:info@menssalonbarbershopandfashion.nl" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;word-break:break-all;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">info@menssalon...</a></li>
+          <li><a href="mailto:info@menssalonbarbershopandfashion.nl" style="font-size:13px;color:var(--color-steel);text-decoration:none;transition:color 200ms ease-out;" onmouseover="this.style.color='var(--color-gold-light)'" onmouseout="this.style.color='var(--color-steel)'">info@menssalon...</a></li>
           <li><span style="font-size:13px;color:var(--color-steel);">Arnhem, 6828 BR</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Bottom footer -->
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
       <p style="font-size:12px;color:var(--color-graphite);">&copy; 2021 – 2026 Men's Salon Barbershop &amp; Fashion. Alle rechten voorbehouden.</p>
       <div style="display:flex;gap:24px;">
@@ -1109,6 +1152,25 @@
   menuBtn.addEventListener('click', openMenu);
   menuClose.addEventListener('click', closeMenu);
 
+  // Video fallback: als de video niet laadt toon je de gradient fallback
+  (function() {
+    const video = document.querySelector('.hero-video-wrap video');
+    if (!video) return;
+    video.addEventListener('error', function() {
+      video.style.display = 'none';
+      const fallback = document.createElement('div');
+      fallback.className = 'hero-video-fallback';
+      video.parentNode.insertBefore(fallback, video);
+    });
+    // Forceer play op iOS/Safari
+    video.play().catch(function() {
+      video.style.display = 'none';
+      const fallback = document.createElement('div');
+      fallback.className = 'hero-video-fallback';
+      video.parentNode.insertBefore(fallback, video);
+    });
+  })();
+
   // Form submit
   function handleSubmit(e) {
     e.preventDefault();
@@ -1124,17 +1186,12 @@
     // No animations
   } else {
 
-    // About section
     gsap.from('.about-img-wrap', {
       opacity: 0,
       x: -60,
       duration: 0.8,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.about-img-wrap',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.about-img-wrap', start: 'top 82%', once: true }
     });
 
     gsap.from('.about-text-wrap', {
@@ -1142,51 +1199,32 @@
       y: 50,
       duration: 0.8,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.about-text-wrap',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.about-text-wrap', start: 'top 82%', once: true }
     });
 
-    // Services header
     gsap.from('.services-header', {
       opacity: 0,
       y: 40,
       duration: 0.7,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.services-header',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.services-header', start: 'top 82%', once: true }
     });
 
-    // Service cards
     gsap.from('.service-card', {
       opacity: 0,
       y: 50,
       duration: 0.7,
       ease: 'power2.out',
       stagger: 0.12,
-      scrollTrigger: {
-        trigger: '.services-grid',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.services-grid', start: 'top 82%', once: true }
     });
 
-    // Gallery
     gsap.from('.gallery-header', {
       opacity: 0,
       y: 40,
       duration: 0.7,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.gallery-header',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.gallery-header', start: 'top 82%', once: true }
     });
 
     gsap.from('.gallery-item', {
@@ -1195,24 +1233,15 @@
       duration: 0.7,
       ease: 'power2.out',
       stagger: 0.1,
-      scrollTrigger: {
-        trigger: '.gallery-grid',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.gallery-grid', start: 'top 82%', once: true }
     });
 
-    // Reviews
     gsap.from('.reviews-header', {
       opacity: 0,
       y: 40,
       duration: 0.7,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.reviews-header',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.reviews-header', start: 'top 82%', once: true }
     });
 
     gsap.from('.review-card', {
@@ -1221,11 +1250,7 @@
       duration: 0.7,
       ease: 'power2.out',
       stagger: 0.1,
-      scrollTrigger: {
-        trigger: '.reviews-grid',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.reviews-grid', start: 'top 82%', once: true }
     });
 
     gsap.from('.usp-banner', {
@@ -1233,24 +1258,15 @@
       y: 40,
       duration: 0.7,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.usp-banner',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.usp-banner', start: 'top 82%', once: true }
     });
 
-    // Vacatures
     gsap.from('.jobs-text', {
       opacity: 0,
       x: -40,
       duration: 0.8,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.jobs-grid',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.jobs-grid', start: 'top 82%', once: true }
     });
 
     gsap.from('.vacature-card', {
@@ -1259,24 +1275,15 @@
       duration: 0.7,
       ease: 'power2.out',
       stagger: 0.12,
-      scrollTrigger: {
-        trigger: '.jobs-cards',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.jobs-cards', start: 'top 82%', once: true }
     });
 
-    // Contact
     gsap.from('.contact-header', {
       opacity: 0,
       y: 40,
       duration: 0.7,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.contact-header',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.contact-header', start: 'top 82%', once: true }
     });
 
     gsap.from('.contact-info', {
@@ -1284,11 +1291,7 @@
       x: -40,
       duration: 0.8,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.contact-grid',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.contact-grid', start: 'top 82%', once: true }
     });
 
     gsap.from('.contact-form-wrap', {
@@ -1296,14 +1299,9 @@
       x: 40,
       duration: 0.8,
       ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.contact-grid',
-        start: 'top 82%',
-        once: true
-      }
+      scrollTrigger: { trigger: '.contact-grid', start: 'top 82%', once: true }
     });
 
-    // Hero entrance
     gsap.from('#home > div[style*="z-index:1"]', {
       opacity: 0,
       y: 30,
