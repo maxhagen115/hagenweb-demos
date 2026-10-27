@@ -1,107 +1,302 @@
-<!DOCTYPE html><!--jdUOHYm2xS2hfCAFG7AiF--><html lang="nl"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="https://images.pexels.com/photos/38051396/pexels-photo-38051396.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940"/><link rel="preload" as="image" href="https://images.pexels.com/photos/35305055/pexels-photo-35305055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940"/><link rel="preload" as="image" href="https://images.pexels.com/photos/11526454/pexels-photo-11526454.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940"/><link rel="preload" as="image" href="https://images.pexels.com/photos/5324960/pexels-photo-5324960.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940"/><link rel="preload" as="image" href="https://images.pexels.com/photos/7433874/pexels-photo-7433874.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940"/><link rel="preload" as="image" href="https://images.pexels.com/photos/8067823/pexels-photo-8067823.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940"/><link rel="stylesheet" href="/demo-scholten-fietsgoednl/_next/static/css/1dbbc23e03ff2791.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/demo-scholten-fietsgoednl/_next/static/chunks/webpack-a38d8b867059b11f.js"/><script src="/demo-scholten-fietsgoednl/_next/static/chunks/4bd1b696-c023c6e3521b1417.js" async=""></script><script src="/demo-scholten-fietsgoednl/_next/static/chunks/255-0c7b0447a9d49cdb.js" async=""></script><script src="/demo-scholten-fietsgoednl/_next/static/chunks/main-app-955bf47e07286798.js" async=""></script><script src="/demo-scholten-fietsgoednl/_next/static/chunks/c15bf2b0-52e8419f34af26ab.js" async=""></script><script src="/demo-scholten-fietsgoednl/_next/static/chunks/565-78de756df59a52d6.js" async=""></script><script src="/demo-scholten-fietsgoednl/_next/static/chunks/app/page-75b4661dcb3957c6.js" async=""></script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><title>Scholten Fietsgoed.nl</title><meta name="description" content="Scholten Fietsgoed.nl — fietsenwinkel in Zwolle"/><link href="https://fonts.googleapis.com/css2?family=Playfair%20Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@500;600;700;800&amp;family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><style>:root {
-    --color-primair: #1e293b;
-    --color-accent:  #fb923c;
-    --color-bg:      #fdf8f0;
-    --color-surface: #ffffff;
-    --color-tekst:   #1c1007;
-    --color-muted:   #78614d;
-    --color-border:  #e8d9c5;
-    --color-footer:  #1c1007;
-    --font-heading:  'Playfair Display';
-    --font-body:     'Inter';
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scholten Fietsgoed.nl | Tweewielerspecialist in Zwolle sinds 1925</title>
+<meta name="description" content="Fietsen, e-bikes, bakfietsen, speed pedelecs en reparatie in het centrum van Zwolle. Familiebedrijf sinds 1925, Luttekestraat 13.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { rood: '#C8161D', roodd: '#A31117', inkt: '#17181A', gevel: '#EEECE8', steen: '#6B6863' },
+      fontFamily: { kop: ['Archivo', 'sans-serif'], tekst: ['"Source Serif 4"', 'Georgia', 'serif'] },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Serif 4", Georgia, serif; }
+  .kop { font-family: Archivo, sans-serif; font-stretch: 75%; font-variation-settings: "wdth" 75; font-weight: 850; letter-spacing: -0.01em; line-height: .92; }
+  .kozijn { border: 14px solid #C8161D; box-shadow: inset 0 0 0 3px #fff; }
+  @media (min-width: 768px) { .kozijn { border-width: 22px; } }
+  .balance { text-wrap: balance; }
+  a, button { transition: background-color .2s, color .2s, transform .1s; }
+  a:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #C8161D; outline-offset: 3px; }
+  .vandaag { background: #C8161D; color: #fff; }
+</style>
+</head>
+<body class="bg-white text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="bg-inkt text-white/80 text-[13px] font-kop text-center px-4 py-2">
+  Demo voor Scholten Fietsgoed.nl, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-rood">Hagenweb</a>
+</div>
+
+<header class="border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between gap-6">
+    <a href="#" class="leading-none group" aria-label="Scholten Fietsgoed.nl, naar boven">
+      <span class="kop italic text-[34px] block"><span class="text-rood">S</span>cholten</span>
+      <span class="font-kop italic text-[13px] text-steen tracking-wide">fietsgoed.nl</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 font-kop text-[15px] font-medium">
+      <a href="#winkel" class="hover:text-rood">De winkel</a>
+      <a href="#werkplaats" class="hover:text-rood">Werkplaats</a>
+      <a href="#familie" class="hover:text-rood">Over ons</a>
+      <a href="#winkels" class="hover:text-rood">Winkels &amp; tijden</a>
+    </nav>
+    <a href="tel:+31384217378" class="hidden sm:inline-flex items-center gap-2 bg-rood hover:bg-roodd text-white font-kop font-semibold px-5 py-3">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      038 421 7378
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero: de gevel -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 pt-6 md:pt-14 pb-16 md:pb-24 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+  <div class="md:col-span-5">
+    <p class="font-kop text-steen text-[15px] mb-5">Tweewielerspecialist in Zwolle, sinds 1925</p>
+    <h1 class="kop text-[68px] sm:text-[92px] lg:text-[124px] uppercase">Zodat u goed fietst.</h1>
+    <p class="mt-7 text-lg md:text-xl leading-relaxed max-w-[34rem] text-inkt/85">
+      Midden in het centrum, aan de Luttekestraat: 1600 m² fietsen op twee verdiepingen. Van stadsfiets tot speed pedelec,
+      met eerlijk advies over wat u echt nodig heeft en een werkplaats die u niet voor verrassingen zet.
+    </p>
+    <div class="mt-9 flex flex-wrap gap-3">
+      <a href="tel:+31384217378" class="bg-rood hover:bg-roodd text-white font-kop font-semibold text-lg px-7 py-4">Bel 038 421 7378</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Luttekestraat+13+8011+LN+Zwolle" target="_blank" rel="noopener" class="border-2 border-inkt hover:bg-inkt hover:text-white font-kop font-semibold text-lg px-7 py-[14px]">Route naar de winkel</a>
+    </div>
+    <p class="mt-6 font-kop text-[15px] text-steen" id="vandaag-tekst">Luttekestraat 13, Zwolle. Donderdag open tot 21:00.</p>
+  </div>
+  <figure class="md:col-span-7 order-first md:order-last">
+    <div class="kozijn">
+      <img src="assets/google-01.jpg" alt="De winkel van Scholten aan de Luttekestraat in Zwolle, met rode kozijnen en bakfietsen voor de deur" class="w-full aspect-[3/2] md:aspect-[4/5] lg:aspect-[1/1] object-cover object-[45%_center]">
+    </div>
+  </figure>
+</section>
+
+<!-- Het pand -->
+<section id="winkel" class="bg-gevel py-16 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <h2 class="kop text-5xl md:text-7xl uppercase max-w-3xl balance">Eén pand, twee verdiepingen vol fietsen</h2>
+    <p class="mt-6 text-lg leading-relaxed max-w-2xl text-inkt/85">
+      In ons hoofdfiliaal heeft elk soort fietser een eigen plek. Kom gerust kijken en maak een proefrit, wij vertellen u eerlijk wat de verschillen zijn.
+    </p>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <img src="assets/google-07.jpg" alt="De begane grond van Scholten met e-bikes, de speed pedelec hoek en de trap naar boven" class="lg:col-span-7 w-full aspect-[4/3] object-cover">
+      <div class="lg:col-span-5 lg:pt-4">
+        <h3 class="kop text-4xl md:text-5xl uppercase"><span class="text-rood">Begane grond</span></h3>
+        <p class="mt-4 text-lg leading-relaxed">Alle stadsfietsen, trendy fietsen en elektrische fietsen. Het aanbod aan e-bikes is de laatste jaren flink gegroeid.</p>
+        <dl class="mt-7 divide-y divide-inkt/15 border-y border-inkt/15">
+          <div class="py-4"><dt class="font-kop font-semibold">Speed pedelec hoek</dt><dd class="text-steen mt-1">De exclusieve collecties van Stromer en Riese &amp; Müller.</dd></div>
+          <div class="py-4"><dt class="font-kop font-semibold">Kledinghoek</dt><dd class="text-steen mt-1">Fietskleding van onder meer Castelli, schoenen, helmen en accessoires.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="mt-16 md:mt-24 grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <h3 class="kop text-4xl md:text-5xl uppercase"><span class="text-rood">Eerste verdieping</span></h3>
+        <p class="mt-4 text-lg leading-relaxed">Boven staan de sportieve fietsen, per merk op een eigen plek. Een ruime keus aan racefietsen, gravelbikes en mountainbikes in verschillende segmenten.</p>
+        <dl class="mt-7 divide-y divide-inkt/15 border-y border-inkt/15">
+          <div class="py-4"><dt class="font-kop font-semibold">Koga, Cube en Giant</dt><dd class="text-steen mt-1">Complete collecties, de volledige Koga-lijn op een aparte afdeling.</dd></div>
+          <div class="py-4"><dt class="font-kop font-semibold">Retul bikefitting</dt><dd class="text-steen mt-1">Een complete lichaamsanalyse en professioneel advies over uw houding op de fiets.</dd></div>
+        </dl>
+      </div>
+      <img src="assets/site-02.png" alt="De eerste verdieping met racefietsen en mountainbikes van Cube en Koga" class="lg:col-span-7 order-1 lg:order-2 w-full aspect-[4/3] lg:aspect-[2/1] object-cover object-[30%_center]">
+    </div>
+
+    <div class="mt-16 md:mt-24 grid md:grid-cols-2 gap-5 items-start">
+      <article class="bg-white p-8 md:p-10 flex flex-col">
+        <h3 class="kop text-3xl md:text-4xl uppercase">Bakfiets Experience Center</h3>
+        <p class="mt-4 mb-6 text-lg leading-relaxed">De bakfietsen van Urban Arrow, Gazelle Makki en Lovens, allemaal onder één dak. Vergelijk ze naast elkaar en maak een proefrit.</p>
+        <blockquote class="border-l-4 border-rood pl-5 text-steen italic leading-relaxed">
+          "Erg goed geholpen bij de aankoop van een bakfiets. We twijfelden tussen 2 modellen, op beide een proefrit gemaakt en goede uitleg gekregen over de verschillen."
+          <footer class="not-italic font-kop text-sm text-inkt mt-2">Geke Litjens, Google</footer>
+        </blockquote>
+      </article>
+      <article class="bg-inkt text-white flex flex-col overflow-hidden">
+        <img src="assets/site-05.png" alt="Twee Stromer speed pedelecs voor museum De Fundatie in Zwolle" class="w-full aspect-[16/9] object-cover">
+        <div class="p-8 md:p-10">
+          <h3 class="kop text-3xl md:text-4xl uppercase">Speed pedelecs</h3>
+          <p class="mt-4 text-lg leading-relaxed text-white/80">De grootste collectie van Noord-Nederland. Dealer van Stromer en Riese &amp; Müller.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Werkplaats -->
+<section id="werkplaats" class="py-16 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+    <figure class="lg:col-span-5">
+      <div class="kozijn">
+        <img src="assets/google-04.jpg" alt="Een monteur van Scholten aan het werk in de werkplaats" class="w-full aspect-[4/5] object-cover object-top">
+      </div>
+    </figure>
+    <div class="lg:col-span-7">
+      <h2 class="kop text-5xl md:text-7xl uppercase balance">De werkplaats van een kampioen</h2>
+      <p class="mt-7 text-lg md:text-xl leading-relaxed max-w-2xl">
+        Onze monteur Jelmer Bijvang is Nederlands én Europees Kampioen Mechanieker. Hij begon in 2011 als leerling bij ons
+        en is nu leermeester in de werkplaats. Hij stelde de fietsen af op de Olympische Spelen in Rio en sleutelde in Parijs
+        aan de fietsen van het Paralympische baanteam.
+      </p>
+      <p class="mt-5 text-lg leading-relaxed max-w-2xl text-inkt/85">
+        Die kennis delen we met alle monteurs, met cursussen en leermomenten. Reparaties doen we in goed overleg met u,
+        zodat u niet voor verrassingen komt te staan. Heeft u een fiets bij ons gekocht? Dan kunt u voor service en garantie
+        bij alle drie onze winkels terecht.
+      </p>
+      <div class="mt-10 grid sm:grid-cols-2 gap-8 border-t border-inkt/15 pt-8">
+        <blockquote>
+          <p class="leading-relaxed">"Deze toppers hebben mij op zaterdagmiddag laat in de middag uit de brand geholpen met een snelle bandenwissel. Topservice!"</p>
+          <footer class="font-kop text-sm text-steen mt-3">Jacco Fenijn, Google</footer>
+        </blockquote>
+        <blockquote>
+          <p class="leading-relaxed">"Ik was gestrand met een dringend en gevaarlijk probleem aan de spaken en ik was op doorrijs dus ik kon geen afspraak maken maar bij fietsgoed Scholten hebben ze hem tóch nog even tussendoor gefixt."</p>
+          <footer class="font-kop text-sm text-steen mt-3">Ruben H, Google</footer>
+        </blockquote>
+      </div>
+      <a href="tel:+31384217378" class="mt-10 inline-block bg-inkt hover:bg-rood text-white font-kop font-semibold text-lg px-7 py-4">Bel de werkplaats</a>
+    </div>
+  </div>
+</section>
+
+<!-- Familie -->
+<section id="familie" class="bg-rood text-white py-16 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-7 order-2 lg:order-1">
+      <h2 class="kop text-5xl md:text-7xl uppercase balance">Honderd jaar, drie generaties</h2>
+      <div class="mt-8 space-y-5 text-lg leading-relaxed max-w-2xl text-white/90">
+        <p>Opgericht door opa Scholten, groot gemaakt door Wim en Dini Wouters en nu verder uitgebouwd door Monique Wouters.
+          Ons personeel werkt over het algemeen al lang bij ons, en we bieden structureel stageplekken aan jongeren in de detailhandel en het fietsenmakersvak.</p>
+        <p class="text-2xl md:text-[28px] leading-snug text-white font-medium">
+          "Wij zullen proberen uit te vinden wat u echt nodig heeft, gegeven uw gebruiksdoel en uw budget. Wij zullen u daarover eerlijk adviseren en actief alternatieven aandragen als dat nodig is. Dat is onze belofte aan u."
+        </p>
+        <p class="font-kop text-base">Monique Wouters, eigenaar</p>
+      </div>
+    </div>
+    <figure class="lg:col-span-5 order-1 lg:order-2">
+      <img src="assets/google-08.jpg" alt="De ingang van Scholten met het logo, glas-in-lood en een rode loper voor het 100-jarig bestaan" class="w-full aspect-[4/5] object-cover border-[10px] border-white">
+    </figure>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="py-16 md:py-24 border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="kop text-[96px] md:text-[128px] text-rood">4,6</p>
+      <p class="mt-3 font-kop text-lg">uit 190 Google-reviews</p>
+    </div>
+    <div class="lg:col-span-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <blockquote>
+        <p class="text-lg leading-relaxed">"Daarnaast eerlijk advies of welke extra's wel, maar ook vooral niet nodig waren voor onze situatie."</p>
+        <footer class="font-kop text-sm text-steen mt-3">Geke Litjens</footer>
+      </blockquote>
+      <blockquote>
+        <p class="text-lg leading-relaxed">"Na serieuze problemen met onze KOGA fietsen is dit professioneel opgelost waardoor wij weer in vertrouwen op onze fietsen durven te stappen. Dank aan Wouter voor de menselijke en klantvriendelijke afhandeling."</p>
+        <footer class="font-kop text-sm text-steen mt-3">Brigitta Wemekamp-Koopman</footer>
+      </blockquote>
+      <blockquote>
+        <p class="text-lg leading-relaxed">"Als de nood écht hoog is, staan ze hier voor je klaar!!"</p>
+        <footer class="font-kop text-sm text-steen mt-3">Ruben H</footer>
+      </blockquote>
+      <blockquote>
+        <p class="text-lg leading-relaxed">"Vanouds een gerenommeerde zaak met wel 3 vestigingen. Aan de Luttekestraat zelfs een onverwacht groot pand in het centrum van Zwolle. Prima te woord gestaan"</p>
+        <footer class="font-kop text-sm text-steen mt-3">G.L. Kroes</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Winkels -->
+<section id="winkels" class="py-16 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <h2 class="kop text-5xl md:text-7xl uppercase">Drie winkels in Zwolle</h2>
+    <div class="mt-12 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-7">
+        <div class="border-t-4 border-rood pt-6">
+          <h3 class="kop text-3xl md:text-4xl uppercase">Centrum, hoofdfiliaal</h3>
+          <p class="mt-3 text-lg">Luttekestraat 13, 8011 LN Zwolle</p>
+          <p class="mt-1 text-lg"><a href="tel:+31384217378" class="underline underline-offset-4 decoration-rood hover:text-rood">038 421 7378</a> · <a href="mailto:info@fietsgoed.nl" class="underline underline-offset-4 decoration-rood hover:text-rood">info@fietsgoed.nl</a></p>
+          <table class="mt-7 w-full max-w-md font-kop text-[15px]">
+            <caption class="sr-only">Openingstijden hoofdfiliaal</caption>
+            <tbody id="tijden" class="divide-y divide-inkt/10">
+              <tr data-dag="1"><th class="text-left font-medium py-2 px-3">Maandag</th><td class="py-2 px-3 text-right tabular-nums">13:00 tot 18:00</td></tr>
+              <tr data-dag="2"><th class="text-left font-medium py-2 px-3">Dinsdag</th><td class="py-2 px-3 text-right tabular-nums">08:00 tot 18:00</td></tr>
+              <tr data-dag="3"><th class="text-left font-medium py-2 px-3">Woensdag</th><td class="py-2 px-3 text-right tabular-nums">08:00 tot 18:00</td></tr>
+              <tr data-dag="4"><th class="text-left font-medium py-2 px-3">Donderdag</th><td class="py-2 px-3 text-right tabular-nums">08:00 tot 21:00</td></tr>
+              <tr data-dag="5"><th class="text-left font-medium py-2 px-3">Vrijdag</th><td class="py-2 px-3 text-right tabular-nums">08:00 tot 18:00</td></tr>
+              <tr data-dag="6"><th class="text-left font-medium py-2 px-3">Zaterdag</th><td class="py-2 px-3 text-right tabular-nums">09:30 tot 17:30</td></tr>
+              <tr data-dag="0"><th class="text-left font-medium py-2 px-3">Zondag</th><td class="py-2 px-3 text-right">Gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="lg:col-span-5 space-y-10">
+        <div class="border-t-4 border-inkt pt-6">
+          <h3 class="kop text-2xl md:text-3xl uppercase">Stadshagen</h3>
+          <p class="mt-3 text-lg">Werkerlaan 95, 8043 LT Zwolle</p>
+          <p class="mt-1 text-lg"><a href="tel:+31384200502" class="underline underline-offset-4 decoration-rood hover:text-rood">038 420 05 02</a> · <a href="mailto:stadshagen@fietsgoed.nl" class="underline underline-offset-4 decoration-rood hover:text-rood">stadshagen@fietsgoed.nl</a></p>
+        </div>
+        <div class="border-t-4 border-inkt pt-6">
+          <h3 class="kop text-2xl md:text-3xl uppercase">Zwolle-Zuid</h3>
+          <p class="mt-3 text-lg">Van der Capellenstraat 147, 8014 VW Zwolle</p>
+          <p class="mt-1 text-lg"><a href="tel:+31384662895" class="underline underline-offset-4 decoration-rood hover:text-rood">038 466 28 95</a> · <a href="mailto:zuid@fietsgoed.nl" class="underline underline-offset-4 decoration-rood hover:text-rood">zuid@fietsgoed.nl</a></p>
+        </div>
+        <p class="text-steen leading-relaxed">De filialen voeren een collectie die past bij de wijk, met de meest gangbare modellen van de verschillende merken. De grootste keus vindt u in het centrum.</p>
+      </div>
+    </div>
+
+    <div class="mt-20 border-t border-inkt/15 pt-10">
+      <h3 class="font-kop font-semibold text-lg">Merken bij Scholten</h3>
+      <p class="mt-3 kop text-2xl md:text-4xl uppercase text-inkt/80 leading-tight balance">
+        Gazelle · Batavus · Sparta · Koga · Cube · Giant · Stromer · Riese &amp; Müller · Urban Arrow · Bakfiets.nl · Van Raam · Zandstra · Castelli
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div>
+      <p class="kop italic text-4xl text-white"><span class="text-rood">S</span>cholten</p>
+      <p class="font-kop italic text-sm mt-1">fietsgoed.nl, tweewielerspecialist sinds 1925</p>
+    </div>
+    <div class="font-kop text-sm leading-relaxed md:text-right">
+      <p>Luttekestraat 13, 8011 LN Zwolle</p>
+      <p><a href="tel:+31384217378" class="hover:text-white">038 421 7378</a> · <a href="mailto:info@fietsgoed.nl" class="hover:text-white">info@fietsgoed.nl</a></p>
+      <p class="mt-3 text-white/50">© 2026 Fietsgoed.nl, Scholten</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 font-kop font-semibold text-center shadow-[0_-4px_16px_rgba(23,24,26,.15)]">
+  <a href="tel:+31384217378" class="bg-rood text-white py-4">Bel ons</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Luttekestraat+13+8011+LN+Zwolle" target="_blank" rel="noopener" class="bg-white text-inkt py-4">Route</a>
+</div>
+
+<script>
+  // Markeer de dag van vandaag in de openingstijden.
+  const dag = new Date().getDay();
+  const rij = document.querySelector('#tijden tr[data-dag="' + dag + '"]');
+  if (rij) {
+    rij.classList.add('vandaag');
+    document.getElementById('vandaag-tekst').textContent =
+      'Luttekestraat 13, Zwolle. Vandaag: ' + rij.lastElementChild.textContent.toLowerCase() + '.';
   }
-  body { background-color: #fdf8f0; color: #1c1007; }</style><script src="/demo-scholten-fietsgoednl/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><div class="bk" style="--paper:#eef2f0;--espresso:#15201a;--honey:#e23b32;--honey-hi:#ff5247;--jam:#b32a23"><style>
-.bk{--paper:#f6efe2;--paper-2:#efe5d3;--espresso:#241710;--espresso-2:#33241a;--cocoa:#5a4636;--honey:#c8841f;--honey-hi:#e3a23a;--jam:#9c2b22;--line:#e2d6c1;--maxw:1180px;background:var(--paper);color:var(--espresso);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.65;overflow-x:clip}
-.bk h1,.bk h2,.bk h3{font-family:'Fraunces','Georgia',serif;font-weight:600;line-height:1;letter-spacing:-.01em;margin:0}
-.bk a{color:inherit;text-decoration:none}
-.bk img,.bk video{display:block;width:100%;height:100%;object-fit:cover}
-.bk .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-.bk .kicker{display:inline-block;font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--honey);margin-bottom:14px}
-.bk .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:100px;cursor:pointer;border:0;transition:transform .15s,background .2s,color .2s;white-space:nowrap}
-.bk .btn-honey{background:var(--honey);color:#fff;box-shadow:0 10px 26px -12px color-mix(in srgb,var(--honey) 55%,transparent)}
-.bk .btn-honey:hover{background:var(--honey-hi);transform:translateY(-1px)}
-.bk .btn-espresso{background:var(--espresso);color:var(--paper)}
-.bk .btn-espresso:hover{background:var(--espresso-2)}
-.bk .btn-glass{border:1.5px solid rgba(255,255,255,.5);color:#fff}
-.bk .btn-glass:hover{border-color:#fff;background:rgba(255,255,255,.12)}
-.bk .topbar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(246,239,226,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bk .brand{font-family:'Fraunces';font-weight:600;font-size:23px;color:var(--espresso)}
-.bk .brand b{color:var(--honey)}
-.bk .nav{display:flex;gap:28px;align-items:center}
-.bk .nav a{font-size:14px;font-weight:600;color:var(--cocoa);transition:color .2s}
-.bk .nav a:hover{color:var(--espresso)}
-@media(max-width:760px){.bk .nav a:not(.btn){display:none}}
-.bk .hero{position:relative;height:100dvh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden;background:var(--espresso)}
-.bk .hero-media{position:absolute;inset:-8% 0;z-index:0;will-change:transform}
-.bk .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,23,16,.3) 0%,rgba(36,23,16,.08) 32%,rgba(36,23,16,.92) 100%)}
-.bk .hero-inner{position:relative;z-index:2;width:100%;padding-bottom:68px}
-.bk .hero h1{color:var(--paper);font-size:clamp(50px,9vw,124px);max-width:12ch}
-.bk .hero h1 em{font-style:italic;color:var(--honey-hi)}
-.bk .hero p.lead{margin-top:20px;max-width:42ch;font-size:clamp(17px,2.2vw,21px);color:#e9ddca}
-.bk .hero-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
-.bk .infobar{background:var(--espresso);color:var(--paper)}
-.bk .inforow{display:flex;align-items:center;gap:0;flex-wrap:wrap}
-.bk .inforow .i{padding:16px 0;display:flex;align-items:center;gap:10px;font-size:14px}
-.bk .inforow .i:not(:last-child){margin-right:34px;padding-right:34px;border-right:1px solid rgba(246,239,226,.16)}
-.bk .inforow .i b{font-family:'Fraunces';font-weight:600;color:var(--honey-hi)}
-.bk .inforow .dot{color:var(--honey-hi)}
-@media(max-width:680px){.bk .inforow .i{margin-right:0;padding-right:0;border-right:0;width:100%;border-bottom:1px solid rgba(246,239,226,.12)}.bk .inforow .i:last-child{border-bottom:0}}
-.bk section{position:relative}
-.bk .pad{padding:clamp(76px,10vw,134px) 0}
-.bk .sec-head{margin-bottom:50px;max-width:60ch}
-.bk .sec-head h2{font-size:clamp(38px,6vw,76px);color:var(--espresso)}
-.bk .sec-head p{margin-top:14px;color:var(--cocoa);max-width:42ch}
-.bk .aanbod{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.bk .prod{position:relative;border-radius:18px;overflow:hidden;background:var(--espresso);min-height:440px;display:flex;align-items:flex-end}
-.bk .prod img{position:absolute;inset:0;z-index:0;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
-.bk .prod::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,23,16,0) 30%,rgba(36,23,16,.9) 100%);z-index:1}
-.bk .prod:hover img{transform:scale(1.06)}
-.bk .prod .pbody{position:relative;z-index:2;padding:28px}
-.bk .prod h3{font-size:28px;color:#fff;margin-bottom:6px}
-.bk .prod p{color:#e9ddca;font-size:15px}
-@media(max-width:840px){.bk .aanbod{grid-template-columns:1fr;max-width:440px;margin:0 auto}.bk .prod{min-height:380px}}
-.bk .about{display:grid;grid-template-columns:1fr 1.05fr;gap:54px;align-items:center}
-.bk .about .pics{display:grid;grid-template-columns:1fr 1fr;gap:14px;grid-auto-rows:170px}
-.bk .about .pics .p1{grid-column:span 2;height:240px}
-.bk .about .pics .p{border-radius:16px;overflow:hidden}
-.bk .about h2{font-size:clamp(32px,4.4vw,56px);color:var(--espresso);margin-bottom:16px}
-.bk .about p{color:var(--cocoa);max-width:46ch}
-.bk .about .seal{display:inline-block;margin-top:22px;font-family:'Fraunces';font-style:italic;font-size:18px;color:var(--honey);border-top:2px solid var(--honey);padding-top:10px}
-@media(max-width:840px){.bk .about{grid-template-columns:1fr;gap:30px}}
-.bk .reviews{background:var(--espresso)}
-.bk .grev-top{display:flex;align-items:center;gap:14px;margin-bottom:38px;flex-wrap:wrap}
-.bk .grev-top .gscore{font-family:'Fraunces';font-weight:600;font-size:42px;color:var(--paper)}
-.bk .grev-top .gstars{color:var(--honey-hi);letter-spacing:.18em}
-.bk .grev-top .gsub{color:#cdbfa8;font-size:14px}
-.bk .grev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.bk .grev{background:var(--espresso-2);border:1px solid rgba(246,239,226,.1);border-radius:14px;padding:24px}
-.bk .grev .head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.bk .grev .av{width:42px;height:42px;border-radius:50%;background:var(--honey);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:17px}
-.bk .grev .nm{font-weight:600;color:var(--paper);font-size:15px}
-.bk .grev .meta{color:#b09b7f;font-size:12px}
-.bk .grev .gstars{color:var(--honey-hi);letter-spacing:.12em;font-size:13px;margin-bottom:8px}
-.bk .grev p{color:#e3d7c3;font-size:14.5px;line-height:1.55}
-@media(max-width:840px){.bk .grev-grid{grid-template-columns:1fr}}
-.bk .visit{display:grid;grid-template-columns:.95fr 1.05fr;gap:50px;align-items:stretch}
-.bk .visit h2{font-size:clamp(34px,4.6vw,58px);color:var(--espresso);margin-bottom:14px}
-.bk .visit p{color:var(--cocoa);max-width:36ch;margin-bottom:22px}
-.bk .vmeta{margin-top:8px}
-.bk .vmeta .vrow{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;max-width:360px}
-.bk .vmeta .vrow.today{color:var(--honey);font-weight:700}
-.bk .vmeta .vrow .c{color:var(--cocoa)}
-.bk .map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:420px;background:var(--paper-2)}
-.bk .map iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:saturate(.92)}
-@media(max-width:840px){.bk .visit{grid-template-columns:1fr;gap:30px}}
-.bk footer{background:var(--espresso);color:#cdbfa8}
-.bk .footgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 34px}
-.bk .footgrid h4{font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#a3927a;margin:0 0 14px}
-.bk .footgrid a,.bk .footgrid p{display:block;color:#e0d3bd;font-size:14px;margin-bottom:9px}
-.bk .footgrid a:hover{color:var(--honey-hi)}
-.bk .footgrid .brand{font-family:'Fraunces';font-weight:600;font-size:23px;color:var(--paper);margin-bottom:12px}
-.bk .footgrid .tag{max-width:30ch}
-.bk .footbottom{border-top:1px solid rgba(246,239,226,.1);padding:20px 0;font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.bk .footbottom a{color:var(--honey-hi)}
-@media(max-width:760px){.bk .footgrid{grid-template-columns:1fr;gap:28px}}
-.bk .reveal{opacity:0;transform:translateY(30px)}
-@media(prefers-reduced-motion:reduce){.bk .reveal{opacity:1;transform:none}}
-</style><header class="topbar"><div class="brand">Scholten Fietsgoed.nl</div><nav class="nav"><a href="#aanbod">Aanbod</a><a href="#over">Over ons</a><a href="#bezoek">Openingstijden</a><a href="#bezoek" class="btn btn-honey">Bekijk de winkel</a></nav></header><section class="hero"><div class="hero-media"><video autoPlay="" loop="" muted="" playsInline="" preload="auto" poster="https://images.pexels.com/photos/5670035/pexels-photo-5670035.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940"><source src="https://videos.pexels.com/video-files/6333114/6333114-hd_2048_1080_25fps.mp4" type="video/mp4"/></video></div><div class="hero-inner"><div class="wrap"><h1>Jouw nieuwe<br/>fiets staat <em>klaar</em></h1><p class="lead">Verkoop, onderhoud en reparatie van fietsen. Vakkundig advies en snelle service.</p><div class="hero-cta"><a href="#aanbod" class="btn btn-honey">Bekijk ons aanbod</a><a href="#bezoek" class="btn btn-glass">Bekijk de winkel</a></div></div></div></section><div class="infobar"><div class="wrap inforow"><span class="i">Verkoop en reparatie</span><span class="i">Vers uit <b>Zwolle</b></span></div></div><section class="pad" id="aanbod"><div class="wrap"><div class="sec-head reveal"><h2>Onze diensten</h2><p>Met zorg gemaakt en geselecteerd. Vraag in de winkel naar wat er vandaag is.</p></div><div class="aanbod"><div class="prod reveal"><img src="https://images.pexels.com/photos/38051396/pexels-photo-38051396.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Fietsverkoop en advies"/><div class="pbody"><h3>Fietsverkoop en advies</h3><p>Uitgebreide keus in fietstypen voor elk budget en gebruik.</p></div></div><div class="prod reveal"><img src="https://images.pexels.com/photos/35305055/pexels-photo-35305055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Onderhoud en reparatie"/><div class="pbody"><h3>Onderhoud en reparatie</h3><p>Van kettingolies tot volledige revisie door gekwalificeerde monteurs.</p></div></div><div class="prod reveal"><img src="https://images.pexels.com/photos/11526454/pexels-photo-11526454.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Onderdelen en accessoires"/><div class="pbody"><h3>Onderdelen en accessoires</h3><p>Vervanging en upgrade van wielen, remmen, versnellingen en meer.</p></div></div></div></div></section><section class="pad" id="over" style="padding-top:0"><div class="wrap"><div class="about"><div class="pics reveal"><div class="p p1"><img src="https://images.pexels.com/photos/5324960/pexels-photo-5324960.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt=""/></div><div class="p "><img src="https://images.pexels.com/photos/7433874/pexels-photo-7433874.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt=""/></div><div class="p "><img src="https://images.pexels.com/photos/8067823/pexels-photo-8067823.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt=""/></div></div><div class="reveal"><h2>Scholten Fietsgoed.nl</h2><p>Scholten Fietsgoed staat in Zwolle bekend voor eerlijk advies en uitstekend vakmanschap. We helpen je niet alleen bij aankoop, maar zorgen er ook voor dat je fiets jaren meegaat. Ons team kent fietsen en kent zijn klanten.</p><span class="seal">Verkoop en reparatie<!-- --> in Zwolle</span></div></div></div></section><section class="pad" id="bezoek"><div class="wrap"><div class="visit"><div class="reveal"><h2>Vind de winkel</h2><p>Loop binnen, we helpen je graag verder.<!-- --> Je vindt ons in Zwolle.</p></div><div class="map reveal"><iframe title="Kaart Scholten Fietsgoed.nl" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Scholten%20Fietsgoed.nl%2C%20Zwolle%2C%20Nederland&amp;z=15&amp;output=embed"></iframe></div></div></div></section><footer><div class="wrap footgrid"><div><div class="brand">Scholten Fietsgoed.nl</div><p class="tag">Verkoop en reparatie<!-- --> in Zwolle<!-- -->. <!-- -->Verkoop, onderhoud en reparatie van fietsen. Vakkundig advies en snelle service.</p></div><div><h4>Aanbod</h4><a href="#aanbod">Fietsverkoop en advies</a><a href="#aanbod">Onderhoud en reparatie</a><a href="#aanbod">Onderdelen en accessoires</a></div><div><h4>Bezoek</h4><p>Zwolle</p><a href="#bezoek">Openingstijden</a></div></div><div class="wrap footbottom"><span>© <!-- -->2026<!-- --> <!-- -->Scholten Fietsgoed.nl</span><span>Website door <a href="#">Hagenweb</a></span></div></footer></div><!--$--><!--/$--><script src="/demo-scholten-fietsgoednl/_next/static/chunks/webpack-a38d8b867059b11f.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[9766,[],\"\"]\n3:I[8924,[],\"\"]\n4:I[270,[\"592\",\"static/chunks/c15bf2b0-52e8419f34af26ab.js\",\"565\",\"static/chunks/565-78de756df59a52d6.js\",\"974\",\"static/chunks/app/page-75b4661dcb3957c6.js\"],\"default\"]\n8:I[7150,[],\"\"]\n:HL[\"/demo-scholten-fietsgoednl/_next/static/css/1dbbc23e03ff2791.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"jdUOHYm2xS2hfCAFG7AiF\",\"p\":\"/demo-scholten-fietsgoednl\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/demo-scholten-fietsgoednl/_next/static/css/1dbbc23e03ff2791.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"nl\",\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.googleapis.com\"}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.gstatic.com\",\"crossOrigin\":\"anonymous\"}],[\"$\",\"link\",null,{\"href\":\"https://fonts.googleapis.com/css2?family=Playfair%20Display:wght@400;600;700\u0026family=Inter:wght@400;500;600\u0026display=swap\",\"rel\":\"stylesheet\"}],[\"$\",\"link\",null,{\"href\":\"https://fonts.googleapis.com/css2?family=Anton\u0026family=Archivo:wght@500;600;700;800\u0026family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600\u0026family=Inter:wght@400;500;600;700\u0026display=swap\",\"rel\":\"stylesheet\"}],[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\":root {\\n    --color-primair: #1e293b;\\n    --color-accent:  #fb923c;\\n    --color-bg:      #fdf8f0;\\n    --color-surface: #ffffff;\\n    --color-tekst:   #1c1007;\\n    --color-muted:   #78614d;\\n    --color-border:  #e8d9c5;\\n    --color-footer:  #1c1007;\\n    --font-heading:  'Playfair Display';\\n    --font-body:     'Inter';\\n  }\\n  body { background-color: #fdf8f0; color: #1c1007; }\"}}]]}],[\"$\",\"body\",null,{\"children\":[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]]}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"$L4\",null,{\"data\":{\"bedrijf\":{\"naam\":\"Scholten Fietsgoed.nl\",\"slug\":\"demo-scholten-fietsgoednl\",\"sector\":\"fietsenwinkel\",\"template\":\"ambacht\",\"stad\":\"Zwolle\",\"telefoon\":\"\",\"email\":\"info@fietsgoed.nl\",\"adres\":\"\",\"logo_url\":null},\"thema\":{\"palet\":\"warm_ambacht\",\"primair\":\"#1e293b\",\"accent\":\"#fb923c\",\"bg\":\"#fdf8f0\",\"surface\":\"#ffffff\",\"tekst\":\"#1c1007\",\"muted\":\"#78614d\",\"border\":\"#e8d9c5\",\"footer\":\"#1c1007\",\"font_heading\":\"Playfair Display\",\"font_body\":\"Inter\",\"is_dark\":false},\"hero\":{\"titel\":\"Scholten Fietsgoed, jouw fietsenwinkel\",\"subtitel\":\"Kwaliteitsfietsen, vakkundig advies en reparatie in het hart van Zwolle\",\"video_url\":\"https://videos.pexels.com/video-files/6333114/6333114-hd_2048_1080_25fps.mp4\",\"foto_url\":\"https://images.pexels.com/photos/5670035/pexels-photo-5670035.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940\",\"cta_tekst\":\"Neem contact op\",\"cta_link\":\"#contact\"},\"usps\":[\"Vakkundig advies van fietsenthusiaste monteurs\",\"Snelle reparaties zonder lange wachtlijsten\",\"Ruim assortiment voor casual tot sportief fietsen\"],\"statistieken\":{\"tonen\":true,\"items\":[{\"label\":\"Jaren ervaring\",\"waarde\":\"25+\"},{\"label\":\"Werkgebied\",\"waarde\":\"Zwolle en omgeving\"},{\"label\":\"Servicegarantie\",\"waarde\":\"100% correct\"}]},\"diensten\":{\"titel\":\"Onze diensten\",\"nav_label\":\"Diensten\",\"anchor\":\"diensten\",\"items\":[{\"naam\":\"Fietsverkoop en advies\",\"omschrijving\":\"Uitgebreide keus in fietstypen voor elk budget en gebruik.\",\"foto_url\":\"https://images.pexels.com/photos/38051396/pexels-photo-38051396.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940\"},{\"naam\":\"Onderhoud en reparatie\",\"omschrijving\":\"Van kettingolies tot volledige revisie door gekwalificeerde monteurs.\",\"foto_url\":\"https://images.pexels.com/photos/35305055/pexels-photo-35305055.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940\"},{\"naam\":\"Onderdelen en accessoires\",\"omschrijving\":\"Vervanging en upgrade van wielen, remmen, versnellingen en meer.\",\"foto_url\":\"https://images.pexels.com/photos/11526454/pexels-photo-11526454.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940\"}]},\"werkwijze\":{\"tonen\":false,\"stappen\":[]},\"over_ons\":{\"tekst\":\"Scholten Fietsgoed staat in Zwolle bekend voor eerlijk advies en uitstekend vakmanschap. We helpen je niet alleen bij aankoop, maar zorgen er ook voor dat je fiets jaren meegaat. Ons team kent fietsen en kent zijn klanten.\",\"cta_tekst\":\"Bezoek ons\",\"foto_urls\":[\"https://images.pexels.com/photos/5324960/pexels-photo-5324960.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940\",\"https://images.pexels.com/photos/7433874/pexels-photo-7433874.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940\",\"https://images.pexels.com/photos/8067823/pexels-photo-8067823.jpeg?auto=compress\u0026cs=tinysrgb\u0026dpr=2\u0026h=650\u0026w=940\"]},\"testimonial\":{\"tonen\":true,\"tekst\":\"Het advies was eerlijk en niet te duur, en mijn fiets rijdt nu als nieuw.\",\"naam\":\"Mark de Vries\",\"functie\":\"Klant, Zwolle\"},\"reviews\":[],\"faq\":{\"tonen\":true,\"items\":[{\"vraag\":\"Kan ik mijn fiets op dezelfde dag repareren?\",\"antwoord\":\"Bij kleine reparaties meestal wel. Bel 038 421 7378 voor beschikbaarheid en schatting.\"},{\"vraag\":\"Welke merken verkopen jullie?\",\"antwoord\":\"We bieden betrouwbare merken voor elk budget. Kom langs of mail voor actuele stock.\"},{\"vraag\":\"Geven jullie garantie op verkochte fietsen?\",\"antwoord\":\"Ja, standaard garantie op frames en onderdelen. Vraag naar details bij aankoop.\"},{\"vraag\":\"Waar zijn jullie gevestigd in Zwolle?\",\"antwoord\":\"Neem contact op via 038 421 7378 of info@fietsgoed.nl voor adres en routekaart.\"}]},\"contact\":{\"adres\":\"\",\"telefoon\":\"\",\"email\":\"info@fietsgoed.nl\",\"openingstijden\":{}}},\"cfg\":{\"vars\":{\"--paper\":\"#eef2f0\",\"--espresso\":\"#15201a\",\"--honey\":\"#e23b32\",\"--honey-hi\":\"#ff5247\",\"--jam\":\"#b32a23\"},\"heroTitel\":\"$L5\",\"heroLead\":\"Verkoop, onderhoud en reparatie van fietsen. Vakkundig advies en snelle service.\",\"infoTag\":\"Verkoop en reparatie\",\"cta\":\"Bekijk de winkel\",\"aanbodKicker\":\"In de winkel\",\"aanbodTitel\":\"Ons aanbod\",\"aanbodIntro\":\"$undefined\",\"visitIntro\":\"$undefined\"}}],null,\"$L6\"]}],{},null,false]},null,false],\"$L7\",false]],\"m\":\"$undefined\",\"G\":[\"$8\",[]],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"9:I[4431,[],\"OutletBoundary\"]\nb:I[5278,[],\"AsyncMetadataOutlet\"]\nd:I[4431,[],\"ViewportBoundary\"]\nf:I[4431,[],\"MetadataBoundary\"]\n10:\"$Sreact.suspense\"\n5:[\"Jouw nieuwe\",[\"$\",\"br\",null,{}],\"fiets staat \",[\"$\",\"em\",null,{\"children\":\"klaar\"}]]\n6:[\"$\",\"$L9\",null,{\"children\":[\"$La\",[\"$\",\"$Lb\",null,{\"promise\":\"$@c\"}]]}]\n7:[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$Ld\",null,{\"children\":\"$Le\"}],null],[\"$\",\"$Lf\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$10\",null,{\"fallback\":null,\"children\":\"$L11\"}]}]}]]}]\n"])</script><script>self.__next_f.push([1,"e:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\na:null\n"])</script><script>self.__next_f.push([1,"c:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Scholten Fietsgoed.nl\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Scholten Fietsgoed.nl — fietsenwinkel in Zwolle\"}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script><script>self.__next_f.push([1,"11:\"$c:metadata\"\n"])</script></body></html>
+</script>
+</body>
+</html>
