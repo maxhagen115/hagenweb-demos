@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peer Installatietechniek | Installateur in Wageningen</title>
+<meta name="description" content="Marvin Peer, installateur in Wageningen. Warmtepompen, waterleiding en riolering, centrale verwarming, airco, waterontharders, dakwerk en elektra. Bel 06 50849090.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        groen: '#188A2B', fel: '#22B03A', bos: '#0E4F22', inkt: '#17211B', staal: '#E3E8E4', papier: '#F4F6F4', grijs: '#56625A'
+      },
+      fontFamily: {
+        kop: ['"Saira Semi Condensed"', 'sans-serif'],
+        tekst: ['"Source Sans 3"', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .hex { clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0% 50%); }
+  .hex-v { clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .plus { transform: rotate(45deg); }
+  .plus { transition: transform .2s ease; }
+  .lijst li { position: relative; padding-left: 1.4rem; }
+  .lijst li::before { content: ""; position: absolute; left: 0; top: .5em; width: .6rem; height: .7rem; background: #22B03A;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
+  :focus-visible { outline: 3px solid #22B03A; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+</head>
+<body class="bg-white font-tekst text-inkt text-[17px] leading-relaxed antialiased pb-20 md:pb-0">
+
+<div class="bg-inkt text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor Peer Installatietechniek, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-staal">
+  <div class="max-w-6xl mx-auto px-5 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="shrink-0"><img src="assets/site-05.png" alt="Peer Installatietechniek" class="h-8 md:h-10 w-auto"></a>
+    <nav class="hidden md:flex items-center gap-7 font-kop font-semibold text-[15px]">
+      <a href="#diensten" class="hover:text-groen">Diensten</a>
+      <a href="#projecten" class="hover:text-groen">Projecten</a>
+      <a href="#marvin" class="hover:text-groen">Over Marvin</a>
+      <a href="#reviews" class="hover:text-groen">Reviews</a>
+      <a href="#contact" class="hover:text-groen">Contact</a>
+    </nav>
+    <a href="tel:+31650849090" class="hidden sm:inline-flex items-center gap-2 bg-groen hover:bg-bos text-white font-kop font-semibold px-4 py-2.5 rounded-md transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+      06 50849090
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-8 md:pt-16 pb-14 md:pb-20 grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-6 relative z-10 order-2 md:order-1">
+      <p class="font-kop font-semibold text-groen text-lg">Installeren met oog voor morgen</p>
+      <h1 class="font-kop font-extrabold text-[2.7rem] leading-[1.02] sm:text-6xl lg:text-[4.4rem] tracking-tight mt-3">
+        Je installateur in Wageningen. Marvin doet het zelf.
+      </h1>
+      <p class="mt-6 text-lg text-grijs max-w-xl">
+        Warmtepompen, waterleiding en riolering, centrale verwarming, airco, waterontharders, dakwerk en elektra.
+        Eén vakman met vaste vakmensen om zich heen, en één aanspreekpunt van offerte tot oplevering.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+31650849090" class="inline-flex justify-center items-center gap-2 bg-groen hover:bg-bos active:translate-y-px text-white font-kop font-bold text-lg px-6 py-3.5 rounded-md transition-colors">
+          Bel 06 50849090
+        </a>
+        <a href="#contact" class="inline-flex justify-center items-center border-2 border-inkt hover:bg-inkt hover:text-white font-kop font-bold text-lg px-6 py-3 rounded-md transition-colors">
+          Offerte aanvragen
+        </a>
+      </div>
+      <p class="mt-6 flex items-center gap-2 text-[15px] text-grijs">
+        <span class="text-fel tracking-wider" aria-hidden="true">★★★★★</span>
+        5 sterren op Google, uit 22 reviews
+      </p>
+    </div>
+    <div class="md:col-span-6 relative order-1 md:order-2">
+      <div class="hex-v absolute -right-16 -top-8 w-[75%] md:-right-24 md:-top-10 md:w-[130%] aspect-[0.87] bg-fel/90" aria-hidden="true"></div>
+      <img src="assets/site-04.jpg" alt="Marvin Peer met armen over elkaar voor zijn witte bedrijfsbus met groen logo"
+           class="relative w-[88%] md:w-full aspect-[4/3] md:aspect-[4/5] object-cover object-[30%_25%] md:object-[30%_center] rounded-lg shadow-[0_30px_60px_-20px_rgba(14,79,34,.45)]">
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-papier border-y border-staal">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-14">
+    <div class="md:col-span-5">
+      <div class="md:sticky md:top-28">
+        <h2 class="font-kop font-extrabold text-4xl md:text-5xl leading-tight tracking-tight">Waarvoor je mij belt</h2>
+        <p class="mt-5 text-grijs max-w-md">
+          Van een lekkende leiding tot een complete warmtepompinstallatie. Ook gecombineerd werk, zoals een keuken of
+          badkamer waar water, afvoer en elektra tegelijk moeten worden aangepast. Klik een dienst open voor wat ik precies doe.
+        </p>
+        <img src="assets/google-08.jpg" alt="Nieuw koperen leidingwerk met afsluiters, netjes geïsoleerd en gelabeld"
+             class="mt-8 w-full aspect-[4/3] object-cover object-[center_35%] rounded-lg hidden md:block">
+      </div>
+    </div>
+
+    <div class="md:col-span-7 divide-y divide-staal border-y border-staal">
+      <details class="group py-5" open>
+        <summary class="flex items-start justify-between gap-6">
+          <span>
+            <span class="block font-kop font-bold text-2xl">Warmtepompen</span>
+            <span class="block text-grijs mt-1">Hybride en volledig elektrische warmtepompen voor energiezuinig verwarmen en warm water.</span>
+          </span>
+          <span class="plus font-kop text-3xl leading-none text-groen mt-1" aria-hidden="true">+</span>
+        </summary>
+        <div class="pt-4">
+          <p class="text-grijs">Bij een hybride warmtepomp werkt het systeem samen met je bestaande cv-ketel. Een volledig elektrische warmtepomp kan helemaal gasloos. Ik kijk naar je woning en je verwarmingssysteem, en kies wat het beste werkt.</p>
+          <ul class="lijst mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+            <li>Hybride warmtepompen plaatsen</li><li>Volledig elektrische warmtepompen installeren</li>
+            <li>Lucht/water warmtepompen aansluiten</li><li>Boilervaten aansluiten voor warm tapwater</li>
+            <li>Buffervaten plaatsen waar nodig</li><li>Installatie inregelen en controleren</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-start justify-between gap-6">
+          <span>
+            <span class="block font-kop font-bold text-2xl">Waterleiding, riolering en loodgieterswerk</span>
+            <span class="block text-grijs mt-1">Aanleggen, vervangen en verleggen van leidingen en riolering. Ook lekkages.</span>
+          </span>
+          <span class="plus font-kop text-3xl leading-none text-groen mt-1" aria-hidden="true">+</span>
+        </summary>
+        <div class="pt-4">
+          <p class="text-grijs">Bij verbouwingen, renovaties en nieuwe installaties, maar ook voor kleiner werk: een leiding aanpassen, sanitair aansluiten of een lekkage verhelpen.</p>
+          <ul class="lijst mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+            <li>Waterleidingen vervangen of verleggen</li><li>Nieuwe waterleidingen aanleggen</li>
+            <li>Riolering vervangen of herstellen</li><li>Leidingen aanpassen bij verbouwingen</li>
+            <li>Lekkages verhelpen</li><li>Aansluitingen voor sanitair, keuken of wasmachine</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-start justify-between gap-6">
+          <span>
+            <span class="block font-kop font-bold text-2xl">Centrale verwarming</span>
+            <span class="block text-grijs mt-1">Radiatoren, convectoren, vloerverwarming en cv-ketels.</span>
+          </span>
+          <span class="plus font-kop text-3xl leading-none text-groen mt-1" aria-hidden="true">+</span>
+        </summary>
+        <div class="pt-4">
+          <p class="text-grijs">Ik kijk naar de ruimte en de bestaande installatie, en zorg voor een nette aansluiting en een verwarming die goed werkt. Ook bij een verbouwing kan het leidingwerk worden aangepast of uitgebreid.</p>
+          <ul class="lijst mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+            <li>Radiatoren plaatsen</li><li>Convectoren installeren</li>
+            <li>Vloerverwarming aanleggen</li><li>Cv-ketels plaatsen of vervangen</li>
+            <li>Leidingwerk aanpassen</li><li>Installatie aansluiten en controleren</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-start justify-between gap-6">
+          <span>
+            <span class="block font-kop font-bold text-2xl">Airconditioning</span>
+            <span class="block text-grijs mt-1">Leveren, installeren en onderhouden van airco's voor koelen en verwarmen.</span>
+          </span>
+          <span class="plus font-kop text-3xl leading-none text-groen mt-1" aria-hidden="true">+</span>
+        </summary>
+        <div class="pt-4">
+          <p class="text-grijs">Voor woningen, kantoren en kleine bedrijfsruimtes. Ik let op de juiste plek voor binnen- en buitenunit en op een strakke afwerking.</p>
+          <ul class="lijst mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+            <li>Airco's leveren en installeren</li><li>Split-airco's plaatsen</li>
+            <li>Multisplit-airco's plaatsen</li><li>Airco's voor koelen en verwarmen</li>
+            <li>Binnen- en buitenunits netjes monteren</li><li>Onderhoud en controle</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-start justify-between gap-6">
+          <span>
+            <span class="block font-kop font-bold text-2xl">Waterontharders</span>
+            <span class="block text-grijs mt-1">Minder kalk op kranen, tegels en douchewanden, en in je apparaten.</span>
+          </span>
+          <span class="plus font-kop text-3xl leading-none text-groen mt-1" aria-hidden="true">+</span>
+        </summary>
+        <div class="pt-4">
+          <p class="text-grijs">Ook je wasmachine, vaatwasser en cv-installatie hebben minder last van kalk. Ik plaats de ontharder op je bestaande waterleiding en leg uit hoe je hem gebruikt en onderhoudt.</p>
+          <ul class="lijst mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+            <li>Advies over de juiste waterontharder</li><li>Leveren en plaatsen</li>
+            <li>Aansluiten op de waterleiding</li><li>Systeem instellen</li>
+            <li>Controle op de werking</li><li>Uitleg over gebruik en onderhoud</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-start justify-between gap-6">
+          <span>
+            <span class="block font-kop font-bold text-2xl">Dakwerkzaamheden</span>
+            <span class="block text-grijs mt-1">Zinkwerk en bitumen dakbedekking voor platte daken.</span>
+          </span>
+          <span class="plus font-kop text-3xl leading-none text-groen mt-1" aria-hidden="true">+</span>
+        </summary>
+        <div class="pt-4">
+          <p class="text-grijs">Zinken dakgoten, daklijsten, dakranden en afdekkappen. Bestaande daken herstel of renoveer ik ook, netjes afgewerkt en waterdicht.</p>
+          <ul class="lijst mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+            <li>Zinken dakgoten plaatsen</li><li>Zinken daklijsten en dakranden</li>
+            <li>Afdekkappen aanbrengen</li><li>Bitumen dakbedekking branden</li>
+            <li>Bestaande daken herstellen</li><li>Dakisolatie waar dat mogelijk is</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="group py-5">
+        <summary class="flex items-start justify-between gap-6">
+          <span>
+            <span class="block font-kop font-bold text-2xl">Elektra</span>
+            <span class="block text-grijs mt-1">Extra groepen, meterkast uitbreiden en nieuwe aansluitpunten.</span>
+          </span>
+          <span class="plus font-kop text-3xl leading-none text-groen mt-1" aria-hidden="true">+</span>
+        </summary>
+        <div class="pt-4">
+          <p class="text-grijs">Overzichtelijk en veilig aangesloten. Vooral belangrijk bij een verbouwing, nieuwe apparatuur of een warmtepomp of airco die stroom nodig heeft.</p>
+          <ul class="lijst mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+            <li>Extra groepen aanleggen</li><li>Meterkast uitbreiden of aanpassen</li>
+            <li>Elektra aanleggen bij verbouwingen</li><li>Stopcontacten en aansluitpunten</li>
+            <li>Aansluitingen voor keuken, badkamer of apparatuur</li><li>Complete elektrawerkzaamheden</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Projecten -->
+<section id="projecten" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+  <div class="md:flex items-end justify-between gap-10">
+    <h2 class="font-kop font-extrabold text-4xl md:text-5xl leading-tight tracking-tight max-w-xl">Recent opgeleverd</h2>
+    <p class="text-grijs max-w-md mt-4 md:mt-0">Drie warmtepompinstallaties uit de praktijk, met wat er is geplaatst.</p>
+  </div>
+
+  <div class="mt-10 grid md:grid-cols-12 gap-6">
+    <figure class="md:col-span-7 md:row-span-2 group">
+      <img src="assets/site-02.jpg" alt="Remeha warmtepompunit aan de wand met grijs buffervat en boiler in een technische ruimte"
+           class="w-full aspect-[4/5] md:aspect-auto md:h-[720px] object-cover rounded-lg">
+      <figcaption class="mt-4">
+        <h3 class="font-kop font-bold text-2xl">Hybride installatie met Remeha Elga Ace</h3>
+        <p class="text-grijs mt-1">Complete lucht/water warmtepompinstallatie met buffervat en boiler voor ruimteverwarming en warm tapwater.</p>
+      </figcaption>
+    </figure>
+    <figure class="md:col-span-5">
+      <img src="assets/site-01.jpg" alt="Remeha warmtepompunit naast de cv-ketel in een trapkast"
+           class="w-full aspect-[4/3] object-cover object-[center_45%] rounded-lg">
+      <figcaption class="mt-4">
+        <h3 class="font-kop font-bold text-2xl">Gasloze installatie met Remeha Mercuria</h3>
+        <p class="text-grijs mt-1">Hybride warmtepompinstallatie in combinatie met een bestaande cv-ketel, voor een lager gasverbruik.</p>
+      </figcaption>
+    </figure>
+    <figure class="md:col-span-5">
+      <img src="assets/site-03.jpg" alt="Panasonic Aquarea buitenunit op een nette plek tussen de hagen in de tuin"
+           class="w-full aspect-[4/3] object-cover object-[center_40%] rounded-lg">
+      <figcaption class="mt-4">
+        <h3 class="font-kop font-bold text-2xl">Compacte installatie met Panasonic Aquarea</h3>
+        <p class="text-grijs mt-1">Gasloos, met een geïntegreerde binnenunit en boiler voor verwarming en warm water.</p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="mt-16 border-t border-staal pt-8">
+    <h3 class="font-kop font-bold text-xl">En verder: badkamers, airco's, leidingwerk</h3>
+    <div class="mt-5 grid grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="assets/google-04.jpg" alt="Verbouwde badkamer met grijze tegels, hangtoilet en dubbele wastafel op een houten meubel" class="col-span-2 md:col-span-1 w-full aspect-[4/3] object-cover rounded-lg">
+      <img src="assets/google-01.jpg" alt="Buitenunit van een airco strak aan de gevel gemonteerd" class="w-full aspect-square md:aspect-[4/3] object-cover rounded-lg">
+      <img src="assets/google-03.jpg" alt="Airco binnenunit hoog aan een witte wand in de woonkamer" class="w-full aspect-square md:aspect-[4/3] object-cover object-top rounded-lg">
+    </div>
+  </div>
+</section>
+
+<!-- Over Marvin -->
+<section id="marvin" class="bg-bos text-white relative overflow-hidden">
+  <div class="relative max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+    <div class="md:col-span-5 order-2 md:order-1">
+      <img src="assets/site-07.jpg" alt="Marvin Peer sluit de koperen leidingen van een airco binnenunit aan"
+           class="w-full aspect-[4/5] object-cover rounded-lg">
+    </div>
+    <div class="md:col-span-7 order-1 md:order-2">
+      <h2 class="font-kop font-extrabold text-4xl md:text-5xl leading-tight tracking-tight">Ik ben Marvin Peer</h2>
+      <div class="mt-6 space-y-4 text-white/85 text-lg max-w-2xl">
+        <p>Al meer dan 15 jaar werk ik in de installatietechniek, en nog steeds met veel plezier. In die jaren ben ik een allround vakman geworden: installatiewerk, elektra en dakwerk.</p>
+        <p>Ik werk zelfstandig, met vaste vakmensen om mij heen. Zo kan ik ook grotere of gecombineerde klussen goed uitvoeren, en heb jij één duidelijk aanspreekpunt.</p>
+        <p>Ik denk met je mee, geef eerlijk advies en kom mijn afspraken na. Van installatie tot afwerking moet alles kloppen, en ik laat het netjes achter.</p>
+      </div>
+      <p class="mt-8 border-l-4 border-fel pl-4 text-white/85">
+        Ik werk vooral in Wageningen, Ede, Bennekom, Arnhem, Renkum en Heelsum. Woon je in de omgeving? Bel gerust om te bespreken wat er mogelijk is.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+  <div class="grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4">
+      <h2 class="font-kop font-extrabold text-4xl md:text-5xl leading-tight tracking-tight">Wat klanten zeggen</h2>
+      <p class="mt-4 text-grijs"><span class="text-fel tracking-wider" aria-hidden="true">★★★★★</span><br>5 sterren op Google, uit 22 reviews.</p>
+    </div>
+    <blockquote class="md:col-span-8">
+      <p class="font-kop font-semibold text-xl sm:text-2xl md:text-[2rem] leading-snug">"Een absolute aanrader! Vanaf het eerste contact tot en met de installatie van de airco is alles perfect verlopen. Marvin Peer is deskundig, vriendelijk en werkt zeer professioneel. De airco hangt er strak bij en werkt uitstekend. Als je op zoek bent naar een vakkundig installatiebedrijf, zit je hier helemaal goed!"</p>
+      <footer class="mt-4 text-grijs font-semibold">Agnes van den Sigtenhorst</footer>
+    </blockquote>
+  </div>
+
+  <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-6 [&>*]:break-inside-avoid [&>*]:mb-6">
+    <blockquote class="bg-papier rounded-lg p-6">
+      <p>"Complete badkamer verbouwing laten uitvoeren door installatiebedrijf Peer. Van planning tot uitvoering een betrouwbare en meedenkende partij. Alles strak en netjes afgewerkt tot in detail. Wij zijn tevreden."</p>
+      <footer class="mt-3 font-semibold text-sm">Peter van Kleef</footer>
+    </blockquote>
+    <blockquote class="bg-papier rounded-lg p-6">
+      <p>"Afgelopen juni heeft Marvin bij ons al het voorbereidende installatiewerk voor de nieuwe keuken gedaan. Hij heeft de waterleidingen en afvoer verlegd, de elektra aangepast en extra aansluitingen gemaakt zodat de keuken zonder problemen geplaatst kon worden. Alles werd strak afgewerkt en goed voorbereid.</p>
+      <p class="mt-3">Daarnaast werkt hij netjes, denkt mee en is prettig in de omgang. Tijdens de werkzaamheden werd alles schoon en overzichtelijk gehouden en afspraken werden gewoon nagekomen. Erg tevreden over hoe alles is verlopen en zeker een aanrader voor als je een betrouwbare installateur zoekt."</p>
+      <footer class="mt-3 font-semibold text-sm">Lars Dolphijn</footer>
+    </blockquote>
+    <blockquote class="bg-papier rounded-lg p-6">
+      <p>"Vanaf de eerste kennismaking luisterde hij heel goed naar onze wensen en dacht hij met ons mee. Ze waren mooi op tijd en zijn vroeg begonnen. De twee airco's zijn vakkundig geplaatst en alles is netjes afgewerkt. Na afloop hebben ze alles keurig opgeruimd. We zijn erg tevreden over de service en het eindresultaat."</p>
+      <footer class="mt-3 font-semibold text-sm">Connie Roza</footer>
+    </blockquote>
+    <blockquote class="bg-papier rounded-lg p-6">
+      <p>"Wat verfrissend om een zelfstandige en intelligente ervaren en meedenkende expert op het gebied van warmtepompen te ervaren. Hij overlegt, neemt desnoods contact op met andere experts en jawel vanaf moment 1 draait onze warmtepomp als nooit tevoren. En dat in een huis van voor 1900. Dank je wel Marvin!"</p>
+      <footer class="mt-3 font-semibold text-sm">Mariska Hulsewé</footer>
+    </blockquote>
+    <blockquote class="bg-papier rounded-lg p-6">
+      <p>"Erg tevreden over de service van dit installatietechniek bedrijf. Ze werkten netjes en professioneel, dachten flexibel mee bij veranderingen tijdens het werk en waren altijd makkelijk te benaderen voor vragen of overleg. Fijne communicatie en betrouwbaar in afspraken. Zeker een aanrader!"</p>
+      <footer class="mt-3 font-semibold text-sm">Charlotte van Wees</footer>
+    </blockquote>
+    <blockquote class="bg-papier rounded-lg p-6">
+      <p>"Zeer tevreden over Peer Installatietechniek! Vanaf het eerste contact kregen we duidelijke en eerlijke informatie over de verschillende soorten airco's, waardoor we een goede keuze konden maken. De plaatsing is vervolgens zeer zorgvuldig en netjes uitgevoerd. Ook kregen we een heldere uitleg over de werking van de airco en hoe we deze het beste kunnen gebruiken. Alles werd keurig achtergelaten na afloop. Prima service en zeker een aanrader!"</p>
+      <footer class="mt-3 font-semibold text-sm">Kees en Simone</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-papier border-t border-staal">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-6">
+      <h2 class="font-kop font-extrabold text-4xl md:text-5xl leading-tight tracking-tight">Even overleggen of een offerte?</h2>
+      <p class="mt-4 text-grijs max-w-md">Bel of mail, of vul het formulier in. Je krijgt zo snel mogelijk antwoord. Een offerte is vrijblijvend.</p>
+
+      <a href="tel:+31650849090" class="mt-8 block font-kop font-extrabold text-5xl sm:text-6xl text-groen hover:text-bos tracking-tight transition-colors">06 50849090</a>
+      <a href="mailto:info@peerinstallatietechniek.nl" class="mt-2 inline-block text-lg font-semibold underline underline-offset-4 decoration-staal hover:decoration-groen break-all">info@peerinstallatietechniek.nl</a>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-kop font-bold text-lg">Adres</h3>
+          <p class="mt-2 text-grijs">Tarthorst 557<br>6708 HT Wageningen</p>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-lg">Openingstijden</h3>
+          <dl class="mt-2 text-grijs grid grid-cols-[auto_1fr] gap-x-4 tabular-nums">
+            <dt>ma t/m vr</dt><dd>07:00 tot 17:00</dd>
+            <dt>zaterdag</dt><dd>08:30 tot 15:00</dd>
+            <dt>zondag</dt><dd>gesloten</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <form class="md:col-span-6 bg-white rounded-lg border border-staal p-6 md:p-8 space-y-5 self-start"
+          action="mailto:info@peerinstallatietechniek.nl" method="post" enctype="text/plain">
+      <div>
+        <label for="naam" class="block font-semibold text-sm">Naam</label>
+        <input id="naam" name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-staal bg-papier px-4 py-3 focus:border-groen focus:bg-white outline-none">
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="tel" class="block font-semibold text-sm">Telefoonnummer</label>
+          <input id="tel" name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-md border border-staal bg-papier px-4 py-3 focus:border-groen focus:bg-white outline-none">
+        </div>
+        <div>
+          <label for="mail" class="block font-semibold text-sm">E-mailadres <span class="font-normal text-grijs">(optioneel)</span></label>
+          <input id="mail" name="email" type="email" autocomplete="email" class="mt-1.5 w-full rounded-md border border-staal bg-papier px-4 py-3 focus:border-groen focus:bg-white outline-none">
+        </div>
+      </div>
+      <div>
+        <label for="bericht" class="block font-semibold text-sm">Waar kan ik je mee helpen?</label>
+        <textarea id="bericht" name="bericht" rows="5" required class="mt-1.5 w-full rounded-md border border-staal bg-papier px-4 py-3 focus:border-groen focus:bg-white outline-none"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-groen hover:bg-bos active:translate-y-px text-white font-kop font-bold text-lg py-3.5 rounded-md transition-colors">Verstuur aanvraag</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/70 text-sm">
+  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="hex-v w-7 h-8 bg-fel" aria-hidden="true"></span>
+      <span><span class="text-white font-kop font-bold">Peer Installatietechniek</span><br>Installeren met oog voor morgen</span>
+    </div>
+    <p>Tarthorst 557, 6708 HT Wageningen<br class="md:hidden"><span class="hidden md:inline">, </span><a href="tel:+31650849090" class="hover:text-white">06 50849090</a>, <a href="mailto:info@peerinstallatietechniek.nl" class="hover:text-white">info@peerinstallatietechniek.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-staal p-3 grid grid-cols-[1fr_auto] gap-2">
+  <a href="tel:+31650849090" class="flex items-center justify-center gap-2 bg-groen text-white font-kop font-bold text-lg py-3 rounded-md">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Bel Marvin
+  </a>
+  <a href="mailto:info@peerinstallatietechniek.nl" class="flex items-center justify-center border-2 border-inkt font-kop font-bold px-5 rounded-md">Mail</a>
+</div>
+
+</body>
+</html>
