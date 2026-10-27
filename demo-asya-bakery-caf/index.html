@@ -1,640 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asya bakery &amp; café | Arnhem</title>
-  <meta name="description" content="Ambachtelijk gebak en brood dagelijks bereid in Arnhem. Lokale bezorging mogelijk.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fdf8f0; color: #1c1007; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-:root {
-  --accent: #f97316; --accent-dark: #ea580c; --accent-light: rgba(249,115,22,0.08);
-  --bg: #fdf8f0; --surface: #ffffff; --border: #e8d9c5;
-  --text: #1c1007; --muted: #78614d; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(253,248,240,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 24px rgba(28,16,7,0.08);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #1c1007; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #78614d; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #1c1007; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #1c1007; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(253,248,240,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(50,20,0,0.82) 0%, rgba(50,20,0,0.55) 60%, rgba(50,20,0,0.3) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #fdf8f0, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(50,20,0,0.82) 0%, rgba(50,20,0,0.55) 60%, rgba(50,20,0,0.3) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #fdf8f0; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #ffffff; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #1c1007; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #1c1007; border-top: 1px solid #2d1a0e;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #2d1a0e; padding-top: 24px; color: #5a3520; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
-</head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Asya<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/7937968/pexels-photo-7937968.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">Asya bakery, vers van de<br><em>oven</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Ambachtelijk gebak en brood dagelijks bereid in Arnhem. Lokale bezorging mogelijk.</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Bestel nu</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/30918889/pexels-photo-30918889.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Vers brood" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Vers</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>Vers brood</h3>
-            <p>Dagelijks gebakken broodsoorten met traditie en kwaliteit.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/30888612/pexels-photo-30888612.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Gebak en taarten" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Gebak</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>Gebak en taarten</h3>
-            <p>Handgemaakte taarten en patisserie voor elk moment van de dag.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/28396810/pexels-photo-28396810.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Belegde broodjes" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Belegde</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Belegde broodjes</h3>
-            <p>Vers bereide broodjes met smaakvolle topping naar jouw wens.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/34692791/pexels-photo-34692791.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Asya bakery &amp; café" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          <div class="stats-badge"><span class="stats-num">25+</span><span class="stats-label">jaar ambacht</span></div>
-        </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/5779775/pexels-photo-5779775.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/35671255/pexels-photo-35671255.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
-      </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Asya bakery &amp; café</h2>
-        <p class="reveal reveal-delay-1">Asya bakery en café is geboren uit liefde voor ambachtelijk bakken. We verzorgen Arnhem dagelijks met vers brood, gebak en broodjes die smaken naar wat ze moeten zijn: echt lekker. Bij ons draait het om kwaliteit, warmte en de kunst van het bakken..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>Dagvers gebakken met ambachtelijke recepten</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Lokale bezorging in en rond Arnhem mogelijk</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Geen additieven, puur genieten van het echt werk</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"De croissants van Asya zijn echt zoals ze hoort te zijn: boterzoet en fris uit de oven."</p>
-      <div class="testimonial-naam">Marieke Bosman</div>
-      <div class="testimonial-functie">Klant, Arnhem</div>
-    </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Kunt u mijn taart op maat maken?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, we nemen graag je wensen op. Bel 026 351 6010 of mail info@asyaarnhem.nl.</div>
-    </details><details>
-      <summary>Bezorgen jullie in Arnhem?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">We leveren vers brood en gebak in Arnhem en omgeving. Vraag naar de mogelijkheden.</div>
-    </details><details>
-      <summary>Welke producten zijn glutenvrij?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">We hebben glutenvrije opties. Bel voor het actuele aanbod en bestelmogelijkheden.</div>
-    </details><details>
-      <summary>Hoe laat zijn jullie geopend?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Bel 026 351 6010 of mail info@asyaarnhem.nl voor de actuele openingstijden.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met Asya bakery &amp; café voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Bestel nu &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">Asya<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">Vers brood</a></li><li><a href="diensten.html">Gebak en taarten</a></li><li><a href="diensten.html">Belegde broodjes</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="tel:0263516010">026 351 6010</a></li><li><a href="mailto:info@asyaarnhem.nl">info@asyaarnhem.nl</a></li><li><span>Arnhem</span></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2025 Asya bakery &amp; café. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
-</footer>
-<div class="demo-banner"><span>&#9889; DEMO voor Asya bakery &amp; café &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asya bakery &amp; café | Turkse bakkerij en café aan de Hommelseweg, Arnhem</title>
+<meta name="description" content="Vers brood, börek, simit, gebak, Turkse thee en matcha. Asya bakery & café, Hommelseweg 51 in Arnhem. Dinsdag tot en met zondag open, woensdag tot en met zaterdag tot 23:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
-
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { paper: '#EFF1EE', ink: '#191C18', mos: '#3E5A2C', matcha: '#DCE5D3', tegel: '#7C847A' },
+      fontFamily: { serif: ['"Bodoni Moda"', 'serif'], sans: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'] }
     }
   }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-feature-settings: "ss01"; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .liner { font-family: "Bodoni Moda", serif; font-weight: 900; font-optical-sizing: auto; line-height: .9; letter-spacing: -.02em; }
+  .liner span { display: block; white-space: nowrap; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  tr.vandaag td { color: #3E5A2C; font-weight: 600; }
+  :focus-visible { outline: 2px solid #3E5A2C; outline-offset: 3px; }
+</style>
+</head>
+<body class="bg-paper text-ink font-sans antialiased pb-20 md:pb-0">
 
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  }
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-ink text-paper px-3 py-2 z-50">Naar inhoud</a>
 
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
+<div class="bg-ink text-paper/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Asya bakery &amp; café, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-paper hover:text-matcha">Hagenweb</a>
+</div>
 
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
+<header class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between gap-6">
+  <a href="#" class="leading-none text-center" aria-label="Asya bakery &amp; café, naar boven">
+    <span class="block font-serif font-bold text-3xl tracking-[.08em]">ASYA</span>
+    <span class="block font-serif italic text-[11px] tracking-wide text-tegel">Bakery &amp; Café</span>
+  </a>
+  <nav class="hidden md:flex items-center gap-8 text-[15px]">
+    <a href="#op-tafel" class="hover:text-mos">Op tafel</a>
+    <a href="#de-zaak" class="hover:text-mos">De zaak</a>
+    <a href="#reviews" class="hover:text-mos">Reviews</a>
+    <a href="#open" class="hover:text-mos">Openingstijden</a>
+    <a href="tel:+31263516010" class="bg-ink text-paper px-5 py-2.5 rounded-full hover:bg-mos transition-colors">026 351 6010</a>
+  </nav>
+</header>
 
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
-    }
+<main id="main">
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pt-0 md:pt-12 pb-16 md:pb-24 grid md:grid-cols-12 gap-8 md:gap-8 items-center">
+    <div class="md:col-span-6 md:pb-6">
+      <h1 class="font-serif font-semibold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.4rem] tracking-[-.02em]">
+        Vers brood, börek en een glas thee aan de Hommelseweg
+      </h1>
+      <p class="mt-6 text-lg text-ink/75 max-w-md leading-relaxed">
+        Turkse bakkerij en café in Arnhem. Kom voor ontbijt, een broodje bij de lunch of een matcha met gebak tot laat in de avond.
+      </p>
+      <p class="mt-6 text-[15px] text-ink" id="vandaag">Dinsdag tot en met zondag open, maandag gesloten.</p>
+      <div class="mt-8 hidden md:flex flex-wrap gap-3">
+        <a href="tel:+31263516010" class="bg-ink text-paper px-6 py-3.5 rounded-full font-medium hover:bg-mos transition-colors active:translate-y-px">Bel 026 351 6010</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Asya+bakery+%26+caf%C3%A9+Hommelseweg+51+Arnhem" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-full font-medium border border-ink/25 hover:border-ink transition-colors">Route naar Hommelseweg 51</a>
+      </div>
+    </div>
+    <figure class="order-first md:order-none md:col-span-6 -mx-5 sm:mx-0 md:-mr-8 lg:-mr-16">
+      <img src="assets/google-04.jpg" alt="Twee glazen Turkse thee op bloemetjesschotels, simit, börek en een belegd broodje op houten planken" class="w-full aspect-[16/10] md:aspect-[16/11] object-cover object-[60%_50%] sm:rounded-sm md:rounded-l-sm md:rounded-r-none">
+    </figure>
+  </section>
+
+  <!-- Dienbladband -->
+  <section aria-label="Openingstijden in het kort" class="relative overflow-hidden bg-white border-y border-ink/10">
+    <div class="liner text-ink select-none -rotate-[7deg] scale-110 -my-10 text-[7.5rem] sm:text-[10rem] md:text-[13rem]" aria-hidden="true">
+      <span class="-ml-24">ASYA ASYA ASYA ASYA ASYA ASYA</span>
+      <span class="-ml-72">ASYA ASYA ASYA ASYA ASYA ASYA</span>
+      <span class="-ml-40">ASYA ASYA ASYA ASYA ASYA ASYA</span>
+      <span class="-ml-96">ASYA ASYA ASYA ASYA ASYA ASYA</span>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center px-5">
+      <p class="bg-white px-7 py-6 sm:px-10 sm:py-8 max-w-xl text-center font-serif text-2xl sm:text-3xl leading-snug shadow-[0_20px_50px_-20px_rgba(25,28,24,.45)]">
+        Zaterdag ontbijt vanaf acht uur. Woensdag tot en met zaterdag matcha tot elf uur ’s avonds.
+      </p>
+    </div>
+  </section>
+
+  <!-- Op tafel -->
+  <section id="op-tafel" class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-12 gap-6 md:gap-8 mb-12">
+      <h2 class="md:col-span-6 font-serif font-semibold text-4xl sm:text-5xl leading-[1.05] tracking-[-.01em]">Wat er bij ons op tafel komt</h2>
+      <p class="md:col-span-5 md:col-start-8 text-lg text-ink/75 leading-relaxed self-end">
+        Börek met spinazie en kaas, simit met sesam, broodjes op ons eigen brood, gebak en koekjes. Erbij: koffie, Turkse thee in een tulpglas of een ijskoude matcha.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-5">
+      <figure class="col-span-2 md:col-span-7">
+        <img src="assets/google-01.jpg" alt="Doorgesneden börek met spinazie, bladerdeeg goudbruin gebakken" class="w-full aspect-[16/10] object-cover rounded-sm" loading="lazy">
+        <figcaption class="mt-3 text-sm text-tegel">Börek met spinazie, laag op laag bladerdeeg</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-5 md:row-span-2">
+        <img src="assets/google-08.jpg" alt="Twee ijsmatcha's in Asya-bekers naast een broodje met salade op een dienblad" class="w-full aspect-[3/4] md:aspect-auto md:h-[calc(100%-2rem)] object-cover object-top rounded-sm" loading="lazy">
+        <figcaption class="mt-3 text-sm text-tegel">IJsmatcha en een broodje op het Asya-dienblad</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-3">
+        <img src="assets/google-02.jpg" alt="Belegd broodje met rucola en een glas Turkse thee bij het raam" class="w-full aspect-[3/4] md:aspect-auto md:h-[26rem] object-cover object-[50%_70%] rounded-sm" loading="lazy">
+        <figcaption class="mt-3 text-sm text-tegel">Broodje aan het raam</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-4">
+        <img src="assets/google-03.jpg" alt="Börek en een bladerdeegbroodje met worst op een houten plank" class="w-full aspect-[3/4] md:aspect-auto md:h-[26rem] object-cover object-[65%_50%] rounded-sm" loading="lazy">
+        <figcaption class="mt-3 text-sm text-tegel">Uit eigen oven</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- De zaak -->
+  <section id="de-zaak" class="bg-matcha/60">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+      <figure class="md:col-span-5">
+        <img src="assets/google-05.jpg" alt="De toonbank van Asya met een mosgroene wand en het verlichte ASYA-logo tussen grijze tegels" class="w-full aspect-[4/5] object-cover rounded-sm" loading="lazy">
+      </figure>
+      <div class="md:col-span-6 md:col-start-7">
+        <h2 class="font-serif font-semibold text-4xl sm:text-5xl leading-[1.05] tracking-[-.01em]">Groene wand, grijze tegels, een terras aan de straat</h2>
+        <p class="mt-6 text-lg text-ink/75 leading-relaxed max-w-lg">
+          Achter de toonbank wordt alles gemaakt: de broodjes, de thee, de koffie. Bij mooi weer staan de parasols buiten en zit u op het terras aan de Hommelseweg.
+        </p>
+        <img src="assets/google-06.jpg" alt="Gevel van Asya Bakkerij aan de Hommelseweg met parasols en terrastafels" class="mt-10 w-full aspect-[16/9] object-cover object-[50%_72%] rounded-sm" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+    <div class="flex flex-wrap items-baseline justify-between gap-4 mb-12">
+      <h2 class="font-serif font-semibold text-4xl sm:text-5xl tracking-[-.01em]">Wat gasten zeggen</h2>
+      <p class="text-ink/75"><span class="font-serif text-3xl text-ink">4,6</span> uit 151 Google-reviews</p>
+    </div>
+    <div class="grid md:grid-cols-12 gap-x-8 gap-y-12">
+      <blockquote class="md:col-span-7">
+        <p class="font-serif text-2xl sm:text-[1.75rem] leading-snug">“Ik wou dat ik hier elke dag kon genieten!! Wat een geweldige plek, het personeel is zo lief en vriendelijk, de sfeer is warm en de prijs is perfect 💋 Alles wordt met aandacht en geduld gemaakt, de koffie is geweldig en het is er altijd netjes en mooi. Echt een pareltje in Arnhem 🎁”</p>
+        <footer class="mt-4 text-sm text-tegel">Amber, Google</footer>
+      </blockquote>
+      <div class="md:col-span-4 md:col-start-9 flex flex-col gap-10 md:pt-2">
+        <blockquote class="border-l-2 border-mos pl-5">
+          <p class="text-lg leading-relaxed">“Hartstikke lekkere matcha! +We zijn erg goed geholpen door de barista’s bij het maken van een keuze🫶🏼”</p>
+          <footer class="mt-3 text-sm text-tegel">Zeyneb koseoglu, Google</footer>
+        </blockquote>
+        <blockquote class="border-l-2 border-mos pl-5">
+          <p class="text-lg leading-relaxed">“Heerlijke matcha en fantastisch gebak! Alles smaakte vers en met zorg bereid. Daarnaast een gezellige sfeer en vriendelijk personeel. Zeker een aanrader en een plek waar ik graag terugkom.”</p>
+          <footer class="mt-3 text-sm text-tegel">Alberto De groot, Google</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Openingstijden + contact -->
+  <section id="open" class="bg-ink text-paper">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-14 md:gap-8">
+      <div class="md:col-span-5">
+        <h2 class="font-serif font-semibold text-4xl sm:text-5xl tracking-[-.01em]">Openingstijden</h2>
+        <table class="mt-8 w-full max-w-sm text-lg tabular-nums">
+          <tbody class="divide-y divide-paper/15 [&_td]:py-2.5 [&_td:last-child]:text-right">
+            <tr data-dag="1"><td>Maandag</td><td class="text-paper/50">Gesloten</td></tr>
+            <tr data-dag="2"><td>Dinsdag</td><td>10:00 tot 18:00</td></tr>
+            <tr data-dag="3"><td>Woensdag</td><td>10:00 tot 23:00</td></tr>
+            <tr data-dag="4"><td>Donderdag</td><td>10:00 tot 23:00</td></tr>
+            <tr data-dag="5"><td>Vrijdag</td><td>10:00 tot 23:00</td></tr>
+            <tr data-dag="6"><td>Zaterdag</td><td>08:00 tot 23:00</td></tr>
+            <tr data-dag="0"><td>Zondag</td><td>10:00 tot 18:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="md:col-span-6 md:col-start-7">
+        <h2 class="font-serif font-semibold text-4xl sm:text-5xl tracking-[-.01em]">Langskomen of bellen</h2>
+        <address class="not-italic mt-8 text-lg leading-relaxed text-paper/85">
+          Asya bakery &amp; café<br>
+          Hommelseweg 51<br>
+          6821 LB Arnhem
+        </address>
+        <div class="mt-8 flex flex-col gap-3 text-lg">
+          <a href="tel:+31263516010" class="font-serif text-3xl sm:text-4xl text-paper hover:text-matcha w-fit">026 351 6010</a>
+          <a href="mailto:info@asyaarnhem.nl" class="underline underline-offset-4 decoration-paper/30 hover:decoration-paper w-fit">info@asyaarnhem.nl</a>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="tel:+31263516010" class="bg-paper text-ink px-6 py-3.5 rounded-full font-medium hover:bg-matcha transition-colors">Bellen</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Asya+bakery+%26+caf%C3%A9+Hommelseweg+51+Arnhem" target="_blank" rel="noopener" class="px-6 py-3.5 rounded-full font-medium border border-paper/30 hover:border-paper transition-colors">Route plannen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-ink text-paper/50 border-t border-paper/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 flex flex-wrap justify-between gap-4 text-sm">
+    <p><span class="font-serif text-paper tracking-[.08em]">ASYA</span> bakery &amp; café, Hommelseweg 51, Arnhem</p>
+    <p>Demo door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-paper">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-paper/95 backdrop-blur border-t border-ink/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31263516010" class="flex-1 text-center bg-ink text-paper py-3 rounded-full font-medium">Bel 026 351 6010</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Asya+bakery+%26+caf%C3%A9+Hommelseweg+51+Arnhem" target="_blank" rel="noopener" class="px-5 text-center border border-ink/25 py-3 rounded-full font-medium">Route</a>
+</div>
+
+<script>
+  // Vandaag markeren in de tabel en in de hero.
+  const tijden = { 0: ['10:00', '18:00'], 2: ['10:00', '18:00'], 3: ['10:00', '23:00'], 4: ['10:00', '23:00'], 5: ['10:00', '23:00'], 6: ['08:00', '23:00'] };
+  const nu = new Date(), dag = nu.getDay();
+  document.querySelector(`tr[data-dag="${dag}"]`)?.classList.add('vandaag');
+  const t = tijden[dag], el = document.getElementById('vandaag');
+  if (!t) el.textContent = 'Vandaag, maandag, zijn we gesloten. Dinsdag vanaf 10:00 weer open.';
+  else {
+    const hm = nu.toTimeString().slice(0, 5);
+    el.textContent = hm < t[0] ? `Vandaag open van ${t[0]} tot ${t[1]}.` : hm < t[1] ? `Vandaag open tot ${t[1]}.` : 'Voor vandaag zijn we gesloten.';
   }
-});
 </script>
 </body>
 </html>
