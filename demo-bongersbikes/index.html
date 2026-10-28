@@ -1,640 +1,308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BongersBikes | Apeldoorn</title>
-  <meta name="description" content="Fietsen, onderdelen en deskundig advies voor elke fietsliefhebber.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f8fafc; color: #0f172a; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BongersBikes Apeldoorn | Vakantiefietsen, gravelbikes en maatwerk</title>
+<meta name="description" content="Fietsspeciaalzaak in Apeldoorn voor vakantie- en trekkingfietsen, gravelbikes en maatwerk. Dealer van KOGA, Idworx, Santos, Tout Terrain, Van Nicholas, Jan Janssen en Ridley.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper: '#F1F4F3', paper2: '#E4E9E8', ink: '#16212A', steel: '#5C6B76',
+        blue: { DEFAULT: '#1A7FCC', dark: '#1468A8' }, line: '#CBD3D6'
+      },
+      fontFamily: {
+        head: ['Archivo', 'sans-serif'],
+        body: ['"Source Sans 3"', 'sans-serif']
+      }
+    }
+  }
 }
-:root {
-  --accent: #f59e0b; --accent-dark: #d97706; --accent-light: rgba(245,158,11,0.08);
-  --bg: #f8fafc; --surface: #ffffff; --border: #e2e8f0;
-  --text: #0f172a; --muted: #64748b; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(255,255,255,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #0f172a; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #64748b; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #0f172a; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #0f172a; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,30,60,0.82) 0%, rgba(10,30,60,0.55) 60%, rgba(10,30,60,0.3) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #f8fafc, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,30,60,0.82) 0%, rgba(10,30,60,0.55) 60%, rgba(10,30,60,0.3) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #f8fafc; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #ffffff; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #0f172a; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #0f172a; border-top: 1px solid #1e293b;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #1e293b; padding-top: 24px; color: #334155; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", sans-serif; }
+  .head { font-family: Archivo, sans-serif; font-stretch: 68%; letter-spacing: -0.01em; line-height: .95; text-wrap: balance; }
+  .wide { font-family: Archivo, sans-serif; font-stretch: 100%; }
+  p { text-wrap: pretty; }
+  .btn { display: inline-flex; align-items: center; gap: .6rem; padding: .85rem 1.4rem; font-weight: 600; border-radius: 3px; transition: background-color .2s, color .2s, transform .1s; }
+  .btn:active { transform: translateY(1px); }
+  .btn-blue { background: #1A7FCC; color: #fff; }
+  .btn-blue:hover { background: #1468A8; }
+  .btn-line { box-shadow: inset 0 0 0 1.5px #16212A; color: #16212A; }
+  .btn-line:hover { background: #16212A; color: #F1F4F3; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #1A7FCC; outline-offset: 3px; }
+  .route path { stroke-dasharray: 1 7; stroke-linecap: round; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .rise { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+    .js .rise + .rise { animation-delay: .15s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">BongersBikes<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+<body class="bg-paper text-ink antialiased pb-16 md:pb-0">
+
+<div class="bg-ink text-paper/80 text-xs sm:text-sm text-center py-2 px-4">
+  Demo voor BongersBikes, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-blue">Hagenweb</a>
+</div>
+
+<header class="border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="BongersBikes, naar boven">
+      <span class="wide grid place-items-center w-10 h-10 bg-blue text-white text-xl font-extrabold rounded-[3px]">B</span>
+      <span class="head text-[1.7rem] font-extrabold uppercase leading-none">Bongers<span class="text-blue">Bikes</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold" aria-label="Hoofdmenu">
+      <a href="#fietsen" class="hover:text-blue">Fietsen</a>
+      <a href="#merken" class="hover:text-blue">Merken</a>
+      <a href="#ervaringen" class="hover:text-blue">Ervaringen</a>
+      <a href="#bezoek" class="hover:text-blue">Bezoek</a>
+    </nav>
+    <a href="tel:+31555786201" class="btn btn-blue !py-2.5 !px-4 text-sm">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="hidden sm:inline">055 578 6201</span><span class="sm:hidden">Bellen</span>
+    </a>
   </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/27916515/pexels-photo-27916515.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">BongersBikes in<br><em>Apeldoorn</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Fietsen, onderdelen en deskundig advies voor elke fietsliefhebber.</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Kom langs of bel</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="max-w-7xl mx-auto px-5 lg:px-10 pt-10 lg:pt-16 pb-14 lg:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+  <div class="lg:col-span-5 rise">
+    <p class="text-steel font-semibold mb-5">Fietsspeciaalzaak in Apeldoorn</p>
+    <h1 class="head font-extrabold text-[3.4rem] sm:text-7xl lg:text-[5.4rem]">Vakantiefietsen en gravelbikes, met de Veluwe om de hoek</h1>
+    <p class="mt-6 text-lg leading-relaxed text-steel max-w-md">Een zorgvuldig gekozen aanbod vakantiefietsen, gravelbikes en maatwerk. We nemen de tijd, meten u op en laten u de fiets eerst zelf ervaren.</p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="tel:+31555786201" class="btn btn-blue">Testrit afspreken</a>
+      <a href="#bezoek" class="btn btn-line">Route en openingstijden</a>
     </div>
+    <p class="mt-8 flex items-center gap-3 text-sm text-steel">
+      <span class="text-blue tracking-[.15em] text-base" aria-hidden="true">★★★★★</span>
+      <span><strong class="text-ink">4,7</strong> op Google, uit 213 reviews</span>
+    </p>
+  </div>
+  <figure class="lg:col-span-7 relative rise">
+    <img src="assets/google-07.jpg" alt="Titanium gravelbike met groene banden voor het hertenbehang in de winkel van BongersBikes" class="w-full aspect-[4/3] object-cover rounded-[4px]">
+    <figcaption class="absolute left-0 bottom-0 bg-paper pr-4 pt-3 text-sm text-steel">In de winkel, Zwolseweg 227</figcaption>
+  </figure>
+</section>
+
+<!-- Openingstijden-strook -->
+<section class="bg-ink text-paper" aria-label="Openingstijden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-5 flex flex-col md:flex-row md:items-center gap-3 md:gap-10 text-[15px]">
+    <p class="font-semibold">Vrijdag open tot 21:00</p>
+    <p class="text-paper/70">Dinsdag t/m donderdag 08:00 tot 17:30</p>
+    <p class="text-paper/70">Maandag, zaterdag en zondag gesloten</p>
+    <a href="tel:+31555786201" class="md:ml-auto text-white underline underline-offset-4 decoration-blue hover:text-blue">Bel voor een afspraak</a>
   </div>
 </section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/6334127/pexels-photo-6334127.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Fietsverkoop" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Fietsverkoop</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>Fietsverkoop</h3>
-            <p>Nieuw en gebruikt, van stadsfietsen tot mountainbikes.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/31628832/pexels-photo-31628832.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Reparatie en onderhoud" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Reparatie</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>Reparatie en onderhoud</h3>
-            <p>Snel en betrouwbaar, van bandenpech tot volledige revisions.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/31452616/pexels-photo-31452616.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Onderdelen en accessoires" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Onderdelen</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Onderdelen en accessoires</h3>
-            <p>Wielen, kettingen, verlichting en alles wat je nodig hebt.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
+
+<!-- Specialismen -->
+<section id="fietsen" class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+  <div class="lg:col-span-5 order-2 lg:order-1">
+    <img src="assets/google-03.jpg" alt="De vide in de winkel met fietsen aan de wand en een trap naar beneden" class="w-full aspect-[4/5] object-cover rounded-[4px]">
+  </div>
+  <div class="lg:col-span-7 order-1 lg:order-2">
+    <h2 class="head font-extrabold text-5xl lg:text-6xl max-w-xl">Fietsen om ver mee te komen</h2>
+    <p class="mt-5 text-lg text-steel max-w-lg">Geen winkel met van alles een beetje. Wij kiezen voor fietsen waar u jaren en duizenden kilometers mee vooruit kunt.</p>
+    <dl class="mt-12 border-t border-line">
+      <div class="py-7 border-b border-line grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
+        <dt class="head text-3xl font-bold">Vakantie- en trekkingfietsen</dt>
+        <dd class="text-steel leading-relaxed">Van de KOGA WorldTraveller en Signature tot Santos, Tout Terrain en Idworx. Met Rohloff-naaf, Pinion-versnellingsbak of Gates-riem als u onderweg weinig onderhoud wilt.</dd>
       </div>
+      <div class="py-7 border-b border-line grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
+        <dt class="head text-3xl font-bold">Gravelbikes</dt>
+        <dd class="text-steel leading-relaxed">Voor de zandpaden en bossen van de Veluwe. Onder meer de Ridley ASTR RS met SRAM Force XPLR staat klaar voor een testrit.</dd>
+      </div>
+      <div class="py-7 border-b border-line grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
+        <dt class="head text-3xl font-bold">Maatwerk</dt>
+        <dd class="text-steel leading-relaxed">Stuur, handvatten, zadel, banden en pedalen stellen we samen met u af. Een Jan Janssen wordt zelfs pas gebouwd als u hem bestelt.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- Fietsmeting -->
+<section class="bg-paper2">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-24 grid lg:grid-cols-12 gap-10 items-end">
+    <div class="lg:col-span-7">
+      <p class="text-blue font-semibold mb-4">Size matters</p>
+      <h2 class="head font-extrabold text-5xl lg:text-7xl">Bij ons gaat niemand de deur uit zonder fietsmeting</h2>
+    </div>
+    <div class="lg:col-span-5">
+      <p class="text-lg leading-relaxed text-steel">Een reisfiets die niet past, merkt u na dertig kilometer. Daarom is de fietsmeting bij ons verplicht. Daarna maakt u een testrit, gewoon de Veluwe in, zodat u voelt wat u koopt.</p>
+      <svg class="route mt-8 w-full h-10 text-blue" viewBox="0 0 400 40" fill="none" aria-hidden="true"><path d="M2 30 C60 2 90 38 150 20 S250 4 290 22 S370 36 398 8" stroke="currentColor" stroke-width="2.5"/></svg>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/7213603/pexels-photo-7213603.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="BongersBikes" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          
+<!-- Uitgelichte review -->
+<section class="max-w-5xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+  <figure>
+    <blockquote class="head font-bold text-[2.1rem] sm:text-5xl lg:text-[3.6rem] leading-[1.02]">
+      "We zitten in Duitsland met pech en zijn enorm geholpen door jullie."
+    </blockquote>
+    <figcaption class="mt-8 grid sm:grid-cols-[auto_1fr] gap-4 sm:gap-10 text-steel max-w-3xl">
+      <span class="font-semibold text-ink">Lev J., Google</span>
+      <span class="leading-relaxed">"Hartelijk dank voor de telefonische service. Vandaag heb ik jullie monteurs 3x gebeld ivm probleem met Koga Nova<br>Omdat ik de rechter achter brug niet uit elkaar kreeg om belt te vervangen..<br>We zitten in Duitsland met pech en zijn enorm geholpen door jullie.<br><br>Onze eigen fietsen zaak in noord Holland was niet bereikbaar."</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- Merken -->
+<section id="merken" class="bg-ink text-paper">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 mb-14">
+      <h2 class="lg:col-span-6 head font-extrabold text-5xl lg:text-7xl">Merken die we kennen tot op het boutje</h2>
+      <p class="lg:col-span-5 lg:col-start-8 self-end text-lg text-paper/70 leading-relaxed">BongersBikes is dealer voor Apeldoorn en wijde omgeving van KOGA, KOGA Signature, Idworx, Santos, Tout Terrain, Van Nicholas, Jan Janssen en Ridley.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <article class="lg:col-span-7">
+        <img src="assets/site-10.jpg" alt="Monteurs bouwen Idworx-fietsen in de werkplaats van Bike Basics" class="w-full aspect-[16/10] object-cover rounded-[4px]">
+        <div class="mt-7 flex flex-wrap items-baseline gap-x-5 gap-y-1">
+          <h3 class="head text-4xl font-extrabold">Idworx</h3>
+          <p class="text-blue font-semibold">Master Dealer</p>
         </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/7793697/pexels-photo-7793697.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/6794967/pexels-photo-6794967.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
-      </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">BongersBikes</h2>
-        <p class="reveal reveal-delay-1">BongersBikes is jouw fietsenwinkel in Apeldoorn waar kennis en persoonlijk advies centraal staan. We verkopen niet zomaar fietsen, we helpen je de juiste keuze maken. Of je nu een nieuwe fiets zoekt, je huidige fiets moet laten repareren of iets kleins nodig hebt: we weten waar we het over hebben..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>Echte fietskennis in Apeldoorn sinds jaar en dag</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Werkplaats die dezelfde dag nog klaar kan zijn</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Fietsen die bij jouw stijl en budget passen</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"Fijne jongens die echt weten waar ze over praten, en die je niet onnodig geld uit je zak proberen te kloppen."</p>
-      <div class="testimonial-naam">Marc de Vries</div>
-      <div class="testimonial-functie">Klant, Apeldoorn</div>
-    </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Hoe bereik ik BongersBikes in Apeldoorn?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Bel ons op 055 578 6201 of stuur een email naar info@bongersbikes.nl. We helpen je graag verder met je vraag.</div>
-    </details><details>
-      <summary>Kunnen jullie mijn fiets dezelfde dag repareren?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Meestal wel, afhankelijk van wat je nodig hebt en hoe druk het is. Bel vooruit, dan weten we het zeker.</div>
-    </details><details>
-      <summary>Hebben jullie gebruikte fietsen in voorraad?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, we hebben altijd een selectie gebruikte fietsen. Kom langs om ze te bekijken en uit te proberen.</div>
-    </details><details>
-      <summary>Wat kost een basisbeurt voor mijn fiets?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Dat hangt af van wat je fiets nodig heeft. Kom langs voor een inspectie en krijg een eerlijke offerte.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met BongersBikes voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Kom langs of bel &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">BongersBikes<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <p class="mt-4 text-paper/75 leading-relaxed max-w-2xl">In 1999 opgericht door Gerrit Gaastra, gebouwd in zijn atelier Bike Basics in Duitsland. Eén fiets, één monteur, met handgemaakte aluminium en titanium frames. De volgorde van eisen: extreem duurzaam en betrouwbaar, zo min mogelijk onderhoud, zo breed mogelijk inzetbaar, en pas dan zo licht mogelijk.</p>
+      </article>
+
+      <ul class="lg:col-span-5 border-t border-paper/20">
+        <li class="py-5 border-b border-paper/20">
+          <h3 class="head text-3xl font-bold">KOGA <span class="text-paper/50 font-semibold">en KOGA Signature</span></h3>
+          <p class="mt-1.5 text-paper/70">Sinds 1974 uit Heerenveen. Van e-bikes tot de WorldTraveller. Elke fiets 100% getest in het KOGA Quality Center.</p>
+        </li>
+        <li class="py-5 border-b border-paper/20">
+          <h3 class="head text-3xl font-bold">Jan Janssen</h3>
+          <p class="mt-1.5 text-paper/70">Opgericht in 1972 door de Tourwinnaar van 1968. Handgemaakt in eigen fabriek in Hoogerheide, elke fiets op bestelling.</p>
+        </li>
+        <li class="py-5 border-b border-paper/20">
+          <h3 class="head text-3xl font-bold">Ridley</h3>
+          <p class="mt-1.5 text-paper/70">Gravelbikes, zoals de ASTR RS met SRAM Force XPLR.</p>
+        </li>
+        <li class="py-5 border-b border-paper/20">
+          <h3 class="head text-3xl font-bold">Santos, Tout Terrain, Van Nicholas</h3>
+          <p class="mt-1.5 text-paper/70">Op zoek naar een specifiek model? Bel of mail even voor de beschikbaarheid.</p>
+        </li>
       </ul>
     </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">Fietsverkoop</a></li><li><a href="diensten.html">Reparatie en onderhoud</a></li><li><a href="diensten.html">Onderdelen en accessoires</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="tel:0555786201">055 578 6201</a></li><li><a href="mailto:info@bongersbikes.nl">info@bongersbikes.nl</a></li><li><span>Apeldoorn</span></li></ul></div>
+
+    <div class="mt-14 lg:mt-20 pt-10 border-t border-paper/20 grid md:grid-cols-12 gap-8 items-center">
+      <p class="md:col-span-4 text-paper/70 leading-relaxed"><span class="text-paper font-semibold">Technieken voor de lange afstand.</span> Naaf, versnellingsbak of riem: we leggen u het verschil uit en laten het u voelen.</p>
+      <div class="md:col-span-8 grid grid-cols-3 gap-6 lg:gap-12 items-center">
+        <div class="aspect-[3.6] overflow-hidden"><img src="assets/site-01.png" alt="Rohloff" class="w-full h-auto"></div>
+        <div class="aspect-[3.6] overflow-hidden"><img src="assets/site-02.png" alt="Pinion" class="w-full h-auto"></div>
+        <div class="aspect-[3.6] overflow-hidden"><img src="assets/site-03.png" alt="Gates Carbon Drive" class="w-full h-auto"></div>
+      </div>
+    </div>
   </div>
-  <div class="footer-bottom"><p>&copy; 2025 BongersBikes. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
+</section>
+
+<!-- Bepakt en bezakt -->
+<section class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+  <div class="lg:col-span-6">
+    <h2 class="head font-extrabold text-5xl lg:text-6xl">Bepakt en bezakt op reis</h2>
+    <p class="mt-5 text-lg text-steel leading-relaxed max-w-lg">Een reisfiets is pas af met de juiste tassen en uitrusting. In de winkel vindt u onder meer Ortlieb-tassen, Brooks-zadels en stuurlint, en Santos-accessoires. We helpen u uitzoeken wat er op uw fiets past.</p>
+    <figure class="mt-12 grid grid-cols-[7rem_1fr] sm:grid-cols-[10rem_1fr] gap-5 items-center">
+      <img src="assets/site-04.png" alt="Alee Denham met het team voor de winkel van BongersBikes" class="w-full aspect-square object-cover object-left-top rounded-[3px]">
+      <figcaption class="text-steel leading-relaxed"><span class="block text-ink font-semibold">Alee Denham bij BongersBikes</span>Uit het nieuws van 17 juni 2026.</figcaption>
+    </figure>
+  </div>
+  <div class="lg:col-span-6">
+    <img src="assets/google-06.jpg" alt="Wand met Brooks-zadels, Ortlieb-tassen, Santos-accessoires en sloten" class="w-full aspect-[4/5] lg:aspect-[6/5] object-top object-cover rounded-[4px]">
+  </div>
+</section>
+
+<!-- Ervaringen -->
+<section id="ervaringen" class="border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+      <h2 class="head font-extrabold text-5xl lg:text-6xl max-w-xl">Wat klanten zeggen</h2>
+      <p class="text-steel"><span class="text-blue tracking-[.15em]" aria-hidden="true">★★★★★</span> <strong class="text-ink">4,7</strong> uit 213 Google-reviews</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
+      <figure class="lg:row-span-2 border-l-2 border-blue pl-6">
+        <blockquote class="text-xl leading-relaxed">"Het assortiment is van de hoogste kwaliteit en de vakkennis is groot. Ik ben door Hans geholpen en had het gevoel dat we samen op zoek gingen naar de fiets die voor mij het meest geschikt is. Zijn passie voor het fietsen spat er vanaf. Ik ben dan ook zeer tevreden met de keuze die ik uiteindelijk heb gemaakt."</blockquote>
+        <figcaption class="mt-5 font-semibold">Dhr. Heins</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="leading-relaxed text-ink/85">"Wat fijn om bij Bongers Bikes een fiets te kopen! Vriendelijke en deskundige verkoper, legde alles goed uit, en stelde de fiets af, net zo lang tot ik tevreden was. En... ik ben heel blij met mijn nieuwe fiets!"</blockquote>
+        <figcaption class="mt-4 font-semibold">Mia Spaans <span class="font-normal text-steel">via Google</span></figcaption>
+      </figure>
+      <figure>
+        <blockquote class="leading-relaxed text-ink/85">"Op 19 mei mochten we onze twee Santos Travelmaster E+ in ontvangst nemen. Na nu 450 kilometer gereden te hebben kunnen we zeggen dat we blij zijn met de service en de keuze van deze mooie fietsen. Ze rijden goed en comfortabel door de brede banden en de grote capaciteit van de accu."</blockquote>
+        <figcaption class="mt-4 font-semibold">Evarien en Hennie ter Hart Schonthaler <span class="font-normal text-steel">via Google</span></figcaption>
+      </figure>
+      <figure class="md:col-span-2">
+        <blockquote class="leading-relaxed text-ink/85 max-w-3xl">"Op zoek naar een goede vakantie/trekkingfiets heb ik een afspraak gemaakt bij Bongersbikes. Maarten stond me te woord en heeft ruim de tijd genomen om me de verschillende opties te laten zien. Met zijn hulp en kennis van fietsen en onderdelen konden we het keuzeproces prettig en vlot doorlopen. [...]"</blockquote>
+        <figcaption class="mt-4 font-semibold">Corno van Renssen <span class="font-normal text-steel">via Google</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Bezoek -->
+<section id="bezoek" class="bg-ink text-paper">
+  <div class="relative">
+    <img src="assets/google-01.jpg" alt="De winkelpui van BongersBikes met het opschrift Cycling Heart of Holland en een reisfiets met gele tassen voor de deur" class="w-full h-[46vh] min-h-[300px] lg:h-[70vh] object-cover object-[50%_30%]">
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent"></div>
+    <h2 class="head absolute left-5 lg:left-10 right-5 bottom-6 lg:bottom-10 font-extrabold text-white text-5xl sm:text-7xl lg:text-8xl max-w-4xl">Kom langs aan de Zwolseweg</h2>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-24 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5">
+      <p class=" text-paper/75 text-lg leading-relaxed">Wilt u uitgebreid advies of een testrit? Bel even, dan maken we tijd voor u.</p>
+      <address class="not-italic mt-8 space-y-2 text-lg">
+        <p>Zwolseweg 227<br>7315 GK Apeldoorn</p>
+        <p><a href="tel:+31555786201" class="hover:text-blue underline underline-offset-4 decoration-blue">055 578 6201</a></p>
+        <p><a href="mailto:info@bongersbikes.nl" class="hover:text-blue underline underline-offset-4 decoration-blue">info@bongersbikes.nl</a></p>
+      </address>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="tel:+31555786201" class="btn btn-blue">Testrit afspreken</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=BongersBikes+Zwolseweg+227+Apeldoorn" class="btn text-paper shadow-[inset_0_0_0_1.5px_#F1F4F3] hover:bg-paper hover:text-ink">Route plannen</a>
+      </div>
+    </div>
+    <div class="md:col-span-6 md:col-start-7">
+      <h3 class="wide text-sm font-semibold text-paper/60 mb-4">Openingstijden</h3>
+      <table class="w-full text-lg tabular-nums">
+        <tbody class="divide-y divide-paper/15">
+          <tr><td class="py-3 text-paper/60">Maandag</td><td class="py-3 text-right text-paper/60">Gesloten</td></tr>
+          <tr><td class="py-3">Dinsdag</td><td class="py-3 text-right">08:00 tot 17:30</td></tr>
+          <tr><td class="py-3">Woensdag</td><td class="py-3 text-right">08:00 tot 17:30</td></tr>
+          <tr><td class="py-3">Donderdag</td><td class="py-3 text-right">08:00 tot 17:30</td></tr>
+          <tr><td class="py-3 font-semibold">Vrijdag</td><td class="py-3 text-right font-semibold">08:00 tot 21:00</td></tr>
+          <tr><td class="py-3 text-paper/60">Zaterdag</td><td class="py-3 text-right text-paper/60">Gesloten</td></tr>
+          <tr><td class="py-3 text-paper/60">Zondag</td><td class="py-3 text-right text-paper/60">Gesloten</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-ink text-paper/55 border-t border-paper/15">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-8 flex flex-col sm:flex-row gap-3 justify-between text-sm">
+    <p>BongersBikes, Zwolseweg 227, Apeldoorn</p>
+    <p>Demo door <a href="https://hagenweb.nl" class="text-paper hover:text-blue">Hagenweb</a></p>
+  </div>
 </footer>
-<div class="demo-banner"><span>&#9889; DEMO voor BongersBikes &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
 
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
+<!-- Belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-20 grid grid-cols-2 bg-ink text-paper border-t border-paper/15">
+  <a href="tel:+31555786201" class="flex items-center justify-center gap-2 py-4 bg-blue text-white font-semibold">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel de winkel
+  </a>
+  <a href="#bezoek" class="flex items-center justify-center py-4 font-semibold">Route en tijden</a>
+</div>
 
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  }
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
-
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
-    }
-  }
-});
-</script>
 </body>
 </html>
