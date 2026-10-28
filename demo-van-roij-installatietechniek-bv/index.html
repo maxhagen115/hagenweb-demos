@@ -1,640 +1,346 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>van Roij installatietechniek B.V. | Nijmegen</title>
-  <meta name="description" content="Lek? Cv-storing? Badkamer nodig? Bel direct voor spoedservice in Nijmegen.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0f0f0f; color: #f5f5f5; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-:root {
-  --accent: #f59e0b; --accent-dark: #d97706; --accent-light: rgba(245,158,11,0.12);
-  --bg: #0f0f0f; --surface: #1a1a1a; --border: #2a2a2a;
-  --text: #f5f5f5; --muted: #a0a0a0; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(15,15,15,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.4);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #f5f5f5; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #a0a0a0; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #f5f5f5; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #f5f5f5; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(15,15,15,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.3) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #0f0f0f, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.3) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #1a1a1a; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #1a1a1a; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #080808; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #080808; border-top: 1px solid #1e1e1e;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #1e1e1e; padding-top: 24px; color: #444444; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
-</head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">van<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/29301874/pexels-photo-29301874.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">Van Roij installatietechniek, 24/7<br><em>beschikbaar</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Lek? Cv-storing? Badkamer nodig? Bel direct voor spoedservice in Nijmegen.</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Bel direct</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/29274530/pexels-photo-29274530.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Lekkage verhelpen" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Lekkage</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>Lekkage verhelpen</h3>
-            <p>Waterlekkages opgespoord en verholpen, direct en effectief.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/4194862/pexels-photo-4194862.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="CV-ketel installatie en onderhoud" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">CV-ketel</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>CV-ketel installatie en onderhoud</h3>
-            <p>Installatie, reparatie en jaarlijkse servicebeurt voor optimale werking.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/29252628/pexels-photo-29252628.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Badkamer renovatie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Badkamer</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Badkamer renovatie</h3>
-            <p>Compleet bad of douche ontwerp, installatie en afwerking met garantie.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/6444240/pexels-photo-6444240.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="van Roij installatietechniek B.V." loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          <div class="stats-badge"><span class="stats-num">15+</span><span class="stats-label">jaar ervaring</span></div>
-        </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/6519910/pexels-photo-6519910.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/8143696/pexels-photo-8143696.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
-      </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">van Roij installatietechniek B.V.</h2>
-        <p class="reveal reveal-delay-1">Van Roij installatietechniek is sinds jaren dé betrouwbare installateur in Nijmegen. We pakken elk klus aan met oog voor detail: of het nu een spoedlekkage is, CV-onderhoud of een hele badkamerrenovatie. Geen marketing, geen gedoe, gewoon eerlijk vakwerk..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>24/7 spoedservice, geen wachtlijsten</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Eerlijk tarief, geen verrassingen achteraf</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Vakwerk met garantie op alle installatiewerk</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"Zondag lekkage gehad, maandag al opgelost door Van Roij. Professioneel en eerlijk in de prijs."</p>
-      <div class="testimonial-naam">Mark de Vries</div>
-      <div class="testimonial-functie">Huiseigenaar, Nijmegen</div>
-    </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Werken jullie ook buiten kantoortijden?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, we zijn 24/7 bereikbaar voor spoedwerk. Bel 085 203 0230 voor spoedreparatie of noodsituaties.</div>
-    </details><details>
-      <summary>Hoe veel kost een lekkage reparatie?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Eerst inspectie, dan helder tarief. Geen verrassingen. Bel voor een schatting of afspraak in Nijmegen.</div>
-    </details><details>
-      <summary>Geven jullie garantie op het geleverde werk?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, garantie op alle installatiewerk. Details bespreken we bij aanvang van de klus.</div>
-    </details><details>
-      <summary>Doen jullie CV-ketelinspecties voor woningverkoop?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, we voeren inspectie en certificering uit. Bel voor afspraak of mail info@duurzaamxl.nl.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met van Roij installatietechniek B.V. voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Bel direct &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">van<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">Lekkage verhelpen</a></li><li><a href="diensten.html">CV-ketel installatie en onderhoud</a></li><li><a href="diensten.html">Badkamer renovatie</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="tel:0852030230">085 203 0230</a></li><li><a href="mailto:info@duurzaamxl.nl">info@duurzaamxl.nl</a></li><li><span>Nijmegen</span></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2025 van Roij installatietechniek B.V.. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
-</footer>
-<div class="demo-banner"><span>&#9889; DEMO voor van Roij installatietechniek B.V. &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>van Roij installatietechniek | Cv, warmtepomp, ventilatie en sanitair in regio Nijmegen</title>
+<meta name="description" content="Cv-ketels, warmtepompen, airco, ventilatie en sanitair in Nijmegen en omgeving. Eerlijke prijs, zonder voorrijkosten. Bel 085 203 0230.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
-
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  }
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
-
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
-    }
-  }
-});
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        inkt: '#15312c',
+        groen: { DEFAULT: '#23946f', donker: '#1a7457', licht: '#e2f0eb' },
+        paars: '#6c56b3',
+        tegel: '#f3f5f4',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'sans-serif'],
+        sans: ['"Public Sans"', 'sans-serif'],
+      },
+    },
+  },
+}
 </script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, blockquote { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* Groen-paarse streep, zoals op de bus */
+  .streep { height: 10px; background: linear-gradient(#23946f 0 50%, #6c56b3 50% 100%); }
+  .muur { columns: 2; column-gap: .75rem; }
+  .muur figure { break-inside: avoid; margin-bottom: .75rem; }
+  @media (min-width: 1024px) { .muur { columns: 3; column-gap: 1rem; } .muur figure { margin-bottom: 1rem; } }
+  :focus-visible { outline: 3px solid #23946f; outline-offset: 3px; }
+</style>
+</head>
+<body class="bg-white font-sans text-inkt pb-20 md:pb-0">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-inkt text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor van Roij installatietechniek B.V., gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-groen-licht">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="leading-none">
+      <span class="block font-kop font-extrabold text-2xl lg:text-[1.7rem] tracking-tight">van Roij</span>
+      <span class="block text-[11px] lg:text-xs text-inkt/60 tracking-wide mt-0.5">installatietechniek</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#diensten" class="hover:text-groen">Diensten</a>
+      <a href="#werk" class="hover:text-groen">Ons werk</a>
+      <a href="#onderhoud" class="hover:text-groen">Onderhoud</a>
+      <a href="#reviews" class="hover:text-groen">Reviews</a>
+      <a href="#contact" class="hover:text-groen">Contact</a>
+    </nav>
+    <a href="tel:0852030230" class="inline-flex items-center gap-2 bg-groen hover:bg-groen-donker active:translate-y-px transition text-white font-semibold rounded-md px-4 py-2.5 text-sm lg:text-base">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">085 203 0230</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section id="top" class="bg-tegel">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-10 pb-14 lg:pt-20 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="lg:col-span-6">
+      <p class="text-groen-donker font-semibold">Installateur in Nijmegen en omgeving</p>
+      <h1 class="font-kop font-extrabold tracking-tight leading-[0.95] text-[2.9rem] sm:text-6xl xl:text-[5.2rem] mt-4">
+        Netjes aangesloten, tot en met de leidingloop.
+      </h1>
+      <p class="mt-6 text-lg lg:text-xl text-inkt/75 max-w-xl leading-relaxed">
+        Cv-ketels, warmtepompen, airco, ventilatie en sanitair. U krijgt vooraf eerlijk advies en een duidelijke prijs, en wij werken zonder voorrijkosten.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="tel:0852030230" class="inline-flex items-center gap-2 bg-groen hover:bg-groen-donker active:translate-y-px transition text-white font-semibold rounded-md px-6 py-4 text-lg">Bel 085 203 0230</a>
+        <a href="#contact" class="inline-flex items-center bg-white hover:bg-groen-licht active:translate-y-px transition border border-inkt/15 font-semibold rounded-md px-6 py-4 text-lg">Prijsopgave aanvragen</a>
+      </div>
+    </div>
+    <div class="lg:col-span-6 relative">
+      <div class="grid grid-cols-5 grid-rows-2 gap-3 sm:gap-4 h-[340px] sm:h-[520px] lg:h-[600px]">
+        <img src="assets/google-01.jpg" alt="Nieuwe cv-ketel met strak weggewerkte leidingen in een ketelkast" class="col-span-3 row-span-2 w-full h-full object-cover rounded-lg">
+        <img src="assets/google-02.jpg" alt="Badkamermeubel van hout met twee betonlook waskommen en zwarte kranen" class="col-span-2 w-full h-full object-cover rounded-lg">
+        <img src="assets/google-08.jpg" alt="Vrijstaand antraciet bad met zwarte vrijstaande kraan" class="col-span-2 w-full h-full object-cover object-left rounded-lg">
+      </div>
+    </div>
+  </div>
+  <div class="streep" aria-hidden="true"></div>
+</section>
+
+<!-- Feiten -->
+<section class="border-b border-inkt/10">
+  <dl class="max-w-7xl mx-auto px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4">
+    <div class="py-6 lg:py-8 pr-4 border-r border-b lg:border-b-0 border-inkt/10">
+      <dt class="text-sm text-inkt/60">Google-reviews</dt>
+      <dd class="font-kop font-bold text-lg sm:text-xl lg:text-2xl mt-1">5,0 uit 48 reviews</dd>
+    </div>
+    <div class="py-6 lg:py-8 pl-4 lg:pl-8 pr-4 border-b lg:border-b-0 lg:border-r border-inkt/10">
+      <dt class="text-sm text-inkt/60">Voorrijkosten</dt>
+      <dd class="font-kop font-bold text-lg sm:text-xl lg:text-2xl mt-1">Geen</dd>
+    </div>
+    <div class="py-6 lg:py-8 pr-4 lg:pl-8 border-r border-inkt/10">
+      <dt class="text-sm text-inkt/60">Garantie op het werk</dt>
+      <dd class="font-kop font-bold text-lg sm:text-xl lg:text-2xl mt-1">2 jaar</dd>
+    </div>
+    <div class="py-6 lg:py-8 pl-4 lg:pl-8">
+      <dt class="text-sm text-inkt/60">Bereikbaar</dt>
+      <dd class="font-kop font-bold text-lg sm:text-xl lg:text-2xl mt-1">Ma t/m vr, 07:30 tot 16:15</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-16">
+  <div class="lg:col-span-4">
+    <div class="lg:sticky lg:top-32">
+      <h2 class="font-kop font-extrabold tracking-tight text-4xl lg:text-5xl leading-[1.02]">Waar u ons voor belt</h2>
+      <p class="mt-5 text-inkt/70 text-lg leading-relaxed max-w-sm">Van een lekkende kraan tot een complete hybride warmtepomp. Wij werken met eigen producten en materialen, zodat we kunnen instaan voor de kwaliteit.</p>
+      <a href="#contact" class="inline-block mt-6 font-semibold text-groen-donker underline underline-offset-4 decoration-2 hover:text-inkt">Vraag een prijsopgave aan</a>
+    </div>
+  </div>
+
+  <div class="lg:col-span-8 divide-y divide-inkt/10 border-t border-inkt/10">
+    <article class="py-10 lg:py-12 grid sm:grid-cols-[1fr_190px] gap-6 lg:gap-10">
+      <div>
+        <h3 class="font-kop font-bold text-2xl lg:text-3xl">Cv-ketel en radiatoren</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed max-w-prose">Wilt u uw cv-ketel of radiatoren laten vervangen, of alleen de leidingen? Een cv-ketel gaat gemiddeld 15 jaar mee. Rond die leeftijd heeft hij meer onderhoud nodig, krijgt hij sneller storingen en verbruikt hij meer energie. Nieuwe radiatoren leveren we in verschillende maten, vormen en kleuren.</p>
+      </div>
+      <img src="assets/site-12.jpg" alt="Geplaatste cv-ketel met nieuwe koperen leidingen" class="w-full sm:w-[190px] aspect-[4/3] sm:aspect-[3/4] object-cover rounded-lg">
+    </article>
+
+    <article class="py-10 lg:py-12">
+      <h3 class="font-kop font-bold text-2xl lg:text-3xl">Warmtepomp en airco</h3>
+      <p class="mt-3 text-inkt/75 leading-relaxed max-w-prose">Een warmtepomp haalt warmte uit de lucht of de bodem en verwarmt daarmee uw huis. U gebruikt veel minder of helemaal geen gas meer, met lagere energiekosten en minder CO2-uitstoot. Welke past bij uw woning?</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-px bg-inkt/10 rounded-lg overflow-hidden">
+        <div class="bg-groen-licht p-6">
+          <h4 class="font-kop font-bold text-xl">Hybride</h4>
+          <p class="mt-2 text-inkt/80 leading-relaxed">Werkt samen met uw cv-ketel. De ketel springt alleen bij als het echt koud is. Een goede keuze als er geen ruimte is voor een boilervat, of als uw huis niet warm wordt met alleen lagetemperatuurverwarming.</p>
+        </div>
+        <div class="bg-tegel p-6">
+          <h4 class="font-kop font-bold text-xl">All-electric</h4>
+          <p class="mt-2 text-inkt/80 leading-relaxed">Geen gasketel meer nodig. U heeft wel ruimte nodig voor een boilervat voor warm water.</p>
+        </div>
+      </div>
+      <p class="mt-6 text-inkt/75 leading-relaxed max-w-prose">Ook voor airco's bent u bij ons aan het juiste adres: koel in de zomer, warm in de winter, zuinig en fluisterstil. Veel modellen hebben we uit voorraad leverbaar.</p>
+    </article>
+
+    <article class="py-10 lg:py-12">
+      <h3 class="font-kop font-bold text-2xl lg:text-3xl">Ventilatie</h3>
+      <p class="mt-3 text-inkt/75 leading-relaxed max-w-prose">Mechanische ventilatie of een WTW-unit ouder dan 10 jaar, die veel lawaai maakt of niet meer goed werkt? Dan is vervangen verstandig. Laat uw ventilatie daarnaast minstens eens in de 6 jaar reinigen: we maken de luchtkanalen schoon met speciale borstels en een stofzuiger, en reinigen ook de box en de ventielen.</p>
+    </article>
+
+    <article class="py-10 lg:py-12 grid sm:grid-cols-[1fr_190px] gap-6 lg:gap-10">
+      <div>
+        <h3 class="font-kop font-bold text-2xl lg:text-3xl">Badkamer, toilet en sanitair</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed max-w-prose">Loodgieterswerk, een nieuw toilet of fonteintje, of een complete badkamer, ook in een ruimte die eerst slaapkamer was. Wij denken mee over de indeling en werken het netjes af.</p>
+      </div>
+      <img src="assets/google-06.jpg" alt="Inloopdouche met zwart stalen glaswand en grijze tegels" class="w-full sm:w-[190px] aspect-[4/3] sm:aspect-[3/4] object-cover rounded-lg">
+    </article>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="bg-tegel py-16 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-10 lg:mb-14">
+      <h2 class="lg:col-span-6 font-kop font-extrabold tracking-tight text-4xl lg:text-5xl leading-[1.02]">Werk dat we hebben opgeleverd</h2>
+      <p class="lg:col-span-5 lg:col-start-8 text-inkt/70 text-lg leading-relaxed">Badkamers, toiletten en ketels bij klanten in Nijmegen, Wijchen, Beuningen, Elst en Beekbergen.</p>
+    </div>
+    <div class="muur">
+      <figure><img src="assets/google-03.jpg" alt="Hangtoilet tussen marmeren tegels" class="w-full rounded-lg"><figcaption class="text-sm text-inkt/60 mt-2">Toilet in marmerlook</figcaption></figure>
+      <figure><img src="assets/site-09.webp" alt="Badkamer met blauwe tegelwand en dubbel houten wastafelmeubel" class="w-full rounded-lg"><figcaption class="text-sm text-inkt/60 mt-2">Badkamer met dubbel wastafelmeubel</figcaption></figure>
+      <figure><img src="assets/google-07.png" alt="Toilet met fontein en grijze tegelwand" class="w-full rounded-lg"><figcaption class="text-sm text-inkt/60 mt-2">Toiletrenovatie</figcaption></figure>
+      <figure><img src="assets/site-14.jpg" alt="Fontein met mozaïek waskom op houten blad en Portugese tegelvloer" class="w-full rounded-lg"><figcaption class="text-sm text-inkt/60 mt-2">Fontein op houten blad</figcaption></figure>
+      <figure><img src="assets/google-08.jpg" alt="Vrijstaand antraciet bad" class="w-full rounded-lg"><figcaption class="text-sm text-inkt/60 mt-2">Vrijstaand bad</figcaption></figure>
+      <figure><img src="assets/site-10.jpg" alt="Waskom op eiken blad tegen donkere mozaïektegels" class="w-full rounded-lg"><figcaption class="text-sm text-inkt/60 mt-2">Waskom op eiken blad</figcaption></figure>
+      <figure><img src="assets/site-11.jpg" alt="Wit wastafelmeubel met inbouwkraan en brede spiegel" class="w-full rounded-lg"><figcaption class="text-sm text-inkt/60 mt-2">Wastafel met inbouwkraan</figcaption></figure>
+      <figure><img src="assets/site-07.webp" alt="Cv-ketel tussen houten kastdeuren" class="w-full rounded-lg"><figcaption class="text-sm text-inkt/60 mt-2">Cv-ketel vervangen</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="bg-groen text-white">
+  <div class="max-w-5xl mx-auto px-5 lg:px-8 py-16 lg:py-24">
+    <blockquote class="font-kop font-bold text-2xl sm:text-3xl lg:text-[2.6rem] leading-[1.2] tracking-tight">
+      "Hij beseft dat een cv-ketel en hybride warmtepomp installeren in een bestaande woning één is, maar dat je het verschil maakt in de afwerking, o.a. van de leidingloop."
+    </blockquote>
+    <p class="mt-8 text-white/85">S Ebben, Google-review, 5 sterren</p>
+  </div>
+</section>
+
+<!-- Onderhoud -->
+<section id="onderhoud" class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-16">
+  <div class="lg:col-span-5">
+    <h2 class="font-kop font-extrabold tracking-tight text-4xl lg:text-5xl leading-[1.02]">Eén keer per jaar laten nakijken</h2>
+    <p class="mt-5 text-inkt/70 text-lg leading-relaxed max-w-md">Een cv-ketel draait dag en nacht. Net als uw auto heeft hij een jaarlijkse beurt nodig. Met een servicecontract hoeft u er niet meer aan te denken.</p>
+    <a href="mailto:info@duurzaamxl.nl?subject=Servicecontract%20aanvragen" class="inline-flex mt-8 bg-inkt hover:bg-groen-donker active:translate-y-px transition text-white font-semibold rounded-md px-6 py-4">Servicecontract aanvragen</a>
+  </div>
+  <dl class="lg:col-span-7 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+    <div class="border-t-2 border-groen pt-4">
+      <dt class="font-kop font-bold text-xl">Veiliger</dt>
+      <dd class="mt-2 text-inkt/75 leading-relaxed">De brandweer raadt jaarlijkse controle aan, en veel brandverzekeringen eisen het.</dd>
+    </div>
+    <div class="border-t-2 border-groen pt-4">
+      <dt class="font-kop font-bold text-xl">Minder storingen</dt>
+      <dd class="mt-2 text-inkt/75 leading-relaxed">Kleine defecten lossen we op voordat uw verwarming op een slecht moment uitvalt.</dd>
+    </div>
+    <div class="border-t-2 border-groen pt-4">
+      <dt class="font-kop font-bold text-xl">Geen dure reparaties</dt>
+      <dd class="mt-2 text-inkt/75 leading-relaxed">Wat tijdens de beurt gerepareerd wordt, scheelt later een storingsbezoek en arbeidsloon.</dd>
+    </div>
+    <div class="border-t-2 border-groen pt-4">
+      <dt class="font-kop font-bold text-xl">Langer mee</dt>
+      <dd class="mt-2 text-inkt/75 leading-relaxed">Uw ketel, geiser of boiler blijft langer in goede staat, zodat u vervanging uitstelt.</dd>
+    </div>
+    <div class="border-t-2 border-groen pt-4 sm:col-span-2">
+      <dt class="font-kop font-bold text-xl">Hoger rendement</dt>
+      <dd class="mt-2 text-inkt/75 leading-relaxed max-w-prose">Een hr-ketel haalt zijn rendement alleen als hij goed is ingesteld. Juist instellen kan wel 25% of meer schelen.</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-tegel py-16 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-10 lg:mb-14">
+      <h2 class="font-kop font-extrabold tracking-tight text-4xl lg:text-5xl leading-[1.02]">Wat klanten zeggen</h2>
+      <p class="text-lg"><span class="text-groen text-xl tracking-wider" aria-hidden="true">★★★★★</span> <span class="font-semibold">5,0</span> <span class="text-inkt/65">uit 48 Google-reviews</span></p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-4 lg:gap-6">
+      <figure class="bg-white rounded-lg p-7 lg:p-9">
+        <blockquote class="text-lg leading-relaxed">"Wij hebben een Hybride warmtepomp door Vincent en zijn team Laten plaatsen. Prettige communicatie, duidelijke afspraak en een keurige installatie! Echt een heel prettige ervaring die vertrouwen geeft voor de toekomst😘"</blockquote>
+        <figcaption class="mt-5 font-semibold">Arthur Roelofs</figcaption>
+      </figure>
+      <figure class="bg-white rounded-lg p-7 lg:p-9">
+        <blockquote class="text-lg leading-relaxed">"Vincent heeft bij ons een nieuwe CV ketel geplaatst. Vincent heeft ons goed en professioneel advies gegeven vooraf over het type CV ketel. Plaatsing van de ketel ging op dezelfde professionele wijze. Wij zijn zeer tevreden en bevelen van Roij installatietechniek van harte aan."</blockquote>
+        <figcaption class="mt-5 font-semibold">Gijs Arends</figcaption>
+      </figure>
+      <figure class="bg-white rounded-lg p-7 lg:p-9">
+        <blockquote class="text-lg leading-relaxed">"Vincent heeft onze badkamer en wc geplaatst en daarvoor hadden we ons geen betere installateur kunnen wensen. Vincent denkt mee, geeft eerlijk, professioneel en gedegen advies en vond het absoluut niet erg om een stapje extra te zetten!"</blockquote>
+        <figcaption class="mt-5 font-semibold">Koen Drijvers</figcaption>
+      </figure>
+      <figure class="bg-white rounded-lg p-7 lg:p-9">
+        <blockquote class="text-lg leading-relaxed">"Van Roij installatie techniek heeft vandaag een nieuwe cv installatie geplaatst en ik zeer tevreden met het resultaat en de werkwijze van de medewerkers van dit bedrijf. Keurig en netjes gewerkt hulde."</blockquote>
+        <figcaption class="mt-5 font-semibold">Rene Beks</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+  <div class="lg:col-span-5">
+    <h2 class="font-kop font-extrabold tracking-tight text-4xl lg:text-5xl leading-[1.02]">Bel of mail, we komen bij u langs</h2>
+    <p class="mt-5 text-inkt/70 text-lg leading-relaxed">Vertel kort wat er moet gebeuren. U krijgt eerlijk advies en een duidelijke prijsopgave.</p>
+    <a href="tel:0852030230" class="block mt-8 font-kop font-extrabold text-4xl sm:text-5xl tracking-tight text-groen-donker hover:text-inkt">085 203 0230</a>
+    <a href="mailto:info@duurzaamxl.nl" class="inline-block mt-3 text-lg font-semibold underline underline-offset-4 decoration-groen decoration-2 hover:text-groen-donker">info@duurzaamxl.nl</a>
+
+    <div class="mt-10 grid sm:grid-cols-2 gap-8">
+      <div>
+        <h3 class="font-semibold">Adres</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">Rietgraafsingel 6<br>6678 PH Oosterhout</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Openingstijden</h3>
+        <table class="mt-2 text-inkt/75 tabular-nums">
+          <tr><td class="pr-4">Ma t/m vr</td><td>07:30 tot 16:15</td></tr>
+          <tr><td class="pr-4">Za en zo</td><td>Gesloten</td></tr>
+        </table>
+      </div>
+    </div>
+    <img src="assets/google-05.jpg" alt="Bedrijfsbus van van Roij installatietechniek" class="mt-10 w-full max-w-md aspect-[16/9] object-cover rounded-lg">
+  </div>
+
+  <form action="mailto:info@duurzaamxl.nl" method="post" enctype="text/plain" class="lg:col-span-6 lg:col-start-7 bg-tegel rounded-xl p-6 sm:p-9 space-y-5 self-start">
+    <h3 class="font-kop font-bold text-2xl">Prijsopgave aanvragen</h3>
+    <div>
+      <label for="naam" class="block text-sm font-semibold mb-1.5">Naam</label>
+      <input id="naam" name="naam" required autocomplete="name" class="w-full rounded-md border border-inkt/20 bg-white px-4 py-3 focus:border-groen focus:outline-none">
+    </div>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div>
+        <label for="tel" class="block text-sm font-semibold mb-1.5">Telefoon</label>
+        <input id="tel" name="telefoon" type="tel" autocomplete="tel" class="w-full rounded-md border border-inkt/20 bg-white px-4 py-3 focus:border-groen focus:outline-none">
+      </div>
+      <div>
+        <label for="mail" class="block text-sm font-semibold mb-1.5">E-mail</label>
+        <input id="mail" name="email" type="email" required autocomplete="email" class="w-full rounded-md border border-inkt/20 bg-white px-4 py-3 focus:border-groen focus:outline-none">
+      </div>
+    </div>
+    <div>
+      <label for="onderwerp" class="block text-sm font-semibold mb-1.5">Waar gaat het over?</label>
+      <select id="onderwerp" name="onderwerp" class="w-full rounded-md border border-inkt/20 bg-white px-4 py-3 focus:border-groen focus:outline-none">
+        <option>Cv-ketel of radiatoren</option>
+        <option>Onderhoud of servicecontract</option>
+        <option>Warmtepomp</option>
+        <option>Airco</option>
+        <option>Ventilatie</option>
+        <option>Badkamer, toilet of sanitair</option>
+        <option>Iets anders</option>
+      </select>
+    </div>
+    <div>
+      <label for="bericht" class="block text-sm font-semibold mb-1.5">Uw vraag</label>
+      <textarea id="bericht" name="bericht" rows="4" class="w-full rounded-md border border-inkt/20 bg-white px-4 py-3 focus:border-groen focus:outline-none"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-groen hover:bg-groen-donker active:translate-y-px transition text-white font-semibold rounded-md px-6 py-4 text-lg">Aanvraag versturen</button>
+  </form>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/75">
+  <div class="streep" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div>
+      <p class="font-kop font-extrabold text-2xl text-white tracking-tight">van Roij</p>
+      <p class="text-sm">installatietechniek B.V.</p>
+      <p class="mt-5 text-sm max-w-sm">van Roij installatietechniek is onderdeel van DuurzaamXL.</p>
+    </div>
+    <div class="text-sm leading-7">
+      <p>Rietgraafsingel 6, 6678 PH Oosterhout</p>
+      <p><a href="tel:0852030230" class="hover:text-white">085 203 0230</a></p>
+      <p><a href="mailto:info@duurzaamxl.nl" class="hover:text-white">info@duurzaamxl.nl</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-inkt/10 p-3 grid grid-cols-2 gap-2">
+  <a href="tel:0852030230" class="bg-groen active:bg-groen-donker text-white font-semibold rounded-md py-3.5 text-center">Bel direct</a>
+  <a href="#contact" class="bg-tegel border border-inkt/15 font-semibold rounded-md py-3.5 text-center">Prijsopgave</a>
+</div>
+
 </body>
 </html>
