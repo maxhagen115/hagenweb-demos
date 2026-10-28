@@ -1,640 +1,300 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harleman Tweewielers | Apeldoorn</title>
-  <meta name="description" content="Kwaliteitsfietsen, reparatie en onderdelen voor elk moment in Apeldoorn">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f8fafc; color: #0f172a; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-:root {
-  --accent: #fb923c; --accent-dark: #1d4ed8; --accent-light: rgba(251,146,60,0.08);
-  --bg: #f8fafc; --surface: #ffffff; --border: #e2e8f0;
-  --text: #0f172a; --muted: #64748b; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(255,255,255,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #0f172a; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #64748b; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #0f172a; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #0f172a; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,30,60,0.82) 0%, rgba(10,30,60,0.55) 60%, rgba(10,30,60,0.3) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #f8fafc, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,30,60,0.82) 0%, rgba(10,30,60,0.55) 60%, rgba(10,30,60,0.3) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #f8fafc; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #ffffff; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #0f172a; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #0f172a; border-top: 1px solid #1e293b;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #1e293b; padding-top: 24px; color: #334155; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harleman Tweewielers | Fietsenmaker en fietsenwinkel in Apeldoorn sinds 1921</title>
+<meta name="description" content="Fietsenwinkel en werkplaats aan de Pinksterbloem 12 in Apeldoorn. Nieuwe fietsen, e-bikes, BOVAG-occasions, reparatie en onderhoud. Bel 055 366 5567.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        luifel: '#EE7A1F',
+        asfalt: '#1F1C1A',
+        klinker: '#EAE6E1',
+        baksteen: '#8C4A31',
+      },
+      fontFamily: {
+        kop: ['Archivo', 'system-ui', 'sans-serif'],
+        tekst: ['"Source Serif 4"', 'Georgia', 'serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Serif 4", Georgia, serif; }
+  .kop { font-family: Archivo, system-ui, sans-serif; font-stretch: 125%; font-weight: 800; letter-spacing: -0.02em; line-height: 0.98; text-wrap: balance; }
+  .smal { font-family: Archivo, system-ui, sans-serif; font-stretch: 85%; font-weight: 600; }
+  p { text-wrap: pretty; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #1F1C1A; outline-offset: 3px; }
+  .op-oranje a:focus-visible { outline-color: #fff; }
+  .vandaag { background: #EE7A1F; color: #1F1C1A; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-kop { animation: op 700ms cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes op { from { transform: translateY(18px); opacity: 0; } }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Harleman<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/6334127/pexels-photo-6334127.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">Harleman Tweewielers, jouw<br><em>fietsvriend</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Kwaliteitsfietsen, reparatie en onderdelen voor elk moment in Apeldoorn</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Bel voor advies</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/6334127/pexels-photo-6334127.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Fietsverkoop" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Fietsverkoop</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>Fietsverkoop</h3>
-            <p>Breed assortiment van kinderfietsen tot elektrische fietsen</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/34185192/pexels-photo-34185192.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Reparatie en onderhoud" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Reparatie</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>Reparatie en onderhoud</h3>
-            <p>Vakkundig herstel, bandenservice en regelmatig onderhoud</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/37210494/pexels-photo-37210494.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Onderdelen en accessoires" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Onderdelen</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Onderdelen en accessoires</h3>
-            <p>Complete voorraad verlichting, wielen, remmen en meer</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<body class="bg-white text-asfalt antialiased pb-16 md:pb-0">
 
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/7869124/pexels-photo-7869124.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Harleman Tweewielers" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:bg-white focus:px-3 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-asfalt text-white/80 text-xs smal tracking-wide text-center px-4 py-2">
+  Demo voor Harleman Tweewielers, gemaakt door <a href="https://hagenweb.nl" class="underline text-white hover:text-luifel">Hagenweb</a>
+</div>
+
+<header class="bg-white border-b border-asfalt/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16 md:h-20">
+    <a href="#" class="flex items-baseline gap-2" aria-label="Harleman Tweewielers, naar boven">
+      <span class="kop text-2xl md:text-3xl lowercase">harleman</span>
+      <span class="smal text-xs text-asfalt/60 hidden sm:inline">tweewielers</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 smal text-[15px]">
+      <a href="#werkplaats" class="hover:text-baksteen">Werkplaats</a>
+      <a href="#kopen" class="hover:text-baksteen">Fiets kopen</a>
+      <a href="#shop" class="hover:text-baksteen">Shop</a>
+      <a href="#sinds-1921" class="hover:text-baksteen">Sinds 1921</a>
+      <a href="#langskomen" class="hover:text-baksteen">Langskomen</a>
+    </nav>
+    <a href="tel:0553665567" class="smal bg-asfalt text-white px-4 py-2.5 hover:bg-baksteen transition-colors">055 366 5567</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="relative">
+    <img src="assets/google-06.jpg" alt="De winkel van Harleman Tweewielers aan de Pinksterbloem in Apeldoorn, met oranje luifel en vlaggen" class="w-full h-[62vh] min-h-[420px] max-h-[720px] object-cover object-[60%_55%]">
+    <div class="absolute inset-0 bg-gradient-to-t from-asfalt/85 via-asfalt/20 to-transparent"></div>
+    <div class="absolute inset-x-0 bottom-0">
+      <div class="max-w-7xl mx-auto px-5 md:px-8 pb-8 md:pb-14">
+        <h1 class="hero-kop kop text-white text-[2.6rem] sm:text-6xl lg:text-[5.5rem] max-w-5xl">Fietsenmaker in Apeldoorn sinds 1921</h1>
+        <p class="text-white/90 text-lg md:text-xl mt-4 md:mt-6 max-w-2xl">Nieuwe fietsen, e-bikes en occasions, en een werkplaats waar u gewoon even binnen kunt lopen met een rem die het niet doet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Luifel -->
+  <section class="op-oranje bg-luifel text-asfalt" aria-label="Contact en openingstijden">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-6 md:py-7 grid gap-5 md:grid-cols-3 md:gap-8 smal text-base md:text-lg">
+      <a href="tel:0553665567" class="group">
+        <span class="block text-sm font-medium opacity-75">Bellen</span>
+        <span class="kop text-2xl md:text-3xl group-hover:underline">055 366 5567</span>
+      </a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Pinksterbloem+12+7322+GT+Apeldoorn" class="group">
+        <span class="block text-sm font-medium opacity-75">Adres</span>
+        <span class="group-hover:underline">Pinksterbloem 12, 7322 GT Apeldoorn</span>
+      </a>
+      <div>
+        <span class="block text-sm font-medium opacity-75">Open</span>
+        di t/m vr 08:30 tot 17:30, za 09:00 tot 16:00
+      </div>
+    </div>
+  </section>
+
+  <!-- Werkplaats -->
+  <section id="werkplaats" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <div class="lg:col-span-5">
+        <h2 class="kop text-4xl md:text-5xl">De werkplaats</h2>
+        <p class="text-lg md:text-xl mt-6 leading-relaxed">Wie zijn fiets veel gebruikt, heeft af en toe iets stuk. Een lekke band, remmen die niet meer pakken, een versnelling die overslaat: wij kijken er vakkundig naar, ook bij elektrische fietsen.</p>
+        <p class="mt-4 leading-relaxed text-asfalt/80">Een jaarlijkse onderhoudsbeurt verlengt de levensduur van uw fiets flink en voorkomt dat kleine dingen grote reparaties worden. Zeker na de winter.</p>
+
+        <div class="mt-10 border-t-4 border-luifel pt-6">
+          <h3 class="kop text-2xl">Fiets online gekocht?</h3>
+          <p class="mt-3 leading-relaxed text-asfalt/80">Kwam uw fiets als bouwpakket in een doos, zonder handleiding? Wij monteren en stellen hem vakkundig af tegen een vast tarief. Kom na drie maanden nog eens langs voor een onderhoudsbeurt, dan trekken we alle belangrijke onderdelen na.</p>
         </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/8127807/pexels-photo-8127807.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/20390772/pexels-photo-20390772.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
+
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="tel:0553665567" class="smal bg-asfalt text-white px-6 py-3.5 text-lg hover:bg-baksteen transition-colors active:translate-y-px">Bel voor een afspraak</a>
+          <a href="mailto:info@harlemantweewielers.nl?subject=Afspraak%20werkplaats" class="smal border-2 border-asfalt px-6 py-3 text-lg hover:bg-klinker transition-colors">Mail de werkplaats</a>
+        </div>
       </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Harleman Tweewielers</h2>
-        <p class="reveal reveal-delay-1">Harleman Tweewielers is dé fietsenwinkel voor Apeldoorn. We verkopen niet alleen fietsen van topmerken, we zorgen er ook voor dat jouw fiets in topconditie blijft. Of je nu naar een reparatie toe bent of op zoek bent naar je volgende tweewieler, ons team staat klaar met praktisch advies en vakmanschap..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>Lokale expertise sinds jaren in Apeldoorn</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Reparatie dezelfde dag mogelijk</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Deskundig advies op maat voor je fiets</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
+
+      <div class="lg:col-span-7 grid grid-cols-5 gap-3 md:gap-4">
+        <img src="assets/site-05.jpg" alt="Een e-bike in de werkplaats tussen de onderdelenrekken" class="col-span-5 w-full aspect-[2/1] object-cover">
+        <figure class="col-span-5 sm:col-span-3">
+          <img src="assets/google-08.jpg" alt="Zijkant van de winkel met het bord Ingang werkplaats" class="w-full aspect-[4/3] object-cover object-left">
+        </figure>
+        <div class="col-span-5 sm:col-span-2 bg-klinker p-5 md:p-6 flex flex-col justify-end">
+          <p class="smal text-sm text-asfalt/60">Waar moet ik zijn?</p>
+          <p class="kop text-lg md:text-2xl mt-1">Ingang werkplaats</p>
+          <p class="text-sm md:text-base mt-2 leading-snug">Aan de zijkant van het pand, onder het bord met de oranje pijlen.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"Geen gedoe, gewoon goed vakmanschap en eerlijk advies over mijn fiets."</p>
-      <div class="testimonial-naam">Mark de Vries</div>
-      <div class="testimonial-functie">Klant, Apeldoorn</div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-klinker">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <h2 class="kop text-4xl md:text-5xl max-w-xl">Wat klanten zeggen</h2>
+        <p class="smal text-lg"><span class="kop text-3xl align-middle">4,6</span> uit 57 Google-reviews</p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-12 gap-6 md:gap-8">
+        <blockquote class="md:col-span-7 bg-white p-7 md:p-10">
+          <p class="text-xl md:text-[1.9rem] md:leading-[1.3] leading-snug">"100% tevreden en prima service. Ik kwam even langs rijden voor een rem die het niet deed. Het was in een paar minuten opgelost en ik hoefde niks te betalen. Dat kom je nergens meer tegen. Maakt wel dat als ik iets moet kopen ik naar Harleman ga. Dat gun ik hen."</p>
+          <footer class="smal mt-6 text-asfalt/70">Sylvia B, 5 sterren</footer>
+        </blockquote>
+        <figure class="md:col-span-5 md:row-span-2 relative">
+          <img src="assets/google-05.jpg" alt="Een jonge klant met zijn nieuwe zwarte transportfiets" class="w-full aspect-[4/3] md:aspect-auto md:h-full md:min-h-[360px] max-h-[640px] object-cover object-[50%_40%]">
+        </figure>
+        <blockquote class="md:col-span-4 self-start border-l-4 border-luifel pl-6 py-1">
+          <p class="text-lg leading-relaxed">"Een week geleden de remblokjes van mijn van Raam driewielfiets laten vervangen, kon er op wachten, binnen 10 minuten klaar top!"</p>
+          <footer class="smal mt-4 text-asfalt/70">Jolanda van Vessem, 5 sterren</footer>
+        </blockquote>
+        <blockquote class="md:col-span-3 self-start border-l-4 border-luifel pl-6 py-1">
+          <p class="text-lg leading-relaxed">"Topservice! Heel snel geholpen, zeer vriendelijk en meedenkend! Vakkundig, ook bij elektrische fietsen. Zeker een aanrader!"</p>
+          <footer class="smal mt-4 text-asfalt/70">Martijn S, 5 sterren</footer>
+        </blockquote>
+      </div>
     </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
+  </section>
+
+  <!-- Fiets kopen -->
+  <section id="kopen" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-6">
+        <h2 class="kop text-4xl md:text-5xl">Een nieuwe fiets uitzoeken</h2>
+        <p class="text-lg md:text-xl mt-6 leading-relaxed">Elektrisch, een gewone stadsfiets of toch een hybride? In de showroom krijgt u eerlijk advies van de vakman en kunt u verschillende fietsen uitproberen. Kom gerust vrijblijvend kijken, dinsdag tot en met zaterdag.</p>
+      </div>
+      <img src="assets/site-01.jpg" alt="De showroom met een rij e-bikes voor een bosbehang" class="lg:col-span-6 w-full aspect-[707/430] object-cover">
     </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Hoe snel kunnen jullie mijn fiets repareren?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Voor veel veel reparaties doen we het dezelfde dag. Belt u even voor inlevering, dan geven we graag een inschatting.</div>
-    </details><details>
-      <summary>Welke fietsmerken verkopen jullie?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">We werken met erkende merken die we zelf kiezen op kwaliteit. Bezoek de winkel of bel voor het actuele aanbod.</div>
-    </details><details>
-      <summary>Kan ik onderdelen ook apart kopen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja zeker. Remmen, kettingen, wielen, verlichting en meer. Veel voorraad, en we bestellen graag voor u in.</div>
-    </details><details>
-      <summary>Bieden jullie fietsverzekering of garantie aan?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Alle nieuwe fietsen hebben fabrikantgarantie. Voor service en onderhoud helpen we je graag met de beste opties.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met Harleman Tweewielers voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Bel voor advies &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">Harleman<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
+
+    <div class="mt-16 md:mt-20 grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-4">
+        <h3 class="kop text-2xl">Welke fiets past bij u?</h3>
+        <p class="mt-3 text-asfalt/80 leading-relaxed">Van kinderfiets tot tandem. Twijfelt u? In de winkel denken we graag met u mee.</p>
+      </div>
+      <ul class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 border-t border-asfalt/20">
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Stadsfiets</span><span class="block text-asfalt/70 mt-1">Degelijk, voor woon-werkverkeer en korte afstanden.</span></li>
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Elektrische fiets</span><span class="block text-asfalt/70 mt-1">Trapondersteuning, de afgelopen jaren enorm verbeterd.</span></li>
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Hybride en crosshybride</span><span class="block text-asfalt/70 mt-1">Sportief, mountainbike-onderdelen op 28 inch wielen.</span></li>
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Omafiets</span><span class="block text-asfalt/70 mt-1">Damesfiets met 28 inch wielen en een gebogen buis.</span></li>
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Moederfiets en bakfiets</span><span class="block text-asfalt/70 mt-1">Lage instap, gemaakt om kinderen of spullen mee te nemen.</span></li>
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Transportfiets</span><span class="block text-asfalt/70 mt-1">De naam zegt het al: voor vracht.</span></li>
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Kinderfiets</span><span class="block text-asfalt/70 mt-1">Aangepast voor de beginnende fietser.</span></li>
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Vouwfiets</span><span class="block text-asfalt/70 mt-1">Compact opgevouwen, makkelijk mee te nemen.</span></li>
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Tandem</span><span class="block text-asfalt/70 mt-1">Voor met z'n tweeën.</span></li>
+        <li class="border-b border-asfalt/20 py-4"><span class="smal text-lg">Design en exclusieve retro</span><span class="block text-asfalt/70 mt-1">Ontwerp van vroeger, weer helemaal van nu.</span></li>
       </ul>
     </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">Fietsverkoop</a></li><li><a href="diensten.html">Reparatie en onderhoud</a></li><li><a href="diensten.html">Onderdelen en accessoires</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="tel:0553665567">055 366 5567</a></li><li><a href="mailto:info@harlemantweewielers.nl">info@harlemantweewielers.nl</a></li><li><span>Apeldoorn</span></li></ul></div>
+
+    <!-- E-bike + occasions -->
+    <div class="mt-20 md:mt-28 grid md:grid-cols-2 gap-6 md:gap-8">
+      <article class="bg-asfalt text-white flex flex-col">
+        <img src="assets/site-02.jpg" alt="Het display van een QWIC e-bike" class="w-full aspect-[707/400] object-cover">
+        <div class="p-7 md:p-10">
+          <h3 class="kop text-3xl">Overstappen op een e-bike</h3>
+          <p class="mt-4 text-white/80 leading-relaxed">Voorwielmotor of middenmotor, welke ondersteuningsstanden, hoe ver komt u op één accu? En is een speed pedelec, met ondersteuning tot 45 km/u, iets voor uw woon-werkverkeer? Dat zoeken we samen uit, met een proefrit.</p>
+        </div>
+      </article>
+      <article class="bg-klinker flex flex-col">
+        <img src="assets/site-03.jpg" alt="Gebruikte fietsen met oranje prijskaartjes in de winkel" class="w-full aspect-[707/400] object-cover">
+        <div class="p-7 md:p-10">
+          <h3 class="kop text-3xl">Liever een occasion?</h3>
+          <p class="mt-4 text-asfalt/80 leading-relaxed">Een ruime keuze aan jonge A-merk fietsen op voorraad, van kinderfiets tot e-bike. Allemaal met de service en garantie die u van een vakman mag verwachten. Harleman Tweewielers is officieel BOVAG gekwalificeerd.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Shop -->
+  <section id="shop" class="bg-asfalt text-white">
+    <div class="grid lg:grid-cols-2">
+      <img src="assets/site-06.jpg" alt="Wand met fietstassen in allerlei kleuren en maten" class="w-full h-full min-h-[300px] object-cover">
+      <div class="px-5 md:px-14 py-16 md:py-24 max-w-2xl">
+        <h2 class="kop text-4xl md:text-5xl">Alles voor onderweg</h2>
+        <p class="mt-6 text-lg text-white/85 leading-relaxed">In de winkel vindt u wat fietsen veiliger en prettiger maakt:</p>
+        <ul class="mt-6 smal text-xl md:text-2xl space-y-2">
+          <li class="border-b border-white/15 pb-2">Regenkleding van goede kwaliteit</li>
+          <li class="border-b border-white/15 pb-2">Fietstassen en manden in allerlei kleuren en maten</li>
+          <li class="border-b border-white/15 pb-2">Verlichting</li>
+        </ul>
+        <p class="mt-6 text-white/85 leading-relaxed">Staat er niet tussen wat u zoekt? Vraag ernaar, we bestellen het graag voor u.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sinds 1921 -->
+  <section id="sinds-1921" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5">
+        <p class="kop text-baksteen text-7xl md:text-8xl">1921</p>
+        <h2 class="kop text-3xl md:text-4xl mt-4">Al meer dan 100 jaar uw fietsspecialist</h2>
+        <p class="mt-6 text-lg leading-relaxed">De fiets is in die tijd veranderd van een frame met twee wielen in een hightech vervoermiddel. Wat gebleven is: verkoop en onderhoud met echte service, en helder, eerlijk advies van de vakman.</p>
+      </div>
+      <figure class="lg:col-span-7">
+        <img src="assets/site-04.png" alt="Drie oude zwart-witfoto's: een man op een fiets, de winkel vroeger en een jongen op een fiets" class="w-full">
+        <figcaption class="smal text-sm text-asfalt/60 mt-2">Historische foto's via oud-apeldoorn.nl</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Langskomen -->
+  <section id="langskomen" class="bg-luifel op-oranje">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-5">
+        <h2 class="kop text-4xl md:text-6xl">Kom langs</h2>
+        <address class="not-italic mt-8 text-xl leading-relaxed">
+          Harleman Tweewielers<br>
+          Pinksterbloem 12<br>
+          7322 GT Apeldoorn
+        </address>
+        <div class="mt-8 flex flex-col gap-3 smal text-lg">
+          <a href="tel:0553665567" class="bg-asfalt text-white px-6 py-4 hover:bg-baksteen transition-colors">Bel 055 366 5567</a>
+          <a href="mailto:info@harlemantweewielers.nl" class="border-2 border-asfalt px-6 py-3.5 hover:bg-white/30 transition-colors">info@harlemantweewielers.nl</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Pinksterbloem+12+7322+GT+Apeldoorn" class="underline underline-offset-4 decoration-2 hover:no-underline">Route plannen in Google Maps</a>
+        </div>
+      </div>
+      <div class="lg:col-span-7 bg-white">
+        <img src="assets/google-02.png" alt="De winkel op de hoek in de avondzon" class="w-full aspect-[16/8] object-cover object-bottom">
+        <div class="p-6 md:p-8">
+          <h3 class="kop text-2xl">Openingstijden</h3>
+          <table class="mt-4 w-full text-lg" id="tijden">
+            <tbody class="[&_td]:py-2 [&_td]:px-2 [&_tr]:border-b [&_tr]:border-asfalt/10">
+              <tr data-dag="1"><td>Maandag</td><td class="text-right text-asfalt/60">Gesloten</td></tr>
+              <tr data-dag="2"><td>Dinsdag</td><td class="text-right tabular-nums">08:30 tot 17:30</td></tr>
+              <tr data-dag="3"><td>Woensdag</td><td class="text-right tabular-nums">08:30 tot 17:30</td></tr>
+              <tr data-dag="4"><td>Donderdag</td><td class="text-right tabular-nums">08:30 tot 17:30</td></tr>
+              <tr data-dag="5"><td>Vrijdag</td><td class="text-right tabular-nums">08:30 tot 17:30</td></tr>
+              <tr data-dag="6"><td>Zaterdag</td><td class="text-right tabular-nums">09:00 tot 16:00</td></tr>
+              <tr data-dag="0"><td>Zondag</td><td class="text-right text-asfalt/60">Gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-asfalt text-white/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row gap-4 md:justify-between smal text-sm">
+    <p><span class="kop text-white text-lg lowercase mr-2">harleman</span> Tweewielers, Pinksterbloem 12, Apeldoorn</p>
+    <p><a href="tel:0553665567" class="hover:text-white">055 366 5567</a> <span class="mx-2">/</span> <a href="mailto:info@harlemantweewielers.nl" class="hover:text-white">info@harlemantweewielers.nl</a></p>
   </div>
-  <div class="footer-bottom"><p>&copy; 2025 Harleman Tweewielers. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
 </footer>
-<div class="demo-banner"><span>&#9889; DEMO voor Harleman Tweewielers &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-[2fr_1fr] smal text-base border-t border-asfalt">
+  <a href="tel:0553665567" class="bg-luifel text-asfalt text-center py-4 font-bold">Bel 055 366 5567</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Pinksterbloem+12+7322+GT+Apeldoorn" class="bg-asfalt text-white text-center py-4">Route</a>
+</div>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
-
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  }
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
-
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
-    }
-  }
-});
+  // Markeer vandaag in de openingstijden.
+  var rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag', 'font-semibold');
 </script>
 </body>
 </html>
