@@ -1,640 +1,306 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bakkerscafé Brood op de Plank | Nijmegen</title>
-  <meta name="description" content="Dagvers brood en gebak, handgemaakt in Nijmegen. Kom smaken waarom ambacht verschil maakt.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fdf8f0; color: #1c1007; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-:root {
-  --accent: #f97316; --accent-dark: #ea580c; --accent-light: rgba(249,115,22,0.08);
-  --bg: #fdf8f0; --surface: #ffffff; --border: #e8d9c5;
-  --text: #1c1007; --muted: #78614d; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(253,248,240,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 24px rgba(28,16,7,0.08);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #1c1007; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #78614d; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #1c1007; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #1c1007; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(253,248,240,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(50,20,0,0.82) 0%, rgba(50,20,0,0.55) 60%, rgba(50,20,0,0.3) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #fdf8f0, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(50,20,0,0.82) 0%, rgba(50,20,0,0.55) 60%, rgba(50,20,0,0.3) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #fdf8f0; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #ffffff; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #1c1007; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #1c1007; border-top: 1px solid #2d1a0e;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #2d1a0e; padding-top: 24px; color: #5a3520; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
-</head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Bakkerscafé<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/31064937/pexels-photo-31064937.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">Bakkerscafé Brood op de<br><em>Plank</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Dagvers brood en gebak, handgemaakt in Nijmegen. Kom smaken waarom ambacht verschil maakt.</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Bestel nu</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/28396810/pexels-photo-28396810.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Brood" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Brood</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>Brood</h3>
-            <p>Artisanaal brood volgens traditionele recepten, dagvers uit de oven.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/36445548/pexels-photo-36445548.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Gebak en taarten" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Gebak</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>Gebak en taarten</h3>
-            <p>Handgemaakte patisserie en taarten, perfect voor elk moment of feest.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/28396797/pexels-photo-28396797.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Belegde broodjes" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Belegde</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Belegde broodjes</h3>
-            <p>Verse broodjes met kwaliteitsvol beleggen, ideaal voor lunch of tussendoor.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/34692791/pexels-photo-34692791.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Bakkerscafé Brood op de Plank" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          <div class="stats-badge"><span class="stats-num">25+</span><span class="stats-label">jaar ambacht</span></div>
-        </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/11392648/pexels-photo-11392648.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/32946099/pexels-photo-32946099.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
-      </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Bakkerscafé Brood op de Plank</h2>
-        <p class="reveal reveal-delay-1">Bakkerscafé Brood op de Plank is sinds jaar en dag dé plek voor echte bakkerij in Nijmegen. We kneden elk brood met de hand, laten onze gebakken goed rijpen in plaats van opslagen, en geloven dat kwaliteit smaken is. Kom langs en ontdek het verschil..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>Dagvers gemaakt, geen voorraden van gisteren</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Ambachtelijke recepten zonder kunstmatige toevoegingen</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Lokaal bezorgd in Nijmegen en directe omgeving</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"De broden van Brood op de Plank zijn echt anders. Je proeft dat het met zorg wordt gemaakt."</p>
-      <div class="testimonial-naam">Janneke Verlaan</div>
-      <div class="testimonial-functie">Klant, Nijmegen</div>
-    </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Kunnen we brood bestellen voor de volgende dag?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, bel ons voor 17.00 uur op 024 848 8560 en we zetten je favoriete brood apart. Graag voor &#39;s morgens beschikbaar.</div>
-    </details><details>
-      <summary>Maken jullie ook taarten op maat?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Zeker. Stuur je wens naar post@bakkerscafe.nl of kom langs. We ontwerpen graag een unieke taart voor jouw feest.</div>
-    </details><details>
-      <summary>Zijn er opties voor allergiëen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">We werken met verschillende granen en kunnen uitleggen wat in elk product zit. Bel of mail ons met je vragen, we helpen graag.</div>
-    </details><details>
-      <summary>Bezorgen jullie ook in Nijmegen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Voor grotere bestellingen kunnen we bezorgen. Neem contact op voor mogelijkheden en bereik in je wijk.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met Bakkerscafé Brood op de Plank voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Bestel nu &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">Bakkerscafé<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">Brood</a></li><li><a href="diensten.html">Gebak en taarten</a></li><li><a href="diensten.html">Belegde broodjes</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="tel:0248488560">024 848 8560</a></li><li><a href="mailto:post@bakkerscafe.nl">post@bakkerscafe.nl</a></li><li><span>Nijmegen</span></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2025 Bakkerscafé Brood op de Plank. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
-</footer>
-<div class="demo-banner"><span>&#9889; DEMO voor Bakkerscafé Brood op de Plank &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brood op de Plank | Bakkerscafé, lunchroom en bakkerswinkel in Nijmegen</title>
+<meta name="description" content="Biologisch brood, soep en beleg uit eigen keuken en een lunchroom aan het plein van de oude Dobbelmanfabriek. Castellastraat 29, Nijmegen.">
+<link rel="icon" href="assets/site-01.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,700;1,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
-
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        fles: '#1D4F43', logo: '#23735F', tafel: '#DDE9E2', papier: '#F5F7F4', korst: '#C6A24A', inkt: '#17221E'
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        tekst: ['Figtree', 'system-ui', 'sans-serif']
+      }
     }
   }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-variation-settings: "wdth" 80; letter-spacing: -0.02em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .btn { display: inline-flex; align-items: center; gap: .55rem; border-radius: .6rem; padding: .85rem 1.3rem; font-weight: 700; transition: background-color .2s, transform .15s; }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 3px solid #C6A24A; outline-offset: 3px; }
+  .uren li.vandaag { color: #fff; font-weight: 700; }
+  .uren li.vandaag span:first-child::after { content: " (vandaag)"; font-weight: 400; color: #C6A24A; }
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .hero-in { animation: in .9s cubic-bezier(.2,.7,.2,1) both; }
+    html.js .hero-in.d2 { animation-delay: .12s; }
+    html.js .hero-in.d3 { animation-delay: .24s; }
+    @keyframes in { from { opacity: 0; transform: translateY(14px); } }
   }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="bg-papier text-inkt font-tekst antialiased pb-20 md:pb-0">
 
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 bg-white px-3 py-2 rounded">Naar de inhoud</a>
 
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
+<div class="bg-inkt text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Bakkerscafé Brood op de Plank, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-korst">Hagenweb</a>
+</div>
 
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
-    }
-  }
-});
+<header class="bg-papier/95 backdrop-blur sticky top-0 z-40 border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <a href="#" class="flex items-center gap-2.5">
+      <img src="assets/site-01.png" alt="" class="h-10 w-10">
+      <span class="kop text-xl font-extrabold text-fles leading-none">Brood op de Plank</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px]" aria-label="Hoofdmenu">
+      <a href="#keuken" class="hover:text-logo">Lunchroom</a>
+      <a href="#winkel" class="hover:text-logo">Bakkerswinkel</a>
+      <a href="#het-kan-wel" class="hover:text-logo">Over ons</a>
+      <a href="#bezoek" class="hover:text-logo">Bezoek</a>
+      <a href="tel:+31248488560" class="btn bg-logo text-white hover:bg-fles !py-2.5">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        024 848 8560
+      </a>
+    </nav>
+    <a href="tel:+31248488560" class="md:hidden btn bg-logo text-white !py-2 !px-3.5 text-sm">Bellen</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] bg-fles text-white">
+  <div class="px-5 sm:px-10 lg:px-14 xl:px-20 pt-9 pb-12 lg:py-20 flex flex-col justify-center order-2 lg:order-1">
+    <p class="hero-in text-korst font-bold">Bakkerscafé aan het Dobbelmanplein, Nijmegen</p>
+    <h1 class="hero-in d2 kop font-extrabold text-[3.4rem] leading-[.92] sm:text-7xl xl:text-[6.2rem] mt-4">Brood op de plank</h1>
+    <p class="hero-in d3 mt-6 text-lg text-white/85 max-w-md leading-relaxed">
+      Biologisch brood uit onze eigen bakkerij, soep en beleg uit onze eigen keuken, en een lunchroom waar de zon door de ramen schijnt. Iedereen is welkom, niks moet.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="tel:+31248488560" class="btn bg-korst text-inkt hover:bg-[#d8b65c]">Bel 024 848 8560</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Castellastraat+29+6512+EV+Nijmegen" class="btn border border-white/40 hover:bg-white/10">Route plannen</a>
+    </div>
+    <div class="mt-10 pt-6 border-t border-white/15 grid sm:grid-cols-2 gap-6 text-[15px]">
+      <div>
+        <p class="text-white/60">Adres</p>
+        <p class="mt-1">Castellastraat 29<br>6512 EV Nijmegen</p>
+      </div>
+      <div>
+        <p class="text-white/60">Open</p>
+        <p class="mt-1">Ma t/m za 08:30 tot 17:00<br>Zondag 09:30 tot 15:30</p>
+      </div>
+    </div>
+  </div>
+  <div class="relative order-1 lg:order-2 min-h-[250px] sm:min-h-[420px] lg:min-h-[640px]">
+    <img src="assets/google-02.jpg" alt="Twee scones met poedersuiker, room, lemon curd en vers fruit op een houten plank in de zon" class="absolute inset-0 w-full h-full object-cover object-[50%_55%]">
+  </div>
+</section>
+
+<!-- Keuken -->
+<section id="keuken" class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+    <div class="lg:col-span-5 lg:sticky lg:top-28">
+      <h2 class="kop font-extrabold text-4xl sm:text-5xl text-fles leading-[1]">Uit eigen keuken, op de plank</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/85 max-w-prose">
+        In onze keuken roeren we elke dag in de potten en pannen. Verse soep, belegsoorten, sauzen, chutney's en andere lekkernijen maken we zelf. Het brood komt uit onze eigen biologische bakkerij.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed text-inkt/85 max-w-prose">
+        Daarnaast werken we met lokale leveranciers van biologische vleeswaren, boerenkazen en bijzondere vruchtensappen. We schenken fairtrade koffie van Coffyn en thee van Het Theezaakje.
+      </p>
+      <dl class="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-inkt/10 pt-6 text-[15px]">
+        <div><dt class="font-bold text-fles">Ontbijt en lunch</dt><dd class="text-inkt/75 mt-1">Aan tafel of aan het plein</dd></div>
+        <div><dt class="font-bold text-fles">Meenemen</dt><dd class="text-inkt/75 mt-1">Belegde broodjes om mee te nemen</dd></div>
+        <div><dt class="font-bold text-fles">Vegan Friendly</dt><dd class="text-inkt/75 mt-1">Gecertificeerd door veganfriendly.nl</dd></div>
+        <div><dt class="font-bold text-fles">Reserveren</dt><dd class="mt-1"><a href="tel:+31248488560" class="text-logo underline underline-offset-2">024 848 8560</a></dd></div>
+      </dl>
+    </div>
+    <div class="lg:col-span-7 grid grid-cols-6 gap-3 sm:gap-4">
+      <figure class="col-span-6">
+        <img src="assets/google-05.jpg" alt="Kom soep met twee belegde broodjes en een punt quiche op een houten plank" class="w-full aspect-[4/3] object-cover rounded-xl">
+      </figure>
+      <figure class="col-span-3">
+        <img src="assets/google-03.jpg" alt="Bord met desembrood, een bol, bietenhummus, vijgenjam en verse kaas" class="w-full aspect-[3/4] object-cover rounded-xl">
+      </figure>
+      <figure class="col-span-3">
+        <img src="assets/google-08.jpg" alt="Getoast brood met salade en een glas warme chocolademelk op een geschilderde houten tafel" class="w-full aspect-[3/4] object-cover object-[30%_50%] rounded-xl">
+      </figure>
+      <div class="col-span-6 bg-tafel rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <p class="kop text-2xl sm:text-3xl font-bold text-fles leading-tight">Lunchen met een groep?</p>
+          <p class="mt-2 text-[15px] sm:text-base leading-relaxed text-inkt/80 max-w-md">Bent u met meer dan 8 personen, dan stellen we graag samen met u een passend aanbod samen.</p>
+        </div>
+        <a href="mailto:post@bakkerscafe.nl?subject=Lunch%20met%20een%20groep" class="btn bg-logo text-white hover:bg-fles shrink-0 self-start sm:self-auto">Mail ons</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Winkel -->
+<section id="winkel" class="bg-tafel">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div class="relative">
+      <img src="assets/google-07.jpg" alt="Mand met biologische roomboter croissants, broodjes met zaden en appelgebak op de toonbank" class="w-full aspect-[4/3] object-cover rounded-xl">
+      <img src="assets/site-06.jpg" alt="Het team van hét Bakkerscafé in de open bakkerij, tussen rekken vers brood" class="hidden sm:block absolute -bottom-10 -right-6 lg:-right-10 w-[42%] aspect-square object-cover rounded-xl border-[6px] border-tafel">
+    </div>
+    <div class="sm:pt-8 lg:pt-0">
+      <h2 class="kop font-extrabold text-4xl sm:text-5xl text-fles leading-[1]">Elke ochtend vers, per fiets en rolstoel</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/85 max-w-prose">
+        Onze bakkerswinkel wordt elke morgen door onze eigen fiets- en rolstoelkoeriers voorzien van krakend vers biologisch brood en banket uit Dé Bakkerij, onze bakkerij aan de Hatertseweg.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed text-inkt/85 max-w-prose">
+        Daar wordt het deeg meermalen gekneed, mag het lang rusten en rijzen en wordt het knapperig afgebakken. Het biologische meel is gemalen op de molenstenen van de Witte Molen, aangedreven door Nijmeegse wind. We houden het assortiment bewust klein, voor de kwaliteit.
+      </p>
+      <p class="mt-6 text-[15px] text-inkt/70">Hét Bakkerscafé is SKAL gecertificeerd.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Social -->
+<section id="het-kan-wel" class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-10 items-end">
+    <p class="lg:col-span-7 kop font-extrabold text-fles text-[4rem] sm:text-[7rem] lg:text-[9rem] leading-[.85]">Het kan wél.</p>
+    <div class="lg:col-span-5">
+      <p class="text-lg leading-relaxed text-inkt/85">
+        Dat is ons motto. Brood op de Plank is onderdeel van hét Bakkerscafé, een social enterprise in Nijmegen. In de bakkerij, de winkel, de keuken en de lunchroom werken vakmensen samen met een zeer divers team, aan mooie producten en aan ieders eigen ontwikkeling.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed text-inkt/85">
+        We bieden ontwikkeltrajecten binnen WLZ, WMO en Participatiewet. Gastvrijheid en plezier in het werk zijn voor ons een doel op zich.
+      </p>
+      <a href="mailto:trajecten@bakkerscafe.nl" class="inline-block mt-6 font-bold text-logo underline underline-offset-4">Meer weten over trajecten? trajecten@bakkerscafe.nl</a>
+    </div>
+  </div>
+  <figure class="mt-14 grid md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-4">
+    <img src="assets/google-01.jpg" alt="De toonbank met biologische taarten in de vitrine, muesli en het krijtbord met belegde broodjes" class="w-full aspect-[16/10] object-cover rounded-xl">
+    <blockquote class="bg-fles text-white rounded-xl p-8 lg:p-10 flex flex-col justify-between gap-8">
+      <p class="kop text-2xl lg:text-[1.75rem] font-semibold leading-snug">"We hebben heerlijk koffie gedronken met een notentaartje op het prachtige terras en werden heel vriendelijk geholpen door een mevrouw in een rolstoel die ontzettend veel positiviteit uitstraalde. We werden er helemaal blij van."</p>
+      <footer class="text-white/70">Rinske Kegel</footer>
+    </blockquote>
+  </figure>
+</section>
+
+<!-- Kinderen -->
+<section class="bg-fles text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-20 grid md:grid-cols-2 gap-10 md:gap-16">
+    <div>
+      <h2 class="kop font-extrabold text-3xl sm:text-4xl leading-[1.05]">Neem de kinderen gerust mee</h2>
+      <p class="mt-4 text-lg leading-relaxed text-white/80">Voor onze kleine gasten staat er een speciale kinderkast met kleurplaten en speelgoed. En het autovrije plein voor de deur is gemáákt voor tikkertje en sneeuwpoppen.</p>
+    </div>
+    <div>
+      <h2 class="kop font-extrabold text-3xl sm:text-4xl leading-[1.05]">Brood voor uw kantoor of zaak</h2>
+      <p class="mt-4 text-lg leading-relaxed text-white/80">Ons biologische brood gaat ook naar horeca in Nijmegen. Voor bakkerijbestellingen belt u met Brood op de Plank of met Dé Bakkerij.</p>
+      <p class="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-bold"><a href="tel:+31248488560" class="underline underline-offset-4 hover:text-korst">024 848 8560</a><a href="tel:+31242049036" class="underline underline-offset-4 hover:text-korst">024 204 9036</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <h2 class="kop font-extrabold text-4xl sm:text-5xl text-fles leading-[1]">Wat gasten zeggen</h2>
+    <p class="text-inkt/75"><span class="kop text-3xl font-extrabold text-inkt">4,5</span> <span class="text-korst text-xl" aria-hidden="true">★★★★★</span> uit 183 reviews op Google</p>
+  </div>
+  <div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-5 [&>*]:break-inside-avoid [&>*]:mb-5">
+    <blockquote class="bg-tafel rounded-xl p-7">
+      <p class="kop text-3xl font-bold text-fles leading-tight">"Beste desem volkorenbrood van Nijmegen!"</p>
+      <footer class="mt-4 text-inkt/70">wout morrenhof</footer>
+    </blockquote>
+    <blockquote class="border border-inkt/10 rounded-xl p-7">
+      <p class="text-lg leading-relaxed">"Gastvrij personeel, lekker geluncht. Eén klein puntje, vanaf de weg (kant Graafseweg) zie je niet waar de ingang is, dus wellicht een bordje met pijl."</p>
+      <footer class="mt-4 text-inkt/70">Stefan, Google</footer>
+    </blockquote>
+    <blockquote class="border border-inkt/10 rounded-xl p-7">
+      <p class="text-lg leading-relaxed">"Bij binnenkomst vriendelijk verwelkomt met de vraag hoe het met mij gaat, een compliment over mijn nagels en heerlijke koffie 10/10 zou ik er nog een keer heen gaan"</p>
+      <footer class="mt-4 text-inkt/70">Erica Koster</footer>
+    </blockquote>
+    <blockquote class="border border-inkt/10 rounded-xl p-7">
+      <p class="text-lg leading-relaxed">"Heerlijk biologisch brood, super sfeer... Je kunt er een heerlijk kopje koffie drinken een broodje eten of lunchen Etc...."</p>
+      <footer class="mt-4 text-inkt/70">Claudia Roos, Google</footer>
+    </blockquote>
+    <blockquote class="bg-tafel rounded-xl p-7">
+      <p class="kop text-3xl font-bold text-fles leading-tight">"Fijne plek. Lekker eten, heerlijk brood"</p>
+      <footer class="mt-4 text-inkt/70">José van Gestel, Google</footer>
+    </blockquote>
+    <blockquote class="border border-inkt/10 rounded-xl p-7">
+      <p class="text-lg leading-relaxed">"Geweldige mensen, geweldige producten, en weer heerlijk gegeten."</p>
+      <footer class="mt-4 text-inkt/70">Willy Van De Logt</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Bezoek -->
+<section id="bezoek" class="bg-tafel">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14">
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <img src="assets/google-04.jpg" alt="De gevel van Brood op de Plank aan het plein, met glazen pui, houten banken en een krijtbord bij de deur" class="w-full aspect-[4/5] object-cover object-bottom rounded-xl">
+      <p class="mt-3 text-[15px] text-inkt/70">Zo ziet onze gevel eruit, aan het autovrije plein van de oude Dobbelmanfabriek.</p>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <h2 class="kop font-extrabold text-4xl sm:text-5xl text-fles leading-[1]">Kom langs</h2>
+      <p class="mt-5 text-lg leading-relaxed text-inkt/85 max-w-prose">U kijkt uit op het plein waar de schoorsteen van de oude Dobbelmanfabriek nog trots omhoog reikt.</p>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-bold text-fles">Brood op de Plank</h3>
+          <p class="mt-2 leading-relaxed">Castellastraat 29<br>6512 EV Nijmegen</p>
+          <p class="mt-3 leading-relaxed">
+            <a href="tel:+31248488560" class="text-logo font-bold underline underline-offset-2">024 848 8560</a><br>
+            <a href="mailto:post@bakkerscafe.nl" class="text-logo underline underline-offset-2">post@bakkerscafe.nl</a>
+          </p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Castellastraat+29+6512+EV+Nijmegen" class="btn bg-logo text-white hover:bg-fles mt-5">Route in Google Maps</a>
+        </div>
+        <div class="bg-fles text-white/80 rounded-xl p-6">
+          <h3 class="font-bold text-white">Openingstijden</h3>
+          <ul class="uren mt-3 space-y-1.5 text-[15px] tabular-nums">
+            <li data-dag="1" class="flex justify-between gap-4"><span>Maandag</span><span>08:30 - 17:00</span></li>
+            <li data-dag="2" class="flex justify-between gap-4"><span>Dinsdag</span><span>08:30 - 17:00</span></li>
+            <li data-dag="3" class="flex justify-between gap-4"><span>Woensdag</span><span>08:30 - 17:00</span></li>
+            <li data-dag="4" class="flex justify-between gap-4"><span>Donderdag</span><span>08:30 - 17:00</span></li>
+            <li data-dag="5" class="flex justify-between gap-4"><span>Vrijdag</span><span>08:30 - 17:00</span></li>
+            <li data-dag="6" class="flex justify-between gap-4"><span>Zaterdag</span><span>08:30 - 17:00</span></li>
+            <li data-dag="0" class="flex justify-between gap-4"><span>Zondag</span><span>09:30 - 15:30</span></li>
+          </ul>
+          <p class="mt-3 text-sm text-white/60">Feestdagen gesloten.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-inkt/10">
+        <h3 class="font-bold text-fles">Ook bij Dé Bakkerij</h3>
+        <p class="mt-2 leading-relaxed text-inkt/85 max-w-prose">Onze open bakkerij met bakkerswinkel in De Houtwerf, Hatertseweg 23C. Daar rollen de broden en taarten zo uit de oven in het schap. Maandag t/m vrijdag 08:30 tot 16:00, zaterdag 08:30 tot 15:30. <a href="tel:+31242049036" class="text-logo underline underline-offset-2">024 204 9036</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/70">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[15px]">
+    <div class="flex items-center gap-3">
+      <span class="bg-papier rounded-lg p-1.5"><img src="assets/site-01.png" alt="" class="h-9 w-9"></span>
+      <div>
+        <p class="kop text-lg font-bold text-white">Brood op de Plank</p>
+        <p>Een vestiging van hét Bakkerscafé, Nijmegen</p>
+      </div>
+    </div>
+    <div class="flex flex-wrap gap-x-8 gap-y-1"><span>Castellastraat 29, 6512 EV Nijmegen</span><a href="tel:+31248488560" class="hover:text-white">024 848 8560</a><a href="mailto:post@bakkerscafe.nl" class="hover:text-white">post@bakkerscafe.nl</a></div>
+  </div>
+</footer>
+
+<!-- Mobiel: belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-papier/95 backdrop-blur border-t border-inkt/10 p-3 grid grid-cols-2 gap-2">
+  <a href="tel:+31248488560" class="btn justify-center bg-logo text-white">Bel ons</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Castellastraat+29+6512+EV+Nijmegen" class="btn justify-center bg-tafel text-fles">Route</a>
+</div>
+
+<script>
+  var d = new Date().getDay();
+  var li = document.querySelector('.uren li[data-dag="' + d + '"]');
+  if (li) li.classList.add('vandaag');
 </script>
 </body>
 </html>
