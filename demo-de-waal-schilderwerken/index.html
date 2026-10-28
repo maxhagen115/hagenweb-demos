@@ -1,640 +1,347 @@
-<!DOCTYPE html>
-<html lang="nl">
+<!doctype html>
+<html lang="nl" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>De Waal Schilderwerken | Nijmegen</title>
-  <meta name="description" content="Professioneel schilder en stukadoor. Duurzame verf, nette werkwijze, lokaal vakbedrijf.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0f0f0f; color: #f5f5f5; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-:root {
-  --accent: #f59e0b; --accent-dark: #d97706; --accent-light: rgba(245,158,11,0.12);
-  --bg: #0f0f0f; --surface: #1a1a1a; --border: #2a2a2a;
-  --text: #f5f5f5; --muted: #a0a0a0; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(15,15,15,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.4);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #f5f5f5; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #a0a0a0; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #f5f5f5; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #f5f5f5; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(15,15,15,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.3) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #0f0f0f, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.3) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #1a1a1a; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #1a1a1a; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #080808; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #080808; border-top: 1px solid #1e1e1e;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #1e1e1e; padding-top: 24px; color: #444444; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
-</head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">De<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/6474346/pexels-photo-6474346.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">De Waal Schilderwerken<br><em>Nijmegen</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Professioneel schilder en stukadoor. Duurzame verf, nette werkwijze, lokaal vakbedrijf.</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Vraag een offerte</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/5583126/pexels-photo-5583126.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Binnenschilderwerk" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Binnenschilderwerk</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>Binnenschilderwerk</h3>
-            <p>Interieurkleuren en afwerking voor woon en werkkamers.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/20693160/pexels-photo-20693160.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Buitenschilderwerk" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Buitenschilderwerk</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>Buitenschilderwerk</h3>
-            <p>Gevel, kozijn en dak schoonmaken en schilderen met duurzame verven.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/6474305/pexels-photo-6474305.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Spuitwerk &amp; Lakken" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Spuitwerk</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Spuitwerk &amp; Lakken</h3>
-            <p>Hoogwaardige spuitafwerking voor meubels, deuren en decoratieve elementen.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/6764270/pexels-photo-6764270.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="De Waal Schilderwerken" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          <div class="stats-badge"><span class="stats-num">200+</span><span class="stats-label">projecten</span></div>
-        </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/6474133/pexels-photo-6474133.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/6050252/pexels-photo-6050252.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
-      </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">De Waal Schilderwerken</h2>
-        <p class="reveal reveal-delay-1">De Waal Schilderwerken is een vakbedrijf in Nijmegen met jarenlange ervaring in schilder en stucwerk. We werken met duurzame materialen en zorgen voor een nette werkwijze van begin tot eind. Uw huis of bedrijf is bij ons in goede handen..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>Duurzame verf en professionele afwerking</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Werkgebied Nijmegen en omgeving</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Zorgvuldige voorbereiding en opruiming</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"Echt vakwerk, netjes opgeruimd en goed gevolg. Aanrader voor wie kwaliteit wil."</p>
-      <div class="testimonial-naam">Mark van den Berg</div>
-      <div class="testimonial-functie">Klant, Nijmegen</div>
-    </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Werkt u ook buiten Nijmegen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, we zijn actief in Nijmegen en de directe omgeving. Bel voor uw locatie en we geven direct duidelijkheid.</div>
-    </details><details>
-      <summary>Hoe lang duurt een gemiddelde klus?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Afhankelijk van omvang en type werk. Bij contact geven we een duidelijke planning en inspectie van tevoren.</div>
-    </details><details>
-      <summary>Welke verfmerken gebruikt u?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">We kiezen verf op basis van uw wens. Duurzame, milieuverantwoorde merken hebben onze voorkeur.</div>
-    </details><details>
-      <summary>Kan ik een offerte opvragen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Zeker. Bel of mail ons. Na een korte inspectie maken we een vrijblijvend voorstel voor u.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met De Waal Schilderwerken voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Vraag een offerte &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">De<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">Binnenschilderwerk</a></li><li><a href="diensten.html">Buitenschilderwerk</a></li><li><a href="diensten.html">Spuitwerk &amp; Lakken</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="tel:0624474197">06 24474197</a></li><li><a href="mailto:info@dewaalschilderwerken.nl">info@dewaalschilderwerken.nl</a></li><li><span>Nijmegen</span></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2025 De Waal Schilderwerken. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
-</footer>
-<div class="demo-banner"><span>&#9889; DEMO voor De Waal Schilderwerken &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De Waal Schilderwerken | Schilder in Nijmegen en omstreken</title>
+<meta name="description" content="Schilderwerk binnen en buiten, onderhoud, glaszetten en Trespa in Nijmegen, Groesbeek, Lent, Oosterhout, Bemmel, Wijchen en Beuningen. Bel 06 24474197.">
+<link rel="icon" href="assets/site-01.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
-
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  }
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
-
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
-    }
-  }
-});
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: { DEFAULT: '#0F2A44', diep: '#0A1F33', licht: '#25445F' },
+        kalk: '#F2F3F1',
+        steen: '#E3E5E1',
+        kwast: '#E9CF92',
+        inkt: '#16212C',
+      },
+      fontFamily: {
+        kop: ['Spectral', 'Georgia', 'serif'],
+        sans: ['"Public Sans"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+}
 </script>
+<style>
+  body { font-feature-settings: "kern"; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .logo-crop { width: 44px; height: 44px; overflow: hidden; position: relative; flex: none; }
+  .logo-crop img { position: absolute; width: 116px; max-width: none; left: -35px; top: -6px; mix-blend-mode: multiply; }
+  /* Glans: een lichtstreep die eenmalig over de herodeur strijkt. Alleen als JS draait en motion mag. */
+  .glans { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.28) 50%, transparent 60%); transform: translateX(-120%); }
+  html.js .glans { animation: glans 1.8s .6s ease-out forwards; }
+  @keyframes glans { to { transform: translateX(120%); } }
+  @media (prefers-reduced-motion: reduce) { html.js .glans { animation: none; } }
+  :focus-visible { outline: 2px solid #E9CF92; outline-offset: 3px; }
+  .veld { width: 100%; background: #fff; border: 1px solid #C9CDC6; border-radius: 4px; padding: .7rem .85rem; font-size: 1rem; color: #16212C; }
+  .veld:focus { outline: 2px solid #0F2A44; outline-offset: 0; border-color: #0F2A44; }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="bg-kalk text-inkt font-sans antialiased pb-16 md:pb-0">
+
+<div class="bg-navy-diep text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor De Waal Schilderwerken, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-kwast">Hagenweb</a>
+</div>
+
+<header class="bg-white border-b border-steen sticky top-0 z-30">
+  <div class="max-w-6xl mx-auto px-5 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="De Waal Schilderwerken, naar boven">
+      <span class="logo-crop"><img src="assets/site-01.png" alt=""></span>
+      <span class="font-kop text-navy text-xl md:text-2xl font-semibold leading-none">De Waal <span class="font-medium">Schilderwerken</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-inkt/80" aria-label="Hoofdmenu">
+      <a href="#werk" class="hover:text-navy">Ons werk</a>
+      <a href="#reviews" class="hover:text-navy">Reviews</a>
+      <a href="#werkwijze" class="hover:text-navy">Werkwijze</a>
+      <a href="#glas-trespa" class="hover:text-navy">Glas en Trespa</a>
+      <a href="#offerte" class="hover:text-navy">Offerte</a>
+    </nav>
+    <a href="tel:+31624474197" class="hidden sm:inline-flex items-center gap-2 bg-navy text-white px-4 py-2.5 rounded text-[15px] font-medium hover:bg-navy-licht transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      06 24474197
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 pt-10 md:pt-16 pb-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+    <div class="md:col-span-6 lg:col-span-6">
+      <p class="text-navy/70 font-medium mb-5">Schilder in Nijmegen en omstreken</p>
+      <h1 class="font-kop text-navy text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.4rem] font-semibold tracking-tight">
+        Uw huis weer strak in de verf.
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80 max-w-[34rem]">
+        Everard en Femke schilderen binnen en buiten, van één voordeur tot een herenhuis met veel houtwerk.
+        Houtrot repareren we eerst, daarna gronden en aflakken we met <span class="whitespace-nowrap">A-kwaliteit</span> verf. Ook voor dubbel glas en Trespa kunt u bij ons terecht.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+31624474197" class="inline-flex justify-center items-center gap-2 bg-navy text-white px-6 py-4 rounded font-medium text-lg hover:bg-navy-licht transition-colors">
+          Bel 06 24474197
+        </a>
+        <a href="#offerte" class="inline-flex justify-center items-center px-6 py-4 rounded font-medium text-lg text-navy border border-navy/30 hover:border-navy hover:bg-white transition-colors">
+          Offerte aanvragen
+        </a>
+      </div>
+      <p class="mt-8 text-[15px] text-inkt/70 leading-relaxed">
+        <span class="text-navy font-semibold">4,7 uit 5</span> op Google, uit 38 reviews.<br>
+        Elke dag bereikbaar van 07:00 tot 18:00.
+      </p>
+    </div>
+    <figure class="md:col-span-6 lg:col-span-6 relative">
+      <div class="relative overflow-hidden rounded-md aspect-[4/5] shadow-[0_30px_60px_-20px_rgba(15,42,68,.45)]">
+        <img src="assets/google-07.jpg" alt="Groen gelakte paneeldeur met amberkleurig glas en een crèmewit kozijn, net geschilderd" class="w-full h-full object-cover">
+        <div class="glans" aria-hidden="true"></div>
+      </div>
+      <figcaption class="mt-3 text-sm text-inkt/60">Voordeur en kozijn, opnieuw gelakt.</figcaption>
+    </figure>
+  </section>
+
+  <!-- Werk -->
+  <section id="werk" class="bg-white border-y border-steen py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid md:grid-cols-12 gap-6 mb-10 md:mb-14">
+        <h2 class="md:col-span-5 font-kop text-navy text-4xl md:text-5xl font-semibold tracking-tight leading-tight">Ons werk spreekt voor zich</h2>
+        <p class="md:col-span-6 md:col-start-7 text-lg leading-relaxed text-inkt/75 self-end">
+          Een greep uit recente klussen in de regio. Van glanzend lakwerk op een voordeur tot een complete gevel met sierlijsten,
+          en binnen een woonkamer die van donker naar licht ging.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+        <figure class="col-span-2 md:col-span-7 md:row-span-2 relative overflow-hidden rounded-md">
+          <img src="assets/google-02.jpg" alt="Gevel van een herenhuis met crèmekleurige kozijnen, lijsten en dakkapel, opnieuw geschilderd" class="w-full h-full object-cover aspect-[4/5] md:aspect-auto">
+          <figcaption class="absolute left-0 bottom-0 m-2 md:m-3 bg-white/95 text-inkt text-xs md:text-sm px-2.5 py-1 md:px-3 md:py-1.5 rounded">Gevel met lijstwerk en dakkapel</figcaption>
+        </figure>
+        <figure class="md:col-span-5 relative overflow-hidden rounded-md">
+          <img src="assets/google-05.jpg" alt="Hoogglans donkerblauw gelakte voordeur naast rode baksteen" class="w-full aspect-square md:aspect-[5/4] object-cover">
+          <figcaption class="absolute left-0 bottom-0 m-2 md:m-3 bg-white/95 text-inkt text-xs md:text-sm px-2.5 py-1 md:px-3 md:py-1.5 rounded">Voordeur in hoogglans</figcaption>
+        </figure>
+        <figure class="md:col-span-5 relative overflow-hidden rounded-md">
+          <img src="assets/google-03.jpg" alt="Bakstenen woning met wit geschilderde kozijnen en een zwarte voordeur" class="w-full aspect-square md:aspect-[5/4] object-cover object-top">
+          <figcaption class="absolute left-0 bottom-0 m-2 md:m-3 bg-white/95 text-inkt text-xs md:text-sm px-2.5 py-1 md:px-3 md:py-1.5 rounded">Kozijnen en luifel</figcaption>
+        </figure>
+        <figure class="md:col-span-4 relative overflow-hidden rounded-md bg-steen">
+          <img src="assets/google-06.jpg" alt="Woonkamer voor en tijdens het schilderen: bruine wanden en plafond worden wit" class="w-full aspect-[2/3] object-cover">
+          <figcaption class="absolute left-0 bottom-0 m-2 md:m-3 bg-white/95 text-inkt text-xs md:text-sm px-2.5 py-1 md:px-3 md:py-1.5 rounded">Binnen: voor en tijdens</figcaption>
+        </figure>
+        <figure class="md:col-span-4 relative overflow-hidden rounded-md">
+          <img src="assets/google-01.jpg" alt="Rolsteiger met het doek van De Waal Schilderwerken voor een woning" class="w-full aspect-[2/3] object-cover object-[50%_45%]">
+          <figcaption class="absolute left-0 bottom-0 m-2 md:m-3 bg-white/95 text-inkt text-xs md:text-sm px-2.5 py-1 md:px-3 md:py-1.5 rounded">Herkenbaar aan ons doek</figcaption>
+        </figure>
+        <div class="col-span-2 md:col-span-4 bg-navy text-white rounded-md p-7 md:p-8 flex flex-col justify-end">
+          <p class="font-kop text-3xl leading-tight font-semibold">Uw huis de volgende?</p>
+          <p class="mt-3 text-white/75 leading-relaxed">We komen graag langs om te kijken wat er nodig is, en maken een duidelijke offerte.</p>
+          <a href="tel:+31624474197" class="mt-6 inline-flex justify-center items-center bg-kwast text-navy-diep px-5 py-3.5 rounded font-semibold hover:bg-white transition-colors">Bel 06 24474197</a>
+          <a href="#offerte" class="mt-3 text-center text-white/80 underline underline-offset-4 hover:text-white">of vraag een offerte aan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="bg-navy text-white py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-4">
+          <h2 class="font-kop text-4xl md:text-5xl font-semibold tracking-tight leading-tight">Wat klanten over Everard en Femke zeggen</h2>
+          <p class="mt-6 text-white/75 text-lg"><span class="text-kwast font-semibold">4,7 uit 5</span> gemiddeld, uit 38 reviews op Google.</p>
+        </div>
+        <figure class="md:col-span-8 md:pl-8 md:border-l md:border-white/15">
+          <blockquote class="font-kop text-2xl md:text-[2rem] leading-snug font-medium">
+            "Everard en Femke wat een fantastisch team! Ze hebben ons herenhuis uit 1895 van binnen en van buiten helemaal in de verf gezet en dat is echt fantastisch gedaan!! Wat een vakwerk. De details en het vele houtwerk vragen aandacht en expertise, top!"
+          </blockquote>
+          <figcaption class="mt-5 text-kwast">Jeroen van Heerde</figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-14 md:mt-20 grid md:grid-cols-2 gap-x-12 gap-y-10">
+        <figure class="border-t border-white/15 pt-6">
+          <blockquote class="text-white/90 leading-relaxed">"Wij zijn ontzettend blij met het schilderwerk van De Waal schilderwerken! Ons huis ziet er weer prachtig uit. Daarnaast verliep de communicatie met Everard en Femke erg prettig en kregen wij goede adviezen waar we veel aan hebben gehad. Het was dus top, dank Everard en Femke!"</blockquote>
+          <figcaption class="mt-3 text-sm text-kwast">Lieke van der Aa</figcaption>
+        </figure>
+        <figure class="border-t border-white/15 pt-6">
+          <blockquote class="text-white/90 leading-relaxed">"Heel blij met Everard en Femke! Het huis ziet er weer als nieuw uit na de schilderklus. Verder is het mooi om te zien dat ze passie voor het vak hebben en met plezier mooi werk neerzetten. Ik raad hen zeker aan!"</blockquote>
+          <figcaption class="mt-3 text-sm text-kwast">Mickey Mullers</figcaption>
+        </figure>
+        <figure class="border-t border-white/15 pt-6">
+          <blockquote class="text-white/90 leading-relaxed">"Everard en Femke hebben nu voor de eerste keer ons huis van buiten onderhanden genomen. Was toch een soort van groot onderhoud omdat wij het enige tijd verwaarloosd hadden. Met aandacht voor detail is alles nu weer helemaal fris. Met veel gerepareerde stukken waar hout rot was."</blockquote>
+          <figcaption class="mt-3 text-sm text-kwast">Leon Pillich</figcaption>
+        </figure>
+        <figure class="border-t border-white/15 pt-6">
+          <blockquote class="text-white/90 leading-relaxed">"Wij hebben Everard inmiddels voor meerdere schilderklussen ingeschakeld, zowel voor de binnen- als de buitenkant van onze woning. Het geleverde werk is van hoge kwaliteit en getuigt van vakmanschap. Alles is zorgvuldig en strak afgewerkt."</blockquote>
+          <figcaption class="mt-3 text-sm text-kwast">Puk van der Zwalum</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Werkwijze -->
+  <section id="werkwijze" class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-10 md:gap-12">
+      <div class="md:col-span-5">
+        <h2 class="font-kop text-navy text-4xl md:text-5xl font-semibold tracking-tight leading-tight">Eerst goed voorbereiden, dan pas verven</h2>
+        <p class="mt-6 text-lg leading-relaxed text-inkt/75">
+          Een laklaag is zo goed als de ondergrond. Daarom slaan we geen stap over. We werken uitsluitend met <span class="whitespace-nowrap">A-kwaliteit</span> verf van Veveo,
+          en op verzoek met een ander A-merk. Op ons schilderwerk geven we garantie.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-inkt/75">
+          Goed onderhoud is beter dan herstel achteraf: het verlengt de levensduur van uw kozijnen en deuren flink.
+        </p>
+      </div>
+      <ol class="md:col-span-7 border-t border-navy/15">
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-6 border-b border-navy/15">
+          <span class="font-kop text-3xl text-navy/40 leading-none">1</span>
+          <div><h3 class="font-kop text-2xl text-navy font-semibold">Schoonmaken en ontvetten</h3><p class="mt-1 text-inkt/70">Vuil en vet eraf, zodat de nieuwe laag goed hecht.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-6 border-b border-navy/15">
+          <span class="font-kop text-3xl text-navy/40 leading-none">2</span>
+          <div><h3 class="font-kop text-2xl text-navy font-semibold">Schuren</h3><p class="mt-1 text-inkt/70">Oude, losse verf weg en een gelijkmatige ondergrond.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-6 border-b border-navy/15">
+          <span class="font-kop text-3xl text-navy/40 leading-none">3</span>
+          <div><h3 class="font-kop text-2xl text-navy font-semibold">Repareren</h3><p class="mt-1 text-inkt/70">Houtrot behandelen, herstellen met twee-componenten epoxy of plamuur, en ramen en naden kitten.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-6 border-b border-navy/15">
+          <span class="font-kop text-3xl text-navy/40 leading-none">4</span>
+          <div><h3 class="font-kop text-2xl text-navy font-semibold">Gronden</h3><p class="mt-1 text-inkt/70">Nog een keer schoonmaken, daarna de grondverf erop.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-6 border-b border-navy/15">
+          <span class="font-kop text-3xl text-navy/40 leading-none">5</span>
+          <div><h3 class="font-kop text-2xl text-navy font-semibold">Aflakken</h3><p class="mt-1 text-inkt/70">De laatste laag, strak afgewerkt. Ook voor periodiek onderhoud.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Glas en Trespa -->
+  <section id="glas-trespa" class="bg-steen py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="font-kop text-navy text-4xl md:text-5xl font-semibold tracking-tight leading-tight max-w-2xl">Meer dan alleen een schilder</h2>
+      <div class="mt-10 md:mt-14 grid md:grid-cols-12 gap-10 md:gap-12">
+        <div class="md:col-span-6">
+          <h3 class="font-kop text-2xl md:text-3xl text-navy font-semibold">Dubbel glas plaatsen</h3>
+          <p class="mt-3 text-lg leading-relaxed text-inkt/75">
+            Van enkel naar dubbel glas in uw deur of raam? Dat regelen we voor u. Ook bij ruitschade kunt u bij ons terecht:
+            we bestellen en plaatsen het nieuwe glas en schilderen het kozijn meteen mee, zodat alles er weer als nieuw uitziet.
+          </p>
+        </div>
+        <div class="md:col-span-5 md:col-start-8">
+          <h3 class="font-kop text-2xl md:text-3xl text-navy font-semibold">Trespa plaatsen</h3>
+          <p class="mt-3 text-lg leading-relaxed text-inkt/75">
+            Trespa aan boeidelen en dakkapellen. Liever hout? Dat kan ook, in een geschikte houtsoort.
+          </p>
+        </div>
+      </div>
+      <p class="mt-12 pt-8 border-t border-navy/15 text-lg leading-relaxed text-inkt/80 max-w-3xl">
+        We werken binnen en buiten, voor particulieren, VVE's, kantoren en winkels. Werken op hoogte, monumentaal werk of regulier onderhoud:
+        geen klus is te groot of te klein. Ook voor één voordeur of een woonkamerwand bent u welkom.
+      </p>
+    </div>
+  </section>
+
+  <!-- Offerte en contact -->
+  <section id="offerte" class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-5">
+        <h2 class="font-kop text-navy text-4xl md:text-5xl font-semibold tracking-tight leading-tight">Offerte aanvragen</h2>
+        <p class="mt-6 text-lg leading-relaxed text-inkt/75">
+          Vertel kort wat er geschilderd moet worden. We maken graag een afspraak om te komen kijken en sturen u een duidelijke offerte
+          voor schilderwerk, glas of Trespa. Bij akkoord plannen we samen het werk in.
+        </p>
+
+        <dl class="mt-10 space-y-5 text-[17px]">
+          <div>
+            <dt class="text-sm text-inkt/60">Telefoon</dt>
+            <dd><a href="tel:+31624474197" class="font-kop text-2xl text-navy font-semibold hover:underline">06 24474197</a></dd>
+          </div>
+          <div>
+            <dt class="text-sm text-inkt/60">E-mail</dt>
+            <dd><a href="mailto:info@dewaalschilderwerken.nl" class="text-navy hover:underline break-all">info@dewaalschilderwerken.nl</a></dd>
+          </div>
+          <div>
+            <dt class="text-sm text-inkt/60">Bereikbaar</dt>
+            <dd>Maandag tot en met zondag, 07:00 tot 18:00</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-inkt/60">Adres</dt>
+            <dd>De Vlotkampweg 12, 34G<br>6545 AG Nijmegen</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-inkt/60">Werkgebied</dt>
+            <dd>Nijmegen, Groesbeek, Lent, Oosterhout, Bemmel, Wijchen, Beuningen en omstreken</dd>
+          </div>
+        </dl>
+      </div>
+
+      <form class="md:col-span-7 bg-white border border-steen rounded-md p-6 md:p-10" action="mailto:info@dewaalschilderwerken.nl" method="post" enctype="text/plain">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block sm:col-span-2"><span class="text-sm font-medium">Naam</span>
+            <input class="veld mt-1.5" name="naam" autocomplete="name" required></label>
+          <label class="block"><span class="text-sm font-medium">Telefoon</span>
+            <input class="veld mt-1.5" type="tel" name="telefoon" autocomplete="tel"></label>
+          <label class="block"><span class="text-sm font-medium">E-mailadres</span>
+            <input class="veld mt-1.5" type="email" name="email" autocomplete="email" required></label>
+        </div>
+
+        <fieldset class="mt-8">
+          <legend class="font-kop text-xl text-navy font-semibold">Over uw schilderwerk <span class="font-sans text-sm font-normal text-inkt/60">(als u het weet)</span></legend>
+          <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <label class="block"><span class="text-sm">Deuren</span><input class="veld mt-1.5" type="number" min="0" inputmode="numeric" name="deuren"></label>
+            <label class="block"><span class="text-sm">Kozijnen</span><input class="veld mt-1.5" type="number" min="0" inputmode="numeric" name="kozijnen"></label>
+            <label class="block"><span class="text-sm">Posten</span><input class="veld mt-1.5" type="number" min="0" inputmode="numeric" name="posten"></label>
+            <label class="block"><span class="text-sm">Muren in m²</span><input class="veld mt-1.5" type="number" min="0" inputmode="numeric" name="muren_m2"></label>
+            <label class="block"><span class="text-sm">Plafonds in m²</span><input class="veld mt-1.5" type="number" min="0" inputmode="numeric" name="plafonds_m2"></label>
+          </div>
+        </fieldset>
+
+        <label class="block mt-6"><span class="text-sm font-medium">Vertel ons meer over uw klus</span>
+          <textarea class="veld mt-1.5 min-h-32" name="bericht" rows="4" placeholder="Bijvoorbeeld: buitenkozijnen en voordeur, houtrot bij de dorpel"></textarea></label>
+
+        <button type="submit" class="mt-8 w-full sm:w-auto bg-navy text-white px-8 py-4 rounded font-medium text-lg hover:bg-navy-licht active:translate-y-px transition">
+          Offerte aanvragen
+        </button>
+        <p class="mt-4 text-sm text-inkt/60">Liever direct overleggen? Bel <a href="tel:+31624474197" class="text-navy underline">06 24474197</a>.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-navy-diep text-white/70 text-sm">
+  <div class="max-w-6xl mx-auto px-5 py-10 grid sm:grid-cols-3 gap-6">
+    <div>
+      <p class="font-kop text-white text-xl font-semibold">De Waal Schilderwerken</p>
+      <p class="mt-2">De Vlotkampweg 12, 34G<br>6545 AG Nijmegen</p>
+    </div>
+    <div>
+      <p><a href="tel:+31624474197" class="hover:text-white">06 24474197</a></p>
+      <p><a href="mailto:info@dewaalschilderwerken.nl" class="hover:text-white">info@dewaalschilderwerken.nl</a></p>
+    </div>
+    <div>
+      <p>KVK 59297840</p>
+      <p>BTW NL8534100008B01</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white border-t border-steen p-2.5 grid grid-cols-2 gap-2">
+  <a href="tel:+31624474197" class="flex justify-center items-center gap-2 bg-navy text-white py-3 rounded font-medium">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bellen
+  </a>
+  <a href="#offerte" class="flex justify-center items-center text-navy border border-navy/30 py-3 rounded font-medium">Offerte</a>
+</div>
+
 </body>
 </html>
