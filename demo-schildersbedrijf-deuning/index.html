@@ -1,1345 +1,300 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schildersbedrijf Deuning</title>
-  <meta name="description" content="Professioneel schilder en stukadoor in Ede met duurzame verf en nette werkwijze.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #0c0c0c;
-  color: #f0f0f0;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-:root {
-  --accent: #fb923c;
-  --bg: #0c0c0c;
-  --surface: #1c1c1c;
-  --border: #2a2a2a;
-  --text: #f0f0f0;
-  --muted: #a0a0a0;
-  --nav-bg: rgba(12,12,12,0.95);
-  --hero-bg: transparent;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-/* ── Typografie ── */
-h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
-p { margin: 0; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Navigatie ── */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo span {
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-cta {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.nav-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Secties ── */
-section {
-  padding: 96px 24px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--muted);
-  max-width: 540px;
-  font-size: 1.05rem;
-  margin-bottom: 56px;
-}
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── USP strip ── */
-.usp-strip {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 24px;
-}
-
-.usp-strip .container {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.usp-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.usp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-/* ── Diensten grid ── */
-.diensten-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.dienst-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.dienst-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-.dienst-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.2;
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-
-.dienst-card h3 {
-  margin-bottom: 10px;
-}
-
-.dienst-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Stats band ── */
-.stats-band {
-  background: var(--accent);
-  color: #ffffff;
-  padding: 64px 24px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-item {}
-
-.stat-waarde {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  font-weight: 500;
-}
-
-/* ── Werkwijze ── */
-.werkwijze-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  counter-reset: stap;
-}
-
-.stap-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-}
-
-.stap-nummer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.stap-card h3 {
-  margin-bottom: 10px;
-}
-
-.stap-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Over ons ── */
-.over-ons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.over-ons-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.over-ons-tekst p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 56px;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 28px;
-  font-style: italic;
-  color: var(--text);
-}
-
-.testimonial-naam {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ── FAQ ── */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-details[open] {
-  border-color: var(--accent);
-}
-
-summary {
-  padding: 20px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-.faq-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: transform 0.2s;
-}
-
-details[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 24px 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* ── Contact ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-info h3 {
-  margin-bottom: 8px;
-}
-
-.contact-info p {
-  color: var(--muted);
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-}
-
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px;
-}
-
-.form-row {
-  margin-bottom: 18px;
-}
-
-.form-row label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 12px 16px;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--accent);
-}
-
-.form-row textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  font-family: inherit;
-}
-
-.form-submit:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Footer ── */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-logo {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.footer-logo span {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
-.footer-copy {
-  color: var(--muted);
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ── Dark-specifiek: hero ── */
-.hero-dark {
-  min-height: 100vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: #0c0c0c;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-dark-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.hero-dark-glow {
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, #fb923c 15%, transparent), transparent 70%);
-  pointer-events: none;
-}
-
-.hero-dark-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-dark-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-dark-left h1 {
-  color: #f0f0f0;
-}
-
-.hero-dark-left .hero-sub {
-  color: #a0a0a0;
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-dark-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-dark-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-}
-
-/* Sector SVG icon groot in de hero */
-.hero-sector-icon {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-sector-icon svg {
-  width: 80px;
-  height: 80px;
-  stroke: #fb923c;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 0 20px color-mix(in srgb, #fb923c 60%, transparent));
-}
-
-/* Pulserende ringen */
-.pulse-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #fb923c;
-  animation: pulse-out 3s ease-out infinite;
-  opacity: 0;
-}
-
-.pulse-ring:nth-child(1) { width: 160px; height: 160px; animation-delay: 0s; }
-.pulse-ring:nth-child(2) { width: 220px; height: 220px; animation-delay: 0.8s; }
-.pulse-ring:nth-child(3) { width: 290px; height: 290px; animation-delay: 1.6s; }
-
-@keyframes pulse-out {
-  0%   { opacity: 0.6; transform: scale(0.85); }
-  100% { opacity: 0;   transform: scale(1.15); }
-}
-
-/* Drijvende stat kaarten */
-.stat-cards {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.stat-card {
-  position: absolute;
-  background: #1c1c1c;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 14px 18px;
-  pointer-events: auto;
-  animation: float-card 5s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-
-.stat-card:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.stat-card:nth-child(2) { top: 55%; right: -8%; animation-delay: 1.5s; }
-.stat-card:nth-child(3) { bottom: 8%; left: 15%; animation-delay: 0.8s; }
-
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-
-.stat-card .sc-waarde {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #fb923c;
-  line-height: 1;
-}
-
-.stat-card .sc-label {
-  font-size: 0.75rem;
-  color: #a0a0a0;
-  margin-top: 4px;
-}
-
-/* ── Light hero (foto achtergrond) ── */
-.hero-light {
-  min-height: 100vh;
-  padding-top: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-light-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-light-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-}
-
-.hero-light-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.hero-light-inner h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.hero-light-inner .hero-sub {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.15rem;
-  margin-bottom: 36px;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-.hero-light-cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── Clean hero ── */
-.hero-clean {
-  min-height: 90vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-}
-
-.hero-clean-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-clean-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-clean-left h1 {
-  color: var(--text);
-}
-
-.hero-clean-left .hero-sub {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-clean-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-clean-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.hero-stat-block {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-}
-
-.hero-stat-block .hs-waarde {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.hero-stat-block .hs-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-/* ── Foto grid voor services (light/clean) ── */
-.diensten-foto-wrap {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  height: 220px;
-  margin-bottom: 0;
-}
-
-.diensten-foto-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-}
-
-.dienst-card:hover .diensten-foto-wrap img {
-  transform: scale(1.04);
-}
-
-/* ── Responsive ── */
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border-top: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.demo-banner a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-/* ── Mobile hamburger ── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-
-.nav-mobile-menu {
-  display: none;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  z-index: 99;
-  padding: 16px 24px 24px;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-mobile-menu.open { display: flex; }
-
-.nav-mobile-menu a {
-  padding: 12px 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-mobile-menu a:last-child { border-bottom: none; }
-
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-dark-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .hero-dark-right { display: none; }
-  .hero-dark-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-dark-left h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-
-  .hero-clean-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-clean-right { display: none; }
-  .hero-clean-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-clean-left { text-align: center; align-items: center; }
-  .hero-clean-left h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-
-  .hero-light-inner { padding: 0 0 40px; }
-  .hero-light-inner h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-light-cta { flex-wrap: wrap; justify-content: center; }
-
-  .diensten-grid,
-  .werkwijze-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .over-ons-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .over-ons-img { height: 240px; }
-
-  .testimonial-wrap { padding: 28px 20px; }
-
-  .usp-strip .container { gap: 20px; flex-wrap: wrap; }
-  .usp-item { min-width: 140px; flex: 1; }
-
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 16px; }
-
-  .demo-banner { font-size: 0.78rem; padding: 9px 12px; }
-}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schildersbedrijf Deuning | Schilder en airless spuitwerk in Ede</title>
+<meta name="description" content="Binnenschilderwerk, airless latex- en lakspuiten, behang en wandafwerking in Ede en omgeving. Bel 06 83794864 voor een vrijblijvende afspraak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        wall: '#F3F4F2',
+        ink: '#1F2427',
+        blue: { DEFAULT: '#1D3F66', dark: '#152F4D' },
+        mute: '#5F666A',
+        line: '#D9DCDA',
+        tape: '#E4D08A',
+      },
+      fontFamily: {
+        head: ['Archivo', 'sans-serif'],
+        body: ['"Public Sans"', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .wide { font-stretch: 118%; }
+  .balance { text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+  /* ponytail: lijnt full-bleed secties uit met de 80rem container */
+  @media (min-width: 768px) { .edge-l { padding-left: max(2rem, calc((100vw - 80rem) / 2 + 2rem)) !important; } }
+  @media (min-width: 1024px) { .edge-r { padding-right: max(3rem, calc((100vw - 80rem) / 2 + 2rem)) !important; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Schildersbedrijf Deuning</div>
-    <ul class="nav-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#werkwijze">Werkwijze</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary nav-cta">Gratis offerte</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="#diensten">Diensten</a>
-  <a href="#over-ons">Over ons</a>
-  <a href="#werkwijze">Werkwijze</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" style="color:var(--accent);font-weight:700;margin-top:8px;">Gratis offerte</a>
+<body class="bg-wall text-ink font-body antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-ink text-wall px-4 py-2">Naar de inhoud</a>
+
+<div class="bg-ink text-wall/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Schildersbedrijf Deuning, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-wall hover:text-tape">Hagenweb</a>
 </div>
-<section class="hero-dark" id="hero">
-  <div class="hero-dark-bg-grid"></div>
-  <div class="hero-dark-glow"></div>
-  <div class="hero-dark-inner">
-    <div class="hero-dark-left reveal">
-      <h1>Schildersbedrijf Deuning maakt het verschil</h1>
-      <p class="hero-sub">Professioneel schilder en stukadoor in Ede met duurzame verf en nette werkwijze.</p>
-      <div class="hero-dark-cta">
-        <a href="#contact" class="btn btn-primary">Vraag offerte aan</a>
-        <a href="#diensten" class="btn btn-secondary">Bekijk diensten</a>
+
+<header class="border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="leading-none">
+      <span class="block text-[11px] tracking-wide text-mute">Schildersbedrijf</span>
+      <span class="block font-head wide font-extrabold text-2xl tracking-tight">Deuning</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#spuiten" class="hover:text-blue">Spuitwerk</a>
+      <a href="#diensten" class="hover:text-blue">Diensten</a>
+      <a href="#werkwijze" class="hover:text-blue">Werkwijze</a>
+      <a href="#ervaringen" class="hover:text-blue">Ervaringen</a>
+      <a href="#contact" class="hover:text-blue">Contact</a>
+    </nav>
+    <a href="tel:+31683794864" class="inline-flex items-center gap-2 bg-blue hover:bg-blue-dark text-white text-sm font-semibold px-4 py-2.5 transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 83794864</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="grid md:grid-cols-12 md:min-h-[640px]">
+    <div class="md:col-span-6 lg:col-span-5 px-5 md:pr-8 edge-l pt-12 pb-10 md:py-20 flex flex-col justify-center relative z-10">
+      <p class="text-mute font-medium mb-5">Schilder in Ede en omgeving</p>
+      <h1 class="font-head wide font-extrabold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.4rem] tracking-tight balance">Strak gespoten. Netjes opgeleverd.</h1>
+      <p class="mt-6 text-lg text-mute max-w-md pretty">Binnenschilderwerk en airless spuitwerk voor wanden, plafonds, deuren, kozijnen en trappen. Eerlijk advies vooraf, en afspraak is afspraak.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31683794864" class="bg-blue hover:bg-blue-dark text-white font-semibold px-6 py-4 transition-colors active:translate-y-px">Bel 06 83794864</a>
+        <a href="#contact" class="font-semibold underline underline-offset-4 decoration-2 decoration-blue hover:text-blue">Vrijblijvende offerte aanvragen</a>
       </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Schildersbedrijf+Deuning+Ede" class="mt-10 inline-flex items-center gap-3 text-sm group">
+        <span class="text-blue tracking-[0.15em]" aria-hidden="true">★★★★★</span>
+        <span><strong class="font-semibold">5,0</strong> uit 33 Google-reviews</span>
+      </a>
     </div>
-    <div class="hero-dark-right reveal reveal-delay-2">
-      <div class="stat-cards"><div class="stat-card">
-      <div class="sc-waarde">Binnen 24 uur</div>
-      <div class="sc-label">Reactietijd</div>
-    </div><div class="stat-card">
-      <div class="sc-waarde">Ede en omgeving</div>
-      <div class="sc-label">Werkgebied</div>
-    </div><div class="stat-card">
-      <div class="sc-waarde">Flexibele planning</div>
-      <div class="sc-label">Beschikbaarheid</div>
-    </div></div>
-      <div class="hero-sector-icon">
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring"></div>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="usp-strip">
-  <div class="container"><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Vakkundige uitvoering van begin tot eind</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Duurzame materialen met milieuverantwoording</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Lokaal bedrijf met langdurige klantrelaties</span>
-    </div></div>
-</div>
-<section id="diensten">
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal"></p>
-    <div class="diensten-grid"><div class="dienst-card reveal reveal-delay-1">
-      
-      <div class="dienst-number">01</div>
-      <h3>Binnenschilderwerk</h3>
-      <p>Muren, plafonds en houtwerk voor woonhuis en bedrijfsruimten.</p>
-    </div><div class="dienst-card reveal reveal-delay-2">
-      
-      <div class="dienst-number">02</div>
-      <h3>Buitenschilderwerk</h3>
-      <p>Duurzame afwerking voor gevels, trappen en buitenstructuren.</p>
-    </div><div class="dienst-card reveal reveal-delay-3">
-      
-      <div class="dienst-number">03</div>
-      <h3>Spuitwerk &amp; lakken</h3>
-      <p>Professioneel spuitwerk voor deuren, meubels en industriële toepassingen.</p>
-    </div></div>
-  </div>
-</section>
-<section class="stats-band">
-  <div class="container">
-    <div class="stats-grid"><div class="stat-item reveal">
-      <div class="stat-waarde">Binnen 24 uur</div>
-      <div class="stat-label">Reactietijd</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Ede en omgeving</div>
-      <div class="stat-label">Werkgebied</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Flexibele planning</div>
-      <div class="stat-label">Beschikbaarheid</div>
-    </div></div>
-  </div>
-</section>
-<section id="werkwijze">
-  <div class="container">
-    <div class="section-label">Hoe het werkt</div>
-    <h2 class="section-title reveal">Onze aanpak</h2>
-    <div class="werkwijze-grid"><div class="stap-card reveal reveal-delay-1">
-      <div class="stap-nummer">1</div>
-      <h3>Adviesgesprek</h3>
-      <p>Wij bekijken de situatie en bespreken uw wensen.</p>
-    </div><div class="stap-card reveal reveal-delay-2">
-      <div class="stap-nummer">2</div>
-      <h3>Voorbereiding &amp; planning</h3>
-      <p>Oppervlakken worden gereed gemaakt en werkschema bepaald.</p>
-    </div><div class="stap-card reveal reveal-delay-3">
-      <div class="stap-nummer">3</div>
-      <h3>Uitvoering &amp; afwerking</h3>
-      <p>Professioneel schilderwerk met oog voor detail en netheid.</p>
-    </div></div>
-  </div>
-</section>
-<section id="over-ons" style="background: var(--surface);">
-  <div class="container">
-    <div class="over-ons-grid">
-      <div class="over-ons-foto reveal"><img src="stock/img-2.jpg" alt="Schildersbedrijf Deuning" class="over-ons-img" loading="lazy"></div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Schildersbedrijf Deuning</h2>
-        <p class="reveal reveal-delay-1">Schildersbedrijf Deuning is een gevestigd bedrijf in Ede met jarenlange ervaring in binnen- en buitenschilderwerk. Wij werken met duurzame verf, geven ons handwerk de tijd die het verdient, en zetten de belangen van onze klanten voorop. Van nieuwbouw tot renovatie: wij leveren een strak, vakkundig resultaat.</p>
-        <div class="reveal reveal-delay-2">
-          <a href="#contact" class="btn btn-primary">Plan een gesprek</a>
-        </div>
-      </div>
+    <div class="md:col-span-6 lg:col-span-7 relative">
+      <img src="assets/google-05.jpg" alt="Davey Deuning spuit met een airless spuit latex op een wand" class="w-full aspect-[1039/792] object-cover md:aspect-auto md:absolute md:inset-0 md:h-full object-[60%_top]">
     </div>
   </div>
 </section>
-<section id="referenties" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Wat klanten zeggen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">Ervaringen</h2>
-    <div class="testimonial-wrap reveal">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px;opacity:0.5;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-      <p class="testimonial-quote">Een serieus bedrijf dat op tijd klaar is en het resultaat ziet er verzorgd uit.</p>
-      <div class="testimonial-naam">Jan, Ede</div>
+
+<!-- Spuiten -->
+<section id="spuiten" class="bg-ink text-wall">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <figure class="lg:col-span-7 relative">
+      <img src="assets/site-03.jpg" alt="Een trap voor en na het spuiten: eerst wit en kaal, daarna strak zwart gespoten" class="w-full h-auto">
+      <span class="absolute top-4 left-4 bg-tape text-ink text-sm font-semibold px-3 py-1 -rotate-2">voor</span>
+      <span class="absolute top-4 left-[calc(50%+1rem)] bg-tape text-ink text-sm font-semibold px-3 py-1 rotate-1">na</span>
+    </figure>
+    <div class="lg:col-span-5">
+      <h2 class="font-head wide font-extrabold text-4xl md:text-5xl leading-[1.05] tracking-tight balance">Onze specialiteit: airless spuiten</h2>
+      <div class="mt-6 space-y-4 text-wall/75 text-lg leading-relaxed pretty">
+        <p>Latex spuiten geeft de strakste wandafwerking die er is. Met onze professionele machines spuiten we latex en verf op plafonds, wanden, deuren, trappen, kozijnen en zelfs meubels.</p>
+        <p>Dat kan ook als u gewoon thuis woont. Vloeren en meubels plakken we netjes af, zodat alleen de muur kleur krijgt.</p>
+      </div>
+      <a href="https://wa.me/31683794864" class="mt-8 inline-flex items-center gap-2 font-semibold text-wall underline underline-offset-4 decoration-2 decoration-tape hover:text-tape">Stuur een foto van uw klus via WhatsApp</a>
     </div>
   </div>
 </section>
-<section id="faq" style="background: var(--surface);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-    <summary>
-      Welke verfsoorten gebruikt Schildersbedrijf Deuning?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Wij kiezen duurzame, milieuvriendelijke verfmerken met goede dekkingskracht en lange levensduur.</div>
-  </details><details>
-    <summary>
-      Hoe lang duurt een schilderklus gemiddeld?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Afhankelijk van grootte en voorbereiding. Wij geven een duidelijke planning en houden ons daaraan.</div>
-  </details><details>
-    <summary>
-      Verzorgen jullie ook voorbereiding en stukadoorswerk?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja, wij laten geen reparaties voor wat betreft oneffenheden en scheuren staan.</div>
-  </details><details>
-    <summary>
-      Hoe kan ik een offerte aanvragen in Ede?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Bel 06 83794864 of stuur een mailtje naar info@schildersbedrijfdeuning.nl met uw wensen.</div>
-  </details></div>
+
+<!-- Diensten -->
+<section id="diensten" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-6 mb-14">
+    <h2 class="md:col-span-6 font-head wide font-extrabold text-4xl md:text-5xl leading-[1.05] tracking-tight balance">Wat we verder voor u doen</h2>
+    <p class="md:col-span-5 md:col-start-8 text-lg text-mute self-end pretty">Gaat u verhuizen, verbouwen, heeft u waterschade of is uw huis toe aan een opknapbeurt? Wij doen de klus en adviseren over de juiste afwerking.</p>
+  </div>
+
+  <div class="grid md:grid-cols-12 gap-x-8 gap-y-16">
+    <article class="md:col-span-7">
+      <img src="assets/google-08.jpg" alt="Wit gelakte open trap in een hal" class="w-full aspect-[4/3] md:aspect-square object-cover object-[center_70%]">
+      <h3 class="mt-6 font-head wide font-bold text-2xl">Lakwerk op deuren, kozijnen en trappen</h3>
+      <p class="mt-2 text-mute max-w-lg pretty">Lak gespoten in plaats van gekwast: geen strepen, een gelijkmatige laag. Ook voor trappen die er na het schuren en lakken uitzien als nieuw.</p>
+    </article>
+    <article class="md:col-span-5 md:pt-24">
+      <img src="assets/google-06.jpg" alt="Zwart gespoten trap in een bedrijfspand" class="w-full aspect-[4/5] object-cover">
+      <h3 class="mt-6 font-head wide font-bold text-2xl">Ook voor bedrijven</h3>
+      <p class="mt-2 text-mute pretty">Van een trap in een nieuw bedrijfspand tot een meldkamer die een nieuw kleurtje nodig had.</p>
+    </article>
+
+    <article class="md:col-span-12 grid md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-7 grid grid-cols-2 gap-3">
+        <img src="assets/site-05.jpg" alt="Wand met groen bladerenbehang" class="w-full aspect-square object-cover">
+        <img src="assets/site-04.jpg" alt="Fotobehang met maan, sterren en een leeuwtje in een kinderkamer" class="w-full aspect-square object-cover object-[45%_center]">
+      </div>
+      <div class="md:col-span-5">
+        <h3 class="font-head wide font-bold text-2xl">Behangen</h3>
+        <p class="mt-2 text-mute pretty">Renovlies en glasvezel om op te schilderen, maar ook patroon- en fotobehang. Exclusief behang van bijvoorbeeld Arte en Elitis plakken we ook, en we kunnen het voor u leveren.</p>
+      </div>
+    </article>
+
+    <article class="md:col-span-12 grid md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-5 md:order-1 order-2">
+        <h3 class="font-head wide font-bold text-2xl">Stucwerk en wandafwerking</h3>
+        <p class="mt-2 text-mute pretty">Samen met vaste stukadoors maken we uw wanden weer glad: normaal stucwerk, dunpleister of naden smeren. Decoratief stucwerk kan ook.</p>
+      </div>
+      <img src="assets/google-03.jpg" alt="Donkere decoratief gestucte wand met zwarte kozijnen rond twee ramen" class="md:col-span-7 md:order-2 order-1 w-full aspect-[16/10] object-cover object-[center_60%]">
+    </article>
   </div>
 </section>
-<section id="contact" style="background: var(--bg);">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title reveal">Vraag offerte aan</h2>
-        <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte. Wij reageren binnen 24 uur.</p>
-        <div class="contact-details reveal reveal-delay-2">
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <a href="tel:0683794864">06 83794864</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <a href="mailto:info@schildersbedrijfdeuning.nl">info@schildersbedrijfdeuning.nl</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <span>Ede</span>
-      </div>
-        </div>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-row">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam" autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label>E-mailadres</label>
-          <input type="email" placeholder="u@voorbeeld.nl" autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label>Bericht</label>
-          <textarea placeholder="Vertel ons over uw project..."></textarea>
-        </div>
-        <button class="form-submit" type="button">Vraag offerte aan</button>
+
+<!-- Kleuradvies -->
+<section class="bg-blue text-white">
+  <div class="grid md:grid-cols-2">
+    <img src="assets/google-02.jpg" alt="Slaapkamer met een donkerblauwe en een lichtblauwe wand en een witte deur" class="w-full h-full min-h-[320px] object-cover">
+    <div class="px-5 md:px-12 lg:pl-16 edge-r py-16 md:py-24 flex flex-col justify-center">
+      <h2 class="font-head wide font-extrabold text-4xl md:text-5xl leading-[1.05] tracking-tight balance">Twijfelt u over de kleur?</h2>
+      <p class="mt-6 text-lg text-white/80 leading-relaxed max-w-lg pretty">Kleur maakt een ruimte groter of knusser, rustiger of juist luchtiger. Omdat we elke dag met verf werken, weten we wat een kleur doet en welke producten erbij passen. Dat advies krijgt u er gewoon bij.</p>
+      <blockquote class="mt-10 border-l-2 border-tape pl-5 max-w-md">
+        <p class="text-white/90 italic">"Nice gewerkt en thanks voor het advies van een ander kleurtje. ziet er weer super strak uit"</p>
+        <footer class="mt-2 text-sm text-white/60">Mike De Lassacquere, over de meldkamer</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <h2 class="font-head wide font-extrabold text-4xl md:text-5xl leading-[1.05] tracking-tight max-w-2xl balance">Zo pakken we het aan</h2>
+  <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-ink">
+    <li class="pt-6 pb-8 lg:pr-8 border-b lg:border-b-0 border-line">
+      <span class="font-head wide font-extrabold text-5xl text-blue">1</span>
+      <h3 class="mt-4 font-semibold text-lg">Offerteaanvraag</h3>
+      <p class="mt-2 text-mute pretty">U vraagt een offerte aan. We plannen een afspraak om de klus bij u op te nemen.</p>
+    </li>
+    <li class="pt-6 pb-8 sm:pl-6 lg:px-8 border-b lg:border-b-0 sm:border-l border-line">
+      <span class="font-head wide font-extrabold text-5xl text-blue">2</span>
+      <h3 class="mt-4 font-semibold text-lg">Akkoord</h3>
+      <p class="mt-2 text-mute pretty">U krijgt vooraf volledig inzicht in prijs en kwaliteit, en geeft akkoord.</p>
+    </li>
+    <li class="pt-6 pb-8 lg:px-8 border-b sm:border-b-0 lg:border-l border-line">
+      <span class="font-head wide font-extrabold text-5xl text-blue">3</span>
+      <h3 class="mt-4 font-semibold text-lg">Uitvoering</h3>
+      <p class="mt-2 text-mute pretty">We gaan aan de slag volgens een vast protocol, zodat de kwaliteit elke keer klopt.</p>
+    </li>
+    <li class="pt-6 pb-8 sm:pl-6 lg:pl-8 sm:border-l border-line">
+      <span class="font-head wide font-extrabold text-5xl text-blue">4</span>
+      <h3 class="mt-4 font-semibold text-lg">Oplevering</h3>
+      <p class="mt-2 text-mute pretty">Samen lopen we een rondje langs het werk en zetten we waar nodig de puntjes op de i. Niet helemaal tevreden? Dan werken we het kosteloos bij.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- Ervaringen -->
+<section id="ervaringen" class="border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="font-head wide font-extrabold text-4xl md:text-5xl leading-[1.05] tracking-tight balance">Wat klanten zeggen</h2>
+      <p class="mt-6 flex items-baseline gap-3">
+        <span class="font-head wide font-extrabold text-6xl">5,0</span>
+        <span class="text-mute">uit 33 reviews op Google</span>
+      </p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Schildersbedrijf+Deuning+Ede" class="mt-4 inline-block font-semibold underline underline-offset-4 decoration-2 decoration-blue hover:text-blue">Alle reviews op Google</a>
+    </div>
+    <div class="lg:col-span-8 space-y-12">
+      <blockquote>
+        <p class="font-head font-semibold text-2xl md:text-[1.7rem] leading-snug pretty">"Davey Deuning heeft bij ons het hele huis geschilderd en gespoten, vanaf het eerste contact moment kwam hij betrouwbaar en vakbekwaam over, en dat is ook in het eind resultaat te zien. Oog voor detail en strak en net schilder/spuitwerk afgeleverd. We zijn zelf ook erg blij met het eindresultaat."</p>
+        <footer class="mt-4 text-mute">Egbert van den Broek</footer>
+      </blockquote>
+      <div class="grid sm:grid-cols-2 gap-x-10 gap-y-10 pt-10 border-t border-line">
+        <blockquote>
+          <p class="pretty">"Davey en Kevin hebben ons hele huis in verschillende kleuren geverfd en gespoten. En behangen. Oog voor detail. Straks afgewerkt. Heel blij mee."</p>
+          <footer class="mt-3 text-sm text-mute">Marloes van Onna</footer>
+        </blockquote>
+        <blockquote>
+          <p class="pretty">"Top schilder. Hij heeft de huiskamer en keuken en gang met drie kleuren een mooie sfeer gegeven. Werkt precies en komt afspraken na. Dank voor het mooie resultaat Dave."</p>
+          <footer class="mt-3 text-sm text-mute">Bert B</footer>
+        </blockquote>
+        <blockquote>
+          <p class="pretty">"Ouderwetse kwaliteit; afspraak is afspraak; geen verassingen achteraf en overleggen kan altijd."</p>
+          <footer class="mt-3 text-sm text-mute">Harry H</footer>
+        </blockquote>
+        <blockquote>
+          <p class="pretty">"Zeer vakkundige schilder werkt netjes!! En het resultaat is zeer mooi."</p>
+          <footer class="mt-3 text-sm text-mute">adrie Jansen</footer>
+        </blockquote>
       </div>
     </div>
   </div>
 </section>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Schildersbedrijf Deuning</div>
-    <ul class="footer-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+
+<!-- Contact -->
+<section id="contact" class="bg-ink text-wall">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="font-head wide font-extrabold text-4xl md:text-5xl leading-[1.05] tracking-tight balance">Bel voor een vrijblijvende afspraak</h2>
+      <p class="mt-6 text-wall/75 text-lg leading-relaxed pretty">Overdag staan we vaak op de steiger. Neemt niemand op? Spreek de voicemail in of stuur een bericht, dan bellen we zo snel mogelijk terug.</p>
+      <a href="tel:+31683794864" class="mt-8 block font-head wide font-extrabold text-4xl sm:text-5xl hover:text-tape transition-colors">06 83794864</a>
+      <a href="mailto:info@schildersbedrijfdeuning.nl" class="mt-3 inline-block text-lg underline underline-offset-4 decoration-wall/30 hover:decoration-tape break-all">info@schildersbedrijfdeuning.nl</a>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-10 text-sm">
+        <div>
+          <h3 class="font-semibold text-wall mb-3">Openingstijden</h3>
+          <dl class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-wall/70 tabular-nums">
+            <dt>ma t/m vr</dt><dd>08:00 tot 21:00</dd>
+            <dt>zaterdag</dt><dd>08:00 tot 18:00</dd>
+            <dt>zondag</dt><dd>gesloten</dd>
+          </dl>
+        </div>
+        <div>
+          <h3 class="font-semibold text-wall mb-3">Adres</h3>
+          <address class="not-italic text-wall/70 leading-relaxed">Zanderijweg 24G<br>6717 BM Ede</address>
+        </div>
+      </div>
+      <p class="mt-10 text-sm text-wall/60 leading-relaxed max-w-md pretty">We werken in Ede, Bennekom, Wageningen, Lunteren, Veenendaal, Barneveld, Arnhem, Amersfoort, Rhenen en verder.</p>
+    </div>
+
+    <form class="lg:col-span-6 lg:col-start-7 bg-wall text-ink p-6 sm:p-10 grid sm:grid-cols-2 gap-5" action="mailto:info@schildersbedrijfdeuning.nl" method="post" enctype="text/plain">
+      <h3 class="sm:col-span-2 font-head wide font-bold text-2xl">Of vraag een offerte aan</h3>
+      <label class="block text-sm font-medium">Naam
+        <input name="naam" required autocomplete="name" class="mt-1.5 w-full border border-line bg-white px-3 py-2.5 focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20">
+      </label>
+      <label class="block text-sm font-medium">Woonplaats
+        <input name="woonplaats" required autocomplete="address-level2" class="mt-1.5 w-full border border-line bg-white px-3 py-2.5 focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20">
+      </label>
+      <label class="block text-sm font-medium">Telefoonnummer
+        <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full border border-line bg-white px-3 py-2.5 focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20">
+      </label>
+      <label class="block text-sm font-medium">E-mailadres
+        <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full border border-line bg-white px-3 py-2.5 focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20">
+      </label>
+      <label class="block text-sm font-medium sm:col-span-2">Wat wilt u laten doen?
+        <textarea name="bericht" rows="5" required placeholder="Bijvoorbeeld: woonkamer en hal latex spuiten, plafond en wanden" class="mt-1.5 w-full border border-line bg-white px-3 py-2.5 placeholder:text-mute/60 focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20"></textarea>
+      </label>
+      <button type="submit" class="sm:col-span-2 bg-blue hover:bg-blue-dark text-white font-semibold px-6 py-4 transition-colors active:translate-y-px">Offerteaanvraag versturen</button>
+    </form>
   </div>
-  <p class="footer-copy">&copy; 2025 Schildersbedrijf Deuning. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
+</section>
+</main>
+
+<footer class="bg-ink text-wall/50 text-sm border-t border-wall/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-8 pb-24 md:pb-8 flex flex-col sm:flex-row gap-2 justify-between">
+    <p>Schildersbedrijf Deuning, Zanderijweg 24G, 6717 BM Ede</p>
+    <p>KvK 76732576</p>
+  </div>
 </footer>
-<div class="demo-banner">
-  <span>&#9889; DEMO voor Schildersbedrijf Deuning &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 bg-ink text-white text-sm font-semibold">
+  <a href="tel:+31683794864" class="flex items-center justify-center gap-2 bg-blue py-4">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bellen
+  </a>
+  <a href="https://wa.me/31683794864" class="flex items-center justify-center gap-2 py-4">WhatsApp</a>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Scroll reveal
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { io.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('visible'); });
-  }
 
-  // Nav scroll effect
-  var nav = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-});
-</script>
 </body>
 </html>
