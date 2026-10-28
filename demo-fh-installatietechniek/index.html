@@ -1,1345 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FH Installatietechniek</title>
-  <meta name="description" content="Lekkages verholpen, CV-ketels geplaatst, badkamers gerenoveerd. 24/7 bereikbaar.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #0c0c0c;
-  color: #f0f0f0;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-:root {
-  --accent: #fb923c;
-  --bg: #0c0c0c;
-  --surface: #1c1c1c;
-  --border: #2a2a2a;
-  --text: #f0f0f0;
-  --muted: #a0a0a0;
-  --nav-bg: rgba(12,12,12,0.95);
-  --hero-bg: transparent;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-/* ── Typografie ── */
-h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
-p { margin: 0; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Navigatie ── */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo span {
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-cta {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.nav-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Secties ── */
-section {
-  padding: 96px 24px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--muted);
-  max-width: 540px;
-  font-size: 1.05rem;
-  margin-bottom: 56px;
-}
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── USP strip ── */
-.usp-strip {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 24px;
-}
-
-.usp-strip .container {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.usp-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.usp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-/* ── Diensten grid ── */
-.diensten-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.dienst-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.dienst-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-.dienst-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.2;
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-
-.dienst-card h3 {
-  margin-bottom: 10px;
-}
-
-.dienst-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Stats band ── */
-.stats-band {
-  background: var(--accent);
-  color: #ffffff;
-  padding: 64px 24px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-item {}
-
-.stat-waarde {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  font-weight: 500;
-}
-
-/* ── Werkwijze ── */
-.werkwijze-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  counter-reset: stap;
-}
-
-.stap-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-}
-
-.stap-nummer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.stap-card h3 {
-  margin-bottom: 10px;
-}
-
-.stap-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Over ons ── */
-.over-ons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.over-ons-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.over-ons-tekst p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 56px;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 28px;
-  font-style: italic;
-  color: var(--text);
-}
-
-.testimonial-naam {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ── FAQ ── */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-details[open] {
-  border-color: var(--accent);
-}
-
-summary {
-  padding: 20px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-.faq-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: transform 0.2s;
-}
-
-details[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 24px 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* ── Contact ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-info h3 {
-  margin-bottom: 8px;
-}
-
-.contact-info p {
-  color: var(--muted);
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-}
-
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px;
-}
-
-.form-row {
-  margin-bottom: 18px;
-}
-
-.form-row label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 12px 16px;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--accent);
-}
-
-.form-row textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  font-family: inherit;
-}
-
-.form-submit:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Footer ── */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-logo {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.footer-logo span {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
-.footer-copy {
-  color: var(--muted);
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ── Dark-specifiek: hero ── */
-.hero-dark {
-  min-height: 100vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: #0c0c0c;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-dark-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.hero-dark-glow {
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, #fb923c 15%, transparent), transparent 70%);
-  pointer-events: none;
-}
-
-.hero-dark-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-dark-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-dark-left h1 {
-  color: #f0f0f0;
-}
-
-.hero-dark-left .hero-sub {
-  color: #a0a0a0;
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-dark-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-dark-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-}
-
-/* Sector SVG icon groot in de hero */
-.hero-sector-icon {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-sector-icon svg {
-  width: 80px;
-  height: 80px;
-  stroke: #fb923c;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 0 20px color-mix(in srgb, #fb923c 60%, transparent));
-}
-
-/* Pulserende ringen */
-.pulse-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #fb923c;
-  animation: pulse-out 3s ease-out infinite;
-  opacity: 0;
-}
-
-.pulse-ring:nth-child(1) { width: 160px; height: 160px; animation-delay: 0s; }
-.pulse-ring:nth-child(2) { width: 220px; height: 220px; animation-delay: 0.8s; }
-.pulse-ring:nth-child(3) { width: 290px; height: 290px; animation-delay: 1.6s; }
-
-@keyframes pulse-out {
-  0%   { opacity: 0.6; transform: scale(0.85); }
-  100% { opacity: 0;   transform: scale(1.15); }
-}
-
-/* Drijvende stat kaarten */
-.stat-cards {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.stat-card {
-  position: absolute;
-  background: #1c1c1c;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 14px 18px;
-  pointer-events: auto;
-  animation: float-card 5s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-
-.stat-card:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.stat-card:nth-child(2) { top: 55%; right: -8%; animation-delay: 1.5s; }
-.stat-card:nth-child(3) { bottom: 8%; left: 15%; animation-delay: 0.8s; }
-
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-
-.stat-card .sc-waarde {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #fb923c;
-  line-height: 1;
-}
-
-.stat-card .sc-label {
-  font-size: 0.75rem;
-  color: #a0a0a0;
-  margin-top: 4px;
-}
-
-/* ── Light hero (foto achtergrond) ── */
-.hero-light {
-  min-height: 100vh;
-  padding-top: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-light-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-light-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-}
-
-.hero-light-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.hero-light-inner h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.hero-light-inner .hero-sub {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.15rem;
-  margin-bottom: 36px;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-.hero-light-cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── Clean hero ── */
-.hero-clean {
-  min-height: 90vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-}
-
-.hero-clean-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-clean-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-clean-left h1 {
-  color: var(--text);
-}
-
-.hero-clean-left .hero-sub {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-clean-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-clean-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.hero-stat-block {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-}
-
-.hero-stat-block .hs-waarde {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.hero-stat-block .hs-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-/* ── Foto grid voor services (light/clean) ── */
-.diensten-foto-wrap {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  height: 220px;
-  margin-bottom: 0;
-}
-
-.diensten-foto-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-}
-
-.dienst-card:hover .diensten-foto-wrap img {
-  transform: scale(1.04);
-}
-
-/* ── Responsive ── */
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border-top: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.demo-banner a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-/* ── Mobile hamburger ── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-
-.nav-mobile-menu {
-  display: none;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  z-index: 99;
-  padding: 16px 24px 24px;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-mobile-menu.open { display: flex; }
-
-.nav-mobile-menu a {
-  padding: 12px 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-mobile-menu a:last-child { border-bottom: none; }
-
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-dark-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FH Installatietechniek | Loodgieter en installateur regio Nijmegen en Arnhem</title>
+<meta name="description" content="Ferry Hendriks, zelfstandig installateur uit Elst. Cv, gas, water, vloerverwarming, ventilatie en riool in de regio Nijmegen en Arnhem. 5,0 op Google.">
+<link rel="icon" href="assets/site-01.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: '#122e54', deep: '#0b1d36', geel: '#e8ba00', staal: '#5d6b80', mist: '#eef1f5', inkt: '#132238'
+      },
+      fontFamily: {
+        kop: ['Archivo', 'sans-serif'],
+        sans: ['"Instrument Sans"', 'sans-serif']
+      }
+    }
   }
-
-  .hero-dark-right { display: none; }
-  .hero-dark-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-dark-left h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-
-  .hero-clean-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-clean-right { display: none; }
-  .hero-clean-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-clean-left { text-align: center; align-items: center; }
-  .hero-clean-left h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-
-  .hero-light-inner { padding: 0 0 40px; }
-  .hero-light-inner h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-light-cta { flex-wrap: wrap; justify-content: center; }
-
-  .diensten-grid,
-  .werkwijze-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .over-ons-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .over-ons-img { height: 240px; }
-
-  .testimonial-wrap { padding: 28px 20px; }
-
-  .usp-strip .container { gap: 20px; flex-wrap: wrap; }
-  .usp-item { min-width: 140px; flex: 1; }
-
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 16px; }
-
-  .demo-banner { font-size: 0.78rem; padding: 9px 12px; }
 }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Instrument Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: Archivo, sans-serif; font-stretch: 122%; letter-spacing: -0.02em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .knop { transition: transform .15s ease, background-color .2s ease; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #e8ba00; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">FH Installatietechniek</div>
-    <ul class="nav-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#werkwijze">Werkwijze</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary nav-cta">Gratis offerte</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="#diensten">Diensten</a>
-  <a href="#over-ons">Over ons</a>
-  <a href="#werkwijze">Werkwijze</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" style="color:var(--accent);font-weight:700;margin-top:8px;">Gratis offerte</a>
+<body class="bg-white text-inkt pb-[72px] md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-geel focus:p-3">Naar de inhoud</a>
+
+<div class="bg-geel text-deep text-[13px] text-center px-4 py-2 font-medium">
+  Demo voor FH Installatietechniek, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-semibold">Hagenweb</a>
 </div>
-<section class="hero-dark" id="hero">
-  <div class="hero-dark-bg-grid"></div>
-  <div class="hero-dark-glow"></div>
-  <div class="hero-dark-inner">
-    <div class="hero-dark-left reveal">
-      <h1>FH Installatietechniek, uw loodgieter in Nijmegen</h1>
-      <p class="hero-sub">Lekkages verholpen, CV-ketels geplaatst, badkamers gerenoveerd. 24/7 bereikbaar.</p>
-      <div class="hero-dark-cta">
-        <a href="#contact" class="btn btn-primary">Bel voor offerte</a>
-        <a href="#diensten" class="btn btn-secondary">Bekijk diensten</a>
+
+<header class="bg-deep text-white sticky top-0 z-40 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="shrink-0" aria-label="FH Installatietechniek, naar boven">
+      <img src="assets/site-01.svg" alt="Ferry Hendriks Installatietechniek" class="h-9 md:h-11 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-white/80">
+      <a href="#diensten" class="hover:text-white">Diensten</a>
+      <a href="#ferry" class="hover:text-white">Over Ferry</a>
+      <a href="#werkwijze" class="hover:text-white">Werkwijze</a>
+      <a href="#reviews" class="hover:text-white">Reviews</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+    <a href="tel:+31633711951" class="knop hidden sm:inline-flex items-center gap-2 bg-geel text-deep font-semibold px-5 py-2.5 rounded-md hover:bg-[#f5c916]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      06 33 71 19 51
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="bg-deep text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-12 md:pt-20 pb-16 md:pb-24 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <div class="lg:col-span-6 relative z-10">
+      <h1 class="kop font-[850] text-[44px] leading-[0.98] sm:text-6xl xl:text-[78px]">Leidingwerk dat klopt.</h1>
+      <p class="mt-7 text-lg md:text-xl text-white/80 max-w-[34rem] leading-relaxed">
+        Ik ben Ferry Hendriks, zelfstandig installateur uit Elst. Cv, gas, water en afvoer, vloerverwarming en riool.
+        Ik kom kijken, maak de offerte en doe het werk zelf. Eén aanspreekpunt, van begin tot eind.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="tel:+31633711951" class="knop inline-flex items-center gap-2 bg-geel text-deep font-semibold text-lg px-6 py-3.5 rounded-md hover:bg-[#f5c916]">Bel 06 33 71 19 51</a>
+        <a href="https://wa.me/31633711951" class="knop inline-flex items-center gap-2 border border-white/30 text-white font-semibold text-lg px-6 py-3.5 rounded-md hover:bg-white/10">Stuur een foto via WhatsApp</a>
       </div>
+      <a href="#reviews" class="mt-10 inline-flex items-center gap-3 text-white/80 hover:text-white">
+        <span class="text-geel text-xl tracking-[0.15em]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-white font-semibold">5,0 op Google</strong> uit 84 reviews</span>
+      </a>
     </div>
-    <div class="hero-dark-right reveal reveal-delay-2">
-      <div class="stat-cards"><div class="stat-card">
-      <div class="sc-waarde">Binnen 1 uur</div>
-      <div class="sc-label">Reactietijd spoedservice</div>
-    </div><div class="stat-card">
-      <div class="sc-waarde">Nijmegen en omgeving</div>
-      <div class="sc-label">Werkgebied</div>
-    </div><div class="stat-card">
-      <div class="sc-waarde">24/7 bereikbaar</div>
-      <div class="sc-label">Beschikbaarheid</div>
-    </div></div>
-      <div class="hero-sector-icon">
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring"></div>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="usp-strip">
-  <div class="container"><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>24/7 spoedservice voor acute problemen</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Eerlijk tarief zonder verborgen kosten</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Garantie op al ons uitgevoerde werk</span>
-    </div></div>
-</div>
-<section id="diensten">
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal"></p>
-    <div class="diensten-grid"><div class="dienst-card reveal reveal-delay-1">
-      
-      <div class="dienst-number">01</div>
-      <h3>Lekkages en waterschade</h3>
-      <p>Snelle diagnostiek en reparatie van lekke leidingen en kranen.</p>
-    </div><div class="dienst-card reveal reveal-delay-2">
-      
-      <div class="dienst-number">02</div>
-      <h3>CV-installatie en onderhoud</h3>
-      <p>Nieuwe ketels, jaarlijkse onderhoud en storingen snel opgelost.</p>
-    </div><div class="dienst-card reveal reveal-delay-3">
-      
-      <div class="dienst-number">03</div>
-      <h3>Badkamerrenovatie</h3>
-      <p>Volledige inrichting met sanitair, tegels en afwerking op maat.</p>
-    </div></div>
-  </div>
-</section>
-<section class="stats-band">
-  <div class="container">
-    <div class="stats-grid"><div class="stat-item reveal">
-      <div class="stat-waarde">Binnen 1 uur</div>
-      <div class="stat-label">Reactietijd spoedservice</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Nijmegen en omgeving</div>
-      <div class="stat-label">Werkgebied</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">24/7 bereikbaar</div>
-      <div class="stat-label">Beschikbaarheid</div>
-    </div></div>
-  </div>
-</section>
-<section id="werkwijze">
-  <div class="container">
-    <div class="section-label">Hoe het werkt</div>
-    <h2 class="section-title reveal">Onze aanpak</h2>
-    <div class="werkwijze-grid"><div class="stap-card reveal reveal-delay-1">
-      <div class="stap-nummer">1</div>
-      <h3>U belt of mailt</h3>
-      <p>Beschrijf het probleem en wij reageren snel.</p>
-    </div><div class="stap-card reveal reveal-delay-2">
-      <div class="stap-nummer">2</div>
-      <h3>Inspectie ter plaatse</h3>
-      <p>We kijken naar de klus en geven advies en offerte.</p>
-    </div><div class="stap-card reveal reveal-delay-3">
-      <div class="stap-nummer">3</div>
-      <h3>Uitvoering en afronding</h3>
-      <p>We voeren het werk uit en controleren alles voordat we gaan.</p>
-    </div></div>
-  </div>
-</section>
-<section id="over-ons" style="background: var(--surface);">
-  <div class="container">
-    <div class="over-ons-grid">
-      <div class="over-ons-foto reveal"><img src="stock/img-2.jpg" alt="FH Installatietechniek" class="over-ons-img" loading="lazy"></div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">FH Installatietechniek</h2>
-        <p class="reveal reveal-delay-1">FH Installatietechniek werkt al jaren voor huishoudens en bedrijven in Nijmegen. We pakken loodgieterswerk professioneel aan, van klein onderhoud tot complete badkamerrenovaties. Wat je van ons mag verwachten: vakwerk, duidelijke communicatie en afspraken die we nakomen.</p>
-        <div class="reveal reveal-delay-2">
-          <a href="#contact" class="btn btn-primary">Plan een gesprek</a>
-        </div>
+
+    <div class="lg:col-span-6 relative">
+      <div class="relative ml-auto w-[82%] sm:w-[70%] lg:w-[78%]">
+        <img src="assets/google-07.jpg" alt="Nieuwe warm- en koudwaterleidingen, rood en blauw, aangelegd in een badkamer tijdens de verbouwing" class="w-full aspect-[4/5] object-cover rounded-lg">
+        <figure class="absolute -left-[22%] bottom-6 w-[52%] sm:w-[62%] bg-white p-2 rounded-lg shadow-[0_24px_60px_-20px_rgba(0,0,0,.6)]">
+          <img src="assets/google-03.jpg" alt="Nette technische ruimte met cv-ketel, boiler en strak leidingwerk" class="w-full aspect-[4/3] object-cover rounded">
+          <figcaption class="text-inkt text-[13px] px-1 pt-2 pb-0.5">Technische ruimte, strak opgebouwd</figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
-<section id="referenties" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Wat klanten zeggen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">Ervaringen</h2>
-    <div class="testimonial-wrap reveal">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px;opacity:0.5;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-      <p class="testimonial-quote">Na jaren met een lekkende kraan hebben ze het probleem direct gevonden en opgelost. Professioneel en eerlijk.</p>
-      <div class="testimonial-naam">Johan, Nijmegen</div>
+
+<!-- Feiten -->
+<section class="bg-navy text-white">
+  <dl class="max-w-7xl mx-auto px-5 md:px-8 py-7 grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-8">
+    <div><dt class="text-white/60 text-sm">Google</dt><dd class="kop font-bold text-xl mt-1">5,0 uit 84 reviews</dd></div>
+    <div><dt class="text-white/60 text-sm">Eigen bedrijf</dt><dd class="kop font-bold text-xl mt-1">Sinds maart 2024</dd></div>
+    <div><dt class="text-white/60 text-sm">Gevestigd in</dt><dd class="kop font-bold text-xl mt-1">Elst (Gld)</dd></div>
+    <div><dt class="text-white/60 text-sm">Werkgebied</dt><dd class="kop font-bold text-xl mt-1">Nijmegen, Arnhem en verder</dd></div>
+  </dl>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-mist py-20 md:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end">
+      <h2 class="kop font-[850] text-4xl md:text-5xl leading-[1.02] lg:col-span-6">Alles wat door de muur en onder de vloer loopt.</h2>
+      <p class="text-staal text-lg leading-relaxed lg:col-span-5 lg:col-start-8">
+        Mijn specialiteit is leidingwerk en riool. Daarnaast help ik je met water, gas, vloerverwarming en ventilatie,
+        in je woning of bedrijfspand.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-5">
+      <article class="bg-white rounded-lg overflow-hidden grid sm:grid-cols-2">
+        <img src="assets/site-03.jpg" alt="Cv-opstelling met koperen leidingen en expansievat" class="w-full h-60 sm:h-full object-cover">
+        <div class="p-7">
+          <h3 class="kop font-extrabold text-2xl">Cv en technische ruimte</h3>
+          <p class="mt-3 text-staal leading-relaxed">Aanleg en vernieuwing van cv-leidingen, ook als voorbereiding op verduurzaming. Alles onder en rond de ketel strak en overzichtelijk.</p>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-lg overflow-hidden grid sm:grid-cols-2">
+        <img src="assets/site-02.jpg" alt="Vloerverwarming gelegd op netten in een lege ruimte" class="w-full h-60 sm:h-full object-cover">
+        <div class="p-7">
+          <h3 class="kop font-extrabold text-2xl">Vloerverwarming</h3>
+          <p class="mt-3 text-staal leading-relaxed">In een bestaande woning of bij nieuwbouw. Ik denk mee over de indeling, verzorg het leidingwerk en sluit alles aan op je verwarming.</p>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-lg overflow-hidden grid sm:grid-cols-2">
+        <img src="assets/site-05.jpg" alt="Nieuwe waterleidingen en inbouwreservoir in een ruimte in aanbouw" class="w-full h-60 sm:h-full object-cover">
+        <div class="p-7">
+          <h3 class="kop font-extrabold text-2xl">Water en afvoer</h3>
+          <p class="mt-3 text-staal leading-relaxed">Leidingwerk, kranen en sanitair. Van een nieuwe waterleiding vanaf de watermeter tot de aansluitingen in je nieuwe badkamer.</p>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-lg overflow-hidden grid sm:grid-cols-2">
+        <img src="assets/site-06.jpg" alt="Grijze afvoer- en rioolleidingen netjes weggewerkt" class="w-full h-60 sm:h-full object-cover">
+        <div class="p-7">
+          <h3 class="kop font-extrabold text-2xl">Riool</h3>
+          <p class="mt-3 text-staal leading-relaxed">Verzakt, lek of oud gietijzeren riool vervangen, van de afvoer in huis tot de aansluiting in de tuin. Met de graafmachine en goed afschot.</p>
+        </div>
+      </article>
+
+      <article class="bg-navy text-white rounded-lg p-7 md:p-9">
+        <h3 class="kop font-extrabold text-2xl">Gas</h3>
+        <p class="mt-3 text-white/75 leading-relaxed">Vakkundige gasinstallaties, van aansluiting tot onderhoud. Veilig aangelegd, zodat je er met een gerust hart op kunt vertrouwen.</p>
+      </article>
+
+      <article class="bg-navy text-white rounded-lg p-7 md:p-9">
+        <h3 class="kop font-extrabold text-2xl">Ventilatie</h3>
+        <p class="mt-3 text-white/75 leading-relaxed">Mechanische ventilatie, balansventilatie met warmteterugwinning of een bestaande unit vervangen. Frisse lucht voorkomt vocht en schimmel.</p>
+      </article>
+    </div>
+
+    <p class="mt-8 text-staal max-w-3xl leading-relaxed">
+      Een nieuwe cv-ketel of airco nodig? Daarvoor werk ik samen met DSO Installaties. Zij plaatsen de ketel en regelen de
+      certificering, ik verzorg het leidingwerk eromheen.
+    </p>
+  </div>
+</section>
+
+<!-- Over Ferry -->
+<section id="ferry" class="py-20 md:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-5 relative bg-navy text-white rounded-lg p-8 md:p-10 overflow-hidden">
+      <p class="kop font-[850] text-3xl md:text-4xl leading-[1.08]">Netjes werken en vooraf duidelijke afspraken maken.</p>
+      <p class="mt-6 text-white/70">Ferry Hendriks, eigenaar en monteur</p>
+      <dl class="mt-10 grid grid-cols-2 gap-6 border-t border-white/15 pt-6">
+        <div><dt class="text-white/60 text-sm">Ervaring als loodgieter</dt><dd class="kop font-bold text-xl mt-1">6 jaar in loondienst</dd></div>
+        <div><dt class="text-white/60 text-sm">Voor mezelf</dt><dd class="kop font-bold text-xl mt-1">Sinds maart 2024</dd></div>
+      </dl>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7">
+      <h2 class="kop font-[850] text-4xl md:text-5xl leading-[1.02]">Geen wisselende monteurs. Gewoon Ferry.</h2>
+      <div class="mt-7 space-y-5 text-lg leading-relaxed text-inkt/85 max-w-[38rem]">
+        <p>Na zes jaar met veel plezier als loodgieter bij een installatiebedrijf te hebben gewerkt, kreeg ik de kans om mijn eigen weg te gaan. In maart 2024 ben ik gestart met FH Installatietechniek.</p>
+        <p>In die jaren heb ik brede ervaring opgebouwd in leidingwerk, cv-installaties, badkamers, airco's en meer. Wat ik belangrijk vind? Netjes werken en vooraf duidelijke afspraken maken.</p>
+        <p>Of het nu gaat om nieuw leidingwerk, een rioolvervanging of een kleine aanpassing in huis: ik denk met je mee en zorg voor een installatie die klopt.</p>
+      </div>
     </div>
   </div>
 </section>
-<section id="faq" style="background: var(--surface);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-    <summary>
-      Hoeveel kost een loodgieter in Nijmegen?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Dit verschilt per klus. We geven altijd eerst een duidelijk advies en offerte zonder verplichting.</div>
-  </details><details>
-    <summary>
-      Kunnen jullie &#39;s avonds of in het weekend langskomen?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja, we zijn 24/7 bereikbaar voor spoedgevallen en plannen flexibel in.</div>
-  </details><details>
-    <summary>
-      Hoe lang duurt een badkamerrenovatie?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Afhankelijk van omvang 1 tot 4 weken. We maken een realistisch schema bij offerte.</div>
-  </details><details>
-    <summary>
-      Geeft jullie garantie op het werk?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja, we geven garantie op al ons werk. De voorwaarden bespreken we graag met je.</div>
-  </details></div>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-deep text-white py-20 md:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <h2 class="kop font-[850] text-4xl md:text-5xl leading-[1.02] max-w-2xl">Zo werk ik</h2>
+    <ol class="mt-14 grid md:grid-cols-3 gap-10 md:gap-0 relative">
+      <div class="hidden md:block absolute top-[22px] left-0 right-[33%] h-[10px] bg-geel rounded-full" aria-hidden="true"></div>
+      <li class="relative md:pr-10">
+        <span class="kop relative z-10 grid place-items-center w-14 h-14 rounded-full bg-geel text-deep font-black text-2xl">1</span>
+        <h3 class="kop font-extrabold text-2xl mt-6">App of bel</h3>
+        <p class="mt-3 text-white/75 leading-relaxed max-w-xs">Stuur een foto van de klus via WhatsApp of bel me. Ik reageer zo snel mogelijk.</p>
+      </li>
+      <li class="relative md:pr-10">
+        <span class="kop relative z-10 grid place-items-center w-14 h-14 rounded-full bg-geel text-deep font-black text-2xl">2</span>
+        <h3 class="kop font-extrabold text-2xl mt-6">Ik kom kijken</h3>
+        <p class="mt-3 text-white/75 leading-relaxed max-w-xs">Ik bekijk de situatie ter plekke en je krijgt een duidelijke offerte, zonder verrassingen.</p>
+      </li>
+      <li class="relative md:pr-10">
+        <span class="kop relative z-10 grid place-items-center w-14 h-14 rounded-full bg-geel text-deep font-black text-2xl">3</span>
+        <h3 class="kop font-extrabold text-2xl mt-6">Netjes uitgevoerd</h3>
+        <p class="mt-3 text-white/75 leading-relaxed max-w-xs">Ik voer het werk zelf uit en laat alles netjes achter. Eén aanspreekpunt van begin tot eind.</p>
+      </li>
+    </ol>
   </div>
 </section>
-<section id="contact" style="background: var(--bg);">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title reveal">Bel voor offerte</h2>
-        <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte. Wij reageren binnen 24 uur.</p>
-        <div class="contact-details reveal reveal-delay-2">
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <a href="tel:0633711951">06 33711951</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <a href="mailto:info@fhinstallatietechniek.nl">info@fhinstallatietechniek.nl</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <span>Nijmegen</span>
-      </div>
-        </div>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-row">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam" autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label>E-mailadres</label>
-          <input type="email" placeholder="u@voorbeeld.nl" autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label>Bericht</label>
-          <textarea placeholder="Vertel ons over uw project..."></textarea>
-        </div>
-        <button class="form-submit" type="button">Bel voor offerte</button>
+
+<!-- Opgeleverd -->
+<section class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end">
+      <h2 class="kop font-[850] text-4xl md:text-5xl leading-[1.02] lg:col-span-6">Van kale vloer tot badkamer.</h2>
+      <p class="text-staal text-lg leading-relaxed lg:col-span-5 lg:col-start-8">Het leidingwerk zie je straks niet meer. Daarom moet het in één keer goed liggen.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <figure class="col-span-2 md:col-span-5 md:row-span-2">
+        <img src="assets/google-05.jpg" alt="Inbouwreservoir geplaatst terwijl de oude badkamer gesloopt wordt" class="w-full h-full aspect-[4/5] md:aspect-auto object-cover rounded-lg">
+      </figure>
+      <figure class="md:col-span-7">
+        <img src="assets/google-06.jpg" alt="Afgewerkt badmeubel met twee waskommen en zwarte inbouwkranen" class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-lg">
+      </figure>
+      <figure class="md:col-span-7 grid md:grid-cols-2 gap-3 md:gap-4">
+        <img src="assets/google-04.jpg" alt="Ligbad ingebouwd in donkere tegels" class="w-full aspect-[4/3] object-cover rounded-lg">
+        <img src="assets/site-03.jpg" alt="Cv-ketel met koperen leidingwerk eronder" class="hidden md:block w-full aspect-[4/3] object-cover rounded-lg">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-mist py-20 md:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="kop font-[850] text-4xl md:text-5xl leading-[1.02] max-w-xl">Gemiddeld een 5,0 uit 84 reviews.</h2>
+      <p class="text-staal text-lg"><span class="text-[#b38f00] tracking-[0.15em]" aria-hidden="true">★★★★★</span> 5,0 op Google</p>
+    </div>
+    <div class="mt-12 md:columns-2 lg:columns-3 gap-5 [&>*]:break-inside-avoid [&>*]:mb-5">
+      <blockquote class="bg-white rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"Wij zijn ontzettend tevreden over het geleverde werk! Voor onze nieuwe badkamer heeft dit installatiebedrijf de leidingen voor de douche en het toilet aangelegd. Alles is vakkundig, netjes en met veel zorg gedaan.</p>
+        <p class="text-lg leading-relaxed mt-3">We zijn ontzettend blij met het resultaat en vooral met de goede hulp, het meedenken en de fijne service."</p>
+        <footer class="mt-5 text-staal text-sm"><strong class="text-inkt font-semibold">Irma Rondaan</strong>, via Google</footer>
+      </blockquote>
+      <blockquote class="bg-navy text-white rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"De service en het vakmanschap van Ferry zijn geweldig. Respect voor zijn inzicht en kunde. Bij ons heeft hij een lekkage van de Quooker opgelost. Verder: duidelijk in het maken van afspraken, komt op tijd, goede communicatie, prettig en professioneel. Aanrader voor maatwerk en vakwerk van elke loodgieters uitdaging."</p>
+        <footer class="mt-5 text-white/60 text-sm"><strong class="text-white font-semibold">S van Bokhoven</strong>, via Google</footer>
+      </blockquote>
+      <blockquote class="bg-white rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"Ferry heeft ons fantastisch goed geholpen. We waren met spoed op zoek naar een installateur en Ferry heeft tijd voor ons gemaakt waarmee hij ons echt uit de brand heeft geholpen. Het bleek een ingewikkelde klus (afwijkende pijpmaten) maar je merkt dat Ferry weet wat hij doet en er veel verstand van heeft. Wij zijn erg ..."</p>
+        <footer class="mt-5 text-staal text-sm"><strong class="text-inkt font-semibold">Ray Bas</strong>, via Google</footer>
+      </blockquote>
+      <blockquote class="bg-white rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"FH installatietechniek zou ik iedereen aanraden! Ferry is duidelijk in zijn communicatie en erg vriendelijk, hij kwam direct even 's avonds langs om te kijken wat er moest gebeuren en had gelukkig ook nog op korte termijn tijd in zijn agenda.</p>
+        <p class="text-lg leading-relaxed mt-3">De aansluiting van onze vloerverwarming is erg netjes gedaan ..."</p>
+        <footer class="mt-5 text-staal text-sm"><strong class="text-inkt font-semibold">TheBV1998</strong>, via Google</footer>
+      </blockquote>
+      <blockquote class="bg-white rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"Verzoek was om een luchtdruk punt in mijn praktijk voor orthodontie (Orthodontiepraktijk Lent, Carbatinastraat 5 in Nijmegen) aan te leggen naar de gewenste plek. Niet heeft Ferry dat zeer vakkundig gedaan, maar was de communicatie en afhandeling zeer prettig. Een aanrader!"</p>
+        <footer class="mt-5 text-staal text-sm"><strong class="text-inkt font-semibold">Olivier Lijten</strong>, via Google</footer>
+      </blockquote>
+      <div class="bg-geel text-deep rounded-lg p-7">
+        <p class="kop font-extrabold text-2xl leading-tight">Zelf een klus waar Ferry naar moet kijken?</p>
+        <a href="tel:+31633711951" class="mt-5 inline-block font-semibold underline underline-offset-4">Bel 06 33 71 19 51</a>
       </div>
     </div>
   </div>
 </section>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">FH Installatietechniek</div>
-    <ul class="footer-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+
+<!-- Contact -->
+<section id="contact" class="bg-deep text-white py-20 md:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-[850] text-4xl md:text-5xl leading-[1.02]">Vertel me wat er moet gebeuren.</h2>
+      <p class="mt-6 text-white/75 text-lg leading-relaxed max-w-md">Het snelst gaat het met een foto van de situatie via WhatsApp. Bellen kan ook, dan plannen we meteen een moment om te komen kijken.</p>
+
+      <div class="mt-10 space-y-3">
+        <a href="tel:+31633711951" class="knop flex items-center justify-between bg-geel text-deep rounded-md px-6 py-4 hover:bg-[#f5c916]">
+          <span class="font-semibold">Bellen</span><span class="kop font-extrabold text-xl">06 33 71 19 51</span>
+        </a>
+        <a href="https://wa.me/31633711951" class="knop flex items-center justify-between border border-white/25 rounded-md px-6 py-4 hover:bg-white/10">
+          <span class="font-semibold">WhatsApp</span><span class="text-white/75">Stuur een foto van de klus</span>
+        </a>
+        <a href="mailto:info@fhinstallatietechniek.nl" class="knop flex items-center justify-between border border-white/25 rounded-md px-6 py-4 hover:bg-white/10">
+          <span class="font-semibold">E-mail</span><span class="text-white/75 break-all">info@fhinstallatietechniek.nl</span>
+        </a>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-8 text-white/80">
+        <div>
+          <h3 class="text-white font-semibold">Adres</h3>
+          <p class="mt-2 leading-relaxed">FH Installatietechniek<br>Beethovenstraat 3<br>6661 CG Elst</p>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold">Openingstijden</h3>
+          <p class="mt-2 leading-relaxed">Maandag tot en met vrijdag<br>07:30 tot 17:00<br>Zaterdag en zondag gesloten</p>
+        </div>
+      </div>
+    </div>
+
+    <form action="mailto:info@fhinstallatietechniek.nl" method="post" enctype="text/plain" class="lg:col-span-6 lg:col-start-7 bg-white text-inkt rounded-lg p-7 md:p-10 self-start">
+      <h3 class="kop font-extrabold text-2xl">Liever een bericht?</h3>
+      <p class="mt-2 text-staal">Ik reageer zo snel mogelijk.</p>
+      <div class="mt-7 space-y-5">
+        <label class="block">
+          <span class="text-sm font-semibold">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-2 w-full rounded-md border border-slate-300 px-4 py-3 focus:border-navy focus:outline-none focus:ring-2 focus:ring-geel">
+        </label>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold">E-mailadres</span>
+            <input type="email" name="email" required autocomplete="email" class="mt-2 w-full rounded-md border border-slate-300 px-4 py-3 focus:border-navy focus:outline-none focus:ring-2 focus:ring-geel">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Telefoon <span class="font-normal text-staal">(optioneel)</span></span>
+            <input type="tel" name="telefoon" autocomplete="tel" class="mt-2 w-full rounded-md border border-slate-300 px-4 py-3 focus:border-navy focus:outline-none focus:ring-2 focus:ring-geel">
+          </label>
+        </div>
+        <label class="block">
+          <span class="text-sm font-semibold">Wat is de klus?</span>
+          <textarea name="bericht" rows="5" required class="mt-2 w-full rounded-md border border-slate-300 px-4 py-3 focus:border-navy focus:outline-none focus:ring-2 focus:ring-geel"></textarea>
+        </label>
+        <button type="submit" class="knop w-full bg-navy text-white font-semibold text-lg rounded-md py-4 hover:bg-deep">Bericht versturen</button>
+      </div>
+    </form>
   </div>
-  <p class="footer-copy">&copy; 2025 FH Installatietechniek. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
+</section>
+
+</main>
+
+<footer class="bg-deep text-white/60 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-sm">
+    <img src="assets/site-01.svg" alt="FH Installatietechniek" class="h-8 w-auto self-start">
+    <p>Ferry Hendriks, zelfstandig installateur in de regio Nijmegen en Arnhem</p>
+    <p>&copy; 2024 - 2026 FH Installatietechniek</p>
+  </div>
 </footer>
-<div class="demo-banner">
-  <span>&#9889; DEMO voor FH Installatietechniek &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
+
+<!-- Mobiel: bellen altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-deep/95 backdrop-blur border-t border-white/10 p-3 grid grid-cols-2 gap-2">
+  <a href="tel:+31633711951" class="knop bg-geel text-deep font-semibold text-center rounded-md py-3.5">Bel Ferry</a>
+  <a href="https://wa.me/31633711951" class="knop border border-white/30 text-white font-semibold text-center rounded-md py-3.5">WhatsApp</a>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Scroll reveal
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { io.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('visible'); });
-  }
 
-  // Nav scroll effect
-  var nav = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-});
-</script>
 </body>
 </html>
