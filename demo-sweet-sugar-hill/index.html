@@ -1,1313 +1,410 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sweet sugar hill</title>
-  <meta name="description" content="Ambachtelijk gebak en vers brood, dagelijks gemaakt in Arnhem. Bezorging beschikbaar.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #ffffff;
-  color: #1a1a1a;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-:root {
-  --accent: #f59e0b;
-  --bg: #ffffff;
-  --surface: #f9f9f7;
-  --border: #e5e5e0;
-  --text: #1a1a1a;
-  --muted: #6b7280;
-  --nav-bg: rgba(255,255,255,0.95);
-  --hero-bg: transparent;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-/* ── Typografie ── */
-h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
-p { margin: 0; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Navigatie ── */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo span {
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-cta {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.nav-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Secties ── */
-section {
-  padding: 96px 24px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--muted);
-  max-width: 540px;
-  font-size: 1.05rem;
-  margin-bottom: 56px;
-}
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── USP strip ── */
-.usp-strip {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 24px;
-}
-
-.usp-strip .container {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.usp-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.usp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-/* ── Diensten grid ── */
-.diensten-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.dienst-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.dienst-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-.dienst-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.2;
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-
-.dienst-card h3 {
-  margin-bottom: 10px;
-}
-
-.dienst-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Stats band ── */
-.stats-band {
-  background: var(--accent);
-  color: #ffffff;
-  padding: 64px 24px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-item {}
-
-.stat-waarde {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  font-weight: 500;
-}
-
-/* ── Werkwijze ── */
-.werkwijze-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  counter-reset: stap;
-}
-
-.stap-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-}
-
-.stap-nummer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.stap-card h3 {
-  margin-bottom: 10px;
-}
-
-.stap-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Over ons ── */
-.over-ons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.over-ons-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.over-ons-tekst p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 56px;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 28px;
-  font-style: italic;
-  color: var(--text);
-}
-
-.testimonial-naam {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ── FAQ ── */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-details[open] {
-  border-color: var(--accent);
-}
-
-summary {
-  padding: 20px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-.faq-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: transform 0.2s;
-}
-
-details[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 24px 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* ── Contact ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-info h3 {
-  margin-bottom: 8px;
-}
-
-.contact-info p {
-  color: var(--muted);
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-}
-
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px;
-}
-
-.form-row {
-  margin-bottom: 18px;
-}
-
-.form-row label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 12px 16px;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--accent);
-}
-
-.form-row textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  font-family: inherit;
-}
-
-.form-submit:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Footer ── */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-logo {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.footer-logo span {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
-.footer-copy {
-  color: var(--muted);
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ── Dark-specifiek: hero ── */
-.hero-dark {
-  min-height: 100vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: #0c0c0c;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-dark-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.hero-dark-glow {
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, #f59e0b 15%, transparent), transparent 70%);
-  pointer-events: none;
-}
-
-.hero-dark-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-dark-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-dark-left h1 {
-  color: #f0f0f0;
-}
-
-.hero-dark-left .hero-sub {
-  color: #a0a0a0;
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-dark-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-dark-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-}
-
-/* Sector SVG icon groot in de hero */
-.hero-sector-icon {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-sector-icon svg {
-  width: 80px;
-  height: 80px;
-  stroke: #f59e0b;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 0 20px color-mix(in srgb, #f59e0b 60%, transparent));
-}
-
-/* Pulserende ringen */
-.pulse-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #f59e0b;
-  animation: pulse-out 3s ease-out infinite;
-  opacity: 0;
-}
-
-.pulse-ring:nth-child(1) { width: 160px; height: 160px; animation-delay: 0s; }
-.pulse-ring:nth-child(2) { width: 220px; height: 220px; animation-delay: 0.8s; }
-.pulse-ring:nth-child(3) { width: 290px; height: 290px; animation-delay: 1.6s; }
-
-@keyframes pulse-out {
-  0%   { opacity: 0.6; transform: scale(0.85); }
-  100% { opacity: 0;   transform: scale(1.15); }
-}
-
-/* Drijvende stat kaarten */
-.stat-cards {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.stat-card {
-  position: absolute;
-  background: #1c1c1c;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 14px 18px;
-  pointer-events: auto;
-  animation: float-card 5s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-
-.stat-card:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.stat-card:nth-child(2) { top: 55%; right: -8%; animation-delay: 1.5s; }
-.stat-card:nth-child(3) { bottom: 8%; left: 15%; animation-delay: 0.8s; }
-
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-
-.stat-card .sc-waarde {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #f59e0b;
-  line-height: 1;
-}
-
-.stat-card .sc-label {
-  font-size: 0.75rem;
-  color: #a0a0a0;
-  margin-top: 4px;
-}
-
-/* ── Light hero (foto achtergrond) ── */
-.hero-light {
-  min-height: 100vh;
-  padding-top: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-light-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-light-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-}
-
-.hero-light-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.hero-light-inner h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.hero-light-inner .hero-sub {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.15rem;
-  margin-bottom: 36px;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-.hero-light-cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── Clean hero ── */
-.hero-clean {
-  min-height: 90vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-}
-
-.hero-clean-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-clean-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-clean-left h1 {
-  color: var(--text);
-}
-
-.hero-clean-left .hero-sub {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-clean-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-clean-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.hero-stat-block {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-}
-
-.hero-stat-block .hs-waarde {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.hero-stat-block .hs-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-/* ── Foto grid voor services (light/clean) ── */
-.diensten-foto-wrap {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  height: 220px;
-  margin-bottom: 0;
-}
-
-.diensten-foto-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-}
-
-.dienst-card:hover .diensten-foto-wrap img {
-  transform: scale(1.04);
-}
-
-/* ── Responsive ── */
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border-top: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.demo-banner a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-/* ── Mobile hamburger ── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-
-.nav-mobile-menu {
-  display: none;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  z-index: 99;
-  padding: 16px 24px 24px;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-mobile-menu.open { display: flex; }
-
-.nav-mobile-menu a {
-  padding: 12px 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-mobile-menu a:last-child { border-bottom: none; }
-
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-dark-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweet Sugar Hill | Ambachtelijke taarten uit Klarendal, Arnhem</title>
+<meta name="description" content="Ambachtelijke bakkerij in Arnhem-Klarendal. Bestel hele en halve taarten per mail en haal ze af aan de Klarendalseweg 376. Ook zoete tafels voor bruiloften en feesten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        salie: '#93AA92',
+        saliel: '#DCE5D8',
+        inkt: '#22382F',
+        kers: '#A9262C',
+        kersd: '#8A1D22',
+        papier: '#F6F8F3',
+      },
+      fontFamily: {
+        kop: ['Gloock', 'Georgia', 'serif'],
+        body: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { text-wrap: pretty; }
+  h1, h2, h3 { text-wrap: balance; }
+  /* Luifel: kersenrood/wit gestreept met geschulpte onderrand, zoals de pui aan de Klarendalseweg */
+  .luifel {
+    height: 46px;
+    background: repeating-linear-gradient(90deg, #A9262C 0 36px, #FFFFFF 36px 72px);
+    -webkit-mask: linear-gradient(#000 0 0) top / 100% 28px no-repeat,
+                  radial-gradient(circle 18px at 18px 0, #000 98%, transparent) 0 28px / 36px 18px repeat-x;
+            mask: linear-gradient(#000 0 0) top / 100% 28px no-repeat,
+                  radial-gradient(circle 18px at 18px 0, #000 98%, transparent) 0 28px / 36px 18px repeat-x;
   }
-
-  .hero-dark-right { display: none; }
-  .hero-dark-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-dark-left h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-
-  .hero-clean-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-clean-right { display: none; }
-  .hero-clean-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-clean-left { text-align: center; align-items: center; }
-  .hero-clean-left h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-
-  .hero-light-inner { padding: 0 0 40px; }
-  .hero-light-inner h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-light-cta { flex-wrap: wrap; justify-content: center; }
-
-  .diensten-grid,
-  .werkwijze-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .over-ons-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .over-ons-img { height: 240px; }
-
-  .testimonial-wrap { padding: 28px 20px; }
-
-  .usp-strip .container { gap: 20px; flex-wrap: wrap; }
-  .usp-item { min-width: 140px; flex: 1; }
-
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 16px; }
-
-  .demo-banner { font-size: 0.78rem; padding: 9px 12px; }
-}
+  .leader { flex: 1; border-bottom: 2px dotted rgba(246,248,243,.35); transform: translateY(-5px); min-width: 1rem; }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #A9262C; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
 </head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Sweet sugar hill</div>
-    <ul class="nav-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#werkwijze">Werkwijze</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary nav-cta">Gratis offerte</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="#diensten">Diensten</a>
-  <a href="#over-ons">Over ons</a>
-  <a href="#werkwijze">Werkwijze</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" style="color:var(--accent);font-weight:700;margin-top:8px;">Gratis offerte</a>
-</div>
-<section class="hero-light" id="hero">
-  <div class="hero-light-bg" style="background-image: url('stock/img-0.jpg')"></div>
-  <div class="hero-light-overlay"></div>
-  <div class="hero-light-inner">
-    <h1 class="reveal">Sweet Sugar Hill, uw dagverse bakkerij</h1>
-    <p class="hero-sub reveal reveal-delay-1">Ambachtelijk gebak en vers brood, dagelijks gemaakt in Arnhem. Bezorging beschikbaar.</p>
-    <div class="hero-light-cta reveal reveal-delay-2">
-      <a href="#contact" class="btn btn-primary">Bestel nu</a>
-      <a href="#diensten" class="btn btn-secondary" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.4);color:#fff;">Onze diensten</a>
-    </div>
-  </div>
-</section>
-<div class="usp-strip">
-  <div class="container"><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Dagvers gemaakt, nooit vorige dag</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Ambachtelijke recepten met passie</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Lokale bezorging in Arnhem mogelijk</span>
-    </div></div>
-</div>
-<section id="diensten">
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal"></p>
-    <div class="diensten-grid"><div class="dienst-card reveal reveal-delay-1">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-0.jpg" alt="Brood en broodjes" loading="lazy">
-      </div>
-      <div class="dienst-number">01</div>
-      <h3>Brood en broodjes</h3>
-      <p>Dagvers artisanaal brood, ambachtelijk bereid met traditionele recepten.</p>
-    </div><div class="dienst-card reveal reveal-delay-2">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-1.jpg" alt="Gebak en taarten" loading="lazy">
-      </div>
-      <div class="dienst-number">02</div>
-      <h3>Gebak en taarten</h3>
-      <p>Feestelijke taarten en verfijnde patisserie, op maat voor elk moment.</p>
-    </div><div class="dienst-card reveal reveal-delay-3">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-2.jpg" alt="Belegde broodjes" loading="lazy">
-      </div>
-      <div class="dienst-number">03</div>
-      <h3>Belegde broodjes</h3>
-      <p>Verse broodjes met zorgvuldig geselecteerde ingrediënten, klaar om te genieten.</p>
-    </div></div>
-  </div>
-</section>
-<section class="stats-band">
-  <div class="container">
-    <div class="stats-grid"><div class="stat-item reveal">
-      <div class="stat-waarde">Meer dan 15 jaar</div>
-      <div class="stat-label">Sinds</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Arnhem en omgeving</div>
-      <div class="stat-label">Bereik</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">100% ambachtelijk</div>
-      <div class="stat-label">Specialiteit</div>
-    </div></div>
-  </div>
-</section>
+<body class="bg-papier text-inkt font-body antialiased pb-20 md:pb-0">
 
-<section id="over-ons" style="background: var(--surface);">
-  <div class="container">
-    <div class="over-ons-grid">
-      <div class="over-ons-foto reveal"><img src="stock/img-2.jpg" alt="Sweet sugar hill" class="over-ons-img" loading="lazy"></div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Sweet sugar hill</h2>
-        <p class="reveal reveal-delay-1">Sweet Sugar Hill is uw favoriete bakkerij in Arnhem, waar we sinds jaar en dag verse deeg en de beste ingrediënten omzetten in heerlijk brood, gebak en broodjes. Elke ochtend beginnen we opnieuw, omdat we geloven dat ambacht en kwaliteit niet uit de mode gaan. Wij zorgen dat u zich voelt als thuis.</p>
-        <div class="reveal reveal-delay-2">
-          <a href="#contact" class="btn btn-primary">Plan een gesprek</a>
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-papier focus:p-3">Naar de inhoud</a>
+
+<div class="bg-inkt text-papier/80 text-xs sm:text-sm text-center py-2 px-4">
+  Demo voor Sweet sugar hill, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-papier hover:text-saliel">Hagenweb</a>
+</div>
+
+<header class="bg-salie relative z-10">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between gap-6 py-4">
+    <a href="#" class="font-kop text-2xl md:text-[1.7rem] leading-none tracking-tight text-inkt">Sweet Sugar Hill</a>
+    <nav aria-label="Hoofdmenu" class="hidden md:flex items-center gap-7 text-[0.95rem] font-medium">
+      <a href="#taarten" class="hover:text-kers">Taarten</a>
+      <a href="#zoete-tafels" class="hover:text-kers">Zoete tafels</a>
+      <a href="#proefpakket" class="hover:text-kers">Proefpakket</a>
+      <a href="#afhalen" class="hover:text-kers">Afhalen</a>
+      <a href="tel:0263703903" class="knop rounded-full bg-kers text-papier px-5 py-2.5 hover:bg-kersd">026 370 3903</a>
+    </nav>
+    <a href="tel:0263703903" class="md:hidden knop rounded-full bg-kers text-papier text-sm font-semibold px-4 py-2 hover:bg-kersd">Bellen</a>
+  </div>
+  <div class="luifel" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="bg-salie">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-6 md:gap-6 items-center pt-6 md:pt-12 pb-12 md:pb-0">
+      <div class="md:col-span-6 md:pb-20">
+        <p class="text-inkt/75 font-medium mb-4">Ambachtelijke bakkerij in Klarendal, Arnhem</p>
+        <h1 class="font-kop text-[2.5rem] leading-[1.02] md:text-7xl md:leading-[0.98] tracking-tight text-inkt">Taarten om voor thuis te blijven</h1>
+        <p class="mt-5 md:mt-6 text-base md:text-lg leading-relaxed max-w-md text-inkt/90">Hele en halve taarten, met de hand gebakken voor je verjaardag, bruiloft of zomaar. Bestel ze per mail en haal ze (bijna) elke dag van de week bij ons af.</p>
+        <div class="mt-7 md:mt-8 flex flex-wrap gap-3">
+          <a href="mailto:sweetsugarhill@outlook.com?subject=Taart%20bestellen" class="knop rounded-full bg-kers text-papier font-semibold px-5 md:px-6 py-3.5 hover:bg-kersd">Taart bestellen</a>
+          <a href="#taarten" class="knop rounded-full border-2 border-inkt/80 font-semibold px-5 md:px-6 py-3 hover:bg-inkt hover:text-papier">Bekijk de taarten</a>
         </div>
+        <p class="mt-5 md:mt-6 text-sm text-inkt/75">Onze winkel is gesloten. Bestellen en afhalen kan wel.</p>
+      </div>
+      <div class="md:col-span-6 md:self-end">
+        <img src="assets/site-01.webp" alt="Feesttaart met witte chocolade botercrème en verse bloemen op een taartplateau" class="w-full aspect-square object-cover object-[50%_60%] rounded-t-[999px] md:rounded-b-none rounded-b-3xl">
       </div>
     </div>
-  </div>
-</section>
-<section id="referenties" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Wat klanten zeggen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">Ervaringen</h2>
-    <div class="testimonial-wrap reveal">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px;opacity:0.5;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-      <p class="testimonial-quote">Ik ga nergens anders meer naartoe; hun croissants zijn echt uit de hemel.</p>
-      <div class="testimonial-naam">Marieke, Arnhem</div>
+  </section>
+
+  <!-- Zo bestel je -->
+  <section class="bg-papier" aria-labelledby="bestellen-titel">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <h2 id="bestellen-titel" class="font-kop text-4xl md:text-5xl leading-none tracking-tight">Zo bestel je</h2>
+        <p class="mt-4 text-inkt/80 leading-relaxed max-w-xs">Mail liefst een paar dagen van tevoren, dan weten we zeker dat we voor je kunnen bakken.</p>
+      </div>
+      <ol class="md:col-span-8 grid sm:grid-cols-3 gap-8 sm:gap-6">
+        <li class="border-t-2 border-inkt pt-4">
+          <span class="font-kop text-4xl text-kers">1</span>
+          <h3 class="font-semibold text-lg mt-2">Mail je bestelling</h3>
+          <p class="mt-2 text-inkt/80 leading-relaxed">Welke taart, heel of half, en wanneer je hem wilt ophalen. Naar <a href="mailto:sweetsugarhill@outlook.com?subject=Taart%20bestellen" class="underline underline-offset-2 decoration-kers break-all">sweetsugarhill@outlook.com</a>.</p>
+        </li>
+        <li class="border-t-2 border-inkt pt-4">
+          <span class="font-kop text-4xl text-kers">2</span>
+          <h3 class="font-semibold text-lg mt-2">Bevestiging en betaalverzoek</h3>
+          <p class="mt-2 text-inkt/80 leading-relaxed">Je krijgt altijd een bevestiging én een betaalverzoek van ons terug.</p>
+        </li>
+        <li class="border-t-2 border-inkt pt-4">
+          <span class="font-kop text-4xl text-kers">3</span>
+          <h3 class="font-semibold text-lg mt-2">Ophalen in Klarendal</h3>
+          <p class="mt-2 text-inkt/80 leading-relaxed">Je haalt je taart af aan de Klarendalseweg 376. Dat kan bijna elke dag van de week.</p>
+        </li>
+      </ol>
     </div>
-  </div>
-</section>
-<section id="faq" style="background: var(--surface);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-    <summary>
-      Kan ik Sweet Sugar Hill producten laten bezorgen in Arnhem?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja, we bieden lokale bezorging aan in Arnhem en omgeving. Bel ons op 026 370 3903 voor details.</div>
-  </details><details>
-    <summary>
-      Werken jullie met allergenen?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">We werken met verschillende ingrediënten. Neem contact op voor details over allergenen en inhoudsstoffen.</div>
-  </details><details>
-    <summary>
-      Kan ik taarten op maat bestellen?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja, we maken graag maatwerk taarten. Mail sweetsugarhill@outlook.com of bel voor overleg en offerte.</div>
-  </details><details>
-    <summary>
-      Hoe vers is het brood echt?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Alles wordt dagelijks gemaakt. Het brood is elke ochtend vers uit de oven klaar.</div>
-  </details></div>
-  </div>
-</section>
-<section id="contact" style="background: var(--bg);">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title reveal">Bestel nu</h2>
-        <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte. Wij reageren binnen 24 uur.</p>
-        <div class="contact-details reveal reveal-delay-2">
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <a href="tel:0263703903">026 370 3903</a>
+  </section>
+
+  <!-- Taarten -->
+  <section id="taarten" class="bg-saliel scroll-mt-4" aria-labelledby="taarten-titel">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
+      <div class="md:flex md:items-end md:justify-between gap-10">
+        <h2 id="taarten-titel" class="font-kop text-4xl md:text-6xl leading-none tracking-tight">Onze vaste taarten</h2>
+        <p class="mt-4 md:mt-0 max-w-sm text-inkt/80 leading-relaxed">Per hele of halve taart te bestellen. Taarten met <span class="text-kers font-semibold">notenvrij</span> zijn zonder noten gebakken, maar kunnen wel sporen bevatten.</p>
       </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+
+      <ul class="mt-10 md:mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+        <li class="flex sm:flex-col gap-4 sm:gap-0">
+          <img src="assets/site-02.webp" alt="Lemon merengue taart" loading="lazy" class="w-28 h-28 sm:w-full sm:h-auto sm:aspect-[4/5] object-cover object-[50%_58%] rounded-2xl shrink-0">
+          <div class="sm:mt-4 flex-1 flex flex-col">
+            <h3 class="font-kop text-xl sm:text-2xl leading-tight">Lemon merengue taart</h3>
+            <p class="mt-1.5 text-inkt/80 text-[0.95rem] leading-snug">Laagjes merengue, cake, ongezoete room en home made lemon curd.</p>
+            <p class="mt-2 text-sm text-inkt/70">12 punten, 27 cm, <span class="text-kers font-semibold">notenvrij</span></p>
+            <div class="mt-3 flex items-baseline justify-between gap-3 sm:mt-auto sm:pt-3">
+              <span class="font-semibold text-lg tabular-nums">€ 43,50</span>
+              <a href="mailto:sweetsugarhill@outlook.com?subject=Bestelling%3A%20Lemon%20merengue%20taart" class="text-sm font-semibold text-kers underline underline-offset-4 hover:text-kersd">Bestellen</a>
+            </div>
+          </div>
+        </li>
+        <li class="flex sm:flex-col gap-4 sm:gap-0">
+          <img src="assets/site-03.webp" alt="Choco framboos merengue taart" loading="lazy" class="w-28 h-28 sm:w-full sm:h-auto sm:aspect-[4/5] object-cover object-[50%_58%] rounded-2xl shrink-0">
+          <div class="sm:mt-4 flex-1 flex flex-col">
+            <h3 class="font-kop text-xl sm:text-2xl leading-tight">Choco framboos merengue</h3>
+            <p class="mt-1.5 text-inkt/80 text-[0.95rem] leading-snug">Laagjes merengue, chocoladecake, ongezoete room en home made frambozencompote.</p>
+            <p class="mt-2 text-sm text-inkt/70">12 punten, 27 cm, <span class="text-kers font-semibold">notenvrij</span></p>
+            <div class="mt-3 flex items-baseline justify-between gap-3 sm:mt-auto sm:pt-3">
+              <span class="font-semibold text-lg tabular-nums">€ 43,50</span>
+              <a href="mailto:sweetsugarhill@outlook.com?subject=Bestelling%3A%20Choco%20framboos%20merengue" class="text-sm font-semibold text-kers underline underline-offset-4 hover:text-kersd">Bestellen</a>
+            </div>
+          </div>
+        </li>
+        <li class="flex sm:flex-col gap-4 sm:gap-0">
+          <img src="assets/site-04.webp" alt="Hemelse modder taart met walnoten en karamel" loading="lazy" class="w-28 h-28 sm:w-full sm:h-auto sm:aspect-[4/5] object-cover object-[50%_55%] rounded-2xl shrink-0">
+          <div class="sm:mt-4 flex-1 flex flex-col">
+            <h3 class="font-kop text-xl sm:text-2xl leading-tight">Hemelse modder taart</h3>
+            <p class="mt-1.5 text-inkt/80 text-[0.95rem] leading-snug">Drie lagen chocolade met walnoten, afgetopt met gezouten karamelsaus.</p>
+            <p class="mt-2 text-sm text-inkt/70">10 punten, 20 cm, met walnoten</p>
+            <div class="mt-3 flex items-baseline justify-between gap-3 sm:mt-auto sm:pt-3">
+              <span class="font-semibold text-lg tabular-nums">€ 47,50</span>
+              <a href="mailto:sweetsugarhill@outlook.com?subject=Bestelling%3A%20Hemelse%20modder%20taart" class="text-sm font-semibold text-kers underline underline-offset-4 hover:text-kersd">Bestellen</a>
+            </div>
+          </div>
+        </li>
+        <li class="flex sm:flex-col gap-4 sm:gap-0">
+          <img src="assets/site-05.webp" alt="Cheesecake met passiecurd" loading="lazy" class="w-28 h-28 sm:w-full sm:h-auto sm:aspect-[4/5] object-cover object-[50%_58%] rounded-2xl shrink-0">
+          <div class="sm:mt-4 flex-1 flex flex-col">
+            <h3 class="font-kop text-xl sm:text-2xl leading-tight">Cheesecake passiecurd</h3>
+            <p class="mt-1.5 text-inkt/80 text-[0.95rem] leading-snug">Romige cheesecake met home made passiecurd.</p>
+            <p class="mt-2 text-sm text-inkt/70">12 punten, 27 cm, <span class="text-kers font-semibold">notenvrij</span></p>
+            <div class="mt-3 flex items-baseline justify-between gap-3 sm:mt-auto sm:pt-3">
+              <span class="font-semibold text-lg tabular-nums">€ 43,50</span>
+              <a href="mailto:sweetsugarhill@outlook.com?subject=Bestelling%3A%20Cheesecake%20passiecurd" class="text-sm font-semibold text-kers underline underline-offset-4 hover:text-kersd">Bestellen</a>
+            </div>
+          </div>
+        </li>
+        <li class="flex sm:flex-col gap-4 sm:gap-0">
+          <img src="assets/site-06.webp" alt="Hazelnoot lavendel pie" loading="lazy" class="w-28 h-28 sm:w-full sm:h-auto sm:aspect-[4/5] object-cover object-[50%_58%] rounded-2xl shrink-0">
+          <div class="sm:mt-4 flex-1 flex flex-col">
+            <h3 class="font-kop text-xl sm:text-2xl leading-tight">Hazelnoot lavendel pie</h3>
+            <p class="mt-1.5 text-inkt/80 text-[0.95rem] leading-snug">Zandbodem gevuld met zachte melkchocolade, hazelnoten en lavendel. Bevat gelatine.</p>
+            <p class="mt-2 text-sm text-inkt/70">10 punten, 24 cm, met hazelnoten</p>
+            <div class="mt-3 flex items-baseline justify-between gap-3 sm:mt-auto sm:pt-3">
+              <span class="font-semibold text-lg tabular-nums">€ 45,00</span>
+              <a href="mailto:sweetsugarhill@outlook.com?subject=Bestelling%3A%20Hazelnoot%20lavendel%20pie" class="text-sm font-semibold text-kers underline underline-offset-4 hover:text-kersd">Bestellen</a>
+            </div>
+          </div>
+        </li>
+        <li class="flex sm:flex-col gap-4 sm:gap-0">
+          <img src="assets/site-07.webp" alt="Carrot cake tulband met citroen-icing" loading="lazy" class="w-28 h-28 sm:w-full sm:h-auto sm:aspect-[4/5] object-cover object-[50%_55%] rounded-2xl shrink-0">
+          <div class="sm:mt-4 flex-1 flex flex-col">
+            <h3 class="font-kop text-xl sm:text-2xl leading-tight">Carrot cake tulband</h3>
+            <p class="mt-1.5 text-inkt/80 text-[0.95rem] leading-snug">Worteltjestaart, rijk gevuld met walnoten en gedroogd fruit, afgetopt met citroen-icing.</p>
+            <p class="mt-2 text-sm text-inkt/70">12 punten, 27 cm, met noten</p>
+            <div class="mt-3 flex items-baseline justify-between gap-3 sm:mt-auto sm:pt-3">
+              <span class="font-semibold text-lg tabular-nums">€ 43,50</span>
+              <a href="mailto:sweetsugarhill@outlook.com?subject=Bestelling%3A%20Carrot%20cake%20tulband" class="text-sm font-semibold text-kers underline underline-offset-4 hover:text-kersd">Bestellen</a>
+            </div>
+          </div>
+        </li>
+        <li class="flex sm:flex-col gap-4 sm:gap-0">
+          <img src="assets/site-08.webp" alt="Lemon pie met Italiaans schuim" loading="lazy" class="w-28 h-28 sm:w-full sm:h-auto sm:aspect-[4/5] object-cover object-[50%_58%] rounded-2xl shrink-0">
+          <div class="sm:mt-4 flex-1 flex flex-col">
+            <h3 class="font-kop text-xl sm:text-2xl leading-tight">Lemon pie</h3>
+            <p class="mt-1.5 text-inkt/80 text-[0.95rem] leading-snug">Zandbodem gevuld met citroencrème, afgetopt met Italiaans schuim.</p>
+            <p class="mt-2 text-sm text-inkt/70">10 punten, 20 cm, <span class="text-kers font-semibold">notenvrij</span></p>
+            <div class="mt-3 flex items-baseline justify-between gap-3 sm:mt-auto sm:pt-3">
+              <span class="font-semibold text-lg tabular-nums">€ 41,50</span>
+              <a href="mailto:sweetsugarhill@outlook.com?subject=Bestelling%3A%20Lemon%20pie" class="text-sm font-semibold text-kers underline underline-offset-4 hover:text-kersd">Bestellen</a>
+            </div>
+          </div>
+        </li>
+        <li class="flex sm:flex-col gap-4 sm:gap-0">
+          <img src="assets/site-09.webp" alt="Appel cranberry cake met crumble" loading="lazy" class="w-28 h-28 sm:w-full sm:h-auto sm:aspect-[4/5] object-cover object-[50%_58%] rounded-2xl shrink-0">
+          <div class="sm:mt-4 flex-1 flex flex-col">
+            <h3 class="font-kop text-xl sm:text-2xl leading-tight">Appel cranberry cake</h3>
+            <p class="mt-1.5 text-inkt/80 text-[0.95rem] leading-snug">Appelcake met cranberry en kaneel en een crumble bovenop. Lactosevrij.</p>
+            <p class="mt-2 text-sm text-inkt/70">12 punten, 25 cm, <span class="text-kers font-semibold">notenvrij</span></p>
+            <div class="mt-3 flex items-baseline justify-between gap-3 sm:mt-auto sm:pt-3">
+              <span class="font-semibold text-lg tabular-nums">€ 43,50</span>
+              <a href="mailto:sweetsugarhill@outlook.com?subject=Bestelling%3A%20Appel%20cranberry%20cake" class="text-sm font-semibold text-kers underline underline-offset-4 hover:text-kersd">Bestellen</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Zoete tafels -->
+  <section id="zoete-tafels" class="bg-inkt text-papier scroll-mt-4" aria-labelledby="tafels-titel">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
+      <div class="grid md:grid-cols-12 gap-10 md:gap-12 items-start">
+        <div class="md:col-span-5">
+          <h2 id="tafels-titel" class="font-kop text-4xl md:text-6xl leading-none tracking-tight">Een zoete tafel voor je feest</h2>
+          <p class="mt-6 text-papier/85 leading-relaxed text-lg">Een rijk gevulde tafel straalt gezelligheid uit en is moeilijk te weerstaan. We bakken met alle liefde voor bruiloften, verjaardagen, kinderfeestjes of gewoon zomaar.</p>
+          <dl class="mt-8 grid grid-cols-2 gap-4">
+            <div class="border-t border-papier/25 pt-3">
+              <dt class="text-sm text-papier/70">Minimale afname</dt>
+              <dd class="font-kop text-3xl mt-1">€ 175</dd>
+              <dd class="text-sm text-papier/70">exclusief bezorgkosten</dd>
+            </div>
+            <div class="border-t border-papier/25 pt-3">
+              <dt class="text-sm text-papier/70">Bezorgen</dt>
+              <dd class="font-kop text-3xl mt-1">vanaf € 30</dd>
+              <dd class="text-sm text-papier/70">we bezorgen graag</dd>
+            </div>
+          </dl>
+          <img src="assets/google-07.jpg" alt="Drielaagse bruidstaart met vers rood fruit en een bruidspaar bovenop" loading="lazy" class="mt-10 w-full aspect-[4/5] object-cover rounded-t-[999px] rounded-b-2xl">
         </div>
-        <a href="mailto:sweetsugarhill@outlook.com">sweetsugarhill@outlook.com</a>
+
+        <div class="md:col-span-7">
+          <h3 class="font-kop text-3xl">Het assortiment</h3>
+          <p class="mt-2 text-papier/75">Alle vaste taarten kun je ook als puntjes voor de zoete tafel bestellen, in 24 of 20 puntjes.</p>
+
+          <ul class="mt-8 space-y-6">
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Feesttaart</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 72,00</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Citroencake, frambozencompote en witte chocolade botercrème, inclusief bloemdecoratie. 10 punten of 20 puntjes, 19 cm. Voor 20 punten of 40 puntjes: € 121,50.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Tartelettes, 1 persoons</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 49,80</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">7 cm, per 12 per smaak. Lemon pie, hazelnoot lavendel, witte chocolade met framboos, passievrucht of matcha.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Tartelettes, 1 haps</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 62,40</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">3 cm, per 24 per smaak. Dezelfde vijf smaken.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Brownie</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 29,50</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Sticky en puur. 24 mini's.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Choco frambozen vierkantjes</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 29,50</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Zacht chocoladeblokje met koekkruimels en frambozen. 24 mini's.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Boterkoek</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 29,50</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Zacht en smeuïg. 24 mini's.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Pure chocolade truffels</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 30,00</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Cacao van buiten, smeuïg van binnen. 24 stuks, glutenvrij.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Financiers met seizoensfruit</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 39,60</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Zacht amandelcakeje met fruit van het seizoen. 24 mini's.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Skuumkoppen, Arabische wolken</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 36,50</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Knapperig van buiten, zacht als nougat van binnen. Citroen, kardemom en rozen. 24 mini's.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Cranberry witte choco crunchies</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 24,00</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">De naam zegt het al. 24 mini's, glutenvrij.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Pindarotsen</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 24,00</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Pinda's en pure chocolade met een snufje zout. 24 mini's, vegan, gluten- en lactosevrij.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Choco haver koekjes</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 12,00</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Chocolate chip cookies. 24 mini's.</p>
+            </li>
+            <li>
+              <div class="flex items-baseline gap-3"><span class="font-semibold text-lg">Cocos cookies</span><span class="leader"></span><span class="tabular-nums whitespace-nowrap">€ 8,50</span></div>
+              <p class="text-papier/70 text-[0.95rem] mt-1">Knapperige kokoskoekjes. 24 stuks, gluten- en lactosevrij.</p>
+            </li>
+          </ul>
+
+          <a href="mailto:sweetsugarhill@outlook.com?subject=Zoete%20tafel%20aanvragen" class="knop inline-block mt-10 rounded-full bg-kers text-papier font-semibold px-6 py-3.5 hover:bg-kersd">Zoete tafel aanvragen</a>
+        </div>
       </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <span>Arnhem</span>
+
+      <ul class="mt-16 grid grid-cols-3 md:grid-cols-6 gap-3" aria-label="Zoetwaren van de zoete tafel">
+        <li class="overflow-hidden rounded-xl"><img src="assets/site-10.webp" alt="Tartelettes" loading="lazy" class="w-full aspect-square object-cover object-[50%_62%] scale-[1.35]"></li>
+        <li><img src="assets/site-11.webp" alt="Brownies" loading="lazy" class="w-full aspect-square object-cover object-[50%_58%] rounded-xl"></li>
+        <li><img src="assets/site-12.webp" alt="Choco frambozen vierkantjes" loading="lazy" class="w-full aspect-square object-cover object-[50%_58%] rounded-xl"></li>
+        <li><img src="assets/site-13.webp" alt="Boterkoek" loading="lazy" class="w-full aspect-square object-cover object-[50%_58%] rounded-xl"></li>
+        <li><img src="assets/site-14.webp" alt="Pure chocolade truffels" loading="lazy" class="w-full aspect-square object-cover object-[50%_60%] rounded-xl"></li>
+        <li><img src="assets/site-15.webp" alt="Financiers met seizoensfruit" loading="lazy" class="w-full aspect-square object-cover object-[50%_60%] rounded-xl"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Proefpakket -->
+  <section id="proefpakket" class="bg-salie scroll-mt-4" aria-labelledby="proef-titel">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-7">
+        <p class="font-medium text-inkt/80">Speciaal voor bruidsparen</p>
+        <h2 id="proef-titel" class="font-kop text-4xl md:text-6xl leading-none tracking-tight mt-3">Eerst proeven, dan kiezen</h2>
+        <p class="mt-6 text-lg leading-relaxed max-w-xl">In ons zoete proefpakket zitten de hardlopers uit het zoete tafel-assortiment. Zo weten jullie precies wat er op de grote dag op tafel komt.</p>
+        <ul class="mt-6 space-y-2 text-inkt/90 max-w-xl">
+          <li class="flex gap-3"><span class="text-kers font-bold">·</span>Ophalen op vrijdag of zaterdag, alleen na bevestiging van de reservering.</li>
+          <li class="flex gap-3"><span class="text-kers font-bold">·</span>Bestel liefst een week van tevoren.</li>
+          <li class="flex gap-3"><span class="text-kers font-bold">·</span>Proeven op onze locatie is niet mogelijk.</li>
+        </ul>
       </div>
-        </div>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-row">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam" autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label>E-mailadres</label>
-          <input type="email" placeholder="u@voorbeeld.nl" autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label>Bericht</label>
-          <textarea placeholder="Vertel ons over uw project..."></textarea>
-        </div>
-        <button class="form-submit" type="button">Bestel nu</button>
+      <div class="md:col-span-5 bg-papier rounded-3xl p-8 md:p-10">
+        <p class="text-inkt/75">Zoete tafel-proefpakket</p>
+        <p class="font-kop text-6xl mt-2 tabular-nums">€ 33,50</p>
+        <a href="mailto:sweetsugarhill@outlook.com?subject=Proefpakket%20reserveren&body=Naam%3A%0ADatum%20bruiloft%3A%0AAantal%20gasten%3A%0AOphalen%20op%20(vrijdag%20of%20zaterdag)%3A%0A" class="knop block text-center mt-8 rounded-full bg-kers text-papier font-semibold px-6 py-3.5 hover:bg-kersd">Proefpakket reserveren</a>
+        <p class="mt-4 text-sm text-inkt/70">We vragen een paar gegevens, zodat we zeker weten dat we voor jullie kunnen bakken.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-papier" aria-labelledby="reviews-titel">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
+      <div class="md:flex md:items-end md:justify-between gap-8">
+        <h2 id="reviews-titel" class="font-kop text-4xl md:text-6xl leading-none tracking-tight max-w-xl">Wat bruidsparen zeggen</h2>
+        <p class="mt-4 md:mt-0 text-inkt/80"><span class="font-kop text-3xl text-inkt">4,7</span> uit 51 Google-reviews</p>
+      </div>
+      <div class="mt-12 grid md:grid-cols-2 gap-x-12 gap-y-12">
+        <figure class="md:pr-8">
+          <blockquote class="font-kop text-2xl md:text-3xl leading-snug">"Doordat we al vaker taart besteld hadden ook onze bruidstaart laten maken door Sweet Sugar Hill. Hij was (zoals verwacht) heerlijk!! Veel complimenten over gehad! De taart was precies zoals we wilde en afgesproken was!"</blockquote>
+          <figcaption class="mt-4 text-inkt/75 font-medium">Janneke</figcaption>
+        </figure>
+        <figure class="md:mt-24">
+          <blockquote class="text-lg leading-relaxed">"Sweet Sugar Hill heeft ons geholpen met een zoete tafel voor onze bruiloft. Dit was heerlijk! Ze denken graag met je mee, luisteren naar je wensen, hebben veel opties qua smaken en wensen en zijn heel vriendelijk. We zouden het ieder aanraden!"</blockquote>
+          <figcaption class="mt-4 text-inkt/75 font-medium">Alireza</figcaption>
+        </figure>
+        <figure>
+          <blockquote class="text-lg leading-relaxed">"Sweet Sugar Hill heeft de zoete tafel voor onze bruiloft verzorgd. Het contact verliep soepel en prettig, we hebben van tevoren kunnen proeven van een heleboel lekkernijen. De taarten zijn prachtig en smaken heerlijk!! Alles is helemaal volgens afspraak gegaan. Absolute aanrader!!"</blockquote>
+          <figcaption class="mt-4 text-inkt/75 font-medium">Anne Verheijen</figcaption>
+        </figure>
+        <figure class="md:mt-12">
+          <blockquote class="text-lg leading-relaxed">"Sweet sugar hill heeft voor onze bruiloft een prachtige en vooral heerlijke taart gebakken! Goed contact gehad en er was een goede samenwerking met onze bloemist."</blockquote>
+          <figcaption class="mt-4 text-inkt/75 font-medium">Brigitte Geerligs</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Afhalen -->
+  <section id="afhalen" class="bg-saliel scroll-mt-4" aria-labelledby="afhalen-titel">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <img src="assets/google-03.jpg" alt="De hoekpui van Sweet Sugar Hill aan de Klarendalseweg met gestreepte luifels" class="w-full aspect-[4/3] object-cover rounded-3xl">
+      <div>
+        <h2 id="afhalen-titel" class="font-kop text-4xl md:text-6xl leading-none tracking-tight">Afhalen in Klarendal</h2>
+        <p class="mt-6 text-lg leading-relaxed max-w-md">Je herkent ons aan de gestreepte luifels, midden in het Arnhemse Modekwartier. De winkel is gesloten, maar je bestelling haal je hier gewoon op.</p>
+        <address class="not-italic mt-8 space-y-4 text-lg">
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Klarendalseweg+376+6822+GT+Arnhem" class="underline underline-offset-4 decoration-kers hover:text-kers">Klarendalseweg 376<br>6822 GT Arnhem</a></p>
+          <p><a href="tel:0263703903" class="font-semibold hover:text-kers">026 370 3903</a></p>
+          <p><a href="mailto:sweetsugarhill@outlook.com" class="font-semibold hover:text-kers break-all">sweetsugarhill@outlook.com</a></p>
+        </address>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-inkt text-papier/75">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm">
+    <p><span class="font-kop text-xl text-papier">Sweet Sugar Hill</span><br>Ambachtelijke bakkerij in het Arnhemse Klarendal</p>
+    <p>Klarendalseweg 376, 6822 GT Arnhem<br>026 370 3903 | sweetsugarhill@outlook.com</p>
   </div>
-</section>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Sweet sugar hill</div>
-    <ul class="footer-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-  <p class="footer-copy">&copy; 2025 Sweet sugar hill. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
 </footer>
-<div class="demo-banner">
-  <span>&#9889; DEMO voor Sweet sugar hill &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
+
+<!-- Mobiel: bellen en mailen altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-papier/95 backdrop-blur border-t border-inkt/10 p-3 grid grid-cols-2 gap-3">
+  <a href="tel:0263703903" class="knop text-center rounded-full bg-kers text-papier font-semibold py-3 hover:bg-kersd">Bellen</a>
+  <a href="mailto:sweetsugarhill@outlook.com?subject=Taart%20bestellen" class="knop text-center rounded-full border-2 border-inkt font-semibold py-2.5">Bestellen per mail</a>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Scroll reveal
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { io.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('visible'); });
-  }
 
-  // Nav scroll effect
-  var nav = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-});
-</script>
 </body>
 </html>
