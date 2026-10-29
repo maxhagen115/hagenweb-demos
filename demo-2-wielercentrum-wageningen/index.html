@@ -1,640 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2 Wielercentrum Wageningen | Wageningen</title>
-  <meta name="description" content="Deskundige fietsenwinkel met service, onderhoud en reparatie voor elke renner">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f8fafc; color: #0f172a; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-:root {
-  --accent: #fb923c; --accent-dark: #1d4ed8; --accent-light: rgba(251,146,60,0.08);
-  --bg: #f8fafc; --surface: #ffffff; --border: #e2e8f0;
-  --text: #0f172a; --muted: #64748b; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(255,255,255,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #0f172a; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #64748b; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #0f172a; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #0f172a; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,30,60,0.82) 0%, rgba(10,30,60,0.55) 60%, rgba(10,30,60,0.3) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #f8fafc, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,30,60,0.82) 0%, rgba(10,30,60,0.55) 60%, rgba(10,30,60,0.3) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #f8fafc; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #ffffff; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #0f172a; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #0f172a; border-top: 1px solid #1e293b;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #1e293b; padding-top: 24px; color: #334155; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
-</head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">2<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/132682/pexels-photo-132682.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">2 Wielercentrum<br><em>Wageningen</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Deskundige fietsenwinkel met service, onderhoud en reparatie voor elke renner</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Bezoek onze winkel</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/35239611/pexels-photo-35239611.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Fietsenverkoop" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Fietsenverkoop</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>Fietsenverkoop</h3>
-            <p>Nieuwe en gebruikte fietsen voor elk type en budget</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/37210494/pexels-photo-37210494.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Onderhoud en reparatie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Onderhoud</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>Onderhoud en reparatie</h3>
-            <p>Vakkundig herstel van je fiets door gecertificeerde monteurs</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/35305055/pexels-photo-35305055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Accessoires en onderdelen" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Accessoires</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Accessoires en onderdelen</h3>
-            <p>Compleet assortiment onderdelen, verlichting en fietskledij</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/7793697/pexels-photo-7793697.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="2 Wielercentrum Wageningen" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          
-        </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/7793727/pexels-photo-7793727.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/12703090/pexels-photo-12703090.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
-      </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">2 Wielercentrum Wageningen</h2>
-        <p class="reveal reveal-delay-1">2 Wielercentrum Wageningen is al jaren het adres voor fietsgebruikers in de regio. Van beginnende stadsfietser tot serieuze toerenrijder: wij kennen jouw fiets en weten wat je nodig hebt. Ons team helpt je graag met aankoop, onderhoud of een spoedherstellling..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>Erkende fietsmonteurs met jarenlange ervaring</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Snel en eerlijk reparatiewerk zonder gedoe</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Breed assortiment voor toer en stadsfietsen</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"Ze repareerden mijn fiets op dezelfde dag en legden alles goed uit."</p>
-      <div class="testimonial-naam">Jan de Vries</div>
-      <div class="testimonial-functie">Klant, Wageningen</div>
-    </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Hoe snel kan mijn fiets gerepareerd worden?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Kleine reparaties gebeuren vaak dezelfde dag. Grotere werkzaamheden plannen we in overleg in.</div>
-    </details><details>
-      <summary>Verkoopt 2 Wielercentrum gebruikte fietsen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, we hebben regelmatig gebruikte fietsen in voorraad tegen schappelijke prijzen.</div>
-    </details><details>
-      <summary>Welke fietsen verkopen jullie?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">We bieden merken voor elke wens: stadsfiets, racefiets, mountainbike en elektrische fiets.</div>
-    </details><details>
-      <summary>Kunnen jullie mijn fiets aanpassen op maat?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Absoluut. We stellen zadel, stuur en andere onderdelen graag op jouw maat in.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met 2 Wielercentrum Wageningen voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Bezoek onze winkel &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">2<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">Fietsenverkoop</a></li><li><a href="diensten.html">Onderhoud en reparatie</a></li><li><a href="diensten.html">Accessoires en onderdelen</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="tel:0317785146">0317 785 146</a></li><li><a href="mailto:info@2wielercentrumede.nl">info@2wielercentrumede.nl</a></li><li><span>Wageningen</span></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2025 2 Wielercentrum Wageningen. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
-</footer>
-<div class="demo-banner"><span>&#9889; DEMO voor 2 Wielercentrum Wageningen &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 Wielercentrum Wageningen | Fietsen en werkplaats aan de Brinkmanlaan</title>
+<meta name="description" content="Fietsenwinkel en werkplaats in Wageningen. Specialized, Koga en Gazelle, e-bikes, racefietsen, mountainbikes en reparatie. Brinkmanlaan 3, bel 0317 785 146.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
-
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { lei: '#24303C', rood: '#D7282F', tegel: '#ECEDEF', staal: '#5F6874' },
+      fontFamily: { kop: ['"Barlow Condensed"', 'sans-serif'], tekst: ['Figtree', 'sans-serif'] }
     }
   }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { text-wrap: pretty; }
+  h1, h2, h3 { text-wrap: balance; }
+  /* Handwijzer: wit bord met puntige rechterkant, zoals de wegwijzer in de winkel */
+  .wijzer { clip-path: polygon(0 0, calc(100% - 1.6rem) 0, 100% 50%, calc(100% - 1.6rem) 100%, 0 100%); }
+  .wijzer-rand { display: block; background: #24303C; padding: 3px; }
+  .wijzer-link:hover .wijzer-rand, .wijzer-link:focus-visible .wijzer-rand { background: #D7282F; }
+  .wijzer-link:hover .wijzer-rand > span { transform: translateX(4px); }
+  .wijzer-rand > span { transition: transform .2s ease; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #D7282F; outline-offset: 3px; }
+  .js .vandaag { background: #fff; }
+  .js .vandaag td { font-weight: 600; color: #24303C; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .wijzer-rand > span { transition: none; } }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="bg-tegel text-lei font-tekst antialiased pb-20 md:pb-0">
 
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  }
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white px-3 py-2 z-50">Naar inhoud</a>
 
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
+<div class="bg-lei text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor 2 Wielercentrum Wageningen, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2">Hagenweb</a>
+</div>
 
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
+<header class="bg-white border-b border-lei/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 sm:h-20 flex items-center justify-between gap-4">
+    <a href="#" class="flex items-center gap-2.5" aria-label="2 Wielercentrum Wageningen, naar boven">
+      <span class="grid place-items-center w-10 h-10 sm:w-12 sm:h-12 rounded-full border-[3px] border-rood text-rood font-kop font-bold text-2xl sm:text-3xl leading-none">2</span>
+      <span class="font-kop font-bold uppercase leading-[0.9] tracking-wide">
+        <span class="block text-sm sm:text-base">Wielercentrum</span>
+        <span class="block text-xl sm:text-2xl">Wageningen</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#fietsen" class="hover:text-rood transition-colors">Fietsen</a>
+      <a href="#werkplaats" class="hover:text-rood transition-colors">Werkplaats</a>
+      <a href="#reviews" class="hover:text-rood transition-colors">Reviews</a>
+      <a href="#langskomen" class="hover:text-rood transition-colors">Langskomen</a>
+    </nav>
+    <a href="tel:+31317785146" class="bg-rood hover:bg-[#b81f25] active:translate-y-px text-white font-semibold rounded-md px-4 py-2.5 text-sm sm:text-base transition-colors whitespace-nowrap">
+      <span class="sm:hidden">Bellen</span><span class="hidden sm:inline">0317 785 146</span>
+    </a>
+  </div>
+</header>
 
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
-    }
-  }
-});
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 pt-10 sm:pt-14 lg:pt-14">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-7">
+        <h1 class="font-kop font-bold uppercase text-[3.25rem] sm:text-7xl lg:text-[5rem] leading-[0.88] tracking-tight">
+          Je fietsenwinkel <br class="hidden lg:block">aan de Brinkmanlaan
+        </h1>
+        <p class="mt-6 text-lg text-staal max-w-md leading-relaxed">
+          E-bikes, racefietsen, mountainbikes, stads- en kinderfietsen van Specialized, Koga en Gazelle.
+          En een werkplaats die je fiets weer goed laat rijden.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="tel:+31317785146" class="bg-rood hover:bg-[#b81f25] active:translate-y-px text-white font-semibold rounded-md px-6 py-3.5 transition-colors">Bel 0317 785 146</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Brinkmanlaan+3+6708+RR+Wageningen" class="bg-white hover:bg-lei hover:text-white border-2 border-lei font-semibold rounded-md px-6 py-3 transition-colors">Route plannen</a>
+        </div>
+        <p class="mt-5 text-sm text-staal">Dinsdag t/m vrijdag 9:00 tot 18:00, zaterdag tot 16:30.</p>
+      </div>
+      <figure class="lg:col-span-5 relative">
+        <img src="assets/google-04.jpg" alt="Winkel van 2 Wielercentrum Wageningen met het logo aan de wand, kinderfietsen en een wegwijzer naar de koffiehoek" class="w-full aspect-[3/2] object-cover rounded-lg">
+        <figcaption class="absolute -bottom-5 left-4 sm:left-6 bg-white rounded-md shadow-[0_10px_30px_-10px_rgba(36,48,60,.35)] px-4 py-3 flex items-center gap-3">
+          <span class="font-kop font-bold text-3xl leading-none">4,9</span>
+          <span class="text-sm leading-tight text-staal">sterren op Google<br>uit 66 reviews</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Wegwijzers -->
+    <nav aria-label="Snel naar" class="mt-16 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <a href="#fietsen" class="wijzer-link block">
+        <span class="wijzer wijzer-rand"><span class="wijzer bg-white pl-5 pr-10 py-3.5 flex items-baseline justify-between gap-4">
+          <span class="font-kop font-bold uppercase text-2xl text-rood tracking-wide">Fietsen</span>
+          <span class="font-kop font-semibold text-xl text-lei">kopen</span>
+        </span></span>
+      </a>
+      <a href="#werkplaats" class="wijzer-link block">
+        <span class="wijzer wijzer-rand"><span class="wijzer bg-white pl-5 pr-10 py-3.5 flex items-baseline justify-between gap-4">
+          <span class="font-kop font-bold uppercase text-2xl text-rood tracking-wide">Werkplaats</span>
+          <span class="font-kop font-semibold text-xl text-lei">reparatie</span>
+        </span></span>
+      </a>
+      <a href="#langskomen" class="wijzer-link block">
+        <span class="wijzer wijzer-rand"><span class="wijzer bg-white pl-5 pr-10 py-3.5 flex items-baseline justify-between gap-4">
+          <span class="font-kop font-bold uppercase text-2xl text-rood tracking-wide">Open</span>
+          <span class="font-kop font-semibold text-xl text-lei">di t/m za</span>
+        </span></span>
+      </a>
+      <a href="#langskomen" class="wijzer-link block">
+        <span class="wijzer wijzer-rand"><span class="wijzer bg-white pl-5 pr-10 py-3.5 flex items-baseline justify-between gap-4">
+          <span class="font-kop font-bold uppercase text-2xl text-rood tracking-wide">Brinkmanlaan</span>
+          <span class="font-kop font-semibold text-xl text-lei">3</span>
+        </span></span>
+      </a>
+    </nav>
+  </section>
+
+  <!-- Fietsen -->
+  <section id="fietsen" class="max-w-6xl mx-auto px-5 pt-24 sm:pt-32">
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 items-end">
+      <h2 class="lg:col-span-6 font-kop font-bold uppercase text-5xl sm:text-6xl leading-[0.9] tracking-tight">Welke fiets zoek je?</h2>
+      <p class="lg:col-span-6 text-staal text-lg leading-relaxed max-w-xl">
+        We zijn Specialized Elite shop en regiodealer, en dealer van Koga en Gazelle. In de winkel staat een
+        ruime collectie waar je rustig tussen kunt kiezen, met iemand die meedenkt over wat bij jou past.
+      </p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">
+      <article class="md:col-span-7 md:row-span-2 bg-white rounded-lg overflow-hidden flex flex-col">
+        <img src="assets/google-02.jpg" alt="Specialized racefietsen opgesteld in de winkel" class="w-full aspect-[4/3] md:aspect-auto md:flex-1 object-cover">
+        <div class="p-6 sm:p-7">
+          <h3 class="font-kop font-bold uppercase text-3xl">Racefietsen</h3>
+          <p class="mt-2 text-staal max-w-md">Als Specialized Elite shop hebben we de racefietsen van Specialized in de winkel staan. We helpen je persoonlijk aan de fiets die bij je past.</p>
+        </div>
+      </article>
+      <article class="md:col-span-5 bg-white rounded-lg overflow-hidden">
+        <img src="assets/google-03.jpg" alt="Mountainbikes van Specialized en Giant op een opstelling met mos en stenen" class="w-full aspect-[16/10] object-cover">
+        <div class="p-6">
+          <h3 class="font-kop font-bold uppercase text-3xl">Mountainbikes</h3>
+          <p class="mt-2 text-staal">Voor de bossen rond Wageningen en verder. Met helmen, kleding en zadels erbij.</p>
+        </div>
+      </article>
+      <article class="md:col-span-5 bg-white rounded-lg overflow-hidden">
+        <img src="assets/google-07.jpg" alt="Stadsfietsen en e-bikes in de winkel naast een fietspad-bord" class="w-full aspect-[16/10] object-cover">
+        <div class="p-6">
+          <h3 class="font-kop font-bold uppercase text-3xl">E-bikes en stadsfietsen</h3>
+          <p class="mt-2 text-staal">Elektrisch fietsen is onze specialiteit. Van Gazelle Grenoble tot Koga, voor dagelijks woon-werk of een lange tocht.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-4 md:mt-5 grid md:grid-cols-12 gap-4 md:gap-5">
+      <article class="md:col-span-8 bg-white rounded-lg overflow-hidden grid sm:grid-cols-2">
+        <img src="assets/google-06.jpg" alt="Kinderfietsen voor het logo van 2 Wielercentrum Wageningen" class="w-full h-full min-h-56 object-cover">
+        <div class="p-6 sm:p-7 flex flex-col justify-center">
+          <h3 class="font-kop font-bold uppercase text-3xl">Kinderfietsen</h3>
+          <p class="mt-2 text-staal">Van de eerste fiets met zijwieltjes tot een stoere fiets voor de middelbare school.</p>
+        </div>
+      </article>
+      <article class="md:col-span-4 rounded-lg overflow-hidden relative min-h-64">
+        <img src="assets/google-08.jpg" alt="Wand met handvatten, verlichting en andere fietsonderdelen" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-lei/90 to-transparent p-6 pt-16 text-white">
+          <h3 class="font-kop font-bold uppercase text-3xl">Onderdelen en accessoires</h3>
+          <p class="mt-1 text-white/85">Handvatten, verlichting, zadels, tassen.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Werkplaats -->
+  <section id="werkplaats" class="mt-24 sm:mt-32 bg-lei text-white">
+    <div class="max-w-6xl mx-auto px-5 py-20 sm:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div class="lg:col-span-6 order-2 lg:order-1">
+        <h2 class="font-kop font-bold uppercase text-5xl sm:text-6xl leading-[0.9] tracking-tight">Werkplaats: we zoeken tot het past</h2>
+        <p class="mt-6 text-white/80 text-lg leading-relaxed max-w-xl">
+          Onderhoud, reparatie of een lekke band: in onze moderne werkplaats kijken we je fiets na.
+          We zijn Shimano Service Center, dus versnellingen en remmen zijn bij ons in goede handen.
+        </p>
+        <ul class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-white/90">
+          <li class="border-t border-white/15 pt-3">Onderhoud en afstellen</li>
+          <li class="border-t border-white/15 pt-3">Reparaties, ook kleine</li>
+          <li class="border-t border-white/15 pt-3">Shimano Service Center</li>
+          <li class="border-t border-white/15 pt-3">Onderdelen uit eigen magazijn</li>
+        </ul>
+        <div class="mt-10 bg-white/5 border border-white/10 rounded-lg p-6">
+          <p class="font-kop font-semibold uppercase text-2xl">Pech onderweg in Wageningen?</p>
+          <p class="mt-1 text-white/75">Bel de winkel, dan kijken we hoe we je snel weer op weg helpen.</p>
+          <a href="tel:+31317785146" class="mt-4 inline-block bg-rood hover:bg-[#b81f25] active:translate-y-px text-white font-semibold rounded-md px-5 py-3 transition-colors">Bel 0317 785 146</a>
+        </div>
+      </div>
+      <figure class="lg:col-span-6 order-1 lg:order-2">
+        <img src="assets/google-05.jpg" alt="Rij fietsen met blauwe en crèmekleurige banden in de winkel" class="w-full aspect-[4/3] object-cover rounded-lg">
+        <blockquote class="mt-6 border-l-[3px] border-rood pl-5">
+          <p class="text-white/90 leading-relaxed">"Pech onderweg met nog anderhalve dag te gaan. De heren hebben ervoor gezorgd dat we onze weg weer snel konden vervolgen, waarvoor dank!"</p>
+          <footer class="mt-2 text-sm text-white/60">Youri Zwart, Google review</footer>
+        </blockquote>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="max-w-6xl mx-auto px-5 pt-24 sm:pt-32">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-kop font-bold uppercase text-5xl sm:text-6xl leading-[0.9] tracking-tight max-w-xl">Wat klanten zeggen</h2>
+      <p class="flex items-baseline gap-3">
+        <span class="font-kop font-bold text-6xl leading-none">4,9</span>
+        <span class="text-staal">van 5 sterren,<br>66 reviews op Google</span>
+      </p>
+    </div>
+    <div class="mt-10 columns-1 md:columns-2 gap-5 [&>*]:break-inside-avoid [&>*]:mb-5">
+      <blockquote class="bg-white rounded-lg p-7">
+        <p class="text-rood tracking-[0.2em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <p class="mt-3 text-lg leading-relaxed">"Ik heb bij 2Wielercentrum Wageningen een tweedehands vouwfiets gekocht (nadat mijn vorige was gestolen in Utrecht). Tweedehands is tweedehands. In het begin waren er een paar onvoorziene mankementen. Die hebben ze prima en gratis opgelost. Ik ben helemaal blij met mijn vouwfietsje."</p>
+        <footer class="mt-4 text-sm text-staal">Elmar Theune</footer>
+      </blockquote>
+      <blockquote class="bg-white rounded-lg p-7">
+        <p class="text-rood tracking-[0.2em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <p class="mt-3 text-lg leading-relaxed">"Uitstekend geholpen door Denis met de aanschaf van mijn nieuwe racefiets. Erg blij met de fiets en ook de persoonlijke service."</p>
+        <footer class="mt-4 text-sm text-staal">Jiri</footer>
+      </blockquote>
+      <blockquote class="bg-white rounded-lg p-7">
+        <p class="text-rood tracking-[0.2em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <p class="mt-3 text-lg leading-relaxed">"Top service! Het kleinste schroefje om het derailleurpadje mee vast te zetten blijkt niet voorradig. Niet getreurd kosten nog moeite gespaard en net zolang gespeurd in de winkel en het magazijn tot er een langere variant werd gevonden. Keurig op lengte gemaakt en de schroefdraad getest. (...)"</p>
+        <footer class="mt-4 text-sm text-staal">Sarry Van den Berg</footer>
+      </blockquote>
+      <blockquote class="bg-white rounded-lg p-7">
+        <p class="text-rood tracking-[0.2em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <p class="mt-3 text-lg leading-relaxed">"We hebben er 2 Gazelle Grenoble C5 gekocht en we zijn super geholpen. Goede en mooie zaak en super vriendelijk personeel. Service is top."</p>
+        <footer class="mt-4 text-sm text-staal">Willie van koolwijk</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Langskomen -->
+  <section id="langskomen" class="max-w-6xl mx-auto px-5 pt-24 sm:pt-32 pb-24 sm:pb-32">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-7">
+        <img src="assets/google-01.jpg" alt="Gevel van 2 Wielercentrum Wageningen aan de Brinkmanlaan met fietsen voor de deur" class="w-full h-full aspect-[3/2] lg:aspect-auto lg:min-h-[32rem] object-cover rounded-lg">
+      </div>
+      <div class="lg:col-span-5">
+        <h2 class="font-kop font-bold uppercase text-5xl sm:text-6xl leading-[0.9] tracking-tight">Kom langs</h2>
+        <address class="not-italic mt-6 text-lg leading-relaxed">
+          Brinkmanlaan 3<br>6708 RR Wageningen
+        </address>
+        <p class="mt-4 space-y-1">
+          <a href="tel:+31317785146" class="block font-semibold text-lg hover:text-rood">0317 785 146</a>
+          <a href="mailto:info@2wielercentrumede.nl" class="block hover:text-rood underline underline-offset-4 decoration-lei/30">info@2wielercentrumede.nl</a>
+        </p>
+        <table class="mt-8 w-full text-[15px]">
+          <caption class="text-left font-kop font-bold uppercase text-2xl mb-2">Openingstijden</caption>
+          <tbody class="text-staal">
+            <tr data-dag="1" class="border-t border-lei/10"><td class="py-2 pl-3">Maandag</td><td class="py-2 pr-3 text-right">Gesloten</td></tr>
+            <tr data-dag="2" class="border-t border-lei/10"><td class="py-2 pl-3">Dinsdag</td><td class="py-2 pr-3 text-right tabular-nums">9:00 tot 18:00</td></tr>
+            <tr data-dag="3" class="border-t border-lei/10"><td class="py-2 pl-3">Woensdag</td><td class="py-2 pr-3 text-right tabular-nums">9:00 tot 18:00</td></tr>
+            <tr data-dag="4" class="border-t border-lei/10"><td class="py-2 pl-3">Donderdag</td><td class="py-2 pr-3 text-right tabular-nums">9:00 tot 18:00</td></tr>
+            <tr data-dag="5" class="border-t border-lei/10"><td class="py-2 pl-3">Vrijdag</td><td class="py-2 pr-3 text-right tabular-nums">9:00 tot 18:00</td></tr>
+            <tr data-dag="6" class="border-t border-lei/10"><td class="py-2 pl-3">Zaterdag</td><td class="py-2 pr-3 text-right tabular-nums">9:00 tot 16:30</td></tr>
+            <tr data-dag="0" class="border-y border-lei/10"><td class="py-2 pl-3">Zondag</td><td class="py-2 pr-3 text-right">Gesloten</td></tr>
+          </tbody>
+        </table>
+        <a href="https://www.google.com/maps/search/?api=1&query=Brinkmanlaan+3+6708+RR+Wageningen" class="mt-8 inline-block bg-lei hover:bg-rood active:translate-y-px text-white font-semibold rounded-md px-6 py-3.5 transition-colors">Route in Google Maps</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-lei text-white/75">
+  <div class="max-w-6xl mx-auto px-5 py-12 grid sm:grid-cols-3 gap-8 text-sm">
+    <div>
+      <p class="font-kop font-bold uppercase text-white text-xl leading-tight">2 Wielercentrum Wageningen</p>
+      <p class="mt-2">Brinkmanlaan 3, 6708 RR Wageningen<br><a href="tel:+31317785146" class="hover:text-white">0317 785 146</a></p>
+    </div>
+    <div>
+      <p class="font-kop font-bold uppercase text-white text-xl leading-tight">Ook in Ede</p>
+      <p class="mt-2">Verlengde Maanderweg 106-108, 6713 LM Ede<br><a href="tel:+31318610870" class="hover:text-white">0318 610 870</a></p>
+    </div>
+    <div class="sm:text-right">
+      <p>Specialized Elite shop<br>Koga en Gazelle dealer<br>Shimano Service Center</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Belknop mobiel -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-lei/10 p-3 flex gap-2">
+  <a href="tel:+31317785146" class="flex-1 text-center bg-rood text-white font-semibold rounded-md py-3.5">Bel 0317 785 146</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Brinkmanlaan+3+6708+RR+Wageningen" class="px-5 text-center border-2 border-lei font-semibold rounded-md py-3">Route</a>
+</div>
+
+<script>
+  var rij = document.querySelector('tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag');
 </script>
 </body>
 </html>
