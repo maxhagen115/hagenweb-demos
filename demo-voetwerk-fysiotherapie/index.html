@@ -1,640 +1,253 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voetwerk Fysiotherapie | Wageningen</title>
-  <meta name="description" content="Gerichte behandeling, korte wachttijd en een plan op maat in Wageningen.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f8fbfe; color: #0f2040; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-:root {
-  --accent: #10b981; --accent-dark: #059669; --accent-light: rgba(16,185,129,0.08);
-  --bg: #f8fbfe; --surface: #ffffff; --border: #dbeafe;
-  --text: #0f2040; --muted: #64748b; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(248,251,254,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 24px rgba(15,32,64,0.06);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #0f2040; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #64748b; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #0f2040; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #0f2040; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(248,251,254,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(4,60,40,0.82) 0%, rgba(4,60,40,0.58) 60%, rgba(4,60,40,0.32) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #f8fbfe, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(4,60,40,0.82) 0%, rgba(4,60,40,0.58) 60%, rgba(4,60,40,0.32) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #f8fbfe; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #ffffff; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #0f2040; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #0f2040; border-top: 1px solid #1e3a60;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #1e3a60; padding-top: 24px; color: #334155; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
-</head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Voetwerk<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/20860577/pexels-photo-20860577.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">Voetwerk Fysiotherapie voor pijnvrij<br><em>leven</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Gerichte behandeling, korte wachttijd en een plan op maat in Wageningen.</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Maak een afspraak</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/31234757/pexels-photo-31234757.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Manuele therapie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Manuele</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>Manuele therapie</h3>
-            <p>Handgrepen gericht op spieren, gewrichten en bewegingsbeperking.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/20860616/pexels-photo-20860616.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Sportrevalidatie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Sportrevalidatie</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>Sportrevalidatie</h3>
-            <p>Terugkeer naar sport na blessure met stapsgewijs trainingsprogramma.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/5793794/pexels-photo-5793794.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Bekkenfysiotherapie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Bekkenfysiotherapie</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Bekkenfysiotherapie</h3>
-            <p>Gerichte zorg voor bekkenbodemproblematiek en pijnklachten.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/6193191/pexels-photo-6193191.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Voetwerk Fysiotherapie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          <div class="stats-badge"><span class="stats-num">1.000+</span><span class="stats-label">behandelingen</span></div>
-        </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/20860616/pexels-photo-20860616.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/8460234/pexels-photo-8460234.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
-      </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Voetwerk Fysiotherapie</h2>
-        <p class="reveal reveal-delay-1">Voetwerk Fysiotherapie in Wageningen helpt je terug naar een actief leven zonder pijn. Onze therapeuten combineren vakkennis met aandacht voor wat jij nodig hebt. We geloven dat goed herstel begint met luisteren en samen een duidelijk plan maken..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>Korte wachttijd, snel aan de slag</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Ervaren therapeuten met persoonlijke aanpak</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Concreet behandelplan afgestemd op jouw doel</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"Na mijn blessure dacht ik dat sporten voorbij was, maar hier voelden ze me echt begrepen."</p>
-      <div class="testimonial-naam">Joris van der Berg</div>
-      <div class="testimonial-functie">Klant, Wageningen</div>
-    </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Hoe lang duur een eerste consult bij Voetwerk?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Een intake duurt ongeveer 45 minuten. We nemen tijd voor je klacht en maken samen een behandelplan.</div>
-    </details><details>
-      <summary>Heb ik een verwijzing van mijn huisarts nodig?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Voor de meeste verzekeringen wel. Controleer je polis of neem contact op met ons kantoor.</div>
-    </details><details>
-      <summary>Hoe snel kan ik terug naar sport na revalidatie?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Dat hangt van je blessure af. We bouwen voorzichtig op en stemmen progressie af op je doelen.</div>
-    </details><details>
-      <summary>Worden jullie vergoed door zorgverzekeraars?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja, we werken samen met alle grote zorgverzekeraars. Vraag naar de voorwaarden van jouw polis.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met Voetwerk Fysiotherapie voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Maak een afspraak &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">Voetwerk<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">Manuele therapie</a></li><li><a href="diensten.html">Sportrevalidatie</a></li><li><a href="diensten.html">Bekkenfysiotherapie</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="mailto:max@voetwerkfysio.nl">max@voetwerkfysio.nl</a></li><li><span>Wageningen</span></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2025 Voetwerk Fysiotherapie. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
-</footer>
-<div class="demo-banner"><span>&#9889; DEMO voor Voetwerk Fysiotherapie &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voetwerk Fysiotherapie | Sterke, vrije voeten | Arnhem</title>
+<meta name="description" content="Voetwerk: oorzaakgerichte voetfysiotherapie door Max Hendrickx, vanuit de oefenruimte in Barefoot & More in Arnhem. Hielspoor, platvoeten, hallux valgus, de juiste schoenen en overstappen op barefoot.">
+<link rel="icon" href="assets/site-01.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
-
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bos: '#1F3B31', 'bos-diep': '#16291F', steen: '#D8D1C7', kalk: '#EFEBE5',
+          inkt: '#1B1D1A', oranje: '#EE6F3F', mos: '#A9B8A6'
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif']
         }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  }
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
-
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
+      }
     }
   }
-});
 </script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  h1, h2, h3, .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .logo-licht { filter: invert(1); }
+  .num { font-variant-numeric: tabular-nums; }
+  a, button { transition: background-color .2s, color .2s, transform .2s, border-color .2s; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #EE6F3F; outline-offset: 3px; }
+  .btn:active { transform: translateY(1px); }
+  /* Eén moment beweging: de hero bij laden. Zonder JS is alles gewoon zichtbaar. */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .intro > * { animation: op .8s cubic-bezier(.2,.7,.2,1) both; }
+    html.js .intro > *:nth-child(2) { animation-delay: .08s; }
+    html.js .intro > *:nth-child(3) { animation-delay: .16s; }
+    html.js .intro > *:nth-child(4) { animation-delay: .24s; }
+    @keyframes op { from { opacity: 0; transform: translateY(14px); } }
+  }
+</style>
+</head>
+<body class="bg-kalk text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-oranje focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-inkt text-kalk/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Voetwerk Fysiotherapie, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+</div>
+
+<header class="bg-bos text-kalk">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3" aria-label="Voetwerk, naar boven">
+      <img src="assets/site-01.png" alt="Logo Voetwerk" class="logo-licht h-14 w-auto sm:h-16">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] text-kalk/85" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-white">Diensten</a>
+      <a href="#over" class="hover:text-white">Over Max</a>
+      <a href="#tarieven" class="hover:text-white">Tarieven</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+    <a href="mailto:max@voetwerkfysio.nl?subject=Afspraak%20maken" class="btn hidden sm:inline-flex rounded-full bg-oranje text-inkt font-semibold px-5 py-2.5 text-[15px] hover:bg-[#f4875c]">Afspraak maken</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="bg-bos text-kalk overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-8 pb-16 md:pt-14 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+      <div class="intro md:col-span-6 lg:col-span-6">
+        <p class="text-mos text-[15px] mb-5">Voetfysiotherapie in Arnhem</p>
+        <h1 class="text-[3.5rem] leading-[0.95] sm:text-7xl lg:text-[6.2rem] font-semibold tracking-[-0.022em]">Sterke, vrije voeten.</h1>
+        <p class="mt-7 text-lg sm:text-xl text-kalk/85 max-w-[34rem] leading-relaxed">Je voeten zijn het fundament van een vitaal lichaam. Bij Voetwerk zoeken we samen naar de oorzaak van je klacht en werken we aan blijvende verandering, niet aan tijdelijke verlichting.</p>
+        <div class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a href="mailto:max@voetwerkfysio.nl?subject=Afspraak%20maken" class="btn rounded-full bg-oranje text-inkt font-semibold px-7 py-4 text-base hover:bg-[#f4875c]">Maak een afspraak</a>
+          <a href="#tarieven" class="text-kalk underline decoration-kalk/40 underline-offset-4 hover:decoration-oranje">Bekijk de tarieven</a>
+        </div>
+      </div>
+      <figure class="md:col-span-6 lg:col-span-5 lg:col-start-8 relative">
+        <img src="assets/site-03.jpg" alt="Max Hendrickx onderzoekt de voet van een cliënt" class="w-full aspect-[4/3] md:aspect-[4/5] object-cover object-[50%_72%] rounded-[28px]">
+        <figcaption class="absolute -bottom-5 left-5 sm:-left-6 bg-kalk text-inkt rounded-2xl px-5 py-4 max-w-[17rem] shadow-[0_18px_40px_-18px_rgba(10,25,18,.6)]">
+          <span class="block kop font-semibold text-lg leading-tight">Hielspoor, platvoeten of hallux valgus?</span>
+          <span class="block text-sm text-inkt/70 mt-1">We kijken verder dan de plek waar het pijn doet.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Aanpak -->
+  <section class="bg-kalk">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10">
+      <h2 class="md:col-span-5 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.025em] leading-[1.05]">Alleen behandelen wat nodig is. En nooit langer dan zinvol.</h2>
+      <div class="md:col-span-6 md:col-start-7 text-lg leading-relaxed text-inkt/80 space-y-5">
+        <p>Ik werk eerlijk en doelgericht. Dat betekent: eerst goed onderzoeken waar je klacht vandaan komt, daarna gericht behandelen. Tegelijk leer ik je hoe je zelf aan je herstel werkt, zodat je niet afhankelijk blijft van mij.</p>
+        <p>Je vindt me in de oefenruimte van Barefoot & More, aan de Kleine Oord 86 in Arnhem. Daar kunnen we oefenen, lopen en direct kijken welke schoenen bij jouw voeten passen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diensten -->
+  <section id="diensten" class="bg-steen scroll-mt-4">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-20 md:pt-28 pb-8">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em]">Waarmee ik je help</h2>
+    </div>
+
+    <article class="max-w-7xl mx-auto px-5 sm:px-8 py-10 md:py-14 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <img src="assets/site-08.jpg" alt="Twee mensen in een squat, één blootsvoets" class="md:col-span-7 w-full aspect-[3/2] object-cover rounded-[24px]">
+      <div class="md:col-span-5">
+        <h3 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em]">Voetfysiotherapie</h3>
+        <p class="mt-4 text-lg leading-relaxed text-inkt/80">Samen zoeken we een oplossing die bij de oorzaak begint. Voor voetklachten als hielspoor, platvoeten en hallux valgus. En omdat je voeten alles dragen, kijken we ook naar wat je in je knieën of rug merkt.</p>
+        <p class="mt-6 flex flex-wrap gap-2 text-sm">
+          <span class="rounded-md bg-kalk px-3 py-1.5">Hielspoor</span>
+          <span class="rounded-md bg-kalk px-3 py-1.5">Platvoeten</span>
+          <span class="rounded-md bg-kalk px-3 py-1.5">Hallux valgus</span>
+        </p>
+      </div>
+    </article>
+
+    <article class="max-w-7xl mx-auto px-5 sm:px-8 py-10 md:py-14 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-5 md:order-1 order-2">
+        <h3 class="text-3xl sm:text-4xl font-semibold tracking-[-0.02em]">Vind de juiste schoenen</h3>
+        <p class="mt-4 text-lg leading-relaxed text-inkt/80">Vanuit de oefenruimte in Barefoot & More combineer ik mijn kennis als fysiotherapeut met mijn ervaring in de winkel. Zo vinden we schoenen die écht passen bij jouw voeten, in plaats van ze in te knellen.</p>
+      </div>
+      <img src="assets/site-04.jpg" alt="Max laat een cliënte een barefoot schoen zien in de winkel van Barefoot & More" class="md:col-span-6 md:col-start-7 md:order-2 order-1 w-full aspect-[4/5] md:aspect-[5/6] object-cover object-[50%_45%] rounded-[24px]">
+    </article>
+
+    <article class="max-w-7xl mx-auto px-5 sm:px-8 pt-10 pb-20 md:pt-14 md:pb-28">
+      <img src="assets/site-05.jpg" alt="Voeten in Vibram-schoenen op een voelplaat met hout en steen" class="w-full aspect-[4/3] sm:aspect-[21/9] object-cover object-[50%_45%] rounded-[24px]">
+      <div class="mt-8 md:mt-10 grid md:grid-cols-12 gap-6">
+        <h3 class="md:col-span-5 text-3xl sm:text-4xl font-semibold tracking-[-0.02em]">Overstapservice</h3>
+        <p class="md:col-span-6 md:col-start-7 text-lg leading-relaxed text-inkt/80">Wil je barefoot hardlopen of ook in het dagelijks leven barefoot lopen? Met een training op maat help ik je om verantwoord over te stappen. Je versterkt je voeten stap voor stap en voorkomt blessures.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- Over Max -->
+  <section id="over" class="bg-bos text-kalk scroll-mt-4">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+      <img src="assets/site-07.jpg" alt="Portret van fysiotherapeut Max Hendrickx" class="md:col-span-5 w-full aspect-[4/5] object-cover object-top rounded-[24px]">
+      <div class="md:col-span-7 md:pt-4">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em]">Leuk je te ontmoeten.</h2>
+        <div class="mt-7 space-y-5 text-lg leading-relaxed text-kalk/85 max-w-[38rem]">
+          <p>Ik ben Max Hendrickx (27), fysiotherapeut en sinds 2022 werkzaam bij Barefoot & More.</p>
+          <p>Wat mij verbaast: onze voeten zijn een complex en sterk deel van ons lichaam, en toch pakken we ze in schoenen die ze afknellen en onze bewegingsvrijheid beperken. Gek, toch?</p>
+          <p>Toen ik zelf ontdekte hoeveel verschil het maakt om je voeten weer vrijheid te geven, verbeterden niet alleen mijn voetklachten. Ook de knie- en rugpijn die ik door sport had opgelopen, werd minder. Dat maakte me alleen maar gedrevener om anderen hetzelfde te laten ervaren.</p>
+        </div>
+        <p class="mt-10 pt-8 border-t border-kalk/20 kop text-2xl sm:text-3xl leading-snug text-white max-w-[38rem]">Mijn missie: jou op weg helpen naar sterke, vrije voeten en een bewuste, gezonde manier van bewegen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarieven -->
+  <section id="tarieven" class="bg-kalk scroll-mt-4">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-7">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em]">Tarieven 2026</h2>
+        <dl class="mt-10 border-t border-inkt/15">
+          <div class="flex items-baseline justify-between gap-6 py-6 border-b border-inkt/15">
+            <dt><span class="kop text-xl sm:text-2xl font-semibold">Eerste afspraak lang</span><span class="block text-inkt/65 mt-1">Intake en onderzoek plus eerste behandeling, 60 minuten</span></dt>
+            <dd class="num kop text-2xl sm:text-3xl font-semibold">€90</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-6 py-6 border-b border-inkt/15">
+            <dt><span class="kop text-xl sm:text-2xl font-semibold">Eerste afspraak kort</span><span class="block text-inkt/65 mt-1">Intake en onderzoek, 30 minuten</span></dt>
+            <dd class="num kop text-2xl sm:text-3xl font-semibold">€45</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-6 py-6 border-b border-inkt/15">
+            <dt><span class="kop text-xl sm:text-2xl font-semibold">Telefonisch consult</span></dt>
+            <dd class="num kop text-2xl sm:text-3xl font-semibold">€45</dd>
+          </div>
+        </dl>
+
+        <div class="mt-12 grid sm:grid-cols-2 gap-10 text-inkt/80 leading-relaxed">
+          <div>
+            <h3 class="text-xl font-semibold text-inkt">Afspraak afzeggen</h3>
+            <p class="mt-3">Verplaatsen of annuleren kan kosteloos tot 48 uur van tevoren. Zeg je later af, dan breng ik €45 in rekening.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-inkt">Vergoeding</h3>
+            <p class="mt-3">Ik werk zonder contract met zorgverzekeraars, zodat mijn tijd naar jou gaat en niet naar administratie. Je betaalt na elke afspraak per pin en krijgt een nota die je bij je verzekeraar indient. Hoeveel je terugkrijgt, hangt af van je aanvullende verzekering.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="md:col-span-4 md:col-start-9 md:pt-24">
+        <img src="assets/site-02.jpg" alt="Intakegesprek in de behandelruimte, met een poster over de anatomie van de voet" class="w-full aspect-[3/4] object-cover object-left rounded-[24px]">
+        <figcaption class="mt-3 text-sm text-inkt/60">Elke eerste afspraak begint met een goed gesprek.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-steen scroll-mt-4">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-5">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em]">Een afspraak maken</h2>
+        <p class="mt-6 text-lg leading-relaxed text-inkt/80 max-w-md">Stuur me een mail met je klacht of vraag. Ik neem contact met je op om een moment te plannen.</p>
+        <a href="mailto:max@voetwerkfysio.nl?subject=Afspraak%20maken" class="mt-8 inline-block kop text-2xl sm:text-3xl font-semibold underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-bos break-all">max@voetwerkfysio.nl</a>
+        <div class="mt-10 grid grid-cols-2 gap-8 text-[15px] leading-relaxed">
+          <div>
+            <h3 class="font-semibold">Adres</h3>
+            <address class="not-italic text-inkt/75 mt-1">Barefoot & More<br>Kleine Oord 86<br>6811 HZ Arnhem</address>
+            <a href="https://www.google.com/maps/search/?api=1&query=Kleine+Oord+86+6811+HZ+Arnhem" class="inline-block mt-2 underline underline-offset-2 hover:text-bos">Route plannen</a>
+          </div>
+          <div>
+            <h3 class="font-semibold">Gegevens</h3>
+            <p class="text-inkt/75 mt-1">KvK 96240733</p>
+          </div>
+        </div>
+      </div>
+      <form class="md:col-span-6 md:col-start-7 bg-kalk rounded-[24px] p-6 sm:p-9 space-y-5" action="mailto:max@voetwerkfysio.nl" method="post" enctype="text/plain">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block"><span class="text-sm font-medium">Voornaam</span>
+            <input name="voornaam" required autocomplete="given-name" class="mt-1.5 w-full rounded-xl border border-inkt/15 bg-white/70 px-4 py-3 focus:border-bos"></label>
+          <label class="block"><span class="text-sm font-medium">Achternaam</span>
+            <input name="achternaam" autocomplete="family-name" class="mt-1.5 w-full rounded-xl border border-inkt/15 bg-white/70 px-4 py-3 focus:border-bos"></label>
+        </div>
+        <label class="block"><span class="text-sm font-medium">E-mail</span>
+          <input type="email" name="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border border-inkt/15 bg-white/70 px-4 py-3 focus:border-bos"></label>
+        <label class="block"><span class="text-sm font-medium">Waar kan ik je mee helpen?</span>
+          <textarea name="bericht" rows="5" required class="mt-1.5 w-full rounded-xl border border-inkt/15 bg-white/70 px-4 py-3 focus:border-bos"></textarea></label>
+        <button class="btn w-full sm:w-auto rounded-full bg-bos text-kalk font-semibold px-7 py-3.5 hover:bg-bos-diep">Bericht versturen</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-bos-diep text-kalk/75">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 flex flex-col sm:flex-row sm:items-end justify-between gap-10">
+    <img src="assets/site-01.png" alt="Logo Voetwerk" class="logo-licht h-24 w-auto opacity-90 self-start">
+    <div class="text-sm leading-relaxed sm:text-right">
+      <p>Voetwerk Fysiotherapie, Max Hendrickx</p>
+      <p>Barefoot & More, Kleine Oord 86, 6811 HZ Arnhem</p>
+      <p><a href="mailto:max@voetwerkfysio.nl" class="hover:text-oranje">max@voetwerkfysio.nl</a></p>
+      <p>KvK 96240733</p>
+      <p class="mt-4 text-kalk/50">© 2026 Voetwerk</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiel: afspraakknop altijd binnen bereik -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-bos/95 backdrop-blur px-4 py-3 border-t border-kalk/10">
+  <a href="mailto:max@voetwerkfysio.nl?subject=Afspraak%20maken" class="btn block text-center rounded-full bg-oranje text-inkt font-semibold py-3.5">Mail voor een afspraak</a>
+</div>
+
 </body>
 </html>
