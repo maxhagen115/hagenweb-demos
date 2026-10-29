@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merida Experience Center Apeldoorn | Eerst rijden, dan kiezen</title>
+<meta name="description" content="De volledige Merida-collectie onder één dak in Apeldoorn. Kom langs voor uitmeting en proefrit. Laan van Westenenk 102, ma t/m vr 09:00 tot 17:00, 055 506 1001.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,500..900;1,62..125,800..900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper: '#F2F3F0', ink: '#1C2024', asphalt: '#2B2F34', line: '#D9DCD6',
+        green: { DEFAULT: '#8CC63F', ink: '#3F6B12' }
+      },
+      fontFamily: { head: ['Archivo', 'sans-serif'], body: ['Figtree', 'sans-serif'] }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, sans-serif; }
+  .head { font-family: Archivo, sans-serif; font-stretch: 75%; letter-spacing: -0.01em; line-height: .92; text-wrap: balance; }
+  .mark { font-family: Archivo, sans-serif; font-stretch: 110%; font-weight: 900; font-style: italic; letter-spacing: .02em; }
+  .pretty { text-wrap: pretty; }
+  /* De middenstreep van de weg door de hal */
+  .road { background: #2B2F34; position: relative; }
+  .road::before { content: ""; position: absolute; left: 0; right: 0; top: 74px; height: 4px;
+    background: repeating-linear-gradient(90deg, #fff 0 36px, transparent 36px 72px); opacity: .85; }
+  @media (max-width: 767px) {
+    .road::before { left: 27px; right: auto; top: 0; bottom: 0; width: 4px; height: auto; transform: none;
+      background: repeating-linear-gradient(180deg, #fff 0 28px, transparent 28px 56px); }
+  }
+  .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  a:focus-visible, button:focus-visible { outline: 3px solid #8CC63F; outline-offset: 3px; }
+</style>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+<div class="bg-ink text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Merida Benelux, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-green">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-30 bg-paper/90 backdrop-blur border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-baseline gap-2 shrink-0" aria-label="Merida Experience Center, naar boven">
+      <span class="mark text-2xl">MERIDA</span>
+      <span class="hidden sm:inline text-sm text-ink/60 font-medium">Experience Center</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-ink/75">
+      <a href="#bezoek" class="hover:text-ink">Je bezoek</a>
+      <a href="#collectie" class="hover:text-ink">Collectie</a>
+      <a href="#hal" class="hover:text-ink">De hal</a>
+      <a href="#tracks" class="hover:text-ink">Factory Tracks</a>
+      <a href="#contact" class="hover:text-ink">Route</a>
+    </nav>
+    <a href="tel:+31555061001" class="inline-flex items-center gap-2 bg-ink text-white rounded-full pl-4 pr-5 py-2.5 text-sm font-semibold hover:bg-asphalt active:scale-[.98] transition">
+      <svg class="w-4 h-4 text-green" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">055 506 1001</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-5 lg:px-10 pt-10 md:pt-16">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-10 items-end">
+      <div class="md:col-span-7">
+        <p class="text-green-ink font-semibold mb-4">Merida Experience Center, Apeldoorn</p>
+        <h1 class="head font-black text-[3.6rem] sm:text-7xl lg:text-[6.75rem] uppercase">Eerst rijden.<br>Dan kiezen.</h1>
+      </div>
+      <div class="md:col-span-5 md:pb-3">
+        <p class="text-lg lg:text-xl leading-relaxed text-ink/80 pretty max-w-md">
+          Kom, voordat je een fiets koopt, eerst proberen. Hier staat de hele Merida-collectie in één hal: race, gravel,
+          mountainbike, e-bike en meer. Je laat je opmeten, maakt een proefrit en kiest pas als het klopt.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="tel:+31555061001" class="bg-green text-ink font-semibold rounded-full px-6 py-3.5 hover:brightness-95 active:scale-[.98] transition">Bel voor een proefrit</a>
+          <a href="#contact" class="border-2 border-ink/80 font-semibold rounded-full px-6 py-3 hover:bg-ink hover:text-white transition">Route en openingstijden</a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="relative mt-10 md:mt-14">
+      <img src="assets/google-03.jpg" alt="De showroom van het Merida Experience Center: een asfaltweg met middenstreep loopt tussen witte podia met racefietsen en gravelbikes" class="w-full aspect-[4/3] sm:aspect-[16/8] object-cover rounded-[22px]">
+      <div class="md:absolute md:left-6 md:bottom-6 mt-4 md:mt-0 bg-white rounded-2xl md:shadow-[0_18px_40px_-18px_rgba(28,32,36,.45)] px-5 py-4 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-sm md:max-w-2xl">
+        <div class="col-span-2 md:col-span-1"><div class="text-ink/55">Adres</div><div class="font-semibold leading-snug">Laan van Westenenk 102<span class="md:hidden">, </span><br class="hidden md:block">Apeldoorn</div></div>
+        <div><div class="text-ink/55">Open</div><div class="font-semibold leading-snug">ma t/m vr<br>09:00 tot 17:00</div></div>
+        <div><div class="text-ink/55">Google</div><div class="font-semibold leading-snug">4,4 van 5<br>62 reviews</div></div>
+      </div>
+    </figure>
+  </section>
+
+  <!-- Je bezoek: de weg door de hal -->
+  <section id="bezoek" class="mt-20 md:mt-28 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 grid md:grid-cols-12 gap-6 mb-10">
+      <h2 class="head font-black uppercase text-5xl lg:text-7xl md:col-span-6">Zo gaat een bezoek</h2>
+      <p class="md:col-span-5 md:col-start-8 text-lg text-ink/75 leading-relaxed pretty self-end">
+        Neem gerust de tijd. Bezoekers rijden twee maten van hetzelfde model en komen er zelfs voor uit België. Bel even
+        vooraf, dan staat je fiets klaar.
+      </p>
+    </div>
+
+    <div class="road text-white">
+      <ol class="relative max-w-7xl mx-auto px-5 lg:px-10 grid md:grid-cols-4 gap-0 md:gap-6 py-10 md:py-0">
+        <li class="reveal relative pl-16 md:pl-0 py-5 md:pt-12 md:pb-14">
+          <span class="absolute left-0 md:static inline-flex w-14 h-14 rounded-full bg-green text-ink head font-black text-2xl items-center justify-center ring-[6px] ring-asphalt">1</span>
+          <h3 class="head font-extrabold text-3xl uppercase mt-2 md:mt-6">Afspraak maken</h3>
+          <p class="mt-2 text-white/75 leading-relaxed pretty">Bel 055 506 1001 of mail info@merida.nl en zeg welke fietsen je wilt proberen.</p>
+        </li>
+        <li class="reveal relative pl-16 md:pl-0 py-5 md:pt-12 md:pb-14">
+          <span class="absolute left-0 md:static inline-flex w-14 h-14 rounded-full bg-white text-ink head font-black text-2xl items-center justify-center ring-[6px] ring-asphalt">2</span>
+          <h3 class="head font-extrabold text-3xl uppercase mt-2 md:mt-6">Uitmeting</h3>
+          <p class="mt-2 text-white/75 leading-relaxed pretty">We meten je op, zodat je de juiste maat en het juiste model test.</p>
+        </li>
+        <li class="reveal relative pl-16 md:pl-0 py-5 md:pt-12 md:pb-14">
+          <span class="absolute left-0 md:static inline-flex w-14 h-14 rounded-full bg-white text-ink head font-black text-2xl items-center justify-center ring-[6px] ring-asphalt">3</span>
+          <h3 class="head font-extrabold text-3xl uppercase mt-2 md:mt-6">Proefrit</h3>
+          <p class="mt-2 text-white/75 leading-relaxed pretty">Rijd de Reacto naast de Scultura, of de Silex in twee maten. Voel het verschil zelf.</p>
+        </li>
+        <li class="reveal relative pl-16 md:pl-0 py-5 md:pt-12 md:pb-14">
+          <span class="absolute left-0 md:static inline-flex w-14 h-14 rounded-full bg-white text-ink head font-black text-2xl items-center justify-center ring-[6px] ring-asphalt">4</span>
+          <h3 class="head font-extrabold text-3xl uppercase mt-2 md:mt-6">Bestellen</h3>
+          <p class="mt-2 text-white/75 leading-relaxed pretty">Bestel je fiets en laat hem uitleveren door een Merida-dealer bij jou in de buurt.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Collectie -->
+  <section id="collectie" class="max-w-7xl mx-auto px-5 lg:px-10 mt-20 md:mt-28 scroll-mt-20">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-5">
+        <h2 class="head font-black uppercase text-5xl lg:text-7xl">De hele collectie op de vloer</h2>
+        <p class="mt-5 text-lg text-ink/75 leading-relaxed pretty max-w-md">
+          Van de recreatieve rijder tot de fanatieke wedstrijdrenner: in Apeldoorn zie je alle series naast elkaar,
+          in aluminium en carbon.
+        </p>
+        <img src="assets/site-07.webp" alt="Een champagnekleurige Merida-fiets op een houten brug in het groen" class="mt-8 w-full aspect-[3/2] object-cover rounded-[22px]">
+      </div>
+
+      <ul class="lg:col-span-7 border-t-2 border-ink">
+        <li class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 py-5 border-b border-line">
+          <h3 class="head font-extrabold uppercase text-3xl md:text-4xl">Racefietsen</h3>
+          <span class="text-sm text-ink/60 self-center tabular-nums">€ 1.399 tot € 11.499</span>
+          <p class="col-span-2 text-ink/70">Reacto voor snelheid, Scultura om als eerste boven te zijn, Scultura Endurance voor comfort. En de Time Warp TRI.</p>
+        </li>
+        <li class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 py-5 border-b border-line">
+          <h3 class="head font-extrabold uppercase text-3xl md:text-4xl">Gravelbikes</h3>
+          <span class="text-sm text-ink/60 self-center tabular-nums">€ 1.599 tot € 8.999</span>
+          <p class="col-span-2 text-ink/70">Silex en Mission, voor grind, bospad en lange dagen.</p>
+        </li>
+        <li class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 py-5 border-b border-line">
+          <h3 class="head font-extrabold uppercase text-3xl md:text-4xl">Mountainbikes</h3>
+          <span class="text-sm text-ink/60 self-center tabular-nums">€ 749 tot € 8.999</span>
+          <p class="col-span-2 text-ink/70">De Big Nine hardtail, de full-suspension Ninety-Six en de Big Seven. Voor beginners tot wedstrijdrijders.</p>
+          <div class="col-span-2 mt-3 grid grid-cols-3 gap-2">
+            <img src="assets/site-10.jpg" alt="Merida Ninety-Six full-suspension mountainbike in goud en grijs" class="w-full aspect-[16/10] object-contain bg-white rounded-xl p-2">
+            <img src="assets/site-11.jpg" alt="Merida Big Nine hardtail in paars en zwart" class="w-full aspect-[16/10] object-contain bg-white rounded-xl p-2">
+            <img src="assets/site-12.jpg" alt="Merida Ninety-Six in petrolgroen" class="w-full aspect-[16/10] object-contain bg-white rounded-xl p-2">
+          </div>
+        </li>
+        <li class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 py-5 border-b border-line">
+          <h3 class="head font-extrabold uppercase text-3xl md:text-4xl">Hybrides</h3>
+          <span class="text-sm text-ink/60 self-center tabular-nums">€ 749 tot € 1.049</span>
+          <p class="col-span-2 text-ink/70">De Crossway: bredere banden en een verende voorvork, op te bouwen voor woon-werkverkeer of fietsvakantie.</p>
+        </li>
+        <li class="py-5 border-b border-line">
+          <h3 class="head font-extrabold uppercase text-3xl md:text-4xl">En verder</h3>
+          <p class="mt-1 text-ink/70">E-bikes, kinderfietsen, fitnessfietsen en framekits. Plus kleding, onderdelen en toebehoren.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- De hal -->
+  <section id="hal" class="mt-20 md:mt-28 scroll-mt-20 bg-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10">
+      <div class="grid md:grid-cols-12 gap-6 mb-10">
+        <h2 class="head font-black uppercase text-5xl lg:text-7xl md:col-span-7">Voor de liefhebber een paradijs</h2>
+        <p class="md:col-span-4 md:col-start-9 text-lg text-ink/75 leading-relaxed pretty self-end">
+          Meer dan een showroom. Na je proefrit zit je bij de haard of aan de bar, en tussendoor kijk je rond in de
+          werkplaats en de kledingafdeling.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+        <img src="assets/google-05.jpg" alt="Lounge met leren fauteuils rond een open haard" class="col-span-2 md:col-span-8 md:row-span-2 w-full h-full aspect-[4/3] md:aspect-auto object-cover rounded-[22px]">
+        <img src="assets/google-08.jpg" alt="Houten bar met krukken" class="md:col-span-4 w-full aspect-[4/3] object-cover rounded-[22px]">
+        <img src="assets/google-07.jpg" alt="Werkplaats met onderdelenwand en een racefiets in de montagestandaard" class="md:col-span-4 w-full aspect-[4/3] object-cover rounded-[22px]">
+        <img src="assets/google-06.jpg" alt="Rijen racefietsen en gravelbikes op witte en groene podia" class="col-span-2 md:col-span-7 w-full aspect-[16/9] object-cover rounded-[22px]">
+        <img src="assets/google-04.jpg" alt="Kledingafdeling met fietsshirts, handschoenen en helmen" class="hidden md:block md:col-span-5 w-full aspect-[16/9] md:aspect-auto md:h-full object-cover rounded-[22px]">
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="max-w-7xl mx-auto px-5 lg:px-10 mt-20 md:mt-28">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
+      <h2 class="head font-black uppercase text-5xl lg:text-7xl">Wat rijders zeggen</h2>
+      <p class="text-ink/70"><span class="head font-black text-4xl text-ink align-middle">4,4</span> <span class="align-middle">van 5 op Google, 62 reviews</span></p>
+    </div>
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-5 [&>figure]:mb-5">
+      <figure class="break-inside-avoid bg-ink text-white rounded-[22px] p-7">
+        <blockquote class="text-xl leading-snug pretty">"Bij binnenkomst was ik direct onder de indruk van de prachtige winkel; voor de liefhebber van wielrennen is dit een waar paradijs. Ik ben uitstekend geholpen"</blockquote>
+        <figcaption class="mt-5 text-sm text-white/60">Jan Edelenbos, via Google</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-[22px] p-7">
+        <blockquote class="leading-relaxed text-ink/85 pretty">"Heb vandaag, 11 september een proefrit gemaakt op de Silex 8000. De ervaring op de fiets was super maar wat veel belangrijker is is de benadering van het team daar aanwezig. Meedenkend, vriendelijk, adequaat, goed geïnformeerd en vakkundig en geen vraag was te veel."</blockquote>
+        <figcaption class="mt-5 text-sm text-ink/55">Jan Jacobs, via Google</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-[22px] p-7">
+        <blockquote class="leading-relaxed text-ink/85 pretty">"Vandaag samen met mijn zoon vanuit België naar het experience center gereden in Apeldoorn waar hij de Merida reacto en de Merida scultura kon testen op basis van een uitmeting. Zėér goede en uitgebreide uitleg gekregen met vriendelijke ontvangst. Wat een service! Zeker de moeite waard!!"</blockquote>
+        <figcaption class="mt-5 text-sm text-ink/55">Ben Van Hooydonk, via Google</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-green rounded-[22px] p-7">
+        <blockquote class="text-xl leading-snug pretty">"Even gekeken naar de nieuwe 2026 modellen was weer een feestje, er staat weer een mooie collectie."</blockquote>
+        <figcaption class="mt-5 text-sm text-ink/70">Henk Gijsenbergh, via Google</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-[22px] p-7">
+        <blockquote class="leading-relaxed text-ink/85 pretty">"Zowel in Apeldoorn als in Klarenbeek erg goed ontvangen. Bekwame mensen die je alle informatie geven voor de juiste fiets keuze."</blockquote>
+        <figcaption class="mt-5 text-sm text-ink/55">Gerrit-Jan Kolkman, via Google</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Factory Tracks -->
+  <section id="tracks" class="mt-20 md:mt-28 scroll-mt-20">
+    <div class="relative">
+      <img src="assets/site-09.webp" alt="Twee mountainbikers op een bospad tussen de dennen" class="w-full h-[460px] md:h-[620px] object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0">
+        <div class="max-w-7xl mx-auto px-5 lg:px-10 pb-10 md:pb-16 grid md:grid-cols-12 gap-6 text-white">
+          <h2 class="head font-black uppercase text-5xl lg:text-8xl md:col-span-7">Merida Factory Tracks</h2>
+          <p class="md:col-span-5 text-lg leading-relaxed text-white/85 pretty self-end">
+            Het Experience Center ligt aan de rand van de Veluwezoom. Koffie op de hei, een terras langs de dijk of
+            gewoon de bossen in: vanaf hier rijd je zo de mooiste tochten.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sinds 1972 -->
+  <section class="max-w-7xl mx-auto px-5 lg:px-10 mt-20 md:mt-28 grid md:grid-cols-12 gap-8 items-center">
+    <img src="assets/google-02.jpg" alt="Een renster houdt haar Merida-gravelbike boven haar hoofd op een rots tussen de dennen" class="md:col-span-6 w-full aspect-[4/3] object-cover rounded-[22px]">
+    <div class="md:col-span-5 md:col-start-8">
+      <p class="mark text-green-ink text-2xl">Me-ri-da</p>
+      <h2 class="head font-black uppercase text-5xl lg:text-6xl mt-3">Sinds 1972</h2>
+      <p class="mt-5 text-lg text-ink/75 leading-relaxed pretty">
+        Ike Tseng richtte Merida in 1972 op. De drie lettergrepen betekenen vrij vertaald: alleen mooie, hoogwaardige
+        producten maken waarmee iedereen zo prettig mogelijk zijn bestemming bereikt. Inmiddels levert Merida jaarlijks
+        1,5 miljoen fietsen. In Apeldoorn kun je ze allemaal proberen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact & route -->
+  <section id="contact" class="mt-20 md:mt-28 scroll-mt-20 bg-ink text-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 py-16 md:py-24 grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-6">
+        <h2 class="head font-black uppercase text-5xl lg:text-7xl">Kom langs in Apeldoorn</h2>
+        <div class="mt-8 grid sm:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-white/55 text-sm mb-2">Adres</h3>
+            <p class="text-lg leading-relaxed">Merida Experience Center<br>Laan van Westenenk 102<br>7336 AZ Apeldoorn</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Laan+van+Westenenk+102+7336+AZ+Apeldoorn" class="inline-block mt-3 text-green underline underline-offset-4 hover:text-white">Plan je route</a>
+          </div>
+          <div>
+            <h3 class="text-white/55 text-sm mb-2">Openingstijden</h3>
+            <dl class="grid grid-cols-[auto_1fr] gap-x-5 gap-y-1 text-lg tabular-nums">
+              <dt>ma t/m vr</dt><dd>09:00 tot 17:00</dd>
+              <dt>zaterdag</dt><dd class="text-white/55">gesloten</dd>
+              <dt>zondag</dt><dd class="text-white/55">gesloten</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="tel:+31555061001" class="bg-green text-ink font-semibold rounded-full px-6 py-3.5 hover:brightness-95 active:scale-[.98] transition">Bel 055 506 1001</a>
+          <a href="mailto:info@merida.nl?subject=Proefrit%20in%20het%20Experience%20Center" class="border-2 border-white/70 font-semibold rounded-full px-6 py-3 hover:bg-white hover:text-ink transition">Mail info@merida.nl</a>
+        </div>
+      </div>
+      <figure class="lg:col-span-6">
+        <img src="assets/google-01.jpg" alt="De gevel van het Merida Experience Center met groene borden More Bike, More Fun" class="w-full aspect-[4/3] object-cover rounded-[22px]">
+        <figcaption class="mt-3 text-sm text-white/55">Je herkent ons aan de groene borden boven de trap.</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-ink text-white/55 border-t border-white/10 pb-24 md:pb-0">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-8 flex flex-wrap items-center justify-between gap-4 text-sm">
+    <span><span class="mark text-white text-lg">MERIDA</span> Benelux BV, Apeldoorn</span>
+    <span>Specificaties en prijzen onder voorbehoud van wijzigingen.</span>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-paper/95 backdrop-blur border-t border-line grid grid-cols-2 gap-2">
+  <a href="tel:+31555061001" class="text-center bg-green text-ink font-semibold rounded-full py-3.5">Bellen</a>
+  <a href="#contact" class="text-center bg-ink text-white font-semibold rounded-full py-3.5">Route</a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .2 });
+  document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 120 + 'ms'; io.observe(el); });
+</script>
+</body>
+</html>
