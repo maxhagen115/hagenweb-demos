@@ -1,1331 +1,238 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barbershop Hola Apeldoorn</title>
-  <meta name="description" content="Klassieke barbering en moderne haarsnijkunst in het hart van Apeldoorn.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #ffffff;
-  color: #1a1a1a;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-:root {
-  --accent: #f472b6;
-  --bg: #ffffff;
-  --surface: #f9f9f7;
-  --border: #e5e5e0;
-  --text: #1a1a1a;
-  --muted: #6b7280;
-  --nav-bg: rgba(255,255,255,0.95);
-  --hero-bg: transparent;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-/* ── Typografie ── */
-h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
-p { margin: 0; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Navigatie ── */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo span {
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-cta {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.nav-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Secties ── */
-section {
-  padding: 96px 24px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--muted);
-  max-width: 540px;
-  font-size: 1.05rem;
-  margin-bottom: 56px;
-}
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── USP strip ── */
-.usp-strip {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 24px;
-}
-
-.usp-strip .container {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.usp-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.usp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-/* ── Diensten grid ── */
-.diensten-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.dienst-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.dienst-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-.dienst-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.2;
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-
-.dienst-card h3 {
-  margin-bottom: 10px;
-}
-
-.dienst-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Stats band ── */
-.stats-band {
-  background: var(--accent);
-  color: #ffffff;
-  padding: 64px 24px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-item {}
-
-.stat-waarde {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  font-weight: 500;
-}
-
-/* ── Werkwijze ── */
-.werkwijze-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  counter-reset: stap;
-}
-
-.stap-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-}
-
-.stap-nummer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.stap-card h3 {
-  margin-bottom: 10px;
-}
-
-.stap-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Over ons ── */
-.over-ons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.over-ons-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.over-ons-tekst p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 56px;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 28px;
-  font-style: italic;
-  color: var(--text);
-}
-
-.testimonial-naam {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ── FAQ ── */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-details[open] {
-  border-color: var(--accent);
-}
-
-summary {
-  padding: 20px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-.faq-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: transform 0.2s;
-}
-
-details[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 24px 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* ── Contact ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-info h3 {
-  margin-bottom: 8px;
-}
-
-.contact-info p {
-  color: var(--muted);
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-}
-
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px;
-}
-
-.form-row {
-  margin-bottom: 18px;
-}
-
-.form-row label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 12px 16px;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--accent);
-}
-
-.form-row textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  font-family: inherit;
-}
-
-.form-submit:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Footer ── */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-logo {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.footer-logo span {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
-.footer-copy {
-  color: var(--muted);
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ── Dark-specifiek: hero ── */
-.hero-dark {
-  min-height: 100vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: #0c0c0c;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-dark-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.hero-dark-glow {
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, #f472b6 15%, transparent), transparent 70%);
-  pointer-events: none;
-}
-
-.hero-dark-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-dark-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-dark-left h1 {
-  color: #f0f0f0;
-}
-
-.hero-dark-left .hero-sub {
-  color: #a0a0a0;
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-dark-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-dark-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-}
-
-/* Sector SVG icon groot in de hero */
-.hero-sector-icon {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-sector-icon svg {
-  width: 80px;
-  height: 80px;
-  stroke: #f472b6;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 0 20px color-mix(in srgb, #f472b6 60%, transparent));
-}
-
-/* Pulserende ringen */
-.pulse-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #f472b6;
-  animation: pulse-out 3s ease-out infinite;
-  opacity: 0;
-}
-
-.pulse-ring:nth-child(1) { width: 160px; height: 160px; animation-delay: 0s; }
-.pulse-ring:nth-child(2) { width: 220px; height: 220px; animation-delay: 0.8s; }
-.pulse-ring:nth-child(3) { width: 290px; height: 290px; animation-delay: 1.6s; }
-
-@keyframes pulse-out {
-  0%   { opacity: 0.6; transform: scale(0.85); }
-  100% { opacity: 0;   transform: scale(1.15); }
-}
-
-/* Drijvende stat kaarten */
-.stat-cards {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.stat-card {
-  position: absolute;
-  background: #1c1c1c;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 14px 18px;
-  pointer-events: auto;
-  animation: float-card 5s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-
-.stat-card:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.stat-card:nth-child(2) { top: 55%; right: -8%; animation-delay: 1.5s; }
-.stat-card:nth-child(3) { bottom: 8%; left: 15%; animation-delay: 0.8s; }
-
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-
-.stat-card .sc-waarde {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #f472b6;
-  line-height: 1;
-}
-
-.stat-card .sc-label {
-  font-size: 0.75rem;
-  color: #a0a0a0;
-  margin-top: 4px;
-}
-
-/* ── Light hero (foto achtergrond) ── */
-.hero-light {
-  min-height: 100vh;
-  padding-top: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-light-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-light-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-}
-
-.hero-light-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.hero-light-inner h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.hero-light-inner .hero-sub {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.15rem;
-  margin-bottom: 36px;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-.hero-light-cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── Clean hero ── */
-.hero-clean {
-  min-height: 90vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-}
-
-.hero-clean-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-clean-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-clean-left h1 {
-  color: var(--text);
-}
-
-.hero-clean-left .hero-sub {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-clean-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-clean-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.hero-stat-block {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-}
-
-.hero-stat-block .hs-waarde {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.hero-stat-block .hs-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-/* ── Foto grid voor services (light/clean) ── */
-.diensten-foto-wrap {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  height: 220px;
-  margin-bottom: 0;
-}
-
-.diensten-foto-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-}
-
-.dienst-card:hover .diensten-foto-wrap img {
-  transform: scale(1.04);
-}
-
-/* ── Responsive ── */
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border-top: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.demo-banner a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-/* ── Mobile hamburger ── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-
-.nav-mobile-menu {
-  display: none;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  z-index: 99;
-  padding: 16px 24px 24px;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-mobile-menu.open { display: flex; }
-
-.nav-mobile-menu a {
-  padding: 12px 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-mobile-menu a:last-child { border-bottom: none; }
-
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-dark-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .hero-dark-right { display: none; }
-  .hero-dark-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-dark-left h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-
-  .hero-clean-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-clean-right { display: none; }
-  .hero-clean-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-clean-left { text-align: center; align-items: center; }
-  .hero-clean-left h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-
-  .hero-light-inner { padding: 0 0 40px; }
-  .hero-light-inner h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-light-cta { flex-wrap: wrap; justify-content: center; }
-
-  .diensten-grid,
-  .werkwijze-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .over-ons-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .over-ons-img { height: 240px; }
-
-  .testimonial-wrap { padding: 28px 20px; }
-
-  .usp-strip .container { gap: 20px; flex-wrap: wrap; }
-  .usp-item { min-width: 140px; flex: 1; }
-
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 16px; }
-
-  .demo-banner { font-size: 0.78rem; padding: 9px 12px; }
-}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbershop Hola Apeldoorn | Kapper aan het Korianderplein</title>
+<meta name="description" content="Barbershop Hola aan het Korianderplein 19 in Apeldoorn. Herenknippen, fades, baard trimmen en klassiek scheren. Bel 06 16110585.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { plafond: '#3A1F27', nacht: '#22141A', muur: '#EADFB8', messing: '#C49A5A', led: '#F6F3EA' },
+      fontFamily: { kop: ['"Big Shoulders Display"', 'sans-serif'], sans: ['Manrope', 'sans-serif'] },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .kop { font-family: "Big Shoulders Display", sans-serif; letter-spacing: -0.01em; line-height: .9; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .honingraat { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23F6F3EA' stroke-width='1.4'/%3E%3C/svg%3E"); background-size: 84px 150px; }
+  .honingraat-fade { -webkit-mask-image: radial-gradient(ellipse 70% 80% at 30% 20%, #000 10%, transparent 75%); mask-image: radial-gradient(ellipse 70% 80% at 30% 20%, #000 10%, transparent 75%); }
+  .btn { display: inline-flex; align-items: center; gap: .6rem; font-weight: 700; border-radius: 999px; padding: .95rem 1.5rem; transition: transform .2s, background-color .2s, color .2s; }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 2px solid #C49A5A; outline-offset: 3px; }
+  .vandaag { color: #22141A; background: #C49A5A; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Barbershop Hola Apeldoorn</div>
-    <ul class="nav-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#werkwijze">Werkwijze</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary nav-cta">Gratis offerte</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="#diensten">Diensten</a>
-  <a href="#over-ons">Over ons</a>
-  <a href="#werkwijze">Werkwijze</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" style="color:var(--accent);font-weight:700;margin-top:8px;">Gratis offerte</a>
+<body class="bg-plafond text-led font-sans pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-led text-nacht px-3 py-2 rounded">Naar de inhoud</a>
+
+<div class="bg-nacht text-led/70 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Barbershop Hola Apeldoorn, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-led hover:text-messing">Hagenweb</a>
 </div>
-<section class="hero-light" id="hero">
-  <div class="hero-light-bg" style="background-image: url('stock/img-0.jpg')"></div>
-  <div class="hero-light-overlay"></div>
-  <div class="hero-light-inner">
-    <h1 class="reveal">Barbershop Hola Apeldoorn</h1>
-    <p class="hero-sub reveal reveal-delay-1">Klassieke barbering en moderne haarsnijkunst in het hart van Apeldoorn.</p>
-    <div class="hero-light-cta reveal reveal-delay-2">
-      <a href="#contact" class="btn btn-primary">Bel voor afspraak</a>
-      <a href="#diensten" class="btn btn-secondary" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.4);color:#fff;">Onze diensten</a>
+
+<header class="relative z-10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between gap-4">
+    <a href="#" class="flex items-baseline gap-2">
+      <span class="kop text-3xl font-black uppercase tracking-wide">Barber Hola</span>
+      <span class="hidden sm:inline text-sm text-led/60">Korianderplein</span>
+    </a>
+    <nav class="flex items-center gap-6 text-sm font-semibold">
+      <a href="#diensten" class="hidden md:inline text-led/80 hover:text-led">Diensten</a>
+      <a href="#zaak" class="hidden md:inline text-led/80 hover:text-led">De zaak</a>
+      <a href="#langskomen" class="hidden md:inline text-led/80 hover:text-led">Openingstijden</a>
+      <a href="tel:+31616110585" class="btn bg-messing text-nacht hover:bg-led !py-2.5 !px-4">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        <span class="hidden sm:inline">06 16110585</span><span class="sm:hidden">Bel</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="honingraat honingraat-fade absolute inset-0 opacity-[.13] pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 pt-6 pb-16 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-8 items-end">
+    <div class="lg:col-span-7 lg:pb-10">
+      <p class="text-messing font-semibold mb-5">Barbershop in Apeldoorn</p>
+      <h1 class="kop font-black uppercase text-[clamp(2.75rem,14.5vw,6.5rem)] lg:text-[clamp(4.5rem,7.9vw,7.25rem)]">Fris geknipt aan het Korianderplein</h1>
+      <p class="mt-7 max-w-xl text-lg text-led/80 leading-relaxed">Van klassieke knipbeurt tot strakke fade, baard en scheermes. Altijd met precisie, rust en aandacht, en afgestemd op jouw gezicht en jouw stijl.</p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="tel:+31616110585" class="btn bg-messing text-nacht hover:bg-led">Bel 06 16110585</a>
+        <a href="https://wa.me/31616110585" class="btn border border-led/30 hover:border-led hover:bg-led hover:text-nacht">App via WhatsApp</a>
+      </div>
+      <p class="mt-8 text-sm text-led/70"><span class="text-messing tracking-widest" aria-hidden="true">★★★★★</span> <strong class="text-led">4,8</strong> uit 32 Google-reviews</p>
+    </div>
+    <div class="lg:col-span-5 relative">
+      <img src="assets/google-05.jpg" alt="De zaak vanaf de vloer gezien: barberstoelen en het honingraatplafond met lichtlijnen" class="w-full aspect-[4/5] object-cover rounded-[2rem] shadow-2xl shadow-black/40">
+      <p class="absolute -bottom-5 left-6 right-6 sm:right-auto bg-muur text-nacht rounded-2xl px-5 py-3 text-sm font-semibold shadow-xl" id="vandaag-tekst">Di t/m za 9:00 tot 18:00, ma en zo vanaf 12:00</p>
     </div>
   </div>
 </section>
-<div class="usp-strip">
-  <div class="container"><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Handwerk dat aandacht voor detail toont</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Ontspannen sfeer, geen haastwerk</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Lokaal vertrouwde plek in Apeldoorn</span>
-    </div></div>
-</div>
-<section id="diensten">
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal"></p>
-    <div class="diensten-grid"><div class="dienst-card reveal reveal-delay-1">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-0.jpg" alt="Haarsnit &amp; styling" loading="lazy">
-      </div>
-      <div class="dienst-number">01</div>
-      <h3>Haarsnit &amp; styling</h3>
-      <p>Klassieke en moderne snijdingen op maat voor uw gezicht en haar.</p>
-    </div><div class="dienst-card reveal reveal-delay-2">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-1.jpg" alt="Baard &amp; trimmen" loading="lazy">
-      </div>
-      <div class="dienst-number">02</div>
-      <h3>Baard &amp; trimmen</h3>
-      <p>Deskundige baardverzorging, liniëring en professioneel trimwerk.</p>
-    </div><div class="dienst-card reveal reveal-delay-3">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-2.jpg" alt="Behandelingen &amp; olie" loading="lazy">
-      </div>
-      <div class="dienst-number">03</div>
-      <h3>Behandelingen &amp; olie</h3>
-      <p>Haarmaskers, baardolie en verzorgingsproducten voor thuis.</p>
-    </div></div>
-  </div>
-</section>
-<section class="stats-band">
-  <div class="container">
-    <div class="stats-grid"><div class="stat-item reveal">
-      <div class="stat-waarde">10+</div>
-      <div class="stat-label">Jaren ervaring</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">4.6</div>
-      <div class="stat-label">Klanttevredenheid</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Ma t/m Za</div>
-      <div class="stat-label">Openingsuren</div>
-    </div></div>
-  </div>
-</section>
-<section id="werkwijze">
-  <div class="container">
-    <div class="section-label">Hoe het werkt</div>
-    <h2 class="section-title reveal">Onze aanpak</h2>
-    <div class="werkwijze-grid"><div class="stap-card reveal reveal-delay-1">
-      <div class="stap-nummer">1</div>
-      <h3>Afspraak maken</h3>
-      <p>Bel ons of kom langs. Je hoeft niet lang te wachten.</p>
-    </div><div class="stap-card reveal reveal-delay-2">
-      <div class="stap-nummer">2</div>
-      <h3>Consultation</h3>
-      <p>We luisteren wat je wilt en adviseren wat past bij jou.</p>
-    </div><div class="stap-card reveal reveal-delay-3">
-      <div class="stap-nummer">3</div>
-      <h3>Vakkundig afwerken</h3>
-      <p>Scherpe snit, netjes bijwerken, goed voelen in je vel.</p>
-    </div></div>
-  </div>
-</section>
-<section id="over-ons" style="background: var(--surface);">
-  <div class="container">
-    <div class="over-ons-grid">
-      <div class="over-ons-foto reveal"><img src="stock/img-2.jpg" alt="Barbershop Hola Apeldoorn" class="over-ons-img" loading="lazy"></div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Barbershop Hola Apeldoorn</h2>
-        <p class="reveal reveal-delay-1">Barbershop Hola is dé plek in Apeldoorn waar klassieke barbering tradition meets modern vakmanschap. We geloven in goed luisteren, scherpe scharen en een ontspannen moment voor jezelf. Een knipbeurt hier is meer dan een service, het is ritueel.</p>
-        <div class="reveal reveal-delay-2">
-          <a href="#contact" class="btn btn-primary">Plan een gesprek</a>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-muur text-nacht">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-14 lg:gap-10">
+    <div class="lg:col-span-7">
+      <h2 class="kop font-black uppercase text-6xl sm:text-7xl">Wat we doen</h2>
+      <p class="mt-5 max-w-lg text-lg text-nacht/75">Kom je voor een snelle opfrisser of de complete behandeling? Dit is wat je bij ons in de stoel kunt laten doen.</p>
+      <dl class="mt-12 border-t border-nacht/15">
+        <div class="grid sm:grid-cols-[14rem_1fr] gap-1 sm:gap-6 py-6 border-b border-nacht/15">
+          <dt class="kop font-extrabold uppercase text-3xl">Herenknippen</dt>
+          <dd class="text-nacht/75 leading-relaxed">Een knipbeurt die past bij je gezichtsvorm en je eigen stijl, van klassiek tot modern.</dd>
         </div>
-      </div>
+        <div class="grid sm:grid-cols-[14rem_1fr] gap-1 sm:gap-6 py-6 border-b border-nacht/15">
+          <dt class="kop font-extrabold uppercase text-3xl">Fade &amp; modern</dt>
+          <dd class="text-nacht/75 leading-relaxed">Strakke fades en eigentijdse kapsels die bij jouw persoonlijkheid passen.</dd>
+        </div>
+        <div class="grid sm:grid-cols-[14rem_1fr] gap-1 sm:gap-6 py-6 border-b border-nacht/15">
+          <dt class="kop font-extrabold uppercase text-3xl">Baard trimmen</dt>
+          <dd class="text-nacht/75 leading-relaxed">Nauwkeurig bijgewerkt, met oog voor vorm en structuur. Netjes getrimd en verzorgd.</dd>
+        </div>
+        <div class="grid sm:grid-cols-[14rem_1fr] gap-1 sm:gap-6 py-6 border-b border-nacht/15">
+          <dt class="kop font-extrabold uppercase text-3xl">Klassiek scheren</dt>
+          <dd class="text-nacht/75 leading-relaxed">Traditioneel scheren met een warme handdoek en het scheermes.</dd>
+        </div>
+        <div class="grid sm:grid-cols-[14rem_1fr] gap-1 sm:gap-6 py-6 border-b border-nacht/15">
+          <dt class="kop font-extrabold uppercase text-3xl">Haar &amp; baard</dt>
+          <dd class="text-nacht/75 leading-relaxed">Knippen en baardverzorging in één keer, voor een complete, verzorgde look.</dd>
+        </div>
+        <div class="grid sm:grid-cols-[14rem_1fr] gap-1 sm:gap-6 py-6 border-b border-nacht/15">
+          <dt class="kop font-extrabold uppercase text-3xl">Haarwassen</dt>
+          <dd class="text-nacht/75 leading-relaxed">Een verzorgende wasbeurt met professionele producten, voor glans en volume.</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="lg:col-span-5 grid grid-cols-5 lg:grid-cols-1 gap-4 content-start lg:pt-24">
+      <figure class="col-span-3 lg:col-span-1">
+        <img src="assets/google-02.jpg" alt="Jongen met een verse fade en scherpe lijn bij het oor" class="w-full aspect-[4/5] object-cover rounded-[1.5rem]" loading="lazy">
+      </figure>
+      <figure class="col-span-2 lg:w-3/5 lg:-mt-24 lg:ml-auto lg:relative">
+        <img src="assets/google-03.jpg" alt="Krullen met een taper in de nek, van achteren gezien" class="w-full aspect-[4/3] object-cover object-top rounded-[1.5rem] lg:ring-8 lg:ring-muur" loading="lazy">
+      </figure>
     </div>
   </div>
 </section>
-<section id="referenties" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Wat klanten zeggen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">Ervaringen</h2>
-    <div class="testimonial-wrap reveal">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px;opacity:0.5;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-      <p class="testimonial-quote">Fijne barbershop met rust en aandacht, zonder gedoe en altijd netjes in elkaar gezet.</p>
-      <div class="testimonial-naam">Marco, Apeldoorn</div>
+
+<!-- De zaak -->
+<section id="zaak" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <h2 class="lg:col-span-6 kop font-black uppercase text-6xl sm:text-7xl">Binnen onder het lichtplafond</h2>
+      <p class="lg:col-span-5 lg:col-start-8 text-lg text-led/80 leading-relaxed">Je vindt ons in de overdekte galerij aan het Korianderplein. Binnen: een rij barberstoelen, donkerhouten werkplekken en dat plafond vol licht. Ook je kinderen kun je hier laten knippen.</p>
+    </div>
+    <div class="mt-14 grid grid-cols-12 gap-4">
+      <img src="assets/google-01.jpg" alt="Het interieur van Barber Hola: wachtbanken, barberstoelen en werkplekken onder het verlichte plafond" class="col-span-12 md:col-span-8 w-full aspect-[4/3] md:aspect-auto md:h-[34rem] object-cover rounded-[2rem]" loading="lazy">
+      <figure class="col-span-12 md:col-span-4 flex flex-col gap-4">
+        <img src="assets/google-06.jpg" alt="De winkelpui van Barber Hola in de galerij aan het Korianderplein" class="w-full aspect-[4/3] md:aspect-auto md:h-[24rem] object-cover object-[50%_40%] rounded-[2rem]" loading="lazy">
+        <figcaption class="text-sm text-led/70 leading-relaxed">Herken je de ronde lampen met de snor en de schaar? Dan sta je voor de deur. <br><span class="text-led">Korianderplein 19, 7322 NA Apeldoorn</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
-<section id="faq" style="background: var(--surface);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-    <summary>
-      Hoe lang duurt een standaard haarsnit?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Een klassieke snit neemt ongeveer 30 minuten. Ingewikkelder styles kunnen iets langer duren.</div>
-  </details><details>
-    <summary>
-      Kan ik zomaar binnenlopen of moet ik reserveren?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Beide kunnen, maar een afspraak garandeert je plek. Bel ons op 06 84597118 of stuur een bericht.</div>
-  </details><details>
-    <summary>
-      Welke betalingsmogelijkheden hebben jullie?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">We accepteren contant en digitaal betalen. Reken op standaardtarieven zonder verrassingen.</div>
-  </details><details>
-    <summary>
-      Zijn jullie geschikt voor kinderen?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja, we knipppen graag kinderen. Geef door wanneer je komt zodat we goed tijd inplannen.</div>
-  </details></div>
+
+<!-- Reviews -->
+<section class="bg-nacht">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-7">
+      <p class="text-messing tracking-[.3em] text-xl" aria-label="5 van 5 sterren">★★★★★</p>
+      <blockquote class="mt-6">
+        <p class="kop font-extrabold text-4xl sm:text-5xl leading-[1.02]">“Een geweldige plek met een zeer vriendelijke en professionele service. Ik heb mijn kinderen gebracht om hun haar te laten knippen en het resultaat was fantastisch. Ik raad het zeker aan. Dank aan het hele team!”</p>
+        <footer class="mt-6 text-led/70">Do96, via Google</footer>
+      </blockquote>
+    </div>
+    <div class="lg:col-span-4 lg:col-start-9 flex flex-col divide-y divide-led/10">
+      <blockquote class="py-6 first:pt-0">
+        <p class="text-lg leading-relaxed">“Een zeer professionele en vriendelijke kapper. Ik kom zeker terug.”</p>
+        <footer class="mt-2 text-sm text-led/60">nagah hoto</footer>
+      </blockquote>
+      <blockquote class="py-6">
+        <p class="text-lg leading-relaxed">“Beste kapper met veel ervaring. Heel veriendelijk behandelt❤️🙏✨”</p>
+        <footer class="mt-2 text-sm text-led/60">Mo. Nahlous</footer>
+      </blockquote>
+      <blockquote class="py-6">
+        <p class="text-lg leading-relaxed">“Aardig en vriendelijke personeel. Zeker een aanrader”</p>
+        <footer class="mt-2 text-sm text-led/60">Jerutsi Ooft</footer>
+      </blockquote>
+      <p class="pt-6 text-sm text-led/60">Gemiddeld <strong class="text-led">4,8 sterren</strong> uit 32 reviews op Google.</p>
+    </div>
   </div>
 </section>
-<section id="contact" style="background: var(--bg);">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title reveal">Bel voor afspraak</h2>
-        <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte. Wij reageren binnen 24 uur.</p>
-        <div class="contact-details reveal reveal-delay-2">
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+
+<!-- Langskomen -->
+<section id="langskomen" class="bg-muur text-nacht">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-black uppercase text-6xl sm:text-7xl">Langskomen</h2>
+      <p class="mt-5 text-lg text-nacht/75 max-w-md">Bel of app even, dan weet je zeker dat er een stoel voor je vrij is.</p>
+      <div class="mt-10 space-y-6">
+        <div>
+          <p class="text-sm text-nacht/60">Adres</p>
+          <p class="text-xl font-semibold">Korianderplein 19<br>7322 NA Apeldoorn</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Barbershop+Hola+Korianderplein+19+7322+NA+Apeldoorn" class="mt-2 inline-block font-semibold underline underline-offset-4 decoration-messing decoration-2 hover:text-plafond">Route plannen</a>
         </div>
-        <a href="tel:0684597118">06 84597118</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div>
+          <p class="text-sm text-nacht/60">Telefoon en WhatsApp</p>
+          <a href="tel:+31616110585" class="text-xl font-semibold hover:text-plafond">06 16110585</a>
         </div>
-        <a href="mailto:info@barber-hola.nl">info@barber-hola.nl</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <span>Apeldoorn</span>
-      </div>
+        <div>
+          <p class="text-sm text-nacht/60">E-mail</p>
+          <a href="mailto:info@barber-hola.nl" class="text-xl font-semibold hover:text-plafond">info@barber-hola.nl</a>
         </div>
       </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-row">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam" autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label>E-mailadres</label>
-          <input type="email" placeholder="u@voorbeeld.nl" autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label>Bericht</label>
-          <textarea placeholder="Vertel ons over uw project..."></textarea>
-        </div>
-        <button class="form-submit" type="button">Bel voor afspraak</button>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7">
+      <div class="bg-plafond text-led rounded-[2rem] p-6 sm:p-10 relative overflow-hidden">
+        <div class="honingraat absolute inset-0 opacity-[.07] pointer-events-none" aria-hidden="true"></div>
+        <h3 class="relative kop font-extrabold uppercase text-4xl">Openingstijden</h3>
+        <table class="relative mt-6 w-full text-lg tabular-nums">
+          <tbody id="tijden">
+            <tr data-dag="1"><td class="py-2.5 px-3 rounded-l-lg">Maandag</td><td class="py-2.5 px-3 text-right rounded-r-lg">12:00 tot 18:00</td></tr>
+            <tr data-dag="2"><td class="py-2.5 px-3 rounded-l-lg">Dinsdag</td><td class="py-2.5 px-3 text-right rounded-r-lg">09:00 tot 18:00</td></tr>
+            <tr data-dag="3"><td class="py-2.5 px-3 rounded-l-lg">Woensdag</td><td class="py-2.5 px-3 text-right rounded-r-lg">09:00 tot 18:00</td></tr>
+            <tr data-dag="4"><td class="py-2.5 px-3 rounded-l-lg">Donderdag</td><td class="py-2.5 px-3 text-right rounded-r-lg">09:00 tot 18:00</td></tr>
+            <tr data-dag="5"><td class="py-2.5 px-3 rounded-l-lg">Vrijdag</td><td class="py-2.5 px-3 text-right rounded-r-lg">09:00 tot 18:00</td></tr>
+            <tr data-dag="6"><td class="py-2.5 px-3 rounded-l-lg">Zaterdag</td><td class="py-2.5 px-3 text-right rounded-r-lg">09:00 tot 18:00</td></tr>
+            <tr data-dag="0"><td class="py-2.5 px-3 rounded-l-lg">Zondag</td><td class="py-2.5 px-3 text-right rounded-r-lg">12:00 tot 18:00</td></tr>
+          </tbody>
+        </table>
+        <a href="tel:+31616110585" class="relative btn bg-messing text-nacht hover:bg-led mt-8 w-full justify-center">Bel 06 16110585</a>
       </div>
     </div>
   </div>
 </section>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Barbershop Hola Apeldoorn</div>
-    <ul class="footer-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+
+</main>
+
+<footer class="bg-nacht text-led/60 text-sm">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row gap-4 justify-between">
+    <p><span class="kop font-black uppercase text-2xl text-led tracking-wide mr-3">Barber Hola</span> Korianderplein 19, Apeldoorn</p>
+    <p>Ook in Zoetermeer en aan het Mercatorplein in Apeldoorn</p>
   </div>
-  <p class="footer-copy">&copy; 2025 Barbershop Hola Apeldoorn. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
 </footer>
-<div class="demo-banner">
-  <span>&#9889; DEMO voor Barbershop Hola Apeldoorn &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
+
+<!-- Mobiel: altijd bellen of appen binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-20 bg-nacht/95 backdrop-blur border-t border-led/10 p-3 grid grid-cols-2 gap-3">
+  <a href="tel:+31616110585" class="btn bg-messing text-nacht justify-center !py-3">Bellen</a>
+  <a href="https://wa.me/31616110585" class="btn border border-led/30 justify-center !py-3">WhatsApp</a>
 </div>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Scroll reveal
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { io.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('visible'); });
-  }
-
-  // Nav scroll effect
-  var nav = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-});
+  // Markeer vandaag in de openingstijden (verrijking, zonder JS staat alles er ook).
+  const rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag', 'font-semibold');
 </script>
 </body>
 </html>
