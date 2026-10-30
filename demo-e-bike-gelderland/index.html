@@ -1,640 +1,372 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Bike Gelderland | Doetinchem</title>
-  <meta name="description" content="Kwaliteit, service en kennis in Doetinchem. Vind je perfecte elektrische fiets vandaag.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f8fafc; color: #0f172a; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-:root {
-  --accent: #fb923c; --accent-dark: #1d4ed8; --accent-light: rgba(251,146,60,0.08);
-  --bg: #f8fafc; --surface: #ffffff; --border: #e2e8f0;
-  --text: #0f172a; --muted: #64748b; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(255,255,255,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #0f172a; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #64748b; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #0f172a; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #0f172a; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,30,60,0.82) 0%, rgba(10,30,60,0.55) 60%, rgba(10,30,60,0.3) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #f8fafc, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,30,60,0.82) 0%, rgba(10,30,60,0.55) 60%, rgba(10,30,60,0.3) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #f8fafc; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #ffffff; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #0f172a; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #0f172a; border-top: 1px solid #1e293b;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #1e293b; padding-top: 24px; color: #334155; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
-</head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">E-Bike<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/34185193/pexels-photo-34185193.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">E-Bike Gelderland, jouw<br><em>e-bikespecialist</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Kwaliteit, service en kennis in Doetinchem. Vind je perfecte elektrische fiets vandaag.</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Maak een afspraak</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/35239628/pexels-photo-35239628.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="E-bike verkoop" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">E-bike</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>E-bike verkoop</h3>
-            <p>Breed assortiment elektrische fietsen voor elke behoefte.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/13122870/pexels-photo-13122870.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Onderhoud en reparatie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Onderhoud</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>Onderhoud en reparatie</h3>
-            <p>Professionele service voor batterij, motor en onderstellen.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/35305055/pexels-photo-35305055.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Accessoires en upgrades" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Accessoires</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Accessoires en upgrades</h3>
-            <p>Helmen, verlichting, slot en reserveonderdelen op voorraad.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/7674843/pexels-photo-7674843.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="E-Bike Gelderland" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          
-        </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/7698800/pexels-photo-7698800.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/9068384/pexels-photo-9068384.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
-      </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">E-Bike Gelderland</h2>
-        <p class="reveal reveal-delay-1">E-Bike Gelderland is dé specialist voor elektrische fietsen in Doetinchem. Met jarenlange ervaring helpen we je bij de keuze van een e-bike die perfect aansluit bij je leven. Of je nu woon-, werk- of recreatief fietst, we zorgen dat je fijt, veilig en comfortabel rijdt..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>Lokale kennis van Gelderse fietsroutes</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Snelle reparatie en serviceafspraken</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Eerlijke prijzen zonder veel omhaal</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"Ze weten echt waar ze over spreken en hebben me goed geholpen bij het kiezen van mijn eerste e-bike."</p>
-      <div class="testimonial-naam">Erik Winters</div>
-      <div class="testimonial-functie">Klant, Doetinchem</div>
-    </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Welke merken e-bikes hebben jullie?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">We voeren toonaangevende merken met sterke reputatie. Kom langs voor het volledige aanbod en demo-ritten.</div>
-    </details><details>
-      <summary>Kunnen jullie mijn e-bike repareren?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja. Motor, batterij, versnelling, remmen, wielen. Bel 085 483 2800 voor de snelste afhandeling.</div>
-    </details><details>
-      <summary>Hoelang gaat een batterij mee?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">3 tot 5 jaar bij correct gebruik. Wij informeren je graag over onderhoud en vervangingsopties.</div>
-    </details><details>
-      <summary>Bieden jullie garantie op e-bikes?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Alle nieuwe fietsen krijgen fabrikantgarantie. Kijk op onze site of bel voor precieze voorwaarden.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met E-Bike Gelderland voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Maak een afspraak &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">E-Bike<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">E-bike verkoop</a></li><li><a href="diensten.html">Onderhoud en reparatie</a></li><li><a href="diensten.html">Accessoires en upgrades</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="tel:0854832800">085 483 2800</a></li><li><a href="mailto:info@ebikegelderland.nl">info@ebikegelderland.nl</a></li><li><span>Doetinchem</span></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2025 E-Bike Gelderland. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
-</footer>
-<div class="demo-banner"><span>&#9889; DEMO voor E-Bike Gelderland &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Bike Gelderland, Doetinchem | E-bikes, Van Raam, scootmobielen en brommobielen</title>
+<meta name="description" content="E-Bike Gelderland in Doetinchem: e-bikes, aangepaste fietsen van Van Raam, scootmobielen en rijbewijsvrije auto's. Advies, proefrijden, werkplaats en haal- en brengservice.">
+<link rel="icon" href="assets/site-01.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
-
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper: '#F2F4F6', ink: '#15243B', inksoft: '#4A5A70', line: '#D4DAE1', mist: '#E3E8EE',
+        oranje: { DEFAULT: '#E8671E', dark: '#C8540F' }
+      },
+      fontFamily: {
+        kop: ['Archivo', 'system-ui', 'sans-serif'],
+        tekst: ['"Atkinson Hyperlegible"', 'system-ui', 'sans-serif']
+      }
     }
   }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  }
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
-
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
-    }
-  }
-});
+}
 </script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-size: 19px; }
+  .kop { font-family: Archivo, system-ui, sans-serif; font-stretch: 118%; letter-spacing: -0.01em; }
+  .kop-smal, .cijfer { font-family: Archivo, system-ui, sans-serif; font-stretch: 100%; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  a, button { transition: background-color .2s, color .2s, border-color .2s, transform .2s; }
+  a:active, button:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #E8671E; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+</head>
+<body class="bg-paper text-ink font-tekst antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="bg-ink text-white/85 text-[14px] text-center px-4 py-2">
+  Demo voor E-Bike Gelderland, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<header class="bg-white border-b border-line sticky top-0 z-40">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 h-[76px] md:h-[88px] flex items-center gap-6">
+    <a href="#" class="flex items-center gap-3 shrink-0" aria-label="E-Bike Gelderland, naar boven">
+      <img src="assets/site-01.png" alt="Logo E-Bike Gelderland" class="h-11 md:h-14 w-auto">
+      <span class="kop font-extrabold text-[17px] md:text-[19px] leading-[1.05]">E-Bike<br>Gelderland</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[17px] ml-6" aria-label="Hoofdmenu">
+      <a href="#aanbod" class="hover:text-oranje-dark">Aanbod</a>
+      <a href="#service" class="hover:text-oranje-dark">Service</a>
+      <a href="#aangepast" class="hover:text-oranje-dark">Aangepaste fietsen</a>
+      <a href="#ervaringen" class="hover:text-oranje-dark">Ervaringen</a>
+      <a href="#bezoek" class="hover:text-oranje-dark">Bezoek</a>
+    </nav>
+    <div class="ml-auto flex items-center gap-4">
+      <a href="tel:+31854832800" class="hidden md:block text-right leading-tight">
+        <span class="block text-[14px] text-inksoft">Bel ons</span>
+        <span class="kop-smal font-bold text-[20px] tabular-nums cijfer">085 483 2800</span>
+      </a>
+      <a href="#bezoek" class="bg-oranje hover:bg-oranje-dark text-white font-bold rounded-md px-4 md:px-5 py-3 text-[16px] md:text-[17px]">Afspraak maken</a>
+    </div>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="max-w-[1240px] mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-14 md:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+  <div class="lg:col-span-6">
+    <p class="text-[18px] text-inksoft mb-5">Fietsenwinkel en werkplaats in Doetinchem</p>
+    <h1 class="kop font-black text-[44px] sm:text-[60px] lg:text-[72px] leading-[0.98]">Mobiel blijven, zonder gedoe.</h1>
+    <p class="mt-7 text-[20px] md:text-[22px] leading-[1.55] max-w-[34ch] text-ink/85">
+      Goede e-bikes, aangepaste fietsen en scootmobielen, met uitleg in gewone woorden. Kom rustig kijken en probeer alles uit.
+    </p>
+    <div class="mt-9 flex flex-col sm:flex-row gap-3">
+      <a href="tel:+31854832800" class="inline-flex items-center justify-center gap-3 bg-oranje hover:bg-oranje-dark text-white font-bold rounded-md px-7 py-4 text-[19px]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Bel <span class="cijfer">085 483 2800</span>
+      </a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Rozengaardseweg+21+7001+DN+Doetinchem" class="inline-flex items-center justify-center border-2 border-ink hover:bg-ink hover:text-white font-bold rounded-md px-7 py-4 text-[19px]">Route naar de showroom</a>
+    </div>
+    <dl class="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3 text-[17px] max-w-[520px] border-t border-line pt-6">
+      <div><dt class="text-inksoft">Di t/m vr</dt><dd class="font-bold tabular-nums cijfer">09:00 tot 18:00</dd></div>
+      <div><dt class="text-inksoft">Zaterdag</dt><dd class="font-bold tabular-nums cijfer">10:00 tot 16:00</dd></div>
+      <div><dt class="text-inksoft">Zo en ma</dt><dd class="font-bold">Gesloten</dd></div>
+    </dl>
+  </div>
+  <figure class="lg:col-span-6 relative">
+    <img src="assets/google-04.png" alt="Een crèmekleurige Tenways e-bike in de zonnige showroom van E-Bike Gelderland" class="w-full aspect-[4/3.6] object-cover object-[50%_60%] rounded-lg">
+    <figcaption class="absolute left-0 bottom-0 bg-white rounded-tr-lg rounded-bl-lg px-5 py-4 flex items-center gap-4">
+      <span class="kop font-black text-[34px] leading-none tabular-nums cijfer">4,6</span>
+      <span class="text-[16px] leading-snug"><span class="text-oranje tracking-[0.1em]" aria-hidden="true">★★★★★</span><br>188 reviews op Google</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- Aanbod -->
+<section id="aanbod" class="bg-white border-y border-line">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="grid lg:grid-cols-12 gap-6 mb-10 md:mb-14">
+      <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02] lg:col-span-7">Waar bent u naar op zoek?</h2>
+      <p class="lg:col-span-5 text-[19px] leading-relaxed text-inksoft lg:pt-3">We verkopen alleen wat we zelf durven aan te raden. In de showroom staat alles klaar om te proberen.</p>
+    </div>
+
+    <ul class="border-t-2 border-ink">
+      <li class="grid md:grid-cols-12 gap-5 md:gap-8 py-8 md:py-10 border-b border-line items-center">
+        <div class="md:col-span-4">
+          <h3 class="kop font-extrabold text-[28px] md:text-[36px] leading-[1.05]">E-bikes</h3>
+          <p class="mt-3 text-[18px] text-inksoft">Levit, Tenways, Vyber, Navee en meer</p>
+        </div>
+        <p class="md:col-span-3 text-[18px] leading-relaxed">Voor elke dag en voor lange tochten. We helpen u kiezen en stellen de fiets op u af.</p>
+        <img src="assets/google-07.png" alt="Levit e-bikes in de showroom" class="md:col-span-5 w-full aspect-[16/10] object-cover object-[50%_65%] rounded-md">
+      </li>
+      <li class="grid md:grid-cols-12 gap-5 md:gap-8 py-8 md:py-10 border-b border-line items-center">
+        <div class="md:col-span-4">
+          <h3 class="kop font-extrabold text-[28px] md:text-[36px] leading-[1.05]">Aangepaste fietsen</h3>
+          <p class="mt-3 text-[18px] text-inksoft">Van Raam driewielers, duofietsen, tandems en rolstoelfietsen</p>
+        </div>
+        <p class="md:col-span-3 text-[18px] leading-relaxed">Zelfstandig of samen blijven fietsen, ook als een gewone fiets niet meer gaat. <a href="#aangepast" class="underline underline-offset-4 decoration-oranje decoration-2 hover:text-oranje-dark">Lees meer</a></p>
+        <img src="assets/site-02.jpg" alt="Een blauwe Van Raam Easy Rider driewieler op een tuinpad" class="md:col-span-5 w-full aspect-[16/10] object-cover rounded-md">
+      </li>
+      <li class="grid md:grid-cols-12 gap-5 md:gap-8 py-8 md:py-10 border-b border-line items-center">
+        <div class="md:col-span-4">
+          <h3 class="kop font-extrabold text-[28px] md:text-[36px] leading-[1.05]">Scootmobielen en hulpmiddelen</h3>
+          <p class="mt-3 text-[18px] text-inksoft">Scootmobielen, rollators en meer</p>
+        </div>
+        <p class="md:col-span-3 text-[18px] leading-relaxed">Zelf boodschappen doen en op visite gaan. We laten u rustig zien wat bij u past.</p>
+        <img src="assets/site-03.jpg" alt="Rollator, scootmobielen en een bakfiets in de showroom" class="md:col-span-5 w-full aspect-[16/10] object-cover object-[35%_50%] rounded-md">
+      </li>
+      <li class="grid md:grid-cols-12 gap-5 md:gap-8 py-8 md:py-10 items-center">
+        <div class="md:col-span-4">
+          <h3 class="kop font-extrabold text-[28px] md:text-[36px] leading-[1.05]">Brommobielen en rijbewijsvrije auto's</h3>
+          <p class="mt-3 text-[18px] text-inksoft">Elektrisch, onder andere de Eli ZERO</p>
+        </div>
+        <p class="md:col-span-3 text-[18px] leading-relaxed">Droog en elektrisch op pad, ook zonder autorijbewijs.</p>
+        <img src="assets/site-04.webp" alt="Een witte Eli ZERO elektrische brommobiel op een kinderkopjesstraat" class="md:col-span-5 w-full aspect-[16/10] object-cover rounded-md">
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Service -->
+<section id="service" class="bg-ink text-white">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02]">Wij ontzorgen uw mobiliteit.</h2>
+      <p class="mt-6 text-[19px] leading-relaxed text-white/80 max-w-[40ch]">Van de eerste vraag tot het onderhoud jaren later: u heeft één adres in Doetinchem. We leggen het simpel uit, zonder moeilijke woorden.</p>
+      <img src="assets/google-02.jpg" alt="De showroom met de grote houten tafel waar klanten advies krijgen" class="mt-10 w-full aspect-[4/3] object-cover rounded-md">
+    </div>
+    <ol class="lg:col-span-7 lg:pl-8 space-y-0">
+      <li class="border-t border-white/20 py-8 grid grid-cols-[3rem_1fr] gap-4">
+        <span class="kop font-black text-oranje text-[26px] leading-none tabular-nums cijfer">1</span>
+        <div>
+          <h3 class="kop font-bold text-[24px] md:text-[28px]">Kiezen</h3>
+          <p class="mt-2 text-[18px] leading-relaxed text-white/80">Aan de grote tafel in de showroom bespreken we hoe u fietst, waar u heen wilt en wat u prettig vindt.</p>
+        </div>
+      </li>
+      <li class="border-t border-white/20 py-8 grid grid-cols-[3rem_1fr] gap-4">
+        <span class="kop font-black text-oranje text-[26px] leading-none tabular-nums cijfer">2</span>
+        <div>
+          <h3 class="kop font-bold text-[24px] md:text-[28px]">Proefrijden</h3>
+          <p class="mt-2 text-[18px] leading-relaxed text-white/80">Eerst voelen, dan beslissen. Wilt u een bepaald model proberen? Bel even vooraf, dan staat het klaar.</p>
+        </div>
+      </li>
+      <li class="border-t border-white/20 py-8 grid grid-cols-[3rem_1fr] gap-4">
+        <span class="kop font-black text-oranje text-[26px] leading-none tabular-nums cijfer">3</span>
+        <div>
+          <h3 class="kop font-bold text-[24px] md:text-[28px]">Onderhoud en reparatie</h3>
+          <p class="mt-2 text-[18px] leading-relaxed text-white/80">Onze eigen werkplaats is open van dinsdag tot en met vrijdag, van <span class="cijfer">09:00</span> tot <span class="cijfer">18:00</span>. Ook voor Van Raam en onderdelen.</p>
+        </div>
+      </li>
+      <li class="border-y border-white/20 py-8 grid grid-cols-[3rem_1fr] gap-4">
+        <span class="kop font-black text-oranje text-[26px] leading-none tabular-nums cijfer">4</span>
+        <div>
+          <h3 class="kop font-bold text-[24px] md:text-[28px]">Haal- en brengservice</h3>
+          <p class="mt-2 text-[18px] leading-relaxed text-white/80">Kunt u uw fiets niet zelf brengen? Wij halen hem op en brengen hem terug, tegen een kleine vergoeding.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Aangepaste fietsen -->
+<section id="aangepast" class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-24">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+    <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
+      <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02]">Een fiets die past bij hoe u wilt fietsen.</h2>
+      <p class="mt-6 text-[19px] leading-relaxed text-inksoft">Een andere zithouding, een lage instap, drie wielen of samen op één fiets. We bespreken de instap, de zitpositie, de bediening en of u elektrische ondersteuning wilt.</p>
+      <img src="assets/google-05.jpg" alt="Een rij Van Raam fietsen in de showroom" class="mt-8 w-full aspect-[4/3] object-cover object-[60%_50%] rounded-md">
+    </div>
+    <div class="lg:col-span-7">
+      <dl class="divide-y divide-line border-y border-line">
+        <div class="py-6 md:grid md:grid-cols-[14rem_1fr] md:gap-6">
+          <dt class="kop-smal font-bold text-[21px]">Driewielfietsen</dt>
+          <dd class="mt-1 md:mt-0 text-[18px] leading-relaxed text-ink/80">Blijft bij stilstand vanzelf staan. Met een gewone zadelzit, zoals de Van Raam Maxi, of een stoel met rugsteun, zoals de Easy Rider.</dd>
+        </div>
+        <div class="py-6 md:grid md:grid-cols-[14rem_1fr] md:gap-6">
+          <dt class="kop-smal font-bold text-[21px]">Duofietsen en tandems</dt>
+          <dd class="mt-1 md:mt-0 text-[18px] leading-relaxed text-ink/80">Naast elkaar op de Fun2Go, achter elkaar op de Twinny, of met uw kind voorop op de Kivo.</dd>
+        </div>
+        <div class="py-6 md:grid md:grid-cols-[14rem_1fr] md:gap-6">
+          <dt class="kop-smal font-bold text-[21px]">Lage instap</dt>
+          <dd class="mt-1 md:mt-0 text-[18px] leading-relaxed text-ink/80">Voor als op- en afstappen lastiger wordt. We kijken ook naar zithoogte, stuur en pedalen.</dd>
+        </div>
+        <div class="py-6 md:grid md:grid-cols-[14rem_1fr] md:gap-6">
+          <dt class="kop-smal font-bold text-[21px]">Rolstoelfietsen</dt>
+          <dd class="mt-1 md:mt-0 text-[18px] leading-relaxed text-ink/80">De passagier zit op de fiets, of blijft in de eigen rolstoel op een plateau. We bespreken de overstap en de bediening met de begeleider.</dd>
+        </div>
+        <div class="py-6 md:grid md:grid-cols-[14rem_1fr] md:gap-6">
+          <dt class="kop-smal font-bold text-[21px]">Scootmobielfietsen</dt>
+          <dd class="mt-1 md:mt-0 text-[18px] leading-relaxed text-ink/80">Zoals de Van Raam Easy Go: zelf fietsen, met trapondersteuning of elektrisch rijden zonder te trappen.</dd>
+        </div>
+        <div class="py-6 md:grid md:grid-cols-[14rem_1fr] md:gap-6">
+          <dt class="kop-smal font-bold text-[21px]">Personenvervoer</dt>
+          <dd class="mt-1 md:mt-0 text-[18px] leading-relaxed text-ink/80">Transportfietsen zoals de riksja, om passagiers mee te nemen terwijl de begeleider fietst.</dd>
+        </div>
+      </dl>
+      <div class="mt-10 bg-white border border-line rounded-lg p-6 md:p-8">
+        <h3 class="kop font-bold text-[22px] md:text-[26px]">Iets nodig dat niet standaard is?</h3>
+        <p class="mt-3 text-[18px] leading-relaxed text-ink/80">Voetenbakjes, een aangepast stuur, een andere stoel of een rollatorhouder: we kijken welke opties op uw fiets passen. Zit het er niet tussen, dan zoeken we samen met onze engineer naar een oplossing.</p>
+        <a href="tel:+31854832800" class="mt-6 inline-flex bg-ink hover:bg-ink/85 text-white font-bold rounded-md px-6 py-3.5 text-[18px]">Bel voor advies of een proefrit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Showroom -->
+<section class="bg-white border-y border-line">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="grid lg:grid-cols-12 gap-6 mb-10">
+      <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02] lg:col-span-7">Kom rustig rondkijken.</h2>
+      <p class="lg:col-span-5 text-[19px] leading-relaxed text-inksoft lg:pt-3">Een grote, lichte showroom aan de Rozengaardseweg. Alles staat klaar om te proberen.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <img src="assets/google-06.jpg" alt="Rijen e-bikes op houten plateaus langs de glazen pui" class="col-span-2 md:col-span-8 md:row-span-2 w-full h-full aspect-[4/3] md:aspect-auto object-cover rounded-md">
+      <img src="assets/google-01.jpg" alt="De gevel van E-Bike Gelderland met twee elektrische brommobielen ervoor" class="md:col-span-4 w-full aspect-[4/3] object-cover object-[45%_60%] rounded-md">
+      <img src="assets/google-08.jpg" alt="Scootmobielen en de hoek met leenfietsen" class="md:col-span-4 w-full aspect-[4/3] object-cover rounded-md">
+    </div>
+  </div>
+</section>
+
+<!-- Ervaringen -->
+<section id="ervaringen" class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-24">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+    <div class="lg:col-span-4">
+      <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02]">Wat klanten zeggen.</h2>
+      <div class="mt-8 flex items-baseline gap-4">
+        <span class="kop font-black text-[72px] leading-none tabular-nums cijfer">4,6</span>
+        <span class="text-[18px] leading-snug"><span class="text-oranje tracking-[0.1em]" aria-hidden="true">★★★★★</span><br>uit 188 Google-reviews</span>
+      </div>
+      <p class="mt-6 text-[18px] text-inksoft"><strong class="text-ink tabular-nums cijfer">91,18%</strong> van onze klanten beveelt ons aan.</p>
+      <blockquote class="mt-8 border-l-4 border-oranje pl-5">
+        <p class="text-[19px] leading-relaxed">"Een goed advies. Open en eerlijke antwoorden. Zeker een aanrader voor anderen om eens langs te gaan!!"</p>
+        <footer class="mt-2 text-[16px] text-inksoft">Heer Te Winkel, cijfer 10</footer>
+      </blockquote>
+    </div>
+    <div class="lg:col-span-8 grid md:grid-cols-2 gap-4 md:gap-5 items-start">
+      <figure class="bg-white border border-line rounded-lg p-6 md:p-7">
+        <blockquote class="text-[18px] leading-relaxed">"Klantgericht en goede service. Elektrische fiets gekocht maar het stuur kon niet dichter naar me toe komen doordat ik graag rechtop zit en niet één van de langste ben. Er is toen naar een oplossing gezocht, er kon een nieuwe stuurstanghouder op gemonteerd worden waardoor het stuur meer richting mij kwam. ..."</blockquote>
+        <figcaption class="mt-5 flex justify-between text-[16px]"><span class="font-bold">Rick &amp;Euge</span><span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+      </figure>
+      <figure class="bg-white border border-line rounded-lg p-6 md:p-7">
+        <blockquote class="text-[18px] leading-relaxed">"We hebben een duo-fiets en een gewone fiets gehuurd voor 1 dag. Goede communicatie via de mail, vriendelijke service bij de 'fysieke' reservering én bij het ophalen van de fietsen. Duidelijke uitleg gekregen en we hebben een top dag gehad. Alleen maar positief!"</blockquote>
+        <figcaption class="mt-5 flex justify-between text-[16px]"><span class="font-bold">Dianne Wanga-Vink</span><span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+      </figure>
+      <figure class="bg-white border border-line rounded-lg p-6 md:p-7">
+        <blockquote class="text-[18px] leading-relaxed">"Als je als Boshuus, aangepast vakantiehuis van het Ronald McDonald Kinderfonds, een Van Raam rolstoelfiets geschonken krijgt, ben je meer dan dankbaar. ..."</blockquote>
+        <figcaption class="mt-5 flex justify-between text-[16px]"><span class="font-bold">Margo Braafhart</span><span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+      </figure>
+      <figure class="bg-white border border-line rounded-lg p-6 md:p-7">
+        <blockquote class="text-[18px] leading-relaxed">"Ben heel blij met mijn fiets. Hele goede service. Stelden ter plekke even versnelling af. Goede uitleg heel belangrijk. Al met al heel tevreden top👍"</blockquote>
+        <figcaption class="mt-5 flex justify-between text-[16px]"><span class="font-bold">Henk Van Duren</span><span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Merken -->
+<section class="border-y border-line bg-mist">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-10">
+    <h2 class="text-[17px] text-inksoft shrink-0">Merken in de showroom</h2>
+    <p class="kop font-extrabold text-[22px] md:text-[28px] leading-snug">Van Raam <span class="text-line">/</span> Levit <span class="text-line">/</span> Tenways <span class="text-line">/</span> Vyber <span class="text-line">/</span> Navee <span class="text-line">/</span> Eli</p>
+  </div>
+</section>
+
+<!-- Bezoek -->
+<section id="bezoek" class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-24">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-14">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02]">Langskomen of afspraak maken.</h2>
+      <p class="mt-6 text-[19px] leading-relaxed text-inksoft max-w-[42ch]">Binnenlopen mag altijd. Wilt u een bepaalde fiets proberen of zeker weten dat er tijd voor u is? Bel of mail even.</p>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-[16px] text-inksoft">Adres</h3>
+          <p class="mt-1 text-[19px] font-bold leading-snug">Rozengaardseweg 21<br><span class="cijfer">7001</span> DN Doetinchem</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rozengaardseweg+21+7001+DN+Doetinchem" class="mt-2 inline-block underline underline-offset-4 decoration-oranje decoration-2 hover:text-oranje-dark text-[17px]">Plan uw route</a>
+        </div>
+        <div>
+          <h3 class="text-[16px] text-inksoft">Telefoon en e-mail</h3>
+          <a href="tel:+31854832800" class="mt-1 block text-[19px] font-bold tabular-nums cijfer hover:text-oranje-dark">085 483 2800</a>
+          <a href="mailto:info@ebikegelderland.nl" class="block text-[19px] font-bold hover:text-oranje-dark break-all">info@ebikegelderland.nl</a>
+        </div>
+      </div>
+
+      <h3 class="mt-10 text-[16px] text-inksoft">Openingstijden</h3>
+      <table class="mt-2 w-full max-w-[420px] text-[18px] tabular-nums cijfer">
+        <tbody class="divide-y divide-line">
+          <tr><td class="py-2.5">Maandag</td><td class="py-2.5 text-right text-inksoft">Gesloten</td></tr>
+          <tr><td class="py-2.5">Dinsdag</td><td class="py-2.5 text-right font-bold">09:00 tot 18:00</td></tr>
+          <tr><td class="py-2.5">Woensdag</td><td class="py-2.5 text-right font-bold">09:00 tot 18:00</td></tr>
+          <tr><td class="py-2.5">Donderdag</td><td class="py-2.5 text-right font-bold">09:00 tot 18:00</td></tr>
+          <tr><td class="py-2.5">Vrijdag</td><td class="py-2.5 text-right font-bold">09:00 tot 18:00</td></tr>
+          <tr><td class="py-2.5">Zaterdag</td><td class="py-2.5 text-right font-bold">10:00 tot 16:00</td></tr>
+          <tr><td class="py-2.5">Zondag</td><td class="py-2.5 text-right text-inksoft">Gesloten</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form class="lg:col-span-6 bg-white border border-line rounded-lg p-6 md:p-10 self-start" onsubmit="event.preventDefault(); this.querySelector('[data-ok]').hidden = false;">
+      <h3 class="kop font-bold text-[24px] md:text-[28px]">Stuur ons een bericht</h3>
+      <p class="mt-2 text-[17px] text-inksoft">We nemen zo snel mogelijk contact met u op.</p>
+      <label class="block mt-7 text-[17px] font-bold" for="naam">Naam</label>
+      <input id="naam" name="naam" required autocomplete="name" class="mt-2 w-full border-2 border-line focus:border-ink rounded-md px-4 py-3.5 text-[18px] outline-none">
+      <label class="block mt-5 text-[17px] font-bold" for="tel">Telefoonnummer</label>
+      <input id="tel" name="tel" type="tel" required autocomplete="tel" class="mt-2 w-full border-2 border-line focus:border-ink rounded-md px-4 py-3.5 text-[18px] outline-none">
+      <label class="block mt-5 text-[17px] font-bold" for="onderwerp">Waar gaat het over?</label>
+      <select id="onderwerp" name="onderwerp" class="mt-2 w-full border-2 border-line focus:border-ink rounded-md px-4 py-3.5 text-[18px] bg-white outline-none">
+        <option>Advies of proefrit</option>
+        <option>Onderhoud of reparatie</option>
+        <option>Haal- en brengservice</option>
+        <option>Iets anders</option>
+      </select>
+      <label class="block mt-5 text-[17px] font-bold" for="bericht">Uw bericht</label>
+      <textarea id="bericht" name="bericht" rows="4" class="mt-2 w-full border-2 border-line focus:border-ink rounded-md px-4 py-3.5 text-[18px] outline-none"></textarea>
+      <button class="mt-7 w-full bg-oranje hover:bg-oranje-dark text-white font-bold rounded-md px-6 py-4 text-[19px]">Bericht versturen</button>
+      <p data-ok hidden class="mt-4 text-[17px] font-bold">Bedankt, uw bericht is verstuurd.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-ink text-white/80">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[16px]">
+    <div class="flex items-center gap-4">
+      <img src="assets/site-01.png" alt="" class="h-12 w-auto">
+      <p class="leading-snug"><span class="text-white font-bold">E-Bike Gelderland</span><br>Rozengaardseweg 21, Doetinchem</p>
+    </div>
+    <p class="leading-snug md:text-right"><a href="tel:+31854832800" class="hover:text-white cijfer">085 483 2800</a><br><a href="mailto:info@ebikegelderland.nl" class="hover:text-white">info@ebikegelderland.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-line p-3 grid grid-cols-[1fr_auto] gap-3">
+  <a href="tel:+31854832800" class="flex items-center justify-center gap-2 bg-oranje text-white font-bold rounded-md py-3.5 text-[18px]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel <span class="cijfer">085 483 2800</span>
+  </a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Rozengaardseweg+21+7001+DN+Doetinchem" class="flex items-center justify-center border-2 border-ink font-bold rounded-md px-4 text-[17px]">Route</a>
+</div>
+
 </body>
 </html>
