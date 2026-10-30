@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loodgieter in Zutphen, dag en nacht | Loodgieter Holland</title>
-<meta name="description" content="Lekkage, verstopping of cv-storing in Zutphen? Loodgieter Holland is elke dag 24 uur bereikbaar op 0575 781 035. Gemiddeld binnen 40 minuten ter plaatse.">
-<link rel="icon" href="assets/logo-oud.png">
+<title>Loodgieter Zutphen | Loodgieter Holland | 0575 781 035</title>
+<meta name="description" content="Loodgieter in Zutphen, dag en nacht bereikbaar. Lekkage, verstopping, wc ontstoppen, cv-ketel en leidingwerk. Gemiddeld binnen 40 minuten ter plaatse. Bel 0575 781 035.">
+<link rel="icon" href="assets/site-01.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,8 +14,17 @@
 tailwind.config = {
   theme: {
     extend: {
-      colors: { ink: '#11293D', deep: '#0C1F2F', blauw: '#2B7FB0', mist: '#EAF0F3', lijn: '#C8D5DD', grijs: '#55697A' },
-      fontFamily: { kop: ['"Bricolage Grotesque"', 'sans-serif'], sans: ['"Public Sans"', 'sans-serif'] },
+      colors: {
+        navy: '#15334A',
+        deep: '#0E2333',
+        logo: '#2E80B0',
+        mist: '#EEF3F6',
+        line: '#D3DEE5',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        sans: ['"Public Sans"', 'system-ui', 'sans-serif'],
+      },
     },
   },
 }
@@ -24,192 +33,319 @@ tailwind.config = {
   html { scroll-behavior: smooth; }
   h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
-  a, button { transition: background-color .2s, color .2s, transform .15s; }
-  a:active, button:active { transform: translateY(1px); }
-  :focus-visible { outline: 3px solid #2B7FB0; outline-offset: 3px; }
-  .num { font-variant-numeric: tabular-nums; }
-  @media (prefers-reduced-motion: no-preference) {
-    .js .rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
-    .js .rise-2 { animation-delay: .12s; }
-    @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  .nummer { font-variant-numeric: tabular-nums; letter-spacing: -0.035em; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible {
+    outline: 3px solid #2E80B0; outline-offset: 3px;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] .plus { transform: rotate(45deg); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
 </style>
-<script>document.documentElement.classList.add('js')</script>
 </head>
-<body class="bg-mist text-ink font-sans antialiased pb-20 md:pb-0">
+<body class="bg-mist font-sans text-deep antialiased">
 
-<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 bg-white px-4 py-2 z-50">Naar inhoud</a>
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
 
-<div class="bg-deep text-white/80 text-xs sm:text-sm">
-  <p class="max-w-6xl mx-auto px-5 py-2">Demo voor Loodgieter zutphen loodgieter holland, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-blauw">Hagenweb</a></p>
+<div class="bg-deep text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Loodgieter Zutphen - Loodgieter Holland, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-[#8FC3E2]">Hagenweb</a>
 </div>
 
-<header class="bg-mist/90 backdrop-blur sticky top-0 z-40 border-b border-lijn">
-  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-4">
+<header class="bg-navy text-white border-b border-white/10">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
     <a href="#" class="flex items-center gap-3">
-      <img src="assets/logo-oud.png" alt="" class="w-10 h-10">
-      <span class="font-kop font-bold text-lg leading-none">Loodgieter Holland<span class="block text-sm font-medium text-grijs mt-1">Zutphen</span></span>
+      <img src="assets/site-01.png" alt="Logo Loodgieter Holland" class="h-12 w-12 -m-1">
+      <span class="leading-tight">
+        <span class="block font-kop font-bold text-lg">Loodgieter Holland</span>
+        <span class="block text-sm text-white/65">Loodgieter in Zutphen</span>
+      </span>
     </a>
-    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium">
-      <a href="#diensten" class="hover:text-blauw">Diensten</a>
-      <a href="#binnenstad" class="hover:text-blauw">Oude panden</a>
-      <a href="#werkgebied" class="hover:text-blauw">Werkgebied</a>
-      <a href="#contact" class="hover:text-blauw">Contact</a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-white/80" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-white">Diensten</a>
+      <a href="#zutphen" class="hover:text-white">Zutphen</a>
+      <a href="#werkwijze" class="hover:text-white">Werkwijze</a>
+      <a href="#vragen" class="hover:text-white">Vragen</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
     </nav>
-    <a href="tel:+31575781035" class="hidden sm:inline-block whitespace-nowrap bg-blauw hover:bg-ink text-white font-semibold rounded-md px-4 py-2.5 text-[15px] num">0575 781 035</a>
+    <a href="tel:+31575781035" class="hidden sm:inline-flex items-center gap-2 rounded-md bg-white text-navy font-semibold px-4 py-2.5 hover:bg-mist active:translate-y-px transition">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      0575 781 035
+    </a>
   </div>
 </header>
 
-<main id="main">
+<main id="inhoud">
 
-  <!-- Hero -->
-  <section class="max-w-6xl mx-auto px-5 pt-10 md:pt-16 pb-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-end">
-    <div class="md:col-span-7 rise">
-      <h1 class="font-kop font-extrabold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-7xl tracking-tight">Loodgieter in Zutphen. Dag en nacht.</h1>
-      <p class="mt-6 text-lg text-grijs max-w-xl leading-relaxed">Lekkage, een verstopte afvoer of een cv-ketel die het opgeeft? Bel, en u krijgt meteen een vakman aan de lijn. Geen wachtrij, ook niet om drie uur 's nachts.</p>
-      <a href="tel:+31575781035" class="group mt-9 inline-block">
-        <span class="block text-sm font-medium text-grijs">Direct bellen</span>
-        <span class="block font-kop font-bold num text-5xl sm:text-6xl lg:text-[5.25rem] leading-none tracking-tight text-blauw group-hover:text-ink">0575 781 035</span>
+<!-- Hero -->
+<section class="bg-navy text-white overflow-hidden">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+    <div class="lg:col-span-7">
+      <h1 class="font-kop font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[16ch]">Loodgieter in Zutphen, dag en nacht.</h1>
+      <p class="mt-6 text-lg text-white/75 max-w-xl leading-relaxed">Lekkage, een verstopte wc of een ketel die het opgeeft? Bel en je hebt meteen een vakman aan de lijn. Geen wachtrij, ook niet om drie uur 's nachts.</p>
+
+      <a href="tel:+31575781035" class="group mt-10 block w-fit">
+        <span class="block text-sm text-white/60 mb-1">Bel direct</span>
+        <span class="nummer block font-kop font-extrabold text-[3.1rem] sm:text-7xl lg:text-[5.6rem] leading-none text-white group-hover:text-[#8FC3E2] transition-colors">0575 781 035</span>
       </a>
-      <dl class="mt-10 grid sm:grid-cols-3 gap-px bg-lijn border border-lijn rounded-lg overflow-hidden max-w-2xl">
-        <div class="bg-white px-4 py-3 sm:p-4"><dt class="text-sm text-grijs">Ter plaatse</dt><dd class="font-semibold mt-1">Gemiddeld 40 minuten</dd></div>
-        <div class="bg-white px-4 py-3 sm:p-4"><dt class="text-sm text-grijs">Voorrijkosten</dt><dd class="font-semibold mt-1 num">Vast, €45 tot €65</dd></div>
-        <div class="bg-white px-4 py-3 sm:p-4"><dt class="text-sm text-grijs">Garantie</dt><dd class="font-semibold mt-1">Twee jaar, op papier</dd></div>
+
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="tel:+31575781035" class="inline-flex items-center gap-2 rounded-md bg-logo px-5 py-3 font-semibold text-white hover:bg-[#3891C4] active:translate-y-px transition">Nu bellen</a>
+        <a href="mailto:info@loodgieterholland.com" class="font-medium text-white/85 underline decoration-white/30 underline-offset-4 hover:decoration-white">info@loodgieterholland.com</a>
+      </div>
+
+      <p class="mt-10 border-t border-white/15 pt-6 text-white/70 max-w-xl leading-relaxed">Gemiddeld binnen 40 minuten bij je, ook in De Hoven. Vaste voorrijkosten van 45 tot 65 euro. Twee jaar garantie op arbeid en materiaal, op papier.</p>
+    </div>
+
+    <figure class="lg:col-span-5 relative">
+      <img src="assets/site-05.jpg" alt="Monteur van Loodgieter Holland aan het werk aan een geopende cv-ketel" class="w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] object-cover object-[62%_50%] rounded-lg">
+      <figcaption class="absolute left-4 bottom-4 right-4 sm:right-auto rounded-md bg-deep/85 px-4 py-3 text-sm text-white/85">Storing aan de cv-ketel? Vaak dezelfde dag gerepareerd.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-white">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <div class="lg:sticky lg:top-10">
+        <h2 class="font-kop font-bold text-3xl sm:text-4xl tracking-tight leading-tight">Wat is er aan de hand?</h2>
+        <p class="mt-4 text-[#4A6072] leading-relaxed max-w-sm">Van een druppelende sifon tot een rioolverstopping onder een monument. Staat jouw klus er niet tussen, bel dan gewoon even.</p>
+        <img src="assets/site-10.png" alt="Loodgieter draait de sifon onder een wastafel los" class="mt-8 hidden lg:block w-full aspect-[4/3] object-cover object-left rounded-lg">
+      </div>
+    </div>
+
+    <ul class="lg:col-span-8 divide-y divide-line border-y border-line">
+      <li class="py-7 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-2 sm:gap-8">
+        <h3 class="font-kop font-bold text-xl">Lekkage</h3>
+        <p class="text-[#4A6072] leading-relaxed">We sporen de lek op met een warmtecamera en akoestische apparatuur, zodat we gericht repareren zonder onnodig hak- en breekwerk. Voor je verzekeraar krijg je een rapport met foto's en meetgegevens.</p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-2 sm:gap-8">
+        <h3 class="font-kop font-bold text-xl">Verstopping</h3>
+        <p class="text-[#4A6072] leading-relaxed">Hogedrukspuit of elektrische veerspiraal, en bij een hardnekkig geval de rioolcamera erin. Zo pakken we de oorzaak aan, niet alleen het gevolg.</p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-2 sm:gap-8">
+        <h3 class="font-kop font-bold text-xl">Wc ontstoppen</h3>
+        <p class="text-[#4A6072] leading-relaxed">Een verstopte wc kan niet wachten. We stellen eerst vast waar het zit en kiezen dan de methode die je leidingen heel laat. Vooraf hoor je wat het kost.</p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-2 sm:gap-8">
+        <h3 class="font-kop font-bold text-xl">Cv-ketel</h3>
+        <p class="text-[#4A6072] leading-relaxed">Onderhoud, reparatie en vervanging van alle gangbare merken, waaronder Intergas, Nefit, Remeha en Vaillant. De meest voorkomende onderdelen hebben we in de bus, dus vaak is het in één bezoek klaar.</p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-2 sm:gap-8">
+        <h3 class="font-kop font-bold text-xl">Rioolinspectie</h3>
+        <p class="text-[#4A6072] leading-relaxed">Met een camera door de riolering, zodat je ziet wat er speelt voordat het schade geeft.</p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-2 sm:gap-8">
+        <h3 class="font-kop font-bold text-xl">Leidingwerk</h3>
+        <p class="text-[#4A6072] leading-relaxed">Nieuwe water-, gas- en afvoerleidingen, of de oude vervangen. In monumentale panden doen we dat voorzichtig en met respect voor het pand.</p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-2 sm:gap-8">
+        <h3 class="font-kop font-bold text-xl">Dak</h3>
+        <p class="text-[#4A6072] leading-relaxed">Dakreparaties, renovaties en onderhoud, zodat het water buiten blijft.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Zutphen -->
+<section id="zutphen" class="bg-mist">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-12 items-end">
+      <div class="lg:col-span-7">
+        <h2 class="font-kop font-bold text-3xl sm:text-5xl tracking-tight leading-[1.08]">Een oude stad heeft oude leidingen.</h2>
+        <p class="mt-6 text-lg text-[#3C5466] leading-relaxed max-w-2xl">Zutphen is een van de oudste steden van Nederland. Onder de Hanzepanden liggen middeleeuwse kelders, loden leidingen en gresbuizen uit de negentiende eeuw in gemetselde putten. Werken aan een monument vraagt iets anders dan een standaard reparatie. Daarom stemmen we werk in het beschermd stadsgezicht af met de Monumentenwacht.</p>
+      </div>
+      <img src="assets/site-07.jpg" alt="Nieuwe afvoerbuis wordt in een uitgegraven sleuf aangesloten" class="lg:col-span-5 w-full aspect-[16/10] object-cover rounded-lg">
+    </div>
+
+    <h3 class="mt-20 font-kop font-bold text-2xl">Wat we per wijk tegenkomen</h3>
+    <dl class="mt-6 border-t-2 border-navy">
+      <div class="grid md:grid-cols-[14rem_1fr] gap-1 md:gap-8 py-6 border-b border-line">
+        <dt class="font-kop font-bold text-xl text-navy">Centrum</dt>
+        <dd class="text-[#3C5466] leading-relaxed max-w-3xl">Rond de Walburgiskerk en het Wijnhuis zitten nog loden leidingen en oude soldeerverbindingen die na tientallen jaren gaan lekken. Ketels staan hier soms in een kelder of onder de trap.</dd>
+      </div>
+      <div class="grid md:grid-cols-[14rem_1fr] gap-1 md:gap-8 py-6 border-b border-line">
+        <dt class="font-kop font-bold text-xl text-navy">Waterkwartier</dt>
+        <dd class="text-[#3C5466] leading-relaxed max-w-3xl">Langs de grachten geeft het hoge grondwater vaak vocht in huis.</dd>
+      </div>
+      <div class="grid md:grid-cols-[14rem_1fr] gap-1 md:gap-8 py-6 border-b border-line">
+        <dt class="font-kop font-bold text-xl text-navy">Noordveen</dt>
+        <dd class="text-[#3C5466] leading-relaxed max-w-3xl">In de huizen uit de jaren zestig en zeventig zorgen boomwortels en kalkaanslag voor verstoppingen, en is het oorspronkelijke leidingwerk vaak aan vervanging toe.</dd>
+      </div>
+      <div class="grid md:grid-cols-[14rem_1fr] gap-1 md:gap-8 py-6 border-b border-line">
+        <dt class="font-kop font-bold text-xl text-navy">Leesten</dt>
+        <dd class="text-[#3C5466] leading-relaxed max-w-3xl">Nieuwbouw met PVC-afvoeren, combiketels en vloerverwarming. Lekkages ontstaan hier vaak bij de verdeelunit, verstoppingen door vet en haar.</dd>
+      </div>
+      <div class="grid md:grid-cols-[14rem_1fr] gap-1 md:gap-8 py-6 border-b border-line">
+        <dt class="font-kop font-bold text-xl text-navy">De Hoven</dt>
+        <dd class="text-[#3C5466] leading-relaxed max-w-3xl">Aan de overkant van de IJssel, en toch gemiddeld binnen 40 minuten bij je.</dd>
+      </div>
+    </dl>
+    <p class="mt-8 text-[#3C5466]">Ook in Warnsveld, Gorssel, Lochem en Vorden ben je bij ons aan het goede adres.</p>
+  </div>
+</section>
+
+<!-- Afspraken -->
+<section class="bg-navy text-white">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 lg:py-24">
+    <h2 class="font-kop font-bold text-3xl sm:text-4xl tracking-tight max-w-xl">Waar je op kunt rekenen</h2>
+    <dl class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-10">
+      <div class="border-t border-white/25 pt-5">
+        <dt class="nummer font-kop font-extrabold text-5xl">40 min</dt>
+        <dd class="mt-3 text-white/70 leading-relaxed">Gemiddeld zo snel staan we bij je voor de deur, in alle Zutphense wijken.</dd>
+      </div>
+      <div class="border-t border-white/25 pt-5">
+        <dt class="nummer font-kop font-extrabold text-5xl">€45 tot €65</dt>
+        <dd class="mt-3 text-white/70 leading-relaxed">Vaste voorrijkosten. Geen verborgen toeslagen, en de prijs hoor je voordat we beginnen.</dd>
+      </div>
+      <div class="border-t border-white/25 pt-5">
+        <dt class="nummer font-kop font-extrabold text-5xl">2 jaar</dt>
+        <dd class="mt-3 text-white/70 leading-relaxed">Garantie op arbeid en materialen, schriftelijk vastgelegd.</dd>
+      </div>
+      <div class="border-t border-white/25 pt-5">
+        <dt class="nummer font-kop font-extrabold text-5xl">24/7</dt>
+        <dd class="mt-3 text-white/70 leading-relaxed">Bereikbaar voor spoed, ook in het weekend en 's nachts.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-white">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 lg:py-28">
+    <h2 class="font-kop font-bold text-3xl sm:text-4xl tracking-tight">Zo werken we</h2>
+    <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <li >
+        <span class="nummer font-kop font-extrabold text-6xl text-logo/30">1</span>
+        <h3 class="mt-2 font-kop font-bold text-xl">Je belt of mailt</h3>
+        <p class="mt-2 text-[#4A6072] leading-relaxed">We luisteren naar je situatie en plannen meteen een afspraak, vaak nog dezelfde dag. Bij spoed helpen we je aan de telefoon al met noodmaatregelen, zoals het afsluiten van de hoofdkraan.</p>
+      </li>
+      <li >
+        <span class="nummer font-kop font-extrabold text-6xl text-logo/30">2</span>
+        <h3 class="mt-2 font-kop font-bold text-xl">Diagnose</h3>
+        <p class="mt-2 text-[#4A6072] leading-relaxed">De monteur komt langs, zoekt de echte oorzaak en geeft een vaste prijs voordat het werk begint.</p>
+      </li>
+      <li >
+        <span class="nummer font-kop font-extrabold text-6xl text-logo/30">3</span>
+        <h3 class="mt-2 font-kop font-bold text-xl">Oplossing</h3>
+        <p class="mt-2 text-[#4A6072] leading-relaxed">We lossen het vakkundig op, met professionele apparatuur en goede materialen.</p>
+      </li>
+      <li >
+        <span class="nummer font-kop font-extrabold text-6xl text-logo/30">4</span>
+        <h3 class="mt-2 font-kop font-bold text-xl">Nazorg</h3>
+        <p class="mt-2 text-[#4A6072] leading-relaxed">Je krijgt een heldere factuur met garantie. Vragen achteraf? Bel ons gerust.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-mist">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 lg:gap-16">
+    <figure >
+      <blockquote class="font-kop font-medium text-2xl sm:text-3xl leading-snug tracking-tight">“Midden in de nacht een gesprongen leiding gehad. Binnen 40 minuten stond er iemand voor de deur. Kalm, vakkundig en met verstand van zaken de boel opgelost. Enorm geholpen.”</blockquote>
+      <figcaption class="mt-6 text-[#4A6072]"><span class="font-semibold text-deep">Sanne de Vries</span>, Zutphen</figcaption>
+    </figure>
+    <figure class="lg:mt-24">
+      <blockquote class="font-kop font-medium text-2xl sm:text-3xl leading-snug tracking-tight">“Snelle service en vakkundig werk. De loodgieter was binnen een uur ter plaatse in Zutphen en heeft het probleem snel verholpen. Zeer tevreden!”</blockquote>
+      <figcaption class="mt-6 text-[#4A6072]"><span class="font-semibold text-deep">Klant uit Zutphen</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Vragen -->
+<section id="vragen" class="bg-white">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-10">
+    <h2 class="lg:col-span-4 font-kop font-bold text-3xl sm:text-4xl tracking-tight">Vaak gevraagd</h2>
+    <div class="lg:col-span-8 border-t border-line">
+      <details class="group border-b border-line" open>
+        <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-kop font-bold text-lg">Wat kost een loodgieter in Zutphen?<span class="plus text-2xl text-logo transition-transform">+</span></summary>
+        <p class="pb-6 text-[#4A6072] leading-relaxed max-w-2xl">De voorrijkosten zijn vast: 45 tot 65 euro. Na de diagnose krijg je een vaste prijs voor de klus, voordat we beginnen. Een offerte is gratis en vrijblijvend.</p>
+      </details>
+      <details class="group border-b border-line">
+        <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-kop font-bold text-lg">Hoe snel zijn jullie er?<span class="plus text-2xl text-logo transition-transform">+</span></summary>
+        <p class="pb-6 text-[#4A6072] leading-relaxed max-w-2xl">Gemiddeld binnen 40 minuten, in alle wijken van Zutphen en ook over de IJssel in De Hoven.</p>
+      </details>
+      <details class="group border-b border-line">
+        <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-kop font-bold text-lg">Hebben jullie ervaring met monumentale panden?<span class="plus text-2xl text-logo transition-transform">+</span></summary>
+        <p class="pb-6 text-[#4A6072] leading-relaxed max-w-2xl">Ja. We werken veel in Hanzepanden, met loden leidingen en in monumentale kelders. Werk in het beschermd stadsgezicht stemmen we af met de Monumentenwacht.</p>
+      </details>
+      <details class="group border-b border-line">
+        <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-kop font-bold text-lg">Kan ik ook 's nachts of in het weekend bellen?<span class="plus text-2xl text-logo transition-transform">+</span></summary>
+        <p class="pb-6 text-[#4A6072] leading-relaxed max-w-2xl">Ja, we zijn 24/7 bereikbaar. Spoedtarieven buiten kantoortijd hoor je vooraf, zodat je niet voor verrassingen komt te staan.</p>
+      </details>
+      <details class="group border-b border-line">
+        <summary class="flex cursor-pointer items-center justify-between gap-6 py-5 font-kop font-bold text-lg">Krijg ik garantie?<span class="plus text-2xl text-logo transition-transform">+</span></summary>
+        <p class="pb-6 text-[#4A6072] leading-relaxed max-w-2xl">Twee jaar garantie op arbeid en materialen, schriftelijk vastgelegd.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-navy text-white">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop font-bold text-3xl sm:text-5xl tracking-tight leading-[1.08]">Even bellen is vaak de snelste weg.</h2>
+      <a href="tel:+31575781035" class="nummer mt-8 block w-fit font-kop font-extrabold text-5xl sm:text-6xl hover:text-[#8FC3E2] transition-colors">0575 781 035</a>
+      <p class="mt-6 text-white/70 max-w-md leading-relaxed">Liever mailen of een offerte aanvragen? Stuur een bericht naar <a href="mailto:info@loodgieterholland.com" class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">info@loodgieterholland.com</a> of gebruik het formulier.</p>
+      <dl class="mt-10 grid grid-cols-2 gap-6 max-w-md border-t border-white/15 pt-6 text-sm">
+        <div><dt class="text-white/55">Bereikbaar</dt><dd class="mt-1 text-white">24/7, ook in het weekend</dd></div>
+        <div><dt class="text-white/55">Werkgebied</dt><dd class="mt-1 text-white">Zutphen, Warnsveld, Gorssel, Lochem en Vorden</dd></div>
       </dl>
     </div>
-    <figure class="md:col-span-5 rise rise-2">
-      <img src="assets/site-05.jpg" alt="Monteur aan het werk aan een cv-ketel in een kast" class="w-full aspect-[4/5] object-cover object-[62%_50%] rounded-xl">
-      <figcaption class="mt-3 text-sm text-grijs">Onderhoud, reparatie en vervanging van cv-ketels, alle gangbare merken.</figcaption>
-    </figure>
-  </section>
 
-  <!-- Diensten -->
-  <section id="diensten" class="bg-white border-y border-lijn">
-    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-10">
-      <div class="md:col-span-4">
-        <div class="md:sticky md:top-28">
-          <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-tight leading-tight">Wat is er aan de hand?</h2>
-          <p class="mt-4 text-grijs max-w-xs">Staat uw klus er niet tussen? Bel gerust, dan kijken we samen wat er nodig is.</p>
-          <a href="tel:+31575781035" class="mt-6 inline-block font-semibold text-blauw hover:text-ink underline underline-offset-4 num">Bel 0575 781 035</a>
-        </div>
+    <form class="lg:col-span-6 rounded-lg bg-white p-6 sm:p-8 text-deep" action="mailto:info@loodgieterholland.com" method="post" enctype="text/plain">
+      <h3 class="font-kop font-bold text-xl">Offerte aanvragen</h3>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block text-sm font-medium">Naam
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-base">
+        </label>
+        <label class="block text-sm font-medium">Telefoon
+          <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-base">
+        </label>
       </div>
-      <ul class="md:col-span-8 divide-y divide-lijn border-y border-lijn">
-        <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="font-kop font-bold text-xl">Lekkage</h3><p class="text-grijs">Wij sporen het lek op met thermografische en akoestische apparatuur, zodat er niet onnodig gehakt en gebroken hoeft te worden.</p></li>
-        <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="font-kop font-bold text-xl">Verstopping</h3><p class="text-grijs">Gootsteen, douche of riool: met hogedrukspuit of veerspiraal weer vrij, en bij de bron aangepakt.</p></li>
-        <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="font-kop font-bold text-xl">WC ontstoppen</h3><p class="text-grijs">Een verstopt toilet kan niet wachten. Wij komen met professioneel gereedschap en lossen het netjes op.</p></li>
-        <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="font-kop font-bold text-xl">CV-ketel</h3><p class="text-grijs">Installatie, onderhoud en storingen. Van Intergas en Remeha tot Vaillant en Nefit.</p></li>
-        <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="font-kop font-bold text-xl">Rioolinspectie</h3><p class="text-grijs">Met een camera door de leiding, zodat de oorzaak zichtbaar wordt voordat er schade ontstaat.</p></li>
-        <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="font-kop font-bold text-xl">Leiding leggen</h3><p class="text-grijs">Nieuwe en vervangende water-, gas- en afvoerleidingen, ook loden leidingen in oude panden.</p></li>
-        <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="font-kop font-bold text-xl">Dakdekken</h3><p class="text-grijs">Dakreparaties, renovaties en onderhoud, zodat het binnen droog blijft.</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Uitgelicht -->
-  <section class="max-w-6xl mx-auto px-5 py-16 md:py-24 space-y-16 md:space-y-24">
-    <article class="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
-      <img src="assets/site-03.jpg" alt="Loodgieter ligt onder een keukenkastje en werkt aan de afvoer" class="w-full aspect-[4/3] object-cover rounded-xl">
-      <div>
-        <h3 class="font-kop font-bold text-3xl md:text-4xl tracking-tight">Een lekkage, gevonden zonder hakwerk</h3>
-        <p class="mt-4 text-grijs leading-relaxed max-w-prose">In het Centrum lekken vaak nog loden leidingen en oude soldeerverbindingen. In het Waterkwartier speelt grondwater mee, in Leesten zit het lek vaak bij de verdeler van de vloerverwarming. Wij zoeken gericht en repareren alleen waar het nodig is.</p>
-        <p class="mt-3 text-grijs leading-relaxed max-w-prose">Voor uw verzekeraar krijgt u een rapport met foto's en meetgegevens.</p>
-      </div>
-    </article>
-    <article class="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
-      <img src="assets/site-10.png" alt="Loodgieter draait met een tang een sifon onder de wastafel los" class="w-full aspect-[4/3] object-cover rounded-xl md:order-2">
-      <div>
-        <h3 class="font-kop font-bold text-3xl md:text-4xl tracking-tight">Verstopt? Wij zoeken de oorzaak</h3>
-        <p class="mt-4 text-grijs leading-relaxed max-w-prose">In de binnenstad liggen nog gresleidingen uit de negentiende eeuw in gemetselde putten. In Noordveen zijn het vaak boomwortels en kalk, in Leesten vet en haar in de pvc-afvoer.</p>
-        <p class="mt-3 text-grijs leading-relaxed max-w-prose">Bij hardnekkige gevallen zetten we een rioolcamera in. Zo is het probleem echt weg, niet alleen voor even.</p>
-      </div>
-    </article>
-    <article class="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
-      <img src="assets/site-09.jpg" alt="Leidingwerk met afsluiter naar een radiator" class="w-full aspect-[4/3] object-cover rounded-xl">
-      <div>
-        <h3 class="font-kop font-bold text-3xl md:text-4xl tracking-tight">Warm de winter door</h3>
-        <p class="mt-4 text-grijs leading-relaxed max-w-prose">In oude panden hangt de ketel soms in een kelder of onder de trap. In nieuwere wijken staan combiketels en hybride warmtepompen met vloerverwarming. Wij onderhouden, repareren en vervangen het allemaal.</p>
-        <p class="mt-3 text-grijs leading-relaxed max-w-prose">Storing? De meest voorkomende onderdelen hebben we bij ons, dus vaak is de verwarming dezelfde dag weer aan.</p>
-      </div>
-    </article>
-  </section>
-
-  <!-- Binnenstad + werkgebied -->
-  <section id="binnenstad" class="bg-ink text-white">
-    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-12">
-      <div class="md:col-span-7">
-        <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-tight leading-tight">Een oud pand vraagt een andere aanpak</h2>
-        <p class="mt-6 text-white/75 text-lg leading-relaxed max-w-prose">Zutphen is een van de oudste steden van Nederland. Achter de gevels in de binnenstad zitten middeleeuwse kelders, loden leidingen en Hanzepanden die geen standaard reparatie verdragen.</p>
-        <p class="mt-4 text-white/75 text-lg leading-relaxed max-w-prose">Onze monteurs werken met respect voor de oorspronkelijke bouw en kiezen oplossingen die jaren meegaan. Werken we in beschermd stadsgezicht, dan stemmen we af met de Monumentenwacht.</p>
-      </div>
-      <div id="werkgebied" class="md:col-span-5 md:border-l md:border-white/15 md:pl-10">
-        <h3 class="font-kop font-bold text-2xl">Werkgebied</h3>
-        <p class="mt-3 text-white/75">Alle wijken van Zutphen:</p>
-        <p class="mt-2 font-kop text-2xl md:text-3xl font-medium leading-snug">Centrum, Waterkwartier, Noordveen, Leesten en De Hoven, aan de overkant van de IJssel.</p>
-        <p class="mt-6 text-white/75">En daarbuiten:</p>
-        <p class="mt-2 font-kop text-2xl md:text-3xl font-medium leading-snug">Warnsveld, Gorssel, Lochem en Vorden.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Afspraken -->
-  <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
-    <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-tight max-w-2xl">Wat u van ons mag verwachten</h2>
-    <dl class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
-      <div class="border-t-2 border-ink pt-4"><dt class="font-kop font-bold text-xl">Snel bij u</dt><dd class="mt-2 text-grijs">Gemiddeld binnen 40 minuten ter plaatse, in alle wijken, ook in De Hoven.</dd></div>
-      <div class="border-t-2 border-ink pt-4"><dt class="font-kop font-bold text-xl">Vaste voorrijkosten</dt><dd class="mt-2 text-grijs num">Tussen €45 en €65, zonder verborgen toeslagen.</dd></div>
-      <div class="border-t-2 border-ink pt-4"><dt class="font-kop font-bold text-xl">Altijd bereikbaar</dt><dd class="mt-2 text-grijs">Elke dag 24 uur, ook in het weekend en midden in de nacht.</dd></div>
-      <div class="border-t-2 border-ink pt-4"><dt class="font-kop font-bold text-xl">Twee jaar garantie</dt><dd class="mt-2 text-grijs">Op arbeid en materialen, schriftelijk vastgelegd.</dd></div>
-      <div class="border-t-2 border-ink pt-4"><dt class="font-kop font-bold text-xl">Verstand van monumenten</dt><dd class="mt-2 text-grijs">Ervaring met Hanzepanden, loden leidingen en monumentale kelders.</dd></div>
-      <div class="border-t-2 border-ink pt-4"><dt class="font-kop font-bold text-xl">Eén aanspreekpunt</dt><dd class="mt-2 text-grijs">Eén loodgieter voor heel Zutphen, van lekkage tot dak.</dd></div>
-    </dl>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="bg-white border-t border-lijn">
-    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-12">
-      <div class="md:col-span-6">
-        <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-tight">Even bellen is vaak het snelst</h2>
-        <a href="tel:+31575781035" class="mt-6 inline-block font-kop font-bold num text-4xl sm:text-5xl text-blauw hover:text-ink">0575 781 035</a>
-        <dl class="mt-8 space-y-5">
-          <div><dt class="text-sm text-grijs">E-mail</dt><dd><a href="mailto:info@loodgieterholland.com" class="font-semibold hover:text-blauw underline underline-offset-4 decoration-lijn">info@loodgieterholland.com</a></dd></div>
-          <div><dt class="text-sm text-grijs">Adres</dt><dd class="font-semibold">Litauensestraat 26, 7202 CN Zutphen</dd></div>
-          <div><dt class="text-sm text-grijs">Openingstijden</dt><dd class="font-semibold">Maandag tot en met zondag, 24 uur per dag</dd></div>
-        </dl>
-      </div>
-      <form action="mailto:info@loodgieterholland.com" method="post" enctype="text/plain" class="md:col-span-6 bg-mist rounded-xl p-6 md:p-8 space-y-4">
-        <h3 class="font-kop font-bold text-2xl">Geen haast? Vraag een offerte aan</h3>
-        <label class="block"><span class="text-sm font-medium">Naam</span><input name="naam" required autocomplete="name" class="mt-1 w-full rounded-md border border-lijn bg-white px-3 py-2.5"></label>
-        <div class="grid sm:grid-cols-2 gap-4">
-          <label class="block"><span class="text-sm font-medium">Telefoon</span><input name="telefoon" type="tel" required autocomplete="tel" class="mt-1 w-full rounded-md border border-lijn bg-white px-3 py-2.5"></label>
-          <label class="block"><span class="text-sm font-medium">Dienst</span>
-            <select name="dienst" class="mt-1 w-full rounded-md border border-lijn bg-white px-3 py-2.5">
-              <option value="">Kies een dienst</option>
-              <option>Lekkage</option><option>Verstopping</option><option>WC ontstoppen</option><option>CV-ketel</option><option>Rioolinspectie</option><option>Leiding leggen</option><option>Dakdekken</option>
-            </select>
-          </label>
-        </div>
-        <label class="block"><span class="text-sm font-medium">Wat kunnen we voor u doen?</span><textarea name="bericht" rows="4" class="mt-1 w-full rounded-md border border-lijn bg-white px-3 py-2.5"></textarea></label>
-        <button class="w-full bg-ink hover:bg-blauw text-white font-semibold rounded-md px-5 py-3">Offerte aanvragen</button>
-      </form>
-    </div>
-  </section>
+      <label class="mt-4 block text-sm font-medium">Waar gaat het om?
+        <select name="dienst" class="mt-1.5 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-base">
+          <option>Lekkage</option>
+          <option>Verstopping</option>
+          <option>Wc ontstoppen</option>
+          <option>Cv-ketel</option>
+          <option>Rioolinspectie</option>
+          <option>Leidingwerk</option>
+          <option>Dak</option>
+          <option>Iets anders</option>
+        </select>
+      </label>
+      <label class="mt-4 block text-sm font-medium">Omschrijving
+        <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-base"></textarea>
+      </label>
+      <button class="mt-6 w-full rounded-md bg-navy px-5 py-3 font-semibold text-white hover:bg-deep active:translate-y-px transition">Aanvraag versturen</button>
+      <p class="mt-3 text-sm text-[#4A6072]">Is het spoed? Bel dan liever direct.</p>
+    </form>
+  </div>
+</section>
 </main>
 
-<footer class="bg-deep text-white/70 text-sm">
-  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-col sm:flex-row gap-4 sm:items-center justify-between">
+<footer class="bg-deep text-white/65 text-sm">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 pt-12 pb-28 md:pb-12 grid gap-8 md:grid-cols-3">
     <div class="flex items-center gap-3">
-      <img src="assets/logo-oud.png" alt="" class="w-8 h-8">
-      <span><span class="text-white font-semibold">Loodgieter Holland</span>, Litauensestraat 26, Zutphen</span>
+      <img src="assets/site-01.png" alt="" class="h-10 w-10 -m-1">
+      <span class="font-kop font-bold text-base text-white">Loodgieter Holland</span>
     </div>
-    <a href="tel:+31575781035" class="text-white font-semibold num hover:text-blauw">0575 781 035</a>
+    <p>Werkgebied: Zutphen (Centrum, Waterkwartier, Noordveen, Leesten, De Hoven), Warnsveld, Gorssel, Lochem en Vorden.</p>
+    <p class="md:text-right"><a href="tel:+31575781035" class="text-white hover:underline">0575 781 035</a><br><a href="mailto:info@loodgieterholland.com" class="hover:text-white hover:underline">info@loodgieterholland.com</a></p>
   </div>
 </footer>
 
-<!-- Belbalk mobiel -->
-<a href="tel:+31575781035" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-blauw text-white flex items-center justify-center gap-3 py-4 font-semibold text-lg num">
-  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
-  Bel 0575 781 035
-</a>
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-navy/95 backdrop-blur border-t border-white/10 p-3">
+  <a href="tel:+31575781035" class="flex items-center justify-center gap-2 rounded-md bg-logo py-3.5 font-semibold text-white active:translate-y-px">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 0575 781 035
+  </a>
+</div>
 
 </body>
 </html>
