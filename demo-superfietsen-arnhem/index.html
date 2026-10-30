@@ -4,22 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Superfietsen Arnhem | Fietsenwinkel en werkplaats aan de Steenstraat</title>
-<meta name="description" content="Fietsenwinkel met eigen werkplaats in hartje Arnhem. E-bikes, stadsfietsen, bakfietsen en meer. Gratis proefrit, reparatie en onderhoud. Steenstraat 110.">
+<meta name="description" content="Fietsen, e-bikes, bakfietsen, onderdelen en reparatie aan de Steenstraat 110 in Arnhem. Bel 026 370 0090.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
   theme: {
     extend: {
       colors: {
-        oranje: '#E8641E', 'oranje-d': '#C24E10',
-        grafiet: '#2B2D2F', beton: '#EEF0EF', staal: '#6E7478'
+        beton: '#E6E5E1', papier: '#F4F4F1', grafiet: '#1D2023', staal: '#5F656B',
+        groen: '#2E5A43', steen: '#B5432F'
       },
       fontFamily: {
-        kop: ['Archivo', 'sans-serif'],
-        sans: ['"Public Sans"', 'sans-serif']
+        kop: ['"Bricolage Grotesque"', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif']
       }
     }
   }
@@ -27,242 +27,172 @@ tailwind.config = {
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  .breed { font-family: Archivo, sans-serif; font-stretch: 118%; letter-spacing: -0.02em; }
-  .smal-spatie { letter-spacing: .42em; }
+  body { font-family: Figtree, system-ui, sans-serif; }
   h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
-  :focus-visible { outline: 3px solid #E8641E; outline-offset: 3px; }
-  .btn { display: inline-flex; align-items: center; gap: .6rem; font-weight: 600; border-radius: 4px;
-         padding: .95rem 1.4rem; transition: background-color .2s, color .2s, transform .1s; }
+  /* De terrazzovloer uit de winkel, als patroon */
+  .terrazzo {
+    background-color: #E2DCCF;
+    background-image:
+      radial-gradient(circle at 20% 30%, #1D2023 0 3px, transparent 3.5px),
+      radial-gradient(circle at 70% 80%, #B5432F 0 2.5px, transparent 3px),
+      radial-gradient(circle at 45% 60%, #2E5A43 0 2px, transparent 2.5px),
+      radial-gradient(ellipse 5px 3px at 85% 25%, #1D2023 0 100%, transparent 100%),
+      radial-gradient(circle at 10% 85%, #8C7B62 0 2px, transparent 2.5px),
+      radial-gradient(circle at 60% 15%, #F7F5F0 0 3px, transparent 3.5px),
+      radial-gradient(circle at 35% 10%, #1D2023 0 1.5px, transparent 2px),
+      radial-gradient(circle at 90% 55%, #B5432F 0 1.5px, transparent 2px);
+    background-size: 73px 89px, 97px 83px, 61px 107px, 113px 79px, 41px 53px, 127px 101px, 37px 47px, 89px 67px;
+  }
+  .btn { transition: background-color .2s, transform .1s; }
   .btn:active { transform: translateY(1px); }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  a:focus-visible, button:focus-visible { outline: 3px solid #2E5A43; outline-offset: 3px; }
 </style>
 </head>
-<body class="bg-beton text-grafiet font-sans antialiased pb-20 md:pb-0">
+<body class="bg-beton text-grafiet antialiased pb-20 md:pb-0">
 
-<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white px-3 py-2 z-50">Naar de inhoud</a>
-
-<div class="bg-grafiet text-white/80 text-[13px] text-center px-4 py-2">
-  Demo voor Superfietsen Arnhem, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+<div class="bg-grafiet text-papier/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Superfietsen Arnhem, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-papier hover:text-white">Hagenweb</a>
 </div>
 
-<header class="bg-oranje text-white">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between gap-6">
-    <a href="#" class="flex items-center gap-3" aria-label="Superfietsen Arnhem, naar boven">
-      <svg viewBox="0 0 40 46" class="w-9 h-10 shrink-0" aria-hidden="true">
-        <path d="M2 2h36v24c0 9-8 15-18 18C10 41 2 35 2 26z" fill="none" stroke="#fff" stroke-width="3"/>
-        <text x="20" y="31" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="24" fill="#fff">S</text>
-      </svg>
-      <span class="leading-none">
-        <span class="block breed font-black text-2xl">SUPER</span>
-        <span class="block font-kop font-bold text-[10px] smal-spatie mt-1">FIETSEN</span>
-      </span>
-    </a>
-    <nav class="hidden md:flex items-center gap-8 font-medium" aria-label="Hoofdmenu">
-      <a href="#fietsen" class="hover:underline underline-offset-4">Fietsen</a>
-      <a href="#werkplaats" class="hover:underline underline-offset-4">Werkplaats</a>
-      <a href="#lease" class="hover:underline underline-offset-4">Lease</a>
-      <a href="#bezoek" class="hover:underline underline-offset-4">Bezoek</a>
-    </nav>
-    <a href="tel:+31263700090" class="btn bg-white text-grafiet hover:bg-grafiet hover:text-white !py-2.5 !px-4 text-sm">
-      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
-      <span class="hidden sm:inline">026 370 0090</span><span class="sm:hidden">Bel</span>
-    </a>
-  </div>
+<header class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between gap-4">
+  <a href="#" class="font-kop font-extrabold text-2xl sm:text-[1.7rem] tracking-tight leading-none">Superfietsen<span class="text-staal font-medium"> Arnhem</span></a>
+  <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+    <a href="#winkel" class="hover:text-groen">Winkel</a>
+    <a href="#werkplaats" class="hover:text-groen">Werkplaats</a>
+    <a href="#reviews" class="hover:text-groen">Reviews</a>
+    <a href="#bezoek" class="hover:text-groen">Bezoek</a>
+  </nav>
+  <a href="tel:+31263700090" class="btn hidden sm:inline-flex bg-grafiet text-papier hover:bg-groen rounded-full px-5 py-2.5 text-sm font-semibold">Bel 026 370 0090</a>
 </header>
 
-<main id="inhoud">
-
-<!-- Hero: de oranje band loopt door in het gevelbord op de foto -->
-<section class="bg-oranje text-white">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-10 pb-14 md:pt-16 md:pb-20 grid md:grid-cols-12 gap-8 md:gap-10 items-end">
-    <h1 class="breed font-black md:col-span-7 text-[2.35rem] leading-[.95] sm:text-6xl lg:text-[4.8rem]">Fietsenwinkel in hartje Arnhem</h1>
-    <div class="md:col-span-5 md:pb-2">
-      <p class="text-lg leading-relaxed text-white/95 max-w-md">Rustig kijken, gratis een proefrit maken en ondertussen een kop koffie. Met persoonlijk advies en een eigen werkplaats achter de showroom.</p>
-      <div class="mt-7 flex flex-wrap gap-3">
-        <a href="mailto:info@novabikes.nl?subject=Proefrit%20plannen" class="btn bg-grafiet text-white hover:bg-black">Proefrit plannen</a>
-        <a href="tel:+31263700090" class="btn border-2 border-white/80 text-white hover:bg-white hover:text-grafiet">Bel 026 370 0090</a>
-      </div>
-    </div>
-  </div>
-  <figure class="relative">
-    <img src="assets/site-02.jpg" alt="De winkelpui van Superfietsen aan de Steenstraat 110 in Arnhem, met fietsen voor de deur" class="w-full h-[320px] sm:h-[460px] lg:h-[620px] object-cover object-[50%_20%]">
-    <figcaption class="absolute left-5 md:left-8 bottom-5 bg-white text-grafiet text-sm md:text-base px-4 py-3 rounded max-w-[calc(100%-2.5rem)] shadow-lg shadow-black/20">
-      <strong class="font-semibold">We zijn verhuisd.</strong> U vindt ons nu aan de Steenstraat 110.
-    </figcaption>
-  </figure>
-</section>
-
-<!-- Fietsen -->
-<section id="fietsen" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
-  <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+<main>
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-5 sm:px-8 pt-4 lg:pt-10 pb-16 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
     <div class="lg:col-span-5">
-      <h2 class="breed font-extrabold text-4xl md:text-5xl leading-none">Van stadsfiets tot high&#8209;end e&#8209;bike</h2>
-      <p class="mt-6 text-lg leading-relaxed text-grafiet/85 max-w-prose">Sinds 2010 helpen we Arnhemmers aan een fiets die past bij hoe ze rijden en wat ze willen uitgeven. In de showroom staan onder andere Trek, Sparta, Batavus, Flyer en Cortina. Twijfelt u tussen twee modellen? Neem ze allebei mee voor een proefrit.</p>
-      <img src="assets/site-01.jpg" alt="Showroom van Superfietsen met de balie en e-bikes op rode podia" class="mt-10 w-full aspect-[4/3] object-cover rounded">
+      <h1 class="font-kop font-extrabold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.3rem] tracking-[-0.03em]">Fiets kopen of laten maken? Kom langs aan de Steenstraat.</h1>
+      <p class="mt-6 text-lg text-staal max-w-md leading-relaxed">Een fietsenwinkel met eigen werkplaats in Arnhem. Rustig kijken en proefrijden, eerlijk advies, en als uw fiets kapot is: snel weer rijden.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="tel:+31263700090" class="btn bg-groen text-white hover:bg-grafiet rounded-full px-6 py-3.5 font-semibold">Bel 026 370 0090</a>
+        <a href="#bezoek" class="btn bg-papier hover:bg-white rounded-full px-6 py-3.5 font-semibold ring-1 ring-grafiet/15">Adres en openingstijden</a>
+      </div>
+      <p class="mt-8 text-[15px] text-staal"><span class="font-semibold text-grafiet">4,7 van 5</span> op Google, uit 249 reviews</p>
     </div>
+    <figure class="lg:col-span-7 relative">
+      <img src="assets/google-05.jpg" alt="De winkel met e-bikes en een slapende hond op een fauteuil" class="w-full aspect-[4/3] object-cover rounded-2xl">
+      <figcaption class="absolute left-4 bottom-4 bg-papier/95 rounded-lg px-4 py-2 text-sm font-medium">Altijd tijd voor de klant. Ook de hond.</figcaption>
+    </figure>
+  </section>
 
-    <div class="lg:col-span-7">
-      <ul class="border-t-2 border-grafiet">
-        <li class="py-7 border-b border-grafiet/15 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-          <h3 class="breed font-bold text-2xl">Elektrische fietsen</h3>
-          <p class="text-grafiet/80 leading-relaxed">Comfort en ondersteuning voor langere ritten en woon-werkverkeer. Met het servicepakket blijft uw e-bike in topconditie.</p>
-        </li>
-        <li class="py-7 border-b border-grafiet/15 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-          <h3 class="breed font-bold text-2xl">Stadsfietsen</h3>
-          <p class="text-grafiet/80 leading-relaxed">Comfortabel en betrouwbaar voor elke dag: werk, school of boodschappen.</p>
-        </li>
-        <li class="py-7 border-b border-grafiet/15 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-          <h3 class="breed font-bold text-2xl">Hybride fietsen</h3>
-          <p class="text-grafiet/80 leading-relaxed">Snelheid en comfort in een. Fijn voor woon-werkverkeer en langere ritten.</p>
-        </li>
-        <li class="py-7 border-b border-grafiet/15 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-          <h3 class="breed font-bold text-2xl">Mountainbikes</h3>
-          <p class="text-grafiet/80 leading-relaxed">Voor sportieve ritten, met grip en controle op elk terrein.</p>
-        </li>
-        <li class="py-7 border-b border-grafiet/15 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-          <h3 class="breed font-bold text-2xl">Bakfietsen</h3>
-          <p class="text-grafiet/80 leading-relaxed">Stabiel en praktisch voor kinderen en bagage. Kom ze uitproberen, de bakfietsen staan bij ons gewoon klaar.</p>
-        </li>
-      </ul>
-      <div class="mt-10 grid grid-cols-5 gap-4">
-        <img src="assets/google-07.jpg" alt="Wand met Flyer e-bikes in de showroom" class="col-span-3 w-full h-56 md:h-72 object-cover rounded">
-        <img src="assets/google-04.jpg" alt="Urban Arrow bakfietsen met knuffelberen in de bak" class="col-span-2 w-full h-56 md:h-72 object-cover object-[30%_50%] rounded">
+  <!-- Winkel -->
+  <section id="winkel" class="bg-papier py-16 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+        <div class="lg:col-span-5 lg:order-2">
+          <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.05]">Een winkel waar u rustig mag kijken en testen</h2>
+          <p class="mt-6 text-lg text-staal leading-relaxed max-w-lg">Stadsfietsen, e-bikes en bakfietsen staan klaar om te proberen. Neem de tijd, stel uw vragen en maak een rondje. U krijgt alle informatie die u nodig heeft, zonder dat er iets wordt aangepraat.</p>
+          <p class="mt-4 text-lg text-staal leading-relaxed max-w-lg">Ook voor helmen, sloten, tassen, regenkleding, banden en onderdelen kunt u hier terecht.</p>
+        </div>
+        <div class="lg:col-span-7 lg:order-1 grid grid-cols-6 gap-3 sm:gap-4">
+          <img src="assets/google-07.jpg" alt="E-bikes op een rij in de showroom" class="col-span-6 w-full aspect-[16/8] object-cover rounded-2xl">
+          <img src="assets/google-04.jpg" alt="Bakfietsen in de winkel, met knuffelberen in de bak" class="col-span-3 w-full aspect-[4/3] object-cover rounded-xl">
+          <img src="assets/google-03.jpg" alt="Wand met onderdelen, banden en accessoires" class="col-span-3 w-full aspect-[4/3] object-cover rounded-xl">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Werkplaats -->
-<section id="werkplaats" class="bg-white">
-  <div class="relative">
-    <img src="assets/site-03.jpg" alt="De eigen werkplaats van Superfietsen met fietsen aan takels en gereedschapswanden" class="w-full h-[300px] sm:h-[440px] lg:h-[560px] object-cover object-[40%_72%]">
-  </div>
-  <div class="max-w-7xl mx-auto px-5 md:px-8">
-    <div class="relative -mt-20 md:-mt-32 bg-grafiet text-white rounded p-7 md:p-12 grid md:grid-cols-12 gap-8 md:gap-12">
-      <div class="md:col-span-7">
-        <h2 class="breed font-extrabold text-4xl md:text-5xl leading-none">Een grote eigen werkplaats</h2>
-        <p class="mt-6 text-lg leading-relaxed text-white/85 max-w-prose">Van een lekke band tot een uitgebreide servicebeurt: onze monteurs zorgen dat u weer veilig en zonder zorgen de weg op kunt. U kunt hier ook terecht voor onderdelen en klein materiaal.</p>
+  <!-- Werkplaats -->
+  <section id="werkplaats" class="bg-grafiet text-papier py-16 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div class="lg:col-span-6">
+        <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.05]">Kapot? Breng hem naar de werkplaats.</h2>
+        <p class="mt-6 text-lg text-papier/75 leading-relaxed max-w-lg">Lekke band, rare geluiden of schade na een val: loop gerust binnen of bel even. Ook voor e-bikes. De monteurs kijken wat er aan de hand is en zorgen dat u weer kunt fietsen.</p>
+        <p class="mt-4 text-lg text-papier/75 leading-relaxed max-w-lg">En terwijl u wacht, staat de koffie klaar.</p>
+        <a href="tel:+31263700090" class="btn mt-8 inline-flex bg-papier text-grafiet hover:bg-white rounded-full px-6 py-3.5 font-semibold">Bel de werkplaats</a>
       </div>
-      <div class="md:col-span-5 border-l-4 border-oranje pl-6 self-center">
-        <p class="font-semibold text-lg">Ingang werkplaats via de achterzijde</p>
-        <p class="mt-2 text-white/75 leading-relaxed">De werkplaats ligt in het verlengde van de showroom, ook aan de Steenstraat 110. U loopt om naar de achterkant van het pand.</p>
+      <figure class="lg:col-span-6">
+        <img src="assets/google-06.jpg" alt="De werkplaats met werkbanken, gereedschapswand en fietsen aan de takels" class="w-full aspect-[4/3] object-cover rounded-2xl">
+        <figcaption class="mt-3 text-sm text-papier/60">De werkplaats, met fietsen aan de takels.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="py-16 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.05] max-w-xl">Wat klanten zeggen</h2>
+        <p class="text-staal"><span class="font-kop font-bold text-3xl text-grafiet">4,7</span> gemiddeld uit 249 Google-reviews</p>
+      </div>
+      <div class="mt-12 grid md:grid-cols-2 gap-x-14 gap-y-12">
+        <blockquote class="border-l-4 border-groen pl-6">
+          <p class="text-xl sm:text-2xl leading-snug font-medium">"Altijd vriendelijk, altijd tijd voor de klant, altijd een bakkie koffie (ook belangrijk 😉)! Deskundig advies, zonder onnodige upselling maar wel met alle info, gewoon zoals een goede fietsenwinkel hoort te zijn."</p>
+          <footer class="mt-4 text-staal">Jelte</footer>
+        </blockquote>
+        <blockquote class="border-l-4 border-grafiet/20 pl-6 md:mt-16">
+          <p class="text-lg leading-relaxed">"Heel netjes geholpen door Kadir. Hij heeft ons rustig laten kijken en testen en gaf uitstekend advies. Speciaal naar Arnhem gekomen omdat de fiets die we wilden niet meer in onze omgeving verkrijgbaar was. Dat zouden we zo opnieuw doen - niet alleen voor het aanbod, maar ook de prijs en de service."</p>
+          <footer class="mt-4 text-staal">Kaj Temme</footer>
+        </blockquote>
+        <blockquote class="border-l-4 border-grafiet/20 pl-6">
+          <p class="text-lg leading-relaxed">"Ik kom hier al vele jaren en heb hier al veel fietsen gekocht. En ik niet alleen! Veel vrienden en bekenden kopen ook hier. De service is altijd perfect en je wordt altijd goed geholpen. Vanochtend was hier weer een voorbeeld van: de fiets van mijn zoon was kapot en die was weer super(fietsen) snel gerepareerd!!"</p>
+          <footer class="mt-4 text-staal">Jasper Knoef</footer>
+        </blockquote>
+        <blockquote class="border-l-4 border-grafiet/20 pl-6 md:mt-16">
+          <p class="text-lg leading-relaxed">"Ik sluit mij volledig aan bij alle positieve reviews; mijn Veloretti Ace Pro 2 vertoonde beetje gek gedrag tijdens het fietsen; ik ben even spontaan langsgegaan, erg leuke gasten in de werkplaats en einde middag heb ik de fiets weer opgehaald; probleem gefixed onder service."</p>
+          <footer class="mt-4 text-staal">C vE</footer>
+        </blockquote>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
-    <img src="assets/site-08.jpg" alt="Monteur aan het werk aan een fiets met fietstassen" class="md:col-span-4 w-full max-w-sm aspect-[4/5] object-cover rounded">
-    <div class="md:col-span-8">
-      <h3 class="breed font-extrabold text-3xl md:text-4xl leading-tight">Superfietsen Servicepakket voor uw e-bike</h3>
-      <p class="mt-5 text-lg leading-relaxed text-grafiet/85 max-w-prose">Twee servicebeurten waarbij uw elektrische fiets helemaal wordt nagekeken. Niet alleen de mechanische onderdelen, ook de software krijgt een update. Voordeliger dan losse onderhoudsbeurten, en u weet zeker dat u op uw fiets kunt rekenen.</p>
-      <a href="mailto:info@novabikes.nl?subject=Servicepakket%20e-bike" class="btn mt-8 bg-oranje text-white hover:bg-oranje-d">Vraag naar het servicepakket</a>
+  <!-- Bezoek -->
+  <section id="bezoek" class="terrazzo py-16 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="bg-papier rounded-2xl p-7 sm:p-12 lg:p-16 grid lg:grid-cols-2 gap-12 lg:gap-20 shadow-[0_20px_60px_-30px_rgba(29,32,35,.45)]">
+        <div>
+          <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.05]">Langskomen</h2>
+          <address class="not-italic mt-6 text-xl leading-relaxed">Steenstraat 110<br>6828 CP Arnhem</address>
+          <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+            <a href="tel:+31263700090" class="btn bg-groen text-white hover:bg-grafiet rounded-full px-6 py-3.5 font-semibold text-center">Bel 026 370 0090</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Steenstraat+110+6828+CP+Arnhem" class="btn bg-beton hover:bg-grafiet hover:text-papier rounded-full px-6 py-3.5 font-semibold text-center">Route plannen</a>
+          </div>
+          <p class="mt-6 text-staal">Of mail naar <a href="mailto:info@novabikes.nl" class="text-grafiet font-medium underline underline-offset-4 hover:text-groen">info@novabikes.nl</a></p>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-2xl">Openingstijden</h3>
+          <table class="mt-5 w-full text-lg tabular-nums">
+            <tbody class="divide-y divide-grafiet/10">
+              <tr data-dag="1"><td class="py-2.5">Maandag</td><td class="py-2.5 text-right text-staal">Gesloten</td></tr>
+              <tr data-dag="2"><td class="py-2.5">Dinsdag</td><td class="py-2.5 text-right">09:30 tot 18:00</td></tr>
+              <tr data-dag="3"><td class="py-2.5">Woensdag</td><td class="py-2.5 text-right">09:30 tot 18:00</td></tr>
+              <tr data-dag="4"><td class="py-2.5">Donderdag</td><td class="py-2.5 text-right">09:30 tot 18:00</td></tr>
+              <tr data-dag="5"><td class="py-2.5">Vrijdag</td><td class="py-2.5 text-right">09:30 tot 18:00</td></tr>
+              <tr data-dag="6"><td class="py-2.5">Zaterdag</td><td class="py-2.5 text-right">09:30 tot 17:00</td></tr>
+              <tr data-dag="0"><td class="py-2.5">Zondag</td><td class="py-2.5 text-right text-staal">Gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- Reviews -->
-<section class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
-  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-    <h2 class="breed font-extrabold text-4xl md:text-5xl leading-none max-w-xl">Zoals een goede fietsenwinkel hoort te zijn</h2>
-    <p class="text-staal md:text-right">Gemiddeld <strong class="text-grafiet font-semibold">4,7 van 5</strong> uit 249 Google-reviews</p>
-  </div>
-
-  <div class="mt-12 grid md:grid-cols-2 gap-6 md:gap-8">
-    <figure class="md:row-span-2 bg-oranje text-white rounded p-8 md:p-12 flex flex-col justify-between">
-      <blockquote class="breed font-bold text-xl md:text-[2rem] leading-snug">"Altijd vriendelijk, altijd tijd voor de klant, altijd een bakkie koffie (ook belangrijk 😉)! Deskundig advies, zonder onnodige upselling maar wel met alle info, gewoon zoals een goede fietsenwinkel hoort te zijn."</blockquote>
-      <figcaption class="mt-8 font-semibold">Jelte</figcaption>
-    </figure>
-    <figure class="bg-white rounded p-7 md:p-9">
-      <blockquote class="leading-relaxed text-grafiet/90">"Heel netjes geholpen door Kadir. Hij heeft ons rustig laten kijken en testen en gaf uitstekend advies. Speciaal naar Arnhem gekomen omdat de fiets die we wilden niet meer in onze omgeving verkrijgbaar was. Dat zouden we zo opnieuw doen - niet alleen voor het aanbod, maar ook de prijs en de service."</blockquote>
-      <figcaption class="mt-5 font-semibold">Kaj Temme</figcaption>
-    </figure>
-    <figure class="bg-white rounded p-7 md:p-9">
-      <blockquote class="leading-relaxed text-grafiet/90">"Ik kom hier al vele jaren en heb hier al veel fietsen gekocht. En ik niet alleen! Veel vrienden en bekenden kopen ook hier. De service is altijd perfect en je wordt altijd goed geholpen. Vanochtend was hier weer een voorbeeld van: de fiets van mijn zoon was kapot en die was weer super(fietsen) snel gerepareerd!!"</blockquote>
-      <figcaption class="mt-5 font-semibold">Jasper Knoef</figcaption>
-    </figure>
-    <figure class="md:col-span-2 border-t-2 border-grafiet pt-7 grid md:grid-cols-12 gap-4">
-      <blockquote class="md:col-span-9 leading-relaxed text-grafiet/90">"Ik sluit mij volledig aan bij alle positieve reviews; mijn Veloretti Ace Pro 2 vertoonde beetje gek gedrag tijdens het fietsen; ik ben even spontaan langsgegaan, erg leuke gasten in de werkplaats en einde middag heb ik de fiets weer opgehaald; probleem gefixed onder service (fiets is ook nog maar 2 weken oud maar okay)"</blockquote>
-      <figcaption class="md:col-span-3 md:text-right font-semibold">C vE</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- Lease -->
-<section id="lease" class="bg-grafiet text-white">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24 grid md:grid-cols-12 gap-10 md:gap-16">
-    <div class="md:col-span-5">
-      <h2 class="breed font-extrabold text-4xl md:text-5xl leading-none">Liever leasen?</h2>
-      <p class="mt-6 text-lg leading-relaxed text-white/80">Een nieuwe (elektrische) fiets voor een vast bedrag per maand. Particulier, via uw werkgever of als rijksambtenaar.</p>
-    </div>
-    <div class="md:col-span-7">
-      <p class="text-white/60">Wij werken met</p>
-      <p class="breed font-bold text-2xl md:text-3xl mt-2">HelloRider, Lease a Bike en LeaseGemak</p>
-      <ul class="mt-8 grid sm:grid-cols-2 gap-x-10 gap-y-4 text-white/85">
-        <li class="border-l-2 border-oranje pl-4">Geen hoge aanschafkosten in een keer</li>
-        <li class="border-l-2 border-oranje pl-4">Verzekering en onderhoud inbegrepen, vaak ook pechhulp</li>
-        <li class="border-l-2 border-oranje pl-4">Maandelijks opzegbaar</li>
-        <li class="border-l-2 border-oranje pl-4">Fiscaal aantrekkelijk via uw werkgever</li>
-      </ul>
-      <a href="mailto:info@novabikes.nl?subject=Fiets%20leasen" class="btn mt-10 bg-oranje text-white hover:bg-oranje-d">Vraag naar de voorwaarden</a>
-    </div>
-  </div>
-</section>
-
-<!-- Bezoek -->
-<section id="bezoek" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
-  <div class="lg:col-span-6">
-    <h2 class="breed font-extrabold text-4xl md:text-5xl leading-none">Kom langs, de koffie staat klaar</h2>
-    <p class="mt-6 text-lg leading-relaxed text-grafiet/85 max-w-prose">Midden in Arnhem, aan de Steenstraat. Een proefrit is altijd gratis. Wilt u zeker weten dat het model dat u zoekt klaarstaat? Bel of mail ons even.</p>
-    <img src="assets/google-05.jpg" alt="Een hond ligt te slapen op een fauteuil midden in de showroom tussen de e-bikes" class="mt-10 w-full aspect-[4/3] object-cover rounded">
-  </div>
-
-  <div class="lg:col-span-6 lg:pt-4">
-    <address class="not-italic">
-      <p class="breed font-bold text-3xl leading-tight">Steenstraat 110<br>6828 CP Arnhem</p>
-      <a href="https://www.google.com/maps/search/?api=1&query=Superfietsen+Steenstraat+110+Arnhem" class="inline-block mt-3 font-semibold text-oranje-d underline underline-offset-4 hover:text-grafiet">Route plannen in Google Maps</a>
-    </address>
-
-    <div class="mt-10 grid sm:grid-cols-2 gap-3">
-      <a href="tel:+31263700090" class="btn bg-oranje text-white hover:bg-oranje-d justify-center">Bel 026 370 0090</a>
-      <a href="mailto:info@novabikes.nl" class="btn bg-white text-grafiet hover:bg-grafiet hover:text-white justify-center">info@novabikes.nl</a>
-    </div>
-
-    <h3 class="mt-12 font-semibold text-lg">Openingstijden</h3>
-    <table class="mt-4 w-full text-left [font-variant-numeric:tabular-nums]">
-      <tbody class="divide-y divide-grafiet/15">
-        <tr><th class="py-3 font-normal">Maandag</th><td class="py-3 text-right text-staal">Gesloten</td></tr>
-        <tr><th class="py-3 font-normal">Dinsdag</th><td class="py-3 text-right">09:30 tot 18:00</td></tr>
-        <tr><th class="py-3 font-normal">Woensdag</th><td class="py-3 text-right">09:30 tot 18:00</td></tr>
-        <tr><th class="py-3 font-normal">Donderdag</th><td class="py-3 text-right">09:30 tot 18:00</td></tr>
-        <tr><th class="py-3 font-normal">Vrijdag</th><td class="py-3 text-right">09:30 tot 18:00</td></tr>
-        <tr><th class="py-3 font-normal">Zaterdag</th><td class="py-3 text-right">09:30 tot 17:00</td></tr>
-        <tr><th class="py-3 font-normal">Zondag</th><td class="py-3 text-right text-staal">Gesloten</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
+  </section>
 </main>
 
-<footer class="bg-oranje text-white">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-    <div>
-      <p class="breed font-black text-5xl md:text-6xl leading-none">SUPER</p>
-      <p class="font-kop font-bold smal-spatie text-sm mt-2">FIETSEN</p>
-    </div>
-    <div class="text-white/90 md:text-right leading-relaxed">
-      <p>Steenstraat 110, 6828 CP Arnhem</p>
-      <p><a href="tel:+31263700090" class="hover:underline">026 370 0090</a> en <a href="mailto:info@novabikes.nl" class="hover:underline">info@novabikes.nl</a></p>
-    </div>
-  </div>
+<footer class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-wrap justify-between gap-4 text-sm text-staal">
+  <p><span class="font-kop font-bold text-grafiet">Superfietsen Arnhem</span>, Steenstraat 110, 6828 CP Arnhem</p>
+  <p><a href="tel:+31263700090" class="hover:text-grafiet">026 370 0090</a> &nbsp; <a href="mailto:info@novabikes.nl" class="hover:text-grafiet">info@novabikes.nl</a></p>
 </footer>
 
 <!-- Mobiel: bellen altijd binnen bereik -->
-<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-grafiet/10 p-3 grid grid-cols-2 gap-3">
-  <a href="tel:+31263700090" class="btn bg-oranje text-white justify-center !py-3">Bellen</a>
-  <a href="https://www.google.com/maps/search/?api=1&query=Superfietsen+Steenstraat+110+Arnhem" class="btn bg-grafiet text-white justify-center !py-3">Route</a>
+<div class="md:hidden fixed inset-x-0 bottom-0 z-20 p-3 bg-beton/95 backdrop-blur border-t border-grafiet/10 flex gap-2">
+  <a href="tel:+31263700090" class="btn flex-1 bg-groen text-white rounded-full py-3.5 font-semibold text-center">Bel 026 370 0090</a>
+  <a href="#bezoek" class="btn bg-papier rounded-full px-5 py-3.5 font-semibold ring-1 ring-grafiet/15">Route</a>
 </div>
 
+<script>
+  // Markeer vandaag in de openingstijden
+  var rij = document.querySelector('tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('font-semibold', 'text-groen');
+</script>
 </body>
 </html>
