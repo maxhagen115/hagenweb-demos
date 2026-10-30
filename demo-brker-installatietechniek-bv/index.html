@@ -1,640 +1,406 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bröker Installatietechniek B.V. | Arnhem</title>
-  <meta name="description" content="Lekkages verholpen, CV-ketels geplaatst, badkamers gerenoveerd. 24/7 bereikbaar.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0f0f0f; color: #f5f5f5; line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-:root {
-  --accent: #fb923c; --accent-dark: #1d4ed8; --accent-light: rgba(251,146,60,0.12);
-  --bg: #0f0f0f; --surface: #1a1a1a; --border: #2a2a2a;
-  --text: #f5f5f5; --muted: #a0a0a0; --radius: 14px;
-}
-h1, h2, h3 { line-height: 1.15; font-weight: 800; }
-h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
-h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.1rem; font-weight: 700; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Nav ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 68px; display: flex; align-items: center;
-  background: transparent; border-bottom: 1px solid transparent;
-  transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(15,15,15,0.97); border-bottom-color: var(--border);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.4);
-}
-.nav-inner {
-  width: 100%; max-width: 1280px; margin: 0 auto;
-  padding: 0 32px; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; color: #fff; transition: color 0.4s; }
-.nav-logo span { color: var(--accent); }
-nav.scrolled .nav-logo { color: #f5f5f5; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: rgba(255,255,255,0.78); font-weight: 500; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-nav.scrolled .nav-links a { color: #a0a0a0; }
-nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: #f5f5f5; }
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: background 0.4s; }
-nav.scrolled .nav-hamburger span { background: #f5f5f5; }
-.nav-mobile-menu {
-  display: none; position: fixed; top: 68px; left: 0; right: 0;
-  background: rgba(15,15,15,0.97); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border); z-index: 99;
-  padding: 16px 24px 24px; flex-direction: column; gap: 4px;
-}
-.nav-mobile-menu.open { display: flex; }
-.nav-mobile-menu a { padding: 12px 4px; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh; padding-top: 68px;
-  position: relative; display: flex; align-items: center; overflow: hidden;
-}
-.hero-photo-bg {
-  position: absolute; inset: 0; background-size: cover; background-position: center;
-  animation: kenburns 20s ease-in-out infinite alternate; z-index: 0;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, -1%); }
-}
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.3) 100%); }
-.hero-fade-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(to top, #0f0f0f, transparent);
-}
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%;
-}
-.hero-inner h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
-.hero-inner h1 em { font-style: normal; color: var(--accent); }
-.hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; margin-bottom: 44px; max-width: 520px; line-height: 1.8; }
-.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* ── Page hero (subpagina's) ── */
-.page-hero {
-  padding: 148px 32px 88px; background-size: cover; background-position: center;
-  position: relative; overflow: hidden;
-}
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.3) 100%); }
-.page-hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; }
-.page-hero-inner .section-label { color: rgba(255,255,255,0.7); }
-.page-hero-inner h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); margin-top: 8px; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 32px; border-radius: 0; font-weight: 700;
-  font-size: 0.95rem; cursor: pointer; transition: all 0.22s; border: none; letter-spacing: 0.02em;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
-.btn-ghost {
-  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35);
-  color: #fff; backdrop-filter: blur(8px);
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
-.btn-outline:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-
-/* ── Gedeelde layout ── */
-section { padding: 100px 32px; }
-.container { max-width: 1280px; margin: 0 auto; }
-.section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
-}
-.section-title { margin-bottom: 18px; color: var(--text); }
-.section-sub { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin-bottom: 60px; line-height: 1.75; }
-
-/* ── Featured diensten (home) ── */
-.diensten-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;
-}
-.featured-left { display: flex; flex-direction: column; }
-.featured-right { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
-.dienst-card {
-  background: var(--surface); border: 1px solid var(--border);
-  overflow: hidden; cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-  display: flex; flex-direction: column;
-}
-.dienst-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
-.dienst-card.featured { flex: 1; }
-.dienst-foto-wrap { overflow: hidden; position: relative; }
-.dienst-foto { width: 100%; object-fit: cover; transition: transform 0.5s; display: block; }
-.dienst-card.featured .dienst-foto { height: 320px; }
-.dienst-card.small .dienst-foto { height: 180px; }
-.dienst-card:hover .dienst-foto { transform: scale(1.06); }
-.dienst-foto-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4)); }
-.dienst-badge {
-  position: absolute; top: 14px; left: 14px; z-index: 3;
-  background: var(--accent); color: #fff;
-  font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 5px 12px;
-}
-.dienst-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-.dienst-card.small .dienst-body { padding: 20px 24px; }
-.dienst-nummer { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-.dienst-card h3 { margin-bottom: 10px; font-size: 1.05rem; color: var(--text); }
-.dienst-card p { color: var(--muted); font-size: 0.875rem; line-height: 1.65; flex: 1; }
-.dienst-lees-meer {
-  display: inline-block; margin-top: 16px;
-  padding: 9px 20px; font-size: 0.8rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  background: transparent; cursor: pointer; transition: background 0.2s, color 0.2s;
-  text-decoration: none; align-self: flex-start;
-}
-.dienst-card:hover .dienst-lees-meer { background: var(--accent); color: #fff; }
-
-/* ── Alternating diensten rijen ── */
-.dienst-row {
-  display: grid; grid-template-columns: 55fr 45fr;
-  min-height: 440px; border-bottom: 1px solid var(--border);
-}
-.dienst-row.reverse { grid-template-columns: 45fr 55fr; }
-.dienst-row-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dienst-row-content {
-  padding: 64px 56px; display: flex; flex-direction: column; justify-content: center;
-  background: var(--surface);
-}
-.dienst-row.reverse .dienst-row-content { order: -1; background: var(--bg); }
-.dienst-row-num {
-  font-size: 3rem; font-weight: 800; color: var(--accent); opacity: 0.15;
-  line-height: 1; margin-bottom: 12px;
-}
-.dienst-row-content h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--text); }
-.dienst-row-content p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 28px; }
-.dienst-row-cta {
-  align-self: flex-start; padding: 11px 28px;
-  border: 1.5px solid var(--accent); color: var(--accent);
-  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: background 0.2s, color 0.2s; text-decoration: none;
-}
-.dienst-row-cta:hover { background: var(--accent); color: #fff; }
-
-/* ── Accent band (seizoen/actie) ── */
-.accent-band {
-  background: var(--accent); padding: 28px 32px; text-align: center;
-}
-.accent-band p {
-  color: #fff; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em;
-}
-.accent-band strong { opacity: 0.7; font-weight: 400; font-size: 0.9rem; margin-left: 12px; }
-
-/* ── Over ons ── */
-.over-ons-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.over-ons-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.stats-badge-wrap { position: relative; grid-column: 1 / -1; }
-.stats-badge-wrap img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; display: block; }
-.over-ons-foto-small { width: 100%; height: 155px; object-fit: cover; border-radius: 10px; display: block; }
-.stats-badge {
-  position: absolute; bottom: -16px; right: 20px;
-  background: var(--accent); color: #fff; padding: 18px 22px; text-align: center;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.25); z-index: 2;
-}
-.stats-num { font-size: 1.8rem; font-weight: 800; line-height: 1; display: block; }
-.stats-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; display: block; margin-top: 4px; }
-.over-ons-tekst p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px; }
-.over-ons-pilaren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-.over-ons-pilaar { padding: 20px; border-left: 3px solid var(--accent); background: #1a1a1a; }
-.pilaar-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
-.over-ons-pilaar p { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
-
-/* ── Waarden op over-ons pagina ── */
-.waarden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-.waarde-card { padding: 36px 28px; border: 1px solid var(--border); background: var(--surface); }
-.waarde-num { font-size: 2.4rem; font-weight: 800; color: var(--accent); opacity: 0.15; line-height: 1; margin-bottom: 12px; }
-.waarde-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-.waarde-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
-.galerij-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 72px; }
-.galerij-foto { width: 100%; height: 240px; object-fit: cover; display: block; }
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-  padding: 56px 64px; max-width: 820px; margin: 0 auto; text-align: center; position: relative;
-}
-.quote-mark { font-size: 6rem; line-height: 0.6; color: var(--accent); opacity: 0.12; font-family: Georgia, serif; position: absolute; top: 32px; left: 48px; }
-.stars { color: #fbbf24; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 24px; }
-.testimonial-tekst { font-size: 1.2rem; line-height: 1.75; font-style: italic; color: var(--text); margin-bottom: 28px; position: relative; z-index: 1; }
-.testimonial-naam { font-weight: 700; color: var(--accent); font-size: 0.875rem; letter-spacing: 0.06em; text-transform: uppercase; }
-.testimonial-functie { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
-.review-platforms { display:flex; justify-content:center; gap:16px; margin-top:40px; flex-wrap:wrap; }
-
-/* ── FAQ ── */
-.faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-details { background: #1a1a1a; border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
-details[open] { border-color: var(--accent); }
-summary {
-  padding: 22px 28px; font-weight: 600; cursor: pointer; list-style: none;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.95rem; color: var(--text);
-}
-summary::-webkit-details-marker { display: none; }
-.faq-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); transition: transform 0.2s; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-answer { padding: 0 28px 24px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-
-/* ── Contact ── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-.contact-info-side p { color: var(--muted); margin-bottom: 32px; line-height: 1.75; font-size: 1rem; }
-.contact-details { display: flex; flex-direction: column; gap: 16px; }
-.contact-row { display: flex; align-items: center; gap: 14px; font-size: 0.95rem; color: var(--text); }
-.contact-icon-wrap {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--surface); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
-.contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; }
-.form-row { margin-bottom: 18px; }
-.form-row label { display: block; font-size: 0.75rem; font-weight: 700; margin-bottom: 7px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
-.form-row input, .form-row textarea, .form-row select {
-  width: 100%; padding: 13px 16px;
-  background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px;
-  color: var(--text); font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-}
-.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
-.form-row textarea { min-height: 120px; resize: vertical; }
-.form-submit {
-  width: 100%; padding: 15px; background: var(--accent); color: #fff;
-  border: none; font-weight: 700; font-size: 0.95rem;
-  cursor: pointer; transition: all 0.22s; font-family: inherit;
-  letter-spacing: 0.04em; text-transform: uppercase;
-}
-.form-submit:hover { background: var(--accent-dark); transform: translateY(-1px); }
-
-/* ── Openingstijden ── */
-.tijden-blok { margin-top: 40px; }
-.tijden-titel { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.tijden-tabel { width: 100%; border-collapse: collapse; }
-.tijden-tabel tr { border-bottom: 1px solid var(--border); }
-.tijden-tabel td { padding: 10px 0; font-size: 0.875rem; color: var(--muted); }
-.tijden-tabel td:first-child { font-weight: 600; color: var(--text); width: 50%; }
-
-/* ── WhatsApp knop ── */
-.whatsapp-btn {
-  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
-  padding: 13px 24px; background: #25d366; color: #fff;
-  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em;
-  transition: all 0.22s; text-decoration: none;
-}
-.whatsapp-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
-.whatsapp-btn svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-/* ── CTA band ── */
-.cta-band { background: #080808; padding: 96px 32px; text-align: center; }
-.cta-band-inner { max-width: 680px; margin: 0 auto; }
-.cta-band h2 { color: #fff; margin-bottom: 16px; }
-.cta-band p { color: rgba(255,255,255,0.5); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
-.btn-cta-accent {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 40px; background: var(--accent); color: #fff;
-  font-weight: 700; font-size: 1rem; letter-spacing: 0.02em;
-  cursor: pointer; transition: all 0.22s; text-decoration: none;
-}
-.btn-cta-accent:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
-
-/* ── Footer 4-kolom ── */
-footer {
-  background: #080808; border-top: 1px solid #1e1e1e;
-  padding: 64px 32px 32px;
-}
-.footer-4col {
-  max-width: 1280px; margin: 0 auto;
-  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-  padding-bottom: 56px;
-}
-.footer-col-title { color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-col ul a { color: #64748b; font-size: 0.875rem; transition: color 0.2s; }
-.footer-col ul a:hover { color: #fff; }
-.footer-col ul li span { color: #64748b; font-size: 0.875rem; }
-.footer-col-brand .footer-logo { font-weight: 800; font-size: 1.05rem; color: #fff; margin-bottom: 14px; display: block; }
-.footer-col-brand .footer-logo span { color: var(--accent); }
-.footer-col-brand p { color: #64748b; font-size: 0.875rem; line-height: 1.75; max-width: 240px; }
-.footer-bottom { max-width: 1280px; margin: 0 auto; border-top: 1px solid #1e1e1e; padding-top: 24px; color: #444444; font-size: 0.8rem; }
-
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: #111; color: #fff; text-align: center;
-  padding: 11px 16px; font-size: 0.82rem; font-weight: 600;
-  border-top: 2px solid var(--accent);
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.demo-banner a { color: var(--accent); text-decoration: underline; font-weight: 700; }
-
-/* ── Reveal ── */
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── Responsive ── */
-@media (max-width: 1024px) {
-  .footer-4col { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .galerij-grid { grid-template-columns: repeat(2, 1fr); }
-  .diensten-featured { grid-template-columns: 1fr; }
-  .featured-right { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-}
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-  .cta-band { padding: 64px 20px; }
-  .accent-band { padding: 22px 20px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .hero-inner { padding: 0 20px; }
-  .over-ons-split { grid-template-columns: 1fr; gap: 40px; }
-  .over-ons-fotos { display: block; }
-  .stats-badge-wrap img { height: 260px; }
-  .over-ons-foto-small { display: none; }
-  .over-ons-pilaren { grid-template-columns: 1fr; }
-  .waarden-grid { grid-template-columns: 1fr; }
-  .galerij-grid { grid-template-columns: 1fr 1fr; }
-  .dienst-row { grid-template-columns: 1fr; min-height: auto; }
-  .dienst-row.reverse { grid-template-columns: 1fr; }
-  .dienst-row-img { height: 260px; }
-  .dienst-row-content { padding: 36px 24px; order: 0 !important; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .testimonial-wrap { padding: 36px 24px; }
-  .footer-4col { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
-  .page-hero { padding: 128px 20px 60px; }
-  .featured-right { grid-template-columns: 1fr; }
-}</style>
-</head>
-<body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Bröker<span>.</span></a>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="diensten.html" class="">Diensten</a></li><li><a href="over-ons.html" class="">Over ons</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu"><a href="index.html" class="active">Home</a><a href="diensten.html" class="">Diensten</a><a href="over-ons.html" class="">Over ons</a><a href="contact.html" class="">Contact</a></div>
-<section class="hero">
-  <div class="hero-photo-bg" style="background-image:url('https://images.pexels.com/photos/8486928/pexels-photo-8486928.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-fade-bottom"></div>
-  <div class="hero-inner">
-    <h1 class="reveal">Bröker Installatietechniek, uw loodgieter in<br><em>Arnhem</em></h1>
-    <p class="hero-sub reveal reveal-delay-1">Lekkages verholpen, CV-ketels geplaatst, badkamers gerenoveerd. 24/7 bereikbaar.</p>
-    <div class="hero-cta reveal reveal-delay-2">
-      <a href="contact.html" class="btn btn-primary">Bel direct</a>
-      <a href="contact.html" class="btn btn-ghost">Contact</a>
-    </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal reveal-delay-1"></p>
-    <div class="diensten-featured">
-      <div class="featured-left reveal"><div class="dienst-card featured">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:320px" src="https://images.pexels.com/photos/29226620/pexels-photo-29226620.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Lekkage verhelpen" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-0/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Lekkage</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">01</div>
-            <h3>Lekkage verhelpen</h3>
-            <p>Snel opgespoord en professioneel aangepakt. Water- en verwarmingsleidingen.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div></div>
-      <div class="featured-right reveal reveal-delay-1">
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/4194862/pexels-photo-4194862.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="CV-ketel installatie en onderhoud" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-1/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">CV-ketel</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">02</div>
-            <h3>CV-ketel installatie en onderhoud</h3>
-            <p>Nieuwe installatie, onderhoud en reparatie. Betrouwbare warmte het hele jaar.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-        <div class="dienst-card small">
-          <div class="dienst-foto-wrap">
-            <img class="dienst-foto" style="height:180px" src="https://images.pexels.com/photos/8143708/pexels-photo-8143708.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Badkamer renovatie" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-2/800/600'">
-            <div class="dienst-foto-overlay"></div>
-            <div class="dienst-badge">Badkamer</div>
-          </div>
-          <div class="dienst-body">
-            <div class="dienst-nummer">03</div>
-            <h3>Badkamer renovatie</h3>
-            <p>Van tegels tot toilet. Complete badkamer- en keukeninstallaties op maat.</p>
-            <a href="diensten.html" class="dienst-lees-meer">Bekijk alle diensten &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="over-ons-split">
-      <div class="over-ons-fotos reveal">
-        <div class="stats-badge-wrap">
-          <img src="https://images.pexels.com/photos/7587749/pexels-photo-7587749.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Bröker Installatietechniek B.V." loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo/1200/600'">
-          <div class="stats-badge"><span class="stats-num">15+</span><span class="stats-label">jaar ervaring</span></div>
-        </div>
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/6519910/pexels-photo-6519910.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo2/600/300'">
-        <img class="over-ons-foto-small" src="https://images.pexels.com/photos/7587746/pexels-photo-7587746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/hw-oo3/600/300'">
-      </div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Bröker Installatietechniek B.V.</h2>
-        <p class="reveal reveal-delay-1">Bröker Installatietechniek is sinds jaar en dag het vertrouwde adres voor loodgieterwerk en installaties in Arnhem en omgeving. We pakken klussen aan met ervaring, inzicht en geen onnodig gedoe. Uw waterleiding, CV-systeem en badkamer zijn in goede handen..</p>
-        <div class="over-ons-pilaren reveal reveal-delay-2"><div class="over-ons-pilaar"><div class="pilaar-num">01</div><p>24/7 spoedservice, ook in het weekend</p></div><div class="over-ons-pilaar"><div class="pilaar-num">02</div><p>Eerlijk tarief zonder verrassingen</p></div><div class="over-ons-pilaar"><div class="pilaar-num">03</div><p>Garantie op ons vakwerk</p></div></div>
-        <a href="over-ons.html" class="btn btn-outline reveal reveal-delay-3">Ons volledige verhaal</a>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Ervaringen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">Wat klanten zeggen</h2>
-    <div class="testimonial-wrap reveal">
-      <div class="quote-mark">"</div>
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-tekst">"Vakkundig werk, eerlijke prijzen en snel ter plekke. Dat is wat ik van Bröker ervaar."</p>
-      <div class="testimonial-naam">Peter de Vries</div>
-      <div class="testimonial-functie">Klant, Arnhem</div>
-    </div>
-    <div class="review-platforms reveal" style="display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap;">
-      <a href="#" onclick="return false;" class="review-btn review-btn-google" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #dadce0;background:#fff;color:#3c4043;cursor:pointer;
-        transition:box-shadow 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
-        Bekijk Google reviews
-      </a>
-      <a href="#" onclick="return false;" class="review-btn review-btn-trustpilot" style="
-        display:inline-flex;align-items:center;gap:10px;
-        padding:13px 24px;border-radius:0;font-weight:700;font-size:0.88rem;
-        border:2px solid #00b67a;background:#00b67a;color:#fff;cursor:pointer;
-        transition:background 0.2s;text-decoration:none;letter-spacing:0.02em;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-        Trustpilot beoordelingen
-      </a>
-    </div>
-  </div>
-</section>
-<section id="faq">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:48px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-      <summary>Hoe snel kunnen jullie naar een lekkage komen?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Bij spoedeisende werkzaamheden zijn we meestal binnen twee uur ter plekke. Bel 026 234 0505.</div>
-    </details><details>
-      <summary>Welke garantie geeft Bröker op het geleverde werk?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">We geven garantie op ons vakwerk. De precieze duur bespreken we na diagnose van uw situatie.</div>
-    </details><details>
-      <summary>Voert Bröker ook CV-onderhoud en inspectie uit?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Ja. Regelmatig onderhoud voorkomt storingen. We controleren uw systeem en vervangen onderdelen indien nodig.</div>
-    </details><details>
-      <summary>Zijn jullie ook buiten kantooruren bereikbaar in Arnhem?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-      <div class="faq-answer">Absoluut. We zijn 24/7 bereikbaar voor spoedwerkzaamheden, ook in het weekend.</div>
-    </details></div>
-  </div>
-</section>
-<section class="cta-band">
-  <div class="cta-band-inner reveal">
-    <h2>Klaar om te beginnen?</h2>
-    <p>Neem vandaag nog contact op met Bröker Installatietechniek B.V. voor een vrijblijvend gesprek.</p>
-    <a href="contact.html" class="btn-cta-accent">Bel direct &rarr;</a>
-  </div>
-</section>
-<footer>
-  <div class="footer-4col">
-    <div class="footer-col footer-col-brand">
-      <a href="index.html" class="footer-logo">Bröker<span>.</span></a>
-      <p>Professioneel, betrouwbaar en persoonlijk. Wij staan altijd voor u klaar.</p>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Navigatie</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="diensten.html">Diensten</a></li>
-        <li><a href="over-ons.html">Over ons</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col"><div class="footer-col-title">Diensten</div><ul><li><a href="diensten.html">Lekkage verhelpen</a></li><li><a href="diensten.html">CV-ketel installatie en onderhoud</a></li><li><a href="diensten.html">Badkamer renovatie</a></li></ul></div>
-    <div class="footer-col"><div class="footer-col-title">Contact</div><ul><li><a href="tel:0262340505">026 234 0505</a></li><li><a href="mailto:info@brokerinstallatie.nl">info@brokerinstallatie.nl</a></li><li><span>Arnhem</span></li></ul></div>
-  </div>
-  <div class="footer-bottom"><p>&copy; 2025 Bröker Installatietechniek B.V.. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p></div>
-</footer>
-<div class="demo-banner"><span>&#9889; DEMO voor Bröker Installatietechniek B.V. &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span></div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bröker Installatietechniek | Installateur en loodgieter in Arnhem</title>
+<meta name="description" content="Familiebedrijf uit Arnhem voor cv-ketels, hybride warmtepompen, vloerverwarming, airco's en loodgieterswerk. Bel 026 234 0505.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var nav = document.getElementById('navbar');
-
-  // Nav scroll: transparant → gekleurd
-  function updateNav() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bus: '#1C74CC', diep: '#0F4F8F', antraciet: '#1D232A', papier: '#F1F4F7', lijn: '#D8E0E8', ijs: '#E4EFFA'
+      },
+      fontFamily: { kop: ['Archivo', 'sans-serif'], tekst: ['"Public Sans"', 'sans-serif'] }
     }
   }
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  // Scroll reveal
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
-  }
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-
-  // Video: als laden mislukt, verberg video (foto-bg is altijd al zichtbaar onder de video)
-  var video = document.querySelector('.hero-video-bg');
-  if (video) {
-    function hideVideo() { video.style.display = 'none'; }
-    video.addEventListener('error', hideVideo);
-    // Browsers vuren error op <source>, niet op <video> — beide afvangen
-    video.querySelectorAll('source').forEach(function(s) {
-      s.addEventListener('error', hideVideo);
-    });
-    setTimeout(function() {
-      if (video.readyState < 2) { hideVideo(); }
-    }, 4000);
-  }
-
-  // Hero foto fallback: als background-image niet laadt → picsum
-  var heroBg = document.querySelector('.hero-photo-bg');
-  if (heroBg) {
-    var m = heroBg.style.backgroundImage.match(/url\(['"]?([^'"]+)['"]?\)/);
-    if (m && m[1]) {
-      var pi = new Image();
-      pi.onerror = function() {
-        heroBg.style.backgroundImage = "url('https://picsum.photos/seed/hagenweb-hero/1600/1000')";
-      };
-      pi.src = m[1];
-    }
-  }
-});
+}
 </script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Public Sans", sans-serif; color: #1D232A; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: Archivo, sans-serif; font-stretch: 118%; letter-spacing: -0.02em; text-wrap: balance; }
+  .kop-smal { font-family: Archivo, sans-serif; font-stretch: 100%; }
+  p { text-wrap: pretty; }
+  /* De boog van de blauwe buspanelen */
+  .livery { border-top-right-radius: 55% 100%; }
+  .livery-quote { border-radius: 1.5rem; border-top-right-radius: 38% 100%; }
+  @media (max-width: 639px) { .livery-quote { border-top-right-radius: 60% 90px; } }
+  @media (max-width: 1023px) { .livery { border-top-right-radius: 0; border-top-right-radius: 100% 56px; } }
+  .ring { border: 3px solid currentColor; border-radius: 9999px; }
+  a, button { transition: background-color .2s, color .2s, border-color .2s, transform .2s; }
+  a:active, button:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #1C74CC; outline-offset: 3px; }
+  .dienst:hover .dienst-pijl { transform: translateX(4px); }
+  .dienst-pijl { transition: transform .2s; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+</head>
+<body class="bg-white pb-20 lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="bg-antraciet text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Bröker Installatietechniek B.V., gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-ijs">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-lijn">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 text-bus" aria-label="Bröker Installatietechniek, naar boven">
+      <span class="ring w-10 h-10 lg:w-11 lg:h-11 grid place-items-center"><span class="kop font-extrabold text-lg text-antraciet">B</span></span>
+      <span class="leading-none">
+        <span class="kop block font-extrabold text-xl lg:text-2xl text-antraciet">Bröker</span>
+        <span class="block text-[13px] text-bus font-medium tracking-wide mt-0.5">Installatietechniek</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-bus">Diensten</a>
+      <a href="#werk" class="hover:text-bus">Werk</a>
+      <a href="#over" class="hover:text-bus">Over ons</a>
+      <a href="#reviews" class="hover:text-bus">Reviews</a>
+      <a href="#contact" class="hover:text-bus">Contact</a>
+    </nav>
+    <a href="tel:+31262340505" class="inline-flex items-center gap-2 bg-bus hover:bg-diep text-white font-semibold rounded-full px-4 lg:px-5 py-2.5 text-sm lg:text-base">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">026 234 0505</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative bg-white">
+  <div class="relative lg:grid lg:grid-cols-12 lg:min-h-[640px]">
+    <div class="lg:col-span-7 lg:col-start-6 lg:row-start-1 h-72 sm:h-96 lg:h-auto">
+      <img src="assets/google-01.jpg" alt="Twee bussen van Bröker Installatietechniek geparkeerd onder een Arnhemse brug" class="w-full h-full object-cover object-[70%_50%]">
+    </div>
+    <div class="livery relative -mt-12 lg:mt-0 bg-bus text-white lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:z-10 px-6 sm:px-10 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-40 pt-20 pb-12 lg:py-24 flex flex-col justify-center">
+      <p class="text-ijs font-medium mb-5">Installatie en loodgieterswerk in Arnhem en omgeving</p>
+      <h1 class="kop font-extrabold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.6rem]">Een klein bedrijf met grote service.</h1>
+      <p class="mt-6 text-lg leading-relaxed text-white/90 max-w-xl">Cv-ketels, hybride warmtepompen, vloerverwarming, airco's en al het loodgieterswerk. Wij denken met u mee, maken duidelijke afspraken en laten uw huis netjes achter.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+31262340505" class="inline-flex justify-center items-center gap-3 bg-white text-diep hover:bg-ijs font-semibold rounded-full px-7 py-4 text-lg">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 026 234 0505
+        </a>
+        <a href="#storing" class="inline-flex justify-center items-center rounded-full px-7 py-4 text-lg font-semibold border-2 border-white/60 hover:border-white hover:bg-white/10">Storing melden</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-b border-lijn">
+    <dl class="max-w-7xl mx-auto px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-6 py-8 lg:py-10">
+      <div>
+        <dt class="text-sm text-antraciet/60">Google-reviews (90)</dt>
+        <dd class="mt-1 flex items-center gap-2"><span class="kop font-extrabold text-2xl">4.9</span>
+          <span class="flex text-bus" aria-label="4.9 van 5 sterren">
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg>
+          </span>
+          </dd>
+      </div>
+      <div>
+        <dt class="text-sm text-antraciet/60">Wie</dt>
+        <dd class="mt-1 kop-smal font-semibold text-lg">Familiebedrijf uit Arnhem</dd>
+      </div>
+      <div>
+        <dt class="text-sm text-antraciet/60">Bereikbaar</dt>
+        <dd class="mt-1 kop-smal font-semibold text-lg">Ma t/m vr, 08:00 tot 17:00</dd>
+      </div>
+      <div>
+        <dt class="text-sm text-antraciet/60">Werkgebied</dt>
+        <dd class="mt-1 kop-smal font-semibold text-lg">Regio Arnhem</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- Storing -->
+<section id="storing" class="bg-papier">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">Ketel kapot of een lekkage?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-antraciet/80 max-w-xl">Voor storingen en onderhoud kunt u bij ons terecht, ook zonder contract. Bel direct, of mail ons wat er aan de hand is en wanneer uw installatie voor het laatst onderhoud heeft gehad. Wij nemen zo snel mogelijk contact met u op.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+31262340505" class="inline-flex justify-center items-center bg-bus hover:bg-diep text-white font-semibold rounded-full px-7 py-4">Bel 026 234 0505</a>
+        <a href="mailto:info@brokerinstallatie.nl?subject=Storing%20melden" class="inline-flex justify-center items-center font-semibold rounded-full px-7 py-4 border-2 border-antraciet/20 hover:border-bus hover:text-bus">Storing mailen</a>
+      </div>
+    </div>
+    <figure class="lg:col-span-6 bg-white rounded-3xl p-8 sm:p-10 lg:p-12 border border-lijn">
+      <blockquote class="text-xl sm:text-2xl leading-snug kop-smal font-medium">"'s Middags ging mijn ketel stuk. Een paar uur later had ik de vervanger uitgezocht, en contact gezocht met Bröker. De volgende ochtend hadden we een nette offerte, en maakten we een afspraak voor installatie in overleg. Contact verloopt idioot snel én prettig en transparant."</blockquote>
+      <figcaption class="mt-6 text-antraciet/70"><span class="font-semibold text-antraciet">Tijmen Sarneel</span>, Google-review, 5 sterren</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-20 lg:pt-28 pb-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end">
+      <h2 class="lg:col-span-7 kop font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.02]">Wat wij voor u doen</h2>
+      <p class="lg:col-span-5 text-lg leading-relaxed text-antraciet/75">Grote en kleine klussen, voor particulieren en ondernemers. Door samenwerking met een vast team van vakspecialisten kunnen we ook grotere projecten snel realiseren.</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pb-20 lg:pb-28">
+    <!-- Twee uitgelichte diensten met foto -->
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8 mt-10">
+      <article class="group">
+        <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-papier">
+          <img src="assets/site-04.webp" alt="Monteur van Bröker sluit een nieuwe cv-ketel aan" class="w-full h-full object-cover object-top">
+        </div>
+        <h3 class="kop font-bold text-2xl lg:text-3xl mt-6">Cv-ketel plaatsen of vervangen</h3>
+        <p class="mt-3 text-antraciet/75 leading-relaxed max-w-lg">Is reparatie niet meer de oplossing? Dan helpen wij u aan een nieuwe, zuinige cv-ketel. Bij vervanging kijken we meteen of een hybride warmtepomp bij uw woning past, zodat u bespaart op de gasrekening.</p>
+      </article>
+      <article class="group md:mt-24">
+        <div class="rounded-3xl overflow-hidden aspect-[4/3] bg-papier">
+          <img src="assets/site-05.webp" alt="Monteur legt de leidingen van vloerverwarming" class="w-full h-full object-cover">
+        </div>
+        <h3 class="kop font-bold text-2xl lg:text-3xl mt-6">Vloerverwarming</h3>
+        <p class="mt-3 text-antraciet/75 leading-relaxed max-w-lg">Geen koude vloer meer en een gelijkmatig warm huis. Uw gasverbruik gaat omlaag en uw comfort omhoog, zeker in combinatie met een hybride warmtepomp.</p>
+      </article>
+    </div>
+
+    <!-- Overige diensten als lijst -->
+    <ul class="mt-16 lg:mt-20 border-t border-lijn">
+      <li class="dienst grid md:grid-cols-12 gap-2 md:gap-6 py-7 border-b border-lijn items-baseline">
+        <h3 class="md:col-span-4 kop font-bold text-xl lg:text-2xl">Hybride warmtepompen</h3>
+        <p class="md:col-span-8 text-antraciet/75 leading-relaxed">Advies op maat over de mogelijkheden voor uw woning, bijvoorbeeld met de Remeha Elga Ace hybride warmtepomp.</p>
+      </li>
+      <li class="dienst grid md:grid-cols-12 gap-2 md:gap-6 py-7 border-b border-lijn items-baseline">
+        <h3 class="md:col-span-4 kop font-bold text-xl lg:text-2xl">Airco's</h3>
+        <p class="md:col-span-8 text-antraciet/75 leading-relaxed">Koelen in de zomer, en verwarmen met een airco in combinatie met vloerverwarming kan ook. Wij plaatsen binnen- en buitenunits netjes en nemen het afval mee.</p>
+      </li>
+      <li class="dienst grid md:grid-cols-12 gap-2 md:gap-6 py-7 border-b border-lijn items-baseline">
+        <h3 class="md:col-span-4 kop font-bold text-xl lg:text-2xl">Installatie en loodgieterswerk</h3>
+        <p class="md:col-span-8 text-antraciet/75 leading-relaxed">Monteren en repareren van gas-, water- en afvoerinstallaties, of een complete binnenhuisinstallatie.</p>
+      </li>
+      <li class="dienst grid md:grid-cols-12 gap-2 md:gap-6 py-7 border-b border-lijn items-baseline">
+        <h3 class="md:col-span-4 kop font-bold text-xl lg:text-2xl">Badkamers</h3>
+        <p class="md:col-span-8 text-antraciet/75 leading-relaxed">Ook voor een nieuwe badkamer kunt u bij ons terecht. Wij werken samen met Plieger Arnhem, waar u op afspraak in de showroom kunt kijken.</p>
+      </li>
+      <li class="dienst grid md:grid-cols-12 gap-2 md:gap-6 py-7 border-b border-lijn items-baseline">
+        <h3 class="md:col-span-4 kop font-bold text-xl lg:text-2xl">Verduurzaming</h3>
+        <p class="md:col-span-8 text-antraciet/75 leading-relaxed">Wij denken met u mee over het verduurzamen van uw installatie, zonder in te leveren op comfort.</p>
+      </li>
+      <li class="dienst grid md:grid-cols-12 gap-2 md:gap-6 py-7 border-b border-lijn items-baseline">
+        <h3 class="md:col-span-4 kop font-bold text-xl lg:text-2xl">Service en onderhoud</h3>
+        <p class="md:col-span-8 text-antraciet/75 leading-relaxed">Een grondige servicebeurt aan uw cv-ketel volgens afspraak, en reparaties als er iets stuk is.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Advies op maat -->
+<section class="bg-antraciet text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-6 lg:order-2">
+      <h2 class="kop font-extrabold text-4xl sm:text-5xl leading-[1.04]">Elke woning is anders. Ons advies ook.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-white/80 max-w-xl">Nu de energieprijzen zo zijn gestegen, kijken we samen met u naar wat er kan. Een hybride warmtepomp bijvoorbeeld, of vloerverwarming gecombineerd met verwarmen via de airco. Wij kijken naar uw huis, uw wensen en hoeveel u wilt besparen, zonder dat uw comfort eronder lijdt.</p>
+      <a href="#contact" class="mt-9 inline-flex items-center gap-2 bg-bus hover:bg-white hover:text-diep font-semibold rounded-full px-7 py-4">Vraag vrijblijvend advies</a>
+    </div>
+    <div class="lg:col-span-6 lg:order-1 relative">
+      <img src="assets/google-02.jpg" alt="Zonnepanelen op een plat dak in een woonwijk, in aanbouw" class="rounded-3xl w-full aspect-[4/5] lg:aspect-[5/6] object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-12">
+      <h2 class="lg:col-span-6 kop font-extrabold text-4xl sm:text-5xl leading-[1.04]">Uit ons werk</h2>
+      <p class="lg:col-span-6 text-lg text-antraciet/75 leading-relaxed">Van een buitenunit op de gevel tot een complete badkamer en de verdeler in de meterkast.</p>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-5">
+      <figure class="col-span-2 lg:col-span-5 lg:row-span-2">
+        <img src="assets/google-03.jpg" alt="Monteur van Bröker plaatst een airco-buitenunit op een balkon" class="w-full h-80 lg:h-full object-cover object-[50%_35%] rounded-2xl">
+        <figcaption class="text-sm text-antraciet/60 mt-2">Airco-buitenunit op de gevel</figcaption>
+      </figure>
+      <figure class="lg:col-span-4">
+        <img src="assets/site-06.webp" alt="Badkamer met zwarte waskom op houten blad en gouden kraan" class="w-full h-56 lg:h-72 object-cover rounded-2xl">
+        <figcaption class="text-sm text-antraciet/60 mt-2">Badkamer</figcaption>
+      </figure>
+      <figure class="lg:col-span-3">
+        <img src="assets/google-05.jpg" alt="Inloopdouche met glazen wand en hangtoilet" class="w-full h-56 lg:h-72 object-cover rounded-2xl">
+        <figcaption class="text-sm text-antraciet/60 mt-2">Inloopdouche</figcaption>
+      </figure>
+      <figure class="lg:col-span-4">
+        <img src="assets/google-04.jpg" alt="Airco-binnenunit boven een bakstenen muur in een horecazaak" class="w-full h-56 lg:h-72 object-cover rounded-2xl">
+        <figcaption class="text-sm text-antraciet/60 mt-2">Airco voor een ondernemer</figcaption>
+      </figure>
+      <figure class="lg:col-span-3">
+        <img src="assets/google-06.jpg" alt="Nieuwe waterleidingverdeler met watermeters in een meterkast" class="w-full h-56 lg:h-72 object-cover object-top rounded-2xl">
+        <figcaption class="text-sm text-antraciet/60 mt-2">Waterleiding en verdeler</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Over ons -->
+<section id="over" class="bg-papier">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-5">
+      <img src="assets/site-02.webp" alt="Bussen van Bröker Installatietechniek bij een woning" class="rounded-3xl w-full aspect-[4/5] object-cover">
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7">
+      <h2 class="kop font-extrabold text-4xl sm:text-5xl leading-[1.04]">Een familiebedrijf dat u kunt bellen</h2>
+      <p class="mt-6 text-lg leading-relaxed text-antraciet/80">Bröker Installatietechniek is een familiebedrijf en staat voor kwaliteit en betrouwbaarheid. Omdat we werken met een vast team van vakspecialisten, is onze doorlooptijd kort. U krijgt een duidelijke offerte, uitleg over uw installatie en we laten alles netjes achter.</p>
+      <p class="mt-4 text-lg leading-relaxed text-antraciet/80">We werken gecertificeerd en voeren installaties, onderhoud en reparaties uit volgens de norm, want veiligheid nemen we serieus.</p>
+      <div class="mt-8 bg-white rounded-2xl p-5 border border-lijn inline-block">
+        <img src="assets/site-03.webp" alt="Keurmerk CO-vrij: koolmonoxidevrij, veilige installatie" class="h-14 sm:h-16 w-auto">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <h2 class="kop font-extrabold text-4xl sm:text-5xl leading-[1.04]">Wat klanten zeggen</h2>
+      <p class="text-antraciet/70"><span class="kop font-extrabold text-2xl text-antraciet">4.9</span> gemiddeld uit 90 Google-reviews</p>
+    </div>
+
+    <figure class="mt-12 bg-bus text-white livery-quote px-7 sm:px-12 lg:pl-16 lg:pr-56 py-12 lg:py-16">
+      <blockquote class="kop-smal font-semibold text-2xl sm:text-3xl lg:text-[2.4rem] leading-[1.25] max-w-4xl">"Niet alleen maar verkopen, maar ook nazorg als je vragen of problemen heb zijn ze altijd bereikbaar. (...) Mochten mensen een betrouwbare installateur zoeken....stop maar en bel Bröker."</blockquote>
+      <figcaption class="mt-8 text-ijs"><span class="font-semibold text-white">Gerard Van Leijen</span>, liet 5 bedrijven een offerte maken voor een cv-ketel en airco</figcaption>
+    </figure>
+
+    <div class="mt-6 columns-1 md:columns-2 lg:columns-3 gap-6 [&>figure]:mb-6">
+      <figure class="break-inside-avoid border border-lijn rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Vandaag een nieuwe CV ketel laten aansluiten door de jongens van Bröker. Ging erg vlot en professioneel. Kan ze iedereen aanbevelen!"</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold">Arthur</figcaption>
+      </figure>
+      <figure class="break-inside-avoid border border-lijn rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Hybride waterpomp en een CV geïnstalleerd. Wat een geweldig familiebedrijf, alle reviews zijn niet overdreven. Secuur werken, meedenken, professionele en persoonlijke benadering. Mocht je op zoek zijn naar mensen die echt weten waar ze het over hebben en een glimlach? Meteen bellen!"</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold">Bram Startman</figcaption>
+      </figure>
+      <figure class="break-inside-avoid border border-lijn rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Keurige offerte, perfecte toelichting, vakkundige plaatsing en goede service! Wij zijn zeer tevreden. Aanrader!"</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold">Linda van der Eijk</figcaption>
+      </figure>
+      <figure class="break-inside-avoid border border-lijn rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Dit is een aanrader! Eerlijk bedrijf, met eerlijke prijzen. De communicatie verliep soepel &amp; vlot, advies was prettig &amp; helder, installatie netjes uitgevoerd, huis schoon achtergelaten, zelfs nog een paar gebroken dakpannen van het dak gehaald en vervangen door een paar die nog in de schuur lagen."</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold">Rik Looijen</figcaption>
+      </figure>
+      <figure class="break-inside-avoid border border-lijn rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Zeer tevreden over Broker Installatietechniek! Bij ons hebben ze een hybride warmtepomp geïnstalleerd en het hele traject is prettig verlopen. Vanaf het eerste contact werd er goed meegedacht over de beste oplossing voor onze woning."</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold">Wouter Geerling</figcaption>
+      </figure>
+      <figure class="break-inside-avoid border border-lijn rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Vriendelijke en kundige mensen, fijn en snel contact. Konden binnen een dag onze CV vervangen toen de oude kapot ging. Heel blij mee!"</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold">Roos Greven</figcaption>
+      </figure>
+      <figure class="break-inside-avoid border border-lijn rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Reparatie thermostaatknop van vloerverwarming. Goed uitgevoerd, snel gedaan en dat voor een mooie prijs. Meteen een afspraak gemaakt voor een onderhoudsbeurt van onze CV. Daarnaast ook een weloverwogen advies gekregen op onze vraag over een alternatief voor verwarming. No-nonsense familiebedrijf, daar houd ik van!"</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold">Hein Mulder</figcaption>
+      </figure>
+      <figure class="break-inside-avoid border border-lijn rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Betrouwbaar en duidelijke afspraken. Werk is goed uitgevoerd. Na veel slechte ervaring met andere bedrijven is dit een aanrader."</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold">Andreas K</figcaption>
+      </figure>
+      <figure class="break-inside-avoid border border-lijn rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Perfecte service. Servicebeurt aan CV grondig en volgens afspraak gedaan. Waterleiding Kraan in tuin en ontharder vlot en volgens wens geplaatst. Duidelijk advies vooraf over de mogelijkheden en te verwachten werkzaamheden. Komt op de afgesproken tijd, informeert als het iets later wordt."</blockquote>
+        <figcaption class="mt-4 text-sm font-semibold">Henk Bosscher</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-papier">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-4xl sm:text-5xl leading-[1.04]">Even overleggen?</h2>
+      <p class="mt-5 text-lg text-antraciet/75 leading-relaxed">Voor al uw vragen of een vrijblijvende offerte. Bellen is het snelst.</p>
+      <a href="tel:+31262340505" class="mt-8 block kop font-extrabold text-4xl sm:text-5xl text-bus hover:text-diep">026 234 0505</a>
+      <a href="mailto:info@brokerinstallatie.nl" class="mt-3 block text-lg font-semibold underline underline-offset-4 decoration-bus/40 hover:text-bus">info@brokerinstallatie.nl</a>
+
+      <dl class="mt-10 grid sm:grid-cols-2 lg:grid-cols-1 gap-8">
+        <div>
+          <dt class="font-semibold">Adres</dt>
+          <dd class="mt-1 text-antraciet/75">Lesterhuispad 21<br>6835 DN Arnhem</dd>
+        </div>
+        <div>
+          <dt class="font-semibold">Openingstijden</dt>
+          <dd class="mt-1 text-antraciet/75">
+            <span class="flex justify-between max-w-xs"><span>Maandag t/m vrijdag</span><span class="tabular-nums">08:00 tot 17:00</span></span>
+            <span class="flex justify-between max-w-xs"><span>Zaterdag en zondag</span><span>Gesloten</span></span>
+          </dd>
+        </div>
+        <div class="sm:col-span-2 lg:col-span-1">
+          <dt class="font-semibold">Werkgebied</dt>
+          <dd class="mt-1 text-antraciet/75 leading-relaxed">Arnhem, Oosterbeek, Doorwerth, De Lingewaard, Dieren, Duiven, Elst, Nijmegen, Westervoort en Zevenaar.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="lg:col-span-7 bg-white rounded-3xl border border-lijn p-6 sm:p-10 grid sm:grid-cols-2 gap-5" action="mailto:info@brokerinstallatie.nl" method="post" enctype="text/plain">
+      <h3 class="sm:col-span-2 kop font-bold text-2xl">Offerte of informatie aanvragen</h3>
+      <label class="sm:col-span-2 block">
+        <span class="text-sm font-semibold">Waar gaat het over?</span>
+        <select name="onderwerp" required class="mt-2 w-full rounded-xl border border-lijn bg-white px-4 py-3 focus:border-bus focus:outline-none">
+          <option value="">Kies een onderwerp</option>
+          <option>Cv-ketel</option><option>Vloerverwarming</option><option>Installatie of loodgieterswerk</option>
+          <option>Airco</option><option>Warmtepomp</option><option>Verduurzaming</option><option>Onderhoud</option><option>Storing</option><option>Anders</option>
+        </select>
+      </label>
+      <label class="block">
+        <span class="text-sm font-semibold">Naam</span>
+        <input name="naam" required autocomplete="name" class="mt-2 w-full rounded-xl border border-lijn px-4 py-3 focus:border-bus focus:outline-none">
+      </label>
+      <label class="block">
+        <span class="text-sm font-semibold">Plaats</span>
+        <input name="plaats" autocomplete="address-level2" class="mt-2 w-full rounded-xl border border-lijn px-4 py-3 focus:border-bus focus:outline-none">
+      </label>
+      <label class="block">
+        <span class="text-sm font-semibold">E-mailadres</span>
+        <input name="email" type="email" required autocomplete="email" class="mt-2 w-full rounded-xl border border-lijn px-4 py-3 focus:border-bus focus:outline-none">
+      </label>
+      <label class="block">
+        <span class="text-sm font-semibold">Telefoon</span>
+        <input name="telefoon" type="tel" autocomplete="tel" class="mt-2 w-full rounded-xl border border-lijn px-4 py-3 focus:border-bus focus:outline-none">
+      </label>
+      <label class="sm:col-span-2 block">
+        <span class="text-sm font-semibold">Bericht</span>
+        <textarea name="bericht" rows="5" required class="mt-2 w-full rounded-xl border border-lijn px-4 py-3 focus:border-bus focus:outline-none"></textarea>
+      </label>
+      <button type="submit" class="sm:col-span-2 justify-self-start bg-bus hover:bg-diep text-white font-semibold rounded-full px-8 py-4">Aanvraag versturen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-antraciet text-white/70">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row justify-between gap-8">
+    <div>
+      <p class="kop font-extrabold text-2xl text-white">Bröker</p>
+      <p class="text-sm text-ijs/80">Installatietechniek B.V.</p>
+    </div>
+    <div class="text-sm leading-relaxed">
+      Lesterhuispad 21, 6835 DN Arnhem<br>
+      <a href="tel:+31262340505" class="hover:text-white">026 234 0505</a><br>
+      <a href="mailto:info@brokerinstallatie.nl" class="hover:text-white">info@brokerinstallatie.nl</a><br>
+      KvK 42003883
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiel: altijd bellen binnen bereik -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-lijn p-3 grid grid-cols-2 gap-3">
+  <a href="tel:+31262340505" class="flex justify-center items-center gap-2 bg-bus text-white font-semibold rounded-full py-3.5">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bellen
+  </a>
+  <a href="mailto:info@brokerinstallatie.nl" class="flex justify-center items-center border-2 border-antraciet/15 font-semibold rounded-full py-3.5">Mailen</a>
+</div>
+
 </body>
 </html>
