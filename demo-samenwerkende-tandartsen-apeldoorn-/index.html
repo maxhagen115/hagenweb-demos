@@ -1,1343 +1,351 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samenwerkende Tandartsen Apeldoorn - de Maten</title>
-  <meta name="description" content="Samenwerkende Tandartsen Apeldoorn biedt moderne, angstvrije tandheelkunde voor het hele gezin.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #f8fafc;
-  color: #0f172a;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-:root {
-  --accent: #10b981;
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --border: #e2e8f0;
-  --text: #0f172a;
-  --muted: #64748b;
-  --nav-bg: rgba(248,250,252,0.97);
-  --hero-bg: transparent;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-/* ── Typografie ── */
-h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
-p { margin: 0; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Navigatie ── */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo span {
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-cta {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.nav-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Secties ── */
-section {
-  padding: 96px 24px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--muted);
-  max-width: 540px;
-  font-size: 1.05rem;
-  margin-bottom: 56px;
-}
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── USP strip ── */
-.usp-strip {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 24px;
-}
-
-.usp-strip .container {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.usp-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.usp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-/* ── Diensten grid ── */
-.diensten-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.dienst-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.dienst-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-.dienst-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.2;
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-
-.dienst-card h3 {
-  margin-bottom: 10px;
-}
-
-.dienst-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Stats band ── */
-.stats-band {
-  background: var(--accent);
-  color: #ffffff;
-  padding: 64px 24px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-item {}
-
-.stat-waarde {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  font-weight: 500;
-}
-
-/* ── Werkwijze ── */
-.werkwijze-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  counter-reset: stap;
-}
-
-.stap-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-}
-
-.stap-nummer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.stap-card h3 {
-  margin-bottom: 10px;
-}
-
-.stap-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Over ons ── */
-.over-ons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.over-ons-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.over-ons-tekst p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 56px;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 28px;
-  font-style: italic;
-  color: var(--text);
-}
-
-.testimonial-naam {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ── FAQ ── */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-details[open] {
-  border-color: var(--accent);
-}
-
-summary {
-  padding: 20px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-.faq-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: transform 0.2s;
-}
-
-details[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 24px 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* ── Contact ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-info h3 {
-  margin-bottom: 8px;
-}
-
-.contact-info p {
-  color: var(--muted);
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-}
-
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px;
-}
-
-.form-row {
-  margin-bottom: 18px;
-}
-
-.form-row label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 12px 16px;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--accent);
-}
-
-.form-row textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  font-family: inherit;
-}
-
-.form-submit:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Footer ── */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-logo {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.footer-logo span {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
-.footer-copy {
-  color: var(--muted);
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ── Dark-specifiek: hero ── */
-.hero-dark {
-  min-height: 100vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: #0c0c0c;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-dark-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.hero-dark-glow {
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, #10b981 15%, transparent), transparent 70%);
-  pointer-events: none;
-}
-
-.hero-dark-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-dark-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-dark-left h1 {
-  color: #f0f0f0;
-}
-
-.hero-dark-left .hero-sub {
-  color: #a0a0a0;
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-dark-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-dark-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-}
-
-/* Sector SVG icon groot in de hero */
-.hero-sector-icon {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-sector-icon svg {
-  width: 80px;
-  height: 80px;
-  stroke: #10b981;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 0 20px color-mix(in srgb, #10b981 60%, transparent));
-}
-
-/* Pulserende ringen */
-.pulse-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #10b981;
-  animation: pulse-out 3s ease-out infinite;
-  opacity: 0;
-}
-
-.pulse-ring:nth-child(1) { width: 160px; height: 160px; animation-delay: 0s; }
-.pulse-ring:nth-child(2) { width: 220px; height: 220px; animation-delay: 0.8s; }
-.pulse-ring:nth-child(3) { width: 290px; height: 290px; animation-delay: 1.6s; }
-
-@keyframes pulse-out {
-  0%   { opacity: 0.6; transform: scale(0.85); }
-  100% { opacity: 0;   transform: scale(1.15); }
-}
-
-/* Drijvende stat kaarten */
-.stat-cards {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.stat-card {
-  position: absolute;
-  background: #1c1c1c;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 14px 18px;
-  pointer-events: auto;
-  animation: float-card 5s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-
-.stat-card:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.stat-card:nth-child(2) { top: 55%; right: -8%; animation-delay: 1.5s; }
-.stat-card:nth-child(3) { bottom: 8%; left: 15%; animation-delay: 0.8s; }
-
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-
-.stat-card .sc-waarde {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #10b981;
-  line-height: 1;
-}
-
-.stat-card .sc-label {
-  font-size: 0.75rem;
-  color: #a0a0a0;
-  margin-top: 4px;
-}
-
-/* ── Light hero (foto achtergrond) ── */
-.hero-light {
-  min-height: 100vh;
-  padding-top: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-light-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-light-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-}
-
-.hero-light-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.hero-light-inner h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.hero-light-inner .hero-sub {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.15rem;
-  margin-bottom: 36px;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-.hero-light-cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── Clean hero ── */
-.hero-clean {
-  min-height: 90vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-}
-
-.hero-clean-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-clean-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-clean-left h1 {
-  color: var(--text);
-}
-
-.hero-clean-left .hero-sub {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-clean-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-clean-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.hero-stat-block {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-}
-
-.hero-stat-block .hs-waarde {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.hero-stat-block .hs-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-/* ── Foto grid voor services (light/clean) ── */
-.diensten-foto-wrap {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  height: 220px;
-  margin-bottom: 0;
-}
-
-.diensten-foto-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-}
-
-.dienst-card:hover .diensten-foto-wrap img {
-  transform: scale(1.04);
-}
-
-/* ── Responsive ── */
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border-top: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.demo-banner a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-/* ── Mobile hamburger ── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-
-.nav-mobile-menu {
-  display: none;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  z-index: 99;
-  padding: 16px 24px 24px;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-mobile-menu.open { display: flex; }
-
-.nav-mobile-menu a {
-  padding: 12px 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-mobile-menu a:last-child { border-bottom: none; }
-
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-dark-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .hero-dark-right { display: none; }
-  .hero-dark-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-dark-left h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-
-  .hero-clean-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-clean-right { display: none; }
-  .hero-clean-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-clean-left { text-align: center; align-items: center; }
-  .hero-clean-left h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-
-  .hero-light-inner { padding: 0 0 40px; }
-  .hero-light-inner h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-light-cta { flex-wrap: wrap; justify-content: center; }
-
-  .diensten-grid,
-  .werkwijze-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .over-ons-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .over-ons-img { height: 240px; }
-
-  .testimonial-wrap { padding: 28px 20px; }
-
-  .usp-strip .container { gap: 20px; flex-wrap: wrap; }
-  .usp-item { min-width: 140px; flex: 1; }
-
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 16px; }
-
-  .demo-banner { font-size: 0.78rem; padding: 9px 12px; }
-}
-</style>
-</head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Samenwerkende Tandartsen Apeldoorn - de Maten</div>
-    <ul class="nav-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#werkwijze">Werkwijze</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary nav-cta">Gratis offerte</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="#diensten">Diensten</a>
-  <a href="#over-ons">Over ons</a>
-  <a href="#werkwijze">Werkwijze</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" style="color:var(--accent);font-weight:700;margin-top:8px;">Gratis offerte</a>
-</div>
-<section class="hero-clean" id="hero">
-  <div class="hero-clean-inner">
-    <div class="hero-clean-left">
-      <h1 class="reveal">Gezond gebit, pijnvrij vertrouwen</h1>
-      <p class="hero-sub reveal reveal-delay-1">Samenwerkende Tandartsen Apeldoorn biedt moderne, angstvrije tandheelkunde voor het hele gezin.</p>
-      <div class="hero-clean-cta reveal reveal-delay-2">
-        <a href="#contact" class="btn btn-primary">Maak een afspraak</a>
-        <a href="#diensten" class="btn btn-secondary">Onze diensten</a>
-      </div>
-    </div>
-    <div class="hero-clean-right">
-      <div class="hero-stat-block reveal reveal-delay-1">
-      <div class="hs-waarde">4.8</div>
-      <div class="hs-label">Patiënt tevredenheid</div>
-    </div><div class="hero-stat-block reveal reveal-delay-2">
-      <div class="hs-waarde">Apeldoorn en omgeving</div>
-      <div class="hs-label">Werkgebied</div>
-    </div><div class="hero-stat-block reveal reveal-delay-3">
-      <div class="hs-waarde">Binnen 24 uur</div>
-      <div class="hs-label">Reactietijd</div>
-    </div>
-    </div>
-  </div>
-</section>
-<div class="usp-strip">
-  <div class="container"><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Angstvrije behandeling voor alle leeftijden</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Moderne apparatuur en kindvriendelijke benadering</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Persoonlijke aandacht en vertrouwen in focus</span>
-    </div></div>
-</div>
-<section id="diensten">
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal"></p>
-    <div class="diensten-grid"><div class="dienst-card reveal reveal-delay-1">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-0.jpg" alt="Periodieke controle" loading="lazy">
-      </div>
-      <div class="dienst-number">01</div>
-      <h3>Periodieke controle</h3>
-      <p>Voorkomen is beter dan genezen. Regelmatige check-ups houden uw tanden gezond.</p>
-    </div><div class="dienst-card reveal reveal-delay-2">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-1.jpg" alt="Tandheelkundige behandeling" loading="lazy">
-      </div>
-      <div class="dienst-number">02</div>
-      <h3>Tandheelkundige behandeling</h3>
-      <p>Van vullingen tot wortelbehandeling. Moderne technieken met maximaal comfort.</p>
-    </div><div class="dienst-card reveal reveal-delay-3">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-2.jpg" alt="Cosmetische tandheelkunde" loading="lazy">
-      </div>
-      <div class="dienst-number">03</div>
-      <h3>Cosmetische tandheelkunde</h3>
-      <p>Bleken, facings en meer. Een stralend lachje waar u trots op bent.</p>
-    </div></div>
-  </div>
-</section>
-<section class="stats-band">
-  <div class="container">
-    <div class="stats-grid"><div class="stat-item reveal">
-      <div class="stat-waarde">4.8</div>
-      <div class="stat-label">Patiënt tevredenheid</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Apeldoorn en omgeving</div>
-      <div class="stat-label">Werkgebied</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Binnen 24 uur</div>
-      <div class="stat-label">Reactietijd</div>
-    </div></div>
-  </div>
-</section>
-<section id="werkwijze">
-  <div class="container">
-    <div class="section-label">Hoe het werkt</div>
-    <h2 class="section-title reveal">Onze aanpak</h2>
-    <div class="werkwijze-grid"><div class="stap-card reveal reveal-delay-1">
-      <div class="stap-nummer">1</div>
-      <h3>Intake en onderzoek</h3>
-      <p>Kennismaking en grondige controle van tanden en mondgezondheid.</p>
-    </div><div class="stap-card reveal reveal-delay-2">
-      <div class="stap-nummer">2</div>
-      <h3>Behandeling plannen</h3>
-      <p>Samen bepalen we de beste aanpak met uw wensen en budget.</p>
-    </div><div class="stap-card reveal reveal-delay-3">
-      <div class="stap-nummer">3</div>
-      <h3>Zorg en nazorg</h3>
-      <p>Professionele behandeling met vervolgafspraken voor gezond gebit.</p>
-    </div></div>
-  </div>
-</section>
-<section id="over-ons" style="background: var(--surface);">
-  <div class="container">
-    <div class="over-ons-grid">
-      <div class="over-ons-foto reveal"><img src="stock/img-2.jpg" alt="Samenwerkende Tandartsen Apeldoorn - de Maten" class="over-ons-img" loading="lazy"></div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Samenwerkende Tandartsen Apeldoorn - de Maten</h2>
-        <p class="reveal reveal-delay-1">Samenwerkende Tandartsen Apeldoorn de Maten staat voor zorg zonder angst en veel begrip. We werken met de nieuwste technieken en maken tandheelkunde toegankelijk voor iedereen in Apeldoorn. Uw gezondheid en vertrouwen zijn onze prioriteit.</p>
-        <div class="reveal reveal-delay-2">
-          <a href="#contact" class="btn btn-primary">Plan een gesprek</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Wat klanten zeggen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">Ervaringen</h2>
-    <div class="testimonial-wrap reveal">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px;opacity:0.5;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-      <p class="testimonial-quote">Eindelijk een tandarts waar ik niet bang ben. De behandeling was pijnloos en het hele team was erg aardig.</p>
-      <div class="testimonial-naam">Linda, Apeldoorn</div>
-    </div>
-  </div>
-</section>
-<section id="faq" style="background: var(--surface);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-    <summary>
-      Hoe voorkomen we tandvleesontsteking?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Regelmatig tandenpoetsen, flossen en jaarlijkse controles zijn essentieel. We geven graag persoonlijk advies.</div>
-  </details><details>
-    <summary>
-      Wat gebeurt er bij een wortelbehandeling?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">We verwijderen ontstoken tandweefsel, reinigen en vullen de wortelkanaal. Moderne technieken maken het comfortabel.</div>
-  </details><details>
-    <summary>
-      Is tanden bleken veilig?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja, onder professionele begeleiding. We gebruiken veilige middelen en passen het aan uw tandstructuur aan.</div>
-  </details><details>
-    <summary>
-      Hoe helpen jullie kinderen met tandvrees?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Geduld, speelse uitleg en rustige omgeving. Veel kinderen voelen zich meteen op hun gemak bij ons.</div>
-  </details></div>
-  </div>
-</section>
-<section id="contact" style="background: var(--bg);">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title reveal">Maak een afspraak</h2>
-        <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte. Wij reageren binnen 24 uur.</p>
-        <div class="contact-details reveal reveal-delay-2">
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <a href="tel:0555396587">055 539 6587</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <a href="mailto:maten@samenwerkendetandartsen.nl">maten@samenwerkendetandartsen.nl</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <span>Apeldoorn</span>
-      </div>
-        </div>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-row">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam" autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label>E-mailadres</label>
-          <input type="email" placeholder="u@voorbeeld.nl" autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label>Bericht</label>
-          <textarea placeholder="Vertel ons over uw project..."></textarea>
-        </div>
-        <button class="form-submit" type="button">Maak een afspraak</button>
-      </div>
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Samenwerkende Tandartsen Apeldoorn - de Maten</div>
-    <ul class="footer-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-  <p class="footer-copy">&copy; 2025 Samenwerkende Tandartsen Apeldoorn - de Maten. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
-</footer>
-<div class="demo-banner">
-  <span>&#9889; DEMO voor Samenwerkende Tandartsen Apeldoorn - de Maten &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
-</div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samenwerkende Tandartsen Apeldoorn - de Maten | Tandarts in Apeldoorn</title>
+<meta name="description" content="Tandartspraktijk aan de Waleweingaarde 6 in Apeldoorn. Algemene tandheelkunde, mondhygiëne en orthodontie. Bel 055 539 6587.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Scroll reveal
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { io.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('visible'); });
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        petrol: '#0F3D44',
+        turkoois: { DEFAULT: '#17B3BE', donker: '#0C7F88', licht: '#9FDDE2' },
+        mint: '#E6F6F7',
+        wit: '#FBFDFD',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'sans-serif'],
+        sans: ['Figtree', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* De boog uit het interieur van de praktijk */
+  .boog { position: absolute; border-radius: 9999px; border-style: solid; pointer-events: none; }
+  .tijden td { padding: .45rem 0; border-bottom: 1px solid rgba(15,61,68,.1); font-variant-numeric: tabular-nums; }
+  .tijden tr.vandaag td { font-weight: 600; color: #0C7F88; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .intro > * { animation: op .7s cubic-bezier(.2,.7,.2,1) both; }
+    .js .intro > *:nth-child(2) { animation-delay: .08s; }
+    .js .intro > *:nth-child(3) { animation-delay: .16s; }
+    .js .intro > *:nth-child(4) { animation-delay: .24s; }
+    @keyframes op { from { opacity: 0; transform: translateY(14px); } }
   }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-wit text-petrol font-sans antialiased pb-20 md:pb-0">
 
-  // Nav scroll effect
-  var nav = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
 
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-});
+<div class="bg-petrol text-white/85 text-[13px] text-center px-4 py-2">
+  Demo voor Samenwerkende Tandartsen Apeldoorn - de Maten, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-turkoois-licht">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-40 bg-wit/90 backdrop-blur border-b border-petrol/10">
+  <div class="max-w-6xl mx-auto px-5 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="shrink-0" aria-label="Samenwerkende Tandartsen Apeldoorn - de Maten, naar boven">
+      <img src="assets/site-01.png" alt="Samenwerkende Tandartsen Apeldoorn - de Maten" class="h-9 md:h-10 w-auto">
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium">
+      <a href="#praktijk" class="hover:text-turkoois-donker">Praktijk</a>
+      <a href="#behandelingen" class="hover:text-turkoois-donker">Behandelingen</a>
+      <a href="#team" class="hover:text-turkoois-donker">Team</a>
+      <a href="#contact" class="hover:text-turkoois-donker">Contact</a>
+      <a href="tel:0555396587" class="ml-2 inline-flex items-center gap-2 rounded-full bg-turkoois-donker text-white px-5 py-2.5 hover:bg-petrol transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        055 539 6587
+      </a>
+    </nav>
+    <a href="tel:0555396587" class="md:hidden text-sm font-semibold text-turkoois-donker">Bellen</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-10 pb-14 md:pt-14 md:pb-20 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="intro md:col-span-6 relative z-10">
+      <p class="text-turkoois-donker font-medium mb-4">Tandarts in Apeldoorn, De Maten</p>
+      <h1 class="font-kop font-semibold text-[2.6rem] leading-[1.02] md:text-[4.1rem] tracking-[-0.025em]">Een gezonde lach, gewoon om de hoek.</h1>
+      <p class="mt-6 text-lg leading-relaxed max-w-[34rem] text-petrol/80">Wij zijn toegankelijk, gastvrij en gedreven. Voor de halfjaarlijkse controle, de mondhygiënist, een beugel of een kies die plots pijn doet: u kunt bij ons terecht aan de Waleweingaarde 6.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="tel:0555396587" class="inline-flex items-center gap-2 rounded-full bg-turkoois-donker text-white font-semibold px-6 py-3.5 hover:bg-petrol active:translate-y-px transition">Afspraak maken: 055 539 6587</a>
+        <a href="#aanmelden" class="inline-flex items-center rounded-full border-2 border-petrol/15 font-semibold px-6 py-3 hover:border-turkoois-donker hover:text-turkoois-donker transition">Aanmelden als patiënt</a>
+      </div>
+    </div>
+
+    <div class="md:col-span-6 relative">
+      <div class="boog border-[34px] md:border-[46px] border-turkoois w-[115%] aspect-square -right-[45%] top-[10%] md:-right-[30%] md:-top-[30%]"></div>
+      <div class="relative rounded-tl-[9rem] md:rounded-tl-[14rem] rounded-br-3xl overflow-hidden aspect-[4/5] md:aspect-square shadow-[0_30px_60px_-30px_rgba(15,61,68,.45)]">
+        <img src="assets/site-14.jpg" alt="Tandarts in gesprek met een patiënt in de behandelkamer" class="w-full h-full object-cover object-[56%_center]">
+      </div>
+      <div class="relative md:absolute md:-left-10 md:bottom-8 mt-4 md:mt-0 bg-white rounded-2xl shadow-[0_20px_40px_-20px_rgba(15,61,68,.35)] p-5 md:w-72">
+        <p class="font-kop font-semibold text-lg" data-vandaag>Ma t/m vr open van 08:30 tot 17:00</p>
+        <p class="text-sm text-petrol/70 mt-1">Dinsdagavond ook van 17:30 tot 20:00. Lunchpauze 12:30 tot 13:00.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pijn en spoed -->
+<section id="pijn" class="px-5">
+  <div class="max-w-6xl mx-auto relative overflow-hidden rounded-[2rem] bg-petrol text-white">
+    <div class="boog border-[28px] border-turkoois/25 w-[420px] h-[420px] -right-40 -bottom-60"></div>
+    <div class="relative grid md:grid-cols-12 gap-8 p-7 md:p-14">
+      <div class="md:col-span-5">
+        <h2 class="font-kop font-semibold text-3xl md:text-[2.6rem] leading-[1.05] tracking-tight">Pijn? Bel vóór 10:00 uur.</h2>
+        <p class="mt-4 text-white/80 leading-relaxed max-w-md">Bent u patiënt bij ons en meldt u pijnklachten op een werkdag vóór 10:00 uur, dan streven we ernaar u dezelfde dag nog te helpen.</p>
+        <a href="tel:0555396587" class="mt-7 inline-flex rounded-full bg-turkoois text-petrol font-semibold px-6 py-3.5 hover:bg-white transition">Bel de praktijk: 055 539 6587</a>
+      </div>
+      <div class="md:col-span-6 md:col-start-7 grid gap-6 text-[15px] leading-relaxed">
+        <div class="border-t border-white/15 pt-5">
+          <h3 class="font-semibold text-white">Acute pijn of een bloeding tijdens openingstijden</h3>
+          <p class="text-white/75 mt-1">Bel gewoon het praktijknummer, dan kijken we wat er kan.</p>
+        </div>
+        <div class="border-t border-white/15 pt-5">
+          <h3 class="font-semibold text-white">Is de praktijk gesloten?</h3>
+          <p class="text-white/75 mt-1">Bel de spoeddienst op <a href="tel:0850189466" class="text-turkoois-licht underline underline-offset-2">085 018 9466</a>. Buiten openingstijden, in het weekend en op feestdagen kunt u ook terecht bij <a href="tel:09001515" class="text-turkoois-licht underline underline-offset-2">0900 - 15 15</a>.</p>
+        </div>
+        <div class="border-t border-white/15 pt-5">
+          <h3 class="font-semibold text-white">Neem mee naar de spoeddienst</h3>
+          <p class="text-white/75 mt-1">Uw BSN, verzekeringspas en identiteitsbewijs. Een spoedconsult betaalt u direct met pin of creditcard, contant kan helaas niet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Praktijk -->
+<section id="praktijk" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-10 md:gap-12">
+    <div class="md:col-span-5 md:sticky md:top-28 self-start">
+      <h2 class="font-kop font-semibold text-3xl md:text-5xl leading-[1.05] tracking-tight">Ruim, licht en goed bereikbaar.</h2>
+      <p class="mt-5 leading-relaxed text-petrol/80">Onze praktijk heeft 8 ruim ingerichte behandelkamers met in totaal 9 behandelstoelen. U vindt de ingang aan de Waleweingaarde 6.</p>
+      <p class="mt-4 leading-relaxed text-petrol/80">Om de hoek zit een bushalte, en komt u met de auto, dan is er voldoende parkeergelegenheid.</p>
+      <p class="mt-4 leading-relaxed text-petrol/80">We werken nauw samen met andere Samenwerkende Tandartsen-praktijken in de omgeving. Zo heeft u alle specialismen binnen handbereik. Ons team wordt periodiek bijgeschoold, zodat u zorg krijgt volgens de nieuwste technieken.</p>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Waleweingaarde+6,+7329+BD+Apeldoorn" class="mt-7 inline-flex font-semibold text-turkoois-donker underline underline-offset-4 decoration-2 hover:text-petrol">Plan uw route</a>
+    </div>
+    <div class="md:col-span-7 grid grid-cols-6 gap-3 md:gap-4">
+      <figure class="col-span-6 rounded-tr-[6rem] md:rounded-tr-[9rem] rounded-2xl overflow-hidden aspect-[4/3]">
+        <img src="assets/site-05.jpg" alt="De gang met de turquoise bogen en de tekst Open up for better care" class="w-full h-full object-cover">
+      </figure>
+      <figure class="col-span-3 rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/site-04.jpg" alt="De balie met turquoise blad" class="w-full h-full object-cover object-left">
+      </figure>
+      <figure class="col-span-3 rounded-2xl rounded-bl-[5rem] overflow-hidden aspect-square">
+        <img src="assets/google-05.jpg" alt="Een behandelstoel in een van de behandelkamers" class="w-full h-full object-cover">
+      </figure>
+      <figure class="col-span-6 rounded-2xl overflow-hidden aspect-[16/9]">
+        <img src="assets/site-07.jpg" alt="De wachtkamer met houten tafel en turquoise muur" class="w-full h-full object-cover">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Behandelingen -->
+<section id="behandelingen" class="bg-mint relative overflow-hidden">
+  <div class="boog border-[40px] border-white/70 w-[560px] h-[560px] -right-60 -top-60"></div>
+  <div class="relative max-w-6xl mx-auto px-5 py-20 md:py-28">
+    <h2 class="font-kop font-semibold text-3xl md:text-5xl leading-[1.05] tracking-tight max-w-2xl">Waarvoor u bij ons terecht kunt.</h2>
+    <div class="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-14">
+      <article class="border-t-2 border-petrol py-7">
+        <h3 class="font-kop font-semibold text-2xl">Algemene tandheelkunde</h3>
+        <p class="mt-3 leading-relaxed text-petrol/80">Daar richten we ons vooral op. Bij een controle kijken we of uw tandvlees gezond is en controleren we uw gebit op onder andere gaatjes. Waar nodig verwijzen we u op tijd door naar een specialist, zoals een parodontoloog.</p>
+      </article>
+      <article class="border-t-2 border-petrol py-7">
+        <h3 class="font-kop font-semibold text-2xl">De halfjaarlijkse controle</h3>
+        <p class="mt-3 leading-relaxed text-petrol/80">Op iedere leeftijd belangrijk. De tandarts of mondhygiënist kijkt naar meer dan alleen uw gebit en maakt soms foto's. Daarna hoort u of er een vervolgafspraak nodig is, en hoe vaak u het beste terugkomt.</p>
+      </article>
+      <article class="border-t-2 border-petrol py-7">
+        <h3 class="font-kop font-semibold text-2xl">Orthodontie</h3>
+        <p class="mt-3 leading-relaxed text-petrol/80">We hebben een eigen orthodontie-afdeling met een tandarts voor orthodontie en een team van zelfstandige ortho-assistenten. Samen zorgen zij dat uw gebit netjes recht komt te staan.</p>
+      </article>
+      <article class="border-t-2 border-petrol py-7">
+        <h3 class="font-kop font-semibold text-2xl">Mondhygiëne en preventie</h3>
+        <p class="mt-3 leading-relaxed text-petrol/80">Onze mondhygiënisten en preventieassistenten helpen u uw tanden en tandvlees gezond te houden, zodat u minder vaak in de stoel hoeft voor een behandeling.</p>
+      </article>
+    </div>
+    <div class="mt-10 grid md:grid-cols-12 gap-6 items-start">
+      <div class="md:col-span-8 bg-white rounded-2xl p-6 md:p-8">
+        <h3 class="font-semibold text-lg">Wat kost het?</h3>
+        <p class="mt-2 leading-relaxed text-petrol/80">De tarieven worden elk jaar door de NZa vastgesteld en zijn bij iedere praktijk hetzelfde. Tandsteen verwijderen of foto's staan apart op de factuur. Of u het vergoed krijgt hangt af van uw aanvullende verzekering. Voor kinderen tot 18 jaar valt tandheelkunde in het basispakket, met uitzondering van kroon- en brugwerk en orthodontie.</p>
+      </div>
+      <p class="md:col-span-4 font-kop text-xl leading-snug md:pt-8">Dit jaar nog niet op controle geweest? Dan is dit het moment. <a href="tel:0555396587" class="text-turkoois-donker underline underline-offset-4 decoration-2">Bel ons even.</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section id="team" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-10 items-end">
+    <h2 class="md:col-span-6 font-kop font-semibold text-3xl md:text-5xl leading-[1.05] tracking-tight">Zeventien mensen, één praktijk.</h2>
+    <p class="md:col-span-5 md:col-start-8 leading-relaxed text-petrol/80">Van de balie tot de behandelstoel: dit is wie u bij ons tegenkomt. Van onze tandartsen staat het BIG-nummer erbij, zodat u hun registratie zelf kunt controleren.</p>
+  </div>
+  <figure class="mt-10 rounded-2xl rounded-tl-[6rem] md:rounded-tl-[10rem] overflow-hidden aspect-[16/10] md:aspect-[1900/607]">
+    <img src="assets/site-13.jpg" alt="Medewerkers aan de balie in gesprek met een patiënt" class="w-full h-full object-cover object-[60%_center]">
+  </figure>
+  <div class="mt-12 grid md:grid-cols-3 gap-10 md:gap-12">
+    <div>
+      <h3 class="font-kop font-semibold text-xl pb-3 border-b-2 border-turkoois">Tandartsen</h3>
+      <ul class="mt-2 divide-y divide-petrol/10">
+        <li class="py-3"><span class="font-semibold">J. Vos</span><span class="block text-sm text-petrol/70">Tandarts, chef de clinique, BIG 39915122502</span></li>
+        <li class="py-3"><span class="font-semibold">F. Alnaqola</span><span class="block text-sm text-petrol/70">Tandarts, BIG 89922370902</span></li>
+        <li class="py-3"><span class="font-semibold">L. Kuipers</span><span class="block text-sm text-petrol/70">Tandarts, BIG 29915797302</span></li>
+        <li class="py-3"><span class="font-semibold">H. van Engelshoven</span><span class="block text-sm text-petrol/70">Tandarts, BIG 19937810702</span></li>
+        <li class="py-3"><span class="font-semibold">J. van den Hemel</span><span class="block text-sm text-petrol/70">Tandarts voor orthodontie, BIG 79021443102</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-kop font-semibold text-xl pb-3 border-b-2 border-turkoois">Mondzorg en preventie</h3>
+      <ul class="mt-2 divide-y divide-petrol/10">
+        <li class="py-3"><span class="font-semibold">H. Akturk</span><span class="block text-sm text-petrol/70">Mondhygiënist</span></li>
+        <li class="py-3"><span class="font-semibold">K. Arojan</span><span class="block text-sm text-petrol/70">Mondhygiënist</span></li>
+        <li class="py-3"><span class="font-semibold">Suleman</span><span class="block text-sm text-petrol/70">Mondhygiënist</span></li>
+        <li class="py-3"><span class="font-semibold">Manuela</span><span class="block text-sm text-petrol/70">Preventieassistente</span></li>
+        <li class="py-3"><span class="font-semibold">Rachèl</span><span class="block text-sm text-petrol/70">Preventieassistente</span></li>
+        <li class="py-3"><span class="font-semibold">Odile</span><span class="block text-sm text-petrol/70">Orthodontie-assistente</span></li>
+        <li class="py-3"><span class="font-semibold">Lisa</span><span class="block text-sm text-petrol/70">Orthodontie-assistente</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-kop font-semibold text-xl pb-3 border-b-2 border-turkoois">Assistentie en balie</h3>
+      <ul class="mt-2 divide-y divide-petrol/10">
+        <li class="py-3"><span class="font-semibold">Annemiek</span><span class="block text-sm text-petrol/70">Tandartsassistente</span></li>
+        <li class="py-3"><span class="font-semibold">Joke</span><span class="block text-sm text-petrol/70">Baliemedewerker</span></li>
+        <li class="py-3"><span class="font-semibold">Monique</span><span class="block text-sm text-petrol/70">Baliemedewerker</span></li>
+        <li class="py-3"><span class="font-semibold">Liselot</span><span class="block text-sm text-petrol/70">Baliemedewerker</span></li>
+        <li class="py-3"><span class="font-semibold">Josine</span><span class="block text-sm text-petrol/70">Praktijkmanager</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Ervaringen -->
+<section id="ervaringen" class="bg-mint">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-4">
+      <p class="font-kop font-semibold text-[5.5rem] md:text-[7.5rem] leading-none tracking-tight text-turkoois-donker">8,9</p>
+      <p class="mt-3 text-lg leading-snug">gemiddeld uit 3263 patiëntbeoordelingen</p>
+    </div>
+    <div class="md:col-span-8">
+      <blockquote class="font-kop text-2xl md:text-[1.75rem] leading-snug tracking-tight">
+        "Vanaf het moment dat ik binnenkwam voelde ik me welkom en op mijn gemak. De ontvangst was vriendelijk en professioneel, en de wachttijd was minimaal. De tandarts (Janneke Vos) nam echt de tijd om alles goed uit te leggen en stelde me gerust tijdens de behandeling."
+      </blockquote>
+      <p class="mt-5 font-semibold">Ana Bojadziev <span class="font-normal text-petrol/70">via Google</span></p>
+      <ul class="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-6 text-[15px] leading-relaxed">
+        <li class="border-l-2 border-turkoois pl-4">"Eerst vertrouwen opbouwen door een praatje. Voordat de behandeling begint uitleg over wat er gaat gebeuren. Uitleg mbv spiegel."</li>
+        <li class="border-l-2 border-turkoois pl-4">"Tandarts Kuipers informeert je rustig en kundig. De reparatie van de kies verliep vlot."</li>
+        <li class="border-l-2 border-turkoois pl-4">"Dag voor controle afspraak stukje kies afgebroken. Tijdens de controle is dit gelijk aangepakt en opgelost."</li>
+        <li class="border-l-2 border-turkoois pl-4">"Zoals altijd prima. Ruim tijd, aandacht en uitleg"</li>
+      </ul>
+      <p class="mt-6 text-sm text-petrol/60">Patiëntervaringen zoals ze op onze huidige website staan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <h2 class="font-kop font-semibold text-3xl md:text-5xl leading-[1.05] tracking-tight max-w-xl">Langskomen, bellen of aanmelden.</h2>
+  <div class="mt-12 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5">
+      <dl class="grid gap-6">
+        <div>
+          <dt class="text-sm text-petrol/60">Adres</dt>
+          <dd class="mt-1 text-lg">Waleweingaarde 6<br>7329 BD Apeldoorn</dd>
+          <dd class="mt-1"><a href="https://www.google.com/maps/dir/?api=1&destination=Waleweingaarde+6,+7329+BD+Apeldoorn" class="text-turkoois-donker font-semibold underline underline-offset-4">Route plannen</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-petrol/60">Telefoon</dt>
+          <dd class="mt-1 text-lg"><a href="tel:0555396587" class="hover:text-turkoois-donker">055 539 6587</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-petrol/60">E-mail</dt>
+          <dd class="mt-1 text-lg break-all"><a href="mailto:maten@samenwerkendetandartsen.nl" class="hover:text-turkoois-donker">maten@samenwerkendetandartsen.nl</a></dd>
+        </div>
+      </dl>
+      <h3 class="mt-10 font-semibold">Openingstijden</h3>
+      <table class="tijden mt-2 w-full text-[15px]">
+        <tbody>
+          <tr data-dag="1"><td>Maandag</td><td class="text-right">08:30 - 12:30, 13:00 - 17:00</td></tr>
+          <tr data-dag="2"><td>Dinsdag</td><td class="text-right">08:30 - 12:30, 13:00 - 17:00<br>17:30 - 20:00</td></tr>
+          <tr data-dag="3"><td>Woensdag</td><td class="text-right">08:30 - 12:30, 13:00 - 17:00</td></tr>
+          <tr data-dag="4"><td>Donderdag</td><td class="text-right">08:30 - 12:30, 13:00 - 17:00</td></tr>
+          <tr data-dag="5"><td>Vrijdag</td><td class="text-right">08:30 - 12:30, 13:00 - 17:00</td></tr>
+          <tr data-dag="6"><td>Zaterdag</td><td class="text-right">Gesloten</td></tr>
+          <tr data-dag="0"><td>Zondag</td><td class="text-right">Gesloten</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-3 text-sm text-petrol/60">Tijdens feestdagen kunnen de tijden afwijken.</p>
+    </div>
+
+    <div id="aanmelden" class="md:col-span-7 relative overflow-hidden rounded-[2rem] rounded-tr-[7rem] bg-petrol text-white p-7 md:p-10 self-start">
+      <div class="boog border-[30px] border-turkoois/30 w-80 h-80 -right-36 -top-36"></div>
+      <h3 class="relative font-kop font-semibold text-2xl md:text-3xl">Aanmelden als nieuwe patiënt</h3>
+      <p class="relative mt-2 text-white/75">Vul uw gegevens in, dan nemen wij contact met u op.</p>
+      <form class="relative mt-7 grid sm:grid-cols-2 gap-4" action="mailto:maten@samenwerkendetandartsen.nl" method="post" enctype="text/plain">
+        <label class="grid gap-1.5 text-sm">Voornaam
+          <input name="voornaam" required autocomplete="given-name" class="rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-base text-white placeholder-white/40 focus:outline-none focus:border-turkoois focus:ring-2 focus:ring-turkoois/40">
+        </label>
+        <label class="grid gap-1.5 text-sm">Achternaam
+          <input name="achternaam" required autocomplete="family-name" class="rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-base text-white focus:outline-none focus:border-turkoois focus:ring-2 focus:ring-turkoois/40">
+        </label>
+        <label class="grid gap-1.5 text-sm">Telefoonnummer
+          <input name="telefoon" type="tel" required autocomplete="tel" class="rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-base text-white focus:outline-none focus:border-turkoois focus:ring-2 focus:ring-turkoois/40">
+        </label>
+        <label class="grid gap-1.5 text-sm">E-mail
+          <input name="email" type="email" required autocomplete="email" class="rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-base text-white focus:outline-none focus:border-turkoois focus:ring-2 focus:ring-turkoois/40">
+        </label>
+        <label class="grid gap-1.5 text-sm sm:col-span-2">Geboortedatum
+          <input name="geboortedatum" type="date" required class="rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-base text-white [color-scheme:dark] focus:outline-none focus:border-turkoois focus:ring-2 focus:ring-turkoois/40">
+        </label>
+        <button type="submit" class="sm:col-span-2 mt-2 rounded-full bg-turkoois text-petrol font-semibold px-6 py-3.5 hover:bg-white active:translate-y-px transition">Aanmelding versturen</button>
+      </form>
+      <p class="relative mt-5 text-sm text-white/60">Liever bellen? Dat kan op <a href="tel:0555396587" class="underline underline-offset-2 text-white">055 539 6587</a>.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-petrol/10">
+  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-sm text-petrol/70">
+    <img src="assets/site-01.png" alt="Samenwerkende Tandartsen Apeldoorn - de Maten" class="h-8 w-auto self-start">
+    <p>Waleweingaarde 6, 7329 BD Apeldoorn. <a href="tel:0555396587" class="hover:text-turkoois-donker">055 539 6587</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-wit/95 backdrop-blur border-t border-petrol/10 flex gap-2">
+  <a href="tel:0555396587" class="flex-1 text-center rounded-full bg-turkoois-donker text-white font-semibold py-3.5">Bel 055 539 6587</a>
+  <a href="#aanmelden" class="rounded-full border-2 border-petrol/15 font-semibold px-5 py-3">Aanmelden</a>
+</div>
+
+<script>
+  // Openingstijden van vandaag; zonder JS blijft de algemene tekst staan.
+  (function () {
+    var d = new Date(), dag = d.getDay(), min = d.getHours() * 60 + d.getMinutes();
+    var rij = document.querySelector('[data-dag="' + dag + '"]');
+    if (rij) rij.classList.add('vandaag');
+    var el = document.querySelector('[data-vandaag]');
+    var sluit = dag === 2 ? 20 * 60 : 17 * 60;
+    if (dag === 0 || dag === 6) el.textContent = 'Vandaag gesloten, maandag vanaf 08:30 weer open';
+    else if (min < 510) el.textContent = 'Vandaag open vanaf 08:30';
+    else if (min < sluit) el.textContent = 'Vandaag open tot ' + (dag === 2 ? '20:00' : '17:00');
+    else el.textContent = dag === 5 ? 'Maandag vanaf 08:30 weer open' : 'Morgen vanaf 08:30 weer open';
+  })();
 </script>
 </body>
 </html>
