@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fietsenwinkel.nl Zwolle | E-bikes in het MAC³PARK stadion</title>
+<meta name="description" content="E-bikewinkel van 400 m² in het MAC³PARK stadion in Zwolle. Circa 130 e-bikes, proefrit rond het stadion en een eigen werkplaats. Stadionplein 14, 038 303 2676.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { loper: '#2D3BDB', nacht: '#10142E', beton: '#ECEEF1', geel: '#FFD21E' },
+      fontFamily: {
+        kop: ['"Big Shoulders Display"', 'sans-serif'],
+        sans: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: "Big Shoulders Display", sans-serif; line-height: .9; letter-spacing: -.005em; }
+  /* De blauwe loper: een brede baan met de streepjes van de vloer */
+  .loper-baan { background: linear-gradient(90deg, transparent 0 6px, rgba(255,255,255,.18) 6px 8px, transparent 8px calc(100% - 8px), rgba(255,255,255,.18) calc(100% - 8px) calc(100% - 6px), transparent calc(100% - 6px)), #2D3BDB; }
+  .strip { scrollbar-width: thin; scroll-snap-type: x mandatory; }
+  .strip { padding-inline: max(1.25rem, calc((100vw - 80rem) / 2 + 2rem)); scroll-padding-inline: max(1.25rem, calc((100vw - 80rem) / 2 + 2rem)); }
+  .strip > * { scroll-snap-align: start; }
+  a, button { transition: background-color .2s, color .2s, transform .15s; }
+  a:active, button:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #FFD21E; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  .vandaag { background: #2D3BDB; color: #fff; }
+</style>
+</head>
+<body class="bg-beton text-nacht font-sans">
+
+<div class="bg-nacht text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Fietsenwinkel.nl Zwolle, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-geel focus:p-3">Naar de inhoud</a>
+
+<header class="sticky top-0 z-40 bg-beton/95 backdrop-blur border-b border-nacht/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3">
+      <img src="assets/logo-oud.png" alt="" width="32" height="32" class="w-8 h-8">
+      <span class="leading-none">
+        <span class="block font-semibold tracking-tight">fietsenwinkel.nl</span>
+        <span class="block kop text-loper text-lg font-extrabold">Zwolle</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium">
+      <a href="#winkel" class="hover:text-loper">De winkel</a>
+      <a href="#proefrit" class="hover:text-loper">Proefrit</a>
+      <a href="#werkplaats" class="hover:text-loper">Werkplaats</a>
+      <a href="#route" class="hover:text-loper">Route en tijden</a>
+    </nav>
+    <a href="tel:0383032676" class="hidden sm:inline-flex items-center gap-2 bg-geel hover:bg-[#ffdd55] text-nacht font-semibold rounded-full px-5 py-2.5">
+      <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      038 303 2676
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero: de showroom met de blauwe loper -->
+  <section class="relative">
+    <div class="relative h-[78svh] min-h-[540px] max-h-[860px] overflow-hidden bg-nacht">
+      <img src="assets/google-08.jpg" alt="De showroom van Fietsenwinkel.nl Zwolle met een blauwe loper tussen de rijen e-bikes" class="absolute inset-0 w-full h-full object-cover object-[50%_100%]">
+      <div class="absolute inset-0 bg-gradient-to-t from-nacht/90 via-nacht/30 to-transparent md:bg-gradient-to-r md:from-nacht/90 md:via-nacht/50 md:to-transparent"></div>
+      <div class="relative h-full max-w-7xl mx-auto px-5 md:px-8 flex flex-col justify-end pb-12 md:pb-16">
+        <p class="text-white/85 font-medium mb-4 md:text-lg">E-bikewinkel in het MAC³PARK stadion</p>
+        <h1 class="kop text-white font-black uppercase text-[64px] sm:text-[96px] lg:text-[132px] max-w-3xl">Rij een rondje om het stadion</h1>
+        <p class="text-white/85 text-lg md:text-xl max-w-xl mt-6">Circa 130 e-bikes op 400 m². Kies er een uit en stap op: elke e&#8209;bike mag mee voor een proefrit.</p>
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-4 mt-8">
+          <a href="tel:0383032676" class="inline-flex items-center gap-2 bg-geel hover:bg-[#ffdd55] text-nacht font-semibold rounded-full px-6 py-3.5 text-lg">Bel voor een proefrit</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Stadionplein+14+8025+CP+Zwolle" class="text-white font-medium underline underline-offset-4 decoration-white/40 hover:decoration-white">Route naar Stadionplein 14</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Snelle feiten direct onder de foto -->
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="grid md:grid-cols-3 bg-white -mt-px md:-mt-8 relative md:rounded-xl overflow-hidden shadow-[0_20px_40px_-24px_rgba(16,20,46,.35)] divide-y md:divide-y-0 md:divide-x divide-nacht/10">
+        <div class="p-6 md:p-7">
+          <p class="text-sm text-nacht/60">Vandaag</p>
+          <p id="vandaag" class="font-semibold text-lg mt-1">Di t/m vr 10:00 tot 18:00, za tot 17:00</p>
+        </div>
+        <div class="p-6 md:p-7">
+          <p class="text-sm text-nacht/60">Adres</p>
+          <p class="font-semibold text-lg mt-1">Stadionplein 14, Zwolle</p>
+        </div>
+        <div class="p-6 md:p-7">
+          <p class="text-sm text-nacht/60">Met de bus</p>
+          <p class="font-semibold text-lg mt-1">Halte Stadionplein om de hoek</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- De winkel -->
+  <section id="winkel" class="max-w-7xl mx-auto px-5 md:px-8 pt-24 md:pt-32 pb-20">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+      <div class="lg:col-span-5 lg:sticky lg:top-28">
+        <h2 class="kop uppercase font-extrabold text-5xl md:text-7xl">400 m² vol e-bikes</h2>
+        <p class="text-lg mt-6 max-w-md text-nacht/80">Onze winkel zit in het MAC³PARK stadion. Je loopt over de blauwe loper langs circa 130 e-bikes: lage instap, transportfietsen, bakfietsen, sportieve modellen en speed pedelecs.</p>
+        <p class="text-lg mt-4 max-w-md text-nacht/80">De e-bike specialisten in de winkel helpen je met een advies dat bij jou past. Doorgaans staan ze 5 dagen per week voor je klaar.</p>
+        <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-[15px] max-w-md">
+          <li class="flex gap-2.5"><span class="mt-2 w-2 h-2 rounded-sm bg-loper shrink-0"></span>Eigen werkplaats</li>
+          <li class="flex gap-2.5"><span class="mt-2 w-2 h-2 rounded-sm bg-loper shrink-0"></span>Rolstoeltoegankelijk</li>
+          <li class="flex gap-2.5"><span class="mt-2 w-2 h-2 rounded-sm bg-loper shrink-0"></span>Gratis wifi</li>
+          <li class="flex gap-2.5"><span class="mt-2 w-2 h-2 rounded-sm bg-loper shrink-0"></span>Testrit rond het stadion</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-6 gap-4">
+        <img src="assets/google-02.jpg" alt="Transportfietsen met kratten op een podium in de showroom" class="col-span-6 w-full aspect-[3/2] object-cover rounded-xl">
+        <img src="assets/google-05.jpg" alt="Lichte showroom met houten pilaren en sportieve e-bikes" class="col-span-6 sm:col-span-4 w-full aspect-[4/3] object-cover rounded-xl">
+        <div class="col-span-6 sm:col-span-2 loper-baan rounded-xl text-white p-6 flex flex-row sm:flex-col items-end sm:items-start justify-between sm:justify-end gap-4">
+          <p class="kop font-black text-6xl md:text-7xl">130</p>
+          <p class="text-sm sm:mt-2 text-white/85 max-w-[14rem]">Zoveel e-bikes staan er ongeveer klaar voor een proefrit</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soorten e-bikes -->
+  <section class="bg-white py-20 md:py-24">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 flex flex-wrap items-end justify-between gap-4">
+      <h2 class="kop uppercase font-extrabold text-5xl md:text-6xl max-w-2xl">Voor elke rit een andere fiets</h2>
+      <p class="text-nacht/70 max-w-sm">Een greep uit wat er in de winkel staat. Twijfel je? Kom langs en rij er een paar achter elkaar.</p>
+    </div>
+    <ul class="strip mt-10 flex gap-5 overflow-x-auto pb-6">
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-01.webp" alt="E-bike met lage instap" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">Lage instap</p></li>
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-05.webp" alt="Elektrische bakfiets" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">Bakfiets</p></li>
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-03.webp" alt="Zwarte e-bike met hoge instap" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">Hoge instap</p></li>
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-06.webp" alt="Elektrische transportfiets met voordrager" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">Transportfiets</p></li>
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-02.webp" alt="E-bike met twee kinderzitjes" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">Met kinderzitjes</p></li>
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-08.webp" alt="Elektrische mountainbike" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">E-MTB</p></li>
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-09.webp" alt="Lichtblauwe longtail e-bike" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">Longtail</p></li>
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-07.webp" alt="Compacte e-bike met kleine wielen" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">Compact</p></li>
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-04.webp" alt="Groene e-bike met strak frame" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">Strak voor de stad</p></li>
+      <li class="shrink-0 w-[78%] sm:w-[42%] lg:w-[24%]"><img src="assets/site-10.webp" alt="Elektrische driewieler met kap voor kinderen" class="w-full aspect-[4/3] object-contain bg-white"><p class="mt-3 font-semibold border-t-4 border-loper pt-3">Driewieler</p></li>
+    </ul>
+  </section>
+
+  <!-- Proefrit: de loper als route -->
+  <section id="proefrit" class="bg-nacht text-white py-24 md:py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <h2 class="kop uppercase font-extrabold text-5xl md:text-7xl">Zo werkt een proefrit</h2>
+        <p class="text-white/75 text-lg mt-6 max-w-md">Een e-bike koop je niet van een foto. Daarom mag elke fiets in de winkel mee naar buiten.</p>
+        <a href="tel:0383032676" class="inline-flex mt-8 bg-geel hover:bg-[#ffdd55] text-nacht font-semibold rounded-full px-6 py-3.5">Proefrit inplannen: 038 303 2676</a>
+      </div>
+      <ol class="lg:col-span-7 relative">
+        <span aria-hidden="true" class="loper-baan absolute left-[22px] md:left-[30px] top-2 bottom-24 w-3 md:w-4 rounded-full"></span>
+        <li class="relative pl-16 md:pl-24 pb-12">
+          <span class="absolute left-0 top-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-loper ring-8 ring-nacht grid place-items-center kop font-black text-2xl md:text-3xl">1</span>
+          <h3 class="kop uppercase font-extrabold text-3xl md:text-4xl">Kom langs</h3>
+          <p class="text-white/75 mt-2 max-w-md">Loop binnen op het Stadionplein of bel even vooruit, dan weten we dat je komt.</p>
+        </li>
+        <li class="relative pl-16 md:pl-24 pb-12">
+          <span class="absolute left-0 top-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-loper ring-8 ring-nacht grid place-items-center kop font-black text-2xl md:text-3xl">2</span>
+          <h3 class="kop uppercase font-extrabold text-3xl md:text-4xl">Kies je e-bike</h3>
+          <p class="text-white/75 mt-2 max-w-md">Vertel waar je naartoe fietst en wat je meeneemt. Onze specialist zet een paar passende fietsen voor je klaar.</p>
+        </li>
+        <li class="relative pl-16 md:pl-24">
+          <span class="absolute left-0 top-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-geel text-nacht ring-8 ring-nacht grid place-items-center kop font-black text-2xl md:text-3xl">3</span>
+          <h3 class="kop uppercase font-extrabold text-3xl md:text-4xl">Rij een rondje</h3>
+          <p class="text-white/75 mt-2 max-w-md">Maak een mooie rit om het stadion, of neem de e-bike mee voor een langere testrit.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Werkplaats en service -->
+  <section id="werkplaats" class="max-w-7xl mx-auto px-5 md:px-8 py-24 md:py-32">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <img src="assets/google-03.jpg" alt="Bruine e-bike op de blauwe vloer van de winkel" class="w-full aspect-[4/3] object-cover rounded-xl order-last lg:order-first">
+      <div>
+        <h2 class="kop uppercase font-extrabold text-5xl md:text-7xl">Ook na de aankoop</h2>
+        <p class="text-lg text-nacht/80 mt-6 max-w-lg">De winkel heeft een eigen werkplaats. Plan je onderhoudsbeurt of reparatie in, dan zorgen wij dat je weer kunt rijden.</p>
+        <dl class="mt-10 divide-y divide-nacht/15 border-y border-nacht/15">
+          <div class="py-5 grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6">
+            <dt class="font-semibold">Onderhoud en reparatie</dt>
+            <dd class="text-nacht/75">Een beurt of reparatie plan je eenvoudig in, telefonisch of online.</dd>
+          </div>
+          <div class="py-5 grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6">
+            <dt class="font-semibold">Servicepakketten</dt>
+            <dd class="text-nacht/75">Ontstaat er een defect? Dan worden alle reparaties onder garantie kosteloos voor je gedaan.</dd>
+          </div>
+          <div class="py-5 grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6">
+            <dt class="font-semibold">Fietsverzekering</dt>
+            <dd class="text-nacht/75">Dekking tegen diefstal en/of schade. Wij regelen het voor je.</dd>
+          </div>
+          <div class="py-5 grid sm:grid-cols-[200px_1fr] gap-1 sm:gap-6">
+            <dt class="font-semibold">Zekerheid bij aankoop</dt>
+            <dd class="text-nacht/75">14 dagen bedenktijd, 2 jaar e-bike fabrieksgarantie en service op meer dan 40 locaties of aan huis.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review -->
+  <section class="loper-baan text-white">
+    <figure class="max-w-4xl mx-auto px-5 md:px-8 py-20 md:py-28">
+      <blockquote class="text-2xl md:text-4xl leading-snug font-medium">
+        <p>"Ik ben onlangs bij deze fietsenwinkel langs geweest en mijn ervaring was zeer positief. De winkel heeft een ruim assortiment aan fietsen en accessoires, waardoor er voor ieder wat wils is. Wat mij vooral opviel, was de deskundigheid en vriendelijkheid van het personeel. Ik werd direct geholpen…"</p>
+      </blockquote>
+      <figcaption class="mt-8 text-white/80">Yvonne Muis, op Google</figcaption>
+    </figure>
+  </section>
+
+  <!-- Route en contact -->
+  <section id="route" class="max-w-7xl mx-auto px-5 md:px-8 py-24 md:py-32">
+    <h2 class="kop uppercase font-extrabold text-5xl md:text-7xl max-w-3xl">Je vindt ons aan het Stadionplein</h2>
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 mt-12">
+      <div class="lg:col-span-7">
+        <img src="assets/google-01.jpg" alt="De gevel van Fietsenwinkel.nl Zwolle aan het Stadionplein met een blauwe tent en e-bikes" class="w-full aspect-[16/10] object-cover rounded-xl">
+        <div class="grid sm:grid-cols-2 gap-8 mt-8">
+          <div>
+            <h3 class="font-semibold text-lg">Adres</h3>
+            <p class="mt-2 text-nacht/80">Stadionplein 14<br>8025 CP Zwolle</p>
+            <p class="mt-2 text-nacht/80">In het MAC³PARK stadion. Bushalte Stadionplein ligt om de hoek.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Stadionplein+14+8025+CP+Zwolle" class="inline-block mt-3 font-semibold text-loper underline underline-offset-4">Open in Google Maps</a>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg">Contact</h3>
+            <p class="mt-2"><a href="tel:0383032676" class="font-semibold text-xl hover:text-loper">038 303 2676</a></p>
+            <p class="mt-1"><a href="mailto:info@fietsenwinkel.nl" class="text-nacht/80 hover:text-loper underline underline-offset-4">info@fietsenwinkel.nl</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 space-y-10">
+        <div>
+          <h3 class="font-semibold text-lg">Openingstijden</h3>
+          <table class="mt-3 w-full text-[15px]" id="tijden">
+            <tbody class="[&_td]:py-2.5 [&_td]:px-3 [&_tr]:border-b [&_tr]:border-nacht/10">
+              <tr data-dag="1"><td>Maandag</td><td class="text-right text-nacht/60">Gesloten</td></tr>
+              <tr data-dag="2"><td>Dinsdag</td><td class="text-right tabular-nums">10:00 – 18:00</td></tr>
+              <tr data-dag="3"><td>Woensdag</td><td class="text-right tabular-nums">10:00 – 18:00</td></tr>
+              <tr data-dag="4"><td>Donderdag</td><td class="text-right tabular-nums">10:00 – 18:00</td></tr>
+              <tr data-dag="5"><td>Vrijdag</td><td class="text-right tabular-nums">10:00 – 18:00</td></tr>
+              <tr data-dag="6"><td>Zaterdag</td><td class="text-right tabular-nums">10:00 – 17:00</td></tr>
+              <tr data-dag="0"><td>Zondag</td><td class="text-right text-nacht/60">Gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <form class="bg-white rounded-xl p-6 md:p-7" onsubmit="event.preventDefault(); this.querySelector('[data-ok]').hidden = false; this.reset();">
+          <h3 class="font-semibold text-lg">Stuur een bericht</h3>
+          <p class="text-sm text-nacht/65 mt-1">Vraag naar een proefrit, een onderhoudsbeurt of een specifieke e-bike.</p>
+          <label class="block mt-5 text-sm font-medium" for="naam">Naam</label>
+          <input id="naam" name="naam" required class="mt-1.5 w-full rounded-lg border border-nacht/20 px-3.5 py-2.5 focus:border-loper focus:outline-none">
+          <label class="block mt-4 text-sm font-medium" for="tel">Telefoon of e-mail</label>
+          <input id="tel" name="contact" required class="mt-1.5 w-full rounded-lg border border-nacht/20 px-3.5 py-2.5 focus:border-loper focus:outline-none">
+          <label class="block mt-4 text-sm font-medium" for="vraag">Je vraag</label>
+          <textarea id="vraag" name="vraag" rows="3" required class="mt-1.5 w-full rounded-lg border border-nacht/20 px-3.5 py-2.5 focus:border-loper focus:outline-none"></textarea>
+          <button class="mt-5 w-full bg-loper hover:bg-[#2330b8] text-white font-semibold rounded-full px-6 py-3">Bericht versturen</button>
+          <p data-ok hidden class="mt-3 text-sm text-loper font-medium">Bedankt, je bericht is verstuurd. We nemen contact met je op.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-nacht text-white/70 pb-24 sm:pb-0">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-sm">
+    <p><span class="text-white font-semibold">Fietsenwinkel.nl Zwolle</span>, Stadionplein 14, 8025 CP Zwolle</p>
+    <p><a href="tel:0383032676" class="hover:text-white">038 303 2676</a> <span class="mx-2 text-white/30">|</span> <a href="mailto:info@fietsenwinkel.nl" class="hover:text-white">info@fietsenwinkel.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: bellen en route altijd binnen bereik -->
+<div class="sm:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-beton/95 backdrop-blur border-t border-nacht/10 grid grid-cols-[1fr_auto] gap-2">
+  <a href="tel:0383032676" class="bg-geel text-nacht font-semibold rounded-full py-3.5 text-center">Bel 038 303 2676</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Stadionplein+14+8025+CP+Zwolle" class="bg-nacht text-white font-semibold rounded-full px-5 py-3.5">Route</a>
+</div>
+
+<script>
+    // Vandaag: openingstijden van de huidige dag
+  const tijden = { 0: null, 1: null, 2: '10:00 tot 18:00', 3: '10:00 tot 18:00', 4: '10:00 tot 18:00', 5: '10:00 tot 18:00', 6: '10:00 tot 17:00' };
+  const dag = new Date().getDay();
+  document.getElementById('vandaag').textContent = tijden[dag] ? 'Open van ' + tijden[dag] : 'Gesloten, dinsdag weer open vanaf 10:00';
+  document.querySelector('#tijden tr[data-dag="' + dag + '"]')?.classList.add('vandaag');
+</script>
+</body>
+</html>
