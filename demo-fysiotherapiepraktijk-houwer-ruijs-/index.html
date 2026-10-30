@@ -1,1338 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fysiotherapiepraktijk Houwer &amp; Ruijs - Locatie FSG Health</title>
-  <meta name="description" content="Fysiotherapiepraktijk Houwer &amp; Ruijs in Apeldoorn. Ervaren therapeuten, persoonlijk plan.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #f8fafc;
-  color: #0f172a;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-:root {
-  --accent: #2dd4bf;
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --border: #e2e8f0;
-  --text: #0f172a;
-  --muted: #64748b;
-  --nav-bg: rgba(248,250,252,0.97);
-  --hero-bg: transparent;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-/* ── Typografie ── */
-h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
-p { margin: 0; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Navigatie ── */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo span {
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-cta {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.nav-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Secties ── */
-section {
-  padding: 96px 24px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--muted);
-  max-width: 540px;
-  font-size: 1.05rem;
-  margin-bottom: 56px;
-}
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── USP strip ── */
-.usp-strip {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 24px;
-}
-
-.usp-strip .container {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.usp-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.usp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-/* ── Diensten grid ── */
-.diensten-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.dienst-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.dienst-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-.dienst-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.2;
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-
-.dienst-card h3 {
-  margin-bottom: 10px;
-}
-
-.dienst-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Stats band ── */
-.stats-band {
-  background: var(--accent);
-  color: #ffffff;
-  padding: 64px 24px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-item {}
-
-.stat-waarde {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  font-weight: 500;
-}
-
-/* ── Werkwijze ── */
-.werkwijze-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  counter-reset: stap;
-}
-
-.stap-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-}
-
-.stap-nummer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.stap-card h3 {
-  margin-bottom: 10px;
-}
-
-.stap-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Over ons ── */
-.over-ons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.over-ons-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.over-ons-tekst p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 56px;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 28px;
-  font-style: italic;
-  color: var(--text);
-}
-
-.testimonial-naam {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ── FAQ ── */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-details[open] {
-  border-color: var(--accent);
-}
-
-summary {
-  padding: 20px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-.faq-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: transform 0.2s;
-}
-
-details[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 24px 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* ── Contact ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-info h3 {
-  margin-bottom: 8px;
-}
-
-.contact-info p {
-  color: var(--muted);
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-}
-
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px;
-}
-
-.form-row {
-  margin-bottom: 18px;
-}
-
-.form-row label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 12px 16px;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--accent);
-}
-
-.form-row textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  font-family: inherit;
-}
-
-.form-submit:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Footer ── */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-logo {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.footer-logo span {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
-.footer-copy {
-  color: var(--muted);
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ── Dark-specifiek: hero ── */
-.hero-dark {
-  min-height: 100vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: #0c0c0c;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-dark-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.hero-dark-glow {
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, #2dd4bf 15%, transparent), transparent 70%);
-  pointer-events: none;
-}
-
-.hero-dark-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-dark-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-dark-left h1 {
-  color: #f0f0f0;
-}
-
-.hero-dark-left .hero-sub {
-  color: #a0a0a0;
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-dark-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-dark-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-}
-
-/* Sector SVG icon groot in de hero */
-.hero-sector-icon {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-sector-icon svg {
-  width: 80px;
-  height: 80px;
-  stroke: #2dd4bf;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 0 20px color-mix(in srgb, #2dd4bf 60%, transparent));
-}
-
-/* Pulserende ringen */
-.pulse-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #2dd4bf;
-  animation: pulse-out 3s ease-out infinite;
-  opacity: 0;
-}
-
-.pulse-ring:nth-child(1) { width: 160px; height: 160px; animation-delay: 0s; }
-.pulse-ring:nth-child(2) { width: 220px; height: 220px; animation-delay: 0.8s; }
-.pulse-ring:nth-child(3) { width: 290px; height: 290px; animation-delay: 1.6s; }
-
-@keyframes pulse-out {
-  0%   { opacity: 0.6; transform: scale(0.85); }
-  100% { opacity: 0;   transform: scale(1.15); }
-}
-
-/* Drijvende stat kaarten */
-.stat-cards {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.stat-card {
-  position: absolute;
-  background: #1c1c1c;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 14px 18px;
-  pointer-events: auto;
-  animation: float-card 5s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-
-.stat-card:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.stat-card:nth-child(2) { top: 55%; right: -8%; animation-delay: 1.5s; }
-.stat-card:nth-child(3) { bottom: 8%; left: 15%; animation-delay: 0.8s; }
-
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-
-.stat-card .sc-waarde {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #2dd4bf;
-  line-height: 1;
-}
-
-.stat-card .sc-label {
-  font-size: 0.75rem;
-  color: #a0a0a0;
-  margin-top: 4px;
-}
-
-/* ── Light hero (foto achtergrond) ── */
-.hero-light {
-  min-height: 100vh;
-  padding-top: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-light-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-light-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-}
-
-.hero-light-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.hero-light-inner h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.hero-light-inner .hero-sub {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.15rem;
-  margin-bottom: 36px;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-.hero-light-cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── Clean hero ── */
-.hero-clean {
-  min-height: 90vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-}
-
-.hero-clean-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-clean-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-clean-left h1 {
-  color: var(--text);
-}
-
-.hero-clean-left .hero-sub {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-clean-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-clean-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.hero-stat-block {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-}
-
-.hero-stat-block .hs-waarde {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.hero-stat-block .hs-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-/* ── Foto grid voor services (light/clean) ── */
-.diensten-foto-wrap {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  height: 220px;
-  margin-bottom: 0;
-}
-
-.diensten-foto-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-}
-
-.dienst-card:hover .diensten-foto-wrap img {
-  transform: scale(1.04);
-}
-
-/* ── Responsive ── */
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border-top: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.demo-banner a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-/* ── Mobile hamburger ── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-
-.nav-mobile-menu {
-  display: none;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  z-index: 99;
-  padding: 16px 24px 24px;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-mobile-menu.open { display: flex; }
-
-.nav-mobile-menu a {
-  padding: 12px 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-mobile-menu a:last-child { border-bottom: none; }
-
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-dark-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .hero-dark-right { display: none; }
-  .hero-dark-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-dark-left h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-
-  .hero-clean-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-clean-right { display: none; }
-  .hero-clean-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-clean-left { text-align: center; align-items: center; }
-  .hero-clean-left h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-
-  .hero-light-inner { padding: 0 0 40px; }
-  .hero-light-inner h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-light-cta { flex-wrap: wrap; justify-content: center; }
-
-  .diensten-grid,
-  .werkwijze-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .over-ons-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .over-ons-img { height: 240px; }
-
-  .testimonial-wrap { padding: 28px 20px; }
-
-  .usp-strip .container { gap: 20px; flex-wrap: wrap; }
-  .usp-item { min-width: 140px; flex: 1; }
-
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 16px; }
-
-  .demo-banner { font-size: 0.78rem; padding: 9px 12px; }
-}
-</style>
-</head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Fysiotherapiepraktijk Houwer &amp; Ruijs - Locatie FSG Health</div>
-    <ul class="nav-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#werkwijze">Werkwijze</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary nav-cta">Gratis offerte</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="#diensten">Diensten</a>
-  <a href="#over-ons">Over ons</a>
-  <a href="#werkwijze">Werkwijze</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" style="color:var(--accent);font-weight:700;margin-top:8px;">Gratis offerte</a>
-</div>
-<section class="hero-clean" id="hero">
-  <div class="hero-clean-inner">
-    <div class="hero-clean-left">
-      <h1 class="reveal">Terug naar een leven zonder pijn</h1>
-      <p class="hero-sub reveal reveal-delay-1">Fysiotherapiepraktijk Houwer &amp; Ruijs in Apeldoorn. Ervaren therapeuten, persoonlijk plan.</p>
-      <div class="hero-clean-cta reveal reveal-delay-2">
-        <a href="#contact" class="btn btn-primary">Eerste afspraak maken</a>
-        <a href="#diensten" class="btn btn-secondary">Onze diensten</a>
-      </div>
-    </div>
-    <div class="hero-clean-right">
-      <div class="hero-stat-block reveal reveal-delay-1">
-      <div class="hs-waarde">Tot 1 week</div>
-      <div class="hs-label">Gemiddelde wachttijd</div>
-    </div><div class="hero-stat-block reveal reveal-delay-2">
-      <div class="hs-waarde">Apeldoorn en regio</div>
-      <div class="hs-label">Werkgebied</div>
-    </div><div class="hero-stat-block reveal reveal-delay-3">
-      <div class="hs-waarde">100% persoonlijk</div>
-      <div class="hs-label">Behandelbenadering</div>
-    </div>
-    </div>
-  </div>
-</section>
-<div class="usp-strip">
-  <div class="container"><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Korte wachttijd, snel aan de slag</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Ervaren therapeuten met elkaar gecertificeerd</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Jouw persoonlijk behandelplan, geen standaard</span>
-    </div></div>
-</div>
-<section id="diensten">
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal"></p>
-    <div class="diensten-grid"><div class="dienst-card reveal reveal-delay-1">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-0.jpg" alt="Manuele therapie" loading="lazy">
-      </div>
-      <div class="dienst-number">01</div>
-      <h3>Manuele therapie</h3>
-      <p>Handen-op behandeling voor spier en gewrichtsproblemen</p>
-    </div><div class="dienst-card reveal reveal-delay-2">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-1.jpg" alt="Sportrevalidatie" loading="lazy">
-      </div>
-      <div class="dienst-number">02</div>
-      <h3>Sportrevalidatie</h3>
-      <p>Gerichte training na blessure of operatie, terug naar sport</p>
-    </div><div class="dienst-card reveal reveal-delay-3">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-2.jpg" alt="Bekkenfysiotherapie" loading="lazy">
-      </div>
-      <div class="dienst-number">03</div>
-      <h3>Bekkenfysiotherapie</h3>
-      <p>Specialistische zorg voor buik, bekken en continentie</p>
-    </div></div>
-  </div>
-</section>
-<section class="stats-band">
-  <div class="container">
-    <div class="stats-grid"><div class="stat-item reveal">
-      <div class="stat-waarde">Tot 1 week</div>
-      <div class="stat-label">Gemiddelde wachttijd</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Apeldoorn en regio</div>
-      <div class="stat-label">Werkgebied</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">100% persoonlijk</div>
-      <div class="stat-label">Behandelbenadering</div>
-    </div></div>
-  </div>
-</section>
-<section id="werkwijze">
-  <div class="container">
-    <div class="section-label">Hoe het werkt</div>
-    <h2 class="section-title reveal">Onze aanpak</h2>
-    <div class="werkwijze-grid"><div class="stap-card reveal reveal-delay-1">
-      <div class="stap-nummer">1</div>
-      <h3>Afspraak inplannen</h3>
-      <p>Bel of mail ons, wij zoeken snel een moment</p>
-    </div><div class="stap-card reveal reveal-delay-2">
-      <div class="stap-nummer">2</div>
-      <h3>Eerste onderzoek</h3>
-      <p>We luisteren, onderzoeken je lichaam, stellen vragen</p>
-    </div><div class="stap-card reveal reveal-delay-3">
-      <div class="stap-nummer">3</div>
-      <h3>Behandeling starten</h3>
-      <p>Jouw plan wordt uitgevoerd, stap voor stap</p>
-    </div></div>
-  </div>
-</section>
-<section id="over-ons" style="background: var(--surface);">
-  <div class="container">
-    <div class="over-ons-grid">
-      <div class="over-ons-foto reveal"><img src="stock/img-2.jpg" alt="Fysiotherapiepraktijk Houwer &amp; Ruijs - Locatie FSG Health" class="over-ons-img" loading="lazy"></div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Fysiotherapiepraktijk Houwer &amp; Ruijs - Locatie FSG Health</h2>
-        <p class="reveal reveal-delay-1">Fysiotherapiepraktijk Houwer &amp; Ruijs staat in Apeldoorn voor doelgerichte zorg en echt luisteren naar wat je lichaam nodig heeft. Onze therapeuten combineren jarenlange ervaring met moderne behandelmethoden, zodat jij weer kunt doen wat je graag doet.</p>
-        <div class="reveal reveal-delay-2">
-          <a href="#contact" class="btn btn-primary">Plan een gesprek</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Wat klanten zeggen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">Ervaringen</h2>
-    <div class="testimonial-wrap reveal">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px;opacity:0.5;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-      <p class="testimonial-quote">Na mijn schouderoperatie kon ik weer trainen dankzij hun gerichte sportrevalidatie.</p>
-      <div class="testimonial-naam">René, Apeldoorn</div>
-    </div>
-  </div>
-</section>
-<section id="faq" style="background: var(--surface);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-    <summary>
-      Hoe lang duurt het voordat ik resultaat zie?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Dat hangt af van je klacht. Veel mensen voelen al binnen enkele sessies verbetering. We bespreken realistische doelen in je eerste afspraak.</div>
-  </details><details>
-    <summary>
-      Heb ik een verwijzing van mijn huisarts nodig?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Voor veel verzekeringen wel. Neem contact op, dan helpen we je verder met de juiste stappen.</div>
-  </details><details>
-    <summary>
-      Kan ik terecht met chronische pijn?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja. We werken veel met mensen die langdurig pijn hebben. Een goed plan helpt je stap voor stap beter te functioneren.</div>
-  </details><details>
-    <summary>
-      Waar in Apeldoorn zit de praktijk?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">We zitten op locatie FSG Health. Stuur een mail naar info@houwerenruijs.nl voor het exacte adres en routegegevens.</div>
-  </details></div>
-  </div>
-</section>
-<section id="contact" style="background: var(--bg);">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title reveal">Eerste afspraak maken</h2>
-        <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte. Wij reageren binnen 24 uur.</p>
-        <div class="contact-details reveal reveal-delay-2">
-          
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <a href="mailto:info@houwerenruijs.nl">info@houwerenruijs.nl</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <span>Apeldoorn</span>
-      </div>
-        </div>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-row">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam" autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label>E-mailadres</label>
-          <input type="email" placeholder="u@voorbeeld.nl" autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label>Bericht</label>
-          <textarea placeholder="Vertel ons over uw project..."></textarea>
-        </div>
-        <button class="form-submit" type="button">Eerste afspraak maken</button>
-      </div>
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Fysiotherapiepraktijk Houwer &amp; Ruijs - Locatie FSG Health</div>
-    <ul class="footer-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-  <p class="footer-copy">&copy; 2025 Fysiotherapiepraktijk Houwer &amp; Ruijs - Locatie FSG Health. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
-</footer>
-<div class="demo-banner">
-  <span>&#9889; DEMO voor Fysiotherapiepraktijk Houwer &amp; Ruijs - Locatie FSG Health &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
-</div>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fysiotherapie Houwer & Ruijs | Locatie FSG Health, Apeldoorn</title>
+<meta name="description" content="Fysiotherapie, sportfysiotherapie, handtherapie en meer aan de Laan van Westenenk 4 in Apeldoorn. Bel 055 360 56 81 of vraag een afspraak aan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Scroll reveal
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { io.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('visible'); });
-  }
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper: '#eef3f4',
+        mist: '#dde7e9',
+        ink: '#16233b',
+        teal: { DEFAULT: '#1f6f78', dark: '#155159', light: '#cfe3e5' },
+        signal: '#e2dd4c',
+      },
+      fontFamily: {
+        display: ['"Bricolage Grotesque"', 'sans-serif'],
+        sans: ['"Public Sans"', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { text-wrap: pretty; }
+  h1, h2, h3 { text-wrap: balance; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  :focus-visible { outline: 3px solid #e2dd4c; outline-offset: 2px; }
+  .bar { transform-origin: left; }
+  .js .bar { transform: scaleX(0); transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
+  .js .bars.in .bar { transform: scaleX(1); }
+  @media (prefers-reduced-motion: reduce) { .js .bar { transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="bg-paper text-ink font-sans antialiased">
 
-  // Nav scroll effect
-  var nav = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
+<div class="bg-ink text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Fysiotherapiepraktijk Houwer &amp; Ruijs - Locatie FSG Health, gemaakt door <a href="https://hagenweb.nl" class="underline text-white hover:text-signal">Hagenweb</a>
+</div>
 
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-});
+<header class="sticky top-0 z-30 bg-paper/90 backdrop-blur border-b border-ink/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="Houwer & Ruijs, naar boven">
+      <span class="font-display font-extrabold text-xl leading-none bg-teal text-white rounded-md px-1.5 py-1 tracking-tight">HR</span>
+      <span class="font-display font-bold text-lg leading-tight">Houwer &amp; Ruijs</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-ink/75">
+      <a href="#behandelingen" class="hover:text-teal">Behandelingen</a>
+      <a href="#team" class="hover:text-teal">Team</a>
+      <a href="#vergoedingen" class="hover:text-teal">Vergoedingen</a>
+      <a href="#locatie" class="hover:text-teal">Route</a>
+    </nav>
+    <a href="tel:0553605681" class="inline-flex items-center gap-2 rounded-full bg-teal text-white px-4 py-2 text-sm font-semibold hover:bg-teal-dark transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      <span class="hidden sm:inline">055 360 56 81</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 pt-10 md:pt-16 pb-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6">
+      <p class="font-medium text-teal mb-5">Locatie FSG Health, Laan van Westenenk 4, Apeldoorn</p>
+      <h1 class="font-display font-extrabold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-7xl tracking-tight">Weer bewegen zonder dat het pijn doet.</h1>
+      <p class="mt-6 text-lg text-ink/75 max-w-md leading-relaxed">Wij zoeken samen met u de balans tussen wat u van uw lichaam vraagt en wat het aankan. Persoonlijk, vakkundig en met een team dat onderling veel overlegt.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="tel:0553605681" class="rounded-full bg-teal text-white px-6 py-3.5 font-semibold hover:bg-teal-dark active:translate-y-px transition">Bel 055 360 56 81</a>
+        <a href="#afspraak" class="rounded-full border-2 border-ink/15 px-6 py-3 font-semibold hover:border-teal hover:text-teal transition">Afspraak aanvragen</a>
+      </div>
+      <p class="mt-5 text-sm text-ink/60">Telefonisch bereikbaar maandag tot en met vrijdag, 8.00 tot 14.00 uur.</p>
+    </div>
+    <div class="md:col-span-6 relative">
+      <div class="rounded-[2rem] overflow-hidden aspect-[4/5] bg-mist">
+        <img src="assets/site-11.jpg" alt="Fysiotherapeut van Houwer & Ruijs in de oefenzaal" class="w-full h-full object-cover object-[center_20%]">
+      </div>
+      <div class="absolute -bottom-6 left-4 sm:-left-6 bg-white rounded-2xl shadow-[0_18px_40px_-18px_rgba(22,35,59,.45)] px-5 py-4 max-w-[17rem]">
+        <p class="font-display font-bold text-lg leading-snug">Maandag en woensdag open tot 21.00 uur</p>
+        <p class="text-sm text-ink/65 mt-1">Ook na uw werk terecht.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Klachten in cijfers -->
+  <section class="bg-ink text-white">
+    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <h2 class="font-display font-bold text-3xl sm:text-4xl leading-tight">Waar heeft u last van?</h2>
+        <p class="mt-4 text-white/70 leading-relaxed">Grote kans dat wij uw klacht vaak zien. Dit behandelden de collega's van Houwer &amp; Ruijs Apeldoorn in 2024.</p>
+      </div>
+      <ul class="bars md:col-span-8 space-y-6 tnum" id="bars">
+        <li>
+          <div class="flex items-baseline justify-between gap-4"><span class="text-lg">Schouderklachten</span><span class="font-display font-extrabold text-4xl sm:text-5xl">1512</span></div>
+          <div class="mt-2 h-3 rounded-full bg-white/10"><div class="bar h-3 rounded-full bg-signal w-full"></div></div>
+        </li>
+        <li>
+          <div class="flex items-baseline justify-between gap-4"><span class="text-lg">Lage rugpijn</span><span class="font-display font-extrabold text-4xl sm:text-5xl">1391</span></div>
+          <div class="mt-2 h-3 rounded-full bg-white/10"><div class="bar h-3 rounded-full bg-teal-light w-[92%]"></div></div>
+        </li>
+        <li>
+          <div class="flex items-baseline justify-between gap-4"><span class="text-lg">Knieklachten</span><span class="font-display font-extrabold text-4xl sm:text-5xl">1018</span></div>
+          <div class="mt-2 h-3 rounded-full bg-white/10"><div class="bar h-3 rounded-full bg-teal-light w-[67%]"></div></div>
+        </li>
+        <li>
+          <div class="flex items-baseline justify-between gap-4"><span class="text-lg">Nekpijn</span><span class="font-display font-extrabold text-4xl sm:text-5xl">888</span></div>
+          <div class="mt-2 h-3 rounded-full bg-white/10"><div class="bar h-3 rounded-full bg-teal-light w-[59%]"></div></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Behandelingen -->
+  <section id="behandelingen" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <div class="max-w-2xl">
+      <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-tight leading-tight">Behandelingen</h2>
+      <p class="mt-4 text-lg text-ink/70 leading-relaxed">Van een sportblessure tot klachten door uw werk. Elke behandeling begint met uw hulpvraag; samen stellen we de doelen vast.</p>
+    </div>
+    <dl class="mt-12 grid sm:grid-cols-2 gap-x-14 border-t border-ink/15">
+      <div class="py-6 border-b border-ink/15"><dt class="font-display font-bold text-xl">Fysiotherapie</dt><dd class="mt-2 text-ink/70 leading-relaxed">Samen herstellen we de verstoorde balans tussen belasting en belastbaarheid.</dd></div>
+      <div class="py-6 border-b border-ink/15"><dt class="font-display font-bold text-xl">Sportfysiotherapie</dt><dd class="mt-2 text-ink/70 leading-relaxed">Voor wie een blessure heeft opgelopen tijdens het sporten, en weer verder wil.</dd></div>
+      <div class="py-6 border-b border-ink/15"><dt class="font-display font-bold text-xl">Arbeidsfysiotherapie</dt><dd class="mt-2 text-ink/70 leading-relaxed">Gericht op uw inzetbaarheid en vitaliteit in het werk.</dd></div>
+      <div class="py-6 border-b border-ink/15"><dt class="font-display font-bold text-xl">Handtherapie</dt><dd class="mt-2 text-ink/70 leading-relaxed">Gespecialiseerd in hand- en polsklachten.</dd></div>
+      <div class="py-6 border-b border-ink/15"><dt class="font-display font-bold text-xl">Kinderfysiotherapie</dt><dd class="mt-2 text-ink/70 leading-relaxed">Voor kinderen met klachten op het gebied van orthopedie, sport, revalidatie, ademhaling en (inspannings)incontinentie.</dd></div>
+      <div class="py-6 border-b border-ink/15"><dt class="font-display font-bold text-xl">Shockwave</dt><dd class="mt-2 text-ink/70 leading-relaxed">Extracorporeal ShockWave Therapy (ESWT): een beproefde methode tegen chronische pijn in spieren en pezen.</dd></div>
+      <div class="py-6 border-b border-ink/15"><dt class="font-display font-bold text-xl">Echografie</dt><dd class="mt-2 text-ink/70 leading-relaxed">Met een echo zien we beter wat er in de geblesseerde structuur aan de hand is.</dd></div>
+      <div class="py-6 border-b border-ink/15"><dt class="font-display font-bold text-xl">Dry needling</dt><dd class="mt-2 text-ink/70 leading-relaxed">Schakelt triggerpoints uit, die kenmerkend zijn voor pijn in de spieren.</dd></div>
+      <div class="py-6 border-b border-ink/15 sm:col-span-2 sm:max-w-[calc(50%-1.75rem)]"><dt class="font-display font-bold text-xl">Sportmassage</dt><dd class="mt-2 text-ink/70 leading-relaxed">Betere doorbloeding, ontspannen spieren, afvoer van vocht en afvalstoffen en minder bewegingsbeperking.</dd></div>
+    </dl>
+    <p class="mt-8 text-ink/70">Liever thuis oefenen tussen de afspraken door? Met de <strong class="font-semibold text-ink">PhysiApp</strong> krijgt u uw oefenprogramma online mee.</p>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="bg-mist/70">
+    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div class="lg:col-span-4">
+        <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-tight leading-tight">Een team dat met elkaar overlegt</h2>
+        <p class="mt-5 text-ink/75 leading-relaxed">Als team fysiotherapeuten staan wij voor ons vak. Uw hulpvraag staat centraal. Therapeuten werken veel samen, en ook met huisartsen, praktijkondersteuners, verloskundigen, bedrijven en sportverenigingen in de regio.</p>
+        <p class="mt-4 text-ink/75 leading-relaxed">Zo vindt u bij ons onder meer manueel therapeuten, sport-, kinder-, bekken- en handtherapeuten onder één dak.</p>
+      </div>
+      <div class="lg:col-span-8 grid grid-cols-3 sm:grid-cols-5 gap-2.5 sm:gap-3">
+          <img src="assets/site-07.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="col-span-2 row-span-2 w-full h-full object-cover rounded-2xl">
+          <img src="assets/site-09.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="w-full aspect-[3/4] object-cover object-top rounded-xl">
+          <img src="assets/site-13.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="w-full aspect-[3/4] object-cover object-top rounded-xl">
+          <img src="assets/site-06.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="w-full aspect-[3/4] object-cover object-top rounded-xl">
+          <img src="assets/site-12.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="w-full aspect-[3/4] object-cover object-top rounded-xl">
+          <img src="assets/site-08.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="w-full aspect-[3/4] object-cover object-top rounded-xl">
+          <img src="assets/site-14.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="w-full aspect-[3/4] object-cover object-top rounded-xl">
+          <img src="assets/site-10.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="w-full aspect-[3/4] object-cover object-top rounded-xl">
+          <img src="assets/site-15.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="w-full aspect-[3/4] object-cover object-top rounded-xl">
+          <img src="assets/site-16.jpg" alt="Fysiotherapeut van Houwer & Ruijs" class="w-full aspect-[3/4] object-cover object-top rounded-xl">
+          <div class="col-span-2 rounded-xl bg-teal text-white p-4 flex flex-col justify-end"><p class="font-display font-bold text-xl leading-tight">25 jaar Houwer &amp; Ruijs</p><p class="text-sm text-white/80 mt-1">Drie locaties in Apeldoorn</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-tight leading-tight">Wat patiënten zeggen</h2>
+      <p class="text-ink/65">Google: 4 van de 5 sterren, 9 reviews</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <figure class="md:col-span-2 bg-teal text-white rounded-3xl p-8 sm:p-10">
+        <blockquote class="font-display font-bold text-2xl sm:text-3xl leading-snug">"Goed geholpen met een kruisband revalidatie. Zeer fijn en gemakkelijk contact en vakkundig personeel!"</blockquote>
+        <figcaption class="mt-6 text-white/80">Jordy Bakkenes, via Google</figcaption>
+      </figure>
+      <div class="grid gap-6">
+        <figure class="bg-white rounded-3xl p-7"><blockquote class="font-display font-bold text-xl">"Ze zijn er erg vakkundig"</blockquote><figcaption class="mt-3 text-sm text-ink/60">Egbert Proper, via Google</figcaption></figure>
+        <figure class="bg-white rounded-3xl p-7"><blockquote class="font-display font-bold text-xl">"Fijne praktijk"</blockquote><figcaption class="mt-3 text-sm text-ink/60">Gea Van Driesten, via Google</figcaption></figure>
+      </div>
+    </div>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6 text-ink/75 leading-relaxed">
+      <blockquote class="border-l-4 border-signal pl-5">"De praktijk denkt mee, de therapeut neemt de tijd. Alles ademt professionaliteit, ervaring en klantgerichtheid."</blockquote>
+      <blockquote class="border-l-4 border-signal pl-5">"Goed geluisterd naar de klachten en duidelijke uitleg en advies voor thuis oefeningen. En alle afspraken vonden plaats op het afgesproken tijdstip."</blockquote>
+      <blockquote class="border-l-4 border-signal pl-5">"De tomeloze energie die jullie allemaal uitstralen in de trainingszaal is echt fantastisch."</blockquote>
+    </div>
+  </section>
+
+  <!-- Vergoedingen -->
+  <section id="vergoedingen" class="bg-white">
+    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-tight leading-tight">Wordt het vergoed?</h2>
+        <p class="mt-5 text-ink/75 leading-relaxed">Met een aanvullende verzekering wordt fysiotherapie of manuele therapie meestal geheel of gedeeltelijk vergoed. Wij hebben dit jaar met alle zorgverzekeraars een contract, dus de nota gaat dan rechtstreeks naar uw verzekeraar.</p>
+        <p class="mt-4 text-ink/75 leading-relaxed">Hoeveel behandelingen u nog vergoed krijgt, mogen wij door de privacywet niet opvragen. Dat weet uw zorgverzekeraar.</p>
+        <p class="mt-4 text-sm text-ink/60">Afspraak afzeggen kan tot 24 uur van tevoren.</p>
+      </div>
+      <div class="md:col-span-6 md:col-start-7">
+        <h3 class="font-display font-bold text-xl">Tarieven 2026</h3>
+        <table class="mt-4 w-full tnum text-[15px]">
+          <tbody class="divide-y divide-ink/10">
+            <tr><td class="py-3 pr-4">Screening, intake en onderzoek</td><td class="py-3 text-right font-semibold">€ 74,60</td></tr>
+            <tr><td class="py-3 pr-4">Behandeling fysiotherapie</td><td class="py-3 text-right font-semibold">€ 50,75</td></tr>
+            <tr><td class="py-3 pr-4">Behandeling manuele therapie</td><td class="py-3 text-right font-semibold">€ 64,50</td></tr>
+            <tr><td class="py-3 pr-4">Behandeling kinderfysiotherapie</td><td class="py-3 text-right font-semibold">€ 64,50</td></tr>
+            <tr><td class="py-3 pr-4">Behandeling arbeidsfysiotherapie</td><td class="py-3 text-right font-semibold">€ 64,50</td></tr>
+            <tr><td class="py-3 pr-4">Intake en echografie</td><td class="py-3 text-right font-semibold">€ 74,50</td></tr>
+            <tr><td class="py-3 pr-4">E-consult, telefonisch of videobellen</td><td class="py-3 text-right font-semibold">€ 30,40</td></tr>
+            <tr><td class="py-3 pr-4">Niet nagekomen afspraak</td><td class="py-3 text-right font-semibold">€ 38,00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locatie -->
+  <section id="locatie" class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-10 items-start">
+    <div class="md:col-span-6">
+      <img src="assets/site-01.jpg" alt="Ingang van FSG Health aan de Laan van Westenenk 4 met de vlag van Houwer & Ruijs" class="w-full aspect-[5/4] object-cover rounded-[2rem]">
+    </div>
+    <div class="md:col-span-5 md:col-start-8">
+      <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-tight leading-tight">Locatie FSG Health</h2>
+      <address class="not-italic mt-5 text-lg leading-relaxed">Laan van Westenenk 4<br>7336 AZ Apeldoorn<br><span class="text-ink/60">In de buurt van Ugchelen</span></address>
+      <div class="mt-6 space-y-1.5">
+        <a href="tel:0553605681" class="block font-semibold text-teal hover:underline">055 360 56 81</a>
+        <a href="mailto:info@houwerenruijs.nl" class="block font-semibold text-teal hover:underline">info@houwerenruijs.nl</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Laan+van+Westenenk+4+Apeldoorn" class="block text-ink/70 hover:text-teal underline underline-offset-4">Route plannen</a>
+      </div>
+      <h3 class="mt-9 font-display font-bold text-xl">Openingstijden</h3>
+      <table class="mt-3 w-full tnum">
+        <tbody class="divide-y divide-ink/10">
+          <tr><td class="py-2">Maandag</td><td class="py-2 text-right">08.00 - 21.00</td></tr>
+          <tr><td class="py-2">Dinsdag</td><td class="py-2 text-right">08.00 - 18.00</td></tr>
+          <tr><td class="py-2">Woensdag</td><td class="py-2 text-right">08.00 - 21.00</td></tr>
+          <tr><td class="py-2">Donderdag</td><td class="py-2 text-right">08.00 - 20.00</td></tr>
+          <tr><td class="py-2">Vrijdag</td><td class="py-2 text-right">08.00 - 18.00</td></tr>
+          <tr class="text-ink/50"><td class="py-2">Zaterdag en zondag</td><td class="py-2 text-right">Gesloten</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-8 text-sm text-ink/65 leading-relaxed">Ook in Apeldoorn: Deventerstraat 120 en Gezondheidscentrum Welgelegen, Baron Sloetkade 109.</p>
+    </div>
+  </section>
+
+  <!-- Afspraak -->
+  <section id="afspraak" class="bg-teal text-white">
+    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-tight leading-tight">Afspraak maken</h2>
+        <p class="mt-5 text-white/85 leading-relaxed">Bel de praktijk, of laat uw gegevens achter. We nemen binnen één werkdag contact met u op.</p>
+        <a href="tel:0553605681" class="mt-7 inline-block font-display font-extrabold text-3xl sm:text-4xl text-signal hover:underline tnum">055 360 56 81</a>
+        <p class="mt-2 text-sm text-white/70">Maandag tot en met vrijdag, 8.00 tot 14.00 uur</p>
+      </div>
+      <form class="md:col-span-6 md:col-start-7 grid sm:grid-cols-2 gap-4" action="mailto:info@houwerenruijs.nl" method="post" enctype="text/plain">
+        <label class="block"><span class="text-sm text-white/80">Naam</span><input name="naam" required autocomplete="name" class="mt-1 w-full rounded-xl bg-white text-ink px-4 py-3 focus:outline-none focus:ring-4 focus:ring-signal"></label>
+        <label class="block"><span class="text-sm text-white/80">Telefoon</span><input name="telefoon" type="tel" required autocomplete="tel" class="mt-1 w-full rounded-xl bg-white text-ink px-4 py-3 focus:outline-none focus:ring-4 focus:ring-signal"></label>
+        <label class="block sm:col-span-2"><span class="text-sm text-white/80">E-mail</span><input name="email" type="email" autocomplete="email" class="mt-1 w-full rounded-xl bg-white text-ink px-4 py-3 focus:outline-none focus:ring-4 focus:ring-signal"></label>
+        <label class="block sm:col-span-2"><span class="text-sm text-white/80">Waar heeft u last van?</span><textarea name="klacht" rows="4" class="mt-1 w-full rounded-xl bg-white text-ink px-4 py-3 focus:outline-none focus:ring-4 focus:ring-signal"></textarea></label>
+        <button class="sm:col-span-2 justify-self-start rounded-full bg-signal text-ink px-7 py-3.5 font-semibold hover:bg-white active:translate-y-px transition">Terugbelverzoek versturen</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-ink text-white/70 pb-24 md:pb-0">
+  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-wrap justify-between gap-6 text-sm">
+    <p><span class="font-display font-bold text-white">Houwer &amp; Ruijs</span> Fysiotherapie, locatie FSG Health, Laan van Westenenk 4, Apeldoorn</p>
+    <p>Vragen over nota's: <a href="mailto:administratie@houwerenruijs.nl" class="underline hover:text-white">administratie@houwerenruijs.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-paper/95 backdrop-blur border-t border-ink/10 grid grid-cols-2 gap-2">
+  <a href="tel:0553605681" class="rounded-full bg-teal text-white text-center py-3 font-semibold">Bellen</a>
+  <a href="#afspraak" class="rounded-full bg-ink text-white text-center py-3 font-semibold">Afspraak</a>
+</div>
+
+<script>
+  const bars = document.getElementById('bars');
+  new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { bars.classList.add('in'); o.disconnect(); } }, { threshold: .3 }).observe(bars);
 </script>
 </body>
 </html>
