@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loodgieter Dijkstra Nijmegen | Lekkage en verstopping, dag en nacht bereikbaar</title>
+<meta name="description" content="Loodgieter in Nijmegen voor lekkages, verstoppingen, sanitair en CV. Dag en nacht bereikbaar op 085 200 9967.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { navy: '#0E2741', blue: '#1B6FD8', signal: '#F2B705', paper: '#F2F4F6', ink: '#0F1B27' },
+      fontFamily: { display: ['Archivo', 'sans-serif'], body: ['"Public Sans"', 'sans-serif'] }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', sans-serif; }
+  .display { font-family: 'Archivo', sans-serif; font-variation-settings: 'wdth' 115; letter-spacing: -0.02em; text-wrap: balance; }
+  .num { font-family: 'Archivo', sans-serif; font-variation-settings: 'wdth' 125; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+  p { text-wrap: pretty; }
+  a, button { transition: background-color .2s, color .2s, transform .15s; }
+  a:active, button:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #F2B705; outline-offset: 3px; }
+</style>
+</head>
+<body class="bg-white text-ink antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-white">Naar inhoud</a>
+
+<div class="bg-ink text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Loodgieter Nijmegen &amp; ontstoppingsbedrijf, gemaakt door <a href="https://hagenweb.nl" class="underline text-white hover:text-signal">Hagenweb</a>
+</div>
+
+<header class="bg-white border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between gap-6">
+    <a href="#" aria-label="Loodgieter Dijkstra, naar boven"><img src="assets/logo-oud.png" alt="Loodgieter Dijkstra" class="h-12 sm:h-14 w-auto -ml-3"></a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#lekkage" class="hover:text-blue">Lekkage</a>
+      <a href="#verstopping" class="hover:text-blue">Verstopping</a>
+      <a href="#sanitair-cv" class="hover:text-blue">Sanitair en CV</a>
+      <a href="#contact" class="hover:text-blue">Contact</a>
+    </nav>
+    <a href="tel:+31852009967" class="hidden sm:inline-flex items-center gap-2 bg-signal text-ink font-semibold px-5 py-3 rounded-md hover:bg-[#ffc51a]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      085 200 9967
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="bg-navy text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-12">
+    <div class="lg:col-span-7 px-5 sm:px-8 pt-12 pb-14 lg:py-24">
+      <h1 class="display text-[2.4rem] leading-[1.02] sm:text-6xl lg:text-[4.4rem] font-extrabold">Lekkage of verstopping in Nijmegen?</h1>
+      <p class="mt-6 text-lg sm:text-xl text-white/80 max-w-xl">Bel Loodgieter Dijkstra. We nemen dag en nacht op, ook in het weekend, en zoeken uit waar het probleem echt zit.</p>
+      <a href="tel:+31852009967" class="group block mt-10 sm:mt-12 w-fit">
+        <span class="block text-sm text-white/60 mb-1">Bel direct, 24 uur per dag</span>
+        <span class="num block whitespace-nowrap text-[2.5rem] min-[400px]:text-[2.7rem] leading-none sm:text-7xl lg:text-[4.2rem] xl:text-[4.6rem] font-black text-signal group-hover:text-white">085 200 9967</span>
+      </a>
+      <p class="mt-8 text-white/70">Liever mailen? <a href="mailto:info@loodgieterdijkstra.nl" class="text-white underline underline-offset-4 decoration-white/40 hover:decoration-signal">info@loodgieterdijkstra.nl</a></p>
+    </div>
+    <figure class="lg:col-span-5 relative min-h-[320px] lg:min-h-0 lg:mr-[min(0px,calc((80rem-100vw)/2))]">
+      <img src="assets/google-03.jpg" alt="Rioolcamera met beeldscherm tijdens een inspectie van de afvoer, met ontstoppingsmachine op de voorgrond" class="absolute inset-0 w-full h-full object-cover object-[center_35%]">
+      <figcaption class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy/90 to-transparent p-5 pt-16 text-sm text-white/90">Camera-inspectie van een afvoer: eerst kijken, dan pas aan de slag.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Diensten overzicht -->
+<section class="border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-2 md:grid-cols-4">
+    <a href="#lekkage" class="py-6 md:py-8 pr-4 border-r border-ink/10 hover:text-blue">
+      <span class="display block text-lg sm:text-xl font-bold">Lekkages</span><span class="text-sm text-ink/60">Opsporen en herstellen</span></a>
+    <a href="#verstopping" class="py-6 md:py-8 pl-4 md:pr-4 md:border-r border-ink/10 hover:text-blue">
+      <span class="display block text-lg sm:text-xl font-bold">Verstoppingen</span><span class="text-sm text-ink/60">Afvoer en riool</span></a>
+    <a href="#sanitair-cv" class="py-6 md:py-8 pr-4 md:pl-4 border-r border-t md:border-t-0 border-ink/10 hover:text-blue">
+      <span class="display block text-lg sm:text-xl font-bold">Sanitair</span><span class="text-sm text-ink/60">Plaatsen en vervangen</span></a>
+    <a href="#sanitair-cv" class="py-6 md:py-8 pl-4 border-t md:border-t-0 border-ink/10 hover:text-blue">
+      <span class="display block text-lg sm:text-xl font-bold">CV en verwarming</span><span class="text-sm text-ink/60">Storing, onderhoud, lekkage</span></a>
+  </div>
+</section>
+
+<!-- Lekkage -->
+<section id="lekkage" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-6 lg:order-2">
+      <h2 class="display text-4xl sm:text-5xl font-extrabold leading-[1.05]">Een vochtplek zit niet altijd boven het lek</h2>
+      <div class="mt-6 space-y-4 text-lg text-ink/80 max-w-[60ch]">
+        <p>Water zoekt zijn eigen weg, achter tegels, onder de vloer en langs leidingwerk. Daarom kijken we niet alleen waar het water zichtbaar wordt, maar zoeken we waar het echt vandaan komt. Zo blijft het niet bij dichtplakken en krijgt u een gerichte reparatie.</p>
+        <p>We herstellen lekkende waterleidingen en koppelingen, lekkages bij toilet, badkamer, wastafel en gootsteen, de afvoer en waterverlies bij radiatoren of de cv-ketel.</p>
+      </div>
+      <h3 class="mt-10 font-semibold text-lg">Herkent u een van deze signalen?</h3>
+      <ul class="mt-4 grid sm:grid-cols-2 gap-x-8 text-[15px]">
+        <li class="py-3 border-t border-ink/10"><strong class="font-semibold">Vochtplekken</strong><br><span class="text-ink/70">verkleuring op muur, plafond of vloer</span></li>
+        <li class="py-3 border-t border-ink/10"><strong class="font-semibold">Loslatende afwerking</strong><br><span class="text-ink/70">behang, verf of stucwerk</span></li>
+        <li class="py-3 border-t border-ink/10"><strong class="font-semibold">Schimmel</strong><br><span class="text-ink/70">donkere plekken, muffe geur</span></li>
+        <li class="py-3 border-t border-ink/10"><strong class="font-semibold">Watermeter loopt door</strong><br><span class="text-ink/70">terwijl er niets openstaat</span></li>
+        <li class="py-3 border-t border-ink/10"><strong class="font-semibold">Drukverlies</strong><br><span class="text-ink/70">de cv moet steeds bijgevuld worden</span></li>
+        <li class="py-3 border-t border-ink/10"><strong class="font-semibold">Natte vloeren</strong><br><span class="text-ink/70">natte plinten, opbollende vloerdelen</span></li>
+      </ul>
+    </div>
+    <figure class="lg:col-span-6 lg:order-1 lg:sticky lg:top-8">
+      <img src="assets/google-06.jpg" alt="Warmtebeeldcamera die een koude, vochtige plek langs een douchebak laat zien, rood omcirkeld" class="w-full aspect-[4/5] object-cover rounded-lg">
+      <figcaption class="mt-3 text-sm text-ink/60">Met een warmtebeeldcamera wordt zichtbaar waar het vocht zit, zonder eerst tegels te slopen.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Verstopping -->
+<section id="verstopping" class="bg-paper py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-5">
+        <h2 class="display text-4xl sm:text-5xl font-extrabold leading-[1.05]">Loopt de afvoer niet meer door?</h2>
+        <p class="mt-6 text-lg text-ink/80 max-w-[55ch]">Water dat blijft staan, een borrelende afvoer of een toilet dat niet doorspoelt. We maken de leiding vrij en kijken bij een terugkerende verstopping verder: verkeerd afschot, een verzakking of een beschadigde buis los je niet op met alleen ontstoppen.</p>
+        <dl class="mt-10 divide-y divide-ink/10 border-y border-ink/10">
+          <div class="py-4"><dt class="font-semibold">Gootsteen</dt><dd class="text-ink/70">Opgehoopt vet en etensresten eruit, zodat het water weer wegloopt.</dd></div>
+          <div class="py-4"><dt class="font-semibold">Toilet</dt><dd class="text-ink/70">Verstopping verholpen, zodat het toilet weer normaal doorspoelt.</dd></div>
+          <div class="py-4"><dt class="font-semibold">Douche</dt><dd class="text-ink/70">Haren en zeepresten uit de afvoer.</dd></div>
+          <div class="py-4"><dt class="font-semibold">Riolering</dt><dd class="text-ink/70">Ook bij problemen verder in de leiding kunt u bij ons terecht.</dd></div>
+        </dl>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-5 gap-4 content-start">
+        <figure class="col-span-3">
+          <img src="assets/google-05.jpg" alt="Ontstoppingsmachine, veren en een afvoerpomp van Rothenberger op de stoep" class="w-full aspect-[3/4] object-cover rounded-lg">
+        </figure>
+        <figure class="col-span-2 mt-16">
+          <img src="assets/google-04.jpg" alt="Opengegraven stuk afvoer naast een gevel, met nieuwe grijze pvc-buis" class="w-full aspect-[3/4] object-cover rounded-lg">
+        </figure>
+        <p class="col-span-5 text-sm text-ink/60">Links: het materiaal waarmee we een leiding vrijmaken. Rechts: een opengelegde afvoer bij een woning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sanitair en CV -->
+<section id="sanitair-cv" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-14 lg:gap-20">
+    <article>
+      <img src="assets/google-02.jpg" alt="Nieuw geplaatste zwarte regendouche in een badkamer met grijze zeshoekige tegels" class="w-full aspect-[4/3] object-cover object-[center_30%] rounded-lg">
+      <h2 class="display mt-8 text-3xl sm:text-4xl font-extrabold">Sanitair</h2>
+      <p class="mt-4 text-lg text-ink/80 max-w-[55ch]">Kranen, toiletten, wastafels en douches: we plaatsen nieuw sanitair en vervangen wat aan vervanging toe is. Met aandacht voor de aansluitingen achter de muur en een nette afwerking.</p>
+    </article>
+    <article class="md:pt-10 lg:pt-16">
+      <h2 class="display text-3xl sm:text-4xl font-extrabold">CV en verwarming</h2>
+      <p class="mt-4 text-lg text-ink/80 max-w-[55ch]">Wisselende watertemperatuur, een ketel die steeds bijgevuld moet worden of een verwarming die niet warm wordt. Niet elke storing betekent een nieuwe ketel: soms is het een expansievat, een lekkende koppeling of lucht in het systeem.</p>
+      <ul class="mt-8 border-t border-ink/10">
+        <li class="py-5 border-b border-ink/10 grid grid-cols-[9rem_1fr] gap-4"><span class="font-semibold">Reparatie</span><span class="text-ink/70">Storing opsporen en het defect verhelpen.</span></li>
+        <li class="py-5 border-b border-ink/10 grid grid-cols-[9rem_1fr] gap-4"><span class="font-semibold">Onderhoud</span><span class="text-ink/70">Zodat de installatie goed blijft werken.</span></li>
+        <li class="py-5 border-b border-ink/10 grid grid-cols-[9rem_1fr] gap-4"><span class="font-semibold">Lekkage</span><span class="text-ink/70">Waterverlies of dalende druk: oorzaak vinden en lekkende onderdelen herstellen.</span></li>
+      </ul>
+      <p class="mt-8 text-ink/70">Twijfelt u of repareren nog zin heeft? We kijken naar de staat van de installatie en geven eerlijk advies.</p>
+    </article>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section class="bg-navy text-white py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <h2 class="display text-4xl sm:text-5xl font-extrabold max-w-2xl leading-[1.05]">Zo gaat het in zijn werk</h2>
+    <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+      <li class="border-t-2 border-signal pt-5"><span class="num text-4xl font-black text-signal">1</span><h3 class="mt-3 font-semibold text-lg">U belt of mailt</h3><p class="mt-2 text-white/70">U vertelt wat er aan de hand is, wij denken mee over de mogelijkheden.</p></li>
+      <li class="border-t-2 border-white/25 pt-5"><span class="num text-4xl font-black text-white/50">2</span><h3 class="mt-3 font-semibold text-lg">Afspraak</h3><p class="mt-2 text-white/70">We plannen een moment dat u uitkomt. Bij spoed zo snel mogelijk.</p></li>
+      <li class="border-t-2 border-white/25 pt-5"><span class="num text-4xl font-black text-white/50">3</span><h3 class="mt-3 font-semibold text-lg">Oorzaak en reparatie</h3><p class="mt-2 text-white/70">Op locatie bekijken we de installatie, zoeken de oorzaak en voeren het werk uit.</p></li>
+      <li class="border-t-2 border-white/25 pt-5"><span class="num text-4xl font-black text-white/50">4</span><h3 class="mt-3 font-semibold text-lg">Gecontroleerd opgeleverd</h3><p class="mt-2 text-white/70">We testen aansluitingen en werking voordat we de klus afronden.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Review -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <figure>
+      <div class="flex gap-1 text-signal" aria-label="5 van 5 sterren">
+        <svg class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.7l6.1-.6z"/></svg>
+        <svg class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.7l6.1-.6z"/></svg>
+        <svg class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.7l6.1-.6z"/></svg>
+        <svg class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.7l6.1-.6z"/></svg>
+        <svg class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6L1.3 7.7l6.1-.6z"/></svg>
+      </div>
+      <blockquote class="display mt-6 text-3xl sm:text-[2.6rem] leading-[1.15] font-bold">“ik ben superblij met dit supertoffe team! het lijkt een familie en vond ze heel vriendelijk! aanrader!!”</blockquote>
+      <figcaption class="mt-6 text-ink/70">Svetlo_070, via Google</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-paper py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="display text-4xl sm:text-5xl font-extrabold leading-[1.05]">Direct hulp nodig?</h2>
+      <p class="mt-5 text-lg text-ink/80">Bellen is het snelst. We zijn elke dag 24 uur bereikbaar.</p>
+      <a href="tel:+31852009967" class="mt-8 inline-flex items-center gap-3 bg-signal text-ink font-semibold text-lg px-7 py-4 rounded-md hover:bg-[#ffc51a]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 085 200 9967
+      </a>
+      <dl class="mt-12 space-y-5 text-[15px]">
+        <div><dt class="text-ink/60">E-mail</dt><dd><a href="mailto:info@loodgieterdijkstra.nl" class="font-medium hover:text-blue">info@loodgieterdijkstra.nl</a></dd></div>
+        <div><dt class="text-ink/60">Adres</dt><dd class="font-medium">Kerkenbos 1053 M<br>6546 BB Nijmegen</dd></div>
+        <div><dt class="text-ink/60">Bereikbaar</dt><dd class="font-medium">Maandag tot en met zondag, 24 uur per dag</dd></div>
+      </dl>
+    </div>
+    <form class="lg:col-span-7 bg-white rounded-lg p-6 sm:p-10 grid sm:grid-cols-2 gap-5" action="mailto:info@loodgieterdijkstra.nl" method="post" enctype="text/plain">
+      <h3 class="sm:col-span-2 font-semibold text-xl">Of stuur een bericht</h3>
+      <label class="block"><span class="text-sm font-medium">Naam</span>
+        <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-ink/20 px-4 py-3 focus:border-blue focus:outline-none"></label>
+      <label class="block"><span class="text-sm font-medium">Telefoon</span>
+        <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-md border border-ink/20 px-4 py-3 focus:border-blue focus:outline-none"></label>
+      <label class="block sm:col-span-2"><span class="text-sm font-medium">Waar gaat het om?</span>
+        <select name="onderwerp" class="mt-1.5 w-full rounded-md border border-ink/20 px-4 py-3 bg-white focus:border-blue focus:outline-none">
+          <option>Lekkage</option><option>Verstopping</option><option>Sanitair</option><option>CV en verwarming</option><option>Iets anders</option>
+        </select></label>
+      <label class="block sm:col-span-2"><span class="text-sm font-medium">Omschrijving</span>
+        <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-md border border-ink/20 px-4 py-3 focus:border-blue focus:outline-none"></textarea></label>
+      <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+        <button type="submit" class="bg-navy text-white font-semibold px-7 py-3.5 rounded-md hover:bg-blue">Bericht versturen</button>
+        <span class="text-sm text-ink/60">Bij spoed liever even bellen.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-navy text-white/70 text-sm">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row gap-4 justify-between">
+    <p><span class="text-white font-semibold">Loodgieter Dijkstra</span>, loodgieter en ontstoppingsbedrijf in Nijmegen</p>
+    <p><a href="tel:+31852009967" class="hover:text-white">085 200 9967</a> <span class="mx-2 text-white/30">/</span> <a href="mailto:info@loodgieterdijkstra.nl" class="hover:text-white">info@loodgieterdijkstra.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-navy/95 backdrop-blur p-3 grid grid-cols-[1fr_auto] gap-3 border-t border-white/10">
+  <a href="tel:+31852009967" class="flex items-center justify-center gap-2 bg-signal text-ink font-semibold rounded-md py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 085 200 9967
+  </a>
+  <a href="mailto:info@loodgieterdijkstra.nl" class="flex items-center justify-center px-4 rounded-md border border-white/30 text-white font-medium">Mail</a>
+</div>
+
+</body>
+</html>
