@@ -1,1345 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ako Loodgieters</title>
-  <meta name="description" content="Lekkages verhelpen, CV-installatie en badkamerrenovatie in Wageningen. 24/7 beschikbaar.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #0c0c0c;
-  color: #f0f0f0;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-:root {
-  --accent: #f59e0b;
-  --bg: #0c0c0c;
-  --surface: #1c1c1c;
-  --border: #2a2a2a;
-  --text: #f0f0f0;
-  --muted: #a0a0a0;
-  --nav-bg: rgba(12,12,12,0.95);
-  --hero-bg: transparent;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-/* ── Typografie ── */
-h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
-p { margin: 0; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Navigatie ── */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo span {
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-cta {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.nav-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Secties ── */
-section {
-  padding: 96px 24px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--muted);
-  max-width: 540px;
-  font-size: 1.05rem;
-  margin-bottom: 56px;
-}
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── USP strip ── */
-.usp-strip {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 24px;
-}
-
-.usp-strip .container {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.usp-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.usp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-/* ── Diensten grid ── */
-.diensten-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.dienst-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.dienst-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-.dienst-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.2;
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-
-.dienst-card h3 {
-  margin-bottom: 10px;
-}
-
-.dienst-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Stats band ── */
-.stats-band {
-  background: var(--accent);
-  color: #ffffff;
-  padding: 64px 24px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-item {}
-
-.stat-waarde {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  font-weight: 500;
-}
-
-/* ── Werkwijze ── */
-.werkwijze-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  counter-reset: stap;
-}
-
-.stap-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-}
-
-.stap-nummer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.stap-card h3 {
-  margin-bottom: 10px;
-}
-
-.stap-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Over ons ── */
-.over-ons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.over-ons-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.over-ons-tekst p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 56px;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 28px;
-  font-style: italic;
-  color: var(--text);
-}
-
-.testimonial-naam {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ── FAQ ── */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-details[open] {
-  border-color: var(--accent);
-}
-
-summary {
-  padding: 20px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-.faq-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: transform 0.2s;
-}
-
-details[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 24px 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* ── Contact ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-info h3 {
-  margin-bottom: 8px;
-}
-
-.contact-info p {
-  color: var(--muted);
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-}
-
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px;
-}
-
-.form-row {
-  margin-bottom: 18px;
-}
-
-.form-row label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 12px 16px;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--accent);
-}
-
-.form-row textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  font-family: inherit;
-}
-
-.form-submit:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Footer ── */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-logo {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.footer-logo span {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
-.footer-copy {
-  color: var(--muted);
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ── Dark-specifiek: hero ── */
-.hero-dark {
-  min-height: 100vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: #0c0c0c;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-dark-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.hero-dark-glow {
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, #f59e0b 15%, transparent), transparent 70%);
-  pointer-events: none;
-}
-
-.hero-dark-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-dark-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-dark-left h1 {
-  color: #f0f0f0;
-}
-
-.hero-dark-left .hero-sub {
-  color: #a0a0a0;
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-dark-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-dark-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-}
-
-/* Sector SVG icon groot in de hero */
-.hero-sector-icon {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-sector-icon svg {
-  width: 80px;
-  height: 80px;
-  stroke: #f59e0b;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 0 20px color-mix(in srgb, #f59e0b 60%, transparent));
-}
-
-/* Pulserende ringen */
-.pulse-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #f59e0b;
-  animation: pulse-out 3s ease-out infinite;
-  opacity: 0;
-}
-
-.pulse-ring:nth-child(1) { width: 160px; height: 160px; animation-delay: 0s; }
-.pulse-ring:nth-child(2) { width: 220px; height: 220px; animation-delay: 0.8s; }
-.pulse-ring:nth-child(3) { width: 290px; height: 290px; animation-delay: 1.6s; }
-
-@keyframes pulse-out {
-  0%   { opacity: 0.6; transform: scale(0.85); }
-  100% { opacity: 0;   transform: scale(1.15); }
-}
-
-/* Drijvende stat kaarten */
-.stat-cards {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.stat-card {
-  position: absolute;
-  background: #1c1c1c;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 14px 18px;
-  pointer-events: auto;
-  animation: float-card 5s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-
-.stat-card:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.stat-card:nth-child(2) { top: 55%; right: -8%; animation-delay: 1.5s; }
-.stat-card:nth-child(3) { bottom: 8%; left: 15%; animation-delay: 0.8s; }
-
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-
-.stat-card .sc-waarde {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #f59e0b;
-  line-height: 1;
-}
-
-.stat-card .sc-label {
-  font-size: 0.75rem;
-  color: #a0a0a0;
-  margin-top: 4px;
-}
-
-/* ── Light hero (foto achtergrond) ── */
-.hero-light {
-  min-height: 100vh;
-  padding-top: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-light-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-light-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-}
-
-.hero-light-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.hero-light-inner h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.hero-light-inner .hero-sub {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.15rem;
-  margin-bottom: 36px;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-.hero-light-cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── Clean hero ── */
-.hero-clean {
-  min-height: 90vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-}
-
-.hero-clean-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-clean-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-clean-left h1 {
-  color: var(--text);
-}
-
-.hero-clean-left .hero-sub {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-clean-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-clean-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.hero-stat-block {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-}
-
-.hero-stat-block .hs-waarde {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.hero-stat-block .hs-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-/* ── Foto grid voor services (light/clean) ── */
-.diensten-foto-wrap {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  height: 220px;
-  margin-bottom: 0;
-}
-
-.diensten-foto-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-}
-
-.dienst-card:hover .diensten-foto-wrap img {
-  transform: scale(1.04);
-}
-
-/* ── Responsive ── */
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border-top: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.demo-banner a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-/* ── Mobile hamburger ── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-
-.nav-mobile-menu {
-  display: none;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  z-index: 99;
-  padding: 16px 24px 24px;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-mobile-menu.open { display: flex; }
-
-.nav-mobile-menu a {
-  padding: 12px 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-mobile-menu a:last-child { border-bottom: none; }
-
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-dark-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ako Loodgieters | Loodgieter in Wageningen</title>
+<meta name="description" content="Ako Loodgieters in Wageningen: leidingwerk, sanitair, (zonne)boilers, heatpipes, verstoppingen en reparaties. Bel 06 23071726.">
+<link rel="icon" href="assets/site-01.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper: '#F2F6F6',
+        ink: '#11303A',
+        pipe: '#8FD4D9',
+        pipedark: '#2E7F87',
+        heat: '#C7372D',
+      },
+      fontFamily: {
+        head: ['Archivo', 'sans-serif'],
+        body: ['"Public Sans"', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .wide { font-stretch: 125%; font-variation-settings: "wdth" 125; letter-spacing: -0.015em; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Het leidingschema: een doorlopende leiding met aftakkingen en flenzen, zoals in het logo. */
+  .run { position: relative; padding-left: 4.25rem; }
+  .run::before {
+    content: ""; position: absolute; left: 1.25rem; top: 0; bottom: 0; width: 14px; border-radius: 7px;
+    background: linear-gradient(90deg, #74c3c9 0%, #b3e6ea 45%, #82cbd1 100%);
+  }
+  .branch { position: relative; }
+  .branch::before {
+    content: ""; position: absolute; left: -3rem; top: 0.95rem; width: 2.4rem; height: 12px;
+    background: linear-gradient(180deg, #74c3c9 0%, #b3e6ea 45%, #82cbd1 100%);
+  }
+  .branch::after {
+    content: ""; position: absolute; left: -0.85rem; top: 0.45rem; width: 9px; height: 30px; border-radius: 2px;
+    background: #6db9bf;
+  }
+  .cap { position: absolute; left: calc(1.25rem - 8px); width: 30px; height: 9px; border-radius: 2px; background: #6db9bf; }
+  @media (min-width: 768px) {
+    .run { padding-left: 7rem; }
+    .run::before { left: 2.5rem; width: 16px; border-radius: 8px; }
+    .branch::before { left: -4.5rem; width: 3.9rem; height: 14px; top: 1.15rem; }
+    .branch::after { left: -0.9rem; top: 0.6rem; width: 10px; height: 34px; }
+    .cap { left: calc(2.5rem - 8px); width: 32px; }
   }
 
-  .hero-dark-right { display: none; }
-  .hero-dark-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-dark-left h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-
-  .hero-clean-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-clean-right { display: none; }
-  .hero-clean-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-clean-left { text-align: center; align-items: center; }
-  .hero-clean-left h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-
-  .hero-light-inner { padding: 0 0 40px; }
-  .hero-light-inner h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-light-cta { flex-wrap: wrap; justify-content: center; }
-
-  .diensten-grid,
-  .werkwijze-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .over-ons-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .over-ons-img { height: 240px; }
-
-  .testimonial-wrap { padding: 28px 20px; }
-
-  .usp-strip .container { gap: 20px; flex-wrap: wrap; }
-  .usp-item { min-width: 140px; flex: 1; }
-
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 16px; }
-
-  .demo-banner { font-size: 0.78rem; padding: 9px 12px; }
-}
+  .btn { transition: background-color .2s, transform .1s; }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #2E7F87; outline-offset: 3px; }
 </style>
 </head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Ako Loodgieters</div>
-    <ul class="nav-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#werkwijze">Werkwijze</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary nav-cta">Gratis offerte</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="#diensten">Diensten</a>
-  <a href="#over-ons">Over ons</a>
-  <a href="#werkwijze">Werkwijze</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" style="color:var(--accent);font-weight:700;margin-top:8px;">Gratis offerte</a>
-</div>
-<section class="hero-dark" id="hero">
-  <div class="hero-dark-bg-grid"></div>
-  <div class="hero-dark-glow"></div>
-  <div class="hero-dark-inner">
-    <div class="hero-dark-left reveal">
-      <h1>Ako Loodgieters, snel ter plaatse</h1>
-      <p class="hero-sub">Lekkages verhelpen, CV-installatie en badkamerrenovatie in Wageningen. 24/7 beschikbaar.</p>
-      <div class="hero-dark-cta">
-        <a href="#contact" class="btn btn-primary">Bel voor vrijblijvend advies</a>
-        <a href="#diensten" class="btn btn-secondary">Bekijk diensten</a>
-      </div>
-    </div>
-    <div class="hero-dark-right reveal reveal-delay-2">
-      <div class="stat-cards"><div class="stat-card">
-      <div class="sc-waarde">30 minuten</div>
-      <div class="sc-label">Reactietijd spoedservice</div>
-    </div><div class="stat-card">
-      <div class="sc-waarde">Wageningen en omgeving</div>
-      <div class="sc-label">Werkgebied</div>
-    </div><div class="stat-card">
-      <div class="sc-waarde">24/7</div>
-      <div class="sc-label">Beschikbaarheid</div>
-    </div></div>
-      <div class="hero-sector-icon">
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring"></div>
-        <div class="pulse-ring"></div>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="usp-strip">
-  <div class="container"><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>24/7 spoedservice, geen wachtlijsten</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Eerlijk tarief, geen vette verrassingen</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Garantie op al ons werk, schriftelijk</span>
-    </div></div>
-</div>
-<section id="diensten">
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal"></p>
-    <div class="diensten-grid"><div class="dienst-card reveal reveal-delay-1">
-      
-      <div class="dienst-number">01</div>
-      <h3>Lekkage verhelpen</h3>
-      <p>Snelle diagnose en reparatie van waterlekken, groot of klein.</p>
-    </div><div class="dienst-card reveal reveal-delay-2">
-      
-      <div class="dienst-number">02</div>
-      <h3>CV-ketel installatie en onderhoud</h3>
-      <p>Nieuwe ketels, jaarlijkse inspectie en storingshulp op afroep.</p>
-    </div><div class="dienst-card reveal reveal-delay-3">
-      
-      <div class="dienst-number">03</div>
-      <h3>Badkamerrenovatie</h3>
-      <p>Compleet nieuwe badkamer of gerichte updates met vakman-garantie.</p>
-    </div></div>
-  </div>
-</section>
-<section class="stats-band">
-  <div class="container">
-    <div class="stats-grid"><div class="stat-item reveal">
-      <div class="stat-waarde">30 minuten</div>
-      <div class="stat-label">Reactietijd spoedservice</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Wageningen en omgeving</div>
-      <div class="stat-label">Werkgebied</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">24/7</div>
-      <div class="stat-label">Beschikbaarheid</div>
-    </div></div>
-  </div>
-</section>
-<section id="werkwijze">
-  <div class="container">
-    <div class="section-label">Hoe het werkt</div>
-    <h2 class="section-title reveal">Onze aanpak</h2>
-    <div class="werkwijze-grid"><div class="stap-card reveal reveal-delay-1">
-      <div class="stap-nummer">1</div>
-      <h3>Bel of mail ons</h3>
-      <p>Vertel wat het probleem is, wij maken een afspraak.</p>
-    </div><div class="stap-card reveal reveal-delay-2">
-      <div class="stap-nummer">2</div>
-      <h3>Wij komen langs</h3>
-      <p>Inspectie, diagnose en duidelijke prijsopgave vooraf.</p>
-    </div><div class="stap-card reveal reveal-delay-3">
-      <div class="stap-nummer">3</div>
-      <h3>Reparatie of installatie</h3>
-      <p>Netjes werk, opgeruimd, met garantie schriftelijk mee.</p>
-    </div></div>
-  </div>
-</section>
-<section id="over-ons" style="background: var(--surface);">
-  <div class="container">
-    <div class="over-ons-grid">
-      <div class="over-ons-foto reveal"><img src="stock/img-2.jpg" alt="Ako Loodgieters" class="over-ons-img" loading="lazy"></div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Ako Loodgieters</h2>
-        <p class="reveal reveal-delay-1">Ako Loodgieters is tien jaar bezig in Wageningen. Wij doen één ding goed: vakwerk zonder fratsen. Of het nu een spoedlekkage op zondagavond is of een complete badkamerrenovatie, wij pakken het aan met schone handen en eerlijke prijs.</p>
-        <div class="reveal reveal-delay-2">
-          <a href="#contact" class="btn btn-primary">Plan een gesprek</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="referenties" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Wat klanten zeggen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">Ervaringen</h2>
-    <div class="testimonial-wrap reveal">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px;opacity:0.5;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-      <p class="testimonial-quote">Gewoon een betrouwbare vent die op tijd komt en netjes werk levert zonder gedoe.</p>
-      <div class="testimonial-naam">Peter, Wageningen</div>
-    </div>
-  </div>
-</section>
-<section id="faq" style="background: var(--surface);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-    <summary>
-      Hoe snel kunnen jullie naar mij toe?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Spoedgevallen binnen 30 minuten in Wageningen. Reguliere aanvragen plannen we snel in, meestal binnen 24 uur.</div>
-  </details><details>
-    <summary>
-      Wat kost een lekkage verhelpen?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Hangt af van de oorzaak. Wij geven altijd een duidelijke prijs voordat we beginnen, geen verrassingen.</div>
-  </details><details>
-    <summary>
-      Hebben jullie garantie op reparaties?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja. Twee jaar garantie op onderdelen, één jaar op arbeid. Schriftelijk en zonder kleine lettertjes.</div>
-  </details><details>
-    <summary>
-      Kan ik avonds of in het weekend bellen?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja, 24/7. Voor spoedgevallen zijn we echt bereikbaar. Bij onderhoud kunnen we samen een moment kiezen.</div>
-  </details></div>
-  </div>
-</section>
-<section id="contact" style="background: var(--bg);">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title reveal">Bel voor vrijblijvend advies</h2>
-        <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte. Wij reageren binnen 24 uur.</p>
-        <div class="contact-details reveal reveal-delay-2">
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <a href="tel:0623071726">06 23071726</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <a href="mailto:ako.loodgieters@hotmail.com">ako.loodgieters@hotmail.com</a>
-      </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <span>Wageningen</span>
-      </div>
-        </div>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-row">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam" autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label>E-mailadres</label>
-          <input type="email" placeholder="u@voorbeeld.nl" autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label>Bericht</label>
-          <textarea placeholder="Vertel ons over uw project..."></textarea>
-        </div>
-        <button class="form-submit" type="button">Bel voor vrijblijvend advies</button>
-      </div>
-    </div>
-  </div>
-</section>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Ako Loodgieters</div>
-    <ul class="footer-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-  <p class="footer-copy">&copy; 2025 Ako Loodgieters. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
-</footer>
-<div class="demo-banner">
-  <span>&#9889; DEMO voor Ako Loodgieters &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Scroll reveal
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { io.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('visible'); });
-  }
+<body class="bg-paper text-ink font-body antialiased pb-20 md:pb-0">
 
-  // Nav scroll effect
-  var nav = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
+<div class="bg-ink text-paper/90 text-[13px] text-center py-2 px-4">
+  Demo voor Ako Loodgieters, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
 
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-});
-</script>
+<header class="max-w-6xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between gap-4">
+  <a href="#" class="flex items-center gap-3" aria-label="Ako Loodgieters, naar boven">
+    <img src="assets/site-01.webp" alt="Logo Ako Loodgieters" class="h-12 w-auto mix-blend-multiply">
+  </a>
+  <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+    <a href="#diensten" class="hover:text-pipedark">Diensten</a>
+    <a href="#projecten" class="hover:text-pipedark">Projecten</a>
+    <a href="#reviews" class="hover:text-pipedark">Reviews</a>
+    <a href="#contact" class="hover:text-pipedark">Contact</a>
+  </nav>
+  <a href="tel:+31623071726" class="btn font-head wide font-bold text-[15px] md:text-base text-heat hover:text-ink whitespace-nowrap">06 23071726</a>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 md:px-8 pt-6 md:pt-10 pb-14 md:pb-20 grid md:grid-cols-[1fr_300px] lg:grid-cols-[1fr_320px] gap-10 md:gap-16 items-center">
+    <div>
+      <p class="text-pipedark font-semibold mb-5">Ako Loodgieters, Wageningen</p>
+      <h1 class="font-head wide font-extrabold text-[2.5rem] leading-[1.02] sm:text-6xl lg:text-[4.6rem]">
+        De loodgieter die met u meedenkt.
+      </h1>
+      <p class="mt-7 text-lg md:text-xl leading-relaxed max-w-[34rem] text-ink/80">
+        Betaalbaar, betrouwbaar en gezellig. Ik leg drinkwater, afvoer en gas aan, sluit sanitair aan
+        en los verstoppingen en lekkages op. Bel me, dan zoeken we samen de beste oplossing.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31623071726" class="btn inline-flex items-center gap-3 bg-heat hover:bg-[#a92c23] text-white font-semibold text-lg px-7 py-4 rounded-md">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 23071726
+        </a>
+        <a href="mailto:ako.loodgieters@hotmail.com" class="font-semibold underline decoration-pipe decoration-[3px] underline-offset-[6px] hover:decoration-pipedark">Of stuur een mail</a>
+      </div>
+      <p class="mt-8 text-[15px] text-ink/70">
+        <span class="text-heat tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span class="ml-2">5 sterren uit 7 reviews op Google</span>
+      </p>
+    </div>
+
+    <figure class="relative mx-auto w-[78%] max-w-[300px] md:max-w-none md:w-full">
+      <div class="absolute -inset-3 md:-inset-4 rounded-lg border-[10px] border-pipe/70" aria-hidden="true"></div>
+      <img src="assets/ako.jpg" alt="Ako in blauwe werkkleding, duim omhoog, naast een geplaatste boiler" class="relative w-full aspect-[254/560] md:aspect-[254/500] object-cover object-[50%_20%] rounded-md">
+      <blockquote class="relative md:absolute md:-left-28 md:bottom-8 mt-6 md:mt-0 bg-white rounded-md shadow-[0_10px_30px_-10px_rgba(17,48,58,.35)] px-5 py-4 max-w-[17rem]">
+        <p class="font-head wide font-bold text-lg leading-snug">"Volgens de jongere generatie een chille gast."</p>
+        <footer class="mt-2 text-sm text-ink/65">Oda Schelhaas, Google</footer>
+      </blockquote>
+    </figure>
+  </section>
+
+  <!-- Diensten als leidingschema -->
+  <section id="diensten" class="max-w-6xl mx-auto px-5 md:px-8 pb-16 md:pb-24">
+    <div class="run py-10 md:py-14">
+      <span class="cap top-0" aria-hidden="true"></span><span class="cap bottom-0" aria-hidden="true"></span>
+      <div class="max-w-2xl mb-12 md:mb-16">
+        <h2 class="font-head wide font-extrabold text-3xl md:text-5xl leading-tight">Waar u mij voor belt</h2>
+        <p class="mt-4 text-lg text-ink/75">Van een nieuwe leiding in de kruipruimte tot een complete badkamer. En zit het probleem net buiten het loodgieterswerk, dan kijk ik ook graag mee.</p>
+      </div>
+
+      <div class="space-y-14 md:space-y-20">
+        <article class="branch grid md:grid-cols-[1fr_360px] gap-6 md:gap-12 items-start">
+          <div>
+            <h3 class="font-head wide font-bold text-2xl md:text-3xl">Leidingwerk aanleggen</h3>
+            <p class="mt-3 text-lg leading-relaxed text-ink/80 max-w-xl">Drinkwaterinstallaties, afvoersystemen en gasleidingen. Nieuw aanleggen of oude leidingen vervangen, ook op lastige plekken zoals de kruipruimte.</p>
+          </div>
+          <img src="assets/site-03.webp" alt="Nieuwe water- en afvoerleidingen met rode kogelkranen in een kruipruimte" class="w-full aspect-[16/9] object-cover rounded-md">
+        </article>
+
+        <article class="branch grid md:grid-cols-[1fr_360px] gap-6 md:gap-12 items-start">
+          <div>
+            <h3 class="font-head wide font-bold text-2xl md:text-3xl">Sanitair</h3>
+            <p class="mt-3 text-lg leading-relaxed text-ink/80 max-w-xl">Toilet, wastafel of douche aansluiten of repareren, tot een complete badkamer aan toe.</p>
+          </div>
+          <img src="assets/site-04.webp" alt="Afgewerkte badkamer met douchecabine, toilet en zwart wastafelmeubel" class="w-full aspect-[4/3] object-cover rounded-md">
+        </article>
+
+        <article class="branch max-w-xl">
+          <h3 class="font-head wide font-bold text-2xl md:text-3xl">Verstoppingen en reparaties</h3>
+          <p class="mt-3 text-lg leading-relaxed text-ink/80">Een verstopte afvoer, een lekkage of een toilet dat niet meer doet wat het moet? Ik kom langs, zoek uit waar het zit en los het op.</p>
+        </article>
+
+        <article class="branch grid md:grid-cols-[1fr_360px] gap-6 md:gap-12 items-start">
+          <div>
+            <h3 class="font-head wide font-bold text-2xl md:text-3xl">(Zonne)boilers en heatpipes</h3>
+            <p class="mt-3 text-lg leading-relaxed text-ink/80 max-w-xl">Boilers en zonneboilers plaatsen en aansluiten, en heatpipe-collectoren op het dak koppelen aan uw installatie.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <img src="assets/site-05.webp" alt="Messing appendages en expansievaten op een boiler" class="w-full aspect-[3/4] object-cover rounded-md">
+            <img src="assets/site-07.webp" alt="Heatpipe-collector met vacuümbuizen op een dak" class="w-full aspect-[3/4] object-cover rounded-md">
+          </div>
+        </article>
+
+        <article class="branch grid md:grid-cols-[1fr_360px] gap-6 md:gap-12 items-start">
+          <div>
+            <h3 class="font-head wide font-bold text-2xl md:text-3xl">Elektra, keuken en kleine verbouwing</h3>
+            <p class="mt-3 text-lg leading-relaxed text-ink/80 max-w-xl">U kunt mij ook vragen voor elektrawerk, kleinere verbouwingen en aanpassingen in uw keuken. Ik kom graag bij u langs om de mogelijkheden te bespreken.</p>
+          </div>
+          <img src="assets/site-08.webp" alt="Witte hoekkeuken onder een schuin dak met houten balken" class="w-full aspect-[4/3] object-cover object-[50%_30%] rounded-md">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projecten -->
+  <section id="projecten" class="bg-white py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <h2 class="font-head wide font-extrabold text-3xl md:text-5xl leading-tight">Recent werk</h2>
+
+      <article class="mt-10 md:mt-14 grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-14 items-end">
+        <div class="lg:pb-4">
+          <h3 class="font-head wide font-bold text-2xl md:text-3xl">Badkamer Dijkstraat, Wageningen</h3>
+          <p class="mt-3 text-lg leading-relaxed text-ink/80">Een kale ruimte met alleen een afvoer en een douchebak, omgebouwd tot een volledige badkamer: douchecabine, toilet, wastafelmeubel en boiler.</p>
+          <p class="mt-4 text-sm text-ink/60">Links de ruimte vooraf, daarnaast het resultaat.</p>
+        </div>
+        <img src="assets/site-09.webp" alt="Badkamer Dijkstraat: de kale ruimte vooraf, en daarna met douchecabine, toilet en wastafelmeubel" class="w-full rounded-md">
+      </article>
+
+      <article class="mt-16 md:mt-24 grid lg:grid-cols-[2fr_1fr] gap-8 lg:gap-14 items-end">
+        <img src="assets/site-10.webp" alt="Nieuwe centrale afvoerleiding in het trappenhuis van een portiekflat, eerst zichtbaar en daarna weggewerkt in een zwarte koker" class="w-full rounded-md lg:order-1 order-2">
+        <div class="lg:pb-4 lg:order-2 order-1">
+          <h3 class="font-head wide font-bold text-2xl md:text-3xl">Nieuwe centrale afvoer in een portiekflat, Wageningen</h3>
+          <p class="mt-3 text-lg leading-relaxed text-ink/80">Een nieuwe centrale afvoer door het trappenhuis, daarna netjes weggewerkt in een koker.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <h2 class="font-head wide font-extrabold text-3xl md:text-5xl leading-tight">Wat klanten zeggen</h2>
+      <p class="text-ink/70"><span class="text-heat tracking-[2px]" aria-hidden="true">★★★★★</span> <span class="ml-1">5 sterren uit 7 reviews op Google</span></p>
+    </div>
+
+    <div class="mt-10 md:mt-14 grid md:grid-cols-2 gap-x-14 gap-y-10">
+      <blockquote class="md:row-span-2 border-l-[6px] border-pipe pl-6">
+        <p class="text-xl md:text-2xl leading-relaxed">"Ako heeft inmiddels meerdere klussen bij ons gedaan: een lekkage in de badkamer opgelost, alle leidingen (water, verwarming, gas) in de kruipruimte vervangen, en daarnaast advies gegeven over meerdere andere zaken in onze kluswoning. Ako communiceert helder, duidelijk en eerlijk, ..."</p>
+        <footer class="mt-4 font-semibold">Eva Romviel</footer>
+      </blockquote>
+      <blockquote class="border-l-[6px] border-pipe pl-6">
+        <p class="text-lg leading-relaxed">"Fijne samenwerking met Ako Loodgieters. Snelle reactie op de mail, direct langsgekomen, benodigdheden besteld en toilet vlot gerepareerd. Verder duidelijke communicatie over de kosten en overzichtelijke factuur. En volgens de jongere generatie “een chille gast”. Aanrader!"</p>
+        <footer class="mt-3 font-semibold">Oda Schelhaas</footer>
+      </blockquote>
+      <blockquote class="border-l-[6px] border-pipe pl-6">
+        <p class="text-lg leading-relaxed">"Ako denkt heel goed mee in oplossingen en is niet makkelijk tevreden. Hij is professioneel nieuwsgierig en onderzoekt graag dingen die hij nog niet weet. Om t daarna naar alle tevredenheid op te lossen."</p>
+        <footer class="mt-3 font-semibold">Laura Graus</footer>
+      </blockquote>
+      <blockquote class="border-l-[6px] border-pipe pl-6">
+        <p class="text-lg leading-relaxed">"Ako loodgieters heeft ons zeer vlot en vriendelijk geholpen op de groep van ons KDV. Vriendelijke communicatie, een echte aanrader!"</p>
+        <footer class="mt-3 font-semibold">R CC</footer>
+      </blockquote>
+      <blockquote class="border-l-[6px] border-pipe pl-6">
+        <p class="text-lg leading-relaxed">"Fijne communicatie, duidelijk, legt alles graag uit. Aanrader!"</p>
+        <footer class="mt-3 font-semibold">Ruben Meulenkamp</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-ink text-paper">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-2 gap-14">
+      <div>
+        <h2 class="font-head wide font-extrabold text-3xl md:text-5xl leading-tight">Lekkage, verstopping of een nieuwe klus?</h2>
+        <p class="mt-5 text-lg text-paper/80 max-w-md">Bel of mail mij. Ik reageer snel en kom langs om te kijken wat er nodig is.</p>
+        <a href="tel:+31623071726" class="btn mt-9 inline-flex items-center gap-3 bg-heat hover:bg-[#a92c23] text-white font-semibold text-lg px-7 py-4 rounded-md">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 23071726
+        </a>
+        <dl class="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-6 text-[15px]">
+          <div><dt class="text-pipe font-semibold">E-mail</dt><dd class="mt-1"><a href="mailto:ako.loodgieters@hotmail.com" class="underline underline-offset-4 decoration-pipe/60 hover:decoration-pipe break-all">ako.loodgieters@hotmail.com</a></dd></div>
+          <div><dt class="text-pipe font-semibold">Adres</dt><dd class="mt-1">Harnjesweg 49<br>6706 AR Wageningen</dd></div>
+          <div><dt class="text-pipe font-semibold">KvK</dt><dd class="mt-1">86528726</dd></div>
+        </dl>
+      </div>
+
+      <form action="mailto:ako.loodgieters@hotmail.com" method="post" enctype="text/plain" class="bg-paper text-ink rounded-lg p-6 md:p-9 space-y-5">
+        <h3 class="font-head wide font-bold text-xl">Stuur uw vraag</h3>
+        <div>
+          <label for="naam" class="block text-sm font-semibold mb-1.5">Naam</label>
+          <input id="naam" name="naam" required autocomplete="name" class="w-full rounded-md border border-ink/20 bg-white px-4 py-3">
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="tel" class="block text-sm font-semibold mb-1.5">Telefoon</label>
+            <input id="tel" name="telefoon" type="tel" autocomplete="tel" class="w-full rounded-md border border-ink/20 bg-white px-4 py-3">
+          </div>
+          <div>
+            <label for="plaats" class="block text-sm font-semibold mb-1.5">Plaats</label>
+            <input id="plaats" name="plaats" autocomplete="address-level2" class="w-full rounded-md border border-ink/20 bg-white px-4 py-3">
+          </div>
+        </div>
+        <div>
+          <label for="vraag" class="block text-sm font-semibold mb-1.5">Waar kan ik mee helpen?</label>
+          <textarea id="vraag" name="vraag" rows="4" required class="w-full rounded-md border border-ink/20 bg-white px-4 py-3"></textarea>
+        </div>
+        <button type="submit" class="btn w-full bg-ink hover:bg-pipedark text-white font-semibold py-4 rounded-md">Vraag versturen</button>
+      </form>
+    </div>
+    <footer class="border-t border-paper/15">
+      <div class="max-w-6xl mx-auto px-5 md:px-8 py-6 text-sm text-paper/60 flex flex-wrap justify-between gap-2">
+        <span>Ako Loodgieters, Wageningen</span>
+        <span>KvK 86528726</span>
+      </div>
+    </footer>
+  </section>
+</main>
+
+<!-- Belbalk mobiel -->
+<a href="tel:+31623071726" class="md:hidden fixed bottom-0 inset-x-0 z-20 bg-heat text-white font-semibold text-lg flex items-center justify-center gap-3 py-4 shadow-[0_-6px_20px_-8px_rgba(17,48,58,.5)]">
+  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+  Bel Ako: 06 23071726
+</a>
+
 </body>
 </html>
