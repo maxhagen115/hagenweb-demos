@@ -1,1343 +1,337 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Het Buitenland, Buro voor Tuin- en Landschapsarchitectuur</title>
-  <meta name="description" content="Duurzame tuinaanleg en vakkundig onderhoud in Nijmegen, seizoen na seizoen.">
-  <meta name="robots" content="noindex">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #f8fafc;
-  color: #0f172a;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-:root {
-  --accent: #4ade80;
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --border: #e2e8f0;
-  --text: #0f172a;
-  --muted: #64748b;
-  --nav-bg: rgba(248,250,252,0.97);
-  --hero-bg: transparent;
-  --radius: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
-
-/* ── Typografie ── */
-h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); }
-p { margin: 0; }
-a { color: inherit; text-decoration: none; }
-
-/* ── Navigatie ── */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  height: 64px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-inner {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo span {
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  color: var(--muted);
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-cta {
-  background: var(--accent);
-  color: #fff !important;
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.nav-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Secties ── */
-section {
-  padding: 96px 24px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.section-title {
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  color: var(--muted);
-  max-width: 540px;
-  font-size: 1.05rem;
-  margin-bottom: 56px;
-}
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-  text-decoration: none;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent) 40%, transparent);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1.5px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── USP strip ── */
-.usp-strip {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 24px;
-}
-
-.usp-strip .container {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.usp-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-
-.usp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-
-/* ── Diensten grid ── */
-.diensten-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.dienst-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-}
-
-.dienst-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--accent);
-}
-
-.dienst-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.2;
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-
-.dienst-card h3 {
-  margin-bottom: 10px;
-}
-
-.dienst-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Stats band ── */
-.stats-band {
-  background: var(--accent);
-  color: #ffffff;
-  padding: 64px 24px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-
-.stat-item {}
-
-.stat-waarde {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  font-weight: 500;
-}
-
-/* ── Werkwijze ── */
-.werkwijze-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  counter-reset: stap;
-}
-
-.stap-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  position: relative;
-}
-
-.stap-nummer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-.stap-card h3 {
-  margin-bottom: 10px;
-}
-
-.stap-card p {
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* ── Over ons ── */
-.over-ons-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.over-ons-img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: var(--radius);
-}
-
-.over-ons-tekst p {
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 32px;
-}
-
-/* ── Testimonial ── */
-.testimonial-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 56px;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.testimonial-quote {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 28px;
-  font-style: italic;
-  color: var(--text);
-}
-
-.testimonial-naam {
-  font-weight: 600;
-  color: var(--accent);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ── FAQ ── */
-.faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-details {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-details[open] {
-  border-color: var(--accent);
-}
-
-summary {
-  padding: 20px 24px;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-.faq-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  color: var(--accent);
-  transition: transform 0.2s;
-}
-
-details[open] .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
-  padding: 0 24px 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* ── Contact ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-info h3 {
-  margin-bottom: 8px;
-}
-
-.contact-info p {
-  color: var(--muted);
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
-}
-
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.contact-form {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px;
-}
-
-.form-row {
-  margin-bottom: 18px;
-}
-
-.form-row label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.form-row input,
-.form-row textarea {
-  width: 100%;
-  padding: 12px 16px;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  color: var(--text);
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-row input:focus,
-.form-row textarea:focus {
-  border-color: var(--accent);
-}
-
-.form-row textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
-  width: 100%;
-  padding: 14px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  font-family: inherit;
-}
-
-.form-submit:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-/* ── Footer ── */
-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 40px 24px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-logo {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.footer-logo span {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.footer-links a {
-  color: var(--muted);
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
-.footer-copy {
-  color: var(--muted);
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ── Scroll reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* ── Dark-specifiek: hero ── */
-.hero-dark {
-  min-height: 100vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: #0c0c0c;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-dark-bg-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-
-.hero-dark-glow {
-  position: absolute;
-  top: -200px;
-  left: -200px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, #4ade80 15%, transparent), transparent 70%);
-  pointer-events: none;
-}
-
-.hero-dark-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-dark-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-dark-left h1 {
-  color: #f0f0f0;
-}
-
-.hero-dark-left .hero-sub {
-  color: #a0a0a0;
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-dark-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-dark-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 420px;
-}
-
-/* Sector SVG icon groot in de hero */
-.hero-sector-icon {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-sector-icon svg {
-  width: 80px;
-  height: 80px;
-  stroke: #4ade80;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 0 20px color-mix(in srgb, #4ade80 60%, transparent));
-}
-
-/* Pulserende ringen */
-.pulse-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #4ade80;
-  animation: pulse-out 3s ease-out infinite;
-  opacity: 0;
-}
-
-.pulse-ring:nth-child(1) { width: 160px; height: 160px; animation-delay: 0s; }
-.pulse-ring:nth-child(2) { width: 220px; height: 220px; animation-delay: 0.8s; }
-.pulse-ring:nth-child(3) { width: 290px; height: 290px; animation-delay: 1.6s; }
-
-@keyframes pulse-out {
-  0%   { opacity: 0.6; transform: scale(0.85); }
-  100% { opacity: 0;   transform: scale(1.15); }
-}
-
-/* Drijvende stat kaarten */
-.stat-cards {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.stat-card {
-  position: absolute;
-  background: #1c1c1c;
-  border: 1px solid #2a2a2a;
-  border-radius: 12px;
-  padding: 14px 18px;
-  pointer-events: auto;
-  animation: float-card 5s ease-in-out infinite;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-
-.stat-card:nth-child(1) { top: 10%; left: -10%; animation-delay: 0s; }
-.stat-card:nth-child(2) { top: 55%; right: -8%; animation-delay: 1.5s; }
-.stat-card:nth-child(3) { bottom: 8%; left: 15%; animation-delay: 0.8s; }
-
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-
-.stat-card .sc-waarde {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #4ade80;
-  line-height: 1;
-}
-
-.stat-card .sc-label {
-  font-size: 0.75rem;
-  color: #a0a0a0;
-  margin-top: 4px;
-}
-
-/* ── Light hero (foto achtergrond) ── */
-.hero-light {
-  min-height: 100vh;
-  padding-top: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hero-light-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-light-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 100%);
-}
-
-.hero-light-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.hero-light-inner h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-
-.hero-light-inner .hero-sub {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.15rem;
-  margin-bottom: 36px;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-.hero-light-cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ── Clean hero ── */
-.hero-clean {
-  min-height: 90vh;
-  padding-top: 64px;
-  display: flex;
-  align-items: center;
-  background: var(--bg);
-}
-
-.hero-clean-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero-clean-left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.hero-clean-left h1 {
-  color: var(--text);
-}
-
-.hero-clean-left .hero-sub {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 480px;
-  line-height: 1.7;
-}
-
-.hero-clean-cta {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.hero-clean-right {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.hero-stat-block {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  text-align: center;
-}
-
-.hero-stat-block .hs-waarde {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.hero-stat-block .hs-label {
-  font-size: 0.8rem;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-/* ── Foto grid voor services (light/clean) ── */
-.diensten-foto-wrap {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  height: 220px;
-  margin-bottom: 0;
-}
-
-.diensten-foto-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s;
-}
-
-.dienst-card:hover .diensten-foto-wrap img {
-  transform: scale(1.04);
-}
-
-/* ── Responsive ── */
-/* ── Demo banner ── */
-.demo-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background: #111;
-  color: #fff;
-  text-align: center;
-  padding: 10px 16px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border-top: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.demo-banner a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-/* ── Mobile hamburger ── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 4px;
-  background: none;
-  border: none;
-}
-
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-
-.nav-mobile-menu {
-  display: none;
-  position: fixed;
-  top: 64px;
-  left: 0;
-  right: 0;
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  z-index: 99;
-  padding: 16px 24px 24px;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.nav-mobile-menu.open { display: flex; }
-
-.nav-mobile-menu a {
-  padding: 12px 4px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-mobile-menu a:last-child { border-bottom: none; }
-
-@media (max-width: 768px) {
-  section { padding: 64px 20px; }
-
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .hero-dark-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Het Buitenland | Tuinarchitect Marijn Vereijken, Lent (Nijmegen)</title>
+<meta name="description" content="Tuinontwerp en landschapsarchitectuur door Marijn Vereijken. Stadstuinen en landschapstuinen in Nijmegen en omstreken, van schets tot aanleg.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        moss: '#1E2B23', stone: '#EEF0EB', slate: '#D9DDD5', fern: '#4A5E4F', aster: '#5B5598', asterlight: '#B9B5E6'
+      },
+      fontFamily: {
+        display: ['Gloock', 'Georgia', 'serif'],
+        sans: ['"Hanken Grotesk"', 'system-ui', 'sans-serif']
+      }
+    }
   }
-
-  .hero-dark-right { display: none; }
-  .hero-dark-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-dark-left h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
-
-  .hero-clean-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-clean-right { display: none; }
-  .hero-clean-cta { justify-content: center; flex-wrap: wrap; }
-  .hero-clean-left { text-align: center; align-items: center; }
-  .hero-clean-left h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
-
-  .hero-light-inner { padding: 0 0 40px; }
-  .hero-light-inner h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
-  .hero-light-cta { flex-wrap: wrap; justify-content: center; }
-
-  .diensten-grid,
-  .werkwijze-grid,
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .over-ons-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .over-ons-img { height: 240px; }
-
-  .testimonial-wrap { padding: 28px 20px; }
-
-  .usp-strip .container { gap: 20px; flex-wrap: wrap; }
-  .usp-item { min-width: 140px; flex: 1; }
-
-  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .footer-links { flex-wrap: wrap; gap: 16px; }
-
-  .demo-banner { font-size: 0.78rem; padding: 9px 12px; }
 }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  h1, h2, h3, blockquote { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  a, button { transition: background-color .2s, color .2s, transform .2s; }
+  a:active { transform: translateY(1px); }
+  :focus-visible { outline: 2px solid #5B5598; outline-offset: 3px; }
+  .hero-shade { background: linear-gradient(180deg, rgba(30,43,35,.55) 0%, rgba(30,43,35,0) 30%, rgba(30,43,35,.15) 40%, rgba(30,43,35,.88) 100%); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Het Buitenland, Buro voor Tuin- en Landschapsarchitectuur</div>
-    <ul class="nav-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#werkwijze">Werkwijze</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary nav-cta">Gratis offerte</a>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="nav-mobile-menu" id="nav-mobile-menu">
-  <a href="#diensten">Diensten</a>
-  <a href="#over-ons">Over ons</a>
-  <a href="#werkwijze">Werkwijze</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" style="color:var(--accent);font-weight:700;margin-top:8px;">Gratis offerte</a>
+<body class="bg-stone text-moss font-sans antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="bg-moss text-stone/80 text-xs sm:text-[13px] text-center px-4 py-2">
+  Demo voor Het Buitenland, Buro voor Tuin- en Landschapsarchitectuur, gemaakt door
+  <a href="https://hagenweb.nl" class="underline underline-offset-2 text-stone hover:text-asterlight">Hagenweb</a>
 </div>
-<section class="hero-clean" id="hero">
-  <div class="hero-clean-inner">
-    <div class="hero-clean-left">
-      <h1 class="reveal">Je tuin verdient Het Buitenland</h1>
-      <p class="hero-sub reveal reveal-delay-1">Duurzame tuinaanleg en vakkundig onderhoud in Nijmegen, seizoen na seizoen.</p>
-      <div class="hero-clean-cta reveal reveal-delay-2">
-        <a href="#contact" class="btn btn-primary">Plan een kennismaking</a>
-        <a href="#diensten" class="btn btn-secondary">Onze diensten</a>
-      </div>
-    </div>
-    <div class="hero-clean-right">
-      <div class="hero-stat-block reveal reveal-delay-1">
-      <div class="hs-waarde">Nijmegen &amp; omgeving</div>
-      <div class="hs-label">Werkgebied</div>
-    </div><div class="hero-stat-block reveal reveal-delay-2">
-      <div class="hs-waarde">Binnen 48 uur</div>
-      <div class="hs-label">Reactietijd</div>
-    </div><div class="hero-stat-block reveal reveal-delay-3">
-      <div class="hs-waarde">Duurzaam ontwerp</div>
-      <div class="hs-label">Specialisme</div>
-    </div>
-    </div>
+
+<header class="sticky top-0 z-40 bg-stone/95 backdrop-blur border-b border-slate">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="leading-none">
+      <span class="font-display text-2xl tracking-tight">Het Buitenland</span>
+      <span class="block text-[11px] text-fern mt-1">tuin- en landschapsarchitectuur</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px]">
+      <a href="#handschrift" class="hover:text-aster">Handschrift</a>
+      <a href="#werk" class="hover:text-aster">Werk</a>
+      <a href="#aanpak" class="hover:text-aster">Aanpak</a>
+      <a href="#marijn" class="hover:text-aster">Over Marijn</a>
+      <a href="#contact" class="hover:text-aster">Contact</a>
+    </nav>
+    <a href="tel:+31623677572" class="hidden sm:inline-flex items-center gap-2 bg-moss text-stone px-4 py-2.5 rounded-full text-sm font-medium hover:bg-aster">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      06 23677572
+    </a>
+    <a href="tel:+31623677572" class="sm:hidden text-sm font-medium underline underline-offset-4">Bel Marijn</a>
   </div>
-</section>
-<div class="usp-strip">
-  <div class="container"><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Duurzame materialen en lokale plantenkennis</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Seizoensgebonden onderhoud voor optimale groei</span>
-    </div><div class="usp-item reveal">
-      <div class="usp-dot"></div>
-      <span>Persoonlijk advies van tuinarchitecten in Nijmegen</span>
-    </div></div>
-</div>
-<section id="diensten">
-  <div class="container">
-    <div class="section-label">Wat wij doen</div>
-    <h2 class="section-title reveal">Onze diensten</h2>
-    <p class="section-sub reveal"></p>
-    <div class="diensten-grid"><div class="dienst-card reveal reveal-delay-1">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-0.jpg" alt="Tuinaanleg &amp; herinrichting" loading="lazy">
-      </div>
-      <div class="dienst-number">01</div>
-      <h3>Tuinaanleg &amp; herinrichting</h3>
-      <p>Complete tuinontwikkeling met duurzame materialen en groenvisie.</p>
-    </div><div class="dienst-card reveal reveal-delay-2">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-1.jpg" alt="Tuinonderhoud &amp; seizoenszorg" loading="lazy">
-      </div>
-      <div class="dienst-number">02</div>
-      <h3>Tuinonderhoud &amp; seizoenszorg</h3>
-      <p>Gerichte verzorging afgestemd op het seizoen en jouw tuinplantplan.</p>
-    </div><div class="dienst-card reveal reveal-delay-3">
-      <div class="diensten-foto-wrap">
-        <img src="stock/img-2.jpg" alt="Boomverzorging &amp; snoeien" loading="lazy">
-      </div>
-      <div class="dienst-number">03</div>
-      <h3>Boomverzorging &amp; snoeien</h3>
-      <p>Professioneel snoeien en verzorging voor gezonde, vitale bomen.</p>
-    </div></div>
-  </div>
-</section>
-<section class="stats-band">
-  <div class="container">
-    <div class="stats-grid"><div class="stat-item reveal">
-      <div class="stat-waarde">Nijmegen &amp; omgeving</div>
-      <div class="stat-label">Werkgebied</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Binnen 48 uur</div>
-      <div class="stat-label">Reactietijd</div>
-    </div><div class="stat-item reveal">
-      <div class="stat-waarde">Duurzaam ontwerp</div>
-      <div class="stat-label">Specialisme</div>
-    </div></div>
-  </div>
-</section>
-<section id="werkwijze">
-  <div class="container">
-    <div class="section-label">Hoe het werkt</div>
-    <h2 class="section-title reveal">Onze aanpak</h2>
-    <div class="werkwijze-grid"><div class="stap-card reveal reveal-delay-1">
-      <div class="stap-nummer">1</div>
-      <h3>Kennismaking &amp; schets</h3>
-      <p>Bezichtigen en bespreken jouw wensen, situatie en begroting.</p>
-    </div><div class="stap-card reveal reveal-delay-2">
-      <div class="stap-nummer">2</div>
-      <h3>Ontwerp &amp; planning</h3>
-      <p>Gedetailleerd tuinplan met duurzame keuzes en seizoenskalender.</p>
-    </div><div class="stap-card reveal reveal-delay-3">
-      <div class="stap-nummer">3</div>
-      <h3>Uitvoering &amp; begeleiding</h3>
-      <p>Realisatie en advies voor langdurig onderhoud van je nieuwe tuin.</p>
-    </div></div>
-  </div>
-</section>
-<section id="over-ons" style="background: var(--surface);">
-  <div class="container">
-    <div class="over-ons-grid">
-      <div class="over-ons-foto reveal"><img src="stock/img-2.jpg" alt="Het Buitenland, Buro voor Tuin- en Landschapsarchitectuur" class="over-ons-img" loading="lazy"></div>
-      <div class="over-ons-tekst">
-        <div class="section-label">Over ons</div>
-        <h2 class="section-title reveal">Het Buitenland, Buro voor Tuin- en Landschapsarchitectuur</h2>
-        <p class="reveal reveal-delay-1">Het Buitenland is een bureau voor tuin- en landschapsarchitectuur met wortels in Nijmegen. Wij geloven dat elke tuin uniek is en verdient een persoonlijk plan. Van herinrichting tot onderhoud: we werken met respect voor natuur en duurzame keuzes.</p>
-        <div class="reveal reveal-delay-2">
-          <a href="#contact" class="btn btn-primary">Plan een gesprek</a>
-        </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section id="top" class="relative min-h-[calc(100svh-12rem)] md:min-h-[86vh] flex items-end overflow-hidden">
+  <img src="assets/google-01.jpg" alt="Natuurvijver met betonnen stapstenen, een houten vlonder met witte tuinstoelen en een pad van gebakken klinkers" class="absolute inset-0 w-full h-full object-cover object-[60%_center] md:object-[30%_center]">
+  <div class="absolute inset-0 hero-shade"></div>
+  <div class="relative w-full max-w-7xl mx-auto px-5 md:px-10 pb-10 md:pb-16 text-stone">
+    <h1 class="font-display text-[3.4rem] leading-[0.95] sm:text-7xl md:text-8xl lg:text-[8rem] tracking-tight max-w-5xl">Geen standaard tuin.</h1>
+    <div class="mt-8 grid md:grid-cols-[minmax(0,34rem)_auto] gap-8 md:items-end md:justify-between">
+      <p class="text-lg md:text-xl leading-relaxed text-stone/90">
+        Dat is de wens die ik het vaakst hoor. Ik ben Marijn Vereijken, tuinarchitect in Lent, en ik ontwerp tuinen die passen bij jouw huis, jouw plek en jou. Van eerste schets tot aanleg.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="tel:+31623677572" class="bg-stone text-moss px-6 py-3.5 rounded-full font-medium hover:bg-asterlight">Bel 06 23677572</a>
+        <a href="mailto:hetbuitenland@xs4all.nl?subject=Aanvraag%20tuinontwerp" class="border border-stone/60 px-6 py-3.5 rounded-full font-medium hover:bg-stone hover:text-moss">Mail je wensen</a>
       </div>
     </div>
   </div>
 </section>
-<section id="referenties" style="background: var(--bg);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Wat klanten zeggen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">Ervaringen</h2>
-    <div class="testimonial-wrap reveal">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px;opacity:0.5;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-      <p class="testimonial-quote">Het Buitenland heeft onze verwaarloosde achtertuin volledig getransformeerd en geeft nu regelmatig advies voor het onderhoud.</p>
-      <div class="testimonial-naam">Marieke, Nijmegen</div>
+
+<!-- Handschrift -->
+<section id="handschrift" class="max-w-7xl mx-auto px-5 md:px-10 pt-20 md:pt-32 pb-20 md:pb-28">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-display text-4xl md:text-6xl leading-[1.02] tracking-tight">Een helder plan dat toch verrast.</h2>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7 space-y-5 text-lg leading-relaxed text-moss/85 max-w-[38rem]">
+      <p>Elke tuinsituatie is anders, dus elk ontwerp ook. Of het nu om een stadstuin gaat of een tuin in het buitengebied: ze zijn eigentijds, met een ruimtelijke opbouw die helder is maar weet te verrassen.</p>
+      <p>Beplanting is daarbij geen opvulling. Planten bepalen in belangrijke mate de sfeer van een tuin. Ze kunnen betoveren en er wat magie aan toevoegen. Mijn ontwerpen putten uit drie bronnen.</p>
     </div>
   </div>
-</section>
-<section id="faq" style="background: var(--surface);">
-  <div class="container">
-    <div class="section-label" style="text-align:center;">Veelgestelde vragen</div>
-    <h2 class="section-title reveal" style="text-align:center; margin-bottom:40px;">FAQ</h2>
-    <div class="faq-list reveal"><details>
-    <summary>
-      Wanneer is het beste moment om mijn tuin aan te leggen?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Herfst en voorjaar zijn ideaal. In het voorjaar groeien planten voller; in de herfst wortelen ze goed in voor de winter.</div>
-  </details><details>
-    <summary>
-      Werkt Het Buitenland ook aan kleine tuinen?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Ja, elke tuin telt. Kleine tuinen vragen juist om goed doordacht ontwerp met duurzame keuzes.</div>
-  </details><details>
-    <summary>
-      Kunnen jullie duurzame materialen aanraden?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Zeker. We gebruiken graag hergebruikte stenen, natuurlijk hout en bijna-inheemse planten die goed groeien in Nijmegen.</div>
-  </details><details>
-    <summary>
-      Hoe vaak heeft mijn tuin onderhoud nodig?
-      <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-      </svg>
-    </summary>
-    <div class="faq-answer">Dat hangt af van plantsoort en seizoen. We stellen een seizoensplan op zodat je tuin het hele jaar mooi en gezond blijft.</div>
-  </details></div>
+
+  <div class="mt-16 md:mt-24 grid md:grid-cols-12 gap-x-6 gap-y-14">
+    <figure class="md:col-span-7">
+      <img src="assets/site-04.webp" alt="Weelderige border met blauwe kogeldistels, ooievaarsbek en roze bloeiers" class="w-full aspect-[4/3] object-cover rounded-sm">
+      <figcaption class="mt-5 max-w-md">
+        <h3 class="font-display text-2xl">Wilde, natuurlijke beplanting</h3>
+        <p class="mt-2 text-moss/75 leading-relaxed">Ik trad in het vak toen Piet Oudolf, Coen Jansen en Hans Kramer nieuwe, wilder ogende planten kweekten. Daar komt mijn plantenkennis vandaan: graag ontwerp ik een Oudolf-achtige tuin of een onderhoudsvriendelijke, kleurrijke prairietuin.</p>
+      </figcaption>
+    </figure>
+    <figure class="md:col-span-5 md:mt-40">
+      <img src="assets/google-07.jpg" alt="Stadstuin van bovenaf met een cortenstalen vijver, waterspuwers, vlonder en siergrassen" class="w-full aspect-square object-cover object-[65%_25%] rounded-sm">
+      <figcaption class="mt-5">
+        <h3 class="font-display text-2xl">De Japanse tuin</h3>
+        <p class="mt-2 text-moss/75 leading-relaxed">Om de rijke symboliek, de verstilling en het water. Hier begon het voor mij ook: staand in een vijver van de Japanse tuin Arnoldshof in Wijchen.</p>
+      </figcaption>
+    </figure>
+    <figure class="md:col-span-8 md:col-start-3">
+      <img src="assets/google-02.jpg" alt="Strak ontworpen tuin met gazon, buxusbollen, witte hortensia's en een zwembad naast een overkapping" class="w-full aspect-[16/10] object-cover object-[center_70%] rounded-sm">
+      <figcaption class="mt-5 md:grid md:grid-cols-2 md:gap-10">
+        <h3 class="font-display text-2xl">De kloostertuin</h3>
+        <p class="mt-2 md:mt-0 text-moss/75 leading-relaxed">Om de beslotenheid en de manier waarop gebouw en tuin samensmelten. Een tuin die voelt als verlengstuk van je huis.</p>
+      </figcaption>
+    </figure>
   </div>
 </section>
-<section id="contact" style="background: var(--bg);">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title reveal">Plan een kennismaking</h2>
-        <p class="reveal reveal-delay-1">Neem contact op voor een vrijblijvende offerte. Wij reageren binnen 24 uur.</p>
-        <div class="contact-details reveal reveal-delay-2">
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.93a16 16 0 0 0 5.9 5.9l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <a href="tel:0623677572">06 23677572</a>
+
+<!-- Werk -->
+<section id="werk" class="bg-moss text-stone py-20 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <h2 class="font-display text-4xl md:text-6xl tracking-tight max-w-3xl">Twee soorten tuinen, één handschrift.</h2>
+
+    <div class="mt-14 md:mt-20 grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="lg:col-span-4 lg:sticky lg:top-28">
+        <h3 class="font-display text-3xl">Stadstuin</h3>
+        <p class="text-asterlight mt-1">30 tot 1000 m²</p>
+        <p class="mt-5 text-stone/80 leading-relaxed max-w-md">In de stad of het dorp is elke meter kostbaar. Met slimme zichtlijnen en weelderig groen ontstaan privacy en ruimte. Een rustpunt als verlengstuk van je woning.</p>
       </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <a href="mailto:hetbuitenland@xs4all.nl">hetbuitenland@xs4all.nl</a>
+      <div class="lg:col-span-8 grid grid-cols-2 gap-3 md:gap-4">
+        <img src="assets/site-05.webp" alt="Moderne stadstuin met strakke waterpartijen, een vlonder, leibomen en een grote parasol" class="col-span-2 w-full aspect-[16/9] object-cover rounded-sm">
+        <img src="assets/google-04.jpg" alt="Terras met houten tafel en witte stoelen tussen roze hortensia's en zonnehoed" class="w-full aspect-square object-cover rounded-sm">
+        <img src="assets/site-02.webp" alt="Beschutte zitplek op een bank omringd door bamboe, varens en hosta's" class="w-full aspect-square object-cover object-[center_60%] rounded-sm">
       </div>
-          <div class="contact-row">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <span>Nijmegen</span>
+    </div>
+
+    <div class="mt-20 md:mt-28 grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="lg:col-span-4 lg:col-start-9 lg:order-2 lg:sticky lg:top-28">
+        <h3 class="font-display text-3xl">Landschapstuin</h3>
+        <p class="text-asterlight mt-1">Groter dan 1000 m²</p>
+        <p class="mt-5 text-stone/80 leading-relaxed max-w-md">In het buitengebied of aan de rand van het dorp zoek ik de verbinding met het landschap. De grenzen vervagen, het ontwerp loopt over in de natuur erachter en er is ruimte voor grote gebaren.</p>
       </div>
-        </div>
-      </div>
-      <div class="contact-form reveal reveal-delay-2">
-        <div class="form-row">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam" autocomplete="name">
-        </div>
-        <div class="form-row">
-          <label>E-mailadres</label>
-          <input type="email" placeholder="u@voorbeeld.nl" autocomplete="email">
-        </div>
-        <div class="form-row">
-          <label>Bericht</label>
-          <textarea placeholder="Vertel ons over uw project..."></textarea>
-        </div>
-        <button class="form-submit" type="button">Plan een kennismaking</button>
+      <div class="lg:col-span-8 lg:order-1 grid grid-cols-6 gap-3 md:gap-4">
+        <img src="assets/site-03.webp" alt="Natuurvijver met stapstenen en een vlonder, gezien vanaf houten tuinstoelen" class="col-span-6 w-full aspect-[16/9] object-cover rounded-sm">
+        <img src="assets/site-06.webp" alt="Rechthoekige vijver aan de rand van een maisveld met bos op de achtergrond" class="col-span-3 w-full aspect-[4/5] object-cover rounded-sm">
+        <img src="assets/google-08.jpg" alt="Ronde houten bank om een boomstam tussen paarse ooievaarsbek" class="col-span-3 w-full aspect-[4/5] object-cover rounded-sm">
+        <img src="assets/site-07.webp" alt="Uitzicht vanonder een pergola over een grote tuin met buxusblokken, borders en oude bomen" class="col-span-6 md:col-span-4 w-full aspect-[4/3] object-cover rounded-sm">
+        <img src="assets/google-05.jpg" alt="Gebogen klinkerpad langs een gazon naar een vlonder onder een grote boom" class="hidden md:block col-span-2 w-full h-full object-cover rounded-sm">
       </div>
     </div>
   </div>
 </section>
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Het Buitenland, Buro voor Tuin- en Landschapsarchitectuur</div>
-    <ul class="footer-links">
-      <li><a href="#diensten">Diensten</a></li>
-      <li><a href="#over-ons">Over ons</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+<!-- Aanpak -->
+<section id="aanpak" class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-32">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-5">
+      <h2 class="font-display text-4xl md:text-6xl leading-[1.02] tracking-tight">Van schets tot aanleg.</h2>
+      <p class="mt-6 text-lg text-moss/80 leading-relaxed max-w-md">Je kiest zelf hoe diep we gaan: een snelle schets als richting, of een volledig ontwerp als je alles goed wilt doordenken voordat er een schop de grond in gaat.</p>
+    </div>
+    <ul class="lg:col-span-7 divide-y divide-slate border-y border-slate">
+      <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-6">
+        <h3 class="font-display text-2xl">Tuinschets</h3>
+        <p class="text-moss/75 leading-relaxed">Een laagdrempelige start: een duidelijke indeling en beplantingsadvies in één heldere schets. Later uit te breiden naar een volledig ontwerp.</p>
+      </li>
+      <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-6">
+        <h3 class="font-display text-2xl">Volledig tuinontwerp</h3>
+        <p class="text-moss/75 leading-relaxed">Het uitgebreidste traject: van analyse en schetsfase tot een uitgewerkt plan, met advies over materialen en stijl.</p>
+      </li>
+      <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-6">
+        <h3 class="font-display text-2xl">3D-tuinontwerp</h3>
+        <p class="text-moss/75 leading-relaxed">Licht, hoogteverschillen, materialen en beplanting worden voelbaar. Je vergelijkt eenvoudig varianten en kiest met vertrouwen.</p>
+      </li>
+      <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-6">
+        <h3 class="font-display text-2xl">Beplantingsontwerp</h3>
+        <p class="text-moss/75 leading-relaxed">Sterke combinaties die het hele jaar interessant zijn, met aandacht voor biodiversiteit en praktische onderhoudstips.</p>
+      </li>
+      <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-6">
+        <h3 class="font-display text-2xl">Tuinaanleg</h3>
+        <p class="text-moss/75 leading-relaxed">Met ervaren hoveniers uit mijn netwerk, met regie op detail. Eén aanspreekpunt van ontwerp tot oplevering.</p>
+      </li>
     </ul>
   </div>
-  <p class="footer-copy">&copy; 2025 Het Buitenland, Buro voor Tuin- en Landschapsarchitectuur. Alle rechten voorbehouden. Website door <strong>Hagenweb</strong>.</p>
-</footer>
-<div class="demo-banner">
-  <span>&#9889; DEMO voor Het Buitenland, Buro voor Tuin- en Landschapsarchitectuur &mdash; gemaakt door <a href="https://hagenweb.nl" target="_blank" rel="noopener">Hagenweb</a></span>
+
+  <div class="mt-16 md:mt-24 grid md:grid-cols-5 gap-4">
+    <figure class="md:col-span-2">
+      <img src="assets/site-09.webp" alt="Ingekleurde ontwerptekening van een tuin met ronde terrassen, vijver en beplantingsvlakken" class="w-full aspect-[4/3] md:aspect-auto md:h-[22rem] object-cover rounded-sm">
+      <figcaption class="mt-3 text-sm text-fern">Ontwerptekening</figcaption>
+    </figure>
+    <figure class="md:col-span-3">
+      <img src="assets/site-10.webp" alt="3D-visualisatie van een tuin met een watergoot, lavendel, meerstammige bomen en een tuinhuis" class="w-full aspect-[4/3] md:aspect-auto md:h-[22rem] object-cover rounded-sm">
+      <figcaption class="mt-3 text-sm text-fern">Hetzelfde idee in 3D, voordat de aanleg begint</figcaption>
+    </figure>
+  </div>
+
+  <div class="mt-20 md:mt-28">
+    <h3 class="font-display text-3xl md:text-4xl">Zo starten we</h3>
+    <ol class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate border border-slate">
+      <li class="bg-stone p-6">
+        <span class="font-display text-4xl text-aster">1</span>
+        <h4 class="mt-3 font-semibold">Aanvraag</h4>
+        <p class="mt-2 text-moss/75 leading-relaxed">Je belt of mailt met je vraag. Stuur gerust meteen foto's en globale maten mee.</p>
+      </li>
+      <li class="bg-stone p-6">
+        <span class="font-display text-4xl text-aster">2</span>
+        <h4 class="mt-3 font-semibold">Inventarisatie</h4>
+        <p class="mt-2 text-moss/75 leading-relaxed">Je krijgt per mail een vragenlijst over je wensen en je situatie.</p>
+      </li>
+      <li class="bg-stone p-6">
+        <span class="font-display text-4xl text-aster">3</span>
+        <h4 class="mt-3 font-semibold">Offerte op maat</h4>
+        <p class="mt-2 text-moss/75 leading-relaxed">Op basis van je antwoorden ontvang je een passende offerte voor het ontwerp.</p>
+      </li>
+      <li class="bg-stone p-6">
+        <span class="font-display text-4xl text-aster">4</span>
+        <h4 class="mt-3 font-semibold">Locatiebezoek</h4>
+        <p class="mt-2 text-moss/75 leading-relaxed">Na akkoord kom ik langs om de tuin te bekijken, en dan gaan we van start.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-slate/60 py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-display text-4xl md:text-6xl tracking-tight max-w-2xl">Wat opdrachtgevers zeggen.</h2>
+      <p class="text-fern"><span class="font-display text-3xl text-moss">4,9</span> uit 24 reviews op Google</p>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid lg:grid-cols-12 gap-10 lg:gap-12">
+      <figure class="lg:col-span-7">
+        <blockquote class="font-display text-2xl md:text-[2.1rem] leading-snug">“Marijn is er perfect in geslaagd om mijn (onmogelijk gedachte) wensen tóch te realiseren. Fantastische tuin gekregen met grote vijver, vlonders en terrassen. De borders zijn afwisselend kleurrijk en ingetogen en de zichtlijnen zijn vanuit alle hoeken heel erg mooi.”</blockquote>
+        <figcaption class="mt-5 text-fern">Gonny Vijn</figcaption>
+      </figure>
+      <div class="lg:col-span-5 space-y-8">
+        <figure>
+          <blockquote class="leading-relaxed">“We hebben Marijn laatst voor de tweede keer gevraagd voor onze tuin. Hij voelt alweer gelijk aan wat wij willen en maakt een eerste tekening die helemaal klopt. Top! Een verrassend en snel resultaat.”</blockquote>
+          <figcaption class="mt-2 text-sm text-fern">geert lamers</figcaption>
+        </figure>
+        <figure>
+          <blockquote class="leading-relaxed">“Enorm blij en content met het uiteindelijke plan! Wij hebben een grote lange tuin met veel hoogtes en Marijn wist hier wel raad mee!! Marijn heeft verstand van zaken en veel ervaring. Hij luistert en sluit aan bij je wensen en past deze toe. Hij weet zelf ook wat leuk en passend is. Ook kwa budget denkt Marijn mee.”</blockquote>
+          <figcaption class="mt-2 text-sm text-fern">R vdb</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-10 border-t border-moss/15 grid md:grid-cols-2 gap-8 md:gap-12">
+      <figure>
+        <blockquote class="leading-relaxed text-moss/85">“Na onze verhuizing hadden wij een prachtig huis, maar een tuin die op de een of andere manier niet klopte. We hadden wel wat wensen, maar hoe alles precies te veranderen vonden we moeilijk om zelf te bepalen. Marijn heeft goed naar onze wensen geluisterd en een tuin ontworpen die helemaal past bij de architectuur van ...”</blockquote>
+        <figcaption class="mt-2 text-sm text-fern">Marieke Hoetjes</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="leading-relaxed text-moss/85">“Na een minder positieve ervaring met een ontwerp van een lokale tuinder (onvoldoende kwaliteit) kwamen wij "in het buitenland" Marijn tegen. Hij heeft goed geluisterd naar onze wensen en in zijn ontwerp rekening gehouden met de opgelegde regels vanuit de gemeente. De tuin is slechts een paar jaar oud, maar nu al ...”</blockquote>
+        <figcaption class="mt-2 text-sm text-fern">Martijn</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Marijn -->
+<section id="marijn" class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-32">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+    <div class="lg:col-span-5 lg:sticky lg:top-28">
+      <img src="assets/site-11.webp" alt="Najaarsborder met lampenpoetsersgras en roze hemelsleutel" class="w-full aspect-[4/5] object-cover rounded-sm">
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="font-display text-4xl md:text-6xl leading-[1.02] tracking-tight">De vlam ontbrandde in het water.</h2>
+      <div class="mt-8 space-y-5 text-lg leading-relaxed text-moss/85 max-w-[38rem]">
+        <p>Gek genoeg, staand in een vijver in de Japanse tuin Arnoldshof in Wijchen. De verstilde sfeer, het toverachtige beeld en de symboliek troffen me als een bliksemschicht.</p>
+        <p>Ik ging landschapsarchitectuur studeren aan de Landbouwuniversiteit in Wageningen en werkte tegelijk met mijn handen, in tuinaanleg en onderhoud. Later was ik vijf jaar docent tuinontwerp en plantenkennis en leidde ik studenten op tot tuindesigner.</p>
+        <p>Ik won prijsvragen voor de duurzame woonwijk De Akkers in Helmond en voor het parkontwerp Welinkbos in Dinxperlo. Voor de aanleg werk ik samen met een netwerk van specialisten.</p>
+      </div>
+
+      <h3 class="mt-14 font-display text-2xl">Gepubliceerd in</h3>
+      <ul class="mt-5 border-t border-slate text-[15px]">
+        <li class="flex justify-between gap-6 py-3 border-b border-slate"><span>Art of Living: Zwemmen in de Laagte</span><span class="text-fern shrink-0">fotografie Patrick Meis</span></li>
+        <li class="flex justify-between gap-6 py-3 border-b border-slate"><span>Tuinontwerpen, Modeste Herwig: Jungle</span><span class="text-fern shrink-0">2024</span></li>
+        <li class="flex justify-between gap-6 py-3 border-b border-slate"><span>Ontwerpen en planten voor kleine tuinen, Modeste Herwig: Jungle en Mozaïek</span><span class="text-fern shrink-0">2016, 2023</span></li>
+        <li class="flex justify-between gap-6 py-3 border-b border-slate"><span>Homes &amp; Gardens (VK): Measured Response</span><span class="text-fern shrink-0">2015</span></li>
+        <li class="flex justify-between gap-6 py-3 border-b border-slate"><span>Tuin &amp; Landschap, Groei &amp; Bloei, Bloemen &amp; Planten</span><span class="text-fern shrink-0">2013</span></li>
+        <li class="flex justify-between gap-6 py-3 border-b border-slate"><span>Home &amp; Garden: Nieuw tuintalent</span><span class="text-fern shrink-0">2006</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-moss text-stone">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-7">
+      <h2 class="font-display text-5xl md:text-7xl leading-[0.98] tracking-tight">Vertel me over je tuin.</h2>
+      <p class="mt-6 text-lg text-stone/80 leading-relaxed max-w-xl">Bel voor een vrijblijvende kennismaking, of mail je wensen met een paar foto's en de globale maten van je tuin. Dan weet ik meteen waar we het over hebben.</p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+31623677572" class="bg-stone text-moss px-7 py-4 rounded-full font-medium text-center hover:bg-asterlight">Bel 06 23677572</a>
+        <a href="mailto:hetbuitenland@xs4all.nl?subject=Aanvraag%20tuinontwerp" class="border border-stone/50 px-7 py-4 rounded-full font-medium text-center hover:bg-stone hover:text-moss">hetbuitenland@xs4all.nl</a>
+      </div>
+    </div>
+    <dl class="lg:col-span-4 lg:col-start-9 space-y-7 text-stone/85">
+      <div>
+        <dt class="text-asterlight text-sm">Adres</dt>
+        <dd class="mt-1">Vrouwe Udasingel 220<br>6663 GW Lent (Nijmegen)</dd>
+      </div>
+      <div>
+        <dt class="text-asterlight text-sm">Bereikbaar</dt>
+        <dd class="mt-1">Maandag tot en met zondag, 09:00 tot 17:00</dd>
+      </div>
+      <div>
+        <dt class="text-asterlight text-sm">Werkgebied</dt>
+        <dd class="mt-1 leading-relaxed">Nijmegen en omstreken, zoals Malden, Elst, Arnhem en Oosterbeek, maar ook de Betuwe, de Gelderse rivierenstreek en tot in de Achterhoek. Woon je verder weg? Neem gerust contact op.</dd>
+      </div>
+    </dl>
+  </div>
+  <footer class="border-t border-stone/15">
+    <div class="max-w-7xl mx-auto px-5 md:px-10 pt-6 pb-24 md:pb-6 flex flex-wrap justify-between gap-3 text-sm text-stone/60">
+      <span>© 2026 Het Buitenland, Buro voor Tuin- en Landschapsarchitectuur</span>
+      <span>Tuinarchitect Marijn Vereijken</span>
+    </div>
+  </footer>
+</section>
+
+</main>
+
+<!-- Mobiel: altijd bellen binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 bg-moss text-stone border-t border-stone/15 text-[15px] font-medium">
+  <a href="tel:+31623677572" class="py-4 text-center hover:bg-aster">Bellen</a>
+  <a href="mailto:hetbuitenland@xs4all.nl?subject=Aanvraag%20tuinontwerp" class="py-4 text-center border-l border-stone/15 hover:bg-aster">Mailen</a>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Scroll reveal
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(function(el) { io.observe(el); });
-  } else {
-    reveals.forEach(function(el) { el.classList.add('visible'); });
-  }
 
-  // Nav scroll effect
-  var nav = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 40) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.12)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
-
-  // Hamburger menu
-  var hamburger = document.getElementById('nav-hamburger');
-  var mobileMenu = document.getElementById('nav-mobile-menu');
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', function() {
-      mobileMenu.classList.toggle('open');
-    });
-    mobileMenu.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() { mobileMenu.classList.remove('open'); });
-    });
-  }
-});
-</script>
 </body>
 </html>
