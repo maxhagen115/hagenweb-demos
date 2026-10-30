@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbershop Ziad | Kapper in Ede, zonder afspraak</title>
+<meta name="description" content="Barbershop Ziad aan de Grotestraat 90 in Ede. Knippen, baard trimmen en scheren. Loop binnen zonder afspraak. Vrijdag open tot 21:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sancreek&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          antraciet: '#1f1e1c',
+          houtskool: '#2b2926',
+          goud: '#d9a82e',
+          gevelrood: '#d23a2c',
+          krijt: '#f2efe8',
+        },
+        fontFamily: {
+          kop: ['Sancreek', 'serif'],
+          sans: ['Archivo', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { text-wrap: pretty; }
+  h1, h2, h3 { text-wrap: balance; }
+  /* Meanderband: het patroon van de kapmantels */
+  .meander {
+    height: 28px;
+    background-color: #1f1e1c;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg fill='none' stroke='%23d9a82e' stroke-width='2.5' stroke-linecap='square'%3E%3Cpath d='M0 2H28M0 26H28'/%3E%3Cpath d='M3 26V7H22V21H10V12H16'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 28px 28px;
+  }
+  .vandaag { color: #1f1e1c; background: #d9a82e; }
+  .vandaag td { font-weight: 700; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .intro > * { animation: op 0.7s cubic-bezier(.2,.7,.2,1) both; }
+    .js .intro > *:nth-child(2) { animation-delay: .08s; }
+    .js .intro > *:nth-child(3) { animation-delay: .16s; }
+    .js .intro > *:nth-child(4) { animation-delay: .24s; }
+    @keyframes op { from { opacity: 0; transform: translateY(14px); } }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-antraciet text-krijt font-sans antialiased pb-20 md:pb-0">
+
+<div class="bg-krijt text-antraciet text-center text-xs sm:text-sm py-2 px-4">
+  Demo voor BarbershopZiad, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-semibold">Hagenweb</a>
+</div>
+
+<header class="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between gap-4">
+  <a href="#" class="font-kop text-gevelrood text-2xl sm:text-3xl leading-none tracking-wide">Barbershop Ziad</a>
+  <nav class="flex items-center gap-6 text-sm font-medium">
+    <a href="#diensten" class="hidden md:inline hover:text-goud transition-colors">Diensten</a>
+    <a href="#zaak" class="hidden md:inline hover:text-goud transition-colors">De zaak</a>
+    <a href="#langskomen" class="hidden md:inline hover:text-goud transition-colors">Openingstijden</a>
+    <a href="tel:+31645454544" class="hidden sm:inline-flex items-center gap-2 border border-goud text-goud px-4 py-2 rounded-sm hover:bg-goud hover:text-antraciet transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-goud">Bel 06 45454544</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-6 pb-14 md:pb-20 grid md:grid-cols-12 gap-10 md:gap-8 items-end">
+    <div class="intro md:col-span-7 md:pb-6">
+      <p class="text-goud font-medium mb-5">Grotestraat 90, Ede</p>
+      <h1 class="font-kop text-6xl sm:text-7xl lg:text-[7rem] leading-[1] tracking-wide">Loop gewoon binnen.</h1>
+      <p class="mt-7 text-lg sm:text-xl text-krijt/80 max-w-xl leading-relaxed">
+        Geen afspraak nodig. U krijgt iets te drinken, neemt plaats in de stoel en vertelt wat u wilt.
+        Wij luisteren, en nemen de tijd voor een knipbeurt of baard die klopt.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a href="tel:+31645454544" class="inline-flex items-center gap-3 bg-goud text-antraciet font-semibold px-6 py-4 rounded-sm hover:bg-[#e8bb45] active:translate-y-px transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-krijt">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Bel even of het druk is
+        </a>
+        <a href="https://www.google.com/search?q=Barbershop+Ziad+Ede+reviews" class="group text-sm leading-snug">
+          <span class="text-goud text-lg" aria-hidden="true">★★★★★</span><br>
+          <span class="text-krijt/80 group-hover:text-krijt"><strong class="text-krijt">4,9</strong> uit 182 Google-reviews</span>
+        </a>
+      </div>
+    </div>
+    <figure class="md:col-span-5 relative">
+      <img src="assets/google-04.jpg" alt="Klant met strak geknipte fade en verzorgde baard in de stoel bij Barbershop Ziad" class="w-full aspect-[4/5] object-cover object-top rounded-sm">
+      <figcaption class="absolute -bottom-5 left-5 right-5 sm:left-auto sm:-left-8 sm:right-auto bg-houtskool border-l-4 border-goud px-5 py-4 text-sm">
+        <span class="block text-krijt/60">Vandaag open</span>
+        <span id="vandaag-tijd" class="block font-semibold text-base">ma 10:00 tot 18:00, di t/m za 09:00, vr tot 21:00</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <div class="meander" role="presentation"></div>
+
+  <!-- Diensten -->
+  <section id="diensten" class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-12 gap-12 md:gap-10">
+      <div class="md:col-span-6">
+        <h2 class="font-kop text-4xl sm:text-5xl tracking-wide text-goud">In de stoel</h2>
+        <p class="mt-5 text-krijt/75 max-w-md leading-relaxed">Klassieke kniptechniek en de laatste trends, met persoonlijke aandacht voor elke klant.</p>
+        <ul class="mt-12 divide-y divide-krijt/15 border-y border-krijt/15">
+          <li class="py-7">
+            <h3 class="text-2xl font-semibold">Klassieke knipbeurt</h3>
+            <p class="mt-2 text-krijt/75 max-w-md">Een klassieke knipbeurt die stijl en persoonlijke aandacht combineert. Van een strakke fade tot een nette zijscheiding.</p>
+          </li>
+          <li class="py-7">
+            <h3 class="text-2xl font-semibold">Baard trimmen</h3>
+            <p class="mt-2 text-krijt/75 max-w-md">Baard trimmen op maat, zodat uw baard weer netjes en in model is.</p>
+          </li>
+          <li class="py-7">
+            <h3 class="text-2xl font-semibold">Luxe scheerbeurt</h3>
+            <p class="mt-2 text-krijt/75 max-w-md">Een luxe scheerbeurt voor de ultieme verwenning van de huid.</p>
+          </li>
+        </ul>
+        <p class="mt-8 text-krijt/75">Vragen over een behandeling? <a href="tel:+31645454544" class="text-goud underline underline-offset-4 hover:text-krijt">Bel 06 45454544</a>.</p>
+      </div>
+      <div class="md:col-span-6 grid grid-cols-2 gap-3 sm:gap-4 content-start">
+        <img src="assets/google-05.jpg" alt="Korte fade met kuif, zijaanzicht" class="col-span-2 w-full aspect-[16/11] object-cover object-[center_45%] rounded-sm">
+        <img src="assets/google-08.jpg" alt="Krullen met een zachte fade in de nek" class="w-full aspect-[3/4] object-cover rounded-sm">
+        <img src="assets/google-07.jpg" alt="Jongen met een frisse korte coupe" class="w-full aspect-[3/4] object-cover object-[center_40%] rounded-sm">
+      </div>
+    </div>
+  </section>
+
+  <!-- De zaak -->
+  <section id="zaak" class="bg-houtskool">
+    <img src="assets/google-02.jpg" alt="Interieur van Barbershop Ziad met ronde spiegels, zwarte werkplekken en kapmantels met gouden motief" class="w-full h-[52vh] md:h-[70vh] object-cover object-[center_60%]">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-8">
+      <h2 class="md:col-span-5 font-kop text-4xl sm:text-5xl tracking-wide leading-tight">Meer dan een kapperszaak</h2>
+      <div class="md:col-span-6 md:col-start-7 space-y-5 text-lg text-krijt/80 leading-relaxed">
+        <p>Barbershop Ziad zit midden in Ede, aan de Grotestraat. Een plek waar traditie en moderne stijl samenkomen: onze barbiers combineren klassieke kniptechnieken met de nieuwste trends.</p>
+        <p>Persoonlijke aandacht staat voorop. U krijgt bij binnenkomst iets te drinken, en tijdens het knippen vragen we of het goed is zo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-krijt text-antraciet">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-14">
+        <h2 class="font-kop text-4xl sm:text-5xl tracking-wide">Wat klanten zeggen</h2>
+        <p class="text-antraciet/70"><span class="font-semibold text-antraciet text-2xl">4,9</span> gemiddeld uit 182 Google-reviews</p>
+      </div>
+      <div class="grid md:grid-cols-12 gap-x-10 gap-y-12">
+        <blockquote class="md:col-span-7">
+          <p class="text-2xl sm:text-3xl leading-snug font-medium">“Vandaag voor het eerst naar Barbershop Ziad geweest omdat het bij mijn eigen kapper ontzettend druk was. Bij binnenkomst werd ik vriendelijk begroet en werd er wat te drinken aangeboden. Ik kon meteen gaan zitten, de jongen die mij hielp luisterde goed naar mijn wensen en ook tussendoor werd er gevraagd of het goed was”</p>
+          <footer class="mt-5 font-semibold">Henri Brussen <span class="text-goud" aria-label="5 van 5 sterren">★★★★★</span></footer>
+        </blockquote>
+        <div class="md:col-span-5 space-y-10">
+        <blockquote class="border-l-4 border-goud pl-6">
+          <p class="text-lg leading-relaxed">“Vandaag voor het eerst geweest, belde vantevoren of er ruimte was en kon gelijk komen.. van het moment dat ik binnen stapte meteen drinken aangeboden en mocht ik gaan zitten.. Kapper luisterde heel goed naar wat ik wilde en maakte er heel iets moois van! Zeker een aanrader”</p>
+          <footer class="mt-3 font-semibold">Ricardo Sanders</footer>
+        </blockquote>
+        <blockquote class="border-l-4 border-goud pl-6">
+          <p class="text-lg leading-relaxed">“Kwam er voor het eerst, binnen zonder afspraak. Gelijk vragen wat ik wil drinken. Mocht in de stoel gaan zitten en wilde mijn baard weer netjes hebben. Nou geloof me, ze luisteren echt naar jou wensen [...] Super net gewerkt en ze nemen de tijd voor je.”</p>
+          <footer class="mt-3 font-semibold">Er win</footer>
+        </blockquote>
+        <blockquote class="border-l-4 border-goud pl-6">
+          <p class="text-lg leading-relaxed">“Heel goede barbershop, heel liefe mensen, ik vind een van de beste kappers in ede”</p>
+          <footer class="mt-3 font-semibold">Robert</footer>
+        </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="meander" role="presentation"></div>
+
+  <!-- Langskomen -->
+  <section id="langskomen" class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 md:gap-10">
+    <div class="md:col-span-7">
+      <h2 class="font-kop text-4xl sm:text-5xl tracking-wide text-goud">Langskomen</h2>
+      <p class="mt-5 text-krijt/80 max-w-md leading-relaxed">Zonder afspraak welkom tijdens openingstijden. Op vrijdag knippen we door tot 21:00.</p>
+      <table class="mt-10 w-full max-w-md text-lg tabular-nums" aria-label="Openingstijden">
+        <tbody class="divide-y divide-krijt/15">
+          <tr data-dag="1"><td class="py-3 pl-3">Maandag</td><td class="py-3 pr-3 text-right">10:00 tot 18:00</td></tr>
+          <tr data-dag="2"><td class="py-3 pl-3">Dinsdag</td><td class="py-3 pr-3 text-right">09:00 tot 18:00</td></tr>
+          <tr data-dag="3"><td class="py-3 pl-3">Woensdag</td><td class="py-3 pr-3 text-right">09:00 tot 18:00</td></tr>
+          <tr data-dag="4"><td class="py-3 pl-3">Donderdag</td><td class="py-3 pr-3 text-right">09:00 tot 18:00</td></tr>
+          <tr data-dag="5"><td class="py-3 pl-3">Vrijdag</td><td class="py-3 pr-3 text-right">09:00 tot 21:00</td></tr>
+          <tr data-dag="6"><td class="py-3 pl-3">Zaterdag</td><td class="py-3 pr-3 text-right">09:00 tot 18:00</td></tr>
+          <tr data-dag="0"><td class="py-3 pl-3 text-krijt/50">Zondag</td><td class="py-3 pr-3 text-right text-krijt/50">Gesloten</td></tr>
+        </tbody>
+      </table>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-8 max-w-xl">
+        <div>
+          <dt class="text-krijt/60 text-sm">Adres</dt>
+          <dd class="mt-1 text-lg">Grotestraat 90<br>6711 AN Ede</dd>
+          <dd class="mt-2"><a href="https://www.google.com/maps/search/?api=1&query=Grotestraat+90+6711+AN+Ede" class="text-goud underline underline-offset-4 hover:text-krijt">Route plannen</a></dd>
+        </div>
+        <div>
+          <dt class="text-krijt/60 text-sm">Telefoon en e-mail</dt>
+          <dd class="mt-1 text-lg"><a href="tel:+31645454544" class="hover:text-goud">06 45454544</a></dd>
+          <dd class="mt-1"><a href="mailto:info@barbershop-ziad.nl" class="hover:text-goud break-all">info@barbershop-ziad.nl</a></dd>
+        </div>
+      </dl>
+    </div>
+    <figure class="md:col-span-5">
+      <img src="assets/google-01.jpg" alt="Gevel van Barbershop Ziad aan de Grotestraat 90 met rode letters en barberpaal" class="w-full aspect-[3/4] object-cover rounded-sm">
+      <figcaption class="mt-3 text-sm text-krijt/60">Herkenbaar aan de rode letters en de barberpaal, nummer 90.</figcaption>
+    </figure>
+  </section>
+</main>
+
+<footer class="border-t border-krijt/10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-wrap items-center justify-between gap-4 text-sm text-krijt/60">
+    <span class="font-kop text-gevelrood text-xl">Barbershop Ziad</span>
+    <span>Grotestraat 90, 6711 AN Ede</span>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<a href="tel:+31645454544" class="md:hidden fixed bottom-0 inset-x-0 z-20 flex items-center justify-center gap-3 bg-goud text-antraciet font-semibold py-4 shadow-[0_-8px_24px_rgba(20,18,15,.5)]">
+  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+  Bel 06 45454544
+</a>
+
+<script>
+  // Vandaag markeren in de openingstijden en in de hero
+  const d = new Date().getDay();
+  const rij = document.querySelector(`tr[data-dag="${d}"]`);
+  if (rij) {
+    rij.classList.add('vandaag');
+    const tijd = rij.children[1].textContent;
+    document.getElementById('vandaag-tijd').textContent = d === 0 ? 'Zondag gesloten' : tijd;
+    if (d === 0) document.getElementById('vandaag-tijd').previousElementSibling.textContent = 'Vandaag';
+  }
+</script>
+</body>
+</html>
