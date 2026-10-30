@@ -3,25 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Samenwerkende Tandartsen Nijmegen - de Biezen | Tandarts aan de Waterstraat</title>
-<meta name="description" content="Tandartspraktijk aan de Waterstraat 104 in Nijmegen. Zes behandelkamers, tandartsen, mondhygiënisten en een prothese technicus. Bel 024 377 3670.">
+<title>Samenwerkende Tandartsen Nijmegen - de Tandarts | Tandarts aan de Groenewoudseweg</title>
+<meta name="description" content="Tandartspraktijk aan de Groenewoudseweg 315 in Nijmegen. Maandag tot en met woensdag open tot 20:30, zaterdag tot 13:00. Bel 024 323 2928.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Urbanist:wght@500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
   theme: {
     extend: {
       colors: {
-        inkt: '#0F3A40',
-        teal: { DEFAULT: '#00B8C4', diep: '#007A83' },
-        nevel: '#EAF7F7',
-        zand: '#F4F2EE',
+        paper: '#F4F8F8',
+        ink: '#0E2B31',
+        wall: '#12808B',
+        tq: '#00C4CF',
+        mist: '#DCEFF0',
       },
       fontFamily: {
-        kop: ['Quicksand', 'system-ui', 'sans-serif'],
-        tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        kop: ['Urbanist', 'system-ui', 'sans-serif'],
+        sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
       },
     },
   },
@@ -32,307 +33,382 @@ tailwind.config = {
   body { -webkit-font-smoothing: antialiased; }
   h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
-  .boog { border-top-left-radius: 9999px 9999px; }
-  .boog-r { border-top-right-radius: 9999px 9999px; }
-  :focus-visible { outline: 3px solid #00B8C4; outline-offset: 3px; border-radius: 6px; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  .tnum { font-variant-numeric: tabular-nums; }
+  /* De boog uit de wachtkamer: een dikke cirkelrand waarvan twee kwarten wegvallen. */
+  .boog { border-radius: 9999px; border-style: solid; border-left-color: transparent; border-bottom-color: transparent; transform: rotate(-45deg); }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .plus { transform: rotate(45deg); }
+  .plus { transition: transform .25s ease; }
+  /* Alleen als JS draait: zachte entree van de hero. Zonder JS staat alles gewoon zichtbaar. */
+  .js .intro { animation: op .8s cubic-bezier(.2,.7,.2,1) both; }
+  .js .intro-2 { animation-delay: .12s; }
+  .js .intro-3 { animation-delay: .24s; }
+  @keyframes op { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .intro { animation: none; } html { scroll-behavior: auto; } }
+  :focus-visible { outline: 3px solid #12808B; outline-offset: 3px; border-radius: 4px; }
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-white font-tekst text-inkt text-[17px] leading-relaxed pb-20 md:pb-0">
+<body class="bg-paper font-sans text-ink text-[17px] leading-relaxed pb-20 md:pb-0">
 
-<!-- Demobalk -->
-<div class="bg-inkt text-white/85 text-[13px] text-center px-4 py-2">
-  Demo voor Samenwerkende Tandartsen Nijmegen - de Biezen, gemaakt door
-  <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-teal">Hagenweb</a>
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-ink text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Samenwerkende Tandartsen Nijmegen - de Tandarts, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-tq">Hagenweb</a>
 </div>
 
-<!-- Header -->
-<header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-inkt/10">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
-    <a href="#top" class="shrink-0" aria-label="Samenwerkende Tandartsen Nijmegen - de Biezen, naar boven">
-      <img src="assets/site-01.png" alt="Samenwerkende Tandartsen Nijmegen - de Biezen" class="h-10 md:h-11 w-auto">
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="shrink-0" aria-label="Samenwerkende Tandartsen Nijmegen - de Tandarts, naar boven">
+      <img src="assets/site-01.png" alt="Samenwerkende Tandartsen Nijmegen - de Tandarts" class="h-11 md:h-12 w-auto mix-blend-multiply">
     </a>
-    <nav class="hidden lg:flex items-center gap-8 font-kop font-semibold text-[15px]">
-      <a href="#praktijk" class="hover:text-teal-diep">Praktijk</a>
-      <a href="#behandelingen" class="hover:text-teal-diep">Behandelingen</a>
-      <a href="#team" class="hover:text-teal-diep">Team</a>
-      <a href="#route" class="hover:text-teal-diep">Route en tijden</a>
+    <nav class="hidden lg:flex items-center gap-8 font-kop font-semibold text-[15px]" aria-label="Hoofdmenu">
+      <a href="#praktijk" class="hover:text-wall transition-colors">Praktijk</a>
+      <a href="#behandelingen" class="hover:text-wall transition-colors">Behandelingen</a>
+      <a href="#team" class="hover:text-wall transition-colors">Team</a>
+      <a href="#bezoek" class="hover:text-wall transition-colors">Openingstijden en route</a>
     </nav>
-    <a href="tel:0243773670" class="hidden md:inline-flex items-center gap-2 rounded-full bg-teal-diep text-white font-kop font-bold text-[15px] px-5 py-2.5 hover:bg-inkt transition-colors">
-      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-      024 377 3670
-    </a>
+    <div class="flex items-center gap-3">
+      <a href="tel:+31243232928" class="hidden sm:inline-flex items-center gap-2 font-kop font-bold text-[15px] tnum hover:text-wall transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        024 323 2928
+      </a>
+      <a href="#afspraak" class="inline-flex items-center rounded-full bg-wall text-white font-kop font-bold text-[15px] px-5 py-2.5 hover:bg-ink active:scale-[.98] transition">Afspraak maken</a>
+    </div>
   </div>
 </header>
 
-<main id="top">
+<main id="inhoud">
 
-<!-- Hero -->
+<!-- HERO -->
 <section class="relative overflow-hidden">
-  <svg class="absolute -right-32 -top-10 w-[560px] h-[560px] text-teal/25 pointer-events-none hidden md:block" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 8a42 42 0 1 1-29.7 71.7" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
-  <div class="relative max-w-6xl mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
-    <div class="md:col-span-6">
-      <p class="font-kop font-semibold text-teal-diep mb-4">Tandarts in Nijmegen, Waterstraat 104</p>
-      <h1 class="font-kop font-bold text-[40px] leading-[1.05] md:text-[60px] tracking-tight">Voor een gezonde lach, met mensen die de tijd nemen.</h1>
-      <p class="mt-6 text-[19px] text-inkt/80 max-w-[34rem]">Toegankelijk, gastvrij en gedreven: zo werken we samen aan de gezondheid van uw mond. Met tandartsen, mondhygiënisten en een prothese technicus onder één dak, in zes ruime behandelkamers.</p>
-
-      <div class="mt-9 divide-y divide-inkt/10 border-y border-inkt/10 max-w-[34rem]">
-        <a href="tel:0243773670" class="group flex items-center justify-between gap-4 py-4">
-          <span>
-            <span class="block font-kop font-bold text-[20px]">Afspraak maken</span>
-            <span class="block text-inkt/70 text-[15px]">Bel 024 377 3670, maandag tot en met vrijdag 08:00 tot 17:00</span>
-          </span>
-          <span class="shrink-0 w-11 h-11 rounded-full bg-teal-diep text-white grid place-items-center group-hover:bg-inkt transition-colors" aria-hidden="true">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-          </span>
-        </a>
-        <a href="mailto:biezen@samenwerkendetandartsen.nl?subject=Aanmelden%20als%20pati%C3%ABnt" class="group flex items-center justify-between gap-4 py-4">
-          <span>
-            <span class="block font-kop font-bold text-[20px]">Aanmelden als nieuwe patiënt</span>
-            <span class="block text-inkt/70 text-[15px]">Mail ons of loop gerust even binnen aan de balie</span>
-          </span>
-          <span class="shrink-0 w-11 h-11 rounded-full border-2 border-teal-diep text-teal-diep grid place-items-center group-hover:bg-teal-diep group-hover:text-white transition-colors" aria-hidden="true">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
-          </span>
-        </a>
-        <a href="#spoed" class="group flex items-center justify-between gap-4 py-4">
-          <span>
-            <span class="block font-kop font-bold text-[20px]">Pijn buiten openingstijden?</span>
-            <span class="block text-inkt/70 text-[15px]">Bel de spoeddienst: 0900-8602</span>
-          </span>
-          <span class="shrink-0 w-11 h-11 rounded-full border-2 border-inkt/25 grid place-items-center group-hover:border-inkt transition-colors" aria-hidden="true">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          </span>
-        </a>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-14 md:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="lg:col-span-5 relative z-10">
+      <h1 class="intro font-kop font-extrabold text-[44px] leading-[1.02] md:text-[68px] tracking-[-0.03em]">
+        Tandarts in Nijmegen. Ook 's avonds.
+      </h1>
+      <p class="intro intro-2 mt-6 text-lg md:text-xl text-ink/75 max-w-[30rem]">
+        Aan de Groenewoudseweg komt u voor een gezonde lach. Toegankelijk, gastvrij en gedreven, van maandag tot en met woensdag tot half negen 's avonds en op zaterdagochtend.
+      </p>
+      <div class="intro intro-3 mt-8 flex flex-wrap items-center gap-3">
+        <a href="#afspraak" class="inline-flex items-center rounded-full bg-wall text-white font-kop font-bold px-6 py-3.5 hover:bg-ink active:scale-[.98] transition">Aanmelden als patiënt</a>
+        <a href="tel:+31243232928" class="hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-ink/15 font-kop font-bold px-6 py-3 hover:border-wall hover:text-wall transition tnum">Bel 024 323 2928</a>
       </div>
     </div>
 
-    <div class="md:col-span-6 relative">
-      <div class="relative md:ml-6">
-        <img src="assets/site-04.jpg" alt="Tandarts legt met een gebitsmodel uit aan een patiënt in de stoel" class="boog w-full aspect-square md:aspect-[5/6] object-cover object-[45%_50%] rounded-br-3xl">
-        <div class="absolute -bottom-6 left-4 md:-left-8 bg-white rounded-2xl shadow-[0_20px_40px_-20px_rgba(15,58,64,.45)] px-5 py-4 max-w-[17rem]">
-          <p class="font-kop font-bold text-[28px] leading-none">8,9</p>
-          <p class="text-[14px] text-inkt/75 mt-1">gemiddeld cijfer uit 1935 patiëntbeoordelingen</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Spanning -->
-<section class="bg-nevel relative overflow-hidden">
-  <svg class="absolute -right-24 -top-24 w-[380px] h-[380px] text-teal/30 pointer-events-none hidden md:block" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M8 50a42 42 0 0 1 84 0" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>
-  <div class="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 items-center">
-    <div class="md:col-span-5 order-2 md:order-1">
-      <img src="assets/site-05.jpg" alt="Twee tandartsassistentes in een behandelkamer, lachend naar een patiënt" class="boog-r w-full aspect-square object-cover rounded-bl-3xl">
-    </div>
-    <div class="md:col-span-7 order-1 md:order-2 md:pl-6">
-      <h2 class="font-kop font-bold text-[32px] md:text-[44px] leading-[1.1] tracking-tight max-w-[22ch]">Ziet u op tegen de tandarts? Dat mag u gewoon zeggen.</h2>
-      <p class="mt-5 text-[18px] text-inkt/80 max-w-[36rem]">Wij leggen uit wat we zien en wat we gaan doen, en houden rekening met spanning. Dat schrijven patiënten zelf:</p>
-      <figure class="mt-10 border-l-4 border-teal pl-6">
-        <blockquote class="font-kop font-semibold text-[22px] md:text-[26px] leading-snug">"Fijn personeel dat rekening houdt met mijn tandartsfobie. Heel prettig en ben zeer tevreden. De mensen die er werken zijn lief en zorgzaam. Ik had hier jaren geleden al naar toe moeten gaan. Praktijk is prettig qua inrichting. Hier voel ik me dus wel veilig."</blockquote>
-        <figcaption class="mt-3 text-[15px] text-inkt/70">Gerie Leenhouwers, op Google</figcaption>
-      </figure>
-      <figure class="mt-8 border-l-4 border-teal/40 pl-6">
-        <blockquote class="text-[18px] leading-relaxed">"Zeer vriendelijk personeel en een uitstekende service. Ze leggen alles heel goed uit. Ze hielden ook erg rekening met mijn angst."</blockquote>
-        <figcaption class="mt-2 text-[15px] text-inkt/70">Philip, op Google</figcaption>
+    <div class="lg:col-span-7 relative">
+      <div class="boog absolute -right-24 -top-20 w-[340px] h-[340px] md:w-[460px] md:h-[460px] border-[44px] md:border-[60px] border-t-tq border-r-tq opacity-90" aria-hidden="true"></div>
+      <figure class="relative rounded-[28px] rounded-tl-[160px] md:rounded-tl-[240px] overflow-hidden shadow-[0_30px_60px_-30px_rgba(14,43,49,.45)]">
+        <img src="assets/site-02.jpg" alt="Wachtruimte van de praktijk met het logo op de wand en de turquoise wand met de tekst Open up for better care" class="w-full h-[320px] md:h-[440px] object-cover object-[36%_center]">
       </figure>
     </div>
   </div>
-</section>
 
-<!-- Praktijk -->
-<section id="praktijk" class="scroll-mt-24">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
-    <div class="grid md:grid-cols-12 gap-8 items-end">
-      <h2 class="md:col-span-6 font-kop font-bold text-[32px] md:text-[44px] leading-[1.1] tracking-tight">Ruim, licht en dichtbij in de Biezen</h2>
-      <p class="md:col-span-6 text-[18px] text-inkt/80 max-w-[36rem]">De praktijk heeft zes ruim ingerichte behandelkamers en voldoende parkeergelegenheid voor de deur. Heeft u een vraag? Loop gerust binnen, een van onze medewerkers helpt u graag verder.</p>
-    </div>
-
-    <div class="mt-12 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
-      <img src="assets/site-07.jpg" alt="Lichte behandelkamer met blauwe behandelstoel" class="col-span-2 md:col-span-7 md:row-span-2 w-full h-64 md:h-full object-cover boog rounded-br-2xl">
-      <img src="assets/site-09.jpg" alt="Wachtruimte met houten stoelen, planten en een kleurrijk schilderij van Nijmegen" class="md:col-span-5 w-full h-40 md:h-64 object-cover rounded-2xl">
-      <img src="assets/site-06.jpg" alt="Baliemedewerkster helpt een patiënt aan de balie" class="md:col-span-5 w-full h-40 md:h-64 object-cover rounded-2xl">
-    </div>
-
-    <div class="mt-4 grid md:grid-cols-12 gap-4 items-stretch">
-      <img src="assets/site-08.jpg" alt="De witte gevel van de praktijk aan de Waterstraat 104" class="md:col-span-5 w-full h-56 md:h-72 object-cover rounded-2xl">
-      <div class="md:col-span-7 bg-zand rounded-2xl p-7 md:p-10 flex flex-col justify-center">
-        <p class="font-kop font-bold text-[22px]">Waarom samenwerkende tandartsen?</p>
-        <p class="mt-3 text-inkt/80 max-w-[40rem]">Tandartsen, mondhygiënisten, assistentes en een klinisch prothese technicus werken hier samen aan uw mondgezondheid. Op een betrokken manier, zodat u en uw gezin een persoonlijke keuze kunnen maken, op basis van goede voorlichting en vertrouwen.</p>
-        <p class="mt-5 text-[15px] text-inkt/70">Alle tandartsen staan ingeschreven in het BIG-register. Erkend leerbedrijf en ISO gecertificeerd.</p>
+  <!-- Snelle feiten -->
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pb-6">
+    <dl class="grid sm:grid-cols-3 border-t border-ink/10">
+      <div class="py-5 sm:pr-8 border-b sm:border-b-0 sm:border-r border-ink/10">
+        <dt class="font-kop font-bold text-wall">Avondspreekuur</dt>
+        <dd class="mt-1 tnum">Maandag tot en met woensdag van 08:00 tot 20:30</dd>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Behandelingen -->
-<section id="behandelingen" class="bg-inkt text-white scroll-mt-24 relative overflow-hidden">
-  <svg class="absolute -left-32 -bottom-40 w-[460px] h-[460px] text-teal/25 pointer-events-none hidden md:block" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 92a42 42 0 1 1 42-42" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
-  <div class="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12">
-    <div class="md:col-span-4">
-      <h2 class="font-kop font-bold text-[32px] md:text-[44px] leading-[1.1] tracking-tight">Waarvoor u bij ons terechtkunt</h2>
-      <p class="mt-5 text-white/75">De tandartstarieven worden elk jaar vastgesteld door de NZa en zijn bij iedere praktijk hetzelfde. Of u iets vergoed krijgt, hangt af van uw aanvullende verzekering.</p>
-      <p class="mt-5 text-white/75">Voor kinderen tot 18 jaar wordt tandheelkunde volledig vergoed uit het basispakket, behalve kroon- en brugwerk en orthodontie.</p>
-    </div>
-    <dl class="md:col-span-8 md:pl-8 divide-y divide-white/15 border-y border-white/15">
-      <div class="py-6 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-        <dt class="font-kop font-bold text-[20px] text-teal">Periodieke controle</dt>
-        <dd class="text-white/85">Een halfjaarlijkse controle is op iedere leeftijd belangrijk. We kijken naar meer dan alleen het gebit, controleren op gaatjes en of uw tandvlees gezond is, en maken waar nodig foto's.</dd>
+      <div class="py-5 sm:px-8 border-b sm:border-b-0 sm:border-r border-ink/10">
+        <dt class="font-kop font-bold text-wall">Zaterdag open</dt>
+        <dd class="mt-1 tnum">Van 08:00 tot 13:00</dd>
       </div>
-      <div class="py-6 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-        <dt class="font-kop font-bold text-[20px] text-teal">Algemene tandheelkunde</dt>
-        <dd class="text-white/85">Controles en behandelingen door de tandarts. Is er meer nodig, dan verwijzen we u op tijd door, bijvoorbeeld naar een parodontoloog bij tandvleesontsteking of een orthodontist voor een beugel.</dd>
-      </div>
-      <div class="py-6 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-        <dt class="font-kop font-bold text-[20px] text-teal">Mondhygiëne</dt>
-        <dd class="text-white/85">Drie mondhygiënisten helpen u met het verwijderen van tandsteen en geven advies om uw tanden en tandvlees gezond te houden.</dd>
-      </div>
-      <div class="py-6 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-        <dt class="font-kop font-bold text-[20px] text-teal">Prothese</dt>
-        <dd class="text-white/85">Een klinisch prothese technicus in eigen huis, voor een kunstgebit dat goed past.</dd>
-      </div>
-      <div class="py-6 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-        <dt class="font-kop font-bold text-[20px] text-teal">Invisalign</dt>
-        <dd class="text-white/85">Tanden rechtzetten met doorzichtige beugels, bij tandarts J. Wang.</dd>
-      </div>
-      <div class="py-6 grid sm:grid-cols-[14rem_1fr] gap-2 sm:gap-8">
-        <dt class="font-kop font-bold text-[20px] text-teal">MRA</dt>
-        <dd class="text-white/85">Behandeling met een MRA, bij chef de clinique M. van Lent.</dd>
+      <div class="py-5 sm:pl-8">
+        <dt class="font-kop font-bold text-wall">Parkeren voor de deur</dt>
+        <dd class="mt-1">Op eigen terrein, station Heyendaal op 600 meter</dd>
       </div>
     </dl>
   </div>
 </section>
 
-<!-- Team -->
-<section id="team" class="scroll-mt-24">
-  <img src="assets/site-02.jpg" alt="Twee tandartsassistentes in een lichte behandelkamer" class="w-full h-56 md:h-[420px] object-cover object-[50%_35%]">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-24">
-    <div class="grid md:grid-cols-12 gap-8">
-      <h2 class="md:col-span-5 font-kop font-bold text-[32px] md:text-[44px] leading-[1.1] tracking-tight">De mensen die u ziet</h2>
-      <p class="md:col-span-7 text-[18px] text-inkt/80 max-w-[36rem] md:pt-3">Van de balie tot de behandelstoel. Als erkend leerbedrijf leiden we ook studenten tandheelkunde op.</p>
-    </div>
-
-    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
-      <div>
-        <h3 class="font-kop font-bold text-[18px] pb-3 border-b-2 border-teal">Tandartsen</h3>
-        <ul class="mt-4 space-y-4">
-          <li><p class="font-bold">M. van Lent</p><p class="text-[15px] text-inkt/70">Chef de clinique, tandarts, MRA-behandelaar<br>BIG 69931758002</p></li>
-          <li><p class="font-bold">A. Figueroa Mendoza</p><p class="text-[15px] text-inkt/70">Tandarts<br>BIG 29916477802</p></li>
-          <li><p class="font-bold">J. Wang</p><p class="text-[15px] text-inkt/70">Tandarts, Invisalign-behandelaar<br>BIG 79927202102</p></li>
-          <li><p class="font-bold">J. van Grinsven</p><p class="text-[15px] text-inkt/70">Tandarts<br>BIG 79931180102</p></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-kop font-bold text-[18px] pb-3 border-b-2 border-teal">Mondzorg en prothese</h3>
-        <ul class="mt-4 space-y-4">
-          <li><p class="font-bold">N. Wijers</p><p class="text-[15px] text-inkt/70">Mondhygiënist</p></li>
-          <li><p class="font-bold">L. Willems</p><p class="text-[15px] text-inkt/70">Mondhygiënist</p></li>
-          <li><p class="font-bold">L. Witjes</p><p class="text-[15px] text-inkt/70">Mondhygiënist</p></li>
-          <li><p class="font-bold">F. Overveld</p><p class="text-[15px] text-inkt/70">Klinisch prothese technicus</p></li>
-          <li><p class="font-bold">Betül</p><p class="text-[15px] text-inkt/70">Preventieassistente</p></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-kop font-bold text-[18px] pb-3 border-b-2 border-teal">Assistentie, balie en praktijk</h3>
-        <ul class="mt-4 space-y-4">
-          <li><p class="font-bold">Jolanda, Souad en Wendy</p><p class="text-[15px] text-inkt/70">Tandartsassistentes</p></li>
-          <li><p class="font-bold">Sandra en Monique</p><p class="text-[15px] text-inkt/70">Baliemedewerksters</p></li>
-          <li><p class="font-bold">Corien</p><p class="text-[15px] text-inkt/70">Praktijkmanager</p></li>
-          <li><p class="font-bold">Karlijn, Fleur en Tom</p><p class="text-[15px] text-inkt/70">Studenten tandheelkunde</p></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Reviews -->
-<section class="bg-zand">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-24">
-    <div class="flex flex-wrap items-end justify-between gap-6">
-      <h2 class="font-kop font-bold text-[32px] md:text-[44px] leading-[1.1] tracking-tight">Wat patiënten vertellen</h2>
-      <p class="text-[15px] text-inkt/70"><span class="font-kop font-bold text-inkt text-[20px]">4,1</span> uit 62 reviews op Google</p>
-    </div>
-    <div class="mt-12 grid md:grid-cols-12 gap-5">
-      <figure class="md:col-span-7 md:self-start bg-white rounded-2xl p-7 md:p-10">
-        <blockquote class="text-[18px] leading-relaxed">"Kom al mijn hele leven bij deze tandartsenpraktijk en sinds een jaar of twee bij tandarts Joyce. Ze is zeer kundig en precies, vraagt om advies van een collega wanneer ze ergens over twijfelt. Tijdens het werk neemt ze je mee in wat ze ziet/denkt of de stappen die ze tijdens een behandeling zet. Ze denkt proactief mee"</blockquote>
-        <figcaption class="mt-5 font-kop font-bold">Sanne DK</figcaption>
-      </figure>
-      <div class="md:col-span-5 grid gap-5">
-        <figure class="bg-white rounded-2xl p-7">
-          <blockquote class="leading-relaxed">"Hele fijne tandarts, ik voel mij erg gehoord, en wordt goed naar mij geluisterd. Marith neemt de tijd en denk goed met mij mee."</blockquote>
-          <figcaption class="mt-4 font-kop font-bold">Carolien Keser</figcaption>
-        </figure>
-        <figure class="bg-white rounded-2xl p-7">
-          <blockquote class="leading-relaxed">"Ik kom hier al zo'n 30 jaar tot volle tevredenheid. Word altijd vriendelijk ontvangen door de receptionistes. Tandarts, tandartsassistentes en de mondhygiëniste zijn professioneel, belangstellend en nemen de tijd voor je !"</blockquote>
-          <figcaption class="mt-4 font-kop font-bold">Marlies</figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Route, tijden, spoed -->
-<section id="route" class="scroll-mt-24">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12">
-    <div class="md:col-span-6">
-      <h2 class="font-kop font-bold text-[32px] md:text-[44px] leading-[1.1] tracking-tight">Zo vindt u ons</h2>
-      <address class="not-italic mt-6 text-[20px] font-kop font-bold leading-snug">Waterstraat 104<br>6541 TL Nijmegen</address>
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Waterstraat+104+6541TL+Nijmegen" class="inline-block mt-3 text-teal-diep font-bold underline underline-offset-4 hover:text-inkt">Route plannen in Google Maps</a>
-      <ul class="mt-8 space-y-4 text-inkt/85 max-w-[34rem]">
-        <li class="flex gap-4"><span class="mt-2 w-2.5 h-2.5 rounded-full bg-teal shrink-0"></span><span><strong>Met de bus:</strong> Arriva bus 85 en Breng bus 89 (halte Vlietstraat), Breng bus 5 (halte Havenweg).</span></li>
-        <li class="flex gap-4"><span class="mt-2 w-2.5 h-2.5 rounded-full bg-teal shrink-0"></span><span><strong>Lopend:</strong> ongeveer 17 minuten vanaf station Nijmegen.</span></li>
-        <li class="flex gap-4"><span class="mt-2 w-2.5 h-2.5 rounded-full bg-teal shrink-0"></span><span><strong>Met de auto:</strong> er is voldoende parkeergelegenheid bij de praktijk.</span></li>
-      </ul>
-      <div class="mt-10 space-y-2">
-        <a href="tel:0243773670" class="block font-kop font-bold text-[22px] hover:text-teal-diep">024 377 3670</a>
-        <a href="mailto:biezen@samenwerkendetandartsen.nl" class="block text-teal-diep underline underline-offset-4 break-all hover:text-inkt">biezen@samenwerkendetandartsen.nl</a>
-      </div>
-    </div>
-
-    <div class="md:col-span-6 space-y-5">
-      <div class="bg-nevel rounded-2xl p-7 md:p-9">
-        <h3 class="font-kop font-bold text-[22px]">Openingstijden</h3>
-        <dl class="mt-5 divide-y divide-inkt/10 tabular-nums">
-          <div class="flex justify-between py-2.5"><dt>Maandag</dt><dd>08:00 tot 17:00</dd></div>
-          <div class="flex justify-between py-2.5"><dt>Dinsdag</dt><dd>08:00 tot 17:00</dd></div>
-          <div class="flex justify-between py-2.5"><dt>Woensdag</dt><dd>08:00 tot 17:00</dd></div>
-          <div class="flex justify-between py-2.5"><dt>Donderdag</dt><dd>08:00 tot 17:00</dd></div>
-          <div class="flex justify-between py-2.5"><dt>Vrijdag</dt><dd>08:00 tot 17:00</dd></div>
-          <div class="flex justify-between py-2.5 text-inkt/60"><dt>Zaterdag en zondag</dt><dd>Gesloten</dd></div>
-        </dl>
-        <p class="mt-4 text-[14px] text-inkt/65">Tijdens feestdagen kunnen de tijden afwijken.</p>
-      </div>
-
-      <div id="spoed" class="scroll-mt-24 bg-inkt text-white rounded-2xl rounded-tr-[5rem] p-7 md:p-9">
-        <h3 class="font-kop font-bold text-[22px]">Spoed of acute pijn</h3>
-        <p class="mt-3 text-white/80">Tijdens openingstijden belt u gewoon de praktijk. Buiten openingstijden, in het weekend en op feestdagen belt u bij pijn of een spoedgeval dat niet tot de volgende werkdag kan wachten de spoeddienst.</p>
-        <a href="tel:09008602" class="mt-6 inline-flex items-center gap-3 rounded-full bg-teal text-inkt font-kop font-bold text-[18px] px-6 py-3 hover:bg-white transition-colors">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-          Spoeddienst 0900-8602
+<!-- ROUTES -->
+<section id="afspraak" class="scroll-mt-24 max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20">
+  <div class="grid lg:grid-cols-12 gap-8 lg:gap-10">
+    <div class="lg:col-span-7">
+      <h2 class="font-kop font-bold text-3xl md:text-[44px] leading-tight tracking-[-0.02em]">Waarmee kunnen we u helpen?</h2>
+      <div class="mt-8 divide-y divide-ink/10 border-y border-ink/10">
+        <a href="mailto:nijmegen@samenwerkendetandartsen.nl?subject=Aanmelden%20als%20nieuwe%20pati%C3%ABnt" class="group grid grid-cols-[1fr_auto] gap-4 items-center py-7">
+          <div>
+            <h3 class="font-kop font-bold text-2xl group-hover:text-wall transition-colors">Ik wil patiënt worden</h3>
+            <p class="mt-2 text-ink/70 max-w-[34rem]">Op zoek naar een tandarts in Nijmegen? We verwelkomen u graag. Stuur ons een mail of bel, dan schrijven we u in.</p>
+          </div>
+          <span class="w-12 h-12 rounded-full bg-mist grid place-items-center group-hover:bg-wall group-hover:text-white transition" aria-hidden="true">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+        <a href="tel:+31243232928" class="group grid grid-cols-[1fr_auto] gap-4 items-center py-7">
+          <div>
+            <h3 class="font-kop font-bold text-2xl group-hover:text-wall transition-colors">Ik ben al patiënt en wil een afspraak</h3>
+            <p class="mt-2 text-ink/70 max-w-[34rem]">Bel de balie op <span class="tnum font-bold text-ink">024 323 2928</span>, ook 's&nbsp;avonds tot 20:30 op maandag, dinsdag en woensdag.</p>
+          </div>
+          <span class="w-12 h-12 rounded-full bg-mist grid place-items-center group-hover:bg-wall group-hover:text-white transition" aria-hidden="true">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
         </a>
       </div>
+      <figure class="mt-8 rounded-[24px] overflow-hidden">
+        <img src="assets/site-13.jpg" alt="Medewerkster van de balie helpt een patiënt bij het maken van een afspraak" class="w-full h-[220px] md:h-[260px] object-cover object-[60%_center]">
+      </figure>
     </div>
+
+    <aside class="lg:col-span-5 relative overflow-hidden rounded-[28px] bg-ink text-white p-8 md:p-10 self-start lg:mt-[76px]">
+      <div class="boog absolute -right-24 -top-24 w-[220px] h-[220px] border-[34px] border-t-wall border-r-wall" aria-hidden="true"></div>
+      <h2 class="relative font-kop font-bold text-3xl md:text-4xl leading-tight">Pijn of een bloeding?</h2>
+      <p class="relative mt-4 text-white/80">Bij acute pijn of bloedingen tijdens openingstijden belt u gewoon het praktijknummer. We kijken dan zo snel mogelijk naar u.</p>
+      <a href="tel:+31243232928" class="relative mt-7 inline-flex items-center gap-3 rounded-full bg-tq text-ink font-kop font-extrabold text-xl px-7 py-4 hover:bg-white active:scale-[.98] transition tnum">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        024 323 2928
+      </a>
+      <p class="relative mt-7 text-[15px] text-white/65 max-w-[24rem]">Buiten openingstijden, in het weekend en op feestdagen kunt u voor pijn die niet kan wachten tot de volgende werkdag terecht bij de spoeddienst.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- PRAKTIJK -->
+<section id="praktijk" class="scroll-mt-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <h2 class="lg:col-span-6 font-kop font-bold text-3xl md:text-[52px] leading-[1.05] tracking-[-0.02em]">Tien behandelkamers en een eigen lab, onder één dak.</h2>
+      <div class="lg:col-span-5 lg:col-start-8 text-ink/75 space-y-4">
+        <p>De praktijk aan de Groenewoudseweg heeft 10 ruim ingerichte behandelkamers. We werken nauw samen met ons eigen tandtechnisch laboratorium, dat in hetzelfde pand zit.</p>
+        <p>Ons team wordt periodiek bijgeschoold, zodat u zorg krijgt volgens de nieuwste technieken en de hoogste standaarden.</p>
+      </div>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <figure class="col-span-2 md:col-span-7 md:row-span-2 rounded-[24px] rounded-bl-[120px] overflow-hidden">
+        <img src="assets/site-05.jpg" alt="Lichte receptie met houten balie en de turquoise boog op de wand" class="w-full h-[260px] md:h-full object-cover">
+      </figure>
+      <figure class="md:col-span-5 rounded-[18px] overflow-hidden">
+        <img src="assets/site-06.jpg" alt="Behandelkamer met grote ramen en uitzicht op het groen" class="w-full h-[170px] md:h-[250px] object-cover">
+      </figure>
+      <figure class="md:col-span-5 rounded-[18px] overflow-hidden">
+        <img src="assets/site-07.jpg" alt="Wachtruimte met grote houten tafel en de petrolkleurige wand" class="w-full h-[170px] md:h-[250px] object-cover">
+      </figure>
+    </div>
+
+    <div class="mt-4 grid md:grid-cols-12 gap-4 items-stretch">
+      <figure class="md:col-span-4 rounded-[18px] overflow-hidden">
+        <img src="assets/google-08.jpg" alt="Assistente aan het werk in de sterilisatieruimte" class="w-full h-[260px] md:h-full object-cover object-[30%_60%]">
+      </figure>
+      <div class="md:col-span-8 rounded-[18px] bg-mist p-8 md:p-12 flex flex-col justify-center">
+        <p class="font-kop font-semibold text-2xl md:text-[32px] leading-snug tracking-[-0.01em] max-w-[36rem]">Naast algemene tandheelkunde kunt u bij ons terecht voor implantologie, endodontie, esthetische tandheelkunde en begeleiding als u angstig bent voor de tandarts.</p>
+        <a href="#behandelingen" class="mt-6 font-kop font-bold text-wall underline underline-offset-4 decoration-2 hover:text-ink self-start">Bekijk de behandelingen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEHANDELINGEN -->
+<section id="behandelingen" class="scroll-mt-24 max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-12">
+    <div class="lg:col-span-4 lg:sticky lg:top-28 self-start">
+      <h2 class="font-kop font-bold text-3xl md:text-[44px] leading-tight tracking-[-0.02em]">Behandelingen</h2>
+      <p class="mt-4 text-ink/70 max-w-[26rem]">Alles begint bij de halfjaarlijkse controle. Is er meer nodig, dan helpen we u hier verder of verwijzen we u op tijd door naar een specialist, zoals de parodontoloog of de orthodontist.</p>
+    </div>
+
+    <div class="lg:col-span-8 border-t border-ink/15">
+      <details class="group border-b border-ink/15" open>
+        <summary class="flex items-center justify-between gap-6 py-6">
+          <h3 class="font-kop font-bold text-2xl md:text-[28px]">Controle en algemene tandheelkunde</h3>
+          <span class="plus text-3xl text-wall leading-none" aria-hidden="true">+</span>
+        </summary>
+        <div class="pb-8 grid md:grid-cols-2 gap-6 md:gap-10 text-ink/75">
+          <p>Een halfjaarlijkse controle bij de tandarts of mondhygiënist is op iedere leeftijd belangrijk. We kijken of uw tandvlees gezond is, controleren uw gebit op gaatjes en kijken naar meer dan alleen de tanden. Soms maken we foto's om het goed te kunnen beoordelen. Daarna hoort u of er een vervolgafspraak nodig is, en hoe vaak u het beste op controle kunt komen.</p>
+          <div class="rounded-[18px] bg-white p-6">
+            <h4 class="font-kop font-bold text-ink text-lg">Wat kost het?</h4>
+            <p class="mt-2 text-[15px]">Tandartstarieven worden jaarlijks vastgesteld door de NZa en zijn bij iedere praktijk hetzelfde. Tandsteen verwijderen of foto's staan apart op de factuur. Of u het vergoed krijgt, hangt af van uw zorgverzekering.</p>
+            <p class="mt-3 text-[15px]"><strong class="text-ink">Kinderen tot 18 jaar</strong> krijgen tandheelkunde volledig vergoed uit het basispakket, met uitzondering van kroon- en brugwerk en orthodontie.</p>
+          </div>
+        </div>
+      </details>
+      <details class="group border-b border-ink/15">
+        <summary class="flex items-center justify-between gap-6 py-6">
+          <h3 class="font-kop font-bold text-2xl md:text-[28px]">Implantologie</h3>
+          <span class="plus text-3xl text-wall leading-none" aria-hidden="true">+</span>
+        </summary>
+        <p class="pb-8 text-ink/75 max-w-[42rem]">Het vervangen van een ontbrekende tand of kies met een implantaat. Kronen en ander werk worden gemaakt in samenwerking met ons eigen tandtechnisch laboratorium in hetzelfde pand.</p>
+      </details>
+      <details class="group border-b border-ink/15">
+        <summary class="flex items-center justify-between gap-6 py-6">
+          <h3 class="font-kop font-bold text-2xl md:text-[28px]">Endodontie</h3>
+          <span class="plus text-3xl text-wall leading-none" aria-hidden="true">+</span>
+        </summary>
+        <p class="pb-8 text-ink/75 max-w-[42rem]">Behandeling van de zenuw en het wortelkanaal van een tand of kies, zodat u die kunt behouden. Binnen het team werkt een tandheelkundig medewerker voor endodontologie.</p>
+      </details>
+      <details class="group border-b border-ink/15">
+        <summary class="flex items-center justify-between gap-6 py-6">
+          <h3 class="font-kop font-bold text-2xl md:text-[28px]">Esthetische tandheelkunde</h3>
+          <span class="plus text-3xl text-wall leading-none" aria-hidden="true">+</span>
+        </summary>
+        <p class="pb-8 text-ink/75 max-w-[42rem]">Behandelingen die vooral om het uiterlijk van uw gebit draaien. Twee van onze tandartsen zijn Invisalign behandelaar.</p>
+      </details>
+      <details class="group border-b border-ink/15">
+        <summary class="flex items-center justify-between gap-6 py-6">
+          <h3 class="font-kop font-bold text-2xl md:text-[28px]">Angst voor de tandarts</h3>
+          <span class="plus text-3xl text-wall leading-none" aria-hidden="true">+</span>
+        </summary>
+        <p class="pb-8 text-ink/75 max-w-[42rem]">Ziet u de stoel liever niet? We behandelen ook patiënten met angst. Vertel het ons bij de aanmelding of aan de telefoon, dan houden we er rekening mee.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ERVARINGEN -->
+<section class="bg-ink text-white relative overflow-hidden">
+  <div class="boog absolute -left-40 -top-40 w-[420px] h-[420px] border-[56px] border-t-wall/60 border-r-wall/60" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <p class="font-kop font-extrabold text-[80px] md:text-[112px] leading-none tracking-[-0.04em] text-tq tnum">9,0</p>
+      <p class="mt-3 text-white/75 max-w-[18rem]">gemiddeld cijfer van patiënten, uit 4954 beoordelingen op onze praktijkwebsite.</p>
+    </div>
+    <div class="lg:col-span-8">
+      <blockquote>
+        <p class="font-kop font-semibold text-2xl md:text-[34px] leading-snug tracking-[-0.01em]">"Ik kom hier al 35 jaar. In die tijd verschillende tandartsen gehad en altijd tevreden over de werkwijze, sfeer en communicatie. Ik woon al 19 jaar niet meer in Nijmegen maar ben wel bij deze tandarts gebleven."</p>
+        <footer class="mt-5 text-white/70">Heleen Litmaath, via Google</footer>
+      </blockquote>
+      <div class="mt-12 grid md:grid-cols-2 gap-8 border-t border-white/15 pt-10">
+        <blockquote>
+          <p class="text-white/85">"Ik ben al lang tevreden cliënt bij deze praktijk. Laatst ben ik ook bij een acute klacht zeer snel en deskundig geholpen. Ook kon ik vanuit het buitenland altijd bellen voor overleg toen ik kiespijn had. Top!"</p>
+          <footer class="mt-3 text-sm text-white/60">Ruud van de Plassche, via Google</footer>
+        </blockquote>
+        <blockquote>
+          <p class="text-white/85">"Hele fijne tandarts. Patientvriendelijk. Goede zorg. Duidelijk over wat ze doen tijdens behandeling."</p>
+          <footer class="mt-3 text-sm text-white/60">Wendela-Pascal Van Der Cruijsen, via Google</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="scroll-mt-24 max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+  <div class="grid lg:grid-cols-12 gap-10 items-end">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-bold text-3xl md:text-[44px] leading-tight tracking-[-0.02em]">De mensen achter de praktijk</h2>
+      <p class="mt-4 text-ink/70 max-w-[28rem]">Tandartsen, mondhygiënisten, assistenten en de balie werken hier samen, zodat u met één telefoontje bij de juiste behandelaar komt.</p>
+    </div>
+    <figure class="lg:col-span-7 rounded-[24px] rounded-tr-[120px] overflow-hidden">
+      <img src="assets/site-14.jpg" alt="Mondhygiënist in de behandelkamer in gesprek met een patiënt" class="w-full h-[220px] md:h-[300px] object-cover object-[55%_center]">
+    </figure>
+  </div>
+
+  <div class="mt-14">
+    <h3 class="font-kop font-bold text-xl text-wall">Tandartsen</h3>
+    <ul class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 border-t border-ink/10">
+      <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">N. Damyanov</span><span class="block text-[15px] text-ink/65">Tandarts, Chef de Clinique</span><span class="block text-xs text-ink/45 tnum">BIG 19912769302</span></li>
+      <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">O. van der Heijden</span><span class="block text-[15px] text-ink/65">Tandarts, algemeen practicus</span><span class="block text-xs text-ink/45 tnum">BIG 39021513002</span></li>
+      <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">G. Remijn</span><span class="block text-[15px] text-ink/65">Tandarts, algemeen practicus</span><span class="block text-xs text-ink/45 tnum">BIG 49044375102</span></li>
+      <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">S. Papric</span><span class="block text-[15px] text-ink/65">Tandarts, algemeen practicus, Invisalign behandelaar</span><span class="block text-xs text-ink/45 tnum">BIG 29910704402</span></li>
+      <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">A. Plachokova</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 09910877902</span></li>
+      <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">V. Terpstra</span><span class="block text-[15px] text-ink/65">Tandarts, Invisalign behandelaar</span><span class="block text-xs text-ink/45 tnum">BIG 49927799902</span></li>
+    </ul>
+
+    <details class="mt-2 group/team">
+      <summary class="py-4 font-kop font-bold text-wall inline-flex items-center gap-2 hover:text-ink">
+        <span class="plus inline-block text-2xl leading-none" aria-hidden="true">+</span> Toon het hele team
+      </summary>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 border-t border-ink/10">
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">P.J. Reussing</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 19931756902</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">F. Beukers</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 79929947802</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">C. Wessels</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 59928038202</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">J. Pfundt</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 59932596602</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">J. Kooloos</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 59935481202</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">L. van Kouterik</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 89937333602</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">E. van der Vlugt</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 39937331102</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">R. van Dijk</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 59935463602</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">C.A. Woud</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 19935465802</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">T. Vink</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 29937470802</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">M. Schlingemann</span><span class="block text-[15px] text-ink/65">Tandarts</span><span class="block text-xs text-ink/45 tnum">BIG 39939251202</span></li>
+        <li class="py-4 border-b border-ink/10"><span class="font-kop font-bold text-lg">R. Coelho - van de Ven</span><span class="block text-[15px] text-ink/65">Tandheelkundig medewerker voor endodontologie</span></li>
+      </ul>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-10">
+        <div>
+          <h3 class="font-kop font-bold text-xl text-wall">Mondhygiënisten</h3>
+          <p class="mt-4 leading-loose">C. Picauly, E. Demmers, S. Nefkens, L. van Duren, L. Stokman, E. Lansink, L. Leemans, L. Heltzel, Z. Pellaers, A. van Groenendaal, N. van Houten, N. van Hees, K. Abdi, M. van Krugten</p>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-xl text-wall">Preventie- en tandartsassistenten</h3>
+          <p class="mt-4 leading-loose">Chafika (paro-preventieassistent), Wendy, Kitty, Fatima, Mijke, Jacqueline, Emmie, Iris, Mats, Lars, Anne, Fabienne (preventieassistenten), Renee, Irena, Shanee (tandartsassistenten)</p>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-xl text-wall">Balie en organisatie</h3>
+          <p class="mt-4 leading-loose">Miriam en Claudia (balie), Lisa (praktijkcoördinator), Helma (facilitair)</p>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- BEZOEK -->
+<section id="bezoek" class="scroll-mt-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-bold text-3xl md:text-[44px] leading-tight tracking-[-0.02em]">Langskomen</h2>
+      <address class="not-italic mt-6 text-lg">
+        Groenewoudseweg 315<br>6524 TX Nijmegen
+      </address>
+      <p class="mt-3 text-ink/70">Parkeren kan op ons eigen terrein. Station Heyendaal ligt op 600 meter.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Groenewoudseweg+315+6524+TX+Nijmegen" target="_blank" rel="noopener" class="inline-flex items-center rounded-full bg-wall text-white font-kop font-bold px-6 py-3 hover:bg-ink active:scale-[.98] transition">Route plannen</a>
+        <a href="mailto:nijmegen@samenwerkendetandartsen.nl" class="inline-flex items-center rounded-full border-2 border-ink/15 font-kop font-bold px-6 py-2.5 hover:border-wall hover:text-wall transition">Mail ons</a>
+      </div>
+
+      <h3 class="mt-12 font-kop font-bold text-xl">Openingstijden</h3>
+      <table class="mt-4 w-full max-w-sm tnum">
+        <tbody class="divide-y divide-ink/10">
+          <tr data-dag="1"><td class="py-2.5">Maandag</td><td class="py-2.5 text-right">08:00 tot 20:30</td></tr>
+          <tr data-dag="2"><td class="py-2.5">Dinsdag</td><td class="py-2.5 text-right">08:00 tot 20:30</td></tr>
+          <tr data-dag="3"><td class="py-2.5">Woensdag</td><td class="py-2.5 text-right">08:00 tot 20:30</td></tr>
+          <tr data-dag="4"><td class="py-2.5">Donderdag</td><td class="py-2.5 text-right">08:00 tot 17:00</td></tr>
+          <tr data-dag="5"><td class="py-2.5">Vrijdag</td><td class="py-2.5 text-right">08:00 tot 17:00</td></tr>
+          <tr data-dag="6"><td class="py-2.5">Zaterdag</td><td class="py-2.5 text-right">08:00 tot 13:00</td></tr>
+          <tr data-dag="0"><td class="py-2.5">Zondag</td><td class="py-2.5 text-right text-ink/55">Gesloten</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-3 text-sm text-ink/55">Tijdens feestdagen kunnen de tijden afwijken.</p>
+    </div>
+    <figure class="lg:col-span-7 relative rounded-[28px] rounded-br-[180px] overflow-hidden self-stretch min-h-[320px]">
+      <img src="assets/google-05.jpg" alt="Het praktijkgebouw aan de Groenewoudseweg 315 met de turquoise voordeur" class="absolute inset-0 w-full h-full object-cover object-[60%_center]">
+    </figure>
   </div>
 </section>
 
 </main>
 
-<footer class="border-t border-inkt/10">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[15px] text-inkt/70">
-    <img src="assets/site-01.png" alt="Samenwerkende Tandartsen Nijmegen - de Biezen" class="h-9 w-auto self-start">
-    <p>Waterstraat 104, 6541 TL Nijmegen, <a href="tel:0243773670" class="hover:text-teal-diep">024 377 3670</a></p>
+<footer class="bg-ink text-white/75 relative overflow-hidden">
+  <div class="boog absolute -right-32 -bottom-48 w-[380px] h-[380px] border-[50px] border-t-tq/80 border-r-tq/80" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-3 gap-10">
+    <div>
+      <p class="font-kop font-bold text-white text-xl leading-snug">Samenwerkende Tandartsen Nijmegen<br><span class="text-tq">de Tandarts</span></p>
+    </div>
+    <div>
+      <p>Groenewoudseweg 315<br>6524 TX Nijmegen</p>
+    </div>
+    <div class="space-y-1">
+      <a href="tel:+31243232928" class="block text-white font-kop font-bold text-lg tnum hover:text-tq">024 323 2928</a>
+      <a href="mailto:nijmegen@samenwerkendetandartsen.nl" class="block hover:text-tq break-all">nijmegen@samenwerkendetandartsen.nl</a>
+    </div>
   </div>
 </footer>
 
-<!-- Mobiele belbalk -->
-<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-inkt/10 p-3 grid grid-cols-[1fr_auto] gap-3">
-  <a href="tel:0243773670" class="flex items-center justify-center gap-2 rounded-full bg-teal-diep text-white font-kop font-bold py-3">
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-paper/95 backdrop-blur border-t border-ink/10 p-3 grid grid-cols-[1fr_auto] gap-2">
+  <a href="tel:+31243232928" class="flex items-center justify-center gap-2 rounded-full bg-wall text-white font-kop font-bold py-3.5 tnum active:scale-[.98] transition">
     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-    Bel de praktijk
+    Bel 024 323 2928
   </a>
-  <a href="#spoed" class="flex items-center justify-center rounded-full border-2 border-inkt/20 font-kop font-bold px-5 py-3">Spoed</a>
+  <a href="#bezoek" class="flex items-center justify-center rounded-full border-2 border-ink/15 font-kop font-bold px-5">Route</a>
 </div>
 
+<script>
+  // Markeer vandaag in de openingstijden.
+  var rij = document.querySelector('tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) { rij.classList.add('font-bold', 'text-wall'); rij.firstElementChild.textContent += ' (vandaag)'; }
+</script>
 </body>
 </html>
