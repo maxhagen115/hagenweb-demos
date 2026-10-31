@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huishoudelijke hulp in Nijmegen | Home Facility</title>
+<meta name="description" content="Home Facility koppelt je aan een vaste, ervaren huishoudelijke hulp in Nijmegen, Lent, Nijmegen-Noord en Oosterhout. Gratis intake, ook met PGB.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        mist: '#F5F8F7', bos: '#1E3B2F', groen: '#8CBF4A', groendonker: '#4E7F2A',
+        dak: '#A9D9EA', lucht: '#E3F1F6'
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        tekst: ['Figtree', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .huis { clip-path: polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%); }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.6rem; border-radius:999px; font-weight:700; padding:.95rem 1.5rem; transition: transform .2s, background-color .2s, color .2s; }
+  .btn:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #4E7F2A; outline-offset: 3px; }
+  .field { width:100%; background:#fff; border:1.5px solid #cfe0d8; border-radius:.75rem; padding:.85rem 1rem; transition:border-color .2s; }
+  .field:focus { border-color:#4E7F2A; outline:none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .dak-lijn { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: teken 1.8s .2s ease-out forwards; }
+    @keyframes teken { to { stroke-dashoffset: 0; } }
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="overflow-x-clip bg-mist text-bos font-tekst text-[17px] leading-relaxed pb-20 md:pb-0">
+
+<div class="bg-bos text-mist text-center text-sm py-2 px-4">
+  Demo voor Home Facility - Huishoudelijke hulp in Nijmegen, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-groen">Hagenweb</a>
+</div>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-white">Naar de inhoud</a>
+
+<header class="sticky top-0 z-30 bg-mist/90 backdrop-blur border-b border-bos/5">
+  <div class="max-w-6xl mx-auto px-5 h-20 flex items-center justify-between gap-6">
+    <a href="#" aria-label="Home Facility, naar boven"><img src="assets/google-02.png" alt="Home Facility, oog voor het schone geheel" class="h-12 md:h-14 w-auto"></a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px]">
+      <a href="#werkwijze" class="hover:text-groendonker">Werkwijze</a>
+      <a href="#tarieven" class="hover:text-groendonker">Tarieven</a>
+      <a href="#stoomreiniging" class="hover:text-groendonker">Stoomreiniging</a>
+      <a href="#ervaringen" class="hover:text-groendonker">Ervaringen</a>
+      <a href="#contact" class="hover:text-groendonker">Contact</a>
+    </nav>
+    <a href="tel:+31630328574" class="btn bg-bos text-mist hover:bg-groendonker !py-3 !px-5 text-[15px]">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="hidden sm:inline">06 30328574</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="max-w-6xl mx-auto px-5 pt-12 md:pt-20 pb-16 md:pb-20 grid md:grid-cols-[1.15fr_1fr] gap-14 md:gap-10 items-center">
+  <div>
+    <p class="text-groendonker font-bold mb-5">Huishoudelijke hulp in Nijmegen</p>
+    <h1 class="font-kop font-semibold text-[2.9rem] leading-[1.02] md:text-[4.6rem] tracking-[-0.03em]">Iedereen verdient meer vrije tijd. Jij ook.</h1>
+    <p class="mt-7 text-lg md:text-xl max-w-[34rem] text-bos/80">Home Facility zoekt een vaste, ervaren hulp die bij jou en je huis past. Je begint met een gratis intake bij je thuis, in Nijmegen, Lent, Nijmegen-Noord of Oosterhout (GLD).</p>
+    <p class="mt-5 max-w-[34rem] text-bos/80 border-l-2 border-dak pl-4">Op dit moment is er een wachtlijst. Zet jezelf erop, dan hoor je het als eerste zodra er plek is.</p>
+    <div class="mt-9 flex flex-wrap gap-3">
+      <a href="#contact" class="btn bg-groendonker text-white hover:bg-bos">Zet me op de wachtlijst</a>
+      <a href="tel:+31630328574" class="btn border-2 border-bos/15 hover:border-bos hidden md:inline-flex">Bel 06 30328574</a>
+    </div>
+  </div>
+  <div class="relative mx-auto w-full max-w-[400px]">
+    <div class="relative">
+    <svg class="absolute inset-0 w-full h-full translate-x-4 -translate-y-4 md:translate-x-6 md:-translate-y-6 overflow-visible" viewBox="0 0 100 125" preserveAspectRatio="none" aria-hidden="true">
+      <polyline class="dak-lijn" points="0,125 0,37.5 50,0 100,37.5 100,125" fill="none" stroke="#A9D9EA" stroke-width="3" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <img src="assets/site-04.png" alt="Huishoudelijke hulp maakt een kookplaat schoon met gele handschoenen" class="huis relative w-full aspect-[4/5] object-cover">
+    </div>
+    <p class="relative mt-6 text-sm text-bos/70 italic">Oog voor het schone geheel</p>
+  </div>
+</section>
+
+<!-- Anders -->
+<section class="bg-white">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28 grid md:grid-cols-2 gap-14 items-center">
+    <div class="relative h-[340px] md:h-[460px] order-2 md:order-1">
+      <img src="assets/site-01.jpg" alt="Medewerker van Home Facility" class="absolute left-0 top-0 w-[62%] aspect-[4/5] object-cover rounded-[1.5rem]">
+      <img src="assets/site-02.jpg" alt="Medewerker van Home Facility" class="absolute right-0 bottom-0 w-[50%] aspect-square object-cover rounded-[1.5rem] ring-8 ring-white">
+    </div>
+    <div class="order-1 md:order-2">
+      <h2 class="font-kop font-semibold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Geen platform. Wel een vaste contactpersoon.</h2>
+      <p class="mt-6 text-bos/80 max-w-[32rem]">Bij Home Facility kies je geen hulp uit op basis van een profiel. We kennen al onze hulpen persoonlijk. Ze zijn gescreend en hebben aantoonbare werkervaring.</p>
+      <p class="mt-4 text-bos/80 max-w-[32rem]">Je hebt altijd één vaste contactpersoon voor vragen, wensen en eventuele klachten. We houden regelmatig contact en maken samen duidelijke afspraken. Zo nemen we de zorgen over je huishouden echt uit handen, en dat doen we al meer dan 7 jaar in Nijmegen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <h2 class="font-kop font-semibold text-4xl md:text-5xl tracking-[-0.02em] max-w-xl leading-[1.05]">Zo vind je de hulp die bij je past</h2>
+  <ol class="mt-14 grid md:grid-cols-3 gap-10 md:gap-8 relative">
+    <li class="relative md:pt-14">
+      <span class="font-kop text-2xl font-semibold flex items-center justify-center w-12 h-12 rounded-full bg-bos text-groen relative z-10">1</span>
+      <h3 class="font-kop text-xl font-semibold mt-5">Plan een gratis intake</h3>
+      <p class="mt-2 text-bos/80">Vul het formulier in of bel ons. We plannen een gratis kennismaking bij je thuis.</p>
+    </li>
+    <li class="relative md:pt-14">
+      <span class="font-kop text-2xl font-semibold flex items-center justify-center w-12 h-12 rounded-full bg-bos text-groen relative z-10">2</span>
+      <h3 class="font-kop text-xl font-semibold mt-5">We bespreken je wensen</h3>
+      <p class="mt-2 text-bos/80">Je vaste contactpersoon komt langs, legt uit hoe we werken en bekijkt samen met jou de woning.</p>
+    </li>
+    <li class="relative md:pt-14">
+      <span class="font-kop text-2xl font-semibold flex items-center justify-center w-12 h-12 rounded-full bg-bos text-groen relative z-10">3</span>
+      <h3 class="font-kop text-xl font-semibold mt-5">Ontmoet je hulp</h3>
+      <p class="mt-2 text-bos/80">We stellen je voor aan je hulp. Klikt het, dan gaat die zo snel mogelijk aan de slag.</p>
+    </li>
+    <span class="hidden md:block absolute left-6 right-[30%] top-[5.5rem] h-[3px] bg-dak" aria-hidden="true"></span>
+  </ol>
+</section>
+
+<!-- Tarieven -->
+<section id="tarieven" class="bg-bos text-mist">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28 grid lg:grid-cols-[1fr_1.1fr] gap-14">
+    <div>
+      <h2 class="font-kop font-semibold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Je betaalt alleen de uren die gewerkt zijn</h2>
+      <p class="mt-6 text-mist/75 max-w-md">Wekelijks of om de week, jij bepaalt. Heb je een PGB-budget? Dan kan het ook via Home Facility. We bespreken de mogelijkheden graag met je.</p>
+      <div class="mt-10 grid grid-cols-2 gap-4 max-w-md">
+        <div class="rounded-2xl bg-white/[0.06] p-6">
+          <p class="text-mist/70">Wekelijks</p>
+          <p class="font-kop text-5xl font-semibold mt-2 text-groen">€21</p>
+          <p class="text-mist/70 mt-1">per uur</p>
+        </div>
+        <div class="rounded-2xl bg-white/[0.06] p-6">
+          <p class="text-mist/70">Tweewekelijks</p>
+          <p class="font-kop text-5xl font-semibold mt-2 text-groen">€22</p>
+          <p class="text-mist/70 mt-1">per uur</p>
+        </div>
+      </div>
+    </div>
+    <div class="lg:pt-2">
+      <h3 class="font-kop text-xl font-semibold">Altijd inbegrepen</h3>
+      <ul class="mt-5 divide-y divide-mist/10 border-y border-mist/10">
+        <li class="py-4 flex gap-4"><span class="text-groen font-bold" aria-hidden="true">✓</span>Gratis intakegesprek bij je thuis</li>
+        <li class="py-4 flex gap-4"><span class="text-groen font-bold" aria-hidden="true">✓</span>Een betrouwbare, ervaren hulp die bij je past</li>
+        <li class="py-4 flex gap-4"><span class="text-groen font-bold" aria-hidden="true">✓</span>Vaste contactpersoon en een vaste hulp</li>
+        <li class="py-4 flex gap-4"><span class="text-groen font-bold" aria-hidden="true">✓</span>Geen bijkomende kosten</li>
+        <li class="py-4 flex gap-4"><span class="text-groen font-bold" aria-hidden="true">✓</span>Betalen via iDEAL of automatische incasso</li>
+        <li class="py-4 flex gap-4"><span class="text-groen font-bold" aria-hidden="true">✓</span>Ook mogelijk met PGB-budget</li>
+      </ul>
+      <a href="#contact" class="btn bg-groen text-bos hover:bg-white mt-8">Plan een gratis intake</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stoomreiniging -->
+<section id="stoomreiniging" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <div class="bg-lucht rounded-[2rem] p-8 md:p-14 grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16">
+    <div>
+      <h2 class="font-kop font-semibold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Stoomreiniging aan huis</h2>
+      <p class="mt-6 text-bos/80">Stoomreiniging gaat verder dan gewoon schoonmaken. Van vloeren tot keukens en badkamers: met hete stoom verdwijnt ook hardnekkig vuil, en je huis straalt weer.</p>
+      <p class="mt-4 text-bos/80">We komen eerst langs om te kijken. Op basis van dat bezoek krijg je een offerte. Akkoord? Dan plannen we samen een moment.</p>
+      <a href="#contact" class="btn bg-bos text-mist hover:bg-groendonker mt-8">Vraag een bezoek aan</a>
+    </div>
+    <dl class="grid sm:grid-cols-2 gap-x-8 gap-y-7 content-start">
+      <div><dt class="font-kop font-semibold text-lg">Grondig</dt><dd class="mt-1 text-bos/75">Haalt kalkaanslag, zeepresten, schimmel en vastgekoekt vuil weg.</dd></div>
+      <div><dt class="font-kop font-semibold text-lg">Gezonder huis</dt><dd class="mt-1 text-bos/75">De stoom doodt bacteriën, ziektekiemen en allergenen.</dd></div>
+      <div><dt class="font-kop font-semibold text-lg">Zonder chemie</dt><dd class="mt-1 text-bos/75">Alleen waterdamp. Bij veel vervuiling hooguit een biologisch middel erbij.</dd></div>
+      <div><dt class="font-kop font-semibold text-lg">Voegen als nieuw</dt><dd class="mt-1 text-bos/75">De stoom dringt diep in de voegen tussen tegels en verwijdert schimmel.</dd></div>
+      <div class="sm:col-span-2"><dt class="font-kop font-semibold text-lg">Veilig voor je spullen</dt><dd class="mt-1 text-bos/75">Geschikt voor de meeste oppervlakken, met minder kans op schade dan agressieve middelen.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- Ervaringen -->
+<section id="ervaringen" class="bg-white">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-kop font-semibold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05] max-w-xl">Wat klanten over ons zeggen</h2>
+      <p class="text-bos/80"><span class="text-groendonker text-xl tracking-widest" aria-hidden="true">★★★★★</span><br><strong>5 sterren</strong> uit 7 Google-reviews</p>
+    </div>
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-6 [&>figure]:mb-6 [&>figure]:break-inside-avoid">
+      <figure class="rounded-2xl bg-mist p-7">
+        <blockquote>"Heel blij met de zorgvuldige schoonmaak uitgevoerd door een medewerker van Home Facility! Daarnaast gemakkelijke communicatie met Léon. Betrouwbare samenwerking. Een aanrader!"</blockquote>
+        <figcaption class="mt-4 font-bold text-[15px]">Elsemiek Hofman-Geist <span class="font-normal text-bos/60">via Google</span></figcaption>
+      </figure>
+      <figure class="rounded-2xl bg-bos text-mist p-7">
+        <blockquote class="font-kop text-2xl leading-snug">"Home facility bespaart je de zoektocht naar een goede poetshulp. Mede door de persoonlijke en vriendelijke benadering een absolute aanrader voor iedereen die een poetshulp zoekt."</blockquote>
+        <figcaption class="mt-5 font-bold text-[15px]">Willeke Peeters</figcaption>
+      </figure>
+      <figure class="rounded-2xl bg-mist p-7">
+        <blockquote>"Wij nemen al twee jaar een huishoudelijke hulp af bij Home Facility. We zijn erg tevreden, zowel over het contact met Leon als over de huishoudelijke hulp!"</blockquote>
+        <figcaption class="mt-4 font-bold text-[15px]">Jan <span class="font-normal text-bos/60">via Google</span></figcaption>
+      </figure>
+      <figure class="rounded-2xl bg-mist p-7">
+        <blockquote>"Home Facility is een betrouwbare, betrokken organisatie die kwaliteit levert. Het startte met een intake, om onze behoeftes te inventariseren, vervolgens werd er een huishoudelijke hulp gezocht die bij onze wensen aansloot. Dit is gelukt. Er wordt goed schoongemaakt, de communicatie met zowel de huishoudelijke hulp als ..."</blockquote>
+        <figcaption class="mt-4 font-bold text-[15px]">Bram Versteegen - van Dort <span class="font-normal text-bos/60">via Google</span></figcaption>
+      </figure>
+      <figure class="rounded-2xl bg-mist p-7">
+        <blockquote>"Wij zijn heel blij dat eens per week alles wordt schoonmaakt bij ons thuis. Onze hulp houdt zich aan de gemaakte afspraken en als er tijd over is doet zij een extra klus(je). Wat het voor ons extra fijn maakt is dat de schoonmaakhulp prima met onze honden overweg kan. Een echte aanrader dus!"</blockquote>
+        <figcaption class="mt-4 font-bold text-[15px]">Robin van Dijk</figcaption>
+      </figure>
+      <figure class="rounded-2xl bg-mist p-7">
+        <blockquote>"Sinds een aantal jaren maak ik tot volle tevredenheid gebruik van de diensten van Home Facility. Dit bedrijf heeft kwaliteit hoog in het vaandel staan. De eigenaar heeft aandacht voor de wensen van de klant en zoekt zorgvuldig een medewerker die hierbij past."</blockquote>
+        <figcaption class="mt-4 font-bold text-[15px]">Yvonne Denies <span class="font-normal text-bos/60">via Google</span></figcaption>
+      </figure>
+      <figure class="rounded-2xl bg-mist p-7">
+        <blockquote>"Al een aantal jaren een hele fijne huishoudelijke hulp via Home Facility. Zeker een aanrader als je op zoek bent naar een goede hulp in de regio Nijmegen."</blockquote>
+        <figcaption class="mt-4 font-bold text-[15px]">Elise Jacobs <span class="font-normal text-bos/60">via Google</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-6xl mx-auto px-5 py-20 md:py-28 grid lg:grid-cols-[1fr_1.3fr] gap-14">
+  <div>
+    <h2 class="font-kop font-semibold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Op naar meer vrije tijd</h2>
+    <p class="mt-6 text-bos/80">Er is op dit moment een wachtlijst. Laat je gegevens achter, dan nemen we contact op zodra er plek is en plannen we je gratis intake. Liever eerst even praten? Bel gerust.</p>
+    <dl class="mt-10 space-y-6">
+      <div><dt class="text-sm text-bos/60">Telefoon</dt><dd><a href="tel:+31630328574" class="font-kop text-2xl font-semibold hover:text-groendonker">06 30328574</a></dd></div>
+      <div><dt class="text-sm text-bos/60">E-mail</dt><dd><a href="mailto:info@homefacility.nl" class="font-kop text-2xl font-semibold hover:text-groendonker">info@homefacility.nl</a></dd></div>
+      <div><dt class="text-sm text-bos/60">Bereikbaar</dt><dd>Maandag tot en met vrijdag, 09:00 tot 17:00</dd></div>
+      <div><dt class="text-sm text-bos/60">Adres</dt><dd>Spijkstra-Bruijnhof 66, 6663 TC Nijmegen</dd></div>
+      <div><dt class="text-sm text-bos/60">Werkgebied</dt><dd>Nijmegen, Lent, Nijmegen-Noord en Oosterhout (GLD)</dd></div>
+    </dl>
+  </div>
+  <form class="bg-white rounded-[2rem] p-7 md:p-10 grid sm:grid-cols-2 gap-5" action="mailto:info@homefacility.nl" method="post" enctype="text/plain">
+    <label class="block"><span class="text-[15px] font-bold">Voornaam</span><input class="field mt-2" name="voornaam" required autocomplete="given-name"></label>
+    <label class="block"><span class="text-[15px] font-bold">Achternaam</span><input class="field mt-2" name="achternaam" required autocomplete="family-name"></label>
+    <label class="block"><span class="text-[15px] font-bold">Postcode</span><input class="field mt-2" name="postcode" required autocomplete="postal-code"></label>
+    <label class="block"><span class="text-[15px] font-bold">Huisnummer</span><input class="field mt-2" name="huisnummer" required></label>
+    <label class="block"><span class="text-[15px] font-bold">E-mail</span><input class="field mt-2" type="email" name="email" required autocomplete="email"></label>
+    <label class="block"><span class="text-[15px] font-bold">Telefoonnummer</span><input class="field mt-2" type="tel" name="telefoon" required autocomplete="tel"></label>
+    <label class="block sm:col-span-2"><span class="text-[15px] font-bold">Welke dienst heb je op het oog?</span>
+      <select class="field mt-2" name="dienst" required>
+        <option value="">Kies een dienst</option>
+        <option>Wekelijkse schoonmaak</option>
+        <option>Tweewekelijkse schoonmaak</option>
+        <option>Schoonmaak met PGB-budget</option>
+        <option>Stoomreiniging</option>
+      </select>
+    </label>
+    <button type="submit" class="btn bg-groendonker text-white hover:bg-bos sm:col-span-2 mt-2">Zet me op de wachtlijst</button>
+  </form>
+</section>
+
+</main>
+
+<footer class="border-t border-bos/10">
+  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-[15px] text-bos/70">
+    <img src="assets/google-02.png" alt="Home Facility" class="h-10 w-auto self-start">
+    <p>Huishoudelijke hulp en stoomreiniging in Nijmegen</p>
+    <p><a href="tel:+31630328574" class="hover:text-bos">06 30328574</a> &nbsp;/&nbsp; <a href="mailto:info@homefacility.nl" class="hover:text-bos">info@homefacility.nl</a></p>
+  </div>
+</footer>
+
+<a href="tel:+31630328574" class="md:hidden fixed bottom-4 inset-x-4 z-40 btn bg-groen text-bos shadow-[0_10px_30px_-10px_rgba(30,59,47,.6)]">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+  Bel 06 30328574
+</a>
+
+</body>
+</html>
