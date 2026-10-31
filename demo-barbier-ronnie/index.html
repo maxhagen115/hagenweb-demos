@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbier Salon Ronnie | Kapper aan de Landstraat in Aalten</title>
+<meta name="description" content="Barbier Salon Ronnie in Aalten: haar knippen, baard en kinderen. Landstraat 47. Afspraak via WhatsApp of bel 06 10318292.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        gevel: '#1F3A2F', voeg: '#16291F', lat: '#141A17', lat2: '#1B231F',
+        krijt: '#EEF0EC', goud: '#D2AE68', grijs: '#9AA39E'
+      },
+      fontFamily: { script: ['Yellowtail', 'cursive'], sans: ['Barlow', 'system-ui', 'sans-serif'] }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { text-rendering: optimizeLegibility; }
+  /* De gevel: groene horizontale planken met donkere voegen, zoals de pui aan de Landstraat. */
+  .planken {
+    background-color: #1F3A2F;
+    background-image: repeating-linear-gradient(180deg, transparent 0 17px, #16291F 17px 19px, rgba(255,255,255,.04) 19px 20px);
+  }
+  .streep { background: linear-gradient(180deg, #EEF0EC 0 100%); }
+  .lijn { background-image: radial-gradient(circle, rgba(210,174,104,.55) 1px, transparent 1.5px); background-size: 8px 4px; background-repeat: repeat-x; background-position: 0 70%; }
+  .balance { text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+  .vandaag { color: #D2AE68; }
+  .vandaag td:first-child::after { content: " (vandaag)"; color: #9AA39E; font-weight: 400; }
+  a, button { transition: background-color .2s, color .2s, transform .15s; }
+  a:active { transform: translateY(1px); }
+  :focus-visible { outline: 2px solid #D2AE68; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="bg-lat text-krijt font-sans antialiased pb-20 md:pb-0">
+
+<a href="#prijzen" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-12 focus:z-50 focus:bg-goud focus:text-lat focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-krijt text-lat text-center text-[13px] py-2 px-4">
+  Demo voor Barbier Ronnie, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-semibold">Hagenweb</a>
+</div>
+
+<!-- Gevel -->
+<header class="planken">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-5 md:py-6 flex items-center justify-between gap-4">
+    <a href="#" class="flex items-center gap-3 leading-none" aria-label="Barbier Salon Ronnie, naar boven">
+      <svg viewBox="0 0 24 48" class="h-10 w-5 text-krijt -rotate-12" aria-hidden="true" fill="currentColor">
+        <path d="M9 2c3 0 6 2 6 5v19l-6 3z"/><rect x="9" y="29" width="5" height="17" rx="2.5" opacity=".75"/>
+      </svg>
+      <span class="font-script text-[28px] md:text-[34px] text-krijt">Barbier Salon Ronnie</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-krijt/80">
+      <a href="#prijzen" class="hover:text-krijt">Prijzen</a>
+      <a href="#werk" class="hover:text-krijt">Werk</a>
+      <a href="#reviews" class="hover:text-krijt">Reviews</a>
+      <a href="#langskomen" class="hover:text-krijt">Langskomen</a>
+      <a href="https://wa.me/31610318292" class="bg-krijt text-gevel px-4 py-2.5 rounded-sm font-semibold hover:bg-goud hover:text-lat">Afspraak via WhatsApp</a>
+    </nav>
+    <a href="tel:+31610318292" class="md:hidden text-krijt font-semibold text-[15px] underline underline-offset-4 decoration-goud">06 10318292</a>
+  </div>
+  <div class="h-3 streep"></div>
+  <div class="h-2 bg-gevel"></div>
+</header>
+
+<main>
+<!-- Hero -->
+<section class="max-w-6xl mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-14 md:pb-20 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+  <div class="md:col-span-6 lg:col-span-6">
+    <p class="text-grijs text-[15px] font-medium">Landstraat 47, Aalten</p>
+    <h1 class="mt-3 text-[44px] leading-[1.02] md:text-[64px] font-semibold tracking-tight">
+      Knippen en baard, zoals u het wilt.
+    </h1>
+    <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed text-krijt/80 max-w-[34rem] pretty">
+      Een barbershop midden in Aalten voor mannen en jongens. Haar, baard of allebei,
+      en voor de kinderen staat er net zo goed een stoel klaar. Stuur een WhatsApp en u hoort snel wanneer u terecht kunt.
+    </p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3">
+      <a href="https://wa.me/31610318292" class="inline-flex items-center justify-center gap-2.5 bg-goud text-lat font-semibold text-[17px] px-6 py-4 rounded-sm hover:bg-krijt">
+        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.7-.4z"/></svg>
+        Afspraak via WhatsApp
+      </a>
+      <a href="tel:+31610318292" class="inline-flex items-center justify-center gap-2 border border-krijt/30 text-krijt font-semibold text-[17px] px-6 py-4 rounded-sm hover:border-krijt hover:bg-krijt/5">
+        Bel 06 10318292
+      </a>
+    </div>
+    <p class="mt-6 text-[15px] text-grijs">
+      Dinsdag t/m zaterdag vanaf 09:00, maandag vanaf 12:00. Vrijdag open tot 20:00.
+    </p>
+  </div>
+  <figure class="md:col-span-6 relative">
+    <img src="assets/google-08.jpg" alt="Interieur van Barbier Salon Ronnie: zwarte lattenwand, grote spiegels en kappersstoelen met gestreepte kapen" class="w-full aspect-[4/5] md:aspect-[5/6] object-cover object-[50%_40%] rounded-sm">
+    <figcaption class="absolute -bottom-5 left-5 right-5 md:left-auto md:-left-10 md:right-auto md:max-w-xs bg-gevel text-krijt px-5 py-4 rounded-sm shadow-[0_18px_40px_-12px_rgba(0,0,0,.6)]">
+      <span class="block text-[28px] font-semibold leading-none">4.8 <span class="text-goud text-[22px]" aria-hidden="true">★★★★★</span></span>
+      <span class="block mt-1.5 text-[14px] text-krijt/75">gemiddeld uit 141 Google-reviews</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- Prijzen: het etalageraam -->
+<section id="prijzen" class="bg-lat2 border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4">
+      <h2 class="font-script text-[52px] md:text-[64px] leading-none text-krijt">Prijzen</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-krijt/75 max-w-xs pretty">
+        Geen pakketten of toeslagen. U weet vooraf wat u betaalt.
+      </p>
+      <a href="https://wa.me/31610318292" class="mt-6 inline-block text-[16px] font-semibold text-goud underline underline-offset-4 hover:text-krijt">Plan uw beurt via WhatsApp</a>
+    </div>
+    <ul class="md:col-span-8 divide-y divide-white/10 border-y border-white/10">
+      <li class="flex items-baseline gap-4 py-6 md:py-7">
+        <span class="text-[22px] md:text-[28px] font-semibold">Haar en baard</span>
+        <span class="flex-1 h-4 lijn" aria-hidden="true"></span>
+        <span class="text-[26px] md:text-[34px] font-semibold text-goud tabular-nums">€ 33</span>
+      </li>
+      <li class="flex items-baseline gap-4 py-6 md:py-7">
+        <span class="text-[22px] md:text-[28px] font-semibold">Haar knippen</span>
+        <span class="flex-1 h-4 lijn" aria-hidden="true"></span>
+        <span class="text-[26px] md:text-[34px] font-semibold text-goud tabular-nums">€ 23</span>
+      </li>
+      <li class="flex items-baseline gap-4 py-6 md:py-7">
+        <span class="text-[22px] md:text-[28px] font-semibold">Baard</span>
+        <span class="flex-1 h-4 lijn" aria-hidden="true"></span>
+        <span class="text-[26px] md:text-[34px] font-semibold text-goud tabular-nums">€ 18</span>
+      </li>
+      <li class="flex items-baseline gap-4 py-6 md:py-7">
+        <span class="text-[22px] md:text-[28px] font-semibold">Kinderen <span class="font-normal text-krijt/70 text-[18px] md:text-[22px]">t/m 12 jaar</span></span>
+        <span class="flex-1 h-4 lijn" aria-hidden="true"></span>
+        <span class="text-[26px] md:text-[34px] font-semibold text-goud tabular-nums">€ 20</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+    <h2 class="font-script text-[52px] md:text-[64px] leading-none">Uit de stoel</h2>
+    <p class="text-[17px] text-krijt/75 max-w-sm pretty">Strak uitgeschoren, netjes bijgewerkt. Dit is werk uit de zaak aan de Landstraat.</p>
+  </div>
+  <div class="mt-10 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+    <img src="assets/google-01.jpg" alt="Klant met een fade en verzorgde baard, zijaanzicht" class="col-span-2 md:col-span-7 w-full h-64 md:h-[460px] object-cover object-[45%_40%] rounded-sm">
+    <img src="assets/google-06.jpg" alt="Kort uitgeschoren zijkant met lange kuif bovenop" class="col-span-2 md:col-span-5 w-full h-80 md:h-[460px] object-cover object-[50%_30%] rounded-sm">
+  </div>
+</section>
+
+<!-- Kinderen -->
+<section class="bg-krijt text-lat">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+    <img src="assets/google-03.jpg" alt="Jongen in de kappersstoel met een strakke side part, lachend met een pot wax" class="md:col-span-5 w-full aspect-square object-cover rounded-sm">
+    <div class="md:col-span-7">
+      <h2 class="font-script text-[48px] md:text-[60px] leading-none text-gevel">Ook voor de jongens</h2>
+      <p class="mt-5 text-[18px] leading-relaxed text-lat/75 max-w-xl pretty">
+        Kinderen tot en met 12 jaar knippen we voor € 20. Neem uw zoon gerust mee als u zelf aan de beurt bent.
+      </p>
+      <blockquote class="mt-8 border-l-4 border-goud pl-6">
+        <p class="text-[19px] md:text-[21px] leading-relaxed font-medium pretty">“Ik ga al sinds 2022 naar Ronnie om mijn haren en baard te laten doen. Na een aantal keer langs te komen weet hij precies wat je graag wil. Daarnaast kom ik ook met mijn zoontje hier om zijn haren te laten knippen. Dit gaat altijd naar wens en de kappers zijn altijd zeer attent met kinderen.”</p>
+        <footer class="mt-4 text-[15px] text-lat/60">Ron Vermeer, Google-review <span aria-label="5 van 5 sterren" class="text-[#A9832F]">★★★★★</span></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
+  <div class="grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4">
+      <p class="text-[72px] md:text-[96px] font-semibold leading-none tracking-tight">4.8</p>
+      <p class="mt-2 text-goud text-[22px]" aria-label="4.8 van 5 sterren">★★★★★</p>
+      <p class="mt-2 text-[16px] text-krijt/70">uit 141 reviews op Google</p>
+    </div>
+    <div class="md:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+      <figure class="sm:col-span-2 border-t border-white/15 pt-6">
+        <blockquote class="text-[24px] md:text-[30px] leading-snug font-medium pretty">“Top service, echt super vriendelijk en altijd een goeie knip beurt.”</blockquote>
+        <figcaption class="mt-3 text-[15px] text-grijs">Ilja Jansen</figcaption>
+      </figure>
+      <figure class="border-t border-white/15 pt-6">
+        <blockquote class="text-[19px] leading-relaxed pretty">“Heel goed geknipt en ook vriendelijke barbers hier kom ik terug”</blockquote>
+        <figcaption class="mt-3 text-[15px] text-grijs">K Da</figcaption>
+      </figure>
+      <figure class="border-t border-white/15 pt-6">
+        <blockquote class="text-[19px] leading-relaxed pretty">“Top kapper ben er heel tevreden mee.”</blockquote>
+        <figcaption class="mt-3 text-[15px] text-grijs">Rob Veenvliet</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Langskomen -->
+<section id="langskomen" class="bg-lat2 border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-14">
+    <div class="md:col-span-5">
+      <h2 class="font-script text-[52px] md:text-[64px] leading-none">Langskomen</h2>
+      <address class="not-italic mt-6 text-[19px] leading-relaxed">
+        Landstraat 47<br>7121 CP Aalten
+      </address>
+      <a href="https://www.google.com/maps/search/?api=1&query=Landstraat+47+7121+CP+Aalten" class="mt-3 inline-block text-[16px] font-semibold text-goud underline underline-offset-4 hover:text-krijt">Route in Google Maps</a>
+
+      <table class="mt-10 w-full text-[17px]" id="tijden">
+        <caption class="text-left text-[15px] text-grijs pb-3">Openingstijden</caption>
+        <tbody class="divide-y divide-white/10">
+          <tr data-dag="1"><td class="py-2.5 font-medium">Maandag</td><td class="py-2.5 text-right tabular-nums">12:00 – 18:00</td></tr>
+          <tr data-dag="2"><td class="py-2.5 font-medium">Dinsdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 18:00</td></tr>
+          <tr data-dag="3"><td class="py-2.5 font-medium">Woensdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 18:00</td></tr>
+          <tr data-dag="4"><td class="py-2.5 font-medium">Donderdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 18:00</td></tr>
+          <tr data-dag="5"><td class="py-2.5 font-medium">Vrijdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 20:00</td></tr>
+          <tr data-dag="6"><td class="py-2.5 font-medium">Zaterdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 17:00</td></tr>
+          <tr data-dag="0"><td class="py-2.5 font-medium">Zondag</td><td class="py-2.5 text-right text-grijs">Gesloten</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="md:col-span-7 flex flex-col">
+      <img src="assets/google-07.jpg" alt="De groene gevel van Barbier Salon Ronnie aan de Landstraat 47 in Aalten" class="w-full h-72 md:h-auto md:flex-1 object-cover object-[35%_50%] rounded-sm">
+      <div class="mt-4 bg-gevel rounded-sm p-6 md:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+        <p class="text-[19px] font-medium max-w-xs">Stuur een WhatsApp, dan krijgt u snel een tijd.</p>
+        <a href="https://wa.me/31610318292" class="shrink-0 inline-flex items-center justify-center bg-goud text-lat font-semibold text-[17px] px-6 py-3.5 rounded-sm hover:bg-krijt">WhatsApp 06 10318292</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="planken">
+  <div class="h-2 bg-gevel"></div>
+  <div class="h-3 streep"></div>
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <div>
+      <p class="font-script text-[36px] leading-none">Barbier Salon Ronnie</p>
+      <p class="mt-3 text-[15px] text-krijt/75">Landstraat 47, 7121 CP Aalten<br><a href="tel:+31610318292" class="hover:text-goud">06 10318292</a></p>
+    </div>
+    <p class="text-[13px] text-krijt/60">Website door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-krijt">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-lat/95 backdrop-blur border-t border-white/10 px-3 py-3 grid grid-cols-2 gap-2">
+  <a href="tel:+31610318292" class="text-center border border-krijt/30 text-krijt font-semibold py-3 rounded-sm">Bellen</a>
+  <a href="https://wa.me/31610318292" class="text-center bg-goud text-lat font-semibold py-3 rounded-sm">WhatsApp</a>
+</div>
+
+<script>
+  // Vandaag in de openingstijden markeren (zonder JS gewoon de hele lijst).
+  var rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag');
+</script>
+</body>
+</html>
