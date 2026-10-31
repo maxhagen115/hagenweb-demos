@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Groenwerk | Hovenier en groenvoorziener in Apeldoorn</title>
+<meta name="description" content="Groenwerk uit Apeldoorn: ontwerp en aanleg, groenonderhoud, boomverzorging, natuurbeheer en meer. Professioneel hoveniersbedrijf én social enterprise.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        paper: '#FAFAF6',
+        ink: '#2B1640',
+        groen: '#31BC9F',
+        loof: '#12634F',
+        zand: '#EFE3CC',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'sans-serif'],
+        sans: ['"Public Sans"', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* Bladvorm, overgenomen van het beeldmotief van de oude site */
+  .blad { border-radius: 0.75rem 62% 0.75rem 62% / 0.75rem 62% 0.75rem 62%; overflow: hidden; }
+  .blad-r { border-radius: 62% 0.75rem 62% 0.75rem / 62% 0.75rem 62% 0.75rem; overflow: hidden; }
+  .btn { display: inline-flex; align-items: center; gap: .6rem; border-radius: 999px; padding: .9rem 1.4rem; font-weight: 700; transition: background-color .2s, transform .2s, color .2s; }
+  .btn:active { transform: translateY(1px); }
+  .btn-groen { background: #31BC9F; color: #2B1640; }
+  .btn-groen:hover { background: #4fd1b4; }
+  .btn-lijn { box-shadow: inset 0 0 0 2px currentColor; }
+  .btn-lijn:hover { background: rgba(49,188,159,.15); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #31BC9F; outline-offset: 3px; }
+  .field { width: 100%; border-radius: .6rem; background: #fff; border: 1.5px solid #d8d2c4; padding: .8rem 1rem; }
+  .field:focus { border-color: #12634F; outline: none; box-shadow: 0 0 0 3px rgba(49,188,159,.35); }
+  .js .hero-blad { animation: groei .9s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes groei { from { transform: scale(.92) rotate(-3deg); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-blad { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="bg-paper text-ink font-sans text-[17px] leading-relaxed pb-20 md:pb-0">
+
+<div class="bg-ink text-white/85 text-center text-sm py-2 px-4">
+  Demo voor Groenwerk BV, gemaakt door <a href="https://hagenweb.nl" class="underline text-white hover:text-groen">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-30 bg-paper/95 backdrop-blur border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-2.5 shrink-0" aria-label="Groenwerk, naar boven">
+      <img src="assets/logo-oud.png" alt="" class="w-9 h-9">
+      <span class="font-kop font-semibold text-2xl tracking-tight lowercase">groenwerk</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 font-semibold text-[15px]" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-loof">Diensten</a>
+      <a href="#voor-wie" class="hover:text-loof">Voor wie</a>
+      <a href="#over" class="hover:text-loof">Over ons</a>
+      <a href="#werken-bij" class="hover:text-loof">Werken bij</a>
+      <a href="#contact" class="hover:text-loof">Contact</a>
+    </nav>
+    <a href="tel:0888657865" class="btn btn-groen !py-2.5 text-[15px]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="hidden sm:inline">088 865 7865</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="bg-ink text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-10 pb-12 md:pt-20 md:pb-24 grid lg:grid-cols-[1.05fr_1fr] gap-9 md:gap-12 lg:gap-10 items-center">
+    <div>
+      <h1 class="font-kop font-extrabold tracking-[-0.035em] leading-[0.92] text-[3.4rem] sm:text-7xl xl:text-[6.4rem]">
+        Vele handen maken Groenwerk
+      </h1>
+      <p class="mt-7 text-lg md:text-xl text-white/85 max-w-xl">
+        Hoveniers- en groenvoorzienersbedrijf uit Apeldoorn én social enterprise. Wij ontwerpen, leggen aan en
+        onderhouden groen voor scholen, zorginstellingen, gemeenten en bedrijven. Met vaste vakkrachten en mensen
+        die bij ons het vak leren.
+      </p>
+      <div class="mt-9 hidden md:flex flex-wrap gap-3">
+        <a href="tel:0888657865" class="btn btn-groen">Bel 088 865 7865</a>
+        <a href="mailto:info@groenwerk.nl" class="btn btn-lijn text-white">Mail info@groenwerk.nl</a>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="hero-blad blad aspect-[4/3.4] lg:aspect-[1/1] shadow-[0_30px_80px_-30px_rgba(10,4,20,.8)]">
+        <img src="assets/google-07.jpg" alt="Drie hoveniers van Groenwerk aan het werk in een plantsoen, met de bus met de tekst Vele handen maken Groenwerk" class="w-full h-full object-cover object-[38%_50%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pijlers -->
+<section class="border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-16 grid md:grid-cols-3 gap-10 md:gap-0 md:divide-x divide-ink/10">
+    <div class="md:pr-10">
+      <h2 class="font-kop font-extrabold text-2xl tracking-tight">Iedereen groene vingers</h2>
+      <p class="mt-2 text-ink/85">We kijken altijd of we samen met de opdrachtgever het groen kunnen verzorgen. Want vele handen maken groenwerk.</p>
+    </div>
+    <div class="md:px-10">
+      <h2 class="font-kop font-extrabold text-2xl tracking-tight">Groentjes laten groeien</h2>
+      <p class="mt-2 text-ink/85">Met begeleiding, coaching en opleiding ontdekken en benutten we elkaars talenten, zodat iedereen een bijdrage levert.</p>
+    </div>
+    <div class="md:pl-10">
+      <h2 class="font-kop font-extrabold text-2xl tracking-tight">Nog groener maken</h2>
+      <p class="mt-2 text-ink/85">Duurzaam is geen trend, het is het fundament. We helpen scholen, zorginstellingen en organisaties verduurzamen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-[1fr_1.4fr] gap-6 items-end">
+      <h2 class="font-kop font-extrabold tracking-[-0.03em] leading-[0.95] text-5xl md:text-6xl">Groen in de volle breedte</h2>
+      <p class="text-lg text-ink/85 max-w-xl lg:justify-self-end">Van een nieuwe schooltuin tot het beheer van een heel natuurgebied. Alle expertise zit in huis, dus je hebt één aanspreekpunt voor het hele groen.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-x-14 gap-y-12">
+      <article class="grid grid-cols-[76px_1fr] sm:grid-cols-[150px_1fr] gap-4 sm:gap-7 items-start">
+        <div class="aspect-[440/473]"><img src="assets/site-01.png" alt="Bloeiende border met margrieten en salie" class="w-full h-full object-cover"></div>
+        <div><h3 class="font-kop font-extrabold text-2xl tracking-tight">Ontwerp en groenaanleg</h3>
+        <p class="mt-2 text-ink/85">Toe aan iets nieuws, maar geen idee waar je begint? Wij adviseren, ontwerpen, renoveren en voeren uit, en zijn bij het hele proces betrokken. Met beplanting gericht op biodiversiteit en puur natuur.</p></div>
+      </article>
+      <article class="grid grid-cols-[76px_1fr] sm:grid-cols-[150px_1fr] gap-4 sm:gap-7 items-start">
+        <div class="aspect-[440/473]"><img src="assets/site-02.png" alt="Hoveniers van Groenwerk onderhouden een plantsoen" class="w-full h-full object-cover"></div>
+        <div><h3 class="font-kop font-extrabold text-2xl tracking-tight">Groenonderhoud</h3>
+        <p class="mt-2 text-ink/85">Wat groen is, moet groen blijven. Plantsoenen schoffelen, hagen knippen, bestrating onderhouden: onze hoveniers zorgen samen voor een schone, natuurlijke leefomgeving.</p></div>
+      </article>
+      <article class="grid grid-cols-[76px_1fr] sm:grid-cols-[150px_1fr] gap-4 sm:gap-7 items-start">
+        <div class="aspect-[440/473]"><img src="assets/site-03.png" alt="Boomverzorger met kettingzaag in een hoogwerker" class="w-full h-full object-cover"></div>
+        <div><h3 class="font-kop font-extrabold text-2xl tracking-tight">Boomverzorging</h3>
+        <p class="mt-2 text-ink/85">Voor ieders veiligheid moeten bomen voldoen aan de VTA-norm. Wij doen structureel visuele boomcontroles, signaleren verborgen gebreken op tijd en houden de gezondheid van je bomen in de gaten.</p></div>
+      </article>
+      <article class="grid grid-cols-[76px_1fr] sm:grid-cols-[150px_1fr] gap-4 sm:gap-7 items-start">
+        <div class="aspect-[440/473]"><img src="assets/site-04.png" alt="Medewerkers aan het werk in een natuurgebied" class="w-full h-full object-cover"></div>
+        <div><h3 class="font-kop font-extrabold text-2xl tracking-tight">Bos- en natuurbeheer</h3>
+        <p class="mt-2 text-ink/85">Grootschalig groen vraagt om gespecialiseerde methodes. We bevrijden grote oppervlaktes van bijvoorbeeld de bospest of Japanse duizendknoop, en zorgen voor gezonde bossen, parken en natuurgebieden.</p></div>
+      </article>
+      <article class="grid grid-cols-[76px_1fr] sm:grid-cols-[150px_1fr] gap-4 sm:gap-7 items-start">
+        <div class="aspect-[440/473]"><img src="assets/site-05.png" alt="Onkruid tussen tegels wordt behandeld met heet water" class="w-full h-full object-cover"></div>
+        <div><h3 class="font-kop font-extrabold text-2xl tracking-tight">Onkruidbestrijding</h3>
+        <p class="mt-2 text-ink/85">Zonder chemische middelen. We werken alleen met 100% schoon, heet water. Dat vernietigt de plant tot in de kern en is beter voor het milieu.</p></div>
+      </article>
+      <article class="grid grid-cols-[76px_1fr] sm:grid-cols-[150px_1fr] gap-4 sm:gap-7 items-start">
+        <div class="aspect-[440/473]"><img src="assets/site-06.png" alt="Japanse duizendknoop" class="w-full h-full object-cover"></div>
+        <div><h3 class="font-kop font-extrabold text-2xl tracking-tight">Exotenbestrijding</h3>
+        <p class="mt-2 text-ink/85">Invasieve exoten tasten funderingen en terreinen aan, soms tot ze onbruikbaar zijn. Zo ver hoeft het niet te komen. Weet op tijd waar je mee te maken hebt; wij pakken ze milieuvriendelijk aan.</p></div>
+      </article>
+      <article class="grid grid-cols-[76px_1fr] sm:grid-cols-[150px_1fr] gap-4 sm:gap-7 items-start">
+        <div class="aspect-[440/473]"><img src="assets/site-07.png" alt="Medewerker in beschermend pak bestrijdt eikenprocessierups vanuit een hoogwerker" class="w-full h-full object-cover"></div>
+        <div><h3 class="font-kop font-extrabold text-2xl tracking-tight">Eikenprocessierups&shy;bestrijding</h3>
+        <p class="mt-2 text-ink/85">De brandhaartjes zijn slecht voor de boom én voor mensen, en als boomeigenaar ben je aansprakelijk voor de gevolgen. Wij bestrijden de rups snel en veilig, met veel kennis en vakmanschap.</p></div>
+      </article>
+      <article class="bg-ink text-white rounded-2xl p-7 sm:p-8 md:-mt-2">
+        <h3 class="font-kop font-extrabold text-2xl tracking-tight">Gladheidsbestrijding</h3>
+        <p class="mt-2 text-white/85">Bereikbaarheid staat bij ons hoog, zeker voor organisaties als ziekenhuizen. We strooien zout en schuiven sneeuw netjes aan de kant. Bij onstuimig weer is onze calamiteitentelefoon 24/7 bereikbaar.</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Werkstrook -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-2 px-2">
+    <img src="assets/google-05.jpg" alt="Strakke vijver met waterval en hoge haag" class="w-full aspect-[4/3] object-cover rounded-md">
+    <img src="assets/google-02.jpg" alt="Tuin met buxusbollen, pergola en zitplek" class="w-full aspect-[4/3] object-cover rounded-md">
+    <img src="assets/google-06.jpg" alt="Terras met witte muur en vierkante plantenbakken" class="w-full aspect-[4/3] object-cover rounded-md">
+    <img src="assets/google-03.jpg" alt="Nieuw aangelegde natuurvijver in het landschap" class="w-full aspect-[4/3] object-cover rounded-md">
+  </div>
+</section>
+
+<!-- Voor wie -->
+<section id="voor-wie" class="scroll-mt-20 bg-zand mt-2">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-[1.3fr_1fr] gap-14 lg:gap-20">
+    <div>
+      <h2 class="font-kop font-extrabold tracking-[-0.03em] leading-[0.95] text-5xl md:text-6xl">Voor wie we werken</h2>
+      <ul class="mt-10 font-kop font-semibold tracking-tight text-3xl md:text-[2.6rem] leading-tight divide-y divide-ink/15 border-y border-ink/15">
+        <li class="py-4">Scholen en zorgcentra</li>
+        <li class="py-4">Gemeenten en provincies</li>
+        <li class="py-4">Sport- en recreatieparken</li>
+        <li class="py-4">Horeca en landgoederen</li>
+        <li class="py-4">Grond-, weg- en waterbouw</li>
+      </ul>
+    </div>
+    <div class="lg:pt-24">
+      <h3 class="font-kop font-extrabold text-2xl tracking-tight">Waarom Groenwerk?</h3>
+      <ul class="mt-5 space-y-3.5">
+        <li class="flex gap-3"><span class="mt-2.5 w-2.5 h-2.5 shrink-0 blad bg-loof"></span>Alle expertise in huis voor een groene totaaloplossing</li>
+        <li class="flex gap-3"><span class="mt-2.5 w-2.5 h-2.5 shrink-0 blad bg-loof"></span>We helpen je op meerdere vlakken verduurzamen</li>
+        <li class="flex gap-3"><span class="mt-2.5 w-2.5 h-2.5 shrink-0 blad bg-loof"></span>Sociaal en maatschappelijk verantwoord</li>
+        <li class="flex gap-3"><span class="mt-2.5 w-2.5 h-2.5 shrink-0 blad bg-loof"></span>Ervaring in aanleg en onderhoud van grootschalig groen</li>
+        <li class="flex gap-3"><span class="mt-2.5 w-2.5 h-2.5 shrink-0 blad bg-loof"></span>Centraal gelegen in Apeldoorn, dus goed bereikbaar</li>
+      </ul>
+      <p class="mt-8 text-ink/85">Zakendoen met een social enterprise is voor jou als opdrachtgever een mooi visitekaartje en een positieve bijdrage aan het maatschappelijk belang.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Over -->
+<section id="over" class="scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <div class="order-2 lg:order-1">
+      <div class="blad-r aspect-square max-w-[560px]">
+        <img src="assets/google-01.jpg" alt="Medewerker van Groenwerk steekt zijn duim op vanuit de bus op de heide" class="w-full h-full object-cover object-[40%_60%]">
+      </div>
+    </div>
+    <div class="order-1 lg:order-2">
+      <h2 class="font-kop font-extrabold tracking-[-0.03em] leading-[0.95] text-5xl md:text-6xl">Een bedrijf waar mensen bloeien</h2>
+      <div class="mt-7 space-y-5 text-ink/85 max-w-xl">
+        <p>Groenwerk is een gecertificeerd, professioneel hoveniers- en groenvoorzienersbedrijf. En meer dan dat: onze hoveniers bestaan deels uit mensen met een afstand tot de arbeidsmarkt. Met begeleiding, opleiding en training krijgen zij een volwaardige functie in de groensector.</p>
+        <p>Hans Terhorst zette Groenwerk in 2010 op poten, met ervaring in het onderwijs, het ondernemerschap, de overheid en het sociaal-maatschappelijke veld. In 2023 namen zijn dochter Anne-Marie en schoonzoon Kevin het bedrijf over, met dezelfde filosofie en nieuwe energie.</p>
+      </div>
+      <blockquote class="mt-9 border-l-4 border-groen pl-6">
+        <p class="font-kop font-semibold text-2xl leading-snug tracking-tight">"Vanuit de overtuiging dat een organisatie meerwaarde dient te genereren voor haar directe omgeving ging ik sociaal ondernemen."</p>
+        <footer class="mt-3 text-ink/70">Hans Terhorst, oprichter</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Medewerkers -->
+<section class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <h2 class="font-kop font-extrabold tracking-[-0.03em] leading-[0.95] text-5xl md:text-6xl max-w-3xl">Medewerkers aan het woord</h2>
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-10 [&>figure]:break-inside-avoid [&>figure]:mb-10">
+      <figure>
+        <blockquote class="font-kop font-semibold text-[1.7rem] leading-snug tracking-tight">"Groen heeft een heilzame werking op mensen."</blockquote>
+        <figcaption class="mt-3 text-groen font-bold">Gert Eising</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="font-kop font-semibold text-[1.7rem] leading-snug tracking-tight">"Sinds ik bij Groenwerk werk, kijk ik anders tegen de natuur aan; ik verdiep me er nu meer in."</blockquote>
+        <figcaption class="mt-3 text-groen font-bold">René van Luttikhuizen</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="font-kop font-semibold text-[1.7rem] leading-snug tracking-tight">"Ik heb geleerd iedereen op z'n eigen niveau te waarderen; iedereen is gelijk en we doen het met elkaar."</blockquote>
+        <figcaption class="mt-3 text-groen font-bold">Erik Hoogenkamp</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="font-kop font-semibold text-[1.7rem] leading-snug tracking-tight">"Wat ik bij Groenwerk heb geleerd, is dat ik meer op mezelf kan en mag vertrouwen."</blockquote>
+        <figcaption class="mt-3 text-groen font-bold">Wessel Breukelaar</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="font-kop font-semibold text-[1.7rem] leading-snug tracking-tight">"Ik heb voor Groenwerk gekozen vanwege de goede begeleiding en de mogelijkheid om te groeien."</blockquote>
+        <figcaption class="mt-3 text-groen font-bold">Kjeld ter Smitten</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Erkenning -->
+<section class="border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-20 grid md:grid-cols-[1fr_1.6fr] gap-10 md:gap-16">
+    <div>
+      <p class="font-kop font-extrabold text-6xl md:text-7xl tracking-tight text-loof">3e prijs</p>
+      <p class="mt-3 font-kop font-semibold text-xl tracking-tight max-w-xs">Duurzaamste Hovenier van Nederland in de openbare ruimte</p>
+    </div>
+    <dl class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+      <div><dt class="font-bold">PSO-Trede 3 en PSO 30+</dt><dd class="mt-1 text-ink/85">Minimaal 30% van ons personeel heeft een afstand tot de arbeidsmarkt. Onafhankelijk getoetst en weer verlengd.</dd></div>
+      <div><dt class="font-bold">CO2-prestatieladder</dt><dd class="mt-1 text-ink/85">We werken aantoonbaar aan het terugdringen van energieverbruik en CO2-uitstoot.</dd></div>
+      <div><dt class="font-bold">Erkend leerbedrijf</dt><dd class="mt-1 text-ink/85">We bieden stage- en leerplekken met begeleiding, afgestemd op de leerling en zijn opleiding.</dd></div>
+      <div><dt class="font-bold">Zonder chemie</dt><dd class="mt-1 text-ink/85">Onkruid en exoten bestrijden we met heet, schoon water.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- Werken bij -->
+<section id="werken-bij" class="scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-20">
+    <div>
+      <h2 class="font-kop font-extrabold tracking-[-0.03em] leading-[0.95] text-5xl md:text-6xl">Kom bij ons werken</h2>
+      <p class="mt-6 text-ink/85 max-w-md">Gevarieerd werk, lokaal en in de regio. Goede arbeidsvoorwaarden, ruimte voor scholing en opleiding, en een hardwerkend en plezierig team.</p>
+    </div>
+    <ul class="divide-y divide-ink/15 border-y border-ink/15">
+      <li><a href="mailto:info@groenwerk.nl?subject=Vacature%20Groenvoorziener" class="group flex items-center justify-between gap-6 py-6 hover:text-loof">
+        <span><span class="block font-kop font-extrabold text-2xl md:text-3xl tracking-tight">Groenvoorziener</span><span class="text-ink/70">Rheden, Gelderland, 37 uur</span></span>
+        <span class="shrink-0 font-bold underline underline-offset-4 decoration-groen decoration-2 group-hover:decoration-loof">Reageren</span></a></li>
+      <li><a href="mailto:info@groenwerk.nl?subject=Vacature%20Assistent%20Groenvoorziening" class="group flex items-center justify-between gap-6 py-6 hover:text-loof">
+        <span><span class="block font-kop font-extrabold text-2xl md:text-3xl tracking-tight">Assistent groenvoorziening</span><span class="text-ink/70">Apeldoorn, Gelderland, 37 uur</span></span>
+        <span class="shrink-0 font-bold underline underline-offset-4 decoration-groen decoration-2 group-hover:decoration-loof">Reageren</span></a></li>
+      <li><a href="mailto:info@groenwerk.nl?subject=Vacature%20Vakbekwaam%20hovenier" class="group flex items-center justify-between gap-6 py-6 hover:text-loof">
+        <span><span class="block font-kop font-extrabold text-2xl md:text-3xl tracking-tight">Vakbekwaam hovenier</span><span class="text-ink/70">Apeldoorn, Gelderland, 37 uur</span></span>
+        <span class="shrink-0 font-bold underline underline-offset-4 decoration-groen decoration-2 group-hover:decoration-loof">Reageren</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="scroll-mt-20 bg-zand">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-2 gap-14 lg:gap-20">
+    <div>
+      <h2 class="font-kop font-extrabold tracking-[-0.03em] leading-[0.95] text-5xl md:text-6xl">Krijg je al groene vingers?</h2>
+      <p class="mt-6 text-ink/85 max-w-md">Vertel ons wat er moet gebeuren. Bellen is het snelst, mailen vinden we ook leuk.</p>
+      <div class="mt-10 space-y-6">
+        <a href="tel:0888657865" class="block group"><span class="block text-sm text-ink/70">Bel ons, meteen reactie</span><span class="font-kop font-extrabold text-4xl md:text-5xl tracking-tight group-hover:text-loof">088 865 7865</span></a>
+        <a href="mailto:info@groenwerk.nl" class="block group"><span class="block text-sm text-ink/70">Mail ons</span><span class="font-kop font-extrabold text-3xl md:text-4xl tracking-tight group-hover:text-loof break-all">info@groenwerk.nl</span></a>
+      </div>
+      <div class="mt-12 grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-bold">Adres</h3>
+          <p class="mt-1 text-ink/85">Wilmersdorf 44-J<br>7327 AC Apeldoorn</p>
+          <p class="mt-3 text-ink/85">4,4 op Google, uit 19 reviews</p>
+        </div>
+        <div>
+          <h3 class="font-bold">Openingstijden</h3>
+          <dl class="mt-1 text-ink/85 grid grid-cols-[auto_1fr] gap-x-4 tabular-nums">
+            <dt>ma t/m vr</dt><dd>07:30 tot 17:00</dd>
+            <dt>za en zo</dt><dd>gesloten</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <form action="mailto:info@groenwerk.nl" method="post" enctype="text/plain" class="bg-paper rounded-2xl p-6 sm:p-9 self-start space-y-5">
+      <h3 class="font-kop font-extrabold text-2xl tracking-tight">Stuur een bericht</h3>
+      <div><label for="naam" class="block font-bold mb-1.5">Naam</label><input id="naam" name="naam" required class="field" autocomplete="name"></div>
+      <div><label for="org" class="block font-bold mb-1.5">Organisatie</label><input id="org" name="organisatie" class="field" autocomplete="organization"></div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div><label for="mail" class="block font-bold mb-1.5">E-mail</label><input id="mail" name="email" type="email" required class="field" autocomplete="email"></div>
+        <div><label for="tel" class="block font-bold mb-1.5">Telefoon</label><input id="tel" name="telefoon" type="tel" class="field" autocomplete="tel"></div>
+      </div>
+      <div><label for="vraag" class="block font-bold mb-1.5">Waar kunnen we mee helpen?</label><textarea id="vraag" name="vraag" rows="4" required class="field"></textarea></div>
+      <button type="submit" class="btn btn-groen">Bericht versturen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-ink text-white/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row gap-4 md:items-center justify-between text-sm">
+    <div class="flex items-center gap-2.5 text-white"><img src="assets/logo-oud.png" alt="" class="w-7 h-7"><span class="font-kop font-semibold text-xl lowercase">groenwerk</span></div>
+    <p>Groenwerk BV, Wilmersdorf 44-J, 7327 AC Apeldoorn. <a href="tel:0888657865" class="hover:text-white">088 865 7865</a>, <a href="mailto:info@groenwerk.nl" class="hover:text-white">info@groenwerk.nl</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-ink p-3 grid grid-cols-[1fr_auto] gap-2">
+  <a href="tel:0888657865" class="btn btn-groen justify-center">Bel 088 865 7865</a>
+  <a href="mailto:info@groenwerk.nl" class="btn btn-lijn text-white justify-center" aria-label="Mail Groenwerk">Mail</a>
+</div>
+
+</body>
+</html>
