@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rijschool Ariaan | Rijles in Apeldoorn, schakel en automaat</title>
+<meta name="description" content="Rijles in Apeldoorn en omstreken bij Rijschool Ariaan. Schakel en automaat, vaste rijinstructeur, les van 07:00 tot 21:00. 4.9 op Google uit 230 reviews.">
+<link rel="icon" href="assets/logo-oud.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        nacht: '#13233F', bord: '#2D5DA6', sein: '#D4121A', seinDonker: '#B00E15',
+        asfalt: '#E9EDF3', papier: '#F7F8FA', inkt: '#142033', grijs: '#5A6577'
+      },
+      fontFamily: {
+        kop: ['Archivo', 'sans-serif'],
+        tekst: ['"Source Sans 3"', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Source Sans 3', sans-serif; }
+  .kop { font-family: 'Archivo', sans-serif; font-variation-settings: 'wdth' 72; letter-spacing: -0.01em; text-wrap: balance; }
+  .kop-breed { font-family: 'Archivo', sans-serif; font-variation-settings: 'wdth' 112; }
+  p { text-wrap: pretty; }
+  .cijfers { font-variant-numeric: tabular-nums; }
+  /* Wegstrepen uit het logo als grafische lijn */
+  .weg { position: absolute; pointer-events: none; }
+  .leader { flex: 1; border-bottom: 2px dotted #B9C2D0; margin: 0 .6rem .35rem; min-width: 1.5rem; }
+  .lplaat { display: inline-flex; align-items: center; justify-content: center; background: #2D5DA6; color: #fff; font-family: 'Archivo', sans-serif; font-weight: 800; border-radius: 3px; line-height: 1; }
+  .btn { transition: background-color .2s, transform .15s, border-color .2s; }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #2D5DA6; outline-offset: 3px; }
+  .veld { width: 100%; background: #fff; border: 1.5px solid #CBD3DE; border-radius: 6px; padding: .75rem .9rem; font-size: 1rem; color: #142033; }
+  .veld:focus { border-color: #2D5DA6; outline: none; box-shadow: 0 0 0 3px rgba(45,93,166,.18); }
+  @media (max-width: 767px) { body { padding-bottom: 76px; } }
+</style>
+</head>
+<body class="bg-papier text-inkt antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor Rijschool Ariaan, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-white/80">Hagenweb</a>
+</div>
+
+<!-- Header + hero -->
+<header class="bg-nacht text-white relative overflow-hidden">
+  <svg class="weg right-[-120px] bottom-[-40px] w-[760px] h-[520px] opacity-[0.07] hidden md:block" viewBox="0 0 760 520" fill="none" aria-hidden="true">
+    <path d="M40 520 C 180 300, 420 120, 760 40" stroke="#fff" stroke-width="56"/>
+    <path d="M200 520 C 320 340, 520 200, 760 150" stroke="#fff" stroke-width="56"/>
+  </svg>
+
+  <nav class="relative max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-20">
+    <a href="#" aria-label="Rijschool Ariaan, naar boven">
+      <img src="assets/site-11.png" alt="Rijschool Ariaan" class="h-10 md:h-12 w-auto">
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-[15px] font-medium text-white/80">
+      <a href="#pakketten" class="hover:text-white">Lespakketten</a>
+      <a href="#tarieven" class="hover:text-white">Losse lessen</a>
+      <a href="#geslaagd" class="hover:text-white">Geslaagd</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+      <a href="tel:+31620770606" class="btn bg-sein hover:bg-seinDonker text-white font-semibold px-5 py-2.5 rounded-md cijfers">06 20 77 06 06</a>
+    </div>
+    <a href="tel:+31620770606" class="md:hidden btn bg-sein hover:bg-seinDonker text-white font-semibold px-4 py-2 rounded-md text-sm">Bellen</a>
+  </nav>
+
+  <div id="inhoud" class="relative max-w-7xl mx-auto px-5 md:px-8 pt-8 md:pt-14 pb-14 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 lg:col-span-6">
+      <p class="flex items-center gap-3 text-white/70 text-[15px] mb-5">
+        <span class="lplaat w-7 h-7 text-base">L</span>
+        Rijles in Apeldoorn en omstreken
+      </p>
+      <h1 class="kop font-extrabold text-[44px] leading-[0.98] sm:text-6xl lg:text-[76px]">
+        Rustig uitgelegd, tot je met vertrouwen de weg op gaat.
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-white/80 max-w-xl leading-relaxed">
+        Rijles in schakel of automaat, altijd met dezelfde rijinstructeur. Les van 's ochtends zeven tot 's avonds negen, en op zondag ook.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+31620770606" class="btn bg-sein hover:bg-seinDonker text-white font-semibold text-lg px-7 py-4 rounded-md text-center cijfers">Bel 06 20 77 06 06</a>
+        <a href="#contact" class="btn border-2 border-white/30 hover:border-white text-white font-semibold text-lg px-7 py-[14px] rounded-md text-center">Proefles aanvragen</a>
+      </div>
+      <p class="mt-7 text-white/70 text-[15px]">
+        <span class="text-white font-semibold">4.9 op Google</span> uit 230 reviews van leerlingen.
+      </p>
+    </div>
+
+    <div class="md:col-span-6 relative">
+      <figure class="relative rounded-lg overflow-hidden aspect-[4/3.6] md:aspect-[4/4.2] md:ml-8 shadow-[0_30px_60px_-20px_rgba(4,10,25,.6)]">
+        <img src="assets/site-01.jpg" alt="Leerling juicht na het halen van haar rijbewijs, de instructeur steekt zijn duimen op" class="w-full h-full object-cover object-[50%_60%]">
+      </figure>
+      <figure class="absolute -bottom-8 -left-2 md:-left-6 w-[42%] rounded-lg overflow-hidden border-4 border-nacht shadow-xl hidden sm:block">
+        <img src="assets/google-02.jpg" alt="Leerling bij de witte lesauto van Rijschool Ariaan" class="w-full aspect-[3/4] object-cover object-[50%_45%]">
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Feitenregel -->
+<section class="bg-asfalt border-b border-[#D8DEE7]">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 md:py-10 grid sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x divide-[#C9D1DD]">
+    <div class="sm:pr-8">
+      <p class="kop font-bold text-2xl">Schakel of automaat</p>
+      <p class="text-grijs mt-1">Je kiest zelf waarin je les krijgt en examen doet.</p>
+    </div>
+    <div class="sm:px-8">
+      <p class="kop font-bold text-2xl">Een vaste instructeur</p>
+      <p class="text-grijs mt-1">Geen wisselende gezichten, wel duidelijke uitleg en geduld.</p>
+    </div>
+    <div class="sm:pl-8">
+      <p class="kop font-bold text-2xl cijfers">Zeven dagen per week</p>
+      <p class="text-grijs mt-1 cijfers">Ma t/m za 07:00 tot 21:00, zondag 09:00 tot 17:00.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Lespakketten -->
+<section id="pakketten" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.02]">Lespakketten</h2>
+      <p class="mt-5 text-lg text-grijs leading-relaxed max-w-md">
+        In elk pakket zitten een proefles, het praktijkexamen en de administratiekosten. Je kiest alleen hoeveel lessen je denkt nodig te hebben.
+      </p>
+      <p class="mt-4 text-grijs">Liever automaat? Dat kost per pakket €100 extra.</p>
+      <img src="assets/site-12.jpg" alt="De witte Audi lesauto van Rijschool Ariaan met lesbord op het dak" class="mt-8 rounded-lg w-full aspect-[16/9] object-cover hidden lg:block">
+    </div>
+
+    <div class="lg:col-span-8">
+      <ol class="border-t-2 border-inkt">
+        <li class="grid grid-cols-[auto_1fr] sm:grid-cols-[110px_1fr_auto] gap-x-5 gap-y-3 items-center py-7 border-b border-[#D3DAE4]">
+          <span class="kop-breed font-black text-6xl text-bord leading-none">A</span>
+          <div>
+            <p class="kop font-bold text-2xl md:text-3xl">30 lessen</p>
+            <p class="text-grijs mt-1">Proefles, praktijkexamen en administratiekosten inbegrepen</p>
+          </div>
+          <div class="col-span-2 sm:col-span-1 flex sm:flex-col items-center sm:items-end justify-between gap-2">
+            <p class="kop font-extrabold text-3xl md:text-4xl cijfers">€2.050</p>
+            <a href="#contact" class="btn text-[15px] font-semibold text-bord hover:text-nacht underline underline-offset-4">Pakket A aanvragen</a>
+          </div>
+        </li>
+        <li class="grid grid-cols-[auto_1fr] sm:grid-cols-[110px_1fr_auto] gap-x-5 gap-y-3 items-center py-7 border-b border-[#D3DAE4]">
+          <span class="kop-breed font-black text-6xl text-bord leading-none">B</span>
+          <div>
+            <p class="kop font-bold text-2xl md:text-3xl">35 lessen</p>
+            <p class="text-grijs mt-1">Proefles, praktijkexamen en administratiekosten inbegrepen</p>
+          </div>
+          <div class="col-span-2 sm:col-span-1 flex sm:flex-col items-center sm:items-end justify-between gap-2">
+            <p class="kop font-extrabold text-3xl md:text-4xl cijfers">€2.300</p>
+            <a href="#contact" class="btn text-[15px] font-semibold text-bord hover:text-nacht underline underline-offset-4">Pakket B aanvragen</a>
+          </div>
+        </li>
+        <li class="grid grid-cols-[auto_1fr] sm:grid-cols-[110px_1fr_auto] gap-x-5 gap-y-3 items-center py-7 border-b border-[#D3DAE4]">
+          <span class="kop-breed font-black text-6xl text-bord leading-none">C</span>
+          <div>
+            <p class="kop font-bold text-2xl md:text-3xl">40 lessen</p>
+            <p class="text-grijs mt-1">Proefles, praktijkexamen en administratiekosten inbegrepen</p>
+          </div>
+          <div class="col-span-2 sm:col-span-1 flex sm:flex-col items-center sm:items-end justify-between gap-2">
+            <p class="kop font-extrabold text-3xl md:text-4xl cijfers">€2.650</p>
+            <a href="#contact" class="btn text-[15px] font-semibold text-bord hover:text-nacht underline underline-offset-4">Pakket C aanvragen</a>
+          </div>
+        </li>
+      </ol>
+
+      <div class="mt-10 bg-nacht text-white rounded-lg p-7 md:p-9 grid md:grid-cols-[1fr_auto] gap-6 items-center">
+        <div>
+          <h3 class="kop font-bold text-2xl md:text-3xl">Haast? Kies de spoedcursus.</h3>
+          <p class="mt-2 text-white/75 max-w-lg">Kies een pakket naar wens en doe binnen een maand examen. De spoedcursus kost €500 bovenop het pakket.</p>
+        </div>
+        <a href="tel:+31620770606" class="btn bg-sein hover:bg-seinDonker text-white font-semibold px-6 py-3.5 rounded-md text-center whitespace-nowrap">Bel voor een plek</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Losse lessen en examens -->
+<section id="tarieven" class="bg-asfalt">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.02]">Losse lessen en examens</h2>
+      <p class="mt-5 text-lg text-grijs leading-relaxed max-w-md">
+        Al ervaring, een opfrisser nodig of alleen nog een examen? Alles is ook los te boeken.
+      </p>
+    </div>
+    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-12 gap-y-1 text-[17px] cijfers">
+      <div class="flex items-end py-3"><span>Losse les schakel</span><span class="leader"></span><span class="font-semibold">€58</span></div>
+      <div class="flex items-end py-3"><span>Losse les automaat</span><span class="leader"></span><span class="font-semibold">€60</span></div>
+      <div class="flex items-end py-3"><span>Opfriscursus</span><span class="leader"></span><span class="font-semibold">€60 per les</span></div>
+      <div class="flex items-end py-3"><span>Dagcursus autotheorie</span><span class="leader"></span><span class="font-semibold">€150</span></div>
+      <div class="flex items-end py-3"><span>Tussentijdse toets</span><span class="leader"></span><span class="font-semibold">€290</span></div>
+      <div class="flex items-end py-3"><span>Praktijkexamen</span><span class="leader"></span><span class="font-semibold">€350</span></div>
+      <div class="flex items-end py-3"><span>Herexamen</span><span class="leader"></span><span class="font-semibold">€350</span></div>
+      <div class="flex items-end py-3"><span>Faalangstexamen</span><span class="leader"></span><span class="font-semibold">€400</span></div>
+      <div class="flex items-end py-3"><span>Staatsexamen</span><span class="leader"></span><span class="font-semibold">€400</span></div>
+      <div class="flex items-end py-3"><span>Spoedcursus</span><span class="leader"></span><span class="font-semibold">€500 extra</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Over de lessen -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+  <figure class="md:col-span-5 order-2 md:order-1">
+    <img src="assets/site-06.jpg" alt="De instructeur van Rijschool Ariaan met een geslaagde leerling, leunend tegen de lesauto" class="rounded-lg w-full aspect-[4/5] object-cover object-[50%_35%]">
+  </figure>
+  <div class="md:col-span-7 order-1 md:order-2">
+    <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.02] max-w-xl">Je rijbewijs halen op jouw manier</h2>
+    <div class="mt-6 space-y-5 text-lg leading-relaxed text-inkt/85 max-w-xl">
+      <p>Bij Rijschool Ariaan heb je tijdens al je lessen dezelfde rijinstructeur. Die kent jou, weet waar je staat en legt het uit tot het klopt. Geen haast, wel duidelijke afspraken.</p>
+      <p>Je plant je lessen wanneer het jou uitkomt: vroeg voor school of werk, 's avonds of in het weekend. Zenuwachtig voor het examen? Dan kun je ook een faalangstexamen doen.</p>
+    </div>
+    <blockquote class="mt-10 border-l-4 border-bord pl-6 max-w-xl">
+      <p class="kop font-semibold text-2xl md:text-[28px] leading-snug">"Ariaan is erg kalm, hij legt duidelijk uit en hij zorgt ervoor dat zijn leerlingen slagen en veilig de weg op kunnen!"</p>
+      <footer class="mt-3 text-grijs">Anneloes van Luijtelaar, op Google</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Geslaagd-muur -->
+<section id="geslaagd" class="bg-nacht text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+      <h2 class="kop font-extrabold text-4xl md:text-6xl leading-[1.0] max-w-2xl">Geslaagd, en dat laten ze graag zien</h2>
+      <p class="text-white/75 text-lg max-w-sm">Leerlingen geven Rijschool Ariaan een <span class="text-white font-semibold">4.9 op Google</span>, uit 230 reviews.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 items-start">
+      <div class="flex flex-col gap-5">
+      <img src="assets/site-02.jpg" alt="Geslaagde leerling naast de witte lesauto met het Aariaan-lesbord" class="rounded-lg w-full aspect-square object-cover">
+      <blockquote class="bg-white/[0.06] border border-white/10 rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"Alle 2 mijn zussen zijn in 1x geslaagd bij Rijschool Ariaan, en vandaag ben ik ook in 1x geslaagd!!!! Super fijne rijschool, Ariaan is erg kalm, hij legt duidelijk uit en hij zorgt ervoor dat zijn leerlingen slagen en veilig de weg op kunnen! Heel erg bedankt!"</p>
+        <footer class="mt-4 text-white/60 text-[15px]">Anneloes van Luijtelaar <span class="text-[#F2C230]" aria-label="5 sterren">★★★★★</span></footer>
+      </blockquote>
+      <img src="assets/site-08.jpg" alt="Leerling danst van blijdschap naast de lesauto" class="hidden md:block rounded-lg w-full aspect-[4/5] object-cover object-[60%_50%]">
+      <blockquote class="bg-white/[0.06] border border-white/10 rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"Ik heb met veel plezier rijlessen gevolgd. Mijn rijinstructeur legt alles duidelijk uit, is geduldig en geeft goede tips. Dankzij zijn begeleiding voelde ik me steeds zekerder achter het stuur. Zeker een aanrader!"</p>
+        <footer class="mt-4 text-white/60 text-[15px]">Azad <span class="text-[#F2C230]" aria-label="5 sterren">★★★★★</span></footer>
+      </blockquote>
+      </div>
+      <div class="flex flex-col gap-5">
+      <img src="assets/site-10.jpg" alt="Instructeur en geslaagde leerling bij het lesbord op de auto" class="rounded-lg w-full aspect-square object-cover">
+      <blockquote class="bg-white/[0.06] border border-white/10 rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"Ik ben erg tevreden over mijn rijinstructeur. Hij was altijd geduldig, professioneel en duidelijk in zijn uitleg. Dankzij zijn rustige aanpak voelde ik me op mijn gemak tijdens de lessen en kreeg ik steeds meer zelfvertrouwen achter het stuur."</p>
+        <footer class="mt-4 text-white/60 text-[15px]">Nnda Nails <span class="text-[#F2C230]" aria-label="5 sterren">★★★★★</span></footer>
+      </blockquote>
+      <img src="assets/site-07.jpg" alt="Instructeur en geslaagde leerling bij de zwarte lesauto" class="hidden md:block rounded-lg w-full aspect-[4/5] object-cover object-[50%_40%]">
+      <blockquote class="bg-white/[0.06] border border-white/10 rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"De rij instructeur is heel geduldig, legt goed uit en doet erg zijn best voor zijn leerlingen. Heel erg bedankt voor de fijne tijd en de lessen ik raad het zeker aan!"</p>
+        <footer class="mt-4 text-white/60 text-[15px]">Dalin Mashan <span class="text-[#F2C230]" aria-label="5 sterren">★★★★★</span></footer>
+      </blockquote>
+      </div>
+      <div class="flex flex-col gap-5">
+      <img src="assets/site-09.jpg" alt="Geslaagde leerling en instructeur met duimen omhoog achter de lesauto" class="rounded-lg w-full aspect-square object-cover">
+      <blockquote class="bg-white/[0.06] border border-white/10 rounded-lg p-7">
+        <p class="text-lg leading-relaxed">"Super fijne rijlessen gehad Sirieus maar er kon ook gelachen worden. Zelfs voor een meisje zoals mij die slecht kan luisteren hele fijne ervaring die ik nooit zal vergeten."</p>
+        <footer class="mt-4 text-white/60 text-[15px]">nicky lamie <span class="text-[#F2C230]" aria-label="5 sterren">★★★★★</span></footer>
+      </blockquote>
+      <img src="assets/site-05.jpg" alt="Geslaagde leerling wijst naar het lesbord van Rijschool Ariaan" class="hidden md:block rounded-lg w-full aspect-[4/5] object-cover">
+      <div class="bg-sein rounded-lg p-7">
+        <p class="kop font-bold text-3xl leading-tight">Jij bent de volgende?</p>
+        <p class="mt-2 text-white/85">Bel of app voor een proefles en plan meteen je eerste lessen.</p>
+        <a href="tel:+31620770606" class="btn mt-5 inline-block bg-white text-sein hover:bg-papier font-semibold px-6 py-3 rounded-md cijfers">06 20 77 06 06</a>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+  <div class="lg:col-span-5">
+    <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.02]">Plan je proefles</h2>
+    <p class="mt-5 text-lg text-grijs leading-relaxed max-w-md">Bel of app gerust, of laat je gegevens achter. Je hoort snel wanneer je kunt beginnen.</p>
+
+    <dl class="mt-10 space-y-6 text-[17px]">
+      <div>
+        <dt class="text-grijs text-[15px]">Telefoon</dt>
+        <dd><a href="tel:+31620770606" class="kop font-bold text-3xl hover:text-bord cijfers">06 20 77 06 06</a></dd>
+      </div>
+      <div>
+        <dt class="text-grijs text-[15px]">E-mail</dt>
+        <dd><a href="mailto:info@ariaanrijschool.nl" class="font-semibold hover:text-bord underline underline-offset-4 decoration-[#B9C2D0]">info@ariaanrijschool.nl</a></dd>
+      </div>
+      <div>
+        <dt class="text-grijs text-[15px]">Adres</dt>
+        <dd class="font-semibold">Gentiaanstraat 187<br>7322 BJ Apeldoorn</dd>
+      </div>
+      <div>
+        <dt class="text-grijs text-[15px]">Lestijden</dt>
+        <dd class="cijfers">
+          <div class="flex justify-between max-w-xs"><span>Maandag t/m zaterdag</span><span class="font-semibold">07:00 tot 21:00</span></div>
+          <div class="flex justify-between max-w-xs"><span>Zondag</span><span class="font-semibold">09:00 tot 17:00</span></div>
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+  <form class="lg:col-span-7 bg-white rounded-lg border border-[#DDE3EB] p-6 md:p-10 grid sm:grid-cols-2 gap-5" action="mailto:info@ariaanrijschool.nl?subject=Rijles%20aanvragen" method="post" enctype="text/plain">
+    <h3 class="kop font-bold text-2xl sm:col-span-2">Rijles aanvragen</h3>
+    <label class="block sm:col-span-2">
+      <span class="text-[15px] font-semibold">Naam en achternaam</span>
+      <input class="veld mt-1.5" type="text" name="naam" required autocomplete="name">
+    </label>
+    <label class="block">
+      <span class="text-[15px] font-semibold">E-mail</span>
+      <input class="veld mt-1.5" type="email" name="email" required autocomplete="email">
+    </label>
+    <label class="block">
+      <span class="text-[15px] font-semibold">Mobiel nummer</span>
+      <input class="veld mt-1.5" type="tel" name="mobiel" required autocomplete="tel">
+    </label>
+    <label class="block sm:col-span-2">
+      <span class="text-[15px] font-semibold">Waar heb je interesse in?</span>
+      <select class="veld mt-1.5" name="lespakket" required>
+        <option>Pakket A (30 lessen)</option>
+        <option>Pakket B (35 lessen)</option>
+        <option>Pakket C (40 lessen)</option>
+        <option>Losse les</option>
+        <option>Praktijkexamen</option>
+        <option>Tussentijdse toets</option>
+        <option>Faalangstexamen</option>
+        <option>Herexamen</option>
+        <option>Dagcursus autotheorie</option>
+        <option>Opfriscursus</option>
+        <option>Spoedcursus</option>
+        <option>Staatsexamen</option>
+      </select>
+    </label>
+    <fieldset class="sm:col-span-2">
+      <legend class="text-[15px] font-semibold">Les in</legend>
+      <div class="mt-2 flex gap-6">
+        <label class="flex items-center gap-2"><input type="radio" name="auto" value="schakel" checked class="accent-bord w-4 h-4"> Schakel</label>
+        <label class="flex items-center gap-2"><input type="radio" name="auto" value="automaat" class="accent-bord w-4 h-4"> Automaat</label>
+      </div>
+    </fieldset>
+    <label class="block sm:col-span-2">
+      <span class="text-[15px] font-semibold">Opmerking</span>
+      <textarea class="veld mt-1.5" name="opmerking" rows="4" placeholder="Bijvoorbeeld wanneer je het liefst les hebt"></textarea>
+    </label>
+    <button type="submit" class="btn sm:col-span-2 bg-sein hover:bg-seinDonker text-white font-semibold text-lg py-4 rounded-md">Aanvraag versturen</button>
+  </form>
+</section>
+
+</main>
+
+<footer class="bg-nacht text-white/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row gap-8 md:items-center md:justify-between">
+    <img src="assets/site-11.png" alt="Rijschool Ariaan" class="h-10 w-auto self-start">
+    <p class="text-[15px]">Gentiaanstraat 187, 7322 BJ Apeldoorn<br>
+      <a href="tel:+31620770606" class="hover:text-white">06 20 77 06 06</a><br>
+      <a href="mailto:info@ariaanrijschool.nl" class="hover:text-white">info@ariaanrijschool.nl</a></p>
+    <p class="text-[15px]">© Rijschool Ariaan</p>
+  </div>
+</footer>
+
+<!-- Mobiele actiebalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-[#DDE3EB] p-3 grid grid-cols-2 gap-3">
+  <a href="tel:+31620770606" class="btn bg-sein text-white font-semibold text-center py-3.5 rounded-md">Bellen</a>
+  <a href="#contact" class="btn bg-nacht text-white font-semibold text-center py-3.5 rounded-md">Aanvragen</a>
+</div>
+
+</body>
+</html>
