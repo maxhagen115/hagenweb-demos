@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TopTheorie | Auto- en motortheorie in één dag</title>
+<meta name="description" content="Theoriecursus en CBR-examen op dezelfde dag. 's Ochtends 6 uur les, 's middags examen. Locaties in Apeldoorn, Arnhem, Amersfoort, Nieuwegein, Enschede en Maastricht.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          asfalt: '#16264F',
+          asfalt2: '#1D3163',
+          teal: '#3E9FAD',
+          tealdk: '#2B7F8C',
+          geel: '#FFD83D',
+          papier: '#F2F6F7',
+          grijs: '#5B6B85',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Atkinson Hyperlegible"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 125%; font-weight: 850; letter-spacing: -0.02em; }
+  .kop-smal { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-weight: 750; letter-spacing: -0.01em; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Wegmarkering: horizontaal op desktop, verticaal op mobiel */
+  .weg { background: repeating-linear-gradient(180deg, #FFD83D 0 34px, transparent 34px 62px); }
+  @media (min-width: 1024px) {
+    .weg { background: repeating-linear-gradient(90deg, #FFD83D 0 48px, transparent 48px 84px); }
+  }
+  html.js .weg { animation: rijden 1.6s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes rijden { from { background-position: 0 -248px; } to { background-position: 0 0; } }
+  @media (min-width: 1024px) {
+    @keyframes rijden { from { background-position: -336px 0; } to { background-position: 0 0; } }
+  }
+  @media (prefers-reduced-motion: reduce) { html.js .weg { animation: none; } }
+
+  .btn { transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease; }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #FFD83D; outline-offset: 3px; border-radius: 6px;
+  }
+  .bord { box-shadow: inset 0 0 0 3px #16264F, inset 0 0 0 5px #fff; }
+</style>
+</head>
+<body class="bg-papier text-asfalt antialiased pb-20 lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-geel px-4 py-2">Naar de inhoud</a>
+
+<div class="bg-asfalt text-white/80 text-xs sm:text-sm text-center py-2 px-4">
+  Demo voor TopTheorie, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-geel">Hagenweb</a>
+</div>
+
+<header class="bg-papier/90 backdrop-blur sticky top-0 z-40 border-b border-asfalt/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 sm:h-20 flex items-center justify-between gap-4">
+    <a href="#" class="shrink-0"><img src="assets/site-06.png" alt="TopTheorie" class="h-9 sm:h-11 w-auto"></a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-bold text-asfalt/80">
+      <a href="#dag" class="hover:text-tealdk">Hoe de dag gaat</a>
+      <a href="#prijs" class="hover:text-tealdk">Prijs</a>
+      <a href="#geslaagden" class="hover:text-tealdk">Geslaagden</a>
+      <a href="#locaties" class="hover:text-tealdk">Locaties</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="tel:+31628029928" class="btn hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-bold text-asfalt hover:bg-white">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        06 28 02 99 28
+      </a>
+      <a href="#aanmelden" class="btn inline-flex items-center px-4 sm:px-5 py-2.5 rounded-lg bg-geel font-bold hover:bg-[#FFE36E]">Aanmelden</a>
+    </div>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 pt-10 sm:pt-16 lg:pt-20 pb-14 lg:pb-20">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 lg:items-end">
+      <h1 class="lg:col-span-7 kop text-[2.6rem] leading-[0.98] sm:text-6xl lg:text-[5.4rem]">Je theorie in één dag.</h1>
+      <div class="lg:col-span-5 lg:pb-2">
+        <p class="text-lg sm:text-xl leading-relaxed text-asfalt/85 max-w-xl">
+          's Ochtends zes uur les bij ons, 's middags het officiële CBR-examen. Wij reserveren je examen en rijden je erheen. Voor auto en motor.
+        </p>
+      </div>
+    </div>
+    <div class="mt-8 lg:mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+      <a href="#aanmelden" class="btn inline-flex justify-center items-center px-7 py-4 rounded-xl bg-geel text-lg font-bold hover:bg-[#FFE36E] shadow-[0_6px_0_#E0B800]">Meld je aan</a>
+      <a href="tel:+31628029928" class="btn inline-flex justify-center items-center gap-2 px-7 py-4 rounded-xl bg-asfalt text-white text-lg font-bold hover:bg-asfalt2">Bel 06 28 02 99 28</a>
+      <p class="mt-3 sm:mt-0 sm:ml-4 flex items-center gap-3 text-[15px] text-grijs">
+        <span class="text-geel text-xl tracking-wider drop-shadow-[0_1px_0_#16264F]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-asfalt">4,9</strong> uit 241 Google-reviews</span>
+      </p>
+    </div>
+    <figure class="mt-10 lg:mt-14">
+      <img src="assets/foto-google-05.jpg" alt="Geslaagde cursisten steken hun duim op voor het CBR-bord" width="1024" height="426" class="w-full h-auto rounded-2xl">
+      <figcaption class="mt-3 text-[15px] text-grijs">Net geslaagd, op dezelfde dag als de cursus.</figcaption>
+    </figure>
+  </section>
+
+  <!-- De dagroute -->
+  <section id="dag" class="bg-asfalt text-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-5 py-16 sm:py-24">
+      <h2 class="kop text-3xl sm:text-5xl leading-tight max-w-2xl">Zo ziet je dag eruit</h2>
+      <p class="mt-4 text-white/70 text-lg max-w-xl">Je hoeft vooraf niets te leren. Dat doen we samen, op één dag.</p>
+
+      <ol class="mt-14 relative grid lg:grid-cols-4 gap-12 lg:gap-6">
+        <div class="weg absolute left-[19px] top-2 bottom-2 w-[6px] lg:left-2 lg:right-2 lg:top-[17px] lg:bottom-auto lg:w-auto lg:h-[6px]" aria-hidden="true"></div>
+
+        <li class="relative pl-16 lg:pl-0 lg:pt-16">
+          <span class="absolute left-0 top-0 w-11 h-11 rounded-full bg-geel text-asfalt kop text-lg flex items-center justify-center lg:left-0">1</span>
+          <p class="text-geel font-bold">'s Ochtends</p>
+          <h3 class="kop-smal text-2xl mt-1">Zes uur cursus</h3>
+          <p class="mt-3 text-white/75 leading-relaxed">Examengericht oefenen met zoveel mogelijk echte examenvragen. Duidelijke uitleg, veel herhaling en de ezelsbruggetjes die je nodig hebt.</p>
+        </li>
+        <li class="relative pl-16 lg:pl-0 lg:pt-16">
+          <span class="absolute left-0 top-0 w-11 h-11 rounded-full bg-geel text-asfalt kop text-lg flex items-center justify-center">2</span>
+          <p class="text-geel font-bold">Tussendoor</p>
+          <h3 class="kop-smal text-2xl mt-1">Wij rijden je</h3>
+          <p class="mt-3 text-white/75 leading-relaxed">Vanaf de cursuslocatie regelen wij het vervoer naar het CBR. Jij hoeft alleen in te stappen.</p>
+        </li>
+        <li class="relative pl-16 lg:pl-0 lg:pt-16">
+          <span class="absolute left-0 top-0 w-11 h-11 rounded-full bg-geel text-asfalt kop text-lg flex items-center justify-center">3</span>
+          <p class="text-geel font-bold">'s Middags</p>
+          <h3 class="kop-smal text-2xl mt-1">CBR-examen</h3>
+          <p class="mt-3 text-white/75 leading-relaxed">Het examen is al voor je gereserveerd. Je gaat erin met de stof vers in je hoofd en weet precies wat je kunt verwachten.</p>
+        </li>
+        <li class="relative pl-16 lg:pl-0 lg:pt-16">
+          <span class="absolute left-0 top-0 w-11 h-11 rounded-full bg-white text-asfalt flex items-center justify-center">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          </span>
+          <p class="text-geel font-bold">Aan het eind</p>
+          <h3 class="kop-smal text-2xl mt-1">Theorie op zak</h3>
+          <p class="mt-3 text-white/75 leading-relaxed">Lukt het niet in één keer? Dan krijg je een tweede cursus voor de helft van de prijs.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Voor wie -->
+  <section class="max-w-6xl mx-auto px-5 py-16 sm:py-24 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <img src="assets/site-08.jpg" alt="Het leslokaal van TopTheorie met tafels, projectiescherm en verkeersbordenposters" class="lg:col-span-5 w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] object-cover rounded-2xl">
+    <div class="lg:col-span-7">
+      <h2 class="kop text-3xl sm:text-[2.75rem] leading-[1.05]">Geen boek uit je hoofd leren</h2>
+      <div class="mt-6 space-y-4 text-lg leading-relaxed text-asfalt/85 max-w-2xl">
+        <p>Weinig tijd om te leren, of moeite met leren uit een boek? Dan zit je bij ons goed. Wij weten welke vragen er op het examen komen en leren je precies dat.</p>
+        <p>Door de rustige uitleg, de herhaling en de pauzes is de cursus ook geschikt voor cursisten met faalangst, ADHD of dyslexie.</p>
+      </div>
+      <ul class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-[17px] max-w-2xl">
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 rounded-sm bg-teal shrink-0"></span>Je hebt weinig tijd</li>
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 rounded-sm bg-teal shrink-0"></span>Je bent al eens gezakt</li>
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 rounded-sm bg-teal shrink-0"></span>Je leert liever door uitleg</li>
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 rounded-sm bg-teal shrink-0"></span>Je ziet op tegen het examen</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Prijs -->
+  <section id="prijs" class="bg-white">
+    <div class="max-w-6xl mx-auto px-5 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <div>
+        <h2 class="kop text-3xl sm:text-[2.75rem] leading-[1.05]">Wat het kost</h2>
+        <div class="mt-8 rounded-2xl bg-papier p-6 sm:p-8">
+          <div class="flex items-end gap-4 flex-wrap">
+            <p class="kop text-6xl sm:text-7xl leading-none">€79</p>
+            <p class="pb-1.5 text-grijs leading-snug">per cursus<br><span class="line-through">€169</span> actieprijs</p>
+          </div>
+          <p class="mt-4 text-asfalt/85">Daarbij betaal je de CBR-examenkosten van <span class="kop-smal">€50,50</span>.</p>
+          <ul class="mt-6 pt-6 border-t border-asfalt/10 space-y-3 text-[17px]">
+            <li class="flex gap-3"><svg class="w-5 h-5 mt-0.5 text-tealdk shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>De cursus van zes uur</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 mt-0.5 text-tealdk shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Reservering van je CBR theorie-examen</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 mt-0.5 text-tealdk shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Vervoer naar het CBR</li>
+            <li class="flex gap-3"><svg class="w-5 h-5 mt-0.5 text-tealdk shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tips en tricks voor het examen</li>
+          </ul>
+          <p class="mt-6 text-[15px] text-grijs">Heb je al zelf een CBR-examen gepland? Zet het in je opmerking bij de aanmelding. Je betaalt dan alleen de €79 voor de cursus, ter plekke.</p>
+        </div>
+      </div>
+
+      <div class="lg:pt-[4.6rem]">
+        <h3 class="kop-smal text-2xl">Slagingspercentage</h3>
+        <p class="mt-2 text-grijs">Zo verhoudt TopTheorie zich tot anderen, auto en motor.</p>
+        <dl class="mt-8 space-y-6">
+          <div>
+            <div class="flex justify-between font-bold"><dt>TopTheorie</dt><dd class="kop-smal tabular-nums">84%</dd></div>
+            <div class="mt-2 h-4 rounded-full bg-papier"><div class="h-4 rounded-full bg-teal w-[84%]"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-asfalt/80"><dt>Andere opleiders</dt><dd class="kop-smal tabular-nums">70%</dd></div>
+            <div class="mt-2 h-4 rounded-full bg-papier"><div class="h-4 rounded-full bg-asfalt/25 w-[70%]"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-asfalt/80"><dt>CBR-gemiddelde</dt><dd class="kop-smal tabular-nums">60%</dd></div>
+            <div class="mt-2 h-4 rounded-full bg-papier"><div class="h-4 rounded-full bg-asfalt/25 w-[60%]"></div></div>
+          </div>
+        </dl>
+        <div class="mt-12 rounded-2xl bg-asfalt text-white p-6 sm:p-8">
+          <p class="kop-smal text-xl text-geel">Tweede kans, halve prijs</p>
+          <p class="mt-3 text-white/80 leading-relaxed">We zijn zo zeker van de cursus dat je bij zakken een tweede cursus krijgt voor de helft van de prijs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Geslaagden -->
+  <section id="geslaagden" class="max-w-6xl mx-auto px-5 py-16 sm:py-24">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <h2 class="kop text-3xl sm:text-[2.75rem] leading-[1.05]">Geslaagd, dezelfde dag nog</h2>
+      <p class="text-grijs sm:text-right"><strong class="text-asfalt">4,9</strong> uit 241 reviews op Google</p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-6 gap-4 sm:gap-5">
+      <img src="assets/foto-google-02.jpg" alt="Vijf geslaagde cursisten op de parkeerplaats bij het CBR" class="md:col-span-4 w-full h-full aspect-[16/9] md:aspect-auto object-cover rounded-2xl">
+      <blockquote class="md:col-span-2 bg-white rounded-2xl p-6 sm:p-7 flex flex-col">
+        <p class="text-lg leading-relaxed">"Heb de cursus bij hun gevolgd en ben in 1 keer geslaagd voor me auto theorie voorderest niks geleerd dus dacht doe even een dag cursus perfect uitgelegd en hele fijne hulpmiddelen wat die uitlegd zonder dat was ik helaas gezakt nu geslaagd dus echt een aanrader"</p>
+        <footer class="mt-auto pt-5 text-[15px] text-grijs"><strong class="text-asfalt">Real1shqptr</strong>, via Google</footer>
+      </blockquote>
+
+      <blockquote class="md:col-span-2 bg-asfalt text-white rounded-2xl p-6 sm:p-7 flex flex-col">
+        <p class="text-lg leading-relaxed">"Super theoriecursus, goede duidelijke uitleg over wat je echt moet weten voor het examen! Na 4x zakken nu via TopTheorie in een keer geslaagd met 1 fout! Zeker aan te raden."</p>
+        <footer class="mt-auto pt-5 text-[15px] text-white/60"><strong class="text-white">Bart</strong>, leerling</footer>
+      </blockquote>
+      <img src="assets/foto-site-04.jpg" alt="Vier geslaagde cursisten in de zon voor het CBR-bord" class="md:col-span-4 w-full aspect-[1024/426] md:aspect-[2.4/1] object-cover rounded-2xl">
+
+      <img src="assets/foto-google-03.jpg" alt="Een groep geslaagde cursisten met duimen omhoog" class="md:col-span-3 w-full aspect-[16/9] object-cover rounded-2xl">
+      <img src="assets/foto-site-14.jpg" alt="Geslaagde cursisten bij verschillende CBR-locaties" class="md:col-span-3 w-full aspect-[1024/426] md:aspect-[16/9] object-cover rounded-2xl">
+    </div>
+
+    <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+      <blockquote class="bg-white rounded-2xl p-6">
+        <p class="leading-relaxed">"Gelijk geslaagd bij hem topper"</p>
+        <footer class="mt-4 text-[15px] text-grijs"><strong class="text-asfalt">Sameer Asir</strong>, via Google</footer>
+      </blockquote>
+      <blockquote class="bg-white rounded-2xl p-6">
+        <p class="leading-relaxed">"Na 3 keer gezakt te zijn toch maar naar deze cursus gegaan, achteraf had ik het toch eerder moeten doen!"</p>
+        <footer class="mt-4 text-[15px] text-grijs"><strong class="text-asfalt">Lisa</strong>, leerling</footer>
+      </blockquote>
+      <blockquote class="bg-white rounded-2xl p-6">
+        <p class="leading-relaxed">"Zeer duidelijke uitleg gekregen, goed ingeplande pauzes om even tot "rust" te komen."</p>
+        <footer class="mt-4 text-[15px] text-grijs"><strong class="text-asfalt">Luuk</strong>, leerling</footer>
+      </blockquote>
+      <blockquote class="bg-white rounded-2xl p-6">
+        <p class="leading-relaxed">"Vandaag een top cursus gehad en 1 keer geslaagd"</p>
+        <footer class="mt-4 text-[15px] text-grijs"><strong class="text-asfalt">Hans De Vries</strong>, via Google</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Locaties -->
+  <section id="locaties" class="bg-white">
+    <div class="max-w-6xl mx-auto px-5 py-16 sm:py-24">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-4">
+          <h2 class="kop text-3xl sm:text-[2.75rem] leading-[1.05]">Zes locaties</h2>
+          <p class="mt-4 text-lg text-asfalt/85 leading-relaxed">Cursus en examen in jouw buurt. Veel data zijn snel volgeboekt, dus meld je op tijd aan.</p>
+        </div>
+        <ul class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+          <li class="bord bg-asfalt text-white rounded-lg px-4 py-5 sm:px-5 sm:py-6 kop-smal text-lg sm:text-xl flex items-center justify-between gap-2">Apeldoorn <span class="text-geel" aria-hidden="true">›</span></li>
+          <li class="bord bg-asfalt text-white rounded-lg px-4 py-5 sm:px-5 sm:py-6 kop-smal text-lg sm:text-xl flex items-center justify-between gap-2">Arnhem <span class="text-geel" aria-hidden="true">›</span></li>
+          <li class="bord bg-asfalt text-white rounded-lg px-4 py-5 sm:px-5 sm:py-6 kop-smal text-lg sm:text-xl flex items-center justify-between gap-2">Amersfoort <span class="text-geel" aria-hidden="true">›</span></li>
+          <li class="bord bg-asfalt text-white rounded-lg px-4 py-5 sm:px-5 sm:py-6 kop-smal text-lg sm:text-xl flex items-center justify-between gap-2">Nieuwegein <span class="text-geel" aria-hidden="true">›</span></li>
+          <li class="bord bg-asfalt text-white rounded-lg px-4 py-5 sm:px-5 sm:py-6 kop-smal text-lg sm:text-xl flex items-center justify-between gap-2">Enschede <span class="text-geel" aria-hidden="true">›</span></li>
+          <li class="bord bg-asfalt text-white rounded-lg px-4 py-5 sm:px-5 sm:py-6 kop-smal text-lg sm:text-xl flex items-center justify-between gap-2">Maastricht <span class="text-geel" aria-hidden="true">›</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aanmelden / contact -->
+  <section id="aanmelden" class="max-w-6xl mx-auto px-5 py-16 sm:py-24 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-3xl sm:text-[2.75rem] leading-[1.05]">Meld je aan</h2>
+      <p class="mt-4 text-lg text-asfalt/85 leading-relaxed">Laat weten welke cursus en locatie je wilt, dan nemen we contact met je op over de datum. Liever direct iemand spreken? Bel gerust.</p>
+      <dl class="mt-8 space-y-5 text-[17px]">
+        <div>
+          <dt class="text-grijs text-[15px]">Telefoon</dt>
+          <dd><a href="tel:+31628029928" class="kop-smal text-2xl hover:text-tealdk">06 28 02 99 28</a><br><span class="text-grijs">Bereikbaar van 08.00 tot 17.00 uur</span></dd>
+        </div>
+        <div>
+          <dt class="text-grijs text-[15px]">E-mail</dt>
+          <dd><a href="mailto:info@toptheorie.nl" class="font-bold underline decoration-teal decoration-2 underline-offset-4 hover:text-tealdk">info@toptheorie.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-grijs text-[15px]">Adres</dt>
+          <dd>Molenstraat-Centrum 1<br>7311 XG Apeldoorn</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@toptheorie.nl?subject=Aanmelding%20theoriecursus" method="post" enctype="text/plain" class="lg:col-span-7 bg-white rounded-2xl p-6 sm:p-8 grid sm:grid-cols-2 gap-5">
+      <label class="block">
+        <span class="font-bold">Naam</span>
+        <input name="naam" required autocomplete="name" class="mt-2 w-full rounded-lg border border-asfalt/20 bg-papier px-4 py-3 focus:border-teal">
+      </label>
+      <label class="block">
+        <span class="font-bold">E-mail</span>
+        <input name="email" type="email" required autocomplete="email" class="mt-2 w-full rounded-lg border border-asfalt/20 bg-papier px-4 py-3 focus:border-teal">
+      </label>
+      <label class="block">
+        <span class="font-bold">Cursus</span>
+        <select name="cursus" class="mt-2 w-full rounded-lg border border-asfalt/20 bg-papier px-4 py-3">
+          <option>Autotheorie (B)</option>
+          <option>Motortheorie (A)</option>
+        </select>
+      </label>
+      <label class="block">
+        <span class="font-bold">Locatie</span>
+        <select name="locatie" class="mt-2 w-full rounded-lg border border-asfalt/20 bg-papier px-4 py-3">
+          <option>Apeldoorn</option><option>Arnhem</option><option>Amersfoort</option>
+          <option>Nieuwegein</option><option>Enschede</option><option>Maastricht</option>
+        </select>
+      </label>
+      <label class="block sm:col-span-2">
+        <span class="font-bold">Opmerking</span>
+        <span class="text-grijs text-[15px]"> (bijvoorbeeld een gewenste datum of een examen dat je al gepland hebt)</span>
+        <textarea name="opmerking" rows="4" class="mt-2 w-full rounded-lg border border-asfalt/20 bg-papier px-4 py-3"></textarea>
+      </label>
+      <div class="sm:col-span-2">
+        <button type="submit" class="btn w-full sm:w-auto px-8 py-4 rounded-xl bg-geel text-lg font-bold hover:bg-[#FFE36E] shadow-[0_6px_0_#E0B800]">Aanmelding versturen</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="bg-asfalt text-white/70">
+  <div class="max-w-6xl mx-auto px-5 py-12 flex flex-col md:flex-row gap-8 md:items-center justify-between">
+    <div>
+      <p class="kop text-2xl text-white">TopTheorie</p>
+      <p class="mt-2">Auto- en motortheorie in één dag</p>
+    </div>
+    <p class="text-[15px] leading-relaxed">Molenstraat-Centrum 1, 7311 XG Apeldoorn<br>
+      <a href="tel:+31628029928" class="hover:text-geel">06 28 02 99 28</a> &nbsp;/&nbsp; <a href="mailto:info@toptheorie.nl" class="hover:text-geel">info@toptheorie.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd in bereik -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-asfalt/10 p-3 grid grid-cols-2 gap-3">
+  <a href="tel:+31628029928" class="btn flex items-center justify-center gap-2 py-3.5 rounded-xl bg-asfalt text-white font-bold">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bellen
+  </a>
+  <a href="#aanmelden" class="btn flex items-center justify-center py-3.5 rounded-xl bg-geel font-bold">Aanmelden</a>
+</div>
+
+</body>
+</html>
