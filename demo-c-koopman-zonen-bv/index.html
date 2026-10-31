@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koopman & Zonen | Installatietechniek en droge blusleidingen in Utrecht</title>
+<meta name="description" content="C. Koopman & Zonen B.V. uit Utrecht: droge blusleidingen, lekdetectie, riool, waterleiding, dakwerk en sanitair. Sinds 1968. Storingsdienst 24/7: 030 244 4605.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        kobalt: { DEFAULT: '#1F4A9C', dark: '#183B7E', light: '#DCE5F3' },
+        nacht: '#0E1B33',
+        staal: '#E9EDF2',
+        signaal: { DEFAULT: '#D3262E', dark: '#B01E25' },
+      },
+      fontFamily: {
+        kop: ['Archivo', 'sans-serif'],
+        sans: ['"Source Sans 3"', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .wide { font-family: 'Archivo', sans-serif; font-stretch: 125%; font-variation-settings: 'wdth' 125; }
+  .tight { font-family: 'Archivo', sans-serif; font-stretch: 100%; }
+  h1, h2, h3 { text-wrap: balance; }
+  section[id] { scroll-margin-top: 72px; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid #D3262E; outline-offset: 3px; }
+  /* Doorsnede: doorlopende leiding links van de lagen */
+  .pijp::before { content: ''; position: absolute; left: 21px; top: 0; bottom: 0; width: 6px; background: #1F4A9C; }
+  @media (min-width: 1024px) { .pijp::before { left: 29px; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="bg-white font-sans text-nacht antialiased pb-16 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-nacht text-white/80 text-[13px] py-2 px-4 text-center">
+  Demo voor C. Koopman &amp; Zonen B.V., gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-kobalt-light">Hagenweb</a>
+</div>
+
+<!-- Kop -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-nacht/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 shrink-0" aria-label="Koopman & Zonen, naar boven">
+      <img src="assets/logo-oud.png" alt="" class="h-11 w-auto">
+      <span class="leading-none">
+        <span class="wide block font-extrabold text-[19px] text-kobalt tracking-tight">KOOPMAN</span>
+        <span class="block text-[12.5px] font-semibold text-nacht/70 mt-1">&amp; Zonen, Utrecht</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] font-semibold text-nacht/80" aria-label="Hoofdmenu">
+      <a href="#werk" class="hover:text-kobalt">Werkzaamheden</a>
+      <a href="#blusleidingen" class="hover:text-kobalt">Droge blusleidingen</a>
+      <a href="#lekdetectie" class="hover:text-kobalt">Lekdetectie</a>
+      <a href="#opdrachtgevers" class="hover:text-kobalt">Opdrachtgevers</a>
+      <a href="#werken-bij" class="hover:text-kobalt">Werken bij</a>
+      <a href="#contact" class="hover:text-kobalt">Contact</a>
+    </nav>
+    <a href="tel:+31302444605" class="inline-flex items-center gap-2 bg-kobalt hover:bg-kobalt-dark text-white font-semibold rounded-md px-4 py-2.5 text-[15px] transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">030 244 4605</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative bg-kobalt text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto lg:min-h-[620px] lg:flex lg:items-center">
+    <div class="relative z-10 px-5 lg:px-8 pt-12 pb-12 lg:py-20 lg:w-1/2">
+      <p class="text-kobalt-light font-semibold text-[16px] mb-5">Installatietechniek in Utrecht, sinds 1968</p>
+      <h1 class="wide font-extrabold text-[38px] leading-[1.02] sm:text-[52px] lg:text-[64px] tracking-[-0.02em]">
+        Van de leiding in de grond tot aan het dak.
+      </h1>
+      <p class="mt-6 text-[19px] leading-relaxed text-white/85 max-w-[34rem]">
+        Droge blusleidingen, lekdetectie, riolering, waterleiding, dakwerk en sanitair. Voor ProRail, NS, aannemers,
+        gemeenten en winkelketens. Met eigen materieel en korte lijntjes, van monteur tot directie.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="tel:+31302444605" class="inline-flex items-center gap-2 bg-white text-kobalt hover:bg-kobalt-light font-bold rounded-md px-6 py-3.5 text-[17px] transition-colors">
+          Bel 030 244 4605
+        </a>
+        <a href="mailto:contact@koopmanenzonen.nl" class="inline-flex items-center gap-2 border-2 border-white/40 hover:border-white text-white font-semibold rounded-md px-6 py-3 text-[17px] transition-colors">
+          Mail ons
+        </a>
+      </div>
+    </div>
+    <div class="relative h-[280px] sm:h-[420px] lg:absolute lg:h-auto lg:inset-y-0 lg:right-0 lg:w-[50%]">
+      <img src="assets/site-02.jpg" alt="Pomp-aanhanger van Koopman & Zonen aan het werk op een afgezet terrein, met de bedrijfsbus erachter" class="absolute inset-0 w-full h-full object-cover object-[60%_55%] lg:[clip-path:polygon(10%_0,100%_0,100%_100%,0_100%)]">
+    </div>
+  </div>
+</section>
+
+<!-- Storingsdienst -->
+<section class="bg-signaal text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+    <p class="text-[18px] leading-snug">
+      <strong class="font-bold">Storing of lekkage?</strong> Onze storingsdienst is 24 uur per dag, 7 dagen per week bereikbaar, met gekwalificeerde monteurs.
+    </p>
+    <a href="tel:+31302444605" class="wide shrink-0 font-extrabold text-[22px] tracking-tight underline decoration-white/40 underline-offset-4 hover:decoration-white">030 244 4605</a>
+  </div>
+</section>
+
+<!-- Doorsnede: van de grond tot het dak -->
+<section id="werk" class="bg-staal">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-20 pb-8 lg:pt-28">
+    <div class="lg:grid lg:grid-cols-12 gap-10 items-end">
+      <h2 class="wide lg:col-span-7 font-extrabold text-[32px] sm:text-[44px] leading-[1.05] tracking-[-0.02em]">Alles wat er door een gebouw stroomt.</h2>
+      <p class="lg:col-span-5 mt-5 lg:mt-0 text-[18px] leading-relaxed text-nacht/75 max-w-[36rem]">
+        Wij zijn niet in één hokje te plaatsen. Van gas- en waterleidingen tot riolering en droge blusleidingen: we ontwerpen,
+        leggen aan, inspecteren en onderhouden. En we adviseren over energiebesparende, duurzame maatregelen.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pb-20 lg:pb-28">
+    <div class="pijp relative">
+
+      <article class="relative grid lg:grid-cols-12 gap-6 lg:gap-12 py-10 lg:py-14 border-b border-nacht/10">
+        <div class="lg:col-span-6 flex items-start gap-6 lg:gap-10">
+          <span class="relative z-10 w-12 h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-white border-[6px] border-kobalt" aria-hidden="true"></span>
+          <div>
+            <h3 class="wide font-extrabold text-[26px] lg:text-[34px] tracking-tight leading-none mt-2.5 lg:mt-4">Dak</h3>
+            <ul class="mt-5 space-y-2.5 text-[17.5px] leading-snug max-w-[30rem]">
+            <li>Dakwerken onderhouden en renoveren</li>
+            <li>Nieuwe dakbedekking aanbrengen</li>
+            <li>Lekkages aan het dak verhelpen</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="lg:col-span-6 pl-[72px] lg:pl-0">
+          <img src="assets/site-06.jpg" alt="Werk op een pannendak: aggregaat en brandblusser in de dakgoot" class="w-full aspect-[16/7] object-cover rounded-md">
+        </figure>
+      </article>
+      <article class="relative grid lg:grid-cols-12 gap-6 lg:gap-12 py-10 lg:py-14 border-b border-nacht/10">
+        <div class="lg:col-span-6 flex items-start gap-6 lg:gap-10">
+          <span class="relative z-10 w-12 h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-kobalt" aria-hidden="true"></span>
+          <div>
+            <h3 class="wide font-extrabold text-[26px] lg:text-[34px] tracking-tight leading-none mt-2.5 lg:mt-4">Gebouw</h3>
+            <ul class="mt-5 space-y-2.5 text-[17.5px] leading-snug max-w-[30rem]">
+            <li>Droge blusleidingen, HDPE of staal, aanleggen en onderhouden</li>
+            <li>Was- en vulhydranten aanleggen en onderhouden</li>
+            <li>Gas- en waterleidingen</li>
+            <li>Water- en afvoerleidingen voor winkelformules</li>
+            <li>Sanitair vervangen en nieuw plaatsen</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="lg:col-span-6 pl-[72px] lg:pl-0">
+          <img src="assets/google-03.jpg" alt="Een rode pompunit voor een blusinstallatie hangt aan de kraan" class="w-full aspect-[16/8] object-[60%_0%] object-cover rounded-md">
+        </figure>
+      </article>
+      <article class="relative grid lg:grid-cols-12 gap-6 lg:gap-12 pt-10 lg:pt-14">
+        <div class="lg:col-span-6 flex items-start gap-6 lg:gap-10">
+          <span class="relative z-10 w-12 h-12 lg:w-16 lg:h-16 shrink-0 rounded-full bg-nacht" aria-hidden="true"></span>
+          <div>
+            <h3 class="wide font-extrabold text-[26px] lg:text-[34px] tracking-tight leading-none mt-2.5 lg:mt-4">Grond</h3>
+            <ul class="mt-5 space-y-2.5 text-[17.5px] leading-snug max-w-[30rem]">
+            <li>Rioolinspectie met camera, en de situatie in kaart</li>
+            <li>Rioolreiniging en ontstopping met de hogedrukmachine</li>
+            <li>Drainageleidingen inspecteren en vervangen</li>
+            <li>Lekkages in ondergrondse (droge) leidingen opsporen</li>
+            <li>Eigen materieel voor grondverzet</li>
+            </ul>
+          </div>
+        </div>
+        <figure class="lg:col-span-6 pl-[72px] lg:pl-0">
+          <img src="assets/site-01.jpg" alt="Slang van de hogedrukmachine over de straat, naast de bus van Koopman & Zonen" class="w-full aspect-[16/9] object-[50%_60%] object-cover rounded-md">
+        </figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Droge blusleidingen -->
+<section id="blusleidingen" class="bg-nacht text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-6">
+        <h2 class="wide font-extrabold text-[32px] sm:text-[44px] leading-[1.05] tracking-[-0.02em]">Droge blusleidingen, afgeperst volgens NEN 1594.</h2>
+        <p class="mt-6 text-[18px] leading-relaxed text-white/80 max-w-[34rem]">
+          Het monteren en leggen van droge blusinstallaties doen we sinds 1968. We leggen nieuwe leidingen aan in HDPE of staal,
+          onderhouden bestaande systemen en persen ze af met onze eigen afperspomp. U krijgt er een afpersrapport bij.
+        </p>
+        <p class="mt-4 text-[18px] leading-relaxed text-white/80 max-w-[34rem]">
+          Is er een lek? Dat sporen we op met geluidsgolven, zodat er veel minder gegraven hoeft te worden.
+        </p>
+      </div>
+      <div class="lg:col-span-6">
+        <img src="assets/google-04.jpg" alt="Nieuwe stalen flenzen klaar voor montage" class="w-full aspect-[4/3] object-cover object-[11%_50%] rounded-md">
+      </div>
+    </div>
+
+    <!-- Tijdlijn: een echte cyclus van vijf jaar -->
+    <div class="mt-16 lg:mt-20">
+      <h3 class="wide font-bold text-[20px]">Een droge blusleiding moet elk jaar visueel gecontroleerd en eens in de 5 jaar afgeperst worden. Dat houden wij voor u bij.</h3>
+      <p class="mt-8 text-[15px] text-white/60">Jaar</p>
+      <ol class="mt-2 grid grid-cols-5 border-t-[6px] border-kobalt">
+        <li class="pt-4 pr-2 border-r border-white/10"><span class="wide block font-extrabold text-[20px] sm:text-[28px]">1</span><span class="block mt-1 text-[14px] sm:text-[16px] text-white/70"><span class="hidden sm:inline">Visuele c</span><span class="sm:hidden">C</span>ontrole</span></li>
+        <li class="pt-4 px-2 border-r border-white/10"><span class="wide block font-extrabold text-[20px] sm:text-[28px]">2</span><span class="block mt-1 text-[14px] sm:text-[16px] text-white/70"><span class="hidden sm:inline">Visuele c</span><span class="sm:hidden">C</span>ontrole</span></li>
+        <li class="pt-4 px-2 border-r border-white/10"><span class="wide block font-extrabold text-[20px] sm:text-[28px]">3</span><span class="block mt-1 text-[14px] sm:text-[16px] text-white/70"><span class="hidden sm:inline">Visuele c</span><span class="sm:hidden">C</span>ontrole</span></li>
+        <li class="pt-4 px-2 border-r border-white/10"><span class="wide block font-extrabold text-[20px] sm:text-[28px]">4</span><span class="block mt-1 text-[14px] sm:text-[16px] text-white/70"><span class="hidden sm:inline">Visuele c</span><span class="sm:hidden">C</span>ontrole</span></li>
+        <li class="pt-4 pl-2 relative"><span class="absolute -top-[6px] left-0 right-0 h-[6px] bg-signaal"></span><span class="wide block font-extrabold text-[20px] sm:text-[28px] text-signaal">5</span><span class="block mt-1 text-[14px] sm:text-[16px] text-white">Afpersen<span class="hidden sm:inline"> met rapport</span></span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Lekdetectie -->
+<section id="lekdetectie" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="max-w-3xl">
+      <h2 class="wide font-extrabold text-[32px] sm:text-[44px] leading-[1.05] tracking-[-0.02em]">Lekkage zoeken zonder hakken en breken.</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-nacht/75">
+        Weet u dat er iets lekt, maar niet waar? Wij vinden het lek met gespecialiseerde apparatuur. Zo maakt u geen kosten
+        voor onnodig sloop- en herstelwerk.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-px bg-nacht/10 border-y border-nacht/10">
+      <div class="bg-white py-10 md:pr-12">
+        <h3 class="wide font-extrabold text-[24px] text-kobalt">Met geluidsgolven</h3>
+        <p class="mt-4 text-[17.5px] leading-relaxed text-nacht/80">
+          Ultrasound hoort de turbulentie van gas of lucht dat door een lek ontsnapt. Hoe dichterbij, hoe sterker het signaal.
+          Dat werkt voor druk, vacuüm, perslucht en elk type gas, ook in luide fabrieksomgevingen.
+        </p>
+        <p class="mt-4 text-[17.5px] leading-relaxed text-nacht/80">
+          Met lange afstand detectie vinden we lekken al op <strong class="font-semibold text-nacht">15 meter</strong>, zonder lift of ladder.
+          Bij perslucht-audits rapporteren we per lek de geschatte jaarlijkse kosten en de CO2-reductie.
+        </p>
+      </div>
+      <div class="bg-white py-10 md:pl-12">
+        <h3 class="wide font-extrabold text-[24px] text-kobalt">Met formeergas</h3>
+        <p class="mt-4 text-[17.5px] leading-relaxed text-nacht/80">
+          We vullen de leiding met een veilig, niet giftig mengsel van <strong class="font-semibold text-nacht">5% waterstof en 95% stikstof</strong>.
+          Waterstof is het lichtste gas en sijpelt door de kleinste openingen, waar onze Sensistor-lekzoeker het oppikt.
+        </p>
+        <p class="mt-4 text-[17.5px] leading-relaxed text-nacht/80">
+          Zo vinden we lekkages vanaf 1×10<sup>-7</sup> mbar l/s (0,5 ppm), en de meter reageert niet op andere gassen.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Opdrachtgevers en projecten -->
+<section id="opdrachtgevers" class="bg-kobalt text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="wide font-extrabold text-[32px] sm:text-[44px] leading-[1.05] tracking-[-0.02em]">Vertrouwd door spoor, infra en gemeente.</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-white/80 max-w-[30rem]">
+        Al meer dan 50 jaar werken we voor gerenommeerde opdrachtgevers. Flexibel, met snel en juist advies en een deskundige uitvoering.
+      </p>
+      <img src="assets/google-05.jpg" alt="Bedrijfsbus van Koopman & Zonen met de blauw-witte belettering" class="mt-10 w-full aspect-[16/8] object-cover object-[50%_0%] rounded-md">
+    </div>
+    <div class="lg:col-span-7 lg:pl-8">
+      <h3 class="text-kobalt-light font-semibold text-[16px]">Opdrachtgevers</h3>
+      <ul class="mt-4 wide font-extrabold text-[22px] sm:text-[28px] leading-tight grid sm:grid-cols-2 gap-x-8">
+        <li class="py-3 border-b border-white/15">ProRail</li>
+        <li class="py-3 border-b border-white/15">NS en NedTrain</li>
+        <li class="py-3 border-b border-white/15">BAM Infra</li>
+        <li class="py-3 border-b border-white/15">Gemeente Utrecht</li>
+        <li class="py-3 border-b border-white/15">Strukton Rail</li>
+        <li class="py-3 border-b border-white/15">Vitens</li>
+        <li class="py-3 border-b border-white/15">VEST Infra</li>
+        <li class="py-3 border-b border-white/15">Krämer Groep</li>
+        <li class="py-3 border-b border-white/15 sm:border-b-0">Starbucks</li>
+      </ul>
+      <h3 class="mt-12 text-kobalt-light font-semibold text-[16px]">Een greep uit onze projecten</h3>
+      <p class="mt-3 text-[18px] leading-relaxed text-white/85">
+        Sas van Gent, Tinggi Towers, West, Fletiomare, het vervangen van drainage in Breda en de ABC-straat in Utrecht.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Werken bij + veiligheid -->
+<section id="werken-bij" class="bg-staal">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-6">
+      <img src="assets/google-01.jpg" alt="Open achterkant van een bus van Koopman & Zonen, vol materieel en gereedschap" class="w-full aspect-[3/2] object-cover object-[50%_0%] rounded-md">
+    </div>
+    <div class="lg:col-span-6">
+      <h2 class="wide font-extrabold text-[32px] sm:text-[44px] leading-[1.05] tracking-[-0.02em]">Werken bij Koopman.</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-nacht/80">
+        Elke dag is anders: storingen oplossen, dakwerk, blusinstallaties, utiliteitsbouw en rail infra. We zijn een jong en
+        enthousiast team met korte lijntjes. Veiligheid staat bij ons boven alles.
+      </p>
+      <p class="mt-4 text-[18px] leading-relaxed text-nacht/80">
+        We zoeken een <strong class="font-semibold text-nacht">loodgieter</strong> met ervaring, rijbewijs B en een afgeronde opleiding in de installatietechniek.
+        Je krijgt 25 vakantiedagen en 13 adv-dagen, een marktconform salaris, reiskostenvergoeding en vergoeding voor overuren,
+        nacht en weekend. Nacht- en weekenddiensten plannen we in overleg.
+      </p>
+      <a href="mailto:contact@koopmanenzonen.nl?subject=Sollicitatie%20loodgieter" class="mt-8 inline-flex items-center bg-kobalt hover:bg-kobalt-dark text-white font-bold rounded-md px-6 py-3.5 text-[17px] transition-colors">Stuur je cv</a>
+
+      <h3 class="mt-14 wide font-bold text-[18px]">Certificeringen en veiligheid</h3>
+      <ul class="mt-4 text-[16.5px] border-t border-nacht/10">
+        <li class="py-2.5 border-b border-nacht/10">VCA** 2017/6.0</li>
+        <li class="py-2.5 border-b border-nacht/10">Erkend STERKIN water- en gasinstallateur</li>
+        <li class="py-2.5 border-b border-nacht/10">Alle medewerkers BHV-gecertificeerd</li>
+        <li class="py-2.5 border-b border-nacht/10">Erkend leerbedrijf ROI</li>
+        <li class="py-2.5 border-b border-nacht/10">Aangesloten bij Techniek Middennederland</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="wide font-extrabold text-[32px] sm:text-[44px] leading-[1.05] tracking-[-0.02em]">Bel of mail ons.</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-nacht/75">Wij zijn 24 uur per dag, 7 dagen per week bereikbaar.</p>
+      <dl class="mt-10 space-y-6 text-[18px]">
+        <div>
+          <dt class="text-nacht/60 text-[15px] font-semibold">Telefoon</dt>
+          <dd><a href="tel:+31302444605" class="wide font-extrabold text-[30px] text-kobalt hover:underline underline-offset-4">030 244 4605</a></dd>
+        </div>
+        <div>
+          <dt class="text-nacht/60 text-[15px] font-semibold">E-mail</dt>
+          <dd><a href="mailto:contact@koopmanenzonen.nl" class="font-semibold text-kobalt hover:underline underline-offset-4 break-all">contact@koopmanenzonen.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-nacht/60 text-[15px] font-semibold">Adres</dt>
+          <dd>C. Koopman &amp; Zonen B.V.<br>Tractieweg 160<br>3534 AP Utrecht<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Tractieweg+160+3534+AP+Utrecht" class="mt-2 inline-block font-semibold text-kobalt hover:underline underline-offset-4">Route in Google Maps</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <form class="lg:col-span-7 bg-staal rounded-md p-6 sm:p-10" action="mailto:contact@koopmanenzonen.nl" method="post" enctype="text/plain">
+      <h3 class="wide font-bold text-[22px]">Stuur een bericht</h3>
+      <p class="mt-2 text-[16px] text-nacht/70">Voor een offerte, een afperstermijn of advies. Bij spoed kunt u beter bellen.</p>
+      <div class="mt-8 grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-[15px] font-semibold">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-nacht/20 bg-white px-4 py-3 text-[17px] focus:border-kobalt focus:outline-none focus:ring-2 focus:ring-kobalt/30"></label>
+        <label class="block"><span class="text-[15px] font-semibold">E-mail</span>
+          <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-nacht/20 bg-white px-4 py-3 text-[17px] focus:border-kobalt focus:outline-none focus:ring-2 focus:ring-kobalt/30"></label>
+        <label class="block sm:col-span-2"><span class="text-[15px] font-semibold">Onderwerp</span>
+          <input name="onderwerp" required class="mt-1.5 w-full rounded-md border border-nacht/20 bg-white px-4 py-3 text-[17px] focus:border-kobalt focus:outline-none focus:ring-2 focus:ring-kobalt/30"></label>
+        <label class="block sm:col-span-2"><span class="text-[15px] font-semibold">Bericht</span>
+          <textarea name="bericht" rows="5" required class="mt-1.5 w-full rounded-md border border-nacht/20 bg-white px-4 py-3 text-[17px] focus:border-kobalt focus:outline-none focus:ring-2 focus:ring-kobalt/30"></textarea></label>
+      </div>
+      <button type="submit" class="mt-6 bg-kobalt hover:bg-kobalt-dark text-white font-bold rounded-md px-6 py-3.5 text-[17px] transition-colors">Bericht versturen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-nacht text-white/70">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6 text-[15px]">
+    <div>
+      <p class="wide font-extrabold text-white text-[18px]">KOOPMAN &amp; ZONEN</p>
+      <p class="mt-2">C. Koopman &amp; Zonen B.V., Tractieweg 160, 3534 AP Utrecht</p>
+      <p>Installatietechniek sinds 1968</p>
+    </div>
+    <p>
+      <a href="tel:+31302444605" class="text-white hover:underline">030 244 4605</a><br>
+      <a href="mailto:contact@koopmanenzonen.nl" class="text-white hover:underline">contact@koopmanenzonen.nl</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 bg-white border-t border-nacht/10 shadow-[0_-6px_20px_rgba(14,27,51,0.12)]">
+  <a href="tel:+31302444605" class="flex items-center justify-center gap-2 bg-signaal text-white font-bold py-4 text-[16px]">Bel 24/7</a>
+  <a href="mailto:contact@koopmanenzonen.nl" class="flex items-center justify-center text-kobalt font-bold py-4 text-[16px]">Mail ons</a>
+</div>
+
+</body>
+</html>
