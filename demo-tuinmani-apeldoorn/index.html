@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuinmani Apeldoorn | Overkappingen en tuinkamers op maat</title>
+<meta name="description" content="Overkappingen, veranda's en tuinkamers op maat, ingemeten en geplaatst door eigen monteurs. Bezoek de showroom aan de Kayersdijk 95 in Apeldoorn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        marine: '#1c2a55',
+        nacht: '#121b38',
+        alu: '#e9ebee',
+        papier: '#fbfbfa',
+        antraciet: '#2b2f36',
+        ceder: '#b5773f',
+      },
+      fontFamily: {
+        kop: ['Archivo', 'sans-serif'],
+        sans: ['"Public Sans"', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-feature-settings: "tnum" 0; }
+  .kop { font-family: Archivo, sans-serif; font-stretch: 118%; font-weight: 780; letter-spacing: -0.02em; line-height: 1.02; }
+  .kop-smal { font-family: Archivo, sans-serif; font-stretch: 100%; font-weight: 650; letter-spacing: -0.01em; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Maatlijnen: de taal van de inmeter */
+  .maat { position: absolute; color: #fff; pointer-events: none; filter: drop-shadow(0 1px 2px rgba(18,27,56,.55)); }
+  .maat-h { height: 0; border-top: 2px solid currentColor; }
+  .maat-h::before, .maat-h::after { content: ""; position: absolute; top: -9px; width: 0; height: 18px; border-left: 2px solid currentColor; }
+  .maat-h::before { left: 0; } .maat-h::after { right: 0; }
+  .maat-v { width: 0; border-left: 2px solid currentColor; }
+  .maat-v::before, .maat-v::after { content: ""; position: absolute; left: -9px; height: 0; width: 18px; border-top: 2px solid currentColor; }
+  .maat-v::before { top: 0; } .maat-v::after { bottom: 0; }
+  .maat-label { font-family: Archivo, sans-serif; font-stretch: 100%; font-weight: 600; font-size: 14px; letter-spacing: .01em; background: #b5773f; color: #fff; padding: 4px 10px; white-space: nowrap; }
+
+  .btn { display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.4rem; font-weight: 600; border-radius: 3px; transition: background-color .2s, color .2s, transform .1s; }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid #b5773f; outline-offset: 3px; }
+  .field { width: 100%; background: #fff; border: 1px solid #c9ced6; border-radius: 3px; padding: .8rem .9rem; color: #2b2f36; }
+  .field:focus { border-color: #1c2a55; outline: none; box-shadow: 0 0 0 3px rgba(28,42,85,.15); }
+
+  /* Animatie alleen als JS draait en er geen voorkeur voor minder beweging is */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .maat-h { transform-origin: left; animation: trek .7s .15s cubic-bezier(.2,.7,.2,1) both; }
+  }
+  @keyframes trek { from { transform: scaleX(0); } }
+  @keyframes trekv { from { transform: scaleY(0); } }
+  @keyframes verschijn { from { opacity: 0; } }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="bg-papier text-antraciet font-sans antialiased pb-[68px] md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="bg-nacht text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Tuinmani Apeldoorn, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-ceder">Hagenweb</a>
+</div>
+
+<header class="bg-papier/95 backdrop-blur sticky top-0 z-40 border-b border-antraciet/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-[68px] flex items-center justify-between gap-6">
+    <a href="#" class="flex items-baseline gap-2 text-marine" aria-label="Tuinmani Apeldoorn, naar boven">
+      <span class="kop text-[26px]">Tuinmani</span>
+      <span class="kop-smal text-[13px] text-antraciet/60">Apeldoorn</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#modellen" class="hover:text-ceder transition-colors">Overkappingen</a>
+      <a href="#projecten" class="hover:text-ceder transition-colors">Projecten</a>
+      <a href="#tuin" class="hover:text-ceder transition-colors">Bestrating &amp; schuttingen</a>
+      <a href="#werkwijze" class="hover:text-ceder transition-colors">Werkwijze</a>
+      <a href="#showroom" class="hover:text-ceder transition-colors">Showroom</a>
+    </nav>
+    <a href="tel:+31557200155" class="btn !py-2.5 !px-4 bg-marine text-white hover:bg-nacht text-[15px]">
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="tnum hidden sm:inline">055 720 0155</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-16 md:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+  <div class="lg:col-span-5 lg:pb-6">
+    <h1 class="kop text-marine text-[40px] sm:text-[54px] xl:text-[60px]">Een overkapping die precies past.</h1>
+    <p class="mt-6 text-[18px] leading-relaxed max-w-[34rem] text-antraciet/85">
+      Veranda, tuinkamer of overkapping: bij Tuinmani is alles maatwerk. We meten bij je thuis in tot op de millimeter,
+      laten hem op maat maken en onze eigen monteurs bouwen hem op. Al 25 jaar, met de beste prijsgarantie op maatwerk overkappingen.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#afspraak" class="btn bg-marine text-white hover:bg-nacht">Plan een showroombezoek</a>
+      <a href="tel:+31557200155" class="btn border border-marine/30 text-marine hover:bg-marine hover:text-white">Bel 055 720 0155</a>
+    </div>
+    <p class="mt-8 text-[15px] text-antraciet/70 leading-relaxed">
+      Showroom Kayersdijk 95, Apeldoorn. Open op donderdag van 9:00 tot 17:00 en zaterdag van 9:00 tot 16:00.
+    </p>
+  </div>
+
+  <figure class="lg:col-span-7 relative">
+    <img src="assets/site-05.jpg" alt="Glazen tuinkamer met antraciet aluminium frame tegen een bakstenen huis, met eettafel en planten erin" class="w-full aspect-[4/3] lg:aspect-[5/4] object-cover object-[45%_50%] rounded-[3px]">
+    <div class="absolute inset-0 rounded-[3px] bg-gradient-to-t from-nacht/30 via-transparent to-transparent pointer-events-none"></div>
+    <!-- maatlijnen -->
+    <div class="maat maat-h left-[6%] right-[6%] top-[7%]">
+      <span class="maat-label absolute left-1/2 -translate-x-1/2 -top-[15px]">breedte: jouw maat</span>
+    </div>
+    <div class="maat maat-v top-[16%] bottom-[10%] right-[4%] hidden sm:block">
+      <span class="maat-label absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 -rotate-90">diepte: jouw maat</span>
+    </div>
+  </figure>
+</section>
+
+<!-- MODELLEN -->
+<section id="modellen" class="bg-alu scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5">
+        <h2 class="kop text-marine text-[34px] md:text-[44px]">Voor ieder budget een overkapping.</h2>
+        <p class="mt-5 text-[17px] leading-relaxed max-w-[32rem]">
+          Een overkapping hoeft niet duur te zijn. In de showroom staat het volledige assortiment aluminium veranda's van Verasol,
+          naast Palmiye, onze eigen Tuinmani Edition en houten overkappingen. Dit zijn de Verasol-modellen met hun vanafprijs.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7">
+        <table class="w-full text-left border-collapse">
+          <caption class="sr-only">Verasol veranda's met vanafprijs</caption>
+          <thead>
+            <tr class="text-[13px] text-antraciet/60 border-b border-antraciet/25">
+              <th scope="col" class="py-3 font-medium">Model</th>
+              <th scope="col" class="py-3 font-medium hidden sm:table-cell">Kenmerken</th>
+              <th scope="col" class="py-3 font-medium text-right">Vanaf</th>
+            </tr>
+          </thead>
+          <tbody class="align-top">
+            <tr class="border-b border-antraciet/15">
+              <th scope="row" class="py-6 pr-4">
+                <span class="kop-smal text-[22px] text-marine block">Greenline</span>
+                <span class="sm:hidden block mt-2 text-[15px] font-normal text-antraciet/80">3 stijlen, 2 kleuren, glas of polycarbonaat, zelfmontage mogelijk</span>
+              </th>
+              <td class="py-6 pr-4 text-[15px] leading-relaxed hidden sm:table-cell">In 3 stijlen, 2 kleuren. Dak van glas of polycarbonaat. Op maat gemaakt, zelfmontage mogelijk.</td>
+              <td class="py-6 text-right kop-smal text-[22px] text-marine tnum whitespace-nowrap">€ 1.149,-</td>
+            </tr>
+            <tr class="border-b border-antraciet/15">
+              <th scope="row" class="py-6 pr-4">
+                <span class="kop-smal text-[22px] text-marine block">Profiline</span>
+                <span class="sm:hidden block mt-2 text-[15px] font-normal text-antraciet/80">2 stijlen, 4 kleuren, glas of polycarbonaat</span>
+              </th>
+              <td class="py-6 pr-4 text-[15px] leading-relaxed hidden sm:table-cell">In 2 stijlen, 4 kleuren. Dak van glas of polycarbonaat. Ruime keuze in opties.</td>
+              <td class="py-6 text-right kop-smal text-[22px] text-marine tnum whitespace-nowrap">€ 1.699,-</td>
+            </tr>
+            <tr class="border-b border-antraciet/15">
+              <th scope="row" class="py-6 pr-4">
+                <span class="kop-smal text-[22px] text-marine block">Cube</span>
+                <span class="sm:hidden block mt-2 text-[15px] font-normal text-antraciet/80">Glasdak, geen zichtbare dakhelling, tot 7 meter op 2 palen</span>
+              </th>
+              <td class="py-6 pr-4 text-[15px] leading-relaxed hidden sm:table-cell">Strak glasdak zonder zichtbare dakhelling. Overspant tot 7 meter op maar 2 palen. Inmeetservice en maatwerk.</td>
+              <td class="py-6 text-right kop-smal text-[22px] text-marine tnum whitespace-nowrap">€ 6.999,-</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="mt-4 text-[13px] text-antraciet/60">Vanafprijzen van Verasol, inclusief btw. De definitieve prijs hoort bij jouw maat en opties.</p>
+      </div>
+    </div>
+
+    <!-- Cube uitgelicht -->
+    <div class="mt-16 md:mt-20 grid md:grid-cols-12 gap-8 md:gap-0 items-center">
+      <img src="assets/project-tuinkamer.jpg" alt="Zwarte aluminium tuinkamer met glazen schuifwanden en houten wandpanelen, geplaatst door Tuinmani" class="md:col-span-7 w-full aspect-[16/10] object-cover rounded-[3px]">
+      <div class="md:col-span-5 md:-ml-16 bg-papier p-7 md:p-10 rounded-[3px] relative">
+        <h3 class="kop text-marine text-[26px] md:text-[30px]">Vrij zicht op je tuin.</h3>
+        <p class="mt-4 text-[16px] leading-relaxed">
+          De Cube is het paradepaardje van Verasol. Staanders en goot van 250 bij 250 mm maken hem zo sterk dat hij tot
+          zeven meter breed op twee palen rust. Geen paal in het midden, en van buiten zie je geen dakhelling.
+        </p>
+        <ul class="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 text-[15px] tnum">
+          <li class="border-t border-antraciet/20 pt-2"><span class="block text-antraciet/60 text-[13px]">Breedte</span>4000 t/m 7000 mm</li>
+          <li class="border-t border-antraciet/20 pt-2"><span class="block text-antraciet/60 text-[13px]">Diepte</span>3000 t/m 4000 mm</li>
+          <li class="border-t border-antraciet/20 pt-2"><span class="block text-antraciet/60 text-[13px]">Kleur</span>Wit of antraciet</li>
+          <li class="border-t border-antraciet/20 pt-2"><span class="block text-antraciet/60 text-[13px]">Garantie</span>10 jaar</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMENSTELLEN -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-14">
+  <div class="lg:col-span-5 lg:order-2">
+    <h2 class="kop text-marine text-[34px] md:text-[44px]">Stel hem zelf samen.</h2>
+    <p class="mt-5 text-[17px] leading-relaxed">
+      Kies je kleur, je dak en je wanden. Met voor- en zijwanden maak je van je veranda een tuinkamer waar je van
+      het vroege voorjaar tot in de late herfst zit. In de showroom loop je erdoorheen en zie je hoe het voelt.
+    </p>
+    <dl class="mt-8 text-[15px] divide-y divide-antraciet/15 border-y border-antraciet/15">
+      <div class="py-3 grid grid-cols-[7.5rem_1fr] gap-4"><dt class="text-antraciet/60">Dak</dt><dd>Glas, polycarbonaat of lamellen</dd></div>
+      <div class="py-3 grid grid-cols-[7.5rem_1fr] gap-4"><dt class="text-antraciet/60">Wanden</dt><dd>Glazen schuifwanden, aluminium kozijn of hout</dd></div>
+      <div class="py-3 grid grid-cols-[7.5rem_1fr] gap-4"><dt class="text-antraciet/60">Zon</dt><dd>Screens, onderdakzonwering of allebei</dd></div>
+      <div class="py-3 grid grid-cols-[7.5rem_1fr] gap-4"><dt class="text-antraciet/60">Licht &amp; warmte</dt><dd>Ledverlichting en heaters</dd></div>
+      <div class="py-3 grid grid-cols-[7.5rem_1fr] gap-4"><dt class="text-antraciet/60">Vloer</dt><dd>Modern of juist landelijk</dd></div>
+      <div class="py-3 grid grid-cols-[7.5rem_1fr] gap-4"><dt class="text-antraciet/60">Afmeting</dt><dd>Altijd maatwerk</dd></div>
+    </dl>
+    <p class="mt-6 text-[15px] text-antraciet/75">Ook leverbaar mét inrichting: buitenmeubels en accessoires uit de showroom.</p>
+  </div>
+  <figure class="lg:col-span-7 lg:order-1">
+    <img src="assets/site-09.jpg" alt="Antraciet veranda met lichtdoorlatend dak boven een loungehoek en een vijver" class="w-full h-full min-h-[320px] object-cover rounded-[3px]">
+  </figure>
+</section>
+
+<!-- PROJECTEN -->
+<section id="projecten" class="bg-nacht text-white scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="kop text-[34px] md:text-[44px] max-w-xl">Zo staat het er bij onze klanten.</h2>
+      <p class="text-white/70 max-w-sm text-[16px] leading-relaxed">Echte overkappingen en tuinkamers, ingemeten en gebouwd door ons eigen montageteam.</p>
+    </div>
+    <div class="mt-10 grid grid-cols-2 gap-3 md:gap-4">
+      <figure class="col-span-2">
+        <img src="assets/project-veranda.jpg" alt="Antraciet veranda achter een rijtjeshuis met nieuwe tegels en gras" class="w-full aspect-[16/10] md:aspect-[21/9] object-cover object-[50%_40%] rounded-[3px]">
+      </figure>
+      <figure>
+        <img src="assets/project-tuinkamer-2.jpg" alt="Zwarte tuinkamer met glas en houten paneel naast een geelbladige boom" class="w-full aspect-square md:aspect-[5/4] object-cover rounded-[3px]">
+      </figure>
+      <figure>
+        <img src="assets/project-veranda-binnen.jpg" alt="Uitzicht vanonder een glazen veranda-dak op een nieuw aangelegde tuin" class="w-full aspect-square md:aspect-[5/4] object-cover rounded-[3px]">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- TUIN -->
+<section id="tuin" class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 scroll-mt-20">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <h2 class="kop text-marine text-[34px] md:text-[40px]">En de rest van je tuin erbij.</h2>
+      <p class="mt-5 text-[17px] leading-relaxed">
+        Nieuwe bestrating, een stevige schutting, een tuinhuis of zelfs een wellnesshoek: je regelt het in één keer.
+        Onze tuinexperts plaatsen vrijwel alles wat we leveren, van speeltoestellen tot sauna's.
+      </p>
+      <a href="#afspraak" class="mt-7 inline-block font-semibold text-marine underline underline-offset-4 decoration-ceder decoration-2 hover:text-ceder">Vraag een offerte voor je tuin</a>
+    </div>
+    <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+      <figure class="col-span-2 md:col-span-3">
+        <img src="assets/project-schutting.jpg" alt="Zwarte houten schutting met poort en betonpalen langs een tuinpad" class="w-full aspect-[21/9] object-cover rounded-[3px]">
+        <figcaption class="mt-2 text-[14px] text-antraciet/65">Schutting met poort</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/project-bestrating.jpg" alt="Grote grijze tegels voor een voordeur met antraciet deur" class="w-full aspect-square object-cover rounded-[3px]">
+        <figcaption class="mt-2 text-[14px] text-antraciet/65">Bestrating voor de deur</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/project-oprit.jpg" alt="Nieuwe oprit van gemêleerde grijze stenen langs een huis" class="w-full aspect-square object-cover rounded-[3px]">
+        <figcaption class="mt-2 text-[14px] text-antraciet/65">Oprit</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-1">
+        <img src="assets/project-schutting-2.jpg" alt="Zwarte schutting rond een gazon" class="w-full aspect-[16/10] md:aspect-square object-cover rounded-[3px]">
+        <figcaption class="mt-2 text-[14px] text-antraciet/65">Schutting rond het gazon</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" class="bg-alu scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <h2 class="kop text-marine text-[34px] md:text-[44px] max-w-2xl">Jouw overkapping in vier stappen.</h2>
+    <ol class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+      <li class="border-t-2 border-marine pt-5">
+        <span class="kop text-ceder text-[40px] tnum">1</span>
+        <h3 class="kop-smal text-[20px] text-marine mt-2">Samenstellen in de showroom</h3>
+        <p class="mt-3 text-[15px] leading-relaxed">Met je adviseur stel je de veranda of tuinkamer samen. Bekijk meteen ook bestrating, schuttingen en wellness.</p>
+      </li>
+      <li class="border-t-2 border-marine pt-5">
+        <span class="kop text-ceder text-[40px] tnum">2</span>
+        <h3 class="kop-smal text-[20px] text-marine mt-2">Inmeten bij je thuis</h3>
+        <p class="mt-3 text-[15px] leading-relaxed">We komen langs en meten alles exact in. Daarna krijg je de definitieve offerte ter akkoord.</p>
+      </li>
+      <li class="border-t-2 border-marine pt-5">
+        <span class="kop text-ceder text-[40px] tnum">3</span>
+        <h3 class="kop-smal text-[20px] text-marine mt-2">Productie op maat</h3>
+        <p class="mt-3 text-[15px] leading-relaxed">Je overkapping wordt in de fabriek op maat gemaakt. Andere tuinproducten verzamelen we en leveren we mee.</p>
+      </li>
+      <li class="border-t-2 border-marine pt-5">
+        <span class="kop text-ceder text-[40px] tnum">4</span>
+        <h3 class="kop-smal text-[20px] text-marine mt-2">Montage</h3>
+        <p class="mt-3 text-[15px] leading-relaxed">Onze eigen vaste monteurs bouwen alles op, ook de bestrating, de schutting en je tuinmeubels.</p>
+      </li>
+    </ol>
+
+    <div class="mt-16 grid md:grid-cols-12 gap-8 items-center">
+      <img src="assets/google-08.jpg" alt="Een rij donkerblauwe Tuinmani-bedrijfsbussen voor de vestiging" class="md:col-span-7 w-full aspect-[16/9] object-cover rounded-[3px]">
+      <div class="md:col-span-5">
+        <p class="kop-smal text-marine text-[24px] md:text-[28px] leading-snug">"Met onze eigen ervaren montageteams verzorgen we alles van A tot Z. Jij hoeft alleen nog maar te genieten."</p>
+        <p class="mt-5 text-[15px] leading-relaxed text-antraciet/80">Tuinmani is aangesloten bij een keurmerk en garantiefonds, zodat je zeker weet dat je een betrouwbare aankoop doet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="kop text-marine text-[72px] md:text-[88px] tnum">4,6</p>
+      <p class="mt-1 text-[16px] text-antraciet/75">gemiddeld uit 15 Google-reviews</p>
+    </div>
+    <div class="lg:col-span-8 grid md:grid-cols-2 gap-x-10 gap-y-10">
+      <figure class="md:col-span-2">
+        <blockquote class="kop-smal text-[24px] md:text-[30px] leading-snug text-marine">"Prachtige showroom!! Vriendelijk personeel, duidelijke communicatie en snelle montage, heel erg blij mee!"</blockquote>
+        <figcaption class="mt-4 text-[15px] text-antraciet/70">Yvo Berends</figcaption>
+      </figure>
+      <figure class="border-t border-antraciet/15 pt-5">
+        <blockquote class="text-[17px] leading-relaxed">"Goede info, duidelijke uitleg. Mooie voorbeelden. En hebben toegezegd  entree  rolstoel  vriendelijk te maken"</blockquote>
+        <figcaption class="mt-3 text-[15px] text-antraciet/70">Ron Witteveen</figcaption>
+      </figure>
+      <figure class="border-t border-antraciet/15 pt-5">
+        <blockquote class="text-[17px] leading-relaxed">"Erg vriendelijk nam de tijd voor ons .<br>Helaas wel heel erg prijzig."</blockquote>
+        <figcaption class="mt-3 text-[15px] text-antraciet/70">Bianca Linthorst</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWROOM & CONTACT -->
+<section id="showroom" class="bg-marine text-white scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-[34px] md:text-[44px]">Kom langs in de showroom.</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-white/85">Loop door de veranda's en tuinkamers, voel de materialen en stel samen met een adviseur jouw overkapping samen.</p>
+
+      <address class="not-italic mt-10 text-[17px] leading-relaxed">
+        Kayersdijk 95<br>7332 AM Apeldoorn
+      </address>
+      <div class="mt-5 flex flex-col gap-1 text-[17px]">
+        <a href="tel:+31557200155" class="hover:text-ceder tnum">055 720 0155</a>
+        <a href="mailto:info@tuinmani.nl" class="hover:text-ceder">info@tuinmani.nl</a>
+      </div>
+
+      <table class="mt-8 w-full max-w-sm text-[15px] tnum">
+        <caption class="text-left text-white/60 text-[14px] pb-2">Openingstijden Apeldoorn</caption>
+        <tbody class="divide-y divide-white/15">
+          <tr><th scope="row" class="py-2 text-left font-normal text-white/60">Maandag t/m woensdag</th><td class="py-2 text-right text-white/60">Gesloten</td></tr>
+          <tr><th scope="row" class="py-2 text-left font-semibold">Donderdag</th><td class="py-2 text-right font-semibold">9:00 tot 17:00</td></tr>
+          <tr><th scope="row" class="py-2 text-left font-normal text-white/60">Vrijdag</th><td class="py-2 text-right text-white/60">Gesloten</td></tr>
+          <tr><th scope="row" class="py-2 text-left font-semibold">Zaterdag</th><td class="py-2 text-right font-semibold">9:00 tot 16:00</td></tr>
+          <tr><th scope="row" class="py-2 text-left font-normal text-white/60">Zondag</th><td class="py-2 text-right text-white/60">Gesloten</td></tr>
+        </tbody>
+      </table>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kayersdijk+95+7332+AM+Apeldoorn" target="_blank" rel="noopener" class="btn mt-8 bg-white text-marine hover:bg-alu">Plan je route</a>
+
+      <p class="mt-10 text-[14px] text-white/65 leading-relaxed">
+        Ook in Deventer: Revalstraat 7, 7418 BJ Deventer, <a href="tel:+31570590712" class="underline underline-offset-2 hover:text-white tnum">0570 590 712</a>.
+        Open dinsdag tot en met vrijdag van 9:00 tot 17:00 en zaterdag van 9:00 tot 16:00.
+      </p>
+    </div>
+
+    <div id="afspraak" class="lg:col-span-7 bg-papier text-antraciet rounded-[3px] p-6 md:p-10 scroll-mt-24">
+      <h3 class="kop text-marine text-[26px] md:text-[30px]">Afspraak of offerte aanvragen</h3>
+      <p class="mt-3 text-[15px] text-antraciet/75">Laat je gegevens achter, dan nemen we zo snel mogelijk contact met je op. Velden met * zijn verplicht.</p>
+      <form class="mt-8 grid sm:grid-cols-2 gap-5" action="mailto:info@tuinmani.nl" method="post" enctype="text/plain">
+        <label class="sm:col-span-2 text-[14px] font-medium">Voor- en achternaam *
+          <input class="field mt-1.5" name="naam" autocomplete="name" required>
+        </label>
+        <label class="text-[14px] font-medium">E-mailadres *
+          <input class="field mt-1.5" type="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="text-[14px] font-medium">Telefoonnummer *
+          <input class="field mt-1.5" type="tel" name="telefoon" autocomplete="tel" required>
+        </label>
+        <label class="text-[14px] font-medium">Waarvoor?
+          <select class="field mt-1.5" name="onderwerp">
+            <option>Showroombezoek</option>
+            <option>Offerte overkapping of tuinkamer</option>
+            <option>Bestrating of schutting</option>
+            <option>Iets anders</option>
+          </select>
+        </label>
+        <label class="text-[14px] font-medium">Gewenste datum
+          <input class="field mt-1.5" type="date" name="datum">
+        </label>
+        <label class="sm:col-span-2 text-[14px] font-medium">Opmerkingen of afmetingen
+          <textarea class="field mt-1.5 min-h-[110px]" name="opmerkingen" placeholder="Bijvoorbeeld: veranda van ongeveer 5 bij 3 meter, met glazen schuifwanden"></textarea>
+        </label>
+        <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+          <button type="submit" class="btn bg-marine text-white hover:bg-nacht">Aanvraag versturen</button>
+          <span class="text-[14px] text-antraciet/65">Liever direct? Bel <a href="tel:+31557200155" class="underline underline-offset-2 tnum">055 720 0155</a>.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-nacht text-white/65 text-[14px]">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-10 flex flex-wrap items-baseline justify-between gap-6">
+    <div class="flex items-baseline gap-2"><span class="kop text-white text-[20px]">Tuinmani</span><span>Overkappingen &amp; tuinmaterialen</span></div>
+    <div>Kayersdijk 95, 7332 AM Apeldoorn<span class="mx-3 text-white/30">|</span><a href="mailto:info@tuinmani.nl" class="hover:text-white">info@tuinmani.nl</a></div>
+  </div>
+</footer>
+
+<!-- Mobiel: bellen en route altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 bg-papier border-t border-antraciet/15 p-2 gap-2">
+  <a href="tel:+31557200155" class="btn justify-center bg-marine text-white">Bel ons</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Kayersdijk+95+7332+AM+Apeldoorn" target="_blank" rel="noopener" class="btn justify-center border border-marine/30 text-marine">Route showroom</a>
+</div>
+
+</body>
+</html>
