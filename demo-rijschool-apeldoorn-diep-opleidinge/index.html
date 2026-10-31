@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIEP Opleidingen | Rijschool Apeldoorn voor auto en motor</title>
+<meta name="description" content="Rijles en theorie voor auto en motor in Apeldoorn. Schakel of automaat, vanaf 16,5 jaar, betalen in termijnen. Vraag een gratis proefles aan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: { DEFAULT: '#0D2440', 700: '#1A3556', 500: '#4A607A' },
+        sky: { DEFAULT: '#1E9FE6', 600: '#0B76B3', 50: '#EAF5FC' },
+        plate: '#F5C518',
+        mist: '#F1F4F7',
+      },
+      fontFamily: {
+        head: ['Archivo', 'sans-serif'],
+        body: ['Figtree', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, sans-serif; }
+  .wide { font-family: Archivo, sans-serif; font-stretch: 125%; letter-spacing: -0.02em; }
+  .h-tight { line-height: 1.02; text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+  /* Het dakbord: woordmerk zoals het L-bord op de lesauto */
+  .roofsign { display: inline-flex; align-items: stretch; transform: skewX(-10deg); border-radius: 4px; overflow: hidden; box-shadow: 0 2px 0 #0b6fa6; }
+  .roofsign > span { transform: skewX(10deg); display: flex; align-items: center; }
+  .roofsign .l { background: #fff; color: #1E9FE6; font-family: Archivo, sans-serif; font-weight: 900; padding: 0 .35em; border: 2px solid #1E9FE6; border-right: 0; }
+  .roofsign .w { background: #1E9FE6; color: #fff; font-family: Archivo, sans-serif; font-stretch: 125%; font-style: italic; font-weight: 900; padding: 0 .5em 0 .35em; letter-spacing: -0.01em; }
+  .road { background-image: linear-gradient(to bottom, #F5C518 50%, transparent 50%); background-size: 4px 22px; }
+  .btn { transition: transform .15s ease, background-color .2s ease; }
+  .btn:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #1E9FE6; outline-offset: 3px; }
+  .strip::-webkit-scrollbar { display: none; }
+  .strip { scrollbar-width: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="bg-white text-navy font-body antialiased pb-20 md:pb-0">
+
+<div class="bg-navy text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Rijschool Apeldoorn DIEP Opleidingen - Rijles en Theorie voor Auto &amp; Motor, gemaakt door <a href="https://hagenweb.nl" class="underline text-white hover:text-plate">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-navy/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="roofsign text-xl h-9" aria-label="DIEP Opleidingen, naar boven">
+      <span class="l">L</span><span class="w">DIEP</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-navy-700">
+      <a href="#opleidingen" class="hover:text-sky-600">Opleidingen</a>
+      <a href="#tarieven" class="hover:text-sky-600">Tarieven</a>
+      <a href="#werkwijze" class="hover:text-sky-600">Werkwijze</a>
+      <a href="#reviews" class="hover:text-sky-600">Reviews</a>
+      <a href="#contact" class="hover:text-sky-600">Contact</a>
+    </nav>
+    <a href="tel:0850604110" class="inline-flex btn items-center gap-2 font-semibold text-navy hover:text-sky-600">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      085 060 4110
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-10 md:pt-16 pb-14 md:pb-20 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6">
+      <p class="font-semibold text-sky-600 mb-4">Rijschool in Apeldoorn, sinds 2012</p>
+      <h1 class="wide font-extrabold text-[2.6rem] sm:text-6xl lg:text-[4.4rem] h-tight">
+        Rustig leren rijden. Zonder wachtlijst.
+      </h1>
+      <p class="mt-6 text-lg text-navy-500 max-w-md pretty">
+        Autorijles in een schakel- of automaatauto en motorrijles, met instructeurs die de tijd voor je nemen. Je kunt beginnen vanaf 16,5 jaar en direct starten.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="#proefles" class="btn inline-flex justify-center items-center rounded-md bg-plate px-6 py-4 font-bold text-navy hover:bg-[#ffd332]">Gratis proefles aanvragen</a>
+        <a href="tel:0850604110" class="btn inline-flex justify-center items-center rounded-md border-2 border-navy px-6 py-[14px] font-bold text-navy hover:bg-navy hover:text-white">Bel 085 060 4110</a>
+      </div>
+      <p class="mt-3 text-sm text-navy-500">De proefles is gratis bij een lespakket.</p>
+      <a href="#reviews" class="mt-8 inline-flex items-center gap-3 group">
+        <span class="text-plate text-xl tracking-wider" aria-hidden="true">★★★★★</span>
+        <span class="text-sm"><strong class="font-bold">5,0 op Google</strong> <span class="text-navy-500 group-hover:text-sky-600">uit 189 reviews</span></span>
+      </a>
+    </div>
+    <div class="md:col-span-6 relative">
+      <div class="absolute -top-6 -right-24 w-[70%] h-[85%] bg-sky-50 rounded-3xl hidden md:block" aria-hidden="true"></div>
+      <img src="assets/site-13.webp" alt="Leerling houdt het DIEP-dakbord omhoog naast de witte lesauto" class="relative w-full aspect-[7/5] object-cover rounded-2xl shadow-[0_30px_60px_-30px_rgba(13,36,64,.45)]">
+      <img src="assets/google-02.jpg" alt="Motorleerling met duim omhoog naast de lesmotor" class="absolute -bottom-8 -left-5 sm:-left-8 w-[34%] aspect-[3/4] object-cover object-[50%_60%] rounded-xl border-4 border-white shadow-lg">
+    </div>
+  </div>
+</section>
+
+<!-- Leerlingen strook -->
+<section aria-label="Leerlingen van DIEP Opleidingen" class="bg-navy py-10 md:py-12">
+  <div class="max-w-6xl mx-auto px-5 flex items-end justify-between gap-6 mb-6">
+    <h2 class="wide font-bold text-white text-2xl md:text-3xl h-tight">Onze leerlingen, met het bord op het dak</h2>
+    <p class="hidden md:block text-white/60 text-sm max-w-xs text-right">Auto en motor, schakel en automaat.</p>
+  </div>
+  <div class="strip flex gap-3 overflow-x-auto px-5 md:px-[max(1.25rem,calc((100vw-72rem)/2+1.25rem))] snap-x">
+    <img src="assets/site-02.jpg" alt="Leerling met het DIEP-bord voor een zwarte lesauto" class="snap-start shrink-0 h-64 md:h-80 aspect-[4/5] object-cover rounded-lg">
+    <img src="assets/google-08.jpg" alt="Leerling naast de lesauto bij het CBR" class="snap-start shrink-0 h-64 md:h-80 aspect-[4/5] object-cover rounded-lg">
+    <img src="assets/site-07.jpg" alt="Leerling met duim omhoog naast de Golf met DIEP-bord" class="snap-start shrink-0 h-64 md:h-80 aspect-[4/5] object-cover rounded-lg">
+    <img src="assets/site-04.jpg" alt="Motorleerling in reflectievest naast de lesmotor" class="snap-start shrink-0 h-64 md:h-80 aspect-[4/5] object-cover rounded-lg">
+    <img src="assets/site-06.jpg" alt="Leerling steekt beide duimen op bij de witte lesauto" class="snap-start shrink-0 h-64 md:h-80 aspect-[4/5] object-cover rounded-lg">
+    <img src="assets/site-11.jpg" alt="Leerling naast de zwarte Golf met DIEP-bord" class="snap-start shrink-0 h-64 md:h-80 aspect-[4/5] object-cover rounded-lg">
+    <img src="assets/google-01.jpg" alt="Leerling leunt tegen de witte lesauto" class="snap-start shrink-0 h-64 md:h-80 aspect-[4/5] object-cover rounded-lg">
+    <img src="assets/site-08.jpg" alt="Leerling naast de grijze lesauto" class="snap-start shrink-0 h-64 md:h-80 aspect-[4/5] object-cover rounded-lg">
+  </div>
+</section>
+
+<!-- Opleidingen -->
+<section id="opleidingen" class="py-20 md:py-28 scroll-mt-16">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4 md:sticky md:top-28 self-start">
+      <h2 class="wide font-extrabold text-4xl md:text-5xl h-tight">Wat wil je leren rijden?</h2>
+      <p class="mt-5 text-navy-500 max-w-sm pretty">Van je eerste rijles tot een opfrisser na jaren niet rijden. Twijfel je wat bij je past? In de proefles krijg je persoonlijk advies.</p>
+    </div>
+    <ul class="md:col-span-8 divide-y divide-navy/10 border-y border-navy/10">
+      <li class="py-7 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+        <div>
+          <h3 class="wide font-bold text-2xl">Autorijles</h3>
+          <p class="mt-2 text-navy-500 max-w-lg pretty">Rijbewijs B in een handgeschakelde of automaat lesauto. Starten kan vanaf 16,5 jaar, afrijden op je 17e verjaardag. Ook in het Engels.</p>
+        </div>
+        <p class="sm:text-right"><span class="text-sm text-navy-500">pakketten vanaf</span><br><span class="wide font-bold text-2xl">€1625</span></p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+        <div>
+          <h3 class="wide font-bold text-2xl">Motorrijles</h3>
+          <p class="mt-2 text-navy-500 max-w-lg pretty">Voor categorie A, A code 80 en A2. Pakketten met of zonder AVB- en AVD-examen.</p>
+        </div>
+        <p class="sm:text-right"><span class="text-sm text-navy-500">pakketten vanaf</span><br><span class="wide font-bold text-2xl">€540</span></p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+        <div>
+          <h3 class="wide font-bold text-2xl">Spoedcursus</h3>
+          <p class="mt-2 text-navy-500 max-w-lg pretty">Binnen 10 dagen je rijbewijs op zak. Een rijlespakket volledig op maat, inclusief voorrijden en praktijkexamen.</p>
+        </div>
+        <p class="sm:text-right"><span class="text-sm text-navy-500">vanaf</span><br><span class="wide font-bold text-2xl">€1000</span></p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+        <div>
+          <h3 class="wide font-bold text-2xl">Theoriecursus</h3>
+          <p class="mt-2 text-navy-500 max-w-lg pretty">Klassikale dag- of avondcursus van één dag, helemaal gericht op het CBR-examen.</p>
+        </div>
+        <p class="sm:text-right"><span class="text-sm text-navy-500">vanaf</span><br><span class="wide font-bold text-2xl">€100</span></p>
+      </li>
+      <li class="py-7 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+        <div>
+          <h3 class="wide font-bold text-2xl">Opfriscursus</h3>
+          <p class="mt-2 text-navy-500 max-w-lg pretty">Lang niet gereden? Vier rijlessen van 60 minuten met getrainde instructeurs, ook als je last hebt van faalangst.</p>
+        </div>
+        <p class="sm:text-right"><span class="text-sm text-navy-500">vanaf</span><br><span class="wide font-bold text-2xl">€220</span></p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Tarieven -->
+<section id="tarieven" class="bg-mist py-20 md:py-28 scroll-mt-16">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="max-w-2xl">
+      <h2 class="wide font-extrabold text-4xl md:text-5xl h-tight">Lespakketten auto</h2>
+      <p class="mt-5 text-navy-500 pretty">Elk pakket is inclusief voorrijden en praktijkexamen, met €50 pakketkorting. Je betaalt veilig in termijnen via iDeal. Lessen zijn blokuren van 90 minuten.</p>
+    </div>
+
+    <div class="mt-12 tabular-nums" role="table" aria-label="Lespakketten auto">
+      <div role="row" class="hidden md:grid grid-cols-[1fr_12rem_9rem_9rem] gap-4 px-5 pb-4 text-sm text-navy-500"><span role="columnheader">Pakket</span><span role="columnheader">Rijlessen</span><span role="columnheader" class="text-right">Schakel</span><span role="columnheader" class="text-right">Automaat</span></div>
+      <div role="row" class="border-t border-navy/15 px-5 py-6 grid grid-cols-2 md:grid-cols-[1fr_12rem_9rem_9rem] gap-x-4 gap-y-3 items-center">
+        <div role="cell" class="col-span-2 md:col-span-1"><span class="wide font-bold text-xl">Starterspakket</span><span class="block text-sm text-navy-500">Direct starten met lessen</span></div>
+        <div role="cell" class="col-span-2 md:col-span-1">25 lessen <span class="text-navy-500 text-sm">(12 blokuren van 90 min)</span></div>
+        <div role="cell" class="md:text-right"><span class="md:hidden block text-sm text-navy-500">Schakel</span><span class="wide font-bold text-2xl">€1625</span></div>
+        <div role="cell" class="md:text-right"><span class="md:hidden block text-sm text-navy-500">Automaat</span><span class="wide font-bold text-2xl">€1750</span></div>
+      </div>
+      <div role="row" class="bg-white border-t-4 border-plate rounded-lg shadow-[0_20px_40px_-25px_rgba(13,36,64,.35)] my-2 px-5 py-6 grid grid-cols-2 md:grid-cols-[1fr_12rem_9rem_9rem] gap-x-4 gap-y-3 items-center">
+        <div role="cell" class="col-span-2 md:col-span-1"><span class="wide font-bold text-xl">Basispakket</span><span class="block text-sm font-semibold text-navy">Meest gekozen</span></div>
+        <div role="cell" class="col-span-2 md:col-span-1">35 lessen <span class="text-navy-500 text-sm">(17 blokuren van 90 min)</span></div>
+        <div role="cell" class="md:text-right"><span class="md:hidden block text-sm text-navy-500">Schakel</span><span class="wide font-bold text-2xl">€2175</span></div>
+        <div role="cell" class="md:text-right"><span class="md:hidden block text-sm text-navy-500">Automaat</span><span class="wide font-bold text-2xl">€2350</span></div>
+      </div>
+      <div role="row" class="border-t border-navy/15 px-5 py-6 grid grid-cols-2 md:grid-cols-[1fr_12rem_9rem_9rem] gap-x-4 gap-y-3 items-center">
+        <div role="cell" class="col-span-2 md:col-span-1"><span class="wide font-bold text-xl">Zekerheidpakket</span><span class="block text-sm text-navy-500">Met tussentijdse toets en gratis theoriecursus t.w.v. €59</span></div>
+        <div role="cell" class="col-span-2 md:col-span-1">45 lessen <span class="text-navy-500 text-sm">(22 blokuren van 90 min)</span></div>
+        <div role="cell" class="md:text-right"><span class="md:hidden block text-sm text-navy-500">Schakel</span><span class="wide font-bold text-2xl">€3025</span></div>
+        <div role="cell" class="md:text-right"><span class="md:hidden block text-sm text-navy-500">Automaat</span><span class="wide font-bold text-2xl">€3250</span></div>
+      </div>
+      <div class="border-t border-navy/15"></div>
+    </div>
+    <p class="mt-4 text-sm text-navy-500">Automaat is rijbewijs B met code 78. Losse rijles (50 min): €50. Een pakket op maat kan ook.</p>
+
+    <div class="mt-20 grid md:grid-cols-12 gap-10 items-start">
+      <div class="md:col-span-5">
+        <img src="assets/site-03.jpg" alt="Motorleerling op de lesmotor naast de lesauto" class="w-full aspect-[4/3] object-cover rounded-2xl">
+      </div>
+      <div class="md:col-span-7">
+        <h3 class="wide font-extrabold text-3xl md:text-4xl h-tight">Motorpakketten</h3>
+        <p class="mt-3 text-navy-500">Blokuren van 100 minuten.</p>
+        <dl class="mt-6 divide-y divide-navy/15 border-y border-navy/15 tabular-nums">
+          <div class="py-4 flex justify-between gap-4"><dt><span class="font-semibold">Start and Go</span><span class="block text-sm text-navy-500">10 lessen, voor een snelle start</span></dt><dd class="wide font-bold text-xl">€540</dd></div>
+          <div class="py-4 flex justify-between gap-4"><dt><span class="font-semibold">AVB-pakket</span><span class="block text-sm text-navy-500">10 lessen voertuigbeheersing, inclusief AVB-examen</span></dt><dd class="wide font-bold text-xl">€740</dd></div>
+          <div class="py-4 flex justify-between gap-4"><dt><span class="font-semibold">AVD-pakket</span><span class="block text-sm text-navy-500">10 lessen verkeersdeelneming, inclusief AVD-examen</span></dt><dd class="wide font-bold text-xl">€840</dd></div>
+          <div class="py-4 flex justify-between gap-4"><dt><span class="font-semibold">Ready to Ride</span><span class="block text-sm text-navy-500">20 lessen, gratis proefles, AVB- en AVD-examen, in 2 termijnen</span></dt><dd class="wide font-bold text-xl">€1570</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="py-20 md:py-28 scroll-mt-16">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5">
+      <h2 class="wide font-extrabold text-4xl md:text-5xl h-tight">Van proefles tot rijbewijs</h2>
+      <p class="mt-5 text-navy-500 max-w-sm pretty">Er zijn meerdere instructeurs, dus je hoeft niet te wachten. Je eerste les is altijd een proefles.</p>
+      <img src="assets/site-14.webp" alt="Lachende instructeur wijst naar het DIEP-bord op de lesauto" class="mt-10 w-full aspect-[7/5] object-cover rounded-2xl hidden md:block">
+    </div>
+    <ol class="md:col-span-7 relative">
+      <span class="road absolute left-[19px] top-3 bottom-3 w-1" aria-hidden="true"></span>
+      <li class="relative pl-16 pb-10">
+        <span class="absolute left-0 top-0 w-10 h-10 rounded-full bg-navy text-white wide font-bold flex items-center justify-center">1</span>
+        <h3 class="wide font-bold text-xl">Proefles</h3>
+        <p class="mt-2 text-navy-500 pretty">Je maakt kennis met je instructeur en zit meteen zelf achter het stuur. Helemaal vrijblijvend.</p>
+      </li>
+      <li class="relative pl-16 pb-10">
+        <span class="absolute left-0 top-0 w-10 h-10 rounded-full bg-navy text-white wide font-bold flex items-center justify-center">2</span>
+        <h3 class="wide font-bold text-xl">Lesadvies</h3>
+        <p class="mt-2 text-navy-500 pretty">Na de proefles weet je hoeveel lessen je ongeveer nodig hebt en welk pakket daarbij past.</p>
+      </li>
+      <li class="relative pl-16 pb-10">
+        <span class="absolute left-0 top-0 w-10 h-10 rounded-full bg-navy text-white wide font-bold flex items-center justify-center">3</span>
+        <h3 class="wide font-bold text-xl">Lessen in de app</h3>
+        <p class="mt-2 text-navy-500 pretty">In de leerling-app zie je het rooster van je instructeur en plan je zelf je lessen. De instructiekaart erin legt elk examenonderdeel uit, zodat je het vooraf kunt lezen.</p>
+      </li>
+      <li class="relative pl-16">
+        <span class="absolute left-0 top-0 w-10 h-10 rounded-full bg-plate text-navy wide font-bold flex items-center justify-center">4</span>
+        <h3 class="wide font-bold text-xl">Examen</h3>
+        <p class="mt-2 text-navy-500 pretty">In overleg met je instructeur vragen wij je praktijkexamen aan bij het CBR. Het voorrijden en het examen zitten in elk autopakket.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Waarom -->
+<section class="bg-sky-600 text-white py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="wide font-extrabold text-3xl md:text-4xl h-tight max-w-xl">Handig om te weten</h2>
+    <ul class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8 text-lg">
+      <li class="border-t-2 border-white/40 pt-4"><strong class="block font-bold">Vanaf 16,5 jaar</strong><span class="text-white/85 text-base">Met 2toDrive rijd je af op je 17e en rijd je tot je 18e met een coach.</span></li>
+      <li class="border-t-2 border-white/40 pt-4"><strong class="block font-bold">Schakel of automaat</strong><span class="text-white/85 text-base">Jij kiest in welke lesauto je rijdt.</span></li>
+      <li class="border-t-2 border-white/40 pt-4"><strong class="block font-bold">Betalen in termijnen</strong><span class="text-white/85 text-base">Je lespakket veilig in delen betalen via iDeal.</span></li>
+      <li class="border-t-2 border-white/40 pt-4"><strong class="block font-bold">Rijles in het Engels</strong><span class="text-white/85 text-base">Lessons in English are possible too.</span></li>
+      <li class="border-t-2 border-white/40 pt-4"><strong class="block font-bold">Goed onderhouden lesauto's</strong><span class="text-white/85 text-base">En verzekerd volgens de normen.</span></li>
+      <li class="border-t-2 border-white/40 pt-4"><strong class="block font-bold">Geen kleine lettertjes</strong><span class="text-white/85 text-base">Duidelijke prijzen, je ziet ze hierboven.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-20 md:py-28 scroll-mt-16">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="wide font-extrabold text-4xl md:text-5xl h-tight max-w-xl">Wat leerlingen zeggen</h2>
+      <p class="flex items-center gap-3"><span class="text-plate text-2xl tracking-wider" aria-hidden="true">★★★★★</span><span><strong>5,0</strong> <span class="text-navy-500">uit 189 Google-reviews</span></span></p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-12 gap-6">
+      <figure class="md:col-span-7 bg-navy text-white rounded-2xl p-8 md:p-10 flex flex-col">
+        <blockquote class="wide font-semibold text-xl md:text-2xl leading-snug pretty">“Rémon is een super rijinstructeur! Heel erg calm en relaxed, laat je heel erg op je gemak voelen en heeft super methodes om je te leren. Rijbewijs gehaald in 6 lesjes en kon binnen 2 weken terecht met lessen. Het examen was ook super snel aangevraagd, en over het algemeen een super ervaring!”</blockquote>
+        <figcaption class="mt-auto pt-8 text-white/70">Jesse van der Kaaij</figcaption>
+      </figure>
+      <figure class="md:col-span-5 bg-mist rounded-2xl p-8 flex flex-col">
+        <blockquote class="text-lg leading-relaxed pretty">“Topinstructeur en fijne rijschool. Rémon neemt echt de moeite om je op een rustige manier te laten zien wat er fout gaat en hoe je het beter kan doen. Desnoods doet hij het even voor om het beter op te slaan. Daarnaast is de communicatie over rijlessen ook gewoon goed en verloopt dat op een chille manier.”</blockquote>
+        <figcaption class="mt-auto pt-6 text-navy-500">Theodoor Daniël van der Toorn</figcaption>
+      </figure>
+      <figure class="md:col-span-4 bg-mist rounded-2xl p-8 flex flex-col">
+        <blockquote class="leading-relaxed pretty">“Met 10 lessen in 1 keer geslaagd voor AVB en AVD voor motor bij Amir. De communicatie is duidelijk, professioneel en prettig. Hij speelt goed in op het gedrag en de behoeften van de leerling en past zijn begeleiding hierop aan.”</blockquote>
+        <figcaption class="mt-auto pt-6 text-navy-500">nina renssen</figcaption>
+      </figure>
+      <figure class="md:col-span-5 bg-mist rounded-2xl p-8 flex flex-col">
+        <blockquote class="leading-relaxed pretty">“Ik heb hier mijn motorrijlessen gevolgd en ben voor alles in één keer geslaagd! 🏍️✨ De lessen waren echt top, met duidelijke uitleg en goede begeleiding. Mijn rijinstructeur was ontzettend fijn, geduldig en professioneel, waardoor ik met veel vertrouwen mijn examens in ben gegaan.”</blockquote>
+        <figcaption class="mt-auto pt-6 text-navy-500">Dilara Sahin</figcaption>
+      </figure>
+      <figure class="md:col-span-3 bg-plate rounded-2xl p-8 flex flex-col">
+        <blockquote class="wide font-bold text-xl leading-snug">“Top rijschool, instructor is kalm en aardig en legt alles mooi uit. 10 uit 10 van mij 👍”</blockquote>
+        <figcaption class="mt-auto pt-6 text-navy/70">Sasa Vujke</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Proefles + contact -->
+<section id="contact" class="bg-navy text-white py-20 md:py-28 scroll-mt-16">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-12">
+    <div id="proefles" class="md:col-span-7 scroll-mt-20">
+      <h2 class="wide font-extrabold text-4xl md:text-5xl h-tight">Vraag je gratis proefles aan</h2>
+      <p class="mt-5 text-white/70 max-w-md pretty">Laat je gegevens achter, dan nemen we snel contact met je op om de proefles te plannen. De proefles is gratis bij een lespakket.</p>
+      <form action="mailto:info@diepopleidingen.nl" method="post" enctype="text/plain" class="mt-10 grid sm:grid-cols-2 gap-4">
+        <label class="sm:col-span-2 block">
+          <span class="text-sm text-white/70">Opleiding</span>
+          <select name="opleiding" required class="mt-1 w-full rounded-md bg-white text-navy px-4 py-3">
+            <option>Autorijles schakel</option>
+            <option>Autorijles automaat</option>
+            <option>Motorrijles</option>
+            <option>Spoedcursus</option>
+            <option>Theoriecursus</option>
+            <option>Opfriscursus</option>
+          </select>
+        </label>
+        <label class="block"><span class="text-sm text-white/70">Naam</span><input name="naam" required autocomplete="name" class="mt-1 w-full rounded-md bg-white text-navy px-4 py-3"></label>
+        <label class="block"><span class="text-sm text-white/70">Telefoonnummer</span><input name="telefoon" type="tel" required autocomplete="tel" class="mt-1 w-full rounded-md bg-white text-navy px-4 py-3"></label>
+        <label class="sm:col-span-2 block"><span class="text-sm text-white/70">E-mail</span><input name="email" type="email" required autocomplete="email" class="mt-1 w-full rounded-md bg-white text-navy px-4 py-3"></label>
+        <label class="sm:col-span-2 block"><span class="text-sm text-white/70">Bericht (niet verplicht)</span><textarea name="bericht" rows="3" class="mt-1 w-full rounded-md bg-white text-navy px-4 py-3"></textarea></label>
+        <button type="submit" class="btn sm:col-span-2 sm:justify-self-start rounded-md bg-plate px-7 py-4 font-bold text-navy hover:bg-[#ffd332]">Proefles aanvragen</button>
+      </form>
+    </div>
+
+    <aside class="md:col-span-5 md:pl-10 md:border-l border-white/15 space-y-10">
+      <div>
+        <h3 class="font-semibold text-white/60 text-sm">Liever even bellen?</h3>
+        <a href="tel:0850604110" class="wide font-extrabold text-3xl hover:text-plate block mt-1">085 060 4110</a>
+        <a href="mailto:info@diepopleidingen.nl" class="mt-2 inline-block text-white/85 underline underline-offset-4 hover:text-plate">info@diepopleidingen.nl</a>
+      </div>
+      <div>
+        <h3 class="font-semibold text-white/60 text-sm">Adres</h3>
+        <p class="mt-1 text-lg">Wilmersdorf 29<br>7327 AD Apeldoorn<br><span class="text-white/70 text-base">Verdieping 1, kamer 4</span></p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-white/60 text-sm">Kantoor open</h3>
+        <p class="mt-1 text-lg">Maandag t/m vrijdag 09:00 tot 17:00</p>
+        <p class="text-white/70">Zaterdag en zondag gesloten</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-white/60 text-sm">Wij rijden in</h3>
+        <p class="mt-1 text-white/85">Apeldoorn, Vaassen, Twello, Hoenderloo, Teuge en Beekbergen</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-navy border-t border-white/10 text-white/60 text-sm">
+  <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+    <span class="roofsign text-base h-7"><span class="l">L</span><span class="w">DIEP</span></span>
+    <p>DIEP Opleidingen, rijschool in Apeldoorn sinds 2012</p>
+  </div>
+</footer>
+
+<!-- Mobiel: bellen en proefles altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-navy/10 p-3 grid grid-cols-2 gap-3">
+  <a href="tel:0850604110" class="btn rounded-md border-2 border-navy py-3 text-center font-bold">Bellen</a>
+  <a href="#proefles" class="btn rounded-md bg-plate py-3 text-center font-bold">Gratis proefles</a>
+</div>
+
+</body>
+</html>
