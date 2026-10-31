@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kropman | Verbinding door techniek</title>
+<meta name="description" content="Kropman neemt gebouwinstallaties volledig uit handen: ontwerp, prefabricage, realisatie, beheer en onderhoud. Bel 088 334 4000.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,600;125,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        groen: '#3FAE3F', groendonker: '#22792A', inkt: '#14212E', inkt2: '#1D2D3D',
+        beton: '#E8EBED', staal: '#5A6672', lijn: '#CDD3D8'
+      },
+      fontFamily: {
+        kop: ['Archivo', 'sans-serif'],
+        tekst: ['"Source Sans 3"', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  .kop { font-family: 'Archivo', sans-serif; font-stretch: 125%; font-weight: 800; letter-spacing: -0.02em; }
+  .kop-licht { font-family: 'Archivo', sans-serif; font-stretch: 125%; font-weight: 600; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  html { scroll-behavior: smooth; }
+  a, button { transition: background-color .2s, color .2s, transform .2s; }
+  a:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #3FAE3F; outline-offset: 3px; }
+  /* De leiding: doorlopende groene lijn met knooppunten */
+  .leiding { position: relative; }
+  .leiding::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 4px; background: #3FAE3F; }
+  @media (min-width: 1024px) { .leiding::before { left: 0; right: 0; top: 15px; bottom: auto; width: auto; height: 4px; } }
+  .knoop { width: 34px; height: 34px; border-radius: 50%; background: #fff; border: 4px solid #3FAE3F; position: relative; z-index: 1;
+           display: grid; place-items: center; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 13px; color: #14212E; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+</head>
+<body class="bg-beton text-inkt font-tekst antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 bg-white px-4 py-2">Naar de inhoud</a>
+
+<div class="bg-inkt text-white/80 text-sm text-center px-4 py-2">
+  Demo voor Kropman, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-groen">Hagenweb</a>
+</div>
+
+<header class="bg-white border-b border-lijn sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#" aria-label="Kropman, naar boven"><img src="assets/site-07.webp" alt="Kropman" class="h-5 lg:h-6 w-auto"></a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 text-[17px] font-semibold">
+      <a href="#diensten" class="hover:text-groendonker">Diensten</a>
+      <a href="#branches" class="hover:text-groendonker">Branches</a>
+      <a href="#vestigingen" class="hover:text-groendonker">Vestigingen</a>
+      <a href="#werken-bij" class="hover:text-groendonker">Werken bij</a>
+      <a href="#contact" class="hover:text-groendonker">Contact</a>
+    </nav>
+    <a href="tel:0883344000" class="hidden lg:inline-block bg-groen hover:bg-groendonker text-white font-semibold px-5 py-2.5 rounded-md whitespace-nowrap">
+      088 334 4000
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero: tekst op effen vlak, foto ernaast -->
+<section class="bg-inkt text-white">
+  <div class="grid lg:grid-cols-12 min-h-[calc(100dvh-7rem)] lg:min-h-[640px]">
+    <div class="lg:col-span-6 xl:col-span-5 flex flex-col justify-center px-5 lg:px-12 xl:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] py-14 lg:py-20 order-2 lg:order-1">
+      <h1 class="kop text-[2.6rem] leading-[1.02] sm:text-6xl xl:text-7xl">Verbinding door techniek</h1>
+      <p class="mt-6 text-lg lg:text-xl text-white/80 max-w-[34rem] leading-relaxed">
+        Veilige en gezonde gebouwen waar mensen prettig werken en goed presteren. Kropman neemt de gebouwinstallatie volledig uit handen: van ontwerp en realisatie tot onderhoud, beheer en exploitatie.
+      </p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <a href="tel:0883344000" class="bg-groen hover:bg-groendonker text-white font-semibold text-lg px-6 py-4 rounded-md text-center">Bel 088 334 4000</a>
+        <a href="mailto:info@kropman.nl" class="border-2 border-white/30 hover:border-white text-white font-semibold text-lg px-6 py-[14px] rounded-md text-center">Mail info@kropman.nl</a>
+      </div>
+      <p class="mt-6 text-white/60">Bereikbaar maandag tot en met vrijdag, 08:00 tot 16:30.</p>
+    </div>
+    <div class="lg:col-span-6 xl:col-span-7 order-1 lg:order-2 relative">
+      <img src="assets/site-03.webp" alt="Monteur van Kropman controleert leidingwerk in een technische ruimte" class="w-full h-72 sm:h-96 lg:h-full object-cover object-[65%_center]">
+    </div>
+  </div>
+</section>
+
+<!-- Over + werkwijze als leiding -->
+<section id="diensten" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+      <h2 class="kop text-3xl sm:text-4xl lg:text-5xl leading-[1.05] lg:col-span-6">Eén partij, van tekening tot exploitatie</h2>
+      <p class="text-lg text-staal leading-relaxed lg:col-span-6 max-w-[38rem]">
+        Als Kropman ergens aan begint, gaan we voor kwaliteit en blijven we betrokken tot het eind. U hoeft de installatie niet over meerdere partijen te verdelen: wij ontwerpen, maken onderdelen voor in eigen werkplaats, bouwen, en zorgen daarna dat alles blijft werken.
+      </p>
+    </div>
+
+    <ol class="leiding mt-16 grid gap-12 lg:grid-cols-4 lg:gap-8">
+      <li class="pl-14 lg:pl-0 relative">
+        <span class="knoop absolute left-0 lg:static" aria-hidden="true">1</span>
+        <h3 class="kop text-xl mt-0 lg:mt-6">Ontwerp &amp; Techniek</h3>
+        <p class="mt-2 text-staal">De installatie eerst goed op tekening, afgestemd op het gebouw en de mensen die er werken.</p>
+        <img src="assets/site-04.webp" alt="Installatieschema op een laptop tijdens een overleg" class="mt-5 w-full aspect-[4/3] object-cover rounded-md">
+      </li>
+      <li class="pl-14 lg:pl-0 relative">
+        <span class="knoop absolute left-0 lg:static" aria-hidden="true">2</span>
+        <h3 class="kop text-xl mt-0 lg:mt-6">Prefabricage</h3>
+        <p class="mt-2 text-staal">Onderdelen worden in de werkplaats voorgebouwd, zodat het werk op locatie sneller en netter gaat.</p>
+        <img src="assets/site-10.webp" alt="Lasser aan het werk in de prefabricagewerkplaats van Kropman" class="mt-5 w-full aspect-[4/3] object-cover rounded-md">
+      </li>
+      <li class="pl-14 lg:pl-0 relative">
+        <span class="knoop absolute left-0 lg:static" aria-hidden="true">3</span>
+        <h3 class="kop text-xl mt-0 lg:mt-6">Realisatie</h3>
+        <p class="mt-2 text-staal">Het ontwerp wordt gebouwd: leidingen, kanalen, elektra en regeltechniek, opgeleverd als één geheel.</p>
+        <img src="assets/site-11.webp" alt="Opgeleverde kantoorvloer met zichtbare luchtkanalen" class="mt-5 w-full aspect-[4/3] object-cover rounded-md">
+      </li>
+      <li class="pl-14 lg:pl-0 relative">
+        <span class="knoop absolute left-0 lg:static" aria-hidden="true">4</span>
+        <h3 class="kop text-xl mt-0 lg:mt-6">Beheer &amp; Onderhoud</h3>
+        <p class="mt-2 text-staal">Na oplevering houden we de installaties veilig en betrouwbaar, zolang het gebouw in gebruik is.</p>
+        <img src="assets/site-08.webp" alt="Technicus opent een schakelkast" class="mt-5 w-full aspect-[4/3] object-cover object-top rounded-md">
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Specialismen -->
+<section class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-7">
+      <img src="assets/site-02.webp" alt="Cleanroom met medewerkers in beschermende kleding" class="w-full aspect-[3/2] object-cover rounded-md">
+      <h2 class="kop text-3xl sm:text-4xl mt-8 leading-[1.05]">Contamination Control</h2>
+      <p class="mt-4 text-lg text-staal leading-relaxed max-w-[38rem]">
+        Cleanrooms en gecontroleerde ruimtes, waar lucht, druk en hygiëne precies moeten kloppen. Denk aan farmacie en zorg, waar een installatie geen marge heeft.
+      </p>
+    </div>
+    <div class="lg:col-span-5 lg:pt-4">
+      <h2 class="kop-licht text-2xl">Verder in huis</h2>
+      <dl class="mt-6 divide-y divide-lijn border-y border-lijn">
+        <div class="py-6">
+          <dt class="kop text-lg">Automatisering in gebouwen</dt>
+          <dd class="mt-1 text-staal">Klimaat, verlichting en installaties die op elkaar reageren in plaats van los van elkaar te draaien.</dd>
+        </div>
+        <div class="py-6">
+          <dt class="kop text-lg">Beheer op afstand</dt>
+          <dd class="mt-1 text-staal">Meekijken in uw installaties zonder dat er iemand langs hoeft te komen.</dd>
+        </div>
+        <div class="py-6">
+          <dt class="kop text-lg">Beveiligingstechniek</dt>
+          <dd class="mt-1 text-staal">Techniek die het gebouw en de mensen erin beveiligt, ontworpen samen met de rest van de installatie.</dd>
+        </div>
+      </dl>
+      <img src="assets/site-05.webp" alt="Programmeur werkt aan gebouwautomatisering" class="mt-8 w-full aspect-[16/9] object-cover rounded-md">
+    </div>
+  </div>
+</section>
+
+<!-- Branches -->
+<section id="branches" class="bg-inkt text-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <h2 class="kop text-3xl sm:text-4xl leading-[1.05]">Voor wie we werken</h2>
+      <p class="mt-4 text-white/70 text-lg leading-relaxed">Gebouwen waar veel van afhangt, in zeven branches.</p>
+    </div>
+    <ul class="lg:col-span-8 kop text-2xl sm:text-3xl lg:text-4xl leading-tight">
+      <li class="py-3 border-b border-white/15">Zorg</li>
+      <li class="py-3 border-b border-white/15">Farmacie</li>
+      <li class="py-3 border-b border-white/15">Zakelijke dienstverlening</li>
+      <li class="py-3 border-b border-white/15">Overheid</li>
+      <li class="py-3 border-b border-white/15">Industrie &amp; Energie</li>
+      <li class="py-3 border-b border-white/15">Sport &amp; Recreatie</li>
+      <li class="py-3">Onderwijs</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Werken bij -->
+<section id="werken-bij" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <img src="assets/site-01.webp" alt="Jonge monteur zaagt een buis op maat aan de werkbank" class="lg:col-span-6 w-full aspect-[3/2] object-cover rounded-md">
+      <div class="lg:col-span-6">
+        <h2 class="kop text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">Kom werken bij Kropman</h2>
+        <p class="mt-5 text-lg text-staal leading-relaxed max-w-[36rem]">
+          Werk mee aan veilige en gezonde gebouwen en maak Nederland elke dag een stukje groener. Je krijgt de ruimte om te ontdekken waar je passie ligt en leert van de kennis die Kropman in huis heeft.
+        </p>
+      </div>
+    </div>
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 border-t-4 border-groen pt-10">
+      <div>
+        <h3 class="kop text-lg">Vacatures</h3>
+        <p class="mt-2 text-staal">Werk aan veilige en gezonde gebouwen vanuit een van de twaalf vestigingen.</p>
+      </div>
+      <div>
+        <h3 class="kop text-lg">Stage &amp; afstuderen</h3>
+        <p class="mt-2 text-staal">Stages in techniek, engineering, projectleiding, bedrijfskunde, ICT en HR. Geen passende opdracht? Stuur een open sollicitatie.</p>
+      </div>
+      <div>
+        <h3 class="kop text-lg">Zij-instroom</h3>
+        <p class="mt-2 text-staal">Overstappen naar de techniek? We zoeken samen de opleider die bij je past en bieden maatwerk.</p>
+      </div>
+      <div>
+        <h3 class="kop text-lg">Kropman Academy</h3>
+        <p class="mt-2 text-staal">Een loopbaanpad dat bij jou past: jij bepaalt mee wat je wilt leren en op welke manier.</p>
+      </div>
+    </div>
+    <a href="mailto:info@kropman.nl?subject=Werken%20bij%20Kropman" class="inline-block mt-10 bg-inkt hover:bg-inkt2 text-white font-semibold px-6 py-4 rounded-md">Mail over werken bij Kropman</a>
+  </div>
+</section>
+
+<!-- Vestigingen -->
+<section id="vestigingen" class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-5">
+        <h2 class="kop text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">12 vestigingen, altijd dichtbij</h2>
+        <p class="mt-5 text-lg text-staal leading-relaxed">Verspreid over heel Nederland, zodat er altijd een team in de regio zit dat uw gebouw kent.</p>
+      </div>
+      <img src="assets/site-06.webp" alt="Medewerker opent de laadruimte van een Kropman-bus" class="lg:col-span-7 w-full aspect-[16/8] object-cover rounded-md">
+    </div>
+
+    <ul class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-px bg-lijn border border-lijn">
+      <li class="bg-inkt text-white p-4 sm:p-6 text-sm sm:text-base">
+        <h3 class="kop text-lg">Utrecht</h3>
+        <p class="mt-2 text-white/80">Veldzigt 2B<br>3454 PW De Meern</p>
+        <a href="mailto:info.utrecht@kropman.nl" class="mt-3 inline-block text-groen hover:text-white underline underline-offset-2">info.utrecht<wbr>@kropman.nl</a>
+      </li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Alkmaar</h3><p class="mt-2 text-staal">Melkweg 8<br>1841 JJ Stompetoren</p><a href="mailto:info.alkmaar@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.alkmaar<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Almere</h3><p class="mt-2 text-staal">Veluwezoom 42<br>1327 AH Almere</p><a href="mailto:almere@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">almere<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Amstelveen</h3><p class="mt-2 text-staal">Bouwerij 71<br>1185 XW Amstelveen</p><a href="mailto:info.amsterdam@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.amsterdam<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Assen</h3><p class="mt-2 text-staal">Nijverheidsweg 3<br>9403 VN Assen</p><a href="mailto:info.assen@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.assen<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Breda</h3><p class="mt-2 text-staal">Zuilenstraat 96<br>4813 AC Breda</p><a href="mailto:info.breda@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.breda<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Eindhoven</h3><p class="mt-2 text-staal">Croy 9C<br>5653 LC Eindhoven</p><a href="mailto:info.eindhoven@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.eindhoven<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Nijmegen</h3><p class="mt-2 text-staal">Lagelandseweg 84<br>6545 CG Nijmegen</p><a href="mailto:info.nijmegen@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.nijmegen<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Bijsterhuizen</h3><p class="mt-2 text-staal">Bijsterhuizen 1146<br>6546 AS Nijmegen</p><a href="mailto:info.fabriek@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.fabriek<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Rijswijk</h3><p class="mt-2 text-staal">Verrijn Stuartlaan 36<br>2288 EL Rijswijk</p><a href="mailto:info.rijswijk@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.rijswijk<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Twente</h3><p class="mt-2 text-staal">Hazenweg 70<br>7556 BM Hengelo</p><a href="mailto:info.twente@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.twente<wbr>@kropman.nl</a></li>
+      <li class="bg-white p-4 sm:p-6 text-sm sm:text-base"><h3 class="kop text-lg">Zwolle</h3><p class="mt-2 text-staal">Grote Voort 201<br>8041 BK Zwolle</p><a href="mailto:info.zwolle@kropman.nl" class="mt-3 inline-block text-groendonker hover:underline">info.zwolle<wbr>@kropman.nl</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-groen text-inkt py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-7">
+      <h2 class="kop text-4xl sm:text-5xl lg:text-6xl leading-[1.02]">Een installatie bespreken?</h2>
+      <p class="mt-5 text-lg lg:text-xl leading-relaxed max-w-[36rem]">Bel of mail ons. U krijgt iemand aan de lijn die meedenkt over uw gebouw.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-3">
+        <a href="tel:0883344000" class="bg-inkt hover:bg-inkt2 text-white font-semibold text-lg px-6 py-4 rounded-md text-center">Bel 088 334 4000</a>
+        <a href="mailto:info@kropman.nl" class="bg-white hover:bg-beton text-inkt font-semibold text-lg px-6 py-4 rounded-md text-center">Mail info@kropman.nl</a>
+      </div>
+      <figure class="mt-14 max-w-[30rem]">
+        <blockquote class="kop-licht text-xl">"Mooi bedrijf met fijne sfeer"</blockquote>
+        <figcaption class="mt-2">Henny Krijnen, Google-review, 5 sterren</figcaption>
+      </figure>
+    </div>
+    <div class="lg:col-span-5 bg-white rounded-md p-7 lg:p-9 self-start">
+      <h3 class="kop text-xl">Kropman Utrecht</h3>
+      <address class="not-italic mt-3 text-staal leading-relaxed">
+        Veldzigt 2B<br>3454 PW Utrecht (De Meern)<br>
+        <a href="tel:0883344000" class="text-inkt font-semibold hover:text-groendonker">088 334 4000</a><br>
+        <a href="mailto:info@kropman.nl" class="text-inkt font-semibold hover:text-groendonker">info<wbr>@kropman.nl</a>
+      </address>
+      <h3 class="kop text-lg mt-8">Openingstijden</h3>
+      <dl class="mt-3 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1.5 tabular-nums">
+        <dt>Maandag</dt><dd>08:00 tot 16:30</dd>
+        <dt>Dinsdag</dt><dd>08:00 tot 16:30</dd>
+        <dt>Woensdag</dt><dd>08:00 tot 16:30</dd>
+        <dt>Donderdag</dt><dd>08:00 tot 16:30</dd>
+        <dt>Vrijdag</dt><dd>08:00 tot 16:30</dd>
+        <dt class="text-staal">Zaterdag</dt><dd class="text-staal">Gesloten</dd>
+        <dt class="text-staal">Zondag</dt><dd class="text-staal">Gesloten</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/70 pt-14 pb-28 lg:pb-14">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col lg:flex-row gap-8 lg:items-end justify-between">
+    <div>
+      <img src="assets/site-07.webp" alt="Kropman" class="h-6 w-auto">
+      <p class="mt-4">Verbinding door techniek</p>
+    </div>
+    <nav aria-label="Voettekst" class="flex flex-wrap gap-x-7 gap-y-2">
+      <a href="#diensten" class="hover:text-white">Diensten</a>
+      <a href="#branches" class="hover:text-white">Branches</a>
+      <a href="#vestigingen" class="hover:text-white">Vestigingen</a>
+      <a href="#werken-bij" class="hover:text-white">Werken bij</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-lijn p-3 grid grid-cols-2 gap-2">
+  <a href="tel:0883344000" class="bg-groen text-white font-semibold py-3.5 rounded-md text-center">Bel ons</a>
+  <a href="mailto:info@kropman.nl" class="bg-inkt text-white font-semibold py-3.5 rounded-md text-center">Mail ons</a>
+</div>
+
+</body>
+</html>
