@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rijschool Topper | Rijles in Apeldoorn met een vaste instructeur</title>
+<meta name="description" content="Rijschool Topper in Apeldoorn, sinds 1997. Schakel, automaat of motor, elke les met dezelfde instructeur. Schakelrijles start met een gratis proefles.">
+<link rel="icon" href="assets/site-09.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        lak: '#0E1626',
+        lak2: '#18233A',
+        geel: '#FFE24A',
+        asfalt: '#EEF0F3',
+        inkt: '#121A2B',
+        lblauw: '#1F63D6',
+      },
+      fontFamily: {
+        kop: ['Fraunces', 'Georgia', 'serif'],
+        tekst: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; }
+  .kop { font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 0, 'WONK' 0; letter-spacing: -0.02em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; font-weight: 700; border-radius: .6rem; padding: .95rem 1.4rem; transition: transform .15s ease, background-color .2s ease, color .2s ease; }
+  .btn:active { transform: translateY(1px); }
+  .btn-geel { background: #FFE24A; color: #0E1626; }
+  .btn-geel:hover { background: #fff; }
+  .btn-lijn { border: 2px solid rgba(255,255,255,.35); color: #fff; }
+  .btn-lijn:hover { border-color: #FFE24A; color: #FFE24A; }
+  .btn-donker { background: #0E1626; color: #fff; }
+  .btn-donker:hover { background: #18233A; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #1F63D6; outline-offset: 3px; }
+  /* Wegmarkering: onderbroken middenstreep */
+  .streep { background-image: repeating-linear-gradient(90deg, #fff 0 34px, transparent 34px 60px); height: 4px; }
+  .streep-v { background-image: repeating-linear-gradient(180deg, #fff 0 26px, transparent 26px 46px); width: 4px; }
+  .lbord { display:inline-grid; place-items:center; background:#1F63D6; color:#fff; font-weight:800; border-radius:.3rem; line-height:1; }
+  .muur { display: grid; gap: 1.25rem; align-items: start; }
+  @media (min-width: 1024px) { .muur { grid-template-columns: repeat(3, 1fr); } }
+  .muurkol { display: grid; gap: 1.25rem; }
+  .field { width: 100%; background: #fff; border: 1.5px solid #cfd4dc; border-radius: .55rem; padding: .85rem 1rem; color: #121A2B; }
+  .field:focus { border-color: #1F63D6; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+</head>
+<body class="bg-asfalt text-inkt antialiased pb-[76px] md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-geel focus:text-lak focus:px-4 focus:py-2 focus:rounded">Naar de inhoud</a>
+
+<div class="bg-geel text-lak text-center text-[13px] font-semibold py-2 px-4">
+  Demo voor Rijschool Topper, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2">Hagenweb</a>
+</div>
+
+<header class="bg-lak text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-2.5" aria-label="Rijschool Topper, naar boven">
+      <img src="assets/site-09.png" alt="Topper" class="h-6 md:h-7 w-auto">
+      <span class="lbord w-7 h-7 text-sm md:w-8 md:h-8 md:text-base">L</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-white/80" aria-label="Hoofdmenu">
+      <a href="#rijbewijzen" class="hover:text-geel">Pakketten</a>
+      <a href="#traject" class="hover:text-geel">Hoe het werkt</a>
+      <a href="#toppers" class="hover:text-geel">Geslaagden</a>
+      <a href="#motor" class="hover:text-geel">Motor</a>
+      <a href="#contact" class="hover:text-geel">Contact</a>
+    </nav>
+    <a href="tel:+31626649844" class="btn btn-geel !py-2.5 !px-4 text-[15px]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 26 64 98 44</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="bg-lak text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 pt-10 pb-14 lg:pt-20 lg:pb-24 items-center">
+    <div class="lg:col-span-6">
+      <p class="text-geel font-semibold text-[15px] mb-5">Rijschool Topper, Apeldoorn</p>
+      <h1 class="kop font-black text-[2.9rem] leading-[1.02] sm:text-6xl lg:text-[5.2rem] lg:leading-[.98]">Elke les dezelfde instructeur.</h1>
+      <p class="mt-6 text-lg lg:text-xl text-white/80 max-w-xl leading-relaxed">Schakel, automaat of motor. Je krijgt één vaste instructeur die weet waar je staat, van je eerste les tot je examen. Schakelrijles begint met een gratis proefles.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="#contact" class="btn btn-geel text-[17px]">Gratis proefles aanvragen</a>
+        <a href="#rijbewijzen" class="btn btn-lijn text-[17px]">Pakketten en prijzen</a>
+      </div>
+      <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 text-[15px]">
+        <div class="flex items-center gap-3">
+          <span class="flex text-geel" aria-hidden="true">
+            <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg>
+          </span>
+          <span><strong class="font-semibold">5,0 op Google</strong> <span class="text-white/65">uit 542 reviews</span></span>
+        </div>
+        <div><strong class="font-semibold">Sinds 1997</strong> <span class="text-white/65">in Apeldoorn</span></div>
+      </div>
+    </div>
+    <div class="lg:col-span-6 relative">
+      <img src="assets/site-03.webp" alt="Lesauto van Rijschool Topper met het gele dakbord rijdt over een weg in Apeldoorn, twee lesauto's erachter" class="w-full aspect-[4/3] lg:aspect-[5/6] object-cover object-[45%_center] rounded-2xl">
+      <div class="relative -mt-8 mx-4 sm:mx-0 sm:mt-0 sm:absolute sm:-bottom-5 sm:right-6 sm:max-w-xs bg-geel text-lak rounded-xl px-5 py-4 shadow-[0_18px_40px_-12px_rgba(0,0,0,.55)]">
+        <p class="font-semibold leading-snug">"Hij neemt echt de tijd, legt alles duidelijk uit."</p>
+        <p class="text-sm mt-1 opacity-75">Sude KY, in één keer geslaagd voor de motor</p>
+      </div>
+    </div>
+  </div>
+  <div class="streep opacity-40"></div>
+</section>
+
+<!-- Rijbewijzen -->
+<section id="rijbewijzen" class="py-16 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 mb-10 lg:mb-14">
+      <h2 class="kop font-extrabold text-4xl lg:text-6xl lg:col-span-6 leading-[1.02]">Hoe wil je rijden?</h2>
+      <p class="lg:col-span-5 lg:col-start-8 text-lg text-inkt/75 leading-relaxed self-end">Elk pakket is inclusief het CBR-praktijkexamen. Twijfel je tussen schakel en automaat? Bel even, we denken met je mee.</p>
+    </div>
+
+    <div class="border-t-2 border-inkt">
+      <article class="grid md:grid-cols-12 gap-6 md:gap-8 py-8 lg:py-10 border-b border-inkt/15 items-center">
+        <img src="assets/site-05.jpg" alt="Blauwe lesauto van Topper op de weg" class="md:col-span-4 w-full aspect-[16/10] object-cover rounded-xl">
+        <div class="md:col-span-5">
+          <div class="flex items-baseline gap-3 flex-wrap">
+            <h3 class="kop font-extrabold text-3xl lg:text-4xl">Schakel</h3>
+            <span class="text-[15px] font-semibold text-lblauw">Meest gekozen, start met gratis proefles</span>
+          </div>
+          <p class="mt-3 text-inkt/75 leading-relaxed max-w-lg">Je leert rijden in een handgeschakelde auto: schakelen, koppelen en alle verkeerssituaties. Daarmee haal je een volledig rijbewijs B.</p>
+        </div>
+        <div class="md:col-span-3 md:text-right">
+          <p class="text-[15px] text-inkt/65">Pakket A, 30 lessen</p>
+          <p class="kop font-extrabold text-3xl mt-1 tabular-nums">vanaf €&nbsp;1.990</p>
+        </div>
+      </article>
+
+      <article class="grid md:grid-cols-12 gap-6 md:gap-8 py-8 lg:py-10 border-b border-inkt/15 items-center">
+        <img src="assets/google-07.png" alt="Twee zwarte lesauto's van Topper naast elkaar geparkeerd" class="md:col-span-4 w-full aspect-[16/10] object-cover object-[center_40%] rounded-xl">
+        <div class="md:col-span-5">
+          <h3 class="kop font-extrabold text-3xl lg:text-4xl">Automaat</h3>
+          <p class="mt-3 text-inkt/75 leading-relaxed max-w-lg">Geen koppeling, geen schakelen. Je richt je helemaal op verkeersinzicht en veilig rijden. Let op: je krijgt dan een beperkt rijbewijs B, alleen voor automaat.</p>
+        </div>
+        <div class="md:col-span-3 md:text-right">
+          <p class="text-[15px] text-inkt/65">Pakket A, 30 lessen</p>
+          <p class="kop font-extrabold text-3xl mt-1 tabular-nums">vanaf €&nbsp;2.140</p>
+        </div>
+      </article>
+
+      <article class="grid md:grid-cols-12 gap-6 md:gap-8 py-8 lg:py-10 border-b border-inkt/15 items-center">
+        <img src="assets/google-04.jpg" alt="Leerling in Topper-hesje naast een Yamaha lesmotor" class="md:col-span-4 w-full aspect-[16/10] object-cover object-[center_45%] rounded-xl">
+        <div class="md:col-span-5">
+          <h3 class="kop font-extrabold text-3xl lg:text-4xl">Motor</h3>
+          <p class="mt-3 text-inkt/75 leading-relaxed max-w-lg">Rijlessen, voertuigbeheersing (AVB) en verkeersdeelneming (AVD). Beide CBR-examens zitten in het pakket.</p>
+        </div>
+        <div class="md:col-span-3 md:text-right">
+          <p class="text-[15px] text-inkt/65">Pakket A, 26 lessen</p>
+          <p class="kop font-extrabold text-3xl mt-1 tabular-nums">vanaf €&nbsp;1.782</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-8 flex flex-col md:flex-row md:items-center justify-between gap-5 bg-white rounded-xl p-6 lg:p-7">
+      <p class="text-inkt/80 leading-relaxed max-w-2xl"><strong class="font-semibold text-inkt">Theorie zit niet in je pakket.</strong> Die boek je bij partner Top Theorie: een snelcursus voor auto (schakel of automaat) of motor, €&nbsp;108.</p>
+      <a href="https://toptheorie.nl" class="btn btn-donker shrink-0">Naar Top Theorie</a>
+    </div>
+  </div>
+</section>
+
+<!-- Traject -->
+<section id="traject" class="bg-lak text-white py-16 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 mb-12 lg:mb-16">
+      <h2 class="kop font-extrabold text-4xl lg:text-6xl lg:col-span-7 leading-[1.02]">Van eerste les tot rijbewijs, met één instructeur.</h2>
+      <p class="lg:col-span-4 lg:col-start-9 text-lg text-white/75 leading-relaxed self-end">Geen wisselingen tussendoor. Je instructeur kent je ritme en je leerpunten, dus je hoeft niets twee keer uit te leggen.</p>
+    </div>
+
+    <!-- De weg -->
+    <div class="relative">
+      <div class="hidden lg:block absolute left-0 right-0 top-[30px] h-[64px] bg-lak2 rounded-full" aria-hidden="true"></div>
+      <div class="hidden lg:block absolute left-8 right-8 top-[60px] streep opacity-70" aria-hidden="true"></div>
+      <div class="lg:hidden absolute top-0 bottom-0 left-[26px] w-[56px] -translate-x-1/2 bg-lak2 rounded-full" aria-hidden="true"></div>
+      <div class="lg:hidden absolute top-6 bottom-6 left-[24px] streep-v opacity-70" aria-hidden="true"></div>
+
+      <ol class="relative grid lg:grid-cols-4 gap-10 lg:gap-8">
+        <li class="relative pl-20 lg:pl-0">
+          <span class="absolute lg:static left-0 kop font-black text-2xl w-[52px] h-[52px] lg:w-[64px] lg:h-[64px] lg:mt-[30px] grid place-items-center bg-geel text-lak rounded-full lg:mx-0">1</span>
+          <h3 class="kop font-extrabold text-2xl lg:mt-8">Kennismaken</h3>
+          <p class="mt-2 text-white/75 leading-relaxed">Je rijdt een les mee. Samen kijken we waar je staat en welk pakket past. Bij schakel is die eerste les gratis.</p>
+        </li>
+        <li class="relative pl-20 lg:pl-0">
+          <span class="absolute lg:static left-0 kop font-black text-2xl w-[52px] h-[52px] lg:w-[64px] lg:h-[64px] lg:mt-[30px] grid place-items-center bg-geel text-lak rounded-full">2</span>
+          <h3 class="kop font-extrabold text-2xl lg:mt-8">Lessen op jouw tempo</h3>
+          <p class="mt-2 text-white/75 leading-relaxed">Flexibele tijden, ook 's avonds tot 20:00 en op zaterdag. Na elke les weet je wat de volgende stap is.</p>
+        </li>
+        <li class="relative pl-20 lg:pl-0">
+          <span class="absolute lg:static left-0 kop font-black text-2xl w-[52px] h-[52px] lg:w-[64px] lg:h-[64px] lg:mt-[30px] grid place-items-center bg-geel text-lak rounded-full">3</span>
+          <h3 class="kop font-extrabold text-2xl lg:mt-8">Examen als je klaar bent</h3>
+          <p class="mt-2 text-white/75 leading-relaxed">Je krijgt eerlijk advies over wanneer je examenklaar bent. We plannen het CBR-examen in als jij er klaar voor bent, niet eerder.</p>
+        </li>
+        <li class="relative pl-20 lg:pl-0">
+          <span class="absolute lg:static left-0 kop font-black text-2xl w-[52px] h-[52px] lg:w-[64px] lg:h-[64px] lg:mt-[30px] grid place-items-center bg-white text-lak rounded-full">4</span>
+          <h3 class="kop font-extrabold text-2xl lg:mt-8">Rijbewijs in handen</h3>
+          <p class="mt-2 text-white/75 leading-relaxed">Je rijdt zelfstandig de weg op. En je foto met het Topper-bord komt erbij.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Geslaagden en reviews -->
+<section id="toppers" class="py-16 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 mb-10 lg:mb-14">
+      <h2 class="kop font-extrabold text-4xl lg:text-6xl lg:col-span-6 leading-[1.02]">Onze Toppers</h2>
+      <p class="lg:col-span-5 lg:col-start-8 text-lg text-inkt/75 leading-relaxed self-end">Wie slaagt, gaat op de foto met het dakbord. Op Google geven leerlingen Topper gemiddeld 5 sterren, uit 542 reviews.</p>
+    </div>
+
+    <div class="muur">
+      <div class="muurkol">
+        <figure><img src="assets/site-08.png" alt="Geslaagde leerling houdt het Topper-dakbord vast voor een blauwe lesauto" class="w-full rounded-xl"></figure>
+        <blockquote class="bg-lak text-white rounded-xl p-7">
+        <p class="kop font-semibold text-[1.45rem] leading-snug">"Topperrrrr! In een keer geslaagd voor mijn motorrijbewijs! Ik ben ontzettend goed geholpen door Emre."</p>
+        <p class="mt-4 text-white/75 leading-relaxed">"Hij neemt echt de tijd, legt alles duidelijk uit en zorgt ervoor dat je snel en met vertrouwen leert rijden. Een geweldige instructeur en zeker een aanrader!"</p>
+        <footer class="mt-5 text-geel font-semibold">Sude KY <span class="text-white/50 font-normal">via Google</span></footer>
+      </blockquote>
+        <blockquote class="bg-white rounded-xl p-7">
+        <p class="leading-relaxed text-inkt/85">"Ik heb een hele goede ervaring met deze rijschool. De instructeur heeft mij enorm geholpen en alles rustig en duidelijk uitgelegd. Ik heb veel geleerd en dankzij hem ben ik geslaagd. Zeker een aanrader!"</p>
+        <footer class="mt-4 font-semibold">abdalla ahmed <span class="text-inkt/50 font-normal">via Google</span></footer>
+      </blockquote>
+      </div>
+      <div class="muurkol">
+        <blockquote class="bg-geel text-lak rounded-xl p-7">
+        <p class="kop font-semibold text-[1.35rem] leading-snug">"Rijschool Topper!! De naam zegt het al. Vandaag geslaagd."</p>
+        <p class="mt-3 leading-relaxed">"Hier wordt je goed geholpen en er wordt kritisch gekeken na je zwakke punten…"</p>
+        <footer class="mt-4 font-semibold">Yakup Yesil <span class="opacity-60 font-normal">via Google</span></footer>
+      </blockquote>
+        <figure><img src="assets/google-05.jpg" alt="Geslaagde leerling met bloemen en een fles achter een Topper-lesauto" class="w-full rounded-xl aspect-[4/5] object-cover object-[center_60%]"></figure>
+        <blockquote class="bg-white rounded-xl p-7">
+        <p class="leading-relaxed text-inkt/85">"Super fijne ervaring gehad bij Rijschool Topper! De instructeurs nemen echt de tijd voor je en leggen alles rustig en duidelijk uit. Dankzij hun goede begeleiding voelde ik mij steeds zekerder achter het stuur en ben ik geslaagd. Echt een aanrader!"</p>
+        <footer class="mt-4 font-semibold">Caroline Pieter <span class="text-inkt/50 font-normal">via Google</span></footer>
+      </blockquote>
+      </div>
+      <div class="muurkol">
+        <figure><img src="assets/google-02.jpg" alt="Instructeur leunt tegen het dakbord van een donkerblauwe Topper-lesauto" class="w-full rounded-xl aspect-[3/4] object-cover object-[center_65%]"></figure>
+        <blockquote class="bg-white rounded-xl p-7">
+        <p class="leading-relaxed text-inkt/85">"Wij zijn ontzettend tevreden over deze rijschool. Onze dochter is in één keer geslaagd, en dat is zeker te danken aan de fijne en duidelijke lessen die zij heeft gekregen. De instructeur nam de tijd en gaf eerlijk advies."</p>
+        <footer class="mt-4 font-semibold">G Arslan <span class="text-inkt/50 font-normal">via Google</span></footer>
+      </blockquote>
+        <a href="https://www.instagram.com/rijschooltopper" class="block border-2 border-inkt rounded-xl p-7 hover:bg-inkt hover:text-white transition-colors">
+          <p class="kop font-extrabold text-2xl leading-tight">Meer geslaagden op Instagram</p>
+          <p class="mt-2 opacity-75">Volg @rijschooltopper voor nieuwe geslaagden en updates.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Motor -->
+<section id="motor" class="bg-lak text-white">
+  <div class="grid lg:grid-cols-2">
+    <div class="relative aspect-[4/3] lg:aspect-auto"><img src="assets/site-06.jpg" alt="Motorleerling rijdt tussen oranje pionnen tijdens een les voertuigbeheersing" class="absolute inset-0 w-full h-full object-cover object-[40%_center]"></div>
+    <div class="px-5 lg:px-16 py-14 lg:py-24 flex flex-col justify-center">
+      <h2 class="kop font-extrabold text-4xl lg:text-6xl leading-[1.02]">Ook voor je motorrijbewijs.</h2>
+      <p class="mt-6 text-lg text-white/80 leading-relaxed max-w-lg">Dezelfde aanpak als bij de auto: een vaste instructeur en lessen op jouw tempo. Je oefent op Yamaha lesmotoren, van voertuigbeheersing op het plein tot rijden in het verkeer.</p>
+      <ul class="mt-8 space-y-3 text-white/85">
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 bg-geel rounded-sm shrink-0"></span>AVB, voertuigbeheersing</li>
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 bg-geel rounded-sm shrink-0"></span>AVD, verkeersdeelneming</li>
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 bg-geel rounded-sm shrink-0"></span>Beide CBR-examens in het pakket, vanaf €&nbsp;1.782</li>
+      </ul>
+      <div class="mt-10 grid grid-cols-2 gap-4">
+        <img src="assets/google-03.jpg" alt="Motorleerling in Topper-hesje steekt duimen op naast een lesmotor" class="w-full aspect-square object-cover object-[center_30%] rounded-xl">
+        <img src="assets/site-07.jpg" alt="Vier Yamaha lesmotoren van Topper op een rij" class="w-full aspect-square object-cover rounded-xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-16 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-extrabold text-4xl lg:text-6xl leading-[1.02]">Zin om te beginnen?</h2>
+      <p class="mt-5 text-lg text-inkt/75 leading-relaxed max-w-lg">Bel of app. We leggen uit welk pakket bij je past en wanneer je kunt starten.</p>
+
+      <a href="tel:+31626649844" class="mt-8 block kop font-black text-[2.4rem] sm:text-5xl lg:text-6xl tabular-nums hover:text-lblauw transition-colors">06 26 64 98 44</a>
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+31626649844" class="btn btn-donker">Nu bellen</a>
+        <a href="https://wa.me/31626649844" class="btn bg-[#1FAF5A] text-white hover:bg-[#178f49]">Stuur een WhatsApp</a>
+      </div>
+
+      <dl class="mt-12 grid sm:grid-cols-2 gap-8 text-[15px]">
+        <div>
+          <dt class="font-semibold mb-2">Adres</dt>
+          <dd class="text-inkt/75 leading-relaxed">Talingweg 219<br>7331 ML Apeldoorn</dd>
+          <dt class="font-semibold mt-6 mb-2">E-mail</dt>
+          <dd><a href="mailto:info@rijschooltopper.nl" class="text-inkt/75 underline underline-offset-2 hover:text-lblauw">info@rijschooltopper.nl</a></dd>
+        </div>
+        <div>
+          <dt class="font-semibold mb-2">Bereikbaar</dt>
+          <dd>
+            <table class="text-inkt/75 tabular-nums">
+              <tr><td class="pr-6 py-0.5">Maandag t/m vrijdag</td><td>08:00–20:00</td></tr>
+              <tr><td class="pr-6 py-0.5">Zaterdag</td><td>08:00–17:30</td></tr>
+              <tr><td class="pr-6 py-0.5">Zondag</td><td>gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="lg:col-span-5 lg:col-start-8 bg-white rounded-2xl p-6 sm:p-8 self-start" action="mailto:info@rijschooltopper.nl" method="post" enctype="text/plain">
+      <h3 class="kop font-extrabold text-2xl">Gratis proefles aanvragen</h3>
+      <p class="mt-2 text-inkt/70 text-[15px] leading-relaxed">Laat je gegevens achter, dan nemen we contact met je op.</p>
+      <div class="mt-6 space-y-4">
+        <label class="block"><span class="block text-sm font-semibold mb-1.5">Naam</span><input class="field" type="text" name="naam" required autocomplete="name"></label>
+        <label class="block"><span class="block text-sm font-semibold mb-1.5">Telefoonnummer</span><input class="field" type="tel" name="telefoon" required autocomplete="tel"></label>
+        <label class="block"><span class="block text-sm font-semibold mb-1.5">Ik wil rijles voor</span>
+          <select class="field" name="rijbewijs">
+            <option>Schakel</option>
+            <option>Automaat</option>
+            <option>Motor</option>
+            <option>Weet ik nog niet</option>
+          </select>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-geel w-full mt-6 text-[17px]">Proefles aanvragen</button>
+      <p class="mt-3 text-[13px] text-inkt/55">De gratis proefles geldt voor schakelrijles.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-lak text-white/70">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[14px]">
+    <div class="flex items-center gap-2.5">
+      <img src="assets/site-09.png" alt="Topper" class="h-5 w-auto">
+      <span class="lbord w-6 h-6 text-xs">L</span>
+    </div>
+    <p>Rijschool Topper, Talingweg 219, Apeldoorn. Rijles sinds 1997.</p>
+    <a href="https://www.instagram.com/rijschooltopper" class="hover:text-geel">@rijschooltopper op Instagram</a>
+  </div>
+</footer>
+
+<!-- Mobiel: bellen altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-lak/95 backdrop-blur border-t border-white/10 p-3 grid grid-cols-2 gap-3">
+  <a href="tel:+31626649844" class="btn btn-geel !py-3">Bellen</a>
+  <a href="https://wa.me/31626649844" class="btn bg-[#1FAF5A] text-white !py-3">WhatsApp</a>
+</div>
+
+</body>
+</html>
