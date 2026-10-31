@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rijschool SlaagPro | Rijles in Apeldoorn, gratis proefles</title>
+<meta name="description" content="Rijles in Apeldoorn met één vaste, geduldige instructeur. Schakel of automaat (Tesla), ook bij faalangst, ADHD of autisme. Geen wachtlijst, gratis proefles. 4,9 op Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        asfalt: '#23272C',
+        asfalt2: '#2E333A',
+        merk: '#3787CB',
+        diep: '#1F5E96',
+        weg: '#EEF1F4',
+        grijs: '#5B6470',
+      },
+      fontFamily: {
+        kop: ['Archivo', 'system-ui', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .kop { font-family: Archivo, system-ui, sans-serif; font-stretch: 122%; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance; }
+  .kop-smal { font-family: Archivo, system-ui, sans-serif; font-stretch: 112%; font-weight: 700; letter-spacing: -0.01em; }
+  p { text-wrap: pretty; }
+  /* Het L-bord: het blauwe vierkant uit logo en daklicht */
+  .lbord { display: inline-grid; place-items: center; background: #3787CB; color: #fff; aspect-ratio: 1; }
+  .woordmerk { font-family: Archivo, system-ui, sans-serif; font-stretch: 112%; font-weight: 800; letter-spacing: -0.01em; }
+  .woordmerk .lbord { width: 1.05em; line-height: 1; margin: 0 .02em; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; font-weight: 700; border-radius: .5rem; padding: .95rem 1.4rem; transition: background-color .2s, transform .15s, border-color .2s; }
+  .btn:active { transform: translateY(1px); }
+  .btn-merk { background: #3787CB; color: #fff; }
+  .btn-merk:hover { background: #1F5E96; }
+  .btn-rand { border: 2px solid rgba(255,255,255,.35); color: #fff; }
+  .btn-rand:hover { border-color: #fff; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #3787CB; outline-offset: 3px; }
+  .veld { width: 100%; background: #2E333A; border: 1px solid #454B54; color: #fff; border-radius: .5rem; padding: .85rem 1rem; }
+  .veld::placeholder { color: #8b939e; }
+  .veld:focus { border-color: #3787CB; outline: none; }
+  html.js .intro > * { animation: op .7s cubic-bezier(.2,.7,.2,1) both; }
+  html.js .intro > *:nth-child(2) { animation-delay: .08s; }
+  html.js .intro > *:nth-child(3) { animation-delay: .16s; }
+  html.js .intro > *:nth-child(4) { animation-delay: .24s; }
+  @keyframes op { from { transform: translateY(14px); opacity: .001; } }
+  @media (prefers-reduced-motion: reduce) { html.js .intro > * { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-weg text-asfalt font-sans pb-[72px] md:pb-0">
+
+<!-- Demo-balk -->
+<div class="bg-merk text-white text-[13px] text-center px-4 py-2">
+  Demo voor Rijschool SlaagPro, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-semibold">Hagenweb</a>
+</div>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-12 bg-white text-asfalt px-3 py-2 rounded">Naar de inhoud</a>
+
+<header class="bg-asfalt text-white">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="woordmerk text-[26px]" aria-label="SlaagPro, naar boven">S<span class="lbord">L</span>aag<span class="text-merk">Pro</span></a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] text-white/80">
+      <a href="#lessen" class="hover:text-white">Lessen</a>
+      <a href="#tarief" class="hover:text-white">Tarief</a>
+      <a href="#ervaringen" class="hover:text-white">Ervaringen</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+    <a href="tel:+31638858531" class="btn btn-rand !py-2.5 !px-4 text-[15px]">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="hidden sm:inline">06 38858531</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="bg-asfalt text-white overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-8 pt-10 md:pt-16 pb-14 md:pb-20 items-center">
+    <div class="intro md:col-span-6 lg:col-span-6">
+      <h1 class="kop text-[40px] sm:text-[52px] lg:text-[64px] [font-stretch:115%]">Rijles in Apeldoorn. Deze week nog de weg op.</h1>
+      <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed text-white/75 max-w-[34rem]">Je rijdt met één vaste, geduldige instructeur, in Apeldoorn en omgeving. In een schakelauto of in een Tesla als automaat. Ook als je het spannend vindt of faalangst hebt.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="#contact" class="btn btn-merk text-[17px]">Plan je gratis proefles</a>
+        <a href="tel:+31638858531" class="btn btn-rand text-[17px]">Bel 06 38858531</a>
+      </div>
+      <a href="#ervaringen" class="mt-9 inline-flex items-center gap-3 group">
+        <span class="flex text-[#F5B83D]" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span class="text-[15px] text-white/80 group-hover:text-white"><strong class="text-white">4,9</strong> op Google, uit 215 reviews</span>
+      </a>
+    </div>
+    <div class="md:col-span-6 relative">
+      <div class="relative rounded-xl overflow-hidden aspect-square md:aspect-[4/4.4]">
+        <img src="assets/google-01.png" alt="Instructeur van SlaagPro wijst naar de spiegel terwijl een leerling achter het stuur zit" class="absolute inset-0 w-full h-full object-cover object-[88%_70%]">
+      </div>
+      <p class="absolute -bottom-5 left-5 md:-left-6 bg-white text-asfalt rounded-lg px-4 py-3 text-[15px] shadow-[0_12px_30px_-12px_rgba(10,20,35,.6)]">
+        <strong class="kop-smal">Sinds 2020</strong> ruim 300 leerlingen geslaagd
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Herfstactie -->
+<section id="tarief" class="max-w-6xl mx-auto px-5 md:px-8 pt-16 md:pt-24">
+  <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+    <div class="md:col-span-5 flex md:justify-end">
+      <div class="lbord rounded-2xl w-full max-w-[360px] p-8 sm:p-9 gap-6 !aspect-auto md:!aspect-square !place-items-start !content-between">
+        <span class="text-[15px] font-semibold text-white/85">Herfstactie, per rijles</span>
+        <span>
+          <span class="block text-white/70 line-through text-[22px] font-semibold">€57,50</span>
+          <span class="kop block text-[60px] sm:text-[68px] [font-stretch:112%] whitespace-nowrap">€52,50</span>
+        </span>
+        <span class="text-[15px] font-semibold text-white/85">Geldig tot en met 30 november</span>
+      </div>
+    </div>
+    <div class="md:col-span-7">
+      <h2 class="kop text-[34px] md:text-[46px]">Eerlijk tarief, geen verrassingen achteraf.</h2>
+      <p class="mt-5 text-[18px] leading-relaxed text-grijs max-w-[36rem]">Je weet precies wat je betaalt. Kies je voor een pakket, dan krijg je nu tot €275 korting. Betalen in termijnen kan altijd, en lessen in de avond of op zaterdag kosten niets extra. De proefles is helemaal gratis en zit nergens aan vast.</p>
+      <ul class="mt-7 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-[16px] font-medium">
+        <li class="flex gap-3"><span class="lbord w-6 h-6 self-start mt-px rounded text-[13px] font-bold shrink-0">✓</span>Gratis proefles</li>
+        <li class="flex gap-3"><span class="lbord w-6 h-6 self-start mt-px rounded text-[13px] font-bold shrink-0">✓</span>Betalen in termijnen</li>
+        <li class="flex gap-3"><span class="lbord w-6 h-6 self-start mt-px rounded text-[13px] font-bold shrink-0">✓</span>Avond en zaterdag zonder meerkosten</li>
+        <li class="flex gap-3"><span class="lbord w-6 h-6 self-start mt-px rounded text-[13px] font-bold shrink-0">✓</span>WRM-erkende instructeur</li>
+      </ul>
+      <a href="#contact" class="btn btn-merk mt-8 text-[17px]">Vraag je gratis proefles aan</a>
+    </div>
+  </div>
+</section>
+
+<!-- Speciale lessen -->
+<section id="lessen" class="max-w-6xl mx-auto px-5 md:px-8 pt-24 md:pt-32">
+  <div class="grid md:grid-cols-12 gap-6 items-end">
+    <h2 class="kop text-[34px] md:text-[46px] md:col-span-7">Elke leerling is anders. Zo les je bij ons.</h2>
+    <p class="md:col-span-5 text-[17px] leading-relaxed text-grijs">Automaat, spoed, faalangst of ADHD en autisme. Kies wat bij je past. In de proefles bespreken we samen je wensen en ervaring, en maken we meteen een lesplan.</p>
+  </div>
+
+  <div class="mt-12 grid lg:grid-cols-12 gap-6">
+    <!-- Automaat met foto -->
+    <article class="lg:col-span-7 bg-white rounded-2xl overflow-hidden grid sm:grid-cols-2">
+      <img src="assets/google-03.jpg" alt="Drie lesauto's van SlaagPro naast elkaar: een Ford, een Tesla en een Audi" class="w-full h-56 sm:h-full object-cover object-[50%_75%]">
+      <div class="p-7">
+        <h3 class="kop-smal text-[24px]">Automaat</h3>
+        <p class="mt-2 text-grijs">Geen koppeling, geen schakelen. Je leert rijden in een Tesla, handig als je straks elektrisch gaat rijden.</p>
+        <p class="mt-4 font-semibold text-diep">Zelfde prijs als schakel.</p>
+      </div>
+    </article>
+    <article class="lg:col-span-5 bg-asfalt text-white rounded-2xl p-7 md:p-9 flex flex-col">
+      <h3 class="kop-smal text-[24px]">Spoedcursus</h3>
+      <p class="mt-2 text-white/75">Geen wachtlijst en snel starten. Je rijdt meerdere lessen per week en we plannen je examen slim rond het CBR.</p>
+      <p class="mt-auto pt-6 font-semibold text-merk">Geen spoedtoeslag.</p>
+    </article>
+    <article class="lg:col-span-6 bg-white rounded-2xl p-7 md:p-9">
+      <h3 class="kop-smal text-[24px]">Bij faalangst</h3>
+      <p class="mt-2 text-grijs">Eén vaste, geduldige instructeur en leren in je eigen tempo. Je proefles is geen test. En als het zover is, helpen we je met het faalangstexamen van het CBR.</p>
+    </article>
+    <article class="lg:col-span-6 bg-white rounded-2xl p-7 md:p-9">
+      <h3 class="kop-smal text-[24px]">Bij ADHD of autisme</h3>
+      <p class="mt-2 text-grijs">In stilte rijden mag. We doen één ding tegelijk, in vaste stappen, en je neemt pauze wanneer jij wilt. Een CBR-keuring is niet meer nodig.</p>
+    </article>
+  </div>
+  <p class="mt-8 text-[17px] text-grijs max-w-3xl">Ook voor <strong class="text-asfalt">opfrislessen en rijangst</strong>, <strong class="text-asfalt">2toDrive vanaf 16,5 jaar</strong> en als je <strong class="text-asfalt">gezakt bent of wilt overstappen</strong> van een andere rijschool.</p>
+</section>
+
+<!-- Stappen -->
+<section class="max-w-6xl mx-auto px-5 md:px-8 pt-24 md:pt-32">
+  <h2 class="kop text-[34px] md:text-[46px] max-w-2xl">In vier stappen naar je rijbewijs.</h2>
+  <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+    <li>
+      <span class="lbord w-14 rounded-lg kop text-[28px]">1</span>
+      <h3 class="kop-smal text-[20px] mt-5">Gratis proefles</h3>
+      <p class="mt-2 text-grijs">Vrijblijvend kennismaken en kijken waar je staat. Je rijdt vaak al dezelfde week.</p>
+    </li>
+    <li>
+      <span class="lbord w-14 rounded-lg kop text-[28px]">2</span>
+      <h3 class="kop-smal text-[20px] mt-5">Lesplan op maat</h3>
+      <p class="mt-2 text-grijs">Een programma op jouw niveau, ingepland rond school, stage of werk.</p>
+    </li>
+    <li>
+      <span class="lbord w-14 rounded-lg kop text-[28px]">3</span>
+      <h3 class="kop-smal text-[20px] mt-5">Vaste begeleiding</h3>
+      <p class="mt-2 text-grijs">Elke les dezelfde instructeur, die rustig blijft en opbouwende feedback geeft.</p>
+    </li>
+    <li>
+      <span class="lbord w-14 rounded-lg kop text-[28px]">4</span>
+      <h3 class="kop-smal text-[20px] mt-5">Rijbewijs halen</h3>
+      <p class="mt-2 text-grijs">Je gaat goed voorbereid het examen in. We leren je niet alleen rijden, we leren je slagen.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- Waarom -->
+<section class="pt-24 md:pt-32">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-6 rounded-2xl overflow-hidden aspect-[4/3]">
+      <img src="assets/google-05.jpg" alt="Twee lesauto's van SlaagPro, een Tesla en een Audi, voor een paleistuin met fontein" class="w-full h-full object-cover object-right-bottom">
+    </div>
+    <div class="lg:col-span-6">
+      <h2 class="kop text-[34px] md:text-[46px]">Waarom Apeldoorn voor SlaagPro kiest.</h2>
+      <dl class="mt-9 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+        <div>
+          <dt class="kop-smal text-[19px]">Geen wachtlijst</dt>
+          <dd class="mt-1.5 text-grijs">Maanden wachten? Niet hier. Plan een proefles en je rijdt al deze week.</dd>
+        </div>
+        <div>
+          <dt class="kop-smal text-[19px]">Rust en geduld</dt>
+          <dd class="mt-1.5 text-grijs">We passen het tempo aan op jou, zodat je echt leert rijden en niet alleen examenstof stampt.</dd>
+        </div>
+        <div>
+          <dt class="kop-smal text-[19px]">Les wanneer het jou past</dt>
+          <dd class="mt-1.5 text-grijs">Ook 's avonds en op zaterdag, zonder meerkosten. Wij plannen om jou heen.</dd>
+        </div>
+        <div>
+          <dt class="kop-smal text-[19px]">Alles helder vooraf</dt>
+          <dd class="mt-1.5 text-grijs">All-inclusive pakketten zonder verborgen kosten, met begeleiding tot aan je examen.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Ervaringen -->
+<section id="ervaringen" class="max-w-6xl mx-auto px-5 md:px-8 pt-24 md:pt-32 pb-24 md:pb-32">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <h2 class="kop text-[34px] md:text-[46px] max-w-xl">Wat leerlingen zeggen.</h2>
+    <p class="flex items-baseline gap-3">
+      <span class="kop text-[56px] text-diep">4,9</span>
+      <span class="text-grijs leading-snug">uit 215 reviews<br>op Google</span>
+    </p>
+  </div>
+
+  <div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-6 [&>*]:mb-6 [&>*]:break-inside-avoid">
+    <figure class="bg-white rounded-2xl p-7">
+      <blockquote class="text-[17px] leading-relaxed">"Echt een top ervaring gehad! Vandaag in één keer mijn rijbewijs gehaald dankzij de goede lessen van SlaagPro. Ik voelde me elke les op mijn gemak en ben met veel zelfvertrouwen het examen in gegaan. Super blij mee!"</blockquote>
+      <figcaption class="mt-5 font-semibold">Mahdis Asgharzadeh</figcaption>
+    </figure>
+    <img src="assets/google-07.jpg" alt="Geslaagde leerling lachend naast de SlaagPro-lesauto" class="w-full rounded-2xl aspect-[4/5] object-cover object-[30%_60%]">
+    <figure class="bg-asfalt text-white rounded-2xl p-7">
+      <blockquote class="text-[17px] leading-relaxed">"Lessen bij SlaagPro is echt een feestje. Er hangt altijd een relaxte sfeer in de auto, wat super fijn is als je het in het begin een beetje spannend vindt. De instructeur blijft altijd rustig, geeft opbouwende feedback en gelooft echt in je. Ik voel me hier ontzettend goed begeleid!"</blockquote>
+      <figcaption class="mt-5 font-semibold">Mikka Jeurnincj</figcaption>
+    </figure>
+    <figure class="bg-white rounded-2xl p-7">
+      <p class="kop-smal text-[20px] text-diep">In 1x geslaagd!</p>
+      <blockquote class="mt-2 text-[17px] leading-relaxed">"Top rijschool! Super fijne, duidelijke lessen gehad en geweldig begeleid. Dankzij de goede voorbereiding in één keer mijn rijbewijs gehaald. Absoluut een aanrader!"</blockquote>
+      <figcaption class="mt-5 font-semibold">Megan</figcaption>
+    </figure>
+    <img src="assets/google-02.jpg" alt="Geslaagde leerling met duimen omhoog naast de SlaagPro-lesauto" class="hidden md:block w-full rounded-2xl aspect-square object-cover object-[40%_70%]">
+    <figure class="bg-white rounded-2xl p-7">
+      <blockquote class="text-[17px] leading-relaxed">"Een enorme aanrader voor iedereen die op zoek is naar een fijne en leuke rijschool!! De lessen waren altijd erg gezellig, grappig, duidelijk en leerzaam. Dankzij de goede begeleiding voelde ik me goed voorbereid op het examen en ben ik in 1 keer geslaagd!! :)"</blockquote>
+      <figcaption class="mt-5 font-semibold">Marit Oosterkamp</figcaption>
+    </figure>
+    <img src="assets/google-04.jpg" alt="Geslaagde leerling houdt het SlaagPro-daklicht vast voor de lesauto" class="w-full rounded-2xl aspect-[4/5] object-cover object-[50%_70%]">
+  </div>
+</section>
+
+<!-- Contact / proefles -->
+<section id="contact" class="bg-asfalt text-white">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-7">
+      <h2 class="kop text-[36px] md:text-[52px]">Plan je gratis proefles.</h2>
+      <p class="mt-4 text-[18px] text-white/75 max-w-[32rem]">Laat je gegevens achter, dan nemen we binnen 24 uur contact met je op. Geen verplichtingen.</p>
+      <form action="mailto:info@slaagpro.nl" method="post" enctype="text/plain" class="mt-9 grid sm:grid-cols-2 gap-4">
+        <label class="block"><span class="block text-[14px] font-semibold mb-1.5 text-white/85">Naam</span><input class="veld" name="naam" required autocomplete="name"></label>
+        <label class="block"><span class="block text-[14px] font-semibold mb-1.5 text-white/85">Telefoon</span><input class="veld" name="telefoon" type="tel" required autocomplete="tel"></label>
+        <label class="block sm:col-span-2"><span class="block text-[14px] font-semibold mb-1.5 text-white/85">E-mail</span><input class="veld" name="email" type="email" autocomplete="email"></label>
+        <fieldset class="sm:col-span-2">
+          <legend class="text-[14px] font-semibold mb-2 text-white/85">Ik wil lessen in een</legend>
+          <div class="flex gap-3">
+            <label class="flex-1 flex items-center gap-3 veld cursor-pointer has-[:checked]:border-merk"><input type="radio" name="auto" value="schakel" class="accent-[#3787CB]" checked> Schakelauto</label>
+            <label class="flex-1 flex items-center gap-3 veld cursor-pointer has-[:checked]:border-merk"><input type="radio" name="auto" value="automaat" class="accent-[#3787CB]"> Automaat</label>
+          </div>
+        </fieldset>
+        <label class="block sm:col-span-2"><span class="block text-[14px] font-semibold mb-1.5 text-white/85">Iets wat we moeten weten? <span class="font-normal text-white/50">(mag leeg)</span></span><textarea class="veld" name="bericht" rows="3" placeholder="Bijvoorbeeld faalangst, eerder gezakt of je beschikbaarheid"></textarea></label>
+        <div class="sm:col-span-2"><button class="btn btn-merk w-full sm:w-auto text-[17px]">Proefles aanvragen</button></div>
+      </form>
+    </div>
+
+    <div class="lg:col-span-5 lg:pl-6 lg:border-l border-white/10 space-y-9">
+      <div>
+        <h3 class="kop-smal text-[20px]">Liever direct contact?</h3>
+        <a href="tel:+31638858531" class="kop block text-[34px] mt-3 hover:text-merk">06 38858531</a>
+        <a href="mailto:info@slaagpro.nl" class="block mt-1 text-[18px] text-white/80 underline underline-offset-4 decoration-white/30 hover:decoration-white">info@slaagpro.nl</a>
+      </div>
+      <div>
+        <h3 class="kop-smal text-[20px]">Adres</h3>
+        <a href="https://www.google.com/maps/search/?api=1&query=Kruizemuntstraat+667+7322+MB+Apeldoorn" class="block mt-2 text-white/80 hover:text-white">Kruizemuntstraat 667<br>7322 MB Apeldoorn</a>
+      </div>
+      <div>
+        <h3 class="kop-smal text-[20px]">Bereikbaar</h3>
+        <dl class="mt-2 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-white/80 tabular-nums">
+          <dt>Maandag t/m zaterdag</dt><dd>08:00 tot 21:00</dd>
+          <dt>Zondag</dt><dd>12:00 tot 18:00</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-asfalt2 text-white/60 text-[14px]">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-8 flex flex-col sm:flex-row gap-4 justify-between">
+    <span class="woordmerk text-[20px] text-white">S<span class="lbord">L</span>aag<span class="text-merk">Pro</span></span>
+    <span>Rijschool SlaagPro, Kruizemuntstraat 667, Apeldoorn</span>
+  </div>
+</footer>
+
+<!-- Mobiel: altijd bellen of proefles binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-asfalt/95 backdrop-blur border-t border-white/10 p-3 grid grid-cols-2 gap-3">
+  <a href="tel:+31638858531" class="btn btn-rand !py-3">Bellen</a>
+  <a href="#contact" class="btn btn-merk !py-3">Gratis proefles</a>
+</div>
+
+</body>
+</html>
