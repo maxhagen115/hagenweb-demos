@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nijman Installatie & Montage | Totaalinstallateur in Zutphen</title>
+<meta name="description" content="Elektra, sanitair, verwarming, netwerkbekabeling en noodverlichting in Zutphen en omgeving. Bel Sander Nijman: 06 45868931.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2320262B'/%3E%3Cpath d='M9 24V8h3l8 10.5V8h3v16h-3L12 13.5V24z' fill='%23fff'/%3E%3Crect x='0' y='28' width='32' height='4' fill='%23B8322A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        beton: '#E6E4DF', kalk: '#F4F3F0', grafiet: '#20262B', grafiet2: '#2A3137',
+        staal: '#5F676C', rood: '#B8322A', rooddonker: '#962820'
+      },
+      fontFamily: {
+        kop: ['Archivo', 'system-ui', 'sans-serif'],
+        tekst: ['"Source Sans 3"', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", system-ui, sans-serif; }
+  .kop { font-family: Archivo, system-ui, sans-serif; font-stretch: 118%; font-variation-settings: "wdth" 118; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance; }
+  .kop-smal { font-family: Archivo, system-ui, sans-serif; font-variation-settings: "wdth" 100; font-weight: 700; letter-spacing: -0.01em; }
+  .label { font-family: Archivo, system-ui, sans-serif; font-variation-settings: "wdth" 112; font-weight: 600; letter-spacing: .01em; }
+  p { text-wrap: pretty; }
+  .schuin { clip-path: polygon(0 0, calc(100% - 4.5rem) 0, 100% 4.5rem, 100% 100%, 0 100%); }
+  .schuin-klein { clip-path: polygon(0 0, calc(100% - 2rem) 0, 100% 2rem, 100% 100%, 0 100%); }
+  .korrel { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  /* De rode kabel langs de diensten */
+  .kabel { position: relative; }
+  .kabel::before { content: ""; position: absolute; left: 7px; top: .6rem; bottom: 2.4rem; width: 3px; background: #B8322A; border-radius: 2px; }
+  .punt { position: absolute; left: 0; top: .45rem; width: 17px; height: 17px; border-radius: 50%; background: #20262B; border: 3px solid #B8322A; }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #B8322A; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="bg-beton text-grafiet antialiased pb-[4.5rem] md:pb-0">
+
+<!-- Demobalk -->
+<div class="bg-grafiet text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor Nijman Installatie &amp; Montage, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-white/70">Hagenweb</a>
+</div>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-12 focus:left-4 bg-white px-4 py-2 z-50">Naar de inhoud</a>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-beton/90 backdrop-blur border-b border-grafiet/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-baseline gap-2 leading-none" aria-label="Nijman Installatie en Montage, naar boven">
+      <span class="kop text-[1.6rem] md:text-[1.9rem] tracking-tight">Nijman<span class="text-rood">.</span></span>
+      <span class="label text-[11px] md:text-xs text-staal hidden sm:inline">Installatie &amp; Montage</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-rood transition-colors">Diensten</a>
+      <a href="#werk" class="hover:text-rood transition-colors">Werk</a>
+      <a href="#over" class="hover:text-rood transition-colors">Over Sander</a>
+      <a href="#contact" class="hover:text-rood transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31645868931" class="knop hidden md:inline-flex items-center gap-2 bg-grafiet hover:bg-rood text-white px-4 py-2.5 md:px-5 md:py-3 text-sm md:text-[15px] font-semibold">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span class="hidden sm:inline">06 45868931</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="korrel relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-8 pb-14 md:pt-16 md:pb-24 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+    <div class="md:col-span-7 lg:col-span-6 relative z-10">
+      <p class="label text-sm text-staal mb-4 md:mb-6">Totaalinstallateur in Zutphen</p>
+      <h1 class="kop text-[2.4rem] sm:text-6xl lg:text-[5.2rem]">Eén vakman voor alles achter de muur.</h1>
+      <p class="mt-5 md:mt-7 text-lg md:text-xl text-grafiet/75 max-w-[30rem] leading-relaxed">
+        Elektra, sanitair, verwarming en netwerk. Sander Nijman ontwerpt, legt aan, onderhoudt en repareert, persoonlijk en met oog voor detail.
+      </p>
+      <div class="mt-7 md:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31645868931" class="knop inline-flex items-center gap-3 bg-rood hover:bg-rooddonker text-white pl-5 pr-7 py-4 md:py-5 text-lg md:text-xl font-semibold shadow-[0_10px_30px_-12px_rgba(150,40,32,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          Bel 06 45868931
+        </a>
+        <a href="mailto:info@installatiebedrijfnijman.nl" class="font-semibold underline decoration-rood decoration-2 underline-offset-[6px] hover:text-rood transition-colors">Of stuur een mail</a>
+      </div>
+      <p class="mt-7 flex items-center gap-2 text-[15px] text-grafiet/70">
+        <span class="text-rood tracking-[2px]" aria-hidden="true">★★★★<span class="text-rood/35">★</span></span>
+        <span><strong class="text-grafiet">4,5</strong> op Google, uit 2 reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-5 lg:col-span-6 relative">
+      <div class="absolute -right-6 -bottom-6 w-2/3 h-2/3 bg-rood/90 schuin hidden md:block" aria-hidden="true"></div>
+      <img src="assets/site-01.jpg" alt="Open verdeelkast met nieuw aangesloten groepen en bekabeling" class="schuin relative w-full h-[24rem] sm:h-[28rem] md:h-[36rem] lg:h-[40rem] object-cover object-[50%_80%] md:object-[50%_62%]">
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-grafiet text-white scroll-mt-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5 md:sticky md:top-32 self-start">
+      <h2 class="kop text-4xl md:text-5xl lg:text-6xl">Van ontwerp tot reparatie.</h2>
+      <p class="mt-6 text-lg text-white/70 max-w-md leading-relaxed">
+        U heeft één aanspreekpunt voor alle installaties in huis of bedrijf. Groot of klein, de oplossing wordt afgestemd op wat u nodig heeft.
+      </p>
+      <a href="tel:+31645868931" class="knop mt-8 inline-flex items-center gap-2 border-2 border-white/30 hover:border-white px-5 py-3 font-semibold">Bespreek uw klus: 06 45868931</a>
+    </div>
+
+    <ol class="md:col-span-7 kabel space-y-12 md:space-y-14 pl-10 md:pl-12" role="list">
+      <li class="relative">
+        <span class="punt -left-10 md:-left-12" aria-hidden="true"></span>
+        <h3 class="kop-smal text-2xl md:text-[1.9rem]">Elektrische installaties</h3>
+        <p class="mt-3 text-white/70 text-lg leading-relaxed max-w-xl">Efficiënt en betrouwbaar aangelegd, van het eerste ontwerp tot de laatste aansluiting in de groepenkast.</p>
+      </li>
+      <li class="relative">
+        <span class="punt -left-10 md:-left-12" aria-hidden="true"></span>
+        <h3 class="kop-smal text-2xl md:text-[1.9rem]">Sanitair en badkamers</h3>
+        <p class="mt-3 text-white/70 text-lg leading-relaxed max-w-xl">Badkamers en toiletten op maat die uw ruimte echt veranderen. Ook voor al het andere sanitaire werk bent u hier aan het juiste adres.</p>
+      </li>
+      <li class="relative">
+        <span class="punt -left-10 md:-left-12" aria-hidden="true"></span>
+        <h3 class="kop-smal text-2xl md:text-[1.9rem]">Verwarming</h3>
+        <p class="mt-3 text-white/70 text-lg leading-relaxed max-w-xl">Een breed aanbod, of het nu gaat om vervangen, verduurzamen of uitbreiden.</p>
+        <ul class="mt-4 flex flex-wrap gap-2 text-[15px]" role="list">
+          <li class="bg-white/10 px-3 py-1.5">Cv-ketel</li>
+          <li class="bg-white/10 px-3 py-1.5">Hybride cv-ketel</li>
+          <li class="bg-white/10 px-3 py-1.5">Warmtepomp</li>
+          <li class="bg-white/10 px-3 py-1.5">Radiatoren</li>
+          <li class="bg-white/10 px-3 py-1.5">Vloerverwarming</li>
+          <li class="bg-white/10 px-3 py-1.5">Warmtepompboiler</li>
+        </ul>
+      </li>
+      <li class="relative">
+        <span class="punt -left-10 md:-left-12" aria-hidden="true"></span>
+        <h3 class="kop-smal text-2xl md:text-[1.9rem]">Data- en netwerkbekabeling</h3>
+        <p class="mt-3 text-white/70 text-lg leading-relaxed max-w-xl">Hoogwaardige bekabeling voor een snel en betrouwbaar netwerk, inclusief data- en telefoonverbindingen.</p>
+      </li>
+      <li class="relative">
+        <span class="punt -left-10 md:-left-12" aria-hidden="true"></span>
+        <h3 class="kop-smal text-2xl md:text-[1.9rem]">Noodverlichting</h3>
+        <p class="mt-3 text-white/70 text-lg leading-relaxed max-w-xl">Zodat uw personeel en klanten veilig de weg vinden, ook als de stroom uitvalt.</p>
+      </li>
+      <li class="relative">
+        <span class="punt -left-10 md:-left-12" aria-hidden="true"></span>
+        <h3 class="kop-smal text-2xl md:text-[1.9rem]">Onderhoud en reparatie</h3>
+        <p class="mt-3 text-white/70 text-lg leading-relaxed max-w-xl">Snel en deskundig onderhoud en herstel van al uw installaties.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="scroll-mt-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-end">
+      <figure class="md:col-span-8">
+        <img src="assets/site-02.jpg" alt="Inloopdouche met houtlook-tegels en grote grijze tegels" class="w-full aspect-[4/3] md:aspect-[16/10] object-cover object-left schuin-klein" loading="lazy">
+        <figcaption class="mt-4 grid sm:grid-cols-[auto_1fr] gap-x-8 gap-y-2 items-baseline">
+          <span class="kop-smal text-xl">Badkamer op maat</span>
+          <span class="text-grafiet/70 max-w-lg">Inloopdouche met thermostaatkraan, houtlook-tegels en strak afgewerkte naden.</span>
+        </figcaption>
+      </figure>
+      <div class="md:col-span-4 flex flex-col gap-8">
+        <img src="assets/google-01.jpg" alt="Aansluiting op locatie met gereedschapskoffers" class="w-full aspect-[4/5] object-cover object-[50%_40%]" loading="lazy">
+        <div class="border-l-4 border-rood pl-5">
+          <p class="kop-smal text-xl">Ook voor reparaties</p>
+          <p class="mt-2 text-grafiet/75 leading-relaxed">Lekkage, storing of een installatie die niet meer doet wat hij moet? Bel, dan komen we kijken.</p>
+          <a href="tel:+31645868931" class="mt-3 inline-block font-semibold underline decoration-rood decoration-2 underline-offset-[6px] hover:text-rood">06 45868931</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Over -->
+<section id="over" class="bg-kalk scroll-mt-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 md:gap-10">
+    <div class="md:col-span-6">
+      <p class="label text-sm text-staal mb-4">Sander Nijman</p>
+      <h2 class="kop text-4xl md:text-5xl lg:text-[3.6rem]">Persoonlijk, tot in het detail.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-grafiet/80 max-w-xl">
+        Bij Nijman Installatie &amp; Montage heeft u direct contact met een ervaren totaalinstallateur. We denken mee met uw situatie, werken netjes en zorgen dat het resultaat doet wat u ervan verwacht.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed text-grafiet/80 max-w-xl">
+        Op al onze installaties en service zit garantie. Gaat er onverhoopt toch iets mis, dan herstellen of vervangen we het kosteloos.
+      </p>
+    </div>
+    <dl class="md:col-span-6 md:pl-8 divide-y divide-grafiet/15 border-y border-grafiet/15 self-center">
+      <div class="py-6 md:py-7 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-6">
+        <dt class="kop-smal text-xl">Kennis en ervaring</dt>
+        <dd class="text-grafiet/75 leading-relaxed">Jarenlange ervaring in installatie en montage, van elektra tot verwarming.</dd>
+      </div>
+      <div class="py-6 md:py-7 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-6">
+        <dt class="kop-smal text-xl">Maatwerk</dt>
+        <dd class="text-grafiet/75 leading-relaxed">Voor grote en kleine projecten, altijd afgestemd op wat u als klant nodig heeft.</dd>
+      </div>
+      <div class="py-6 md:py-7 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-6">
+        <dt class="kop-smal text-xl">Goed materiaal</dt>
+        <dd class="text-grafiet/75 leading-relaxed">Hoogwaardige materialen en vakwerk, voor installaties die lang meegaan.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="korrel">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+      <h2 class="kop text-4xl md:text-5xl">Wat klanten zeggen.</h2>
+      <p class="flex items-center gap-3">
+        <span class="kop text-5xl">4,5</span>
+        <span class="text-[15px] leading-tight text-grafiet/70"><span class="text-rood tracking-[2px]" aria-hidden="true">★★★★<span class="text-rood/35">★</span></span><br>uit 2 Google-reviews</span>
+      </p>
+    </div>
+    <div class="grid md:grid-cols-12 gap-10 md:gap-8">
+      <blockquote class="md:col-span-7 bg-grafiet text-white p-8 md:p-12 schuin-klein">
+        <span class="text-rood tracking-[3px]" aria-label="5 van 5 sterren">★★★★★</span>
+        <p class="kop-smal mt-5 text-2xl md:text-[2rem] leading-snug">"Topper. Een goeie totaalinstallateur, zeer veel kennis en ervaring, alleen maar naar tevredenheid."</p>
+        <footer class="mt-6 text-white/70">Mvk Martin Visschers Klussenbedrijf</footer>
+      </blockquote>
+      <blockquote class="md:col-span-5 md:mt-16 border-t-4 border-rood pt-7">
+        <span class="text-rood tracking-[3px]" aria-label="4 van 5 sterren">★★★★<span class="text-rood/35">★</span></span>
+        <p class="kop-smal mt-5 text-2xl leading-snug">"Goede reparatie stadsverwarming. Komen hun afspraken na."</p>
+        <footer class="mt-6 text-grafiet/70">Jan Pot</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-grafiet text-white scroll-mt-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-14 md:gap-10">
+    <div class="md:col-span-6">
+      <h2 class="kop text-4xl md:text-5xl lg:text-6xl">Even overleggen?</h2>
+      <p class="mt-5 text-lg text-white/70 max-w-md">Bel voor advies of een offerte op maat. Liever schriftelijk? Mail of gebruik het formulier.</p>
+      <a href="tel:+31645868931" class="kop block mt-10 text-4xl sm:text-5xl lg:text-6xl hover:text-rood transition-colors">06 45868931</a>
+      <a href="mailto:info@installatiebedrijfnijman.nl" class="inline-block mt-4 text-lg underline decoration-rood decoration-2 underline-offset-[6px] hover:text-white/80 break-all">info@installatiebedrijfnijman.nl</a>
+      <div class="mt-12 grid sm:grid-cols-2 gap-8 text-white/80">
+        <div>
+          <h3 class="kop-smal text-white mb-2">Adres</h3>
+          <address class="not-italic leading-relaxed">Sloetstraat 53<br>7203 GK Zutphen</address>
+        </div>
+        <div>
+          <h3 class="kop-smal text-white mb-2">Bereikbaar</h3>
+          <p class="leading-relaxed tabular-nums">Ma t/m vr: 08:00 tot 16:30<br>Za en zo: gesloten</p>
+        </div>
+      </div>
+    </div>
+    <form class="md:col-span-6 bg-grafiet2 p-6 sm:p-10 schuin-klein space-y-5" action="mailto:info@installatiebedrijfnijman.nl" method="post" enctype="text/plain" id="formulier">
+      <h3 class="kop-smal text-2xl">Stuur een bericht</h3>
+      <div>
+        <label for="naam" class="block text-sm font-semibold mb-2">Naam</label>
+        <input id="naam" name="naam" required autocomplete="name" class="w-full bg-white/5 border border-white/20 focus:border-white px-4 py-3 text-white placeholder-white/40">
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="email" class="block text-sm font-semibold mb-2">E-mail</label>
+          <input id="email" name="email" type="email" required autocomplete="email" class="w-full bg-white/5 border border-white/20 focus:border-white px-4 py-3 text-white">
+        </div>
+        <div>
+          <label for="tel" class="block text-sm font-semibold mb-2">Telefoon <span class="font-normal text-white/50">(optioneel)</span></label>
+          <input id="tel" name="telefoon" type="tel" autocomplete="tel" class="w-full bg-white/5 border border-white/20 focus:border-white px-4 py-3 text-white">
+        </div>
+      </div>
+      <div>
+        <label for="bericht" class="block text-sm font-semibold mb-2">Waar kunnen we mee helpen?</label>
+        <textarea id="bericht" name="bericht" rows="4" required class="w-full bg-white/5 border border-white/20 focus:border-white px-4 py-3 text-white" placeholder="Bijvoorbeeld: nieuwe groepenkast, lekkage, offerte badkamer"></textarea>
+      </div>
+      <button type="submit" class="knop w-full sm:w-auto bg-rood hover:bg-rooddonker px-7 py-4 font-semibold">Bericht versturen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-grafiet text-white/60 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row gap-3 justify-between text-sm">
+    <p><span class="kop text-white text-base">Nijman<span class="text-rood">.</span></span> Installatie &amp; Montage, Sloetstraat 53, Zutphen</p>
+    <p><a href="tel:+31645868931" class="hover:text-white">06 45868931</a> <span class="mx-2">/</span> <a href="mailto:info@installatiebedrijfnijman.nl" class="hover:text-white">info@installatiebedrijfnijman.nl</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-grafiet/95 backdrop-blur p-3 flex gap-3">
+  <a href="tel:+31645868931" class="knop flex-1 flex items-center justify-center gap-2 bg-rood text-white py-3.5 font-semibold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+    Bel 06 45868931
+  </a>
+  <a href="mailto:info@installatiebedrijfnijman.nl" class="knop flex items-center justify-center px-5 border border-white/30 text-white font-semibold">Mail</a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  document.getElementById('formulier').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    const body = `Naam: ${f.naam.value}\nE-mail: ${f.email.value}\nTelefoon: ${f.telefoon.value}\n\n${f.bericht.value}`;
+    location.href = `mailto:info@installatiebedrijfnijman.nl?subject=${encodeURIComponent('Vraag via de website')}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+</body>
+</html>
