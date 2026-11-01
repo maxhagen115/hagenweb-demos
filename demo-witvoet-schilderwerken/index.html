@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Witvoet Schilderwerken | Schilder in Zutphen</title>
+  <meta name="description" content="Witvoet Schilderwerken uit Zutphen: schilderwerk binnen en buiten, aanpak van houtrot en kleuradvies. Bel 06 51810634.">
+  <meta property="og:title" content="Witvoet Schilderwerken, schilder in Zutphen">
+  <meta property="og:image" content="assets/site-01.jpg">
+  <link rel="icon" href="assets/logo-oud.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lak: '#FFFFFF',
+            steen: '#ECEDEA',
+            antraciet: '#1E2124',
+            grijs: '#5B6166',
+            rood: { DEFAULT: '#C62A2F', donker: '#A32025' }
+          },
+          fontFamily: {
+            kop: ['Archivo', 'system-ui', 'sans-serif'],
+            tekst: ['"Source Serif 4"', 'Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "Source Serif 4", Georgia, serif; }
+    .kop { font-family: Archivo, system-ui, sans-serif; font-stretch: 125%; font-weight: 800; letter-spacing: -0.02em; }
+    .kop-smal { font-family: Archivo, system-ui, sans-serif; font-stretch: 100%; }
+    h1, h2, h3, blockquote p { text-wrap: balance; }
+    p { text-wrap: pretty; }
+
+    /* Gevelvorm uit het logo */
+    .gevel { clip-path: polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%); }
+    .bus img { transform: scale(1.09); transform-origin: 50% 46%; }
+
+    /* Banners van de oude site: alleen de linkerhelft, zonder ingebakken tekst */
+    .uitsnede { object-fit: cover; object-position: 0% 50%; }
+
+    .knop { transition: background-color .2s, transform .15s; }
+    .knop:active { transform: translateY(1px); }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid #C62A2F; outline-offset: 3px;
+    }
+
+    /* Daklijn tekent zichzelf alleen als JS draait; zonder JS staat hij er gewoon */
+    .js .daklijn path { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: teken 1.4s .3s cubic-bezier(.6,.1,.2,1) forwards; }
+    @keyframes teken { to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .js .daklijn path { animation: none; stroke-dashoffset: 0; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-lak text-antraciet antialiased pb-20 md:pb-0">
+
+  <a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-antraciet text-white px-4 py-2 z-50">Naar de inhoud</a>
+
+  <!-- Demo-balk -->
+  <div class="bg-antraciet text-white/80 text-[11.5px] sm:text-[13px] kop-smal">
+    <div class="max-w-6xl mx-auto px-5 py-2 text-center">
+      Demo voor Witvoet Schilderwerken, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-white/90">Hagenweb</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="max-w-6xl mx-auto px-5 pt-5 md:pt-7 flex items-center justify-between gap-4">
+    <a href="#" class="flex items-end gap-2.5" aria-label="Witvoet Schilderwerken, naar boven">
+      <svg viewBox="0 0 44 30" class="w-10 md:w-11 h-auto shrink-0 -mb-0.5" aria-hidden="true">
+        <path d="M3 29 V15 H8 V9 H11 V12.5 L22 3 L41 16" fill="none" stroke="#C62A2F" stroke-width="3.2" stroke-linejoin="miter" stroke-linecap="square"/>
+      </svg>
+      <span class="leading-none">
+        <span class="block kop-smal uppercase text-[10px] md:text-[11px] font-bold tracking-[0.18em] text-grijs">Schilderwerken</span>
+        <span class="block kop text-[22px] md:text-[26px] tracking-tight">WITVOET</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 kop-smal font-semibold text-[15px]">
+      <a href="#werk" class="hover:text-rood transition-colors">Wat we doen</a>
+      <a href="#review" class="hover:text-rood transition-colors">Ervaringen</a>
+      <a href="#contact" class="hover:text-rood transition-colors">Contact</a>
+      <a href="tel:+31651810634" class="text-rood">06 51810634</a>
+    </nav>
+    <a href="tel:+31651810634" class="md:hidden kop-smal font-bold text-rood text-[15px]">06 51810634</a>
+  </header>
+
+  <main id="inhoud">
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-5 pt-10 md:pt-14 pb-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+      <div class="md:col-span-7 lg:col-span-6">
+        <p class="kop-smal font-semibold text-grijs text-[15px] mb-4">Schilder in Zutphen</p>
+        <h1 class="kop text-[44px] leading-[0.98] sm:text-6xl lg:text-[76px] lg:leading-[0.95]">Uw huis weer strak in de verf.</h1>
+        <p class="mt-6 text-lg md:text-xl leading-relaxed text-antraciet/80 max-w-[32rem]">
+          Kozijnen, gevel of woonkamer: Witvoet schildert binnen en buiten, pakt houtrot vakkundig aan en denkt graag met u mee over kleur.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a href="tel:+31651810634" class="knop inline-flex items-center gap-3 bg-rood hover:bg-rood-donker text-white kop-smal font-bold text-lg px-7 py-4 rounded-[4px] shadow-[0_10px_24px_-10px_rgba(198,42,47,.7)]">
+            <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Bel 06 51810634
+          </a>
+          <a href="mailto:info@witvoetschilderwerken.nl" class="kop-smal font-semibold underline underline-offset-4 decoration-2 decoration-rood/40 hover:decoration-rood">of stuur een e-mail</a>
+        </div>
+        <p class="mt-8 flex items-center gap-2 text-[15px] text-grijs kop-smal">
+          <span class="text-rood tracking-[0.1em] text-base" aria-hidden="true">★★★★★</span>
+          5 sterren op Google, uit 2 reviews
+        </p>
+      </div>
+
+      <div class="md:col-span-5 lg:col-span-6 relative">
+        <div class="relative mx-auto w-full max-w-[420px] lg:max-w-[460px]">
+          <div class="bus gevel overflow-hidden aspect-[4/5] bg-steen">
+            <img src="assets/site-01.jpg" alt="De witte bus van Witvoet Schilderwerken met ladders op het dak" class="w-full h-full object-cover">
+          </div>
+          <!-- Daklijn uit het logo, losjes over de foto -->
+          <svg class="daklijn absolute -left-5 -top-6 w-[calc(100%+40px)] h-auto pointer-events-none" viewBox="0 0 500 170" aria-hidden="true" preserveAspectRatio="none">
+            <path d="M8 168 V96 H40 V58 H62 V78 L250 8 L492 112" fill="none" stroke="#C62A2F" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wat we doen -->
+    <section id="werk" class="bg-steen">
+      <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+        <div class="md:flex md:items-end md:justify-between gap-10 mb-12 md:mb-16">
+          <h2 class="kop text-4xl md:text-5xl leading-none">Wat Witvoet voor u doet</h2>
+          <p class="mt-4 md:mt-0 text-lg text-antraciet/75 max-w-md">Vakmanschap is meesterschap. Van een enkel kozijn tot het hele huis, binnen en buiten.</p>
+        </div>
+
+        <!-- Schilderwerk -->
+        <article class="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+          <div class="overflow-hidden rounded-[3px] aspect-[3/2]">
+            <img src="assets/site-02.jpg" alt="Een kwast met witte verf op een kozijn naast metselwerk" class="uitsnede w-full h-full" loading="lazy">
+          </div>
+          <div class="md:pr-8">
+            <h3 class="kop text-2xl md:text-3xl">Schilderwerk binnen en buiten</h3>
+            <p class="mt-4 text-lg leading-relaxed text-antraciet/80">Kozijnen, deuren, gevels, plafonds en muren. Goed voorwerk, strakke lijnen en een nette afwerking. Het werk is klaar binnen de tijd die we samen afspreken.</p>
+          </div>
+        </article>
+
+        <!-- Houtrot -->
+        <article class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mt-14 md:mt-20">
+          <div class="overflow-hidden rounded-[3px] aspect-[3/2] md:order-2">
+            <img src="assets/site-03.jpg" alt="Vensterbank met afgebladderde verf en houtrot" class="uitsnede w-full h-full" loading="lazy">
+          </div>
+          <div class="md:order-1 md:pl-8">
+            <h3 class="kop text-2xl md:text-3xl">Houtrot aanpakken</h3>
+            <p class="mt-4 text-lg leading-relaxed text-antraciet/80">Bladdert de verf van uw vensterbank of kozijn en voelt het hout zacht aan? Dan is het tijd. Rot hout wordt professioneel en met precisie hersteld, zodat uw schilderwerk weer een goede basis heeft.</p>
+          </div>
+        </article>
+
+        <!-- Kleuradvies -->
+        <article class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mt-14 md:mt-20">
+          <div class="aspect-[3/2] grid grid-cols-5 gap-1.5 md:gap-2" aria-hidden="true">
+            <div class="flex flex-col gap-1.5 md:gap-2"><span class="flex-1 rounded-[2px] bg-[#F4F3EF]"></span><span class="flex-1 rounded-[2px] bg-[#E3E1DA]"></span><span class="flex-1 rounded-[2px] bg-[#C9C6BC]"></span></div>
+            <div class="flex flex-col gap-1.5 md:gap-2"><span class="flex-1 rounded-[2px] bg-[#D7DDD6]"></span><span class="flex-1 rounded-[2px] bg-[#A9B7AA]"></span><span class="flex-1 rounded-[2px] bg-[#5F7464]"></span></div>
+            <div class="flex flex-col gap-1.5 md:gap-2"><span class="flex-1 rounded-[2px] bg-[#D3DBE0]"></span><span class="flex-1 rounded-[2px] bg-[#8FA3B0]"></span><span class="flex-1 rounded-[2px] bg-[#34495A]"></span></div>
+            <div class="flex flex-col gap-1.5 md:gap-2"><span class="flex-1 rounded-[2px] bg-[#EAD9C8]"></span><span class="flex-1 rounded-[2px] bg-[#C99B78]"></span><span class="flex-1 rounded-[2px] bg-[#8A5A3C]"></span></div>
+            <div class="flex flex-col gap-1.5 md:gap-2"><span class="flex-1 rounded-[2px] bg-[#E9C9C4]"></span><span class="flex-1 rounded-[2px] bg-[#C62A2F]"></span><span class="flex-1 rounded-[2px] bg-[#1E2124]"></span></div>
+          </div>
+          <div class="md:pr-8">
+            <h3 class="kop text-2xl md:text-3xl">Kleuradvies</h3>
+            <p class="mt-4 text-lg leading-relaxed text-antraciet/80">Twijfelt u tussen gebroken wit en net iets warmer? Wij geven u graag kleuradvies, zodat u vooraf weet hoe het wordt.</p>
+          </div>
+        </article>
+
+        <p class="mt-14 md:mt-20 border-t border-antraciet/15 pt-6 text-lg text-antraciet/80 max-w-3xl">
+          <span class="kop-smal font-bold text-antraciet">En ook:</span> een nieuw raam plaatsen, bijvoorbeeld in de keuken. Vraag gerust wat er mogelijk is.
+        </p>
+      </div>
+    </section>
+
+    <!-- Citaat-band -->
+    <section class="relative overflow-hidden bg-rood text-white">
+      <svg class="hidden md:block absolute right-[-60px] bottom-[-10px] w-[620px] opacity-20" viewBox="0 0 500 170" aria-hidden="true">
+        <path d="M8 168 V96 H40 V58 H62 V78 L250 8 L492 112" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="square"/>
+      </svg>
+      <div class="relative max-w-6xl mx-auto px-5 py-16 md:py-24">
+        <p class="kop text-[34px] leading-[1.02] md:text-6xl md:leading-[0.98] max-w-4xl">Een kleine aanpassing kan al een groots effect hebben.</p>
+        <p class="mt-6 text-lg text-white/85 max-w-xl">Een nieuwe kleur op de voordeur, opgeknapte kozijnen: soms is dat al genoeg om uw huis er weer fris uit te laten zien.</p>
+      </div>
+    </section>
+
+    <!-- Review -->
+    <section id="review" class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-12 gap-8 md:gap-10">
+      <div class="md:col-span-4">
+        <h2 class="kop text-4xl md:text-5xl leading-none">Wat klanten zeggen</h2>
+        <p class="mt-5 flex items-center gap-2 kop-smal text-grijs">
+          <span class="text-rood tracking-[0.1em]" aria-hidden="true">★★★★★</span>
+          5 sterren op Google, uit 2 reviews
+        </p>
+      </div>
+      <figure class="md:col-span-8 relative pl-6 md:pl-10 border-l-4 border-rood">
+        <blockquote class="text-xl md:text-2xl leading-relaxed text-antraciet">
+          <p>"Zeer vakkundige schilder, het gevraagde werk was binnen de afgesproken tijd gedaan en het ziet er prima uit.</p>
+          <p class="mt-3">Ook het plaatsten van het nieuwe keukenraam ziet er perfect uit.</p>
+          <p class="mt-3">Van het zomer maar eens laten komen voor de buitenkant van ons huis.</p>
+          <p class="mt-3">Bedankt Gradie!!"</p>
+        </blockquote>
+        <figcaption class="mt-6 kop-smal font-semibold">Youri<span class="font-normal text-grijs">, 5 van 5 sterren op Google</span></figcaption>
+      </figure>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-antraciet text-white">
+      <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-2 gap-12 md:gap-16">
+        <div>
+          <h2 class="kop text-4xl md:text-5xl leading-none">Even overleggen?</h2>
+          <p class="mt-5 text-lg text-white/75 max-w-md">Bel voor een afspraak, een prijsopgave of advies. Liever schrijven? Mail of laat hiernaast een bericht achter.</p>
+          <a href="tel:+31651810634" class="knop mt-8 inline-flex items-center gap-3 bg-rood hover:bg-rood-donker text-white kop-smal font-bold text-lg px-7 py-4 rounded-[4px]">
+            <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Bel 06 51810634
+          </a>
+          <dl class="mt-10 space-y-5 kop-smal">
+            <div>
+              <dt class="text-white/55 text-sm">E-mail</dt>
+              <dd><a href="mailto:info@witvoetschilderwerken.nl" class="text-lg font-semibold underline underline-offset-4 decoration-white/30 hover:decoration-white break-all">info@witvoetschilderwerken.nl</a></dd>
+            </div>
+            <div>
+              <dt class="text-white/55 text-sm">Adres</dt>
+              <dd class="text-lg font-semibold">Engelbertsstraat 4<br>7207 JG Zutphen</dd>
+            </div>
+          </dl>
+        </div>
+
+        <form class="bg-white/[0.06] rounded-[6px] p-6 md:p-8 space-y-5 kop-smal" action="mailto:info@witvoetschilderwerken.nl" method="post" enctype="text/plain">
+          <h3 class="kop text-xl">Stuur een bericht</h3>
+          <div>
+            <label for="naam" class="block text-sm text-white/70 mb-1.5">Naam</label>
+            <input id="naam" name="naam" required class="w-full bg-white text-antraciet rounded-[3px] px-4 py-3 text-base">
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="tel" class="block text-sm text-white/70 mb-1.5">Telefoon</label>
+              <input id="tel" name="telefoon" type="tel" class="w-full bg-white text-antraciet rounded-[3px] px-4 py-3 text-base">
+            </div>
+            <div>
+              <label for="mail" class="block text-sm text-white/70 mb-1.5">E-mail</label>
+              <input id="mail" name="email" type="email" required class="w-full bg-white text-antraciet rounded-[3px] px-4 py-3 text-base">
+            </div>
+          </div>
+          <div>
+            <label for="bericht" class="block text-sm text-white/70 mb-1.5">Wat wilt u laten schilderen?</label>
+            <textarea id="bericht" name="bericht" rows="4" class="w-full bg-white text-antraciet rounded-[3px] px-4 py-3 text-base"></textarea>
+          </div>
+          <button type="submit" class="knop w-full bg-white hover:bg-steen text-antraciet font-bold text-lg px-6 py-3.5 rounded-[4px]">Verstuur bericht</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-antraciet text-white/55 border-t border-white/10 kop-smal text-sm">
+    <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+      <p>Witvoet Schilderwerken, Engelbertsstraat 4, 7207 JG Zutphen</p>
+      <p><a href="tel:+31651810634" class="hover:text-white">06 51810634</a> <span class="mx-2">/</span> <a href="mailto:info@witvoetschilderwerken.nl" class="hover:text-white">info@witvoetschilderwerken.nl</a></p>
+    </div>
+  </footer>
+
+  <!-- Vaste belbalk op mobiel -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-antraciet/10 px-4 py-3 flex gap-3">
+    <a href="tel:+31651810634" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-rood text-white kop-smal font-bold py-3.5 rounded-[4px]">
+      <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Bel direct
+    </a>
+    <a href="mailto:info@witvoetschilderwerken.nl" class="inline-flex items-center justify-center px-5 border-2 border-antraciet/20 rounded-[4px] kop-smal font-semibold">Mail</a>
+  </div>
+</body>
+</html>
