@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Houkamp Klus-&#8197;&#8202;en Schilderbedrijf | Schilder in Zutphen</title>
+<meta name="description" content="Schilderwerk binnen en buiten, behang, gevelonderhoud en houtrotherstel in de regio Zutphen. Bel Houkamp: 06 14224471.">
+<meta property="og:title" content="Houkamp Klus-&#8197;&#8202;en Schilderbedrijf, Zutphen">
+<meta property="og:image" content="assets/web/google-03.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          grafiet: '#2A2A29',
+          logogrijs: '#6B6B69',
+          lakwit: '#F7F7F5',
+          grondverf: '#E6E6E2',
+          oranje: '#F2A35B',
+          oranjedonker: '#B8691F',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Public Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; word-spacing: .04em; }
+  .kop { word-spacing: 0; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; letter-spacing: -0.025em; }
+  .kop-breed { font-stretch: 125%; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Kubusvlakken uit het logo: schuine randen */
+  .vlak-l { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+  .vlak-r { clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%); }
+  .vlak-onder { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+  .schuin-boven { clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%); }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #F2A35B; outline-offset: 3px; }
+
+  .foto { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .tegel:hover .foto { transform: scale(1.04); }
+
+  /* Eén ingang-moment op de hero, alleen als JS draait */
+  .js .hero-in { animation: in .8s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in-2 { animation-delay: .12s; }
+  .js .hero-in-3 { animation-delay: .24s; }
+  .js .hero-beeld { animation: veeg 1s cubic-bezier(.7,0,.2,1) both; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes veeg { from { clip-path: polygon(14% 0, 14% 0, 0 100%, 0 100%); } to { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); } }
+  @media (prefers-reduced-motion: reduce) {
+    .js .hero-in, .js .hero-beeld { animation: none; }
+    .foto, .knop { transition: none; }
+  }
+</style>
+</head>
+<body class="bg-lakwit text-grafiet antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 bg-oranje px-4 py-2 font-semibold">Direct naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-oranje text-grafiet text-center text-[13px] leading-snug px-4 py-2">
+  Demo voor Houkamp Klus-&#8197;&#8202;en Schilderbedrijf, gemaakt door <a href="https://hagenweb.nl" class="font-semibold underline underline-offset-2">Hagenweb</a>
+</div>
+
+<!-- Kopbalk -->
+<header class="bg-grafiet text-white sticky top-0 z-40">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 h-[68px] md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="shrink-0" aria-label="Houkamp Klus-&#8197;&#8202;en Schilderbedrijf, naar boven">
+      <img src="assets/logo-oud.png" alt="Logo Houkamp Klus-&#8197;&#8202;en Schilderbedrijf" class="h-11 md:h-14 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-white/80" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-oranje transition-colors">Diensten</a>
+      <a href="#werk" class="hover:text-oranje transition-colors">Werk</a>
+      <a href="#advies" class="hover:text-oranje transition-colors">Advies</a>
+      <a href="#reviews" class="hover:text-oranje transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-oranje transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31614224471" class="knop hidden md:inline-flex items-center gap-2 rounded-md bg-oranje text-grafiet font-semibold px-4 py-2.5 text-[15px] hover:bg-[#f5b373]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      06 14224471
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-12 gap-8 lg:gap-6 items-center pt-8 pb-12 md:pt-14 lg:pt-16 lg:pb-20">
+    <div class="lg:col-span-6 relative z-10">
+      <p class="hero-in text-[15px] font-medium text-logogrijs">Schilder-&#8197;&#8202;en klusbedrijf in Zutphen</p>
+      <h1 class="hero-in hero-in-2 kop font-extrabold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.6rem] mt-3">
+        Afspraak is afspraak. Ook bij de laatste kwast.
+      </h1>
+      <p class="hero-in hero-in-3 mt-5 text-lg md:text-xl leading-relaxed text-grafiet/80 max-w-[34rem]">
+        Schilderwerk binnen en buiten, behang en gevelonderhoud. Met eerlijk advies over kleur en materiaal, en netjes opgeleverd.
+      </p>
+      <div class="hero-in hero-in-3 mt-7 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31614224471" class="knop inline-flex items-center gap-3 rounded-md bg-oranje text-grafiet font-bold text-lg px-7 py-4 shadow-[0_10px_24px_-10px_rgba(184,105,31,.7)] hover:bg-[#f5b373]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Bel 06 14224471
+        </a>
+        <a href="#contact" class="font-semibold underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranjedonker">Offerte aanvragen</a>
+      </div>
+      <p class="hero-in hero-in-3 mt-7 flex items-center gap-3 text-[15px] text-grafiet/75">
+        <span class="text-oranje text-lg tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-grafiet">5,0 uit 5</strong> op Google</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-6 relative">
+      <div class="absolute -right-6 md:-right-10 top-6 bottom-[-1.5rem] w-[78%] bg-oranje vlak-l" aria-hidden="true"></div>
+      <div class="hero-beeld vlak-l relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] max-h-[620px] w-full overflow-hidden">
+        <img src="assets/web/google-03.jpg" alt="Dakkapel met strak gelakte crèmekleurige kozijnen en een zwart hoogglans raam" class="w-full h-full object-cover object-[50%_35%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote-strook -->
+<section class="bg-grafiet text-white">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 py-10 md:py-12 grid md:grid-cols-12 gap-4 md:items-center">
+    <p class="md:col-span-9 kop font-bold text-2xl md:text-[2rem] leading-tight">
+      "Zeer vakkundige goede schilder! Levert top werkaf! En afspraak is afspraak! Top keuze!"
+    </p>
+    <p class="md:col-span-3 md:text-right text-white/70">Emiel van den Burg<br><span class="text-oranje">★★★★★</span> Google-review</p>
+  </div>
+</section>
+
+<!-- Diensten: binnen en buiten -->
+<section id="diensten" class="py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end">
+      <h2 class="lg:col-span-7 kop font-extrabold text-4xl md:text-5xl leading-[1.05]">Van plafond tot gevel, één vakman voor het hele huis.</h2>
+      <p class="lg:col-span-5 text-lg leading-relaxed text-grafiet/75 max-w-xl">
+        Houkamp is een totaalaanbieder in schilderwerk en gevelonderhoud. Gevels, kozijnen, deuren, plafonds, noem maar op. U belt één nummer en het hele klusje is geregeld.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-10 md:gap-8">
+      <!-- Binnen -->
+      <article>
+        <div class="vlak-onder aspect-[4/3] overflow-hidden bg-grondverf">
+          <img src="assets/web/google-06.jpg" alt="Wit gelakte trap met verfpot en kwast" loading="lazy" class="w-full h-full object-cover object-[50%_40%]">
+        </div>
+        <h3 class="kop font-extrabold text-3xl mt-6">Binnen</h3>
+        <p class="mt-3 text-grafiet/75 leading-relaxed max-w-lg">Een nieuwe kleur op de muren kan een interieur helemaal opfrissen. Ook voor behang bent u hier goed: luxe soorten van mooie merken en designers, met uitbundige dessins en reliëf.</p>
+        <ul class="mt-6 border-t border-grafiet/15">
+          <li class="flex gap-4 py-3.5 border-b border-grafiet/15"><span class="mt-2 w-3 h-3 shrink-0 bg-oranje vlak-l"></span>Alle voorkomende schilderwerkzaamheden</li>
+          <li class="flex gap-4 py-3.5 border-b border-grafiet/15"><span class="mt-2 w-3 h-3 shrink-0 bg-oranje vlak-l"></span>Behangwerkzaamheden</li>
+          <li class="flex gap-4 py-3.5 border-b border-grafiet/15"><span class="mt-2 w-3 h-3 shrink-0 bg-oranje vlak-l"></span>Kleur-&#8197;&#8202;en materiaaladvies</li>
+        </ul>
+      </article>
+
+      <!-- Buiten -->
+      <article class="md:mt-16">
+        <div class="vlak-onder aspect-[4/3] overflow-hidden bg-grondverf">
+          <img src="assets/web/google-08.jpg" alt="Rijtjeshuis met steiger tijdens buitenschilderwerk" loading="lazy" class="w-full h-full object-cover object-[50%_45%]">
+        </div>
+        <h3 class="kop font-extrabold text-3xl mt-6">Buiten</h3>
+        <p class="mt-3 text-grafiet/75 leading-relaxed max-w-lg">Goed buitenwerk beschermt uw huis. Van een nieuwe laklaag tot houtrotherstel en het vervangen van kozijnen, zodat het hout jaren meegaat.</p>
+        <ul class="mt-6 border-t border-grafiet/15">
+          <li class="flex gap-4 py-3.5 border-b border-grafiet/15"><span class="mt-2 w-3 h-3 shrink-0 bg-oranje vlak-l"></span>Prestatie-&#8197;&#8202;en resultaatgericht gevelonderhoud</li>
+          <li class="flex gap-4 py-3.5 border-b border-grafiet/15"><span class="mt-2 w-3 h-3 shrink-0 bg-oranje vlak-l"></span>Houtrotherstel (onder andere Window Care)</li>
+          <li class="flex gap-4 py-3.5 border-b border-grafiet/15"><span class="mt-2 w-3 h-3 shrink-0 bg-oranje vlak-l"></span>(Deel)vervanging van ramen, deuren en kozijnen</li>
+          <li class="flex gap-4 py-3.5 border-b border-grafiet/15"><span class="mt-2 w-3 h-3 shrink-0 bg-oranje vlak-l"></span>Gevelreiniging</li>
+          <li class="flex gap-4 py-3.5 border-b border-grafiet/15"><span class="mt-2 w-3 h-3 shrink-0 bg-oranje vlak-l"></span>Voeg-&#8197;&#8202;en metselwerk</li>
+          <li class="flex gap-4 py-3.5 border-b border-grafiet/15"><span class="mt-2 w-3 h-3 shrink-0 bg-oranje vlak-l"></span>Balkonvloeren en hekwerken</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="bg-grondverf py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.05] max-w-2xl">Recent werk in en rond Zutphen.</h2>
+      <p class="text-grafiet/70 max-w-sm">Een blik op het vakmanschap, van binnen- tot buitenwerk.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4 md:auto-rows-[150px]">
+      <figure class="tegel col-span-2 md:col-span-7 md:row-span-3 relative overflow-hidden aspect-[4/3] md:aspect-auto">
+        <img src="assets/web/google-07.jpg" alt="Zwart geschilderde houten schuur met nieuwe goot" loading="lazy" class="foto w-full h-full object-cover">
+        <figcaption class="absolute left-0 bottom-0 bg-grafiet text-white text-sm px-4 py-2">Schuur, zwart in de verf</figcaption>
+      </figure>
+      <figure class="tegel md:col-span-5 md:row-span-3 relative overflow-hidden aspect-[3/4] md:aspect-auto">
+        <img src="assets/web/site-03.jpg" alt="Rood hoogglans gelakte boerderijdeur met glas-in-lood" loading="lazy" class="foto w-full h-full object-cover object-[50%_40%]">
+        <figcaption class="absolute left-0 bottom-0 bg-grafiet text-white text-sm px-4 py-2">Buitendeur</figcaption>
+      </figure>
+      <figure class="tegel md:col-span-4 md:row-span-3 relative overflow-hidden aspect-[3/4] md:aspect-auto">
+        <img src="assets/web/google-02.jpg" alt="Trapgat met strak geschilderde wanden en glas-in-lood raam" loading="lazy" class="foto w-full h-full object-cover">
+        <figcaption class="absolute left-0 bottom-0 bg-grafiet text-white text-sm px-4 py-2">Trapgat</figcaption>
+      </figure>
+      <figure class="tegel md:col-span-4 md:row-span-3 relative overflow-hidden aspect-[3/4] md:aspect-auto">
+        <img src="assets/web/site-02.jpg" alt="Pot grondverf met kwast op de steiger voor een houten gevel" loading="lazy" class="foto w-full h-full object-cover">
+        <figcaption class="absolute left-0 bottom-0 bg-grafiet text-white text-sm px-4 py-2">Buitenschilderwerk</figcaption>
+      </figure>
+      <figure class="tegel md:col-span-4 md:row-span-3 relative overflow-hidden aspect-[3/4] md:aspect-auto">
+        <img src="assets/web/site-06.jpg" alt="Wit geschilderd plafond met rozet boven het trapgat" loading="lazy" class="foto w-full h-full object-cover">
+        <figcaption class="absolute left-0 bottom-0 bg-grafiet text-white text-sm px-4 py-2">Plafond</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Advies -->
+<section id="advies" class="py-20 md:py-28 overflow-hidden">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+    <div class="lg:col-span-5 relative order-2 lg:order-1">
+      <div class="absolute -left-8 -top-6 w-2/3 h-[85%] bg-grafiet vlak-r" aria-hidden="true"></div>
+      <div class="vlak-r relative aspect-[3/4] overflow-hidden max-w-md">
+        <img src="assets/web/google-01.jpg" alt="Woning in de steigers met het spandoek van Schildersbedrijf Houkamp" loading="lazy" class="w-full h-full object-cover object-[50%_40%]">
+      </div>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.05] max-w-xl">Eerst goed overleggen, dan pas de kwast erin.</h2>
+      <div class="mt-6 space-y-5 text-lg leading-relaxed text-grafiet/80 max-w-[38rem]">
+        <p>Welke kleur past bij uw kozijnen? Hoe combineert u een nieuw behang met de rest van de kamer? Houkamp denkt mee en adviseert u graag, als het moet samen met uw interieurarchitect of verfleverancier.</p>
+        <p>Het doel is altijd hoogstaande kwaliteit: goed opgeleide mensen, het beste materiaal en de juiste mentaliteit. U moet 100% tevreden zijn.</p>
+      </div>
+      <figure class="mt-10 border-l-4 border-oranje pl-6 max-w-[38rem]">
+        <blockquote class="text-lg italic leading-relaxed">"Hij komt met goede ideeën en heeft van verstand van kleuren en combinaties van kleuren."</blockquote>
+        <figcaption class="mt-2 text-[15px] text-grafiet/65">peter hamelink, Google-review</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Kwaliteit -->
+<section id="kwaliteit" class="bg-grafiet text-white py-20 md:py-24">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <h2 class="kop font-extrabold text-4xl leading-[1.05]">Gecertificeerd schildersbedrijf.</h2>
+      <p class="mt-4 text-white/70 leading-relaxed">Het kwaliteits-&#8197;&#8202;en veiligheidssysteem is onderzocht door een gecertificeerde instantie en wordt periodiek gecontroleerd.</p>
+    </div>
+    <dl class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10">
+      <div class="py-6 border-t border-white/15">
+        <dt class="kop font-bold text-xl text-oranje">ISO 9001:2008 en VCA**</dt>
+        <dd class="mt-2 text-white/75 leading-relaxed">Voor het aannemen en uitvoeren van schilderwerk en interieurafwerking.</dd>
+      </div>
+      <div class="py-6 border-t border-white/15">
+        <dt class="kop font-bold text-xl text-oranje">Window Care</dt>
+        <dd class="mt-2 text-white/75 leading-relaxed">Erkend Window Care systeemspecialist: houten gevelelementen duurzaam in stand houden.</dd>
+      </div>
+      <div class="py-6 border-t border-white/15 sm:col-span-2">
+        <dt class="kop font-bold text-xl text-oranje">VGO-keur</dt>
+        <dd class="mt-2 text-white/75 leading-relaxed max-w-2xl">Voor resultaatgericht onderhoud van vastgoed. Op basis van het kwaliteitsniveau dat u wenst, maakt Houkamp onderhoudsscenario's en neemt taken en risico's van u over. Zo houdt u één vaste partner voor uw panden.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12">
+    <div class="lg:col-span-4">
+      <div class="lg:sticky lg:top-32">
+        <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.05]">Wat klanten over Robert Hans zeggen.</h2>
+        <p class="mt-6 flex items-center gap-3"><span class="text-oranje text-2xl tracking-[3px]" aria-hidden="true">★★★★★</span><span><strong>5,0</strong> uit 5 reviews op Google</span></p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-8 columns-1 md:columns-2 gap-5 [&>figure]:break-inside-avoid [&>figure]:mb-5">
+      <figure class="bg-white p-7 border-t-4 border-oranje">
+        <div class="text-oranje tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 leading-relaxed">"Robert Hans Houkamp is al bijna 20 jaar onze gewaardeerde vakman voor al ons schilderwerk voor zowel buiten als binnen.Altijd beschikbaar om in goed overleg het werk naar onze wensen te doen. Heeft vooral goed oog voor detail en preventief onderhoud en is prettig in de omgang.Er is 1 nadeel voor hemzelf ,door zijn kwal…"</blockquote>
+        <figcaption class="mt-4 font-semibold">Arie van Dam</figcaption>
+      </figure>
+      <figure class="bg-grafiet text-white p-7">
+        <div class="text-oranje tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 kop font-bold text-xl leading-snug">"Top schilder, die gaat voor kwaliteit. Heeft ons hele huis geschilderd en heeft ons goed geadviseerd. Een echte vakman en we zijn blij met het eindresultaat."</blockquote>
+        <figcaption class="mt-4 font-semibold">Hans Berenschot</figcaption>
+      </figure>
+      <figure class="bg-white p-7 border-t-4 border-oranje">
+        <div class="text-oranje tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 leading-relaxed">"Zeer vakbekwaam en kwaliteitsgericht! Het uitgewoonde appartement dat ik heb gekocht heeft Rober Hans Houkamp als het ware omgetoverd tot een woonpaleisje met een topkwalitatieve uitstraling! Alle muren superglad geplamuurd en van glasvliesbehang voorzien. Al het houtwerk en kozijnen zien er weer uit als nieuw! Het sch…"</blockquote>
+        <figcaption class="mt-4 font-semibold">Cor Bloot</figcaption>
+      </figure>
+      <figure class="bg-white p-7 border-t-4 border-oranje">
+        <div class="text-oranje tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 leading-relaxed">"Met Robert Hans is goed te overleggen<br>Hij komt zijn afspraken na<br>Hij komt met goede ideeën en heeft van verstand van  kleuren en  combinaties van kleuren.<br>Wij bevelen hem zeker aan voor binnen en buiten schilderwerk en voor behangen<br>Al jaren een vertrouwde schilder bij ons.<br>Hrt grt"</blockquote>
+        <figcaption class="mt-4 font-semibold">peter hamelink</figcaption>
+      </figure>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-grondverf py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.05]">Klaar voor uw volgende klus?</h2>
+      <p class="mt-4 text-lg text-grafiet/75 max-w-md">Bel, mail of stuur een bericht. U krijgt een eerlijke offerte op maat.</p>
+
+      <a href="tel:+31614224471" class="group mt-10 block w-fit">
+        <span class="block text-[15px] text-grafiet/65">Bel direct</span>
+        <span class="kop kop-breed font-black text-4xl sm:text-5xl md:text-6xl group-hover:text-oranjedonker transition-colors">06 14224471</span>
+      </a>
+      <a href="mailto:info@houkamp.nl" class="mt-6 inline-block text-xl font-semibold underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranjedonker">info@houkamp.nl</a>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8 max-w-lg">
+        <div>
+          <h3 class="font-semibold">Adres</h3>
+          <p class="mt-2 text-grafiet/75 leading-relaxed">Looiersstraat<br>7201 MA Zutphen</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">Bereikbaar</h3>
+          <table class="mt-2 text-grafiet/75 text-[15px] [font-variant-numeric:tabular-nums]">
+            <tr><td class="pr-4 py-0.5">ma t/m vr</td><td>07:30 tot 17:30</td></tr>
+            <tr><td class="pr-4 py-0.5">za en zo</td><td>gesloten</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6">
+      <form id="contactform" action="mailto:info@houkamp.nl" method="post" enctype="text/plain" class="bg-white p-7 md:p-10 vlak-onder pb-14 md:pb-16">
+        <h3 class="kop font-bold text-2xl">Stuur een bericht</h3>
+        <div class="mt-6 space-y-5">
+          <label class="block">
+            <span class="text-[15px] font-medium">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-1.5 w-full border border-grafiet/25 bg-lakwit px-4 py-3 rounded-sm focus:border-oranje focus:outline-none focus:ring-2 focus:ring-oranje/40">
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-medium">E-mail of telefoon</span>
+            <input name="contact" required class="mt-1.5 w-full border border-grafiet/25 bg-lakwit px-4 py-3 rounded-sm focus:border-oranje focus:outline-none focus:ring-2 focus:ring-oranje/40">
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-medium">Wat wilt u laten doen?</span>
+            <textarea name="bericht" rows="4" required placeholder="Bijvoorbeeld: kozijnen buiten schilderen, woonkamer behangen" class="mt-1.5 w-full border border-grafiet/25 bg-lakwit px-4 py-3 rounded-sm focus:border-oranje focus:outline-none focus:ring-2 focus:ring-oranje/40"></textarea>
+          </label>
+        </div>
+        <button type="submit" class="knop mt-6 inline-flex items-center rounded-md bg-grafiet text-white font-semibold px-6 py-3.5 hover:bg-black">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-grafiet text-white/70">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 pt-10 pb-28 md:pb-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[15px]">
+    <img src="assets/logo-oud.png" alt="Houkamp Klus-&#8197;&#8202;en Schilderbedrijf" class="h-12 w-auto self-start">
+    <p class="flex flex-col sm:flex-row gap-x-6 gap-y-1"><span>Looiersstraat, 7201 MA Zutphen</span><a href="tel:+31614224471" class="hover:text-oranje">06 14224471</a><a href="mailto:info@houkamp.nl" class="hover:text-oranje">info@houkamp.nl</a></p>
+    <p>© 2026 Houkamp Klus-&#8197;&#8202;en Schilderbedrijf</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-grafiet/95 backdrop-blur px-4 py-3 flex gap-3">
+  <a href="tel:+31614224471" class="flex-1 inline-flex items-center justify-center gap-2 rounded-md bg-oranje text-grafiet font-bold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel 06 14224471
+  </a>
+  <a href="mailto:info@houkamp.nl" class="inline-flex items-center justify-center rounded-md border border-white/30 text-white font-semibold px-4" aria-label="Mail Houkamp">Mail</a>
+</div>
+
+<script>
+  // Formulier: open de mail-app met een nette, ingevulde e-mail
+  document.getElementById('contactform').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target;
+    var body = 'Naam: ' + f.naam.value + '\nContact: ' + f.contact.value + '\n\n' + f.bericht.value;
+    window.location.href = 'mailto:info@houkamp.nl?subject=' + encodeURIComponent('Offerteaanvraag via de website') + '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>
