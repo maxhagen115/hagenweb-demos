@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMB Willems | Schoonmaakbedrijf in Arnhem en Nijmegen</title>
+<meta name="description" content="SMB Willems is een familiebedrijf in de schoonmaak uit Arnhem. Vaste mensen, vaste routes en één contactpersoon. Bel 026 389 11 19.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          fris: '#F4F6EF',
+          beton: '#E4E8DC',
+          bos: '#1E2B23',
+          groen: '#3F9A50',
+          lime: '#D3DC4C',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-variation-settings: 'wdth' 115; font-weight: 800; letter-spacing: -0.02em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* Bladvorm uit het logo: drie ronde hoeken, één scherpe */
+  .blad-tl { border-radius: 0 var(--r) var(--r) var(--r); }
+  .blad-tr { border-radius: var(--r) 0 var(--r) var(--r); }
+  .blad-bl { border-radius: var(--r) var(--r) var(--r) 0; }
+  .blad-br { border-radius: var(--r) var(--r) 0 var(--r); }
+  .r-xl { --r: clamp(90px, 14vw, 220px); }
+  .r-lg { --r: clamp(56px, 8vw, 120px); }
+  .r-md { --r: 48px; }
+  .r-sm { --r: 22px; }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px rgba(30,43,35,.45); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #3F9A50; outline-offset: 3px;
+  }
+  .tegel img { transition: transform .6s ease; }
+  .tegel:hover img { transform: scale(1.04); }
+  /* Eén moment beweging: de hero-foto komt binnen, alleen als JS draait */
+  .js .hero-foto { animation: binnen 1s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes binnen { from { transform: scale(1.06); filter: saturate(.6); } to { transform: none; filter: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-foto { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-fris text-bos antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 bg-lime px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-bos text-fris/80 text-[13px] text-center py-2 px-4">
+  Demo voor SMB Willems, gemaakt door <a href="https://hagenweb.nl" class="text-lime underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-fris/90 backdrop-blur sticky top-0 z-40 border-b border-bos/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#top" aria-label="SMB Willems, naar boven">
+      <img src="assets/logo-oud.png" alt="SMB Willems" class="h-9 lg:h-11 w-auto">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-groen">Diensten</a>
+      <a href="#klanten" class="hover:text-groen">Klanten</a>
+      <a href="#werken" class="hover:text-groen">Werken bij SMB</a>
+      <a href="#contact" class="hover:text-groen">Contact</a>
+    </nav>
+    <a href="tel:+31263891119" class="knop inline-flex items-center gap-2 rounded-full border-2 border-bos px-4 py-2 text-sm font-semibold hover:bg-bos hover:text-fris">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      <span class="hidden sm:inline">026 389 11 19</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-5 pb-16 lg:pt-14 lg:pb-24 grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+    <div class="lg:col-span-7 order-2 lg:order-1">
+      <p class="text-groen font-semibold text-[15px] mb-3 lg:mb-4">Schoonmaakbedrijf in Arnhem en Nijmegen</p>
+      <h1 class="kop text-[2.2rem] leading-[1.02] sm:text-6xl lg:text-[4.4rem] lg:leading-[0.98] max-w-[12ch] lg:max-w-[13ch]">
+        Elke dag dezelfde gezichten. Elke dag schoon.
+      </h1>
+      <p class="mt-4 lg:mt-5 text-[17px] lg:text-xl leading-relaxed text-bos/80 max-w-[34rem]">
+        Wij zijn een familiebedrijf uit Arnhem. Wij houden kantoren, scholen, zorglocaties en trappenhuizen schoon,
+        met vaste mensen, vaste routes en één contactpersoon voor alles.
+      </p>
+      <div class="mt-6 lg:mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:+31263891119" class="knop inline-flex items-center justify-center gap-3 rounded-full bg-lime text-bos px-8 py-4 lg:py-5 text-lg font-bold">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Bel 026 389 11 19
+        </a>
+        <a href="#contact" class="font-semibold underline decoration-2 decoration-groen underline-offset-[6px] hover:text-groen text-center sm:text-left">Offerte aanvragen</a>
+      </div>
+    </div>
+    <div class="lg:col-span-5 order-1 lg:order-2 relative">
+      <div class="absolute -right-8 -bottom-8 w-2/5 aspect-square bg-lime blad-tl r-lg hidden lg:block" aria-hidden="true"></div>
+      <div class="relative blad-tr r-xl overflow-hidden aspect-[2/1] sm:aspect-[5/4] lg:aspect-[4/5] bg-beton">
+        <img src="assets/site-01.png" alt="Lachende medewerker van SMB Willems dweilt een glimmende gangvloer" class="hero-foto w-full h-full object-cover object-[55%_18%] lg:object-[55%_40%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Familiebedrijf -->
+<section class="bg-beton">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">Een familiebedrijf, ook met 900 collega's.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-bos/80 max-w-xl">
+        Al 50 jaar maken wij schoon in Zuidoost-Nederland. We zijn flink gegroeid, maar werken nog steeds als een hecht
+        familiebedrijf: u kent ons, wij kennen uw gebouw. Benieuwd wat we voor u kunnen doen? We geven graag een advies op maat.
+      </p>
+      <a href="tel:+31263891119" class="mt-8 inline-block font-semibold underline decoration-2 decoration-groen underline-offset-[6px] hover:text-groen">Bel voor een advies op maat</a>
+    </div>
+    <div class="lg:col-span-7">
+      <div class="blad-bl r-lg overflow-hidden aspect-[16/7]">
+        <img src="assets/google-01.jpg" alt="Medewerkster van SMB Willems neemt een bureau af in een licht kantoor" class="w-full h-full object-cover object-[45%_center]" loading="lazy">
+      </div>
+      <ul class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+        <li class="border-t-2 border-bos pt-4">
+          <h3 class="font-bold text-lg">Snel schakelen</h3>
+          <p class="mt-1 text-bos/75 leading-relaxed">Verandert er iets in uw gebouw of planning? Ons compacte team past het snel aan.</p>
+        </li>
+        <li class="border-t-2 border-bos pt-4">
+          <h3 class="font-bold text-lg">Korte lijnen, vaste contactpersoon</h3>
+          <p class="mt-1 text-bos/75 leading-relaxed">U belt één persoon, die het regelt. Geen callcenter, geen doorverbinden.</p>
+        </li>
+        <li class="border-t-2 border-bos pt-4">
+          <h3 class="font-bold text-lg">Vertrouwde gezichten</h3>
+          <p class="mt-1 text-bos/75 leading-relaxed">Onze mensen blijven lang. Daardoor ziet u op de werkvloer steeds dezelfde gezichten.</p>
+        </li>
+        <li class="border-t-2 border-bos pt-4">
+          <h3 class="font-bold text-lg">Ervaring met social return</h3>
+          <p class="mt-1 text-bos/75 leading-relaxed">Ruim 20% van onze medewerkers heeft een afstand tot de arbeidsmarkt. Dat nemen we serieus.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-10 lg:mb-14">
+      <h2 class="kop lg:col-span-7 text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">Alles onder één dak.</h2>
+      <p class="lg:col-span-5 text-lg leading-relaxed text-bos/80">
+        Van de dagelijkse schoonmaak tot de ramen op drie hoog. Eén partij voor alle facilitaire diensten scheelt u tijd, energie en kosten.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-5">
+      <a href="#contact" class="tegel group relative overflow-hidden blad-tl r-md sm:col-span-2 lg:col-span-4 lg:row-span-2 min-h-[320px] lg:min-h-[560px] bg-beton">
+        <img src="assets/google-02.jpg" alt="Medewerker reinigt een betonnen vloer met een schrobmachine" class="absolute inset-0 w-full h-full object-cover object-[60%_center]" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-bos/85 via-bos/10 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 p-6 lg:p-8 text-fris">
+          <h3 class="kop text-[1.4rem] sm:text-2xl lg:text-4xl">Schoonmaakonderhoud</h3>
+          <p class="mt-2 max-w-md text-fris/85">De vaste, dagelijkse schoonmaak van kantoren, scholen en zorglocaties.</p>
+        </div>
+      </a>
+      <a href="#contact" class="tegel group relative overflow-hidden blad-tr r-md lg:col-span-2 min-h-[270px] bg-beton">
+        <img src="assets/google-04.jpg" alt="Medewerker dweilt een trappenhuis met glazen balustrades" class="absolute inset-0 w-full h-full object-cover object-[45%_center]" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-bos/85 via-bos/10 to-transparent"></div>
+        <h3 class="kop absolute bottom-0 left-0 p-6 text-xl lg:text-2xl text-fris">Trappenhuisreiniging</h3>
+      </a>
+      <a href="#contact" class="tegel group relative overflow-hidden blad-br r-md lg:col-span-2 min-h-[270px] bg-beton">
+        <img src="assets/google-03.jpg" alt="Glazenwasser op een ladder reinigt een glazen wand" class="absolute inset-0 w-full h-full object-cover object-[60%_center]" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-bos/85 via-bos/10 to-transparent"></div>
+        <h3 class="kop absolute bottom-0 left-0 p-6 text-xl lg:text-2xl text-fris">Glas en gevelonderhoud</h3>
+      </a>
+      <a href="#contact" class="tegel group relative overflow-hidden blad-bl r-md lg:col-span-2 min-h-[270px] bg-beton">
+        <img src="assets/google-07.jpg" alt="Medewerker neemt de deurlijst van een lift af" class="absolute inset-0 w-full h-full object-cover object-[45%_center]" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-bos/85 via-bos/10 to-transparent"></div>
+        <h3 class="kop absolute bottom-0 left-0 p-6 text-xl lg:text-2xl text-fris">Onderhoudsservice</h3>
+      </a>
+      <a href="#contact" class="tegel group relative overflow-hidden blad-tl r-md lg:col-span-2 min-h-[270px] bg-beton">
+        <img src="assets/google-06.jpg" alt="Schrobmachine van SMB Willems in een parkeergarage" class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-bos/85 via-bos/10 to-transparent"></div>
+        <h3 class="kop absolute bottom-0 left-0 p-6 text-xl lg:text-2xl text-fris">Specialistische reiniging</h3>
+      </a>
+      <a href="#contact" class="group relative overflow-hidden blad-br r-md lg:col-span-2 min-h-[270px] bg-lime p-6 lg:p-8 flex flex-col justify-end">
+        <div>
+          <h3 class="kop text-xl lg:text-2xl">Ontruiming</h3>
+          <p class="mt-2 text-bos/80">Een ruimte die leeg moet? Ook dat regelen wij.</p>
+          <span class="mt-4 inline-block font-semibold underline decoration-2 underline-offset-4">Vraag het ons</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Klanten -->
+<section id="klanten" class="bg-bos text-fris scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <p class="text-lime font-semibold">Wij werken voor gemeenten, onderwijs, zorginstellingen, zakelijke dienstverleners en woningcorporaties.</p>
+
+    <figure class="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-8 items-end">
+      <blockquote class="lg:col-span-9">
+        <p class="kop text-[1.6rem] sm:text-3xl lg:text-[2.25rem] leading-[1.2] max-w-[30ch]" style="font-weight:600;font-variation-settings:'wdth' 105">
+          "SMB Willems is een echt familiebedrijf dat staat voor kwaliteit met korte lijnen en een perfecte service. De werkwijze met fulltime medewerkers en vaste routes zorgt voor continuïteit en vertrouwde gezichten."
+        </p>
+      </blockquote>
+      <figcaption class="lg:col-span-3 lg:pb-2">
+        <span class="block font-bold text-lg">Alexander Nauta</span>
+        <span class="text-fris/70">Volkshuisvesting Arnhem</span>
+      </figcaption>
+    </figure>
+
+    <div class="mt-16 lg:mt-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <figure class="border-t border-fris/25 pt-6">
+        <blockquote class="text-fris/90 leading-relaxed">"Eén contactpersoon voor het geheel maakt dat wij alleen hoeven te signaleren, de rest wordt geregeld met een geweldige service. SMB Willems is flexibel en denkt mee."</blockquote>
+        <figcaption class="mt-4"><span class="font-bold">Virgil Nitschinger</span><br><span class="text-fris/65 text-sm">Beslist.nl</span></figcaption>
+      </figure>
+      <figure class="border-t border-fris/25 pt-6">
+        <blockquote class="text-fris/90 leading-relaxed">"Ik waardeer SMB Willems om de positieve benadering van de werkzaamheden, flexibiliteit, stiptheid en de kennis van zaken. Voor ons is het een fijn bedrijf om mee samen te werken!"</blockquote>
+        <figcaption class="mt-4"><span class="font-bold">Gerben Laurens</span><br><span class="text-fris/65 text-sm">Woonstichting Wageningen</span></figcaption>
+      </figure>
+      <figure class="border-t border-fris/25 pt-6">
+        <blockquote class="text-fris/90 leading-relaxed">"SMB Willems is een veelzijdige partner die je volledig ontzorgt en gaat voor kwaliteit. Je kunt bij SMB Willems terecht voor meer dan alleen reguliere schoonmaakdienstverlening."</blockquote>
+        <figcaption class="mt-4"><span class="font-bold">Willy Miggelbrink</span><br><span class="text-fris/65 text-sm">Compact Real State Services</span></figcaption>
+      </figure>
+    </div>
+    <figure class="mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 bg-fris/5 blad-tl r-sm px-6 py-5">
+      <span class="text-lime text-lg tracking-widest" aria-label="5 van 5 sterren">★★★★★</span>
+      <blockquote class="text-fris/90">"Super fijn bedrijf met veel schoonmaakervaring."</blockquote>
+      <figcaption class="sm:ml-auto text-fris/65 text-sm">Kelly Hubner, via Google</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Werken bij -->
+<section id="werken" class="scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-6 relative">
+      <div class="blad-br r-lg overflow-hidden aspect-[4/3.4]">
+        <img src="assets/site-02.png" alt="Medewerkster van SMB Willems maakt een bureau schoon en lacht in de camera" class="w-full h-full object-cover object-[50%_30%]" loading="lazy">
+      </div>
+      <div class="absolute -bottom-8 -right-3 lg:-right-10 w-2/5 blad-tl r-md overflow-hidden border-[6px] border-fris aspect-square">
+        <img src="assets/google-05.jpg" alt="Medewerkster stofzuigt de entree van een winkel" class="w-full h-full object-cover object-[60%_center]" loading="lazy">
+      </div>
+    </div>
+    <div class="lg:col-span-6 mt-6 lg:mt-0">
+      <h2 class="kop text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">Talent in schoonmaak.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-bos/80 max-w-xl">
+        Onze kracht zijn onze mensen. In ons team kennen en helpen we elkaar, en we halen het beste in elkaar naar boven.
+        Voor elk schoonmaaktalent is bij ons plek. Zoek je werk dat past bij jouw ritme? We kijken graag samen naar de mogelijkheden, fulltime of parttime.
+      </p>
+      <ul class="mt-8 space-y-3 text-bos/90">
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 shrink-0 bg-groen blad-tr r-sm" style="--r:6px"></span>Salaris volgens de CAO Schoonmaak- en Glazenwassersbedrijf</li>
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 shrink-0 bg-groen blad-tr r-sm" style="--r:6px"></span>5% eindejaarsuitkering en bij fulltime 26 vakantiedagen</li>
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 shrink-0 bg-groen blad-tr r-sm" style="--r:6px"></span>Een vrije dag op je verjaardag</li>
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 shrink-0 bg-groen blad-tr r-sm" style="--r:6px"></span>Opleidingen en een persoonlijk ontwikkelingsplan</li>
+        <li class="flex gap-3"><span class="mt-2 w-2.5 h-2.5 shrink-0 bg-groen blad-tr r-sm" style="--r:6px"></span>Korting op je zorgverzekering, ook voor je gezin</li>
+      </ul>
+      <p class="mt-6 text-bos/70">Vacatures in onder meer Arnhem, Nijmegen, Ede, Veenendaal, Apeldoorn en de Achterhoek.</p>
+      <a href="mailto:info@smbwillems.nl?subject=Sollicitatie%20SMB%20Willems" class="knop mt-8 inline-flex items-center rounded-full border-2 border-bos px-6 py-3 font-semibold hover:bg-bos hover:text-fris">Stuur een open sollicitatie</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-beton scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">Een schoon vooruitzicht begint met een gesprek.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-bos/80">Vertel ons over uw gebouw. We komen langs en maken een voorstel dat past.</p>
+
+      <a href="tel:+31263891119" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-lime text-bos px-7 py-4 text-lg font-bold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        026 389 11 19
+      </a>
+
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-6 text-[15px]">
+        <div>
+          <dt class="font-bold">E-mail</dt>
+          <dd><a href="mailto:info@smbwillems.nl" class="underline decoration-groen underline-offset-4 hover:text-groen">info@smbwillems.nl</a></dd>
+        </div>
+        <div>
+          <dt class="font-bold">Adres</dt>
+          <dd>Papenkamp 4<br>6836 BD Arnhem</dd>
+        </div>
+        <div>
+          <dt class="font-bold">Kantoor bereikbaar</dt>
+          <dd>Maandag t/m vrijdag<br>08:00 tot 17:00 uur</dd>
+        </div>
+        <div>
+          <dt class="font-bold">Werkgebied</dt>
+          <dd>Arnhem, Nijmegen, Ede, Doetinchem, Veenendaal en Wageningen</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@smbwillems.nl" method="post" enctype="text/plain" id="offerte" class="lg:col-span-7 bg-fris blad-tr r-lg p-6 sm:p-10 lg:p-12 self-start">
+      <h3 class="kop text-2xl">Offerte aanvragen</h3>
+      <p class="mt-2 text-bos/70">We nemen binnen kantoortijden contact met u op.</p>
+      <div class="mt-8 grid sm:grid-cols-2 gap-5">
+        <label class="block">
+          <span class="text-sm font-semibold">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-xl border border-bos/20 bg-white px-4 py-3 focus:border-groen">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Organisatie</span>
+          <input name="organisatie" autocomplete="organization" class="mt-1.5 w-full rounded-xl border border-bos/20 bg-white px-4 py-3 focus:border-groen">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">E-mail</span>
+          <input type="email" name="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border border-bos/20 bg-white px-4 py-3 focus:border-groen">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Telefoon</span>
+          <input type="tel" name="telefoon" autocomplete="tel" class="mt-1.5 w-full rounded-xl border border-bos/20 bg-white px-4 py-3 focus:border-groen">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold">Waar kunnen we u mee helpen?</span>
+          <select name="dienst" class="mt-1.5 w-full rounded-xl border border-bos/20 bg-white px-4 py-3 focus:border-groen">
+            <option>Schoonmaakonderhoud</option>
+            <option>Trappenhuisreiniging</option>
+            <option>Glas en gevelonderhoud</option>
+            <option>Onderhoudsservice</option>
+            <option>Specialistische reiniging</option>
+            <option>Ontruiming</option>
+            <option>Iets anders</option>
+          </select>
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold">Over uw gebouw</span>
+          <textarea name="bericht" rows="4" placeholder="Bijvoorbeeld: kantoor van 3 verdiepingen in Nijmegen, schoonmaak 3x per week" class="mt-1.5 w-full rounded-xl border border-bos/20 bg-white px-4 py-3 focus:border-groen"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="knop mt-6 rounded-full bg-bos text-fris px-7 py-4 font-semibold hover:bg-groen">Verstuur aanvraag</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-fris border-t border-bos/10 pb-24 md:pb-0">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row md:items-center gap-6 md:justify-between">
+    <div class="flex items-center gap-5">
+      <img src="assets/logo-oud.png" alt="SMB Willems" class="h-10 w-auto" loading="lazy">
+      <span class="text-bos/70 italic">biedt u een schoon vooruitzicht</span>
+    </div>
+    <p class="text-sm text-bos/60 flex flex-wrap gap-x-6 gap-y-1"><span>Papenkamp 4, 6836 BD Arnhem</span><a href="tel:+31263891119" class="hover:text-groen">026 389 11 19</a><a href="mailto:info@smbwillems.nl" class="hover:text-groen">info@smbwillems.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-fris/95 backdrop-blur border-t border-bos/10 flex gap-3">
+  <a href="tel:+31263891119" class="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-lime text-bos py-3.5 font-bold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel ons
+  </a>
+  <a href="mailto:info@smbwillems.nl" class="inline-flex items-center justify-center rounded-full border-2 border-bos px-5 font-semibold">Mail</a>
+</div>
+
+</body>
+</html>
