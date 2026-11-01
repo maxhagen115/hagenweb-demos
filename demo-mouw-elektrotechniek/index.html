@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mouw Elektrotechniek | Elektricien in Zutphen</title>
-<meta name="description" content="Mouw Elektrotechniek uit Zutphen: zonnepanelen, thuisaccu's, laadpalen, storingen, domotica en algemeen elektrotechnisch werk. 24/7 storingsdienst: 06 28912747.">
+<title>Mouw Elektrotechniek | Elektricien in Zutphen, dag en nacht bereikbaar</title>
+<meta name="description" content="Mouw Elektrotechniek in Zutphen: storingen, meterkasten, zonnepanelen, thuisaccu's, laadpalen en beveiliging. Dag en nacht bereikbaar op 06 28912747.">
 <link rel="icon" href="assets/logo-oud.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,109 +15,74 @@
     theme: {
       extend: {
         colors: {
-          ink: '#1D2733',
-          kast: '#253445',
-          rail: '#2F4055',
-          oranje: '#F39318',
-          oranjedonker: '#C9700A',
-          papier: '#EEF0EE',
-          staal: '#5D6B78',
+          lei: { DEFAULT: '#1C2834', 700: '#24333F', 600: '#2E3E4C' },
+          stroom: { DEFAULT: '#F28A17', 600: '#DB7609', 100: '#FDEBD6' },
+          kalk: '#F2F3F1',
+          staal: '#5A6773',
+          lijn: '#D9DDE0',
         },
         fontFamily: {
           kop: ['Archivo', 'system-ui', 'sans-serif'],
-          tekst: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+          sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
         },
       },
     },
   };
 </script>
 <style>
-  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; }
-  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 70%; letter-spacing: -0.01em; }
-  .kop-breed { font-family: 'Archivo', system-ui, sans-serif; font-variation-settings: 'wdth' 112; }
-  .balans { text-wrap: balance; }
-  .mooi { text-wrap: pretty; }
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .kop { font-family: Archivo, system-ui, sans-serif; font-stretch: 72%; font-weight: 800; letter-spacing: -0.01em; line-height: .95; text-wrap: balance; }
+  .kop-breed { font-family: Archivo, system-ui, sans-serif; font-stretch: 100%; font-weight: 700; }
+  p { text-wrap: pretty; }
+  .tab { font-variant-numeric: tabular-nums; }
 
-  /* De groepenkast */
-  .kast-paneel {
-    background:
-      radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,.05), transparent 60%),
-      #253445;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06), 0 30px 60px -30px rgba(29,39,51,.6);
-  }
-  .din-rail {
-    background: repeating-linear-gradient(90deg, #3a4c62 0 10px, #33445a 10px 14px);
-    height: 10px; border-radius: 2px;
-  }
-  .schakelaar {
-    width: 34px; height: 56px; border-radius: 4px;
-    background: linear-gradient(#f6f6f4, #dcdedb);
-    box-shadow: inset 0 -2px 0 rgba(0,0,0,.12), 0 2px 0 rgba(0,0,0,.25);
-    position: relative; flex: none;
-  }
-  .schakelaar::before { /* uitsparing */
-    content: ''; position: absolute; left: 9px; right: 9px; top: 10px; bottom: 10px;
-    background: #2a2f36; border-radius: 3px;
-  }
-  .schakelaar::after { /* hendel in aan-stand */
-    content: ''; position: absolute; left: 11px; right: 11px; top: 12px; height: 16px;
-    background: #F39318; border-radius: 2px;
-    transition: transform .25s ease;
-  }
-  .groep:hover .schakelaar::after { transform: translateY(2px); }
-  .etiket {
-    background: #fbfbf8; color: #1D2733;
-    box-shadow: 0 1px 0 rgba(0,0,0,.2);
-  }
+  /* De bliksemknik: de vorm die op de hele site terugkomt */
+  .knik-links { clip-path: polygon(17% 0, 100% 0, 100% 100%, 0 100%, 10% 54%, 3% 54%); }
+  .knik-onder { clip-path: polygon(0 0, 100% 0, 100% 88%, 58% 100%, 60% 91%, 0 100%); }
+  .knik-rechts { clip-path: polygon(0 0, 100% 0, 92% 46%, 98% 46%, 86% 100%, 0 100%); }
+  @media (max-width: 1023px) { .knik-links { clip-path: polygon(0 0, 100% 0, 100% 86%, 56% 100%, 58% 90%, 0 100%); } }
 
-  .foto-kader { box-shadow: 14px 14px 0 0 #F39318; }
-  @media (max-width: 640px) { .foto-kader { box-shadow: 8px 8px 0 0 #F39318; } }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #F28A17; outline-offset: 3px; }
 
-  a, button { transition: background-color .2s, color .2s, transform .15s, border-color .2s; }
-  a:active, button:active { transform: translateY(1px); }
-  :focus-visible { outline: 3px solid #F39318; outline-offset: 3px; border-radius: 4px; }
-
-  /* Verrijking met JS: alleen als html.js gezet is */
-  /* Schakelaars springen een voor een in de aan-stand; tekst is altijd zichtbaar. */
-  html.js .opbouw:not(.aan) .schakelaar::after { transform: translateY(16px); background: #8a96a3; }
-  html.js .opbouw.aan .schakelaar::after { transition: transform .3s cubic-bezier(.3,1.6,.5,1), background-color .2s; transition-delay: var(--d, 0ms); }
-  @media (prefers-reduced-motion: reduce) {
-    html.js .opbouw:not(.aan) .schakelaar::after { transform: none; background: #F39318; }
-    html { scroll-behavior: auto; }
-  }
+  /* Eén moment beweging: de hero-foto schuift in. Alleen als JS draait. */
+  .js .hero-foto { transform: translateX(24px); opacity: 0; transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s; }
+  .js.geladen .hero-foto { transform: none; opacity: 1; }
+  @media (prefers-reduced-motion: reduce) { .js .hero-foto { transform: none; opacity: 1; transition: none; } html { scroll-behavior: auto; } }
 </style>
-<script>document.documentElement.classList.add('js');</script>
+<script>document.documentElement.classList.add('js'); addEventListener('DOMContentLoaded', () => requestAnimationFrame(() => document.documentElement.classList.add('geladen')));</script>
 </head>
-<body class="bg-papier text-ink antialiased pb-20 md:pb-0">
+<body class="bg-kalk text-lei font-sans pb-20 lg:pb-0">
 
 <a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
 
-<!-- Demobalk -->
-<div class="bg-ink text-white/80 text-[13px] text-center py-2 px-4">
-  Demo voor Mouw Elektrotechniek, gemaakt door <a href="https://hagenweb.nl" class="text-oranje underline underline-offset-2 hover:text-white">Hagenweb</a>
+<!-- Demo-balk -->
+<div class="bg-black text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Mouw Elektrotechniek, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-stroom">Hagenweb</a>
 </div>
 
 <!-- Header -->
-<header class="bg-white border-b border-ink/10 sticky top-0 z-40">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
-    <a href="#" class="flex flex-col leading-none" aria-label="Mouw Elektrotechniek, naar boven">
-      <span class="kop-breed font-black text-[30px] tracking-tight text-ink flex items-center">
-        M<span class="relative inline-flex items-center justify-center w-[26px] h-[26px] mx-[1px] rounded-full bg-oranje">
-          <svg viewBox="0 0 24 24" class="w-[15px] h-[15px]" aria-hidden="true"><path d="M13.5 2 5 13.2h5.6L9.8 22 19 10.3h-5.7z" fill="#1D2733"/></svg>
-        </span>UW
+<header class="bg-lei text-white">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-2.5" aria-label="Mouw Elektrotechniek, naar boven">
+      <svg viewBox="0 0 24 32" class="h-8 w-6 lg:h-9 lg:w-7 text-stroom" aria-hidden="true"><path fill="currentColor" d="M15 0 2 18h8l-3 14L22 12h-8l4-12z"/></svg>
+      <span class="leading-none">
+        <span class="kop block text-[28px] lg:text-[32px] tracking-tight">MOUW</span>
+        <span class="block text-[11px] lg:text-xs text-white/60 mt-0.5 tracking-wide">Elektrotechniek</span>
       </span>
-      <span class="text-[12.5px] tracking-[0.18em] text-staal mt-1 font-medium">Elektrotechniek</span>
     </a>
-    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
-      <a href="#diensten" class="hover:text-oranjedonker">Diensten</a>
-      <a href="#thuisaccu" class="hover:text-oranjedonker">Thuisaccu</a>
-      <a href="#laadpalen" class="hover:text-oranjedonker">Laadpalen</a>
-      <a href="#contact" class="hover:text-oranjedonker">Contact</a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] text-white/75" aria-label="Hoofdmenu">
+      <a href="#storing" class="hover:text-white">Storing</a>
+      <a href="#zon" class="hover:text-white">Zon en accu</a>
+      <a href="#diensten" class="hover:text-white">Diensten</a>
+      <a href="#reviews" class="hover:text-white">Reviews</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
     </nav>
-    <a href="tel:+31628912747" class="inline-flex items-center gap-2 bg-oranje hover:bg-ink hover:text-white text-ink font-semibold rounded-md px-4 py-2.5 text-[15px]">
-      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
-      <span class="hidden sm:inline">06 28912747</span><span class="sm:hidden">Bellen</span>
+    <a href="tel:+31628912747" class="knop tab inline-flex items-center gap-2 rounded-md bg-white/10 hover:bg-white/20 px-3.5 py-2 text-[15px] font-medium">
+      <svg viewBox="0 0 24 24" class="h-4 w-4 text-stroom" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      <span class="hidden sm:inline">06 28912747</span><span class="sm:hidden">Bel</span>
     </a>
   </div>
 </header>
@@ -125,265 +90,246 @@
 <main id="inhoud">
 
 <!-- Hero -->
-<section class="max-w-6xl mx-auto px-5 md:px-8 pt-10 md:pt-20 pb-14 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
-  <div class="md:col-span-6 lg:col-span-6">
-    <p class="text-staal font-medium mb-4">Elektricien in Zutphen</p>
-    <h1 class="kop font-extrabold text-[46px] leading-[0.98] sm:text-6xl lg:text-[76px] balans">
-      Elektra, zon en opslag. Goed aangelegd, veilig opgeleverd.
-    </h1>
-    <p class="mt-6 text-lg leading-relaxed text-ink/80 max-w-[52ch] mooi">
-      Mouw Elektrotechniek installeert, onderhoudt en repareert. Van een nieuwe groepenkast tot zonnepanelen met een thuisaccu erachter. En valt de stroom uit, dan zijn we dag en nacht te bereiken.
-    </p>
-    <div class="mt-8 flex flex-col sm:flex-row gap-3">
-      <a href="tel:+31628912747" class="inline-flex items-center justify-center gap-2 bg-ink text-white hover:bg-oranje hover:text-ink font-semibold rounded-md px-6 py-4 text-[17px]">
-        Bel 06 28912747
-      </a>
-      <a href="mailto:info@mouwelektrotechniek.nl?subject=Offerte%20aanvraag" class="inline-flex items-center justify-center gap-2 border-2 border-ink/20 hover:border-ink font-semibold rounded-md px-6 py-4 text-[17px]">
-        Vraag een offerte aan
+<section class="bg-lei text-white overflow-hidden relative">
+  <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:min-h-[680px]">
+    <div class="px-5 lg:px-10 pt-9 pb-10 lg:py-24 lg:col-span-6 flex flex-col justify-center relative z-10">
+      <p class="text-stroom font-medium text-[15px] mb-4">Elektricien in Zutphen</p>
+      <h1 class="kop text-[64px] sm:text-[84px] lg:text-[112px]">Een beller is&nbsp;sneller.</h1>
+      <p class="mt-6 text-lg lg:text-xl text-white/75 max-w-[30rem] leading-relaxed">
+        Storing, nieuwe meterkast of zonnepanelen op het dak? Ernst Mouw komt langs en lost het netjes op. Dag en nacht bereikbaar, ook in het weekend.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31628912747" class="knop tab inline-flex items-center gap-3 rounded-md bg-stroom hover:bg-stroom-600 text-lei px-7 py-4 text-lg font-semibold shadow-[0_10px_30px_-10px_rgba(242,138,23,.7)]">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Bel 06 28912747
+        </a>
+        <a href="#diensten" class="text-white/80 hover:text-white underline decoration-white/30 underline-offset-4 hover:decoration-stroom">Bekijk wat we doen</a>
+      </div>
+      <a href="#reviews" class="mt-10 inline-flex items-center gap-3 text-sm text-white/70 hover:text-white w-fit">
+        <span class="flex text-stroom" aria-hidden="true">
+          <svg viewBox="0 0 20 20" class="h-4 w-4" fill="currentColor"><path d="m10 1.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" class="h-4 w-4" fill="currentColor"><path d="m10 1.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" class="h-4 w-4" fill="currentColor"><path d="m10 1.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" class="h-4 w-4" fill="currentColor"><path d="m10 1.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg viewBox="0 0 20 20" class="h-4 w-4" fill="currentColor"><path d="m10 1.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+        </span>
+        <span><strong class="text-white font-semibold">4,8</strong> uit 30 Google-reviews</span>
       </a>
     </div>
+    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-[50%]">
+      <img src="assets/google-01.jpg" alt="Een nette, nieuw aangelegde meterkast met aardlekschakelaars en groepen"
+           class="hero-foto knik-links w-full h-[380px] sm:h-[480px] lg:h-full object-cover object-[50%_42%] lg:absolute lg:inset-0">
+    </div>
   </div>
-  <div class="md:col-span-6 lg:col-span-6 md:pl-4">
-    <figure class="relative">
-      <img src="assets/site-02.jpg" alt="Zwarte zonnepanelen op een plat dak, gelegd door Mouw Elektrotechniek" class="foto-kader w-full aspect-[4/3] object-cover rounded-md" width="600" height="450">
-      <figcaption class="mt-6 text-sm text-staal">Zonnepanelen op een plat dak, aangelegd door Mouw.</figcaption>
+</section>
+
+<!-- Storing -->
+<section id="storing" class="bg-stroom text-lei">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 py-16 lg:py-24 grid gap-12 lg:grid-cols-12 lg:items-center">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-5xl lg:text-7xl">Stroom eruit? Bel&nbsp;meteen.</h2>
+      <p class="mt-6 text-lg leading-relaxed max-w-xl">
+        Een kortsluiting, een groep die steeds uitslaat of het hele huis in het donker: dat wacht niet tot maandag. Mouw Elektrotechniek heeft een storingsdienst die 24 uur per dag, 7 dagen per week bereikbaar is. We sporen de oorzaak op en zorgen dat je thuis of in je zaak weer veilig stroom hebt.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed max-w-xl">
+        Liever voorkomen dan genezen? We doen ook preventief onderhoud aan je installatie.
+      </p>
+      <a href="tel:+31628912747" class="knop tab mt-8 inline-flex items-center gap-3 rounded-md bg-lei hover:bg-lei-600 text-white px-6 py-3.5 text-lg font-semibold">
+        Storing melden: 06 28912747
+      </a>
+    </div>
+    <figure class="lg:col-span-5 lg:col-start-8 bg-lei text-white rounded-lg p-8 lg:p-10 relative">
+      <p class="flex gap-1 text-stroom mb-5" aria-label="5 sterren">★★★★★</p>
+            <blockquote class="text-lg lg:text-xl leading-relaxed">
+        "We zijn enorm goed geholpen door Mouw. Bij een vervelende stroomstoring in onze kapsalon kwam hij direct op zondag om de storing te verhelpen zodat we maandag gewoon open konden. Hij was keurig op tijd, isoleerde het probleem vakkundig en loste het snel op. Ook tegen hele nette tarieven zelfs in het weekend."
+      </blockquote>
+      <figcaption class="mt-6 text-sm text-white/65"><span class="text-white font-medium">Frederique Pouw</span>, Google-review, 5 sterren</figcaption>
     </figure>
   </div>
 </section>
 
-<!-- Storingsstrook -->
-<section class="bg-oranje" aria-labelledby="storing-kop">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-10 md:py-12 grid md:grid-cols-12 gap-6 md:gap-10 items-center">
-    <div class="md:col-span-7">
-      <h2 id="storing-kop" class="kop font-extrabold text-4xl md:text-5xl leading-none">Storing? Bel ons, dag en nacht.</h2>
-      <p class="mt-4 text-ink/85 text-[17px] leading-relaxed max-w-[56ch] mooi">
-        Kortsluiting, stroomuitval of een groep die steeds uitslaat: onze 24/7 storingsdienst spoort de oorzaak op en zorgt dat je elektra snel weer veilig werkt. Thuis of in je bedrijf.
+<!-- Zon en accu -->
+<section id="zon" class="bg-kalk">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 py-20 lg:py-28">
+    <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
+      <h2 class="kop text-5xl lg:text-7xl lg:col-span-7">Zelf stroom maken, en&nbsp;bewaren.</h2>
+      <p class="lg:col-span-5 text-lg text-staal leading-relaxed">
+        Met zonnepanelen bespaar je op je energierekening. Met een thuisaccu haal je er nog meer uit. Wij adviseren, plaatsen en onderhouden, afgestemd op jouw dak en jouw verbruik.
       </p>
     </div>
-    <div class="md:col-span-5 md:text-right">
-      <a href="tel:+31628912747" class="kop font-black text-[44px] sm:text-6xl leading-none hover:underline decoration-4 underline-offset-8 whitespace-nowrap">06 28912747</a>
-      <p class="mt-2 text-ink/75 text-sm">24 uur per dag, 7 dagen per week</p>
-    </div>
-  </div>
-</section>
 
-<!-- Groepenkast: diensten -->
-<section id="diensten" class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24" aria-labelledby="diensten-kop">
-  <div class="grid md:grid-cols-12 gap-6 mb-10 md:mb-14 items-end">
-    <h2 id="diensten-kop" class="kop font-extrabold text-4xl md:text-6xl leading-[0.95] md:col-span-6 balans">Alles wat we aansluiten, op een rij.</h2>
-    <p class="md:col-span-5 md:col-start-8 text-ink/75 leading-relaxed mooi">
-      Zoals in een goede groepenkast: elke groep heeft zijn eigen taak en een duidelijk etiket. Dit is wat Mouw Elektrotechniek voor je kan doen, voor woningen en bedrijfspanden.
-    </p>
-  </div>
-
-  <div class="kast-paneel rounded-xl p-4 sm:p-6 md:p-10">
-    <div class="din-rail mb-6 md:mb-8" aria-hidden="true"></div>
-    <ul class="opbouw grid md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-3 md:gap-y-4">
-      <li class="groep flex gap-4 sm:gap-5 rounded-lg bg-rail/70 p-4 sm:p-5">
-        <div class="schakelaar mt-1" aria-hidden="true"></div>
-        <div>
-          <span class="etiket inline-block text-[12px] font-semibold rounded-sm px-2 py-0.5 mb-2">Groep 1</span>
-          <h3 class="kop text-white font-bold text-2xl leading-tight">Zonnepanelen</h3>
-          <p class="text-white/70 mt-1.5 leading-relaxed text-[15px] mooi">Veilige installatie, afgestemd op jouw dak en woning of bedrijfspand. Wij begeleiden je van advies en plaatsing tot onderhoud, zodat je optimaal profiteert van de zon.</p>
-        </div>
-      </li>
-      <li class="groep flex gap-4 sm:gap-5 rounded-lg bg-rail/70 p-4 sm:p-5">
-        <div class="schakelaar mt-1" aria-hidden="true"></div>
-        <div>
-          <span class="etiket inline-block text-[12px] font-semibold rounded-sm px-2 py-0.5 mb-2">Groep 2</span>
-          <h3 class="kop text-white font-bold text-2xl leading-tight">Thuisaccu's</h3>
-          <p class="text-white/70 mt-1.5 leading-relaxed text-[15px] mooi">Levering en installatie van AlphaESS thuisaccu's. Ze passen in elke situatie en kunnen ook je oude omvormer vervangen. <a href="#thuisaccu" class="text-oranje underline underline-offset-2 hover:text-white">Meer over thuisaccu's</a></p>
-        </div>
-      </li>
-      <li class="groep flex gap-4 sm:gap-5 rounded-lg bg-rail/70 p-4 sm:p-5">
-        <div class="schakelaar mt-1" aria-hidden="true"></div>
-        <div>
-          <span class="etiket inline-block text-[12px] font-semibold rounded-sm px-2 py-0.5 mb-2">Groep 3</span>
-          <h3 class="kop text-white font-bold text-2xl leading-tight">Laadpalen voor je auto</h3>
-          <p class="text-white/70 mt-1.5 leading-relaxed text-[15px] mooi">Van een standaard thuislader tot een laadnetwerk voor meerdere auto's bij je bedrijf. Professioneel geplaatst, volgens alle normen en richtlijnen.</p>
-        </div>
-      </li>
-      <li class="groep flex gap-4 sm:gap-5 rounded-lg bg-rail/70 p-4 sm:p-5">
-        <div class="schakelaar mt-1" aria-hidden="true"></div>
-        <div>
-          <span class="etiket inline-block text-[12px] font-semibold rounded-sm px-2 py-0.5 mb-2">Groep 4</span>
-          <h3 class="kop text-white font-bold text-2xl leading-tight">Storingen en onderhoud</h3>
-          <p class="text-white/70 mt-1.5 leading-relaxed text-[15px] mooi">Kortsluiting of stroomuitval? We vinden de oorzaak en lossen het veilig op. Met preventief onderhoud voorkom je storingen en blijft je installatie in topconditie.</p>
-        </div>
-      </li>
-      <li class="groep flex gap-4 sm:gap-5 rounded-lg bg-rail/70 p-4 sm:p-5">
-        <div class="schakelaar mt-1" aria-hidden="true"></div>
-        <div>
-          <span class="etiket inline-block text-[12px] font-semibold rounded-sm px-2 py-0.5 mb-2">Groep 5</span>
-          <h3 class="kop text-white font-bold text-2xl leading-tight">Algemeen elektrotechnisch werk</h3>
-          <p class="text-white/70 mt-1.5 leading-relaxed text-[15px] mooi">Nieuwbouw, renovatie of een aanpassing: nieuwe bedrading, groepenkasten, verlichting en stopcontacten. Ook extra capaciteit voor nieuwe apparaten of overstappen op LED.</p>
-        </div>
-      </li>
-      <li class="groep flex gap-4 sm:gap-5 rounded-lg bg-rail/70 p-4 sm:p-5">
-        <div class="schakelaar mt-1" aria-hidden="true"></div>
-        <div>
-          <span class="etiket inline-block text-[12px] font-semibold rounded-sm px-2 py-0.5 mb-2">Groep 6</span>
-          <h3 class="kop text-white font-bold text-2xl leading-tight">Domotica en slim wonen</h3>
-          <p class="text-white/70 mt-1.5 leading-relaxed text-[15px] mooi">Verlichting, verwarming en beveiliging bedienen vanaf je telefoon of tablet. We installeren en stellen het in zoals jij het wilt, van een paar lampen tot je hele woning.</p>
-        </div>
-      </li>
-      <li class="groep flex gap-4 sm:gap-5 rounded-lg bg-rail/70 p-4 sm:p-5">
-        <div class="schakelaar mt-1" aria-hidden="true"></div>
-        <div>
-          <span class="etiket inline-block text-[12px] font-semibold rounded-sm px-2 py-0.5 mb-2">Groep 7</span>
-          <h3 class="kop text-white font-bold text-2xl leading-tight">Inbraakbeveiliging en camera's</h3>
-          <p class="text-white/70 mt-1.5 leading-relaxed text-[15px] mooi">Alarmsystemen, bewegingssensoren en binnen- en buitencamera's met HD-beeld, nachtzicht en meldingen op je telefoon. Op maat geplaatst, voor woning of bedrijf.</p>
-        </div>
-      </li>
-      <li class="groep flex gap-4 sm:gap-5 rounded-lg bg-rail/70 p-4 sm:p-5">
-        <div class="schakelaar mt-1" aria-hidden="true"></div>
-        <div>
-          <span class="etiket inline-block text-[12px] font-semibold rounded-sm px-2 py-0.5 mb-2">Groep 8</span>
-          <h3 class="kop text-white font-bold text-2xl leading-tight">Netwerkinstallatie en onderhoud</h3>
-          <p class="text-white/70 mt-1.5 leading-relaxed text-[15px] mooi">Een stabiel bedraad of draadloos netwerk, thuis of op kantoor. Van netwerkkabels trekken tot routers en switches instellen.</p>
-        </div>
-      </li>
-    </ul>
-    <div class="mt-6 md:mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-white/10 pt-6">
-      <p class="text-white/80 mooi">Staat jouw klus er niet tussen? Vraag het gewoon even.</p>
-      <a href="tel:+31628912747" class="inline-flex items-center justify-center bg-oranje hover:bg-white text-ink font-semibold rounded-md px-5 py-3">Bel 06 28912747</a>
-    </div>
-  </div>
-</section>
-
-<!-- Thuisaccu -->
-<section id="thuisaccu" class="bg-white" aria-labelledby="accu-kop">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
-    <div class="md:col-span-6 order-2 md:order-1">
-      <img src="assets/site-03.jpg" alt="Zonnepanelen van bovenaf gezien op het dak van een bedrijfspand" class="foto-kader w-full aspect-[4/3] object-cover rounded-md" width="600" height="450">
-    </div>
-    <div class="md:col-span-6 order-1 md:order-2">
-      <p class="text-oranjedonker font-semibold mb-3">Nieuw bij Mouw</p>
-      <h2 id="accu-kop" class="kop font-extrabold text-4xl md:text-6xl leading-[0.95] balans">Bewaar je zonnestroom met een thuisaccu.</h2>
-      <div class="mt-6 space-y-4 text-[17px] leading-relaxed text-ink/80 max-w-[60ch] mooi">
-        <p>Wij leveren en installeren thuisaccu's van AlphaESS. Die kunnen in elke situatie geplaatst worden. De accu kan je oude omvormer vervangen doordat de zonnepanelen er direct op worden aangesloten, of hij vangt de zonne-energie op voordat die het net in gaat.</p>
-        <p>Stap je over naar bijvoorbeeld Frank Energie, dan koppel je de accu via de app en handel je in energie op de onbalansmarkt. Volledig geautomatiseerd.</p>
+    <div class="mt-12 grid gap-4 lg:grid-cols-12">
+      <img src="assets/google-03.jpg" alt="Twee zwarte zonnepanelen op een pannendak, net geplaatst" class="knik-rechts lg:col-span-8 w-full h-[280px] sm:h-[420px] lg:h-[520px] object-cover">
+      <div class="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:col-span-4">
+        <img src="assets/site-03.jpg" alt="Een volledig dak met zwarte zonnepanelen van bovenaf" class="w-full h-40 sm:h-56 lg:h-[252px] object-cover rounded-lg">
+        <img src="assets/site-02.jpg" alt="Zonnepanelen op een plat dak tussen de bomen" class="w-full h-40 sm:h-56 lg:h-[252px] object-cover rounded-lg">
       </div>
-      <div class="mt-8 rounded-lg bg-papier p-5 md:p-6 max-w-[60ch]">
-        <h3 class="kop font-bold text-2xl">Zelf zonnepanelen leggen?</h3>
-        <p class="mt-2 text-ink/80 leading-relaxed mooi">Mouw levert ook doe-het-zelf zonnepaneelkits, met gratis advies. De webshop komt eraan. Tot die tijd stuur je een mail voor een vrijblijvende offerte.</p>
-        <a href="mailto:info@mouwelektrotechniek.nl?subject=Offerte%20zonnepaneelkit" class="mt-4 inline-block font-semibold underline decoration-oranje decoration-2 underline-offset-4 hover:text-oranjedonker">info@mouwelektrotechniek.nl</a>
+    </div>
+
+    <div class="mt-14 grid gap-10 md:grid-cols-3">
+      <div>
+        <h3 class="kop-breed text-xl">Zonnepanelen</h3>
+        <p class="mt-3 text-staal leading-relaxed">Een veilige installatie, aangepast aan je woning of bedrijfspand. Van advies en plaatsing tot onderhoud en het oplossen van storingen in je systeem.</p>
+      </div>
+      <div>
+        <h3 class="kop-breed text-xl">Thuisaccu</h3>
+        <p class="mt-3 text-staal leading-relaxed">Levering en installatie van AlphaESS-thuisaccu's. Ze passen in elke situatie: als vervanger van je oude omvormer, of om zonne-energie op te slaan voordat die het net in gaat. Bij een leverancier als Frank Energie koppel je de accu via de app en handel je volledig automatisch op de onbalansmarkt.</p>
+      </div>
+      <div class="border-t-4 border-stroom pt-5 md:border-t-0 md:pt-0 md:border-l-4 md:pl-6">
+        <h3 class="kop-breed text-xl">Zelf leggen?</h3>
+        <p class="mt-3 text-staal leading-relaxed">Mouw levert ook doe-het-zelf zonnepaneelkits, met gratis advies. Mail voor een vrijblijvende offerte.</p>
+        <a href="mailto:info@mouwelektrotechniek.nl?subject=Offerte%20doe-het-zelf%20zonnepaneelkit" class="mt-4 inline-block font-medium underline decoration-stroom decoration-2 underline-offset-4 hover:text-stroom-600">Vraag een offerte aan</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Laadpalen -->
-<section id="laadpalen" class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-14 items-center" aria-labelledby="laad-kop">
-  <div class="md:col-span-6 lg:col-span-7">
-    <h2 id="laad-kop" class="kop font-extrabold text-4xl md:text-6xl leading-[0.95] balans">Elektrisch rijden? Laad gewoon thuis.</h2>
-    <p class="mt-6 text-[17px] leading-relaxed text-ink/80 max-w-[58ch] mooi">
-      Een laadpaal bij je huis of bedrijf is voor een elektrische auto bijna onmisbaar. Wij plaatsen alles van een standaard thuislader tot laadstations voor bedrijven, veilig en volgens de normen. Eén laadpaal of een compleet laadnetwerk voor meerdere auto's: we denken met je mee.
-    </p>
-    <a href="mailto:info@mouwelektrotechniek.nl?subject=Laadpaal" class="mt-8 inline-flex items-center justify-center bg-ink text-white hover:bg-oranje hover:text-ink font-semibold rounded-md px-6 py-4">Advies over een laadpaal</a>
+<!-- Diensten -->
+<section id="diensten" class="bg-white">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 py-20 lg:py-28">
+    <div class="max-w-2xl">
+      <h2 class="kop text-5xl lg:text-7xl">Alles achter het stopcontact.</h2>
+      <p class="mt-5 text-lg text-staal leading-relaxed">Nieuwbouw, verbouwing of een aanpassing aan wat er al zit. Eén vakman voor de hele installatie.</p>
+    </div>
+
+    <div class="mt-14 grid gap-x-10 gap-y-16 lg:grid-cols-2">
+      <!-- Laadpalen -->
+      <article>
+        <img src="assets/google-06.jpg" alt="Geopende Zaptec-laadpaal tijdens de aansluiting" class="w-full aspect-[4/3] object-cover rounded-lg">
+        <div class="mt-6 max-w-lg">
+          <h3 class="kop text-4xl">Laadpaal voor je auto</h3>
+          <p class="mt-3 text-staal leading-relaxed">Een thuislader op de oprit of laadstations voor je bedrijf. Professioneel en veilig aangesloten, volgens de geldende normen. Eén paal of een compleet laadnetwerk: we denken mee.</p>
+        </div>
+      </article>
+      <!-- Beveiliging -->
+      <article class="lg:mt-28">
+        <img src="assets/google-08.jpg" alt="Beveiligingscamera onder de dakrand van een woning" class="w-full aspect-[4/3] object-cover object-[50%_35%] rounded-lg">
+        <div class="mt-6 max-w-lg">
+          <h3 class="kop text-4xl">Alarm en camera's</h3>
+          <p class="mt-3 text-staal leading-relaxed">Alarmsystemen, bewegingssensoren en binnen- en buitencamera's, op maat geplaatst. Bekijk beelden live of terug op je telefoon, met HD-beeld, nachtzicht en slimme meldingen.</p>
+        </div>
+      </article>
+      <!-- Meterkast -->
+      <article>
+        <img src="assets/google-07.jpg" alt="Wandgoten met contactdozen en netwerkaansluitingen in een lokaal" class="w-full aspect-[4/3] object-cover rounded-lg">
+        <div class="mt-6 max-w-lg">
+          <h3 class="kop text-4xl">Meterkast en elektra</h3>
+          <p class="mt-3 text-staal leading-relaxed">Nieuwe groepenkasten, bedrading, stopcontacten en verlichting. Extra capaciteit voor nieuwe apparaten, of je installatie in één keer moderniseren. Altijd volgens de laatste veiligheidsnormen.</p>
+        </div>
+      </article>
+      <!-- Verlichting -->
+      <article class="lg:mt-28">
+        <img src="assets/google-02.jpg" alt="LED-panelen aan een plafond, warm wit licht" class="w-full aspect-[4/3] object-cover rounded-lg">
+        <div class="mt-6 max-w-lg">
+          <h3 class="kop text-4xl">LED-verlichting</h3>
+          <p class="mt-3 text-staal leading-relaxed">Energiezuinig licht in huis, werkplaats of winkel. We adviseren over wat past en hangen het netjes op.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-20 grid gap-8 md:grid-cols-2 border-t border-lijn pt-12">
+      <div class="flex gap-5">
+        <svg viewBox="0 0 24 32" class="h-8 w-6 shrink-0 text-stroom mt-1" aria-hidden="true"><path fill="currentColor" d="M15 0 2 18h8l-3 14L22 12h-8l4-12z"/></svg>
+        <div>
+          <h3 class="kop-breed text-xl">Domotica en slim wonen</h3>
+          <p class="mt-2 text-staal leading-relaxed">Verlichting, verwarming en beveiliging automatiseren en bedienen met je telefoon of tablet. Meer comfort, meer veiligheid en minder energie.</p>
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <svg viewBox="0 0 24 32" class="h-8 w-6 shrink-0 text-stroom mt-1" aria-hidden="true"><path fill="currentColor" d="M15 0 2 18h8l-3 14L22 12h-8l4-12z"/></svg>
+        <div>
+          <h3 class="kop-breed text-xl">Netwerk</h3>
+          <p class="mt-2 text-staal leading-relaxed">Een stabiel bedraad of draadloos netwerk, thuis of op de zaak. Van het trekken van netwerkkabels tot het instellen van routers en switches.</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="md:col-span-6 lg:col-span-5">
-    <img src="assets/site-01.jpg" alt="Laadpaal op een paal in de tuin, voor een heg" class="foto-kader w-full max-w-[440px] md:ml-auto aspect-[11/12] object-cover rounded-md" width="549" height="600">
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-lei text-white">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 py-20 lg:py-28">
+    <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-5">
+        <p class="kop text-[120px] lg:text-[168px] text-stroom tab">4,8</p>
+        <p class="mt-2 text-white/70">gemiddeld uit 30 reviews op Google</p>
+      </div>
+      <h2 class="kop text-5xl lg:text-6xl lg:col-span-7 lg:pb-4">"Vakman met hart voor zijn werk."</h2>
+    </div>
+
+    <div class="mt-14 columns-1 md:columns-2 gap-5 [&>figure]:mb-5 [&>figure]:break-inside-avoid">
+      <figure class="bg-lei-700 rounded-lg p-7">
+        <blockquote class="leading-relaxed text-white/90">"Erg kundig vakman. Schroomde niet om de kruipruimte in te duiken en de kortsluiting op te lossen. Enorm schappelijke prijzen en ook nog eens stipt op tijd."</blockquote>
+        <figcaption class="mt-5 text-sm text-white/60"><span class="text-white font-medium">Emiel van den Brink</span></figcaption>
+      </figure>
+      <figure class="bg-lei-700 rounded-lg p-7">
+        <blockquote class="leading-relaxed text-white/90">"Vakman met hart voor zijn werk!<br><br>Ernst van Mouw Elektrotechniek is inmiddels mijn vaste huis installateur, en dat is niet voor niets. Hij heeft bij mij diverse klussen uitgevoerd, waaronder het oplossen van storingen in mijn zonnepaneel installatie, uitbreiding van die installatie én het plaatsen van een tweede systeem..."</blockquote>
+        <figcaption class="mt-5 text-sm text-white/60"><span class="text-white font-medium">René Kamphuis</span></figcaption>
+      </figure>
+      <figure class="bg-lei-700 rounded-lg p-7">
+        <blockquote class="leading-relaxed text-white/90">"Ernst heeft onze meterkast vernieuwd en later ook de zonnepanelen geinstalleerd. Hij komt afspraken na en levert goede service."</blockquote>
+        <figcaption class="mt-5 text-sm text-white/60"><span class="text-white font-medium">Silvia Streep</span></figcaption>
+      </figure>
+      <figure class="bg-lei-700 rounded-lg p-7">
+        <blockquote class="leading-relaxed text-white/90">"Ernst Mouw heeft afgelopen week bij mij 20 zonnepanelen geplaatst. Naast dat ik bijzonder te spreken ben over de panelen (goede kwaliteit, goede opbrengst, zien er fraai uit), ben ik ook zeer te spreken over de kwaliteit en service die Ernst levert: heel netjes gelegd, altijd vriendelijk en in voor een grapje..."</blockquote>
+        <figcaption class="mt-5 text-sm text-white/60"><span class="text-white font-medium">Mark van den Broek</span></figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="bg-ink text-white" aria-labelledby="contact-kop">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-12">
-    <div class="md:col-span-6">
-      <h2 id="contact-kop" class="kop font-extrabold text-5xl md:text-7xl leading-[0.92]">Een beller is sneller.</h2>
-      <p class="mt-5 text-white/75 text-[17px] leading-relaxed max-w-[46ch] mooi">Vraag over je installatie, een offerte of een storing? Bel of mail ons, dan kijken we samen wat er nodig is.</p>
-      <dl class="mt-10 space-y-6">
+<section id="contact" class="bg-kalk">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 py-20 lg:py-28 grid gap-14 lg:grid-cols-12">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-5xl lg:text-7xl">Bel Ernst, dag en&nbsp;nacht.</h2>
+      <p class="mt-5 text-lg text-staal leading-relaxed max-w-md">Voor een storing, een offerte of gewoon een vraag. Bellen gaat het snelst, mailen kan ook.</p>
+      <a href="tel:+31628912747" class="kop tab mt-10 block text-[52px] sm:text-7xl text-lei hover:text-stroom-600 transition-colors">06 28912747</a>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-8 text-[15px]">
         <div>
-          <dt class="text-white/55 text-sm">Telefoon</dt>
-          <dd><a href="tel:+31628912747" class="kop font-black text-4xl md:text-5xl text-oranje hover:text-white">06 28912747</a></dd>
+          <dt class="text-staal">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@mouwelektrotechniek.nl" class="font-medium underline decoration-stroom decoration-2 underline-offset-4 break-all">info@mouwelektrotechniek.nl</a></dd>
         </div>
         <div>
-          <dt class="text-white/55 text-sm">E-mail</dt>
-          <dd><a href="mailto:info@mouwelektrotechniek.nl" class="text-xl font-medium underline decoration-oranje decoration-2 underline-offset-4 hover:text-oranje break-all">info@mouwelektrotechniek.nl</a></dd>
+          <dt class="text-staal">Bereikbaar</dt>
+          <dd class="mt-1 font-medium">Maandag t/m zondag, 24 uur per dag</dd>
         </div>
         <div>
-          <dt class="text-white/55 text-sm">Adres</dt>
-          <dd class="text-lg leading-relaxed">Weg naar Laren 201<br>7203 HK Zutphen</dd>
+          <dt class="text-staal">Adres</dt>
+          <dd class="mt-1 font-medium">Weg naar Laren 201<br>7203 HK Zutphen</dd>
         </div>
       </dl>
     </div>
-    <div class="md:col-span-6">
-      <form action="mailto:info@mouwelektrotechniek.nl" method="post" enctype="text/plain" class="bg-white text-ink rounded-xl p-6 md:p-8 space-y-5">
-        <h3 class="kop font-bold text-3xl">Liever een bericht?</h3>
-        <div>
-          <label for="naam" class="block text-sm font-medium mb-1.5">Naam</label>
-          <input id="naam" name="naam" required autocomplete="name" class="w-full rounded-md border border-ink/20 bg-papier/60 px-4 py-3 focus:border-ink outline-none">
-        </div>
-        <div class="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label for="tel" class="block text-sm font-medium mb-1.5">Telefoon</label>
-            <input id="tel" name="telefoon" type="tel" autocomplete="tel" class="w-full rounded-md border border-ink/20 bg-papier/60 px-4 py-3 focus:border-ink outline-none">
-          </div>
-          <div>
-            <label for="mail" class="block text-sm font-medium mb-1.5">E-mail</label>
-            <input id="mail" name="email" type="email" required autocomplete="email" class="w-full rounded-md border border-ink/20 bg-papier/60 px-4 py-3 focus:border-ink outline-none">
-          </div>
-        </div>
-        <div>
-          <label for="onderwerp" class="block text-sm font-medium mb-1.5">Waar gaat het over?</label>
-          <select id="onderwerp" name="onderwerp" class="w-full rounded-md border border-ink/20 bg-papier/60 px-4 py-3 focus:border-ink outline-none">
-            <option>Zonnepanelen</option>
-            <option>Thuisaccu</option>
-            <option>Laadpaal</option>
-            <option>Storing of onderhoud</option>
-            <option>Groepenkast, bedrading of verlichting</option>
-            <option>Domotica</option>
-            <option>Beveiliging en camera's</option>
-            <option>Netwerk</option>
-            <option>Doe-het-zelf zonnepaneelkit</option>
-            <option>Iets anders</option>
-          </select>
-        </div>
-        <div>
-          <label for="bericht" class="block text-sm font-medium mb-1.5">Bericht</label>
-          <textarea id="bericht" name="bericht" rows="4" required class="w-full rounded-md border border-ink/20 bg-papier/60 px-4 py-3 focus:border-ink outline-none"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-oranje hover:bg-ink hover:text-white text-ink font-semibold rounded-md px-6 py-4 text-[17px]">Verstuur bericht</button>
-        <p class="text-sm text-staal">Spoed? Bel dan liever direct: <a href="tel:+31628912747" class="font-semibold text-ink underline underline-offset-2">06 28912747</a>.</p>
-      </form>
-    </div>
+
+    <form class="lg:col-span-5 lg:col-start-8 bg-white rounded-lg p-7 lg:p-9 self-start" action="mailto:info@mouwelektrotechniek.nl" method="post" enctype="text/plain">
+      <h3 class="kop-breed text-2xl">Stuur een bericht</h3>
+      <p class="mt-1 text-sm text-staal">We reageren zo snel mogelijk. Bij een storing: liever even bellen.</p>
+      <label class="block mt-6 text-sm font-medium" for="naam">Naam</label>
+      <input id="naam" name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-lijn bg-kalk/60 px-3.5 py-2.5 focus:border-stroom">
+      <label class="block mt-4 text-sm font-medium" for="tel">Telefoon of e-mail</label>
+      <input id="tel" name="contact" required class="mt-1.5 w-full rounded-md border border-lijn bg-kalk/60 px-3.5 py-2.5">
+      <label class="block mt-4 text-sm font-medium" for="vraag">Waar kunnen we mee helpen?</label>
+      <textarea id="vraag" name="vraag" rows="4" required class="mt-1.5 w-full rounded-md border border-lijn bg-kalk/60 px-3.5 py-2.5" placeholder="Bijvoorbeeld: offerte voor 12 zonnepanelen, of een laadpaal op de oprit"></textarea>
+      <button class="knop mt-6 w-full rounded-md bg-lei hover:bg-lei-600 text-white py-3.5 font-semibold">Verstuur bericht</button>
+    </form>
   </div>
 </section>
 
 </main>
 
-<footer class="bg-[#151d27] text-white/60 text-sm">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-8 flex flex-col md:flex-row gap-3 md:items-center justify-between">
-    <p><span class="text-white font-medium">Mouw Elektrotechniek</span>, Weg naar Laren 201, 7203 HK Zutphen</p>
-    <p>KvK 86680560 <span class="mx-2 text-white/25">|</span> BTW NL004293650B83</p>
+<footer class="bg-lei text-white/60 text-sm">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 py-10 flex flex-col sm:flex-row gap-4 sm:items-center justify-between">
+    <div class="flex items-center gap-2.5">
+      <svg viewBox="0 0 24 32" class="h-6 w-5 text-stroom" aria-hidden="true"><path fill="currentColor" d="M15 0 2 18h8l-3 14L22 12h-8l4-12z"/></svg>
+      <span class="kop text-xl text-white">MOUW</span><span>Elektrotechniek, Zutphen</span>
+    </div>
+    <p><a href="tel:+31628912747" class="hover:text-white tab">06 28912747</a> <span class="mx-2">/</span> <a href="mailto:info@mouwelektrotechniek.nl" class="hover:text-white">info@mouwelektrotechniek.nl</a></p>
   </div>
 </footer>
 
 <!-- Mobiele belbalk -->
-<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-ink/10 p-3 flex gap-3">
-  <a href="tel:+31628912747" class="flex-1 inline-flex items-center justify-center gap-2 bg-oranje text-ink font-semibold rounded-md py-3.5">
-    <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
-    Bel 06 28912747
+<div class="lg:hidden fixed inset-x-0 bottom-0 z-40 bg-lei/95 backdrop-blur px-4 py-3 border-t border-white/10">
+  <a href="tel:+31628912747" class="knop tab flex items-center justify-center gap-3 rounded-md bg-stroom text-lei py-3.5 font-semibold text-lg">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel Mouw: 06 28912747
   </a>
-  <a href="mailto:info@mouwelektrotechniek.nl" class="inline-flex items-center justify-center border-2 border-ink/15 font-semibold rounded-md px-4" aria-label="Mail Mouw Elektrotechniek">Mail</a>
 </div>
 
-<script>
-  // Groepen gaan een voor een "aan" als de kast in beeld komt.
-  (function () {
-    var lijst = document.querySelector('.opbouw');
-    if (!lijst) return;
-    var groepen = lijst.querySelectorAll('.groep');
-    groepen.forEach(function (g, i) { g.style.setProperty('--d', (i * 90) + 'ms'); });
-    var aan = function () { lijst.classList.add('aan'); };
-    if (!('IntersectionObserver' in window)) { aan(); return; }
-    var io = new IntersectionObserver(function (e) {
-      if (e.some(function (x) { return x.isIntersecting; })) { aan(); io.disconnect(); }
-    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
-    io.observe(lijst);
-    setTimeout(aan, 4000);
-  })();
-</script>
 </body>
 </html>
