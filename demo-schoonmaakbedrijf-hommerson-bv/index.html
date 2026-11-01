@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hommerson Schoonmaakbedrijf | Betrouwbaar schoon in Arnhem en omgeving</title>
+<meta name="description" content="Familiebedrijf uit Arnhem met eigen medewerkers. Schoonmaak voor kantoren, onderwijs, zorg, retail, vastgoed en VvE. Bel 088 363 9000.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          rood: { DEFAULT: '#D42A2E', donker: '#A81E22' },
+          grafiet: '#23272B',
+          logogrijs: '#8C9095',
+          koel: '#EEF0F1',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Source Sans 3', system-ui, sans-serif; color: #23272B; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; letter-spacing: -0.02em; }
+  .kop-breed { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 125%; letter-spacing: -0.025em; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* De boog: vormtaal uit het logo en de gevel van het pand */
+  .boog-foto { border-top-left-radius: 62% 48%; }
+  :root { --b: .65rem; }
+  @media (min-width: 640px) { :root { --b: 1.3rem; } }
+  .boog-lijn { position: absolute; pointer-events: none; border-top-style: solid; border-left-style: solid; border-right: 0; border-bottom: 0; }
+  .boog-hoek { border-top-left-radius: 7rem; }
+  @media (min-width: 1024px) { .boog-hoek { border-top-left-radius: 12rem; } }
+
+  .knop-rood { transition: background-color .2s ease, transform .15s ease; }
+  .knop-rood:hover { background-color: #A81E22; }
+  .knop-rood:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #D42A2E; outline-offset: 3px;
+  }
+
+  /* Eén ingetogen binnenkomst van de hero, alleen als JS draait */
+  .js .hero-in { animation: in .8s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in.d2 { animation-delay: .12s; }
+  .js .hero-in.d3 { animation-delay: .24s; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-in { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-white pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-grafiet text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Schoonmaakbedrijf Hommerson B.V., gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-white/90">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white border-b border-black/5">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 shrink-0" aria-label="Hommerson Schoonmaakbedrijf, naar boven">
+      <img src="assets/logo-oud.png" alt="" class="h-10 w-10 object-contain">
+      <span class="leading-none">
+        <span class="kop-breed block font-extrabold italic text-rood text-[19px] tracking-tight">HOMMERSON</span>
+        <span class="block text-[13px] text-logogrijs font-semibold mt-1">schoonmaakbedrijf</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-rood transition-colors">Diensten</a>
+      <a href="#sectoren" class="hover:text-rood transition-colors">Voor wie</a>
+      <a href="#familiebedrijf" class="hover:text-rood transition-colors">Over ons</a>
+      <a href="#contact" class="hover:text-rood transition-colors">Contact</a>
+    </nav>
+    <a href="tel:0883639000" class="knop-rood hidden sm:inline-flex items-center gap-2 bg-rood text-white font-semibold rounded-full px-5 py-2.5 text-[15px]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      088 363 9000
+    </a>
+    <a href="tel:0883639000" class="sm:hidden inline-flex items-center justify-center w-11 h-11 rounded-full bg-rood text-white" aria-label="Bel 088 363 9000">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-5 pb-14 lg:pt-14 lg:pb-20 grid lg:grid-cols-12 gap-6 lg:gap-6 items-center">
+    <div class="lg:col-span-5 relative z-10 order-2 lg:order-1">
+      <p class="hero-in text-logogrijs font-semibold text-[15px] lg:text-base">Schoonmaakbedrijf in Arnhem en omgeving</p>
+      <h1 class="hero-in kop-breed font-black text-grafiet text-[40px] leading-[1] sm:text-6xl lg:text-[54px] xl:text-[60px] mt-2 lg:mt-3">Betrouwbaar schoon.</h1>
+      <p class="hero-in d2 mt-4 lg:mt-5 text-[17px] lg:text-xl text-grafiet/80 max-w-[36ch] lg:max-w-[30ch] leading-relaxed">
+        Een familiebedrijf met eigen mensen. Wij houden uw kantoor, school, zorglocatie of gebouw schoon, met vaste gezichten en korte lijnen.
+      </p>
+      <div class="hero-in d3 mt-6 lg:mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:0883639000" class="knop-rood inline-flex items-center gap-3 bg-rood text-white font-bold text-lg rounded-full pl-5 pr-7 py-4 shadow-[0_10px_24px_-10px_rgba(212,42,46,.7)]">
+          <span class="grid place-items-center w-8 h-8 rounded-full bg-white/15">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          </span>
+          Bel 088 363 9000
+        </a>
+        <a href="#contact" class="font-semibold text-grafiet underline decoration-rood decoration-2 underline-offset-[6px] hover:text-rood transition-colors">Offerte aanvragen</a>
+      </div>
+      <p class="hero-in d3 mt-5 lg:mt-8 flex items-center gap-2 text-[15px] text-grafiet/75">
+        <span class="text-rood tracking-[2px]" aria-hidden="true">★★★★<span class="text-rood/35">★</span></span>
+        <span><strong class="text-grafiet">4,3</strong> uit 54 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-7 relative order-1 lg:order-2">
+      <div class="relative ml-5 mt-5 sm:ml-10 sm:mt-10 lg:ml-20 lg:mt-12">
+        <!-- bogen uit het logo -->
+        <div class="boog-lijn boog-foto border-logogrijs/60" style="inset:calc(var(--b)*-2) auto auto calc(var(--b)*-2); width:calc(100% + var(--b)*2); height:calc(100% + var(--b)*2); border-width:calc(var(--b)*.45);" aria-hidden="true"></div>
+        <div class="boog-lijn boog-foto border-rood" style="inset:calc(var(--b)*-1) auto auto calc(var(--b)*-1); width:calc(100% + var(--b)); height:calc(100% + var(--b)); border-width:calc(var(--b)*.7);" aria-hidden="true"></div>
+        <img src="assets/site-02.jpg" alt="Medewerkster van Hommerson in rood uniform neemt een bureau af, op de achtergrond dweilt een collega de vloer"
+             class="boog-foto relative w-full aspect-[16/8.5] sm:aspect-[5/4] object-cover object-[62%_25%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sectoren -->
+<section id="sectoren" class="bg-grafiet text-white boog-hoek">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <h2 class="kop font-extrabold text-3xl lg:text-4xl leading-tight">Elk pand een eigen werkprogramma.</h2>
+      <p class="mt-5 text-white/70 text-lg leading-relaxed max-w-[38ch]">
+        Wij kijken eerst hoe uw gebouw gebruikt wordt. Daarop stellen we een planning op maat en zetten we de juiste mensen in.
+      </p>
+    </div>
+    <ul class="lg:col-span-7 lg:col-start-6 divide-y divide-white/10 border-y border-white/10">
+      <li class="py-5 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-1 sm:gap-8 items-baseline">
+        <span class="kop font-bold text-2xl lg:text-[28px]">Kantoren</span>
+        <span class="text-white/65">Een frisse, verzorgde werkplek voor medewerkers en bezoekers.</span>
+      </li>
+      <li class="py-5 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-1 sm:gap-8 items-baseline">
+        <span class="kop font-bold text-2xl lg:text-[28px]">Onderwijs</span>
+        <span class="text-white/65">Schone, hygiënische lokalen voor leerlingen, studenten en docenten.</span>
+      </li>
+      <li class="py-5 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-1 sm:gap-8 items-baseline">
+        <span class="kop font-bold text-2xl lg:text-[28px]">Zorg</span>
+        <span class="text-white/65">Hygiënisch en veilig, met extra aandacht waar zorg en welzijn voorop staan.</span>
+      </li>
+      <li class="py-5 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-1 sm:gap-8 items-baseline">
+        <span class="kop font-bold text-2xl lg:text-[28px]">Retail</span>
+        <span class="text-white/65">Een winkel die er elke dag verzorgd uitziet, voor klanten en personeel.</span>
+      </li>
+      <li class="py-5 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-1 sm:gap-8 items-baseline">
+        <span class="kop font-bold text-2xl lg:text-[28px]">Vastgoed en VvE</span>
+        <span class="text-white/65">Trappenhuizen, entrees en algemene ruimtes die structureel goed onderhouden zijn.</span>
+      </li>
+      <li class="py-5 grid sm:grid-cols-[minmax(0,15rem)_1fr] gap-1 sm:gap-8 items-baseline">
+        <span class="kop font-bold text-2xl lg:text-[28px]">Recreatie en sport</span>
+        <span class="text-white/65">Van sporthal tot recreatiepark: schoon en veilig voor elke bezoeker.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 items-end">
+      <h2 class="lg:col-span-7 kop font-extrabold text-4xl lg:text-5xl leading-[1.05]">Van dagelijkse schoonmaak tot graffiti op de gevel.</h2>
+      <p class="lg:col-span-5 text-lg text-grafiet/75 leading-relaxed">
+        Naast de vaste schoonmaak nemen we ook de ramen, de vloeren en de buitenkant van uw pand mee. Zo heeft u één aanspreekpunt voor alles.
+      </p>
+    </div>
+
+    <!-- Uitgelicht: reguliere schoonmaak + vloeronderhoud -->
+    <div class="mt-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <article class="lg:col-span-7">
+        <img src="assets/site-05.jpg" alt="Medewerker in rood shirt reinigt een marmeren vloer met een schrobzuigmachine"
+             class="w-full aspect-[16/10] object-cover boog-hoek">
+        <div class="mt-6 grid sm:grid-cols-2 gap-6 sm:gap-10">
+          <div>
+            <h3 class="kop font-bold text-2xl">Vloeronderhoud</h3>
+            <p class="mt-2 text-grafiet/75 leading-relaxed">Een schone vloer is het visitekaartje van uw bedrijf. Wij reinigen alle soorten vloeren, dagelijks, wekelijks of periodiek, met de machine die erbij hoort.</p>
+          </div>
+          <div>
+            <h3 class="kop font-bold text-2xl">Reguliere schoonmaak</h3>
+            <p class="mt-2 text-grafiet/75 leading-relaxed">Stofwissen, dweilen, plinten, toiletten, vensterbanken. Het werk dat elke dag of elke week gebeurt, door mensen die uw pand kennen.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="lg:col-span-5 lg:mt-24 bg-koel p-6 sm:p-8 lg:p-10">
+        <img src="assets/google-04.jpg" alt="Hogedrukaanhanger van Hommerson met slangen bij een appartementencomplex, de bus staat erachter"
+             class="w-full aspect-[4/3] object-cover">
+        <h3 class="kop font-bold text-2xl mt-6">Hogedrukreiniging met stoom</h3>
+        <p class="mt-2 text-grafiet/75 leading-relaxed">
+          Met de steamPLUS-techniek spuiten we stoom van zo'n 150&nbsp;°C onder hoge druk. Graffiti, mos, algen, roet, kauwgom en olieresten gaan eraf zonder chemische middelen.
+        </p>
+        <p class="mt-3 text-grafiet/75 leading-relaxed">Groene aanslag op gevel of rieten dak? Dan werken we met het biologisch afbreekbare BioFoam.</p>
+      </article>
+    </div>
+
+    <!-- Overige diensten als index -->
+    <div class="mt-16 lg:mt-24 grid lg:grid-cols-12 gap-8">
+      <h3 class="lg:col-span-3 kop font-bold text-xl text-grafiet/60">En verder</h3>
+      <dl class="lg:col-span-9 grid sm:grid-cols-2 gap-x-12">
+        <div class="py-6 border-t-2 border-grafiet">
+          <dt class="kop font-bold text-xl">Glas- en gevelonderhoud</dt>
+          <dd class="mt-2 text-grafiet/75 leading-relaxed">Door VCA-gecertificeerde glazenwassers, met ladder, steiger, hoogwerker of Tuckerpole. De dakgoten nemen we op verzoek meteen mee.</dd>
+        </div>
+        <div class="py-6 border-t-2 border-grafiet">
+          <dt class="kop font-bold text-xl">Specialistische schoonmaak</dt>
+          <dd class="mt-2 text-grafiet/75 leading-relaxed">Na brand, roet of een flinke lekkage pakken we het snel op. Ook cleanrooms, grootkeukens, ventilatie, opleveringen en ontruimingen.</dd>
+        </div>
+        <div class="py-6 border-t border-grafiet/15">
+          <dt class="kop font-bold text-xl">Sanitaire benodigdheden</dt>
+          <dd class="mt-2 text-grafiet/75 leading-relaxed">Wij maken het sanitair schoon en leveren ook een uitgebreid assortiment sanitaire benodigdheden.</dd>
+        </div>
+        <div class="py-6 border-t border-grafiet/15">
+          <dt class="kop font-bold text-xl">Technische diensten</dt>
+          <dd class="mt-2 text-grafiet/75 leading-relaxed">Kleine reparaties en klussen waar u zelf geen tijd voor heeft.</dd>
+        </div>
+        <div class="py-6 border-t border-grafiet/15 sm:col-span-2">
+          <dt class="kop font-bold text-xl">Huishoudelijke ondersteuning (WMO)</dt>
+          <dd class="mt-2 text-grafiet/75 leading-relaxed max-w-[60ch]">Een schoon huis is voor iedereen belangrijk. Daarom bieden we ook huishoudelijke hulp vanuit de WMO.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Familiebedrijf -->
+<section id="familiebedrijf" class="bg-koel py-20 lg:py-28 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-6 relative">
+      <img src="assets/site-01.jpg" alt="De eigenaren van Hommerson voor hun pand aan de Beijerinckweg, met de koperen bogen uit het logo op de gevel"
+           class="w-full aspect-[4/3.3] object-cover object-[45%_60%] boog-hoek">
+      <img src="assets/google-06.jpg" alt="Schoonmaakkar van Hommerson in een museumzaal met schilderijen"
+           class="hidden sm:block absolute -bottom-10 -right-4 lg:-right-10 w-[42%] aspect-[4/3] object-cover border-[6px] border-koel">
+    </div>
+    <div class="lg:col-span-6 sm:pt-6 lg:pt-0">
+      <h2 class="kop font-extrabold text-4xl lg:text-5xl leading-[1.05]">Een familiebedrijf uit Arnhem.</h2>
+      <div class="mt-6 space-y-4 text-lg text-grafiet/80 leading-relaxed max-w-[54ch]">
+        <p>Hommerson maakt al bijna vijftig jaar schoon. Kijk maar naar de gevel van ons pand aan de Beijerinckweg: dezelfde bogen als in ons logo.</p>
+        <p>We werken met eigen medewerkers, niet met steeds wisselende krachten. Zo heeft u een vast gezicht dat uw pand kent, en lijnen die kort zijn. Gaat er iets mis, dan schakelen we snel.</p>
+        <p>Onze mensen doen meer dan schoonmaken. Ze denken mee, zien wat er nodig is en zeggen het als ze iets opvalt.</p>
+      </div>
+      <ul class="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-semibold text-grafiet">
+        <li class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-tl-full bg-rood" aria-hidden="true"></span>Eigen medewerkers</li>
+        <li class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-tl-full bg-rood" aria-hidden="true"></span>Milieubewuste middelen</li>
+        <li class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-tl-full bg-rood" aria-hidden="true"></span>Werkprogramma op maat</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="kop font-extrabold text-4xl lg:text-5xl leading-[1.05] max-w-xl">Wat klanten zeggen.</h2>
+      <p class="flex items-baseline gap-3">
+        <span class="kop-breed font-black text-5xl text-rood">4,3</span>
+        <span class="text-grafiet/70">gemiddeld uit 54 reviews op Google</span>
+      </p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-12 gap-6 lg:gap-8">
+      <figure class="lg:col-span-7 lg:row-span-3 bg-rood text-white p-8 lg:p-12 boog-hoek flex flex-col justify-between">
+        <blockquote class="kop font-semibold text-2xl lg:text-[30px] leading-snug lg:pl-16">
+          "We zijn al jaren klant en zeer tevreden. Een zorgvuldig en betrouwbaar schoonmaakbedrijf dat kwaliteit levert. De samenwerking verloopt prettig, met jaarlijkse evaluaties om alles scherp te houden. Echt top!"
+        </blockquote>
+        <figcaption class="mt-8 lg:pl-16 flex items-center gap-3 text-white/85">
+          <span class="tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</span> JH Boerhof, Google
+        </figcaption>
+      </figure>
+
+      <figure class="lg:col-span-5 border-t-2 border-grafiet pt-6">
+        <blockquote class="text-lg leading-relaxed text-grafiet/85">
+          "TechnipFMC is bijzonder tevreden over de samenwerking die al heel lang met Hommerson bestaat. Zowel met medewerkster als met de rayonleidster. Medewerkster die bij ons schoonmaakt, ziet ons als "haar panden" en is altijd bereid om iets extra's te doen. ..."
+        </blockquote>
+        <figcaption class="mt-4 text-[15px] text-grafiet/65"><span class="text-rood tracking-[2px]" aria-label="4 van 5 sterren">★★★★</span> Jan-Pieter Vink, Google</figcaption>
+      </figure>
+
+      <figure class="lg:col-span-5 border-t-2 border-grafiet pt-6">
+        <blockquote class="text-lg leading-relaxed text-grafiet/85">
+          "CRV BV maakt al jaren naar tevredenheid gebruik van de facilitaire schoonmaak dienstverlening van de firma Hommerson op diverse locaties in Nederland. Dan hebben we het o.a. over kantoren, laboratoriums, stallen en bedrijfswoningen. ..."
+        </blockquote>
+        <figcaption class="mt-4 text-[15px] text-grafiet/65"><span class="text-rood tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</span> Rob van Leeuwen, Google</figcaption>
+      </figure>
+
+      <figure class="lg:col-span-5 border-t-2 border-grafiet pt-6">
+        <blockquote class="text-lg leading-relaxed text-grafiet/85">
+          "Hommerson werkt heel klantgericht. Fijn als er pro-actief gereageerd wordt, dat maakt de samenwerking fijn."
+        </blockquote>
+        <figcaption class="mt-4 text-[15px] text-grafiet/65"><span class="text-rood tracking-[2px]" aria-label="4 van 5 sterren">★★★★</span> Linh Ly, Google</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Werkgebied -->
+<section id="werkgebied" class="relative bg-grafiet text-white overflow-hidden">
+  <div class="grid lg:grid-cols-2">
+    <img src="assets/google-01.jpg" alt="Bedrijfsbus en aanhanger van Hommerson met de tekst Betrouwbaar schoon"
+         class="w-full h-64 sm:h-80 lg:h-full object-cover object-[60%_50%]">
+    <div class="px-5 sm:px-10 lg:px-16 py-14 lg:py-20 max-w-2xl">
+      <h2 class="kop font-extrabold text-3xl lg:text-4xl leading-tight">Vanuit Arnhem de regio in.</h2>
+      <p class="mt-4 text-white/70 text-lg leading-relaxed">Wij maken schoon in onder andere deze plaatsen.</p>
+      <ul class="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-lg font-semibold text-white/90">
+        <li>Arnhem</li><li>Nijmegen</li><li>Bemmel</li><li>Deventer</li><li>Duiven</li><li>Doorwerth</li><li>Doetinchem</li>
+        <li>Ede</li><li>Elst</li><li>Huissen</li><li>Oosterbeek</li><li>Renkum</li><li>Rheden</li><li>Utrecht</li>
+        <li>Velp</li><li>Veenendaal</li><li>Westervoort</li><li>Wijchen</li><li>Zevenaar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-4xl lg:text-5xl leading-[1.05]">Even kennismaken?</h2>
+      <p class="mt-5 text-lg text-grafiet/75 leading-relaxed max-w-[42ch]">Heeft u vragen over onze diensten of prijzen? Bel of mail ons, dan krijgt u een vrijblijvende offerte op maat.</p>
+
+      <a href="tel:0883639000" class="mt-8 block group">
+        <span class="block text-[15px] text-grafiet/60 font-semibold">Bel ons direct</span>
+        <span class="kop-breed block font-black text-[34px] sm:text-[44px] text-rood group-hover:text-rood-donker transition-colors leading-tight">088 363 9000</span>
+      </a>
+      <a href="mailto:info@betrouwbaarschoon.nl" class="mt-4 inline-block text-lg font-semibold underline decoration-grafiet/30 underline-offset-4 hover:decoration-rood">info@betrouwbaarschoon.nl</a>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8 text-grafiet/85">
+        <div>
+          <h3 class="font-bold text-grafiet">Adres</h3>
+          <p class="mt-2 leading-relaxed">Hommerson Schoonmaakbedrijf<br>Beijerinckweg 38<br>6827 BN Arnhem</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-grafiet">Bereikbaar</h3>
+          <p class="mt-2 leading-relaxed">Maandag t/m vrijdag<br>08:00 tot 17:00<br>Weekend gesloten</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <form class="bg-koel p-6 sm:p-10 boog-hoek" action="mailto:info@betrouwbaarschoon.nl" method="post" enctype="text/plain">
+        <h3 class="kop font-bold text-2xl lg:pl-10">Offerte aanvragen</h3>
+        <p class="mt-2 text-grafiet/70 lg:pl-10">Vertel kort om wat voor pand het gaat. We nemen zo snel mogelijk contact met u op.</p>
+        <div class="mt-8 grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-1.5 w-full bg-white border border-grafiet/15 rounded-md px-4 py-3 focus:border-rood outline-none">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Bedrijf of organisatie</span>
+            <input name="bedrijf" autocomplete="organization" class="mt-1.5 w-full bg-white border border-grafiet/15 rounded-md px-4 py-3 focus:border-rood outline-none">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Telefoon</span>
+            <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full bg-white border border-grafiet/15 rounded-md px-4 py-3 focus:border-rood outline-none">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">E-mail</span>
+            <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full bg-white border border-grafiet/15 rounded-md px-4 py-3 focus:border-rood outline-none">
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-sm font-semibold">Soort pand</span>
+            <select name="soort" class="mt-1.5 w-full bg-white border border-grafiet/15 rounded-md px-4 py-3 focus:border-rood outline-none">
+              <option>Kantoor</option><option>Onderwijs</option><option>Zorg</option><option>Retail</option>
+              <option>Vastgoed of VvE</option><option>Recreatie en sport</option><option>Anders</option>
+            </select>
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-sm font-semibold">Uw vraag</span>
+            <textarea name="vraag" rows="4" class="mt-1.5 w-full bg-white border border-grafiet/15 rounded-md px-4 py-3 focus:border-rood outline-none" placeholder="Bijvoorbeeld: kantoor van 600 m², schoonmaak drie avonden per week"></textarea>
+          </label>
+        </div>
+        <button type="submit" class="knop-rood mt-6 w-full sm:w-auto bg-rood text-white font-bold rounded-full px-8 py-4">Offerte aanvragen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-grafiet text-white/70 text-[15px]">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row gap-8 md:items-center md:justify-between">
+    <div class="flex items-center gap-3">
+      <span class="bg-white rounded-tl-[22px] p-1.5"><img src="assets/logo-oud.png" alt="" class="h-8 w-8"></span>
+      <span>
+        <span class="kop-breed block font-extrabold italic text-white text-[17px]">HOMMERSON</span>
+        <span class="block text-white/60 text-[13px]">Betrouwbaar schoon</span>
+      </span>
+    </div>
+    <p>Beijerinckweg 38, 6827 BN Arnhem<br>
+      <a href="tel:0883639000" class="hover:text-white">088 363 9000</a> &nbsp;|&nbsp; <a href="mailto:info@betrouwbaarschoon.nl" class="hover:text-white">info@betrouwbaarschoon.nl</a></p>
+    <p class="text-white/50">© 2026 Schoonmaakbedrijf Hommerson B.V.</p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk op mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-black/10 p-3 flex gap-3">
+  <a href="tel:0883639000" class="knop-rood flex-1 inline-flex items-center justify-center gap-2 bg-rood text-white font-bold rounded-full py-3.5">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel 088 363 9000
+  </a>
+  <a href="mailto:info@betrouwbaarschoon.nl" class="inline-flex items-center justify-center px-5 rounded-full border border-grafiet/20 font-semibold">Mail</a>
+</div>
+
+</body>
+</html>
