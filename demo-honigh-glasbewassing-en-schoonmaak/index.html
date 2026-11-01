@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Honigh glasbewassing en schoonmaak | Glazenwasser in Malden en Nijmegen</title>
+<meta name="description" content="Glazenwasser, schoonmaakwerk en kluswerk in Malden en Nijmegen. Sinds 2008 voor particulieren, bedrijven en VvE's. Bel 06 52548846.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B8A3F'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-style='italic' font-size='20' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;0,800;1,700;1,800;1,900&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        groen: { DEFAULT: '#0B8A3F', donker: '#087234' },
+        inkt: '#0F2A1D',
+        glas: '#EAF3EF',
+        lijn: '#D3E3DB',
+      },
+      fontFamily: {
+        kop: ['Archivo', 'system-ui', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: Archivo, system-ui, sans-serif; font-style: italic; font-weight: 900; letter-spacing: -0.02em; word-spacing: 0.1em; }
+  /* Raamvorm van de hero-foto */
+  .raam { border-radius: 999px 999px 18px 18px; }
+  .raam-lijn { border-radius: 999px 999px 22px 22px; }
+  /* Glinster uit het logo */
+  .glint line { stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+  /* Verrijking: alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-foto { animation: zeem 1.1s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-tekst > * { animation: op .7s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-tekst > *:nth-child(2) { animation-delay: .08s; }
+    .js .hero-tekst > *:nth-child(3) { animation-delay: .16s; }
+    .js .hero-tekst > *:nth-child(4) { animation-delay: .24s; }
+    .js .hero-tekst > *:nth-child(5) { animation-delay: .32s; }
+  }
+  @keyframes zeem { from { clip-path: inset(0 100% 0 0 round 999px 999px 18px 18px); } to { clip-path: inset(0 0 0 0 round 999px 999px 18px 18px); } }
+  @keyframes op { from { transform: translateY(14px); opacity: .001; } to { transform: none; opacity: 1; } }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #0B8A3F; outline-offset: 3px; }
+</style>
+</head>
+<body class="bg-white text-inkt font-sans pb-20 md:pb-0">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-3 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Honigh glasbewassing en schoonmaak, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-glas">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-lijn">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-2 text-groen" aria-label="Honigh glasbewassing en schoonmaak, naar boven">
+      <span class="kop text-[26px] md:text-[30px] leading-none">HONIGH</span>
+      <svg class="glint w-5 h-5 -mt-3" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="23"/><line x1="1" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="23" y2="12"/><line x1="5" y1="5" x2="8.5" y2="8.5"/><line x1="15.5" y1="15.5" x2="19" y2="19"/></svg>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#werk" class="hover:text-groen">Werkzaamheden</a>
+      <a href="#werkwijze" class="hover:text-groen">Werkwijze</a>
+      <a href="#reviews" class="hover:text-groen">Reviews</a>
+      <a href="#contact" class="hover:text-groen">Contact</a>
+    </nav>
+    <a href="tel:+31652548846" class="knop hidden md:inline-flex items-center gap-2 rounded-full bg-groen hover:bg-groen-donker text-white text-sm md:text-[15px] font-semibold px-4 md:px-5 py-2.5">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 52548846</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="relative max-w-6xl mx-auto px-5 md:px-8 pt-8 md:pt-16 pb-16 md:pb-24 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+    <div class="hero-tekst md:col-span-7 lg:col-span-6">
+      <p class="text-groen font-semibold text-[15px] mb-4">Glazenwasser en schoonmaak in Malden en Nijmegen</p>
+      <h1 class="kop text-[44px] leading-[0.98] sm:text-6xl lg:text-[80px] text-inkt">Helder glas.<br>Heldere afspraken.</h1>
+      <p class="mt-5 md:mt-6 text-[17px] md:text-lg leading-relaxed text-inkt/75 max-w-[30rem]">Sinds 2008 wassen wij ramen, maken we trappenhuizen schoon en pakken we klussen in en om het huis aan. Voor particulieren, bedrijven en VvE's.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31652548846" class="knop inline-flex items-center gap-3 rounded-full bg-groen hover:bg-groen-donker text-white text-lg font-semibold pl-6 pr-7 py-4 shadow-[0_10px_30px_-10px_rgba(11,138,63,.6)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 52548846
+        </a>
+        <a href="mailto:info@schoonmaakbedrijfhonigh.nl" class="font-semibold text-inkt underline decoration-groen decoration-2 underline-offset-4 hover:text-groen">Of stuur een mail</a>
+      </div>
+      <p class="mt-7 flex items-center gap-2 text-[15px] text-inkt/70">
+        <span class="text-groen tracking-tight" aria-hidden="true">★★★★<span class="opacity-30">★</span></span>
+        <span><strong class="text-inkt font-semibold">4,3</strong> op Google, uit 4 reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-5 lg:col-span-6 relative flex justify-center md:justify-end">
+      <div class="relative w-[82%] sm:w-[60%] md:w-full max-w-[440px]">
+        <div class="raam-lijn absolute -inset-3 md:-inset-4 border-2 border-groen/70 translate-x-3 translate-y-3 md:translate-x-5 md:translate-y-5" aria-hidden="true"></div>
+        <img src="assets/site-02.jpg" alt="Glazenwasser van Honigh zeept lachend een ruit in" class="hero-foto raam relative w-full aspect-[4/5] object-cover object-[50%_30%]">
+        <svg class="glint absolute -top-4 -left-6 md:-left-10 w-14 h-14 md:w-20 md:h-20 text-groen" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="23"/><line x1="1" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="23" y2="12"/><line x1="5" y1="5" x2="8.5" y2="8.5"/><line x1="15.5" y1="15.5" x2="19" y2="19"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkzaamheden -->
+<section id="werk" class="bg-glas pb-20 md:pb-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="pt-20 md:pt-28 max-w-2xl">
+      <h2 class="kop text-4xl md:text-5xl leading-[1.02]">Wat wij voor u doen</h2>
+      <p class="mt-4 text-lg text-inkt/75 leading-relaxed">Drie vakken, één aanspreekpunt. Of het nu om uw ramen thuis gaat, het trappenhuis van uw VvE of de goten die al een tijd vol liggen.</p>
+    </div>
+
+    <!-- Glasbewassing -->
+    <article class="mt-12 md:mt-16 grid md:grid-cols-12 gap-6 md:gap-12 items-center">
+      <div class="md:col-span-7">
+        <img src="assets/site-04.webp" alt="Glazenwasser zeept een grote ruit in, gezien van binnenuit" class="w-full aspect-[16/11] object-cover rounded-[22px]" loading="lazy">
+      </div>
+      <div class="md:col-span-5">
+        <h3 class="kop text-3xl md:text-[40px] leading-none text-groen">Glasbewassing</h3>
+        <p class="mt-5 text-[17px] leading-relaxed text-inkt/80">Zoveel mogelijk ambachtelijk, met emmer en ladder. Voor de ramen die lastig te bereiken zijn werken we met telescoopbewassing en osmosewater.</p>
+        <p class="mt-3 text-[17px] leading-relaxed text-inkt/80">Kozijnen, vensterbanken en deuren nemen we vanzelfsprekend mee. Voor particulieren en bedrijven.</p>
+        <a href="tel:+31652548846" class="mt-6 inline-block font-semibold underline decoration-groen decoration-2 underline-offset-4 hover:text-groen">Ramen laten wassen? Bel ons</a>
+      </div>
+    </article>
+
+    <div class="mt-16 md:mt-24 grid md:grid-cols-2 gap-14 md:gap-12">
+      <!-- Schoonmaak -->
+      <article class="bg-white rounded-[22px] p-3 pb-8 md:pb-10">
+        <img src="assets/site-05.webp" alt="Schoonmaker stofzuigt een vloer met een bouwstofzuiger" class="w-full aspect-[3/2] object-cover object-[50%_60%] rounded-[16px]" loading="lazy">
+        <div class="px-4 md:px-6">
+          <h3 class="kop mt-7 text-3xl md:text-[34px] leading-none text-groen">Schoonmaakwerk</h3>
+          <p class="mt-4 text-[17px] leading-relaxed text-inkt/80">Een pand eenmalig schoon opleveren, of vast onderhoud van een trappenhuis of kantoor.</p>
+          <p class="mt-3 text-[17px] leading-relaxed text-inkt/80">We hebben een flink aantal VvE's in onderhoud, voor het trappenhuis en de glasbewassing. We weten dus precies hoe we dat het beste aanpakken.</p>
+        </div>
+      </article>
+      <!-- Kluswerk -->
+      <article class="bg-white rounded-[22px] p-3 pb-8 md:pb-10 md:mt-20">
+        <img src="assets/site-06.webp" alt="Klusser boort een gat in een raamkozijn" class="w-full aspect-[3/2] object-cover rounded-[16px]" loading="lazy">
+        <div class="px-4 md:px-6">
+          <h3 class="kop mt-7 text-3xl md:text-[34px] leading-none text-groen">Klussen in en om het huis</h3>
+          <p class="mt-4 text-[17px] leading-relaxed text-inkt/80">Goten leegmaken, houtwerk reinigen, afspuiten. Maar ook een gordijnrail ophangen of klein timmerwerk, noem maar op.</p>
+          <p class="mt-3 text-[17px] leading-relaxed text-inkt/80">Wij zijn zeker niet onhandig en nemen dit soort werk graag aan.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Statement -->
+<section class="relative bg-groen text-white overflow-hidden">
+  <svg class="glint absolute right-[6%] top-10 w-24 h-24 md:w-40 md:h-40 text-white/25" viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="23"/><line x1="1" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="23" y2="12"/><line x1="5" y1="5" x2="8.5" y2="8.5"/><line x1="15.5" y1="15.5" x2="19" y2="19"/></svg>
+  <div class="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <blockquote class="kop text-[34px] leading-[1.06] sm:text-5xl lg:text-[64px] max-w-5xl">
+      Lever kwaliteit, communiceer en kom je afspraken na. Dan is iedereen blij.
+    </blockquote>
+    <div class="mt-10 grid md:grid-cols-2 gap-6 md:gap-12 max-w-4xl text-[17px] leading-relaxed text-white/85">
+      <p>Meer is er in dit werk eigenlijk niet echt belangrijk. Op tijd komen, doen wat we zeggen en goed werk afleveren vinden wij niet meer dan normaal.</p>
+      <p>Moet een afspraak toch een keer verzet worden? Dan hoort u het van ons, met een belletje of een appje. Zo bouw je sinds 2008 een goede naam op.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-12">
+    <div class="md:col-span-4">
+      <h2 class="kop text-4xl md:text-5xl leading-[1.02]">Zo gaan we te werk</h2>
+      <p class="mt-4 text-lg text-inkt/75 leading-relaxed">Bellen, mailen of gewoon op straat aanspreken. Alles mag.</p>
+    </div>
+    <ol class="md:col-span-8 border-t border-lijn">
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-2 py-7 border-b border-lijn">
+        <span class="kop text-3xl md:text-4xl text-groen leading-none">1</span>
+        <div><h3 class="font-kop font-bold text-xl">U neemt contact op</h3><p class="mt-2 text-inkt/75 leading-relaxed">Telefonisch, per e-mail, of u spreekt ons aan als u ons in de straat ziet werken.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-2 py-7 border-b border-lijn">
+        <span class="kop text-3xl md:text-4xl text-groen leading-none">2</span>
+        <div><h3 class="font-kop font-bold text-xl">We komen even kijken</h3><p class="mt-2 text-inkt/75 leading-relaxed">We bekijken de klus en geven advies. Vaak noemen we ter plekke al een prijs, of we maken een offerte als u dat wilt.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-2 py-7 border-b border-lijn">
+        <span class="kop text-3xl md:text-4xl text-groen leading-none">3</span>
+        <div><h3 class="font-kop font-bold text-xl">Snel aan de slag</h3><p class="mt-2 text-inkt/75 leading-relaxed">Gaat u akkoord, dan plannen we meestal op korte termijn een afspraak en voeren we de klus vakkundig uit.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-2 py-7 border-b border-lijn">
+        <span class="kop text-3xl md:text-4xl text-groen leading-none">4</span>
+        <div><h3 class="font-kop font-bold text-xl">Daarna geen omkijken meer</h3><p class="mt-2 text-inkt/75 leading-relaxed">Kiest u voor periodieke reiniging, dan nemen we u voortaan mee in de planning. U hoeft er zelf niet meer aan te denken.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-glas py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="kop text-4xl md:text-5xl leading-[1.02]">Wat klanten zeggen</h2>
+      <p class="flex items-baseline gap-3">
+        <span class="kop text-5xl text-groen leading-none">4,3</span>
+        <span class="text-inkt/70 text-[15px]">gemiddeld op Google<br>uit 4 reviews</span>
+      </p>
+    </div>
+    <div class="mt-12 grid lg:grid-cols-12 gap-6">
+      <figure class="lg:col-span-7 bg-white rounded-[22px] p-8 md:p-12 flex flex-col">
+        <span class="text-groen text-lg" aria-label="5 van 5 sterren">★★★★★</span>
+        <blockquote class="mt-5 text-xl md:text-[22px] leading-relaxed text-inkt">
+          "Vandaag zijn mijn ramen, kozijnen, boeiboorden en al het trespa plaatwerk grondig schoongemaakt, en ik ben echt ontzettend tevreden met het resultaat. Alles ziet er weer fris en als nieuw uit!<br>Daarnaast verliep het contact ook heel prettig: duidelijke communicatie, vriendelijk en professioneel. Afspraken werden netjes..."
+        </blockquote>
+        <figcaption class="mt-auto pt-8 font-semibold">Priscilla Wismans <span class="font-normal text-inkt/60">via Google</span></figcaption>
+      </figure>
+      <div class="lg:col-span-5 grid gap-6">
+        <figure class="bg-white rounded-[22px] p-8 md:p-10">
+          <span class="text-groen" aria-label="5 van 5 sterren">★★★★★</span>
+          <blockquote class="kop mt-4 text-2xl md:text-[28px] leading-[1.15]">"Ramen en rolluik ziet er weer netjes uit!"</blockquote>
+          <figcaption class="mt-6 font-semibold">Naomi Hofman <span class="font-normal text-inkt/60">via Google</span></figcaption>
+        </figure>
+        <figure class="bg-white rounded-[22px] p-8 md:p-10">
+          <span class="text-groen" aria-label="5 van 5 sterren">★★★★★</span>
+          <blockquote class="kop mt-4 text-2xl md:text-[28px] leading-[1.15]">"Super goede glasbewassing. Prettig en enthousiast."</blockquote>
+          <figcaption class="mt-6 font-semibold">Tineke Nauta <span class="font-normal text-inkt/60">via Google</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-4xl md:text-5xl leading-[1.02]">Even bellen is het snelst</h2>
+      <p class="mt-4 text-lg text-inkt/75 leading-relaxed">Vragen, een afspraak of een prijs voor uw ramen? Bel of mail ons, we denken graag mee.</p>
+      <a href="tel:+31652548846" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-groen hover:bg-groen-donker text-white text-lg font-semibold pl-6 pr-7 py-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 06 52548846
+      </a>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-7 text-[16px]">
+        <div><dt class="text-inkt/60 text-sm">E-mail</dt><dd class="mt-1"><a href="mailto:info@schoonmaakbedrijfhonigh.nl" class="font-semibold break-all hover:text-groen">info@schoonmaak&shy;bedrijfhonigh.nl</a></dd></div>
+        <div><dt class="text-inkt/60 text-sm">Adres</dt><dd class="mt-1 font-semibold">Tulpstraat 8<br>6581 XV Malden</dd></div>
+        <div class="sm:col-span-2"><dt class="text-inkt/60 text-sm">Bereikbaar</dt>
+          <dd class="mt-1"><span class="font-semibold">Maandag t/m vrijdag, 08:00 tot 18:00</span><br><span class="text-inkt/70">Zaterdag en zondag gesloten</span></dd></div>
+      </dl>
+    </div>
+    <form class="lg:col-span-7 bg-glas rounded-[22px] p-6 md:p-10 grid sm:grid-cols-2 gap-5" action="mailto:info@schoonmaakbedrijfhonigh.nl" method="post" enctype="text/plain">
+      <h3 class="sm:col-span-2 font-kop font-bold text-2xl">Liever een bericht sturen?</h3>
+      <label class="grid gap-2 text-sm font-medium">Naam
+        <input name="naam" required autocomplete="name" class="rounded-xl border border-lijn bg-white px-4 py-3 text-base font-normal focus:border-groen focus:outline-none focus:ring-2 focus:ring-groen/30">
+      </label>
+      <label class="grid gap-2 text-sm font-medium">Telefoon
+        <input name="telefoon" type="tel" autocomplete="tel" class="rounded-xl border border-lijn bg-white px-4 py-3 text-base font-normal focus:border-groen focus:outline-none focus:ring-2 focus:ring-groen/30">
+      </label>
+      <label class="sm:col-span-2 grid gap-2 text-sm font-medium">E-mail
+        <input name="email" type="email" required autocomplete="email" class="rounded-xl border border-lijn bg-white px-4 py-3 text-base font-normal focus:border-groen focus:outline-none focus:ring-2 focus:ring-groen/30">
+      </label>
+      <label class="sm:col-span-2 grid gap-2 text-sm font-medium">Waar kunnen we mee helpen?
+        <textarea name="bericht" rows="5" required class="rounded-xl border border-lijn bg-white px-4 py-3 text-base font-normal focus:border-groen focus:outline-none focus:ring-2 focus:ring-groen/30" placeholder="Bijvoorbeeld: ramen binnen en buiten, rijtjeshuis in Malden"></textarea>
+      </label>
+      <div class="sm:col-span-2">
+        <button type="submit" class="knop rounded-full bg-inkt hover:bg-groen text-white font-semibold px-7 py-3.5">Bericht versturen</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/75">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div>
+      <p class="kop text-white text-3xl leading-none">HONIGH</p>
+      <p class="mt-2 text-sm">Glasbewassing en schoonmaak in Malden en Nijmegen</p>
+    </div>
+    <div class="text-sm leading-relaxed md:text-right">
+      <p>Tulpstraat 8, 6581 XV Malden</p>
+      <p><a href="tel:+31652548846" class="hover:text-white">06 52548846</a> &nbsp;|&nbsp; <a href="mailto:info@schoonmaakbedrijfhonigh.nl" class="hover:text-white">info@schoonmaakbedrijfhonigh.nl</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-lijn p-3 flex gap-3">
+  <a href="tel:+31652548846" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-groen text-white font-semibold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 06 52548846
+  </a>
+  <a href="mailto:info@schoonmaakbedrijfhonigh.nl" class="knop inline-flex items-center justify-center rounded-full border-2 border-lijn px-5 font-semibold" aria-label="Stuur een e-mail">Mail</a>
+</div>
+
+</body>
+</html>
