@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Somsen Bouwtechniek | Elektra, leidingwerk en verbouwingen in Zutphen</title>
+<meta name="description" content="Somsen Bouwtechniek uit Zutphen: elektra, leidingwerk en complete verbouwingen. Keukens, badkamers, installaties en losse klussen tegen een vaste prijs. Bel 06 28444849.">
+<meta property="og:title" content="Somsen Bouwtechniek, Zutphen">
+<meta property="og:description" content="Jouw verbouwing, zonder zorgen. Eén vast aanspreekpunt van begin tot oplevering.">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="assets/site-03.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#F5F4EF',
+          ink: '#17212B',
+          inksoft: '#22303D',
+          bus: '#F2A516',
+          busdark: '#D98F05',
+          logoblue: '#1D86C6',
+          logogreen: '#5BB848',
+          stone: '#5B6670',
+        },
+        fontFamily: {
+          display: ['Archivo', 'system-ui', 'sans-serif'],
+          body: ['"Public Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; }
+  .wide { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 125%; font-variation-settings: "wdth" 125; letter-spacing: -0.02em; }
+  .balance { text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+
+  /* Hero beeld met schuine bliksemrand */
+  .hero-shape { clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 100%); }
+  .hero-stripe { clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 100%); transform: translateY(-14px); }
+  @media (min-width: 1024px) {
+    .hero-shape { clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%); }
+    .hero-stripe { clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%); transform: translateX(-18px); }
+  }
+  .slant-top { clip-path: polygon(0 0, 100% 28px, 100% 100%, 0 100%); }
+  .bolt-line { background: linear-gradient(90deg, #1D86C6, #5BB848); }
+
+  .btn-bus { transition: background-color .2s, transform .15s; }
+  .btn-bus:hover { background-color: #D98F05; }
+  .btn-bus:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #1D86C6; outline-offset: 3px;
+  }
+
+  /* Eén laad-moment, alleen als JS draait */
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+  .js.ready .reveal { opacity: 1; transform: none; }
+  .js.ready .reveal-2 { transition-delay: .12s; }
+  .js.ready .reveal-3 { transition-delay: .24s; }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+<script>
+  document.documentElement.classList.add('js');
+  window.addEventListener('DOMContentLoaded', function () {
+    requestAnimationFrame(function () { document.documentElement.classList.add('ready'); });
+  });
+</script>
+</head>
+<body class="bg-paper text-ink antialiased pb-[72px] lg:pb-0">
+
+<!-- Demo-balk -->
+<div class="bg-ink text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Somsenbouwtechniek BV, gemaakt door <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-bus">Hagenweb</a>
+</div>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-12 focus:left-4 bg-white px-4 py-2 z-50">Naar de inhoud</a>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-ink/10">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 h-[68px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="Somsen Bouwtechniek, naar boven">
+      <img src="assets/site-03.png" alt="Logo Somsen Bouwtechniek" class="h-14 w-auto">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-ink/80">
+      <a href="#diensten" class="hover:text-ink">Diensten</a>
+      <a href="#vaste-prijs" class="hover:text-ink">Vaste prijs</a>
+      <a href="#mart" class="hover:text-ink">Over Mart</a>
+      <a href="#reviews" class="hover:text-ink">Reviews</a>
+      <a href="#contact" class="hover:text-ink">Contact</a>
+    </nav>
+    <a href="tel:+31628444849" class="btn-bus inline-flex items-center gap-2 bg-bus text-ink font-semibold rounded-md px-4 py-2.5 text-[15px]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 28444849</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.08fr)] lg:min-h-[calc(100dvh-104px)]">
+    <div class="relative z-10 px-5 lg:pl-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] lg:pr-4 pt-7 pb-9 lg:py-16 flex flex-col justify-center">
+      <p class="reveal text-[15px] font-semibold text-stone flex items-center gap-3">
+        <span class="bolt-line inline-block h-[3px] w-8 rounded-full" aria-hidden="true"></span>
+        Elektra, leidingwerk en verbouwingen in Zutphen
+      </p>
+      <h1 class="reveal reveal-2 wide font-[850] text-[2.55rem] leading-[0.98] sm:text-6xl xl:text-[5.4rem] mt-4 lg:mt-5 balance">
+        Bel Mart. Dan komt het goed.
+      </h1>
+      <p class="reveal reveal-2 mt-4 lg:mt-6 text-[17px] lg:text-lg leading-relaxed text-ink/75 max-w-[30rem] pretty">
+        Een complete verbouwing of één losse klus: Somsen Bouwtechniek regelt elektra, leidingen en afwerking, met één vast aanspreekpunt van begin tot oplevering.
+      </p>
+      <div class="reveal reveal-3 mt-6 lg:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31628444849" class="btn-bus inline-flex items-center gap-3 bg-bus text-ink font-bold text-lg rounded-md px-7 py-4 shadow-[0_10px_24px_-10px_rgba(217,143,5,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 28444849
+        </a>
+        <a href="mailto:info@somsenbouwtechniek.nl" class="font-semibold text-ink underline decoration-2 decoration-bus underline-offset-[6px] hover:decoration-ink">Liever mailen</a>
+      </div>
+      <a href="#reviews" class="reveal reveal-3 mt-6 lg:mt-9 inline-flex items-center gap-3 text-[15px] text-ink/75 hover:text-ink w-fit">
+        <span class="flex text-bus" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 15l-5.2 2.7 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 15l-5.2 2.7 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 15l-5.2 2.7 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 15l-5.2 2.7 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 15l-5.2 2.7 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="text-ink">4.8</strong> uit 20 Google-reviews</span>
+      </a>
+    </div>
+
+    <div class="relative h-[360px] sm:h-[460px] lg:h-auto">
+      <div class="hero-stripe bolt-line absolute inset-0" aria-hidden="true"></div>
+      <div class="hero-shape absolute inset-0">
+        <img src="assets/google-01.jpg" alt="De gele bus van Somsen Bouwtechniek op de dijk langs de IJssel" class="w-full h-full object-cover object-[30%_60%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="py-20 lg:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10">
+    <div class="max-w-2xl">
+      <h2 class="wide font-extrabold text-4xl lg:text-[3.2rem] leading-[1.02] balance">Jouw verbouwing, zonder zorgen.</h2>
+      <p class="mt-5 text-lg text-ink/75 leading-relaxed pretty">Je hoeft geen elektricien, loodgieter en stukadoor apart te regelen. Mart neemt de klus uit handen en stemt alles op elkaar af, van het eerste gesprek tot de oplevering.</p>
+    </div>
+
+    <!-- Verbouwingen -->
+    <article class="mt-16 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-7">
+        <img src="assets/google-04.jpg" alt="Open keuken met kookeiland en houten kastenwand, opgeleverd door Somsen Bouwtechniek" class="w-full aspect-[4/3] object-cover object-[50%_62%] rounded-md">
+      </div>
+      <div class="lg:col-span-5">
+        <h3 class="wide font-extrabold text-2xl lg:text-[2rem] leading-tight">Verbouwingen</h3>
+        <p class="mt-4 text-ink/75 leading-relaxed text-[17px] pretty">Kleine en grote renovaties, van ontwerp tot oplevering. Leidingen omleggen, elektra aanleggen, stucwerk regelen: het voorwerk en de afwerking komen uit één hand, zodat jij één aanspreekpunt hebt.</p>
+        <blockquote class="mt-7 border-l-[3px] border-bus pl-5 text-ink/80 italic leading-relaxed">
+          "We zijn goed, snel en professioneel geholpen met de verbouwing van onze bijkeuken."
+          <footer class="not-italic mt-2 text-sm font-semibold text-stone">Jeroen Veenstra</footer>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- Keukens & badkamers -->
+    <article class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-5 lg:order-1 order-2">
+        <h3 class="wide font-extrabold text-2xl lg:text-[2rem] leading-tight">Keukens &amp; badkamers</h3>
+        <p class="mt-4 text-ink/75 leading-relaxed text-[17px] pretty">Komt er een nieuwe keuken of badkamer? Mart doet het voorwerk: aansluitingen voor water en stroom op de juiste plek, leidingwerk weggewerkt en de wanden strak. Zo kan de rest zonder gedoe worden geplaatst.</p>
+        <ul class="mt-6 space-y-2 text-[16px] font-medium">
+          <li class="flex gap-3"><span class="mt-2.5 h-[3px] w-4 bolt-line rounded-full shrink-0" aria-hidden="true"></span>Leidingen omleggen en aansluiten</li>
+          <li class="flex gap-3"><span class="mt-2.5 h-[3px] w-4 bolt-line rounded-full shrink-0" aria-hidden="true"></span>Elektra voor apparatuur en verlichting</li>
+          <li class="flex gap-3"><span class="mt-2.5 h-[3px] w-4 bolt-line rounded-full shrink-0" aria-hidden="true"></span>Stucwerk en afwerking geregeld</li>
+        </ul>
+      </div>
+      <figure class="lg:col-span-6 lg:col-start-7 lg:order-2 order-1">
+        <img src="assets/site-01.jpg" alt="Badkamer met terracotta tegelwand, inloopdouche en twee terracotta waskommen" class="w-full aspect-[4/5] lg:aspect-[5/6] object-cover object-[50%_55%] rounded-md">
+        <figcaption class="mt-3 text-sm text-stone">Badkamer met terracotta accenten in Deventer</figcaption>
+      </figure>
+    </article>
+
+    <!-- Installaties -->
+    <article class="mt-20 lg:mt-28 bg-ink text-white rounded-md overflow-hidden grid lg:grid-cols-12">
+      <div class="lg:col-span-7 p-8 sm:p-12 lg:p-16">
+        <h3 class="wide font-extrabold text-2xl lg:text-[2rem] leading-tight">Installaties &amp; verduurzaming</h3>
+        <p class="mt-4 text-white/75 leading-relaxed text-[17px] max-w-xl pretty">Als erkend elektromonteur legt Mart je installatie veilig en volgens de geldende normen aan. Ook voor energiezuinige installaties, isolatie en de voorbereiding op een warmtepomp ben je bij Somsen aan het goede adres.</p>
+        <p class="mt-6 text-white/75 leading-relaxed text-[17px] max-w-xl pretty">Wasmachine en droger op zolder? Ook dat.</p>
+        <blockquote class="mt-8 border-l-[3px] border-bus pl-5 text-white/90 italic leading-relaxed max-w-xl">
+          "Wasmachine en droger aansluiting op zolder laten uitvoeren. Super gedaan, mooie afwerking en goed contact gehad met Mart."
+          <footer class="not-italic mt-2 text-sm font-semibold text-white/60">Thijs Schouten</footer>
+        </blockquote>
+      </div>
+      <div class="lg:col-span-5 relative min-h-[280px]">
+        <img src="assets/google-03.jpg" alt="De gele bus van Somsen Bouwtechniek in een woonwijk" class="absolute inset-0 w-full h-full object-cover object-[70%_60%]">
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Vaste prijs -->
+<section id="vaste-prijs" class="bg-bus slant-top pt-24 pb-20 lg:pt-28 lg:pb-24">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 items-end">
+    <div class="lg:col-span-7">
+      <h2 class="wide font-extrabold text-4xl lg:text-[3.4rem] leading-[1.02] balance">Losse klus? Vaste prijs.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-ink/85 max-w-xl pretty">Ook voor een enkele klus kun je bij Somsen terecht, voor een vaste prijs met alles inbegrepen. Zo weet je vooraf precies waar je aan toe bent.</p>
+    </div>
+    <div class="lg:col-span-5">
+      <ul class="wide font-bold text-xl lg:text-2xl divide-y divide-ink/20 border-y border-ink/20">
+        <li class="py-4">Groepenkast vervangen</li>
+        <li class="py-4">Laadpaal plaatsen</li>
+        <li class="py-4">Nieuwe cv-ketel</li>
+      </ul>
+      <a href="mailto:info@somsenbouwtechniek.nl?subject=Vaste%20prijs%20aanvragen" class="mt-7 inline-flex items-center gap-3 bg-ink text-white font-semibold rounded-md px-6 py-4 hover:bg-inksoft transition-colors">Vraag een vaste prijs aan</a>
+    </div>
+  </div>
+</section>
+
+<!-- Over Mart -->
+<section id="mart" class="py-20 lg:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-5 relative mr-3 mb-3">
+      <div class="absolute inset-0 translate-x-3 translate-y-3 bolt-line rounded-md" aria-hidden="true"></div>
+      <img src="assets/site-02.jpg" alt="Mart van Somsen Bouwtechniek voor de bedrijfsbus" class="relative w-full aspect-square object-cover rounded-md">
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="wide font-extrabold text-4xl lg:text-[3.2rem] leading-[1.02] balance">Eén vast aanspreekpunt: Mart.</h2>
+      <p class="mt-5 text-lg text-ink/75 leading-relaxed max-w-2xl pretty">Bij Somsen Bouwtechniek praat je niet met een wisselend loket. Mart komt kijken, denkt met je mee en houdt het overzicht. Waar nodig schakelt hij ervaren vakmensen in, en die werken als één team aan jouw project.</p>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-7">
+        <div class="border-t-2 border-ink pt-4">
+          <dt class="font-bold text-[17px]">Vakkundig team</dt>
+          <dd class="mt-1.5 text-ink/70 leading-relaxed">Ervaren vakmensen, gecoördineerd als één team voor jouw project.</dd>
+        </div>
+        <div class="border-t-2 border-ink pt-4">
+          <dt class="font-bold text-[17px]">Ervaring</dt>
+          <dd class="mt-1.5 text-ink/70 leading-relaxed">In kleine en grote renovaties, van bijkeuken tot complete verbouwing.</dd>
+        </div>
+        <div class="border-t-2 border-ink pt-4">
+          <dt class="font-bold text-[17px]">Duurzaam</dt>
+          <dd class="mt-1.5 text-ink/70 leading-relaxed">Energiezuinige installaties, isolatie en voorbereiding voor warmtepompen.</dd>
+        </div>
+        <div class="border-t-2 border-ink pt-4">
+          <dt class="font-bold text-[17px]">Kwaliteit</dt>
+          <dd class="mt-1.5 text-ink/70 leading-relaxed">Controle tijdens én na de werkzaamheden, volgens de geldende normen.</dd>
+        </div>
+      </dl>
+      <div class="mt-10 flex items-center gap-5">
+        <img src="assets/site-07.png" alt="InstallQ logo" class="h-14 w-auto">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-white py-20 lg:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="wide font-extrabold text-4xl lg:text-[3.2rem] leading-[1.02] balance max-w-2xl">Wat klanten over Mart zeggen</h2>
+      <p class="flex items-center gap-3 text-lg">
+        <span class="wide font-extrabold text-4xl">4.8</span>
+        <span class="text-ink/70 leading-tight">van 5 sterren<br>uit 20 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-6">
+      <figure class="lg:col-span-7 lg:row-span-2 bg-paper rounded-md p-8 lg:p-12 flex flex-col">
+        <svg class="w-10 h-10 text-bus" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M13 7C7.5 9 4 13.5 4 19.5 4 23 6.3 25 9 25c2.6 0 4.6-2 4.6-4.5S11.8 16 9.4 16c-.5 0-1 .1-1.3.2.6-3 2.8-5.6 6-7zM28 7c-5.5 2-9 6.5-9 12.5 0 3.5 2.3 5.5 5 5.5 2.6 0 4.6-2 4.6-4.5S26.8 16 24.4 16c-.5 0-1 .1-1.3.2.6-3 2.8-5.6 6-7z"/></svg>
+        <blockquote class="mt-6 text-xl lg:text-[1.65rem] leading-snug font-medium pretty">
+          Somsen Bouwtechniek, heeft me fantastisch werk verricht. Ook toen het op een dag een beetje uitliep omdat de gewapende beton in de achterwand van de keuken tegenzat heeft Mart de klus die late namiddag/ avond netjes afgemaakt. Super, dankbaar!
+        </blockquote>
+        <figcaption class="mt-auto pt-8 font-semibold">Hugo Sloot <span class="block text-stone font-normal text-sm mt-1">5 sterren op Google</span></figcaption>
+      </figure>
+
+      <figure class="lg:col-span-5 border border-ink/10 rounded-md p-7">
+        <blockquote class="leading-relaxed text-ink/85 pretty">Mart heeft bij ons het voorwerk gedaan voordat de nieuwe keuken kwam, leidingen omgelegd, elektra, en stucwerk geregeld.<br>Hij doet netjes z’n werk, communiceert goed.<br>Wij zijn tevreden!</blockquote>
+        <figcaption class="mt-4 font-semibold text-[15px]">Petra van den Top</figcaption>
+      </figure>
+      <figure class="lg:col-span-5 border border-ink/10 rounded-md p-7">
+        <blockquote class="leading-relaxed text-ink/85 pretty">Wasmachine en droger aansluiting op zolder laten uitvoeren. Super gedaan, mooie afwerking en goed contact gehad met Mart. Denkt goed met je mee! Aanrader!</blockquote>
+        <figcaption class="mt-4 font-semibold text-[15px]">Thijs Schouten</figcaption>
+      </figure>
+      <figure class="lg:col-span-6 border border-ink/10 rounded-md p-7">
+        <blockquote class="leading-relaxed text-ink/85 pretty">We zijn goed, snel en professioneel geholpen met de verbouwing van onze bijkeuken. Somsen bouwtechniek heeft het leidingwerk en elektriciteit bij ons aangelegd. We zijn zeer tevreden!</blockquote>
+        <figcaption class="mt-4 font-semibold text-[15px]">Jeroen Veenstra</figcaption>
+      </figure>
+      <figure class="lg:col-span-6 border border-ink/10 rounded-md p-7">
+        <blockquote class="leading-relaxed text-ink/85 pretty">Prima service.<br>Fijn bedrijf om samen mee te werken.<br>Komt alle afspraken op tijd na.<br>Ik kan hem aan iedereen aanbevelen.</blockquote>
+        <figcaption class="mt-4 font-semibold text-[15px]">salih karadavut</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section aria-label="Opgeleverd werk" class="py-6 lg:py-8 bg-white">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid sm:grid-cols-5 gap-4 lg:gap-6">
+    <img src="assets/google-05.jpg" alt="Keukenwand in licht eiken met nis, inductiekookplaat en wijnklimaatkast" class="sm:col-span-3 w-full aspect-[4/3] sm:aspect-auto sm:h-[420px] object-cover rounded-md">
+    <img src="assets/google-02.jpg" alt="Doorkijk langs nieuwe keuken naar een lichte woonkamer" class="sm:col-span-2 w-full aspect-[4/3] sm:aspect-auto sm:h-[420px] object-cover object-[35%_50%] rounded-md">
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-ink text-white mt-0 pt-20 pb-20 lg:pt-28 lg:pb-24 relative overflow-hidden">
+  <div class="bolt-line absolute top-0 left-0 right-0 h-1" aria-hidden="true"></div>
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-6">
+      <h2 class="wide font-extrabold text-4xl lg:text-[3.2rem] leading-[1.02] balance">Plan een vrijblijvend adviesgesprek</h2>
+      <p class="mt-5 text-lg text-white/75 leading-relaxed max-w-lg pretty">Vertel Mart wat je van plan bent. Hij komt kijken en denkt met je mee, of het nu om een verbouwing gaat of om één losse klus.</p>
+      <a href="tel:+31628444849" class="mt-10 block wide font-extrabold text-[2.1rem] sm:text-5xl text-bus hover:text-white transition-colors w-fit">06 28444849</a>
+      <a href="mailto:info@somsenbouwtechniek.nl" class="mt-3 block text-lg font-semibold underline decoration-white/30 underline-offset-[6px] hover:decoration-bus w-fit break-all">info@somsenbouwtechniek.nl</a>
+
+      <div class="mt-12 grid sm:grid-cols-[auto_1fr] gap-8 sm:gap-14 text-white/80">
+        <div>
+          <h3 class="font-bold text-white">Adres</h3>
+          <p class="mt-2 leading-relaxed">Emmerikseweg<br>7204 SE Zutphen</p>
+        </div>
+        <div>
+          <h3 class="font-bold text-white">Openingstijden</h3>
+          <table class="mt-2 leading-relaxed tabular-nums whitespace-nowrap">
+            <tr><td class="pr-6">Maandag t/m vrijdag</td><td>08:00 tot 17:00</td></tr>
+            <tr><td class="pr-6">Zaterdag en zondag</td><td>Gesloten</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6">
+      <form action="mailto:info@somsenbouwtechniek.nl" method="post" enctype="text/plain" class="bg-inksoft rounded-md p-7 sm:p-10 space-y-5">
+        <h3 class="wide font-bold text-2xl">Stuur een bericht</h3>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold text-white/80">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-2 w-full bg-ink border border-white/15 rounded-md px-4 py-3 text-white placeholder-white/35 focus:border-bus outline-none">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-white/80">Telefoon</span>
+            <input name="telefoon" type="tel" autocomplete="tel" class="mt-2 w-full bg-ink border border-white/15 rounded-md px-4 py-3 text-white focus:border-bus outline-none">
+          </label>
+        </div>
+        <label class="block">
+          <span class="text-sm font-semibold text-white/80">E-mail</span>
+          <input name="email" type="email" required autocomplete="email" class="mt-2 w-full bg-ink border border-white/15 rounded-md px-4 py-3 text-white focus:border-bus outline-none">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold text-white/80">Wat wil je laten doen?</span>
+          <textarea name="bericht" rows="5" required class="mt-2 w-full bg-ink border border-white/15 rounded-md px-4 py-3 text-white focus:border-bus outline-none" placeholder="Bijvoorbeeld: nieuwe keuken, groepenkast vervangen, laadpaal..."></textarea>
+        </label>
+        <button type="submit" class="btn-bus w-full bg-bus text-ink font-bold text-lg rounded-md px-6 py-4">Verstuur bericht</button>
+        <p class="text-sm text-white/50">Liever direct contact? Bel <a href="tel:+31628444849" class="underline hover:text-white">06 28444849</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-ink text-white/55 text-sm border-t border-white/10">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-8 flex flex-wrap items-center justify-between gap-4">
+    <p>Somsenbouwtechniek BV, Emmerikseweg, 7204 SE Zutphen</p>
+    <p>Demo-ontwerp door <a href="https://hagenweb.nl" class="text-white/80 underline hover:text-bus">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-ink/95 backdrop-blur p-3 grid grid-cols-[1fr_auto] gap-3">
+  <a href="tel:+31628444849" class="btn-bus flex items-center justify-center gap-2 bg-bus text-ink font-bold rounded-md py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Mart: 06 28444849
+  </a>
+  <a href="mailto:info@somsenbouwtechniek.nl" class="flex items-center justify-center px-4 rounded-md border border-white/25 text-white font-semibold" aria-label="Mail Somsen Bouwtechniek">Mail</a>
+</div>
+
+</body>
+</html>
