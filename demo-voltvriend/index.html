@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoltVriend | Elektricien in Eefde en regio Zutphen</title>
+<meta name="description" content="VoltVriend uit Eefde: laadpalen, meterkasten, zonnepanelen, databekabeling en bedrijfsinstallaties in de regio Zutphen. Bel 06 58016402.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23272A3A'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23EE6B30'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          stroom: { DEFAULT: '#EE6B30', donker: '#D85A20', zacht: '#FDEDE4' },
+          lei: { DEFAULT: '#272A3A', licht: '#3A3E52', zacht: '#6B6F82' },
+          rail: '#E9EAEE',
+          vlak: '#F5F6F8'
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Instrument Sans"', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Instrument Sans', system-ui, sans-serif; color: #272A3A; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 125%; font-weight: 850; letter-spacing: -0.02em; }
+  .kop-smal { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-weight: 700; letter-spacing: -0.01em; }
+  .balans { text-wrap: balance; }
+  .mooi { text-wrap: pretty; }
+
+  /* Woordmerk naar het logo op de bus */
+  .merk { font-family: 'Archivo', sans-serif; font-stretch: 112%; font-weight: 800; line-height: .86; letter-spacing: .01em; }
+
+  /* Hero-foto met schuine snede, verwijst naar de bliksem in het logo */
+  .snede { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+  @media (max-width: 1023px) { .snede { clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 100%); } }
+
+  /* Groepenverdeler */
+  .kast { background: #272A3A; background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px); background-size: 14px 14px; }
+  .din { background: linear-gradient(#c9ccd4, #a9adb8); height: 10px; border-radius: 2px; }
+  .automaat { width: 34px; height: 54px; border-radius: 4px; background: linear-gradient(#ffffff, #e8e9ed); box-shadow: inset 0 -3px 0 rgba(39,42,58,.12); position: relative; flex: none; }
+  .automaat::before { content: ""; position: absolute; left: 50%; top: 10px; width: 12px; height: 20px; margin-left: -6px; border-radius: 2px; background: #272A3A; transition: transform .25s ease; }
+  .automaat::after { content: ""; position: absolute; left: 7px; right: 7px; bottom: 8px; height: 3px; border-radius: 2px; background: #EE6B30; }
+  .groep:hover .automaat::before { transform: translateY(6px); }
+  .strook { background: #fff; color: #272A3A; border-radius: 3px; box-shadow: 0 1px 0 rgba(0,0,0,.25); }
+
+  .knop-stroom { background: #EE6B30; color: #fff; transition: background-color .2s ease, transform .15s ease; }
+  .knop-stroom:hover { background: #D85A20; }
+  .knop-stroom:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #EE6B30; outline-offset: 3px; }
+
+  /* Verrijking alleen als JS draait: de bus schuift één keer binnen */
+  .js .hero-foto { transform: translateX(24px); opacity: .001; transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s ease; }
+  .js.klaar .hero-foto { transform: none; opacity: 1; }
+  @media (prefers-reduced-motion: reduce) { .js .hero-foto { transform: none; opacity: 1; transition: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');addEventListener('DOMContentLoaded',()=>requestAnimationFrame(()=>document.documentElement.classList.add('klaar')));</script>
+</head>
+<body class="bg-white antialiased pb-20 lg:pb-0">
+
+<!-- Demobalk -->
+<div class="bg-lei text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor VoltVriend, gemaakt door <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-stroom">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-rail">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="merk text-[22px] leading-none" aria-label="VoltVriend, naar boven">
+      <span class="block text-stroom">VOLT</span>
+      <span class="block text-lei">VRI<span class="text-stroom">E</span>ND</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-lei/80" aria-label="Hoofdmenu">
+      <a href="#groepen" class="hover:text-stroom transition-colors">Wat ik doe</a>
+      <a href="#werk" class="hover:text-stroom transition-colors">Werk</a>
+      <a href="#bedrijven" class="hover:text-stroom transition-colors">Bedrijven</a>
+      <a href="#reviews" class="hover:text-stroom transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-stroom transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31658016402" class="knop-stroom rounded-md px-4 py-2.5 text-[15px] font-semibold inline-flex items-center gap-2">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 58016402</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto lg:grid lg:grid-cols-12 lg:min-h-[640px]">
+    <div class="lg:col-span-6 px-5 lg:px-8 pt-10 pb-10 lg:py-24 flex flex-col justify-center relative z-10">
+      <p class="text-[15px] font-medium text-lei-zacht">Elektricien in Eefde en de regio Zutphen</p>
+      <h1 class="kop balans text-[44px] leading-[1.02] sm:text-6xl lg:text-[76px] lg:leading-[.98] mt-4">Een vriend in de meterkast.</h1>
+      <p class="mooi mt-6 text-lg leading-relaxed text-lei/80 max-w-[34ch]">Laadpaal, groepenkast of een lastige storing bij de zonnepanelen: Rick denkt mee, werkt netjes en legt u precies uit wat hij doet.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31658016402" class="knop-stroom rounded-lg px-7 py-4 text-lg font-semibold inline-flex items-center gap-3 shadow-[0_10px_24px_-10px_rgba(238,107,48,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 58016402
+        </a>
+        <a href="mailto:info@voltvriend.nl" class="font-semibold text-lei underline decoration-stroom decoration-2 underline-offset-[6px] hover:text-stroom transition-colors">of mail info@voltvriend.nl</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px] text-lei/75">
+        <span class="text-stroom tracking-[2px]" aria-hidden="true">★★★★<span class="text-stroom/35">★</span></span>
+        <span><strong class="text-lei">4,3</strong> uit 15 Google-reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-6 relative lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:w-[52%]">
+      <img src="assets/google-02.jpg" alt="De witte bus van VoltVriend met het oranje logo" class="hero-foto snede w-full h-[300px] sm:h-[420px] lg:h-full object-cover object-[86%_45%]">
+    </div>
+  </div>
+</section>
+
+<!-- Groepenverdeler: diensten -->
+<section id="groepen" class="px-3 sm:px-5 lg:px-8 py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto kast rounded-[28px] text-white px-5 sm:px-10 lg:px-14 py-12 lg:py-16">
+    <div class="lg:flex lg:items-end lg:justify-between gap-10">
+      <h2 class="kop balans text-4xl lg:text-[54px] leading-[1.02] max-w-[16ch]">Elke klus netjes op z'n eigen groep.</h2>
+      <p class="mooi mt-5 lg:mt-0 text-white/70 text-lg leading-relaxed max-w-[42ch]">Van één extra stopcontact tot een complete verdeler voor uw werkplaats. Dit is waar VoltVriend u mee helpt.</p>
+    </div>
+
+    <div class="mt-12 din"></div>
+    <div class="grid md:grid-cols-2 gap-x-12 md:[&>article:nth-last-child(-n+2)]:border-b-0 [&>article:last-child]:border-b-0">
+        <article class="groep flex gap-5 py-7 border-b border-white/10">
+          <div class="automaat mt-1" aria-hidden="true"></div>
+          <div>
+            <h3 class="strook kop-smal inline-block px-3 py-1 text-[17px]">Laadpaal</h3>
+            <p class="mooi mt-3 text-white/75 leading-relaxed">Thuis laden aan de gevel of op een paal op de oprit. Rick kijkt eerst wat uw meterkast aankan en sluit de laadpaal veilig aan.</p>
+          </div>
+        </article>
+        <article class="groep flex gap-5 py-7 border-b border-white/10">
+          <div class="automaat mt-1" aria-hidden="true"></div>
+          <div>
+            <h3 class="strook kop-smal inline-block px-3 py-1 text-[17px]">Data en MTS-aansluiting</h3>
+            <p class="mooi mt-3 text-white/75 leading-relaxed">Een datakabel naar de werkkamer, of een wat ongebruikelijkere wens zoals een MTS-aansluiting in de meterkast. Vooraf hoort u wat er gaat gebeuren.</p>
+          </div>
+        </article>
+        <article class="groep flex gap-5 py-7 border-b border-white/10">
+          <div class="automaat mt-1" aria-hidden="true"></div>
+          <div>
+            <h3 class="strook kop-smal inline-block px-3 py-1 text-[17px]">Meterkast en groepenkast</h3>
+            <p class="mooi mt-3 text-white/75 leading-relaxed">De groepenkast is het hart van uw installatie. Met een laadpaal, zonnepanelen of warmtepomp erbij moet hij toekomstbestendig zijn. VoltVriend vervangt en past aan volgens de nieuwste normen.</p>
+          </div>
+        </article>
+        <article class="groep flex gap-5 py-7 border-b border-white/10">
+          <div class="automaat mt-1" aria-hidden="true"></div>
+          <div>
+            <h3 class="strook kop-smal inline-block px-3 py-1 text-[17px]">Verlichting</h3>
+            <p class="mooi mt-3 text-white/75 leading-relaxed">Inbouwspots, extra lichtpunten of betere verlichting in kantoor en werkruimte. Strak weggewerkt, zonder rommel achteraf.</p>
+          </div>
+        </article>
+        <article class="groep flex gap-5 py-7 border-b border-white/10">
+          <div class="automaat mt-1" aria-hidden="true"></div>
+          <div>
+            <h3 class="strook kop-smal inline-block px-3 py-1 text-[17px]">Zonnepanelen en omvormer</h3>
+            <p class="mooi mt-3 text-white/75 leading-relaxed">Doet de omvormer vreemd of valt een groep steeds uit? Ook lastige storingen zoekt Rick rustig uit tot het weer werkt.</p>
+          </div>
+        </article>
+        <article class="groep flex gap-5 py-7 border-b border-white/10">
+          <div class="automaat mt-1" aria-hidden="true"></div>
+          <div>
+            <h3 class="strook kop-smal inline-block px-3 py-1 text-[17px]">Bedrijfsinstallaties</h3>
+            <p class="mooi mt-3 text-white/75 leading-relaxed">Krachtstroom voor zware machines, extra groepen voor nieuwe werkplekken en laadoplossingen voor bedrijfswagens.</p>
+            <a href="#bedrijven" class="mt-3 inline-block text-stroom font-semibold underline underline-offset-4">Meer voor bedrijven</a>
+          </div>
+        </article>
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+      <p class="text-white/80 text-lg">Staat uw klus er niet tussen? Vraag het gewoon even.</p>
+      <a href="tel:+31658016402" class="knop-stroom rounded-lg px-6 py-3.5 font-semibold inline-flex items-center justify-center gap-2 self-start sm:self-auto">Bel 06 58016402</a>
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="px-5 lg:px-8 pb-20 lg:pb-28">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-2xl">
+      <h2 class="kop balans text-4xl lg:text-[54px] leading-[1.02]">Zo ziet het eruit als Rick klaar is.</h2>
+      <p class="mooi mt-5 text-lg leading-relaxed text-lei/75">Strak bedraad, elke groep gelabeld en een kaartje in de kast. Zodat u, of de volgende monteur, altijd weet waar alles zit.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-12 lg:grid-rows-[300px_300px_280px] gap-3 lg:gap-4">
+      <figure class="col-span-2 lg:col-span-7 lg:row-span-2 relative rounded-2xl overflow-hidden bg-vlak">
+        <img src="assets/site-04.jpg" alt="Nieuwe, volledig bedrade groepenverdeler op een multiplex achterwand" class="w-full h-[360px] lg:h-full object-cover object-[50%_35%]" loading="lazy">
+        <figcaption class="absolute left-4 bottom-4 bg-white rounded-md px-3 py-1.5 text-sm font-medium">Nieuwe verdeler in een nieuwbouwproject</figcaption>
+      </figure>
+      <figure class="lg:col-span-5 relative rounded-2xl overflow-hidden bg-vlak">
+        <img src="assets/site-01.jpg" alt="Zwarte Zaptec-laadpaal op een paal tegen een bakstenen muur met klimop" class="w-full h-[220px] lg:h-full object-cover object-[55%_45%]" loading="lazy">
+        <figcaption class="absolute left-3 bottom-3 bg-white rounded-md px-3 py-1.5 text-sm font-medium">Laadpaal op de oprit</figcaption>
+      </figure>
+      <figure class="lg:col-span-5 relative rounded-2xl overflow-hidden bg-vlak">
+        <img src="assets/site-06.jpg" alt="Twee groepenkasten met labels PV en EV BOX en een visitekaartje van VoltVriend" class="w-full h-[220px] lg:h-full object-cover object-[50%_54%]" loading="lazy">
+        <figcaption class="absolute left-3 bottom-3 bg-white rounded-md px-3 py-1.5 text-sm font-medium">Groepen voor PV en laadpaal</figcaption>
+      </figure>
+      <figure class="lg:col-span-4 relative rounded-2xl overflow-hidden bg-vlak">
+        <img src="assets/site-03.jpg" alt="Inbouwspots rond een lichtkoepel in een keuken" class="w-full h-[220px] lg:h-full object-cover object-[50%_45%]" loading="lazy">
+        <figcaption class="absolute left-3 bottom-3 bg-white rounded-md px-3 py-1.5 text-sm font-medium">Inbouwspots</figcaption>
+      </figure>
+      <figure class="lg:col-span-4 relative rounded-2xl overflow-hidden bg-vlak">
+        <img src="assets/site-13.jpg" alt="Zwarte groepenkast met genummerde groepen en een kaartje van VoltVriend" class="w-full h-[220px] lg:h-full object-cover object-[50%_30%]" loading="lazy">
+        <figcaption class="absolute left-3 bottom-3 bg-white rounded-md px-3 py-1.5 text-sm font-medium">Elke groep genummerd</figcaption>
+      </figure>
+      <figure class="col-span-2 lg:col-span-4 relative rounded-2xl overflow-hidden bg-vlak">
+        <img src="assets/google-06.jpg" alt="Close-up van een driefasige hoofdschakelaar met nette adereindhulzen" class="w-full h-[220px] lg:h-full object-cover object-[50%_55%]" loading="lazy">
+        <figcaption class="absolute left-3 bottom-3 bg-white rounded-md px-3 py-1.5 text-sm font-medium">Krachtstroom, netjes aangesloten</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Zo werkt het -->
+<section class="bg-vlak px-5 lg:px-8 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto lg:grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="kop balans text-4xl lg:text-5xl leading-[1.04]">Geen verrassingen.</h2>
+      <p class="mooi mt-5 text-lg leading-relaxed text-lei/75">Wat klanten het vaakst over VoltVriend zeggen: hij komt afspraken na en je weet waar je aan toe bent. Zo gaat dat in de praktijk.</p>
+    </div>
+    <ol class="lg:col-span-8 mt-10 lg:mt-0 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+      <li class="border-t-2 border-lei pt-5">
+        <span class="kop-smal text-stroom text-lg">1</span>
+        <h3 class="kop-smal text-xl mt-1">Eerst even kijken</h3>
+        <p class="mooi mt-2 text-lei/75 leading-relaxed">U belt of mailt. Waar nodig komt Rick eerst de situatie bekijken, zodat de offerte klopt.</p>
+      </li>
+      <li class="border-t-2 border-lei pt-5">
+        <span class="kop-smal text-stroom text-lg">2</span>
+        <h3 class="kop-smal text-xl mt-1">Snel een duidelijke offerte</h3>
+        <p class="mooi mt-2 text-lei/75 leading-relaxed">Helder op papier: u ziet wat er gebeurt en wat het kost.</p>
+      </li>
+      <li class="border-t-2 border-lei pt-5">
+        <span class="kop-smal text-stroom text-lg">3</span>
+        <h3 class="kop-smal text-xl mt-1">Een planning waar u op kunt rekenen</h3>
+        <p class="mooi mt-2 text-lei/75 leading-relaxed">Na uw akkoord krijgt u snel een datum. Op die dag staat Rick op tijd voor de deur.</p>
+      </li>
+      <li class="border-t-2 border-lei pt-5">
+        <span class="kop-smal text-stroom text-lg">4</span>
+        <h3 class="kop-smal text-xl mt-1">Netjes werk, met uitleg</h3>
+        <p class="mooi mt-2 text-lei/75 leading-relaxed">Secuur uitgevoerd en opgeruimd achtergelaten. U hoort wat er is gedaan en hoe het werkt.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Bedrijven -->
+<section id="bedrijven" class="px-5 lg:px-8 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto lg:grid lg:grid-cols-12 gap-14 items-center">
+    <div class="lg:col-span-5 order-2 lg:order-1 mt-12 lg:mt-0">
+      <img src="assets/site-09.webp" alt="Groot verdeelbord met drie velden, aangelegd door VoltVriend" class="w-full h-[420px] lg:h-[620px] object-cover object-[50%_40%] rounded-2xl" style="clip-path: polygon(0 0, 100% 0, 100% 92%, 82% 100%, 0 100%);" loading="lazy">
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <p class="text-[15px] font-medium text-stroom">Voor winkels, kantoren en werkplaatsen</p>
+      <h2 class="kop balans text-4xl lg:text-[54px] leading-[1.02] mt-3">Uw bedrijf moet gewoon blijven draaien.</h2>
+      <p class="mooi mt-6 text-lg leading-relaxed text-lei/75 max-w-[60ch]">Een bedrijfsinstallatie moet duidelijk zijn en makkelijk uit te breiden. In werkplaatsen vragen zware machines meer vermogen en stabiele stroom. Daarom kijkt VoltVriend eerst wat er al is, en bepaalt dan wat nodig is voor een veilige situatie.</p>
+      <ul class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-[17px]">
+        <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rounded-sm bg-stroom flex-none"></span>Groepen met genoeg vermogen voor zware machines</li>
+        <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rounded-sm bg-stroom flex-none"></span>Krachtstroom voor apparatuur en productie</li>
+        <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rounded-sm bg-stroom flex-none"></span>Extra groepen voor nieuwe werkplekken</li>
+        <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rounded-sm bg-stroom flex-none"></span>Betere verlichting in kantoor of werkruimte</li>
+        <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rounded-sm bg-stroom flex-none"></span>Laadpunten voor bedrijfswagens of bezoekers</li>
+        <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rounded-sm bg-stroom flex-none"></span>Controle van verdeelkast, bedrading en beveiliging</li>
+      </ul>
+      <p class="mooi mt-8 text-lg leading-relaxed text-lei/75 max-w-[60ch]">Uitbreiden gebeurt zonder uw werk te hinderen. VoltVriend werkt met A-merken, maakt duidelijke afspraken en u heeft één aanspreekpunt.</p>
+      <a href="mailto:info@voltvriend.nl?subject=Bedrijfsinstallatie" class="mt-8 inline-flex items-center gap-2 rounded-lg border-2 border-lei px-6 py-3 font-semibold hover:bg-lei hover:text-white transition-colors">Offerte aanvragen per mail</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-stroom-zacht px-5 lg:px-8 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto">
+    <div class="lg:grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4">
+        <h2 class="kop balans text-4xl lg:text-5xl leading-[1.04]">Wat klanten zeggen.</h2>
+        <p class="mt-5 text-lg text-lei/75"><strong class="text-lei">4,3</strong> gemiddeld uit 15 reviews op Google.</p>
+      </div>
+      <figure class="lg:col-span-8 mt-10 lg:mt-0">
+        <blockquote class="kop-smal mooi text-2xl lg:text-[32px] leading-[1.25] text-lei">
+          “Zonder dat ik zelf (veel) technische kennis heb, wist Rick mij op een rustige en duidelijke manier uit te leggen wat hij ging doen en wat ik kon verwachten. Dat gaf direct vertrouwen.”
+        </blockquote>
+        <figcaption class="mt-5 text-lei/70">Marc de Weijer, over een MTS-aansluiting in de meterkast</figcaption>
+        <details class="mt-4 group">
+          <summary class="cursor-pointer text-[15px] font-semibold text-lei underline decoration-stroom underline-offset-4 list-none">Lees de hele review</summary>
+          <p class="mooi mt-4 text-lei/80 leading-relaxed max-w-[65ch]">Wat een ervaren vakman die het snapt!! Rick is een jonge, vriendelijke en beleefde elektricien met zichtbaar plezier in zijn werk. Enthousiast, vakkundig en niet bang voor een uitdaging. Ik had een (nog) vrij ongebruikelijke wens: een MTS-aansluiting in de meterkast. Zonder dat ik zelf (veel) technische kennis heb, wist Rick mij op een rustige en duidelijke manier uit te leggen wat hij ging doen en wat ik kon verwachten. Dat gaf direct vertrouwen. Het resultaat: snel, strak en professioneel werk waar je écht blij van wordt. Alles ziet er top uit en werkt perfect. Ik was oprecht positief verrast door zijn vakmanschap en toewijding. Kortom – ik wens iedereen een “VoltVriend” toe!</p>
+        </details>
+      </figure>
+    </div>
+
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-5 [&>figure]:mb-5">
+      <figure class="break-inside-avoid bg-white rounded-xl p-6">
+        <blockquote class="mooi leading-relaxed">“Rick, van VoltVriend heeft bij mij een laadpaal geïnstalleerd. Dit is na de snelle en mooie offerte binnen 2 weken gemonteerd. Ik ben zeer tevreden over het resultaat en de vriendelijke benadering van Rick.”</blockquote>
+        <figcaption class="mt-4 font-semibold">Remco Nijenhuis</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-xl p-6">
+        <blockquote class="mooi leading-relaxed">“Na aanvraag, snel de offerte ontvangen. Na opdracht snel een planning ontvangen. Bij aankomst zeer netjes en snel het werk als een echte pro uitgevoerd. Zeer aanbevelingswaardig! Goed tarief, netjes werk geleverd en secuur gewerkt.”</blockquote>
+        <figcaption class="mt-4 font-semibold">Ruben Pot</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-xl p-6">
+        <blockquote class="mooi leading-relaxed">“Rick was op tijd, super vriendelijk en kundig. Hij heeft me goed geholpen met een lastig euvel bij omvormer van de zonnepanelen. Top! Ik raad hem absoluut aan!”</blockquote>
+        <figcaption class="mt-4 font-semibold">Dorenda Brinkman</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-xl p-6">
+        <blockquote class="mooi leading-relaxed">“Voltvriend gevraagd een datakabel aan te leggen. Hij kwam eerst de situatie bekijken en kreeg daarna een keurige offerte. Werkzaamheden zijn keurig en snel uitgevoerd. Ik ben zeer tevreden. Hij is zeker een aanrader!”</blockquote>
+        <figcaption class="mt-4 font-semibold">Aldo Melzi</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-xl p-6">
+        <blockquote class="mooi leading-relaxed">“Komt afspraken na en werkt heel netjes en indien nodig wordt er overlegd. Kan Voltvriend zeker aanbevelen.”</blockquote>
+        <figcaption class="mt-4 font-semibold">Mauriam</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-xl p-6">
+        <blockquote class="mooi leading-relaxed">“Plaatsen van een laadpaal. Reageert snel, juiste informatie, werkt erg netjes en komt afspraken na.”</blockquote>
+        <figcaption class="mt-4 font-semibold">jo</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="kast text-white px-5 lg:px-8 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto lg:grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-7">
+      <h2 class="kop balans text-4xl lg:text-[58px] leading-[1.02]">Even overleggen? Bel Rick.</h2>
+      <p class="mooi mt-5 text-lg text-white/70 max-w-[46ch]">Ook voor een storing of een snelle vraag. Lukt bellen niet, stuur dan een mail of gebruik het formulier.</p>
+
+      <a href="tel:+31658016402" class="mt-10 block kop text-[40px] sm:text-6xl lg:text-7xl text-stroom hover:text-white transition-colors">06 58016402</a>
+      <a href="mailto:info@voltvriend.nl" class="mt-3 inline-block text-xl sm:text-2xl font-semibold underline decoration-stroom underline-offset-[6px] hover:text-stroom transition-colors">info@voltvriend.nl</a>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-10">
+        <div>
+          <h3 class="kop-smal text-lg">Adres</h3>
+          <p class="mt-2 text-white/75 leading-relaxed">Nachtegaalstraat 9<br>7211 GM Eefde</p>
+        </div>
+        <div>
+          <h3 class="kop-smal text-lg">Openingstijden</h3>
+          <dl class="mt-2 text-white/75 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 [font-variant-numeric:tabular-nums]">
+            <dt>Maandag t/m zaterdag</dt><dd>08:00 tot 17:00</dd>
+            <dt>Zondag</dt><dd>Gesloten</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <form action="mailto:info@voltvriend.nl" method="post" enctype="text/plain" class="lg:col-span-5 mt-14 lg:mt-0 bg-white text-lei rounded-2xl p-6 sm:p-8 self-start">
+      <h3 class="kop-smal text-2xl">Stuur een bericht</h3>
+      <p class="mt-1 text-lei/65 text-[15px]">Vertel kort wat u wilt laten doen.</p>
+      <label class="block mt-6 text-sm font-semibold" for="naam">Naam</label>
+      <input id="naam" name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-lg border border-lei/20 bg-vlak px-4 py-3 focus:border-stroom">
+      <label class="block mt-4 text-sm font-semibold" for="tel">Telefoon of e-mail</label>
+      <input id="tel" name="contact" required class="mt-1.5 w-full rounded-lg border border-lei/20 bg-vlak px-4 py-3 focus:border-stroom">
+      <label class="block mt-4 text-sm font-semibold" for="bericht">Uw klus</label>
+      <textarea id="bericht" name="bericht" rows="4" required placeholder="Bijvoorbeeld: laadpaal bij de oprit, groepenkast vervangen" class="mt-1.5 w-full rounded-lg border border-lei/20 bg-vlak px-4 py-3 focus:border-stroom"></textarea>
+      <button type="submit" class="knop-stroom mt-6 w-full rounded-lg py-3.5 font-semibold">Bericht versturen</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-lei text-white/60 border-t border-white/10 px-5 lg:px-8 py-10">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-sm">
+    <div class="merk text-lg leading-none">
+      <span class="block text-stroom">VOLT</span>
+      <span class="block text-white">VRI<span class="text-stroom">E</span>ND</span>
+    </div>
+    <p>Elektricien in Eefde en de regio Zutphen. <a href="tel:+31658016402" class="text-white hover:text-stroom">06 58016402</a></p>
+    <p>Demo door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-stroom">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="lg:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-rail p-3 flex gap-3">
+  <a href="tel:+31658016402" class="knop-stroom flex-1 rounded-lg py-3.5 font-semibold text-center">Bel 06 58016402</a>
+  <a href="mailto:info@voltvriend.nl" class="rounded-lg border-2 border-lei px-5 py-3 font-semibold">Mail</a>
+</div>
+
+</body>
+</html>
