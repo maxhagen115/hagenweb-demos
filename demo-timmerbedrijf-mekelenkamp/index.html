@@ -4,393 +4,405 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Timmerbedrijf Mekelenkamp | Timmerman in de regio Apeldoorn</title>
-<meta name="description" content="Timmerbedrijf Mekelenkamp uit Beemte Broekland: verbouw, afbouw, aanbouw en nieuwbouw in de regio Apeldoorn. Timmerwerk als vak, met een netwerk van zelfstandige vakmensen. Bel 06 20301604.">
+<meta name="description" content="Timmerbedrijf Mekelenkamp: verbouw, aanbouw en afbouw in de regio Apeldoorn. Vrijblijvend advies, duidelijke offerte en één aanspreekpunt. Bel 06 20301604.">
 <meta property="og:title" content="Timmerbedrijf Mekelenkamp">
-<meta property="og:description" content="Van verbouw tot afbouw, van aanbouw tot nieuwbouw. Regio Apeldoorn.">
-<meta property="og:image" content="assets/crop/p06-1.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2322272B'/%3E%3Cpath d='M7 24V9h3.4l5.6 8.6L21.6 9H25v15h-3.4v-9.4L16 23l-5.6-8.4V24z' fill='%23E9B62F'/%3E%3C/svg%3E">
+<meta property="og:description" content="Verbouw, aanbouw en afbouw in de regio Apeldoorn.">
+<meta property="og:image" content="assets/google-04.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3 30 14v15H2V14z' fill='%2323272B'/%3E%3Cpath d='M16 9 25 16v9H7v-9z' fill='%23C68B47'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        kalk: '#EEEEE9',
-        steiger: '#7B756B',
-        lei: '#22272B',
-        leizacht: '#2E3439',
-        geel: '#E9B62F',
-      },
-      fontFamily: {
-        kop: ['Archivo', 'system-ui', 'sans-serif'],
-        tekst: ['"Source Serif 4"', 'Georgia', 'serif'],
-      },
-    },
-  },
-};
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          steen: '#ECEAE5', kalk: '#F7F6F3', lei: '#23272B', grijs: '#5C6064',
+          eik: '#C68B47', eikdonker: '#8C5A22', lijn: '#D6D3CC'
+        },
+        fontFamily: {
+          kop: ['"Zilla Slab"', 'Georgia', 'serif'],
+          tekst: ['"Public Sans"', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
 </script>
 <style>
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  body { font-family: "Source Serif 4", Georgia, serif; }
-  .kop { font-family: Archivo, system-ui, sans-serif; font-stretch: 118%; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance; }
-  .kop-smal { font-family: Archivo, system-ui, sans-serif; font-stretch: 100%; font-weight: 650; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { font-family: "Public Sans", system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
   p { text-wrap: pretty; }
 
-  /* Duimstok: geel, millimeterstreepjes, centimetercijfers, scharnier elke 20 cm */
-  .duimstok {
-    --cm: 44px;
-    position: relative; height: 56px; overflow: hidden;
-    background-color: #E9B62F;
-    background-image:
-      repeating-linear-gradient(90deg, rgba(34,39,43,.9) 0 2px, transparent 2px var(--cm)),
-      repeating-linear-gradient(90deg, rgba(34,39,43,.75) 0 1px, transparent 1px calc(var(--cm) / 2)),
-      repeating-linear-gradient(90deg, rgba(34,39,43,.55) 0 1px, transparent 1px calc(var(--cm) / 10));
-    background-size: 100% 22px, 100% 15px, 100% 9px;
-    background-repeat: repeat-x;
-    background-position: 0 0, 0 0, 0 0;
-    box-shadow: inset 0 -1px 0 rgba(34,39,43,.25), inset 0 1px 0 rgba(255,255,255,.35);
-  }
-  .duimstok .cijfers { position: absolute; left: 0; top: 22px; display: flex; white-space: nowrap; }
-  .duimstok .cijfers span { width: var(--cm); flex: none; font: 700 14px/1 Archivo, sans-serif; font-stretch: 85%; color: #22272B; padding-left: 4px; font-variant-numeric: tabular-nums; }
-  .duimstok .scharnier { position: absolute; top: 0; bottom: 0; width: 2px; background: rgba(34,39,43,.35); }
-  .duimstok .scharnier::after { content: ""; position: absolute; left: -5px; bottom: 9px; width: 12px; height: 12px; border-radius: 50%; background: #c9c4b4; box-shadow: inset 0 0 0 2px rgba(34,39,43,.45); }
+  /* Puntgevel-vorm voor de hero-foto: volgt de nok van het huis op de foto */
+  .gevel { clip-path: polygon(50% 0, 100% 34%, 100% 100%, 0 100%, 0 34%); }
+  
+  /* Voor/na: zonder JS twee foto's naast elkaar */
+  .vn { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .vn figure { position: relative; margin: 0; }
+  .vn img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .vn-label { position: absolute; top: .75rem; padding: .25rem .6rem; font-size: .8rem; font-weight: 600;
+              background: rgba(35,39,43,.82); color: #F7F6F3; border-radius: 3px; }
+  .vn-voor .vn-label { left: .75rem; }
+  .vn-na .vn-label { right: .75rem; background: #C68B47; color: #23272B; }
 
-  .afdruk { background: #fff; padding: 8px 8px 0; box-shadow: 0 1px 1px rgba(34,39,43,.12), 0 10px 24px -10px rgba(34,39,43,.45); }
-  .afdruk img { display: block; width: 100%; height: auto; }
-  .afdruk.vast img { aspect-ratio: 4 / 3; height: auto; object-fit: cover; }
-  .afdruk figcaption { font: 600 13px/1.3 Archivo, sans-serif; color: #4a4741; padding: 8px 2px 10px; }
+  /* Met JS: schuifvergelijking */
+  .js .vn { display: block; position: relative; --p: 50%; overflow: hidden; touch-action: pan-y; }
+  .js .vn .vn-na { position: absolute; inset: 0; clip-path: inset(0 0 0 var(--p)); }
+  .js .vn .vn-na img { height: 100%; }
+  .vn-greep { display: none; }
+  .js .vn-greep { display: block; position: absolute; top: 0; bottom: 0; left: var(--p); width: 3px;
+                  margin-left: -1.5px; background: #F7F6F3; pointer-events: none; }
+  .js .vn-greep::after { content: ""; position: absolute; top: 50%; left: 50%; width: 2.75rem; height: 2.75rem;
+                  transform: translate(-50%, -50%); border-radius: 999px; background: #F7F6F3;
+                  box-shadow: 0 2px 10px rgba(35,39,43,.35);
+                  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2323272B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 6-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E");
+                  background-size: 1.4rem; background-repeat: no-repeat; background-position: center; }
+  .vn-schuif { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+  .vn-schuif:focus-visible + .vn-greep::after { outline: 3px solid #C68B47; outline-offset: 2px; }
 
-  .knop { transition: transform .15s ease, background-color .2s ease, color .2s ease; }
+  .knop { transition: background-color .2s, transform .15s; }
   .knop:active { transform: translateY(1px); }
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #E9B62F; outline-offset: 3px; }
-  .op-donker a:focus-visible { outline-color: #E9B62F; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #C68B47; outline-offset: 2px;
+  }
+
+  /* Eén moment beweging: de hero bij laden, alleen met JS en zonder reduced motion */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-in { animation: omhoog .8s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-in-2 { animation-delay: .12s; }
+    .js .hero-in-3 { animation-delay: .24s; }
+    @keyframes omhoog { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  }
 </style>
 </head>
-<body class="bg-kalk text-lei antialiased">
+<body class="bg-steen text-lei font-tekst antialiased">
 
-<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-geel focus:text-lei focus:px-4 focus:py-2">Naar de inhoud</a>
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-kalk focus:px-4 focus:py-2">Naar de inhoud</a>
 
 <!-- Demobalk -->
-<div class="bg-lei text-[#c9c6bd] text-[13px] font-kop text-center px-4 py-2 border-b border-white/10">
-  Demo voor Timmerbedrijf Mekelenkamp, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-geel">Hagenweb</a>
+<div class="bg-lei text-kalk/80 text-xs sm:text-[13px] text-center px-4 py-2">
+  Demo voor Timmerbedrijf Mekelenkamp, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-kalk hover:text-eik">Hagenweb</a>
 </div>
 
-<!-- Kop -->
-<header class="bg-lei text-white">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between gap-6">
-    <a href="#" class="leading-none group" aria-label="Timmerbedrijf Mekelenkamp, naar boven">
-      <span class="block font-kop text-[11px] md:text-xs font-semibold text-[#b9b5aa] tracking-[0.04em] mb-1">Timmerbedrijf</span>
-      <span class="block kop text-2xl md:text-[28px] group-hover:text-geel transition-colors">Mekelenkamp</span>
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-steen/95 backdrop-blur border-b border-lijn">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 shrink-0" aria-label="Timmerbedrijf Mekelenkamp, naar boven">
+      <svg viewBox="0 0 32 32" class="w-8 h-8" aria-hidden="true"><path d="M16 3 30 14v15H2V14z" fill="#23272B"/><path d="M16 9 25 16v9H7v-9z" fill="#C68B47"/></svg>
+      <span class="leading-none">
+        <span class="block font-kop font-bold text-[1.35rem] tracking-tight">Mekelenkamp</span>
+        <span class="block text-[11px] text-grijs mt-0.5">Timmerbedrijf</span>
+      </span>
     </a>
-    <nav class="hidden lg:flex items-center gap-8 font-kop text-[15px] font-medium text-[#d6d3ca]" aria-label="Hoofdmenu">
-      <a href="#diensten" class="hover:text-white">Wat ik doe</a>
-      <a href="#netwerk" class="hover:text-white">Netwerk</a>
-      <a href="#werk" class="hover:text-white">Werk</a>
-      <a href="#werkwijze" class="hover:text-white">Werkwijze</a>
-      <a href="#contact" class="hover:text-white">Contact</a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#voor-en-na" class="hover:text-eikdonker">Voor en na</a>
+      <a href="#diensten" class="hover:text-eikdonker">Wat ik doe</a>
+      <a href="#werkwijze" class="hover:text-eikdonker">Werkwijze</a>
+      <a href="#projecten" class="hover:text-eikdonker">Projecten</a>
+      <a href="#contact" class="hover:text-eikdonker">Contact</a>
     </nav>
-    <a href="tel:+31620301604" class="knop hidden sm:inline-flex items-center gap-2 bg-geel text-lei font-kop font-bold px-4 py-2.5 rounded-[3px] hover:bg-[#f3c64a]">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
-      06 20301604
+    <a href="tel:+31620301604" class="knop inline-flex items-center gap-2 rounded bg-lei text-kalk px-4 py-2.5 text-sm font-semibold hover:bg-black">
+      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span class="hidden sm:inline">06 20301604</span><span class="sm:hidden">Bellen</span>
     </a>
-    <a href="tel:+31620301604" class="sm:hidden font-kop font-bold text-geel text-[15px] underline underline-offset-4">Bellen</a>
   </div>
 </header>
 
 <main id="inhoud">
 
 <!-- Hero -->
-<section class="bg-lei text-white op-donker overflow-hidden">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-14 md:pb-20 grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-10 items-center">
-    <div>
-      <h1 class="kop text-[40px] leading-[1.02] sm:text-6xl lg:text-[58px]">Van verbouw tot afbouw, van aanbouw tot nieuwbouw.</h1>
-      <p class="mt-7 text-lg md:text-xl leading-relaxed text-[#d9d6cd] max-w-[34rem]">
-        Ik ben zelfstandig timmerman uit Beemte Broekland en werk vooral in de regio Apeldoorn.
-        Meer dan 14 jaar ervaring in de bouw, waarvan de laatste 5 jaar als zelfstandig ondernemer.
-        Timmerwerk is mijn vak. Voor de rest van uw verbouwing werk ik samen met zelfstandige vakmensen uit mijn netwerk.
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-8 pb-14 md:pt-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 relative z-10">
+      <p class="hero-in text-eikdonker font-semibold text-[15px]">Timmerman in de regio Apeldoorn</p>
+      <h1 class="hero-in hero-in-2 font-kop font-bold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.1rem] tracking-tight mt-3">
+        Timmerwerk waar u lang plezier van heeft.
+      </h1>
+      <p class="hero-in hero-in-3 mt-5 text-[17px] sm:text-lg leading-relaxed text-grijs max-w-md">
+        Verbouwen, aanbouwen of afwerken? Ik kom vrijblijvend langs, denk met u mee en ben uw enige aanspreekpunt, ook als er een metselaar of loodgieter bij moet.
       </p>
-      <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-        <a href="tel:+31620301604" class="knop inline-flex justify-center items-center gap-3 bg-geel text-lei font-kop font-extrabold text-lg px-6 py-4 rounded-[3px] hover:bg-[#f3c64a]">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <div class="hero-in hero-in-3 mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31620301604" class="knop inline-flex items-center gap-3 rounded bg-eik text-lei px-6 py-4 text-lg font-semibold hover:bg-[#d39a58] shadow-[0_6px_18px_-6px_rgba(140,90,34,.6)]">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
           Bel 06 20301604
         </a>
-        <a href="mailto:info@timmerbedrijfmekelenkamp.nl?subject=Graag%20een%20vrijblijvend%20bezoek" class="font-kop font-semibold text-white underline decoration-geel decoration-2 underline-offset-[6px] hover:text-geel">Of mail voor een vrijblijvend bezoek</a>
+        <a href="#voor-en-na" class="font-semibold underline decoration-eik decoration-2 underline-offset-[6px] hover:text-eikdonker">Bekijk een verbouwing</a>
       </div>
+      <p class="hero-in hero-in-3 mt-7 flex items-center gap-2 text-sm text-grijs">
+        <span class="text-eik tracking-[.15em] text-base" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-lei font-semibold">5 sterren</strong> uit 2 Google-reviews</span>
+      </p>
     </div>
-
-    <!-- Contactvel met echte werkfoto's -->
-    <div class="relative grid grid-cols-2 gap-3 sm:block sm:h-[500px] max-w-[560px] w-full mx-auto lg:mx-0">
-      <figure class="afdruk col-span-2 sm:absolute sm:left-0 sm:top-0 sm:w-[390px] -rotate-[1.2deg] sm:z-10">
-        <img src="assets/crop/p06-1.jpg" width="284" height="150" alt="Steiger tegen een woning met het bord van Timmerbedrijf Mekelenkamp, vakmensen aan het werk op het dak">
-        <figcaption>Mijn bord aan de steiger</figcaption>
-      </figure>
-      <figure class="afdruk vast sm:absolute sm:right-0 sm:top-[205px] sm:w-[300px] rotate-[1.8deg] sm:z-20">
-        <img src="assets/crop/p07-1.jpg" width="284" height="150" alt="Werk aan een rieten kap, de steiger staat tegen het dak">
-        <figcaption>Werk aan een rieten kap</figcaption>
-      </figure>
-      <figure class="afdruk vast sm:absolute sm:left-0 sm:top-[272px] sm:w-[200px] -rotate-[0.6deg] sm:z-30">
-        <img src="assets/crop/p02-0.jpg" width="276" height="214" alt="Woning met rieten dak en een witte veranda aan de voorkant">
-        <figcaption>Veranda</figcaption>
-      </figure>
+    <div class="md:col-span-6 relative">
+      <div class="absolute inset-0 gevel bg-eik translate-x-4 translate-y-4 hidden md:block" aria-hidden="true"></div>
+      <img src="assets/google-04.jpg" alt="Achterzijde van een verbouwde woning met nieuwe overkapping op eiken staanders"
+           class="gevel relative w-full aspect-[4/3.3] object-cover object-[50%_20%]" width="1600" height="1200">
     </div>
   </div>
 </section>
 
-<!-- Duimstok -->
-<div class="duimstok" aria-hidden="true">
-  <div class="cijfers"><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span><span>50</span></div>
-  <span class="scharnier" style="left:880px"></span><span class="scharnier" style="left:1760px"></span>
-</div>
+<!-- Voor en na -->
+<section id="voor-en-na" class="bg-kalk border-y border-lijn">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+    <div class="grid md:grid-cols-12 gap-8 items-end">
+      <div class="md:col-span-7">
+        <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-tight leading-[1.05]">Van oud huis naar nieuw thuis.</h2>
+        <p class="mt-4 text-lg text-grijs max-w-xl leading-relaxed">Eén woning, voor en na de verbouwing. Schuif over de foto om het verschil te zien.</p>
+      </div>
+    </div>
+
+    <div class="mt-10 grid lg:grid-cols-2 gap-8 lg:gap-10">
+      <div>
+        <div class="vn" data-vn>
+          <figure class="vn-voor"><img src="assets/google-03.jpg" alt="Voorgevel voor de verbouwing: bakstenen woning met oude kozijnen" width="1600" height="1200"><figcaption class="vn-label">Voor</figcaption></figure>
+          <figure class="vn-na"><img src="assets/google-01.jpg" alt="Voorgevel na de verbouwing: gestucte gevel, nieuwe kozijnen, erker en garage" width="1600" height="1200"><figcaption class="vn-label">Na</figcaption></figure>
+        </div>
+        <p class="mt-3 text-sm text-grijs">Voorgevel: nieuwe kozijnen, erker, stucwerk en een aangebouwde garage.</p>
+      </div>
+      <div>
+        <div class="vn" data-vn>
+          <figure class="vn-voor"><img src="assets/google-02.jpg" alt="Achterzijde voor de verbouwing: oude schuren en een verwaarloosde tuin" width="1600" height="1200"><figcaption class="vn-label">Voor</figcaption></figure>
+          <figure class="vn-na"><img src="assets/google-04.jpg" alt="Achterzijde na de verbouwing: uitbouw over de hele breedte met overkapping op eiken staanders" width="1600" height="1200"><figcaption class="vn-label">Na</figcaption></figure>
+        </div>
+        <p class="mt-3 text-sm text-grijs">Achterzijde: de oude schuren eruit, een uitbouw over de volle breedte met overkapping.</p>
+      </div>
+    </div>
+
+    <figure class="mt-14 md:mt-16 grid md:grid-cols-12 gap-6">
+      <div class="hidden md:block md:col-span-1 font-kop text-7xl leading-none text-eik select-none" aria-hidden="true">&ldquo;</div>
+      <blockquote class="md:col-span-9 font-kop text-2xl sm:text-[1.75rem] leading-snug font-medium">
+        Werkelijk een aanrader! Timmerbedrijf Mekelenkamp heeft voor ons een jaren 30 woning volledig aangepakt, uitgebouwd over de gehele achterzijde tot aan de nok en de volledige indeling van de woning opnieuw ingedeeld, het overleg, het meedenken en het harde werken van de mannen heeft ons positief verrast, en ook nog eens&hellip;
+      </blockquote>
+      <figcaption class="md:col-start-2 md:col-span-9 text-grijs">
+        <span class="text-eik tracking-[.15em]" aria-hidden="true">★★★★★</span>
+        <span class="ml-2 font-semibold text-lei">Wicher</span>, Google-review
+      </figcaption>
+    </figure>
+  </div>
+</section>
 
 <!-- Diensten -->
-<section id="diensten" class="max-w-6xl mx-auto px-5 md:px-8 pt-20 md:pt-28 pb-16">
-  <div class="grid md:grid-cols-[1fr_1.4fr] gap-6 md:gap-16 items-end">
-    <h2 class="kop text-4xl md:text-5xl">Wat ik voor u doe</h2>
-    <p class="text-lg leading-relaxed text-[#4a4741] max-w-xl">Van huis uit is timmerwerk mijn specialiteit. Met mijn netwerk kan ik u helpen met alle denkbare bouw- en verbouwingswerkzaamheden.</p>
+<section id="diensten" class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+  <div class="max-w-2xl">
+    <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-tight leading-[1.05]">Van verbouw tot afbouw, van aanbouw tot nieuwbouw.</h2>
+    <p class="mt-5 text-lg text-grijs leading-relaxed">Timmerwerk is mijn vak. Met ruim 14 jaar ervaring in de bouw en een netwerk van vakmensen help ik u met vrijwel alle bouw- en verbouwwerk aan uw woning.</p>
   </div>
 
-  <div class="mt-14 border-t-2 border-lei">
-    <!-- Verbouw -->
-    <article class="grid lg:grid-cols-[0.9fr_1.1fr_1.15fr] gap-6 lg:gap-10 py-10 md:py-12 border-b border-steiger/40">
-      <h3 class="kop text-2xl md:text-[30px]">Verbouw of modernisering van uw woning</h3>
-      <div class="text-[17px] leading-[1.7] text-[#3b3d3d] space-y-3">
-        <p>Kozijnen van hout en kunststof, deuren en ramen plaatsen. Binnen- en buitenmuren (of delen daarvan) plaatsen of weghalen. Houten vloeren en betonvloeren, nieuwe dakconstructies en stucwerk binnen en buiten.</p>
-        <p>Ook keukens en sanitair plaats en bouw ik, met alles wat erbij komt kijken. En ik zorg voor plaatsing en onderhoud van elektrische installaties en verwarming.</p>
+  <div class="mt-14 space-y-14 md:space-y-20">
+    <article class="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
+      <div class="md:col-span-4">
+        <img src="assets/werk/badkamer.jpg" alt="Gerenoveerde badkamer met donkere tegels en wastafelmeubel" class="w-full aspect-[16/10] object-cover">
       </div>
-      <div class="grid grid-cols-2 gap-3 self-start">
-        <figure class="afdruk vast"><img src="assets/crop/p06-0.jpg" width="276" height="214" alt="Woning in de steiger tijdens een verbouwing, met de bus ervoor"><figcaption>Verbouwing in uitvoering</figcaption></figure>
-        <figure class="afdruk vast"><img src="assets/crop/p05-0.jpg" width="276" height="214" alt="Vernieuwde badkamer met donkere tegels en een wit badmeubel onder een schuin dak"><figcaption>Badkamer</figcaption></figure>
+      <div class="md:col-span-8 md:pl-4">
+        <h3 class="font-kop font-bold text-3xl">Verbouw en modernisering</h3>
+        <p class="mt-4 text-grijs leading-relaxed max-w-xl">Kozijnen, deuren en ramen in hout of kunststof. Binnen- en buitenmuren plaatsen of weghalen, houten vloeren en betonvloeren, nieuwe dakconstructies en stucwerk binnen en buiten.</p>
+        <p class="mt-3 text-grijs leading-relaxed max-w-xl">Ook keukens en sanitair met alles wat erbij komt kijken, en het plaatsen en onderhouden van elektra en verwarming.</p>
       </div>
     </article>
-    <!-- Afbouw -->
-    <article class="grid lg:grid-cols-[0.9fr_1.1fr_1.15fr] gap-6 lg:gap-10 py-10 md:py-12 border-b border-steiger/40">
-      <h3 class="kop text-2xl md:text-[30px]">Afbouw van uw woning</h3>
-      <div class="text-[17px] leading-[1.7] text-[#3b3d3d] space-y-3">
-        <p>De afwerking die een huis af maakt: plintwerk, sierlijsten en lambrisering, bijvoorbeeld langs wanden of rond radiatoren.</p>
-        <p>Schouwen in verschillende materialen, boven de kachel of boven de kookplaat. En trappen, gebouwd en geplaatst.</p>
+
+    <article class="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
+      <div class="md:col-span-8 md:order-1 order-2">
+        <h3 class="font-kop font-bold text-3xl">Afbouw</h3>
+        <p class="mt-4 text-grijs leading-relaxed max-w-xl">De details die een kamer af maken: plinten, sierlijsten, lambrisering voor wanden of radiatoren en schouwen van allerlei materialen, ook boven een kachel of kookplaat.</p>
       </div>
-      <div class="grid grid-cols-2 gap-3 self-start">
-        <figure class="afdruk vast"><img src="assets/crop/p08-0.jpg" width="276" height="214" alt="Nieuwe houten trap met spijlen, van boven gezien"><figcaption>Houten trap</figcaption></figure>
-        <figure class="afdruk vast"><img src="assets/crop/p08-1.jpg" width="284" height="150" alt="Open houten trap met spijlenhek op een donkere tegelvloer"><figcaption>Open trap</figcaption></figure>
+      <div class="md:col-span-4 md:order-2 order-1">
+        <img src="assets/werk/trap-2.jpg" alt="Houten trap met spijlen, van bovenaf gezien" class="w-full aspect-[16/10] object-cover">
       </div>
     </article>
-    <!-- Aanbouw -->
-    <article class="grid lg:grid-cols-[0.9fr_1.1fr_1.15fr] gap-6 lg:gap-10 py-10 md:py-12 border-b-2 border-lei">
-      <h3 class="kop text-2xl md:text-[30px]">Aanbouw, uitbouw of bijgebouw</h3>
-      <div class="text-[17px] leading-[1.7] text-[#3b3d3d] space-y-3">
-        <p>Meer ruimte aan of bij uw huis. Een dakkapel, erker, garage of werkruimte, een serre of een schuur: ik realiseer het, samen met de vakmensen die ervoor nodig zijn.</p>
+
+    <article class="grid md:grid-cols-12 gap-6 md:gap-10 items-center">
+      <div class="md:col-span-4">
+        <img src="assets/werk/serre.jpg" alt="Aangebouwde serre aan een woning met rieten dak" class="w-full aspect-[16/10] object-cover">
       </div>
-      <div class="grid grid-cols-2 gap-3 self-start">
-        <figure class="afdruk vast"><img src="assets/crop/p09-0.jpg" width="276" height="214" alt="Aangebouwde serre met houten gevel en glazen dak tegen een woning met rieten kap"><figcaption>Serre</figcaption></figure>
-        <figure class="afdruk vast"><img src="assets/crop/p10-2.jpg" width="284" height="150" alt="Bakstenen garage met puntdak en lichte garagedeur"><figcaption>Garage</figcaption></figure>
+      <div class="md:col-span-8 md:pl-4">
+        <h3 class="font-kop font-bold text-3xl">Aanbouw, uitbouw of bijgebouw</h3>
+        <p class="mt-4 text-grijs leading-relaxed max-w-xl">Meer ruimte bij uw huis: een dakkapel, erker, serre, garage, schuur of werkruimte. Van de eerste schets tot de laatste plint.</p>
       </div>
     </article>
   </div>
 </section>
 
 <!-- Netwerk -->
-<section id="netwerk" class="bg-[#E2E2DB]">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20">
-    <div>
-      <h2 class="kop text-4xl md:text-5xl">Eén aanspreekpunt voor uw hele verbouwing</h2>
-      <div class="mt-8 text-lg leading-[1.75] text-[#3b3d3d] space-y-5 max-w-xl">
-        <p>Ik werk bewust zonder personeel. Dat houdt mij flexibel en effectief, en daardoor kan ik u een zeer aantrekkelijk tarief bieden.</p>
-        <p>Voor alles wat verder gaat dan timmerwerk werk ik samen met andere zelfstandige bouwondernemers. In dat netwerk zitten alleen gedreven vakmensen met passie voor hun vak. Zo gaat het werk snel en vakkundig, op aanneembasis of op uurbasis.</p>
-        <p>Als u dat wilt, neem ik de eindverantwoording voor alle werkzaamheden. U heeft dan één aanspreekpunt en een compleet overzicht van de financiële kant.</p>
-      </div>
+<section class="bg-lei text-kalk">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+    <div class="md:col-span-5">
+      <img src="assets/werk/steiger.jpg" alt="Steiger tegen een woning met de bus van Timmerbedrijf Mekelenkamp ervoor" class="w-full aspect-[4/3] object-cover">
     </div>
-    <div class="self-center">
-      <ul class="font-kop text-[26px] sm:text-[32px] font-bold leading-tight [font-stretch:112%]" aria-label="Vakgebieden in het netwerk">
-        <li class="flex items-baseline justify-between gap-4 border-b-2 border-lei py-3"><span>Timmerwerk</span><span class="text-sm font-semibold [font-stretch:100%] bg-geel text-lei px-2 py-1 rounded-[2px]">mijn eigen vak</span></li>
-        <li class="border-b border-steiger/50 py-3 text-[#4a4741]">Metselwerk</li>
-        <li class="border-b border-steiger/50 py-3 text-[#4a4741]">Loodgieterswerk</li>
-        <li class="border-b border-steiger/50 py-3 text-[#4a4741]">Elektrotechnisch werk</li>
-        <li class="border-b border-steiger/50 py-3 text-[#4a4741]">Stucwerk</li>
-        <li class="border-b border-steiger/50 py-3 text-[#4a4741]">Tegelwerk</li>
-        <li class="border-b border-steiger/50 py-3 text-[#4a4741]">Schilderwerk</li>
-        <li class="py-3 text-[#4a4741]">Dakdekkerswerk</li>
+    <div class="md:col-span-7">
+      <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-tight leading-[1.05]">Eén aanspreekpunt voor de hele klus.</h2>
+      <p class="mt-5 text-kalk/75 text-lg leading-relaxed max-w-xl">Ik werk zelfstandig, zonder personeel. Dat houdt mij flexibel en mijn tarief scherp. Voor wat ik niet zelf doe, werk ik samen met andere zelfstandige vakmensen met passie voor hun vak.</p>
+      <ul class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-3 text-[15px]">
+        <li class="border-t border-eik/60 pt-2">Timmerwerk</li>
+        <li class="border-t border-kalk/25 pt-2">Metselwerk</li>
+        <li class="border-t border-kalk/25 pt-2">Loodgieterswerk</li>
+        <li class="border-t border-kalk/25 pt-2">Elektra</li>
+        <li class="border-t border-kalk/25 pt-2">Stucwerk</li>
+        <li class="border-t border-kalk/25 pt-2">Tegelwerk</li>
+        <li class="border-t border-kalk/25 pt-2">Schilderwerk</li>
+        <li class="border-t border-kalk/25 pt-2">Dakdekkerswerk</li>
       </ul>
+      <p class="mt-8 text-kalk/75 leading-relaxed max-w-xl">Wilt u dat? Dan neem ik de eindverantwoording voor alles wat u aan mij uitbesteedt. U heeft één aanspreekpunt en houdt een compleet overzicht over de kosten.</p>
     </div>
-  </div>
-</section>
-
-<!-- Werk -->
-<section id="werk" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
-  <div class="grid md:grid-cols-[1fr_1.4fr] gap-6 md:gap-16 items-end">
-    <h2 class="kop text-4xl md:text-5xl">Werk uit de praktijk</h2>
-    <p class="text-lg leading-relaxed text-[#4a4741] max-w-xl">Een indruk van wat ik voor anderen heb gemaakt. Wilt u meer zien of iets vergelijkbaars laten maken? Bel gerust.</p>
-  </div>
-
-  <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-[1100px]">
-    <figure class="afdruk vast"><img src="assets/crop/uitbouw.png" width="146" height="108" alt="Woning met een uitbouw op de eerste verdieping, gezien vanuit de tuin"><figcaption>Uitbouw 1e verdieping</figcaption></figure>
-    <figure class="afdruk vast"><img src="assets/crop/p07-0.jpg" width="276" height="214" alt="Grote woning met rieten dak in de steiger, nieuwe panlatten op het dak"><figcaption>Rieten kap in de steiger</figcaption></figure>
-    <figure class="afdruk vast"><img src="assets/crop/p08-2.jpg" width="284" height="150" alt="Ronde houten vlonder aan het water in een tuin"><figcaption>Houten vlonder</figcaption></figure>
-    <figure class="afdruk vast"><img src="assets/crop/p02-2.jpg" width="284" height="150" alt="Woning met rieten dak, rode luiken en een witte veranda"><figcaption>Veranda aan de voorgevel</figcaption></figure>
-    <figure class="afdruk vast"><img src="assets/crop/p09-1.jpg" width="284" height="150" alt="Serre met houten bank ervoor, vanaf de voorkant"><figcaption>Serre, vooraanzicht</figcaption></figure>
-    <figure class="afdruk vast"><img src="assets/crop/p05-1.jpg" width="284" height="150" alt="Detail van strak tegelwerk in een badkamer"><figcaption>Tegelwerk badkamer</figcaption></figure>
-    <figure class="afdruk vast"><img src="assets/crop/p10-0.jpg" width="276" height="214" alt="Bakstenen bijgebouw met open overkapping in een tuin"><figcaption>Bijgebouw met overkapping</figcaption></figure>
-    <figure class="afdruk vast"><img src="assets/crop/p10-1.jpg" width="284" height="150" alt="Lichte buitendeur en ramen in een bakstenen gevel"><figcaption>Deur en kozijnen</figcaption></figure>
-  </div>
-
-  <div class="mt-14 grid md:grid-cols-[1fr_2.4fr] gap-6 md:gap-16 border-t border-steiger/50 pt-8">
-    <h3 class="kop-smal text-lg">Eerder uitgevoerd</h3>
-    <ul class="text-[17px] leading-[1.6] text-[#3b3d3d] sm:columns-2 gap-10 [&>li]:py-1.5 [&>li]:border-b [&>li]:border-steiger/25 [&>li]:break-inside-avoid">
-      <li>Verbouwing woning, uitbouw verdieping</li>
-      <li>Verbouwing woning met aanbouw keuken</li>
-      <li>Bouw en installatie trap</li>
-      <li>Badkamers en toiletten</li>
-      <li>Bouw garage en overstek</li>
-      <li>Verlenging rieten kap</li>
-      <li>Aanbouw van serre annex keuken</li>
-      <li>Aanbouw schuur</li>
-      <li>Aanleggen bankirai vlonder</li>
-      <li>Kachelschouw</li>
-      <li>Schouw boven kookplaat</li>
-      <li>Trap</li>
-    </ul>
   </div>
 </section>
 
 <!-- Werkwijze -->
-<section id="werkwijze" class="bg-white border-y border-steiger/30">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
-    <h2 class="kop text-4xl md:text-5xl max-w-2xl">Hoe ik werk</h2>
-    <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
-      <li class="border-t-2 border-lei pt-5">
-        <span class="font-kop font-extrabold text-geel text-[44px] leading-none [-webkit-text-stroke:1.5px_#22272B]">1</span>
-        <h3 class="kop-smal text-xl mt-3">Ik kom bij u langs</h3>
-        <p class="mt-2 text-[16.5px] leading-relaxed text-[#4a4741]">Vrijblijvend, om uw wensen in kaart te brengen en de mogelijkheden te bespreken.</p>
+<section id="werkwijze" class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+  <div class="grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4">
+      <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-tight leading-[1.05]">Zo werk ik.</h2>
+      <p class="mt-5 text-grijs leading-relaxed">Duidelijke afspraken vooraf, zodat u precies weet waar u aan toe bent.</p>
+    </div>
+    <ol class="md:col-span-8 space-y-10">
+      <li class="grid grid-cols-[3rem_1fr] gap-4">
+        <span class="font-kop font-bold text-4xl text-eik leading-none">1</span>
+        <div>
+          <h3 class="font-kop font-bold text-2xl">Ik kom vrijblijvend langs</h3>
+          <p class="mt-2 text-grijs leading-relaxed">We bespreken uw wensen en de mogelijkheden. Ik denk actief mee en kom waar dat kan met alternatieven.</p>
+        </div>
       </li>
-      <li class="border-t-2 border-lei pt-5">
-        <span class="font-kop font-extrabold text-geel text-[44px] leading-none [-webkit-text-stroke:1.5px_#22272B]">2</span>
-        <h3 class="kop-smal text-xl mt-3">Ik denk met u mee</h3>
-        <p class="mt-2 text-[16.5px] leading-relaxed text-[#4a4741]">Actief, en waar het kan met voorstellen voor verschillende alternatieven.</p>
+      <li class="grid grid-cols-[3rem_1fr] gap-4">
+        <span class="font-kop font-bold text-4xl text-eik leading-none">2</span>
+        <div>
+          <h3 class="font-kop font-bold text-2xl">U krijgt een complete offerte</h3>
+          <p class="mt-2 text-grijs leading-relaxed">Desgewenst met alle werkzaamheden en materialen gespecificeerd. Zo is het project voor u inzichtelijk.</p>
+        </div>
       </li>
-      <li class="border-t-2 border-lei pt-5">
-        <span class="font-kop font-extrabold text-geel text-[44px] leading-none [-webkit-text-stroke:1.5px_#22272B]">3</span>
-        <h3 class="kop-smal text-xl mt-3">U krijgt een complete offerte</h3>
-        <p class="mt-2 text-[16.5px] leading-relaxed text-[#4a4741]">Als u wilt met alle werkzaamheden en materialen gespecificeerd, zodat u precies ziet wat er gebeurt.</p>
-      </li>
-      <li class="border-t-2 border-lei pt-5">
-        <span class="font-kop font-extrabold text-geel text-[44px] leading-none [-webkit-text-stroke:1.5px_#22272B]">4</span>
-        <h3 class="kop-smal text-xl mt-3">Het werk wordt gedaan</h3>
-        <p class="mt-2 text-[16.5px] leading-relaxed text-[#4a4741]">Tijdens het project houd ik u op de hoogte van de stand van zaken.</p>
+      <li class="grid grid-cols-[3rem_1fr] gap-4">
+        <span class="font-kop font-bold text-4xl text-eik leading-none">3</span>
+        <div>
+          <h3 class="font-kop font-bold text-2xl">Uurbasis of aanneemsom, u kiest</h3>
+          <div class="mt-4 grid sm:grid-cols-2 gap-6">
+            <div class="border-l-2 border-eik pl-4">
+              <p class="font-semibold">Op uurbasis</p>
+              <p class="mt-1 text-grijs leading-relaxed text-[15px]">Werktijden van 7.30 tot 16.30 uur met een uur pauze (op verzoek aan te passen). Bij meerdaagse projecten geen voorrijkosten. Tijdens het werk houd ik u op de hoogte.</p>
+            </div>
+            <div class="border-l-2 border-lijn pl-4">
+              <p class="font-semibold">Op aanneembasis</p>
+              <p class="mt-1 text-grijs leading-relaxed text-[15px]">U betaalt het vaste bedrag uit de offerte. Twijfelt u welke vorm bij u past? Ik adviseer u graag.</p>
+            </div>
+          </div>
+        </div>
       </li>
     </ol>
+  </div>
 
-    <div class="mt-20">
-      <h3 class="kop text-3xl md:text-4xl">Aanneembasis of uurbasis: u kiest</h3>
-      <div class="mt-8 grid md:grid-cols-2 gap-0 border-2 border-lei rounded-[4px] overflow-hidden">
-        <div class="p-7 md:p-10 bg-kalk">
-          <h4 class="kop-smal text-2xl">Aanneembasis</h4>
-          <p class="mt-3 text-[17px] leading-[1.7] text-[#3b3d3d]">U betaalt het vaste bedrag dat we in de offerte afspreken. U weet precies waar u aan toe bent.</p>
-          <p class="mt-6 pt-6 border-t border-steiger/40 text-[17px] leading-[1.7] text-[#3b3d3d]">Wat het beste past hangt af van uw wensen. Ik adviseer u graag bij die keuze.</p>
-        </div>
-        <div class="p-7 md:p-10 bg-kalk border-t-2 md:border-t-0 md:border-l-2 border-lei">
-          <h4 class="kop-smal text-2xl">Uurbasis</h4>
-          <p class="mt-3 text-[17px] leading-[1.7] text-[#3b3d3d]">Met duidelijke uitgangspunten die u makkelijk kunt controleren, en vooraf een offerte met een gedetailleerde inschatting van werk en materiaal.</p>
-          <ul class="mt-4 space-y-2 text-[17px] leading-[1.6] text-[#3b3d3d]">
-            <li class="flex gap-3"><span class="mt-[9px] w-3 h-[3px] bg-lei flex-none"></span><span>Werktijden van 7.30 tot 16.30 uur, met een uur pauze voor koffie en lunch (op verzoek aan te passen)</span></li>
-            <li class="flex gap-3"><span class="mt-[9px] w-3 h-[3px] bg-lei flex-none"></span><span>Bij meerdaagse projecten geen voorrijkosten</span></li>
-          </ul>
-        </div>
-      </div>
+  <div class="mt-16 grid md:grid-cols-2 gap-6">
+    <div class="bg-kalk border border-lijn p-6 sm:p-8">
+      <h3 class="font-kop font-bold text-2xl">Zelf meehelpen mag</h3>
+      <p class="mt-3 text-grijs leading-relaxed">Bijvoorbeeld de oude schuur zelf afbreken waar de aanbouw komt, of hand- en spandiensten verlenen. Dat geeft voldoening en kan flink schelen in de kosten.</p>
     </div>
-
-    <div class="mt-16 grid md:grid-cols-2 gap-12 md:gap-16">
-      <div>
-        <h3 class="kop-smal text-2xl">Zelf bijdragen aan uw verbouwing</h3>
-        <p class="mt-3 text-[17px] leading-[1.75] text-[#3b3d3d]">Dat kan in veel vormen. U kunt bijvoorbeeld zelf de voorbereidingen doen, zoals het afbreken van een oude schuur waar de nieuwe aanbouw moet komen. U kunt ook volledig meedoen, of alleen hand- en spandiensten verlenen. Veel mensen halen er voldoening uit, en het kan een flinke besparing op de kosten opleveren.</p>
-      </div>
-      <div>
-        <h3 class="kop-smal text-2xl">Garantie</h3>
-        <p class="mt-3 text-[17px] leading-[1.75] text-[#3b3d3d]">Het komt gelukkig weinig voor, maar gaat er tijdens het werk iets mis, dan kunt u terugvallen op de garantie die ik geef op werkzaamheden en materialen. Vraag er gerust naar in een gesprek, dan neem ik het op in de offerte of overeenkomst.</p>
-      </div>
+    <div class="bg-kalk border border-lijn p-6 sm:p-8">
+      <h3 class="font-kop font-bold text-2xl">Garantie op werk en materiaal</h3>
+      <p class="mt-3 text-grijs leading-relaxed">Gaat er onverhoopt iets mis, dan kunt u terugvallen op de garantie die ik geef. Vraag ernaar, dan neem ik het op in de offerte of overeenkomst.</p>
     </div>
   </div>
 </section>
 
-<!-- Passie en goede naam -->
-<section class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
-  <figure class="grid lg:grid-cols-[1.6fr_1fr] gap-10 lg:gap-16 items-end">
-    <blockquote class="kop text-[30px] sm:text-4xl md:text-[46px] !leading-[1.16]">
-      <p>&ldquo;Je wordt, en blijft, geen zelfstandig ondernemer als je geen passie hebt voor je vak.&rdquo;</p>
+<!-- Projecten -->
+<section id="projecten" class="bg-kalk border-y border-lijn">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-tight leading-[1.05]">Eerder werk.</h2>
+      <p class="text-grijs max-w-sm">Een greep uit projecten in en rond Apeldoorn, van rieten kap tot trap.</p>
+    </div>
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-6 sm:gap-x-4">
+      <figure><img src="assets/werk/rieten-kap-2.jpg" alt="Steiger rond een woning met rieten kap tijdens het werk" class="w-full aspect-[288/154] object-cover"><figcaption class="mt-2 text-sm text-grijs">Rieten kap</figcaption></figure>
+      <figure><img src="assets/werk/veranda.jpg" alt="Woning met witte veranda en rieten dak" class="w-full aspect-[288/154] object-cover"><figcaption class="mt-2 text-sm text-grijs">Veranda</figcaption></figure>
+      <figure><img src="assets/werk/serre-3.jpg" alt="Serre met houten gevelbekleding" class="w-full aspect-[288/154] object-cover"><figcaption class="mt-2 text-sm text-grijs">Serre annex keuken</figcaption></figure>
+      <figure><img src="assets/werk/garage.jpg" alt="Nieuwe garage met puntdak" class="w-full aspect-[288/154] object-cover"><figcaption class="mt-2 text-sm text-grijs">Garage</figcaption></figure>
+      <figure><img src="assets/werk/steiger-dak.jpg" alt="Vakmensen aan het werk op een steiger bij het dak" class="w-full aspect-[288/154] object-cover"><figcaption class="mt-2 text-sm text-grijs">Verbouwing woning</figcaption></figure>
+      <figure><img src="assets/werk/dakkapel.jpg" alt="Woning met dakkapel tijdens de bouw" class="w-full aspect-[288/154] object-cover"><figcaption class="mt-2 text-sm text-grijs">Dakkapel</figcaption></figure>
+      <figure><img src="assets/werk/schuur.jpg" alt="Bakstenen schuur met overkapping" class="w-full aspect-[288/154] object-cover"><figcaption class="mt-2 text-sm text-grijs">Schuur met overkapping</figcaption></figure>
+      <figure><img src="assets/werk/vlonder.jpg" alt="Ronde houten vlonder aan het water" class="w-full aspect-[288/154] object-cover"><figcaption class="mt-2 text-sm text-grijs">Vlonder</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews + passie -->
+<section class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-12">
+  <div class="md:col-span-5">
+    <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-tight leading-[1.05]">Mijn goede naam is mijn reclame.</h2>
+    <p class="mt-5 text-grijs leading-relaxed">Veel opdrachten komen via mond-tot-mondreclame. Ik lever graag werk af waar mensen lang plezier van hebben. Zo zit ik nou eenmaal in elkaar.</p>
+  </div>
+  <figure class="md:col-span-7 bg-kalk border border-lijn p-6 sm:p-10 self-start">
+    <span class="text-eik tracking-[.15em] text-lg" aria-hidden="true">★★★★★</span>
+    <blockquote class="mt-4 font-kop text-xl sm:text-2xl leading-snug font-medium">
+      Timmerbedrijf Mekelenkamp heeft bij ons de verbouwing van de douche, toilet en bijkeuken gedaan. Ze werken netjes, denken mee en leveren vakwerk af. Zeer tevreden met het eindresultaat.
     </blockquote>
-    <figcaption class="text-[17px] leading-[1.75] text-[#3b3d3d] border-l-4 border-geel pl-6">
-      Ik wil goed werk afleveren waar mijn klanten lang plezier van hebben. Ik werk vooral in de regio Apeldoorn en krijg veel opdrachten via mond-tot-mondreclame. Mijn goede naam is alles, en daar ben ik zuinig op.
-    </figcaption>
+    <figcaption class="mt-5 text-grijs"><span class="font-semibold text-lei">Ans Evers</span>, Google-review</figcaption>
   </figure>
 </section>
 
-<div class="duimstok" aria-hidden="true">
-  <div class="cijfers"><span></span><span>51</span><span>52</span><span>53</span><span>54</span><span>55</span><span>56</span><span>57</span><span>58</span><span>59</span><span>60</span><span>61</span><span>62</span><span>63</span><span>64</span><span>65</span><span>66</span><span>67</span><span>68</span><span>69</span><span>70</span><span>71</span><span>72</span><span>73</span><span>74</span><span>75</span><span>76</span><span>77</span><span>78</span><span>79</span><span>80</span><span>81</span><span>82</span><span>83</span><span>84</span><span>85</span><span>86</span><span>87</span><span>88</span><span>89</span><span>90</span><span>91</span><span>92</span><span>93</span><span>94</span><span>95</span><span>96</span><span>97</span><span>98</span><span>99</span><span>100</span></div>
-  <span class="scharnier" style="left:440px"></span><span class="scharnier" style="left:1320px"></span>
-</div>
-
 <!-- Contact -->
-<section id="contact" class="bg-lei text-white op-donker">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20">
-    <div>
-      <h2 class="kop text-4xl md:text-5xl">Plannen? Ik kom graag kijken.</h2>
-      <p class="mt-6 text-lg leading-relaxed text-[#d9d6cd] max-w-md">Heeft u vragen, of wilt u weten wat er mogelijk is en wat het kost? Neem gerust contact met mij op.</p>
-      <a href="tel:+31620301604" class="knop mt-10 block font-kop font-extrabold text-geel text-[40px] sm:text-[56px] leading-none [font-stretch:110%] hover:text-white">06 20301604</a>
-      <dl class="mt-10 grid gap-7 text-[17px]">
-        <div>
-          <dt class="font-kop text-sm font-semibold text-[#a9a59a]">E-mail</dt>
-          <dd class="mt-1"><a href="mailto:info@timmerbedrijfmekelenkamp.nl" class="underline decoration-white/30 underline-offset-4 hover:decoration-geel break-words">info@timmerbedrijfmekelenkamp.nl</a></dd>
+<section id="contact" class="bg-lei text-kalk">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-6">
+      <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-tight leading-[1.05]">Plannen? Bel gerust.</h2>
+      <p class="mt-5 text-kalk/75 text-lg leading-relaxed max-w-md">Vertel wat u van plan bent, dan kom ik vrijblijvend langs om de mogelijkheden en prijzen te bespreken.</p>
+      <a href="tel:+31620301604" class="knop mt-8 inline-flex items-center gap-3 rounded bg-eik text-lei px-6 py-4 text-lg font-semibold hover:bg-[#d39a58]">
+        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+        Bel 06 20301604
+      </a>
+      <dl class="mt-10 space-y-5 text-[15px]">
+        <div class="border-t border-kalk/20 pt-4">
+          <dt class="text-kalk/60 text-sm">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@timmerbedrijfmekelenkamp.nl" class="underline decoration-eik underline-offset-4 hover:text-eik break-all">info@timmerbedrijfmekelenkamp.nl</a></dd>
         </div>
-        <div>
-          <dt class="font-kop text-sm font-semibold text-[#a9a59a]">Adres</dt>
-          <dd class="mt-1 leading-relaxed">Vellertweg 25<br>7341 AB Beemte Broekland</dd>
+        <div class="border-t border-kalk/20 pt-4">
+          <dt class="text-kalk/60 text-sm">Adres</dt>
+          <dd class="mt-1">Vellertweg 25<br>7341 AB Beemte Broekland</dd>
+        </div>
+        <div class="border-t border-kalk/20 pt-4">
+          <dt class="text-kalk/60 text-sm">Werkgebied</dt>
+          <dd class="mt-1">Apeldoorn en omgeving</dd>
         </div>
       </dl>
     </div>
-
-    <form id="contactform" action="mailto:info@timmerbedrijfmekelenkamp.nl" method="post" enctype="text/plain" class="bg-leizacht rounded-[4px] p-6 sm:p-9 border border-white/10">
-      <h3 class="kop-smal text-2xl">Stuur een bericht</h3>
-      <p class="mt-2 text-[15px] text-[#b9b5aa]">Uw bericht opent in uw eigen mailprogramma.</p>
-      <div class="mt-7 space-y-5 font-kop">
-        <label class="block"><span class="text-sm font-semibold text-[#d6d3ca]">Naam</span>
-          <input name="naam" required autocomplete="name" class="mt-1.5 w-full bg-lei border border-white/20 rounded-[3px] px-4 py-3 text-white font-tekst text-[17px] focus:border-geel outline-none"></label>
-        <label class="block"><span class="text-sm font-semibold text-[#d6d3ca]">Telefoonnummer</span>
-          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full bg-lei border border-white/20 rounded-[3px] px-4 py-3 text-white font-tekst text-[17px] focus:border-geel outline-none"></label>
-        <label class="block"><span class="text-sm font-semibold text-[#d6d3ca]">Waar gaat het om?</span>
-          <textarea name="bericht" rows="4" required placeholder="Bijvoorbeeld: een aanbouw aan de achterkant, of een nieuwe trap" class="mt-1.5 w-full bg-lei border border-white/20 rounded-[3px] px-4 py-3 text-white font-tekst text-[17px] placeholder:text-[#8a877e] focus:border-geel outline-none"></textarea></label>
-        <button type="submit" class="knop w-full bg-geel text-lei font-extrabold text-lg py-4 rounded-[3px] hover:bg-[#f3c64a]">Bericht versturen</button>
+    <form class="md:col-span-6 bg-kalk text-lei p-6 sm:p-8 self-start rounded-sm" action="mailto:info@timmerbedrijfmekelenkamp.nl" method="post" enctype="text/plain">
+      <h3 class="font-kop font-bold text-2xl">Liever mailen?</h3>
+      <p class="mt-1 text-sm text-grijs">Uw bericht opent in uw e-mailprogramma.</p>
+      <div class="mt-6 space-y-4">
+        <label class="block"><span class="text-sm font-medium">Naam</span>
+          <input name="Naam" required autocomplete="name" class="mt-1 w-full rounded-sm border border-lijn bg-white px-3 py-2.5 focus:border-eik"></label>
+        <label class="block"><span class="text-sm font-medium">Telefoon</span>
+          <input name="Telefoon" type="tel" autocomplete="tel" class="mt-1 w-full rounded-sm border border-lijn bg-white px-3 py-2.5 focus:border-eik"></label>
+        <label class="block"><span class="text-sm font-medium">Wat wilt u laten doen?</span>
+          <textarea name="Bericht" rows="4" required class="mt-1 w-full rounded-sm border border-lijn bg-white px-3 py-2.5 focus:border-eik" placeholder="Bijvoorbeeld: een dakkapel aan de achterkant"></textarea></label>
       </div>
+      <button type="submit" class="knop mt-6 w-full rounded bg-lei text-kalk px-5 py-3.5 font-semibold hover:bg-black">Bericht versturen</button>
     </form>
   </div>
 </section>
+
 </main>
 
-<footer class="bg-lei text-[#a9a59a] border-t border-white/10">
-  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-8 pb-28 md:pb-8 flex flex-col sm:flex-row gap-3 sm:justify-between font-kop text-sm">
-    <span>Timmerbedrijf Mekelenkamp, Beemte Broekland</span>
-    <span>Website: <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a></span>
+<footer class="bg-lei text-kalk/60 border-t border-kalk/10 pb-24 md:pb-0">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row gap-3 justify-between text-sm">
+    <p><span class="font-kop font-bold text-kalk text-base">Timmerbedrijf Mekelenkamp</span>, Beemte Broekland</p>
+    <p><a href="tel:+31620301604" class="hover:text-eik">06 20301604</a> <span class="mx-2">|</span> <a href="mailto:info@timmerbedrijfmekelenkamp.nl" class="hover:text-eik">E-mail</a></p>
   </div>
 </footer>
 
 <!-- Mobiele belbalk -->
-<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-lei/95 backdrop-blur border-t border-white/10 px-4 py-3 flex gap-3">
-  <a href="tel:+31620301604" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-geel text-lei font-kop font-extrabold py-3.5 rounded-[3px]">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-steen/95 backdrop-blur border-t border-lijn">
+  <a href="tel:+31620301604" class="knop flex items-center justify-center gap-3 rounded bg-eik text-lei py-3.5 text-lg font-semibold">
+    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
     Bel 06 20301604
   </a>
-  <a href="mailto:info@timmerbedrijfmekelenkamp.nl" class="knop inline-flex items-center justify-center px-5 border border-white/30 text-white font-kop font-bold rounded-[3px]">Mail</a>
 </div>
 
 <script>
-  // Formulier: stel een nette e-mail op in plaats van de ruwe mailto-post.
-  document.getElementById('contactform').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var f = e.target;
-    if (!f.reportValidity()) return;
-    var body = 'Naam: ' + f.naam.value + '\nTelefoon: ' + f.telefoon.value + '\n\n' + f.bericht.value;
-    location.href = 'mailto:info@timmerbedrijfmekelenkamp.nl?subject=' + encodeURIComponent('Vraag via de website') + '&body=' + encodeURIComponent(body);
+  document.querySelectorAll('[data-vn]').forEach(function (vn) {
+    var r = document.createElement('input');
+    r.type = 'range'; r.min = 0; r.max = 100; r.value = 50; r.className = 'vn-schuif';
+    r.setAttribute('aria-label', 'Schuif tussen de foto voor en na de verbouwing');
+    var g = document.createElement('div'); g.className = 'vn-greep';
+    vn.append(r, g);
+    r.addEventListener('input', function () { vn.style.setProperty('--p', r.value + '%'); });
   });
 </script>
 </body>
