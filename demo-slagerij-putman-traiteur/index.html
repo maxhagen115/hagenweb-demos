@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slagerij Putman - Traiteur | Ambachtelijke slager en worstmakerij in Arnhem</title>
+<meta name="description" content="Slagerij Putman aan de Steenstraat 90 in Arnhem: ambachtelijke slagerij, worstmakerij en traiteur. Nederlands kampioen rookworst. Bel 026 442 5368.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          papier: '#F6F6F1',
+          lei: '#1F2A32',
+          lei2: '#2B3842',
+          lime: '#8CC63F',
+          limedonker: '#4D7A1F',
+          steen: '#DCDDD5',
+          grijs: '#5A6670',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .ruit { display:inline-block; width:.55em; height:.55em; transform: rotate(45deg); background: currentColor; flex: none; }
+  .hero-foto { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+  @media (max-width: 1023px) { .hero-foto { clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 100%); } }
+  .schuin-boven { clip-path: polygon(0 0, 100% 3.5rem, 100% 100%, 0 100%); }
+  .zegel { width: 2rem; height: 2rem; transform: rotate(45deg); }
+  .zegel > span { transform: rotate(-45deg); }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 3px solid #8CC63F; outline-offset: 3px; border-radius: 4px; }
+  /* Eén laadmoment: alleen als JS draait */
+  .js .opkomst { animation: opkomst .8s cubic-bezier(.2,.7,.2,1) both; }
+  .js .opkomst-2 { animation-delay: .12s; }
+  .js .opkomst-3 { animation-delay: .24s; }
+  .js .confetti i { animation: val .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--d, 0) * 1s + .3s); }
+  @keyframes opkomst { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes val { from { opacity: 0; transform: translateY(-18px) rotate(10deg); } to { opacity: 1; transform: rotate(45deg); } }
+  .confetti i { position: absolute; display: block; transform: rotate(45deg); }
+  @media (prefers-reduced-motion: reduce) { .js .opkomst, .js .confetti i { animation: none; } html { scroll-behavior: auto; } }
+  .vandaag { background: #8CC63F22; }
+</style>
+</head>
+<body class="bg-papier text-lei antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-lime focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-lei text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Slagerij Putman - Traiteur, gemaakt door <a href="https://hagenweb.nl" class="text-lime font-semibold underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-papier/95 backdrop-blur border-b border-steen">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 group" aria-label="Slagerij Putman, naar boven">
+      <img src="assets/logo-oud.png" alt="" class="w-7 h-7 opacity-80">
+      <span class="leading-none">
+        <span class="block font-kop font-800 text-[11px] tracking-[.32em] text-grijs">SLAGERIJ</span>
+        <span class="block font-kop font-extrabold text-[26px] tracking-[.06em] -mt-0.5">PUTMAN</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-semibold" aria-label="Hoofdmenu">
+      <a href="#worstmakerij" class="hover:text-limedonker transition-colors">Worstmakerij</a>
+      <a href="#toonbank" class="hover:text-limedonker transition-colors">Assortiment</a>
+      <a href="#feest" class="hover:text-limedonker transition-colors">BBQ en feest</a>
+      <a href="#spaarkaart" class="hover:text-limedonker transition-colors">Spaarkaart</a>
+      <a href="#langskomen" class="hover:text-limedonker transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:+31264425368" class="knop inline-flex items-center gap-2 bg-lei text-white rounded-full pl-4 pr-5 py-2.5 text-[15px] font-semibold hover:bg-lei2">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">026 442 5368</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden">
+  <div class="lg:grid lg:grid-cols-12 lg:min-h-[calc(100dvh-108px)] lg:max-h-[820px]">
+    <div class="relative z-10 lg:col-span-6 xl:col-span-5 flex items-center px-5 sm:px-8 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-6 pt-9 pb-10 lg:py-16">
+      <div class="max-w-xl">
+        <p class="opkomst flex items-center gap-3 text-limedonker font-semibold text-[15px]">
+          <span class="ruit text-lime"></span> Slager, worstmakerij en traiteur in Arnhem
+        </p>
+        <h1 class="opkomst opkomst-2 font-kop font-extrabold text-[2.6rem] leading-[1.02] sm:text-6xl xl:text-[4.4rem] tracking-[-0.02em] mt-4">
+          Kampioensworst, gewoon aan de Steenstraat.
+        </h1>
+        <p class="opkomst opkomst-3 mt-5 text-lg sm:text-xl text-grijs leading-relaxed max-w-md">
+          Vers vlees, huisgemaakte worst en vleeswaren, soepen en kant-en-klare gerechten. Van een slager die meedenkt, voor uw dagelijkse boodschap en uw volgende feest.
+        </p>
+        <div class="opkomst opkomst-3 mt-7 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <a href="tel:+31264425368" class="knop inline-flex items-center gap-3 bg-lime text-lei rounded-full px-7 py-4 text-lg font-bold shadow-[0_10px_24px_-10px_rgba(77,122,31,.7)] hover:bg-[#9bd24f]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Bel 026 442 5368
+          </a>
+          <a href="https://www.slagerijputman.nl/shop-2/" class="font-semibold text-lei underline decoration-lime decoration-2 underline-offset-[6px] hover:text-limedonker">Online bestellen</a>
+        </div>
+        <p class="opkomst opkomst-3 mt-8 flex items-center gap-2 text-[15px] text-grijs">
+          <span class="text-lime tracking-[.1em] text-base" aria-hidden="true">★★★★★</span>
+          <span><strong class="text-lei">4,8</strong> uit 70 Google-reviews</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="relative lg:col-span-6 xl:col-span-7 h-[340px] sm:h-[460px] lg:h-auto">
+      <img src="assets/site-06.jpg" alt="Pepijn Putman hangt verse rookworsten aan het rek in de worstmakerij" class="hero-foto absolute inset-0 w-full h-full object-cover object-[72%_8%] lg:object-[68%_30%]">
+      <div class="confetti pointer-events-none absolute inset-0" aria-hidden="true">
+        <i class="bg-lime w-5 h-5 left-[4%] top-[18%] lg:left-[6%]" style="--d:.0"></i>
+        <i class="bg-lei w-3 h-3 left-[11%] top-[8%] hidden lg:block" style="--d:.1"></i>
+        <i class="bg-lime w-9 h-9 left-[1%] bottom-[16%] lg:left-[3%]" style="--d:.2"></i>
+        <i class="bg-lei w-4 h-4 right-[6%] bottom-[8%]" style="--d:.15"></i>
+        <i class="bg-lime w-3 h-3 right-[14%] top-[6%] lg:top-[10%]" style="--d:.25"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORSTMAKERIJ -->
+<section id="worstmakerij" class="bg-lei text-white schuin-boven -mt-px pt-28 pb-24 lg:pt-36 lg:pb-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.015em]">Uit eigen worstmakerij.</h2>
+      <p class="mt-6 text-lg text-white/75 leading-relaxed max-w-lg">
+        In de eigen worstmakerij maken Pepijn en zijn medewerkers de worst nog zelf. Fijn of grof, gerookt op de manier die prijzen wint.
+      </p>
+      <p class="mt-6 font-kop font-bold text-xl sm:text-2xl leading-snug text-lime max-w-lg">
+        Bekroond tot Nederlands kampioen bij de slagersvakwedstrijden én tot Nederlands kampioen rookworst.
+      </p>
+      <ul class="mt-8 space-y-3 text-white/85">
+        <li class="flex items-baseline gap-3"><span class="ruit text-lime"></span>Kampioensrookworst, fijn en grof</li>
+        <li class="flex items-baseline gap-3"><span class="ruit text-lime"></span>Huisgemaakte vleeswaren en worsten voor de BBQ</li>
+        <li class="flex items-baseline gap-3"><span class="ruit text-lime"></span>Ambachtelijke rollades</li>
+      </ul>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2 relative pb-10 sm:pb-14 lg:pl-10">
+      <figure class="rounded-2xl overflow-hidden">
+        <img src="assets/site-07.jpg" alt="Pepijn Putman met de kampioensbeker, naast zijn collega's en een rek rookworsten" class="w-full aspect-[712/596] object-cover">
+      </figure>
+      <figure class="absolute bottom-0 -left-1 lg:left-0 w-[36%] sm:w-[32%] rounded-xl overflow-hidden border-[6px] border-lei bg-[#efe9df] shadow-[0_24px_40px_-20px_rgba(0,0,0,.6)]">
+        <img src="assets/site-04.jpg" alt="Bronzen trofee Nationaal Kampioen Arnhem Rookworststad, fijn en grof" class="w-full aspect-[3/4] object-cover">
+      </figure>
+      <span class="absolute right-6 -bottom-1 sm:bottom-3 ruit text-lime text-3xl" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<!-- TOONBANK -->
+<section id="toonbank" class="py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end">
+      <h2 class="lg:col-span-7 font-kop font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.015em]">Wat er vandaag in de toonbank ligt.</h2>
+      <p class="lg:col-span-5 text-lg text-grijs leading-relaxed">Van biefstuk voor vanavond tot een pot soep voor morgen. Weet u niet precies wat u zoekt? Vraag het gerust aan de toonbank.</p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-12 gap-5 lg:gap-6">
+      <article class="md:col-span-7 group">
+        <div class="rounded-2xl overflow-hidden aspect-[16/10]">
+          <img src="assets/google-03.jpg" alt="De vleestoonbank met rib-eye, entrecote, kogelbiefstuk en riblappen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+        </div>
+        <div class="mt-5 flex gap-4">
+          <span class="ruit text-lime mt-2.5"></span>
+          <div>
+            <h3 class="font-kop font-bold text-2xl">Vers vlees</h3>
+            <p class="mt-1.5 text-grijs leading-relaxed max-w-lg">Rundvlees, varkensvlees, kalfs- en lamsvlees, kip en gevogelte. Vers gesneden zoals u het wilt.</p>
+          </div>
+        </div>
+      </article>
+      <article class="md:col-span-5 group md:mt-20">
+        <div class="rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="assets/site-05.jpg" alt="Gevulde kipschnitzels met spek, abrikoos en tomaat in de toonbank" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+        </div>
+        <div class="mt-5 flex gap-4">
+          <span class="ruit text-lime mt-2.5"></span>
+          <div>
+            <h3 class="font-kop font-bold text-2xl">Panklaar en rollades</h3>
+            <p class="mt-1.5 text-grijs leading-relaxed">Gemarineerd, gevuld of opgerold. Thuis alleen nog in de pan of de oven.</p>
+          </div>
+        </div>
+      </article>
+      <article class="md:col-span-5 group">
+        <div class="rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="assets/google-06.jpg" alt="Kant-en-klare gerechten in de toonbank: pasta, nasi, chili con carne, rijst en kippenpootjes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+        </div>
+        <div class="mt-5 flex gap-4">
+          <span class="ruit text-lime mt-2.5"></span>
+          <div>
+            <h3 class="font-kop font-bold text-2xl">Maaltijden en grill</h3>
+            <p class="mt-1.5 text-grijs leading-relaxed">Kant-en-klare gerechten, snacks en grillproducten. Voor de avonden dat koken er niet bij past.</p>
+          </div>
+        </div>
+      </article>
+      <article class="md:col-span-7 group">
+        <div class="rounded-2xl overflow-hidden aspect-[16/10]">
+          <img src="assets/google-07.jpg" alt="Wand vol potten huisgemaakte soep, sauzen en stoofgerechten" class="w-full h-full object-cover object-[center_40%] transition-transform duration-700 group-hover:scale-[1.03]">
+        </div>
+        <div class="mt-5 flex gap-4">
+          <span class="ruit text-lime mt-2.5"></span>
+          <div>
+            <h3 class="font-kop font-bold text-2xl">Soepen, sauzen en fonds</h3>
+            <p class="mt-1.5 text-grijs leading-relaxed max-w-lg">Huisgemaakte soep in de pot, bouillon, fonds en sauzen.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-16 rounded-2xl border border-steen bg-white/60 p-6 sm:p-8 lg:flex lg:items-center lg:justify-between gap-8">
+      <p class="text-lg max-w-2xl"><strong class="font-kop">Liever thuis kiezen?</strong> Bekijk onze folders en bestel daarna gemakkelijk online. Heeft u toch nog vragen, belt u ons gerust.</p>
+      <div class="mt-5 lg:mt-0 flex flex-wrap gap-x-6 gap-y-3 shrink-0">
+        <a href="https://www.slagerijputman.nl/shop-2/" class="knop inline-flex items-center rounded-full bg-lei text-white px-6 py-3 font-semibold hover:bg-lei2">Online bestellen</a>
+        <a href="https://www.slagerijputman.nl/folders/" class="inline-flex items-center font-semibold underline decoration-lime decoration-2 underline-offset-[6px] hover:text-limedonker">Folders bekijken</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEEST -->
+<section id="feest" class="bg-white py-24 lg:py-32 border-y border-steen">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-6 relative">
+      <img src="assets/google-05.jpg" alt="Een gedekt buffet met brood, salades en schotels" class="rounded-2xl w-full aspect-[4/3] object-cover">
+      <img src="assets/site-16.jpg" alt="Saladeschotel opgemaakt met vleeswaren, eitjes en augurk" class="absolute -bottom-10 -right-3 sm:-right-8 w-[46%] rounded-xl border-[6px] border-white shadow-[0_20px_40px_-20px_rgba(31,42,50,.5)] aspect-[4/3] object-cover">
+    </div>
+    <div class="lg:col-span-6 pt-8 lg:pt-0">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.015em]">Iets te vieren? Wij zorgen voor de tafel.</h2>
+      <p class="mt-6 text-lg text-grijs leading-relaxed max-w-lg">Van een borrelschaal voor de verjaardag tot een barbecue voor de hele straat. Bel ons, dan stellen we samen iets samen dat past.</p>
+      <dl class="mt-9 divide-y divide-steen border-y border-steen">
+        <div class="flex items-baseline justify-between gap-6 py-4"><dt class="font-semibold">BBQ-vleespakketten</dt><dd class="text-grijs text-right">vanaf 4 personen</dd></div>
+        <div class="flex items-baseline justify-between gap-6 py-4"><dt class="font-semibold">BBQ-menu's</dt><dd class="text-grijs text-right">vanaf 15 personen</dd></div>
+        <div class="flex items-baseline justify-between gap-6 py-4"><dt class="font-semibold">BBQ-buurtfestijn</dt><dd class="text-grijs text-right">vanaf 30 personen</dd></div>
+        <div class="flex items-baseline justify-between gap-6 py-4"><dt class="font-semibold">Gourmet en fondue</dt><dd class="text-grijs text-right">voor thuis aan tafel</dd></div>
+        <div class="flex items-baseline justify-between gap-6 py-4"><dt class="font-semibold">Borrelschalen en saladeschotels</dt><dd class="text-grijs text-right">voor de borrel</dd></div>
+        <div class="flex items-baseline justify-between gap-6 py-4"><dt class="font-semibold">Stamppotbuffet</dt><dd class="text-grijs text-right">warm buffet</dd></div>
+      </dl>
+      <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31264425368" class="knop inline-flex items-center gap-3 bg-lime text-lei rounded-full px-6 py-3.5 font-bold hover:bg-[#9bd24f]">Bespreek uw feest: 026 442 5368</a>
+        <a href="mailto:info@slagerijputman.nl?subject=Bestelling%20voor%20een%20feest" class="font-semibold underline decoration-lime decoration-2 underline-offset-[6px] hover:text-limedonker">Of mail ons</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPAARKAART -->
+<section id="spaarkaart" class="py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-4">
+        <h2 class="font-kop font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.015em]">Sparen voor iets lekkers.</h2>
+        <p class="mt-6 text-lg text-grijs leading-relaxed">Bij elke €10 die u bij ons besteedt, krijgt u een Putmanzegel. Plak ze op de spaarkaart en kies een culinair cadeau uit onze slagerij.</p>
+        <div class="mt-8 inline-grid grid-cols-5 gap-x-5 gap-y-6 p-7 rounded-2xl bg-white border border-steen" aria-hidden="true">
+          <span class="zegel bg-lime flex items-center justify-center"><span class="text-[10px] font-bold text-lei">P</span></span>
+          <span class="zegel bg-lime flex items-center justify-center"><span class="text-[10px] font-bold text-lei">P</span></span>
+          <span class="zegel bg-lime flex items-center justify-center"><span class="text-[10px] font-bold text-lei">P</span></span>
+          <span class="zegel bg-lime flex items-center justify-center"><span class="text-[10px] font-bold text-lei">P</span></span>
+          <span class="zegel bg-lime flex items-center justify-center"><span class="text-[10px] font-bold text-lei">P</span></span>
+          <span class="zegel bg-lime flex items-center justify-center"><span class="text-[10px] font-bold text-lei">P</span></span>
+          <span class="zegel bg-lime flex items-center justify-center"><span class="text-[10px] font-bold text-lei">P</span></span>
+          <span class="zegel border-2 border-dashed border-steen"></span>
+          <span class="zegel border-2 border-dashed border-steen"></span>
+          <span class="zegel border-2 border-dashed border-steen"></span>
+        </div>
+      </div>
+      <ol class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+        <li>
+          <p class="font-kop font-extrabold text-xl flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-lei text-lime grid place-items-center text-base">1</span> volle kaart</p>
+          <ul class="mt-4 space-y-2 text-grijs leading-snug">
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>Vleeswarenpakket: 100 gram achterham, rosbief en runderrookvlees</li>
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>2 kampioensrookworsten, fijn of grof</li>
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>4 gepaneerde varkensschnitzels</li>
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>2 malse runderschnitzels naar keuze</li>
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>Varkensschouderrollade voor circa 2 à 3 personen</li>
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>2 potten huisgemaakte soep naar keuze</li>
+          </ul>
+        </li>
+        <li>
+          <p class="font-kop font-extrabold text-xl flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-lei text-lime grid place-items-center text-base">2</span> volle kaarten</p>
+          <ul class="mt-4 space-y-2 text-grijs leading-snug">
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>4 malse runderschnitzels naar keuze</li>
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>Runderrosérollade voor circa 2 à 3 personen</li>
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>Borrelschaal 'Putman' met huisgemaakte worstsoorten*</li>
+          </ul>
+        </li>
+        <li>
+          <p class="font-kop font-extrabold text-xl flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-lei text-lime grid place-items-center text-base">3</span> volle kaarten</p>
+          <ul class="mt-4 space-y-2 text-grijs leading-snug">
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>Italiaans vleeswarenplateau met 6 soorten luxe vleeswaren*</li>
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>Rundvleessaladeschotel, opgemaakt met gekookte eitjes, tafelzuren en dressing</li>
+          </ul>
+        </li>
+        <li>
+          <p class="font-kop font-extrabold text-xl flex items-center gap-3"><span class="w-9 h-9 rounded-full bg-lei text-lime grid place-items-center text-base">4</span> volle kaarten</p>
+          <ul class="mt-4 space-y-2 text-grijs leading-snug">
+            <li class="flex gap-3"><span class="ruit text-lime mt-2"></span>Bourgondische snackschaal met huisgemaakte grillspecialiteiten, koud of warm*</li>
+          </ul>
+          <p class="mt-6 text-sm text-grijs">* Minimaal 2 dagen van tevoren bestellen.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bg-white border-y border-steen py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.015em] max-w-2xl">Wat Arnhem zegt.</h2>
+      <p class="flex items-center gap-3 text-grijs"><span class="font-kop font-extrabold text-4xl text-lei">4,8</span><span><span class="text-lime tracking-[.1em]" aria-hidden="true">★★★★★</span><br>uit 70 Google-reviews</span></p>
+    </div>
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-6 [&>figure]:mb-6">
+      <figure class="break-inside-avoid rounded-2xl bg-lei text-white p-7 lg:p-8">
+        <blockquote class="font-kop font-medium text-xl leading-snug">"Naast dat werkelijk alles van erg goede kwaliteit is, van de vleeswaren tot de soepen en kant en klare gerechten ( cordon bleu met boontjes en gebakken aardappeltjes is mijn favoriet) is deze slager ook nog eens sociaal betrokken en dus een groot compliment voor Pepijn en zijn medewerkers!"</blockquote>
+        <figcaption class="mt-6 text-white/70 text-sm"><span class="text-lime" aria-label="5 van 5 sterren">★★★★★</span> <span class="ml-2 font-semibold text-white">F</span>, Google</figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-2xl bg-papier border border-steen p-7 lg:p-8">
+        <blockquote class="font-kop font-medium text-2xl leading-snug">"Eindelijk een hele goede slager gevonden in m’n nieuwe omgeving!"</blockquote>
+        <figcaption class="mt-6 text-grijs text-sm"><span class="text-limedonker" aria-label="5 van 5 sterren">★★★★★</span> <span class="ml-2 font-semibold text-lei">Tea spoon</span>, Google</figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-2xl bg-papier border border-steen p-7 lg:p-8">
+        <blockquote class="text-lg leading-relaxed">"Heerlijke vleeswaren en overheerlijke worsten. Wij halen hier altijd de worsten voor de bbq en de vleeswaren als beleg. Je kan beter kiezen voor kwaliteit dan kwantiteit als je echt van het leven wilt genieten. Wij zijn zeer te spreken over de keuze, kwaliteit en service. Een echte aanrader deze traiteur van Arnhem!"</blockquote>
+        <figcaption class="mt-6 text-grijs text-sm"><span class="text-limedonker" aria-label="5 van 5 sterren">★★★★★</span> <span class="ml-2 font-semibold text-lei">Awaken</span>, Google</figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-2xl bg-papier border border-steen p-7 lg:p-8">
+        <blockquote class="text-lg leading-relaxed">"Helemaal tevreden, zeer vriendelijk overzichtelijk en fris . En gezorgd dat wij nog een Kalkoen op donderdag kregen terwijl we de maandag ervoor pas langs kwamen ..zo lief 💚"</blockquote>
+        <figcaption class="mt-6 text-grijs text-sm"><span class="text-limedonker" aria-label="5 van 5 sterren">★★★★★</span> <span class="ml-2 font-semibold text-lei">Jennefrie Drenthe Holland</span>, Google</figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-2xl bg-lime/25 p-7 lg:p-8">
+        <blockquote class="font-kop font-medium text-2xl leading-snug">"Vriendelijke mensen en vlees en vleeswaren zijn altijd goed!"</blockquote>
+        <figcaption class="mt-6 text-grijs text-sm"><span class="text-limedonker" aria-label="5 van 5 sterren">★★★★★</span> <span class="ml-2 font-semibold text-lei">Dennis Griep</span>, Google</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- LANGSKOMEN -->
+<section id="langskomen" class="bg-lei text-white">
+  <div class="lg:grid lg:grid-cols-2">
+    <div class="relative h-[320px] sm:h-[420px] lg:h-auto">
+      <img src="assets/google-08.jpg" alt="De verlichte winkelpui van Slagerij Putman aan de Steenstraat in de avond" class="absolute inset-0 w-full h-full object-cover object-[45%_center]">
+    </div>
+    <div class="px-5 sm:px-8 lg:px-16 py-20 lg:py-28 max-w-2xl">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl leading-[1.05] tracking-[-0.015em]">Kom langs aan de Steenstraat.</h2>
+      <address class="not-italic mt-8 text-xl leading-relaxed text-white/90">
+        Steenstraat 90<br>6828 CN Arnhem
+      </address>
+      <a href="https://www.google.com/maps/search/?api=1&query=Slagerij+Putman+Steenstraat+90+Arnhem" class="inline-block mt-3 font-semibold text-lime underline underline-offset-[6px] hover:text-white">Route plannen</a>
+
+      <table class="mt-10 w-full max-w-sm text-[17px]" id="tijden">
+        <caption class="text-left font-kop font-bold text-xl mb-3">Openingstijden</caption>
+        <tbody class="[&>tr]:border-b [&>tr]:border-white/10 [&_td]:py-2.5 [&_td]:px-2 tabular-nums">
+          <tr data-dag="1"><td>Maandag</td><td class="text-right text-white/50">Gesloten</td></tr>
+          <tr data-dag="2"><td>Dinsdag</td><td class="text-right">09:00 tot 18:00</td></tr>
+          <tr data-dag="3"><td>Woensdag</td><td class="text-right">09:00 tot 18:00</td></tr>
+          <tr data-dag="4"><td>Donderdag</td><td class="text-right">09:00 tot 18:00</td></tr>
+          <tr data-dag="5"><td>Vrijdag</td><td class="text-right">09:00 tot 18:00</td></tr>
+          <tr data-dag="6"><td>Zaterdag</td><td class="text-right">08:30 tot 17:00</td></tr>
+          <tr data-dag="0"><td>Zondag</td><td class="text-right text-white/50">Gesloten</td></tr>
+        </tbody>
+      </table>
+
+      <div class="mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-4">
+        <a href="tel:+31264425368" class="knop inline-flex justify-center items-center gap-3 bg-lime text-lei rounded-full px-7 py-4 text-lg font-bold hover:bg-[#9bd24f]">Bel 026 442 5368</a>
+        <a href="mailto:info@slagerijputman.nl" class="knop inline-flex justify-center items-center rounded-full border-2 border-white/30 px-7 py-4 text-lg font-semibold hover:border-lime">info@slagerijputman.nl</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-[#18222a] text-white/60 text-sm pb-24 lg:pb-0">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+    <div class="flex items-center gap-3 text-white">
+      <span class="font-kop font-extrabold tracking-[.06em] text-xl">PUTMAN</span>
+      <span class="ruit text-lime text-xs"></span>
+      <span class="text-white/60">Slagerij, worstmakerij en traiteur</span>
+    </div>
+    <p>Steenstraat 90, Arnhem <span class="mx-2 text-white/30">|</span> <a href="tel:+31264425368" class="hover:text-lime">026 442 5368</a> <span class="mx-2 text-white/30">|</span> <a href="mailto:info@slagerijputman.nl" class="hover:text-lime">info@slagerijputman.nl</a></p>
+  </div>
+</footer>
+
+<!-- Belbalk mobiel -->
+<div class="lg:hidden fixed inset-x-0 bottom-0 z-40 p-3 bg-gradient-to-t from-papier via-papier/90 to-transparent">
+  <a href="tel:+31264425368" class="flex items-center justify-center gap-3 bg-lime text-lei rounded-full py-4 font-bold text-lg shadow-[0_12px_30px_-12px_rgba(31,42,50,.6)]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel de slager
+  </a>
+</div>
+
+<script>
+  // Markeer vandaag in de openingstijden
+  var rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) { rij.classList.add('vandaag'); rij.firstElementChild.insertAdjacentHTML('beforeend', ' <span class="text-lime text-sm font-semibold">(vandaag)</span>'); }
+</script>
+</body>
+</html>
