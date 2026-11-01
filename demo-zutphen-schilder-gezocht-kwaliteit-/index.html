@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VELORIY | Schilder en stukadoor in Zutphen</title>
+<meta name="description" content="VELORIY schildert en stukt binnen en buiten in Zutphen. Strak werk, eerlijke prijs en alles schoon achtergelaten. Bel 06 14470066 voor een vrijblijvende offerte.">
+<meta property="og:title" content="VELORIY | Schilder en stukadoor in Zutphen">
+<meta property="og:image" content="assets/site-09.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          muur: '#FBFAF8',
+          pleister: '#ECE9E4',
+          antraciet: '#2B2826',
+          tape: '#F0532E',
+          tapedonker: '#D8441F',
+          steen: '#6E6862',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Instrument Sans", system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Afplaktape: een strook met licht gekartelde uiteinden */
+  .tape {
+    background: #F0532E;
+    background-image: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,0) 45%, rgba(0,0,0,.06));
+    clip-path: polygon(0 0, 100% 0, calc(100% - 5px) 20%, 100% 40%, calc(100% - 4px) 60%, 100% 80%, calc(100% - 5px) 100%, 0 100%, 5px 80%, 0 60%, 4px 40%, 0 20%);
+  }
+  .tape-onder { position: relative; display: inline-block; }
+  .tape-onder::after {
+    content: ""; position: absolute; left: -.15em; right: -.15em; bottom: -.06em; height: .2em;
+    background: #F0532E; opacity: .9; z-index: -1;
+    clip-path: polygon(0 15%, 2% 0, 98% 8%, 100% 0, 100% 85%, 98% 100%, 2% 92%, 0 100%);
+  }
+
+  .hero-tape { transform: rotate(34deg); }
+  .boog { border-radius: 999px 999px 18px 18px; }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #F0532E; outline-offset: 3px;
+  }
+
+  /* Eén moment beweging: de tape over de hero-foto wordt "geplakt". Alleen als JS draait. */
+  html.js .hero-tape { transform: rotate(34deg) scaleX(0); transform-origin: right center; transition: transform .9s cubic-bezier(.2,.8,.2,1) .3s; }
+  html.js.geladen .hero-tape { transform: rotate(34deg) scaleX(1); }
+  @media (prefers-reduced-motion: reduce) {
+    html.js .hero-tape { transition: none; transform: rotate(34deg); }
+    .knop { transition: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-muur text-antraciet antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-antraciet text-white/80 text-[13px] leading-snug">
+  <div class="mx-auto max-w-7xl px-5 py-2 text-center">
+    Demo voor Zutphen Schilder gezocht? Kwaliteit &amp; Lage Prijs, gemaakt door
+    <a href="https://hagenweb.nl" class="font-semibold text-white underline decoration-tape underline-offset-2 hover:text-tape">Hagenweb</a>
+  </div>
+</div>
+
+<!-- Navigatie -->
+<header class="sticky top-0 z-40 bg-muur/90 backdrop-blur border-b border-antraciet/10">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8" aria-label="Hoofdmenu">
+    <a href="#" class="flex items-baseline gap-2.5">
+      <span class="font-kop text-2xl font-extrabold tracking-tight">VELORIY</span>
+      <span class="hidden text-sm text-steen sm:inline">schilder- en stukwerk</span>
+    </a>
+    <div class="hidden items-center gap-8 text-[15px] font-medium md:flex">
+      <a href="#diensten" class="hover:text-tape transition-colors">Diensten</a>
+      <a href="#werkwijze" class="hover:text-tape transition-colors">Werkwijze</a>
+      <a href="#reviews" class="hover:text-tape transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-tape transition-colors">Contact</a>
+    </div>
+    <a href="tel:+31614470066" class="knop rounded-full bg-antraciet px-4 py-2 text-sm font-semibold text-white hover:bg-tape">
+      <span class="hidden sm:inline">Bel </span>06 14470066
+    </a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 pb-16 pt-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-16 lg:px-8 lg:pb-24 lg:pt-14">
+    <div class="relative z-10 order-1">
+      <p class="font-medium text-steen">Schilder- en stukwerk in Zutphen</p>
+      <h1 class="mt-4 font-kop text-[2.75rem] font-extrabold leading-[1] tracking-[-0.03em] sm:text-6xl lg:text-[4.6rem] xl:text-[5rem]">
+        Strak geschilderd. <span class="tape-onder relative z-0">Schoon</span> achtergelaten.
+      </h1>
+      <p class="mt-6 max-w-md text-lg leading-relaxed text-antraciet/80">
+        Binnen, buiten of stucwerk: we kijken eerst naar uw wensen, denken mee en laten uw huis netjes achter. Voor een eerlijke prijs.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31614470066" class="knop inline-flex items-center gap-3 rounded-full bg-tape px-7 py-4 text-lg font-semibold text-white shadow-[0_10px_24px_-8px_rgba(240,83,46,.6)] hover:bg-tapedonker">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 14470066
+        </a>
+        <a href="mailto:info@veloriy.nl?subject=Offerte%20schilderwerk" class="font-semibold underline decoration-antraciet/30 decoration-2 underline-offset-4 hover:decoration-tape">
+          Of mail voor een offerte
+        </a>
+      </div>
+      <a href="#reviews" class="mt-9 inline-flex items-center gap-3 text-[15px]">
+        <span class="flex text-tape" aria-hidden="true">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg>
+        </span>
+        <span><strong class="font-semibold">5,0 op Google</strong> <span class="text-steen">uit 10 reviews</span></span>
+      </a>
+    </div>
+
+    <div class="relative order-2 mx-auto w-full max-w-[30rem] lg:max-w-none">
+      <div class="relative">
+        <img src="assets/site-09.jpg" alt="Gestukte wand met drie verlichte nissen, strak afgewerkt" class="boog aspect-[4/5] w-full object-cover object-center shadow-[0_30px_60px_-30px_rgba(43,40,38,.45)]">
+        <div class="hero-tape tape pointer-events-none absolute -right-8 top-[17%] h-9 w-44 sm:h-11 sm:w-56" aria-hidden="true"></div>
+      </div>
+      <p class="mt-3 text-right text-sm text-steen">Stucwerk met verlichte nissen, door VELORIY</p>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-pleister py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="max-w-2xl">
+      <h2 class="font-kop text-4xl font-bold tracking-[-0.02em] sm:text-5xl">Wat we voor u doen</h2>
+      <p class="mt-4 text-lg leading-relaxed text-antraciet/75">Schilderwerk en stucwerk voor woningen en bedrijfspanden, binnen en buiten. Groot of klein, u heeft één aanspreekpunt van advies tot oplevering.</p>
+    </div>
+
+    <div class="mt-14 space-y-16 lg:space-y-24">
+      <article class="grid items-center gap-8 lg:grid-cols-12">
+        <img src="assets/site-06.png" alt="Lichte keuken met strak geschilderde wanden en plafond" class="aspect-[4/3] w-full rounded-2xl object-cover lg:col-span-7">
+        <div class="lg:col-span-4 lg:col-start-9">
+          <h3 class="font-kop text-3xl font-bold tracking-tight">Binnen schilderwerk</h3>
+          <p class="mt-4 leading-relaxed text-antraciet/80">Wanden, plafonds, kozijnen en deuren. Met goede verf en de juiste techniek krijgt uw ruimte een frisse uitstraling die lang mooi blijft. Vloeren en meubels worden eerst afgedekt.</p>
+        </div>
+      </article>
+
+      <article class="grid items-center gap-8 lg:grid-cols-12">
+        <img src="assets/site-11.jpg" alt="Chalet met vers geschilderde witte gevelbekleding en groene kozijnen" class="aspect-[4/3] w-full rounded-2xl object-cover object-[50%_60%] lg:order-2 lg:col-span-7 lg:col-start-6">
+        <div class="lg:order-1 lg:col-span-4">
+          <h3 class="font-kop text-3xl font-bold tracking-tight">Buiten schilderwerk</h3>
+          <p class="mt-4 leading-relaxed text-antraciet/80">Gevels, kozijnen, boeidelen en houten bekleding. Buitenwerk beschermt uw huis tegen weer en wind, dus we gebruiken duurzame materialen die daar tegen kunnen.</p>
+        </div>
+      </article>
+
+      <article class="grid items-center gap-8 lg:grid-cols-12">
+        <img src="assets/site-14.png" alt="Nieuwe wanden in een bedrijfshal, gestuct met steiger ervoor" class="aspect-[4/3] w-full rounded-2xl object-cover object-[50%_40%] lg:col-span-7">
+        <div class="lg:col-span-4 lg:col-start-9">
+          <h3 class="font-kop text-3xl font-bold tracking-tight">Stucwerk</h3>
+          <p class="mt-4 leading-relaxed text-antraciet/80">Wanden en plafonds strak gestuct, ook in bedrijfspanden. Een vlakke ondergrond die er goed uitziet en klaar is om te schilderen.</p>
+        </div>
+      </article>
+
+      <article class="grid items-center gap-8 lg:grid-cols-12">
+        <img src="assets/google-03.png" alt="Voor en na: een keuken met donkere kasten wordt licht en strak" class="aspect-[4/5] w-full max-w-md rounded-2xl object-cover sm:max-w-none lg:order-2 lg:col-span-5 lg:col-start-6">
+        <div class="lg:order-1 lg:col-span-4 lg:col-start-1">
+          <h3 class="font-kop text-3xl font-bold tracking-tight">Renovatie</h3>
+          <p class="mt-4 leading-relaxed text-antraciet/80">Een kamer, keuken of werkruimte die helemaal opnieuw moet. We begeleiden u van het eerste advies tot de laatste kwast, zodat u niet zelf alles hoeft te regelen.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="py-20 lg:py-28">
+  <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-12 lg:gap-10 lg:px-8">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop text-4xl font-bold tracking-[-0.02em] sm:text-5xl">Eerst afplakken, dan pas verven</h2>
+      <p class="mt-4 max-w-md text-lg leading-relaxed text-antraciet/75">Strak werk begint bij de voorbereiding. Zo pakken we elke klus aan.</p>
+
+      <ol class="relative mt-10 space-y-9 border-l-[5px] border-tape pl-8">
+        <li>
+          <p class="font-kop text-sm font-semibold text-tape">Stap 1</p>
+          <h3 class="mt-1 font-kop text-2xl font-bold">Adviesgesprek</h3>
+          <p class="mt-2 leading-relaxed text-antraciet/80">We luisteren naar uw wensen, bekijken de ruimte en denken mee over kleur, afwerking en aanpak.</p>
+        </li>
+        <li>
+          <p class="font-kop text-sm font-semibold text-tape">Stap 2</p>
+          <h3 class="mt-1 font-kop text-2xl font-bold">Voorbereiding</h3>
+          <p class="mt-2 leading-relaxed text-antraciet/80">Een duidelijke planning, goede materialen, en alles wat niet geverfd moet worden netjes afgeplakt en afgedekt.</p>
+        </li>
+        <li>
+          <p class="font-kop text-sm font-semibold text-tape">Stap 3</p>
+          <h3 class="mt-1 font-kop text-2xl font-bold">Uitvoering</h3>
+          <p class="mt-2 leading-relaxed text-antraciet/80">Met oog voor detail uitgevoerd volgens de afgesproken planning. Daarna ruimen we op en laten we alles schoon achter.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="relative lg:col-span-7">
+      <div class="grid grid-cols-5 gap-4">
+        <img src="assets/site-08.png" alt="Keuken volledig afgedekt met folie en tape voor het schilderen" class="col-span-5 aspect-[16/10] w-full rounded-2xl object-cover">
+        <img src="assets/google-06.jpg" alt="Erker met kozijnen afgeplakt met tape voor het schilderen" class="col-span-2 aspect-[3/4] w-full rounded-2xl object-cover">
+        <div class="col-span-3 flex flex-col justify-end rounded-2xl bg-antraciet p-6 text-white sm:p-8">
+          <p class="font-kop text-xl font-semibold leading-snug sm:text-2xl">"De verf is strak aangebracht en alles is schoon achtergelaten."</p>
+          <p class="mt-4 text-sm text-white/65">Emre ÖZ, via Google</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-pleister py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="max-w-xl font-kop text-4xl font-bold tracking-[-0.02em] sm:text-5xl">Wat klanten over ons zeggen</h2>
+      <p class="text-[15px] text-steen"><strong class="font-semibold text-antraciet">5,0 op Google</strong> uit 10 reviews</p>
+    </div>
+
+    <div class="mt-12 grid gap-5 lg:grid-cols-12">
+      <figure class="relative overflow-hidden rounded-3xl bg-white p-8 sm:p-10 lg:col-span-7 lg:row-span-2">
+        <div class="tape absolute -right-8 top-6 h-7 w-36 rotate-[24deg]" aria-hidden="true"></div>
+        <blockquote class="font-kop text-2xl font-medium leading-snug tracking-tight sm:text-[1.9rem]">
+          "Met veel geduld en precisie is het werk uitgevoerd. Zorgvuldig opgeruimd. Zeer vriendelijke beleefde man. Het was erg prettig om hem over de vloer te hebben. Hij denkt goed mee, stemt af en geeft adviezen. Kennis van zaken. Prijs kwaliteit prima. Eind conclusie: Uitstekend."
+        </blockquote>
+        <figcaption class="mt-8 font-semibold">Jenny</figcaption>
+      </figure>
+
+      <figure class="rounded-3xl bg-white p-7 lg:col-span-5">
+        <blockquote class="leading-relaxed">"Meneer kijkt naar wensen en denk met ons mee ik wilde 2 slaapkamers  schilderen kozijnen en 2 deuren heeft perfecte werkzaamheden verricht echt een aanrader"</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">Bahar Baykus</span> <span class="text-steen">via Google</span></figcaption>
+      </figure>
+      <figure class="rounded-3xl bg-white p-7 lg:col-span-5">
+        <blockquote class="leading-relaxed">"Zeer professioneel. De verf is egaal aangebracht en er was aandacht voor elk klein detail."</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">Tevfik Dağgören</span> <span class="text-steen">via Google</span></figcaption>
+      </figure>
+
+      <figure class="rounded-3xl bg-white p-7 lg:col-span-4">
+        <blockquote class="leading-relaxed">"meneer was heel aardig kijkt naar wensen en eisen van een klant. ook lage tarief als ik dit bij een groot bedrijf had gedaan was ik meer geld kwijt en waarschijnlijk ook minder goed werk,  hij heeft goede werkzaamheden verricht dankjewel topper!"</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">Isimsiz Kisi</span> <span class="text-steen">via Google</span></figcaption>
+      </figure>
+      <figure class="rounded-3xl bg-white p-7 lg:col-span-4">
+        <blockquote class="leading-relaxed">"Hartelijk bedankt voor jullie service, het was precies zoals ik het wilde. Een professioneel team, professioneel werk, gefeliciteerd!"</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">Esmanur vardar</span> <span class="text-steen">via Google</span></figcaption>
+      </figure>
+      <div class="flex flex-col gap-5 lg:col-span-4">
+        <figure class="rounded-3xl bg-white p-7">
+          <blockquote class="leading-relaxed">"Goede en vriendelijke communicatie. Er wordt goed meegedacht en heel mooi resultaat"</blockquote>
+          <figcaption class="mt-4 text-sm font-semibold">Hans van Bommel</figcaption>
+        </figure>
+        <figure class="rounded-3xl bg-white p-7">
+          <blockquote class="leading-relaxed">"Goede service en professioneel resultaat!"</blockquote>
+          <figcaption class="mt-4 text-sm font-semibold">Demi Oldeman</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recent werk -->
+<section class="py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="max-w-2xl">
+      <h2 class="font-kop text-4xl font-bold tracking-[-0.02em] sm:text-5xl">Recent werk</h2>
+      <p class="mt-4 text-lg leading-relaxed text-antraciet/75">Slaapkamers, dakkapellen, kozijnen en bedrijfsruimtes. Een greep uit de klussen van de laatste tijd.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:grid-rows-2">
+      <img src="assets/site-02.png" alt="Slaapkamer met lichte wanden en een strakke inbouwkast" class="col-span-2 aspect-[4/3] h-full w-full rounded-2xl object-cover lg:row-span-2 lg:aspect-auto">
+      <img src="assets/site-05.png" alt="Zolderkamer met dakkapel, wanden en schuine plafonds geschilderd" class="aspect-square w-full rounded-2xl object-cover">
+      <img src="assets/site-16.png" alt="Wand in een bedrijfshal egaal geschilderd in antraciet" class="aspect-square w-full rounded-2xl object-cover">
+      <img src="assets/google-04.png" alt="Kozijn en vensterbank opnieuw geschilderd tegen een gele wand" class="aspect-square w-full rounded-2xl object-cover object-[50%_40%]">
+      <img src="assets/google-07.jpg" alt="Nieuwe witte binnendeur, strak in de lak" class="aspect-square w-full rounded-2xl object-cover object-[50%_35%]">
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="relative overflow-hidden bg-antraciet py-20 text-white lg:py-28">
+  <div class="tape absolute -left-10 top-10 hidden h-9 w-64 -rotate-6 lg:block" aria-hidden="true"></div>
+  <div class="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-12 lg:px-8">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop text-4xl font-bold tracking-[-0.02em] sm:text-5xl">Zin in een frisse muur?</h2>
+      <p class="mt-4 max-w-md text-lg leading-relaxed text-white/75">Bel of mail voor een vrijblijvende offerte. Vertel kort wat er moet gebeuren, dan komen we graag kijken.</p>
+
+      <a href="tel:+31614470066" class="knop mt-9 inline-flex items-center gap-3 rounded-full bg-tape px-7 py-4 text-lg font-semibold text-white hover:bg-tapedonker">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 06 14470066
+      </a>
+
+      <dl class="mt-12 grid gap-8 sm:grid-cols-2">
+        <div>
+          <dt class="text-sm text-white/55">E-mail</dt>
+          <dd class="mt-1 text-lg"><a href="mailto:info@veloriy.nl" class="underline decoration-white/30 underline-offset-4 hover:decoration-tape">info@veloriy.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-white/55">Adres</dt>
+          <dd class="mt-1 text-lg leading-snug">Wagnerstraat 47<br>7204 PA Zutphen</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-sm text-white/55">Openingstijden</dt>
+          <dd class="mt-1 text-lg">Maandag tot en met zondag, 08:00 tot 17:00</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="rounded-3xl bg-white p-7 text-antraciet sm:p-9 lg:col-span-6" action="mailto:info@veloriy.nl" method="post" enctype="text/plain">
+      <h3 class="font-kop text-2xl font-bold">Offerte aanvragen</h3>
+      <p class="mt-1 text-[15px] text-steen">We nemen zo snel mogelijk contact met u op.</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <label class="block">
+          <span class="text-sm font-medium">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-xl border border-antraciet/15 bg-muur px-4 py-3 outline-none focus:border-tape">
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-xl border border-antraciet/15 bg-muur px-4 py-3 outline-none focus:border-tape">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-medium">E-mail</span>
+          <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border border-antraciet/15 bg-muur px-4 py-3 outline-none focus:border-tape">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-medium">Wat moet er gebeuren?</span>
+          <textarea name="klus" rows="4" placeholder="Bijvoorbeeld: twee slaapkamers, kozijnen en twee deuren" class="mt-1.5 w-full rounded-xl border border-antraciet/15 bg-muur px-4 py-3 outline-none focus:border-tape"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="knop mt-6 w-full rounded-full bg-antraciet px-6 py-3.5 font-semibold text-white hover:bg-tape">Verstuur aanvraag</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-antraciet pb-28 text-white/60 md:pb-10">
+  <div class="mx-auto flex max-w-7xl flex-wrap items-baseline justify-between gap-4 border-t border-white/10 px-5 pt-8 text-sm lg:px-8">
+    <p><span class="font-kop text-base font-extrabold text-white">VELORIY</span> &nbsp;Schilder- en stukwerk, Wagnerstraat 47, Zutphen</p>
+    <p>Website door <a href="https://hagenweb.nl" class="text-white underline decoration-tape underline-offset-2">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Belbalk mobiel -->
+<div class="fixed inset-x-0 bottom-0 z-50 border-t border-antraciet/10 bg-muur/95 p-3 backdrop-blur md:hidden">
+  <div class="flex gap-2">
+    <a href="tel:+31614470066" class="flex flex-1 items-center justify-center gap-2 rounded-full bg-tape py-3.5 font-semibold text-white">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Bel direct
+    </a>
+    <a href="mailto:info@veloriy.nl?subject=Offerte%20schilderwerk" class="flex items-center justify-center rounded-full border-2 border-antraciet px-5 py-3 font-semibold">Mail</a>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', function () { document.documentElement.classList.add('geladen'); });
+</script>
+</body>
+</html>
