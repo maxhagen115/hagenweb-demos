@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CL Schoonmaak | Schoonmaakbedrijf in Arnhem voor huis en bedrijf</title>
+<meta name="description" content="CL Schoonmaak uit Arnhem maakt huizen, kantoren, horeca, hotels en vakantieparken schoon. Vaste schoonmakers, offerte binnen 24 uur. Bel 06 18881649.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          delft: '#1F3F86',
+          inkt: '#132A5A',
+          blad: '#9CCB72',
+          tegel: '#F5F8FC',
+          lijn: '#D6DFEC',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; color: #132A5A; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: "Bricolage Grotesque", system-ui, sans-serif; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid #9CCB72; outline-offset: 3px; border-radius: 6px; }
+
+  /* Delftse tegel: dun binnenkader en kwartcirkels in de hoeken */
+  .tegel {
+    position: relative;
+    background:
+      radial-gradient(circle at 0 0, #1F3F86 0 18px, transparent 19px),
+      radial-gradient(circle at 100% 0, #1F3F86 0 18px, transparent 19px),
+      radial-gradient(circle at 0 100%, #1F3F86 0 18px, transparent 19px),
+      radial-gradient(circle at 100% 100%, #1F3F86 0 18px, transparent 19px),
+      #fff;
+    min-height: 300px;
+    padding: 2.75rem 2.25rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .tegel::before {
+    content: ""; position: absolute; inset: 12px;
+    border: 1.5px solid rgba(31,63,134,.35); border-radius: 2px; pointer-events: none;
+  }
+  .tegelwand { gap: 6px; }
+  .tegelwand > .tegel { flex: 0 0 82%; scroll-snap-align: center; outline: 6px solid #D6DFEC; }
+  @media (min-width: 640px) { .tegelwand { background: #D6DFEC; padding: 6px; border-radius: 6px; } .tegelwand > .tegel { outline: 0; } }
+  .tegel-blauw {
+    background:
+      radial-gradient(circle at 0 0, #fff 0 18px, transparent 19px),
+      radial-gradient(circle at 100% 0, #fff 0 18px, transparent 19px),
+      radial-gradient(circle at 0 100%, #fff 0 18px, transparent 19px),
+      radial-gradient(circle at 100% 100%, #fff 0 18px, transparent 19px),
+      #1F3F86;
+    color: #fff;
+  }
+  .tegel-blauw::before { border-color: rgba(255,255,255,.4); }
+
+  .knop { transition: background-color .2s, transform .15s, box-shadow .2s; }
+  .knop:active { transform: translateY(1px); }
+
+  details summary { list-style: none; cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] .plus { transform: rotate(45deg); }
+  .plus { transition: transform .2s; }
+
+  /* Enkel moment van beweging: de hero bij het laden. Zonder JS staat alles gewoon zichtbaar. */
+  html.js .hero-in { animation: heroIn .8s cubic-bezier(.2,.7,.2,1) both; }
+  html.js .hero-in.d2 { animation-delay: .12s; }
+  html.js .hero-in.d3 { animation-delay: .24s; }
+  @keyframes heroIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { html.js .hero-in { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-white pb-[76px] md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-white/80 text-[13px] leading-snug">
+  <div class="max-w-6xl mx-auto px-5 py-2 text-center">
+    Demo voor Schoonmaakbedrijf Arnhem (CL Schoonmaak), gemaakt door
+    <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-blad">Hagenweb</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="border-b border-lijn bg-white sticky top-0 z-30">
+  <div class="max-w-6xl mx-auto px-5 h-[72px] md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3 shrink-0" aria-label="CL Schoonmaak, naar boven">
+      <img src="assets/site-08.png" alt="Logo CL Schoonmaak: boom met tulp en molen" class="h-12 md:h-14 w-auto mix-blend-multiply">
+      <span class="font-kop font-bold text-[19px] leading-none text-delft">CL Schoonmaak<span class="block font-tekst font-medium text-[12.5px] text-inkt/60 mt-1">Schoonmaakbedrijf Arnhem</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-delft">Diensten</a>
+      <a href="#werkwijze" class="hover:text-delft">Werkwijze</a>
+      <a href="#reviews" class="hover:text-delft">Reviews</a>
+      <a href="#vragen" class="hover:text-delft">Vragen</a>
+      <a href="#contact" class="hover:text-delft">Contact</a>
+    </nav>
+    <a href="tel:+31618881649" class="knop inline-flex items-center gap-2 rounded-full bg-delft text-white px-4 md:px-5 py-2.5 text-[15px] font-semibold hover:bg-inkt">
+      <svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 18881649</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-10 pb-16 md:pt-20 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 lg:col-span-6">
+      <h1 class="hero-in font-kop font-extrabold text-delft text-[42px] leading-[1.02] md:text-[64px] tracking-[-0.025em]">
+        Schoonmaak waar je niet meer over na hoeft te denken.
+      </h1>
+      <p class="hero-in d2 mt-6 text-lg md:text-[19px] leading-relaxed text-inkt/80 max-w-[34rem]">
+        CL Schoonmaak uit Arnhem maakt huizen, kantoren, restaurants, hotels en vakantieparken schoon. Met vaste
+        schoonmakers die je ruimte kennen en één aanspreekpunt dat afspraken nakomt.
+      </p>
+      <div class="hero-in d3 mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+        <a href="tel:+31618881649" class="knop inline-flex justify-center items-center gap-2.5 rounded-full bg-delft text-white px-7 py-4 text-[17px] font-semibold hover:bg-inkt shadow-[0_10px_24px_-12px_rgba(31,63,134,.7)]">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 18881649
+        </a>
+        <a href="#contact" class="knop inline-flex justify-center items-center rounded-full border-2 border-delft/20 text-delft px-7 py-[14px] text-[17px] font-semibold hover:border-delft">
+          Offerte aanvragen
+        </a>
+      </div>
+      <p class="hero-in d3 mt-8 flex items-center gap-3 text-[15px] text-inkt/75">
+        <span class="text-blad text-lg tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-inkt">4,8</strong> uit 24 Google-reviews. Offerte binnen 24 uur.</span>
+      </p>
+    </div>
+
+    <div class="md:col-span-6 lg:col-span-6 relative">
+      <div class="relative md:ml-6">
+        <img src="assets/google-04.jpg" alt="Lichte woonkamer met glanzende houten vloer, grijze bank, jute vloerkleed en tuindeuren" class="w-full aspect-[4/3] md:aspect-[5/4] object-cover object-[0%_50%] rounded-[28px]">
+        <img src="assets/google-07.jpg" alt="Keuken met donkere kastjes, wit werkblad en witte tegels" class="absolute -bottom-8 left-3 md:-left-12 w-[38%] aspect-[3/4] object-cover object-[50%_55%] rounded-[20px] border-[6px] border-white shadow-[0_24px_40px_-20px_rgba(19,42,90,.45)]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten: thuis en zakelijk -->
+<section id="diensten" class="bg-tegel border-y border-lijn">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+    <div class="max-w-2xl">
+      <h2 class="font-kop font-bold text-[34px] md:text-[46px] leading-[1.05] tracking-[-0.02em] text-delft">Thuis of op de zaak</h2>
+      <p class="mt-4 text-lg text-inkt/75 leading-relaxed">We hebben ervaring in veel verschillende branches. Of je nu één keer grondig wilt laten schoonmaken of vaste hulp zoekt: we stemmen het af op jouw ruimte.</p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-12 gap-6">
+      <!-- Thuis -->
+      <article class="lg:col-span-7 bg-white rounded-[28px] overflow-hidden border border-lijn grid sm:grid-cols-2">
+        <img src="assets/google-06.jpg" alt="Eettafel van steigerhout bij hoge ramen met uitzicht op groen" class="w-full h-72 sm:h-full object-cover object-[50%_65%]">
+        <div class="p-8 md:p-10 flex flex-col">
+          <h3 class="font-kop font-bold text-[28px] text-delft">Thuis</h3>
+          <p class="mt-3 text-inkt/75 leading-relaxed">Een schoon huis is een gelukkig huis. We maken je huis brandschoon en opgeruimd, en je kunt vragen om steeds dezelfde schoonmaker.</p>
+          <ul class="mt-6 space-y-3 text-[16px]">
+            <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-blad shrink-0"></span>Vaste schoonmaak van je huis</li>
+            <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-blad shrink-0"></span>Eenmalige diepe schoonmaak</li>
+            <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-blad shrink-0"></span>Na renovatie of verhuizing</li>
+            <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-blad shrink-0"></span>Vakantiewoningen en vakantieparken</li>
+          </ul>
+          <a href="#contact" class="mt-auto pt-8 font-semibold text-delft underline underline-offset-4 decoration-blad decoration-2 hover:text-inkt">Offerte voor je huis</a>
+        </div>
+      </article>
+
+      <!-- Zakelijk -->
+      <article class="lg:col-span-5 bg-delft text-white rounded-[28px] p-8 md:p-10 flex flex-col">
+        <h3 class="font-kop font-bold text-[28px]">Zakelijk</h3>
+        <p class="mt-3 text-white/80 leading-relaxed">Een schoon kantoor zorgt voor een prettige sfeer en gezondere medewerkers. We nemen het schoonmaken van je over, op de momenten die jou het beste uitkomen.</p>
+        <dl class="mt-7 divide-y divide-white/15 border-t border-white/15">
+          <div class="py-3.5 flex justify-between gap-4"><dt class="font-semibold">Kantoren</dt><dd class="text-white/70 text-right text-[15px]">werkplekken, vergaderzalen, keukens</dd></div>
+          <div class="py-3.5 flex justify-between gap-4"><dt class="font-semibold">Restaurants en cafés</dt><dd class="text-white/70 text-right text-[15px]">hygiëne en gastvrijheid</dd></div>
+          <div class="py-3.5 flex justify-between gap-4"><dt class="font-semibold">Hotels</dt><dd class="text-white/70 text-right text-[15px]">gasten blij, tijd en geld bespaard</dd></div>
+          <div class="py-3.5 flex justify-between gap-4"><dt class="font-semibold">Scholen en kinderdagverblijven</dt><dd class="text-white/70 text-right text-[15px]">gezond en veilig</dd></div>
+          <div class="py-3.5 flex justify-between gap-4"><dt class="font-semibold">Trappenhuizen</dt><dd class="text-white/70 text-right text-[15px]">schoon bij binnenkomst</dd></div>
+        </dl>
+        <a href="#contact" class="mt-auto pt-8 font-semibold text-white underline underline-offset-4 decoration-blad decoration-2 hover:text-blad">Offerte voor je bedrijf</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Claudio en het team -->
+<section id="werkwijze" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-bold text-[34px] md:text-[46px] leading-[1.05] tracking-[-0.02em] text-delft">Eén aanspreekpunt: Claudio</h2>
+      <p class="mt-5 text-lg text-inkt/75 leading-relaxed">In de reviews valt steeds dezelfde naam. Eigenaar Claudio luistert naar wat je wilt, denkt mee over maatwerk en zorgt dat je vaste, ervaren schoonmakers krijgt. Contact kan in het Nederlands en in het Engels.</p>
+      <figure class="mt-9 border-l-4 border-blad pl-6">
+        <blockquote class="font-kop text-[22px] md:text-[24px] leading-snug text-inkt font-semibold">"Contact met de eigenaar Claudio gaat gemakkelijk."</blockquote>
+        <figcaption class="mt-3 text-[15px] text-inkt/60">Arjen van der Veen, Google-review</figcaption>
+      </figure>
+      <figure class="mt-7 border-l-4 border-blad pl-6">
+        <blockquote class="font-kop text-[22px] md:text-[24px] leading-snug text-inkt font-semibold">"Claudio luistert goed naar je wensen en denkt actief mee over maatwerkoplossingen."</blockquote>
+        <figcaption class="mt-3 text-[15px] text-inkt/60">Nab Anb, Google-review</figcaption>
+      </figure>
+    </div>
+
+    <div class="lg:col-span-7">
+      <h3 class="font-kop font-bold text-[24px] text-inkt">Zo begin je</h3>
+      <ol class="mt-6 space-y-4">
+        <li class="grid grid-cols-[3.25rem_1fr] gap-5 rounded-[22px] bg-tegel border border-lijn p-6">
+          <span class="font-kop font-extrabold text-[30px] leading-none text-delft">1</span>
+          <div><p class="font-semibold text-[18px]">Bel of vraag een offerte aan</p><p class="mt-1 text-inkt/70 leading-relaxed">Wat het kost hangt af van de grootte van de ruimte en het soort schoonmaak. Je hoort binnen 24 uur van ons.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.25rem_1fr] gap-5 rounded-[22px] bg-tegel border border-lijn p-6">
+          <span class="font-kop font-extrabold text-[30px] leading-none text-delft">2</span>
+          <div><p class="font-semibold text-[18px]">Kennismaking en rondgang</p><p class="mt-1 text-inkt/70 leading-relaxed">We komen langs en lopen samen door je huis of kantoor, zodat we weten wat er moet gebeuren.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.25rem_1fr] gap-5 rounded-[22px] bg-tegel border border-lijn p-6">
+          <span class="font-kop font-extrabold text-[30px] leading-none text-delft">3</span>
+          <div><p class="font-semibold text-[18px]">Schoonmaakplan en eerste beurt</p><p class="mt-1 text-inkt/70 leading-relaxed">Samen stellen we een schoonmaakplan op en plannen we de eerste schoonmaakbeurt in.</p></div>
+        </li>
+      </ol>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-6">
+        <div>
+          <h3 class="font-kop font-bold text-[20px] text-inkt">Wat je van ons team mag verwachten</h3>
+          <ul class="mt-3 space-y-2 text-inkt/80">
+            <li>Aandacht voor details</li>
+            <li>Vriendelijke communicatie</li>
+            <li>Betrouwbaar en punctueel</li>
+            <li>Veilige, milieuvriendelijke schoonmaakmiddelen</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-[20px] text-inkt">Goed opgeleid</h3>
+          <p class="mt-3 text-inkt/80 leading-relaxed">Onze schoonmakers krijgen een uitgebreide training in schoonmaaktechnieken, veiligheidsprocedures en klantenservice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews als tegeltjes -->
+<section id="reviews" class="bg-tegel border-y border-lijn">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+      <h2 class="font-kop font-bold text-[34px] md:text-[46px] leading-[1.05] tracking-[-0.02em] text-delft max-w-xl">Wat klanten over ons zeggen</h2>
+      <p class="text-inkt/75 text-[16px]"><span class="text-blad tracking-[2px]" aria-hidden="true">★★★★★</span> <strong class="text-inkt">4,8</strong> gemiddeld uit 24 reviews op Google</p>
+    </div>
+
+    <div class="tegelwand mt-12 -mx-5 px-5 sm:mx-0 sm:px-0 flex overflow-x-auto snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible">
+      <figure class="tegel">
+        <blockquote class="text-[16px] leading-relaxed">"Heel vriendelijk en betrouwbaar (werkt volgens afspraak, maakt waar wat wordt beloofd). Prettig om zaken mee te doen. Leveren goed werk. Een aanrader!"</blockquote>
+        <figcaption class="mt-4 font-kop font-bold text-delft">Karen Bloemen</figcaption>
+      </figure>
+      <figure class="tegel tegel-blauw">
+        <blockquote class="font-kop font-bold text-[24px] leading-tight">"De schoonmaak is TOP! Vriendelijk en efficiënt personeel, een echte aanrader"</blockquote>
+        <figcaption class="mt-4 font-semibold text-white/80">Gabriel Naydenov</figcaption>
+      </figure>
+      <figure class="tegel">
+        <blockquote class="text-[15px] leading-relaxed">"We zijn ontzettend tevreden over de schoonmaakdiensten van dit bedrijf. Claudio luistert goed naar je wensen en denkt actief mee over maatwerkoplossingen. Dankzij zijn flexibiliteit en oog voor detail sluit de schoonmaak perfect aan op onze behoeften…"</blockquote>
+        <figcaption class="mt-4 font-kop font-bold text-delft">Nab Anb</figcaption>
+      </figure>
+      <figure class="tegel">
+        <blockquote class="text-[16px] leading-relaxed">"Betrouwbare schoonmaakdiensten! Communicatie in het Engels, maar de service is goed. Komt afspraken na."</blockquote>
+        <figcaption class="mt-4 font-kop font-bold text-delft">Maaike Wilmer</figcaption>
+      </figure>
+      <figure class="tegel">
+        <blockquote class="text-[15px] leading-relaxed">"Goed bedrijf. Contact met de eigenaar Claudio gaat gemakkelijk. We hadden voorheen een enkele keer zelf een schoonmaakster proberen te vinden via verschillende websites, maar dit was een vermoeiend proces met weinig langdurig resultaat. Via Claudio hebben we inmiddels wel langdurig ervaren schoonmakers voor ons huis…"</blockquote>
+        <figcaption class="mt-4 font-kop font-bold text-delft">Arjen van der Veen</figcaption>
+      </figure>
+      <figure class="tegel">
+        <blockquote class="text-[15px] leading-relaxed">"Cláudio is een hele harde werker die zijn werk serieus neemt. Het is duidelijk dat hij professionele ervaring heeft opgedaan in een hotel. Hij spreekt ook erg goed Engels."</blockquote>
+        <figcaption class="mt-4 font-kop font-bold text-delft">Rien Strootman <span class="font-tekst font-normal text-inkt/55 text-sm">Ede</span></figcaption>
+      </figure>
+      <figure class="tegel tegel-blauw">
+        <blockquote class="font-kop font-bold text-[21px] leading-tight">"Professionele diensten, ze maken zeer grondig schoon. alles fonkelde, zag eruit als nieuw."</blockquote>
+        <figcaption class="mt-4 font-semibold text-white/80">Klaudia Ratmed <span class="font-normal text-white/60 text-sm">Ede</span></figcaption>
+      </figure>
+      <figure class="tegel">
+        <blockquote class="text-[15px] leading-relaxed">"Very satisfied. Claudio takes his job very seriously and is a very nice guy too! I would highly recommend this company if you need a good cleaning service!"</blockquote>
+        <figcaption class="mt-4 font-kop font-bold text-delft">Alfi Oost <span class="font-tekst font-normal text-inkt/55 text-sm">Ede</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Fotostrook -->
+<section aria-label="Foto's uit ons Google-profiel" class="max-w-6xl mx-auto px-5 pt-20 md:pt-28">
+  <div class="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-5">
+    <img src="assets/google-03.jpg" alt="Opgeruimde woonkamer met rotan stoel, bijzettafels en tuindeuren naar de veranda" class="col-span-2 md:col-span-9 w-full h-60 md:h-[420px] object-cover object-[40%_60%] rounded-[22px]">
+    <div class="col-span-2 md:col-span-3 flex flex-col justify-end md:pb-2">
+      <p class="font-kop font-bold text-[26px] leading-tight text-delft">Licht, rustig en opgeruimd.</p>
+      <p class="mt-3 text-inkt/70 leading-relaxed">Foto's uit ons Google-profiel. Benieuwd wat we voor jouw ruimte kunnen doen? Bel gerust even.</p>
+      <a href="tel:+31618881649" class="mt-4 font-semibold text-delft underline underline-offset-4 decoration-blad decoration-2 hover:text-inkt">06 18881649</a>
+    </div>
+  </div>
+</section>
+
+<!-- Vragen + werkgebied -->
+<section id="vragen" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-7">
+      <h2 class="font-kop font-bold text-[34px] md:text-[46px] leading-[1.05] tracking-[-0.02em] text-delft">Veelgestelde vragen</h2>
+      <div class="mt-8 border-t border-lijn">
+        <details class="group border-b border-lijn py-5" open>
+          <summary class="flex justify-between items-start gap-6 font-semibold text-[18px]">Wat kost jullie schoonmaakservice?<span class="plus text-delft text-2xl leading-none" aria-hidden="true">+</span></summary>
+          <p class="mt-3 text-inkt/75 leading-relaxed max-w-[60ch]">Dat hangt af van de grootte van de ruimte en het soort schoonmaak dat nodig is. Neem contact op, dan ontvang je binnen 24 uur een offerte.</p>
+        </details>
+        <details class="group border-b border-lijn py-5">
+          <summary class="flex justify-between items-start gap-6 font-semibold text-[18px]">Kan ik een eenmalige schoonmaak plannen?<span class="plus text-delft text-2xl leading-none" aria-hidden="true">+</span></summary>
+          <p class="mt-3 text-inkt/75 leading-relaxed max-w-[60ch]">Zeker. Ook voor een eenmalige schoonmaak kun je bij ons terecht, bijvoorbeeld een grondige beurt na een verhuizing of gewoon een keer extra. Neem contact op om de details te bespreken.</p>
+        </details>
+        <details class="group border-b border-lijn py-5">
+          <summary class="flex justify-between items-start gap-6 font-semibold text-[18px]">Wat is het verschil tussen een reguliere en een diepe schoonmaak?<span class="plus text-delft text-2xl leading-none" aria-hidden="true">+</span></summary>
+          <p class="mt-3 text-inkt/75 leading-relaxed max-w-[60ch]">Bij een reguliere schoonmaak doen we de dagelijkse taken, zoals stofzuigen, afstoffen en toiletten reinigen. Een diepe schoonmaak gaat verder: ook plafonds, ventilatieroosters, meubilair van onder en achter en moeilijk bereikbare plekken.</p>
+        </details>
+        <details class="group border-b border-lijn py-5">
+          <summary class="flex justify-between items-start gap-6 font-semibold text-[18px]">Welke ruimtes in een kantoor maken jullie schoon?<span class="plus text-delft text-2xl leading-none" aria-hidden="true">+</span></summary>
+          <p class="mt-3 text-inkt/75 leading-relaxed max-w-[60ch]">Alle ruimtes: werkplekken, vergaderzalen, toiletten, keukens, gangen en ontvangstruimtes. Alles wordt grondig aangepakt.</p>
+        </details>
+        <details class="group border-b border-lijn py-5">
+          <summary class="flex justify-between items-start gap-6 font-semibold text-[18px]">Kan ik een afspraak verzetten of annuleren?<span class="plus text-delft text-2xl leading-none" aria-hidden="true">+</span></summary>
+          <p class="mt-3 text-inkt/75 leading-relaxed max-w-[60ch]">Ja. Neem even contact met ons op, dan zetten we de afspraak om of zeggen we hem af.</p>
+        </details>
+        <details class="group border-b border-lijn py-5">
+          <summary class="flex justify-between items-start gap-6 font-semibold text-[18px]">Wat voor schoonmaakmiddelen gebruiken jullie?<span class="plus text-delft text-2xl leading-none" aria-hidden="true">+</span></summary>
+          <p class="mt-3 text-inkt/75 leading-relaxed max-w-[60ch]">We werken met veilige en milieuvriendelijke schoonmaakproducten, die ook prima op de werkvloer gebruikt kunnen worden.</p>
+        </details>
+      </div>
+    </div>
+
+    <aside class="lg:col-span-5">
+      <div class="rounded-[28px] bg-tegel border border-lijn p-8 md:p-10">
+        <h2 class="font-kop font-bold text-[28px] leading-tight text-delft">Waar we werken</h2>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Ons kantoor zit in Arnhem. Van daaruit maken we schoon in de steden eromheen.</p>
+        <ul class="mt-7 grid grid-cols-2 gap-[5px] bg-lijn p-[5px] rounded-[6px] font-kop font-semibold text-[18px]">
+          <li class="bg-delft text-white px-4 py-4 rounded-[3px]">Arnhem<span class="block font-tekst font-normal text-[13px] text-white/70">ons kantoor</span></li>
+          <li class="bg-white px-4 py-4 rounded-[3px]">Ede</li>
+          <li class="bg-white px-4 py-4 rounded-[3px]">Apeldoorn</li>
+          <li class="bg-white px-4 py-4 rounded-[3px]">Barneveld</li>
+          <li class="bg-white px-4 py-4 rounded-[3px]">Amersfoort</li>
+          <li class="bg-white px-4 py-4 rounded-[3px]">Zevenaar</li>
+        </ul>
+        <p class="mt-6 text-[15px] text-inkt/65">Woon of werk je net buiten deze plaatsen? Vraag het gerust.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-inkt text-white">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-bold text-[36px] md:text-[50px] leading-[1.02] tracking-[-0.02em]">Tijd voor de dingen die ertoe doen.</h2>
+      <p class="mt-5 text-lg text-white/75 leading-relaxed">Laat het schoonmaken aan ons over. Bel, mail of vul het formulier in, dan heb je binnen 24 uur een offerte op maat.</p>
+
+      <a href="tel:+31618881649" class="knop mt-9 flex items-center gap-4 rounded-[22px] bg-white text-inkt px-6 py-5 hover:bg-tegel">
+        <span class="w-12 h-12 rounded-full bg-delft text-white grid place-items-center shrink-0"><svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>
+        <span><span class="block text-[14px] text-inkt/60">Bel ons</span><span class="block font-kop font-bold text-[26px] leading-tight">06 18881649</span></span>
+      </a>
+
+      <dl class="mt-8 space-y-5 text-[16px]">
+        <div><dt class="text-white/55 text-[14px]">E-mail</dt><dd><a href="mailto:hallo@clschoonmaak.nl" class="font-semibold underline underline-offset-4 decoration-blad hover:text-blad">hallo@clschoonmaak.nl</a></dd></div>
+        <div><dt class="text-white/55 text-[14px]">Kantoor</dt><dd class="font-semibold">Spireapad 8, 6841 CN Arnhem</dd></div>
+        <div>
+          <dt class="text-white/55 text-[14px]">Openingstijden</dt>
+          <dd class="mt-1 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 max-w-xs">
+            <span>Maandag t/m zaterdag</span><span class="font-semibold tabular-nums">08:00 tot 20:00</span>
+            <span>Zondag</span><span class="font-semibold">gesloten</span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="lg:col-span-7">
+      <form action="mailto:hallo@clschoonmaak.nl" method="post" enctype="text/plain" class="bg-white text-inkt rounded-[28px] p-7 md:p-10">
+        <h3 class="font-kop font-bold text-[26px] text-delft">Offerte aanvragen</h3>
+        <p class="mt-1 text-inkt/65 text-[15px]">Je hoort binnen 24 uur van ons.</p>
+        <div class="mt-7 grid sm:grid-cols-2 gap-5">
+          <label class="block"><span class="text-[14px] font-semibold">Naam</span>
+            <input required name="naam" autocomplete="name" class="mt-1.5 w-full rounded-xl border border-lijn bg-tegel px-4 py-3 focus:border-delft focus:bg-white outline-none"></label>
+          <label class="block"><span class="text-[14px] font-semibold">Bedrijf <span class="font-normal text-inkt/50">(optioneel)</span></span>
+            <input name="bedrijf" autocomplete="organization" class="mt-1.5 w-full rounded-xl border border-lijn bg-tegel px-4 py-3 focus:border-delft focus:bg-white outline-none"></label>
+          <label class="block"><span class="text-[14px] font-semibold">E-mailadres</span>
+            <input required type="email" name="email" autocomplete="email" class="mt-1.5 w-full rounded-xl border border-lijn bg-tegel px-4 py-3 focus:border-delft focus:bg-white outline-none"></label>
+          <label class="block"><span class="text-[14px] font-semibold">Telefoonnummer</span>
+            <input type="tel" name="telefoon" autocomplete="tel" class="mt-1.5 w-full rounded-xl border border-lijn bg-tegel px-4 py-3 focus:border-delft focus:bg-white outline-none"></label>
+          <label class="block"><span class="text-[14px] font-semibold">Wat wil je laten schoonmaken?</span>
+            <select name="dienst" class="mt-1.5 w-full rounded-xl border border-lijn bg-tegel px-4 py-3 focus:border-delft focus:bg-white outline-none">
+              <option>Huis</option>
+              <option>Kantoor of bedrijfspand</option>
+              <option>Restaurant, café of hotel</option>
+              <option>Vakantiepark</option>
+              <option>School of kinderdagverblijf</option>
+              <option>Eenmalig: diepe schoonmaak, renovatie of verhuizing</option>
+            </select></label>
+          <label class="block"><span class="text-[14px] font-semibold">Plaats en postcode</span>
+            <input name="plaats" autocomplete="postal-code" class="mt-1.5 w-full rounded-xl border border-lijn bg-tegel px-4 py-3 focus:border-delft focus:bg-white outline-none"></label>
+          <label class="block sm:col-span-2"><span class="text-[14px] font-semibold">Vertel kort wat je zoekt</span>
+            <textarea name="omschrijving" rows="4" class="mt-1.5 w-full rounded-xl border border-lijn bg-tegel px-4 py-3 focus:border-delft focus:bg-white outline-none" placeholder="Bijvoorbeeld: eens per week, huis van 120 m², liefst op dinsdag"></textarea></label>
+        </div>
+        <button type="submit" class="knop mt-6 w-full sm:w-auto rounded-full bg-delft text-white px-8 py-4 font-semibold text-[17px] hover:bg-inkt">Offerte aanvragen</button>
+        <p class="mt-4 text-[13px] text-inkt/55">We gebruiken je gegevens alleen om contact met je op te nemen over je aanvraag en geven ze nooit aan derden.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/60 border-t border-white/10 text-[14px]">
+  <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+    <p>CL Schoonmaak, Spireapad 8, 6841 CN Arnhem</p>
+    <p class="flex gap-5"><a href="tel:+31618881649" class="hover:text-white">06 18881649</a><a href="mailto:hallo@clschoonmaak.nl" class="hover:text-white">hallo@clschoonmaak.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-lijn px-4 py-3 grid grid-cols-[1.4fr_1fr] gap-3">
+  <a href="tel:+31618881649" class="knop flex items-center justify-center gap-2 rounded-full bg-delft text-white py-3.5 font-semibold">
+    <svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel direct
+  </a>
+  <a href="#contact" class="knop flex items-center justify-center rounded-full border-2 border-delft/25 text-delft py-3 font-semibold">Offerte</a>
+</div>
+
+</body>
+</html>
