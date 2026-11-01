@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier 't Pakhuys | Sfeervolle zalen aan de Berkel in Zutphen</title>
+<meta name="description" content="Atelier 't Pakhuys: twee sfeervolle zalen in een bijna 200 jaar oud pakhuis aan de Berkelkade in Zutphen. Voor workshops, yoga, meditatie, muziek, vieringen en afscheid in kleine kring.">
+<meta property="og:title" content="Atelier 't Pakhuys, Zutphen">
+<meta property="og:image" content="assets/site-01.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23E0A63A'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%2324392F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        deur: '#24392F',
+        kozijn: '#7FA48C',
+        oker: '#E0A63A',
+        kalk: '#F2EDE3',
+        steen: '#8C4A36',
+        inkt: '#1F2420',
+      },
+      fontFamily: {
+        kop: ['Gloock', 'Georgia', 'serif'],
+        tekst: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Hanken Grotesk', system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #E0A63A; outline-offset: 3px; }
+  /* Spiegel: alleen als verrijking, inhoud is altijd zichtbaar */
+  .js .spiegel { transform: scale(.94) rotate(-4deg); transition: transform 1.4s cubic-bezier(.2,.7,.2,1); }
+  .js.geladen .spiegel { transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .spiegel { transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="bg-kalk text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:bg-oker focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-kalk/80 text-[13px] text-center px-4 py-2">
+  Demo voor Atelier 't Pakhuys, gemaakt door <a href="https://hagenweb.nl" class="text-oker underline underline-offset-2 hover:text-kalk">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-deur text-kalk">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between h-[68px] md:h-20">
+    <a href="#" class="flex items-center gap-3 group" aria-label="Atelier 't Pakhuys, naar boven">
+      <span class="relative w-9 h-9 rounded-full bg-oker grid place-items-center">
+        <span class="w-4 h-4 rounded-full bg-deur"></span>
+      </span>
+      <span class="leading-none">
+        <span class="block font-kop text-[22px] tracking-tight">Atelier 't Pakhuys</span>
+        <span class="block text-[12px] text-kalk/60 mt-1">Berkelkade 15A, Zutphen</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px]" aria-label="Hoofdmenu">
+      <a href="#ruimte" class="text-kalk/80 hover:text-oker transition-colors">Ruimte voor</a>
+      <a href="#zalen" class="text-kalk/80 hover:text-oker transition-colors">De zalen</a>
+      <a href="#wie" class="text-kalk/80 hover:text-oker transition-colors">Wie zijn wij</a>
+      <a href="#pand" class="text-kalk/80 hover:text-oker transition-colors">Het pand</a>
+      <a href="#contact" class="knop rounded-full border border-kalk/30 px-5 py-2.5 hover:border-oker hover:text-oker">Contact</a>
+    </nav>
+    <a href="#contact" class="md:hidden text-[15px] rounded-full border border-kalk/30 px-4 py-2">Contact</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative bg-deur text-kalk overflow-hidden grain">
+  <div class="relative max-w-7xl mx-auto px-5 md:px-10 pt-5 pb-14 md:pt-14 md:pb-24 grid md:grid-cols-12 gap-6 md:gap-6 items-center">
+    <div class="md:col-span-6 lg:col-span-6 order-2 md:order-1 relative z-10">
+      <p class="text-kozijn text-[15px] md:text-base -mt-16 md:mt-0 max-w-[50%] md:max-w-none">Atelier en zalen aan de Berkel, Zutphen</p>
+      <h1 class="font-kop text-[44px] leading-[1.02] sm:text-6xl lg:text-[84px] tracking-[-0.02em] mt-4">Een plek waar de vrijheid woont.</h1>
+      <p class="mt-5 md:mt-6 text-[17px] md:text-xl text-kalk/80 max-w-[30rem] leading-relaxed">Twee sfeervolle zalen in een bijna 200 jaar oud pakhuis. Voor workshops, yoga, meditatie, muziek, vieringen en afscheid in kleine kring.</p>
+      <div class="mt-7 md:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="mailto:info@pakhuys.net?subject=Ruimte%20huren%20in%20Atelier%20't%20Pakhuys" class="knop inline-flex items-center gap-3 rounded-full bg-oker text-inkt font-semibold text-lg px-8 py-4 shadow-[0_10px_30px_-10px_rgba(224,166,58,.6)] hover:bg-[#ebb550]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Mail over de ruimte
+        </a>
+        <a href="#zalen" class="text-kalk underline decoration-kalk/30 underline-offset-[6px] hover:decoration-oker">Bekijk de zalen</a>
+      </div>
+      <p class="mt-9 flex items-center gap-3 text-[15px] text-kalk/70">
+        <span class="text-oker tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-kalk font-semibold">4,4</strong> uit 25 Google-reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 order-1 md:order-2 relative">
+      <div class="relative ml-auto -mr-10 w-[58vw] max-w-[230px] sm:max-w-[320px] md:mx-auto md:max-w-none md:w-[115%] md:-mr-[15%] aspect-square">
+        <div class="absolute -inset-3 md:-inset-5 rounded-full border border-oker/40"></div>
+        <img src="assets/site-01.jpg" alt="Een gouden zonnespiegel tegen de bakstenen muur, met de zaal van het atelier erin weerspiegeld" class="spiegel w-full h-full object-cover rounded-full" style="object-position: 42% 50%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ruimte voor -->
+<section id="ruimte" class="relative py-20 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <h2 class="font-kop text-4xl md:text-5xl tracking-tight">Ruimte voor&hellip;</h2>
+        <p class="mt-6 text-lg leading-relaxed text-inkt/75 max-w-sm">Atelier 't Pakhuys is een open ruimte om creatief bezig te zijn, samen te komen en belangrijke momenten met elkaar te delen en te vieren.</p>
+      </div>
+      <p class="md:col-span-8 font-kop text-[28px] leading-[1.25] sm:text-4xl md:text-[44px] md:leading-[1.2] tracking-tight text-inkt/90">
+        schilderen en tekenen, dansen, spelen, zingen, mediteren, yoga, lezingen, familie-opstellingen, lichaamswerk, verhalen vertellen, exposities, concerten, theater, vergaderingen en recepties.
+      </p>
+    </div>
+
+    <div class="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6 items-end">
+      <figure class="col-span-2 md:col-span-6">
+        <img src="assets/site-05.jpg" alt="Een groep zit in een kring op meditatiekussens in de zaal met bakstenen muren" class="w-full aspect-[12/7] object-cover rounded-[28px]">
+        <figcaption class="mt-3 text-sm text-inkt/60">Zen-meditatie</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-3 md:-mb-16">
+        <img src="assets/google-02.jpg" alt="Een band met contrabas, accordeon, zang en viool speelt voor publiek in het atelier" class="w-full aspect-[3/4] object-cover rounded-t-full">
+        <figcaption class="mt-3 text-sm text-inkt/60">Een concert</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-3">
+        <img src="assets/site-06.jpg" alt="Bezoekers praten bij een tafel tijdens een expositie, met schilderijen aan de muur" class="w-full aspect-[3/4] object-cover rounded-[28px]" style="object-position: 30% 50%;">
+        <figcaption class="mt-3 text-sm text-inkt/60">Expositie en ontvangst</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- De zalen -->
+<section id="zalen" class="bg-[#E8E1D3] py-20 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="max-w-2xl">
+      <h2 class="font-kop text-4xl md:text-6xl tracking-tight">Twee zalen, één huis.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/75">Beide zalen hebben hoge plafonds en vloerverwarming. Het gebruik van de keuken is inclusief.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-12 gap-10 md:gap-8">
+      <img src="assets/site-07.jpg" alt="Een ruime zaal met roze vloer, groen podium, gordijnen, een lange tafel en grote hanglampen" class="md:col-span-7 w-full aspect-[12/7] object-cover rounded-[28px] md:rounded-l-[28px] md:rounded-r-[160px]">
+      <div class="md:col-span-5 md:pl-6 flex flex-col gap-10">
+        <article>
+          <h3 class="font-kop text-3xl">Voorste zaal</h3>
+          <dl class="mt-4 flex gap-8">
+            <div><dt class="text-sm text-inkt/60">Oppervlakte</dt><dd class="font-kop text-3xl text-deur">110 m²</dd></div>
+            <div><dt class="text-sm text-inkt/60">Hoogte</dt><dd class="font-kop text-3xl text-deur">3,20 m</dd></div>
+          </dl>
+          <p class="mt-4 leading-relaxed text-inkt/80">Met vloerverwarming en een witte wand voor beamer en presentaties. Veel gebruikt voor creatieve workshops, schilderlessen, zen-meditatie, yoga, familie-opstellingen, lezingen, vergaderingen, exposities en recepties.</p>
+        </article>
+        <article class="border-t border-inkt/15 pt-10">
+          <h3 class="font-kop text-3xl">Achterste zaal en keuken</h3>
+          <dl class="mt-4 flex gap-8">
+            <div><dt class="text-sm text-inkt/60">Oppervlakte</dt><dd class="font-kop text-3xl text-deur">125 m²</dd></div>
+            <div><dt class="text-sm text-inkt/60">Hoogte</dt><dd class="font-kop text-3xl text-deur">bijna 4 m</dd></div>
+          </dl>
+          <p class="mt-4 leading-relaxed text-inkt/80">Ook met vloerverwarming, twee toiletten en een goed uitgeruste keuken. Mooie akoestiek, dus geschikt voor kleine voorstellingen, vieringen, zang, muziek en dans.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="mt-16 md:mt-24 grid md:grid-cols-12 gap-8 items-center">
+      <figure class="md:col-span-5 md:col-start-2 bg-white rounded-[28px] p-4 md:p-6 shadow-[0_20px_50px_-30px_rgba(36,57,47,.5)]">
+        <img src="assets/site-08.jpg" alt="Handgetekende plattegrond van beide zalen aan de Berkelkade 15A, schaal 1:100" class="w-full">
+      </figure>
+      <div class="md:col-span-5 md:col-start-8">
+        <h3 class="font-kop text-3xl">Beide zalen van bovenaf</h3>
+        <p class="mt-4 leading-relaxed text-inkt/80 max-w-md">De plattegrond toont de twee zalen naast elkaar. De keuken staat er niet op, de deur ernaartoe wel: in de meest linkse muur.</p>
+        <a href="mailto:info@pakhuys.net?subject=Vraag%20over%20de%20zalen" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-deur text-kalk font-semibold px-7 py-3.5 hover:bg-[#2e4a3c]">Vraag naar de mogelijkheden</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Afscheid -->
+<section class="py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-5 md:px-10 text-center">
+    <span class="mx-auto block w-3 h-3 rounded-full bg-steen" aria-hidden="true"></span>
+    <h2 class="font-kop text-3xl md:text-5xl tracking-tight mt-8">Ook voor afscheid in kleine kring.</h2>
+    <p class="mt-6 text-lg leading-relaxed text-inkt/75 max-w-2xl mx-auto">In 't Pakhuys vinden regelmatig begrafenissen en afscheidsceremonies plaats. Beide zalen zijn daar zeer geschikt voor: een sfeervolle plek om in alle rust met elkaar stil te staan bij een leven. Neem gerust contact op, dan denken Ellen en Hein met u mee.</p>
+    <a href="mailto:info@pakhuys.net?subject=Afscheid%20in%20Atelier%20't%20Pakhuys" class="mt-8 inline-block text-deur font-semibold underline decoration-deur/30 underline-offset-[6px] hover:decoration-steen">info@pakhuys.net</a>
+  </div>
+</section>
+
+<!-- Het lied -->
+<section class="relative bg-oker text-inkt overflow-hidden grain">
+  <div class="relative max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-32 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4">
+      <p class="text-lg leading-relaxed max-w-xs">Wie hier een optreden, workshop of evenement heeft meegemaakt, herkent hopelijk wat Wende Sneijders bedoelt als ze zingt:</p>
+    </div>
+    <blockquote class="md:col-span-8 font-kop text-[30px] leading-[1.2] sm:text-4xl md:text-5xl md:leading-[1.15] tracking-tight">
+      <p>Een plek<br>waar je doet waar je buik van gaat zingen,<br>waar je droomt, zoveel je kan,<br>waar je bent wie je bent.</p>
+      <p class="mt-8">Een plek<br>waar je nooit verdwalen kunt,<br>een plek waar de vrijheid woont;<br>daar wil ik zijn.</p>
+      <p class="mt-8 text-inkt/70">En als ik daarvan vertrek,<br>neem ik die plek mee,<br>overal waar ik nog komen ga.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Wie zijn wij -->
+<section id="wie" class="py-20 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <h2 class="font-kop text-4xl md:text-6xl tracking-tight max-w-3xl">Twee mensen die ruimte scheppen.</h2>
+    <div class="mt-14 grid md:grid-cols-12 gap-12 md:gap-8">
+      <div class="md:col-span-5 md:sticky md:top-10 self-start">
+        <img src="assets/site-04.jpg" alt="Twee kinderen kijken naar schilderijen van Ellen Dekker in de entree, naast een groene stalen deur" class="w-full aspect-[4/3] object-cover rounded-[28px] md:rounded-tl-[200px]" style="object-position: 100% 50%;">
+        <p class="mt-3 text-sm text-inkt/60">De schilderijen in 't Pakhuys zijn van Ellen en te koop.</p>
+      </div>
+      <div class="md:col-span-6 md:col-start-7 flex flex-col gap-12">
+        <article>
+          <h3 class="font-kop text-3xl">Ellen Dekker</h3>
+          <p class="mt-4 leading-relaxed text-inkt/80">Na de Kunstacademie (Architectonische Vormgeving) werkte Ellen twaalf jaar als freelance decorontwerpster en art director voor televisie. In 2000 rondde ze de opleiding Genezend Tekenen af. Al ruim twintig jaar werkt ze als coach beeldend, tekentherapeute en docente helend tekenen in haar eigen praktijk 'de Ontdekking'. Ze geeft cursussen, workshops, trainingen en therapie aan kinderen en (jong)volwassenen.</p>
+          <p class="mt-4 leading-relaxed text-inkt/80">Ook is ze kunstenaar. Ze bouwt haar schilderijen in lagen op, met acrylverf en gemengde technieken. Zo ontstaan imaginaire landschappen: 'tussenwerelden'.</p>
+          <a href="https://www.ont-dekking.nl" class="mt-4 inline-block text-deur font-semibold underline decoration-deur/30 underline-offset-4 hover:decoration-oker">ont-dekking.nl</a>
+        </article>
+        <article class="border-t border-inkt/15 pt-12">
+          <h3 class="font-kop text-3xl">Hein Reitsma</h3>
+          <p class="mt-4 leading-relaxed text-inkt/80">Hein is sinds 1993 zelfstandig ondernemer met zijn bedrijf Creative Interventions. Hij begeleidt burgerinitiatieven, buurtnetwerken en zorgverleners die werken aan verbinding in plaats van eenzaamheid.</p>
+          <p class="mt-4 leading-relaxed text-inkt/80">Over 't Pakhuys: "We hebben vanaf het begin geen doelen gehad, wel voorwaarden. Bijvoorbeeld dat het Atelier een plek kan zijn waar het 'heilige veilig' is en dus ook het 'veilige heilig' is. We zullen eerder kiezen voor evenementen die mensen onderling en met zichzelf verbinden."</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Het pand -->
+<section id="pand" class="relative bg-deur text-kalk overflow-hidden grain">
+  <div class="relative max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-32 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <h2 class="font-kop text-4xl md:text-6xl tracking-tight">Een pakhuis van bijna 200 jaar oud.</h2>
+      <svg class="mt-10 w-24 h-24 text-oker hidden md:block" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M30 6h40l24 24v40L70 94H30L6 70V30z"/><path d="M38 26h24l12 12v24L62 74H38L26 62V38z" opacity=".5"/></svg>
+    </div>
+    <div class="md:col-span-6 md:col-start-7 text-lg leading-relaxed text-kalk/80 space-y-5">
+      <p>Toen het pand gebouwd werd, lag er in het Kattengat nog geen sluis tussen de IJssel en de Berkel. Binnenvaartschepen voeren de Berkel op en meerden aan voor de deur. De takel en de grote deuren op de tweede verdieping zijn er nog. Later zat er een koffieopslag en branderij: de achtkantige schoorsteen staat er nog steeds.</p>
+      <p>Ellen en Hein wonen sinds 2004 op de bovenste verdiepingen. In 2007 kregen ze de kans om de begane grond erbij te kopen. Na een ingrijpende verbouwing zijn ze gewoon begonnen, zonder businessplan. Het begon met feesten en exposities. Nu zijn er workshops, cursussen, trainingen, dans, muziek, theater en afscheidsceremonies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="py-20 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-kop text-4xl md:text-6xl tracking-tight">Wat bezoekers zeggen.</h2>
+      <p class="flex items-center gap-3 text-inkt/70"><span class="text-oker text-xl tracking-[2px]" aria-hidden="true">★★★★★</span><span><strong class="text-inkt">4,4</strong> uit 25 Google-reviews</span></p>
+    </div>
+
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-6 [&>*]:break-inside-avoid [&>*]:mb-6">
+      <figure class="bg-deur text-kalk rounded-[28px] p-8">
+        <blockquote class="font-kop text-2xl leading-snug">"Lief en onbaatzuchtig. Zo heb ik Ellen Dekker en Hein Reitsma van Atelier 't Pakhuys leren kennen tijdens ons eerste ligconcert aldaar op zondag 17 sept. Twee mensen met het hart op de goede plek."</blockquote>
+        <figcaption class="mt-5 text-sm text-kalk/70">Frank Ong-Alok, 2023</figcaption>
+      </figure>
+      <figure class="bg-white rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"Prachtige locatie, een liefdevolle gastvrouw en een super fijne schilder workshop gehad:-)!"</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Liana Graat, Google</figcaption>
+      </figure>
+      <figure class="bg-white rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"Wat een fijne plek om te zijn. Warm, open, sfeervol, functioneel, gastvrij. Ik heb een mooie fijne dag gehad. Bedankt gastvrouw en gastheer!"</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Tijn Boissevain, Google</figcaption>
+      </figure>
+      <figure class="bg-[#E8E1D3] rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"Na een leuke workshop met ons team zijn we met een aantal collega's verder gegaan met schilderen bij Ellen. Zij is een warme en doortastende creatief therapeute waar je aan jezelf kunt werken door simpelweg creatief bezig te gaan."</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Liesbeth Haijtink, Google</figcaption>
+      </figure>
+      <figure class="bg-white rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"De ruimte in het Pakhuys is een bijzondere werkplek. Het wordt gedragen door 2 mensen die liefdevol deze werkruimte hoeden en 'schoon' houden voor het subtiele werk voor onze groepen. Dank jullie wel."</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Han Deibert, Pardessa</figcaption>
+      </figure>
+      <figure class="bg-oker rounded-[28px] p-8">
+        <blockquote class="font-kop text-2xl leading-snug">"Een plek met een buitengewoon fijne sfeer en lieve verzorging door Ellen."</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/70">Annelou Hessels, Google</figcaption>
+      </figure>
+      <figure class="bg-white rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"Een royale werkruimte, met een plezierige uitstraling en een goede atmosfeer"</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Jacqueline Groenwold</figcaption>
+      </figure>
+      <figure class="bg-white rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"Erg leuke locatie en een nog leukere kookworkshop."</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Frits Sijen, Google</figcaption>
+      </figure>
+      <figure class="bg-white rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"Prachtige plek met een fijne sfeer . Lieve mensen die met je meedenken en voor je klaarstaan ! Fantastisch ♡"</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Sulayca Soijo</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-[#E8E1D3] py-20 md:py-32">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-12 md:gap-8">
+    <div class="md:col-span-5">
+      <h2 class="font-kop text-4xl md:text-6xl tracking-tight">Vertel ons wat u van plan bent.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/75 max-w-md">Heeft u een workshop, cursus, voorstelling of bijeenkomst in gedachten? Mail Ellen en Hein. Ze denken graag met u mee.</p>
+      <a href="mailto:info@pakhuys.net?subject=Ruimte%20huren%20in%20Atelier%20't%20Pakhuys" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-oker text-inkt font-semibold text-lg px-8 py-4 hover:bg-[#ebb550]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        info@pakhuys.net
+      </a>
+      <dl class="mt-12 space-y-6">
+        <div>
+          <dt class="text-sm text-inkt/60">Adres</dt>
+          <dd class="mt-1 text-lg">Berkelkade 15A<br>7201 JE Zutphen</dd>
+          <dd class="mt-2"><a href="https://www.google.com/maps/search/?api=1&query=Berkelkade+15A+7201+JE+Zutphen" class="text-deur font-semibold underline decoration-deur/30 underline-offset-4 hover:decoration-oker">Route plannen</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-inkt/60">E-mail</dt>
+          <dd class="mt-1 text-lg"><a href="mailto:info@pakhuys.net" class="hover:text-deur">info@pakhuys.net</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@pakhuys.net" method="post" enctype="text/plain" class="md:col-span-6 md:col-start-7 bg-kalk rounded-[28px] p-6 md:p-10 space-y-5">
+      <h3 class="font-kop text-2xl">Stuur een bericht</h3>
+      <div>
+        <label for="naam" class="block text-sm font-medium mb-2">Naam</label>
+        <input id="naam" name="Naam" type="text" required autocomplete="name" class="w-full rounded-xl border border-inkt/20 bg-white px-4 py-3 focus:border-deur focus:outline-none">
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium mb-2">E-mailadres</label>
+        <input id="email" name="E-mail" type="email" required autocomplete="email" class="w-full rounded-xl border border-inkt/20 bg-white px-4 py-3 focus:border-deur focus:outline-none">
+      </div>
+      <div>
+        <label for="soort" class="block text-sm font-medium mb-2">Waarvoor zoekt u ruimte?</label>
+        <select id="soort" name="Soort" class="w-full rounded-xl border border-inkt/20 bg-white px-4 py-3 focus:border-deur focus:outline-none">
+          <option>Workshop, cursus of training</option>
+          <option>Yoga, meditatie of lichaamswerk</option>
+          <option>Concert, theater of dans</option>
+          <option>Lezing, vergadering of expositie</option>
+          <option>Viering of receptie</option>
+          <option>Afscheid of begrafenis</option>
+          <option>Iets anders</option>
+        </select>
+      </div>
+      <div>
+        <label for="bericht" class="block text-sm font-medium mb-2">Bericht</label>
+        <textarea id="bericht" name="Bericht" rows="4" class="w-full rounded-xl border border-inkt/20 bg-white px-4 py-3 focus:border-deur focus:outline-none" placeholder="Bijvoorbeeld de datum, het aantal deelnemers en welke zaal"></textarea>
+      </div>
+      <button type="submit" class="knop w-full rounded-full bg-deur text-kalk font-semibold text-lg px-8 py-4 hover:bg-[#2e4a3c]">Bericht versturen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-kalk/70 text-sm">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+    <p><span class="font-kop text-lg text-kalk">Atelier 't Pakhuys</span><span class="ml-3">Berkelkade 15A, 7201 JE Zutphen</span></p>
+    <p>Website-demo door <a href="https://hagenweb.nl" class="text-oker hover:text-kalk underline underline-offset-2">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele actiebalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-deur/95 backdrop-blur px-4 py-3 flex gap-3 border-t border-kalk/10">
+  <a href="mailto:info@pakhuys.net?subject=Ruimte%20huren%20in%20Atelier%20't%20Pakhuys" class="flex-1 text-center rounded-full bg-oker text-inkt font-semibold py-3.5">Mail over de ruimte</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Berkelkade+15A+7201+JE+Zutphen" class="rounded-full border border-kalk/30 text-kalk px-5 py-3.5">Route</a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  window.addEventListener('load', function () { document.documentElement.classList.add('geladen'); });
+</script>
+</body>
+</html>
