@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rob Kwist | Restauratie, schilderijen en schilderscursus in Zutphen</title>
+<meta name="description" content="Atelier Rob Kwist aan de Laarstraat 80 in Zutphen: restauratie van schilderijen en lijsten, schilderijen te koop en op verzoek, schilderscursus en uithangborden.">
+<meta property="og:title" content="Rob Kwist, atelier aan de Laarstraat in Zutphen">
+<meta property="og:image" content="assets/site-05.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          gevel: '#2E3540',
+          gevel2: '#262C35',
+          linnen: '#E9E4D8',
+          papier: '#F6F3EC',
+          goud: '#C39A45',
+          goudlicht: '#D8B66A',
+          omber: '#6B4A2E',
+          inkt: '#1F242B',
+        },
+        fontFamily: {
+          kop: ['Gloock', 'Georgia', 'serif'],
+          tekst: ['Karla', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Karla', system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* linnen-structuur: heel subtiel ruitpatroon zoals onbeschilderd doek */
+  .doek {
+    background-color: #E9E4D8;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(107,74,46,.035) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(107,74,46,.03) 0 1px, transparent 1px 4px);
+  }
+  /* vergulde lijst rond de boog */
+  .lijst {
+    background: linear-gradient(140deg, #E2C27A 0%, #B98C36 28%, #8E6824 52%, #D5B064 74%, #A57B2E 100%);
+    box-shadow: 0 30px 60px -25px rgba(46,53,64,.55), inset 0 0 0 1px rgba(255,240,200,.35);
+  }
+  .lijst-binnen { box-shadow: inset 0 0 0 3px rgba(60,40,15,.45), inset 0 0 18px rgba(0,0,0,.35); }
+  .boog { border-radius: 999px 999px 6px 6px; }
+  .prijs-regel { background-image: radial-gradient(circle, rgba(31,36,43,.35) 1px, transparent 1.4px); background-size: 7px 3px; background-repeat: repeat-x; background-position: 0 70%; }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #C39A45; outline-offset: 3px; }
+  /* één entree-moment: de lijst schuift zacht in, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-lijst { animation: binnen 1s cubic-bezier(.2,.7,.2,1) both .1s; }
+    @keyframes binnen { from { transform: translateY(18px); opacity: .001; } to { transform: none; opacity: 1; } }
+  }
+  .js #belbalk.verborgen { transform: translateY(110%); }
+</style>
+</head>
+<body class="doek text-inkt antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-papier px-3 py-2 z-50">Naar de inhoud</a>
+
+<div class="bg-gevel2 text-linnen/80 text-[13px] text-center py-2 px-4">
+  Demo voor R. Kwist, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-goudlicht hover:text-white">Hagenweb</a>
+</div>
+
+<header class="relative z-20">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between py-5">
+    <a href="#top" class="font-kop text-[26px] leading-none tracking-tight text-gevel">Rob Kwist<span class="block font-tekst text-[12px] tracking-[0.08em] text-omber mt-1">atelier, Zutphen</span></a>
+    <nav aria-label="Hoofdmenu" class="hidden md:flex items-center gap-8 text-[15px] font-medium text-gevel">
+      <a href="#restauratie" class="hover:text-omber">Restauratie</a>
+      <a href="#schilderijen" class="hover:text-omber">Schilderijen</a>
+      <a href="#cursus" class="hover:text-omber">Cursus</a>
+      <a href="#ambacht" class="hover:text-omber">Borden en motoren</a>
+      <a href="#atelier" class="hover:text-omber">Contact</a>
+      <a href="tel:+31575544761" class="knop inline-flex items-center gap-2 border-2 border-gevel rounded-full px-4 py-2 hover:bg-gevel hover:text-linnen">
+        <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        0575 544 761
+      </a>
+    </nav>
+    <a href="#atelier" class="md:hidden font-semibold text-[15px] text-gevel underline decoration-goud decoration-2 underline-offset-[6px]">Contact en route</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-8 items-center pt-4 md:pt-10 pb-16 md:pb-24">
+    <div class="md:col-span-6 lg:col-span-6 relative z-10">
+      <p class="text-omber font-medium text-[15px] md:text-base">Atelier aan de Laarstraat, Zutphen</p>
+      <h1 class="font-kop text-gevel text-[44px] leading-[1.02] sm:text-6xl lg:text-[84px] lg:leading-[0.98] tracking-[-0.015em] mt-3">Wat ik zie, dat kan ik maken.</h1>
+      <p class="mt-6 text-[17px] md:text-lg leading-relaxed max-w-[30rem] text-inkt/85">Rob Kwist restaureert schilderijen en lijsten, schildert op verzoek en geeft les in zijn atelier. Brengt u een dierbaar stuk langs? Er is altijd koffie.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31575544761" class="knop inline-flex items-center gap-3 bg-goud hover:bg-goudlicht text-gevel2 font-bold text-lg rounded-full pl-5 pr-7 py-4 shadow-[0_14px_30px_-12px_rgba(142,104,36,.8)]">
+          <span class="grid place-items-center w-9 h-9 rounded-full bg-gevel text-goudlicht">
+            <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          </span>
+          Bel 0575 544 761
+        </a>
+        <a href="#atelier" class="font-semibold text-gevel underline decoration-goud decoration-2 underline-offset-[6px] hover:decoration-gevel">Kom langs in het atelier</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px] text-inkt/75">
+        <span class="text-goud tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-inkt">5,0</strong> op Google, uit 2 reviews</span>
+      </p>
+    </div>
+
+    <figure class="md:col-span-6 lg:col-span-5 lg:col-start-8 relative">
+      <div class="hero-lijst lijst boog p-3 md:p-4 mx-auto max-w-[420px] md:max-w-none">
+        <div class="lijst-binnen boog overflow-hidden bg-gevel aspect-[4/5]">
+          <img src="assets/site-05.jpg" alt="Een oud schilderij halverwege de restauratie: links nog donker en vuil, rechts weer helder van kleur" class="w-full h-full object-cover object-[40%_center]">
+        </div>
+      </div>
+      <figcaption class="mt-4 text-center text-sm text-omber italic">Halverwege: de oude vernislaag gaat eraf, de kleur komt terug.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- RESTAURATIE -->
+<section id="restauratie" class="bg-papier">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-12">
+      <div class="md:col-span-5">
+        <h2 class="font-kop text-gevel text-4xl md:text-5xl leading-[1.05]">Restauratie van schilderijen en lijsten</h2>
+        <p class="mt-6 text-lg leading-relaxed text-inkt/85">Is een schilderij in de loop der jaren dof, vuil of beschadigd geraakt? Dan breng ik het terug naar hoe het was toen het net gemaakt werd. Alles wat ik doe moet altijd weer omkeerbaar zijn. Zo blijft het werk van de oorspronkelijke maker intact.</p>
+        <p class="mt-4 text-lg leading-relaxed text-inkt/85">Omdat elk stuk anders is, geef ik hier geen vaste prijzen. Ik bekijk uw schilderij, maak een plan en u krijgt vooraf een offerte. Vrijblijvend informeren kan altijd.</p>
+        <a href="tel:+31575544761" class="knop mt-8 inline-flex items-center gap-2 border-2 border-gevel text-gevel font-semibold rounded-full px-5 py-3 hover:bg-gevel hover:text-linnen">Bel voor een afspraak</a>
+      </div>
+
+      <div class="md:col-span-7">
+        <div class="relative">
+          <img src="assets/site-04.jpg" alt="Werkbank in het atelier met lijmklemmen op een doek, met schilderijen van Rob aan de muur" class="w-full aspect-[4/3] object-cover rounded-[4px] shadow-[0_24px_50px_-28px_rgba(46,53,64,.7)]">
+          <blockquote class="md:absolute md:-bottom-14 md:-left-10 md:max-w-[22rem] mt-5 md:mt-0 bg-gevel text-linnen p-6 md:p-7 rounded-[4px] shadow-[0_24px_40px_-24px_rgba(38,44,53,.9)]">
+            <p class="text-goud tracking-[2px] text-sm" aria-label="5 van 5 sterren">★★★★★</p>
+            <p class="mt-3 leading-relaxed text-[15.5px]">"Ik bracht een dierbaar schilderij, somber van nicotineaanslag en ander vuil. Rob heeft het schoongemaakt en in zijn oude luister hersteld. Kleurrijk en sprankelend, echt prachtig! En voor een heel redelijke prijs. Ik ben er superblij mee!"</p>
+            <footer class="mt-4 text-sm text-linnen/70">L.A.H. Giele, via Google</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 md:mt-28">
+      <h3 class="font-kop text-2xl md:text-3xl text-gevel">Wat ik voor u kan doen</h3>
+      <dl class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8 border-t border-gevel/15 pt-8">
+        <div>
+          <dt class="font-semibold text-omber">Schoonmaken</dt>
+          <dd class="mt-2 leading-relaxed text-inkt/80">De oude, vervuilde vernislaag verwijderen en na het herstel een nieuwe vernislaag aanbrengen.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-omber">Verflaag herstellen</dt>
+          <dd class="mt-2 leading-relaxed text-inkt/80">Ontbrekende stukken in de verflaag en de onderlaag aanvullen.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-omber">Doek en spieraam</dt>
+          <dd class="mt-2 leading-relaxed text-inkt/80">Scheurtjes en gaten in het linnen, te smalle randen bij het opnieuw opspannen en het houten spieraam zelf.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-omber">Lijsten</dt>
+          <dd class="mt-2 leading-relaxed text-inkt/80">Ontbrekende stukjes bijmaken, in de originele kleur en structuur bijwerken en losse constructies weer stevig maken.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- SCHILDERIJEN -->
+<section id="schilderijen" class="overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 md:gap-14 items-start">
+    <figure class="md:col-span-6 md:sticky md:top-8">
+      <img src="assets/site-03.jpg" alt="Een duinlandschap van Rob Kwist in een vergulde lijst op de schildersezel in het atelier" class="w-full aspect-[4/5] object-cover object-[45%_center] rounded-[4px] shadow-[0_30px_60px_-30px_rgba(46,53,64,.7)]">
+      <figcaption class="mt-3 text-sm text-omber italic">Op de ezel in het atelier: duinen onder een wolkenlucht.</figcaption>
+    </figure>
+    <div class="md:col-span-6">
+      <h2 class="font-kop text-gevel text-4xl md:text-5xl leading-[1.05]">Schilderijen, te koop en op verzoek</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/85">Schilderen is mijn passie. Het liefst hield ik alles zelf, maar het geeft een voldaan gevoel als een schilderij bij een ander helemaal tot zijn recht komt. U bent welkom om ze in het atelier te komen bekijken.</p>
+      <p class="mt-4 text-lg leading-relaxed text-inkt/85">Ik schilder ook op verzoek: portretten en andere onderwerpen. Bel of mail gerust voor de mogelijkheden en de prijs. Hangt er een lijst om het werk, dan zit die in de prijs. Wilt u het schilderij zonder de lijst? Dat is bespreekbaar.</p>
+
+      <div class="mt-10 bg-papier rounded-[4px] p-6 md:p-8 shadow-[0_18px_40px_-30px_rgba(46,53,64,.6)]">
+        <h3 class="font-kop text-xl text-gevel">Een greep uit de galerij</h3>
+        <ul class="mt-5 space-y-3 text-[15.5px]">
+          <li class="flex items-baseline gap-3"><span><span class="font-semibold">IJsselkade Zutphen</span> <span class="block sm:inline text-[14px] text-inkt/60">55 x 75 cm</span></span><span class="prijs-regel flex-1 h-3 min-w-[1.5rem]"></span><span class="tabular-nums whitespace-nowrap">€ 475</span></li>
+          <li class="flex items-baseline gap-3"><span><span class="font-semibold">Stilleven Renault 4</span> <span class="block sm:inline text-[14px] text-inkt/60">65 x 85 cm</span></span><span class="prijs-regel flex-1 h-3 min-w-[1.5rem]"></span><span class="tabular-nums whitespace-nowrap">€ 695</span></li>
+          <li class="flex items-baseline gap-3"><span><span class="font-semibold">Keukentje</span> <span class="block sm:inline text-[14px] text-inkt/60">40 x 50 cm</span></span><span class="prijs-regel flex-1 h-3 min-w-[1.5rem]"></span><span class="tabular-nums whitespace-nowrap">€ 300</span></li>
+          <li class="flex items-baseline gap-3"><span><span class="font-semibold">Wissant plage</span> <span class="block sm:inline text-[14px] text-inkt/60">95 x 60 cm</span></span><span class="prijs-regel flex-1 h-3 min-w-[1.5rem]"></span><span class="tabular-nums whitespace-nowrap">€ 465</span></li>
+          <li class="flex items-baseline gap-3"><span><span class="font-semibold">Chapelon</span> <span class="block sm:inline text-[14px] text-inkt/60">50 x 100 cm</span></span><span class="prijs-regel flex-1 h-3 min-w-[1.5rem]"></span><span class="tabular-nums whitespace-nowrap">€ 950</span></li>
+          <li class="flex items-baseline gap-3"><span><span class="font-semibold">Dresden</span> <span class="block sm:inline text-[14px] text-inkt/60">70 x 80 cm</span></span><span class="prijs-regel flex-1 h-3 min-w-[1.5rem]"></span><span class="tabular-nums whitespace-nowrap">€ 1250</span></li>
+          <li class="flex items-baseline gap-3"><span><span class="font-semibold">Stationsplein Leiden</span> <span class="block sm:inline text-[14px] text-inkt/60">99,5 x 84,5 cm</span></span><span class="prijs-regel flex-1 h-3 min-w-[1.5rem]"></span><span class="tabular-nums whitespace-nowrap">€ 1280</span></li>
+          <li class="flex items-baseline gap-3"><span><span class="font-semibold">Vader</span> <span class="block sm:inline text-[14px] text-inkt/60">60 x 80 cm</span></span><span class="prijs-regel flex-1 h-3 min-w-[1.5rem]"></span><span class="tabular-nums whitespace-nowrap">€ 3500</span></li>
+        </ul>
+        <p class="mt-6 text-sm text-inkt/65">En nog veel meer, van Zutphen en Leiden tot de Franse kust. Vraag naar wat er nu in het atelier hangt.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CURSUS -->
+<section id="cursus" class="bg-gevel text-linnen relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-7">
+        <h2 class="font-kop text-4xl md:text-6xl leading-[1.02] text-papier">Eerst leren kijken, dan schilderen</h2>
+        <p class="mt-6 text-lg leading-relaxed text-linnen/85 max-w-[36rem]">Net begonnen, vastgelopen in een schilderij of zin in meer verdieping? In de schilderscursus leert u de basistechnieken en is er ruimte voor uw eigen ideeën. Wat wilt u maken, hoe pakt u het aan en waar let u op? We werken naar de waarneming en naar de verbeelding.</p>
+        <p class="mt-4 text-lg leading-relaxed text-linnen/85 max-w-[36rem]">Iedereen werkt aan zijn eigen doek, in een gemoedelijke sfeer. De niveaus en onderwerpen verschillen, maar we willen allemaal iets moois maken.</p>
+
+        <h3 class="mt-12 font-semibold text-goudlicht">Ik help u met</h3>
+        <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-kop text-2xl text-papier">
+          <li>potlood</li><li>houtskool</li><li>olieverf</li><li>aquarel</li><li>acryl</li>
+        </ul>
+      </div>
+
+      <aside class="md:col-span-5">
+        <div class="border border-goud/50 rounded-[4px] p-7 md:p-8">
+          <h3 class="font-kop text-2xl text-papier">Wanneer</h3>
+          <dl class="mt-5 space-y-4">
+            <div class="flex justify-between gap-4 border-b border-linnen/15 pb-4"><dt>Woensdagavond</dt><dd class="tabular-nums text-papier font-semibold">20.00 tot 22.30</dd></div>
+            <div class="flex justify-between gap-4 border-b border-linnen/15 pb-4"><dt>Vrijdagmiddag</dt><dd class="tabular-nums text-papier font-semibold">14.30 tot 17.00</dd></div>
+            <div class="flex justify-between gap-4 border-b border-linnen/15 pb-4"><dt>Groepsgrootte</dt><dd class="text-papier font-semibold">maximaal 5</dd></div>
+            <div class="flex justify-between gap-4"><dt>Bijdrage</dt><dd class="text-papier font-semibold">€ 200 voor 10 lessen</dd></div>
+          </dl>
+          <p class="mt-6 text-[15px] leading-relaxed text-linnen/75">Ook in de vakanties. Meld u even aan, dan weet ik dat er plek is. U neemt uw eigen verf, penselen, terpentine, houtskool, potloden en fixatief mee. Ezels, tafels, schildersmedium, retoucheervernis, koffie en thee staan klaar.</p>
+          <a href="tel:+31575544761" class="knop mt-7 flex justify-center items-center gap-2 bg-goud hover:bg-goudlicht text-gevel2 font-bold rounded-full px-6 py-3.5">Aanmelden: 0575 544 761</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- AMBACHT -->
+<section id="ambacht">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+      <div class="md:col-span-5 space-y-10">
+      <div>
+      <h2 class="font-kop text-gevel text-4xl md:text-5xl leading-[1.05]">Als iets kapot gaat, vind ik dat vreselijk</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/85">Al vanaf mijn zesde wilde ik weten hoe iets gemaakt is. Gereedschap was er niet veel, de wil om het toch te maken was sterker. Met twee rechterhanden, geduld en de durf om anderen om kennis te vragen kwam ik waar ik nu ben. Het resultaat moet aan mijn eigen hoge eisen voldoen, en anders doe ik het opnieuw.</p>
+      </div>
+
+      <article class="bg-papier rounded-[4px] p-7 md:p-9 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-7 items-start">
+        <div class="lijst p-2 rounded-[3px] shrink-0">
+          <img src="assets/site-01.png" alt="Beschilderd uithangbord van Ot en Sien voor de bibliotheek" class="w-[150px] h-auto block rounded-[2px]">
+        </div>
+        <div>
+          <h3 class="font-kop text-2xl text-gevel">Uithangborden</h3>
+          <p class="mt-3 leading-relaxed text-inkt/80">Een geschilderd bord aan de gevel, zoals Ot en Sien voor St. Kinderboek Zutphen (€ 1200). Een eigen bord voor uw zaak? Bel gerust om het te bespreken.</p>
+        </div>
+      </article>
+      </div>
+
+      <article class="md:col-span-7 md:pt-3">
+        <img src="assets/site-02.jpg" alt="Nieuw bekleed bruin lederen zadel op een antieke motorfiets" class="w-full aspect-[16/9] object-cover rounded-[4px]">
+        <h3 class="mt-6 font-kop text-2xl text-gevel">Antieke motoren en leerwerk</h3>
+        <p class="mt-3 leading-relaxed text-inkt/80 max-w-[38rem]">Het was een wens om op een motorfiets uit de jaren twintig te rijden. Versleten onderdelen maak ik als nieuw, ontbrekende maak ik bij of ontwerp ik zelf, allemaal maat- en handwerk. Van motorblok, versnellingsbak en carburateur tot verlichting, toeter, tank en spatborden. Een zadel opnieuw bekleden kost € 350.</p>
+        <p class="mt-4 text-[15px] text-omber leading-relaxed max-w-[38rem]">Draaiwerk, schroefdraden, plaat-, pijp- en buigwerk, solderen, klinken, lassen, leerwerk, lakrestauratie, lagers, reviseren en ombouwen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BEDANKJE -->
+<section class="bg-papier">
+  <div class="max-w-4xl mx-auto px-5 md:px-8 py-20 md:py-24">
+    <figure>
+      <span class="font-kop text-goud text-7xl leading-none block" aria-hidden="true">"</span>
+      <blockquote class="font-kop text-gevel text-[26px] md:text-[34px] leading-[1.25] -mt-4">
+        Rob, ontzettend bedankt voor de prachtige schilderijen! Mijn vrouw is, net als ik, razend enthousiast! Ze hebben een prominente plek in huis gekregen! We kunnen er letterlijk de ogen niet van afhouden.
+      </blockquote>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/75 max-w-2xl">"Ik houd je winkel even in de gaten voor nog wat schilderijen. Het blijft me een raadsel hoe iemand op deze manier zóveel expressie op een doek kan aanbrengen! FANTASTISCH!"</p>
+      <figcaption class="mt-6 font-semibold text-omber">Groet van Cor en Dedy</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ATELIER / CONTACT -->
+<section id="atelier" class="bg-gevel text-linnen">
+  <div class="grid lg:grid-cols-2">
+    <div class="relative min-h-[340px] lg:min-h-full">
+      <img src="assets/google-02.jpg" alt="De gevel aan de Laarstraat in Zutphen met de etalage van Robert Kwist Restauratie" class="absolute inset-0 w-full h-full object-cover object-[50%_70%]">
+    </div>
+    <div class="px-5 md:px-12 lg:px-16 py-16 md:py-24 max-w-2xl">
+      <h2 class="font-kop text-4xl md:text-5xl leading-[1.05] text-papier">Kom langs aan de Laarstraat</h2>
+      <p class="mt-5 text-lg leading-relaxed text-linnen/85">Achter de etalage met "Restauratie" op het raam zit het atelier. Bel of mail even, dan weet u zeker dat ik er ben. Er is altijd koffie.</p>
+
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-7">
+        <div>
+          <dt class="text-goudlicht font-semibold text-sm">Adres</dt>
+          <dd class="mt-1.5 text-papier leading-relaxed"><a href="https://www.google.com/maps/search/?api=1&query=Laarstraat+80+7201+CG+Zutphen" class="hover:underline underline-offset-4">Laarstraat 80<br>7201 CG Zutphen</a></dd>
+        </div>
+        <div>
+          <dt class="text-goudlicht font-semibold text-sm">Telefoon</dt>
+          <dd class="mt-1.5 text-papier leading-relaxed"><a href="tel:+31575544761" class="hover:underline underline-offset-4">0575 544 761</a> <span class="text-linnen/60">atelier</span><br><a href="tel:+31624998449" class="hover:underline underline-offset-4">06 24 99 84 49</a> <span class="text-linnen/60">mobiel</span></dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-goudlicht font-semibold text-sm">E-mail</dt>
+          <dd class="mt-1.5 text-papier"><a href="mailto:robert.kwist@hotmail.com" class="hover:underline underline-offset-4 break-all">robert.kwist@hotmail.com</a></dd>
+        </div>
+      </dl>
+
+      <form action="mailto:robert.kwist@hotmail.com" method="post" enctype="text/plain" class="mt-12 space-y-4">
+        <h3 class="font-kop text-2xl text-papier">Of stuur een bericht</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="block"><span class="text-sm text-linnen/75">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-1.5 w-full bg-gevel2 border border-linnen/20 rounded-[4px] px-4 py-3 text-papier placeholder-linnen/40 focus:border-goud outline-none"></label>
+          <label class="block"><span class="text-sm text-linnen/75">Telefoon of e-mail</span>
+            <input name="contact" required class="mt-1.5 w-full bg-gevel2 border border-linnen/20 rounded-[4px] px-4 py-3 text-papier focus:border-goud outline-none"></label>
+        </div>
+        <label class="block"><span class="text-sm text-linnen/75">Waar gaat het over?</span>
+          <textarea name="bericht" rows="4" required placeholder="Bijvoorbeeld: een oud familieschilderij dat dof is geworden" class="mt-1.5 w-full bg-gevel2 border border-linnen/20 rounded-[4px] px-4 py-3 text-papier placeholder-linnen/40 focus:border-goud outline-none"></textarea></label>
+        <button type="submit" class="knop bg-goud hover:bg-goudlicht text-gevel2 font-bold rounded-full px-7 py-3.5">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-gevel2 text-linnen/60 text-sm">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-10 pb-28 md:pb-10 flex flex-col md:flex-row gap-6 md:items-end justify-between">
+    <div>
+      <p class="font-kop text-2xl text-papier">Rob Kwist</p>
+      <p class="mt-2">Laarstraat 80, 7201 CG Zutphen</p>
+    </div>
+    <p class="md:text-right leading-relaxed">KVK 0819 93 97<br>BTW NL 0014 72 443 B32</p>
+  </div>
+</footer>
+
+<!-- vaste belbalk op mobiel -->
+<div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 transition-transform duration-300 bg-gevel2/95 backdrop-blur border-t border-goud/30">
+  <a href="tel:+31575544761" class="knop flex items-center justify-center gap-2 bg-goud text-gevel2 font-bold text-[17px] rounded-full py-3.5">
+    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel Rob: 0575 544 761
+  </a>
+</div>
+
+<script>
+  (function () {
+    var balk = document.getElementById('belbalk');
+    var hero = document.getElementById('top');
+    if (!balk || !hero || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) {
+      balk.classList.toggle('verborgen', e[0].isIntersecting);
+    }, { threshold: 0.35 }).observe(hero);
+  })();
+</script>
+</body>
+</html>
