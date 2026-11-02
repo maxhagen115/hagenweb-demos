@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier Dorine de Soet | Beeldend kunstenaar in Zutphen</title>
+<meta name="description" content="Schilderijen van Zutphen, de IJssel, koeien en roodborstjes. Atelier Dorine de Soet aan de Spittaalstraat 92 in Zutphen. Werk kopen of huren, en schilderworkshops voor één persoon.">
+<meta property="og:title" content="Atelier Dorine de Soet, Zutphen">
+<meta property="og:image" content="assets/site-01.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          gesso: '#F6F6F3',
+          doek: '#ECEBE5',
+          ijssel: '#1E3A4C',
+          leisteen: '#4B6878',
+          roodborst: '#CC5A1E',
+          oker: '#E9B44C',
+        },
+        fontFamily: {
+          kop: ['Fraunces', 'Georgia', 'serif'],
+          tekst: ['Karla', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Karla', system-ui, sans-serif; }
+  .font-kop { font-variation-settings: "SOFT" 100, "WONK" 1; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 6px 6px; }
+  /* Atelierwand: schilderijen houden hun eigen verhouding, rijen lopen gelijk */
+  .wand-rij { display: flex; flex-direction: column; gap: 1.25rem; }
+  @media (min-width: 768px) {
+    .wand-rij { flex-direction: row; gap: 1.5rem; align-items: flex-start; }
+    .wand-rij > figure { flex-grow: var(--ar); flex-basis: 0; }
+  }
+  .lijst { box-shadow: 0 1px 0 rgba(30,58,76,.08), 0 14px 30px -18px rgba(30,58,76,.45); }
+  .knop { transition: transform .2s ease, background-color .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px); }
+  #belbalk { transition: transform .3s ease; }
+  .js #belbalk.weg { transform: translateY(110%); }
+  :focus-visible { outline: 3px solid #E9B44C; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body class="bg-gesso text-ijssel antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white px-3 py-2 z-50">Naar de inhoud</a>
+
+<div class="bg-ijssel text-white/85 text-center text-xs sm:text-sm py-2 px-4">
+  Demo voor Atelier Dorine de Soet, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-40 bg-gesso/90 backdrop-blur border-b border-ijssel/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="font-kop text-xl sm:text-2xl font-medium tracking-tight leading-none">Dorine de Soet<span class="text-roodborst">.</span></a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#werk" class="hover:text-roodborst transition-colors">Werk</a>
+      <a href="#over" class="hover:text-roodborst transition-colors">Over Dorine</a>
+      <a href="#workshop" class="hover:text-roodborst transition-colors">Workshop</a>
+      <a href="#bezoek" class="hover:text-roodborst transition-colors">Bezoek</a>
+    </nav>
+    <a href="tel:+31624611518" class="knop inline-flex items-center gap-2 rounded-full border border-ijssel/25 px-4 py-2 text-sm font-semibold hover:bg-ijssel hover:text-white">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="hidden sm:inline">06 24 61 15 18</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="max-w-7xl mx-auto px-5 sm:px-8 pt-6 md:pt-14 pb-10 md:pb-16">
+  <div class="grid md:grid-cols-12 gap-7 md:gap-10 items-center">
+    <div class="md:col-span-7 md:order-2">
+      <div class="boog overflow-hidden bg-doek aspect-[4/3] md:aspect-[7/6]">
+        <img src="assets/google-01.png" alt="Dorine de Soet schildert met een brede kwast aan een groot blauw doek in haar atelier" class="w-full h-full object-cover object-[92%_center]">
+      </div>
+    </div>
+    <div class="md:col-span-5 md:order-1">
+      <p class="text-leisteen font-medium mb-3 md:mb-5">Beeldend kunstenaar in Zutphen</p>
+      <h1 class="font-kop font-normal text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-7xl tracking-tight">Waar Zutphen kleur krijgt.</h1>
+      <p class="mt-4 md:mt-6 text-lg leading-relaxed text-ijssel/80 max-w-md">In mijn atelier aan de Spittaalstraat schilder ik de IJssel, de stad, koeien en kleine vogeltjes. Kom kijken, koop of huur een werk, of schilder zelf een middag mee.</p>
+      <div class="mt-6 md:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31624611518" class="knop inline-flex items-center gap-3 rounded-full bg-roodborst hover:bg-[#b34b14] text-white text-lg font-semibold px-7 py-4 shadow-[0_12px_24px_-12px_rgba(204,90,30,.8)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel voor een afspraak
+        </a>
+        <a href="#werk" class="font-semibold underline decoration-oker decoration-2 underline-offset-[6px] hover:text-roodborst">Bekijk het werk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOEKSTROOK -->
+<figure class="relative">
+  <img src="assets/site-01.jpg" alt="Schilderij van een vliegende reiger boven het IJsselfront van Zutphen, in rood, oranje en geel" class="w-full h-48 sm:h-72 md:h-[26rem] object-cover object-[60%_center]">
+  <figcaption class="max-w-7xl mx-auto px-5 sm:px-8 mt-3 text-sm text-leisteen">Reiger boven het IJsselfront. Zutphen keert steeds terug in mijn werk.</figcaption>
+</figure>
+
+<!-- WERK -->
+<section id="werk" class="max-w-7xl mx-auto px-5 sm:px-8 pt-20 md:pt-28 pb-16">
+  <div class="grid md:grid-cols-12 gap-6 mb-12 md:mb-16">
+    <h2 class="md:col-span-5 font-kop text-4xl sm:text-5xl tracking-tight leading-[1.05]">Aan de wand in het atelier</h2>
+    <div class="md:col-span-6 md:col-start-7 text-lg leading-relaxed text-ijssel/80 space-y-4">
+      <p>De skyline van Zutphen en Deventer, het IJsselfront in landschappen die niet bestaan, koeien, kippen en vogels. Ik werk met acryl, collage, muzieknoten en krantenletters, op doek, linnen, papier en hout.</p>
+      <p class="text-base text-ijssel/70">Wat beschikbaar is wisselt. Ziet u iets wat u raakt, of wilt u iets vergelijkbaars? Bel of mail gerust. Bij een opdracht bent u altijd vrij om ervan af te zien.</p>
+    </div>
+  </div>
+
+  <div class="space-y-6 md:space-y-8">
+    <div class="wand-rij">
+      <figure style="--ar:3.16">
+        <img src="assets/site-11.jpg" alt="Brede skyline van Zutphen aan de IJssel in zacht oranje, roze en blauw" class="lijst w-full h-auto" loading="lazy">
+        <figcaption class="mt-3 text-sm text-leisteen">Zutphen aan de IJssel</figcaption>
+      </figure>
+      <figure style="--ar:1.01">
+        <img src="assets/site-13.jpg" alt="De Walburgiskerk en daken van Zutphen in oker tegen een donkerblauwe nachtlucht, geschilderd op hout" class="lijst w-full h-auto" loading="lazy">
+        <figcaption class="mt-3 text-sm text-leisteen">Zutphen bij avond, op hout</figcaption>
+      </figure>
+    </div>
+    <div class="wand-rij">
+      <figure style="--ar:2.12">
+        <img src="assets/site-07.jpg" alt="Een koe en een kalf van achteren gezien, tegen een achtergrond van groen, geel en muzieknoten" class="lijst w-full h-auto" loading="lazy">
+        <figcaption class="mt-3 text-sm text-leisteen">Koe en kalf, met muzieknoten</figcaption>
+      </figure>
+      <figure style="--ar:1.61">
+        <img src="assets/site-08.jpg" alt="Lichte skyline van Zutphen met torens in grijsblauw, oker en groen" class="lijst w-full h-auto" loading="lazy">
+        <figcaption class="mt-3 text-sm text-leisteen">Skyline Zutphen</figcaption>
+      </figure>
+    </div>
+    <div class="wand-rij">
+      <figure style="--ar:1">
+        <img src="assets/site-05.jpg" alt="Abstract schilderij in geel, oranje en turquoise met het silhouet van een kat" class="lijst w-full h-auto" loading="lazy">
+        <figcaption class="mt-3 text-sm text-leisteen">Kat, abstract</figcaption>
+      </figure>
+      <figure style="--ar:2.58">
+        <img src="assets/site-06.jpg" alt="Zonsondergang boven het water met een oever en drijfhout" class="lijst w-full h-auto" loading="lazy">
+        <figcaption class="mt-3 text-sm text-leisteen">Avondlicht aan het water</figcaption>
+      </figure>
+    </div>
+    <div class="wand-rij">
+      <figure style="--ar:3.09">
+        <img src="assets/site-10.jpg" alt="Skyline met kerktorens in geel en zwarte lijn tegen een grijze lucht" class="lijst w-full h-auto" loading="lazy">
+        <figcaption class="mt-3 text-sm text-leisteen">Stad in geel en grijs</figcaption>
+      </figure>
+      <figure style="--ar:1.6">
+        <img src="assets/site-15.jpg" alt="Skyline geborduurd met draad op rood papier, met collage van oud handschrift" class="lijst w-full h-auto" loading="lazy">
+        <figcaption class="mt-3 text-sm text-leisteen">Skyline met draad en collage</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- KLEIN WERK -->
+<section class="bg-doek">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+    <div class="md:col-span-7 relative">
+      <img src="assets/site-14.jpg" alt="Acht kleine schilderijtjes van roodborstjes op houten blokjes, op een rij op een tuinbank" class="w-full h-auto rounded-[4px]" loading="lazy">
+      <img src="assets/site-12.jpg" alt="Roodborstje geschilderd op bladmuziek, gesigneerd ddS '25" class="lijst absolute -bottom-10 right-4 md:-right-8 w-32 sm:w-44 md:w-52 h-auto border-[6px] border-white rotate-3" loading="lazy">
+    </div>
+    <div class="md:col-span-5 mt-8 md:mt-0">
+      <h2 class="font-kop text-4xl sm:text-5xl tracking-tight leading-[1.05]">Klein werk, groot plezier</h2>
+      <p class="mt-6 text-lg leading-relaxed text-ijssel/80">Roodborstjes op kleine vierkante doekjes van 10 x 10 cm en op stukjes hout. Klein, dus ook voor kleine bedragen te koop. Een mooi cadeau, of het begin van een eigen verzameling.</p>
+      <p class="mt-4 leading-relaxed text-ijssel/70">In het atelier staan ook de krantenkippen: vrolijke beeldjes van ongeveer 20 cm hoog, gemaakt van kranten en muzieknoten, in allerlei kleuren.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OVER DORINE -->
+<section id="over" class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-10 md:gap-14">
+    <div class="md:col-span-5 order-2 md:order-1">
+      <img src="assets/site-04.jpg" alt="Hand van Dorine met een fijn penseel aan een schilderij van de skyline van Zutphen" class="w-full aspect-[4/5] object-cover object-[60%_center] rounded-[4px]" loading="lazy">
+      <blockquote class="mt-8 border-l-2 border-oker pl-5">
+        <p class="font-kop text-xl leading-snug">"De koe is voor mij een soort poort geworden, waarachter heel veel verschillende mogelijkheden van technieken liggen."</p>
+      </blockquote>
+    </div>
+    <div class="md:col-span-7 order-1 md:order-2">
+      <h2 class="font-kop text-4xl sm:text-5xl tracking-tight leading-[1.05]">Ik ben Dorine</h2>
+      <div class="mt-6 text-lg leading-relaxed text-ijssel/80 space-y-5 max-w-2xl">
+        <p>Een bevlogen kunstenaar met een hart voor dieren en voor Zutphen. Ik begon in Amsterdam met aquarel en modeltekenen, en ging wekelijks met een schildervriend naar Artis om de dieren te tekenen. Na een paar jaar durfde ik me aan te melden bij de Amsterdamse Akademie voor beeldende vorming.</p>
+        <p>Elke dag nieuwe dingen proberen, dat vind ik het mooiste wat er is. Eerst werken met collage, of de ondergrond een andere textuur geven. Zo wordt elk doek een klein mysterie: wat komt er tevoorschijn? Het resultaat is soms krachtig met harde kleuren, soms zacht in pasteltinten.</p>
+      </div>
+
+      <ol class="mt-12 border-t border-ijssel/15">
+        <li class="grid grid-cols-[5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4 py-5 border-b border-ijssel/15">
+          <span class="font-kop text-2xl text-roodborst">1980</span>
+          <span class="leading-relaxed text-ijssel/80">Begonnen met schilderen in Amsterdam. Daarna in het oosten van het land opdrachten voor aquarellen van huizen, bloemen en bruidsboeketten.</span>
+        </li>
+        <li class="grid grid-cols-[5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4 py-5 border-b border-ijssel/15">
+          <span class="font-kop text-2xl text-roodborst">1995</span>
+          <span class="leading-relaxed text-ijssel/80">Na jaren schilderen bij Jan Slijkhuis in Deventer en Atelier Sabi in Eefde: lid van een kunstenaarscollectief in de Walstraat in Deventer.</span>
+        </li>
+        <li class="grid grid-cols-[5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4 py-5 border-b border-ijssel/15">
+          <span class="font-kop text-2xl text-roodborst">2000</span>
+          <span class="leading-relaxed text-ijssel/80">De vraag naar mijn werk groeide hard. Eigen atelier aan de Spittaalstraat 92 in Zutphen.</span>
+        </li>
+        <li class="grid grid-cols-[5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4 py-5 border-b border-ijssel/15">
+          <span class="font-kop text-2xl text-roodborst">2008</span>
+          <span class="leading-relaxed text-ijssel/80">Begonnen met huur/koop, zodat u een schilderij rustig in maandelijkse bedragen kunt afbetalen.</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- HUUR / KOOP -->
+<section class="bg-ijssel text-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 md:py-20 grid md:grid-cols-12 gap-8 items-center">
+    <h2 class="md:col-span-5 font-kop text-3xl sm:text-4xl tracking-tight leading-tight">Een schilderij aan uw muur, zonder groot bedrag in één keer</h2>
+    <div class="md:col-span-6 md:col-start-7">
+      <p class="text-lg leading-relaxed text-white/80">Met huur/koop betaalt u een schilderij op een prettige manier maandelijks af. Zo hangt het werk al thuis terwijl u het afbetaalt. Bel of mail mij, dan bespreken we samen wat past.</p>
+      <div class="mt-6 flex flex-wrap gap-x-7 gap-y-3 font-semibold">
+        <a href="tel:+31624611518" class="underline decoration-oker decoration-2 underline-offset-[6px] hover:text-oker">06 24 61 15 18</a>
+        <a href="mailto:info@dorinedesoet.nl?subject=Huur%2Fkoop%20schilderij" class="underline decoration-oker decoration-2 underline-offset-[6px] hover:text-oker">info@dorinedesoet.nl</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOP -->
+<section id="workshop" class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+    <div class="md:col-span-6">
+      <h2 class="font-kop text-4xl sm:text-5xl tracking-tight leading-[1.05]">Eén middag schilderen, één schilderij mee naar huis</h2>
+      <p class="mt-6 text-lg leading-relaxed text-ijssel/80 max-w-xl">In mijn workshop abstract en/of figuratief schilderen komen veel technieken aan bod. Ik werk met één persoon tegelijk, zodat we echt samen aan de slag gaan. U loopt misschien tegen een blokkade aan, en die overwinnen we samen. Daar kunt u thuis nog lang op teruggrijpen.</p>
+
+      <ol class="mt-10 space-y-6">
+        <li class="flex gap-5">
+          <span class="font-kop text-3xl leading-none text-roodborst w-8 shrink-0">1</span>
+          <div><h3 class="font-semibold text-lg">We kiezen samen een datum</h3><p class="text-ijssel/75 leading-relaxed">Bel of mail, dan plannen we een middag die u goed uitkomt.</p></div>
+        </li>
+        <li class="flex gap-5">
+          <span class="font-kop text-3xl leading-none text-roodborst w-8 shrink-0">2</span>
+          <div><h3 class="font-semibold text-lg">Van 14.00 tot 17.00 uur in het atelier</h3><p class="text-ijssel/75 leading-relaxed">Drie uur schilderen aan de hand van een stappenplan dat ik zelf heb ontwikkeld.</p></div>
+        </li>
+        <li class="flex gap-5">
+          <span class="font-kop text-3xl leading-none text-roodborst w-8 shrink-0">3</span>
+          <div><h3 class="font-semibold text-lg">U gaat naar huis met een schilderij</h3><p class="text-ijssel/75 leading-relaxed">Klaar om op te hangen. Het stappenplan krijgt u op papier mee, zodat u thuis verder kunt.</p></div>
+        </li>
+      </ol>
+
+      <a href="mailto:info@dorinedesoet.nl?subject=Workshop%20schilderen" class="knop mt-10 inline-flex items-center rounded-full border-2 border-ijssel px-6 py-3 font-semibold hover:bg-ijssel hover:text-white">Workshop aanvragen per mail</a>
+    </div>
+    <div class="md:col-span-6 space-y-6">
+      <img src="assets/google-04.jpg" alt="Het lichte atelier met een grote houten werktafel, verschillende stoelen en schilderijen aan de muur" class="w-full h-auto rounded-[4px]" loading="lazy">
+      <figure class="grid grid-cols-5 gap-5 items-end">
+        <img src="assets/site-02.jpg" alt="Glazen tussendeur beschilderd met de bladeren van een rode beuk" class="col-span-2 w-full h-auto rounded-[4px]" loading="lazy">
+        <figcaption class="col-span-3 text-ijssel/75 leading-relaxed pb-1"><span class="block font-kop text-xl text-ijssel mb-1">Ook in opdracht</span>Zoals deze glazen tussendeur, beschilderd met glasverf naar een rode beuk. Heeft u een idee? Vertel het mij.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- BEZOEK -->
+<section id="bezoek" class="bg-doek">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 md:gap-14">
+    <div class="md:col-span-5">
+      <h2 class="font-kop text-4xl sm:text-5xl tracking-tight leading-[1.05]">Kom langs in het atelier</h2>
+      <img src="assets/google-03.jpg" alt="De gevel van het atelier op de hoek van de Spittaalstraat in Zutphen, met grote etalageramen" class="mt-8 w-full h-auto rounded-[4px]" loading="lazy">
+    </div>
+    <div class="md:col-span-7 md:pt-3">
+      <dl class="grid sm:grid-cols-2 gap-x-10 gap-y-8 text-lg">
+        <div>
+          <dt class="text-sm font-semibold text-leisteen mb-1">Adres</dt>
+          <dd class="leading-relaxed">Spittaalstraat 92<br>7201 EG Zutphen<br><a href="https://www.google.com/maps/search/?api=1&query=Spittaalstraat+92+7201+EG+Zutphen" class="text-base font-semibold underline decoration-oker decoration-2 underline-offset-4 hover:text-roodborst">Route plannen</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm font-semibold text-leisteen mb-1">Open</dt>
+          <dd class="leading-relaxed">Donderdag 13.00 tot 17.00 uur<br>Andere dagen op afspraak</dd>
+        </div>
+        <div>
+          <dt class="text-sm font-semibold text-leisteen mb-1">Telefoon</dt>
+          <dd><a href="tel:+31624611518" class="hover:text-roodborst">06 24 61 15 18</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm font-semibold text-leisteen mb-1">E-mail</dt>
+          <dd><a href="mailto:info@dorinedesoet.nl" class="hover:text-roodborst">info@dorinedesoet.nl</a></dd>
+        </div>
+      </dl>
+
+      <form action="mailto:info@dorinedesoet.nl" method="post" enctype="text/plain" class="mt-12 bg-gesso rounded-[6px] p-6 sm:p-8 space-y-5">
+        <h3 class="font-kop text-2xl">Stuur een bericht</h3>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block"><span class="text-sm font-semibold">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-1 w-full rounded-[4px] border border-ijssel/20 bg-white px-4 py-3 focus:border-ijssel focus:outline-none"></label>
+          <label class="block"><span class="text-sm font-semibold">E-mail of telefoon</span>
+            <input name="contact" required class="mt-1 w-full rounded-[4px] border border-ijssel/20 bg-white px-4 py-3 focus:border-ijssel focus:outline-none"></label>
+        </div>
+        <label class="block"><span class="text-sm font-semibold">Waar gaat het over?</span>
+          <select name="onderwerp" class="mt-1 w-full rounded-[4px] border border-ijssel/20 bg-white px-4 py-3 focus:border-ijssel focus:outline-none">
+            <option>Een schilderij kopen of huren</option>
+            <option>Workshop schilderen</option>
+            <option>Een opdracht</option>
+            <option>Een bezoek aan het atelier</option>
+            <option>Iets anders</option>
+          </select></label>
+        <label class="block"><span class="text-sm font-semibold">Bericht</span>
+          <textarea name="bericht" rows="4" class="mt-1 w-full rounded-[4px] border border-ijssel/20 bg-white px-4 py-3 focus:border-ijssel focus:outline-none"></textarea></label>
+        <button type="submit" class="knop rounded-full bg-ijssel hover:bg-leisteen text-white font-semibold px-7 py-3">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-ijssel text-white/75 pb-24 md:pb-0">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+    <div>
+      <p class="font-kop text-2xl text-white">Dorine de Soet<span class="text-oker">.</span></p>
+      <p class="mt-2">Atelier aan de Spittaalstraat 92, Zutphen</p>
+    </div>
+    <p class="text-sm">&copy; Atelier Dorine de Soet. Demo door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>.</p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-gradient-to-t from-gesso via-gesso/95 to-transparent">
+  <a href="tel:+31624611518" class="flex items-center justify-center gap-3 rounded-full bg-roodborst text-white font-semibold text-lg py-4 shadow-[0_10px_24px_-10px_rgba(204,90,30,.9)]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel Dorine: 06 24 61 15 18
+  </a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  (function () {
+    var balk = document.getElementById('belbalk');
+    var hero = document.getElementById('top');
+    if (!('IntersectionObserver' in window)) return;
+    balk.classList.add('weg');
+    new IntersectionObserver(function (e) {
+      balk.classList.toggle('weg', e[0].isIntersecting);
+    }, { threshold: 0.15 }).observe(hero);
+  })();
+</script>
+</body>
+</html>
