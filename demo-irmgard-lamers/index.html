@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Irmgard Lamers, portretschilderes in Zutphen</title>
+<meta name="description" content="Portretten in opdracht, schilderijen, tekeningen en schilderles. Het atelier van Irmgard Lamers aan de IJsselkade in Zutphen.">
+<meta property="og:title" content="Irmgard Lamers, portretschilderes in Zutphen">
+<meta property="og:image" content="assets/site-03.jpg">
+<link rel="icon" href="assets/logo-oud.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          omber: '#2E261D', omberdiep: '#251E17', omberlicht: '#CDBFA6',
+          linnen: '#E7E1D5', inkt: '#2A231B', goud: '#8C7443', goudknop: '#7A6338', goudlicht: '#C9AB72', papier: '#F3F0EA'
+        },
+        fontFamily: {
+          display: ['"Libre Caslon Display"', 'Georgia', 'serif'],
+          body: ['Karla', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 4px 4px; }
+  /* schilderij aan de wand: dunne lijst met schaduw in de kleur van de wand */
+  .lijst { padding: 6px; background: #1C1611; box-shadow: 0 1px 0 rgba(201,171,114,.25) inset, 0 24px 40px -18px rgba(10,6,2,.85); }
+  .lijst img { display:block; width:100%; height:100%; object-fit:cover; }
+  .passe { padding: 14px; background: #fbf9f5; box-shadow: 0 18px 34px -20px rgba(60,45,25,.45); }
+  .wand { background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,171,114,.10), transparent 70%),
+      #2E261D; }
+  .korrel::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.07;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #C9AB72; outline-offset: 3px; }
+  /* één entree-moment: de hero-boog onthult zich als JS de class zet */
+  .js .onthul { animation: onthul 1.1s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes onthul { from { clip-path: inset(100% 0 0 0 round 999px 999px 4px 4px); } to { clip-path: inset(0 0 0 0 round 999px 999px 4px 4px); } }
+  .js .belbalk { transform: translateY(110%); transition: transform .3s ease; }
+  .js.voorbij .belbalk { transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .onthul { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-linnen text-inkt font-body">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-papier focus:p-2 z-50">Naar de inhoud</a>
+
+<div class="bg-inkt text-omberlicht text-[13px] text-center py-2 px-4">
+  Demo voor Irmgard Lamers, gemaakt door <a href="https://hagenweb.nl" class="text-goudlicht underline underline-offset-2 hover:text-papier">Hagenweb</a>
+</div>
+
+<header class="bg-linnen">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-4 md:py-5 flex items-center justify-between gap-6">
+    <a href="#" class="shrink-0" aria-label="Irmgard Lamers, schilderes, naar boven">
+      <img src="assets/site-10.png" alt="Irmgard Lamers, schilderes" class="h-11 md:h-14 w-auto">
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 text-[15px]">
+      <a href="#portretten" class="hover:text-goud transition-colors">Portretten</a>
+      <a href="#schilderijen" class="hover:text-goud transition-colors">Schilderijen</a>
+      <a href="#tekeningen" class="hover:text-goud transition-colors">Tekeningen</a>
+      <a href="#atelier" class="hover:text-goud transition-colors">Lessen en atelier</a>
+      <a href="tel:+31613036197" class="font-semibold text-goudknop hover:text-inkt transition-colors">06 13 03 61 97</a>
+    </nav>
+    <a href="tel:+31613036197" class="lg:hidden text-sm font-semibold text-goudknop">06 13 03 61 97</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="wand korrel relative overflow-hidden text-papier">
+  <div class="relative max-w-[1320px] mx-auto px-5 md:px-10 pt-10 pb-0 md:py-20 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 lg:col-span-6 relative z-10">
+      <p class="text-goudlicht text-[15px] md:text-base mb-4 md:mb-6">Portretschilderes in Zutphen</p>
+      <h1 class="font-display text-[44px] leading-[1.02] md:text-[76px] lg:text-[92px] md:leading-[0.98] tracking-[-0.015em]">Met hart en ziel geschilderd.</h1>
+      <p class="mt-6 md:mt-8 text-[17px] md:text-lg leading-relaxed text-omberlicht max-w-[30rem]">
+        In mijn atelier aan de IJsselkade schilder en teken ik portretten in opdracht, stillevens en tekeningen. Een portret van iemand die u dierbaar is? Bel me gerust.
+      </p>
+      <div class="mt-8 md:mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a href="tel:+31613036197" class="knop inline-flex items-center gap-3 bg-goudknop hover:bg-goud text-white font-semibold text-lg px-7 py-4 rounded-sm">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel Irmgard
+        </a>
+        <a href="mailto:info@irmgardlamers.nl?subject=Portret%20in%20opdracht" class="text-papier underline decoration-goudlicht underline-offset-[6px] hover:text-goudlicht">Of mail over een portret</a>
+      </div>
+    </div>
+    <div class="md:col-span-6 lg:col-span-5 lg:col-start-8 relative">
+      <div class="onthul boog overflow-hidden mx-auto w-[82%] md:w-full max-w-[460px] aspect-[3/4] translate-y-6 md:translate-y-0 shadow-[0_40px_80px_-30px_rgba(0,0,0,.8)]">
+        <img src="assets/site-03.jpg" alt="Olieverfportret van een vrouw met lang blond haar voor een gouden achtergrond, door Irmgard Lamers" class="w-full h-full object-cover object-top">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SALONWAND PORTRETTEN -->
+<section id="portretten" class="wand korrel relative text-papier pt-24 md:pt-28 pb-24 md:pb-32 scroll-mt-4">
+  <div class="relative max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="grid md:grid-cols-12 gap-8 mb-14 md:mb-20 items-end">
+      <h2 class="md:col-span-6 font-display text-[38px] md:text-[56px] leading-[1.05]">Portretten in opdracht</h2>
+      <div class="md:col-span-5 md:col-start-8 text-omberlicht text-[17px] leading-relaxed">
+        <p>Uw kind, kleinkind, partner of ouder, geschilderd of getekend. Ik werk met hart en ziel aan elk portret, tot het echt de persoon is die u kent. Vertel me wat u voor ogen heeft.</p>
+        <a href="tel:+31613036197" class="inline-block mt-5 text-goudlicht font-semibold underline underline-offset-[6px] hover:text-papier">Bespreek uw portret: 06 13 03 61 97</a>
+      </div>
+    </div>
+
+    <!-- de wand: wisselende formaten, zoals schilderijen in een zaal hangen -->
+    <div class="grid grid-cols-2 gap-4 md:flex md:gap-8 md:items-start">
+      <div class="contents md:flex md:flex-col md:gap-8 md:w-[40%]">
+        <figure class="lijst order-1 md:order-none col-span-2 aspect-[15/17]">
+          <img src="assets/site-01.jpg" alt="Olieverfportret van een jonge vrouw in een bloes met roze en oranje motief">
+        </figure>
+        <figure class="lijst order-2 md:order-none md:w-[78%] md:ml-auto aspect-[15/17]">
+          <img src="assets/site-15.png" alt="Portret van een grootmoeder met twee kleinkinderen die samen lezen">
+        </figure>
+      </div>
+      <div class="contents md:flex md:flex-col md:gap-8 md:w-[33%] md:mt-28">
+        <figure class="lijst order-3 md:order-none aspect-[15/17]">
+          <img src="assets/site-02.jpg" alt="Olieverfportret van een oudere man met blauw vest">
+        </figure>
+        <figure class="lijst order-4 md:order-none col-span-2 aspect-[1000/842]">
+          <img src="assets/site-11.jpg" alt="Olieverfportret van een klein meisje met wit blond haar in een paarse trui">
+        </figure>
+      </div>
+      <div class="contents md:flex md:flex-col md:gap-8 md:w-[27%] md:mt-8">
+        <figure class="lijst order-5 md:order-none aspect-[15/17]">
+          <img src="assets/site-12.jpg" alt="Olieverfportret van een jongen in een donkere hoodie">
+        </figure>
+        <figure class="lijst order-6 md:order-none aspect-[15/17]">
+          <img src="assets/site-16.png" alt="Dubbelportret van een vrouw en een man voor een wolkenlucht">
+        </figure>
+        <div class="order-7 md:order-none col-span-2 mt-8 md:mt-6">
+          <p class="font-display text-[28px] md:text-[30px] leading-snug text-papier">Een portret blijft. Het hangt er nog als de kinderen groot zijn.</p>
+          <p class="mt-4 text-omberlicht">Ik maak portretten in olieverf of als tekening. Bel of mail, dan bespreken we samen de mogelijkheden.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STERREN OP HET DOEK -->
+<section class="bg-linnen pt-24 md:pt-32 pb-20 md:pb-24">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-8 items-start">
+    <h2 class="md:col-span-5 font-display text-[44px] md:text-[72px] leading-[1] tracking-[-0.01em]">Sterren op het doek</h2>
+    <div class="md:col-span-6 md:col-start-7 md:pt-4 border-l-2 border-goud pl-6 md:pl-8">
+      <p class="text-[19px] md:text-[21px] leading-relaxed">
+        Bij 'Sterren op het doek', met René Froger en Özcan Akyol, werd ik uitgenodigd om René Froger te portretteren. Het begon met een voorstudie in potlood.
+      </p>
+      <p class="mt-4 text-[17px] leading-relaxed text-inkt/75">Radio Gelderland interviewde me over mijn deelname.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCHILDERIJEN -->
+<section id="schilderijen" class="bg-linnen pb-24 md:pb-36 scroll-mt-4">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="border-t border-inkt/15 pt-16 md:pt-24 grid md:grid-cols-12 gap-8">
+      <div class="md:col-span-4">
+        <h2 class="font-display text-[38px] md:text-[54px] leading-[1.05]">Schilderijen</h2>
+        <p class="mt-6 text-[17px] leading-relaxed max-w-[26rem]">Stillevens van alledaagse dingen: een paprika, een tulp, een citroen met een atalanta erop. Een deel van mijn werk is te koop. Vraag gerust welke schilderijen beschikbaar zijn.</p>
+        <a href="mailto:info@irmgardlamers.nl?subject=Schilderij%20te%20koop" class="inline-block mt-6 font-semibold text-goudknop underline underline-offset-[6px] hover:text-inkt">Vraag naar werk dat te koop is</a>
+      </div>
+      <div class="md:col-span-8 grid grid-cols-2 md:grid-cols-8 gap-4 md:gap-8 items-center">
+        <figure class="passe col-span-2 md:col-span-5">
+          <img src="assets/site-06.jpg" alt="Stilleven van een citroen met een atalanta-vlinder" class="w-full aspect-[15/17] object-cover">
+        </figure>
+        <div class="contents md:flex md:flex-col md:gap-8 md:col-span-3">
+          <figure class="passe">
+            <img src="assets/site-05.jpg" alt="Stilleven van een papegaaitulp boven een oranje vaas" class="w-full aspect-[15/17] object-cover">
+          </figure>
+          <figure class="passe">
+            <img src="assets/site-04.jpg" alt="Stilleven van een rode paprika op een gouden lijst" class="w-full aspect-[15/17] object-cover">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEKENINGEN -->
+<section id="tekeningen" class="bg-papier py-24 md:py-32 scroll-mt-4">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
+      <h2 class="font-display text-[38px] md:text-[54px] leading-[1.05]">Tekeningen</h2>
+      <p class="text-[17px] leading-relaxed max-w-[30rem]">Met alleen potlood en papier: zachte lijnen, een lach, een pluk haar. Een getekend portret van een baby of kleinkind is een cadeau dat blijft.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-10 items-end">
+      <img src="assets/site-07.jpg" alt="Potloodtekening van een lachende baby met warrig haar" class="w-full aspect-[15/17] object-cover">
+      <img src="assets/site-08.jpg" alt="Potloodtekening van een baby in een rompertje met knoopje" class="w-full aspect-[15/17] object-cover md:-translate-y-10">
+      <img src="assets/site-09.png" alt="Potloodtekening van een jonge vrouw met lang haar" class="col-span-2 md:col-span-1 w-full aspect-[15/17] object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- ATELIER, LESSEN, CONTACT -->
+<section id="atelier" class="wand korrel relative text-papier py-24 md:py-32 scroll-mt-4">
+  <div class="relative max-w-[1320px] mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-14 md:gap-8">
+    <div class="md:col-span-6">
+      <h2 class="font-display text-[38px] md:text-[54px] leading-[1.05]">Een atelier aan de IJssel</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-omberlicht max-w-[32rem]">
+        Mijn atelier is een paradijselijke plek, waar ik met hart en ziel werk aan tekeningen, schilderijen en portretten. Het ligt in een karakteristiek pand, een rijksmonument aan de IJsselkade in de Hanzestad Zutphen.
+      </p>
+      <div class="mt-12 border-l-2 border-goudlicht pl-6 max-w-[32rem]">
+        <h3 class="font-display text-[28px] leading-tight">Zelf leren schilderen</h3>
+        <p class="mt-3 text-omberlicht leading-relaxed">Ik geef ook schilderlessen. Wilt u weten wat er mogelijk is? Bel of mail me, dan vertel ik er graag meer over.</p>
+      </div>
+
+      <dl class="mt-14 grid sm:grid-cols-2 gap-8 text-[17px]">
+        <div>
+          <dt class="text-goudlicht text-sm mb-1">Atelier</dt>
+          <dd>IJsselkade 15<br>7201 HC Zutphen</dd>
+        </div>
+        <div>
+          <dt class="text-goudlicht text-sm mb-1">Bellen of mailen</dt>
+          <dd><a href="tel:+31613036197" class="hover:text-goudlicht">06 13 03 61 97</a><br><a href="mailto:info@irmgardlamers.nl" class="hover:text-goudlicht break-all">info@irmgardlamers.nl</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="md:col-span-5 md:col-start-8">
+      <form action="mailto:info@irmgardlamers.nl" method="post" enctype="text/plain" class="bg-papier text-inkt p-7 md:p-10 rounded-sm shadow-[0_30px_60px_-30px_rgba(0,0,0,.7)]">
+        <h3 class="font-display text-[30px] leading-tight">Stuur Irmgard een bericht</h3>
+        <p class="mt-2 text-inkt/70">Over een portret, een schilderij of les.</p>
+        <label class="block mt-7 text-sm font-semibold" for="naam">Naam</label>
+        <input id="naam" name="naam" required autocomplete="name" class="mt-2 w-full bg-white border border-inkt/20 rounded-sm px-4 py-3 focus:border-goud outline-none">
+        <label class="block mt-5 text-sm font-semibold" for="mail">E-mailadres of telefoon</label>
+        <input id="mail" name="contact" required class="mt-2 w-full bg-white border border-inkt/20 rounded-sm px-4 py-3 focus:border-goud outline-none">
+        <label class="block mt-5 text-sm font-semibold" for="bericht">Bericht</label>
+        <textarea id="bericht" name="bericht" rows="4" class="mt-2 w-full bg-white border border-inkt/20 rounded-sm px-4 py-3 focus:border-goud outline-none" placeholder="Bijvoorbeeld: ik wil graag een portret laten maken van mijn kleindochter."></textarea>
+        <button type="submit" class="knop mt-7 w-full bg-goudknop hover:bg-goud text-white font-semibold text-lg py-4 rounded-sm">Verstuur bericht</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-omberdiep text-omberlicht text-sm pb-24 md:pb-0">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+    <p>© 2026 Irmgard Lamers, schilderes. IJsselkade 15, 7201 HC Zutphen</p>
+    <p><a href="tel:+31613036197" class="hover:text-papier">06 13 03 61 97</a> <span class="mx-2 text-goud">/</span> <a href="mailto:info@irmgardlamers.nl" class="hover:text-papier">info@irmgardlamers.nl</a></p>
+  </div>
+</footer>
+
+<!-- mobiel: belknop altijd binnen bereik -->
+<div class="belbalk md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-omberdiep/95 backdrop-blur border-t border-goud/30">
+  <a href="tel:+31613036197" class="knop flex items-center justify-center gap-3 bg-goudknop active:bg-goud text-white font-semibold text-lg py-3.5 rounded-sm">
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel Irmgard
+  </a>
+</div>
+
+<script>
+  addEventListener('scroll', function () {
+    document.documentElement.classList.toggle('voorbij', scrollY > 520);
+  }, { passive: true });
+</script>
+</body>
+</html>
