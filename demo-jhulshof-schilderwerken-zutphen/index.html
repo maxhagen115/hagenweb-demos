@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JH Schilderwerken | Jimmy Hulshof, schilder in Zutphen</title>
+<meta name="description" content="Jimmy Hulshof schildert al ruim 25 jaar binnen en buiten in Zutphen en omgeving. Strak werk, eerlijk kleuradvies en een schoon huis na afloop. Bel 06 48 84 55 73.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800;125,900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          blauw: '#1D3D86',
+          blauwdonker: '#152D66',
+          oranje: '#D9570B',
+          oranjedonker: '#B94808',
+          inkt: '#16203A',
+          grond: '#EEF0EE',
+          lijn: '#D5D9D6',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; color: #16203A; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance; }
+  .kop-xl { font-stretch: 125%; font-weight: 900; letter-spacing: -0.035em; line-height: 0.95; }
+  p { text-wrap: pretty; }
+  .hero-foto { clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%); }
+  @media (min-width: 1024px) {
+    .hero-foto { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+  }
+  .staal-tape { background: repeating-linear-gradient(90deg, rgba(255,255,255,.12) 0 2px, transparent 2px 6px), #E9A13B; }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #D9570B; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  /* Verrijking: alleen als JS de class zet */
+  html.js .hero-foto img { transform: scale(1.06); transition: transform 1.4s cubic-bezier(.2,.7,.2,1); }
+  html.js.geladen .hero-foto img { transform: scale(1); }
+  @media (prefers-reduced-motion: reduce) { html.js .hero-foto img { transform: none; transition: none; } }
+</style>
+<script>document.documentElement.classList.add('js'); addEventListener('load', () => document.documentElement.classList.add('geladen'));</script>
+</head>
+<body class="bg-white pb-20 lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Jhulshof schilderwerken zutphen, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-white border-b border-lijn">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3" aria-label="JH Schilderwerken, naar boven">
+      <span class="font-kop text-[30px] leading-none" style="font-stretch:125%;font-weight:900;letter-spacing:-0.06em"><span class="text-blauw">J</span><span class="text-oranje">H</span></span>
+      <span class="w-px h-8 bg-blauw/30"></span>
+      <span class="leading-tight">
+        <span class="block font-kop text-[15px] text-blauw" style="font-stretch:112%;font-weight:800;letter-spacing:.01em">SCHILDERWERKEN</span>
+        <span class="block text-[12px] text-inkt/60 font-medium">Jimmy Hulshof, Zutphen</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-inkt/80" aria-label="Hoofdmenu">
+      <a href="#werk" class="hover:text-blauw">Werk</a>
+      <a href="#diensten" class="hover:text-blauw">Diensten</a>
+      <a href="#over" class="hover:text-blauw">Over Jimmy</a>
+      <a href="#contact" class="hover:text-blauw">Contact</a>
+    </nav>
+    <a href="tel:+31648845573" class="knop hidden sm:inline-flex items-center gap-2 border-2 border-blauw text-blauw font-semibold rounded-md px-4 py-2 hover:bg-blauw hover:text-white">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      06 48 84 55 73
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative bg-white overflow-hidden">
+  <div class="lg:grid lg:grid-cols-12 lg:min-h-[640px] lg:h-[calc(100dvh-108px)] lg:max-h-[780px]">
+    <div class="lg:col-span-5 flex items-center px-5 sm:px-8 lg:pl-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))] lg:pr-4 pt-9 pb-8 lg:py-16 relative z-10">
+      <div>
+        <p class="text-[15px] font-semibold text-oranje mb-4">Schilder in Zutphen en omgeving</p>
+        <h1 class="kop kop-xl text-blauw text-[44px] sm:text-[60px] lg:text-[clamp(56px,5.6vw,84px)]">Binnen en buiten gewoon goed.</h1>
+        <p class="mt-6 text-[17px] sm:text-lg leading-relaxed text-inkt/80 max-w-[30rem]">Ik ben Jimmy Hulshof. Al ruim 25 jaar schilder ik huizen en panden in Zutphen en omgeving. Strak afgewerkt, netjes opgeruimd en met eerlijk advies over kleur en verf.</p>
+        <div class="mt-8 flex flex-col sm:flex-row lg:flex-col xl:flex-row sm:items-center lg:items-start xl:items-center gap-4 sm:gap-6">
+          <a href="tel:+31648845573" class="knop whitespace-nowrap inline-flex items-center justify-center gap-3 bg-oranje hover:bg-oranjedonker text-white font-bold text-[19px] rounded-lg px-7 py-4 shadow-[0_10px_24px_-10px_rgba(217,87,11,.7)]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+            Bel Jimmy: 06 48 84 55 73
+          </a>
+          <a href="https://wa.me/31648845573" class="whitespace-nowrap text-blauw font-semibold underline underline-offset-4 decoration-2 decoration-blauw/30 hover:decoration-blauw self-start sm:self-auto">of stuur een WhatsApp</a>
+        </div>
+        <p class="mt-8 flex items-center gap-2 text-[15px] text-inkt/70">
+          <span class="flex text-oranje" aria-hidden="true">
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg>
+          </span>
+          <span><strong class="text-inkt font-semibold">4,8</strong> uit 18 Google-reviews</span>
+        </p>
+      </div>
+    </div>
+    <div class="lg:col-span-7 relative h-[360px] sm:h-[460px] lg:h-full">
+      <div class="hero-foto absolute inset-0 overflow-hidden bg-grond">
+        <img src="assets/site-01.jpg" alt="Jimmy Hulshof schildert de pui van een zaak in Zutphen, naast een rolsteiger" class="w-full h-full object-cover object-[58%_40%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werk: kleurenwaaier -->
+<section id="werk" class="bg-grond py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="lg:flex lg:items-end lg:justify-between gap-10 mb-12">
+      <h2 class="kop text-blauw text-[34px] sm:text-[46px] max-w-xl">Strak werk, in elke kleur.</h2>
+      <p class="mt-4 lg:mt-0 text-[17px] leading-relaxed text-inkt/75 max-w-md">Van één wand in de keuken tot een complete gevel. Een greep uit recent werk, met de kleur die er op de muur, deur of kozijn kwam.</p>
+    </div>
+
+    <div class="werk grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+      <figure class="flex flex-col row-span-2 bg-white rounded-sm shadow-[0_1px_0_#D5D9D6,0_18px_30px_-22px_rgba(22,32,58,.35)]">
+        <img src="assets/google-06.jpg" alt="Voordeur in hoogglans donkergroen met crèmekleurig kozijn" class="w-full flex-1 min-h-0 h-full object-cover" loading="lazy">
+        <figcaption class="flex items-stretch">
+          <span class="w-3 sm:w-16 shrink-0" style="background:#0F5A3B"></span>
+          <span class="px-3 py-2 sm:px-4 sm:py-3"><span class="block font-semibold text-[14px] leading-snug sm:text-base">Deur in hoogglans groen</span><span class="hidden sm:block text-sm text-inkt/60">Buiten schilderwerk, deur en kozijn</span></span>
+        </figcaption>
+      </figure>
+      <figure class="flex flex-col bg-white rounded-sm shadow-[0_1px_0_#D5D9D6,0_18px_30px_-22px_rgba(22,32,58,.35)]">
+        <img src="assets/google-05.jpg" alt="Twee wanden in saliegroen geschilderd, met witte deurkozijnen" class="w-full aspect-[4/3] object-cover" loading="lazy">
+        <figcaption class="flex items-stretch">
+          <span class="w-3 sm:w-16 shrink-0" style="background:#6F9B80"></span>
+          <span class="px-3 py-2 sm:px-4 sm:py-3"><span class="block font-semibold text-[14px] leading-snug sm:text-base">Saliegroen in de woonkamer</span><span class="hidden sm:block text-sm text-inkt/60">Binnen schilderwerk, wanden en kozijnen</span></span>
+        </figcaption>
+      </figure>
+      <figure class="flex flex-col bg-white rounded-sm shadow-[0_1px_0_#D5D9D6,0_18px_30px_-22px_rgba(22,32,58,.35)]">
+        <img src="assets/site-07.jpg" alt="Keukenwand achter de kookplaat afgewerkt in een bronzen metaallook" class="w-full aspect-[4/3] object-cover" loading="lazy">
+        <figcaption class="flex items-stretch">
+          <span class="w-3 sm:w-16 shrink-0" style="background:linear-gradient(135deg,#B89668,#8C6A43 60%,#C4A57A)"></span>
+          <span class="px-3 py-2 sm:px-4 sm:py-3"><span class="block font-semibold text-[14px] leading-snug sm:text-base">Metaallook achter het fornuis</span><span class="hidden sm:block text-sm text-inkt/60">Wandafwerking</span></span>
+        </figcaption>
+      </figure>
+      <figure class="flex flex-col bg-white rounded-sm shadow-[0_1px_0_#D5D9D6,0_18px_30px_-22px_rgba(22,32,58,.35)]">
+        <img src="assets/site-14.jpg" alt="Hal en gang in warm oranjerood met witte plinten" class="w-full aspect-[4/3] object-cover" loading="lazy">
+        <figcaption class="flex items-stretch">
+          <span class="w-3 sm:w-16 shrink-0" style="background:#DE5E3E"></span>
+          <span class="px-3 py-2 sm:px-4 sm:py-3"><span class="block font-semibold text-[14px] leading-snug sm:text-base">Warm rood in de hal</span><span class="hidden sm:block text-sm text-inkt/60">Binnen schilderwerk, wanden en plinten</span></span>
+        </figcaption>
+      </figure>
+      <figure class="flex flex-col bg-white rounded-sm shadow-[0_1px_0_#D5D9D6,0_18px_30px_-22px_rgba(22,32,58,.35)]">
+        <img src="assets/google-02.jpg" alt="Slaapkamer met wanden in olijfgroen en licht taupe, vloer afgedekt" class="w-full aspect-[4/3] object-cover" loading="lazy">
+        <figcaption class="flex items-stretch">
+          <span class="w-3 sm:w-16 shrink-0" style="background:#8B8A6E"></span>
+          <span class="px-3 py-2 sm:px-4 sm:py-3"><span class="block font-semibold text-[14px] leading-snug sm:text-base">Olijf en taupe naast elkaar</span><span class="hidden sm:block text-sm text-inkt/60">Binnen schilderwerk, vloer netjes afgedekt</span></span>
+        </figcaption>
+      </figure>
+      <figure class="flex flex-col col-span-2 lg:col-span-1 bg-white rounded-sm shadow-[0_1px_0_#D5D9D6,0_18px_30px_-22px_rgba(22,32,58,.35)]">
+        <img src="assets/site-05.jpg" alt="Twee ramen met zwart geschilderde kozijnen in een lichte ruimte met balken" class="w-full aspect-[2/1] lg:aspect-[4/3] object-cover" loading="lazy">
+        <figcaption class="flex items-stretch">
+          <span class="w-3 sm:w-16 shrink-0" style="background:#23282C"></span>
+          <span class="px-3 py-2 sm:px-4 sm:py-3"><span class="block font-semibold text-[14px] leading-snug sm:text-base">Zwarte kozijnen, witte wanden</span><span class="hidden sm:block text-sm text-inkt/60">Binnen schilderwerk</span></span>
+        </figcaption>
+      </figure>
+      <figure class="flex flex-col col-span-2 bg-white rounded-sm shadow-[0_1px_0_#D5D9D6,0_18px_30px_-22px_rgba(22,32,58,.35)]">
+        <img src="assets/google-07.jpg" alt="Achtergevel met hoge witte kozijnen en openslaande deuren" class="w-full aspect-[2/1] sm:aspect-[8/3] object-cover object-[50%_45%]" loading="lazy">
+        <figcaption class="flex items-stretch">
+          <span class="w-3 sm:w-16 shrink-0 border-r border-lijn" style="background:#F1F0EA"></span>
+          <span class="px-3 py-2 sm:px-4 sm:py-3"><span class="block font-semibold text-[14px] leading-snug sm:text-base">Strak wit aan de achtergevel</span><span class="hidden sm:block text-sm text-inkt/60">Buiten schilderwerk, kozijnen en deuren</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <h2 class="kop text-blauw text-[34px] sm:text-[46px] max-w-2xl">Waarvoor u mij kunt bellen.</h2>
+
+    <!-- Binnen -->
+    <article class="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+      <div class="lg:col-span-6">
+        <img src="assets/site-06.jpg" alt="Woonkamer met donkergroene wanden en een rolsteiger bij het raam" class="w-full aspect-[4/3] object-cover rounded-sm" loading="lazy">
+      </div>
+      <div class="lg:col-span-6 lg:pl-4">
+        <h3 class="kop text-[28px] sm:text-[34px] text-inkt">Binnen schilderwerk</h3>
+        <p class="mt-5 text-[17px] leading-relaxed text-inkt/80 max-w-[34rem]">Matte verf, muurverf, kalkverf of een metaallook: elke verfsoort geeft uw huis een andere uitstraling. Ik adviseer u graag welke verf het beste past, en in welke kleur.</p>
+        <p class="mt-4 text-[17px] leading-relaxed text-inkt/80 max-w-[34rem]">Binnen werk ik met verf op waterbasis. Die droogt snel en geeft weinig tot geen geur af. Ik gebruik professionele verf van Sigma, Van Wijk, Wijzonol of Sikkens.</p>
+        <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[15px] text-inkt/70">
+          <li>Wanden en plafonds</li><li>Deuren en kozijnen</li><li>Trappen</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Buiten -->
+    <article class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+      <div class="lg:col-span-6 lg:order-2">
+        <img src="assets/site-04.jpg" alt="Jimmy schildert een groen kozijn met rode ramen aan een donker houten huis" class="w-full aspect-[4/3] object-cover rounded-sm" loading="lazy">
+      </div>
+      <div class="lg:col-span-6 lg:order-1 lg:pr-4">
+        <h3 class="kop text-[28px] sm:text-[34px] text-inkt">Buiten schilderwerk</h3>
+        <p class="mt-5 text-[17px] leading-relaxed text-inkt/80 max-w-[34rem]">Een goede verflaag beschermt uw kozijnen en deuren tegen regen, vocht en zon. Zo voorkomt u houtrot en blijft de kleur mooi, in plaats van vaal of vergeeld.</p>
+        <p class="mt-4 text-[17px] leading-relaxed text-inkt/80 max-w-[34rem]">Ik schilder kozijnen, deuren, schuttingen en complete gevels. Buiten gebruik ik terpentinehoudende hoogglansverf: die dekt beter dan zijdeglans en gaat het langst mee. En ook in de koude maanden kunt u bij mij terecht.</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- Kleuradvies -->
+  <div class="mt-20 lg:mt-28 bg-blauw text-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <h3 class="kop text-[30px] sm:text-[40px]">Kleuradvies: eerst zien, dan kiezen.</h3>
+        <p class="mt-6 text-[17px] leading-relaxed text-white/85 max-w-[36rem]">De kleur van uw wanden, plafond, deuren, kozijnen of trap bepaalt de sfeer van een kamer. Een kleur kan een ruimte groter, kleiner, hoger of lager laten lijken. Wilt u een vlak eruit laten springen, of een wand juist rustiger maken?</p>
+        <p class="mt-4 text-[17px] leading-relaxed text-white/85 max-w-[36rem]">Ik heb altijd de RAL-waaier bij me. Twijfelt u, dan zet ik een kleurstaal van 30&nbsp;x&nbsp;30&nbsp;cm op uw muur, zodat u direct ziet hoe het wordt.</p>
+        <p class="mt-6 inline-block border-l-4 border-oranje pl-4 text-[17px] font-semibold text-white">Geeft u mij de opdracht, dan rekent u niets voor de kleurstaal.</p>
+      </div>
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="relative w-[240px] sm:w-[300px] aspect-square bg-white p-4 shadow-[0_30px_50px_-20px_rgba(5,15,40,.6)] rotate-[-3deg]">
+          <div class="w-full h-full" style="background:#6F9B80"></div>
+          <span class="staal-tape absolute -top-3 left-6 w-20 h-7 rotate-[-8deg] opacity-90"></span>
+          <span class="staal-tape absolute -bottom-3 right-6 w-20 h-7 rotate-[6deg] opacity-90"></span>
+          <span class="absolute bottom-7 left-8 text-white/90 text-sm font-semibold">30 x 30 cm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <!-- Wandafwerking -->
+    <article class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+      <div class="lg:col-span-6">
+        <img src="assets/site-02.jpg" alt="Jimmy brengt met een kwast een bronzen metaallook aan op een keukenwand" class="w-full aspect-[4/3] object-cover object-right rounded-sm" loading="lazy">
+      </div>
+      <div class="lg:col-span-6 lg:pl-4">
+        <h3 class="kop text-[28px] sm:text-[34px] text-inkt">Wandafwerking</h3>
+        <p class="mt-5 text-[17px] leading-relaxed text-inkt/80 max-w-[34rem]">Naast schilderen verzorg ik ook de afwerking van uw wanden. Met vliesbehang, een behang dat u zelf uitkiest, of een metaallook voor een unieke uitstraling.</p>
+        <p class="mt-4 text-[17px] leading-relaxed text-inkt/80 max-w-[34rem]">Bij nieuwbouw werk ik meestal met renovlies: een alternatief voor stucwerk dat zelfs sterker is en scheuren overbrugt. Handig, want in de eerste jaren trekt er bouwvocht uit de muren en kunnen wanden krimpen. Het vlies schilder ik daarna in de kleur die u wilt.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Over Jimmy -->
+<section id="over" class="bg-grond py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-7 relative">
+      <img src="assets/google-01.jpg" alt="De witte bus van JH Schilderwerken voor een huis met vers geschilderde kozijnen en luiken in Zutphen" class="w-full aspect-[4/3] object-cover rounded-sm" loading="lazy">
+    </div>
+    <div class="lg:col-span-5">
+      <h2 class="kop text-blauw text-[34px] sm:text-[44px]">Eén vaste schilder, die zelf komt.</h2>
+      <p class="mt-6 text-[17px] leading-relaxed text-inkt/80">Mijn naam is Jimmy Hulshof. Al ruim 25 jaar lever ik in Zutphen en omgeving het perfecte plaatje af.</p>
+      <p class="mt-4 text-[17px] leading-relaxed text-inkt/80">Van een enkele wand in de keuken tot een compleet monumentaal pand: als u mij inhuurt, ziet het schilderwerk er strak uit. Binnen en buiten moet het gewoon goed zijn.</p>
+      <a href="tel:+31648845573" class="mt-8 inline-flex items-center gap-2 text-blauw font-semibold underline underline-offset-4 decoration-2 decoration-blauw/30 hover:decoration-blauw">Bel mij voor een afspraak: 06 48 84 55 73</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="lg:flex lg:items-end lg:justify-between mb-12">
+      <h2 class="kop text-blauw text-[34px] sm:text-[46px] max-w-xl">Wat klanten over Jimmy zeggen.</h2>
+
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <blockquote class="md:col-span-2 lg:col-span-1 lg:row-span-2 bg-blauw text-white p-8 sm:p-10 flex flex-col justify-between rounded-sm">
+        <div>
+          <p class="text-[#F08A4B] tracking-[0.15em] text-lg" aria-label="5 van 5 sterren">★★★★★</p>
+          <p class="mt-6 kop text-[30px] sm:text-[38px]" style="line-height:1.08">"Vakman! Denkt mee en laat strak werk en een schoon huis achter"</p>
+        </div>
+        <div>
+          <footer class="mt-8 font-semibold text-white/85">nathalie broer</footer>
+          <p class="mt-10 pt-6 border-t border-white/20 flex items-baseline gap-3"><span class="kop kop-xl text-[52px]">4,8</span><span class="text-white/75 text-[15px]">gemiddeld uit 18 reviews op Google</span></p>
+        </div>
+      </blockquote>
+      <blockquote class="bg-grond p-7 rounded-sm border-l-4 border-blauw/80">
+        <p class="text-oranje tracking-[0.15em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <p class="mt-4 text-[17px] leading-relaxed">"Jimmy heeft samen met zijn collega Joep afgelopen week ons huis geschilderd. Dit is vakkundig en professioneel gedaan. Beide heren werken zorgvuldig en ruimen alles netjes op. Ze denken met klant mee en geven adviezen waar nodig. Ze houden zich aan afspraken en zijn zeer prettig in de omgang. We zijn super tevreden, to…"</p>
+        <footer class="mt-5 font-semibold">Rob Veneman</footer>
+      </blockquote>
+      <blockquote class="bg-grond p-7 rounded-sm border-l-4 border-blauw/80">
+        <p class="text-oranje tracking-[0.15em]" aria-label="4 van 5 sterren">★★★★<span class="text-inkt/20">★</span></p>
+        <p class="mt-4 text-[17px] leading-relaxed">"Jimmy en Robin hebben ons huis van binnen snel en in goed overleg professioneel geschilderd. Ook heeft Jimmy geadviseerd over kleuren en wat er voor het buitenschilderwerk nodig is wat betreft onderhoud en reparaties.<br>Wat ons betreft een aanrader, Ans en Kees."</p>
+        <footer class="mt-5 font-semibold">Ans van Lier</footer>
+      </blockquote>
+      <blockquote class="bg-grond p-7 rounded-sm border-l-4 border-blauw/80">
+        <p class="text-oranje tracking-[0.15em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <p class="mt-4 text-[17px] leading-relaxed">"Jimmy heeft ons huis prachtig in de verf gezet. Hij is vriendelijk, overlegt waar nodig en geeft aan waar rekening mee te houden in de toekomst. Wij zijn tevreden!"</p>
+        <footer class="mt-5 font-semibold">Nienke Bouwer</footer>
+      </blockquote>
+      <blockquote class="bg-grond p-7 rounded-sm border-l-4 border-blauw/80">
+        <p class="text-oranje tracking-[0.15em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <p class="mt-4 text-[17px] leading-relaxed">"Jimmy heeft bij ons naar volle tevredenheid een klus verricht. Hij werkt snel en secuur en helpt ook nog mee de meubels weer op z’n plek te zetten. Reuze bedankt!"</p>
+        <footer class="mt-5 font-semibold">Anton de Ronde</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-blauw text-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-6">
+      <h2 class="kop kop-xl text-[40px] sm:text-[56px]">Zullen we even bellen?</h2>
+      <p class="mt-6 text-[17px] leading-relaxed text-white/85 max-w-md">Vertel wat er geschilderd moet worden, dan kom ik langs om te kijken en mee te denken. Liever appen? Dat kan ook.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="tel:+31648845573" class="knop inline-flex items-center justify-center gap-3 bg-oranje hover:bg-oranjedonker text-white font-bold text-[19px] rounded-lg px-7 py-4">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          06 48 84 55 73
+        </a>
+        <a href="https://wa.me/31648845573" class="knop inline-flex items-center justify-center gap-2 border-2 border-white/40 hover:border-white text-white font-semibold rounded-lg px-6 py-4">WhatsApp sturen</a>
+      </div>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-8 text-[16px]">
+        <div>
+          <dt class="text-white/60 text-sm">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:jhulshofschilder@gmail.com" class="underline underline-offset-4 decoration-white/30 hover:decoration-white">jhulshofschilder@gmail.com</a></dd>
+          <dt class="mt-6 text-white/60 text-sm">Adres</dt>
+          <dd class="mt-1">Monseigneur Nolensstraat 17<br>7204 LK Zutphen</dd>
+        </div>
+        <div>
+          <dt class="text-white/60 text-sm">Openingstijden</dt>
+          <dd class="mt-1">
+            <table class="w-full max-w-[16rem] tabular-nums">
+              <tr><td class="pr-4 py-0.5">Ma t/m vr</td><td>07:00 tot 20:00</td></tr>
+              <tr><td class="pr-4 py-0.5">Zaterdag</td><td>08:00 tot 18:00</td></tr>
+              <tr><td class="pr-4 py-0.5">Zondag</td><td class="text-white/60">Gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="lg:col-span-6 bg-white text-inkt rounded-lg p-7 sm:p-9 self-start" action="mailto:jhulshofschilder@gmail.com" method="post" enctype="text/plain">
+      <h3 class="kop text-[24px] text-blauw">Liever dat ik u terugbel?</h3>
+      <p class="mt-2 text-inkt/70">Laat uw gegevens achter, dan neem ik contact met u op.</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block"><span class="text-sm font-semibold">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1 w-full rounded-md border border-lijn bg-grond/50 px-4 py-3 focus:border-blauw focus:outline-none focus:ring-2 focus:ring-blauw/20"></label>
+        <label class="block"><span class="text-sm font-semibold">Telefoon</span>
+          <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1 w-full rounded-md border border-lijn bg-grond/50 px-4 py-3 focus:border-blauw focus:outline-none focus:ring-2 focus:ring-blauw/20"></label>
+      </div>
+      <label class="block mt-4"><span class="text-sm font-semibold">E-mail</span>
+        <input name="email" type="email" autocomplete="email" class="mt-1 w-full rounded-md border border-lijn bg-grond/50 px-4 py-3 focus:border-blauw focus:outline-none focus:ring-2 focus:ring-blauw/20"></label>
+      <label class="block mt-4"><span class="text-sm font-semibold">Wat wilt u laten schilderen?</span>
+        <textarea name="bericht" rows="4" class="mt-1 w-full rounded-md border border-lijn bg-grond/50 px-4 py-3 focus:border-blauw focus:outline-none focus:ring-2 focus:ring-blauw/20"></textarea></label>
+      <button type="submit" class="knop mt-6 w-full sm:w-auto bg-blauw hover:bg-blauwdonker text-white font-semibold rounded-lg px-7 py-3.5">Verstuur bericht</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-blauwdonker text-white/70 text-sm">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-8 flex flex-col sm:flex-row gap-3 sm:justify-between">
+    <p><span class="text-white font-semibold">JH Schilderwerken</span>, Jimmy Hulshof, Zutphen</p>
+    <p>KvK 87423898</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-lijn px-4 py-3 flex gap-3">
+  <a href="tel:+31648845573" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-oranje text-white font-bold rounded-lg py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+    Bel Jimmy
+  </a>
+  <a href="https://wa.me/31648845573" class="knop inline-flex items-center justify-center border-2 border-blauw text-blauw font-semibold rounded-lg px-5">WhatsApp</a>
+</div>
+
+</body>
+</html>
