@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuijpers Utrecht | Installatietechniek voor zorg, musea en kantoren</title>
+<meta name="description" content="Kuijpers Utrecht, Damzigt 29. Werktuigbouwkunde en elektrotechniek voor ziekenhuizen, musea en kantoren. Bel 030 662 9300, storing: 0900 20 50 800.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#13205A',
+          brand: '#1C3FAA',
+          drop: '#F39A2B',
+          brick: '#9E4A33',
+          paper: '#F3F5F9',
+          mist: '#DCE2EE',
+        },
+        fontFamily: {
+          display: ['Archivo', 'system-ui', 'sans-serif'],
+          sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", system-ui, sans-serif; }
+  .font-display { font-stretch: 118%; }
+  .wide { font-stretch: 125%; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .arch { border-radius: 999px 999px 28px 28px; }
+  @media (min-width: 1024px) { .arch { border-radius: 999px 999px 36px 36px; } }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .btn { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #F39A2B; outline-offset: 3px; border-radius: 6px;
+  }
+  /* Eén laadmoment, alleen als JS draait */
+  .js .intro > * { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .js .intro > *:nth-child(2) { animation-delay: .06s; }
+  .js .intro > *:nth-child(3) { animation-delay: .12s; }
+  .js .intro > *:nth-child(4) { animation-delay: .18s; }
+  .js .intro > *:nth-child(5) { animation-delay: .24s; }
+  .js .hero-img { animation: unveil 1s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes rise { from { transform: translateY(14px); opacity: .001; } }
+  @keyframes unveil { from { transform: scale(.97); opacity: .001; } }
+  @media (prefers-reduced-motion: reduce) {
+    .js .intro > *, .js .hero-img { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body class="bg-paper text-ink antialiased pb-[76px] lg:pb-0">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-ink text-white/85 text-[13px] leading-tight">
+  <div class="max-w-7xl mx-auto px-5 py-2 text-center">
+    Demo voor Kuijpers - Technisch Dienstverlener Utrecht, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-drop">Hagenweb</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="bg-paper/90 backdrop-blur sticky top-0 z-30 border-b border-mist">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-2.5 shrink-0" aria-label="Kuijpers Utrecht, naar boven">
+      <img src="assets/logo-oud.png" alt="" class="h-9 w-9 lg:h-10 lg:w-10 mix-blend-multiply">
+      <span class="flex flex-col"><span class="font-display wide font-extrabold text-brand text-[21px] lg:text-2xl tracking-tight leading-none">Kuijpers</span><span class="font-semibold text-[13px] text-ink/60 mt-1 leading-none">Vestiging Utrecht</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-ink/80" aria-label="Hoofdmenu">
+      <a href="#projecten" class="hover:text-brand">Projecten</a>
+      <a href="#werkwijze" class="hover:text-brand">Werkwijze</a>
+      <a href="#werken-bij" class="hover:text-brand">Werken bij</a>
+      <a href="#contact" class="hover:text-brand">Contact</a>
+    </nav>
+    <a href="tel:+31306629300" class="btn inline-flex items-center gap-2 rounded-full bg-ink text-white px-4 lg:px-5 py-2.5 text-[15px] font-semibold hover:bg-brand">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">030 662 9300</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-10 pb-14 lg:pt-14 lg:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="intro lg:col-span-6 xl:col-span-6 relative z-10">
+      <p class="text-[15px] font-semibold text-brand mb-4 lg:mb-6">Installatietechniek in Utrecht</p>
+      <h1 class="font-display font-black text-[44px] leading-[0.98] sm:text-6xl lg:text-[76px] xl:text-[84px] lg:leading-[0.95] tracking-[-0.025em] text-ink">Waar techniek niet mag haperen.</h1>
+      <p class="mt-6 lg:mt-8 text-lg lg:text-xl leading-relaxed text-ink/75 max-w-[31rem]">Vanaf de Damzigt verzorgen wij werktuigbouwkunde en elektrotechniek voor ziekenhuizen, musea en kantoren. Van het eerste overleg in het bouwteam tot het onderhoud jaren later.</p>
+      <div class="mt-8 lg:mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31306629300" class="btn inline-flex items-center gap-3 rounded-full bg-drop text-ink pl-6 pr-7 py-4 text-lg font-bold shadow-[0_10px_30px_-10px_rgba(243,154,43,.8)] hover:bg-[#f7a940]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 030 662 9300
+        </a>
+        <a href="mailto:info@kuijpers.nl" class="text-[17px] font-semibold text-ink underline decoration-drop decoration-2 underline-offset-[6px] hover:text-brand">of mail info@kuijpers.nl</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px] text-ink/70">
+        <span class="text-drop tracking-[2px]" aria-hidden="true">★★★★</span><span class="text-mist -ml-2" aria-hidden="true">★</span>
+        <span><strong class="text-ink">4,2</strong> op Google, uit 32 reviews</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-6 relative">
+      <div class="hero-img relative mx-auto w-full max-w-[560px] lg:max-w-none">
+        <div class="arch overflow-hidden aspect-[4/4.4] sm:aspect-[4/4] lg:aspect-[4/4.6] bg-mist shadow-[0_40px_80px_-40px_rgba(19,32,90,.55)]">
+          <img src="assets/google-04.jpg" alt="Het pand van Kuijpers aan de Damzigt 29 in Utrecht met het welkomstbord" class="w-full h-full object-cover object-[30%_50%]">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Storing -->
+<section class="bg-ink text-white relative grain overflow-hidden" aria-label="Storing melden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-8 lg:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+    <div>
+      <h2 class="font-display font-extrabold text-2xl lg:text-[28px] tracking-tight">Storing in uw installatie?</h2>
+      <p class="text-white/70 mt-1 text-[17px]">Onze servicedienst is dag en nacht bereikbaar, ook in het weekend.</p>
+    </div>
+    <a href="tel:09002050800" class="btn inline-flex items-center gap-3 self-start md:self-auto rounded-full border-2 border-white/30 px-6 py-3 text-xl font-display font-extrabold tracking-tight hover:border-drop hover:text-drop">
+      0900 20 50 800
+    </a>
+  </div>
+</section>
+
+<!-- Projecten -->
+<section id="projecten" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12">
+      <div class="lg:col-span-5">
+        <h2 class="font-display font-black text-4xl lg:text-[52px] leading-[1] tracking-[-0.02em]">Thuis in gebouwen die altijd moeten draaien.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-ink/75 max-w-md">In Utrecht zitten alle disciplines onder één dak. Onze collega's hebben zich door jarenlange ervaring gespecialiseerd in de zorg en in museale omgevingen: plekken waar klimaat, stroom en veiligheid elke minuut kloppen.</p>
+        <figure class="mt-10 relative">
+          <img src="assets/site-10.jpg" alt="Twee technici van Kuijpers bekijken een noodstroomaggregaat" class="w-full aspect-[4/3] object-cover rounded-[22px]">
+        </figure>
+      </div>
+
+      <div class="lg:col-span-7 lg:pl-6">
+        <ol class="divide-y divide-mist border-y border-mist">
+          <li class="py-8 lg:py-10 grid sm:grid-cols-[6.5rem_1fr] gap-2 sm:gap-6">
+            <p class="text-brick font-semibold text-[15px] pt-1">Zorg</p>
+            <div>
+              <h3 class="font-display font-extrabold text-[22px] lg:text-[27px] tracking-[-0.01em] leading-[1.15] [font-stretch:105%]">Diakonessenhuis, Alexander Monro Ziekenhuis en Radboudumc</h3>
+              <p class="mt-3 text-[17px] leading-relaxed text-ink/75">Vaste opdrachtgevers van onze vestiging. Bijvoorbeeld de nieuwe koeling voor de MRI in het Diakonessenhuis in Utrecht.</p>
+            </div>
+          </li>
+          <li class="py-8 lg:py-10 grid sm:grid-cols-[6.5rem_1fr] gap-2 sm:gap-6">
+            <p class="text-brick font-semibold text-[15px] pt-1">Sport</p>
+            <div>
+              <h3 class="font-display font-extrabold text-[22px] lg:text-[27px] tracking-[-0.01em] leading-[1.15] [font-stretch:105%]">KNVB Campus, Zeist</h3>
+              <p class="mt-3 text-[17px] leading-relaxed text-ink/75">Wij onderhouden alle werktuigbouwkundige en elektrotechnische installaties op de campus. In bouwteams renoveerden we meerdere gebouwen, waaronder #11: het gebouw van de Video Assistant Referee, waar wij alle technische installaties verzorgden.</p>
+            </div>
+          </li>
+          <li class="py-8 lg:py-10 grid sm:grid-cols-[6.5rem_1fr] gap-2 sm:gap-6">
+            <p class="text-brick font-semibold text-[15px] pt-1">Kantoor</p>
+            <div>
+              <h3 class="font-display font-extrabold text-[22px] lg:text-[27px] tracking-[-0.01em] leading-[1.15] [font-stretch:105%]">Hoofdkantoor a.s.r., Utrecht</h3>
+              <p class="mt-3 text-[17px] leading-relaxed text-ink/75">Na de renovatie: energielabel A++ en een BREEAM 'Excellent' keurmerk. In 2016 kreeg het pand de titel Meest duurzaam gerenoveerde kantoor van Nederland.</p>
+            </div>
+          </li>
+          <li class="py-8 lg:py-10 grid sm:grid-cols-[6.5rem_1fr] gap-2 sm:gap-6">
+            <p class="text-brick font-semibold text-[15px] pt-1">Musea</p>
+            <div>
+              <h3 class="font-display font-extrabold text-[22px] lg:text-[27px] tracking-[-0.01em] leading-[1.15] [font-stretch:105%]">Museale omgevingen</h3>
+              <p class="mt-3 text-[17px] leading-relaxed text-ink/75">Een collectie vraagt om een stabiel binnenklimaat en om installateurs die zorgvuldig werken. Daarin hebben onze Utrechtse collega's zich gespecialiseerd.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-5 lg:sticky lg:top-28 order-2 lg:order-1">
+      <div class="arch overflow-hidden aspect-[4/3] sm:aspect-[4/5] max-w-md">
+        <img src="assets/site-09.jpg" alt="Een adviseur en een technicus van Kuijpers bespreken een installatie in een technische ruimte" class="w-full h-full object-cover object-[60%_50%]">
+      </div>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <h2 class="font-display font-black text-4xl lg:text-[52px] leading-[1] tracking-[-0.02em] max-w-xl">Eén partij, van tekening tot storingsdienst.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-ink/75 max-w-xl">Wij werken multidisciplinair: werktuigbouwkunde en elektrotechniek in één team. Zo hoeft u niet te schakelen tussen installateurs, en sluit alles op elkaar aan.</p>
+
+      <ol class="mt-12 space-y-0">
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-mist">
+          <span class="font-display wide font-black text-3xl text-drop leading-none">1</span>
+          <div>
+            <h3 class="font-display font-extrabold text-xl lg:text-2xl tracking-tight">Meedenken in het bouwteam</h3>
+            <p class="mt-2 text-[17px] leading-relaxed text-ink/75">We schuiven vroeg aan, met architect en aannemer, zodat de techniek vanaf het begin klopt.</p>
+          </div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-mist">
+          <span class="font-display wide font-black text-3xl text-drop leading-none">2</span>
+          <div>
+            <h3 class="font-display font-extrabold text-xl lg:text-2xl tracking-tight">Aanleggen en renoveren</h3>
+            <p class="mt-2 text-[17px] leading-relaxed text-ink/75">Klimaat, water, elektra en gebouwautomatisering, in nieuwbouw en in gebouwen die in gebruik blijven.</p>
+          </div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-mist">
+          <span class="font-display wide font-black text-3xl text-drop leading-none">3</span>
+          <div>
+            <h3 class="font-display font-extrabold text-xl lg:text-2xl tracking-tight">Inbedrijfstellen en valideren</h3>
+            <p class="mt-2 text-[17px] leading-relaxed text-ink/75">We testen en valideren de installatie, zodat die doet wat is afgesproken voordat u de sleutel krijgt.</p>
+          </div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-y border-mist">
+          <span class="font-display wide font-black text-3xl text-drop leading-none">4</span>
+          <div>
+            <h3 class="font-display font-extrabold text-xl lg:text-2xl tracking-tight">Onderhoud en service</h3>
+            <p class="mt-2 text-[17px] leading-relaxed text-ink/75">Daarna blijven we betrokken: met onderhoud, beheer en een servicedienst die dag en nacht klaarstaat.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Duurzaam -->
+<section class="relative bg-brand text-white overflow-hidden grain">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <p class="text-drop font-semibold text-[15px] mb-5">Duurzaam installeren</p>
+      <blockquote class="font-display font-black text-[34px] sm:text-5xl lg:text-[58px] leading-[1.02] tracking-[-0.02em]">Bijna driekwart van onze projecten heeft een duurzaam karakter.</blockquote>
+      <p class="mt-8 text-lg leading-relaxed text-white/80 max-w-xl">Wij denken mee als energiespecialist: van concepten die passen bij de Green Deal en de klimaatdoelen voor 2030 tot het halen van een specifiek energielabel of BREEAM-keurmerk.</p>
+      <a href="#contact" class="mt-8 inline-block font-semibold text-white underline decoration-drop decoration-2 underline-offset-[6px] hover:text-drop">Bespreek uw gebouw met ons</a>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="relative">
+        <img src="assets/site-11.jpg" alt="Technicus van Kuijpers in werkkleding bij een installatie" class="w-full aspect-[4/3.4] object-cover rounded-[22px] rounded-tr-[120px]">
+        <div class="mt-6 grid grid-cols-2 gap-px bg-white/15 rounded-2xl overflow-hidden">
+          <div class="bg-brand p-5"><p class="font-display font-black text-2xl sm:text-3xl">A++</p><p class="text-white/70 text-[15px] mt-1">energielabel a.s.r.</p></div>
+          <div class="bg-brand p-5"><p class="font-display font-black text-2xl sm:text-3xl">Excellent</p><p class="text-white/70 text-[15px] mt-1">BREEAM-keurmerk</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werken bij -->
+<section id="werken-bij" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-end">
+      <h2 class="lg:col-span-7 font-display font-black text-4xl lg:text-[52px] leading-[1] tracking-[-0.02em]">Vakmensen gezocht, in Utrecht.</h2>
+      <p class="lg:col-span-5 text-lg leading-relaxed text-ink/75">Monteurs, werkvoorbereiders, servicetechnici: onze vestiging groeit. Kuijpers is een familiebedrijf, actief sinds 1921.</p>
+    </div>
+  </div>
+
+  <div class="mt-12 flex gap-4 overflow-x-auto px-5 lg:px-8 max-w-7xl mx-auto snap-x pb-2">
+    <img src="assets/site-07.jpg" alt="Elektromonteur van Kuijpers bij een verdeelkast" class="snap-start shrink-0 w-[78%] sm:w-[44%] lg:w-[26%] aspect-[4/5] object-cover rounded-[22px] rounded-tl-[90px]">
+    <img src="assets/site-04.jpg" alt="Monteur van Kuijpers in een technische ruimte met leidingwerk" class="snap-start shrink-0 w-[78%] sm:w-[44%] lg:w-[26%] aspect-[4/5] object-cover rounded-[22px] lg:mt-10">
+    <img src="assets/site-06.jpg" alt="Monteur van Kuijpers met een pijptang tussen de installaties" class="snap-start shrink-0 w-[78%] sm:w-[44%] lg:w-[22%] aspect-[4/5] object-cover rounded-[22px]">
+    <img src="assets/site-05.jpg" alt="Servicetechnicus van Kuijpers met laptop bij een schakelkast" class="snap-start shrink-0 w-[78%] sm:w-[44%] lg:w-[22%] aspect-[4/5] object-cover object-[35%_50%] rounded-[22px] lg:mt-10">
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 mt-14 grid lg:grid-cols-12 gap-10">
+    <ul class="lg:col-span-8 grid sm:grid-cols-2 gap-x-8 border-t border-mist">
+      <li class="border-b border-mist"><a href="https://www.kuijpers.nl/werken-bij/" class="group flex items-baseline justify-between gap-4 py-5 hover:text-brand"><span class="font-display font-extrabold text-lg tracking-tight">1e Monteur</span><span class="text-[15px] text-ink/60">Werktuigbouwkunde</span></a></li>
+      <li class="border-b border-mist"><a href="https://www.kuijpers.nl/werken-bij/" class="group flex items-baseline justify-between gap-4 py-5 hover:text-brand"><span class="font-display font-extrabold text-lg tracking-tight">1e Monteur</span><span class="text-[15px] text-ink/60">Elektrotechniek</span></a></li>
+      <li class="border-b border-mist"><a href="https://www.kuijpers.nl/werken-bij/" class="group flex items-baseline justify-between gap-4 py-5 hover:text-brand"><span class="font-display font-extrabold text-lg tracking-tight">Servicetechnicus</span><span class="text-[15px] text-ink/60">Elektrotechniek</span></a></li>
+      <li class="border-b border-mist"><a href="https://www.kuijpers.nl/werken-bij/" class="group flex items-baseline justify-between gap-4 py-5 hover:text-brand"><span class="font-display font-extrabold text-lg tracking-tight">Werkvoorbereider</span><span class="text-[15px] text-ink/60">Werktuigbouwkunde</span></a></li>
+      <li class="border-b border-mist"><a href="https://www.kuijpers.nl/werken-bij/" class="group flex items-baseline justify-between gap-4 py-5 hover:text-brand"><span class="font-display font-extrabold text-lg tracking-tight">Inbedrijfsteller</span><span class="text-[15px] text-ink/60">Gebouwautomatisering</span></a></li>
+      <li class="border-b border-mist"><a href="https://www.kuijpers.nl/werken-bij/" class="group flex items-baseline justify-between gap-4 py-5 hover:text-brand"><span class="font-display font-extrabold text-lg tracking-tight">Technisch Beheerder</span><span class="text-[15px] text-ink/60">Werktuigbouwkunde</span></a></li>
+    </ul>
+    <aside class="lg:col-span-4 bg-white rounded-[22px] p-7 lg:p-8">
+      <h3 class="font-display font-extrabold text-xl tracking-tight">Liever eerst even praten?</h3>
+      <p class="mt-2 text-[17px] text-ink/75 leading-relaxed">Bel, app of mail Sjors, onze recruiter.</p>
+      <p class="mt-5 space-y-1 text-[17px]">
+        <a href="tel:+31611685773" class="block font-semibold hover:text-brand">06 11 68 57 73</a>
+        <a href="mailto:scornelissen@kuijpers.nl" class="block text-ink/75 hover:text-brand break-all">scornelissen@kuijpers.nl</a>
+      </p>
+      <a href="https://www.kuijpers.nl/werken-bij/" class="mt-6 inline-block font-semibold underline decoration-drop decoration-2 underline-offset-[6px] hover:text-brand">Alle vacatures bekijken</a>
+    </aside>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-white py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-display font-black text-4xl lg:text-[52px] leading-[1] tracking-[-0.02em]">Wat anderen zeggen.</h2>
+      <p class="text-[17px] text-ink/70"><span class="font-display wide font-black text-3xl text-ink align-middle">4,2</span> <span class="text-drop tracking-[2px] align-middle">★★★★</span> <span class="align-middle">uit 32 Google-reviews</span></p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-12 gap-5">
+      <figure class="md:col-span-7 md:row-span-2 bg-paper rounded-[22px] p-8 lg:p-10 flex flex-col justify-between">
+        <blockquote class="font-display font-extrabold text-2xl lg:text-[34px] leading-[1.15] tracking-tight">"Top installateur met mooie projecten onlangs zelf de nieuwe koeling voor de MRI in het diakkonessen ziekenhuis mogen installeren"</blockquote>
+        <figcaption class="mt-8 text-[15px] text-ink/70"><span class="text-drop">★★★★★</span> <span class="font-semibold text-ink ml-1">B te boekhorst</span>, Google</figcaption>
+      </figure>
+      <figure class="md:col-span-5 bg-paper rounded-[22px] p-7">
+        <blockquote class="text-xl leading-snug font-semibold">"Top installatiebedrijf met het milieu in het achterhoofd👍🏻"</blockquote>
+        <figcaption class="mt-4 text-[15px] text-ink/70"><span class="text-drop">★★★★★</span> <span class="font-semibold text-ink ml-1">Henk van Baaren</span>, Google</figcaption>
+      </figure>
+      <figure class="md:col-span-5 bg-paper rounded-[22px] p-7">
+        <blockquote class="text-xl leading-snug font-semibold">"Veelzijdig en technisch hoogstaand bedrijf."</blockquote>
+        <figcaption class="mt-4 text-[15px] text-ink/70"><span class="text-drop">★★★★★</span> <span class="font-semibold text-ink ml-1">A&amp;P Michielsen</span>, Google</figcaption>
+      </figure>
+    </div>
+    <p class="mt-5 text-[17px] text-ink/70">En kort maar krachtig van Bahram Charkhpour: <span class="font-semibold text-ink">"Een top bedrijf 👍"</span></p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="font-display font-black text-4xl lg:text-[52px] leading-[1] tracking-[-0.02em]">Kom langs, of bel even.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-ink/75 max-w-lg">Een vraag over een project, onderhoud of een offerte? Bel ons op werkdagen, dan zoeken we direct de juiste specialist voor u.</p>
+
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-8 text-[17px]">
+        <div>
+          <dt class="text-[15px] font-semibold text-brick">Telefoon</dt>
+          <dd class="mt-1"><a href="tel:+31306629300" class="font-display font-extrabold text-2xl tracking-tight hover:text-brand">030 662 9300</a></dd>
+        </div>
+        <div>
+          <dt class="text-[15px] font-semibold text-brick">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@kuijpers.nl" class="font-display font-extrabold text-2xl tracking-tight hover:text-brand">info@kuijpers.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-[15px] font-semibold text-brick">Bezoekadres</dt>
+          <dd class="mt-1 leading-relaxed">Damzigt 29<br>3454 PS Utrecht (De Meern)<br><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Damzigt+29+3454+PS+Utrecht" class="font-semibold underline decoration-drop decoration-2 underline-offset-4 hover:text-brand">Route plannen</a></dd>
+        </div>
+        <div>
+          <dt class="text-[15px] font-semibold text-brick">Postadres</dt>
+          <dd class="mt-1 leading-relaxed">Postbus 177<br>3454 ZK Utrecht</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-[15px] font-semibold text-brick">Openingstijden</dt>
+          <dd class="mt-2">
+            <table class="w-full max-w-sm tabular-nums">
+              <tr><td class="py-1">Maandag t/m vrijdag</td><td class="py-1 text-right font-semibold">08:00 - 16:30</td></tr>
+              <tr><td class="py-1 text-ink/60">Zaterdag en zondag</td><td class="py-1 text-right text-ink/60">Gesloten</td></tr>
+              <tr><td class="py-1 text-ink/60">Storing, altijd</td><td class="py-1 text-right"><a href="tel:09002050800" class="font-semibold hover:text-brand">0900 20 50 800</a></td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+      <img src="assets/site-01.jpg" alt="Het kantoor van Kuijpers aan de Damzigt in Utrecht" class="mt-10 w-full aspect-[16/8] object-cover rounded-[22px] rounded-tl-[90px]">
+    </div>
+
+    <div class="lg:col-span-6">
+      <form class="bg-white rounded-[22px] p-7 lg:p-10 shadow-[0_30px_60px_-40px_rgba(19,32,90,.45)]" action="mailto:info@kuijpers.nl" method="post" enctype="text/plain">
+        <h3 class="font-display font-extrabold text-2xl tracking-tight">Stuur ons een bericht</h3>
+        <p class="mt-1 text-ink/70">We nemen op werkdagen contact met u op.</p>
+        <div class="mt-7 grid sm:grid-cols-2 gap-5">
+          <label class="block"><span class="text-[15px] font-semibold">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-xl border border-mist bg-paper px-4 py-3 focus:border-brand focus:bg-white outline-none"></label>
+          <label class="block"><span class="text-[15px] font-semibold">Organisatie</span>
+            <input name="organisatie" autocomplete="organization" class="mt-1.5 w-full rounded-xl border border-mist bg-paper px-4 py-3 focus:border-brand focus:bg-white outline-none"></label>
+          <label class="block"><span class="text-[15px] font-semibold">E-mail</span>
+            <input type="email" name="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border border-mist bg-paper px-4 py-3 focus:border-brand focus:bg-white outline-none"></label>
+          <label class="block"><span class="text-[15px] font-semibold">Telefoon</span>
+            <input type="tel" name="telefoon" autocomplete="tel" class="mt-1.5 w-full rounded-xl border border-mist bg-paper px-4 py-3 focus:border-brand focus:bg-white outline-none"></label>
+          <label class="block sm:col-span-2"><span class="text-[15px] font-semibold">Waar kunnen we mee helpen?</span>
+            <textarea name="bericht" rows="4" required class="mt-1.5 w-full rounded-xl border border-mist bg-paper px-4 py-3 focus:border-brand focus:bg-white outline-none"></textarea></label>
+        </div>
+        <button type="submit" class="btn mt-6 w-full sm:w-auto rounded-full bg-ink text-white px-7 py-3.5 font-semibold hover:bg-brand">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-ink text-white/75 relative grain overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14 grid md:grid-cols-12 gap-10 text-[15px]">
+    <div class="md:col-span-5">
+      <p class="font-display wide font-extrabold text-white text-2xl tracking-tight">Kuijpers Utrecht</p>
+      <p class="mt-3 leading-relaxed">Damzigt 29, 3454 PS Utrecht<br><a href="tel:+31306629300" class="hover:text-drop">030 662 9300</a><br><a href="mailto:info@kuijpers.nl" class="hover:text-drop">info@kuijpers.nl</a></p>
+    </div>
+    <div class="md:col-span-7 leading-relaxed">
+      <p class="text-white font-semibold">Landelijk en toch lokaal</p>
+      <p class="mt-2">Kuijpers is ook gevestigd in Amsterdam, Den Bosch, Den Haag, Echt, Groningen, Helmond, Leiden, Nijmegen, Roosendaal, Rotterdam, Tilburg, Zelhem en Zwolle.</p>
+      <p class="mt-4 text-white/55">Kuijpers Projecten B.V., Projecten West, KvK 17238263<br>Kuijpers Service B.V., Centrale contracten &amp; vestiging Utrecht, KvK 17173282</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-paper/95 backdrop-blur border-t border-mist px-4 py-3 flex gap-3">
+  <a href="tel:+31306629300" class="btn flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-drop text-ink py-3.5 font-bold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    030 662 9300
+  </a>
+  <a href="tel:09002050800" class="btn inline-flex items-center justify-center rounded-full border-2 border-ink/20 px-4 py-3 font-semibold text-[15px]">Storing</a>
+</div>
+
+</body>
+</html>
