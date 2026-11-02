@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warmtebouw | Klimaat, sanitair en sprinkler in Utrecht</title>
+<meta name="description" content="Warmtebouw uit Utrecht: familiebedrijf sinds 1970 in klimaattechniek, sanitair en watermist- en sprinklerinstallaties. Advies, ontwerp, realisatie en onderhoud.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: '#142D4B',
+        deep: '#0D1F35',
+        staal: '#2E5E8E',
+        vonk: '#F5A524',
+        lucht: '#EEF2F6',
+      },
+      fontFamily: {
+        kop: ['"Barlow Condensed"', 'sans-serif'],
+        sans: ['"IBM Plex Sans"', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: "Barlow Condensed", sans-serif; letter-spacing: -0.01em; line-height: .92; }
+  .btn-vonk { background: #F5A524; color: #142D4B; transition: background-color .2s, transform .15s; }
+  .btn-vonk:hover { background: #FFB83F; }
+  .btn-vonk:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible {
+    outline: 3px solid #F5A524; outline-offset: 3px;
+  }
+  /* Hero-foto met schuine snede */
+  .hero-foto { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%); }
+  @media (min-width: 1024px) {
+    .hero-foto { clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%); }
+  }
+  .schuin-boven { clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%); }
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  /* Rustige load-reveal, alleen als JS de class zet */
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  .belbalk { transition: transform .3s ease; }
+  .js .belbalk:not(.toon) { transform: translateY(110%); }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-white font-sans text-navy pb-16 lg:pb-0">
+
+<!-- Demo-balk -->
+<div class="bg-deep text-white/80 text-xs sm:text-[13px] text-center px-4 py-2">
+  Demo voor Warmtebouw - Technisch installatiebedrijf HVAC - Sprinkler, gemaakt door
+  <a href="https://hagenweb.nl" class="text-vonk underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-navy text-white relative z-30">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="shrink-0" aria-label="Warmtebouw, naar boven">
+      <img src="assets/site-02.png" alt="Warmtebouw" class="h-5 sm:h-6 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-white/85" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-vonk transition-colors">Diensten</a>
+      <a href="#werkwijze" class="hover:text-vonk transition-colors">Werkwijze</a>
+      <a href="#projecten" class="hover:text-vonk transition-colors">Projecten</a>
+      <a href="#over" class="hover:text-vonk transition-colors">Over ons</a>
+      <a href="#contact" class="hover:text-vonk transition-colors">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+31302483030" class="hidden sm:inline-flex btn-vonk rounded-md px-5 py-2.5 font-semibold text-[15px]">030 248 3030</a>
+      <details class="lg:hidden relative">
+        <summary class="cursor-pointer select-none rounded-md border border-white/25 px-4 py-2.5 text-sm font-medium">Menu</summary>
+        <nav class="absolute right-0 mt-3 w-56 rounded-lg bg-white text-navy shadow-xl shadow-deep/30 p-2 flex flex-col text-base" aria-label="Mobiel menu">
+          <a href="#diensten" class="px-4 py-3 rounded hover:bg-lucht">Diensten</a>
+          <a href="#werkwijze" class="px-4 py-3 rounded hover:bg-lucht">Werkwijze</a>
+          <a href="#projecten" class="px-4 py-3 rounded hover:bg-lucht">Projecten</a>
+          <a href="#over" class="px-4 py-3 rounded hover:bg-lucht">Over ons</a>
+          <a href="#contact" class="px-4 py-3 rounded hover:bg-lucht">Contact</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="relative bg-navy text-white overflow-hidden">
+  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-[56%]">
+    <img src="assets/google-03.jpg" alt="Monteur van Warmtebouw slijpt een leiding in de werkplaats, vonken vliegen in het rond"
+         class="hero-foto w-full h-[24vh] min-h-[170px] lg:h-full object-cover object-[60%_40%]">
+  </div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="lg:w-[52%] pt-5 pb-14 lg:pt-20 lg:pb-36">
+      <p class="reveal text-white/70 text-sm sm:text-base mb-3 lg:mb-6">Installatietechniek in Utrecht, familiebedrijf sinds 1970</p>
+      <h1 class="reveal kop font-extrabold uppercase text-[2.9rem] sm:text-7xl xl:text-[5.2rem]">
+        Wat achter het plafond zit, regelen&nbsp;wij.
+      </h1>
+      <p class="reveal mt-4 lg:mt-7 max-w-md text-base sm:text-lg text-white/80 leading-relaxed">
+        Klimaat, sanitair, watermist en sprinkler voor kantoren, winkels, zorg en industrie. Wij adviseren, ontwerpen,
+        bouwen en onderhouden. Van eerste tekening tot jaren later.
+      </p>
+      <div class="reveal mt-6 lg:mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:+31302483030" class="btn-vonk inline-flex items-center justify-center gap-3 rounded-md px-7 py-4 text-lg font-semibold shadow-lg shadow-deep/40">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Bel 030 248 3030
+        </a>
+        <a href="tel:+31302483033" class="text-white/85 hover:text-vonk underline underline-offset-4 decoration-white/30 hover:decoration-vonk transition-colors text-center sm:text-left">
+          Storing? Bel 030 248 3033
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Storingskaart -->
+<section aria-labelledby="storing-kop" class="relative z-10 max-w-7xl mx-auto px-5 lg:px-10 -mt-6 lg:-mt-20">
+  <div class="bg-deep text-white rounded-xl shadow-2xl shadow-navy/30 grid md:grid-cols-[1.1fr_1fr_1fr] overflow-hidden lg:max-w-[880px]">
+    <div class="p-6 lg:p-8 border-b md:border-b-0 md:border-r border-white/10">
+      <h2 id="storing-kop" class="kop font-bold text-3xl lg:text-4xl uppercase text-vonk">Storing?</h2>
+      <p class="mt-2 text-white/70 text-sm leading-relaxed">Valt het klimaat uit of lekt er iets? Bel direct de storingsdienst.</p>
+    </div>
+    <a href="tel:+31302483033" class="group p-6 lg:p-8 border-b md:border-b-0 md:border-r border-white/10 hover:bg-white/5 transition-colors">
+      <span class="block text-sm text-white/60">Tijdens kantoortijd</span>
+      <span class="block kop font-bold text-3xl lg:text-[2.4rem] mt-1 group-hover:text-vonk transition-colors">030 248 3033</span>
+    </a>
+    <a href="tel:+31646222777" class="group p-6 lg:p-8 hover:bg-white/5 transition-colors">
+      <span class="block text-sm text-white/60">Buiten kantoortijd</span>
+      <span class="block kop font-bold text-3xl lg:text-[2.4rem] mt-1 group-hover:text-vonk transition-colors">06 4622 2777</span>
+    </a>
+  </div>
+</section>
+
+<!-- Over -->
+<section id="over" class="max-w-7xl mx-auto px-5 lg:px-10 pt-20 lg:pt-32 pb-20 lg:pb-28">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <h2 class="kop font-extrabold uppercase text-5xl lg:text-6xl">Een familiebedrijf dat installaties bouwt voor de lange termijn</h2>
+      <div class="mt-7 space-y-5 text-[17px] leading-relaxed text-navy/80 max-w-xl">
+        <p>Installatietechniek is ons vak, en dat al sinds 1970. Wij adviseren over klimaat-, sanitair- en watermist- en sprinklerinstallaties, ontwerpen ze, bouwen ze en houden ze daarna in conditie.</p>
+        <p>Duurzaamheid is daarbij de rode draad. Niet als verkooppraatje, maar omdat een installatie die zuinig draait en lang meegaat simpelweg beter is voor u. Daarom kijken we verder dan de aanschafprijs: naar onderhoud, levensduur en de totale kosten over de jaren.</p>
+        <p>Het hart van het bedrijf is een team van betrokken vakmensen die met plezier hun werk doen, en die dicht bij hun opdrachtgevers staan.</p>
+      </div>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2 relative pb-16 sm:pb-24">
+      <img src="assets/google-02.jpg" alt="Vier collega's van Warmtebouw buigen zich over een installatietekening, met een sprinklerklep op de achtergrond"
+           class="w-full aspect-[16/10] object-cover rounded-xl">
+      <img src="assets/google-05.jpg" alt="Twee medewerkers van Warmtebouw in bedrijfsjassen tussen de zonnepanelen op het dak"
+           class="absolute -bottom-0 right-4 sm:-right-4 lg:-right-8 w-[46%] sm:w-[38%] aspect-square object-cover rounded-lg ring-8 ring-white shadow-xl shadow-navy/20">
+    </div>
+  </div>
+</section>
+
+<!-- Diensten: klimaat -->
+<section id="diensten" class="bg-lucht">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+    <div class="max-w-3xl">
+      <h2 class="kop font-extrabold uppercase text-5xl lg:text-7xl">Warm, koel en brandveilig</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-navy/75 max-w-2xl">Twee vakgebieden vormen de kern: het klimaat in uw gebouw en de brandbeveiliging. Daaromheen regelen we alles wat een gebouw verder nodig heeft.</p>
+    </div>
+
+    <div class="mt-14 lg:mt-20 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="relative">
+        <img src="assets/google-08.jpg" alt="Monteur van Warmtebouw werkt lachend aan een luchtbehandelingskast, staand op een rolsteiger"
+             class="w-full aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] object-cover object-[50%_35%] rounded-xl">
+      </div>
+      <div>
+        <h3 class="kop font-bold uppercase text-4xl lg:text-5xl">Klimaattechniek</h3>
+        <p class="mt-5 text-[17px] leading-relaxed text-navy/80">Een goed binnenklimaat zorgt voor een prettige werkplek, een productief team en een lagere energierekening. Wij bouwen installaties voor ventilatie, verwarming, koeling en luchtbehandeling: HVAC, airconditioning, warmtepompen en klimaatregeling. Afgestemd op het gebouw en op hoe het gebruikt wordt.</p>
+        <ul class="mt-7 grid sm:grid-cols-2 gap-x-6 gap-y-3 text-[16px]">
+          <li class="flex gap-3"><span class="mt-2 w-2 h-2 shrink-0 bg-vonk rounded-sm"></span>Stabiel en gezond binnenklimaat</li>
+          <li class="flex gap-3"><span class="mt-2 w-2 h-2 shrink-0 bg-vonk rounded-sm"></span>Energiezuinige klimaatregeling</li>
+          <li class="flex gap-3"><span class="mt-2 w-2 h-2 shrink-0 bg-vonk rounded-sm"></span>Lagere energiekosten</li>
+          <li class="flex gap-3"><span class="mt-2 w-2 h-2 shrink-0 bg-vonk rounded-sm"></span>Betere luchtkwaliteit en ventilatie</li>
+        </ul>
+        <p class="mt-8 text-[15px] text-navy/65">Voor kantoren en utiliteitsgebouwen, winkels en retail, technische ruimten, bestaande bouw en renovatie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten: sprinkler & watermist -->
+<section class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-5">
+        <h3 class="kop font-bold uppercase text-4xl lg:text-5xl">Watermist en sprinkler</h3>
+        <p class="mt-5 text-[17px] leading-relaxed text-white/80">Een brand legt een organisatie stil en kost veel geld. Een sprinkler- of watermistsysteem brengt een beginnende brand snel onder controle, zodat de schade beperkt blijft.</p>
+        <p class="mt-4 text-[17px] leading-relaxed text-white/80">Warmtebouw is CIBV gecertificeerd VBB-installateur en kreeg als eerste installatiebedrijf in Nederland de officiële CIBV-certificering voor hogedruk watermistinstallaties. Voor watermist werken we samen met AquaSys.</p>
+        <p class="mt-4 text-[17px] leading-relaxed text-white/80">Welk systeem past, hangt af van uw gebouw en de risico's. Dat zetten we eerlijk voor u op een rij.</p>
+      </div>
+      <div class="lg:col-span-7">
+        <div class="rounded-xl overflow-hidden ring-1 ring-white/15">
+          <table class="w-full text-left text-[15px]">
+            <caption class="sr-only">Verschillen tussen sprinklers en watermist</caption>
+            <thead>
+              <tr class="bg-white/5">
+                <th scope="col" class="p-4 lg:p-5 w-1/2 kop text-2xl font-bold uppercase">Sprinkler</th>
+                <th scope="col" class="p-4 lg:p-5 w-1/2 kop text-2xl font-bold uppercase text-vonk border-l border-white/10">Watermist</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/10 text-white/85">
+              <tr><td class="p-4 lg:p-5">Grote druppels</td><td class="p-4 lg:p-5 border-l border-white/10">Fijne nevel die snel koelt</td></tr>
+              <tr><td class="p-4 lg:p-5">Grotere leidingen</td><td class="p-4 lg:p-5 border-l border-white/10">Compacter, gebruikt veel minder water</td></tr>
+              <tr><td class="p-4 lg:p-5">Voordelig in aanleg</td><td class="p-4 lg:p-5 border-l border-white/10">Minder schade en onderhoud</td></tr>
+              <tr><td class="p-4 lg:p-5">Alleen de sproeiers boven de brand gaan open</td><td class="p-4 lg:p-5 border-l border-white/10">Activeert vaak sneller, gericht blussen</td></tr>
+              <tr><td class="p-4 lg:p-5">Basis bij hoge brandbelasting, zoals parkeergarages en logistieke hallen</td><td class="p-4 lg:p-5 border-l border-white/10">Sterk in datacenters, monumenten en bij industriële machines</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Overige diensten -->
+<section class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-7">
+      <h2 class="kop font-extrabold uppercase text-5xl lg:text-6xl">En verder alles wat een gebouw laat draaien</h2>
+      <dl class="mt-10 divide-y divide-navy/10 border-y border-navy/10">
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <dt class="kop font-bold uppercase text-2xl">Sanitairtechniek</dt>
+          <dd class="text-navy/75 leading-relaxed">Sanitaire installaties ontworpen en aangelegd als onderdeel van het hele gebouw.</dd>
+        </div>
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <dt class="kop font-bold uppercase text-2xl">Gebouwautomatisering</dt>
+          <dd class="text-navy/75 leading-relaxed">Monitoring en slimme regeling, zodat u ziet wat uw installaties verbruiken en ze gericht kunt bijsturen.</dd>
+        </div>
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <dt class="kop font-bold uppercase text-2xl">Duurzaam advies</dt>
+          <dd class="text-navy/75 leading-relaxed">Meedenken over zuinige oplossingen die op de lange termijn het minst kosten.</dd>
+        </div>
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <dt class="kop font-bold uppercase text-2xl">Prefabricage</dt>
+          <dd class="text-navy/75 leading-relaxed">Leidingwerk en onderdelen vooraf geprefabriceerd, zodat het op de bouw sneller en netter gaat.</dd>
+        </div>
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <dt class="kop font-bold uppercase text-2xl">Onderhoud en beheer</dt>
+          <dd class="text-navy/75 leading-relaxed">Na de oplevering blijven we betrokken: onderhoud, beheer en een storingsdienst die ook buiten kantoortijd bereikbaar is.</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="lg:col-span-5 lg:sticky lg:top-8">
+      <img src="assets/google-06.jpg" alt="Monteur van Warmtebouw sluit bekabeling aan in een geopende schakelkast op het dak"
+           class="w-full aspect-[4/5] object-cover object-[40%_50%] rounded-xl">
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-lucht">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-4">
+        <h2 class="kop font-extrabold uppercase text-5xl lg:text-6xl">Eén partner, van A tot Z</h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-navy/75">Van een kleine klus tot een groot, complex gebouw: we nemen het hele traject voor onze rekening. U houdt één aanspreekpunt.</p>
+      </div>
+      <ol class="lg:col-span-8 grid sm:grid-cols-2 gap-px bg-navy/10 rounded-xl overflow-hidden">
+        <li class="bg-white p-7 lg:p-9">
+          <span class="kop font-extrabold text-6xl text-staal/30">1</span>
+          <h3 class="kop font-bold uppercase text-3xl mt-2">Advies</h3>
+          <p class="mt-3 text-navy/75 leading-relaxed">We kijken naar uw gebouw, het gebruik en uw wensen, en adviseren welke installatie daar het beste bij past.</p>
+        </li>
+        <li class="bg-white p-7 lg:p-9">
+          <span class="kop font-extrabold text-6xl text-staal/30">2</span>
+          <h3 class="kop font-bold uppercase text-3xl mt-2">Ontwerp</h3>
+          <p class="mt-3 text-navy/75 leading-relaxed">Onze specialisten werken het uit tot een ontwerp dat past bij de bouwkundige situatie en de eisen.</p>
+        </li>
+        <li class="bg-white p-7 lg:p-9">
+          <span class="kop font-extrabold text-6xl text-staal/30">3</span>
+          <h3 class="kop font-bold uppercase text-3xl mt-2">Realiseren</h3>
+          <p class="mt-3 text-navy/75 leading-relaxed">We bouwen de installatie, met waar het kan vooraf geprefabriceerde onderdelen.</p>
+        </li>
+        <li class="bg-white p-7 lg:p-9">
+          <span class="kop font-extrabold text-6xl text-staal/30">4</span>
+          <h3 class="kop font-bold uppercase text-3xl mt-2">Onderhoud en beheer</h3>
+          <p class="mt-3 text-navy/75 leading-relaxed">We houden de installatie in conditie, zodat hij jaren zuinig en betrouwbaar blijft draaien.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Projecten -->
+<section id="projecten" class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+    <h2 class="kop font-extrabold uppercase text-5xl lg:text-7xl max-w-3xl">We laten het liever zien</h2>
+    <p class="text-[17px] leading-relaxed text-navy/75 max-w-md">Nieuwbouw of renovatie, kantoor of ziekenhuis: elk project is maatwerk. Een greep uit het werk voor onze opdrachtgevers.</p>
+  </div>
+
+  <div class="mt-12 grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4">
+    <figure class="col-span-2 lg:col-span-7 lg:row-span-2 relative rounded-xl overflow-hidden group">
+      <img src="assets/site-06.jpg" alt="Luchtfoto van het rode Amac-gebouw langs de snelweg" class="w-full h-full min-h-[260px] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+      <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-deep/85 to-transparent text-white">
+        <span class="block text-sm text-white/70">Kantoor en retail</span>
+        <span class="kop font-bold uppercase text-3xl">Amac</span>
+      </figcaption>
+    </figure>
+    <figure class="lg:col-span-5 relative rounded-xl overflow-hidden group">
+      <img src="assets/site-07.jpg" alt="Gebouw van het Antoni van Leeuwenhoek ziekenhuis" class="w-full aspect-[4/3] lg:aspect-[16/9] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+      <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-deep/85 to-transparent text-white">
+        <span class="block text-xs sm:text-sm text-white/70">Zorg</span>
+        <span class="kop font-bold uppercase text-xl sm:text-2xl">Antoni van Leeuwenhoek</span>
+      </figcaption>
+    </figure>
+    <figure class="lg:col-span-5 relative rounded-xl overflow-hidden group">
+      <img src="assets/site-10.jpg" alt="Drie monteurs van Warmtebouw voor de C&amp;A-winkel" class="w-full aspect-[4/3] lg:aspect-[16/9] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+      <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-deep/85 to-transparent text-white">
+        <span class="block text-xs sm:text-sm text-white/70">Retail</span>
+        <span class="kop font-bold uppercase text-xl sm:text-2xl">C&amp;A</span>
+      </figcaption>
+    </figure>
+    <figure class="lg:col-span-4 relative rounded-xl overflow-hidden group">
+      <img src="assets/site-08.jpg" alt="Koepel van Atheneum College Hageveld" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+      <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-deep/85 to-transparent text-white">
+        <span class="block text-xs sm:text-sm text-white/70">Monumentaal, onderwijs</span>
+        <span class="kop font-bold uppercase text-xl sm:text-2xl">Atheneum College Hageveld</span>
+      </figcaption>
+    </figure>
+    <figure class="lg:col-span-4 relative rounded-xl overflow-hidden group">
+      <img src="assets/site-04.jpg" alt="Gevel van AFAS Live" class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+      <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-deep/85 to-transparent text-white">
+        <span class="block text-xs sm:text-sm text-white/70">Evenementen</span>
+        <span class="kop font-bold uppercase text-xl sm:text-2xl">AFAS Live</span>
+      </figcaption>
+    </figure>
+    <figure class="col-span-2 lg:col-span-4 relative rounded-xl overflow-hidden group">
+      <img src="assets/site-11.jpg" alt="Toren van City Skydive" class="w-full aspect-[16/9] lg:aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.03]">
+      <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-deep/85 to-transparent text-white">
+        <span class="block text-xs sm:text-sm text-white/70">Leisure</span>
+        <span class="kop font-bold uppercase text-xl sm:text-2xl">City Skydive</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="mt-12 lg:mt-16 grid lg:grid-cols-12 gap-6">
+    <p class="lg:col-span-3 kop font-bold uppercase text-2xl">Ook gewerkt voor of in</p>
+    <p class="lg:col-span-9 text-lg leading-loose text-navy/75">
+      Ziggo Dome, Schiphol Airport, Thialf, Unilever Benelux, Nyenrode Business Universiteit, Sligro Food Group,
+      Hoofdkantoor HP, MediaMarkt, Decathlon, Courtyard by Marriott, NH City Centre Hotel, Dopper, Jumbo Foodmarkt,
+      Parnassustoren, The Style Outlets, Winkelcentrum Diemerplein en nog veel meer.
+    </p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-extrabold uppercase text-5xl lg:text-7xl">Een project in gedachten?</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-white/80 max-w-lg">Zoekt u een deskundige partner voor de installaties in uw gebouw? Bel of mail ons. Voor nieuwe projecten kunt u direct terecht bij directeur Henk Overeem.</p>
+
+      <a href="tel:+31302483030" class="btn-vonk mt-8 inline-flex items-center gap-3 rounded-md px-7 py-4 text-lg font-semibold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        Bel 030 248 3030
+      </a>
+
+      <dl class="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-8 text-[16px]">
+        <div>
+          <dt class="text-white/55 text-sm">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@warmtebouw.nl" class="hover:text-vonk underline underline-offset-4 decoration-white/30">info@warmtebouw.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-white/55 text-sm">Adres</dt>
+          <dd class="mt-1">Middenwetering 1<br>3543 AR Utrecht</dd>
+        </div>
+        <div>
+          <dt class="text-white/55 text-sm">Kantoortijden</dt>
+          <dd class="mt-1">Maandag t/m vrijdag 08:00 - 17:00<br><span class="text-white/60">Zaterdag en zondag gesloten</span></dd>
+        </div>
+        <div>
+          <dt class="text-white/55 text-sm">Storingsdienst</dt>
+          <dd class="mt-1">
+            <a href="tel:+31302483033" class="hover:text-vonk">030 248 3033</a> <span class="text-white/60">kantoortijd</span><br>
+            <a href="tel:+31646222777" class="hover:text-vonk">06 4622 2777</a> <span class="text-white/60">daarbuiten</span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="lg:col-span-6">
+      <form class="bg-white text-navy rounded-xl p-6 sm:p-8 shadow-2xl shadow-deep/40" action="mailto:info@warmtebouw.nl" method="post" enctype="text/plain">
+        <h3 class="kop font-bold uppercase text-3xl">Stuur een bericht</h3>
+        <p class="mt-1 text-sm text-navy/60">U hoort tijdens kantoortijden van ons.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="text-sm font-medium">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-navy/20 bg-lucht/60 px-3.5 py-3 focus:border-staal focus:bg-white outline-none">
+          </label>
+          <label class="block">
+            <span class="text-sm font-medium">Bedrijf</span>
+            <input name="bedrijf" autocomplete="organization" class="mt-1.5 w-full rounded-md border border-navy/20 bg-lucht/60 px-3.5 py-3 focus:border-staal focus:bg-white outline-none">
+          </label>
+          <label class="block">
+            <span class="text-sm font-medium">E-mail</span>
+            <input type="email" name="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-navy/20 bg-lucht/60 px-3.5 py-3 focus:border-staal focus:bg-white outline-none">
+          </label>
+          <label class="block">
+            <span class="text-sm font-medium">Telefoon</span>
+            <input type="tel" name="telefoon" autocomplete="tel" class="mt-1.5 w-full rounded-md border border-navy/20 bg-lucht/60 px-3.5 py-3 focus:border-staal focus:bg-white outline-none">
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-sm font-medium">Waar kunnen we mee helpen?</span>
+            <textarea name="bericht" rows="4" required class="mt-1.5 w-full rounded-md border border-navy/20 bg-lucht/60 px-3.5 py-3 focus:border-staal focus:bg-white outline-none"></textarea>
+          </label>
+        </div>
+        <button type="submit" class="mt-6 w-full rounded-md bg-navy text-white px-6 py-3.5 font-semibold hover:bg-staal transition-colors">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+  <div class="relative">
+    <img src="assets/google-01.jpg" alt="Luchtfoto van het pand van Warmtebouw aan de Middenwetering in Utrecht, met zonnepanelen op het dak"
+         class="schuin-boven w-full h-[260px] sm:h-[380px] lg:h-[460px] object-cover object-[50%_55%]">
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-deep text-white/70">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm">
+    <div class="flex items-center gap-4">
+      <img src="assets/logo-oud.png" alt="" class="w-10 h-10 rounded">
+      <p>Warmtebouw, Middenwetering 1, 3543 AR Utrecht</p>
+    </div>
+    <p>© 2026 Warmtebouw. <a href="tel:+31302483030" class="hover:text-vonk">030 248 3030</a>, <a href="mailto:info@warmtebouw.nl" class="hover:text-vonk">info@warmtebouw.nl</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="belbalk lg:hidden fixed inset-x-0 bottom-0 z-40 bg-deep/95 backdrop-blur border-t border-white/10 px-3 py-2.5 grid grid-cols-[1fr_auto] gap-2">
+  <a href="tel:+31302483030" class="btn-vonk rounded-md py-3 text-center font-semibold">Bel 030 248 3030</a>
+  <a href="tel:+31302483033" class="rounded-md border border-white/25 text-white px-4 py-3 text-sm font-medium">Storing</a>
+</div>
+
+<script>
+  // Rustige entree van de hero; zonder JS is alles direct zichtbaar.
+  const balk = document.querySelector('.belbalk');
+  const heroKnop = document.querySelector('section a.btn-vonk');
+  const check = () => balk.classList.toggle('toon', heroKnop.getBoundingClientRect().bottom < 0);
+  addEventListener('scroll', check, { passive: true }); check();
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('in'), 80 + i * 110);
+    });
+  });
+</script>
+</body>
+</html>
