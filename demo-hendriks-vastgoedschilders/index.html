@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hendriks Vastgoedschilders | Schilder in Zutphen</title>
+<meta name="description" content="Binnen- en buitenschilderwerk, glasmontage en wandafwerking in Zutphen. Max Hendriks werkt secuur en netjes. Bel 06 156 58 923.">
+<meta property="og:title" content="Hendriks Vastgoedschilders, schilder in Zutphen">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M6 54 30 26l24 28' fill='none' stroke='%23E8601E' stroke-width='9'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        oranje: '#E8601E',
+        oranjedonker: '#C94E12',
+        antraciet: '#2E2F31',
+        steen: '#6A6B6E',
+        kalk: '#F1F0EE',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'sans-serif'],
+        tekst: ['Figtree', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: "Bricolage Grotesque", sans-serif; letter-spacing: -0.025em; }
+  .tab { font-variant-numeric: tabular-nums; }
+
+  /* Puntgevel: de foto als huis-silhouet */
+  .gevel { clip-path: polygon(50% 0, 100% 19%, 100% 100%, 0 100%, 0 19%); }
+  .schuin { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%); }
+  @media (min-width: 1024px) { .schuin { clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%); } }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #E8601E; outline-offset: 3px;
+  }
+
+  /* Eén moment beweging: de gevel komt omhoog bij laden (alleen met JS) */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .gevel-in { animation: gevelIn 1s cubic-bezier(.2,.7,.2,1) .1s both; }
+    .js .dak-in { animation: dakIn .9s cubic-bezier(.2,.7,.2,1) .5s both; }
+  }
+  @keyframes gevelIn { from { transform: translateY(40px); opacity: 0; } }
+  @keyframes dakIn { from { transform: translate(-16px, 16px); opacity: 0; } }
+</style>
+</head>
+<body class="bg-white text-antraciet pb-[76px] lg:pb-0">
+
+<!-- Demo-balk -->
+<div class="bg-antraciet text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Hendriks Vastgoedschilders, gemaakt door
+  <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-white/95 backdrop-blur sticky top-0 z-30 border-b border-black/5">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="Hendriks Vastgoedschilders, naar boven">
+      <svg viewBox="0 0 120 52" class="w-[54px] h-auto shrink-0" aria-hidden="true">
+        <path d="M12 30V12h9v9" fill="#E8601E"/>
+        <path d="M6 49 39 16l33 33" fill="none" stroke="#E8601E" stroke-width="9" stroke-linejoin="miter"/>
+        <rect x="34" y="32" width="4" height="4" fill="#1c1c1c"/><rect x="40" y="32" width="4" height="4" fill="#1c1c1c"/>
+        <rect x="34" y="38" width="4" height="4" fill="#1c1c1c"/><rect x="40" y="38" width="4" height="4" fill="#1c1c1c"/>
+        <path d="M64 25 80 9l37 40" fill="none" stroke="#1c1c1c" stroke-width="9" stroke-linejoin="miter"/>
+      </svg>
+      <span class="leading-none">
+        <span class="kop block text-[22px] font-extrabold text-oranje">Hendriks</span>
+        <span class="block text-[13px] font-medium tracking-[0.01em] text-antraciet mt-0.5">Vastgoedschilders</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-oranje">Diensten</a>
+      <a href="#over" class="hover:text-oranje">Over Max</a>
+      <a href="#reviews" class="hover:text-oranje">Reviews</a>
+      <a href="#contact" class="hover:text-oranje">Contact</a>
+    </nav>
+    <a href="tel:+31615658923" class="knop hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-antraciet px-5 py-2 text-[15px] font-semibold hover:bg-antraciet hover:text-white">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      06 156 58 923
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 pt-10 lg:pt-16 pb-14 lg:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-8 items-end">
+    <div class="lg:col-span-6 lg:pb-16">
+      <p class="text-[17px] font-semibold text-oranje">Schilder in Zutphen</p>
+      <h1 class="kop font-extrabold text-[58px] leading-[0.95] sm:text-[72px] lg:text-[88px] mt-4">Netjes tot in elke hoek.</h1>
+      <p class="mt-6 text-[19px] leading-relaxed text-steen max-w-[30rem]">
+        Max Hendriks schildert binnen en buiten, zet glas en werkt je wanden strak af. Voor je woning of bedrijfspand, met oog voor elk detail.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31615658923" class="knop inline-flex items-center gap-3 rounded-full bg-oranje hover:bg-oranjedonker text-white text-[19px] font-bold pl-6 pr-7 py-4 shadow-[0_10px_30px_-10px_rgba(232,96,30,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel Max: 06 156 58 923
+        </a>
+        <a href="#contact" class="text-[17px] font-semibold underline decoration-2 decoration-oranje underline-offset-[6px] hover:text-oranje">Of stuur een bericht</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-[15px] text-steen">
+        <span class="text-oranje text-[18px] tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-antraciet">5,0</strong> op Google, uit 4 reviews</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-6 relative">
+      <!-- tweede daklijn, zoals in het logo -->
+      <svg class="dak-in absolute -top-6 lg:-top-10 right-[-12%] w-[70%] text-antraciet hidden sm:block" viewBox="0 0 200 110" aria-hidden="true">
+        <path d="M0 108 100 8l100 100" fill="none" stroke="currentColor" stroke-width="14"/>
+      </svg>
+      <div class="gevel-in relative">
+        <div class="gevel aspect-[4/4.2] sm:aspect-[5/4.4] lg:aspect-[4/4.6] bg-kalk">
+          <img src="assets/google-01.jpg" alt="Max Hendriks rolt een muur naast een groot raam" class="w-full h-full object-cover object-[30%_50%]">
+        </div>
+        <div class="absolute left-0 bottom-0 h-3 w-1/3 bg-oranje"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brug: één review groot -->
+<section class="bg-kalk">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-6">
+    <span class="kop lg:col-span-2 text-oranje text-[90px] lg:text-[140px] leading-[0.6] font-extrabold" aria-hidden="true">“</span>
+    <figure class="lg:col-span-9">
+      <blockquote class="kop text-[30px] sm:text-[40px] lg:text-[52px] leading-[1.1] font-bold">
+        Heel secuur en mooi werk afgeleverd ! We zijn enorm tevreden, top schilder.
+      </blockquote>
+      <figcaption class="mt-6 text-[17px] text-steen"><strong class="text-antraciet">Leo Oost</strong>, via Google, 5 sterren</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="scroll-mt-20">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <div class="lg:sticky lg:top-28">
+        <h2 class="kop font-extrabold text-[40px] sm:text-[52px] leading-[1]">Wat Max voor je doet</h2>
+        <p class="mt-5 text-[18px] leading-relaxed text-steen max-w-[28rem]">Van een frisse kleur in de woonkamer tot nieuw glas in de kozijnen. Hoogwaardig schilderwerk en stijlvolle afwerking voor woningen en vastgoed.</p>
+        <div class="schuin mt-10 aspect-[4/3] lg:aspect-[4/4.4] overflow-hidden bg-kalk">
+          <img src="assets/google-03.jpg" alt="Max Hendriks met verfroller voor een raam, logo op de rug van zijn shirt" class="w-full h-full object-cover object-[40%_50%]" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 divide-y divide-antraciet/15 border-y border-antraciet/15">
+      <article class="py-10 first:pt-10">
+        <h3 class="kop text-[30px] sm:text-[36px] font-bold leading-tight">Binnenschilderwerk</h3>
+        <p class="mt-4 text-[18px] leading-relaxed text-antraciet/85 max-w-[36rem]">Een frisse, verzorgde uitstraling voor je huis of bedrijfspand. Bij binnenschilderwerk komt meer kijken dan een kwast en verf: Max neemt de tijd om je wensen te begrijpen en geeft advies over kleuren en afwerking. Strakke lijnen of juist een warme, gezellige sfeer, het resultaat is strak en duurzaam.</p>
+        <p class="mt-4 text-[15px] font-semibold text-steen">Inclusief kleuradvies</p>
+      </article>
+      <article class="py-10">
+        <h3 class="kop text-[30px] sm:text-[36px] font-bold leading-tight">Buitenschilderwerk</h3>
+        <p class="mt-4 text-[18px] leading-relaxed text-antraciet/85 max-w-[36rem]">Een goede schilderbeurt beschermt je woning tegen weer en wind en geeft het huis meteen een frisse uitstraling. Met hoogwaardige materialen en een zorgvuldige afwerking geniet je er jarenlang van. Een volledige schilderbeurt of alleen een opfrisbeurt: allebei kan.</p>
+        <p class="mt-4 text-[15px] font-semibold text-steen">Volledige schilderbeurt of opfrisbeurt</p>
+      </article>
+      <article class="py-10">
+        <h3 class="kop text-[30px] sm:text-[36px] font-bold leading-tight">Glasmontage</h3>
+        <p class="mt-4 text-[18px] leading-relaxed text-antraciet/85 max-w-[36rem]">Levering en plaatsing van glas voor woningen en bedrijfspanden. Een kapotte ruit, enkel glas vervangen door HR++ of veiligheidsglas plaatsen: Max zorgt voor een snelle, vakkundige oplossing en een nette afwerking.</p>
+        <p class="mt-4 text-[15px] font-semibold text-steen">Standaard ruiten, HR++ en veiligheidsglas</p>
+      </article>
+      <article class="py-10">
+        <h3 class="kop text-[30px] sm:text-[36px] font-bold leading-tight">Wandafwerking</h3>
+        <p class="mt-4 text-[18px] leading-relaxed text-antraciet/85 max-w-[36rem]">Strakke wanden of juist een echte blikvanger. Renovlies geeft een gladde basis die kleine scheuren overbrugt, klaar voor sauswerk in elke kleur. Patroonbehang wordt zo aangebracht dat de patronen precies op elkaar aansluiten. En met decoratieve technieken als betonlook en kalkverf krijgt een wand diepte en karakter.</p>
+        <p class="mt-4 text-[15px] font-semibold text-steen">Renovlies, patroonbehang, betonlook en kalkverf</p>
+      </article>
+      <div class="py-10">
+        <a href="tel:+31615658923" class="knop inline-flex items-center gap-3 rounded-full bg-antraciet hover:bg-black text-white text-[17px] font-semibold px-6 py-3.5">Vraag Max wat er kan: 06 156 58 923</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Over Max -->
+<section id="over" class="scroll-mt-20 bg-kalk">
+  <div class="max-w-[1240px] mx-auto lg:px-8 grid lg:grid-cols-12 items-center">
+    <div class="lg:col-span-6 schuin overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[620px]">
+      <img src="assets/google-02.jpg" alt="Max Hendriks schildert een voordeur, logo van Hendriks Vastgoedschilders op zijn jas" class="w-full h-full object-cover object-[45%_50%]" loading="lazy">
+    </div>
+    <div class="lg:col-span-6 px-5 lg:pl-16 lg:pr-4 py-14 lg:py-20">
+      <h2 class="kop font-extrabold text-[40px] sm:text-[52px] leading-[1]">Je krijgt gewoon Max aan de deur</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-antraciet/85 max-w-[34rem]">Ik ben Max Hendriks, trotse eigenaar van Hendriks Vastgoedschilders. Samen met mijn vaste werkpartner Weijman Vastgoedschilders sta ik elke werkdag klaar om woningen en vastgoed te voorzien van strak schilderwerk en duurzaam onderhoud.</p>
+      <p class="mt-4 text-[18px] leading-relaxed text-antraciet/85 max-w-[34rem]">Je spreekt mij direct, van het eerste advies tot de laatste kwaststreek.</p>
+      <a href="#contact" class="mt-8 inline-block text-[17px] font-semibold underline decoration-2 decoration-oranje underline-offset-[6px] hover:text-oranje">Plan een afspraak met Max</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="scroll-mt-20">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <h2 class="kop font-extrabold text-[40px] sm:text-[52px] leading-[1]">Wat klanten zeggen</h2>
+    <div class="mt-12 grid md:grid-cols-12 gap-5 items-start">
+      <div class="md:col-span-7 space-y-5">
+        <figure class="bg-antraciet text-white p-8 lg:p-10">
+          <span class="text-oranje tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</span>
+          <blockquote class="kop mt-4 text-[26px] lg:text-[32px] leading-snug font-bold">Geweldig bedrijf! Communicatie top! Resultaat boven verwachting goed! Of terwijl aanrader!</blockquote>
+          <figcaption class="mt-6 text-white/70">Tjabo Triblo</figcaption>
+        </figure>
+        <figure class="md:w-[78%] md:ml-auto border-2 border-antraciet p-8 lg:p-10">
+          <span class="text-oranje tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</span>
+          <blockquote class="mt-4 text-[20px] leading-relaxed font-medium">Al meerdere werken gedaan met deze top schilders 👍</blockquote>
+          <figcaption class="mt-6 text-steen">R We</figcaption>
+        </figure>
+      </div>
+      <div class="md:col-span-5 md:mt-16 space-y-5">
+        <figure class="bg-kalk p-8 lg:p-10">
+          <span class="text-oranje tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</span>
+          <blockquote class="mt-4 text-[20px] leading-relaxed font-medium">Zeer tevreden over het binnenschilderwerk. Werkt heel netjes!! Dank je wel Max!</blockquote>
+          <figcaption class="mt-6 text-steen">Bianca Wevers</figcaption>
+        </figure>
+        <div class="px-8 lg:px-10 pt-4">
+          <p class="kop text-[64px] font-extrabold leading-none">5,0</p>
+          <p class="mt-2 text-steen text-[16px]">Gemiddelde op Google uit 4 reviews. Iedereen gaf 5 sterren.</p>
+          <a href="tel:+31615658923" class="mt-5 inline-block text-[17px] font-semibold underline decoration-2 decoration-oranje underline-offset-[6px] hover:text-oranje">Word de volgende: bel 06 156 58 923</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="scroll-mt-20 bg-antraciet text-white relative overflow-hidden">
+  <svg class="absolute -right-24 -top-10 w-[520px] text-white/[0.04]" viewBox="0 0 200 110" aria-hidden="true">
+    <path d="M0 108 100 8l100 100" fill="none" stroke="currentColor" stroke-width="14"/>
+  </svg>
+  <div class="relative max-w-[1240px] mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-[40px] sm:text-[56px] leading-[1]">Even overleggen?</h2>
+      <p class="mt-5 text-[18px] leading-relaxed text-white/75 max-w-[28rem]">Bel Max voor advies of een afspraak. Liever mailen of een bericht sturen kan natuurlijk ook.</p>
+      <a href="tel:+31615658923" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-oranje hover:bg-oranjedonker text-white text-[19px] font-bold px-7 py-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        06 156 58 923
+      </a>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-8 text-[16px]">
+        <div class="sm:col-span-2">
+          <dt class="text-white/55 text-[14px]">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@hendriks-vastgoedschilders.nl" class="font-semibold hover:text-oranje break-words text-[17px]">info@hendriks-vastgoedschilders.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-white/55 text-[14px]">Adres</dt>
+          <dd class="mt-1 font-semibold">Het Zwanevlot 250<br>7206 CN Zutphen</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-white/55 text-[14px]">Bereikbaar</dt>
+          <dd class="mt-2 tab">
+            <ul class="max-w-[20rem] space-y-1.5">
+              <li class="flex justify-between"><span>Maandag t/m vrijdag</span><span class="font-semibold">08:00 tot 17:00</span></li>
+              <li class="flex justify-between text-white/60"><span>Zaterdag en zondag</span><span>Gesloten</span></li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="lg:col-span-7 bg-white text-antraciet p-7 sm:p-10" action="mailto:info@hendriks-vastgoedschilders.nl" method="post" enctype="text/plain">
+      <h3 class="kop text-[28px] font-bold">Stuur Max een bericht</h3>
+      <p class="mt-2 text-steen">Vertel kort wat je wilt laten doen. Max neemt contact met je op.</p>
+      <div class="mt-8 grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-[14px] font-semibold">Voornaam</span>
+          <input required name="voornaam" autocomplete="given-name" class="mt-1.5 w-full bg-kalk border-0 border-b-2 border-antraciet/20 focus:border-oranje focus:ring-0 px-4 py-3 text-[16px]"></label>
+        <label class="block"><span class="text-[14px] font-semibold">Achternaam</span>
+          <input required name="achternaam" autocomplete="family-name" class="mt-1.5 w-full bg-kalk border-0 border-b-2 border-antraciet/20 focus:border-oranje focus:ring-0 px-4 py-3 text-[16px]"></label>
+        <label class="block"><span class="text-[14px] font-semibold">E-mail</span>
+          <input required type="email" name="email" autocomplete="email" class="mt-1.5 w-full bg-kalk border-0 border-b-2 border-antraciet/20 focus:border-oranje focus:ring-0 px-4 py-3 text-[16px]"></label>
+        <label class="block"><span class="text-[14px] font-semibold">Telefoon</span>
+          <input required type="tel" name="telefoon" autocomplete="tel" class="mt-1.5 w-full bg-kalk border-0 border-b-2 border-antraciet/20 focus:border-oranje focus:ring-0 px-4 py-3 text-[16px]"></label>
+        <label class="block sm:col-span-2"><span class="text-[14px] font-semibold">Wat wil je laten doen?</span>
+          <textarea name="bericht" rows="4" class="mt-1.5 w-full bg-kalk border-0 border-b-2 border-antraciet/20 focus:border-oranje focus:ring-0 px-4 py-3 text-[16px]" placeholder="Bijvoorbeeld: woonkamer en hal opnieuw schilderen"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-7 rounded-full bg-antraciet hover:bg-black text-white text-[17px] font-semibold px-7 py-3.5">Bericht versturen</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-[#232426] text-white/60 text-[14px]">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 py-8 flex flex-wrap gap-x-8 gap-y-2 justify-between">
+    <span>© Hendriks Vastgoedschilders, Het Zwanevlot 250, Zutphen</span>
+    <span><a href="tel:+31615658923" class="hover:text-white">06 156 58 923</a> &nbsp;/&nbsp; <a href="mailto:info@hendriks-vastgoedschilders.nl" class="hover:text-white">info@hendriks-vastgoedschilders.nl</a></span>
+  </div>
+</footer>
+
+<!-- Mobiel: bellen altijd binnen bereik -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-black/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31615658923" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-oranje text-white font-bold text-[17px] py-3">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Max
+  </a>
+  <a href="mailto:info@hendriks-vastgoedschilders.nl" class="knop inline-flex items-center justify-center rounded-full border-2 border-antraciet font-semibold text-[16px] px-5">Mail</a>
+</div>
+
+</body>
+</html>
