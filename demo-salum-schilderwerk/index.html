@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salum Schilderwerk | Schilder in Zutphen</title>
+<meta name="description" content="Salum Schilderwerk uit Zutphen: schilderwerk binnen en buiten, stucwerk, behangen, glas zetten en laminaat leggen. Elke dag bereikbaar van 08:00 tot 20:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          papier: '#F2F4F0',
+          inkt: '#1B2925',
+          teal: { DEFAULT: '#0D6B5F', donker: '#0A574D' },
+          salie: '#B7C3B0',
+          kozijn: '#24413A',
+          bordeaux: '#7B2A31',
+          deur: '#6E737B',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'sans-serif'],
+          tekst: ['"Schibsted Grotesk"', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  html.js #belbalk.weg { transform: translateY(110%); }
+  body { font-family: 'Schibsted Grotesk', sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .gevel { clip-path: polygon(50% 0, 100% 26%, 100% 100%, 0 100%, 0 26%); }
+  .chip { box-shadow: inset 0 -10px 0 rgba(0,0,0,.08); }
+  .scheef { transform: rotate(-15deg) scale(1.45); }
+  :focus-visible { outline: 3px solid #0D6B5F; outline-offset: 3px; }
+  /* Eén moment: de kleurstrook rolt uit, alleen als JS draait. */
+  html.js .strook span { transform-origin: left; animation: rol .7s cubic-bezier(.2,.7,.2,1) both; }
+  html.js .strook span:nth-child(2) { animation-delay: .08s; }
+  html.js .strook span:nth-child(3) { animation-delay: .16s; }
+  html.js .strook span:nth-child(4) { animation-delay: .24s; }
+  html.js .strook span:nth-child(5) { animation-delay: .32s; }
+  @keyframes rol { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) { html.js .strook span { animation: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="bg-papier text-inkt antialiased pb-20 md:pb-0">
+
+<div class="bg-inkt text-white/85 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Salum Schilderwerk, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-salie">Hagenweb</a>
+</div>
+
+<header class="max-w-6xl mx-auto px-5 sm:px-8 py-4 md:py-5 flex items-center justify-between gap-6">
+  <a href="#top" class="font-kop font-extrabold text-3xl tracking-tight leading-none">Salum<span class="text-teal">.</span><span class="sr-only"> Schilderwerk</span></a>
+  <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+    <a href="#diensten" class="hover:text-teal transition-colors">Diensten</a>
+    <a href="#werk" class="hover:text-teal transition-colors">Werk</a>
+    <a href="#ervaring" class="hover:text-teal transition-colors">Ervaring</a>
+    <a href="#contact" class="hover:text-teal transition-colors">Contact</a>
+  </nav>
+  <a href="tel:+31687699952" class="inline-flex items-center gap-2 rounded-md border-2 border-inkt px-4 py-2 text-sm font-semibold hover:bg-inkt hover:text-white transition-colors">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    <span class="hidden sm:inline">06 87699952</span><span class="sm:hidden">Bel</span>
+  </a>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-1 md:pt-10 pb-14 md:pb-20 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+    <div class="md:col-span-6 lg:col-span-6 order-2 md:order-1">
+      <p class="font-medium text-teal mb-3 md:mb-4">Schilder in Zutphen</p>
+      <h1 class="font-kop font-extrabold text-[2.6rem] leading-[0.98] sm:text-6xl lg:text-7xl tracking-[-0.03em]">Strak in de verf, schoon achtergelaten.</h1>
+      <p class="mt-4 md:mt-6 text-[17px] md:text-lg leading-relaxed max-w-md text-inkt/80">Schilderwerk binnen en buiten, stucwerk, behang en laminaat. Netjes voorbereid, vakkundig afgewerkt en uw huis gaat opgeruimd terug. Elke dag bereikbaar van 08:00 tot 20:00.</p>
+      <div class="mt-6 md:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a id="hero-bel" href="tel:+31687699952" class="inline-flex items-center gap-3 rounded-md bg-teal px-7 py-4 text-lg font-semibold text-white shadow-[0_10px_24px_-10px_rgba(13,107,95,.7)] hover:bg-teal-donker active:translate-y-px transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 06 87699952
+        </a>
+        <a href="#contact" class="font-semibold underline decoration-2 decoration-salie underline-offset-[6px] hover:decoration-teal">Offerte aanvragen</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-sm text-inkt/75">
+        <span class="text-[#C8902A] tracking-[0.15em] text-base" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-inkt">5,0</strong> op Google</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 lg:col-span-6 order-1 md:order-2">
+      <div class="gevel aspect-[16/10] sm:aspect-[5/4] md:aspect-[1/1] overflow-hidden bg-salie">
+        <img src="assets/google-01.jpg" alt="Gevel met puntdak, kozijnen in wit, bordeauxrood en donkerblauw geschilderd" class="w-full h-full object-cover object-[50%_22%]">
+      </div>
+      <div class="strook grid grid-cols-5 h-4 md:h-5 mt-2" aria-hidden="true">
+        <span class="bg-salie"></span><span class="bg-kozijn"></span><span class="bg-bordeaux"></span><span class="bg-deur"></span><span class="bg-teal"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN als verfkaart -->
+  <section id="diensten" class="bg-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-4">
+        <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.02]">Van kale muur tot strakke afwerking.</h2>
+        <p class="mt-5 text-inkt/75 leading-relaxed max-w-sm">Van een kleine retouche tot een complete woning: vakkundig gedaan, met oog voor detail en goede materialen.</p>
+        <a href="tel:+31687699952" class="mt-6 inline-block font-semibold text-teal underline decoration-2 underline-offset-[6px]">Bespreek uw klus: 06 87699952</a>
+      </div>
+      <ul class="md:col-span-8 border-t border-inkt/15">
+        <li class="grid grid-cols-[3rem_1fr] sm:grid-cols-[4.5rem_1fr] gap-5 py-6 border-b border-inkt/15">
+          <span class="chip block h-16 sm:h-20 rounded-sm bg-salie"></span>
+          <div><h3 class="font-kop font-bold text-2xl">Schilderwerk binnen</h3><p class="mt-1.5 text-inkt/75 leading-relaxed max-w-xl">Muren, plafonds, deuren en kozijnen. Eerst gaten dichten en plamuren, dan pas verf. Zo krijgt u een egale muur zonder vlekken of randen.</p></div>
+        </li>
+        <li class="grid grid-cols-[3rem_1fr] sm:grid-cols-[4.5rem_1fr] gap-5 py-6 border-b border-inkt/15">
+          <span class="chip block h-16 sm:h-20 rounded-sm bg-kozijn"></span>
+          <div><h3 class="font-kop font-bold text-2xl">Schilderwerk buiten</h3><p class="mt-1.5 text-inkt/75 leading-relaxed max-w-xl">Kozijnen, deuren, boeiboorden en gevels. Goed voorbereid en gelakt, zodat het hout beschermd is tegen weer en wind.</p></div>
+        </li>
+        <li class="grid grid-cols-[3rem_1fr] sm:grid-cols-[4.5rem_1fr] gap-5 py-6 border-b border-inkt/15">
+          <span class="chip block h-16 sm:h-20 rounded-sm bg-[#D9D6CF]"></span>
+          <div><h3 class="font-kop font-bold text-2xl">Stucwerk</h3><p class="mt-1.5 text-inkt/75 leading-relaxed max-w-xl">Glad en strak stucwerk: de basis voor elke mooie muur, of u er nu verf of behang op wilt.</p></div>
+        </li>
+        <li class="grid grid-cols-[3rem_1fr] sm:grid-cols-[4.5rem_1fr] gap-5 py-6 border-b border-inkt/15">
+          <span class="chip block h-16 sm:h-20 rounded-sm bg-bordeaux"></span>
+          <div><h3 class="font-kop font-bold text-2xl">Behangen</h3><p class="mt-1.5 text-inkt/75 leading-relaxed max-w-xl">Renovlies, patroonbehang of fotobehang, naadloos aangebracht.</p></div>
+        </li>
+        <li class="grid grid-cols-[3rem_1fr] sm:grid-cols-[4.5rem_1fr] gap-5 py-6 border-b border-inkt/15">
+          <span class="chip block h-16 sm:h-20 rounded-sm bg-[#A9C6C9]"></span>
+          <div><h3 class="font-kop font-bold text-2xl">Glas zetten</h3><p class="mt-1.5 text-inkt/75 leading-relaxed max-w-xl">Nieuw glas in uw kozijnen, netjes geplaatst en afgewerkt.</p></div>
+        </li>
+        <li class="grid grid-cols-[3rem_1fr] sm:grid-cols-[4.5rem_1fr] gap-5 py-6 border-b border-inkt/15">
+          <span class="chip block h-16 sm:h-20 rounded-sm bg-[#B98F62]"></span>
+          <div><h3 class="font-kop font-bold text-2xl">Laminaat leggen</h3><p class="mt-1.5 text-inkt/75 leading-relaxed max-w-xl">Met de juiste ondervloer en afgewerkt met plinten. De vloer als laatste stap van een opgeknapte kamer.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WERK -->
+  <section id="werk" class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.02] max-w-xl">Werk van Salum, binnen en buiten.</h2>
+      <p class="text-inkt/75 max-w-sm leading-relaxed">Geen plaatjes uit een fotobank: dit zijn foto's van echte klussen.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <figure class="col-span-2 md:col-span-7 md:row-span-2 flex flex-col">
+        <div class="relative overflow-hidden aspect-[4/3] md:aspect-auto md:flex-1 bg-salie rounded-sm">
+          <img src="assets/google-07.jpg" alt="Woning met puntgevels, kozijnen en dakranden in donkergroen geschilderd" class="scheef absolute inset-0 w-full h-full object-cover" loading="lazy">
+        </div>
+        <figcaption class="mt-2 text-sm text-inkt/70">Kozijnen en dakranden in donkergroen</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-5">
+        <div class="overflow-hidden aspect-[4/3] rounded-sm"><img src="assets/google-02.jpg" alt="Lange muur in zacht saliegroen geschilderd, vloer afgedekt" class="w-full h-full object-cover" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-inkt/70">Muur in zacht saliegroen</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-5">
+        <div class="overflow-hidden aspect-[4/3] rounded-sm"><img src="assets/google-06.jpg" alt="Woonkamer strak in het wit met ornamentplafond en schoorsteen" class="w-full h-full object-cover object-top" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-inkt/70">Strak wit onder een ornamentplafond</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-4">
+        <div class="overflow-hidden aspect-[3/4] md:aspect-[4/5] rounded-sm"><img src="assets/google-04.jpg" alt="Muur met plamuurplekken, vloer afgedekt met folie, voor het schilderen" class="w-full h-full object-cover" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-inkt/70">Eerst plamuren, vloer afgedekt</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-4">
+        <div class="overflow-hidden aspect-[3/4] md:aspect-[4/5] rounded-sm"><img src="assets/google-03.jpg" alt="Voordeur en kozijn in grijs geschilderd" class="w-full h-full object-cover" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-inkt/70">Voordeur en kozijn in grijs</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-4">
+        <div class="overflow-hidden aspect-[4/3] md:aspect-[4/5] rounded-sm"><img src="assets/google-05.jpg" alt="Boeiboorden en dakrand wit geschilderd, ladder tegen de gevel" class="w-full h-full object-cover object-[60%_50%]" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-inkt/70">Boeiboorden en dakrand</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ERVARING -->
+  <section id="ervaring" class="bg-kozijn text-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-12">
+      <figure class="md:col-span-7">
+        <div class="flex items-center gap-2 text-[#E3B65A] text-xl tracking-[0.15em]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-6 font-kop font-medium text-2xl md:text-[2rem] leading-[1.25] tracking-[-0.01em]">
+          "Zeer tevreden over Salum Schilderwerk! Hij heeft het schilderwerk in ons nieuwe huis netjes en vakkundig uitgevoerd. Afspraken werden goed nagekomen, hij werkte schoon en het resultaat ziet er strak uit. Prettig in de communicatie en hij spreekt ook Engels, wat handig is voor internationale klanten. Een aanrader!"
+        </blockquote>
+        <figcaption class="mt-6 text-white/75">victor val mas, via Google</figcaption>
+      </figure>
+      <div class="md:col-span-5 md:pl-10 md:border-l border-white/15">
+        <h2 class="font-kop font-bold text-3xl tracking-[-0.02em]">Waar u op kunt rekenen</h2>
+        <dl class="mt-8 space-y-6">
+          <div><dt class="font-semibold text-lg flex items-center gap-3"><span class="w-3 h-3 bg-salie"></span>Afspraak is afspraak</dt><dd class="mt-1 text-white/75 leading-relaxed pl-6">Wat is afgesproken, wordt nagekomen. Duidelijke communicatie vooraf en tijdens de klus.</dd></div>
+          <div><dt class="font-semibold text-lg flex items-center gap-3"><span class="w-3 h-3 bg-salie"></span>Schoon gewerkt</dt><dd class="mt-1 text-white/75 leading-relaxed pl-6">Vloeren en meubels afgedekt, en na afloop netjes opgeruimd.</dd></div>
+          <div><dt class="font-semibold text-lg flex items-center gap-3"><span class="w-3 h-3 bg-salie"></span>Nederlands of Engels</dt><dd class="mt-1 text-white/75 leading-relaxed pl-6">Also happy to help in English.</dd></div>
+          <div><dt class="font-semibold text-lg flex items-center gap-3"><span class="w-3 h-3 bg-salie"></span>Elke dag bereikbaar</dt><dd class="mt-1 text-white/75 leading-relaxed pl-6">Maandag tot en met zondag, van 08:00 tot 20:00.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.02]">Zin in een frisse kleur?</h2>
+      <p class="mt-5 text-inkt/75 leading-relaxed max-w-sm">Bel of mail voor een vrijblijvende offerte. Vertel wat u wilt laten doen, dan kijken we samen wat het beste past.</p>
+      <a href="tel:+31687699952" class="mt-8 inline-flex items-center gap-3 rounded-md bg-teal px-7 py-4 text-lg font-semibold text-white hover:bg-teal-donker active:translate-y-px transition">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Bel 06 87699952
+      </a>
+      <dl class="mt-10 grid grid-cols-[7.5rem_1fr] gap-y-4 text-[15px]">
+        <dt class="text-inkt/60">E-mail</dt><dd><a href="mailto:info@salumschilderwerk.nl" class="font-medium underline decoration-salie decoration-2 underline-offset-4 hover:decoration-teal">info@salumschilderwerk.nl</a></dd>
+        <dt class="text-inkt/60">Adres</dt><dd class="font-medium">Beekstraat 20<br>7201 LS Zutphen</dd>
+        <dt class="text-inkt/60">Open</dt><dd class="font-medium">Elke dag 08:00 tot 20:00</dd>
+        <dt class="text-inkt/60">Werkgebied</dt><dd class="font-medium">Vanuit Zutphen, door heel Nederland</dd>
+      </dl>
+    </div>
+    <form action="mailto:info@salumschilderwerk.nl" method="post" enctype="text/plain" class="md:col-span-7 bg-white p-6 sm:p-9 rounded-sm border-t-[6px] border-salie grid sm:grid-cols-2 gap-5">
+      <p class="sm:col-span-2 font-kop font-bold text-2xl">Offerte aanvragen</p>
+      <label class="block"><span class="text-sm font-medium">Naam</span><input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-sm border border-inkt/25 bg-papier px-3.5 py-3 focus:border-teal focus:outline-none"></label>
+      <label class="block"><span class="text-sm font-medium">Telefoonnummer</span><input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-sm border border-inkt/25 bg-papier px-3.5 py-3 focus:border-teal focus:outline-none"></label>
+      <label class="block sm:col-span-2"><span class="text-sm font-medium">E-mailadres</span><input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-sm border border-inkt/25 bg-papier px-3.5 py-3 focus:border-teal focus:outline-none"></label>
+      <label class="block sm:col-span-2"><span class="text-sm font-medium">Wat wilt u laten doen?</span>
+        <select name="dienst" class="mt-1.5 w-full rounded-sm border border-inkt/25 bg-papier px-3.5 py-3 focus:border-teal focus:outline-none">
+          <option>Schilderwerk binnen</option><option>Schilderwerk buiten</option><option>Stucwerk</option><option>Behangen</option><option>Glas zetten</option><option>Laminaat leggen</option><option>Iets anders</option>
+        </select></label>
+      <label class="block sm:col-span-2"><span class="text-sm font-medium">Omschrijving</span><textarea name="omschrijving" rows="4" placeholder="Bijvoorbeeld: woonkamer en hal, muren en plafond" class="mt-1.5 w-full rounded-sm border border-inkt/25 bg-papier px-3.5 py-3 focus:border-teal focus:outline-none"></textarea></label>
+      <button type="submit" class="sm:col-span-2 justify-self-start rounded-md bg-inkt px-7 py-3.5 font-semibold text-white hover:bg-kozijn active:translate-y-px transition">Offerte aanvragen</button>
+    </form>
+  </section>
+</main>
+
+<footer class="border-t border-inkt/10">
+  <div class="strook grid grid-cols-5 h-2" aria-hidden="true"><span class="bg-salie"></span><span class="bg-kozijn"></span><span class="bg-bordeaux"></span><span class="bg-deur"></span><span class="bg-teal"></span></div>
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-inkt/70">
+    <p><span class="font-kop font-extrabold text-xl text-inkt">Salum<span class="text-teal">.</span></span> <span class="ml-2">Schilderwerk, Beekstraat 20, Zutphen</span></p>
+    <p><a href="tel:+31687699952" class="hover:text-teal">06 87699952</a> <span class="mx-2">/</span> <a href="mailto:info@salumschilderwerk.nl" class="hover:text-teal">info@salumschilderwerk.nl</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk op mobiel -->
+<div id="belbalk" class="md:hidden fixed inset-x-0 bottom-0 z-20 transition-transform duration-300 p-3 bg-papier/95 backdrop-blur border-t border-inkt/10">
+  <a href="tel:+31687699952" class="flex items-center justify-center gap-3 rounded-md bg-teal py-3.5 text-white font-semibold text-lg active:translate-y-px">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel 06 87699952
+  </a>
+</div>
+<script>
+  (function () {
+    var bar = document.getElementById('belbalk'), knop = document.getElementById('hero-bel');
+    if (!bar || !knop || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) { bar.classList.toggle('weg', e[0].isIntersecting); }).observe(knop);
+  })();
+</script>
+</body>
+</html>
