@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vlaamsch Broodhuys Twijnstraat Utrecht | Bakkerij en lunchroom</title>
+  <meta name="description" content="Bakkerij en lunchroom aan de Twijnstraat 34 in Utrecht. Zuurdesembrood, viennoiserie, patisserie en lunch. Elke dag open van 08:00 tot 17:00.">
+  <meta property="og:title" content="Vlaamsch Broodhuys Twijnstraat Utrecht">
+  <meta property="og:description" content="Bakkerij en lunchroom aan de Twijnstraat. Elke dag open van 08:00 tot 17:00.">
+  <meta property="og:image" content="assets/google-08.jpg">
+  <link rel="icon" href="assets/logo-oud.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso: '#2A201B',
+            espresso2: '#3A2D26',
+            brons: '#A47A4E',
+            bronslicht: '#C99A63',
+            bronsdonker: '#7E5A35',
+            meel: '#EFECE6',
+            tegel: '#FAF9F6',
+          },
+          fontFamily: {
+            kop: ['"Big Shoulders Display"', 'Impact', 'sans-serif'],
+            tekst: ['Newsreader', 'Georgia', 'serif'],
+          },
+        },
+      },
+    };
+    document.documentElement.classList.add('js');
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Newsreader, Georgia, serif; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .boog { border-radius: 999px 999px 0 0; }
+    .grain::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .knop { transition: transform .2s ease, background-color .2s ease, color .2s ease; }
+    .knop:hover { transform: translateY(-1px); }
+    .knop:active { transform: translateY(1px) scale(.99); }
+    a:focus-visible, button:focus-visible { outline: 2px solid #C99A63; outline-offset: 3px; border-radius: 4px; }
+    .bord-rij + .bord-rij { border-top: 1px solid rgba(239,236,230,.14); }
+    /* Eén moment beweging: de hero-foto opent als een etalage. Alleen met JS, en niet bij reduced motion. */
+    @media (prefers-reduced-motion: no-preference) {
+      .js .hero-foto img { animation: open 1.2s cubic-bezier(.2,.7,.2,1) both; }
+      @keyframes open { from { transform: scale(1.08); filter: brightness(.6); } to { transform: none; filter: none; } }
+    }
+  </style>
+</head>
+<body class="bg-meel text-espresso">
+
+  <a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-tegel focus:px-4 focus:py-2">Naar de inhoud</a>
+
+  <!-- Demo-balk -->
+  <div class="bg-black/90 text-[13px] text-meel/80 text-center px-4 py-2 font-tekst">
+    Demo voor Vlaamsch Broodhuys Twijnstraat Utrecht, gemaakt door
+    <a href="https://hagenweb.nl" class="underline underline-offset-2 text-meel hover:text-bronslicht">Hagenweb</a>
+  </div>
+
+  <!-- Header + hero in het espresso van de pui -->
+  <div class="relative bg-espresso text-meel grain overflow-hidden">
+    <header class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between py-5">
+      <a href="#" class="font-kop font-extrabold uppercase tracking-[0.12em] text-[19px] sm:text-[22px] leading-none text-bronslicht">
+        Vlaamsch <span class="text-meel/40 mx-0.5">&bull;</span> Broodhuys
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-[17px]">
+        <a href="#toonbank" class="text-meel/75 hover:text-meel transition-colors">De toonbank</a>
+        <a href="#lunchroom" class="text-meel/75 hover:text-meel transition-colors">Lunchroom</a>
+        <a href="#bezoek" class="text-meel/75 hover:text-meel transition-colors">Bezoek</a>
+        <a href="tel:+31306870947" class="font-kop font-bold text-[20px] tracking-wide text-bronslicht hover:text-meel transition-colors">030 687 0947</a>
+      </nav>
+      <a href="tel:+31306870947" class="md:hidden font-kop font-bold text-[18px] text-bronslicht">Bellen</a>
+    </header>
+
+    <section id="inhoud" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pt-6 pb-0 lg:pt-10 grid lg:grid-cols-12 gap-10 lg:gap-12 items-end">
+      <div class="lg:col-span-6 lg:pb-24">
+        <p class="text-bronslicht text-[16px] sm:text-[17px] italic mb-3 sm:mb-4">Bakkerij en lunchroom aan de Twijnstraat, Utrecht</p>
+        <h1 class="font-kop font-extrabold leading-[0.88] tracking-[-0.01em] text-[58px] sm:text-[96px] lg:text-[124px]">
+          Brood zoals het hoort.
+        </h1>
+        <p class="mt-5 sm:mt-6 max-w-[30rem] text-[18px] sm:text-[21px] leading-relaxed text-meel/80">
+          Haal een zuurdesembrood mee of schuif aan voor koffie, taart en een goed belegde boterham. Elke dag open, ook in het weekend.
+        </p>
+        <div id="hero-cta" class="mt-7 sm:mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a href="tel:+31306870947" class="knop inline-flex items-center gap-3 bg-bronslicht hover:bg-[#d8ab74] text-espresso font-kop font-bold text-[22px] tracking-wide px-7 py-4 rounded-full shadow-[0_10px_30px_-10px_rgba(201,154,99,.6)]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Bel 030 687 0947
+          </a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Twijnstraat+34+3511+ZL+Utrecht" target="_blank" rel="noopener" class="text-[18px] text-meel underline decoration-bronslicht/60 underline-offset-[6px] hover:decoration-bronslicht">Route plannen</a>
+        </div>
+        <p class="mt-6 sm:mt-8 flex items-center gap-3 text-[16px] text-meel/65">
+          <span class="text-bronslicht tracking-[0.15em]" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;<span class="text-meel/25">&#9733;</span></span>
+          4,0 uit 336 Google-reviews
+        </p>
+      </div>
+
+      <div class="lg:col-span-6 relative">
+        <div class="hero-foto boog overflow-hidden border-[6px] border-b-0 border-brons/40 aspect-[4/3.4] sm:aspect-[4/3.6] lg:aspect-[4/4.6] max-w-[620px] ml-auto">
+          <img src="assets/google-08.jpg" alt="De toonbank van het Vlaamsch Broodhuys: manden vol zuurdesembrood en focaccia voor een bakstenen muur met het logo" class="w-full h-full object-cover object-[62%_center]">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <main>
+    <!-- De toonbank -->
+    <section id="toonbank" class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-5">
+          <h2 class="font-kop font-extrabold text-[48px] sm:text-[64px] leading-[0.92]">Wat er op de toonbank ligt</h2>
+          <p class="mt-6 text-[19px] leading-[1.7] max-w-[34rem] text-espresso/80">
+            Binnen ruikt het naar korst en boter. In de manden langs de baksteen liggen de broden, in de vitrine de croissants
+            en taartjes. Op de muur hangen de borden, net als hieronder.
+          </p>
+
+          <div class="mt-10 bg-espresso text-meel rounded-[6px] p-7 sm:p-9 relative grain overflow-hidden">
+            <div class="relative z-10">
+              <div class="bord-rij py-4 first:pt-0">
+                <h3 class="font-kop font-bold text-[28px] uppercase tracking-[0.06em] text-bronslicht">Zuurdesem</h3>
+                <p class="text-meel/75 text-[17px] mt-1">Stevige broden met een donkere korst, het hart van de zaak.</p>
+              </div>
+              <div class="bord-rij py-4">
+                <h3 class="font-kop font-bold text-[28px] uppercase tracking-[0.06em] text-bronslicht">Pousse-lent</h3>
+                <p class="text-meel/75 text-[17px] mt-1">Deeg dat de tijd krijgt om langzaam te rijzen.</p>
+              </div>
+              <div class="bord-rij py-4">
+                <h3 class="font-kop font-bold text-[28px] uppercase tracking-[0.06em] text-bronslicht">Viennoiserie</h3>
+                <p class="text-meel/75 text-[17px] mt-1">Croissants en ander roomboterwerk voor bij de koffie.</p>
+              </div>
+              <div class="bord-rij py-4">
+                <h3 class="font-kop font-bold text-[28px] uppercase tracking-[0.06em] text-bronslicht">Patisserie</h3>
+                <p class="text-meel/75 text-[17px] mt-1">Taartjes en cake uit de vitrine.</p>
+              </div>
+              <div class="bord-rij pt-4">
+                <h3 class="font-kop font-bold text-[28px] uppercase tracking-[0.06em] text-bronslicht">Take-out</h3>
+                <p class="text-meel/75 text-[17px] mt-1">Koffie, een broodje, ontbijt of lunch om mee te nemen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-6 gap-4 sm:gap-5 lg:pt-4">
+          <img src="assets/google-04.jpg" alt="De winkel met manden brood, de vitrine en grote ramen naar de Twijnstraat" class="col-span-6 w-full aspect-[3/2] object-cover rounded-[4px]">
+          <img src="assets/google-02.jpg" alt="Plakken krentencake en notenbrood op een houten plank" class="col-span-3 w-full aspect-[3/4] object-cover rounded-[4px]">
+          <div class="col-span-3 flex flex-col justify-end pb-2">
+            <img src="assets/site-01.png" alt="" aria-hidden="true" class="w-[85%] mb-6">
+            <p class="font-tekst italic text-[19px] leading-snug text-espresso/80">Brood haalt u hier gewoon over de toonbank. Weet u niet wat u kiezen moet? Vraag het achter de vitrine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lunchroom -->
+    <section id="lunchroom" class="bg-tegel border-y border-espresso/10">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-5 lg:order-2 lg:pt-10">
+          <h2 class="font-kop font-extrabold text-[48px] sm:text-[64px] leading-[0.92]">Aanschuiven voor de lunch</h2>
+          <p class="mt-6 text-[19px] leading-[1.7] text-espresso/80 max-w-[34rem]">
+            Achter de winkel zit de lunchroom: lange houten tafels, een ronde tafel voor gezelschappen en lichtslingers aan het plafond.
+            Hier eet u Dimitri's boterhamme, op het brood van de toonbank, met verschillende soorten beleg.
+          </p>
+          <p class="mt-4 text-[19px] leading-[1.7] text-espresso/80 max-w-[34rem]">
+            Liever een tosti, een stuk taart of alleen koffie? Ook goed. Met een groep komen? Bel even, dan denken we mee.
+          </p>
+          <a href="tel:+31306870947" class="knop mt-8 inline-flex items-center gap-2 bg-espresso hover:bg-espresso2 text-meel font-kop font-bold text-[20px] tracking-wide px-6 py-3.5 rounded-full">
+            Bel voor een tafel
+          </a>
+        </div>
+        <div class="lg:col-span-7 lg:order-1 grid grid-cols-5 gap-4 sm:gap-5">
+          <div class="col-span-3 relative overflow-hidden rounded-[4px]">
+            <img src="assets/google-05.jpg" alt="De lunchroom met houten tafels, een houten wand en lichtslingers" class="absolute inset-0 w-full h-full object-cover object-top">
+          </div>
+          <div class="col-span-2 flex flex-col gap-4 sm:gap-5">
+            <img src="assets/google-07.jpg" alt="Boterhammen op zuurdesem met kaas, radijs en sla op een houten plank" class="w-full aspect-[5/4] object-cover object-[center_60%] rounded-[4px]">
+            <img src="assets/google-06.jpg" alt="Tosti's op houten planken met koffie en thee" class="w-full aspect-[5/4] object-cover object-[75%_center] rounded-[4px]">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div class="lg:col-span-4">
+          <p class="font-kop font-extrabold text-[110px] sm:text-[140px] leading-[0.8] text-brons">4,0</p>
+          <p class="mt-4 text-brons text-[22px] tracking-[0.15em]" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;<span class="text-espresso/20">&#9733;</span></p>
+          <p class="mt-1 text-[19px] text-espresso/80">gemiddeld uit 336 reviews op Google</p>
+        </div>
+        <div class="lg:col-span-8 grid sm:grid-cols-2 gap-10 sm:gap-12">
+          <figure class="border-t-2 border-brons pt-6">
+            <blockquote class="text-[21px] leading-[1.6]">
+              &ldquo;Heel vriendelijk en behulpzaam personeel om iedereen van ons gezelschap met persoonlijke wensen (o.a. veganistisch opties die niet op de menukaart stonden) tevreden te maken. We hebben genoten aan de ronde tafel van de erg lekkere zuurdesem boterhammen en verschillende soorten beleg. Kortom, fijn en heerlijk geluncht,&hellip;&rdquo;
+            </blockquote>
+            <figcaption class="mt-5 font-kop font-bold text-[20px] tracking-wide">Alexander <span class="font-tekst font-normal text-[16px] text-espresso/60 ml-2">5 van 5 sterren, Google</span></figcaption>
+          </figure>
+          <figure class="border-t-2 border-brons pt-6 sm:mt-16">
+            <blockquote class="text-[21px] leading-[1.6]">
+              &ldquo;lekkere taartjes en prima koffie. gezellige sfeer. aardig personeel. alleen duurde het een beetje lang voordat de bestelling werd opgenomen&rdquo;
+            </blockquote>
+            <figcaption class="mt-5 font-kop font-bold text-[20px] tracking-wide">Loïs van Vliet <span class="font-tekst font-normal text-[16px] text-espresso/60 ml-2">4 van 5 sterren, Google</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bezoek -->
+    <section id="bezoek" class="relative bg-espresso text-meel grain overflow-hidden">
+      <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-6">
+          <img src="assets/site-02.png" alt="" aria-hidden="true" class="w-24 sm:w-28 mb-6">
+          <h2 class="font-kop font-extrabold text-[56px] sm:text-[80px] leading-[0.9]">Elke dag van 8 tot 5</h2>
+          <p class="mt-5 text-[19px] text-meel/75 max-w-[30rem] leading-relaxed">Maandag tot en met zondag, 08:00 tot 17:00. U vindt ons midden in de Twijnstraat, herkenbaar aan de bruine luifel.</p>
+
+          <dl class="mt-10 grid sm:grid-cols-2 gap-8 text-[18px]">
+            <div>
+              <dt class="font-kop font-bold text-[20px] tracking-wide text-bronslicht">Adres</dt>
+              <dd class="mt-2 leading-relaxed text-meel/85">Twijnstraat 34<br>3511 ZL Utrecht</dd>
+              <dd class="mt-2"><a href="https://www.google.com/maps/dir/?api=1&destination=Twijnstraat+34+3511+ZL+Utrecht" target="_blank" rel="noopener" class="underline decoration-bronslicht/60 underline-offset-4 hover:decoration-bronslicht">Route plannen</a></dd>
+            </div>
+            <div>
+              <dt class="font-kop font-bold text-[20px] tracking-wide text-bronslicht">Contact</dt>
+              <dd class="mt-2"><a href="tel:+31306870947" class="hover:text-bronslicht">030 687 0947</a></dd>
+              <dd class="mt-1"><a href="mailto:info@vlaamschbroodhuys.nl" class="hover:text-bronslicht break-all">info@vlaamschbroodhuys.nl</a></dd>
+            </div>
+          </dl>
+
+          <div class="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
+            <a href="tel:+31306870947" class="knop inline-flex items-center gap-3 bg-bronslicht hover:bg-[#d8ab74] text-espresso font-kop font-bold text-[22px] tracking-wide px-7 py-4 rounded-full">Bel 030 687 0947</a>
+            <a href="mailto:info@vlaamschbroodhuys.nl" class="text-[18px] underline decoration-bronslicht/60 underline-offset-[6px] hover:decoration-bronslicht">Stuur een e-mail</a>
+          </div>
+        </div>
+        <div class="lg:col-span-6 relative">
+          <img src="assets/google-01.jpg" alt="De gevel van het Vlaamsch Broodhuys aan de Twijnstraat met bruine luifel en etalage vol brood" class="w-full aspect-[3/2] object-cover rounded-[4px]">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#211915] text-meel/60 pb-24 md:pb-0">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between text-[15px]">
+      <p class="font-kop font-extrabold uppercase tracking-[0.12em] text-[18px] text-bronslicht">Vlaamsch <span class="text-meel/30">&bull;</span> Broodhuys</p>
+      <p>Twijnstraat 34, 3511 ZL Utrecht. Elke dag 08:00 tot 17:00.</p>
+    </div>
+  </footer>
+
+  <!-- Mobiele belbalk -->
+  <div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 transition-transform duration-300 bg-espresso/95 backdrop-blur border-t border-meel/10">
+    <a href="tel:+31306870947" class="flex items-center justify-center gap-3 bg-bronslicht text-espresso font-kop font-bold text-[21px] tracking-wide py-3.5 rounded-full">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      Bel 030 687 0947
+    </a>
+  </div>
+  <script>
+    (function () {
+      var bar = document.getElementById('belbalk'), cta = document.getElementById('hero-cta');
+      if (!bar || !cta || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(function (e) {
+        bar.style.transform = e[0].isIntersecting ? 'translateY(110%)' : 'none';
+      }).observe(cta);
+    })();
+  </script>
+</body>
+</html>
