@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoog Catharijne | Winkelcentrum in Utrecht, tussen Centraal en de binnenstad</title>
+<meta name="description" content="Meer dan 120 winkels en ruim 30 restaurants, direct tussen Utrecht Centraal en de oude binnenstad. Bekijk openingstijden, bereikbaarheid en services.">
+<meta property="og:title" content="Hoog Catharijne, winkelcentrum in Utrecht">
+<meta property="og:image" content="assets/google-02.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314202B'/%3E%3Cpath d='M6 12c3.3-2.7 6.7-2.7 10 0s6.7 2.7 10 0M6 17c3.3-2.7 6.7-2.7 10 0s6.7 2.7 10 0M6 22c3.3-2.7 6.7-2.7 10 0s6.7 2.7 10 0' stroke='%23A9D9F2' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        inkt: '#14202B',
+        beton: '#F3F4F2',
+        steen: '#E3E5E1',
+        lucht: '#A9D9F2',
+        diep: '#2C6E91',
+        lamp: '#F2C14E',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        tekst: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-optical-sizing: auto; }
+  .tab { font-variant-numeric: tabular-nums; }
+  /* Luifel: grote zwaai linksboven, zoals de gebogen overkapping van de gevel */
+  .luifel { border-radius: 0 1.25rem 1.25rem 1.25rem; border-top-left-radius: 46% 30%; }
+  @media (min-width: 1024px) { .luifel { border-top-left-radius: 52% 38%; } }
+  /* Ruitpatroon van de gevel */
+  .gevel {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cpath d='M22 3 41 22 22 41 3 22Z' fill='none' stroke='%23A9D9F2' stroke-opacity='.13' stroke-width='1.2'/%3E%3C/svg%3E");
+    background-size: 44px 44px;
+  }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(20,32,43,.45); }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #2C6E91; outline-offset: 3px; border-radius: 6px; }
+  .dag-vandaag { background: #F2C14E; color: #14202B; }
+  /* Eén orkestmoment: hero komt binnen. Alleen als JS draait. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .in { animation: in .8s cubic-bezier(.2,.7,.2,1) both; }
+    .js .in-2 { animation-delay: .12s; }
+    .js .in-3 { animation-delay: .24s; }
+    .js .foto-in { animation: foto .9s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes foto { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body class="bg-beton text-inkt">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-12 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-white/80 text-[13px]">
+  <div class="mx-auto max-w-7xl px-5 py-2 text-center">
+    Demo voor Hoog Catharijne, gemaakt door <a href="https://hagenweb.nl" class="font-semibold text-lucht underline underline-offset-2 hover:text-white">Hagenweb</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-beton/90 backdrop-blur border-b border-inkt/10">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3.5">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="Hoog Catharijne, naar boven">
+      <svg width="30" height="22" viewBox="0 0 30 22" aria-hidden="true"><path d="M1 5c4.7-4 9.3-4 14 0s9.3 4 14 0M1 11c4.7-4 9.3-4 14 0s9.3 4 14 0M1 17c4.7-4 9.3-4 14 0s9.3 4 14 0" stroke="#14202B" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+      <span class="kop text-[19px] font-extrabold tracking-[.04em] uppercase">Hoog Catharijne</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#open" class="hover:text-diep">Openingstijden</a>
+      <a href="#aanbod" class="hover:text-diep">Winkels &amp; eten</a>
+      <a href="#bereikbaar" class="hover:text-diep">Bereikbaarheid</a>
+      <a href="#mening" class="hover:text-diep">Contact</a>
+    </nav>
+    <a href="tel:+31302346464" class="knop hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-inkt px-4 py-2 text-[15px] font-semibold hover:bg-inkt hover:text-white">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      030 234 6464
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="mx-auto grid max-w-7xl items-center gap-6 px-5 pb-12 pt-5 lg:grid-cols-12 lg:gap-10 lg:pb-20 lg:pt-14">
+    <div class="order-2 lg:order-1 lg:col-span-5 lg:pr-4">
+      <p class="in text-[15px] font-medium text-diep">Winkelcentrum in Utrecht<span class="hidden sm:inline">, tussen Centraal en de binnenstad</span></p>
+      <h1 class="kop in in-2 mt-2 lg:mt-4 text-[42px] font-extrabold leading-[.95] tracking-[-.03em] sm:text-6xl lg:text-[76px]">Uitstappen, en je&nbsp;bent er&nbsp;al.</h1>
+      <p class="in in-3 mt-4 max-w-md text-[17px] sm:text-lg leading-relaxed text-inkt/75 lg:mt-6">Meer dan 120 winkels en ruim 30 restaurants, tussen het station en de stad. Zeven dagen per week open, van maandag tot en met zaterdag tot 20:00.</p>
+      <div class="in in-3 mt-6 lg:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hoog+Catharijne,+Godebaldkwartier+54,+3511+DX+Utrecht" target="_blank" rel="noopener" class="knop inline-flex items-center gap-3 rounded-full bg-lucht px-7 py-4 text-lg font-semibold text-inkt hover:bg-[#93cdec]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Plan je route
+        </a>
+        <a href="tel:+31302346464" class="hidden sm:inline font-semibold underline decoration-inkt/30 decoration-2 underline-offset-4 hover:decoration-inkt">of bel 030 234 6464</a>
+      </div>
+      <p class="in in-3 mt-5 lg:mt-8 flex items-center gap-2 text-[15px] text-inkt/70">
+        <span class="text-lamp text-lg tracking-tight" aria-hidden="true">★★★★<span class="text-inkt/20">★</span></span>
+        <span><strong class="text-inkt">4,3</strong> uit 31.783 Google-reviews</span>
+      </p>
+    </div>
+    <div class="order-1 lg:order-2 lg:col-span-7">
+      <div class="foto-in luifel relative overflow-hidden bg-steen aspect-[16/10] sm:aspect-[16/11] lg:aspect-[7/6]">
+        <img src="assets/google-02.jpg" alt="De glazen gevel van Hoog Catharijne The Mall met de gebogen luifel en bezoekers op het plein" class="absolute inset-0 h-full w-full object-cover object-[52%_60%] scale-[1.12] lg:scale-100">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Openingstijden -->
+<section id="open" class="bg-lucht/35">
+  <div class="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-12 lg:py-24">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-4xl font-bold tracking-[-.02em] sm:text-5xl">Open als jij tijd hebt.</h2>
+      <p class="mt-5 max-w-md text-lg leading-relaxed text-inkt/75">Hoog Catharijne heeft de ruimste openingstijden van alle winkelcentra in Nederland. Na je werk nog even langs? Tot 20:00 kan dat, zes dagen per week.</p>
+      <p id="vandaag-tekst" class="mt-6 max-w-md text-[15px] text-inkt/70">Eten en supermarkten hebben eigen tijden, die vind je bij het schema. De tijden per winkel kunnen afwijken.</p>
+    </div>
+    <div class="lg:col-span-7">
+      <div class="rounded-3xl bg-white p-6 shadow-[0_20px_50px_-30px_rgba(20,32,43,.35)] sm:p-9">
+        <h3 class="kop text-xl font-bold">Winkels</h3>
+        <dl class="tab mt-4 divide-y divide-inkt/10 text-[17px]" id="weektabel">
+          <div class="flex justify-between rounded-lg px-3 py-2.5" data-dag="1"><dt>Maandag</dt><dd class="whitespace-nowrap">12:00 tot 20:00</dd></div>
+          <div class="flex justify-between rounded-lg px-3 py-2.5" data-dag="2"><dt>Dinsdag</dt><dd class="whitespace-nowrap">10:00 tot 20:00</dd></div>
+          <div class="flex justify-between rounded-lg px-3 py-2.5" data-dag="3"><dt>Woensdag</dt><dd class="whitespace-nowrap">10:00 tot 20:00</dd></div>
+          <div class="flex justify-between rounded-lg px-3 py-2.5" data-dag="4"><dt>Donderdag</dt><dd class="whitespace-nowrap">10:00 tot 20:00</dd></div>
+          <div class="flex justify-between rounded-lg px-3 py-2.5" data-dag="5"><dt>Vrijdag</dt><dd class="whitespace-nowrap">10:00 tot 20:00</dd></div>
+          <div class="flex justify-between rounded-lg px-3 py-2.5" data-dag="6"><dt>Zaterdag</dt><dd class="whitespace-nowrap">10:00 tot 20:00</dd></div>
+          <div class="flex justify-between rounded-lg px-3 py-2.5" data-dag="0"><dt>Zondag</dt><dd class="whitespace-nowrap">12:00 tot 18:00</dd></div>
+        </dl>
+        <div class="tab mt-8 grid gap-6 border-t border-inkt/10 pt-6 sm:grid-cols-2">
+          <div>
+            <h3 class="kop text-lg font-bold">Eten &amp; drinken</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-inkt/75">Ontbijt en lunch 8:00 tot 20:00<br>Middag en avond 10:00 tot 22:00</p>
+          </div>
+          <div>
+            <h3 class="kop text-lg font-bold">Supermarkten</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-inkt/75">Dagelijks 8:00 tot 21:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Aanbod -->
+<section id="aanbod" class="mx-auto max-w-7xl px-5 py-16 lg:py-28">
+  <div class="grid gap-6 lg:grid-cols-12 lg:items-end">
+    <h2 class="kop text-4xl font-bold tracking-[-.02em] sm:text-5xl lg:col-span-6">133 winkels, 37 plekken om te eten. Eén dak.</h2>
+    <p class="max-w-lg text-lg leading-relaxed text-inkt/75 lg:col-span-5 lg:col-start-8">Shoppen, ontspannen, lekker eten en tijd doorbrengen met familie en vrienden. Dat kan hier allemaal, zonder dat je een paraplu nodig hebt.</p>
+  </div>
+
+  <div class="mt-12 grid gap-5 lg:grid-cols-12 lg:grid-rows-[auto_auto]">
+    <!-- Mode -->
+    <figure class="lg:col-span-7 lg:row-span-2">
+      <div class="overflow-hidden rounded-[1.75rem] aspect-[4/3] lg:aspect-auto lg:h-[620px]">
+        <img src="assets/google-05.jpg" alt="Drie etalages van Mango aan de lichte natuurstenen promenade" class="h-full w-full object-cover">
+      </div>
+      <figcaption class="mt-5 grid gap-2 sm:grid-cols-[180px_1fr]">
+        <h3 class="kop text-2xl font-bold">Mode &amp; meer</h3>
+        <p class="text-inkt/75 leading-relaxed">Van JD Sports, Foot Locker en Zara Man tot Bershka, Boots, Jamin en de Samsung Experience Store.</p>
+      </figcaption>
+    </figure>
+    <!-- Eten -->
+    <figure class="lg:col-span-5">
+      <div class="overflow-hidden rounded-[1.75rem] aspect-[16/10]">
+        <img src="assets/google-01.jpg" alt="Koffiebar aan de vijver in het atrium, met planten op de voorgrond" class="h-full w-full object-cover object-[60%_50%]">
+      </div>
+      <figcaption class="mt-5">
+        <h3 class="kop text-2xl font-bold">Eten aan het water</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">Koffie bij de vijver, of een hapje bij The Seafood Bar, Simit Sarayi, Surya To Go, The Gyros Bar, Salsa Shop, Popsyz of The Smooth Brothers.</p>
+      </figcaption>
+    </figure>
+    <!-- Wonen -->
+    <figure class="lg:col-span-5 grid grid-cols-[1fr_1.1fr] gap-5 items-start">
+      <div class="overflow-hidden rounded-[1.75rem] aspect-[4/5]">
+        <img src="assets/google-04.jpg" alt="Winkel met droogbloemen, planten en kaarsen" class="h-full w-full object-cover">
+      </div>
+      <figcaption class="pt-2">
+        <h3 class="kop text-2xl font-bold">Even rondkijken</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">Bloemen, kaarsen en iets moois voor thuis. Of zoek een cadeau en geef de Hoog Catharijne cadeaukaart.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Verhaal -->
+<section class="gevel bg-inkt text-white">
+  <div class="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-12 lg:items-center lg:py-28">
+    <div class="lg:col-span-6 lg:order-2">
+      <h2 class="kop text-4xl font-bold tracking-[-.02em] sm:text-5xl">Het drukste winkelcentrum van Nederland.</h2>
+      <div class="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-white/80">
+        <p>Hoog Catharijne ligt precies tussen het Centraal Station en de oude binnenstad. De renovatie heeft het centrum moderner en prettiger gemaakt, en sinds de Singel in september 2020 terug is, kun je er met je bootje zelfs onderdoor varen.</p>
+        <p>Na het winkelen ben je zo bij een concert in TivoliVredenburg of de nieuwste film bij Kinepolis. In 2019 won Hoog Catharijne de Jaarprijs van de Nederlandse Raad van Winkelcentra.</p>
+      </div>
+      <dl class="tab mt-10 grid max-w-xl grid-cols-3 gap-6 border-t border-white/15 pt-6">
+        <div><dt class="text-sm text-white/60">Geopend in</dt><dd class="kop mt-1 text-3xl font-bold text-lucht">1973</dd></div>
+        <div><dt class="text-sm text-white/60">Parkeergarages</dt><dd class="kop mt-1 text-3xl font-bold text-lucht">5</dd></div>
+        <div><dt class="text-sm text-white/60">Familieplekken</dt><dd class="kop mt-1 text-3xl font-bold text-lucht">3500</dd></div>
+      </dl>
+    </div>
+    <div class="lg:col-span-6 lg:order-1">
+      <div class="overflow-hidden rounded-[1.75rem] rounded-br-[45%] aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/4.4]">
+        <img src="assets/google-07.jpg" alt="Avonduitzicht over de verlichte winkelpromenade en de perrons van Utrecht Centraal" class="h-full w-full object-cover object-[50%_55%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kinderen & services -->
+<section class="mx-auto max-w-7xl px-5 py-16 lg:py-28">
+  <div class="grid gap-12 lg:grid-cols-12 lg:items-center">
+    <div class="lg:col-span-5">
+      <div class="relative">
+        <div class="overflow-hidden rounded-[1.75rem] rounded-tl-[45%] aspect-[4/5]">
+          <img src="assets/google-08.jpg" alt="Nijntje-beeld bij de speelplek voor kleine kinderen in het winkelcentrum" class="h-full w-full object-cover object-[50%_35%]">
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7">
+      <h2 class="kop text-4xl font-bold tracking-[-.02em] sm:text-5xl">Ook met de kleintjes geregeld.</h2>
+      <p class="mt-5 max-w-lg text-lg leading-relaxed text-inkt/75">Nijntje staat je op te wachten bij de speelplek. En voor de rest van de dag zijn er genoeg voorzieningen, zodat jij rustig kunt rondlopen.</p>
+      <ul class="mt-9 grid gap-x-8 gap-y-3.5 text-[17px] sm:grid-cols-2">
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>Kinderwagen verhuur</li>
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>Babyverzorgingsruimte</li>
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>Informatiebalie</li>
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>Openbaar toilet</li>
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>Wifi</li>
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>Stiltecentrum</li>
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>Mindervalidentoegang</li>
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>AED</li>
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>Pakketpunt</li>
+        <li class="flex gap-3 border-b border-inkt/10 pb-3.5"><span class="mt-[9px] h-2 w-2 shrink-0 rotate-45 bg-diep"></span>Vergaderruimtes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Bereikbaarheid -->
+<section id="bereikbaar" class="bg-steen">
+  <div class="mx-auto max-w-7xl px-5 py-16 lg:py-24">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <h2 class="kop text-4xl font-bold tracking-[-.02em] sm:text-5xl">Zo kom je hier.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-inkt/75">Godebaldkwartier 54, 3511 DX Utrecht. Makkelijk te bereiken met het openbaar vervoer en met de auto.</p>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hoog+Catharijne,+Godebaldkwartier+54,+3511+DX+Utrecht" target="_blank" rel="noopener" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-lucht px-6 py-3.5 font-semibold text-inkt hover:bg-[#93cdec]">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Plan je route
+        </a>
+      </div>
+      <div class="grid gap-px overflow-hidden rounded-3xl bg-inkt/10 sm:grid-cols-2 lg:col-span-8">
+        <div class="bg-beton p-7">
+          <h3 class="kop text-2xl font-bold">Met de trein</h3>
+          <p class="mt-3 leading-relaxed text-inkt/75">Hoog Catharijne ligt tussen Utrecht Centraal en de binnenstad. Vanaf het perron loop je zo het winkelcentrum in.</p>
+        </div>
+        <div class="bg-beton p-7">
+          <h3 class="kop text-2xl font-bold">Met de auto</h3>
+          <p class="mt-3 leading-relaxed text-inkt/75">Parkeer in een van de 5 parkeergarages, met 3500 familieparkeerplaatsen, mindervalidenplekken en laadpunten voor elektrische auto's.</p>
+        </div>
+        <div class="bg-beton p-7">
+          <h3 class="kop text-2xl font-bold">Met de fiets</h3>
+          <p class="mt-3 leading-relaxed text-inkt/75">Zet je fiets in de fietsenstalling en loop zo naar binnen.</p>
+        </div>
+        <div class="bg-beton p-7">
+          <h3 class="kop text-2xl font-bold">Te voet</h3>
+          <p class="mt-3 leading-relaxed text-inkt/75">Vanuit de oude binnenstad wandel je zo naar binnen. En andersom loop je na het shoppen zo de stad in.</p>
+        </div>
+      </div>
+    </div>
+    <figure class="mt-12 overflow-hidden rounded-[1.75rem] aspect-[16/9] sm:aspect-[21/8]">
+      <img src="assets/google-03.jpg" alt="Trap en roltrap naar de bovenverdieping met restaurants en zitplekken" class="h-full w-full object-cover object-[50%_45%]">
+    </figure>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="mx-auto max-w-7xl px-5 py-16 lg:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <h2 class="kop max-w-xl text-4xl font-bold tracking-[-.02em] sm:text-5xl">Wat bezoekers zeggen.</h2>
+    <p class="text-[15px] text-inkt/70"><strong class="text-inkt">4,3</strong> gemiddeld uit 31.783 reviews op Google</p>
+  </div>
+  <div class="mt-12 grid gap-5 lg:grid-cols-12">
+    <blockquote class="rounded-3xl bg-inkt p-8 text-white lg:col-span-7 lg:row-span-2 lg:p-12">
+      <p class="kop text-3xl font-semibold leading-tight tracking-[-.01em] sm:text-4xl">"Een van de mooiste en meest fantastische winkelcentra die ik ooit heb bezocht."</p>
+      <footer class="mt-8 text-white/70"><span class="text-lamp" aria-label="5 van 5 sterren">★★★★★</span><br>zayer. hussein, via Google</footer>
+    </blockquote>
+    <blockquote class="rounded-3xl bg-white p-8 lg:col-span-5">
+      <p class="text-lg leading-relaxed">"Hoog Catharijne winkelcentrum is echt een prachtig winkelcentrum. Je kunt hier eigenlijk alles vinden wat je zoekt: er is een grote variatie aan winkels, voor ieder wat wils."</p>
+      <footer class="mt-5 text-[15px] text-inkt/70"><span class="text-lamp" aria-label="5 van 5 sterren">★★★★★</span> Etelvina Da graca</footer>
+    </blockquote>
+    <blockquote class="rounded-3xl bg-white p-8 lg:col-span-5">
+      <p class="text-lg leading-relaxed">"We mochten in Hoog Catharijne onze gele badeend over een fontein opbouwen. Het was even wat sjouwen maar wat stond het prachtig in het winkelcentrum ☺️"</p>
+      <footer class="mt-5 text-[15px] text-inkt/70"><span class="text-lamp" aria-label="5 van 5 sterren">★★★★★</span> Wessel Bottenberg</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Mening / contact -->
+<section id="mening" class="bg-lucht/35">
+  <div class="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-12 lg:py-24">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-4xl font-bold tracking-[-.02em] sm:text-5xl">Hoe was je bezoek?</h2>
+      <p class="mt-5 max-w-md text-lg leading-relaxed text-inkt/75">Een idee, een compliment of iets dat beter kan: wat het ook is, dit is je kans om het te zeggen.</p>
+      <dl class="mt-10 space-y-5 text-[17px]">
+        <div><dt class="text-sm text-inkt/60">Bellen</dt><dd><a href="tel:+31302346464" class="font-semibold hover:text-diep">030 234 6464</a></dd></div>
+        <div><dt class="text-sm text-inkt/60">Mailen</dt><dd><a href="mailto:voorbeeld@hotmail.com" class="font-semibold hover:text-diep">voorbeeld@hotmail.com</a></dd></div>
+        <div><dt class="text-sm text-inkt/60">Adres</dt><dd class="font-semibold">Godebaldkwartier 54<br>3511 DX Utrecht</dd></div>
+      </dl>
+    </div>
+    <form class="rounded-3xl bg-white p-6 shadow-[0_20px_50px_-30px_rgba(20,32,43,.35)] sm:p-9 lg:col-span-7" action="mailto:voorbeeld@hotmail.com" method="post" enctype="text/plain">
+      <fieldset>
+        <legend class="kop text-xl font-bold">Waar gaat het over?</legend>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <label class="cursor-pointer"><input type="radio" name="soort" value="Suggestie" class="peer sr-only" checked><span class="inline-block rounded-full border-2 border-inkt/15 px-5 py-2.5 font-medium transition peer-checked:border-inkt peer-checked:bg-inkt peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-diep">Een suggestie</span></label>
+          <label class="cursor-pointer"><input type="radio" name="soort" value="Compliment" class="peer sr-only"><span class="inline-block rounded-full border-2 border-inkt/15 px-5 py-2.5 font-medium transition peer-checked:border-inkt peer-checked:bg-inkt peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-diep">Een compliment</span></label>
+          <label class="cursor-pointer"><input type="radio" name="soort" value="Probleem" class="peer sr-only"><span class="inline-block rounded-full border-2 border-inkt/15 px-5 py-2.5 font-medium transition peer-checked:border-inkt peer-checked:bg-inkt peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-diep">Een probleem</span></label>
+        </div>
+      </fieldset>
+      <div class="mt-7 grid gap-5 sm:grid-cols-2">
+        <label class="block"><span class="text-sm font-medium">Naam</span><input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-xl border-2 border-inkt/15 bg-beton px-4 py-3 outline-none focus:border-diep"></label>
+        <label class="block"><span class="text-sm font-medium">E-mail</span><input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border-2 border-inkt/15 bg-beton px-4 py-3 outline-none focus:border-diep"></label>
+      </div>
+      <label class="mt-5 block"><span class="text-sm font-medium">Je bericht</span><textarea name="bericht" rows="4" required class="mt-1.5 w-full rounded-xl border-2 border-inkt/15 bg-beton px-4 py-3 outline-none focus:border-diep"></textarea></label>
+      <button type="submit" class="knop mt-6 inline-flex items-center rounded-full bg-inkt px-7 py-3.5 font-semibold text-white hover:bg-diep">Verstuur je bericht</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="gevel bg-inkt pb-28 text-white/75 md:pb-0">
+  <div class="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 md:flex-row md:items-end md:justify-between">
+    <div>
+      <div class="flex items-center gap-2.5 text-white">
+        <svg width="30" height="22" viewBox="0 0 30 22" aria-hidden="true"><path d="M1 5c4.7-4 9.3-4 14 0s9.3 4 14 0M1 11c4.7-4 9.3-4 14 0s9.3 4 14 0M1 17c4.7-4 9.3-4 14 0s9.3 4 14 0" stroke="#A9D9F2" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+        <span class="kop text-lg font-extrabold uppercase tracking-[.04em]">Hoog Catharijne</span>
+      </div>
+      <p class="mt-4 text-[15px] leading-relaxed">Godebaldkwartier 54, 3511 DX Utrecht<br><a href="tel:+31302346464" class="hover:text-white">030 234 6464</a> &nbsp;/&nbsp; <a href="mailto:voorbeeld@hotmail.com" class="hover:text-white">voorbeeld@hotmail.com</a></p>
+    </div>
+    <p class="text-sm text-white/50">Demo-ontwerp door <a href="https://hagenweb.nl" class="underline hover:text-white">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: acties altijd binnen bereik -->
+<div class="fixed inset-x-0 bottom-0 z-40 border-t border-inkt/10 bg-beton/95 p-3 backdrop-blur md:hidden">
+  <div class="grid grid-cols-2 gap-3">
+    <a href="tel:+31302346464" class="flex items-center justify-center gap-2 rounded-full border-2 border-inkt py-3 font-semibold">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      Bel
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hoog+Catharijne,+Godebaldkwartier+54,+3511+DX+Utrecht" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 rounded-full bg-lucht py-3 font-semibold">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Route
+    </a>
+  </div>
+</div>
+
+<script>
+// Markeer vandaag in het weekschema en zeg of het centrum nu open is.
+(function () {
+  var tijden = {0:[12,18],1:[12,20],2:[10,20],3:[10,20],4:[10,20],5:[10,20],6:[10,20]};
+  var nu = new Date(), dag = nu.getDay(), uur = nu.getHours() + nu.getMinutes() / 60;
+  var rij = document.querySelector('#weektabel [data-dag="' + dag + '"]');
+  if (rij) { rij.classList.add('dag-vandaag', 'font-semibold'); rij.firstElementChild.insertAdjacentHTML('beforeend', ' <span class="font-normal text-inkt/70">vandaag</span>'); }
+  var t = tijden[dag], el = document.getElementById('vandaag-tekst');
+  if (!el) return;
+  var pad = function (h) { return (h < 10 ? '0' : '') + h + ':00'; };
+  var zin = uur >= t[0] && uur < t[1]
+    ? 'De winkels zijn nu open, vandaag tot ' + pad(t[1]) + '.'
+    : (uur < t[0] ? 'Vandaag gaan de winkels om ' + pad(t[0]) + ' open.' : 'De winkels zijn nu dicht. Morgen ben je weer welkom.');
+  el.innerHTML = '<strong class="text-inkt">' + zin + '</strong> ' + el.innerHTML;
+})();
+</script>
+</body>
+</html>
