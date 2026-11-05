@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Markt 5 Lichtenvoorde | Grand café voor lunch, borrel en diner</title>
+<meta name="description" content="Grand café Markt 5 aan de Markt in Lichtenvoorde. Lunch, borrel en diner met een snufje New York, binnen of op het terras. Bel 0544 374 444.">
+<meta property="og:title" content="Markt 5 Lichtenvoorde">
+<meta property="og:image" content="assets/google-08.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          nacht: '#21161A',
+          nacht2: '#2B1D22',
+          velours: '#4A1D2B',
+          koper: '#E48A3A',
+          ananas: '#F2C14E',
+          creme: '#F5EADB',
+          eiken: '#B98A57',
+          bruin: '#6B4A2E',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Instrument Sans", system-ui, sans-serif; }
+  .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-variation-settings: "wdth" 80; letter-spacing: -0.02em; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .gloed { background: radial-gradient(60% 50% at 75% 30%, rgba(228,138,58,.18), transparent 70%), radial-gradient(50% 60% at 10% 90%, rgba(74,29,43,.7), transparent 70%); }
+  .stippel { background-image: radial-gradient(circle, rgba(107,74,46,.45) 1px, transparent 1.5px); background-size: 6px 6px; background-repeat: repeat-x; background-position: 0 70%; }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px) scale(.98); }
+  a:focus-visible, button:focus-visible { outline: 3px solid #F2C14E; outline-offset: 3px; border-radius: 6px; }
+  .js .vandaag { background: rgba(228,138,58,.14); }
+  .js .vandaag td:first-child::after { content: " (vandaag)"; color: #E48A3A; font-weight: 500; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-in { animation: in .9s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-in-2 { animation: in .9s .15s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes in { from { transform: translateY(18px); opacity: .001; } to { transform: none; opacity: 1; } }
+  }
+</style>
+</head>
+<body class="bg-nacht text-creme antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-ananas text-nacht px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-ananas text-nacht text-center text-[13px] font-medium py-2 px-4">
+  Demo voor Markt 5, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-semibold">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="relative z-20">
+  <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between" aria-label="Hoofdmenu">
+    <a href="#" class="flex items-center gap-3">
+      <img src="assets/logo-oud.png" alt="" width="44" height="44" class="w-11 h-11 rounded-full ring-1 ring-creme/15">
+      <span class="kop text-2xl font-extrabold tracking-tight">Markt&nbsp;5</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-[15px] text-creme/80">
+      <a href="#dag" class="hover:text-creme">Lunch, borrel, diner</a>
+      <a href="#kaart" class="hover:text-creme">De kaart</a>
+      <a href="#agenda" class="hover:text-creme">Agenda</a>
+      <a href="#langskomen" class="hover:text-creme">Langskomen</a>
+    </div>
+    <a href="tel:0544374444" class="knop hidden sm:inline-flex items-center gap-2 border border-creme/30 hover:border-koper hover:text-koper rounded-full px-5 py-2.5 text-[15px] font-medium">
+      0544 374 444
+    </a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative grain gloed overflow-hidden -mt-20 pt-24 pb-16 lg:pb-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="lg:col-span-6 hero-in relative z-10 pt-6 lg:pt-10">
+      <p class="text-eiken text-[15px] font-medium mb-5">Grand café aan de Markt, Lichtenvoorde</p>
+      <h1 class="kop font-extrabold text-[3.6rem] leading-[.92] sm:text-7xl sm:leading-[.9] lg:text-[7.2rem] lg:leading-[.86]">Kom het leven vieren.</h1>
+      <p class="mt-6 text-lg sm:text-xl text-creme/80 max-w-md leading-relaxed">
+        Lunch, borrel en diner met een flinke snuf New York. Op het terras aan de Markt of binnen bij het koperen barlicht. We zetten graag een tafel voor je klaar.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:0544374444" class="knop inline-flex items-center gap-3 bg-koper text-nacht font-semibold text-lg rounded-full pl-6 pr-7 py-4 shadow-[0_12px_30px_-10px_rgba(228,138,58,.7)] hover:bg-ananas">
+          <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+          Bel en reserveer
+        </a>
+        <a href="#kaart" class="text-creme font-medium underline decoration-koper decoration-2 underline-offset-[6px] hover:text-koper">Bekijk de kaart</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px] text-creme/70">
+        <span class="text-ananas tracking-[2px]" aria-hidden="true">★★★★<span class="text-ananas/40">★</span></span>
+        <span><strong class="text-creme font-semibold">4,3</strong> uit 1071 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-6 hero-in-2 relative">
+      <div class="relative mx-auto lg:ml-auto lg:mr-0 w-full max-w-[34rem]">
+        <img src="assets/site-02.svg" alt="" aria-hidden="true" class="absolute -left-14 -bottom-10 w-40 sm:w-52 rotate-[-14deg] z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,.4)]">
+        <img src="assets/google-08.jpg" alt="Het interieur van Markt 5: houten tafels, bonte patchworkstoelen, bloemen en koperen hanglampen" class="boog w-full aspect-[4/5] object-cover object-[50%_60%] ring-1 ring-creme/10">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAG -->
+<section id="dag" class="relative py-20 lg:py-28 bg-nacht2">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-14">
+      <h2 class="kop font-extrabold text-5xl sm:text-6xl leading-[.95] lg:col-span-7">Van eerste broodje tot laatste rondje.</h2>
+      <p class="lg:col-span-5 text-creme/75 text-lg leading-relaxed">
+        Markt 5 is geïnspireerd op New York, de stad die nooit slaapt. Een smeltkroes van culturen en keukens, en dat proef je de hele dag door.
+      </p>
+    </div>
+
+    <ol class="grid md:grid-cols-12 gap-8 md:gap-6">
+      <li class="md:col-span-5">
+        <img src="assets/google-02.jpg" alt="Een gevulde baguette met saus en eetbare bloemen" class="w-full aspect-[4/3] object-cover rounded-2xl">
+        <div class="mt-5 flex items-baseline justify-between gap-4 border-b border-creme/15 pb-3">
+          <h3 class="kop text-3xl font-extrabold">Lunch</h3>
+          <span class="text-koper font-medium tabular-nums">11.00 tot 16.30</span>
+        </div>
+        <p class="mt-3 text-creme/75 leading-relaxed">Sandwiches op landbrood, baguettes, tosti's, soep en een klassiek twaalfuurtje. Ook voor de kleintjes is er een eigen kaart.</p>
+      </li>
+      <li class="md:col-span-3 md:mt-24">
+        <img src="assets/google-07.jpg" alt="Een plankje met drie speciaalbieren en cocktails op de bar" class="w-full aspect-[4/3] md:aspect-[3/4] object-cover rounded-2xl">
+        <div class="mt-5 flex items-baseline justify-between gap-4 border-b border-creme/15 pb-3">
+          <h3 class="kop text-3xl font-extrabold">Borrel</h3>
+          <span class="text-koper font-medium">elk moment</span>
+        </div>
+        <p class="mt-3 text-creme/75 leading-relaxed">Een biertje, een glas wijn of een van onze cocktails, met bites erbij. Een glas whatever-you-feel-like.</p>
+      </li>
+      <li class="md:col-span-4 md:mt-10">
+        <img src="assets/google-06.jpg" alt="Een gerecht met vlees, rode ui, champignons en kruidenboter op een donker bord" class="w-full aspect-[5/4] object-cover rounded-2xl">
+        <div class="mt-5 flex items-baseline justify-between gap-4 border-b border-creme/15 pb-3">
+          <h3 class="kop text-3xl font-extrabold">Diner</h3>
+          <span class="text-koper font-medium tabular-nums">17.00 tot 21.00</span>
+        </div>
+        <p class="mt-3 text-creme/75 leading-relaxed">Aan tafel met de New Yorkse keuken als inspiratie, rustig binnen of buiten op het terras. Voor groepen is er ook Next Door, naast de deur.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- KAART -->
+<section id="kaart" class="relative py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-8">
+    <div class="relative bg-creme text-nacht rounded-[1.75rem] px-6 py-12 sm:px-12 lg:px-16 lg:py-16 shadow-[0_40px_80px_-30px_rgba(0,0,0,.7)]">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-b-2 border-nacht pb-8">
+        <div>
+          <p class="text-bruin font-medium mb-2">What the fork are we gonna eat?</p>
+          <h2 class="kop font-extrabold text-5xl sm:text-6xl leading-[.95]">Taste New York, aan de lunchtafel.</h2>
+        </div>
+        <p class="text-bruin max-w-xs text-[15px] leading-relaxed">Een greep uit de lunchkaart. Prijzen in euro's.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-14 gap-y-12 mt-10">
+        <div>
+          <h3 class="kop text-3xl font-extrabold text-velours mb-5">Sandwiches</h3>
+          <ul class="space-y-5">
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">M5 Signature</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">13,50</span></div><p class="text-bruin text-[15px] mt-1">Landbrood met warm vlees, varkensprocureur, gebakken ui, champignons en satésaus</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Wallstreet Sandwich</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">13,00</span></div><p class="text-bruin text-[15px] mt-1">Landbrood met brie uit de oven, honing, walnoten en tomaat</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Carpaccio Sandwich</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">14,50</span></div><p class="text-bruin text-[15px] mt-1">Rundercarpaccio, truffelmayonaise, kaas, rucola in pesto en pijnboompitten</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Healthy Dutchman</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">11,00</span></div><p class="text-bruin text-[15px] mt-1">Landbrood gezond met ham, kaas, gekookt eitje, tomaat en groene kruidendressing</p></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="kop text-3xl font-extrabold text-velours mb-5">Specials</h3>
+          <ul class="space-y-5">
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Plate N.Y. Burger</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">20,50</span></div><p class="text-bruin text-[15px] mt-1">Rundvleesburger van slager Gosselink met bacon, of vegetarisch. Cheddar, augurkenrelish, homemade burgersaus en friet</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Plate Saté</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">23,00</span></div><p class="text-bruin text-[15px] mt-1">Spies van kippendijen met pindasaus en seroendeng</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Pulled Chicken</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">14,50</span></div><p class="text-bruin text-[15px] mt-1">Baguette met pulled chicken, slamelange, cherrytomaten en barbecuesaus</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Garden Sandwich</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">11,50</span></div><p class="text-bruin text-[15px] mt-1">Baguette met geroosterde groenten, pompoenhummus, crispy falafel en labneh</p></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="kop text-3xl font-extrabold text-velours mb-5">Classics</h3>
+          <ul class="space-y-5">
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Tomato Twist</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">7,50</span></div><p class="text-bruin text-[15px] mt-1">Tomatensoep met gehaktballetjes en croutons</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">12 O'Clock</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">14,50</span></div><p class="text-bruin text-[15px] mt-1">Klassiek twaalfuurtje met tomatensoep, rundvleeskroket en gebakken ei met ham en kaas</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">M5 Toast</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">14,00</span></div><p class="text-bruin text-[15px] mt-1">Grote tosti met ham, kaas, chorizo, gebakken ui, champignons en barbecuesaus</p></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="kop text-3xl font-extrabold text-velours mb-5">Kids</h3>
+          <ul class="space-y-5">
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Mini Pancakes</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">7,50</span></div><p class="text-bruin text-[15px] mt-1">Poffertjes met poedersuiker, stroop en smarties</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Snack Attack</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">6,50</span></div><p class="text-bruin text-[15px] mt-1">Friet en appelmoes met drie snacks naar keuze, of één kroket</p></li>
+            <li><div class="flex items-baseline gap-3"><span class="font-semibold">Mini Donut</span><span class="flex-1 stippel h-4"></span><span class="tabular-nums font-semibold">7,50</span></div><p class="text-bruin text-[15px] mt-1">Gevuld met oreo-cheesecake, oreo crumble en een bol vanille-ijs</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-nacht/20 grid md:grid-cols-12 gap-6 items-center">
+        <p class="md:col-span-8 text-[15px] text-bruin leading-relaxed">
+          In de zaak is ook een pinda- en notenvrije, glutenvrije en lactosevrije kaart. Duitse en Engelse kaarten zijn er ook: <em>German and English menus available on site.</em> Tijdens events geldt een aangepaste kaart.
+        </p>
+        <a href="https://markt5.nl/menukaart/" class="md:col-span-4 md:justify-self-end knop inline-flex items-center justify-center gap-2 border-2 border-nacht rounded-full px-6 py-3 font-semibold hover:bg-nacht hover:text-creme">
+          Volledige kaart en diner
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BINNEN EN BUITEN -->
+<section class="pb-20 lg:pb-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 mb-10 items-end">
+      <h2 class="kop font-extrabold text-5xl sm:text-6xl leading-[.95] lg:col-span-6">Buiten op de Markt, binnen tussen de bloemen.</h2>
+      <p class="lg:col-span-5 lg:col-start-8 text-creme/75 text-lg leading-relaxed">
+        Bij mooi weer zit je op ons terras midden op de Markt. Binnen is het minstens zo gezellig, en naast de deur hebben we Next Door voor groepen en feesten.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <img src="assets/google-03.jpg" alt="Het zonnige terras van Markt 5 op de Markt in Lichtenvoorde" class="col-span-2 md:col-span-7 md:row-span-2 w-full h-64 md:h-full object-cover rounded-2xl">
+      <img src="assets/google-04.jpg" alt="De zaal met banken, houten tafels en de verlichte bar" class="col-span-2 md:col-span-5 w-full h-56 md:h-72 object-cover rounded-2xl">
+      <img src="assets/site-04.webp" alt="Lachende gasten proosten met cocktails aan de bar" class="md:col-span-3 w-full h-44 md:h-64 object-cover object-[60%_center] rounded-2xl">
+      <img src="assets/google-01.jpg" alt="Een ronde tafel bij het raam met een grote bos bloemen in een rode vaas" class="md:col-span-2 w-full h-44 md:h-64 object-cover object-[45%_center] rounded-2xl">
+    </div>
+  </div>
+</section>
+
+<!-- TWINTIG JAAR -->
+<section class="relative overflow-hidden bg-velours py-20 lg:py-28 grain">
+  <img src="assets/site-02.svg" alt="" aria-hidden="true" class="pointer-events-none absolute -right-24 top-16 w-72 lg:w-[22rem] hidden md:block">
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <p class="text-ananas font-medium mb-4">2006 tot 2026</p>
+      <h2 class="kop font-extrabold text-5xl sm:text-6xl leading-[.95]">Twintig jaar een warm welkom.</h2>
+      <p class="mt-6 text-creme/80 text-lg leading-relaxed">
+        Wat begon in een oude drogisterij is uitgegroeid tot een begrip in Lichtenvoorde en omstreken. Onze belofte is nog steeds dezelfde: het gevoel van een warm welkom, elk moment van de dag.
+      </p>
+      <p class="mt-8 kop text-3xl font-bold text-ananas leading-tight">Stand tall, wear a crown<br>and be sweet.</p>
+      <p class="mt-6 text-creme/70">Ramón Heijnst en Wout Gerritsen, namens Team M5</p>
+    </div>
+    <ol class="lg:col-span-4 lg:col-start-7 relative border-l border-creme/25 pl-8 space-y-7 md:mr-52 lg:mr-0">
+      <li class="relative"><span class="absolute -left-[37px] top-1.5 w-3 h-3 rounded-full bg-ananas"></span><p class="kop text-2xl font-extrabold text-ananas tabular-nums">2006</p><p class="text-creme/80">Start. Van oude drogisterij naar hedendaagse horeca.</p></li>
+      <li class="relative"><span class="absolute -left-[37px] top-1.5 w-3 h-3 rounded-full bg-creme/60"></span><p class="kop text-2xl font-extrabold tabular-nums">2010</p><p class="text-creme/80">De serre wordt aangebouwd.</p></li>
+      <li class="relative"><span class="absolute -left-[37px] top-1.5 w-3 h-3 rounded-full bg-creme/60"></span><p class="kop text-2xl font-extrabold tabular-nums">2015</p><p class="text-creme/80">Uitbreiding met Next Door.</p></li>
+      <li class="relative"><span class="absolute -left-[37px] top-1.5 w-3 h-3 rounded-full bg-creme/60"></span><p class="kop text-2xl font-extrabold tabular-nums">2018</p><p class="text-creme/80">Ramón en Wout treden toe.</p></li>
+      <li class="relative"><span class="absolute -left-[37px] top-1.5 w-3 h-3 rounded-full bg-creme/60"></span><p class="kop text-2xl font-extrabold tabular-nums">2023</p><p class="text-creme/80">Nieuw terras en een nieuwe specialiteit: cocktails.</p></li>
+      <li class="relative"><span class="absolute -left-[37px] top-1.5 w-3 h-3 rounded-full bg-ananas"></span><p class="kop text-2xl font-extrabold text-ananas tabular-nums">2026</p><p class="text-creme/80">Jubileumjaar. Check onze krant, The M5-Times, en de socials.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="kop font-extrabold text-5xl sm:text-6xl leading-[.95]">Wat er te doen is.</h2>
+      <p class="mt-6 text-creme/75 text-lg leading-relaxed">Quizzen, borrelen, brunchen. Tijdens events zijn er helaas geen buitenreserveringen mogelijk en geldt een aangepaste kaart.</p>
+      <a href="https://markt5.nl/agenda-evenementen/" class="inline-block mt-6 text-creme font-medium underline decoration-koper decoration-2 underline-offset-[6px] hover:text-koper">Hele agenda op markt5.nl</a>
+    </div>
+    <ul class="lg:col-span-8 divide-y divide-creme/15 border-y border-creme/15">
+      <li class="grid sm:grid-cols-[8.5rem_1fr] gap-2 sm:gap-8 py-7">
+        <p class="kop text-2xl font-extrabold text-koper">12 nov</p>
+        <div><h3 class="kop text-2xl font-bold">Hap &amp; Stap Lichtenvoorde</h3><p class="mt-2 text-creme/75 leading-relaxed">Een walking dinner langs Markt 5, Markant, De Driehoek en De Koppelpaarden. Vier gangen met telkens een bijpassend drankje, van 18.30 tot ongeveer 22.30. € 79 per persoon, opgeven kan tot en met 6 november.</p></div>
+      </li>
+      <li class="grid sm:grid-cols-[8.5rem_1fr] gap-2 sm:gap-8 py-7">
+        <p class="kop text-2xl font-extrabold text-koper">Maandagen<br class="hidden sm:block"> in nov</p>
+        <div><h3 class="kop text-2xl font-bold">Pubquiz Nights</h3><p class="mt-2 text-creme/75 leading-relaxed">Teams van maximaal vijf personen, gratis meedoen met een borrelhapje tussendoor. Inloop 19.30, start 20.00. De beste drie teams per avond spelen de finale op 7 december. Opgeven via <a href="mailto:info@markt5.nl?subject=Pubquiz" class="underline decoration-koper underline-offset-4">info@markt5.nl</a>. Op quizavonden is borrel en diner vanaf 17.00 in Next Door.</p></div>
+      </li>
+      <li class="grid sm:grid-cols-[8.5rem_1fr] gap-2 sm:gap-8 py-7">
+        <p class="kop text-2xl font-extrabold text-koper">15 nov</p>
+        <div><h3 class="kop text-2xl font-bold">Sinterklaasintocht</h3><p class="mt-2 text-creme/75 leading-relaxed">De Sint komt naar de Hamalandhal. Daarna op steenworp afstand warme chocolademelk, gebak en bokbier bij ons.</p></div>
+      </li>
+      <li class="grid sm:grid-cols-[8.5rem_1fr] gap-2 sm:gap-8 py-7">
+        <p class="kop text-2xl font-extrabold text-koper">10, 11, 17, 18 dec</p>
+        <div><h3 class="kop text-2xl font-bold">Vrij.Mi.Bo. X-mas editions</h3><p class="mt-2 text-creme/75 leading-relaxed">De drukke en geliefde middagen en avonden voor bedrijfsborrels en -diners, in Markt 5 en Next Door. Voor groepen maken we vooraf een programma en menuvoorstel: <a href="mailto:info@markt5.nl?subject=Bedrijfsborrel" class="underline decoration-koper underline-offset-4">mail en vraag naar Wout</a>.</p></div>
+      </li>
+      <li class="grid sm:grid-cols-[8.5rem_1fr] gap-2 sm:gap-8 py-7">
+        <p class="kop text-2xl font-extrabold text-koper">13 dec</p>
+        <div><h3 class="kop text-2xl font-bold">Bottomless Brunch, Christmas special</h3><p class="mt-2 text-creme/75 leading-relaxed">Een uitgebreide kerstbrunch. Kijk voor de details in de agenda op markt5.nl.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="bg-nacht2 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+      <h2 class="kop font-extrabold text-5xl sm:text-6xl leading-[.95]">Gasten over Markt 5.</h2>
+      <p class="text-creme/70"><span class="kop text-4xl font-extrabold text-ananas align-middle">4,3</span> <span class="align-middle">uit 1071 reviews op Google</span></p>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-6">
+      <figure class="lg:col-span-7 bg-velours rounded-[1.5rem] p-8 sm:p-10">
+        <p class="text-ananas tracking-[3px]" aria-label="4 van 5 sterren">★★★★<span class="text-creme/25">★</span></p>
+        <blockquote class="mt-5 text-xl sm:text-2xl leading-snug">“Mooie zaak met attente/persoonlijke bediening en service. Druk terras. Wij aten binnen in een sfeervolle en heerlijk rustige ambiance met leuke kunst aan de muur. Smakelijke hamburger en shrimpburger met salade en frietjes. Acceptabel prijsniveau. Niks. Mis. Mee.”</blockquote>
+        <figcaption class="mt-6 font-semibold">Michiel Werkman</figcaption>
+      </figure>
+      <figure class="lg:col-span-5 border border-creme/20 rounded-[1.5rem] p-8 sm:p-10 lg:mt-16">
+        <p class="text-ananas tracking-[3px]" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-5 text-lg leading-relaxed text-creme/90">“We kwamen er terecht door waardebonnen van de postcodeloterij. Inmiddels 2x hier geweest en zowel buiten als binnen gezeten. Met mooi weer is het mooi en gezellig zitten op het terras maar binnen is het misschien wel nog gezelliger en sfeervoller. Spontane mensen in de bediening, erg lekker en vers eten (…)”</blockquote>
+        <figcaption class="mt-6 font-semibold">FK82</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- LANGSKOMEN -->
+<section id="langskomen" class="relative grain gloed py-20 lg:py-28 overflow-hidden">
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-extrabold text-5xl sm:text-7xl leading-[.92]">Tot op de Markt.</h2>
+      <p class="mt-6 text-creme/80 text-lg leading-relaxed max-w-md">Bel om een tafel te reserveren, of mail voor groepen, borrels en events.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 sm:items-center">
+        <a href="tel:0544374444" class="knop inline-flex items-center justify-center gap-3 bg-koper text-nacht font-semibold text-lg rounded-full px-7 py-4 hover:bg-ananas">Bel 0544 374 444</a>
+        <a href="mailto:info@markt5.nl" class="knop inline-flex items-center justify-center border border-creme/40 rounded-full px-7 py-4 font-medium hover:border-koper hover:text-koper">info@markt5.nl</a>
+      </div>
+      <div class="mt-10 flex gap-5 items-center">
+        <img src="assets/google-05.jpg" alt="De Markt in Lichtenvoorde met het leeuwenbeeld en de historische panden" class="w-32 h-24 sm:w-40 sm:h-28 object-cover rounded-xl">
+        <address class="not-italic leading-relaxed">
+          <strong class="font-semibold">Markt 5</strong><br>7131 DG Lichtenvoorde<br>
+          <a href="https://www.google.com/maps/search/?api=1&query=Markt+5+7131+DG+Lichtenvoorde" class="text-koper underline underline-offset-4 hover:text-ananas">Route plannen</a>
+        </address>
+      </div>
+    </div>
+    <div class="lg:col-span-5 lg:col-start-8">
+      <div class="bg-nacht/70 backdrop-blur rounded-[1.5rem] border border-creme/15 p-7 sm:p-9">
+        <h3 class="kop text-3xl font-extrabold">Openingstijden</h3>
+        <table class="mt-5 w-full text-[16px] tabular-nums" id="tijden">
+          <tbody class="divide-y divide-creme/10">
+            <tr data-dag="1"><td class="py-2.5 pl-2">Maandag</td><td class="py-2.5 pr-2 text-right whitespace-nowrap">11.00 tot 23.00</td></tr>
+            <tr data-dag="2"><td class="py-2.5 pl-2">Dinsdag</td><td class="py-2.5 pr-2 text-right whitespace-nowrap text-creme/60">Gesloten</td></tr>
+            <tr data-dag="3"><td class="py-2.5 pl-2">Woensdag</td><td class="py-2.5 pr-2 text-right whitespace-nowrap">11.00 tot 23.00</td></tr>
+            <tr data-dag="4"><td class="py-2.5 pl-2">Donderdag</td><td class="py-2.5 pr-2 text-right whitespace-nowrap">11.00 tot 23.00</td></tr>
+            <tr data-dag="5"><td class="py-2.5 pl-2">Vrijdag</td><td class="py-2.5 pr-2 text-right whitespace-nowrap">11.00 tot 00.00</td></tr>
+            <tr data-dag="6"><td class="py-2.5 pl-2">Zaterdag</td><td class="py-2.5 pr-2 text-right whitespace-nowrap">10.00 tot 00.00</td></tr>
+            <tr data-dag="0"><td class="py-2.5 pl-2">Zondag</td><td class="py-2.5 pr-2 text-right whitespace-nowrap">12.00 tot 22.00</td></tr>
+          </tbody>
+        </table>
+        <div class="mt-6 pt-5 border-t border-creme/15 text-[15px] text-creme/75 space-y-2 leading-relaxed">
+          <p><span class="text-creme font-medium">Keuken:</span> lunch 11.00 tot 16.30, diner 17.00 tot 21.00.</p>
+          <p><span class="text-creme font-medium">Maandag vanaf 17.00:</span> borrel en diner in Next Door, vanwege de pubquiz in Markt 5.</p>
+          <p><span class="text-creme font-medium">Feestdagen:</span> 24 en 31 december tot 16.00, 1 januari gesloten.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-creme/10 pt-10 pb-28 sm:pb-10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row gap-6 md:items-center justify-between text-[14px] text-creme/60">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo-oud.png" alt="Logo Markt 5: een kleurrijke ananas" width="36" height="36" class="w-9 h-9 rounded-full">
+      <p><span class="text-creme font-semibold">Markt 5</span>, Markt 5, 7131 DG Lichtenvoorde</p>
+    </div>
+    <p>Celebrate life &amp; enjoy the moment. Op al onze diensten zijn de huisregels en de UVH van toepassing.</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="sm:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-nacht/90 backdrop-blur border-t border-creme/10">
+  <a href="tel:0544374444" class="flex items-center justify-center gap-3 bg-koper text-nacht font-semibold text-lg rounded-full py-3.5">
+    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Bel en reserveer
+  </a>
+</div>
+
+<script>
+  var rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag');
+</script>
+</body>
+</html>
