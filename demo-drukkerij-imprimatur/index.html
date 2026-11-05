@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drukkerij Imprimatur | Drukwerk, printwerk en belettering in Culemborg</title>
+<meta name="description" content="Drukkerij Imprimatur in Culemborg: briefpapier, visitekaartjes, flyers, roll-up banners en belettering. Persoonlijk geregeld. Bel 0345 701 148.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          inkt: { DEFAULT: '#0A3D8F', diep: '#072A63', licht: '#E7EDF7' },
+          vel: '#F2F4F8',
+          tekst: '#1A2238',
+          oranje: { DEFAULT: '#D9480F', donker: '#B83B0B' },
+        },
+        fontFamily: {
+          serif: ['"Source Serif 4"', 'Georgia', 'serif'],
+          sans: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  main { overflow-x: clip; }
+  body { font-family: "Instrument Sans", system-ui, sans-serif; color: #1A2238; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Kleurstrook in de zes logokleuren, zoals op de rand van een drukvel */
+  .strook { display: grid; grid-template-columns: repeat(6, 1fr); height: 6px; }
+  .strook span:nth-child(1) { background: #7E1D7C; }
+  .strook span:nth-child(2) { background: #F2B705; }
+  .strook span:nth-child(3) { background: #8DBF3F; }
+  .strook span:nth-child(4) { background: #0A86C9; }
+  .strook span:nth-child(5) { background: #E5531A; }
+  .strook span:nth-child(6) { background: #D6136F; }
+
+  /* Snijtekens rond een element */
+  .snij { position: relative; }
+  .snij > .hoek { position: absolute; width: 22px; height: 22px; pointer-events: none; }
+  .snij > .hoek::before, .snij > .hoek::after { content: ""; position: absolute; background: currentColor; }
+  .snij > .hoek::before { width: 22px; height: 1.5px; }
+  .snij > .hoek::after { width: 1.5px; height: 22px; }
+  .hoek.lb { top: -14px; left: -14px; } .hoek.lb::before { top: 13px; left: -10px; } .hoek.lb::after { left: 13px; top: -10px; }
+  .hoek.rb { top: -14px; right: -14px; } .hoek.rb::before { top: 13px; right: -10px; } .hoek.rb::after { right: 13px; top: -10px; }
+  .hoek.lo { bottom: -14px; left: -14px; } .hoek.lo::before { bottom: 13px; left: -10px; } .hoek.lo::after { left: 13px; bottom: -10px; }
+  .hoek.ro { bottom: -14px; right: -14px; } .hoek.ro::before { bottom: 13px; right: -10px; } .hoek.ro::after { right: 13px; bottom: -10px; }
+
+  .hero-foto { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+  @media (max-width: 1023px) { .hero-foto { clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%); } }
+
+  .prijsregel { background-image: radial-gradient(circle, #9AA6BF 1px, transparent 1.5px); background-size: 7px 3px; background-repeat: repeat-x; background-position: 0 70%; }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #F2B705; outline-offset: 3px; }
+
+  /* Animatie alleen als verrijking: JS zet .js op <html> */
+  .js .hero-in { animation: in .7s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in.later { animation-delay: .15s; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-in { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-white antialiased pb-20 lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt-diep text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Drukkerij Imprimatur, gemaakt door <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-[#F2B705]">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-white sticky top-0 z-30 border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[72px] lg:h-[84px] flex items-center justify-between gap-6">
+    <a href="#" aria-label="Drukkerij Imprimatur, naar boven" class="shrink-0">
+      <img src="assets/google-01.jpg" alt="Drukkerij Imprimatur" class="h-11 lg:h-14 w-auto mix-blend-multiply">
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden md:flex items-center gap-8 text-[15px] font-medium text-inkt">
+      <a href="#drukwerk" class="hover:text-oranje transition-colors">Drukwerk</a>
+      <a href="#aanleveren" class="hover:text-oranje transition-colors">Aanleveren</a>
+      <a href="#over-ons" class="hover:text-oranje transition-colors">Over ons</a>
+      <a href="#contact" class="hover:text-oranje transition-colors">Contact</a>
+    </nav>
+    <a href="tel:0345701148" class="knop hidden sm:inline-flex items-center gap-2 rounded-md border-2 border-inkt px-4 py-2 text-[15px] font-semibold text-inkt hover:bg-inkt hover:text-white">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      0345 701 148
+    </a>
+    <a href="tel:0345701148" class="sm:hidden text-inkt font-semibold text-sm underline underline-offset-4">Bellen</a>
+  </div>
+  <div class="strook" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto lg:grid lg:grid-cols-12 lg:min-h-[600px]">
+    <div class="px-5 lg:px-8 pt-8 pb-8 lg:py-20 lg:col-span-6 flex flex-col justify-center relative z-10">
+      <p class="hero-in text-inkt font-semibold text-[15px] mb-4">Drukkerij in Culemborg</p>
+      <h1 class="hero-in font-serif font-bold text-inkt text-[44px] leading-[1.02] sm:text-6xl lg:text-[76px] tracking-[-0.02em]">Goed drukwerk, persoonlijk geregeld.</h1>
+      <p class="hero-in later mt-6 text-lg leading-relaxed text-tekst/80 max-w-[30rem]">Briefpapier, flyers, visitekaartjes, banners en belettering. Even bellen of langskomen aan de Gutenbergweg, en wij denken met u mee tot het goed op papier staat.</p>
+      <div class="hero-in later mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:0345701148" class="knop inline-flex items-center gap-3 rounded-md bg-oranje hover:bg-oranje-donker text-white text-lg font-bold px-7 py-4 shadow-[0_8px_20px_-8px_rgba(217,72,15,.6)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0345 701 148
+        </a>
+        <a href="mailto:info@drukkerij-imprimatur.nl" class="font-semibold text-inkt underline decoration-2 underline-offset-[6px] decoration-inkt/30 hover:decoration-oranje">Mail uw bestand</a>
+      </div>
+      <p class="hero-in later mt-8 flex items-center gap-2 text-[15px] text-tekst/75">
+        <span class="text-[#F2B705] tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-tekst">4,7</strong> uit 30 Google-reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-6 relative lg:pl-4">
+      <div class="lg:absolute lg:inset-y-14 lg:left-0 lg:-right-[max(0px,calc((100vw-80rem)/2))] mb-2 lg:mb-0">
+        <img src="assets/site-01.jpg" alt="Pas gedrukte boekblokken op de transportband in de drukkerij" class="hero-foto w-full h-[260px] sm:h-[360px] lg:h-full object-cover object-[38%_50%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Drukwerk / prijslijst -->
+<section id="drukwerk" class="bg-vel scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-8">
+    <div class="lg:col-span-5">
+      <h2 class="font-serif font-bold text-inkt text-4xl lg:text-5xl leading-[1.05] tracking-[-0.015em]">Wat wij voor u drukken</h2>
+      <p class="mt-6 text-lg leading-relaxed text-tekst/80 max-w-md">Drukwerk is letterlijk het visitekaartje van uw bedrijf of evenement. Online drukkers zijn scherp geprijsd, maar missen het persoonlijke contact en het oog voor detail. Bij ons krijgt u allebei: scherpe prijzen en iemand die meekijkt.</p>
+      <p class="mt-5 text-tekst/80 max-w-md">Staat uw product er niet tussen? Bel even, de kans is groot dat we het gewoon kunnen maken.</p>
+      <a href="tel:0345701148" class="mt-8 inline-block font-semibold text-inkt underline decoration-2 underline-offset-[6px] decoration-inkt/30 hover:decoration-oranje">Vraag een prijs op: 0345 701 148</a>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="bg-white snij text-inkt/40 mx-3 sm:mx-0 px-6 sm:px-10 py-8 sm:py-10 shadow-[0_20px_50px_-30px_rgba(10,61,143,.45)]">
+        <span class="hoek lb"></span><span class="hoek rb"></span><span class="hoek lo"></span><span class="hoek ro"></span>
+        <ul class="divide-y divide-inkt/10 text-tekst">
+          <li class="py-6 first:pt-0">
+            <div class="flex items-baseline gap-3">
+              <h3 class="font-serif font-semibold text-2xl text-inkt">Visitekaartjes</h3>
+              <span class="prijsregel flex-1 h-4"></span>
+              <span class="whitespace-nowrap text-[15px]">vanaf <strong class="font-serif text-2xl text-inkt">€&nbsp;20</strong></span>
+            </div>
+            <p class="mt-2 text-tekst/75 max-w-lg">Standaard of luxe, in veel uitvoeringen. Desgewenst ook op PVC gedrukt.</p>
+          </li>
+          <li class="py-6">
+            <div class="flex items-baseline gap-3">
+              <h3 class="font-serif font-semibold text-2xl text-inkt">Briefpapier</h3>
+              <span class="prijsregel flex-1 h-4"></span>
+              <span class="whitespace-nowrap text-[15px]">vanaf <strong class="font-serif text-2xl text-inkt">€&nbsp;25</strong></span>
+            </div>
+            <p class="mt-2 text-tekst/75 max-w-lg">Een professionele uitstraling voor uw post en facturen, in diverse papiersoorten en gramgewichten.</p>
+          </li>
+          <li class="py-6">
+            <div class="flex items-baseline gap-3">
+              <h3 class="font-serif font-semibold text-2xl text-inkt">Flyers</h3>
+              <span class="prijsregel flex-1 h-4"></span>
+              <span class="whitespace-nowrap text-[15px]">vanaf <strong class="font-serif text-2xl text-inkt">€&nbsp;35</strong></span>
+            </div>
+            <p class="mt-2 text-tekst/75 max-w-lg">Diverse formaten, gramgewichten en bedrukkingen. Snel en voordelig geleverd.</p>
+          </li>
+          <li class="py-6 last:pb-0">
+            <div class="flex items-baseline gap-3">
+              <h3 class="font-serif font-semibold text-2xl text-inkt">Roll-up banners</h3>
+              <span class="prijsregel flex-1 h-4"></span>
+              <span class="whitespace-nowrap text-[15px]">vanaf <strong class="font-serif text-2xl text-inkt">€&nbsp;40</strong></span>
+            </div>
+            <p class="mt-2 text-tekst/75 max-w-lg">Uw reclame altijd bij de hand. Voordelig en praktisch, ideaal voor beurzen en presentaties.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-14">
+        <h3 class="font-serif font-semibold text-2xl text-inkt">En verder</h3>
+        <dl class="mt-6 grid sm:grid-cols-2 gap-x-10 gap-y-7">
+          <div class="border-l-[3px] border-[#E5531A] pl-4">
+            <dt class="font-semibold text-inkt">Belettering</dt>
+            <dd class="mt-1 text-tekst/75">Van gevel tot bedrijfsbus. Zo beletterden we de nieuwe bus van Cleaningservice van der Weele uit Culemborg.</dd>
+          </div>
+          <div class="border-l-[3px] border-[#7E1D7C] pl-4">
+            <dt class="font-semibold text-inkt">Grafische vormgeving</dt>
+            <dd class="mt-1 text-tekst/75">Geen bestand of klopt het niet? Onze ontwerpers maken het, van visitekaartje tot huisstijl.</dd>
+          </div>
+          <div class="border-l-[3px] border-[#8DBF3F] pl-4">
+            <dt class="font-semibold text-inkt">Opslag en handling</dt>
+            <dd class="mt-1 text-tekst/75">Wij bewaren uw drukwerk en zorgen dat het op het juiste moment klaarligt.</dd>
+          </div>
+          <div class="border-l-[3px] border-[#0A86C9] pl-4">
+            <dt class="font-semibold text-inkt">Mailing en verzending</dt>
+            <dd class="mt-1 text-tekst/75">Wij verzorgen uw mailing of de verzending van uw tijdschrift, tegen scherpe porto-tarieven.</dd>
+          </div>
+          <div class="border-l-[3px] border-[#D6136F] pl-4">
+            <dt class="font-semibold text-inkt">Printen en scannen</dt>
+            <dd class="mt-1 text-tekst/75">Een A3'tje, een vergroting van A5 naar A4 of snel iets scannen: loop gerust binnen.</dd>
+          </div>
+          <div class="border-l-[3px] border-[#F2B705] pl-4">
+            <dt class="font-semibold text-inkt">Iets anders?</dt>
+            <dd class="mt-1 text-tekst/75">Vraag het gewoon. Bel <a href="tel:0345701148" class="text-inkt font-semibold underline underline-offset-2">0345 701 148</a> en we zoeken het voor u uit.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-serif font-bold text-inkt text-4xl lg:text-5xl leading-[1.05] tracking-[-0.015em] max-w-2xl">Waar je weer blij naar buiten gaat</h2>
+      <p class="text-tekst/75 text-[15px]"><span class="text-[#F2B705] tracking-[2px]" aria-hidden="true">★★★★★</span> <strong class="text-tekst">4,7</strong> uit 30 reviews op Google</p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-12 gap-6">
+      <figure class="lg:col-span-7 lg:row-span-2 bg-inkt text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+        <div class="strook absolute top-0 inset-x-0" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <blockquote class="font-serif text-2xl sm:text-[30px] leading-[1.3]">"Een spoed scan-klusje. Dit werd eerst telefonisch al vriendelijk ontvangen, ik kon meteen langskomen. In twee minuten had Toria, want zo heet deze vriendelijke dame, het voor me geregeld. Ook nog kostenloos. Met grote dank. Petje af!"</blockquote>
+        <figcaption class="mt-10 flex items-center justify-between gap-4 text-white/80">
+          <span class="font-semibold text-white">Nelien van Doorn</span>
+          <span class="text-[#F2B705] tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</span>
+        </figcaption>
+      </figure>
+
+      <figure class="lg:col-span-5 bg-vel p-8 border-t-[3px] border-[#8DBF3F]">
+        <blockquote class="text-lg leading-relaxed">"Super aardige mensen en heel goede service. Het is gezellig om je drukwerk op te halen in deze fijne drukkerij en de prijs-kwaliteit verhouding is goed."</blockquote>
+        <figcaption class="mt-5 font-semibold text-inkt">nelleke posthumus meyjes</figcaption>
+      </figure>
+
+      <figure class="lg:col-span-5 bg-vel p-8 border-t-[3px] border-[#D6136F]">
+        <blockquote class="text-lg leading-relaxed">"Afbeelding van A5 naar A4 laten printen. Te woord gestaan door een zeer vriendelijke en behulpzame dame. Snelle, uitstekende service. Een bedrijf waar je weer blij naar buiten gaat 🙂"</blockquote>
+        <figcaption class="mt-5 font-semibold text-inkt">Yvonne van der Waal</figcaption>
+      </figure>
+
+      <figure class="lg:col-span-7 bg-vel p-8 border-t-[3px] border-[#0A86C9]">
+        <blockquote class="text-lg leading-relaxed">"Zojuist langs geweest om een A3’tje op te halen. Geweldige service! De mevrouw heeft me goed geholpen en ik denk zeker dat ze fluitend naar werk gaat."</blockquote>
+        <figcaption class="mt-5 font-semibold text-inkt">Berry 030</figcaption>
+      </figure>
+
+      <figure class="lg:col-span-5 bg-vel p-8 border-t-[3px] border-[#F2B705]">
+        <blockquote class="text-lg leading-relaxed">"Fijn personeel en allemaal erg behulpzaam. Een aanrader!"</blockquote>
+        <figcaption class="mt-5 font-semibold text-inkt">Cas Soeteman</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Aanleveren -->
+<section id="aanleveren" class="bg-inkt-diep text-white scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-10">
+    <div class="lg:col-span-4">
+      <h2 class="font-serif font-bold text-4xl lg:text-5xl leading-[1.05] tracking-[-0.015em]">Zo levert u uw bestand aan</h2>
+      <p class="mt-6 text-lg leading-relaxed text-white/80">Klopt uw bestand, dan kunnen wij snel en scherp geprijsd leveren. Loop deze punten even na, dat voorkomt vertraging en extra kosten.</p>
+      <a href="mailto:info@drukkerij-imprimatur.nl" class="knop mt-8 inline-flex items-center rounded-md border-2 border-white/80 px-5 py-3 font-semibold hover:bg-white hover:text-inkt-diep">Bestand mailen</a>
+      <p class="mt-4 text-white/70 text-[15px]">naar info@drukkerij-imprimatur.nl</p>
+    </div>
+
+    <div class="lg:col-span-8">
+      <div class="snij text-white/50 border border-white/15 mx-3 sm:mx-0 p-7 sm:p-10">
+        <span class="hoek lb"></span><span class="hoek rb"></span><span class="hoek lo"></span><span class="hoek ro"></span>
+        <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+          <li>
+            <h3 class="font-semibold text-lg text-white">PDF-bestand</h3>
+            <p class="mt-1 text-white/75">Lever alleen de bestanden aan die nodig zijn voor uw opdracht.</p>
+          </li>
+          <li>
+            <h3 class="font-semibold text-lg text-white">CMYK of PMS</h3>
+            <p class="mt-1 text-white/75">RGB geeft altijd kleurverschil. Let op: internetafbeeldingen en Word werken in RGB.</p>
+          </li>
+          <li>
+            <h3 class="font-semibold text-lg text-white">Lettertypen als contouren</h3>
+            <p class="mt-1 text-white/75">Sla fonts op als contouren (outlines), dan verspringt er niets.</p>
+          </li>
+          <li>
+            <h3 class="font-semibold text-lg text-white">300 dpi</h3>
+            <p class="mt-1 text-white/75">Voor flyers en zakelijk drukwerk. A0- en abri-posters: 200 dpi.</p>
+          </li>
+          <li>
+            <h3 class="font-semibold text-lg text-white">3 mm afloop, 5 mm marge</h3>
+            <p class="mt-1 text-white/75">Afloop rondom, en tekst minimaal 5 mm van de rand.</p>
+          </li>
+          <li>
+            <h3 class="font-semibold text-lg text-white">Geen overdruk</h3>
+            <p class="mt-1 text-white/75">Elementen op overdruk vallen weg. Gebruik liever transparantie of een tint.</p>
+          </li>
+          <li class="sm:col-span-2 pt-7 border-t border-white/15">
+            <h3 class="font-semibold text-lg text-white">Kleurverzadiging tussen 20% en 300%</h3>
+            <p class="mt-1 text-white/75 max-w-2xl">Tel de CMYK-waarden bij elkaar op. Boven de 300% ontstaan vlekken, onder de 20% wordt het slecht zichtbaar. Bij spoedopdrachten maximaal 260%, vanwege de korte droogtijd.</p>
+          </li>
+        </ul>
+      </div>
+      <p class="mt-8 text-white/75 max-w-2xl leading-relaxed">Wij controleren elk bestand op formaat en snijmarges. Vinden we een technische fout, dan bellen we u en lossen we het samen op, voor €&nbsp;17,50 per kwartier (excl. btw). U krijgt vooraf een kostenindicatie. Spelfouten en inhoud blijven uw verantwoordelijkheid, dus lees uw proef goed na.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Over ons -->
+<section id="over-ons" class="bg-white scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+    <div class="lg:col-span-5">
+      <svg viewBox="-170 -170 340 340" class="w-full max-w-[280px] lg:max-w-[360px]" role="img" aria-label="Het beeldmerk van Imprimatur: gekleurde letters I in een ster"><g transform="rotate(-90)" fill="#7E1D7C"><rect x="34" y="-9" width="118" height="18"/><rect x="142" y="-24" width="16" height="48"/><rect x="28" y="-17" width="10" height="34"/></g><g transform="rotate(-45)" fill="#8DBF3F"><rect x="34" y="-9" width="118" height="18"/><rect x="142" y="-24" width="16" height="48"/><rect x="28" y="-17" width="10" height="34"/></g><g transform="rotate(0)" fill="#E5531A"><rect x="34" y="-9" width="118" height="18"/><rect x="142" y="-24" width="16" height="48"/><rect x="28" y="-17" width="10" height="34"/></g><g transform="rotate(135)" fill="#D6136F"><rect x="34" y="-9" width="118" height="18"/><rect x="142" y="-24" width="16" height="48"/><rect x="28" y="-17" width="10" height="34"/></g><g transform="rotate(180)" fill="#0A86C9"><rect x="34" y="-9" width="118" height="18"/><rect x="142" y="-24" width="16" height="48"/><rect x="28" y="-17" width="10" height="34"/></g><g transform="rotate(-135)" fill="#F2B705"><rect x="34" y="-9" width="118" height="18"/><rect x="142" y="-24" width="16" height="48"/><rect x="28" y="-17" width="10" height="34"/></g></svg>
+      <p class="mt-8 font-serif text-2xl leading-snug text-inkt max-w-sm">Drukwerk, printwerk en belettering voor Culemborg en omgeving.</p>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7">
+      <h2 class="font-serif font-bold text-inkt text-4xl lg:text-5xl leading-[1.05] tracking-[-0.015em]">Korte lijnen, en doen wat we beloven</h2>
+      <div class="mt-6 space-y-5 text-lg leading-relaxed text-tekst/80 max-w-[38rem]">
+        <p>Drukkerij Imprimatur zit op het industrieterrein van Culemborg, aan de Gutenbergweg. Vanuit hier leveren we drukwerk, printwerk en belettering voor Culemborg en omgeving.</p>
+        <p>We hebben ruim 25 jaar ervaring in de grafische en aanverwante industrie. Wat we in die tijd geleerd hebben: houd de lijnen kort en doe wat je belooft. U belt, u spreekt iemand die meedenkt, en uw drukwerk ligt klaar wanneer we hebben afgesproken.</p>
+        <p>Kom gerust langs. Even iets ophalen, een vraag over papier of een spoedklusje: we helpen u graag verder.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-vel scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-10">
+    <div class="lg:col-span-5">
+      <h2 class="font-serif font-bold text-inkt text-4xl lg:text-5xl leading-[1.05] tracking-[-0.015em]">Bel, mail of kom langs</h2>
+      <a href="tel:0345701148" class="knop mt-8 inline-flex items-center gap-3 rounded-md bg-oranje hover:bg-oranje-donker text-white text-lg font-bold px-7 py-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 0345 701 148
+      </a>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-1 gap-8">
+        <div>
+          <h3 class="font-semibold text-inkt">Adres</h3>
+          <p class="mt-2 leading-relaxed">Gutenbergweg 5<br>4104 BA Culemborg</p>
+          <p class="mt-2"><a href="mailto:info@drukkerij-imprimatur.nl" class="text-inkt font-medium underline underline-offset-4 decoration-inkt/30 hover:decoration-oranje break-all">info@drukkerij-imprimatur.nl</a></p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-inkt">Openingstijden</h3>
+          <table class="mt-2 w-full max-w-xs text-[15px] tabular-nums">
+            <tbody>
+              <tr><td class="py-0.5 pr-4">Maandag t/m vrijdag</td><td class="text-right">08:30 tot 17:00</td></tr>
+              <tr class="text-tekst/60"><td class="py-0.5 pr-4">Zaterdag en zondag</td><td class="text-right">gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <form action="mailto:info@drukkerij-imprimatur.nl" method="post" enctype="text/plain" class="bg-white p-7 sm:p-10 shadow-[0_20px_50px_-30px_rgba(10,61,143,.45)]">
+        <h3 class="font-serif font-semibold text-2xl text-inkt">Prijs opvragen of iets vragen</h3>
+        <p class="mt-2 text-tekst/70">Vertel wat u wilt laten drukken, in welk aantal en wanneer u het nodig heeft.</p>
+        <div class="mt-7 grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold text-inkt">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-inkt/20 bg-vel px-4 py-3 focus:bg-white">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-inkt">Telefoon of e-mail</span>
+            <input name="contact" required class="mt-1.5 w-full rounded-md border border-inkt/20 bg-vel px-4 py-3 focus:bg-white">
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-sm font-semibold text-inkt">Uw vraag</span>
+            <textarea name="vraag" rows="5" required class="mt-1.5 w-full rounded-md border border-inkt/20 bg-vel px-4 py-3 focus:bg-white" placeholder="Bijvoorbeeld: 500 flyers A5, dubbelzijdig, over twee weken nodig"></textarea>
+          </label>
+        </div>
+        <button type="submit" class="knop mt-6 rounded-md bg-inkt hover:bg-inkt-diep text-white font-semibold px-6 py-3.5">Vraag versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-white border-t border-inkt/10">
+  <div class="strook" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row md:items-center justify-between gap-8 text-[15px] text-tekst/75">
+    <img src="assets/google-01.jpg" alt="Drukkerij Imprimatur" class="h-12 w-auto self-start mix-blend-multiply">
+    <p>Gutenbergweg 5, 4104 BA Culemborg<br><a href="tel:0345701148" class="hover:text-inkt">0345 701 148</a>, <a href="mailto:info@drukkerij-imprimatur.nl" class="hover:text-inkt">info@drukkerij-imprimatur.nl</a></p>
+    <p>© 2025 Drukkerij Imprimatur</p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-inkt/10 p-3 flex gap-3">
+  <a href="tel:0345701148" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-md bg-oranje text-white font-bold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 0345 701 148
+  </a>
+  <a href="mailto:info@drukkerij-imprimatur.nl" class="knop inline-flex items-center justify-center rounded-md border-2 border-inkt text-inkt font-semibold px-4">Mail</a>
+</div>
+
+</body>
+</html>
