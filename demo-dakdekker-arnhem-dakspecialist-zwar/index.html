@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dakdekker Arnhem | Dakspecialist De Zwarte Duif</title>
+<meta name="description" content="Daklekkage, stormschade of een oud dak in Arnhem? Dakspecialist De Zwarte Duif zet uw dak eerst droog en herstelt het daarna netjes. Dag en nacht bereikbaar: 085 060 4591.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          lei: '#18212B',
+          antraciet: '#26313D',
+          lood: '#E9EDF0',
+          zink: '#C5CED6',
+          duif: '#1DA6E0',
+          duifdiep: '#0E7FB3',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          sans: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance; }
+  .kop-smal { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 108%; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Het terugkerende element: de puntgevel */
+  .gevel { clip-path: polygon(50% 0, 100% 24%, 100% 100%, 0 100%, 0 24%); }
+  .gevel-laag { clip-path: polygon(50% 0, 100% 14%, 100% 100%, 0 100%, 0 14%); }
+  .gevel-scheef { clip-path: polygon(0 18%, 70% 0, 100% 8%, 100% 100%, 0 100%); }
+
+  .knop { transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #1DA6E0; outline-offset: 3px; }
+
+  /* Nok-lijn: dakvormige scheiding boven donkere vlakken */
+  .nok-boven { clip-path: polygon(0 40px, 50% 0, 100% 40px, 100% 100%, 0 100%); }
+  @media (min-width: 768px) { .nok-boven { clip-path: polygon(0 80px, 50% 0, 100% 80px, 100% 100%, 0 100%); } }
+
+  /* Animatie alleen als JS de class zet */
+  .js .hero-foto { animation: opkomen .9s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes opkomen { from { transform: translateY(24px); opacity: .001; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-foto { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-white text-lei font-sans">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-lei text-white/80 text-[13px] leading-snug">
+  <div class="mx-auto max-w-7xl px-5 py-2 text-center">
+    Demo voor Dakdekker Arnhem - Dakspecialist Zwarte Duif, gemaakt door <a href="https://hagenweb.nl" class="font-semibold text-white underline underline-offset-2 hover:text-duif">Hagenweb</a>
+  </div>
+</div>
+
+<!-- Kop -->
+<header class="bg-white/95 backdrop-blur sticky top-0 z-40 border-b border-lood">
+  <div class="mx-auto max-w-7xl px-5 h-[72px] md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="shrink-0" aria-label="Dakspecialist De Zwarte Duif, naar boven">
+      <img src="assets/site-10.png" alt="Dakspecialist De Zwarte Duif" class="h-10 md:h-12 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-lei/80" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-lei">Diensten</a>
+      <a href="#team" class="hover:text-lei">Wie wij zijn</a>
+      <a href="#reviews" class="hover:text-lei">Ervaringen</a>
+      <a href="#werkwijze" class="hover:text-lei">Werkwijze</a>
+      <a href="#contact" class="hover:text-lei">Contact</a>
+    </nav>
+    <a href="tel:0850604591" class="knop inline-flex items-center gap-2 rounded-full bg-lei text-white px-4 py-2.5 md:px-5 text-[15px] font-semibold hover:bg-antraciet">
+      <svg class="w-4 h-4 text-duif" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">085 060 4591</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-y-0 right-0 hidden lg:block w-[44%] bg-lood" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-7xl px-5 pt-8 pb-14 md:pt-14 lg:pt-16 lg:pb-20 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
+    <div>
+      <p class="text-[15px] md:text-base font-semibold text-duifdiep">Dakdekker in Arnhem en omgeving</p>
+      <h1 class="kop mt-3 text-[46px] sm:text-6xl lg:text-[84px]">Eerst droog.<br>Dan netjes.</h1>
+      <p class="mt-5 md:mt-7 max-w-[30rem] text-[17px] md:text-lg leading-relaxed text-lei/75">
+        Een pan in de goot of een vlek op het plafond? Bel ons, ook ’s nachts. We komen gratis kijken en u krijgt vooraf een vaste prijs.
+      </p>
+      <div class="mt-7 md:mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:0850604591" class="knop inline-flex items-center justify-center gap-3 rounded-full bg-duif text-lei px-7 py-4 md:py-5 text-lg md:text-xl font-bold shadow-[0_10px_30px_-10px_rgba(14,127,179,.7)] hover:bg-[#39b4e8]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 085 060 4591
+        </a>
+        <a href="#contact" class="text-[16px] font-semibold underline decoration-duif decoration-2 underline-offset-[6px] hover:text-duifdiep">Gratis dakinspectie aanvragen</a>
+      </div>
+      <a href="#reviews" class="mt-8 md:mt-10 inline-flex items-center gap-3 text-[15px] text-lei/70 hover:text-lei">
+        <span class="flex text-[#F5B301]" aria-hidden="true">
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+        </span>
+        <span><strong class="text-lei font-semibold">5,0</strong> uit 28 Google-reviews</span>
+      </a>
+    </div>
+
+    <figure class="hero-foto relative mx-auto w-full max-w-[520px] lg:max-w-none">
+      <img src="assets/google-04.jpg" alt="Dakdekker van De Zwarte Duif zet nieuwe nokvorsten vast op een pannendak" class="gevel w-full aspect-[4/5] lg:aspect-auto lg:h-[640px] object-cover object-[50%_40%]">
+    </figure>
+  </div>
+</section>
+
+<!-- SPOED -->
+<section class="relative bg-lei text-white overflow-hidden" aria-labelledby="spoed-kop">
+  <img src="assets/site-09.png" alt="" aria-hidden="true" class="pointer-events-none absolute -right-16 -bottom-10 w-[420px] md:w-[560px] opacity-[0.07]">
+  <div class="relative mx-auto max-w-7xl px-5 py-14 md:py-20 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-start">
+    <div>
+      <h2 id="spoed-kop" class="kop text-[34px] md:text-5xl">Druppelt het nu bij u binnen?</h2>
+      <p class="mt-5 max-w-md text-lg leading-relaxed text-white/75">Bel dag en nacht. Ook midden in de nacht of op zondag krijgt u iemand aan de lijn, en staat er water in huis, dan zijn we er vaak nog dezelfde dag.</p>
+      <a href="tel:0850604591" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-duif text-lei px-7 py-4 text-lg font-bold hover:bg-[#39b4e8]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        085 060 4591
+      </a>
+    </div>
+    <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-8 text-white/75 leading-relaxed">
+      <li class="border-t border-white/15 pt-5">
+        <h3 class="kop-smal text-white text-xl">Eerst waterdicht</h3>
+        <p class="mt-2">Een kapotte pan wisselen we meteen, een open naad dichten we tijdelijk. Zo groeit de schade niet verder.</p>
+      </li>
+      <li class="border-t border-white/15 pt-5">
+        <h3 class="kop-smal text-white text-xl">Dan de echte oorzaak</h3>
+        <p class="mt-2">Water komt vaak meters verderop binnen. We volgen het terug, zo nodig met een warmtecamera.</p>
+      </li>
+      <li class="border-t border-white/15 pt-5">
+        <h3 class="kop-smal text-white text-xl">Fotoverslag voor de verzekeraar</h3>
+        <p class="mt-2">Na een storm leggen we de schade vast in beeld, zodat u het zo kunt doorsturen.</p>
+      </li>
+      <li class="border-t border-white/15 pt-5">
+        <h3 class="kop-smal text-white text-xl">Wat u zelf kunt doen</h3>
+        <p class="mt-2">Emmer eronder, meubels afdekken, foto’s maken. Klim zelf niet naar boven: natte pannen zijn spiegelglad.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- DIENSTEN NAAR PROBLEEM -->
+<section id="diensten" class="scroll-mt-24 py-16 md:py-24" aria-labelledby="diensten-kop">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="max-w-2xl">
+      <h2 id="diensten-kop" class="kop text-[34px] md:text-5xl">Wat ziet u op of onder uw dak?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-lei/70">Achter elk dakprobleem zit een oorzaak. Hieronder ziet u per probleem wat we eraan doen. Weet u het niet zeker? De dakinspectie is gratis.</p>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid md:grid-cols-12 gap-5 md:gap-6">
+      <!-- Water binnen -->
+      <article class="md:col-span-7 grid sm:grid-cols-[1fr_1.1fr] bg-lood rounded-2xl overflow-hidden">
+        <img src="assets/google-06.jpg" alt="Nieuw loodwerk rond een schoorsteen op een antraciet pannendak" class="w-full h-64 sm:h-full object-cover">
+        <div class="p-7 md:p-8">
+          <h3 class="kop-smal text-2xl md:text-[28px]">Komt er water binnen?</h3>
+          <p class="mt-3 text-lei/70 leading-relaxed">Een vochtplek op het plafond, een pan op de stoep of lood dat loslaat. Hoe eerder we de oorzaak vinden, hoe kleiner de schade aan balken en isolatie.</p>
+          <ul class="mt-5 space-y-2.5 text-[15px]">
+            <li><strong class="font-semibold">Daklekkage en dakreparatie:</strong> eerst droog, dan de oorzaak.</li>
+            <li><strong class="font-semibold">Lood- en zinkwerk:</strong> gescheurd lood vervangen en opnieuw invoegen.</li>
+            <li><strong class="font-semibold">Schoorsteenrenovatie:</strong> voegwerk en lood vernieuwen.</li>
+            <li><strong class="font-semibold">Nokvorsten:</strong> weer vastzetten of een droge nok leggen.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Dak op -->
+      <article class="md:col-span-5 relative rounded-2xl overflow-hidden bg-lei text-white min-h-[460px] flex flex-col justify-end">
+        <img src="assets/site-02.jpg" alt="Drie dakdekkers leggen nieuwe antraciet dakpannen op nieuwe folie en panlatten" class="absolute inset-0 w-full h-full object-cover object-[60%_30%]">
+        <div class="absolute inset-0 bg-gradient-to-t from-lei via-lei/80 to-transparent" aria-hidden="true"></div>
+        <div class="relative p-7 md:p-8">
+          <h3 class="kop-smal text-2xl md:text-[28px]">Is uw dak op?</h3>
+          <p class="mt-3 text-white/80 leading-relaxed">Steeds een nieuw lek of poreuze pannen. Dan is blijven plakken zonde van het geld.</p>
+          <ul class="mt-5 space-y-2 text-[15px] text-white/90">
+            <li><strong class="font-semibold text-white">Dakrenovatie</strong>, pannendak of plat dak, met 10 jaar garantie</li>
+            <li><strong class="font-semibold text-white">Dakpannen vervangen</strong> door passende pannen</li>
+            <li><strong class="font-semibold text-white">Platte daken en bitumen</strong> herstellen of vernieuwen</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Koud huis -->
+      <article class="md:col-span-5 rounded-2xl border-2 border-lood p-7 md:p-8 flex flex-col">
+        <h3 class="kop-smal text-2xl md:text-[28px]">Koud huis of hoge stookkosten?</h3>
+        <p class="mt-3 text-lei/70 leading-relaxed">Via een ongeïsoleerd dak verdwijnt veel warmte. Isoleren scheelt in stookkosten en maakt van een koude zolder een bruikbare ruimte.</p>
+        <ul class="mt-5 space-y-2.5 text-[15px]">
+          <li><strong class="font-semibold">Dakisolatie:</strong> vanaf de zolder, met sarking of via de zoldervloer.</li>
+          <li><strong class="font-semibold">Plat dak isoleren:</strong> van buitenaf, met een nieuwe dakbedekking erover.</li>
+        </ul>
+        <div class="mt-auto pt-8">
+          <div class="rounded-xl bg-lei text-white p-6">
+            <p class="kop-smal text-lg">Weet u niet wat er speelt?</p>
+            <p class="mt-1.5 text-[15px] text-white/75 leading-relaxed">Bij de gratis inspectie krijgt u foto’s met uitleg in gewone taal.</p>
+            <a href="#contact" class="mt-4 inline-block font-semibold text-duif underline underline-offset-4 decoration-2 hover:text-white">Inspectie aanvragen</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mos en vogels -->
+      <article class="md:col-span-7 grid sm:grid-cols-[1.1fr_1fr] bg-lood rounded-2xl overflow-hidden">
+        <div class="p-7 md:p-8 order-2 sm:order-1">
+          <h3 class="kop-smal text-2xl md:text-[28px]">Mos, een volle goot of vogels?</h3>
+          <p class="mt-3 text-lei/70 leading-relaxed">Klein begonnen, maar vroeg of laat geeft het vochtschade.</p>
+          <ul class="mt-5 space-y-2.5 text-[15px]">
+            <li><strong class="font-semibold">Dakgoten:</strong> schoonmaken, lek zoeken, repareren of vervangen.</li>
+            <li><strong class="font-semibold">Dakreiniging:</strong> mos weg, goten leeg, pannen gecontroleerd.</li>
+            <li><strong class="font-semibold">Vogelwering:</strong> nesten weg en openingen dicht, het dak blijft ventileren.</li>
+          </ul>
+        </div>
+        <img src="assets/site-05.jpg" alt="Nokvorsten vol mos en korstmos op een oud pannendak" class="order-1 sm:order-2 w-full h-60 sm:h-full object-cover">
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="scroll-mt-24 bg-lood py-16 md:py-24" aria-labelledby="team-kop">
+  <div class="mx-auto max-w-7xl px-5 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-center">
+    <div class="relative order-2 lg:order-1">
+      <img src="assets/google-01.jpg" alt="Dakdekker met het logo van De Zwarte Duif op zijn rug, aan het werk op de nok" class="gevel-laag w-full max-w-[460px] aspect-[3/4] object-cover">
+      <img src="assets/site-14.jpg" alt="Steiger voor een Arnhems rijtjeshuis met het spandoek van Dakspecialist De Zwarte Duif" class="absolute -bottom-8 right-0 sm:right-6 lg:-right-4 w-[46%] max-w-[250px] aspect-[3/4] object-cover rounded-xl ring-8 ring-lood">
+    </div>
+    <div class="order-1 lg:order-2">
+      <h2 id="team-kop" class="kop text-[34px] md:text-5xl">Weet u wie er op uw dak staat?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-lei/75 max-w-xl">Bij veel dakbedrijven komt er iemand langs die u nooit eerder zag. Bij ons werken vaste, eigen dakdekkers. Wie uw dak inspecteert, regelt ook het werk. En wat in de offerte staat, is wat u betaalt.</p>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-7">
+        <div class="border-l-4 border-duif pl-5">
+          <dt class="kop-smal text-lg">Geen onbekenden op uw dak</dt>
+          <dd class="mt-1.5 text-[15px] text-lei/70 leading-relaxed">Vaste eigen mensen, gecertificeerd en verzekerd voor werken op hoogte.</dd>
+        </div>
+        <div class="border-l-4 border-duif pl-5">
+          <dt class="kop-smal text-lg">Een offerte die u begrijpt</dt>
+          <dd class="mt-1.5 text-[15px] text-lei/70 leading-relaxed">Wat we doen, met welke materialen, de garantietermijn en één totaalprijs.</dd>
+        </div>
+        <div class="border-l-4 border-duif pl-5">
+          <dt class="kop-smal text-lg">Garantie op papier</dt>
+          <dd class="mt-1.5 text-[15px] text-lei/70 leading-relaxed">10 jaar op een vernieuwd dak, minstens 5 jaar op een reparatie.</dd>
+        </div>
+        <div class="border-l-4 border-duif pl-5">
+          <dt class="kop-smal text-lg">Bereikbaar, ook na het werk</dt>
+          <dd class="mt-1.5 text-[15px] text-lei/70 leading-relaxed">Is er iets? Dan belt u gewoon. Bij spoed dag en nacht.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="scroll-mt-24 py-16 md:py-24" aria-labelledby="reviews-kop">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 id="reviews-kop" class="kop text-[34px] md:text-5xl">Wat klanten zeggen</h2>
+      <p class="text-lei/70"><strong class="text-lei">5,0</strong> uit 28 reviews op Google</p>
+    </div>
+
+    <div class="mt-10 md:mt-14 grid lg:grid-cols-[1fr_300px] gap-10 lg:gap-14 items-end">
+    <figure class="grid lg:grid-cols-[auto_1fr] gap-6 lg:gap-12 items-start">
+      <svg class="w-14 h-14 md:w-20 md:h-20 text-duif" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M4 38V26C4 15 9 9 19 7l2 4c-6 2-8 5-8 10h7v17H4zm24 0V26c0-11 5-17 15-19l2 4c-6 2-8 5-8 10h7v17H28z"/></svg>
+      <div>
+        <blockquote class="kop-smal text-[26px] md:text-[40px] leading-[1.15] max-w-4xl">“Bij De Zwarte Duif gelukkig geen gedoe. Mensen kwamen wanneer ze zeiden dat ze kwamen en vragen werden gewoon beantwoord. Zo simpel kan goede service zijn.”</blockquote>
+        <figcaption class="mt-5 text-lei/70">David van Dam <span class="ml-1 text-[#D99A00]" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+      </div>
+    </figure>
+    <figure class="rounded-2xl bg-lei text-white p-7">
+      <div class="text-[#F5B301]" aria-label="5 van 5 sterren">★★★★★</div>
+      <blockquote class="kop-smal mt-3 text-xl leading-snug">“Snel, eerlijke prijs en ik heb een prachtig nieuw dak met nieuwe veluxramen. Zeer tevreden!”</blockquote>
+      <figcaption class="mt-4 font-semibold text-[15px] text-white/80">Hanneke Gerlagh</figcaption>
+    </figure>
+    </div>
+
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-5 [&>*]:mb-5 [&>*]:break-inside-avoid">
+      <figure class="rounded-2xl bg-lood p-6">
+        <div class="text-[#D99A00]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 text-[15px] leading-relaxed">“Dak afgelopen netjes vernieuwd, oude dakpannen en latten verwijderen daarna folie opgebracht met nieuwe panlatten en daarna netjes nieuwe dakpannen gelegd . Netjes en vlot met een dakpannen lift ideaal . Dus eigenlijk super tevreden met Dakspecialist Zwarte Duif onder leiding van Mees”</blockquote>
+        <figcaption class="mt-4 font-semibold text-[15px]">Hennie Jansen</figcaption>
+      </figure>
+      <figure class="rounded-2xl bg-lood p-6">
+        <div class="text-[#D99A00]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 text-[15px] leading-relaxed">“We hadden meteen een goede indruk van Mees toen hij kwam inspecteren voor het vernieuwen van de dakpannen. We kregen al snel een goede offerte en in vergelijking met de andere aanbieders ook de voordeligste. Ze zijn helder in hun communicatie, komen afspraken goed na en leveren netjes werk.”</blockquote>
+        <figcaption class="mt-4 font-semibold text-[15px]">An Bouwman</figcaption>
+      </figure>
+      <figure class="rounded-2xl border-2 border-lood p-6">
+        <div class="text-[#D99A00]" aria-label="4 van 5 sterren">★★★★<span class="text-zink">★</span></div>
+        <blockquote class="mt-3 text-[15px] leading-relaxed">“Besloten om onze dakpannen en latten te vervangen. Na vergelijken en bellen uitgekomen bij de dakspecialist Zwarte Duif. Goede heldere communicatie over de gang van zaken. Dakdekkers zijn 2 dagen bezig geweest en het ligt er strak op. Ook al wat regenbuien mogen trotseren en geen lekkages gezien.&nbsp;…”</blockquote>
+        <figcaption class="mt-4 font-semibold text-[15px]">Donny Saija</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" class="scroll-mt-24 nok-boven bg-antraciet text-white pt-24 md:pt-36 pb-16 md:pb-24" aria-labelledby="werkwijze-kop">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="max-w-2xl">
+      <h2 id="werkwijze-kop" class="kop text-[34px] md:text-5xl">Zo gaat het, in vier stappen</h2>
+      <p class="mt-5 text-lg leading-relaxed text-white/70">Een dakprobleem geeft al genoeg zorgen. Daarom weet u bij ons steeds wat er gebeurt en wat het kost.</p>
+    </div>
+    <ol class="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden">
+      <li class="bg-antraciet p-7 md:p-8">
+        <span class="kop text-5xl text-duif">1</span>
+        <h3 class="kop-smal mt-5 text-xl">U neemt contact op</h3>
+        <p class="mt-2 text-white/70 leading-relaxed">Bel, app of vul het formulier in. We reageren binnen 24 uur. Bij spoed neemt er dag en nacht iemand op.</p>
+      </li>
+      <li class="bg-antraciet p-7 md:p-8">
+        <span class="kop text-5xl text-duif">2</span>
+        <h3 class="kop-smal mt-5 text-xl">Gratis dakinspectie</h3>
+        <p class="mt-2 text-white/70 leading-relaxed">Een van ons klimt naar boven. Is het dak hoog of steil, dan gaat de drone de lucht in. U ziet op foto’s hoe het ervoor staat.</p>
+      </li>
+      <li class="bg-antraciet p-7 md:p-8">
+        <span class="kop text-5xl text-duif">3</span>
+        <h3 class="kop-smal mt-5 text-xl">Vaste prijs op papier</h3>
+        <p class="mt-2 text-white/70 leading-relaxed">U krijgt een duidelijke offerte met één prijs die vaststaat, en beslist in alle rust.</p>
+      </li>
+      <li class="bg-antraciet p-7 md:p-8">
+        <span class="kop text-5xl text-duif">4</span>
+        <h3 class="kop-smal mt-5 text-xl">Uitvoering met garantie</h3>
+        <p class="mt-2 text-white/70 leading-relaxed">We werken netjes, nemen kapotte pannen en restmateriaal mee en leggen de garantie schriftelijk vast.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ARNHEM -->
+<section class="py-16 md:py-24" aria-labelledby="arnhem-kop">
+  <div class="mx-auto max-w-7xl px-5 grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-20 items-start">
+    <div>
+      <h2 id="arnhem-kop" class="kop text-[34px] md:text-5xl">Van Spijkerkwartier tot Schuytgraaf</h2>
+      <div class="mt-6 space-y-5 text-lg leading-relaxed text-lei/75 max-w-[38rem]">
+        <p>Arnhem heeft daken uit bijna elke periode, en elke periode heeft zijn eigen zwakke plek. In de oudere wijken, zoals het Spijkerkwartier, Sint Marten en de Burgemeesterswijk, zit het lek vaak bij de schoorsteen: lood dat scheurt, voegen die uitbrokkelen.</p>
+        <p>In Malburgen, Presikhaaf en Elderveld liggen veel daken tegen het einde van hun levensduur. Daar wegen we af of pannen vervangen volstaat of dat een complete renovatie verstandiger is. En als de wind vanaf de Veluwe over de stad trekt, raken overal pannen en nokvorsten los.</p>
+        <p>Woont u in een monument of beschermd stadsgezicht? Dan informeren we bij de gemeente of er een vergunning nodig is, nog voor er een pan van het dak gaat.</p>
+      </div>
+      <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 border-t-2 border-lood pt-8 max-w-[38rem]">
+        <p class="kop-smal text-xl leading-snug">Ligt er na de storm een pan in uw tuin?</p>
+        <a href="tel:0850604591" class="knop shrink-0 inline-flex items-center justify-center gap-2 rounded-full bg-lei text-white px-6 py-3.5 font-semibold hover:bg-antraciet">Bel 085 060 4591</a>
+      </div>
+    </div>
+    <aside class="relative">
+      <img src="assets/google-07.jpg" alt="Gemetselde schoorsteen met loodwerk op een oud pannendak tegen een blauwe lucht" class="gevel w-full max-w-[440px] aspect-[4/5] object-cover object-top">
+      <div class="relative -mt-24 ml-auto mr-0 lg:-ml-10 lg:mr-auto max-w-[340px] bg-lei text-white rounded-2xl p-7 shadow-[0_20px_50px_-20px_rgba(24,33,43,.6)]">
+        <p class="kop-smal text-duif text-lg">Wist u dat?</p>
+        <p class="mt-2 leading-relaxed text-white/85">Lood werkt. In de zon wordt het iets langer, bij vorst trekt het weer samen. Dat geeft na jaren fijne scheurtjes, meestal juist op de knik tegen de schoorsteen. Vanaf de stoep ziet u daar niets van.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- WERK -->
+<section class="pb-16 md:pb-24" aria-labelledby="werk-kop">
+  <div class="mx-auto max-w-7xl px-5">
+    <h2 id="werk-kop" class="kop text-[28px] md:text-4xl">Recent werk</h2>
+  </div>
+  <div class="mt-8 mx-auto max-w-7xl px-5 grid grid-cols-2 md:grid-cols-12 md:grid-rows-[260px_260px] gap-3 md:gap-4">
+    <img src="assets/google-02.jpg" alt="Nieuw rood pannendak met dakraam en ontluchtingen" class="col-span-2 md:col-span-7 md:row-span-2 w-full h-64 md:h-full object-cover rounded-2xl">
+    <img src="assets/site-03.jpg" alt="Dronefoto van een vrijstaand huis met vernieuwd oranje pannendak en plat dak" class="col-span-2 md:col-span-5 w-full h-56 md:h-full object-cover rounded-2xl">
+    <img src="assets/site-07.jpg" alt="Gerenoveerd antraciet pannendak op een rij woningen" class="md:col-span-2 w-full h-48 md:h-full object-cover rounded-2xl">
+    <img src="assets/google-05.jpg" alt="Nieuw strak zwart pannendak boven een bakstenen woning" class="md:col-span-3 w-full h-48 md:h-full object-cover object-[60%_45%] rounded-2xl">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="scroll-mt-24 bg-lood py-16 md:py-24" aria-labelledby="contact-kop">
+  <div class="mx-auto max-w-7xl px-5 grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16">
+    <div>
+      <h2 id="contact-kop" class="kop text-[34px] md:text-5xl">Laat ons even naar uw dak kijken</h2>
+      <p class="mt-5 text-lg leading-relaxed text-lei/75 max-w-md">De eerste stap, een dakinspectie, kost u niets. Daarna weet u wat er nodig is en wat het kost.</p>
+
+      <a href="tel:0850604591" class="knop mt-8 flex items-center gap-4 rounded-2xl bg-lei text-white p-5 md:p-6 hover:bg-antraciet max-w-md">
+        <span class="grid place-items-center w-12 h-12 rounded-full bg-duif text-lei shrink-0">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        </span>
+        <span>
+          <span class="block text-white/70 text-sm">Dag en nacht, 7 dagen per week</span>
+          <span class="kop-smal block text-2xl">085 060 4591</span>
+        </span>
+      </a>
+
+      <dl class="mt-8 grid sm:grid-cols-2 gap-6 text-[15px] max-w-md">
+        <div class="sm:col-span-2">
+          <dt class="font-semibold">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@dakspecialist-zwarteduif.nl" class="underline decoration-duif decoration-2 underline-offset-4 break-all hover:text-duifdiep">info@dakspecialist-zwarteduif.nl</a></dd>
+        </div>
+        <div>
+          <dt class="font-semibold">Adres</dt>
+          <dd class="mt-1 text-lei/75">Velperplein 23<br>6811 AH Arnhem</dd>
+        </div>
+        <div>
+          <dt class="font-semibold">Bereikbaar</dt>
+          <dd class="mt-1 text-lei/75">Maandag tot en met zondag, 24 uur per dag</dd>
+        </div>
+        <div>
+          <dt class="font-semibold">Werkgebied</dt>
+          <dd class="mt-1 text-lei/75">Arnhem, Nijmegen, Ede, Apeldoorn, Veenendaal en omgeving</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@dakspecialist-zwarteduif.nl" method="post" enctype="text/plain" class="bg-white rounded-2xl p-6 md:p-9 shadow-[0_24px_60px_-30px_rgba(24,33,43,.35)]">
+      <h3 class="kop-smal text-2xl">Gratis dakinspectie aanvragen</h3>
+      <p class="mt-2 text-[15px] text-lei/65">We nemen binnen 24 uur contact met u op. Lekt het nu? Bel dan liever direct.</p>
+      <div class="mt-7 grid sm:grid-cols-2 gap-5">
+        <label class="block">
+          <span class="text-sm font-semibold">Naam</span>
+          <input required name="naam" autocomplete="name" class="mt-1.5 w-full rounded-lg border border-zink bg-white px-4 py-3 focus:border-duif">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Telefoon</span>
+          <input required name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-lg border border-zink bg-white px-4 py-3 focus:border-duif">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold">Adres van het dak</span>
+          <input name="adres" autocomplete="street-address" class="mt-1.5 w-full rounded-lg border border-zink bg-white px-4 py-3 focus:border-duif">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold">Wat ziet u?</span>
+          <select name="probleem" class="mt-1.5 w-full rounded-lg border border-zink bg-white px-4 py-3 focus:border-duif">
+            <option>Er komt water binnen</option>
+            <option>Schade na storm</option>
+            <option>Mijn dak is op</option>
+            <option>Koud huis of zolder</option>
+            <option>Mos, dakgoot of vogels</option>
+            <option>Ik twijfel, kom maar kijken</option>
+          </select>
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold">Toelichting</span>
+          <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-lg border border-zink bg-white px-4 py-3 focus:border-duif" placeholder="Bijvoorbeeld: vochtplek op zolder, bij de schoorsteen"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="knop mt-7 w-full rounded-full bg-duif text-lei py-4 text-lg font-bold hover:bg-[#39b4e8]">Inspectie aanvragen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-lei text-white/70 pb-24 md:pb-0">
+  <div class="mx-auto max-w-7xl px-5 py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[15px]">
+    <div class="flex items-center gap-4">
+      <img src="assets/site-09.png" alt="" aria-hidden="true" class="w-14 h-auto">
+      <div>
+        <p class="kop-smal text-white text-lg">Dakspecialist De Zwarte Duif</p>
+        <p>Velperplein 23, 6811 AH Arnhem</p>
+      </div>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-2 sm:gap-8">
+      <a href="tel:0850604591" class="hover:text-white">085 060 4591</a>
+      <a href="mailto:info@dakspecialist-zwarteduif.nl" class="hover:text-white">info@dakspecialist-zwarteduif.nl</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-50 p-3 bg-gradient-to-t from-white via-white/95 to-white/0">
+  <a href="tel:0850604591" class="knop flex items-center justify-center gap-3 rounded-full bg-duif text-lei py-4 text-lg font-bold shadow-[0_10px_30px_-10px_rgba(14,127,179,.8)]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel dag en nacht: 085 060 4591
+  </a>
+</div>
+
+</body>
+</html>
