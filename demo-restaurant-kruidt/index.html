@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurant Kruidt | Lunch, borrel en diner in Lichtenvoorde</title>
+<meta name="description" content="Restaurant Kruidt in Lichtenvoorde: chef Jan Peree kookt met eerlijke, veelal lokale producten. Kruidt Menu, wildmenu, lunch en diner. Reserveer via 06 23769774.">
+<meta property="og:title" content="Restaurant Kruidt, Lichtenvoorde">
+<meta property="og:image" content="assets/site-06.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          nacht: '#0E1923',
+          diep: '#16242F',
+          fluweel: '#3B5566',
+          goud: '#C9A13F',
+          goudlicht: '#DDB95E',
+          linnen: '#EEE7DA',
+          mist: '#A9AFB3',
+          inkt: '#1C2630'
+        },
+        fontFamily: {
+          kop: ['Italiana', 'Georgia', 'serif'],
+          tekst: ['Jost', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .hex { clip-path: polygon(50% 0, 100% 13%, 100% 87%, 50% 100%, 0 87%, 0 13%); }
+  .hex-wide { clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0 50%); }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .btn { transition: background-color .2s, color .2s, transform .15s, border-color .2s; }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 2px solid #DDB95E; outline-offset: 3px; }
+  .dots { flex: 1; border-bottom: 1px dotted rgba(28,38,48,.35); margin: 0 .6rem .35rem; }
+  /* Eén laadmoment in de hero, alleen als JS draait */
+  @keyframes op { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes hexin { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+  .js .in-1 { animation: op .9s .1s ease both; }
+  .js .in-2 { animation: op .9s .25s ease both; }
+  .js .in-3 { animation: op .9s .4s ease both; }
+  .js .in-hex { animation: hexin 1.2s ease both; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .in-1, .js .in-2, .js .in-3, .js .in-hex { animation: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-nacht text-linnen font-tekst font-light text-[17px] leading-relaxed pb-[72px] md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-goud focus:text-nacht focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-goud text-nacht text-center text-[13px] font-normal py-1.5 px-4">
+  Demo voor Restaurant Kruidt, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-medium hover:no-underline">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-nacht/90 backdrop-blur border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="shrink-0" aria-label="Restaurant Kruidt, naar boven">
+      <img src="assets/site-02.png" alt="Kruidt" class="h-6 md:h-7 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-linnen/80" aria-label="Hoofdmenu">
+      <a href="#keuken" class="hover:text-goudlicht transition-colors">Keuken</a>
+      <a href="#menu" class="hover:text-goudlicht transition-colors">Menu's</a>
+      <a href="#sfeer" class="hover:text-goudlicht transition-colors">Sfeer</a>
+      <a href="#arrangementen" class="hover:text-goudlicht transition-colors">Arrangementen</a>
+      <a href="#contact" class="hover:text-goudlicht transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:+31623769774" class="btn hidden md:inline-flex items-center gap-2 border border-goud/70 text-goudlicht hover:bg-goud hover:text-nacht px-4 md:px-5 py-2 text-[15px] font-normal">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      Reserveren
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden grain">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_75%_40%,#1d3242_0%,transparent_60%)]" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-10 pt-6 pb-16 md:pt-16 md:pb-24 grid md:grid-cols-12 gap-7 md:gap-6 items-center">
+    <div class="md:col-span-6 lg:col-span-6 order-2 md:order-1">
+      <p class="in-1 text-goudlicht text-[15px] tracking-wide mb-3 md:mb-5">Restaurant in Lichtenvoorde</p>
+      <h1 class="in-1 font-kop text-[3rem] leading-[0.98] sm:text-7xl lg:text-[6.4rem] tracking-[-0.01em] text-linnen">De Achterhoek op je bord.</h1>
+      <p class="in-2 mt-5 md:mt-7 max-w-[30rem] text-linnen/80 text-[17px] md:text-lg">Chef Jan Peree kookt met eerlijke, veelal lokale producten en gezond boerenverstand. Voor lunch, borrel of een lange avond met wijn die precies past.</p>
+      <div class="in-3 mt-7 md:mt-9 flex flex-col sm:flex-row sm:items-center gap-5">
+        <a href="tel:+31623769774" class="btn inline-flex items-center justify-center gap-3 bg-goud hover:bg-goudlicht text-nacht px-8 py-4 text-lg font-medium">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel om te reserveren
+        </a>
+        <a href="mailto:reserveringen@restaurantkruidt.nl" class="text-linnen/80 hover:text-goudlicht underline underline-offset-[6px] decoration-goud/50 transition-colors">of mail je reservering</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-[15px] text-linnen/70">
+        <span class="text-goud tracking-[.15em]" aria-hidden="true">★★★★★</span>
+        <span><strong class="font-medium text-linnen">4.8</strong> uit 134 Google-reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 order-1 md:order-2 relative flex justify-center md:justify-end">
+      <div class="in-hex relative w-[44%] sm:w-[40%] md:w-[82%] lg:w-[74%] max-w-[460px]">
+        <svg class="absolute -inset-0 translate-x-4 -translate-y-4 md:translate-x-6 md:-translate-y-6 w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <polygon points="50,0 100,13 100,87 50,100 0,87 0,13" fill="none" stroke="#C9A13F" stroke-width="1" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <img src="assets/site-06.jpg" alt="Saus wordt aan tafel over een wildgerecht met paddenstoelen en spruitjes geschonken" class="hex relative w-full aspect-[4/5] object-cover object-top">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Keuken -->
+<section id="keuken" class="relative bg-diep">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-32 grid md:grid-cols-12 gap-12 md:gap-10 items-center">
+    <div class="md:col-span-7 relative">
+      <img src="assets/site-08.png" alt="Een gerecht wordt opgediend onder een wolk van rook" class="w-full aspect-[16/10] object-cover">
+      <img src="assets/site-05.jpg" alt="Rosé gegaarde eend met paddenstoelen in een donker bord" class="hidden sm:block absolute -bottom-14 -right-6 md:-right-14 w-[34%] aspect-[3/4] object-cover border-[6px] border-diep">
+    </div>
+    <div class="md:col-span-5 md:pl-8">
+      <h2 class="font-kop text-5xl md:text-6xl leading-[1.02]">Ambacht, passie en vakmanschap.</h2>
+      <div class="mt-7 space-y-5 text-linnen/80 max-w-[34rem]">
+        <p>In de keuken van Kruidt staat Jan Peree. Hij werkt met pure producten, zoveel mogelijk uit de buurt, en kookt met gezond boerenverstand.</p>
+        <p>Met veel aandacht voor smaak en finesse vertalen Jan en zijn brigade de rijkdom van de Achterhoek naar je bord. Wat er op tafel komt, volgt het seizoen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nu in het seizoen -->
+<section class="relative">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 pt-24 md:pt-36 pb-20 md:pb-28">
+    <div class="grid md:grid-cols-12 gap-10 items-end">
+      <div class="md:col-span-5">
+        <p class="text-goudlicht text-[15px] tracking-wide mb-4">Nu in het seizoen</p>
+        <h2 class="font-kop text-5xl md:text-6xl leading-[1.02]">Wild uit de Achterhoek.</h2>
+        <p class="mt-6 text-linnen/80 max-w-[30rem]">Een 5 gangen wildmenu met aperitiefcocktail, amuses en ambachtelijk desembrood. Liever zelf kiezen? Ook in het Kruidt Menu en op de kaart vind je wild.</p>
+        <p class="mt-8 flex items-baseline gap-4">
+          <span class="text-5xl font-light text-goudlicht">€79</span>
+          <span class="text-linnen/70">per persoon, 5 gangen</span>
+        </p>
+      </div>
+      <div class="md:col-span-7">
+        <img src="assets/site-04.jpg" alt="Een eend in een houten kistje op linnen, klaar voor de keuken" class="hex-wide w-full aspect-[16/9] object-cover">
+      </div>
+    </div>
+
+    <div class="mt-20 md:mt-28 border-t border-fluweel/60 pt-10 grid md:grid-cols-12 gap-6">
+      <h3 class="md:col-span-4 font-kop text-3xl md:text-4xl">Kerst bij Kruidt</h3>
+      <p class="md:col-span-5 text-linnen/80">Op 1e en 2e Kerstdag serveren we een 5 gangen kerstmenu met aperitief, amuses, ambachtelijk desembrood en koffie met een madeleine. Uit te breiden met een extra gang kaas.</p>
+      <div class="md:col-span-3 md:text-right">
+        <a href="tel:+31623769774" class="text-goudlicht hover:text-linnen underline underline-offset-[6px] decoration-goud/50 transition-colors">Reserveer je kersttafel</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menukaart -->
+<section id="menu" class="relative bg-diep">
+  <img src="assets/site-13.png" alt="" aria-hidden="true" class="absolute inset-x-0 top-0 w-full h-[46%] object-cover opacity-60">
+  <div class="absolute inset-x-0 top-0 h-[46%] bg-gradient-to-b from-diep/20 to-diep" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-32">
+    <div class="max-w-2xl">
+      <h2 class="font-kop text-5xl md:text-6xl leading-[1.02]">Op de kaart</h2>
+      <p class="mt-5 text-linnen/80 max-w-[32rem]">Lunch, borrel en diner. Kies à la carte, ons keuzemenu of laat de keuken het werk doen met het Kruidt Menu.</p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <!-- Linnen kaart -->
+      <article class="lg:col-span-7 bg-linnen text-inkt px-7 py-10 sm:px-12 sm:py-14 shadow-[0_30px_80px_-20px_rgba(4,10,16,.7)]">
+        <div class="border border-inkt/15 px-5 py-8 sm:px-10 sm:py-10">
+          <img src="assets/site-02.png" alt="" aria-hidden="true" class="h-4 mx-auto opacity-90">
+          <h3 class="font-kop text-4xl sm:text-5xl text-center mt-6">Kruidt Menu</h3>
+          <p class="text-center text-inkt/70 mt-3 max-w-sm mx-auto">De optimale smaakbeleving aan tafel. De keuken toont haar passie voor seizoensproducten.</p>
+          <ul class="mt-10 space-y-4 text-lg font-normal tabular-nums">
+            <li class="flex items-end"><span>3 gangen</span><span class="dots"></span><span>€52,50</span></li>
+            <li class="flex items-end"><span>4 gangen</span><span class="dots"></span><span>€59</span></li>
+            <li class="flex items-end"><span>5 gangen</span><span class="dots"></span><span>€69</span></li>
+          </ul>
+          <ul class="mt-8 pt-6 border-t border-inkt/15 space-y-3 text-inkt/80 tabular-nums">
+            <li class="flex items-end"><span>Extra gang kaas</span><span class="dots"></span><span>€20</span></li>
+            <li class="flex items-end"><span>Friandises</span><span class="dots"></span><span>€8</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="lg:col-span-5 space-y-10 lg:pt-6">
+        <div>
+          <h3 class="font-kop text-3xl text-goudlicht">Lunch</h3>
+          <p class="mt-2 text-linnen/80">Op zaterdag en zondag schuif je vanaf 12:00 aan voor de lunch.</p>
+        </div>
+        <div>
+          <h3 class="font-kop text-3xl text-goudlicht">À la carte en keuzemenu</h3>
+          <p class="mt-2 text-linnen/80">Stel je eigen avond samen, of kies uit het keuzemenu.</p>
+        </div>
+        <div>
+          <h3 class="font-kop text-3xl text-goudlicht">Wijn</h3>
+          <p class="mt-2 text-linnen/80">Een eigen selectie wijnen bij de keuken van Jan. Vraag gerust naar de wijnkaart.</p>
+        </div>
+        <div class="border-l-2 border-goud pl-5">
+          <h3 class="font-medium text-linnen">Allergieën en dieetwensen</h3>
+          <p class="mt-1 text-linnen/70 text-[16px]">Geef ze door bij je reservering, dan zorgen we voor een volwaardig menu. Ingrijpende allergieën en intoleranties graag 2 weken van tevoren.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="relative grain">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-32">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <h2 class="font-kop text-5xl md:text-6xl leading-[1.02] max-w-xl">Wat gasten zeggen</h2>
+      <p class="text-linnen/70"><span class="text-goud tracking-[.15em]" aria-hidden="true">★★★★★</span> <strong class="font-medium text-linnen">4.8</strong> uit 134 reviews op Google</p>
+    </div>
+    <div class="mt-14 grid md:grid-cols-12 gap-x-10 gap-y-14">
+      <figure class="md:col-span-7">
+        <blockquote class="font-kop text-[1.75rem] md:text-[2.2rem] leading-[1.2] text-linnen">“Wij hadden met 4 personen een 7 gangen verrassing menu. Het was echt een geweldige belevenis. Heerlijke gerechten met een leuke uitleg en veelal lokale ingrediënten. Waarbij we elke keer een heerlijke wijn hadden door de sommelier erbij gezocht. De tafel was prettig en de bediening erg vriendelijk. De sfeer was prettig”</blockquote>
+        <figcaption class="mt-5 text-goudlicht">Vincent Bosma</figcaption>
+      </figure>
+      <div class="md:col-span-5 space-y-12 md:pt-3">
+        <figure >
+          <blockquote class="text-xl text-linnen/90">“Uitstekend. Ster niveau zonder ster prijzen. Heerlijk genoten van een top avond. Wij hadden het 5 gangen wildmenu met bijpassende wijnen.”</blockquote>
+          <figcaption class="mt-3 text-goudlicht">Edwin Viester</figcaption>
+        </figure>
+        <figure >
+          <blockquote class="text-xl text-linnen/90">“Heerlijke lunch genoten van de gerechten van de 3 gangen. Erg smaakvol.”</blockquote>
+          <figcaption class="mt-3 text-goudlicht">Arie Ebbers</figcaption>
+        </figure>
+        <figure >
+          <blockquote class="text-xl text-linnen/90">“Wij genoten van het keuzemenu. Heerlijk gegeten. Lekkere gerechten. Vriendelijke bediening. Goede sfeer.”</blockquote>
+          <figcaption class="mt-3 text-goudlicht">Janny Thus van de mortel</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sfeer -->
+<section id="sfeer" class="bg-diep">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-32">
+    <div class="grid md:grid-cols-12 gap-6 md:gap-8">
+      <div class="md:col-span-5 md:pr-6">
+        <h2 class="font-kop text-5xl md:text-6xl leading-[1.02]">Binnen warm, buiten aan de kerk.</h2>
+        <p class="mt-6 text-linnen/80 max-w-[30rem]">Fluwelen stoelen, gedekte tafels en zacht licht binnen. Buiten het terras met zicht op de kerktoren van Lichtenvoorde, met plek voor 40 tot 50 gasten.</p>
+      </div>
+      <img src="assets/google-05.png" alt="Het restaurant van binnen met donkere tafels, okergele stoelen en hanglampen" class="md:col-span-7 w-full aspect-[16/10] object-cover">
+      <img src="assets/google-07.jpg" alt="Het terras van Kruidt met parasols en de kerktoren op de achtergrond" class="md:col-span-4 w-full aspect-[4/3] md:aspect-auto md:h-full object-cover object-top">
+      <div class="md:col-span-8 grid grid-cols-2 gap-6 md:gap-8">
+        <img src="assets/google-03.jpg" alt="Fluwelen stoelen voor de wand met het Kruidt-logo" class="col-span-2 w-full aspect-[16/8] object-cover">
+        <img src="assets/google-02.jpg" alt="Champagne wordt ingeschonken bij oesters met citroen" class="w-full aspect-square object-cover">
+        <img src="assets/google-08.jpg" alt="Handgemaakte bonbons op een donkere schaal" class="w-full aspect-square object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Arrangementen -->
+<section id="arrangementen" class="relative">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-32">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+      <div class="md:col-span-5">
+        <img src="assets/site-11.jpg" alt="Comfortkamer van Hotel De Koppelpaarden met houten balken" class="hex w-full max-w-[420px] mx-auto aspect-[4/5] object-cover">
+      </div>
+      <div class="md:col-span-7">
+        <h2 class="font-kop text-5xl md:text-6xl leading-[1.02]">Blijf een nachtje.</h2>
+        <p class="mt-5 text-linnen/80 max-w-[34rem]">Op een steenworp afstand zit Hotel De Koppelpaarden. Combineer je diner met een overnachting en rijd pas de volgende dag naar huis.</p>
+
+        <div class="mt-10 divide-y divide-fluweel/60 border-y border-fluweel/60">
+          <div class="py-7 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-3">
+            <h3 class="font-kop text-3xl">Culinair arrangement</h3>
+            <p class="text-3xl font-light text-goudlicht sm:text-right">€495</p>
+            <ul class="sm:col-span-2 text-linnen/80 space-y-1.5 list-none">
+              <li>2 overnachtingen in een comfortkamer met ontbijtbuffet</li>
+              <li>1e avond: 4 gangen diner bij Hotel De Koppelpaarden, met aperitief en amuse</li>
+              <li>2e avond: 5 gangen Kruidt Menu met aperitief, amuses en koffie of thee</li>
+            </ul>
+            <p class="sm:col-span-2 text-[15px] text-linnen/60">Voor 2 personen, exclusief toeristenbelasting. Boeken via <a class="text-goudlicht underline underline-offset-4 hover:text-linnen" href="http://www.dekoppelpaarden.com" target="_blank" rel="noopener">dekoppelpaarden.com</a> of <a class="text-goudlicht underline underline-offset-4 hover:text-linnen" href="mailto:reserveringen@dekoppelpaarden.com">reserveringen@dekoppelpaarden.com</a>.</p>
+          </div>
+          <div class="py-7 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-3">
+            <h3 class="font-kop text-3xl">Wildarrangement 2026</h3>
+            <p class="text-3xl font-light text-goudlicht sm:text-right">€305</p>
+            <ul class="sm:col-span-2 text-linnen/80 space-y-1.5">
+              <li>5 gangen wildmenu met aperitief en amuses</li>
+              <li>Overnachting met ontbijtbuffet bij Hotel De Koppelpaarden</li>
+            </ul>
+            <p class="sm:col-span-2 text-[15px] text-linnen/60">Voor 2 personen, exclusief toeristenbelasting. Boeken via <a class="text-goudlicht underline underline-offset-4 hover:text-linnen" href="https://wildetenindeachterhoek.nl/2-daags-wildarrangement-restaurant-kruidt" target="_blank" rel="noopener">wildetenindeachterhoek.nl</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Events -->
+    <div class="mt-24 md:mt-32 relative overflow-hidden bg-diep grain">
+      <div class="grid md:grid-cols-12 items-stretch">
+        <img src="assets/site-03.png" alt="Glazen worden op een gedekte tafel gezet" class="md:col-span-5 w-full h-56 md:h-full object-cover object-[40%_50%]">
+        <div class="md:col-span-7 p-8 sm:p-12 md:p-14">
+          <h2 class="font-kop text-4xl md:text-5xl leading-[1.05]">Iets te vieren? Of te bespreken?</h2>
+          <p class="mt-5 text-linnen/80 max-w-[34rem]">Een bruiloft, verjaardag, jubileum, personeelsfeest of een rustige vergadering met lunch of diner. Samen met jou stellen we de dag of avond samen. Binnen is plek voor 50 gasten, op het terras voor 40 tot 50.</p>
+          <a href="mailto:info@restaurantkruidt.nl?subject=Aanvraag%20borrel%20of%20event" class="btn mt-8 inline-flex border border-goud/70 text-goudlicht hover:bg-goud hover:text-nacht px-6 py-3">Vraag de mogelijkheden aan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-diep border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-14">
+    <div class="md:col-span-6">
+      <h2 class="font-kop text-5xl md:text-6xl leading-[1.02]">Tot aan tafel.</h2>
+      <p class="mt-5 text-linnen/80 max-w-[28rem]">Bel of mail voor een reservering, een vraag of een cadeaubon.</p>
+      <div class="mt-9 space-y-5">
+        <a href="tel:+31623769774" class="group flex items-baseline gap-4">
+          <span class="w-20 shrink-0 text-[15px] text-mist">Telefoon</span>
+          <span class="text-3xl sm:text-4xl font-light tracking-wide text-goudlicht group-hover:text-linnen transition-colors">06 23769774</span>
+        </a>
+        <a href="mailto:reserveringen@restaurantkruidt.nl" class="group flex items-baseline gap-4">
+          <span class="w-20 shrink-0 text-[15px] text-mist">Reserveren</span>
+          <span class="text-lg text-linnen group-hover:text-goudlicht transition-colors break-all">reserveringen@restaurantkruidt.nl</span>
+        </a>
+        <a href="mailto:info@restaurantkruidt.nl" class="group flex items-baseline gap-4">
+          <span class="w-20 shrink-0 text-[15px] text-mist">Algemeen</span>
+          <span class="text-lg text-linnen group-hover:text-goudlicht transition-colors">info@restaurantkruidt.nl</span>
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Kruidt+Rapenburgsestraat+26+Lichtenvoorde" target="_blank" rel="noopener" class="group flex items-baseline gap-4">
+          <span class="w-20 shrink-0 text-[15px] text-mist">Adres</span>
+          <span class="text-lg text-linnen group-hover:text-goudlicht transition-colors">Rapenburgsestraat 26<br>7131 CZ Lichtenvoorde<br><span class="text-[15px] text-goudlicht underline underline-offset-4">Plan je route</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="md:col-span-6">
+      <h3 class="font-kop text-3xl">Openingstijden</h3>
+      <dl class="mt-6 tabular-nums text-[17px]">
+        <div class="flex justify-between py-3 border-b border-fluweel/50 text-linnen/50"><dt>Maandag</dt><dd>Gesloten</dd></div>
+        <div class="flex justify-between py-3 border-b border-fluweel/50 text-linnen/50"><dt>Dinsdag</dt><dd>Gesloten</dd></div>
+        <div class="flex justify-between py-3 border-b border-fluweel/50"><dt>Woensdag</dt><dd>17:00 tot 00:00</dd></div>
+        <div class="flex justify-between py-3 border-b border-fluweel/50"><dt>Donderdag</dt><dd>17:00 tot 00:00</dd></div>
+        <div class="flex justify-between py-3 border-b border-fluweel/50"><dt>Vrijdag</dt><dd>17:00 tot 00:00</dd></div>
+        <div class="flex justify-between gap-4 py-3 border-b border-fluweel/50"><dt>Zaterdag</dt><dd class="text-right">12:00 tot 16:30<br>17:00 tot 00:00</dd></div>
+        <div class="flex justify-between gap-4 py-3 border-b border-fluweel/50"><dt>Zondag</dt><dd class="text-right">12:00 tot 16:30<br>17:00 tot 00:00</dd></div>
+      </dl>
+      <ul class="mt-8 space-y-2 text-[15px] text-linnen/70">
+        <li>Apart afrekenen per gerecht kan niet; de rekening gelijk delen is geen enkel probleem.</li>
+                <li>We zoeken een collega voor de bediening. Passie voor gastvrijheid, wijn en spijs? <a href="mailto:info@restaurantkruidt.nl?subject=Vacature%20bediening" class="text-goudlicht underline underline-offset-4 hover:text-linnen">Maak kennis</a>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-nacht border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-10 flex flex-col md:flex-row gap-6 md:items-center md:justify-between text-[15px] text-linnen/60">
+    <img src="assets/site-02.png" alt="Kruidt" class="h-4 w-auto self-start md:self-auto">
+    <p>Restaurant Kruidt, Rapenburgsestraat 26, Lichtenvoorde</p>
+    <p>Demo door <a href="https://hagenweb.nl" class="text-goudlicht hover:text-linnen">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-nacht/95 backdrop-blur border-t border-white/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31623769774" class="btn flex-1 inline-flex items-center justify-center gap-2 bg-goud text-nacht py-3 font-medium">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel om te reserveren
+  </a>
+  <a href="#contact" class="btn inline-flex items-center justify-center border border-white/20 px-4 text-linnen/90">Tijden</a>
+</div>
+
+</body>
+</html>
