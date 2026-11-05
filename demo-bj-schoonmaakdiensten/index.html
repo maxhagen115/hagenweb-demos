@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BJ Schoonmaakdiensten | Glazenwasser in Zevenaar</title>
+<meta name="description" content="Glazenwasser en schoonmaakdiensten in Zevenaar. Ramen, kozijnen, dakgoten, gevels, zonnepanelen en meer, particulier en zakelijk. Bel 0316 729 297.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231473C2'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EBJS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#0C2A43', bjs: '#1473C2', bjsdark: '#0E5C9E', sky: '#6FB3E8',
+        glass: '#EAF3FA', paper: '#F8FBFD', slate: '#4D6275'
+      },
+      fontFamily: {
+        display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .font-display { font-optical-sizing: auto; }
+
+  /* Raamvorm: boogvenster met roede */
+  .raam { border-radius: 999px 999px 28px 28px; overflow: hidden; position: relative; isolation: isolate; }
+  .raam::before, .raam::after { content: ""; position: absolute; background: rgba(255,255,255,.85); z-index: 2; pointer-events: none; }
+  .raam::before { left: 50%; top: 0; bottom: 0; width: 6px; transform: translateX(-50%); }
+  .raam::after { left: 0; right: 0; top: 27%; height: 6px; }
+  .raam-lijst { padding: 10px; background: #fff; border-radius: 999px 999px 36px 36px; box-shadow: 0 30px 60px -30px rgba(12,42,67,.45), inset 0 0 0 1px rgba(12,42,67,.08); }
+
+  /* Glans over het glas */
+  .glans { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(115deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.28) 42%, rgba(255,255,255,0) 52%); }
+
+  /* Voor/na-schuif */
+  .vn { --pos: 50%; position: relative; overflow: hidden; border-radius: 28px; }
+  .vn .voor { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+  .vn .trekker { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 4px; transform: translateX(-50%); background: #fff; box-shadow: 0 0 0 1px rgba(12,42,67,.15); pointer-events: none; }
+  .vn .knop { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 54px; height: 54px; border-radius: 999px; background: #1473C2; color: #fff; display: grid; place-items: center; box-shadow: 0 10px 24px -8px rgba(12,42,67,.6); }
+  .vn input[type=range] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+
+  a, button { transition: background-color .2s, color .2s, transform .15s, border-color .2s; }
+  .druk:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #6FB3E8; outline-offset: 3px; border-radius: 6px; }
+
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-paper text-ink font-sans">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-white px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-ink text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor BJ Schoonmaakdiensten, gemaakt door <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-sky">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink/5">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="BJ Schoonmaakdiensten, naar boven">
+      <span class="font-display font-extrabold text-bjs text-[30px] lg:text-[34px] leading-none tracking-[-0.04em]">BJS</span>
+      <span class="hidden sm:block leading-tight text-[13px] text-slate border-l border-ink/15 pl-3">BJ Schoonmaakdiensten<br>Zevenaar</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-bjs">Diensten</a>
+      <a href="#over" class="hover:text-bjs">Over ons</a>
+      <a href="#reviews" class="hover:text-bjs">Reviews</a>
+      <a href="#al-klant" class="hover:text-bjs">Al klant?</a>
+      <a href="#contact" class="hover:text-bjs">Offerte</a>
+    </nav>
+    <a href="tel:+31316729297" class="druk inline-flex items-center gap-2 rounded-full bg-ink text-white px-4 lg:px-5 py-2.5 text-[15px] font-semibold hover:bg-bjs">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">0316 729 297</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div aria-hidden="true" class="absolute -right-40 -top-40 w-[720px] h-[720px] rounded-full bg-glass"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-8 pb-16 lg:pt-16 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="lg:col-span-7">
+      <p class="text-slate font-medium text-[15px] lg:text-base">Glazenwasser en schoonmaak in Zevenaar</p>
+      <h1 class="font-display font-extrabold text-[40px] leading-[1] sm:text-6xl lg:text-[88px] tracking-[-0.035em] mt-3">
+        Glimmend schoon,<br> in weer en wind.
+      </h1>
+      <p class="mt-5 lg:mt-7 text-[17px] lg:text-xl text-slate max-w-xl leading-relaxed">
+        Ramen, kozijnen, dakgoten en gevels: wij nemen het schoonmaakwerk in en rond uw huis of bedrijf uit handen. Met eigen mensen en altijd dezelfde nette afwerking.
+      </p>
+      <div class="mt-7 lg:mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a id="heroknop" href="tel:+31316729297" class="druk inline-flex items-center justify-center gap-3 rounded-full bg-bjs hover:bg-bjsdark text-white px-8 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-[0_18px_40px_-16px_rgba(20,115,194,.8)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0316 729 297
+        </a>
+        <a href="#contact" class="text-ink font-semibold underline decoration-sky decoration-2 underline-offset-[6px] hover:text-bjs self-center sm:self-auto">Vraag een offerte aan</a>
+      </div>
+      <a href="#reviews" class="mt-8 inline-flex items-center gap-3 text-[15px] group">
+        <span class="flex text-[#F5B400]" aria-hidden="true">
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="font-semibold">4,9</strong> <span class="text-slate group-hover:text-ink">uit 15 Google-reviews</span></span>
+      </a>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="raam-lijst max-w-[460px] mx-auto lg:ml-auto">
+        <div class="raam aspect-[4/5]">
+          <img src="assets/site-01.jpg" alt="Het team van BJ Schoonmaakdiensten in zwarte werkkleding voor een witte BJS-bus met ladders" class="absolute inset-0 w-full h-full object-cover object-[55%_60%]">
+          <div class="glans"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-white border-y border-ink/5">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 items-end">
+      <h2 class="lg:col-span-7 font-display font-extrabold text-4xl lg:text-6xl tracking-[-0.03em] leading-[1.02]">Van dakgoot tot drempel.</h2>
+      <p class="lg:col-span-5 text-slate text-lg leading-relaxed max-w-lg">Particulier of zakelijk, binnen of buiten: wij maken het schoon. Kies één klus of laat alles in één keer doen.</p>
+    </div>
+
+    <div class="mt-14 lg:mt-20 space-y-16 lg:space-y-24">
+
+      <!-- Ramen en glas -->
+      <article class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div class="lg:col-span-6">
+          <div class="rounded-[28px] overflow-hidden aspect-[4/3] bg-glass">
+            <img src="assets/site-07.jpg" alt="Glazen serredak met aluminium profielen, net gewassen" loading="lazy" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="lg:col-span-6">
+          <h3 class="font-display font-bold text-3xl lg:text-4xl tracking-[-0.02em]">Ramen en glas</h3>
+          <p class="mt-4 text-slate text-lg leading-relaxed max-w-lg">Ons vak begint bij het glas. Een team van eigen glazenwassers zorgt voor vlekkeloze ramen, en neemt de kozijnen en het serredak meteen mee, zodat er weer volop licht binnenkomt.</p>
+          <ul class="mt-7 grid sm:grid-cols-2 gap-x-8 border-t border-ink/10">
+            <li class="py-3.5 border-b border-ink/10 font-medium">Glasbewassing</li>
+            <li class="py-3.5 border-b border-ink/10 font-medium">Kozijnen reinigen</li>
+            <li class="py-3.5 border-b border-ink/10 font-medium">Serredak schoonmaken</li>
+            <li class="py-3.5 border-b border-ink/10 font-medium">Dakkapel reinigen</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Dak en goot -->
+      <article class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div class="lg:col-span-6 lg:order-2">
+          <div class="rounded-[28px] overflow-hidden aspect-[4/3] bg-glass">
+            <img src="assets/site-11.jpg" alt="Leeggehaalde dakgoot langs een pannendak" loading="lazy" class="w-full h-full object-cover object-[50%_40%]">
+          </div>
+        </div>
+        <div class="lg:col-span-6 lg:order-1">
+          <h3 class="font-display font-bold text-3xl lg:text-4xl tracking-[-0.02em]">Dak en goot</h3>
+          <p class="mt-4 text-slate text-lg leading-relaxed max-w-lg">Een verstopte goot zorgt voor lekkages en schade. Wij halen goten leeg, maken boeiboorden en daken vrij van mos en algen en reinigen uw zonnepanelen, zodat ze weer alle zon opvangen.</p>
+          <ul class="mt-7 grid sm:grid-cols-2 gap-x-8 border-t border-ink/10">
+            <li class="py-3.5 border-b border-ink/10 font-medium">Dakgoten leeghalen</li>
+            <li class="py-3.5 border-b border-ink/10 font-medium">Boeiboorden reinigen</li>
+            <li class="py-3.5 border-b border-ink/10 font-medium">Daken reinigen</li>
+            <li class="py-3.5 border-b border-ink/10 font-medium">Zonnepanelen reinigen</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Gevel en grond -->
+      <article class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div class="lg:col-span-6">
+          <div class="rounded-[28px] overflow-hidden aspect-[4/3] bg-glass">
+            <img src="assets/site-09.jpg" alt="Medewerker van BJS met een hogedrukspuit onder een overkapping" loading="lazy" class="w-full h-full object-cover object-[50%_45%]">
+          </div>
+        </div>
+        <div class="lg:col-span-6">
+          <h3 class="font-display font-bold text-3xl lg:text-4xl tracking-[-0.02em]">Gevel en grond</h3>
+          <p class="mt-4 text-slate text-lg leading-relaxed max-w-lg">Weer, vervuiling en groene aanslag tasten een gevel aan. Met de hogedrukreiniger maken wij gevels, terrassen en vloeren weer schoon, en ook rolluiken krijgen een beurt zodat ze soepel blijven lopen.</p>
+          <ul class="mt-7 grid sm:grid-cols-2 gap-x-8 border-t border-ink/10">
+            <li class="py-3.5 border-b border-ink/10 font-medium">Gevelreiniging</li>
+            <li class="py-3.5 border-b border-ink/10 font-medium">Hogedruk reiniging</li>
+            <li class="py-3.5 border-b border-ink/10 font-medium">Vloeren reinigen</li>
+            <li class="py-3.5 border-b border-ink/10 font-medium">Rolluik reinigen</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Grote beurt -->
+      <article class="relative rounded-[32px] bg-ink text-white overflow-hidden grid lg:grid-cols-12">
+        <div class="lg:col-span-7 p-8 sm:p-10 lg:p-14 relative z-10">
+          <h3 class="font-display font-bold text-3xl lg:text-5xl tracking-[-0.03em] leading-[1.05]">Alles in één keer? Kies de grote beurt.</h3>
+          <p class="mt-5 text-white/75 text-lg leading-relaxed max-w-lg">Laat enkele of al onze diensten tegelijk uitvoeren. Dat is de voordeligste optie, en daarna heeft u geen omkijken meer naar het onderhoud van uw pand. Ook spinnenwering nemen we dan mee.</p>
+          <a href="tel:+31316729297" class="druk mt-8 inline-flex items-center gap-3 rounded-full bg-white text-ink px-7 py-3.5 font-semibold hover:bg-sky">Bel voor een pakket op maat</a>
+        </div>
+        <div class="lg:col-span-5 relative min-h-[240px]">
+          <img src="assets/site-04.jpg" alt="Schoongespoten terrastegels met hogedrukspuit" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-ink via-ink/20 to-transparent"></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Voor en na -->
+<section class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-4">
+      <h2 class="font-display font-extrabold text-4xl lg:text-5xl tracking-[-0.03em] leading-[1.02]">Haal de trekker erover.</h2>
+      <p class="mt-5 text-slate text-lg leading-relaxed">Een gevel vol graffiti, en dezelfde gevel nadat wij er geweest zijn. Schuif over de foto om het verschil te zien.</p>
+    </div>
+    <div class="lg:col-span-8">
+      <div class="vn aspect-[4/3] bg-glass shadow-[0_30px_60px_-30px_rgba(12,42,67,.45)]" id="voorna">
+        <img src="assets/site-13.jpg" alt="Na: dezelfde gevelplaat, volledig schoon" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+        <div class="voor">
+          <img src="assets/site-05.jpg" alt="Voor: gevelplaat beklad met witte en bruine graffiti" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+        </div>
+        <span class="absolute left-4 top-4 bg-ink/80 text-white text-sm font-semibold px-3 py-1.5 rounded-lg">Voor</span>
+        <span class="absolute right-4 top-4 bg-white/90 text-ink text-sm font-semibold px-3 py-1.5 rounded-lg">Na</span>
+        <div class="trekker"><div class="knop">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+        </div></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Schuif tussen voor en na">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Over ons -->
+<section id="over" class="bg-glass">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="relative">
+      <div class="rounded-[32px] overflow-hidden aspect-[16/10] lg:aspect-[16/8]">
+        <img src="assets/google-02.jpg" alt="Drie witte BJS-bussen met ladders op een oprit in de buurt van Zevenaar" loading="lazy" class="w-full h-full object-cover object-[50%_55%]">
+      </div>
+      <div class="relative lg:absolute lg:right-10 lg:-bottom-16 -mt-16 mx-4 lg:mx-0 lg:w-[480px] bg-white rounded-[28px] p-7 sm:p-9 shadow-[0_30px_60px_-30px_rgba(12,42,67,.45)]">
+        <h2 class="font-display font-extrabold text-3xl lg:text-4xl tracking-[-0.03em] leading-[1.05]">Begonnen door Bob, gegroeid door u.</h2>
+        <p class="mt-4 text-slate leading-relaxed">Bob richtte BJ Schoonmaakdiensten op in 2018. De vraag groeide, de diensten ook. Inmiddels werken er 10 medewerkers vol passie voor het vak, en dat ziet u terug in het resultaat.</p>
+      </div>
+    </div>
+
+    <div class="mt-16 lg:mt-32 grid md:grid-cols-3 gap-10 lg:gap-14">
+      <div>
+        <h3 class="font-display font-bold text-2xl tracking-[-0.02em]">Eigen beheer</h3>
+        <p class="mt-3 text-slate leading-relaxed">Wij doen het werk met eigen medewerkers. Is het extra druk, dan huren we ervaren collega's in, zodat u niet lang hoeft te wachten.</p>
+      </div>
+      <div>
+        <h3 class="font-display font-bold text-2xl tracking-[-0.02em]">Pakket op maat</h3>
+        <p class="mt-3 text-slate leading-relaxed">We bekijken uw situatie en wensen en maken een nette prijs voor u. Helder en simpel, zonder gedoe.</p>
+      </div>
+      <div>
+        <h3 class="font-display font-bold text-2xl tracking-[-0.02em]">Altijd dichtbij</h3>
+        <p class="mt-3 text-slate leading-relaxed">Snelle service vanuit Zevenaar. Bel ons gerust om te overleggen wat er voor u mogelijk is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+  <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+    <h2 class="font-display font-extrabold text-4xl lg:text-6xl tracking-[-0.03em] leading-[1.02] max-w-2xl">"Alle ramen weer laten glimmen."</h2>
+    <div class="flex items-baseline gap-3">
+      <span class="font-display font-extrabold text-6xl text-bjs tracking-[-0.04em]">4,9</span>
+      <span class="text-slate leading-tight">gemiddeld uit<br>15 Google-reviews</span>
+    </div>
+  </div>
+
+  <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-6 [&>figure]:mb-6">
+    <figure class="break-inside-avoid bg-white rounded-[24px] p-7 border border-ink/5">
+      <blockquote class="text-[17px] leading-relaxed">"Heel erg fijn bedrijf, werken niet alleen snel, maar ook grondig!! Nemen ook ales meteen mee wat nodig is. Heel erg tevreden, goede kwaliteit en werken in weer en wind gewoon door!"</blockquote>
+      <figcaption class="mt-5 font-semibold">Jet <span class="font-normal text-slate">via Google</span></figcaption>
+    </figure>
+    <figure class="break-inside-avoid bg-bjs text-white rounded-[24px] p-7">
+      <blockquote class="text-[17px] leading-relaxed">"Moeilijk bereikbare dakgoot reinigen tussendoor in drukke tijd. Mooi op tijd gekomen, erg vriendelijke jongeman, meedenkend, snel en netjes werk verricht. Ik ben blij en tevreden!"</blockquote>
+      <figcaption class="mt-5 font-semibold">Inge Hak <span class="font-normal text-white/75">via Google</span></figcaption>
+    </figure>
+    <figure class="break-inside-avoid bg-white rounded-[24px] p-7 border border-ink/5">
+      <blockquote class="text-[17px] leading-relaxed">"Heel blij met dit bedrijf. Rustige nette glazenwasser neemt de tijd om alle ramen weer te laten glimmen."</blockquote>
+      <figcaption class="mt-5 font-semibold">Marian Bloemberg <span class="font-normal text-slate">via Google</span></figcaption>
+    </figure>
+    <figure class="break-inside-avoid bg-glass rounded-[24px] p-7">
+      <blockquote class="text-[17px] leading-relaxed">"Eerste keer Bob gevraagd of hij ons oude huis wilde doen vlak voor bezichtiging met de makelaar en heeft het perfect gedaan. Ook al was het zaterdag en laat in de middag. Gelijk alle kozijnen en boarding gedaan. Dit was zeker een meerwaarde met de verkoop van ons huis. Vanaf toen: Klant!"</blockquote>
+      <figcaption class="mt-5 font-semibold">Arjen Uijttenboogaart <span class="font-normal text-slate">gaf een 10</span></figcaption>
+    </figure>
+    <figure class="break-inside-avoid bg-white rounded-[24px] p-7 border border-ink/5">
+      <blockquote class="text-[17px] leading-relaxed">"Echt een top bedrijf! Alles netjes schoon , erg klantvriendelijk! Al jaren lang een tevreden klant!"</blockquote>
+      <figcaption class="mt-5 font-semibold">Joey Mommertz <span class="font-normal text-slate">via Google</span></figcaption>
+    </figure>
+    <figure class="break-inside-avoid bg-ink text-white rounded-[24px] p-7">
+      <blockquote class="text-[17px] leading-relaxed">"Super vriendelijk en gezellig personeel! Wassen consistent goed en denken met je mee. Zeer tevreden klant!"</blockquote>
+      <figcaption class="mt-5 font-semibold">Daryl Schuurman <span class="font-normal text-white/70">via Google</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Al klant -->
+<section id="al-klant" class="bg-white border-y border-ink/5">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14">
+    <div class="lg:col-span-4">
+      <h2 class="font-display font-extrabold text-4xl lg:text-5xl tracking-[-0.03em] leading-[1.02]">Al klant bij ons?</h2>
+      <p class="mt-5 text-slate text-lg leading-relaxed">Afspraak verzetten, een vraag over uw factuur of iets kwijt willen: hier vindt u snel de juiste weg.</p>
+      <div class="mt-8 rounded-[24px] overflow-hidden aspect-[4/3] hidden lg:block">
+        <img src="assets/google-03.jpg" alt="Achterkant van twee BJS-bussen met de lijst van diensten" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="lg:col-span-8 divide-y divide-ink/10 border-y border-ink/10">
+      <a href="mailto:info@bj-schoonmaakdiensten.nl?subject=Afspraak%20maken%20of%20wijzigen" class="group grid sm:grid-cols-[1fr_auto] gap-2 sm:gap-8 py-7 items-center">
+        <div>
+          <h3 class="font-display font-bold text-2xl tracking-[-0.02em] group-hover:text-bjs">Afspraak maken of wijzigen</h3>
+          <p class="mt-2 text-slate leading-relaxed max-w-xl">Een vraag over de schoonmaakplanning? Mail of bel ons en we passen het aan.</p>
+        </div>
+        <span class="text-bjs font-semibold">Mail ons</span>
+      </a>
+      <a href="mailto:info@bj-schoonmaakdiensten.nl?subject=Vraag%20over%20mijn%20factuur" class="group grid sm:grid-cols-[1fr_auto] gap-2 sm:gap-8 py-7 items-center">
+        <div>
+          <h3 class="font-display font-bold text-2xl tracking-[-0.02em] group-hover:text-bjs">Vraag over mijn factuur</h3>
+          <p class="mt-2 text-slate leading-relaxed max-w-xl">U ontvangt de factuur meestal binnen één dag na het werk, op het e-mailadres dat wij van u hebben. Vergeten te betalen? Geen probleem, u krijgt altijd eerst een herinnering.</p>
+        </div>
+        <span class="text-bjs font-semibold">Mail ons</span>
+      </a>
+      <a href="mailto:info@bj-schoonmaakdiensten.nl?subject=Compliment" class="group grid sm:grid-cols-[1fr_auto] gap-2 sm:gap-8 py-7 items-center">
+        <div>
+          <h3 class="font-display font-bold text-2xl tracking-[-0.02em] group-hover:text-bjs">Ik heb een compliment</h3>
+          <p class="mt-2 text-slate leading-relaxed max-w-xl">Daar worden we blij van. Met uw toestemming zetten we het op onze website.</p>
+        </div>
+        <span class="text-bjs font-semibold">Compliment geven</span>
+      </a>
+      <a href="mailto:info@bj-schoonmaakdiensten.nl?subject=Klacht" class="group grid sm:grid-cols-[1fr_auto] gap-2 sm:gap-8 py-7 items-center">
+        <div>
+          <h3 class="font-display font-bold text-2xl tracking-[-0.02em] group-hover:text-bjs">Ik heb een klacht</h3>
+          <p class="mt-2 text-slate leading-relaxed max-w-xl">Niet tevreden? Dat horen we graag, want zo houden we de kwaliteit hoog.</p>
+        </div>
+        <span class="text-bjs font-semibold">Klacht melden</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact en offerte -->
+<section id="contact" class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+  <div class="lg:col-span-5">
+    <h2 class="font-display font-extrabold text-4xl lg:text-6xl tracking-[-0.03em] leading-[1.02]">Even bellen is het snelst.</h2>
+    <p class="mt-5 text-slate text-lg leading-relaxed">Liever een vrijblijvende offerte? Vul het formulier in, dan nemen we zo snel mogelijk contact met u op.</p>
+
+    <a href="tel:+31316729297" class="druk mt-8 inline-flex items-center gap-3 rounded-full bg-bjs hover:bg-bjsdark text-white px-7 py-4 text-lg font-semibold">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      0316 729 297
+    </a>
+
+    <dl class="mt-10 grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8 text-[15px]">
+      <div>
+        <dt class="text-slate">E-mail</dt>
+        <dd class="mt-1 font-semibold"><a href="mailto:info@bj-schoonmaakdiensten.nl" class="hover:text-bjs break-all">info@bj-schoonmaakdiensten.nl</a></dd>
+        <dt class="text-slate mt-5">Adres</dt>
+        <dd class="mt-1 font-semibold">Nieuwe Steeg 3<br>6902 PP Zevenaar</dd>
+        <dt class="text-slate mt-5">KvK</dt>
+        <dd class="mt-1">71891560</dd>
+      </div>
+      <div>
+        <dt class="text-slate">Openingstijden</dt>
+        <dd class="mt-2">
+          <table class="w-full [font-variant-numeric:tabular-nums]">
+            <tr><td class="py-1 pr-4">Maandag</td><td class="text-right">08:00 tot 18:00</td></tr>
+            <tr><td class="py-1 pr-4">Dinsdag</td><td class="text-right">08:00 tot 18:00</td></tr>
+            <tr><td class="py-1 pr-4">Woensdag</td><td class="text-right">08:00 tot 18:00</td></tr>
+            <tr><td class="py-1 pr-4">Donderdag</td><td class="text-right">08:00 tot 18:00</td></tr>
+            <tr><td class="py-1 pr-4">Vrijdag</td><td class="text-right">08:00 tot 18:00</td></tr>
+            <tr><td class="py-1 pr-4">Zaterdag</td><td class="text-right">08:30 tot 17:00</td></tr>
+            <tr class="text-slate"><td class="py-1 pr-4">Zondag</td><td class="text-right">gesloten</td></tr>
+          </table>
+        </dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="lg:col-span-7">
+    <form id="offerte" class="bg-white rounded-[32px] p-6 sm:p-10 border border-ink/5 shadow-[0_30px_60px_-40px_rgba(12,42,67,.4)]" novalidate>
+      <h3 class="font-display font-bold text-2xl lg:text-3xl tracking-[-0.02em]">Vrijblijvende offerte</h3>
+      <fieldset class="mt-6">
+        <legend class="font-medium mb-3">Voor wie is het?</legend>
+        <div class="flex gap-3">
+          <label class="flex-1 cursor-pointer"><input type="radio" name="soort" value="Particulier" class="peer sr-only" checked><span class="block text-center rounded-xl border border-ink/15 py-3 font-medium peer-checked:bg-ink peer-checked:text-white peer-checked:border-ink peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Particulier</span></label>
+          <label class="flex-1 cursor-pointer"><input type="radio" name="soort" value="Zakelijk" class="peer sr-only"><span class="block text-center rounded-xl border border-ink/15 py-3 font-medium peer-checked:bg-ink peer-checked:text-white peer-checked:border-ink peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Zakelijk</span></label>
+        </div>
+      </fieldset>
+
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block"><span class="text-sm font-medium">Naam</span><input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 focus:border-bjs focus:outline-none"></label>
+        <label class="block"><span class="text-sm font-medium">Telefoon</span><input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 focus:border-bjs focus:outline-none"></label>
+        <label class="block"><span class="text-sm font-medium">E-mail</span><input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 focus:border-bjs focus:outline-none"></label>
+        <label class="block"><span class="text-sm font-medium">Postcode en huisnummer</span><input name="adres" required autocomplete="postal-code" class="mt-1.5 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 focus:border-bjs focus:outline-none"></label>
+      </div>
+
+      <fieldset class="mt-6">
+        <legend class="font-medium mb-3">Wat mogen we schoonmaken?</legend>
+        <div class="flex flex-wrap gap-2 text-[15px]">
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Glasbewassing" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Glasbewassing</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Kozijnen" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Kozijnen</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Serredak" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Serredak</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Dakkapel" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Dakkapel</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Dakgoten" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Dakgoten</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Boeiboorden" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Boeiboorden</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Daken" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Daken</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Zonnepanelen" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Zonnepanelen</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Gevel" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Gevel</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Hogedruk" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Hogedruk</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Vloeren" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Vloeren</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Rolluiken" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Rolluiken</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Spinnenwering" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Spinnenwering</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="dienst" value="Grote beurt" class="peer sr-only"><span class="inline-block rounded-lg border border-ink/15 px-3.5 py-2 peer-checked:bg-bjs peer-checked:text-white peer-checked:border-bjs peer-focus-visible:ring-2 peer-focus-visible:ring-sky">Grote beurt</span></label>
+        </div>
+      </fieldset>
+
+      <label class="block mt-6"><span class="text-sm font-medium">Omschrijving</span><textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 focus:border-bjs focus:outline-none" placeholder="Bijvoorbeeld: ramen rondom, twee verdiepingen, ook de dakgoot"></textarea></label>
+      <p class="mt-2 text-sm text-slate">Tip: stuur foto's van de te reinigen oppervlakken mee per mail, dan kunnen we uw aanvraag sneller verwerken.</p>
+
+      <p id="formfout" class="hidden mt-4 text-[15px] font-medium text-[#B42318]" role="alert">Vul uw naam, telefoon, e-mail en postcode in.</p>
+      <p id="formok" class="hidden mt-4 text-[15px] font-medium text-bjsdark" role="status">Bedankt. Uw aanvraag staat klaar in uw mailprogramma, verstuur hem daar.</p>
+
+      <button type="submit" class="druk mt-6 w-full sm:w-auto rounded-full bg-ink hover:bg-bjs text-white px-8 py-4 font-semibold text-lg">Offerte aanvragen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-ink text-white/70 pb-24 lg:pb-0">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-[15px]">
+    <div class="flex items-center gap-4">
+      <span class="font-display font-extrabold text-white text-3xl tracking-[-0.04em]">BJS</span>
+      <span>BJ Schoonmaakdiensten, Nieuwe Steeg 3, 6902 PP Zevenaar</span>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="tel:+31316729297" class="hover:text-white">0316 729 297</a>
+      <a href="mailto:info@bj-schoonmaakdiensten.nl" class="hover:text-white">info@bj-schoonmaakdiensten.nl</a>
+      <span>KvK 71891560</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div id="belbalk" class="lg:hidden fixed bottom-0 inset-x-0 z-40 p-3 transition-transform duration-300 bg-gradient-to-t from-paper via-paper/90 to-transparent">
+  <div class="flex gap-2">
+    <a href="tel:+31316729297" class="druk flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-bjs text-white py-3.5 font-semibold shadow-[0_12px_30px_-10px_rgba(20,115,194,.8)]">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      Bel 0316 729 297
+    </a>
+    <a href="#contact" class="druk inline-flex items-center justify-center rounded-full bg-white border border-ink/15 text-ink px-5 py-3.5 font-semibold">Offerte</a>
+  </div>
+</div>
+
+<script>
+// Mobiele belbalk pas tonen als de hoofdknop uit beeld is
+(function () {
+  var bar = document.getElementById('belbalk'), knop = document.getElementById('heroknop');
+  if (!bar || !knop || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (e) {
+    bar.style.transform = e[0].isIntersecting ? 'translateY(120%)' : '';
+  }).observe(knop);
+})();
+
+// Voor/na-schuif
+(function () {
+  var vn = document.getElementById('voorna');
+  if (!vn) return;
+  var r = vn.querySelector('input');
+  r.addEventListener('input', function () { vn.style.setProperty('--pos', r.value + '%'); });
+})();
+
+// Formulier zonder backend: opent mail met de gegevens
+(function () {
+  var f = document.getElementById('offerte');
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fout = document.getElementById('formfout'), ok = document.getElementById('formok');
+    var leeg = ['naam','telefoon','email','adres'].filter(function (n) { return !f[n].value.trim(); });
+    fout.classList.toggle('hidden', leeg.length === 0);
+    ok.classList.add('hidden');
+    if (leeg.length) { f[leeg[0]].focus(); return; }
+    var diensten = Array.prototype.map.call(f.querySelectorAll('[name=dienst]:checked'), function (c) { return c.value; }).join(', ');
+    var body = 'Soort: ' + f.soort.value + '\nNaam: ' + f.naam.value + '\nTelefoon: ' + f.telefoon.value +
+      '\nE-mail: ' + f.email.value + '\nPostcode en huisnummer: ' + f.adres.value +
+      '\nDiensten: ' + (diensten || 'nog niet gekozen') + '\n\n' + f.bericht.value;
+    location.href = 'mailto:info@bj-schoonmaakdiensten.nl?subject=' + encodeURIComponent('Offerteaanvraag') + '&body=' + encodeURIComponent(body);
+    ok.classList.remove('hidden');
+  });
+})();
+
+</script>
+</body>
+</html>
