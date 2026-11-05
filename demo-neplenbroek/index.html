@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakkerij Neplenbroek | Al sinds 1963 brood op de plank in Utrecht</title>
+<meta name="description" content="Familiebakkerij aan de Hasebroekstraat in Utrecht. Desembrood, zoete lekkernijen en warme snacks. Maandag tot en met zaterdag open van 8:00 tot 15:00.">
+<link rel="icon" href="assets/logo-oud.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { oven: '#2F3127', schort: '#505345', korst: '#E3B778', meel: '#F5E9D2' },
+        fontFamily: {
+          kop: ['Caprasimo', 'Georgia', 'serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: 'Figtree', system-ui, sans-serif; background: #505345; color: #F5E9D2; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid #E3B778; outline-offset: 3px; border-radius: 2px; }
+  .op-licht :focus-visible { outline-color: #2F3127; }
+
+  /* De ovenmond: halfronde bovenkant, recht naar beneden */
+  .ovenmond { border-radius: 999px 999px 0 0; overflow: hidden; }
+
+  /* De geblokte winkelvloer */
+  .vloer {
+    height: 44px;
+    background-color: #2F3127;
+    background-image: conic-gradient(#ECE3CF 25%, transparent 0 50%, #ECE3CF 0 75%, transparent 0);
+    background-size: 44px 44px;
+  }
+
+  /* Oude foto's als echte afdrukken */
+  .afdruk { background: #FBF6EA; padding: 10px 10px 12px; box-shadow: 0 14px 30px rgba(30, 32, 22, .45); }
+
+  .knop { transition: background-color .2s, transform .2s; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+
+  .js .boog-foto { animation: zak 1s cubic-bezier(.2, .7, .2, 1) both; }
+  @keyframes zak { from { transform: translateY(36px) scale(1.04); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .js .boog-foto { animation: none; }
+    .knop, .knop:hover, .knop:active { transition: none; transform: none; }
+  }
+</style>
+</head>
+<body class="font-tekst antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-30 focus:bg-meel focus:text-oven focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-oven text-meel/90 text-center text-sm px-4 py-2">
+  Demo voor Neplenbroek, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-korst">Hagenweb</a>
+</div>
+
+<header class="max-w-7xl mx-auto px-5 lg:px-10 pt-4 pb-3 lg:pt-5 flex items-center justify-between gap-6">
+  <a href="#" class="flex items-center gap-3 shrink-0">
+    <img src="assets/logo-oud.webp" alt="" width="48" height="48" class="w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-korst ring-2 ring-korst">
+    <span class="font-kop text-xl lg:text-2xl leading-none">Bakkerij Neplenbroek</span>
+  </a>
+  <nav aria-label="Hoofdmenu" class="hidden md:flex items-center gap-8 text-[1.0625rem]">
+    <a href="#assortiment" class="hover:text-korst transition-colors">Assortiment</a>
+    <a href="#verhaal" class="hover:text-korst transition-colors">Ons verhaal</a>
+    <a href="#werken" class="hover:text-korst transition-colors">Werken bij</a>
+    <a href="#winkel" class="hover:text-korst transition-colors">Contact</a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-x-10 items-end">
+    <div class="lg:col-span-6 pt-5 pb-8 lg:pt-10 lg:pb-16 self-center">
+      <p class="text-korst text-lg">Bakkerij in Utrecht</p>
+      <h1 class="font-kop text-[3.25rem] leading-[1.02] sm:text-7xl xl:text-[5.5rem] mt-2 lg:mt-4">Al sinds 1963 brood op de plank.</h1>
+      <p class="mt-4 lg:mt-7 text-lg lg:text-xl leading-relaxed max-w-[32rem]">Rustiek desembrood, zoete lekkernijen en warme snacks van een écht familiebedrijf. Gewoon bij jou om de hoek, van maandag tot en met zaterdag.</p>
+      <div class="mt-5 lg:mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
+        <a id="hero-bel" href="tel:+31302932000" class="knop inline-flex items-center gap-3 bg-korst hover:bg-[#EDC78F] text-oven font-bold text-xl px-7 py-4 rounded-lg">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          Bel 030 293 2000
+        </a>
+        <a href="#winkel" class="underline underline-offset-4 decoration-korst decoration-2 hover:text-korst text-lg">Route en openingstijden</a>
+      </div>
+      <p class="mt-5 lg:mt-7 text-base text-meel/85"><span class="text-korst" aria-hidden="true">★</span> 4,5 sterren uit 121 Google-reviews</p>
+    </div>
+    <div class="lg:col-span-6 relative">
+      <div class="ovenmond boog-foto aspect-[5/5] lg:aspect-[4/5] border-[10px] lg:border-[14px] border-b-0 border-korst">
+        <img src="assets/brood-handen.jpg" alt="Twee ambachtelijke broden in de handen van een bakker, met het logo van Bakkerij Neplenbroek op het schort" width="1700" height="1185" class="w-full h-full object-cover object-[50%_50%]">
+      </div>
+    </div>
+  </section>
+
+  <div class="vloer" aria-hidden="true"></div>
+
+  <!-- Open en adres -->
+  <section aria-label="Openingstijden en adres" class="op-licht bg-korst text-oven">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 py-10 lg:py-12 grid md:grid-cols-2 gap-8 md:gap-10 items-baseline">
+      <div>
+        <p class="font-kop text-3xl lg:text-[2.75rem] leading-tight">Maandag t/m zaterdag<br>8:00 tot 15:00</p>
+        <p class="mt-2 text-lg">Op zondag zijn we dicht.</p>
+      </div>
+      <div class="md:pl-10">
+        <p class="font-kop text-3xl lg:text-[2.75rem] leading-tight">Hasebroekstraat 1<br>Utrecht</p>
+        <p class="mt-2 text-lg"><a href="https://www.google.com/maps/dir/?api=1&destination=Hasebroekstraat+1,+3532+GJ+Utrecht" class="underline underline-offset-4 decoration-2 hover:no-underline">Plan je route</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assortiment -->
+  <section id="assortiment" class="scroll-mt-4 py-16 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10">
+      <h2 class="font-kop text-4xl sm:text-5xl lg:text-7xl leading-[1.05] max-w-5xl">Van rustiek desembrood tot zoete lekkernijen en warme snacks.</h2>
+    </div>
+    <div class="mt-10 lg:mt-16 grid lg:grid-cols-12 gap-x-14 gap-y-10 items-center">
+      <div class="lg:col-span-6">
+        <img src="assets/brood-krant.jpg" alt="Desembrood met een korst vol granen, op een oude krant" width="1478" height="1582" loading="lazy" class="w-full aspect-[5/4] lg:aspect-[1/1] object-cover object-[50%_75%] lg:rounded-r-[3rem]">
+      </div>
+      <div class="lg:col-span-6 px-5 lg:px-0 lg:pr-10 xl:pr-[max(2.5rem,calc((100vw-80rem)/2+2.5rem))]">
+        <div class="max-w-xl">
+          <h3 class="font-kop text-3xl lg:text-4xl text-korst">Desembrood</h3>
+          <p class="mt-3 text-lg leading-relaxed">Ons ambachtelijke desembrood is makkelijk verteerbaar en vol smaak. Perfect voor elke dag, bij de brunch of aan de borrel.</p>
+
+          <h3 class="font-kop text-3xl lg:text-4xl text-korst mt-9 lg:mt-11">Zoet</h3>
+          <p class="mt-3 text-lg leading-relaxed">Gebak, koeken en andere zoete lekkernijen. En met Pasen staat het traditionele paasbrood klaar.</p>
+
+          <h3 class="font-kop text-3xl lg:text-4xl text-korst mt-9 lg:mt-11">Hartig</h3>
+          <p class="mt-3 text-lg leading-relaxed">Warme snacks voor tussendoor. Vraag ook eens naar het Broodje Utreg.</p>
+
+          <p class="mt-9 lg:mt-11 text-lg">
+            <a href="http://www.neplenbroek.nl/" class="knop inline-block border-2 border-korst text-korst hover:bg-korst hover:text-oven font-bold px-6 py-3 rounded-lg">Online bestellen</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 mt-12 lg:mt-20">
+      <img src="assets/broodjes-rek.jpg" alt="Goudbruine broodjes op een bakplaat in een rek in de bakkerij" width="860" height="620" loading="lazy" class="w-full aspect-[16/7] lg:aspect-[3/1] object-cover rounded-2xl">
+    </div>
+  </section>
+
+  <!-- Verhaal -->
+  <section id="verhaal" class="scroll-mt-4 bg-oven">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 pt-16 lg:pt-28 pb-16 lg:pb-24 grid lg:grid-cols-12 gap-x-12 gap-y-12">
+      <div class="lg:col-span-7">
+        <h2 class="font-kop text-4xl sm:text-5xl lg:text-7xl leading-[1.05]">Een écht familiebedrijf</h2>
+        <ol class="mt-10 lg:mt-14 space-y-9 max-w-xl">
+          <li>
+            <p class="font-kop text-3xl text-korst">1963</p>
+            <p class="mt-2 text-lg leading-relaxed">Vader en moeder Neplenbroek ruilen Zwolle in voor Utrecht. In Zwolle was het nog gewoon om langs de deuren te venten, maar dat wilden zij niet. Zij droomden van een winkel waar mensen naartoe kwamen vanwege de sfeer en de kwaliteit.</p>
+          </li>
+          <li>
+            <p class="font-kop text-3xl text-korst">2023</p>
+            <p class="mt-2 text-lg leading-relaxed">In juni is het precies 60 jaar later. Traditie en vernieuwing gaan al die tijd hand in hand.</p>
+          </li>
+          <li>
+            <p class="font-kop text-3xl text-korst">Nu</p>
+            <p class="mt-2 text-lg leading-relaxed">Het zijn niet meer vader en moeder, maar de tweelingbroers Ron en Marchel die met hart voor de zaak het brood op de plank brengen.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="lg:col-span-5 relative min-h-[21rem] sm:min-h-[34rem] lg:min-h-0">
+        <figure class="afdruk w-[66%] lg:w-[78%] -rotate-3 lg:ml-auto">
+          <img src="assets/oven-toen.jpg" alt="Zwart-witfoto van een bakker die zich bukt bij de oven, met een plaat bollen op de vloer" width="1000" height="998" loading="lazy" class="w-full">
+        </figure>
+        <figure class="afdruk w-[46%] lg:w-[58%] rotate-[4deg] absolute right-0 lg:right-auto lg:left-0 top-[38%] lg:top-[52%]">
+          <img src="assets/bakker-toen.jpg" alt="Verkleurde kleurenfoto van een bakker aan het werk aan de tafel, met koeken op de plaat" width="830" height="890" loading="lazy" class="w-full">
+        </figure>
+      </div>
+    </div>
+    <figure class="max-w-[100rem] mx-auto">
+      <img src="assets/broers-rek.jpg" alt="Twee bakkers in witte T-shirts staan lachend naast een rek vol broodjes in de bakkerij" width="1800" height="1200" loading="lazy" class="w-full aspect-[4/3] lg:aspect-[16/8] object-cover object-[50%_40%]">
+    </figure>
+  </section>
+
+  <!-- Reviews -->
+  <section aria-label="Wat klanten zeggen" class="op-licht bg-meel text-oven py-16 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-x-12 gap-y-12 items-end">
+      <figure class="lg:col-span-8">
+        <blockquote class="font-kop text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.25] sm:leading-[1.25] lg:leading-[1.3] [text-wrap:pretty]">“Al jaren klant. Hoe lang weet ik niet eens meer. Heerlijk brood. Lekker gebak en koeken. Leuke mensen die er werken. Ik ben blij dat we deze bakker in de buurt hebben.”</blockquote>
+        <figcaption class="mt-6 text-lg">Petra Ditewig, op Google</figcaption>
+      </figure>
+      <div class="lg:col-span-4">
+        <figure>
+          <blockquote class="text-xl leading-relaxed">“Fijne bakkerij, mooi assortiment en inderdaad, altijd zeer vriendelijk personeel.”</blockquote>
+          <figcaption class="mt-3 text-lg">Bram at Jeemail, op Google</figcaption>
+        </figure>
+        <p class="mt-8 pt-6 border-t-2 border-oven/25 text-lg"><span class="font-kop text-3xl mr-1">4,5</span> sterren uit 121 reviews</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Werken bij -->
+  <section id="werken" class="scroll-mt-4 grid lg:grid-cols-2 items-stretch">
+    <img src="assets/bakker-portret.jpg" alt="Lachende bakker met bril in de bakkerij, met een vers krentenbrood in zijn handen" width="1040" height="1300" loading="lazy" class="w-full h-full aspect-[5/5] lg:aspect-auto lg:max-h-[46rem] object-cover object-[50%_25%]">
+    <div class="px-5 lg:px-16 py-14 lg:py-20 self-center max-w-2xl">
+      <h2 class="font-kop text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">Hoe word je bakker?</h2>
+      <p class="mt-6 text-lg lg:text-xl leading-relaxed">Bij ons, bijvoorbeeld. Bakken is een ambachtelijk en toekomstbestendig beroep. Wil je weten of er plek is in de bakkerij of in de winkel? Stuur ons een mail.</p>
+      <p class="mt-8">
+        <a href="mailto:info@neplenbroek.nl?subject=Werken%20bij%20Bakkerij%20Neplenbroek" class="knop inline-block bg-korst hover:bg-[#EDC78F] text-oven font-bold text-lg px-6 py-3.5 rounded-lg">Mail over werken bij ons</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="vloer" aria-hidden="true"></div>
+
+  <!-- Winkel en contact -->
+  <section id="winkel" class="scroll-mt-4 op-licht bg-korst text-oven">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-24 grid lg:grid-cols-12 gap-x-14 gap-y-10">
+      <div class="lg:col-span-6">
+        <h2 class="font-kop text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">Kom langs of bel even</h2>
+        <p class="mt-8 lg:mt-10"><a href="tel:+31302932000" class="font-kop text-[2.6rem] sm:text-6xl lg:text-7xl leading-none whitespace-nowrap hover:underline decoration-4 underline-offset-8">030 293 2000</a></p>
+        <p class="mt-5 text-xl"><a href="mailto:info@neplenbroek.nl" class="underline underline-offset-4 decoration-2 hover:no-underline">info@neplenbroek.nl</a></p>
+        <address class="not-italic mt-8 text-xl leading-relaxed">
+          Hasebroekstraat 1<br>3532 GJ Utrecht<br>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Hasebroekstraat+1,+3532+GJ+Utrecht" class="underline underline-offset-4 decoration-2 hover:no-underline">Plan je route</a>
+        </address>
+      </div>
+      <div class="lg:col-span-6">
+        <img src="assets/gevel.jpg" alt="De gevel van Bakkerij Neplenbroek op de hoek van de Hasebroekstraat, met een bankje voor de winkel" width="780" height="385" loading="lazy" class="w-full aspect-[2/1] object-cover rounded-2xl">
+        <h3 class="font-kop text-2xl mt-8">Openingstijden</h3>
+        <dl class="mt-3 text-lg max-w-sm tabular-nums">
+          <div class="flex justify-between py-1.5 border-b border-oven/25"><dt>Maandag</dt><dd>8:00 tot 15:00</dd></div>
+          <div class="flex justify-between py-1.5 border-b border-oven/25"><dt>Dinsdag</dt><dd>8:00 tot 15:00</dd></div>
+          <div class="flex justify-between py-1.5 border-b border-oven/25"><dt>Woensdag</dt><dd>8:00 tot 15:00</dd></div>
+          <div class="flex justify-between py-1.5 border-b border-oven/25"><dt>Donderdag</dt><dd>8:00 tot 15:00</dd></div>
+          <div class="flex justify-between py-1.5 border-b border-oven/25"><dt>Vrijdag</dt><dd>8:00 tot 15:00</dd></div>
+          <div class="flex justify-between py-1.5 border-b border-oven/25"><dt>Zaterdag</dt><dd>8:00 tot 15:00</dd></div>
+          <div class="flex justify-between py-1.5"><dt>Zondag</dt><dd>Gesloten</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-oven pb-[76px] lg:pb-0">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-8 flex flex-wrap items-center justify-between gap-4 text-base text-meel/85">
+    <p class="flex items-center gap-3"><img src="assets/logo-oud.webp" alt="" width="40" height="40" class="w-10 h-10 rounded-full bg-korst ring-2 ring-korst"><span>Bakkerij Neplenbroek, Utrecht</span></p>
+    <p>Demo gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-korst">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Belknop altijd binnen bereik op mobiel -->
+<div id="zwevend-bel" class="lg:hidden fixed inset-x-0 bottom-0 z-20 bg-oven/95 px-4 py-3 transition-transform duration-200">
+  <a href="tel:+31302932000" class="flex items-center justify-center gap-3 bg-korst text-oven font-bold text-lg py-3 rounded-lg">
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+    Bel de bakkerij
+  </a>
+</div>
+
+<script>
+  // De zwevende belknop wijkt alleen zolang de belknop in de hero zelf in beeld is.
+  new IntersectionObserver(function (e) {
+    document.getElementById('zwevend-bel').classList.toggle('translate-y-full', e[0].isIntersecting);
+  }).observe(document.getElementById('hero-bel'));
+</script>
+</body>
+</html>
