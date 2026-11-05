@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rood&amp;Bloem | Stadstuinwinkel aan de Springweg in Utrecht</title>
+<meta name="description" content="Rood&Bloem is een stadstuinwinkel in hartje Utrecht: kamerplanten, zijden bloemen, cadeaus en styling. Springweg 14, Utrecht. Bel 030 662 8526.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        wijn: '#7A1E3A', wijndonker: '#5F1529',
+        blush: '#F4D7CF', blushlicht: '#FAE9E4',
+        salie: '#A9C496', saliedonker: '#5E7F4C',
+        bos: '#1F4329', papier: '#FFF9F3', inkt: '#2B1B1F'
+      },
+      fontFamily: {
+        kop: ['"Young Serif"', 'Georgia', 'serif'],
+        tekst: ['Figtree', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  .boog-klein { border-radius: 999px 999px .75rem .75rem; }
+  .blad { border-radius: 2.5rem .5rem 2.5rem .5rem; }
+  .knop { transition: background-color .2s, transform .2s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #7A1E3A; outline-offset: 3px;
+  }
+  .korrel::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .35; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .48 0 0 0 0 .12 0 0 0 0 .23 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .vandaag { background: #7A1E3A; color: #fff; }
+  /* Enkel één binnenkomst-moment voor de hero, alleen als JS draait */
+  .js .hero-in { animation: in .9s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in.d2 { animation-delay: .12s; }
+  .js .hero-foto { animation: foto 1.1s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } }
+  @keyframes foto { from { opacity: 0; transform: scale(.96); } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .hero-in, .js .hero-foto { animation: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-papier text-inkt font-tekst">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-wijn text-white px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-bos text-white/90 text-[13px] text-center px-4 py-2">
+  Demo voor Rood en Bloem, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-papier/95 backdrop-blur sticky top-0 z-30 border-b border-bos/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="shrink-0" aria-label="Rood en Bloem, naar boven">
+      <img src="assets/site-11.webp" alt="Rood en Bloem" class="h-7 lg:h-9 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-bos" aria-label="Hoofdmenu">
+      <a href="#winkel" class="hover:text-wijn">De winkel</a>
+      <a href="#zijden-bloemen" class="hover:text-wijn">Zijden bloemen</a>
+      <a href="#styling" class="hover:text-wijn">Styling</a>
+      <a href="#feestpakket" class="hover:text-wijn">Feestpakket</a>
+      <a href="#bezoek" class="hover:text-wijn">Bezoek</a>
+    </nav>
+    <a href="tel:+31306628526" class="knop inline-flex items-center gap-2 bg-wijn hover:bg-wijndonker text-white font-semibold rounded-full px-4 lg:px-5 py-2.5 text-sm lg:text-[15px]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span class="hidden sm:inline">030 662 8526</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative korrel bg-blush overflow-hidden">
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-6 pb-14 lg:pt-16 lg:pb-20 grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+    <div class="lg:col-span-6 order-2 lg:order-1 relative z-10">
+      <p class="hero-in text-wijn font-semibold text-[15px]">Stadstuinwinkel aan de Springweg, Utrecht</p>
+      <h1 class="hero-in font-kop text-bos text-[2.35rem] leading-[1.02] sm:text-6xl lg:text-[5.2rem] lg:leading-[.98] tracking-tight mt-3">
+        Alles wat je aandacht geeft, groeit.
+      </h1>
+      <p class="hero-in d2 mt-4 lg:mt-7 text-[17px] lg:text-xl leading-relaxed text-inkt/85 max-w-[30rem]">
+        Een schatkamer vol kamerplanten, zijden bloemen, cadeaus en kaarten. Iedere week vers gevuld, in hartje Utrecht.
+      </p>
+      <div class="hero-in d2 mt-6 lg:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31306628526" class="knop inline-flex items-center gap-3 bg-wijn hover:bg-wijndonker text-white text-lg font-semibold rounded-full pl-6 pr-7 py-4 shadow-[0_12px_30px_-12px_rgba(122,30,58,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          Bel de winkel
+        </a>
+        <a href="#bezoek" class="font-semibold text-bos underline decoration-wijn/40 decoration-2 underline-offset-[6px] hover:decoration-wijn">Route en openingstijden</a>
+      </div>
+      <p class="hero-in d2 mt-8 flex items-center gap-2 text-[15px] text-inkt/80">
+        <span class="text-wijn tracking-[.15em]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-inkt">4.8</strong> op Google, uit 149 reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-6 order-1 lg:order-2 relative">
+      <div class="hero-foto relative mx-auto w-[64%] sm:w-[50%] lg:w-[88%] lg:ml-auto lg:mr-0">
+        <div class="absolute -inset-2 lg:-inset-3 boog border-2 border-wijn/25 translate-x-2 translate-y-2 lg:translate-x-4 lg:translate-y-4" aria-hidden="true"></div>
+        <img src="assets/site-09.webp" alt="Carolien Rutgers met een pot vol rode en witte keramieken klaprozen voor de winkel" class="relative boog w-full aspect-[1/1] lg:aspect-[4/5] object-cover object-[50%_30%] shadow-[0_30px_60px_-30px_rgba(95,21,41,.55)]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Openingstijden-strook -->
+<section aria-label="Openingstijden" class="bg-bos text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex flex-col lg:flex-row lg:items-center gap-3 lg:gap-8">
+    <p class="font-kop text-lg shrink-0">Kom gerust langs</p>
+    <ul class="grid grid-cols-4 sm:grid-cols-7 gap-1.5 text-center text-[13px] flex-1" id="tijden">
+      <li data-dag="1" class="rounded-lg bg-white/5 py-1.5 text-white/55"><span class="block font-semibold">ma</span>dicht</li>
+      <li data-dag="2" class="rounded-lg bg-white/10 py-1.5"><span class="block font-semibold">di</span>10 - 17.30</li>
+      <li data-dag="3" class="rounded-lg bg-white/10 py-1.5"><span class="block font-semibold">wo</span>10 - 17.30</li>
+      <li data-dag="4" class="rounded-lg bg-white/10 py-1.5"><span class="block font-semibold">do</span>10 - 17.30</li>
+      <li data-dag="5" class="rounded-lg bg-white/10 py-1.5"><span class="block font-semibold">vr</span>10 - 17.30</li>
+      <li data-dag="6" class="rounded-lg bg-white/10 py-1.5"><span class="block font-semibold">za</span>10 - 17</li>
+      <li data-dag="0" class="rounded-lg bg-white/10 py-1.5"><span class="block font-semibold">zo</span>12 - 17</li>
+    </ul>
+    <p class="text-white/80 text-[15px] shrink-0">Springweg 14, Utrecht</p>
+  </div>
+</section>
+
+<!-- De winkel -->
+<section id="winkel" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+      <div class="lg:col-span-5">
+        <h2 class="font-kop text-bos text-4xl lg:text-[3.4rem] leading-[1.05] tracking-tight">Binnenkomen is elke keer een verrassing.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-inkt/80 max-w-xl">
+          Rood&amp;Bloem is een stadstuinwinkel voor iedereen die van groen houdt. De schappen staan vol bijzondere planten, groenblijvers en planten voor buiten, en elke week komt er een verse lading binnen. Daartussen vind je zijden bloemen, potten, prints, kaarten en cadeaus voor jezelf of een ander.
+        </p>
+      </div>
+      <div class="lg:col-span-7 relative">
+        <img src="assets/site-06.webp" alt="Het interieur van Rood en Bloem met houten vloer, hangende planten en kleurrijke potten" class="w-full aspect-[4/3] lg:aspect-[16/11] object-cover object-[50%_60%] blad">
+        <img src="assets/google-04.jpg" alt="Kaarsen in roze, oker en wit, samengebonden met droogbloemen" class="hidden sm:block absolute -bottom-10 -left-8 w-40 lg:w-52 aspect-[3/4] object-cover boog-klein border-[6px] border-papier">
+      </div>
+    </div>
+
+    <!-- Drie werelden, zigzag -->
+    <div class="mt-24 lg:mt-32 space-y-20 lg:space-y-28">
+      <article class="grid md:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <img src="assets/google-08.jpg" alt="Houten kistjes en bankjes vol planten in terracotta potten voor de winkel" class="md:col-span-7 w-full aspect-[3/2] object-cover rounded-2xl">
+        <div class="md:col-span-5">
+          <h3 class="font-kop text-wijn text-3xl lg:text-4xl">Groen</h3>
+          <p class="mt-4 text-lg leading-relaxed text-inkt/80">Bijzondere en groene planten, hippe groenblijvers en planten voor buiten. Iedere week wordt de winkel opnieuw gevuld met verse planten, dus er is altijd iets nieuws te ontdekken.</p>
+        </div>
+      </article>
+
+      <article class="grid md:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div class="md:col-span-5 md:order-1 order-2">
+          <h3 class="font-kop text-wijn text-3xl lg:text-4xl">Lifestyle</h3>
+          <p class="mt-4 text-lg leading-relaxed text-inkt/80">Botanische prints, boeken en kaarten, woonaccessoires, potten, mokjes en nog veel meer. Leuke cadeaus voor jezelf of iemand anders, en de spullen wisselen wekelijks van plek.</p>
+        </div>
+        <img src="assets/google-03.jpg" alt="Hangende decoraties, kaarsen, keramiek en planten op een houten tafel in de winkel" class="md:col-span-7 md:order-2 order-1 w-full aspect-[3/2] object-cover rounded-2xl">
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Zijden bloemen -->
+<section id="zijden-bloemen" class="relative korrel bg-salie/45 py-20 lg:py-28 overflow-hidden">
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-5">
+      <img src="assets/site-08.webp" alt="Zijden bloemen van Silk-ka: oranje dahlia's, blauwe bloemen en hortensia" class="boog w-[85%] mx-auto lg:w-full aspect-[3/4] object-cover">
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="font-kop text-bos text-4xl lg:text-[3.4rem] leading-[1.05] tracking-tight">Altijd een prachtig boeket in huis.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/85 max-w-2xl">
+        Onze zijden bloemen zijn niet van echt te onderscheiden. Ze brengen kleur en sfeer in huis, en je hoeft ze nooit te vervangen. Ze komen van Silk-ka, een Nederlands merk dat bekendstaat om levensechte details en hoge kwaliteit.
+      </p>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-8 max-w-2xl">
+        <div class="border-t-2 border-bos/20 pt-5">
+          <dt class="font-kop text-xl text-bos">Los of in een boeket</dt>
+          <dd class="mt-2 leading-relaxed text-inkt/80">Een paar subtiele stelen of een volle bos: stel zelf je boeket samen uit losse bloemen, of laat er een op maat maken.</dd>
+        </div>
+        <div class="border-t-2 border-bos/20 pt-5">
+          <dt class="font-kop text-xl text-bos">Advies bij je vaas</dt>
+          <dd class="mt-2 leading-relaxed text-inkt/80">Van een natuurlijk veldboeket tot een stijlvolle blikvanger: we kijken samen wat klopt bij jouw vaas en interieur.</dd>
+        </div>
+      </dl>
+      <p class="mt-10 text-lg text-bos font-medium">Ze zijn zó echt dat je ze bijna ruikt. Kom ze in de winkel bekijken, voelen en combineren.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Styling -->
+<section id="styling" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
+        <h2 class="font-kop text-bos text-4xl lg:text-[3.4rem] leading-[1.05] tracking-tight">Groen met gevoel voor stijl.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-inkt/80">
+          Wil je meer groen of kleur in je huis, winkel of kantoor, maar weet je niet welke planten het goed doen in de schaduw? Carolien maakt een persoonlijk styling- of groenplan, afgestemd op jouw ruimte, licht en stijl. Vaak maken een paar goed gekozen toevoegingen al het verschil.
+        </p>
+        <img src="assets/google-02.jpg" alt="Lichte winkelruimte met een groene tafel, planten op etagères en hangende decoraties" class="mt-10 w-full aspect-[3/2] object-cover rounded-2xl">
+      </div>
+      <div class="lg:col-span-7">
+        <ul class="divide-y-2 divide-blush">
+          <li class="py-8 first:pt-0">
+            <h3 class="font-kop text-2xl lg:text-3xl text-wijn">Bij je thuis</h3>
+            <p class="mt-3 text-lg leading-relaxed text-inkt/80">Een plek waar je tot rust komt, of die je juist uitnodigt om prettig te werken. Carolien komt graag langs om van je huis een passend thuis te maken. Met een duidelijk uitgewerkt groenadvies maak je je huis eenvoudig groener.</p>
+          </li>
+          <li class="py-8">
+            <h3 class="font-kop text-2xl lg:text-3xl text-wijn">In de winkel</h3>
+            <p class="mt-3 text-lg leading-relaxed text-inkt/80">Een winkel die de juiste sfeer ademt. Hoe gebruik je wat er al is, en wat voeg je toe? Carolien denkt mee over de winkelvloer, zodat jouw producten en collectie zo goed mogelijk naar voren komen.</p>
+          </li>
+          <li class="py-8">
+            <h3 class="font-kop text-2xl lg:text-3xl text-wijn">Op kantoor</h3>
+            <p class="mt-3 text-lg leading-relaxed text-inkt/80">Werkruimtes die bij je bedrijf passen, met een aangename werksfeer. Je krijgt stylingtips, een groenplan, of Rood&amp;Bloem neemt de hele styling voor haar rekening.</p>
+          </li>
+        </ul>
+        <div class="mt-4 rounded-[2rem] bg-blushlicht p-7 lg:p-10">
+          <p class="font-kop text-2xl text-bos">Kunnen we je helpen met advies?</p>
+          <p class="mt-3 text-lg leading-relaxed text-inkt/80">Stuur een mail met je vraag, het liefst met een foto van de ruimte erbij.</p>
+          <a href="mailto:info@roodenbloem.nl?subject=Vraag%20over%20styling" class="knop mt-6 inline-flex items-center gap-2 border-2 border-wijn text-wijn hover:bg-wijn hover:text-white font-semibold rounded-full px-6 py-3">Mail je vraag en foto</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feestpakket -->
+<section id="feestpakket" class="bg-wijn text-white overflow-hidden">
+  <div class="grid lg:grid-cols-2 items-stretch">
+    <div class="px-5 lg:px-8 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-16 py-16 lg:py-28 order-2 lg:order-1 flex flex-col justify-center">
+      <h2 class="font-kop text-4xl lg:text-[3.2rem] leading-[1.05] tracking-tight">Een feestpakket dat blijft hangen.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-white/85 max-w-xl">
+        Op zoek naar een origineel, mooi en duurzaam pakket voor een verjaardag, je moeder of je personeel? We stellen met liefde de mooiste combinaties samen en denken graag met je mee.
+      </p>
+      <div class="mt-8">
+        <a href="mailto:info@roodenbloem.nl?subject=Feestpakket" class="knop inline-flex items-center gap-2 bg-papier text-wijn hover:bg-blush font-semibold rounded-full px-6 py-3.5">Vraag een feestpakket aan</a>
+        <p class="mt-4 text-white/70 text-[15px]">Of mail direct naar <a href="mailto:info@roodenbloem.nl" class="underline underline-offset-2 hover:text-white">info@roodenbloem.nl</a></p>
+      </div>
+    </div>
+    <div class="order-1 lg:order-2 relative min-h-[22rem] lg:min-h-full">
+      <img src="assets/site-02.webp" alt="Een feestpakket met een koffieplant, kaars, bloemzaadjes, amaryllis en een kaartje Super bedankt" class="absolute inset-0 w-full h-full object-cover object-[50%_45%]">
+    </div>
+  </div>
+</section>
+
+<!-- Carolien -->
+<section id="carolien" class="py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid md:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="md:col-span-5 relative">
+      <img src="assets/site-10.webp" alt="Carolien en een collega lachend met grote rood-witte keramieken paddenstoelen" class="blad w-full aspect-[1/1] object-cover object-top">
+    </div>
+    <div class="md:col-span-7">
+      <h2 class="font-kop text-bos text-4xl lg:text-[3.2rem] leading-[1.05] tracking-tight">Het rood in Rood&amp;Bloem.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80">
+        De naam verwijst, hoe kan het ook anders, naar de rode krullen van Carolien Rutgers. Haar liefde voor groen begon lang voor de botanische hype. Als kind betekende groen voor haar thuis en gezelligheid: in het weekend met haar moeder en oma verse bloemen uitzoeken, en een moestuin bijhouden was de gewoonste zaak van de wereld.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed text-inkt/80">
+        Inmiddels fietsen mensen ook van buiten Utrecht een eindje om, voor die ene bijzondere plant of dat leuke cadeautje.
+      </p>
+      <blockquote class="mt-10 pl-6 border-l-4 border-wijn">
+        <p class="font-kop text-2xl lg:text-[1.75rem] leading-snug text-wijn">"De geur van verse bloemen en planten werkt voor mij als een gelukselixer. Even diep ademhalen en ik bén er weer."</p>
+        <footer class="mt-3 text-inkt/70 font-medium">Carolien Rutgers</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="relative korrel bg-blush py-20 lg:py-28">
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 class="font-kop text-bos text-4xl lg:text-[3.2rem] leading-[1.05] tracking-tight max-w-xl">Wat klanten zeggen.</h2>
+      <p class="text-lg text-inkt/80"><span class="text-wijn tracking-[.15em]" aria-hidden="true">★★★★★</span> <strong class="text-inkt">4.8</strong> uit 149 Google-reviews</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-6 [&>figure]:flex [&>figure]:flex-col [&>figure]:justify-between">
+      <figure class="lg:col-span-2 bg-papier rounded-3xl p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Ik hou van deze winkel. Alleen maar fijn personeel dat behulpzaam. Mooie spullen die wekelijks van plek veranderen waardoor binnenkomen elke keer een verassing is. In de winkel ontsnap je even aan de werkelijkheid en worden kleine dromen realiteit."</blockquote>
+        <figcaption class="mt-5 font-semibold text-bos">Ellen van Bunnik</figcaption>
+      </figure>
+      <figure class="lg:col-span-2 bg-wijn text-white rounded-3xl p-7">
+        <blockquote class="font-kop text-2xl leading-snug">"Wat een mooie en leuke winkel! Carolien heeft me fantastisch geholpen, ik ben super blij met mijn aankopen!! Hier ga ik nog vaak terugkomen :)"</blockquote>
+        <figcaption class="mt-5 font-semibold text-white/85">Florieke Beelen</figcaption>
+      </figure>
+      <figure class="lg:col-span-2 bg-papier rounded-3xl p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Echt ontzettend blij met deze prachtige pot, ontzettend uniek item!. De pot was in de winkel alleen in een kleine maat beschikbaar, waar de eigenaresse speciaal moeite heeft gedaan om deze pot voor mij in te kopen. Heel blij met mijn aankoop en zeker een aanrader deze winkel! ✨"</blockquote>
+        <figcaption class="mt-5 font-semibold text-bos">Roxanne</figcaption>
+      </figure>
+      <figure class="lg:col-span-3 bg-papier rounded-3xl p-7 lg:p-9">
+        <blockquote class="text-[17px] lg:text-lg leading-relaxed">"Wat een superleuke winkel (!) Je kijkt je ogen uit, zeker nu de Kerst nadert. Carolien is een spontane gezellige ondernemer die van je aanschaf een feestje maakt."</blockquote>
+        <figcaption class="mt-5 font-semibold text-bos">Jack Vo</figcaption>
+      </figure>
+      <figure class="md:col-span-2 lg:col-span-3 bg-bos text-white rounded-3xl p-7 lg:p-9">
+        <blockquote class="font-kop text-2xl leading-snug">"Hele mooie winkel en echt heel lief geholpen plus een hele mooie roosbottel “tak” gekocht. Aanrader!"</blockquote>
+        <figcaption class="mt-5 font-semibold text-white/85">Annemone Völker</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Bezoek -->
+<section id="bezoek" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <img src="assets/google-01.jpg" alt="De gevel van Rood en Bloem aan de Springweg met bloemenslingers en planten op de stoep" class="boog w-full aspect-[4/5] object-cover object-[50%_60%]">
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="font-kop text-bos text-4xl lg:text-[3.4rem] leading-[1.05] tracking-tight">Tot ziens aan de Springweg.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80 max-w-2xl">
+        Je vindt ons in het centrum van Utrecht, op loopafstand van Utrecht CS. Kom op de fiets of parkeer in de Springweg parkeergarage, Strosteeg 83. Combineer je bezoek met een lunch op de gezellige Mariaplaats of een wandeling door de oude binnenstad.
+      </p>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-10">
+        <div>
+          <h3 class="font-kop text-xl text-wijn">Adres en contact</h3>
+          <address class="not-italic mt-3 text-lg leading-relaxed">
+            Rood&amp;Bloem<br>Springweg 14<br>3511 VP Utrecht
+          </address>
+          <p class="mt-4 text-lg"><a href="tel:+31306628526" class="font-semibold text-bos hover:text-wijn">030 662 8526</a><br><a href="mailto:info@roodenbloem.nl" class="text-bos hover:text-wijn underline underline-offset-4 decoration-bos/30">info@roodenbloem.nl</a></p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rood+en+Bloem+Springweg+14+3511+VP+Utrecht" class="mt-5 inline-block font-semibold text-wijn underline decoration-2 underline-offset-[6px] decoration-wijn/40 hover:decoration-wijn">Plan je route</a>
+        </div>
+        <div>
+          <h3 class="font-kop text-xl text-wijn">Openingstijden</h3>
+          <table class="mt-3 w-full max-w-xs text-lg">
+            <tbody class="[&>tr>td]:py-1">
+              <tr class="text-inkt/55"><td>maandag</td><td class="text-right">gesloten</td></tr>
+              <tr><td>dinsdag</td><td class="text-right tabular-nums">10.00 - 17.30</td></tr>
+              <tr><td>woensdag</td><td class="text-right tabular-nums">10.00 - 17.30</td></tr>
+              <tr><td>donderdag</td><td class="text-right tabular-nums">10.00 - 17.30</td></tr>
+              <tr><td>vrijdag</td><td class="text-right tabular-nums">10.00 - 17.30</td></tr>
+              <tr><td>zaterdag</td><td class="text-right tabular-nums">10.00 - 17.00</td></tr>
+              <tr><td>zondag</td><td class="text-right tabular-nums">12.00 - 17.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <form action="mailto:info@roodenbloem.nl" method="post" enctype="text/plain" class="mt-14 rounded-[2rem] bg-blushlicht p-7 lg:p-10">
+        <h3 class="font-kop text-2xl text-bos">Stuur ons een bericht</h3>
+        <p class="mt-2 text-inkt/75">Een vraag over een plant, een groenplan of een idee voor Carolien? We helpen je graag verder.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <label class="block"><span class="text-sm font-semibold text-bos">Voor- en achternaam</span>
+            <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-xl border-2 border-transparent bg-white px-4 py-3 focus:border-wijn outline-none"></label>
+          <label class="block"><span class="text-sm font-semibold text-bos">Je e-mail</span>
+            <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border-2 border-transparent bg-white px-4 py-3 focus:border-wijn outline-none"></label>
+          <label class="block sm:col-span-2"><span class="text-sm font-semibold text-bos">Waarmee kunnen we je helpen?</span>
+            <textarea name="bericht" rows="4" required class="mt-1.5 w-full rounded-xl border-2 border-transparent bg-white px-4 py-3 focus:border-wijn outline-none"></textarea></label>
+        </div>
+        <button type="submit" class="knop mt-6 bg-wijn hover:bg-wijndonker text-white font-semibold rounded-full px-7 py-3.5">Verstuur bericht</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-bos text-white/80 pb-24 lg:pb-0">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14 grid md:grid-cols-3 gap-10 items-start">
+    <div>
+      <img src="assets/site-11.webp" alt="Rood en Bloem" class="h-9 w-auto brightness-0 invert opacity-95">
+      <p class="mt-4 max-w-xs">Planten, wonen en styling. Een stadstuinwinkel in hartje Utrecht.</p>
+    </div>
+    <div>
+      <p class="font-kop text-white text-lg">Springweg 14</p>
+      <p>3511 VP Utrecht</p>
+      <p class="mt-3"><a href="tel:+31306628526" class="hover:text-white">030 662 8526</a><br><a href="mailto:info@roodenbloem.nl" class="hover:text-white">info@roodenbloem.nl</a></p>
+    </div>
+    <div>
+      <p class="font-kop text-white text-lg">Open</p>
+      <p>di t/m vr 10.00 - 17.30<br>za 10.00 - 17.00, zo 12.00 - 17.00<br>maandag gesloten</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <p class="max-w-7xl mx-auto px-5 lg:px-8 py-5 text-sm text-white/55">Rood&amp;Bloem, Utrecht. Demo-ontwerp door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>.</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-papier/95 backdrop-blur border-t border-bos/10 flex gap-3">
+  <a href="tel:+31306628526" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-wijn text-white font-semibold rounded-full py-3.5">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+    Bel de winkel
+  </a>
+  <a href="#bezoek" class="knop inline-flex items-center justify-center border-2 border-bos/25 text-bos font-semibold rounded-full px-5">Route</a>
+</div>
+
+<script>
+  // Markeer de dag van vandaag in de openingstijden-strook
+  (function () {
+    var d = new Date().getDay();
+    var li = document.querySelector('#tijden [data-dag="' + d + '"]');
+    if (li) { li.className = 'rounded-lg py-1.5 vandaag'; li.setAttribute('aria-current', 'date'); }
+  })();
+</script>
+</body>
+</html>
