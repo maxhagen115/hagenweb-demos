@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoefakker DAK | Dakdekker in Ede, direct contact met de uitvoerder</title>
+<meta name="description" content="Dakdekker Willem Hoefakker uit Ede: platte daken, zink- en loodwerk, pannendaken en lekkageherstel. Ruim 20 jaar ervaring en een gratis, vrijblijvende dakinspectie.">
+<meta property="og:title" content="Hoefakker DAK: wie u belt, staat op uw dak">
+<meta property="og:description" content="Dakdekker in Ede met ruim 20 jaar ervaring. U heeft direct contact met de uitvoerder.">
+<meta property="og:image" content="assets/site-03.jpg">
+<meta name="theme-color" content="#25211E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M9 3h22l-8 26H1z' fill='%2325211E' stroke='%23E8730C' stroke-width='2'/%3E%3Cpath d='M7 19h7l5-8h7' fill='none' stroke='%23E8730C' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bitumen: '#25211E',
+        oranje: '#E8730C',
+        zinklicht: '#EDEFEE',
+        zink: '#D5DADA',
+        lood: '#555B5D',
+      },
+    },
+  },
+}
+</script>
+<style>
+  :root { --bitumen:#25211E; --oranje:#E8730C; --zinklicht:#EDEFEE; --zink:#D5DADA; --lood:#555B5D; --rand:max(1.25rem, calc((100vw - 1320px) / 2)); }
+  html { scroll-padding-top:6rem; }
+  body { margin:0; background:var(--zinklicht); color:var(--bitumen); font-family:'Public Sans',system-ui,sans-serif; font-size:1.0625rem; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  img { display:block; max-width:100%; }
+  a { color:inherit; }
+  .wrap { padding-inline:var(--rand); }
+
+  /* Koppen: breed, zwaar en schuin, net als het woordmerk in het logo */
+  .kop { font-family:'Archivo',system-ui,sans-serif; font-style:italic; font-weight:800; font-stretch:118%; line-height:1.03; letter-spacing:-.015em; text-wrap:balance; margin:0; }
+  .nummer { font-family:'Archivo',system-ui,sans-serif; font-weight:750; font-stretch:105%; }
+  .kop-xl { font-size:clamp(2.45rem, 5.1vw, 5.1rem); line-height:.99; }
+  .kop-l { font-size:clamp(2rem, 3.9vw, 3.6rem); }
+  .kop-m { font-size:clamp(1.35rem, 1.9vw, 1.7rem); line-height:1.12; font-stretch:112%; font-weight:750; }
+  .tekst { max-width:62ch; text-wrap:pretty; }
+
+  /* Knoppen: schuin vlak uit het logo, de tekst blijft recht */
+  .knop { position:relative; isolation:isolate; display:inline-flex; align-items:center; justify-content:center; gap:.65rem; padding:1.05rem 1.9rem; font-family:'Archivo',system-ui,sans-serif; font-weight:750; font-stretch:108%; font-size:1.1rem; line-height:1.15; color:var(--bitumen); text-decoration:none; border:0; background:none; cursor:pointer; }
+  .knop::before { content:""; position:absolute; inset:0; z-index:-1; background:var(--oranje); transform:skewX(-15deg); transition:background-color .18s ease, transform .18s ease; }
+  .knop:hover::before { background:#F7892A; }
+  .knop:active::before { transform:skewX(-15deg) translateY(1px); }
+  .knop:focus-visible { outline:none; }
+  .knop:focus-visible::before { outline:3px solid currentColor; outline-offset:3px; }
+  .knop-groot { font-size:clamp(1.05rem, 1.5vw, 1.35rem); padding:1.1rem 1.8rem; }
+  @media (min-width:1024px) { .knop-groot { padding:1.25rem 2.25rem; } }
+  .knop-donker { color:#fff; }
+  .knop-donker::before { background:var(--bitumen); }
+  .knop-donker:hover::before { background:#3b3530; }
+  .knop svg { width:1.15em; height:1.15em; flex:none; }
+  .link { font-weight:700; text-decoration:underline; text-decoration-color:var(--oranje); text-decoration-thickness:2px; text-underline-offset:.25em; transition:color .15s ease; }
+  .link:hover { color:#A84E00; }
+  .op-donker .link:hover { color:#F7A25C; }
+  :focus-visible { outline:3px solid var(--oranje); outline-offset:3px; }
+
+  /* De knik uit het logo als overgang tussen secties */
+  .knik { display:block; width:100%; height:clamp(44px, 6.5vw, 96px); margin-bottom:-1px; }
+
+  /* Hero-foto met de schuine rand en het oranje biesje van het logo */
+  .hero-foto { position:relative; min-height:190px; height:30svh; }
+  .hero-foto .bies, .hero-foto img { position:absolute; inset:0; width:100%; height:100%; }
+  .hero-foto .bies { background:var(--oranje); clip-path:polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+  .hero-foto img { object-fit:cover; object-position:18% 28%; clip-path:polygon(0 0, 100% 0, 100% calc(90% - 7px), 0 calc(100% - 7px)); }
+  @media (min-width:1024px) {
+    .hero-foto { height:auto; min-height:0; }
+    .hero-foto .bies { clip-path:polygon(25% 0, 100% 0, 100% 100%, 0 100%); }
+    .hero-foto img { object-position:9% 30%; clip-path:polygon(calc(25% + 12px) 0, 100% 0, 100% 100%, 12px 100%); }
+  }
+
+  .schuin-rechts { clip-path:polygon(0 0, 100% 0, 84% 100%, 0 100%); }
+
+  blockquote { margin:0; }
+  .citaat footer { margin-top:.85rem; font-weight:700; }
+
+  .plaatsen { font-family:'Archivo',system-ui,sans-serif; font-style:italic; font-weight:700; font-stretch:112%; font-size:clamp(1.45rem, 3.15vw, 2.9rem); line-height:1.18; letter-spacing:-.01em; text-wrap:pretty; }
+
+  label { display:block; font-weight:700; margin-bottom:.35rem; }
+  .veld { width:100%; box-sizing:border-box; padding:.8rem .9rem; font:inherit; color:var(--bitumen); background:var(--zinklicht); border:2px solid transparent; border-radius:2px; transition:border-color .15s ease; }
+  .veld:hover { border-color:var(--zink); }
+  .veld:focus { outline:none; border-color:var(--oranje); }
+
+  /* Eén moment bij het laden: de foto schuift omhoog, alleen als JS draait */
+  @media (prefers-reduced-motion:no-preference) {
+    .js .hero-foto img, .js .hero-foto .bies { animation:omhoog .8s cubic-bezier(.2,.75,.25,1) both; }
+    @keyframes omhoog { from { transform:translateY(28px); } to { transform:none; } }
+  }
+</style>
+</head>
+<body class="pb-[76px] lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="bg-bitumen text-white text-center text-[13px] leading-tight py-2 px-4">
+  Demo voor Hoefakker, gemaakt door <a class="underline underline-offset-2" href="https://hagenweb.nl">Hagenweb</a>
+</div>
+
+<header class="wrap sticky top-0 z-30 bg-zinklicht/95 backdrop-blur flex items-center justify-between gap-6 py-2.5 lg:py-3">
+  <a href="#inhoud" aria-label="Hoefakker DAK, naar boven"><img src="assets/site-02.png" alt="Logo Hoefakker DAK" width="1000" height="433" class="h-11 lg:h-14 w-auto"></a>
+  <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 font-medium">
+    <a class="hover:underline underline-offset-4 decoration-2 decoration-oranje" href="#lekkage">Lekkage</a>
+    <a class="hover:underline underline-offset-4 decoration-2 decoration-oranje" href="#diensten">Wat ik doe</a>
+    <a class="hover:underline underline-offset-4 decoration-2 decoration-oranje" href="#willem">Over Willem</a>
+    <a class="hover:underline underline-offset-4 decoration-2 decoration-oranje" href="#werkgebied">Werkgebied</a>
+    <a class="hover:underline underline-offset-4 decoration-2 decoration-oranje" href="#contact">Contact</a>
+  </nav>
+  <a class="link nummer whitespace-nowrap text-[1.05rem] lg:text-lg" href="tel:+31627268980">06 27 26 8980</a>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)] lg:min-h-[min(calc(100svh_-_178px),800px)]">
+    <div class="hero-foto lg:order-2">
+      <div class="bies"></div>
+      <img src="assets/site-03.jpg" width="2560" height="1533" fetchpriority="high"
+           alt="Willem Hoefakker klimt lachend de ladder op met een dakrandprofiel op zijn schouder, gezien vanaf het dak">
+    </div>
+    <div class="lg:order-1 flex flex-col justify-center pl-[var(--rand)] pr-5 lg:pr-0 pt-4 pb-6 lg:py-10 lg:relative lg:z-10">
+      <p class="font-bold text-lood mb-2 lg:mb-4 lg:text-lg">Dakdekker in Ede</p>
+      <h1 class="kop kop-xl lg:-mr-24">Wie u belt, staat op uw dak.</h1>
+      <p class="mt-3 lg:mt-6 max-w-[33rem] lg:text-xl lg:leading-relaxed">Bij Hoefakker DAK heeft u direct contact met Willem, de man die het werk ook uitvoert. Van lekkage tot compleet nieuw dak, met een gratis en vrijblijvende dakinspectie.</p>
+      <div class="mt-4 lg:mt-8 flex flex-col sm:flex-row sm:items-center lg:flex-col lg:items-start xl:flex-row xl:items-center gap-x-8 gap-y-3 pl-2">
+        <a class="knop knop-groot self-start whitespace-nowrap" href="tel:+31627268980">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel Willem: 06 27 26 8980
+        </a>
+        <a class="link hidden sm:inline whitespace-nowrap" href="#contact">Gratis inspectie aanvragen</a>
+      </div>
+      <p class="mt-4 lg:mt-7 flex items-center gap-2 font-medium text-[.98rem]">
+        <svg class="w-5 h-5 text-oranje flex-none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7.1L12 17.7l-6.200 3.600 1.400-7.100L2 9.400l7-.8z"/></svg>
+        4,6 sterren uit 11 reviews op Google
+      </p>
+    </div>
+  </section>
+
+  <!-- Lekkage -->
+  <div style="background:var(--zinklicht)">
+    <svg class="knik" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,96 0,78 560,78 650,8 1440,8 1440,96" fill="#25211E"/><polyline points="0,78 560,78 650,8 1440,8" fill="none" stroke="#E8730C" stroke-width="7" vector-effect="non-scaling-stroke"/></svg>
+  </div>
+  <section id="lekkage" class="op-donker bg-bitumen text-white pb-16 lg:pb-24 pt-6 lg:pt-8">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-12 lg:items-center">
+      <div class="lg:col-span-6 mb-10 lg:mb-0 pr-8 lg:pr-0">
+        <img class="schuin-rechts w-full h-[280px] sm:h-[380px] lg:h-[560px] object-cover" style="object-position:45% 50%" src="assets/google-08.jpg" width="1600" height="1067" loading="lazy"
+             alt="Handen in werkhandschoenen branden dakbedekking vast met een open vlam">
+      </div>
+      <div class="lg:col-span-6 pl-[1.25rem] pr-[var(--rand)] lg:pl-0">
+        <h2 class="kop kop-l max-w-[14em]">Lekt het? Wacht niet op de volgende bui.</h2>
+        <p class="tekst mt-5 text-lg">Ik spoor de lekkage op en herstel die. Tijdens kantooruren belt of WhatsAppt u mij rechtstreeks. Een lekkage kunt u 24/7 melden via het formulier.</p>
+        <div class="mt-7 flex flex-wrap items-center gap-x-8 gap-y-4 pl-2">
+          <a class="knop" href="tel:+31627268980">Bel 06 27 26 8980</a>
+          <a class="link" href="https://wa.me/31627268980">WhatsApp</a>
+          <a class="link" href="#contact">Lekkage melden</a>
+        </div>
+        <blockquote class="citaat mt-10 border-l-4 border-oranje pl-5 max-w-[60ch]">
+          <p class="text-white/90">“De jongens van Hoefakker DAK hebben bij ons keurig werk afgeleverd. Ik heb jaren last gehad van lekkage, en door nu plaatselijk het dak te vervangen is het eindelijk opgelost. Ik ben blij met deze grondige aanpak, ook al was het een best lastige klus! Dank jullie wel!”</p>
+          <footer>Diokaira, op Google</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wat ik doe -->
+  <section id="diensten" class="wrap py-16 lg:py-28">
+    <div class="max-w-3xl">
+      <h2 class="kop kop-l">Van één lekke naad tot een heel nieuw dak.</h2>
+      <p class="tekst mt-5 text-lg">Dit is het werk waar u mij voor belt. Ik kijk altijd naar de opbouw van uw dak, zodat problemen duurzaam worden opgelost.</p>
+    </div>
+
+    <!-- Platdak -->
+    <article class="mt-12 lg:mt-16 lg:grid lg:grid-cols-12 lg:gap-12 lg:items-end">
+      <div class="lg:col-span-8 overflow-hidden h-[260px] sm:h-[400px] lg:h-[580px]">
+        <img class="w-full h-full object-cover" style="transform:scale(1.32);transform-origin:90% 42%" src="assets/google-06.jpg" width="1600" height="1067" loading="lazy"
+             alt="Willem Hoefakker brandt nieuwe dakbedekking vast op een plat dak, met een brandblusser binnen handbereik">
+      </div>
+      <div class="lg:col-span-4 mt-6 lg:mt-0">
+        <h3 class="kop kop-m">Platdak en isolatie, renovatie en onderhoud</h3>
+        <p class="mt-3">Van onderhoud tot een volledig nieuwe opbouw met goede isolatie. Na renovatie of volledige dakvernieuwing ontvangt u altijd 10 jaar garantie.</p>
+        <blockquote class="citaat mt-6 border-l-4 border-oranje pl-5 text-[1rem]">
+          <p>“Willem en z'n team hebben het platte dak van mijn woning volledig gestript en helemaal opnieuw opgebouwd, met een flink pak isolatie, dakrand opgehoogd, nieuw zinkwerk, etc. Zijn echte vakmannen die weten wat ze doen en het eindresultaat ziet er piekfijn uit. Ook prettig dat ze eerlijke prijzen hanteren.”</p>
+          <footer>Peter Tromp, op Google</footer>
+        </blockquote>
+      </div>
+    </article>
+
+    <!-- Zink -->
+    <article class="mt-16 lg:mt-28 lg:grid lg:grid-cols-12 lg:gap-12 lg:items-center">
+      <div class="lg:col-span-5 lg:order-1 order-2">
+        <h3 class="kop kop-m">Zink- en loodwerk</h3>
+        <p class="mt-3 tekst">Een goed dak stopt niet bij pannen of bitumen. Juist details als zinken afdekkappen, loodslabben, dakranden en dakgoten bepalen of uw woning echt waterdicht is.</p>
+        <p class="mt-3 tekst">Met de juiste materialen en een zorgvuldige opbouw van lagen voorkomt u houtrot, vochtproblemen en lekkages. Of het nu gaat om een schoorsteen, dakgoot, dakkapel of dakrand: ik lever maatwerk.</p>
+      </div>
+      <div class="lg:col-span-7 lg:order-2 relative mt-7 lg:mt-0 pb-14 lg:pb-20 pl-14 lg:pl-28">
+        <img class="w-full h-[320px] sm:h-[460px] lg:h-[600px] object-cover" style="object-position:50% 58%" src="assets/site-06.jpg" width="934" height="1245" loading="lazy"
+             alt="Glanzend gelast zinkwerk langs de dakgoot, met beneden de oranje bus van Hoefakker DAK">
+        <img class="absolute left-0 bottom-0 w-[44%] lg:w-[40%] aspect-square object-cover border-[6px] border-zinklicht" src="assets/site-07.jpg" width="720" height="723" loading="lazy"
+             alt="Punt van een gevel afgewerkt met zinken ruiten in een schubpatroon">
+      </div>
+    </article>
+
+    <!-- Schoorsteen en doorvoeren -->
+    <div class="mt-16 lg:mt-28 lg:grid lg:grid-cols-12 lg:gap-12">
+      <article class="lg:col-span-5">
+        <img class="w-full h-[340px] sm:h-[460px] lg:h-[560px] object-cover" style="object-position:60% 62%" src="assets/site-08.jpg" width="1200" height="1600" loading="lazy"
+             alt="Gemetselde schoorsteen op een pannendak, met nieuw loodwerk rondom de aansluiting">
+        <h3 class="kop kop-m mt-6">Schoorsteen</h3>
+        <p class="mt-3">Een schoorsteen is een kwetsbaar detail en vraagt om regelmatig onderhoud en inspectie. Slaat hij door, dan beoordeel ik hem in zijn geheel: van rookkanaal en dekplaat tot metsel- en voegwerk en de aansluiting op uw dak met loketten of loodslabben. Daarna impregneer ik de schoorsteen, zodat u er langer mee vooruit kunt. Ook voor tijdelijke noodoplossingen heb ik diverse toepassingen beschikbaar.</p>
+      </article>
+      <article class="lg:col-span-7 mt-14 lg:mt-32">
+        <img class="w-full h-[280px] sm:h-[420px] lg:h-[520px] object-cover" style="object-position:30% 3%" src="assets/site-04.jpg" width="934" height="1245" loading="lazy"
+             alt="Dakvlak in aanbouw met een ontluchtingspijp, zinken kilgoot en gestapelde dakpannen">
+        <h3 class="kop kop-m mt-6">Lichtkoepels en dakdoorvoeren</h3>
+        <p class="mt-3 tekst">Door het dak loopt vaak meer dan u denkt. Ik denk mee over een doorvoer voor PV-panelen of een warmtepomp, en lever lichtkoepels, solatubes, dakramen en complete lichtstraten. Boren door beton of houten dakbeschot gaat in overleg met u of uw installateur. Een waterdichte aansluiting staat voorop, met oog voor isolatie, ventilatie en afwatering.</p>
+      </article>
+    </div>
+
+    <!-- Overige expertises -->
+    <div class="mt-16 lg:mt-28 lg:grid lg:grid-cols-12 lg:gap-12 lg:items-start">
+      <img class="lg:col-span-4 w-full h-[240px] lg:h-full lg:min-h-[420px] object-cover mb-8 lg:mb-0" style="object-position:52% 50%" src="assets/google-03.jpg" width="1600" height="1067" loading="lazy"
+           alt="Handen zagen een metalen dakrandprofiel op maat met een oranje beugelzaag">
+      <dl class="lg:col-span-8 border-t-2 border-bitumen">
+        <div class="py-5 border-b border-zink md:grid md:grid-cols-[1fr_1.4fr] md:gap-8">
+          <dt class="kop kop-m">Lekkage opsporing en herstel</dt>
+          <dd class="m-0 mt-2 md:mt-0">Ik zoek uit waar het water vandaan komt en kijk naar de hele opbouw, zodat de lekkage duurzaam wordt opgelost.</dd>
+        </div>
+        <div class="py-5 border-b border-zink md:grid md:grid-cols-[1fr_1.4fr] md:gap-8">
+          <dt class="kop kop-m">Dakrandafwerking en boeidelen</dt>
+          <dd class="m-0 mt-2 md:mt-0">Dakranden en boeidelen bepalen mee of uw woning waterdicht blijft. Ik werk ze op maat af, duurzaam en netjes.</dd>
+        </div>
+        <div class="py-5 border-b border-zink md:grid md:grid-cols-[1fr_1.4fr] md:gap-8">
+          <dt class="kop kop-m">Pannendak</dt>
+          <dd class="m-0 mt-2 md:mt-0">Van het dak zelf tot het lood- en zinkwerk eromheen. Ook dakramen voor uw pannendak lever ik.</dd>
+        </div>
+        <div class="py-5 border-b border-zink md:grid md:grid-cols-[1fr_1.4fr] md:gap-8">
+          <dt class="kop kop-m">Cool-roof en retentiedaken</dt>
+          <dd class="m-0 mt-2 md:mt-0">Denkt u aan een cool-roof of retentiedak? Bel gerust, dan bekijken we wat er op uw dak mogelijk is.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Over Willem -->
+  <div style="background:var(--zinklicht)">
+    <svg class="knik" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,96 0,78 900,78 990,8 1440,8 1440,96" fill="#25211E"/><polyline points="0,78 900,78 990,8 1440,8" fill="none" stroke="#E8730C" stroke-width="7" vector-effect="non-scaling-stroke"/></svg>
+  </div>
+  <section id="willem" class="op-donker bg-bitumen text-white pb-16 lg:pb-28 pt-6">
+    <div class="wrap lg:grid lg:grid-cols-12 lg:gap-14 lg:items-center">
+      <figure class="lg:col-span-6 m-0">
+        <img class="w-full h-[320px] sm:h-[460px] lg:h-[640px] object-cover" style="object-position:32% 50%" src="assets/site-01.jpg" width="1600" height="1066" loading="lazy"
+             alt="Zwart-wit portret van Willem Hoefakker met muts, lachend in de camera">
+        <figcaption class="mt-3 text-white/75">Willem Hoefakker</figcaption>
+      </figure>
+      <div class="lg:col-span-6 mt-8 lg:mt-0">
+        <h2 class="kop kop-l">Geen schakels, geen misverstanden.</h2>
+        <p class="tekst mt-6 text-lg">Met ruim 20 jaar ervaring verzorg ik zink- en loodwerk, pannendaken, platte daken en isolatie, vakkundig en gediplomeerd. U heeft direct contact met mij als uitvoerder, persoonlijk en duidelijk.</p>
+        <p class="tekst mt-4">Is er extra expertise nodig, dan werk ik samen met vertrouwde specialisten zoals timmerlieden of bouwkundig adviseurs. Ik blijf uw vaste aanspreekpunt en zorg voor heldere communicatie.</p>
+        <p class="tekst mt-4">Mijn focus ligt op particulieren, maar ook bedrijven en aannemers weten mij te vinden.</p>
+        <p class="kop kop-m mt-9 text-oranje" style="font-size:clamp(1.6rem,2.6vw,2.3rem)">10 jaar garantie</p>
+        <p class="mt-1 text-white/85">Na renovatie of volledige dakvernieuwing, altijd.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="wrap py-16 lg:py-28 lg:grid lg:grid-cols-12 lg:gap-14 lg:items-center">
+    <div class="lg:col-span-7 lg:order-2">
+      <h2 class="kop kop-l">Wat klanten zeggen.</h2>
+      <p class="mt-3 flex items-center gap-2 font-medium text-lg">
+        <svg class="w-5 h-5 text-oranje flex-none" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.600 7 .8-5.200 4.800 1.400 7.100L12 17.700l-6.200 3.600 1.400-7.100L2 9.400l7-.8z"/></svg>
+        4,6 sterren uit 11 reviews op Google
+      </p>
+      <blockquote class="citaat mt-9">
+        <p class="text-xl lg:text-[1.5rem] lg:leading-[1.45] text-pretty">“Willem van Hoefakker Dak heeft ons dakkapel waar een lekkage in zat, uitstekend gerepareerd, de communicatie bij dit bedrijf is professioneel en je krijgt een duidelijke offerte vooraf voor een eerlijke prijs. En hij overlegt heel goed als er bijzonderheden zijn. Bij ons was de lekkage zorgelijk, dus hij heeft snel tijd vrij gemaakt om het te komen herstellen. Een dikke duim voor de bedrijf!”</p>
+        <footer>Randy Hess</footer>
+      </blockquote>
+      <blockquote class="citaat mt-9 lg:ml-20 border-l-4 border-oranje pl-5">
+        <p>“Keurig geholpen aan een nieuw dak op onze dakkapel. Het was een flinke klus die op korte termijn geklaard kon worden wat wij enorm waarderen nu de herfst echt begonnen is. Absolute aanrader. Goede transparante communicatie, snelle dienstverlening, en een vriendelijk team harde werkers over de vloer.”</p>
+        <footer>Ruth van den Hurk</footer>
+      </blockquote>
+    </div>
+    <img class="lg:col-span-5 lg:order-1 w-full h-[380px] sm:h-[520px] lg:h-[720px] object-cover mt-10 lg:mt-0" style="object-position:50% 25%" src="assets/google-05.jpg" width="1067" height="1600" loading="lazy"
+         alt="Willem Hoefakker in geruite pet brandt op het dak een strook dakbedekking vast, met vlammen bij zijn handschoen">
+  </section>
+
+  <!-- Zo gaat het -->
+  <section class="bg-oranje py-14 lg:py-20 wrap">
+    <h2 class="kop kop-l">Zo gaat het.</h2>
+    <ol class="list-none p-0 m-0 mt-8 lg:-mt-6 grid gap-7 lg:grid-cols-5 lg:gap-7 lg:items-start">
+      <li class="lg:mt-48 border-t-[3px] border-bitumen pt-3">
+        <p class="kop kop-m">1. U neemt contact op</p>
+        <p class="mt-2 text-pretty">Bellen, WhatsApp of formulier. U spreekt meteen de uitvoerder.</p>
+      </li>
+      <li class="lg:mt-36 border-t-[3px] border-bitumen pt-3">
+        <p class="kop kop-m">2. Dakinspectie</p>
+        <p class="mt-2 text-pretty">Ik bekijk uw dak, gratis en vrijblijvend.</p>
+      </li>
+      <li class="lg:mt-24 border-t-[3px] border-bitumen pt-3">
+        <p class="kop kop-m">3. Duidelijke offerte</p>
+        <p class="mt-2 text-pretty">U weet vooraf waar u aan toe bent.</p>
+      </li>
+      <li class="lg:mt-12 border-t-[3px] border-bitumen pt-3">
+        <p class="kop kop-m">4. Het werk</p>
+        <p class="mt-2 text-pretty">Zijn er bijzonderheden, dan overleg ik die met u.</p>
+      </li>
+      <li class="border-t-[3px] border-bitumen pt-3">
+        <p class="kop kop-m">5. Garantie</p>
+        <p class="mt-2 text-pretty">10 jaar na renovatie of volledige dakvernieuwing.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Werkgebied -->
+  <section id="werkgebied" class="wrap py-16 lg:py-28 bg-zink">
+    <h2 class="kop kop-l">Actief in Midden-Nederland.</h2>
+    <p class="tekst mt-4 text-lg">Vooral in Zuid-Holland, Utrecht, Gelderland, Overijssel, Drenthe en omstreken. Staat uw plaats er niet bij? Bel gerust, ik ben beschikbaar in heel Nederland.</p>
+    <p class="plaatsen mt-9 lg:mt-12 mb-0">Ede, Wageningen, Veenendaal, Lunteren, Barneveld, Oosterbeek, Arnhem, Leusden, Amersfoort, Bilthoven, Zeist, Soest, Tiel, Rhenen, Heteren, Kesteren, Nijmegen, Apeldoorn en alles er tussenin.</p>
+  </section>
+
+  <!-- Contact -->
+  <div class="bg-zink">
+    <svg class="knik" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,96 0,78 300,78 390,8 1440,8 1440,96" fill="#25211E"/><polyline points="0,78 300,78 390,8 1440,8" fill="none" stroke="#E8730C" stroke-width="7" vector-effect="non-scaling-stroke"/></svg>
+  </div>
+  <section id="contact" class="op-donker bg-bitumen text-white wrap pb-16 lg:pb-24 pt-10 lg:grid lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-7">
+      <h2 class="kop kop-l">Vertel wat er aan de hand is.</h2>
+      <p class="tekst mt-4 text-lg">Een vraag, een lekkage of een gratis dakinspectie? Vul het formulier in en ik neem zo snel mogelijk contact met u op. Geef gerust aan welke dag en welk tijdstip u het beste uitkomt.</p>
+      <form class="mt-8 grid sm:grid-cols-2 gap-x-5 gap-y-4" action="mailto:info@hoefakkerdak.nl" method="post" enctype="text/plain">
+        <div class="sm:col-span-2">
+          <label for="omschrijving">Omschrijf het project of de lekkage</label>
+          <textarea class="veld" id="omschrijving" name="omschrijving" rows="5" required></textarea>
+        </div>
+        <div><label for="voornaam">Voornaam</label><input class="veld" id="voornaam" name="voornaam" autocomplete="given-name" required></div>
+        <div><label for="achternaam">Achternaam</label><input class="veld" id="achternaam" name="achternaam" autocomplete="family-name" required></div>
+        <div><label for="email">E-mailadres</label><input class="veld" id="email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="telefoon">Telefoonnummer</label><input class="veld" id="telefoon" name="telefoon" type="tel" autocomplete="tel" required></div>
+        <div><label for="adres">Adres <span class="font-normal text-white/70">(niet verplicht)</span></label><input class="veld" id="adres" name="adres" autocomplete="street-address"></div>
+        <div><label for="stad">Plaats <span class="font-normal text-white/70">(niet verplicht)</span></label><input class="veld" id="stad" name="stad" autocomplete="address-level2"></div>
+        <div class="sm:col-span-2 pt-2 pl-2"><button class="knop knop-groot" type="submit">Aanvraag versturen</button></div>
+      </form>
+    </div>
+    <aside class="lg:col-span-5 mt-14 lg:mt-0 lg:pt-[4.4rem]">
+      <h3 class="kop kop-m">Liever direct contact?</h3>
+      <p class="mt-3 text-white/90">Tijdens kantooruren kunt u mij bellen of WhatsAppen. U spreekt dan meteen met mij, persoonlijk en duidelijk.</p>
+      <a class="kop block mt-6 no-underline text-oranje hover:text-[#F7A25C] transition-colors" style="font-size:clamp(1.8rem,3vw,2.7rem)" href="tel:+31627268980">06 27 26 8980</a>
+      <ul class="list-none p-0 mt-6 space-y-2">
+        <li><a class="link" href="https://wa.me/31627268980">WhatsApp Willem</a></li>
+        <li><a class="link" href="mailto:info@hoefakkerdak.nl">info@hoefakkerdak.nl</a></li>
+      </ul>
+      <address class="not-italic mt-7 text-white/90">Hoefakker DAK<br>Dubbelhof 27<br>6715 EE Ede</address>
+      <img class="hidden lg:block mt-10 w-full h-[400px] object-cover" style="object-position:50% 22%" src="assets/google-07.jpg" width="1067" height="1600" loading="lazy"
+           alt="Willem Hoefakker hurkt op het dak en brandt een rol dakbedekking vast">
+    </aside>
+  </section>
+</main>
+
+<footer class="op-donker wrap bg-bitumen text-white/80 border-t border-white/15 py-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 text-[.95rem]">
+  <img src="assets/site-02.png" alt="Logo Hoefakker DAK" width="1000" height="433" loading="lazy" class="h-12 w-auto self-start sm:self-auto">
+  <p class="m-0">&copy; 2026 Hoefakker DAK. Alle rechten voorbehouden.</p>
+</footer>
+
+<!-- Belknop altijd binnen bereik op mobiel -->
+<div class="lg:hidden fixed inset-x-0 bottom-0 z-40 bg-bitumen px-4 py-2.5 flex items-center gap-3">
+  <a class="knop flex-1 !py-3.5 ml-1.5" href="tel:+31627268980">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Willem
+  </a>
+  <a class="text-white font-bold underline underline-offset-4 decoration-oranje decoration-2 px-2 py-3" href="https://wa.me/31627268980">WhatsApp</a>
+</div>
+
+</body>
+</html>
