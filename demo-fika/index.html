@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fika Nijmegen | Smørrebrød, koffie en taart aan de Van Broeckhuysenstraat</title>
+<meta name="description" content="Fika in Nijmegen: smørrebrød op zuurdesem, goede koffie, taart en veel vegan opties. Elke dag open van 9:00 tot 18:00 aan de Van Broeckhuysenstraat 5.">
+<meta property="og:title" content="Fika Nijmegen">
+<meta property="og:description" content="Smørrebrød, koffie en taart. Elke dag open van 9:00 tot 18:00.">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Karla:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          base: '#F6F7F4',
+          fjord: { DEFAULT: '#1E3350', soft: '#3A4E6A' },
+          mist: '#DCE3EA',
+          bloem: { DEFAULT: '#F2C14E', dark: '#E2AC2E' },
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Karla', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 3px solid #1E3350; outline-offset: 3px; border-radius: 6px; }
+  .op-donker a:focus-visible { outline-color: #F2C14E; }
+  .bloem-draai { transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
+  .js .hero-bloem { transform: rotate(-40deg) scale(.6); }
+  .js.geladen .hero-bloem { transform: rotate(0) scale(1); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .hero-bloem { transform: none; }
+    .knop:hover { transform: none; }
+  }
+</style>
+</head>
+<body class="bg-base text-fjord font-tekst text-[17px] leading-relaxed">
+
+<svg width="0" height="0" class="absolute" aria-hidden="true">
+  <symbol id="bloem" viewBox="0 0 100 100">
+    <g fill="currentColor">
+      <circle cx="50" cy="24" r="17"/><circle cx="68.4" cy="31.6" r="17"/><circle cx="76" cy="50" r="17"/><circle cx="68.4" cy="68.4" r="17"/>
+      <circle cx="50" cy="76" r="17"/><circle cx="31.6" cy="68.4" r="17"/><circle cx="24" cy="50" r="17"/><circle cx="31.6" cy="31.6" r="17"/>
+      <circle cx="50" cy="50" r="22"/>
+    </g>
+  </symbol>
+</svg>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-bloem focus:px-4 focus:py-2 focus:m-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-fjord text-white/90 text-[13px] text-center px-4 py-2">
+  Demo voor Fika, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 decoration-bloem hover:text-bloem">Hagenweb</a>
+</div>
+
+<!-- Kop -->
+<header class="sticky top-0 z-40 bg-base/90 backdrop-blur border-b border-fjord/10">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="Fika, naar boven">
+      <img src="assets/logo-oud.png" alt="" class="w-8 h-8">
+      <span class="font-kop font-extrabold text-[26px] tracking-tight leading-none">FiKA</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#smorrebrod" class="hover:underline underline-offset-4 decoration-bloem decoration-2">Smørrebrød</a>
+      <a href="#fika" class="hover:underline underline-offset-4 decoration-bloem decoration-2">Koffie en taart</a>
+      <a href="#reviews" class="hover:underline underline-offset-4 decoration-bloem decoration-2">Reviews</a>
+      <a href="#bezoek" class="hover:underline underline-offset-4 decoration-bloem decoration-2">Bezoek</a>
+    </nav>
+    <a href="tel:+31242060159" class="knop inline-flex items-center gap-2 rounded-full bg-fjord text-white px-4 py-2 text-[15px] font-semibold hover:bg-fjord-soft">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="hidden sm:inline">024 206 0159</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 pt-5 pb-14 lg:pt-14 lg:pb-24 grid lg:grid-cols-[1.05fr_.95fr] gap-8 lg:gap-14 items-center">
+    <div class="order-2 lg:order-1">
+      <p class="text-fjord-soft font-medium mb-3 lg:mb-5">Scandinavische lunchroom in Nijmegen</p>
+      <h1 class="font-kop font-extrabold text-[40px] leading-[1.02] sm:text-6xl lg:text-[78px] tracking-[-0.03em]">
+        Koffie, iets lekkers en even niks.
+      </h1>
+      <p class="mt-4 lg:mt-7 max-w-[30rem] text-[18px] lg:text-[19px] text-fjord/80">
+        Fika is de Zweedse pauze die je echt neemt. Bij ons met smørrebrød op zuurdesem, goede koffie en taart als toetje. Elke dag open van 9 tot 6.
+      </p>
+      <div class="mt-6 lg:mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31242060159" class="knop inline-flex items-center gap-3 rounded-full bg-bloem hover:bg-bloem-dark text-fjord px-7 py-4 text-lg font-bold shadow-[0_10px_24px_-10px_rgba(226,172,46,.9)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 024 206 0159
+        </a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Van+Broeckhuysenstraat+5,+6511+PE+Nijmegen" class="font-semibold underline underline-offset-4 decoration-2 decoration-bloem hover:text-fjord-soft">Plan uw route</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px] text-fjord/75">
+        <span class="text-bloem-dark tracking-[2px] text-lg leading-none" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-fjord">4,5</strong> uit 693 Google-reviews</span>
+      </p>
+    </div>
+    <div class="order-1 lg:order-2 relative mx-auto w-full max-w-[460px] lg:max-w-none">
+      <div class="boog overflow-hidden aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/5] bg-mist">
+        <img src="assets/google-01.jpg" alt="Het interieur van Fika: oranje lampen, planten, lange tafels en een Zweeds vlaggetje" class="w-full h-full object-cover object-[50%_45%]">
+      </div>
+      <svg class="hero-bloem bloem-draai absolute -left-3 -bottom-5 lg:-left-10 lg:bottom-10 w-16 h-16 lg:w-32 lg:h-32 text-bloem drop-shadow-[0_8px_16px_rgba(30,51,80,.18)]" aria-hidden="true"><use href="#bloem"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- Smørrebrød -->
+<section id="smorrebrod" class="bg-white">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-16 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <figure class="lg:col-span-7 lg:-ml-24 xl:-ml-40">
+      <img src="assets/google-02.jpg" alt="Vier borden smørrebrød van boven: zalm, garnalen met ei, geitenkaas met biet en champignons" class="w-full aspect-[4/5] sm:aspect-[5/4] lg:aspect-[6/7] object-cover rounded-[1.5rem] lg:rounded-l-none lg:rounded-r-[2rem]">
+    </figure>
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold text-4xl lg:text-[56px] leading-[1.02] tracking-[-0.025em]">Smørrebrød, zoals het hoort.</h2>
+      <p class="mt-6 text-fjord/80 max-w-prose">
+        Een flinke plak zuurdesembrood, en daarop wat de dag lekker maakt. Zweedse balletjes met aardbeien, pikante kip in een goede marinade, of de smokey tempeh waar gasten speciaal voor terugkomen.
+      </p>
+      <p class="mt-4 text-fjord/80 max-w-prose">
+        Eet u plantaardig? Dan hoeft u bij ons niet te zoeken: er zijn veel vegan opties, zoals smørrebrød met vegan cheddar en kimchi. Ook om mee te nemen.
+      </p>
+      <div class="mt-9 grid grid-cols-2 gap-4">
+        <img src="assets/site-01.webp" alt="Een houten plank vol smørrebrød op tafel met koffie en limonade" class="w-full aspect-square object-cover rounded-2xl">
+        <img src="assets/google-08.jpg" alt="Smørrebrød met champignons en met avocado, feta en spinazie" class="w-full aspect-square object-cover rounded-2xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Koffie en taart -->
+<section id="fika" class="relative">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-16 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+      <div class="lg:col-span-5 lg:pb-10">
+        <svg class="w-12 h-12 text-bloem mb-6" aria-hidden="true"><use href="#bloem"/></svg>
+        <h2 class="font-kop font-extrabold text-4xl lg:text-[56px] leading-[1.02] tracking-[-0.025em]">Fika is een werkwoord.</h2>
+        <p class="mt-6 text-fjord/80 max-w-prose">
+          In Zweden stop je even. Je pakt een koffie, iets zoets erbij, en je neemt de tijd. Met een vriendin, met collega's, of alleen met een boek bij het raam.
+        </p>
+        <p class="mt-4 text-fjord/80 max-w-prose">
+          Bij ons krijgt u een koekje bij de koffie, en staat er taart voor wie na de lunch nog trek heeft. Ook met de laptop bent u welkom aan de lange tafels.
+        </p>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-6 grid-rows-[auto_auto] gap-4">
+        <img src="assets/site-03.jpg" alt="Een cappuccino met latte art in een rood kopje met een koekje" class="col-span-3 row-span-2 w-full h-full min-h-[320px] object-cover rounded-t-full rounded-b-2xl">
+        <img src="assets/google-07.jpg" alt="Een volle tafel bij Fika: koffie, croissant, brood, ham, jam, yoghurt en aardbeien" class="col-span-3 w-full aspect-[4/3] object-cover rounded-2xl">
+        <img src="assets/google-06.jpg" alt="Een latte in een donkerblauw kopje met een chocolate chip koekje op een houten tafel" class="col-span-3 w-full aspect-[4/3] object-cover object-[50%_40%] rounded-2xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-mist/60">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-16 lg:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-10 lg:mb-14">
+      <h2 class="font-kop font-extrabold text-4xl lg:text-[56px] leading-[1.02] tracking-[-0.025em] max-w-xl">Wat gasten zeggen.</h2>
+      <p class="text-fjord/75"><span class="text-bloem-dark tracking-[2px]" aria-hidden="true">★★★★★</span> <strong class="text-fjord">4,5</strong> uit 693 reviews op Google</p>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+      <figure class="lg:col-span-7 bg-white rounded-[2rem] p-7 sm:p-10 lg:p-12 relative overflow-hidden">
+        <svg class="absolute -right-10 -top-10 w-44 h-44 text-bloem/25" aria-hidden="true"><use href="#bloem"/></svg>
+        <blockquote class="relative font-kop font-medium text-xl sm:text-2xl lg:text-[30px] leading-[1.25] tracking-[-0.01em]">
+          “Een dikke vijf sterren! Veel vegan opties waaronder smokey tempeh die we zelfs nog eens besteld hebben zo lekker was deze. Personeel is lief en komt regelmatig langs. En eindelijk gewoon gezondere opties voor lunch. Heel blij hier mee. Het smörrebröd met vegan cheddar en kimchi is ook super smaakvol!”
+        </blockquote>
+        <figcaption class="relative mt-7 font-semibold">Judith <span class="font-normal text-bloem-dark ml-1" aria-label="5 sterren">★★★★★</span></figcaption>
+      </figure>
+      <div class="lg:col-span-5 flex flex-col gap-6 lg:gap-8">
+        <figure class="bg-white rounded-[1.5rem] p-7">
+          <blockquote class="text-fjord/85">“Wat een prettige zaak om heerlijk te lunchen en taart te eten. We namen smorebrod met een topping van zweedse balletjes in combinatie met aardbeien. En pikante kip met een heerlijke marinade.”</blockquote>
+          <figcaption class="mt-4 font-semibold">Marjolein Spithoven <span class="font-normal text-bloem-dark ml-1" aria-label="5 sterren">★★★★★</span></figcaption>
+        </figure>
+        <figure class="bg-white rounded-[1.5rem] p-7">
+          <blockquote class="text-fjord/85">“Even lekker lunchen in Nijmegen (dagje uit met onze minicamper vanuit Flevoland). Heerlijke lunch en vrolijke bediening. Aanrader. Konden t niet laten om een taartje als toetje te nemen….❤️🚙”</blockquote>
+          <figcaption class="mt-4 font-semibold">Claudia Kaldenbach <span class="font-normal text-bloem-dark ml-1" aria-label="5 sterren">★★★★★</span></figcaption>
+        </figure>
+      </div>
+      <figure class="lg:col-span-12 lg:grid lg:grid-cols-12 lg:gap-8 bg-fjord text-white rounded-[1.5rem] p-7 sm:p-10 op-donker">
+        <blockquote class="lg:col-span-9 text-white/90 text-lg">“Ik bestelde een koffietje en een Smokey Tempeh Smorrebrød voor take-away. De Smokey Tempeh had verassend interessante smaakcombinaties en kwam op een lekker verse plak zuurdesembrood. De prijs viel me ook nog eens hartstikke mee! Hier ga ik zeker terugkomen als ik een volgende keer in Nijmegen ben…”</blockquote>
+        <figcaption class="lg:col-span-3 mt-4 lg:mt-0 lg:text-right font-semibold">Jerry Weidema <span class="block font-normal text-bloem" aria-label="5 sterren">★★★★★</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Bezoek -->
+<section id="bezoek" class="bg-fjord text-white op-donker">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-16 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-6 order-2 lg:order-1">
+      <h2 class="font-kop font-extrabold text-4xl lg:text-[56px] leading-[1.02] tracking-[-0.025em]">Kom binnen, elke dag.</h2>
+      <p class="mt-5 text-white/80 max-w-md">U vindt ons achter het raam met de grote FiKA-letters, aan de Van Broeckhuysenstraat. Vragen of met een groep? Bel gerust even.</p>
+
+      <dl class="mt-10 grid sm:grid-cols-2 gap-8">
+        <div>
+          <dt class="text-bloem font-semibold mb-2">Adres</dt>
+          <dd class="text-white/90">Van Broeckhuysenstraat 5<br>6511 PE Nijmegen</dd>
+          <dd class="mt-2"><a class="underline underline-offset-4 decoration-bloem hover:text-bloem" href="https://www.google.com/maps/dir/?api=1&destination=Van+Broeckhuysenstraat+5,+6511+PE+Nijmegen">Plan uw route</a></dd>
+        </div>
+        <div>
+          <dt class="text-bloem font-semibold mb-2">Contact</dt>
+          <dd><a class="hover:text-bloem underline-offset-4 hover:underline" href="tel:+31242060159">024 206 0159</a></dd>
+          <dd><a class="hover:text-bloem underline-offset-4 hover:underline break-all" href="mailto:info@fika-nijmegen.nl">info@fika-nijmegen.nl</a></dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-bloem font-semibold mb-3">Openingstijden</dt>
+          <dd>
+            <table class="w-full max-w-sm text-white/90 tabular-nums">
+              <tbody class="divide-y divide-white/10">
+                <tr><td class="py-1.5">Maandag</td><td class="py-1.5 text-right">09:00 tot 18:00</td></tr>
+                <tr><td class="py-1.5">Dinsdag</td><td class="py-1.5 text-right">09:00 tot 18:00</td></tr>
+                <tr><td class="py-1.5">Woensdag</td><td class="py-1.5 text-right">09:00 tot 18:00</td></tr>
+                <tr><td class="py-1.5">Donderdag</td><td class="py-1.5 text-right">09:00 tot 18:00</td></tr>
+                <tr><td class="py-1.5">Vrijdag</td><td class="py-1.5 text-right">09:00 tot 18:00</td></tr>
+                <tr><td class="py-1.5">Zaterdag</td><td class="py-1.5 text-right">09:00 tot 18:00</td></tr>
+                <tr><td class="py-1.5">Zondag</td><td class="py-1.5 text-right">09:00 tot 18:00</td></tr>
+              </tbody>
+            </table>
+          </dd>
+        </div>
+      </dl>
+
+      <a href="tel:+31242060159" class="knop mt-10 inline-flex items-center gap-3 rounded-full bg-bloem hover:bg-bloem-dark text-fjord px-7 py-4 text-lg font-bold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Bel 024 206 0159
+      </a>
+    </div>
+    <figure class="lg:col-span-6 order-1 lg:order-2 relative max-w-[460px] lg:max-w-none mx-auto w-full">
+      <img src="assets/google-05.jpg" alt="Een latte bij het raam van Fika, met de handgeschilderde FiKA-letters en folk-art tekeningen op het glas" class="boog w-full aspect-[4/5] object-cover object-[50%_30%]">
+      <svg class="absolute -right-4 -bottom-5 w-20 h-20 lg:w-24 lg:h-24 text-bloem" aria-hidden="true"><use href="#bloem"/></svg>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-fjord text-white/70 border-t border-white/10 op-donker pb-24 md:pb-0">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 py-8 flex flex-col sm:flex-row gap-3 sm:items-center justify-between text-[14px]">
+    <p class="flex items-center gap-2"><img src="assets/logo-oud.png" alt="" class="w-5 h-5"> <span class="font-kop font-bold text-white">FiKA</span> Van Broeckhuysenstraat 5, Nijmegen</p>
+    <p>Demo door <a class="underline underline-offset-2 hover:text-bloem" href="https://hagenweb.nl">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 p-3 bg-base/95 backdrop-blur border-t border-fjord/10 flex gap-3">
+  <a href="tel:+31242060159" class="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-bloem text-fjord py-3.5 font-bold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel Fika
+  </a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Van+Broeckhuysenstraat+5,+6511+PE+Nijmegen" class="inline-flex items-center justify-center rounded-full border-2 border-fjord px-5 py-3 font-semibold">Route</a>
+</div>
+
+<script>
+  window.addEventListener('load', function () { document.documentElement.classList.add('geladen'); });
+</script>
+</body>
+</html>
