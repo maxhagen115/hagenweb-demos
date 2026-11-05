@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="nl" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pakro Dakspecialist | Dakdekker in Ede, 24/7 bereikbaar</title>
+<meta name="description" content="Pakro Dakspecialist uit Ede: pannendaken, platte daken, dakkapellen, lood en zink, isolatie en gevelbekleding. 24/7 bereikbaar voor calamiteiten. Bel 06 42 71 64 62.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A1950'/%3E%3Cpath d='M5 19 16 7l11 12M22 13v13' fill='none' stroke='%23DBAE4C' stroke-width='3.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = { theme: { extend: {
+    colors: { inkt:'#1A1950', indigo2:'#34317F', zink:'#E7E9EF', naad:'#C9CDDA', messing:'#DBAE4C', messing2:'#E8C26B', brons:'#6F5B2B' },
+    fontFamily: { kop:['Archivo','sans-serif'], tekst:['"Source Sans 3"','sans-serif'] }
+  } } };
+</script>
+<style>
+  body { font-family:'Source Sans 3',sans-serif; color:#1A1950; background:#E7E9EF; }
+  .kop { font-family:'Archivo',sans-serif; font-stretch:112%; font-weight:800; letter-spacing:-.02em; line-height:1.02; text-wrap:balance; }
+  .kop-s { font-family:'Archivo',sans-serif; font-stretch:105%; font-weight:700; letter-spacing:-.01em; line-height:1.15; }
+  p { text-wrap:pretty; }
+  :focus-visible { outline:3px solid #DBAE4C; outline-offset:3px; }
+  .op-licht :focus-visible { outline-color:#34317F; }
+
+  /* De geveluitsnede: alles op de hero-foto volgt deze lijn. */
+  .gevel { clip-path:polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%); }
+  .helling { clip-path:polygon(0 14%, 100% 0, 100% 100%, 0 100%); }
+
+  .knop { transition:background-color .2s, transform .15s; }
+  .knop:hover { background:#E8C26B; }
+  .knop:active { transform:translateY(1px); }
+
+  /* Tekening: legenda en markering lichten samen op */
+  .punt circle { transition:fill .15s; }
+  .punt.aan circle { fill:#1A1950; }
+  .punt.aan text { fill:#fff; }
+  .regel { transition:background-color .15s; }
+  .regel.aan { background:#fff; }
+
+  /* Eén moment bij binnenkomst: de daklijn tekent zich. Alleen met JS. */
+  .js .daklijn { animation:teken 1s .15s cubic-bezier(.3,.7,.2,1) both; }
+  @keyframes teken { from { clip-path:inset(-10% 50% -10% 50%); } to { clip-path:inset(-10% -10% -10% -10%); } }
+  @media (prefers-reduced-motion:reduce) {
+    html { scroll-behavior:auto !important; }
+    .js .daklijn { animation:none; }
+  }
+
+  /* Werkwijze: de stappen lopen op als een dakhelling */
+  @media (min-width:1024px) {
+    .stap:nth-child(1) { margin-top:9rem; }
+    .stap:nth-child(2) { margin-top:6rem; }
+    .stap:nth-child(3) { margin-top:3rem; }
+  }
+  /* Vaste belbalk op mobiel, verdwijnt zolang de hero-knop in beeld is */
+  .belbalk { transition:transform .2s; }
+  .belbalk.weg { transform:translateY(110%); }
+</style>
+</head>
+<body class="antialiased text-[18px] leading-relaxed pb-[68px] lg:pb-0">
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="bg-inkt text-white/80 text-[13px] leading-snug text-center px-4 py-1.5">
+  Demo voor Pakro Dakspecialist, gemaakt door <a class="underline underline-offset-2 text-white hover:text-messing2" href="https://hagenweb.nl">Hagenweb</a>
+</div>
+
+<header class="op-licht bg-white">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 h-[68px] lg:h-[84px] flex items-center justify-between gap-6">
+    <a href="#inhoud" aria-label="Pakro Dakspecialist, naar boven" class="shrink-0">
+      <svg viewBox="0 0 182 66" class="h-[48px] lg:h-[60px] w-auto" role="img" aria-hidden="true">
+        <path d="M106 14 131 3l46 41" fill="none" stroke="#34317F" stroke-width="5"/>
+        <path d="M164 32v32" stroke="#34317F" stroke-width="5"/>
+        <path d="M164 37h-6M164 43h-4M164 49h-6M164 55h-4M164 61h-6" stroke="#34317F" stroke-width="1.6"/>
+        <text x="0" y="42" font-family="Archivo" font-style="italic" font-weight="900" font-size="34" style="font-stretch:112%" letter-spacing="-.5" fill="#34317F">PAKRO</text>
+        <text x="1" y="63" font-family="Archivo" font-weight="700" font-size="18.4" style="font-stretch:72%" letter-spacing=".25" fill="#8A7340">DAKSPECIALIST</text>
+      </svg>
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 font-bold text-[16px]">
+      <a class="hover:text-indigo2 hover:underline underline-offset-4" href="#diensten">Wat wij doen</a>
+      <a class="hover:text-indigo2 hover:underline underline-offset-4" href="#werk">Ons werk</a>
+      <a class="hover:text-indigo2 hover:underline underline-offset-4" href="#werkwijze">Werkwijze</a>
+      <a class="hover:text-indigo2 hover:underline underline-offset-4" href="#garantie">Garantie</a>
+      <a class="hover:text-indigo2 hover:underline underline-offset-4" href="#contact">Contact</a>
+    </nav>
+    <a href="tel:+31642716462" class="kop-s text-[17px] lg:text-[19px] whitespace-nowrap hover:text-indigo2">06 42 71 64 62</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="bg-inkt text-white relative">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-x-8">
+    <div class="lg:col-span-6 order-2 lg:order-1 pt-6 pb-10 lg:pt-12 lg:pb-6">
+      <p class="text-messing2 font-bold text-[16px] lg:text-[18px]">Dakdekker in Ede en omstreken</p>
+      <h1 class="kop text-[44px] sm:text-[60px] lg:text-[84px] mt-2 lg:mt-4">Dakwerk dat staat als een huis.</h1>
+      <p class="mt-4 lg:mt-7 text-white/85 text-[18px] lg:text-[21px] leading-snug lg:leading-normal max-w-[34rem]">Lekkage, een nieuw pannendak, een dakkapel of zinkwerk: Pakro Dakspecialist pakt alles aan uw dak aan. En bij calamiteiten belt u ons dag en nacht.</p>
+      <div id="hero-knop" class="mt-6 lg:mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
+        <a href="tel:+31642716462" class="knop kop-s inline-flex items-center gap-3 bg-messing text-inkt text-[21px] lg:text-[25px] px-6 lg:px-8 py-4 lg:py-5 rounded-[4px] w-full sm:w-auto justify-center">
+          <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.200.2 2.400.6 3.600.1.300 0 .7-.2 1z"/></svg>
+          Bel 06 42 71 64 62
+        </a>
+        <a href="#contact" class="font-bold underline underline-offset-4 decoration-messing decoration-2 hover:text-messing2">Of vraag een prijs aan</a>
+      </div>
+      <p class="mt-5 lg:mt-8 text-white/80 text-[15px] lg:text-[16px] flex items-center gap-2.5">
+        <span class="text-messing tracking-[.1em] text-[17px]" aria-hidden="true">★★★★★</span>
+        <a href="#review" class="hover:underline underline-offset-4">5 sterren op Google, uit 1 review</a>
+      </p>
+    </div>
+    <div class="lg:col-span-6 order-1 lg:order-2 relative pt-5 lg:pt-10 lg:-mb-36 z-10">
+      <div class="relative lg:mr-5">
+        <img src="assets/site-07.jpg" alt="Afgewerkt pannendak met nieuwe dakkapel onder een blauwe lucht" class="gevel w-full aspect-[16/10] lg:aspect-[10/12] object-cover object-[50%_35%]" width="768" height="768">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="daklijn absolute inset-0 w-full h-full overflow-visible pointer-events-none" aria-hidden="true">
+          <path d="M-3 28.500 50 -3.500 103 28.500" fill="none" stroke="#DBAE4C" stroke-width="5" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <!-- De meetlat uit het logo, langs de muur -->
+        <div class="hidden lg:block absolute left-full top-[30%] bottom-0 ml-3 w-3" aria-hidden="true" style="background:repeating-linear-gradient(to bottom,#DBAE4C 0 2px,transparent 2px 22px);"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPOED + REVIEW -->
+<section class="op-licht">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-x-8 gap-y-12 pt-14 lg:pt-20 pb-16 lg:pb-24">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-[38px] lg:text-[56px]">Lekt het? Wacht dan niet.</h2>
+      <p class="mt-5 text-[19px] max-w-[33rem]">Schade of lekkage direct verhelpen voorkomt een hoop financiële narigheid en alle andere ellende die water kan veroorzaken. Voor calamiteiten zijn wij 24/7 bereikbaar.</p>
+      <p class="mt-6 text-[19px]"><a href="tel:+31642716462" class="kop-s text-[24px] underline decoration-messing decoration-[3px] underline-offset-[5px] hover:text-indigo2">06 42 71 64 62</a></p>
+    </div>
+    <figure id="review" class="lg:col-span-5 lg:col-start-8 lg:mt-36 border-l-[5px] border-messing pl-6 scroll-mt-8">
+      <div class="text-brons tracking-[.1em] text-[18px]" role="img" aria-label="5 van de 5 sterren">★★★★★</div>
+      <blockquote class="kop-s text-[23px] lg:text-[27px] mt-2">"Lekkage dakkapel, lood en voegen zien er weer strak uit! Komt afspraken na, nette prijs! Top service."</blockquote>
+      <figcaption class="mt-3 text-[16px]">marian van Blokland, op Google</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- DE WONING -->
+<section id="diensten" class="op-licht bg-white scroll-mt-4">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-16 lg:py-24">
+    <div class="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-start">
+      <div class="lg:col-span-7">
+        <h2 class="kop text-[38px] lg:text-[56px]">Van de nok tot de regenpijp.</h2>
+        <p class="mt-4 text-[19px] max-w-[38rem]">Alle werkzaamheden aan uw dak, gevel en wanden. Voor renovatie en nieuwbouw, van een woning tot een schuur of garage. Kijk waar het bij u om gaat.</p>
+        <svg id="woning" viewBox="0 0 640 560" class="w-full h-auto mt-8 lg:mt-10" role="img" aria-label="Tekening van een woning met genummerd: pannendak, dakkapel, lood bij de schoorsteen, dakgoot, hemelwaterafvoer, boeibekleding, gevelbekleding en isolatie">
+          <!-- grond -->
+          <path d="M0 541h640" stroke="#1A1950" stroke-width="3"/>
+          <!-- schoorsteen -->
+          <rect x="428" y="34" width="52" height="86" fill="#C9CDDA" stroke="#1A1950" stroke-width="3"/>
+          <path d="M422 34h64" stroke="#1A1950" stroke-width="6"/>
+          <!-- dak -->
+          <path id="dakvlak" d="M92 270 166 92h308l74 178z" fill="#E7E9EF" stroke="#1A1950" stroke-width="3"/>
+          <g stroke="#C9CDDA" stroke-width="2">
+            <path d="M158 112h324M150 132h340M141 152h358M133 172h374M125 192h390M116 212h408M108 232h424M100 252h440"/>
+          </g>
+          <!-- nokvorst -->
+          <path d="M166 92h308" stroke="#1A1950" stroke-width="7"/>
+          <!-- isolatie: opengewerkt stuk links -->
+          <path d="M103 245 142 150h66l-30 95z" fill="#fff" stroke="#1A1950" stroke-width="2"/>
+          <clipPath id="iso"><path d="M103 245 142 150h66l-30 95z"/></clipPath><path clip-path="url(#iso)" d="M100 236q6-8 12 0t12 0 12 0 12 0 12 0 12 0 12 0M108 213q6-8 12 0t12 0 12 0 12 0 12 0 12 0 12 0M116 190q6-8 12 0t12 0 12 0 12 0 12 0 12 0 12 0M124 167q6-8 12 0t12 0 12 0 12 0 12 0 12 0 12 0" fill="none" stroke="#34317F" stroke-width="2"/>
+          <!-- lood bij schoorsteen -->
+          <path d="M422 122l6-6h52l6 6z" fill="#DBAE4C" stroke="#1A1950" stroke-width="2"/>
+          <!-- dakkapel -->
+          <rect x="248" y="150" width="184" height="86" fill="#fff" stroke="#1A1950" stroke-width="3"/>
+          <path d="M238 148h204" stroke="#1A1950" stroke-width="8"/>
+          <rect x="262" y="166" width="70" height="56" fill="#C9CDDA" stroke="#1A1950" stroke-width="3"/>
+          <rect x="348" y="166" width="70" height="56" fill="#C9CDDA" stroke="#1A1950" stroke-width="3"/>
+          <path d="M297 166v56M383 166v56" stroke="#1A1950" stroke-width="2"/>
+          <!-- gevel -->
+          <rect x="112" y="290" width="416" height="250" fill="#fff" stroke="#1A1950" stroke-width="3"/>
+          <!-- gevelbekleding bovenste deel -->
+          <rect x="114" y="292" width="412" height="88" fill="#E7E9EF"/>
+          <g stroke="#34317F" stroke-width="1.500">
+            <path d="M114 303h412M114 314h412M114 325h412M114 336h412M114 347h412M114 358h412M114 369h412"/>
+          </g>
+          <path d="M112 380h416" stroke="#1A1950" stroke-width="3"/>
+          <!-- ramen boven -->
+          <rect x="150" y="304" width="120" height="66" fill="#C9CDDA" stroke="#1A1950" stroke-width="3"/>
+          <rect x="316" y="304" width="120" height="66" fill="#C9CDDA" stroke="#1A1950" stroke-width="3"/>
+          <path d="M210 304v66M376 304v66" stroke="#1A1950" stroke-width="2"/>
+          <!-- onder: raam en deur -->
+          <rect x="150" y="410" width="170" height="92" fill="#C9CDDA" stroke="#1A1950" stroke-width="3"/>
+          <path d="M207 410v92M263 410v92" stroke="#1A1950" stroke-width="2"/>
+          <rect x="372" y="404" width="76" height="136" fill="#34317F" stroke="#1A1950" stroke-width="3"/>
+          <circle cx="436" cy="476" r="3.500" fill="#DBAE4C"/>
+          <!-- boeiboord + goot -->
+          <rect x="86" y="274" width="468" height="16" fill="#fff" stroke="#1A1950" stroke-width="3"/>
+          <rect x="78" y="264" width="484" height="11" rx="2" fill="#C9CDDA" stroke="#1A1950" stroke-width="3"/>
+          <!-- regenpijp -->
+          <path d="M498 290v250" stroke="#1A1950" stroke-width="13"/>
+          <path d="M498 290v250" stroke="#C9CDDA" stroke-width="7"/>
+
+          <!-- markeringen -->
+          <path d="M486 120l12-5" stroke="#1A1950" stroke-width="2"/>
+          <g class="punt" data-n="1"><circle cx="238" cy="118" r="17" fill="#DBAE4C" stroke="#1A1950" stroke-width="2"/><text x="238" y="125" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="19" fill="#1A1950">1</text></g>
+          <g class="punt" data-n="2"><circle cx="340" cy="150" r="17" fill="#DBAE4C" stroke="#1A1950" stroke-width="2"/><text x="340" y="157" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="19" fill="#1A1950">2</text></g>
+          <g class="punt" data-n="3"><circle cx="512" cy="112" r="17" fill="#DBAE4C" stroke="#1A1950" stroke-width="2"/><text x="512" y="119" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="19" fill="#1A1950">3</text></g>
+          <g class="punt" data-n="4"><circle cx="62" cy="269" r="17" fill="#DBAE4C" stroke="#1A1950" stroke-width="2"/><text x="62" y="276" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="19" fill="#1A1950">4</text></g>
+          <g class="punt" data-n="5"><circle cx="498" cy="460" r="17" fill="#DBAE4C" stroke="#1A1950" stroke-width="2"/><text x="498" y="467" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="19" fill="#1A1950">5</text></g>
+          <g class="punt" data-n="6"><circle cx="572" cy="288" r="17" fill="#DBAE4C" stroke="#1A1950" stroke-width="2"/><text x="572" y="295" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="19" fill="#1A1950">6</text></g>
+          <g class="punt" data-n="7"><circle cx="293" cy="337" r="17" fill="#DBAE4C" stroke="#1A1950" stroke-width="2"/><text x="293" y="344" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="19" fill="#1A1950">7</text></g>
+          <g class="punt" data-n="8"><circle cx="118" cy="190" r="17" fill="#DBAE4C" stroke="#1A1950" stroke-width="2"/><text x="118" y="197" text-anchor="middle" font-family="Archivo" font-weight="800" font-size="19" fill="#1A1950">8</text></g>
+        </svg>
+      </div>
+
+      <div class="lg:col-span-5">
+        <ol id="legenda" class="divide-y divide-naad border-y border-naad">
+          <li class="regel flex gap-4 py-3.5 px-2" data-n="1"><span class="kop-s text-[19px] text-brons w-5 shrink-0">1</span><div><h3 class="kop-s text-[19px]">Pannendak</h3><p class="text-[16px] leading-snug mt-0.5">Dakpannen leggen of oude pannen vervangen. Inclusief de ondergrond, want ligt die niet goed, dan gaan de pannen schuiven.</p></div></li>
+          <li class="regel flex gap-4 py-3.5 px-2" data-n="2"><span class="kop-s text-[19px] text-brons w-5 shrink-0">2</span><div><h3 class="kop-s text-[19px]">Dakkapel en dakramen</h3><p class="text-[16px] leading-snug mt-0.5">Wij bouwen de dakkapel en plaatsen dakramen.</p></div></li>
+          <li class="regel flex gap-4 py-3.5 px-2" data-n="3"><span class="kop-s text-[19px] text-brons w-5 shrink-0">3</span><div><h3 class="kop-s text-[19px]">Lood, koper en zink</h3><p class="text-[16px] leading-snug mt-0.5">Al het lood-, koper- en zinkwerk, bijvoorbeeld bij de schoorsteen of langs de muur.</p></div></li>
+          <li class="regel flex gap-4 py-3.5 px-2" data-n="4"><span class="kop-s text-[19px] text-brons w-5 shrink-0">4</span><div><h3 class="kop-s text-[19px]">Dakgoten</h3><p class="text-[16px] leading-snug mt-0.5">Zinken goten vernieuwen en onderhouden, en een lekkende goot verhelpen.</p></div></li>
+          <li class="regel flex gap-4 py-3.5 px-2" data-n="5"><span class="kop-s text-[19px] text-brons w-5 shrink-0">5</span><div><h3 class="kop-s text-[19px]">Hemelwaterafvoer</h3><p class="text-[16px] leading-snug mt-0.5">De afvoer die het water van uw dak weghaalt.</p></div></li>
+          <li class="regel flex gap-4 py-3.5 px-2" data-n="6"><span class="kop-s text-[19px] text-brons w-5 shrink-0">6</span><div><h3 class="kop-s text-[19px]">Boeibekleding</h3><p class="text-[16px] leading-snug mt-0.5">Nieuwe bekleding langs de dakrand.</p></div></li>
+          <li class="regel flex gap-4 py-3.5 px-2" data-n="7"><span class="kop-s text-[19px] text-brons w-5 shrink-0">7</span><div><h3 class="kop-s text-[19px]">Gevelbekleding</h3><p class="text-[16px] leading-snug mt-0.5">Planksystemen voor horizontale en verticale gevels, met een eigen schaduwvoeg.</p></div></li>
+          <li class="regel flex gap-4 py-3.5 px-2" data-n="8"><span class="kop-s text-[19px] text-brons w-5 shrink-0">8</span><div><h3 class="kop-s text-[19px]">Isolatie</h3><p class="text-[16px] leading-snug mt-0.5">Dakisolatie verzorgen wij zelf, gevelisolatie samen met onze partner. U kunt daar subsidie voor aanvragen.</p></div></li>
+        </ol>
+        <p class="mt-6 text-[17px]"><strong>Verder:</strong> platte daken en schuine daken, dakbedekking vervangen, stormschade herstellen, periodiek onderhoud en uw dak voorbereiden op zonnepanelen. Wij monteren pannendaken, planksystemen, losanges, roeven, felssystemen en lood.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WERK -->
+<section id="werk" class="op-licht scroll-mt-4">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-16 lg:py-24">
+    <h2 class="kop text-[38px] lg:text-[56px]">Het werk van dichtbij.</h2>
+    <p class="mt-4 text-[19px] max-w-[36rem]">Geen plaatjes van ver weg, maar de naden, het lood en de aansluitingen.</p>
+
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4">
+      <figure class="col-span-2 lg:col-span-8">
+        <img src="assets/google-01.jpg" alt="Gebogen zinken dakvlak met staande naden en dakramen" class="w-full aspect-[16/9] object-cover">
+        <figcaption class="mt-2 text-[15px]">Zink met staande naad, in de bocht.</figcaption>
+      </figure>
+      <figure class="col-span-2 lg:col-span-4">
+        <img src="assets/site-02.jpg" alt="Soldeerbout bij een gesoldeerde naad in een zinken dakgoot" class="w-full aspect-[16/10] lg:aspect-[4/5] object-cover">
+        <figcaption class="mt-2 text-[15px]">Solderen van een naad in een zinken goot.</figcaption>
+      </figure>
+      <figure class="col-span-1 lg:col-span-4">
+        <img src="assets/site-01.jpg" alt="Dakrand met deels nieuwe witte boeibekleding en rechts nog het oude verweerde hout" class="w-full aspect-square object-cover">
+        <figcaption class="mt-2 text-[15px]">Boeibekleding: links nieuw, rechts nog het oude hout.</figcaption>
+      </figure>
+      <figure class="col-span-1 lg:col-span-3">
+        <img src="assets/site-09.jpg" alt="Donker pannendak met nokvorsten, nat van de regen" class="w-full aspect-square lg:aspect-[3/4] object-cover">
+        <figcaption class="mt-2 text-[15px]">Donker pannendak met nokvorsten.</figcaption>
+      </figure>
+      <figure class="col-span-2 lg:col-span-5">
+        <img src="assets/google-03.jpg" alt="Strak afgewerkt lood tussen een plat dak en een bakstenen muur" class="w-full aspect-[16/9] lg:aspect-[5/4] object-cover object-[35%_50%]">
+        <figcaption class="mt-2 text-[15px]">Lood waar het platte dak de muur raakt.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" class="bg-inkt text-white scroll-mt-4">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-16 lg:py-24">
+    <h2 class="kop text-[38px] lg:text-[56px] max-w-[42rem]">Wat gebeurt er allemaal op het dak?</h2>
+    <p class="mt-4 text-[19px] text-white/85 max-w-[36rem]">Bij een dakrenovatie gaat alles eraf en bouwen we het dak opnieuw op. Dit is de volgorde.</p>
+    <ol class="mt-10 lg:-mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+      <li class="stap">
+        <img src="assets/site-08.jpg" alt="Twee dakdekkers op het dak met een kraan die materiaal aanlevert" class="w-full aspect-[3/2] sm:aspect-[4/5] object-cover object-[20%_50%]">
+        <h3 class="kop-s text-[22px] mt-4"><span class="text-messing">1.</span> Eraf</h3>
+        <p class="mt-1.5 text-[16px] leading-snug text-white/85">We verwijderen de volledige dakbedekking, tot alleen het kale dak overblijft.</p>
+      </li>
+      <li class="stap">
+        <img src="assets/google-08.jpg" alt="Dakfolie met panlatten op een hellend dak, klaar voor de pannen" class="w-full aspect-[3/2] sm:aspect-[4/5] object-cover">
+        <h3 class="kop-s text-[22px] mt-4"><span class="text-messing">2.</span> Isoleren en latten</h3>
+        <p class="mt-1.5 text-[16px] leading-snug text-white/85">Waar nodig plaatsen we dakisolatie (vraag ons gerust wat bij u past). Dan volgen de pannenlatten.</p>
+      </li>
+      <li class="stap">
+        <img src="assets/site-03.jpg" alt="Nieuwe zinken vergaarbak en regenpijp aan de dakrand" class="w-full aspect-[3/2] sm:aspect-[4/5] object-cover">
+        <h3 class="kop-s text-[22px] mt-4"><span class="text-messing">3.</span> Goten en lood</h3>
+        <p class="mt-1.5 text-[16px] leading-snug text-white/85">De goten gaan erop en het lood komt op zijn plek, bijvoorbeeld bij de schoorsteen.</p>
+      </li>
+      <li class="stap">
+        <img src="assets/google-07.jpg" alt="Nieuw oranje pannendak met nokvorsten" class="w-full aspect-[3/2] sm:aspect-[4/5] object-cover object-[45%_50%]">
+        <h3 class="kop-s text-[22px] mt-4"><span class="text-messing">4.</span> Pannen erop</h3>
+        <p class="mt-1.5 text-[16px] leading-snug text-white/85">Tot slot de pannen. Als dat nodig is, bereiden we het dak voor op zonnepanelen.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- GARANTIE -->
+<section id="garantie" class="op-licht scroll-mt-4">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-16 lg:pt-24 pb-10 lg:pb-16 grid lg:grid-cols-12 gap-x-12 gap-y-10 items-center">
+    <div class="lg:col-span-6 order-2 lg:order-1">
+      <img src="assets/google-02.jpg" alt="Woning in de steigers met het spandoek van Pakro aan de gevel" class="helling w-full aspect-[5/4] object-cover">
+    </div>
+    <div class="lg:col-span-6 order-1 lg:order-2">
+      <h2 class="kop text-[38px] lg:text-[56px]">Tien jaar garantie, op papier.</h2>
+      <p class="mt-5 text-[19px] max-w-[34rem]">Op vrijwel alle werkzaamheden geven wij 10 jaar garantie, met ons certificaat erbij. Op alle geleverde artikelen krijgt u de maximale garantie, tot 40 jaar.</p>
+      <ul class="mt-7 space-y-3 text-[17px] max-w-[34rem]">
+        <li class="flex gap-3"><span class="mt-[.72em] h-[3px] w-4 shrink-0 bg-brons"></span>Wij werken volgens ISO-certificering en zijn een gecertificeerd dakmontagebedrijf.</li>
+        <li class="flex gap-3"><span class="mt-[.72em] h-[3px] w-4 shrink-0 bg-brons"></span>Wij leveren op tijd en binnen budget, zonder verrassingen achteraf.</li>
+        <li class="flex gap-3"><span class="mt-[.72em] h-[3px] w-4 shrink-0 bg-brons"></span>Wij werken samen met VDL Totaalbouw.</li>
+      </ul>
+      <div class="mt-7 flex items-center gap-4">
+        <img src="assets/site-06.png" alt="VCA-logo" class="h-14 w-auto mix-blend-multiply">
+        <p class="text-[16px]">Pakro Dakspecialist is VCA-gecertificeerd.</p>
+      </div>
+    </div>
+  </div>
+  <!-- SEDUM -->
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-6 pb-16 lg:pb-24">
+    <div class="bg-white grid md:grid-cols-12 items-stretch">
+      <div class="md:col-span-7 p-6 lg:p-12">
+        <h2 class="kop text-[32px] lg:text-[42px]">Een groen dak, met gewone pannen.</h2>
+        <p class="mt-4 text-[18px] max-w-[36rem]">Sedumdakpannen zijn dakpannen met een laag sedumbeplanting, en een van onze specialiteiten. U krijgt betere isolatie, minder geluid van buiten, een langere levensduur van het dak en regenwater dat minder snel in het riool belandt.</p>
+      </div>
+      <div class="md:col-span-5 relative min-h-[16rem]"><img src="assets/site-10.jpg" alt="Pallets met sedumdakpannen op de bouwplaats" class="absolute inset-0 w-full h-full object-cover object-[50%_35%]"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-inkt text-white scroll-mt-4">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-16 lg:py-24 grid lg:grid-cols-12 gap-x-12 gap-y-10">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-[38px] lg:text-[56px]">Een eerlijk advies, waar u verder mee komt.</h2>
+      <ul class="mt-6 space-y-1.5 text-[19px] text-white/90">
+        <li>Hoe oud is het dak?</li>
+        <li>Voldoet de isolatie nog aan de normen van vandaag?</li>
+        <li>Kunnen er zonder meer zonnepanelen op?</li>
+      </ul>
+      <p class="mt-5 text-[18px] text-white/85 max-w-[32rem]">Vraag het ons, of vraag vrijblijvend een prijs aan.</p>
+
+      <dl class="mt-9 grid sm:grid-cols-2 gap-x-8 gap-y-6 text-[17px]">
+        <div>
+          <dt class="text-messing2 font-bold">Bellen</dt>
+          <dd><a class="kop-s text-[23px] hover:text-messing2" href="tel:+31642716462">06 42 71 64 62</a></dd>
+        </div>
+        <div>
+          <dt class="text-messing2 font-bold">Mailen</dt>
+          <dd><a class="underline underline-offset-4 hover:text-messing2 break-all" href="mailto:info@pakro-dakspecialist.nl">info@pakro-dakspecialist.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-messing2 font-bold">Adres</dt>
+          <dd>Kampstraat 22<br>6711 BS Ede</dd>
+        </div>
+        <div>
+          <dt class="text-messing2 font-bold">Openingstijden</dt>
+          <dd>Maandag t/m zondag:<br>24 uur geopend</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@pakro-dakspecialist.nl" method="post" enctype="text/plain" class="op-licht lg:col-span-6 bg-white text-inkt p-6 lg:p-10 rounded-[4px] grid sm:grid-cols-2 gap-x-5 gap-y-4 self-start">
+      <div class="sm:col-span-2"><label class="font-bold text-[16px]" for="naam">Naam</label><input required id="naam" name="Naam" autocomplete="name" class="mt-1 w-full border-2 border-naad rounded-[3px] px-3 py-2.5 bg-white focus:border-indigo2"></div>
+      <div><label class="font-bold text-[16px]" for="tel">Telefoonnummer</label><input id="tel" type="tel" name="Telefoonnummer" autocomplete="tel" class="mt-1 w-full border-2 border-naad rounded-[3px] px-3 py-2.5 bg-white focus:border-indigo2"></div>
+      <div><label class="font-bold text-[16px]" for="mail">E-mail</label><input id="mail" type="email" name="E-mail" autocomplete="email" class="mt-1 w-full border-2 border-naad rounded-[3px] px-3 py-2.5 bg-white focus:border-indigo2"></div>
+      <div><label class="font-bold text-[16px]" for="adres">Adres</label><input id="adres" name="Adres" autocomplete="street-address" class="mt-1 w-full border-2 border-naad rounded-[3px] px-3 py-2.5 bg-white focus:border-indigo2"></div>
+      <div><label class="font-bold text-[16px]" for="plaats">Plaats</label><input id="plaats" name="Plaats" autocomplete="address-level2" class="mt-1 w-full border-2 border-naad rounded-[3px] px-3 py-2.5 bg-white focus:border-indigo2"></div>
+      <div class="sm:col-span-2"><label class="font-bold text-[16px]" for="bericht">Bericht</label><textarea required id="bericht" name="Bericht" rows="4" class="mt-1 w-full border-2 border-naad rounded-[3px] px-3 py-2.5 bg-white focus:border-indigo2"></textarea></div>
+      <div class="sm:col-span-2"><button class="knop kop-s bg-messing text-inkt text-[19px] px-7 py-3.5 rounded-[4px] w-full sm:w-auto">Bericht versturen</button></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="op-licht">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-10 lg:py-14 grid lg:grid-cols-12 gap-x-12 gap-y-8 text-[15px]">
+    <div class="lg:col-span-8">
+      <h2 class="kop-s text-[20px]">Hier zijn wij aan het werk</h2>
+      <p class="mt-2 leading-relaxed">Onder andere in Arnhem, Asperen, Barneveld, Beesd, Beusichem, Buren, Culemborg, Ede, Everdingen, Geldermalsen, Heteren, Houten, Kapel-Avezaath, Kerk-Avezaath, Leerdam, Meteren, Renkum, Rhenen, Schalkwijk, Tiel, Veenendaal, Vianen, Waardenburg, Wadenoijen, Wageningen, Wijk bij Duurstede, Zoelmond, Zoelen en Zijderveld.</p>
+    </div>
+    <div class="lg:col-span-4">
+      <h2 class="kop-s text-[20px]">Pakro Dakspecialist</h2>
+      <p class="mt-2">Kampstraat 22, 6711 BS Ede<br>KvK 69617953<br>BTW NL001926244B08</p>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+31642716462" id="belbalk" class="belbalk knop kop-s lg:hidden fixed bottom-0 inset-x-0 z-20 bg-messing text-inkt text-[20px] h-[64px] flex items-center justify-center gap-3" aria-label="Bel Pakro Dakspecialist: 06 42 71 64 62">
+  <svg viewBox="0 0 24 24" class="w-5 h-5" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.100.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.200.2 2.400.6 3.600.1.300 0 .7-.2 1z"/></svg>
+  Bel 06 42 71 64 62
+</a>
+
+<script>
+  // Legenda en tekening lichten samen op.
+  const zet = (n, aan) => document.querySelectorAll(`[data-n="${n}"]`).forEach(e => e.classList.toggle('aan', aan));
+  document.querySelectorAll('[data-n]').forEach(e => {
+    e.addEventListener('mouseenter', () => zet(e.dataset.n, true));
+    e.addEventListener('mouseleave', () => zet(e.dataset.n, false));
+  });
+  // Belbalk pas tonen als de hero-knop uit beeld is.
+  const balk = document.getElementById('belbalk');
+  new IntersectionObserver(([x]) => balk.classList.toggle('weg', x.isIntersecting)).observe(document.getElementById('hero-knop'));
+</script>
+</body>
+</html>
