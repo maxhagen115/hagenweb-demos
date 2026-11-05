@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakkerswinkel Utrecht | Bakkerij en lunchroom aan de Plompetorengracht</title>
+<meta name="description" content="Ontbijt, lunch en high tea onder de oude gewelven aan de Plompetorengracht, of vers brood van vanMenno en huisgemaakte taart om mee te nemen. Wittevrouwenstraat 2, Utrecht.">
+<meta property="og:title" content="Bakkerswinkel Utrecht">
+<meta property="og:description" content="Bakkerij en lunchroom aan de Plompetorengracht in Utrecht.">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          fles: '#23392F',
+          fles2: '#2C463A',
+          salie: '#8FAA9C',
+          saliedonker: '#557567',
+          papier: '#EEF1EA',
+          wit: '#FBFCF9',
+          ruit: '#B3322C',
+          ruitdonker: '#93261F',
+          inkt: '#1C2A23',
+        },
+        fontFamily: {
+          kop: ['"Young Serif"', 'Georgia', 'serif'],
+          tekst: ['Karla', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Karla, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 0 0; }
+  .boog-klein { border-radius: 200px 200px 6px 6px; }
+  .ruitjes {
+    background-color: #FBFCF9;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(179,50,44,.55) 0 14px, transparent 14px 28px),
+      repeating-linear-gradient(90deg, rgba(179,50,44,.55) 0 14px, transparent 14px 28px);
+  }
+  .korrel::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #B3322C; outline-offset: 3px; }
+  .uren td { padding: .55rem 0; border-bottom: 1px solid rgba(35,57,47,.12); }
+  .uren tr:last-child td { border-bottom: 0; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="bg-papier text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-wit focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-fles text-papier/90 text-[13px] text-center px-4 py-2">
+  Demo voor Bakkerswinkel Utrecht, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-papier sticky top-0 z-30 border-b border-fles/10">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3 shrink-0">
+      <img src="assets/logo-oud.png" alt="" class="w-12 h-12 mix-blend-multiply">
+      <span class="leading-none">
+        <span class="block font-kop text-[19px] tracking-[0.04em] text-fles">Bakkerswinkel</span>
+        <span class="block text-[12px] tracking-[0.3em] text-saliedonker mt-1">UTRECHT</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-fles/80" aria-label="Hoofdmenu">
+      <a href="#winkel" class="hover:text-ruit transition-colors">Winkel</a>
+      <a href="#gewelven" class="hover:text-ruit transition-colors">Lunchroom</a>
+      <a href="#fondue" class="hover:text-ruit transition-colors">Kaasfondue</a>
+      <a href="#bezoek" class="hover:text-ruit transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:+31302667999" class="knop hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-fles text-fles px-4 py-2 text-[15px] font-semibold hover:bg-fles hover:text-papier">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      030 266 7999
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-7 md:pt-14 pb-14 md:pb-20 grid md:grid-cols-[1.05fr_1fr] gap-8 md:gap-14 items-end">
+    <div class="md:pb-10">
+      <p class="font-kop text-saliedonker text-[15px] md:text-lg">Bakkerij en lunchroom aan de Plompetorengracht</p>
+      <h1 class="font-kop text-fles text-[42px] leading-[1.02] md:text-[76px] md:leading-[0.98] tracking-[-0.015em] mt-4">Even binnenlopen bij de bakker.</h1>
+      <p class="text-[17px] md:text-[19px] leading-relaxed text-inkt/80 mt-5 md:mt-6 max-w-[30rem]">
+        Ontbijt, lunch of onze bekende high tea onder de oude gewelven. Of neem vers brood van vanMenno en huisgemaakte taart mee uit de winkel.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31302667999" class="knop inline-flex items-center gap-3 rounded-full bg-ruit hover:bg-ruitdonker text-white px-7 py-4 text-[17px] font-semibold shadow-[0_10px_24px_-10px_rgba(147,38,31,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel voor een tafel
+        </a>
+        <a href="#bezoek" class="text-fles font-semibold underline decoration-salie decoration-2 underline-offset-[6px] hover:decoration-ruit">Openingstijden en route</a>
+      </div>
+      <p class="mt-6 md:mt-8 flex items-center gap-2 text-[15px] text-inkt/70">
+        <span class="text-ruit tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-fles">4,4</strong> uit 992 Google-reviews</span>
+      </p>
+    </div>
+    <div class="relative">
+      <div class="absolute -inset-3 md:-inset-4 boog border-2 border-salie/60" aria-hidden="true"></div>
+      <img src="assets/google-01.jpg" alt="Het boogvormige etalageraam van Bakkerswinkel Utrecht met de tekst ontbijt, lunch, high tea en fondue au fromage"
+           class="relative boog w-full aspect-[4/5] md:aspect-[5/6] object-cover object-[46%_center]">
+    </div>
+  </div>
+</section>
+
+<!-- Aankondiging fondue -->
+<a href="#fondue" class="block bg-fles text-papier hover:bg-fles2 transition-colors">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-center">
+    <span class="font-kop text-[18px]">Vanaf vrijdag 6 november is de kaasfondue terug.</span>
+    <span class="text-salie underline underline-offset-4">Zo reserveer je</span>
+  </div>
+</a>
+
+<!-- Aan de straat: de winkel -->
+<section id="winkel" class="scroll-mt-20 py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-12 items-start">
+      <div class="md:col-span-5 md:sticky md:top-28">
+        <p class="font-kop text-saliedonker text-lg">Aan de straat</p>
+        <h2 class="font-kop text-fles text-[36px] md:text-[52px] leading-[1.05] mt-2">De winkel: alles om mee te nemen.</h2>
+        <p class="text-[17px] leading-[1.75] text-inkt/80 mt-6 max-w-md">
+          Aan de Wittevrouwenstraat zit onze winkel. Daar liggen elke dag de heerlijkste broden van vanMenno,
+          naast huisgemaakte taarten, scones, jam en andere zoetigheden. Koffie en sandwiches maken we vers voor je klaar.
+        </p>
+        <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-[16px] text-fles max-w-sm">
+          <li class="flex gap-2"><span class="text-ruit">•</span>Brood van vanMenno</li>
+          <li class="flex gap-2"><span class="text-ruit">•</span>Huisgemaakte taart</li>
+          <li class="flex gap-2"><span class="text-ruit">•</span>Scones en jam</li>
+          <li class="flex gap-2"><span class="text-ruit">•</span>Koffie</li>
+          <li class="flex gap-2"><span class="text-ruit">•</span>Sandwiches</li>
+          <li class="flex gap-2"><span class="text-ruit">•</span>Zoetigheden</li>
+        </ul>
+        <div class="mt-10 rounded-2xl bg-wit p-6 border border-fles/10 max-w-md">
+          <h3 class="font-kop text-fles text-[22px]">Liever bestellen?</h3>
+          <p class="text-[16px] leading-relaxed text-inkt/75 mt-2">
+            Alles uit de winkel kun je ook bestellen om af te halen, los of als take away pakket.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-[16px] font-semibold">
+            <a href="tel:+31302667999" class="text-ruit hover:text-ruitdonker">Bel 030 266 7999</a>
+            <a href="mailto:info@bakkerswinkelutrecht.nl?subject=Bestelling%20afhalen" class="text-fles underline underline-offset-4 decoration-salie hover:decoration-ruit">Mail je bestelling</a>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-7 grid grid-cols-2 gap-4 md:gap-5">
+        <img src="assets/google-03.jpg" alt="Desembroden van vanMenno en croissants in de broodkast" class="col-span-2 w-full aspect-[4/3] object-cover object-[center_30%] rounded-[6px]">
+        <img src="assets/google-07.jpg" alt="Biologische croissants met een handgeschreven bordje" class="w-full aspect-[3/4] object-cover boog-klein">
+        <img src="assets/google-08.jpg" alt="Koffie en een stuk kruimeltaart om mee te nemen" class="w-full aspect-[3/4] object-cover rounded-[6px] mt-10">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Aan de gracht: de gewelven -->
+<section id="gewelven" class="scroll-mt-20 relative bg-fles text-papier korrel overflow-hidden">
+  <div class="relative max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <p class="font-kop text-salie text-lg">Een trap lager, aan de gracht</p>
+      <h2 class="font-kop text-[36px] md:text-[56px] leading-[1.04] mt-2">Aan tafel in de oude gewelven.</h2>
+      <p class="text-[17px] md:text-[18px] leading-[1.75] text-papier/80 mt-6 max-w-2xl">
+        Ons pand staat op de hoek van de Plompetorengracht en de Wittevrouwenstraat, en het bakkersbloed stroomt hier al sinds de 18e eeuw.
+        In de gewelven waar bakkersfamilies vroeger hun brood bakten en serveerden, zit nu ons restaurant.
+        Van buitenaf zie je het niet, maar beneden is veel meer ruimte dan je denkt.
+      </p>
+    </div>
+
+    <div class="mt-14 md:mt-20 grid md:grid-cols-3 gap-10 md:gap-8 items-end">
+      <figure>
+        <img src="assets/site-03.jpg" alt="Kaneelbroodjes met poedersuiker op een geruit kleed" class="w-full aspect-square object-cover rounded-[6px]">
+        <figcaption class="mt-5">
+          <h3 class="font-kop text-[26px]">Ontbijt</h3>
+          <p class="text-papier/75 mt-1 leading-relaxed">Rustig beginnen met vers brood en koffie, onder de bogen.</p>
+        </figcaption>
+      </figure>
+      <figure class="md:-mb-0">
+        <img src="assets/google-02.jpg" alt="Lunchgerecht op een bloemetjesbord met salade en desembrood" class="w-full aspect-[4/5] object-cover boog-klein">
+        <figcaption class="mt-5">
+          <h3 class="font-kop text-[26px]">Lunch</h3>
+          <p class="text-papier/75 mt-1 leading-relaxed">Een goed belegde boterham met frisse salade, op bloemetjesservies.</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/site-02.jpg" alt="Tafeltje met bloemen tegen de oude tegelwand" class="w-full aspect-[4/5] md:aspect-square object-cover rounded-[6px]">
+        <figcaption class="mt-5">
+          <h3 class="font-kop text-[26px]">High tea</h3>
+          <p class="text-papier/75 mt-1 leading-relaxed">Onze bekende high tea, aan een tafeltje bij de oude tegels.</p>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-16 md:mt-20 flex flex-col md:flex-row md:items-center gap-5 md:gap-10 border-t border-papier/15 pt-10">
+      <p class="font-kop text-[22px] md:text-[26px] leading-snug max-w-xl">Iets te vieren, of kom je met meer dan 7 personen? Neem dan even contact met ons op.</p>
+      <div class="flex flex-wrap gap-x-6 gap-y-3 md:ml-auto">
+        <a href="tel:+31302667999" class="knop inline-flex items-center rounded-full bg-ruit hover:bg-ruitdonker text-white px-6 py-3.5 font-semibold">Bel 030 266 7999</a>
+        <a href="mailto:info@bakkerswinkelutrecht.nl?subject=Reservering%20groep" class="inline-flex items-center font-semibold underline underline-offset-4 decoration-salie hover:decoration-white">Of stuur een mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kaasfondue -->
+<section id="fondue" class="scroll-mt-20 bg-papier">
+  <div class="ruitjes h-5" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-7">
+      <p class="font-kop text-saliedonker text-lg">'s Avonds, als het seizoen er is</p>
+      <h2 class="font-kop text-fles text-[40px] md:text-[64px] leading-[1.0] mt-2">Fondue au fromage.</h2>
+      <p class="text-[17px] md:text-[18px] leading-[1.75] text-inkt/80 mt-6 max-w-xl">
+        Als de dagen korter worden, gaan de gewelven 's avonds open voor onze heerlijke kaasfondue.
+        Vanaf vrijdag 6 november is hij weer terug. Reserveer op tijd je tafel.
+      </p>
+      <a href="tel:+31302667999" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-ruit hover:bg-ruitdonker text-white px-7 py-4 text-[17px] font-semibold">
+        Bel om te reserveren
+      </a>
+    </div>
+    <div class="md:col-span-5">
+      <div class="bg-wit rounded-2xl border border-fles/10 p-7 md:p-9">
+        <p class="font-kop text-fles text-[22px]">Fondue-avonden</p>
+        <dl class="mt-5 space-y-4 text-[17px]">
+          <div class="flex justify-between gap-4 border-b border-fles/10 pb-4"><dt class="text-inkt/70">Wanneer</dt><dd class="font-semibold text-fles text-right">donderdag t/m zaterdag</dd></div>
+          <div class="flex justify-between gap-4 border-b border-fles/10 pb-4"><dt class="text-inkt/70">Hoe laat</dt><dd class="font-semibold text-fles tabular-nums">17:45 – 22:00</dd></div>
+          <div class="flex justify-between gap-4"><dt class="text-inkt/70">Weer terug</dt><dd class="font-semibold text-fles">vrijdag 6 november</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Terras-strook -->
+<section class="bg-fles text-papier">
+  <div class="ruitjes h-5" aria-hidden="true"></div>
+  <div class="grid md:grid-cols-2 items-stretch">
+    <div class="relative min-h-[360px] md:min-h-[560px]">
+      <img src="assets/google-06.jpg" alt="Terras met rood-wit geruite tafelkleden en groene stoelen voor de etalage" class="absolute inset-0 w-full h-full object-cover object-[center_38%]">
+    </div>
+    <div class="px-5 md:px-16 py-14 md:py-20 flex flex-col justify-center max-w-xl">
+      <p class="font-kop text-salie text-lg">Bij mooi weer</p>
+      <h2 class="font-kop text-[34px] md:text-[48px] leading-[1.05] mt-2">Buiten, aan het geruite kleed.</h2>
+      <p class="text-[17px] leading-[1.75] text-papier/80 mt-6">
+        Als de zon schijnt, staan de tafels met rood-witte kleden op de stoep van de Wittevrouwenstraat.
+        Koffie, een stuk taart en kijken wie er langsloopt.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <h2 class="font-kop text-fles text-[34px] md:text-[48px] leading-[1.05]">Wat gasten zeggen.</h2>
+      <p class="text-inkt/70 text-[16px]"><span class="text-ruit">★</span> <strong class="text-fles">4,4</strong> uit 992 reviews op Google</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-12 gap-6 md:gap-8">
+      <blockquote class="md:col-span-7 bg-wit rounded-2xl border border-fles/10 p-8 md:p-10">
+        <p class="font-kop text-fles text-[19px] md:text-[26px] leading-[1.45]">
+          “De Bakkerswinkel is een plek waar ik regelmatig terugkom. Op het eerste gezicht is het een schattig klein winkeltje, met een hele knusse en gezellige, bijna huiskamerachtige sfeer. Onderaan de gracht hebben ze nog aanzienlijk meer ruimte, maar dat is van buitenaf niet direct zichtbaar.”
+        </p>
+        <footer class="mt-6 flex items-center gap-3 text-[15px]">
+          <span class="text-ruit tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</span>
+          <span class="font-semibold text-fles">jipp jansen</span><span class="text-inkt/60">via Google</span>
+        </footer>
+      </blockquote>
+      <blockquote class="md:col-span-5 md:mt-16 bg-salie/25 rounded-2xl p-8 md:p-10">
+        <p class="text-[18px] leading-[1.7] text-inkt/85">
+          “Leuke en ongedwongen sfeer. Appeltaart was heerlijk en de chocoladetaart om je vingers bij af te likken. Fijne ervaring.
+          Mijn nicht vierde haar 50e verjaardag en was ook helemaal blij.”
+        </p>
+        <footer class="mt-6 flex flex-wrap items-center gap-3 text-[15px]">
+          <span class="text-ruit tracking-[2px]" aria-label="4 van 5 sterren">★★★★<span class="text-fles/25">★</span></span>
+          <span class="font-semibold text-fles">Marjan Wagenaar-kooke</span><span class="text-inkt/60">via Google</span>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Bezoek -->
+<section id="bezoek" class="scroll-mt-20 bg-wit border-t border-fles/10">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 md:gap-14">
+    <div class="md:col-span-5 order-2 md:order-1">
+      <img src="assets/google-05.jpg" alt="De gevel van Bakkerswinkel Utrecht met terras en parasols" class="w-full aspect-[4/5] object-cover object-bottom boog">
+    </div>
+    <div class="md:col-span-7 order-1 md:order-2">
+      <h2 class="font-kop text-fles text-[34px] md:text-[48px] leading-[1.05]">Kom langs.</h2>
+      <div class="mt-8 grid sm:grid-cols-2 gap-10">
+        <div>
+          <h3 class="font-kop text-fles text-[20px]">Adres</h3>
+          <p class="mt-2 text-[17px] leading-relaxed">Wittevrouwenstraat 2<br>3512 CT Utrecht</p>
+          <p class="text-inkt/65 text-[15px] mt-1">Op de hoek met de Plompetorengracht</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Bakkerswinkel+Utrecht+Wittevrouwenstraat+2+Utrecht" class="inline-block mt-3 font-semibold text-fles underline underline-offset-4 decoration-salie hover:decoration-ruit">Route plannen</a>
+
+          <h3 class="font-kop text-fles text-[20px] mt-9">Contact</h3>
+          <p class="mt-2 text-[17px] leading-loose">
+            <a href="tel:+31302667999" class="text-ruit font-semibold hover:text-ruitdonker">030 266 7999</a><br>
+            <a href="mailto:info@bakkerswinkelutrecht.nl" class="text-fles underline underline-offset-4 decoration-salie hover:decoration-ruit break-all">info@bakkerswinkelutrecht.nl</a>
+          </p>
+        </div>
+        <div>
+          <h3 class="font-kop text-fles text-[20px]">Openingstijden</h3>
+          <table class="uren w-full mt-2 text-[16px] tabular-nums">
+            <tbody>
+              <tr><td>Maandag</td><td class="text-right text-inkt/60">gesloten</td></tr>
+              <tr><td>Dinsdag</td><td class="text-right">10:00 – 17:00</td></tr>
+              <tr><td>Woensdag</td><td class="text-right">10:00 – 17:00</td></tr>
+              <tr><td>Donderdag</td><td class="text-right">10:00 – 17:00</td></tr>
+              <tr><td>Vrijdag</td><td class="text-right">10:00 – 17:00</td></tr>
+              <tr><td>Zaterdag</td><td class="text-right">09:00 – 17:00</td></tr>
+              <tr><td>Zondag</td><td class="text-right">09:00 – 17:00</td></tr>
+            </tbody>
+          </table>
+          <p class="text-inkt/65 text-[15px] mt-3">Kaasfondue in het seizoen: do t/m za, 17:45 – 22:00.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-fles text-papier/80">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[15px]">
+    <div class="flex items-center gap-3">
+      <span class="w-14 h-14 rounded-full bg-papier grid place-items-center shrink-0"><img src="assets/logo-oud.png" alt="" class="w-14 h-14 mix-blend-multiply"></span>
+      <div>
+        <p class="font-kop text-papier text-[18px]">Bakkerswinkel Utrecht</p>
+        <p>Wittevrouwenstraat 2, 3512 CT Utrecht</p>
+      </div>
+    </div>
+    <p class="flex flex-wrap gap-x-6 gap-y-1">
+      <a href="tel:+31302667999" class="hover:text-white">030 266 7999</a>
+      <a href="mailto:info@bakkerswinkelutrecht.nl" class="hover:text-white">info@bakkerswinkelutrecht.nl</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-papier/95 backdrop-blur border-t border-fles/10 p-3 flex gap-3">
+  <a href="tel:+31302667999" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-ruit text-white py-3.5 font-semibold text-[16px]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel 030 266 7999
+  </a>
+  <a href="#bezoek" class="inline-flex items-center justify-center rounded-full border-2 border-fles text-fles px-5 font-semibold text-[15px]">Tijden</a>
+</div>
+
+</body>
+</html>
