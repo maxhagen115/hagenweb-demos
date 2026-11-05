@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blokker Daksystemen BV | Dakdekker in Ede voor platte en hellende daken</title>
+<meta name="description" content="Blokker Daksystemen uit Ede: dakbedekking voor platte en hellende daken, bitumen, PVC, EPDM en lood- en zinkwerk. Bel 0318 614 991.">
+<link rel="icon" href="assets/site-02.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          oranje: { DEFAULT: '#EE5A24', donker: '#C9461A' },
+          bitumen: '#1F1D1B',
+          leisteen: '#4A4744',
+          grind: '#ECEAE6',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Instrument Sans', system-ui, sans-serif; color: #4A4744; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; color: #1F1D1B; letter-spacing: -0.02em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Puntdak-uitsnede van de hoofdfoto */
+  .gevel { clip-path: polygon(0 26%, 50% 0, 100% 26%, 100% 100%, 0 100%); }
+  .dakrand { clip-path: polygon(0 26%, 50% 0, 100% 26%, 100% 31%, 50% 5%, 0 31%); }
+
+  /* Schuine sectieranden, zoals een dakhelling */
+  .helling-boven { clip-path: polygon(0 0, 100% 48px, 100% 100%, 0 100%); }
+  @media (min-width: 768px) { .helling-boven { clip-path: polygon(0 0, 100% 96px, 100% 100%, 0 100%); } }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #EE5A24; outline-offset: 3px;
+  }
+
+  /* Eén moment bij binnenkomst: de dakrand valt op zijn plek. Alleen als JS de class zet. */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .dakrand { animation: dak .9s cubic-bezier(.2,.8,.2,1) .15s both; }
+    @keyframes dak { from { transform: translateY(-40px); opacity: 0; } to { transform: none; opacity: 1; } }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-white antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-bitumen text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor Blokker Daksystemen BV, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="border-b border-grind">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 h-20 md:h-24 flex items-center justify-between gap-6">
+    <a href="#" aria-label="Blokker Daksystemen, naar boven">
+      <img src="assets/site-01.jpg" alt="Blokker Daksystemen bv" width="420" height="122" class="h-11 md:h-14 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-bitumen">
+      <a href="#werk" class="hover:text-oranje">Wat we doen</a>
+      <a href="#reviews" class="hover:text-oranje">Reviews</a>
+      <a href="#werkgebied" class="hover:text-oranje">Werkgebied</a>
+      <a href="#contact" class="hover:text-oranje">Contact</a>
+    </nav>
+    <a href="tel:+31318614991" class="hidden sm:flex items-center gap-2 font-kop font-bold text-bitumen text-lg hover:text-oranje" style="font-stretch:112%">
+      <svg class="w-5 h-5 text-oranje" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+      0318 614 991
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-8 md:pt-16 pb-14 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 order-1">
+      <p class="text-[15px] font-semibold text-oranje mb-4">Dakdekker in Ede</p>
+      <h1 class="kop font-black text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.4rem]">Ga voor zekerheid boven je&nbsp;hoofd.</h1>
+      <p class="mt-6 text-lg md:text-xl leading-relaxed max-w-[34ch]">Platte en hellende daken, goed gelegd en netjes afgewerkt. Voor particulieren, bedrijven en instellingen in de hele regio.</p>
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:+31318614991" class="knop inline-flex items-center justify-center gap-3 bg-oranje hover:bg-oranje-donker text-white font-kop font-bold text-lg md:text-xl px-7 py-4 md:py-5 rounded-md shadow-[0_10px_30px_-10px_rgba(238,90,36,.7)]" style="font-stretch:112%">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+          Bel 0318 614 991
+        </a>
+        <a href="#contact" class="font-semibold text-bitumen underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranje">Vrijblijvend offerte aanvragen</a>
+      </div>
+      <a href="#reviews" class="mt-9 inline-flex items-center gap-3 text-[15px] group">
+        <span class="flex text-oranje" aria-hidden="true">
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="m10 1.5 2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="m10 1.5 2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="m10 1.5 2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="m10 1.5 2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="m10 1.5 2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="text-bitumen">4,9</strong> uit 15 Google-reviews</span>
+      </a>
+    </div>
+
+    <div class="md:col-span-6 order-2 relative">
+      <div class="relative mx-auto max-w-[400px] md:max-w-[520px] md:mr-0">
+        <div class="dakrand absolute -inset-x-5 -top-5 h-full bg-oranje" aria-hidden="true"></div>
+        <img src="assets/google-01.jpg" alt="De bus van Blokker Daksystemen voor een woonblok in de steigers, met het spandoek van Blokker aan de steiger" width="600" height="800" class="gevel relative w-full aspect-[4/5] object-cover object-[50%_70%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pijnpunt -->
+<section class="bg-bitumen text-white">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-10 md:py-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+    <div>
+      <h2 class="kop !text-white font-extrabold text-2xl md:text-3xl">Lekkage of pannen van het dak?</h2>
+      <p class="mt-2 text-white/75 max-w-[60ch]">Bel ons en vertel wat je ziet. We denken mee en zoeken een oplossing, ook als het om iets kleins gaat.</p>
+    </div>
+    <a href="tel:+31318614991" class="knop shrink-0 inline-flex items-center justify-center gap-2 border-2 border-oranje text-white font-semibold px-6 py-3 rounded-md hover:bg-oranje">Bel 0318 614 991</a>
+  </div>
+</section>
+
+<!-- Wat we doen -->
+<section id="werk" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4">
+      <h2 class="kop font-black text-4xl md:text-5xl leading-[1.05]">Plat of schuin, wij liggen erop.</h2>
+      <p class="mt-5 leading-relaxed max-w-[40ch]">Blokker Daksystemen is gespecialiseerd in dakbedekking. Van een nieuw bitumen dak op je uitbouw tot het vervangen van het dak van een bedrijfspand.</p>
+    </div>
+    <ul class="md:col-span-8 md:pl-8 divide-y divide-grind border-y border-grind">
+      <li class="py-8 grid sm:grid-cols-[1fr_1.3fr] gap-3 sm:gap-8">
+        <h3 class="kop font-extrabold text-2xl md:text-3xl">Platte daken</h3>
+        <div>
+          <p class="leading-relaxed">Dakbedekking van bitumen, PVC of EPDM. We kijken wat bij jouw dak past en leggen het waterdicht en strak af.</p>
+          <p class="mt-3 text-sm font-semibold text-bitumen">Bitumen, PVC, EPDM</p>
+        </div>
+      </li>
+      <li class="py-8 grid sm:grid-cols-[1fr_1.3fr] gap-3 sm:gap-8">
+        <h3 class="kop font-extrabold text-2xl md:text-3xl">Hellende daken</h3>
+        <p class="leading-relaxed">Losgewaaide pannen, een lekkage of een dak dat aan vervanging toe is. We komen kijken, geven eerlijk advies en lossen het netjes op.</p>
+      </li>
+      <li class="py-8 grid sm:grid-cols-[1fr_1.3fr] gap-3 sm:gap-8">
+        <h3 class="kop font-extrabold text-2xl md:text-3xl">Lood- en zinkwerk</h3>
+        <p class="leading-relaxed">De afwerking rond schoorstenen, dakkapellen en goten. Juist daar ontstaat vaak een lekkage, dus daar letten we extra op.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="helling-boven bg-grind pt-28 md:pt-40 pb-20 md:pb-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+      <h2 class="kop font-black text-4xl md:text-5xl">Wat klanten zeggen</h2>
+      <p class="text-bitumen"><strong>4,9 sterren</strong> uit 15 reviews op Google</p>
+    </div>
+
+    <figure class="bg-white rounded-lg p-8 md:p-12 grid md:grid-cols-12 gap-6 md:gap-10 items-start">
+      <svg class="md:col-span-1 w-12 h-12 text-oranje" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M4 44 24 8l20 36h-8L24 22 12 44z"/></svg>
+      <div class="md:col-span-11">
+        <blockquote class="kop font-bold text-xl sm:text-2xl md:text-[2rem] !leading-[1.35]" style="font-stretch:112%">
+          “Uitermate tevreden<br>Goede communicatie<br>Alles volgens afspraak en echt vakwerk geleverd<br>Meedenkend en altijd overal een oplossing voor<br>TOP”
+        </blockquote>
+        <figcaption class="mt-5 text-[15px]"><strong class="text-bitumen">Rene Van Boggelen</strong>, Google-review, 5 sterren</figcaption>
+      </div>
+    </figure>
+
+    <div class="mt-6 columns-1 md:columns-2 gap-6 [&>figure]:break-inside-avoid [&>figure]:mb-6">
+      <figure class="bg-white rounded-lg p-7">
+        <blockquote class="leading-relaxed">“Wat een fijn bedrijf. Vriendelijke personeel en behulpzaam. Hebben fantastisch werk geleverd. Snel en vakkundig geholpen. Wij zijn erg tevreden. Beslist een aanrader.👌🏼”</blockquote>
+        <figcaption class="mt-4 text-sm"><strong class="text-bitumen">Tineke Hörst</strong>, 5 sterren</figcaption>
+      </figure>
+      <figure class="bg-white rounded-lg p-7">
+        <blockquote class="leading-relaxed">“Wij hadden helaas een lekkage. Contact opgenomen met de dhr. Blokker en ik kan u zeggen, dat andere bedrijven van Blokker kunnen leren.</blockquote>
+        <ul class="mt-3 space-y-1 text-[15px] list-disc pl-5 marker:text-oranje">
+          <li>Communicatie - top.</li>
+          <li>Denkt mee - super.</li>
+          <li>Werkt mooi en netjes - altijd goed.</li>
+          <li>Prijs-kwaliteitverhouding - klasse.</li>
+          <li>Verstand van zaken - zeker weten. …”</li>
+        </ul>
+        <figcaption class="mt-4 text-sm"><strong class="text-bitumen">Davy van Alfen</strong>, 5 sterren</figcaption>
+      </figure>
+      <figure class="bg-white rounded-lg p-7">
+        <blockquote class="leading-relaxed">“Topbedrijf! Er waaiden een aantal pannen van het dak en zodra dit opgemerkt was heb ik op hun website dit gemeld. Diezelfde dag nog bevestiging dat ik gebeld zou worden. Afspraak gemaakt voor de volgende dag en de volgende ochtend 2 vriendelijke heren op bezoek. Ze kwamen met goede tips, dachten netjes mee …”</blockquote>
+        <figcaption class="mt-4 text-sm"><strong class="text-bitumen">Tim K</strong>, 5 sterren</figcaption>
+      </figure>
+      <figure class="bg-white rounded-lg p-7">
+        <blockquote class="leading-relaxed">“Prima bedrijf. Denken mee. Heb je een probleem, dan proberen zij alles om je zo snel mogelijk, goed te helpen. Kortom fijne vaklui voor een schappelijke prijs en soms zelfs helemaal gratis, service van de zaak. Een aanrader!”</blockquote>
+        <figcaption class="mt-4 text-sm"><strong class="text-bitumen">Arnold Fickweiler</strong>, 5 sterren</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Werkgebied -->
+<section id="werkgebied" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+  <div>
+    <h2 class="kop font-black text-4xl md:text-5xl leading-[1.05]">Vanuit Ede, voor de hele regio.</h2>
+    <p class="mt-6 leading-relaxed max-w-[52ch]">Vanuit ons bedrijfspand aan de Darwinstraat zijn we dagelijks onderweg in het gebied van Arnhem tot Nijmegen en van Nieuwegein tot Amersfoort en Apeldoorn, en alles daartussen.</p>
+    <p class="mt-4 leading-relaxed max-w-[52ch]">Woon of werk je buiten de regio? Ook dan ben je bij ons aan het juiste adres. Door de centrale ligging kan iedereen in het land een beroep op ons doen.</p>
+  </div>
+  <figure class="relative">
+    <svg viewBox="0 0 440 310" class="w-full h-auto" role="img" aria-label="Werkgebied rond Ede: Arnhem, Nijmegen, Nieuwegein, Amersfoort en Apeldoorn">
+      <g stroke="#D7D3CD" stroke-width="1.5" stroke-dasharray="3 5">
+        <line x1="264" y1="134" x2="360" y2="173"/>
+        <line x1="264" y1="134" x2="344" y2="262"/>
+        <line x1="264" y1="134" x2="40" y2="141"/>
+        <line x1="264" y1="134" x2="156" y2="58"/>
+        <line x1="264" y1="134" x2="388" y2="30"/>
+      </g>
+      <circle cx="264" cy="134" r="58" fill="#EE5A24" opacity=".09"/>
+      <g fill="#1F1D1B" font-family="Instrument Sans, sans-serif" font-size="14" font-weight="600">
+        <circle cx="360" cy="173" r="5"/><text x="372" y="178">Arnhem</text>
+        <circle cx="344" cy="262" r="5"/><text x="356" y="267">Nijmegen</text>
+        <circle cx="40" cy="141" r="5"/><text x="20" y="166">Nieuwegein</text>
+        <circle cx="156" cy="58" r="5"/><text x="96" y="44">Amersfoort</text>
+        <circle cx="388" cy="30" r="5"/><text x="340" y="16">Apeldoorn</text>
+      </g>
+      <path d="M248 140 264 114 280 140z" fill="#EE5A24"/>
+      <text x="264" y="164" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="900" font-size="20" fill="#1F1D1B">Ede</text>
+    </svg>
+  </figure>
+</section>
+
+<!-- Over het bedrijf -->
+<section class="bg-bitumen text-white/80">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-24 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5">
+      <h2 class="kop !text-white font-black text-4xl md:text-5xl leading-[1.05]">Veilig gewerkt, goed materiaal.</h2>
+      <p class="mt-6 leading-relaxed max-w-[44ch]">Veiligheid en kwaliteit komen bij ons op de eerste plaats. Onze medewerkers zijn VCA-gecertificeerd en we werken uitsluitend met KOMO-gecertificeerde bouwmaterialen.</p>
+      <div class="mt-8 flex gap-3">
+        <span class="border border-white/25 rounded px-4 py-2 font-kop font-bold text-white" style="font-stretch:112%">VCA</span>
+        <span class="border border-white/25 rounded px-4 py-2 font-kop font-bold text-white" style="font-stretch:112%">KOMO</span>
+      </div>
+    </div>
+    <div class="md:col-span-6 md:col-start-7 md:border-l md:border-white/15 md:pl-12">
+      <h3 class="kop !text-white font-extrabold text-2xl md:text-3xl">Betrokken bij Ede</h3>
+      <p class="mt-5 leading-relaxed">Elk jaar gaat een deel van onze omzet naar goede doelen, zoals het Leger des Heils en Stichting Stop Pesten NU.</p>
+      <p class="mt-4 leading-relaxed">Ook sponsoren we plaatselijke activiteiten en sport- en spelvoorzieningen voor jongeren. Ons bedrijf is meerdere malen uitgeroepen tot sportiefste kampioen van Ede.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12">
+  <div class="md:col-span-5">
+    <h2 class="kop font-black text-4xl md:text-5xl leading-[1.05]">Even bellen is het snelst.</h2>
+    <p class="mt-5 leading-relaxed max-w-[42ch]">Vertel wat er met je dak aan de hand is. Liever eerst een vrijblijvende offerte? Vul het formulier in, dan nemen we contact met je op.</p>
+    <a href="tel:+31318614991" class="knop mt-8 inline-flex items-center gap-3 bg-oranje hover:bg-oranje-donker text-white font-kop font-bold text-xl px-7 py-4 rounded-md" style="font-stretch:112%">Bel 0318 614 991</a>
+    <dl class="mt-10 space-y-5 text-[15px]">
+      <div>
+        <dt class="font-semibold text-bitumen">E-mail</dt>
+        <dd><a href="mailto:info@blokkerdaksystemen.nl" class="underline decoration-oranje underline-offset-4 hover:text-oranje">info@blokkerdaksystemen.nl</a></dd>
+      </div>
+      <div>
+        <dt class="font-semibold text-bitumen">Adres</dt>
+        <dd>Darwinstraat 7 C<br>6718 XR Ede</dd>
+      </div>
+    </dl>
+  </div>
+
+  <form class="md:col-span-7 bg-grind rounded-lg p-6 md:p-10 grid sm:grid-cols-2 gap-5" action="mailto:info@blokkerdaksystemen.nl" method="post" enctype="text/plain">
+    <h3 class="sm:col-span-2 kop font-extrabold text-2xl">Vrijblijvende offerte aanvragen</h3>
+    <label class="block">
+      <span class="text-sm font-semibold text-bitumen">Naam</span>
+      <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-[#D7D3CD] bg-white px-4 py-3 focus:border-oranje focus:outline-none">
+    </label>
+    <label class="block">
+      <span class="text-sm font-semibold text-bitumen">Telefoon</span>
+      <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-md border border-[#D7D3CD] bg-white px-4 py-3 focus:border-oranje focus:outline-none">
+    </label>
+    <label class="block sm:col-span-2">
+      <span class="text-sm font-semibold text-bitumen">Plaats</span>
+      <input name="plaats" autocomplete="address-level2" class="mt-1.5 w-full rounded-md border border-[#D7D3CD] bg-white px-4 py-3 focus:border-oranje focus:outline-none">
+    </label>
+    <fieldset class="sm:col-span-2">
+      <legend class="text-sm font-semibold text-bitumen">Soort dak</legend>
+      <div class="mt-2 flex flex-wrap gap-2">
+        <label class="cursor-pointer"><input type="radio" name="dak" value="Plat dak" class="peer sr-only"><span class="block rounded-md border border-[#D7D3CD] bg-white px-4 py-2 peer-checked:border-oranje peer-checked:bg-oranje peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-oranje">Plat dak</span></label>
+        <label class="cursor-pointer"><input type="radio" name="dak" value="Hellend dak" class="peer sr-only"><span class="block rounded-md border border-[#D7D3CD] bg-white px-4 py-2 peer-checked:border-oranje peer-checked:bg-oranje peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-oranje">Hellend dak</span></label>
+        <label class="cursor-pointer"><input type="radio" name="dak" value="Lood- en zinkwerk" class="peer sr-only"><span class="block rounded-md border border-[#D7D3CD] bg-white px-4 py-2 peer-checked:border-oranje peer-checked:bg-oranje peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-oranje">Lood- en zinkwerk</span></label>
+      </div>
+    </fieldset>
+    <label class="block sm:col-span-2">
+      <span class="text-sm font-semibold text-bitumen">Wat is er aan de hand?</span>
+      <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-md border border-[#D7D3CD] bg-white px-4 py-3 focus:border-oranje focus:outline-none"></textarea>
+    </label>
+    <button type="submit" class="knop sm:col-span-2 justify-self-start bg-bitumen hover:bg-black text-white font-semibold px-7 py-3.5 rounded-md">Offerte aanvragen</button>
+  </form>
+</section>
+
+</main>
+
+<footer class="border-t border-grind">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-sm">
+    <img src="assets/site-01.jpg" alt="Blokker Daksystemen bv" width="420" height="122" class="h-10 w-auto self-start md:self-auto">
+    <p>Blokker Daksystemen BV, Darwinstraat 7 C, 6718 XR Ede</p>
+    <p><a href="tel:+31318614991" class="hover:text-oranje">0318 614 991</a> <span class="mx-2 text-[#D7D3CD]">|</span> <a href="mailto:info@blokkerdaksystemen.nl" class="hover:text-oranje">info@blokkerdaksystemen.nl</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belknop op mobiel -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-grind p-3">
+  <a href="tel:+31318614991" class="knop flex items-center justify-center gap-3 bg-oranje text-white font-kop font-bold text-lg py-3.5 rounded-md" style="font-stretch:112%">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Bel 0318 614 991
+  </a>
+</div>
+
+</body>
+</html>
