@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="nl" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dakmanagement B.V. | Dakdekker in Ede, raadgevers en uitvoerders</title>
+<meta name="description" content="Dakmanagement uit Ede inspecteert, adviseert en voert uit, met eigen vakmensen. Lekkage? Dag en nacht bereikbaar op 036 521 8040.">
+<meta property="og:title" content="Dakmanagement B.V. | Weet hoe uw dak erbij ligt">
+<meta property="og:description" content="Dakdekker in Ede. Inspectie, advies en uitvoering met eigen vakmensen.">
+<meta property="og:image" content="assets/foto-drone.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M3 13 21 5l9 7-18 9z' fill='%2312A15E'/%3E%3Cpath d='m12 21 1 9' stroke='%2322282B' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          dak: '#0B7A46',
+          'dak-diep': '#08623A',
+          logo: '#12A15E',
+          bitumen: '#22282B',
+          zink: '#E9ECEA',
+          'zink-diep': '#D9DEDB',
+          lood: '#5C666B',
+          wit: '#F8F9F8',
+        },
+        fontFamily: {
+          kop: ['"Big Shoulders Display"', 'Impact', 'sans-serif'],
+          tekst: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: "Hanken Grotesk", system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid #12A15E; outline-offset: 3px; }
+
+  /* Schuine rand uit het dakvlak in het logo */
+  .dakvlak { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); }
+  @media (min-width: 1024px) {
+    .dakvlak { clip-path: polygon(19% 0, 100% 0, 100% 100%, 0 100%); }
+  }
+  .dakrand-boven { clip-path: polygon(0 clamp(20px, 4vw, 64px), 100% 0, 100% 100%, 0 100%); }
+
+  .knop { transition: background-color .2s, transform .2s; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+
+  .hero-kop { font-size: clamp(4.1rem, 18vw, 6rem); }
+  @media (min-width: 1024px) {
+    .hero-kop { font-size: clamp(5rem, min(10vw, 15vh), 8.6rem); }
+    section .hero-tekst { padding-left: max(2.5rem, calc((100vw - 1440px) / 2 + 2.5rem)); padding-right: 0; }
+  }
+  @media (min-width: 1280px) {
+    section .hero-tekst { padding-left: max(4rem, calc((100vw - 1440px) / 2 + 4rem)); }
+  }
+
+  .belbalk { transition: transform .25s ease; }
+  .belbalk.weg { transform: translateY(100%); }
+
+  .sterren { color: #12A15E; letter-spacing: .1em; }
+
+  .js .hero-foto { animation: onthul 900ms cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes onthul {
+    from { transform: translateX(3%) scale(1.02); }
+    to { transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js .hero-foto { animation: none; }
+    html { scroll-behavior: auto !important; }
+    .knop:hover { transform: none; }
+  }
+</style>
+</head>
+<body class="bg-zink text-bitumen font-tekst antialiased pb-[64px] lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-wit focus:p-3">Ga naar de inhoud</a>
+
+<div class="bg-bitumen text-wit text-[13px] leading-tight text-center px-4 py-2">
+  <a href="https://hagenweb.nl" class="underline-offset-2 hover:underline">Demo voor Dakmanagement B.V., gemaakt door Hagenweb</a>
+</div>
+
+<header class="relative z-20 bg-wit">
+  <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-6 px-5 lg:px-10 xl:px-16 py-2 lg:py-3">
+    <a href="#inhoud" class="shrink-0" aria-label="Dakmanagement, naar boven">
+      <img src="assets/logo-oud.png" alt="Dakmanagement, raadgevers en uitvoerders" width="250" height="109" class="h-12 lg:h-16 w-auto">
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 font-medium text-[15px]">
+      <a class="hover:text-dak transition-colors" href="#diensten">Advies en uitvoering</a>
+      <a class="hover:text-dak transition-colors" href="#werkwijze">Werkwijze</a>
+      <a class="hover:text-dak transition-colors" href="#online">Online Dakmanagement</a>
+      <a class="hover:text-dak transition-colors" href="#reviews">Reviews</a>
+      <a class="hover:text-dak transition-colors" href="#contact">Contact</a>
+    </nav>
+    <a href="tel:+31365218040" class="lg:hidden font-semibold text-dak underline underline-offset-4">036 521 8040</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="relative">
+    <div class="lg:grid lg:grid-cols-12 lg:min-h-[calc(100dvh-33px-88px)]">
+      <div class="relative lg:col-start-7 xl:col-start-6 lg:col-span-6 xl:col-span-7 lg:row-start-1 overflow-hidden h-[28vh] min-h-[190px] lg:h-auto dakvlak">
+        <img src="assets/foto-drone.jpg" alt="Dakdekkers van bovenaf gezien op een groot plat dak, oude en nieuwe dakbanen naast elkaar" width="1273" height="954" class="hero-foto lg:absolute lg:inset-0 w-full h-full object-cover object-[60%_50%] lg:object-[70%_50%]" fetchpriority="high">
+      </div>
+      <div class="relative z-10 lg:col-start-1 lg:col-span-7 lg:row-start-1 self-center hero-tekst px-5 pt-2 pb-10 lg:py-6">
+        <p class="font-semibold text-dak text-base lg:text-lg">Dakdekker in Ede</p>
+        <h1 class="hero-kop font-kop font-extrabold leading-[.88] tracking-[-.005em] mt-2 max-w-[9ch]">Weet hoe uw dak erbij ligt.</h1>
+        <p class="mt-4 lg:mt-6 text-lg lg:text-xl leading-snug max-w-[27rem] lg:max-w-[30rem]">Dakmanagement inspecteert, adviseert en voert uit, met eigen vakmensen. U ziet op foto's wat er speelt, en bij lekkage belt u ons dag en nacht.</p>
+        <div class="mt-5 lg:mt-7 flex flex-wrap items-center gap-x-7 gap-y-3">
+          <a id="hero-bel" href="tel:+31365218040" class="knop inline-block bg-dak hover:bg-dak-diep text-white font-kop font-extrabold text-[1.9rem] lg:text-[2.2rem] leading-none px-7 py-4 lg:py-5">Bel 036 521 8040</a>
+          <a href="#contact" class="font-semibold underline underline-offset-4 decoration-2 decoration-logo hover:text-dak transition-colors">Offerte aanvragen</a>
+        </div>
+        <p class="mt-4 text-[15px] text-lood"><span class="sterren" aria-hidden="true">★</span> <span class="ml-0.5">4,5 sterren uit 8 Google-reviews</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spoed -->
+  <section aria-labelledby="spoed-kop" class="bg-dak text-white">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16 py-12 lg:py-16 grid lg:grid-cols-12 gap-x-10 gap-y-6 items-end">
+      <div class="lg:col-span-5">
+        <h2 id="spoed-kop" class="font-kop font-extrabold text-[2.75rem] lg:text-[3.5rem] leading-[.95]">Lekt uw dak? Bel gerust, ook midden in de nacht.</h2>
+        <p class="mt-4 text-lg leading-snug max-w-[34rem]">Ook een kleine lekkage moet weg: waterschade is vaak onherstelbaar en de kosten lopen snel op. Is er meer aan de hand, dan laten we u met een fotorapportage zien wat er speelt.</p>
+      </div>
+      <div class="lg:col-span-7 lg:text-right">
+        <a href="tel:+31365218040" class="font-kop font-black text-[17vw] sm:text-[7rem] lg:text-[6.5rem] xl:text-[8rem] leading-[.85] whitespace-nowrap hover:underline decoration-4 underline-offset-8">036 521 8040</a>
+        <p class="mt-3 text-lg font-medium">24 uur per dag, 7 dagen per week bereikbaar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Raadgever of uitvoerder -->
+  <section id="diensten" aria-labelledby="diensten-kop" class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16 pt-14 lg:pt-32 pb-14 lg:pb-28">
+    <h2 id="diensten-kop" class="font-kop font-extrabold text-[3.1rem] lg:text-[6rem] leading-[.92] max-w-[14ch]">Alleen onze kennis, of ook onze handen.</h2>
+    <p class="mt-5 text-lg lg:text-xl leading-snug max-w-[38rem]">U kiest zelf hoe ver u gaat. We werken vooral voor gebouwenbeheerders, beleggers, woningcorporaties, bedrijven en overheid, aan platte en hellende daken.</p>
+
+    <div class="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-x-12 gap-y-14">
+      <div class="lg:col-span-5">
+        <h3 class="font-kop font-extrabold text-[2.4rem] leading-none text-dak">Als raadgever</h3>
+        <p class="mt-3 text-lg leading-snug">U maakt alleen gebruik van onze kennis. Ons advies krijgt u in een gedetailleerde rapportage, die u ook online kunt bekijken.</p>
+        <ul class="mt-6 border-t-2 border-bitumen">
+          <li class="py-3 border-b border-zink-diep font-medium">Inspectie en inventarisatie van uw daken</li>
+          <li class="py-3 border-b border-zink-diep font-medium">Meerjarenonderhoudsplanning (MJOP)</li>
+          <li class="py-3 border-b border-zink-diep font-medium">Schadeonderzoek</li>
+          <li class="py-3 border-b border-zink-diep font-medium">Beoordelen van onderhoudsmethoden</li>
+          <li class="py-3 border-b border-zink-diep font-medium">Conditie van een dak bij aankoop van een pand</li>
+        </ul>
+
+        <h3 class="font-kop font-extrabold text-[2.4rem] leading-none text-dak mt-14">Als uitvoerder</h3>
+        <p class="mt-3 text-lg leading-snug">Maatwerk op basis van wat we op uw dak aantreffen. We werken met eigen personeel, zodat er geen informatie verloren gaat onderweg.</p>
+        <ul class="mt-6 border-t-2 border-bitumen">
+          <li class="py-3 border-b border-zink-diep font-medium">Dakrenovaties, ook van hellende daken</li>
+          <li class="py-3 border-b border-zink-diep font-medium">Lood zetten en spouwlood</li>
+          <li class="py-3 border-b border-zink-diep font-medium">Zink en dakpannen</li>
+          <li class="py-3 border-b border-zink-diep font-medium">Daktuinen</li>
+          <li class="py-3 border-b border-zink-diep font-medium">Zonnepanelen, energie- en milieubesparende maatregelen</li>
+        </ul>
+      </div>
+
+      <figure class="lg:col-span-7 lg:-mr-10 xl:-mr-16 -mx-5 lg:ml-0">
+        <img src="assets/foto-brander.jpg" alt="Vakman van Dakmanagement brengt dakbedekking aan op een plat dak, met flatgebouwen en bomen op de achtergrond" width="1273" height="849" class="w-full h-[320px] sm:h-[460px] lg:h-[720px] object-cover object-[58%_50%]">
+        <figcaption class="px-5 lg:px-0 mt-5 font-kop font-bold text-[2rem] lg:text-[2.6rem] leading-none max-w-[20ch]">Vaklieden met liefde voor het vak.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Werkwijze -->
+  <section id="werkwijze" aria-labelledby="werkwijze-kop" class="bg-zink-diep dakrand-boven">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16 pt-20 lg:pt-36 pb-14 lg:pb-28">
+      <h2 id="werkwijze-kop" class="font-kop font-extrabold text-[3.1rem] lg:text-[6rem] leading-[.92] max-w-[13ch]">Eerst op het dak. Dan pas een offerte.</h2>
+      <ol class="mt-12 lg:mt-16 space-y-8 lg:space-y-6">
+        <li class="grid grid-cols-[3.5rem_1fr] lg:grid-cols-[5rem_minmax(0,38rem)] gap-x-3 lg:ml-0">
+          <span class="font-kop font-black text-[3.25rem] lg:text-[4.5rem] leading-none text-dak" aria-hidden="true">1</span>
+          <div><h3 class="font-semibold text-xl">We gaan het dak op</h3><p class="mt-1 text-lg leading-snug">We verzamelen de gegevens ter plekke en leggen op foto vast hoe uw dak erbij ligt.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] lg:grid-cols-[5rem_minmax(0,38rem)] gap-x-3 lg:ml-[9%]">
+          <span class="font-kop font-black text-[3.25rem] lg:text-[4.5rem] leading-none text-dak" aria-hidden="true">2</span>
+          <div><h3 class="font-semibold text-xl">We nemen de tijd voor een gesprek</h3><p class="mt-1 text-lg leading-snug">Ruim en verhelderend. U hoort objectief hoe het zit.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] lg:grid-cols-[5rem_minmax(0,38rem)] gap-x-3 lg:ml-[18%]">
+          <span class="font-kop font-black text-[3.25rem] lg:text-[4.5rem] leading-none text-dak" aria-hidden="true">3</span>
+          <div><h3 class="font-semibold text-xl">U krijgt plannen van aanpak</h3><p class="mt-1 text-lg leading-snug">Meestal meerdere, met de consequenties van elke keuze erbij.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] lg:grid-cols-[5rem_minmax(0,38rem)] gap-x-3 lg:ml-[27%]">
+          <span class="font-kop font-black text-[3.25rem] lg:text-[4.5rem] leading-none text-dak" aria-hidden="true">4</span>
+          <div><h3 class="font-semibold text-xl">Daarna volgt de offerte op maat</h3><p class="mt-1 text-lg leading-snug">Helder en technisch, zo nodig onderbouwd met een bouwfysische of windbelastingberekening.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] lg:grid-cols-[5rem_minmax(0,38rem)] gap-x-3 lg:ml-[36%]">
+          <span class="font-kop font-black text-[3.25rem] lg:text-[4.5rem] leading-none text-dak" aria-hidden="true">5</span>
+          <div><h3 class="font-semibold text-xl">Onze eigen mensen voeren uit</h3><p class="mt-1 text-lg leading-snug">De werkomschrijving uit de offerte is ook hun werkbrief. Zo leiden afspraken niet tot misverstanden.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Online Dakmanagement -->
+  <section id="online" aria-labelledby="online-kop" class="bg-bitumen text-wit">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16 py-14 lg:py-28 grid lg:grid-cols-12 gap-x-12 gap-y-10">
+      <div class="lg:col-span-6">
+        <h2 id="online-kop" class="font-kop font-extrabold text-[3.1rem] lg:text-[6rem] leading-[.92] max-w-[12ch]">Uw daken, altijd online in te zien.</h2>
+        <p class="mt-5 text-lg lg:text-xl leading-snug max-w-[32rem]">Met Online Dakmanagement ziet u de actuele stand van zaken van al uw daken. Ook een lekkage melden of een offerte aanvragen doet u daar.</p>
+        <a href="https://online.dakmanagement.nl/login" class="inline-block mt-7 font-semibold underline underline-offset-4 decoration-2 decoration-logo hover:text-logo transition-colors">Inloggen op Online Dakmanagement</a>
+      </div>
+      <div class="lg:col-span-6 lg:pt-3">
+        <h3 class="font-semibold text-logo text-lg">Wat u er terugvindt</h3>
+        <ul class="mt-3 grid grid-cols-2 gap-x-5 lg:gap-x-10 border-t border-white/25 text-[15px] lg:text-base leading-snug">
+          <li class="py-3 border-b border-white/15">Inspectierapporten</li>
+          <li class="py-3 border-b border-white/15">Tekeningen</li>
+          <li class="py-3 border-b border-white/15">Inspectiefoto's met omschrijving</li>
+          <li class="py-3 border-b border-white/15">Inventarisatie&shy;rapporten en RI&amp;E's</li>
+          <li class="py-3 border-b border-white/15">Wateraccumulatie&shy;rapporten</li>
+          <li class="py-3 border-b border-white/15">Meerjarenbegrotingen</li>
+          <li class="py-3 border-b border-white/15">Meldingen en opvolging</li>
+          <li class="py-3 border-b border-white/15">Actieplannen</li>
+          <li class="py-3 border-b border-white/15">Offertes</li>
+          <li class="py-3 border-b border-white/15">Facturen</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialismen -->
+  <section aria-labelledby="meer-kop" class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16 pt-14 lg:pt-32 pb-14 lg:pb-28">
+    <h2 id="meer-kop" class="font-kop font-extrabold text-[3.1rem] lg:text-[6rem] leading-[.92] max-w-[12ch]">Meer dan dakbedekking alleen.</h2>
+
+    <div class="mt-12 lg:mt-16 grid lg:grid-cols-12 gap-x-12 gap-y-8 items-center">
+      <img src="assets/foto-overzicht.jpg" alt="Twee dakdekkers aan het werk op een groot plat dak waarop plassen regenwater staan" width="1173" height="879" class="lg:col-span-7 -mx-5 lg:mx-0 lg:-ml-10 xl:-ml-16 w-[calc(100%+2.5rem)] lg:w-[calc(100%+2.5rem)] xl:w-[calc(100%+4rem)] max-w-none h-[300px] sm:h-[420px] lg:h-[560px] object-cover">
+      <div class="lg:col-span-5">
+        <h3 class="font-kop font-extrabold text-[2.4rem] leading-none text-dak">Wateraccumulatie</h3>
+        <p class="mt-3 text-lg leading-snug">Loopt regenwater niet snel genoeg weg, dan blijft het op een plat dak staan. Het dak vervormt onder het gewicht, er komt nog meer water bij en uiteindelijk kan de constructie bezwijken.</p>
+        <p class="mt-3 text-lg leading-snug">Wij maken de berekening en brengen de aanpassingen aan: extra hemelwaterafvoeren, noodafvoeren, afschot of versteviging van de onderconstructie.</p>
+      </div>
+    </div>
+
+    <div class="mt-16 lg:mt-24 grid md:grid-cols-3 gap-x-12 gap-y-10">
+      <div class="border-t-2 border-bitumen pt-4">
+        <h3 class="font-kop font-extrabold text-[2rem] leading-none">Onderhouds&shy;overeenkomst</h3>
+        <p class="mt-3 leading-relaxed">Elk jaar inspecteren en reinigen we uw dak, en voeren we zo nodig kleine reparaties uit. De fotorapportage ziet u daarna online.</p>
+      </div>
+      <div class="border-t-2 border-bitumen pt-4">
+        <h3 class="font-kop font-extrabold text-[2rem] leading-none">Rookproef</h3>
+        <p class="mt-3 leading-relaxed">We blazen rook onder de dakbedekking en kijken waar die naar buiten komt. Zo vinden we een lek, hoe klein ook.</p>
+      </div>
+      <div class="border-t-2 border-bitumen pt-4">
+        <h3 class="font-kop font-extrabold text-[2rem] leading-none">Veilig op het dak</h3>
+        <p class="mt-3 leading-relaxed">Risico-inventarisatie en -evaluatie (RI&amp;E), ankerpunten, kabelsystemen, markeringen, hekwerk en gevel- of kooiladders. Geleverd en gemonteerd.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" aria-labelledby="reviews-kop" class="bg-wit">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16 py-14 lg:py-28 grid lg:grid-cols-12 gap-x-12 gap-y-12">
+      <div class="lg:col-span-7">
+        <h2 id="reviews-kop" class="font-semibold text-lg text-lood"><span class="sterren" aria-hidden="true">★</span> <span class="ml-0.5">4,5 sterren uit 8 Google-reviews</span></h2>
+        <figure class="mt-6">
+          <blockquote class="font-kop font-extrabold text-[2.75rem] sm:text-[3.5rem] lg:text-[4.5rem] leading-[.98]">"Vakmannen, leveren echt super werk. Ruimen alles ook netjes op als ze klaar zijn valt niks over te zeggen!"</blockquote>
+          <figcaption class="mt-5 font-semibold text-lg">Rayvano Smaling</figcaption>
+        </figure>
+      </div>
+      <div class="lg:col-span-5 lg:pt-12 space-y-8">
+        <figure class="border-t-2 border-bitumen pt-4">
+          <blockquote class="text-lg leading-snug">"Jeroen en zijn team zijn van alle markten thuis. Prima werk geleverd. Top mannen, bedankt."</blockquote>
+          <figcaption class="mt-2 font-semibold">Freddie Meddens</figcaption>
+        </figure>
+        <figure class="border-t-2 border-bitumen pt-4">
+          <blockquote class="text-lg leading-snug">"Inmiddels al een aantal daken met Dakmanagenent gedaan. Werken netjes, zijn direct en leveren vakmanschap. Dat laatste is echt goed te zien."</blockquote>
+          <figcaption class="mt-2 font-semibold">Bart Elbers</figcaption>
+        </figure>
+        <figure class="border-t-2 border-bitumen pt-4">
+          <blockquote class="text-lg leading-snug">"Prima werk geleverd...we zijn goed tevreden"</blockquote>
+          <figcaption class="mt-2 font-semibold">Hille de Bruin</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="contact-kop" class="bg-zink">
+    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16 py-14 lg:py-28 grid lg:grid-cols-12 gap-x-12 gap-y-12">
+      <div class="lg:col-span-6">
+        <h2 id="contact-kop" class="font-kop font-extrabold text-[3.1rem] lg:text-[6rem] leading-[.92] max-w-[11ch]">Wilt u weten hoe het ervoor staat?</h2>
+        <p class="mt-5 text-lg lg:text-xl leading-snug max-w-[30rem]">Neem vrijblijvend contact op voor een afspraak, een offerte of meer informatie.</p>
+        <dl class="mt-8 space-y-4 text-lg">
+          <div><dt class="text-lood text-base">Telefoon</dt><dd><a class="font-semibold hover:text-dak transition-colors" href="tel:+31365218040">036 521 8040</a>, elke dag 24 uur geopend</dd></div>
+          <div><dt class="text-lood text-base">E-mail</dt><dd><a class="font-semibold hover:text-dak transition-colors" href="mailto:info@dakmanagement.nl">info@dakmanagement.nl</a></dd></div>
+          <div><dt class="text-lood text-base">Adres</dt><dd><a class="font-semibold hover:text-dak transition-colors" href="https://www.google.com/maps/search/?api=1&query=Fultonstraat+14+6716+AX+Ede">Fultonstraat 14, 6716 AX Ede</a></dd></div>
+        </dl>
+      </div>
+      <form class="lg:col-span-6 bg-wit p-6 sm:p-8 lg:p-10 space-y-5" action="mailto:info@dakmanagement.nl" method="post" enctype="text/plain">
+        <div>
+          <label for="naam" class="block font-semibold mb-1.5">Naam</label>
+          <input id="naam" name="naam" type="text" required autocomplete="name" class="w-full bg-zink border-0 border-b-2 border-bitumen px-3 py-3 text-lg">
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="telefoon" class="block font-semibold mb-1.5">Telefoon</label>
+            <input id="telefoon" name="telefoon" type="tel" autocomplete="tel" class="w-full bg-zink border-0 border-b-2 border-bitumen px-3 py-3 text-lg">
+          </div>
+          <div>
+            <label for="email" class="block font-semibold mb-1.5">E-mail</label>
+            <input id="email" name="email" type="email" required autocomplete="email" class="w-full bg-zink border-0 border-b-2 border-bitumen px-3 py-3 text-lg">
+          </div>
+        </div>
+        <div>
+          <label for="bericht" class="block font-semibold mb-1.5">Waar gaat het om?</label>
+          <textarea id="bericht" name="bericht" rows="5" required class="w-full bg-zink border-0 border-b-2 border-bitumen px-3 py-3 text-lg"></textarea>
+        </div>
+        <button type="submit" class="knop bg-dak hover:bg-dak-diep text-white font-kop font-extrabold text-[1.75rem] leading-none px-7 py-4 w-full sm:w-auto">Verstuur uw aanvraag</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-bitumen text-wit">
+  <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16 py-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-[15px]">
+    <p class="font-semibold">Dakmanagement B.V., Fultonstraat 14, 6716 AX Ede</p>
+    <p><a class="underline underline-offset-4" href="https://hagenweb.nl">Demo gemaakt door Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Belknop mobiel -->
+<a id="belbalk" href="tel:+31365218040" class="belbalk lg:hidden fixed inset-x-0 bottom-0 z-30 bg-dak text-white text-center font-kop font-extrabold text-[1.75rem] leading-none py-4">Bel 036 521 8040</a>
+
+<script>
+  (function () {
+    var knop = document.getElementById('hero-bel');
+    var balk = document.getElementById('belbalk');
+    if (!('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) {
+      balk.classList.toggle('weg', e[0].isIntersecting);
+    }).observe(knop);
+  })();
+</script>
+</body>
+</html>
