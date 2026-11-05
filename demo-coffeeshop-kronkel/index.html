@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coffeeshop Kronkel, sinds 1986 in hartje Nijmegen</title>
+<meta name="description" content="Coffeeshop Kronkel aan de Vlaamsegas in Nijmegen. Shop, bar en keuken, elke dag open. Bekijk de openingstijden, de route en waar u kunt parkeren.">
+<meta property="og:title" content="Coffeeshop Kronkel, sinds 1986 in hartje Nijmegen">
+<meta property="og:description" content="Shop, bar en keuken aan de Vlaamsegas. Elke dag open.">
+<meta property="og:image" content="assets/google-02.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        spar: '#193124',
+        woud: '#10221A',
+        zon: '#FFCC04',
+        licht: '#F4EFD9',
+        mos: '#A9B8A4',
+      },
+      fontFamily: {
+        kop: ['Shrikhand', 'Georgia', 'serif'],
+        tekst: ['"Familjen Grotesk"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  :focus-visible { outline: 3px solid #FFCC04; outline-offset: 3px; border-radius: 2px; }
+  .op-zon :focus-visible { outline-color: #193124; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* De kronkel: dezelfde S-curve als het plafond boven de bar. */
+  .kronkel-foto { clip-path: url(#kronkel-mobiel); }
+  @media (min-width: 1024px) { .kronkel-foto { clip-path: url(#kronkel-desktop); } }
+  .kronkel-lijn path { vector-effect: non-scaling-stroke; }
+
+  .knop { transition: transform .18s ease, background-color .18s ease, color .18s ease, border-color .18s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+
+  .onderstreep { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; transition: text-decoration-thickness .15s ease; }
+  .onderstreep:hover { text-decoration-thickness: 3px; }
+
+  .afgewezen .inhoud { display: none; }
+  .bericht-jonger { display: none; }
+  .afgewezen .bericht-jonger { display: block; }
+</style>
+</head>
+<body class="bg-spar font-tekst text-licht antialiased pb-[76px] lg:pb-0">
+
+<!-- Vormen voor de kronkelrand, herbruikbaar door de hele pagina -->
+<svg width="0" height="0" class="absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <clipPath id="kronkel-desktop" clipPathUnits="objectBoundingBox">
+      <path d="M.17,0 C.03,.16 .23,.33 .12,.52 C.03,.68 .02,.86 .1,1 L1,1 L1,0 Z"/>
+    </clipPath>
+    <clipPath id="kronkel-mobiel" clipPathUnits="objectBoundingBox">
+      <path d="M0,0 L1,0 L1,.84 C.83,1.03 .66,.79 .46,.9 C.28,1 .14,1.02 0,.87 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-zon focus:text-spar focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-woud text-mos text-[13px] leading-snug text-center px-4 py-2">
+  Demo voor Coffeeshop Kronkel, gemaakt door <a href="https://hagenweb.nl" class="onderstreep text-licht">Hagenweb</a>
+</div>
+
+<script>
+  // Leeftijdsvraag als verrijking: zonder JavaScript blijft alles zichtbaar en staat 18+ in de voet.
+  (function () {
+    var bewaard = false;
+    try { bewaard = localStorage.getItem('kronkel-18') === 'ja'; } catch (e) {}
+    if (bewaard) return;
+    var balk = document.createElement('div');
+    balk.className = 'bg-zon text-spar op-zon';
+    balk.innerHTML =
+      '<div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-1.5 flex items-center justify-center gap-3 text-[15px] font-semibold">' +
+        '<span>Bent u 18 jaar of ouder?</span>' +
+        '<button type="button" data-antwoord="ja" class="knop min-h-[36px] px-5 rounded-full border-2 border-spar hover:bg-spar hover:text-zon">Ja</button>' +
+        '<button type="button" data-antwoord="nee" class="knop min-h-[36px] px-5 rounded-full border-2 border-spar hover:bg-spar hover:text-zon">Nee</button>' +
+      '</div>';
+    balk.addEventListener('click', function (e) {
+      var antwoord = e.target.getAttribute && e.target.getAttribute('data-antwoord');
+      if (antwoord === 'ja') {
+        try { localStorage.setItem('kronkel-18', 'ja'); } catch (err) {}
+        document.documentElement.classList.remove('afgewezen');
+        balk.remove();
+      } else if (antwoord === 'nee') {
+        document.documentElement.classList.add('afgewezen');
+      }
+    });
+    document.currentScript.parentNode.insertBefore(balk, document.currentScript);
+  })();
+</script>
+
+<div class="bericht-jonger px-6 py-24 text-center">
+  <p class="font-kop text-4xl text-zon">Tot over een paar jaar.</p>
+  <p class="mt-4 text-lg">Deze website is alleen voor bezoekers van 18 jaar en ouder.</p>
+</div>
+
+<div class="inhoud">
+
+<header class="relative z-20">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 h-[68px] lg:h-[84px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 group" aria-label="Kronkel, naar boven">
+      <img src="assets/logo-oud.png" width="180" height="180" alt="" class="w-11 h-11 lg:w-[52px] lg:h-[52px] rounded-full transition-transform duration-300 group-hover:-rotate-12">
+      <span class="font-kop text-[1.7rem] lg:text-[2rem] leading-none text-licht">Kronkel</span>
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 text-[17px] font-medium">
+      <a href="#zaak" class="hover:text-zon transition-colors">De zaak</a>
+      <a href="#gasten" class="hover:text-zon transition-colors">Gasten</a>
+      <a href="#verhaal" class="hover:text-zon transition-colors">Verhaal</a>
+      <a href="#parkeren" class="hover:text-zon transition-colors">Parkeren</a>
+      <a href="#vind-ons" class="hover:text-zon transition-colors">Vind ons</a>
+    </nav>
+    <a href="tel:+31243240909" class="text-[17px] font-semibold onderstreep hidden sm:inline">024 324 0909</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="lg:grid lg:grid-cols-12 lg:min-h-[max(660px,calc(100vh-166px))]">
+      <div class="relative order-2 lg:order-none lg:col-start-6 lg:col-span-7 lg:row-start-1">
+        <div class="relative h-[196px] sm:h-[340px] lg:h-full lg:absolute lg:inset-0">
+          <img src="assets/google-02.jpg" width="1600" height="901" fetchpriority="high"
+               alt="De golvende bar van Kronkel met messing voorkant, hangende lampen en een gebogen houten plafond"
+               class="kronkel-foto absolute inset-0 w-full h-full object-cover object-[52%_50%]">
+          <svg class="kronkel-lijn hidden lg:block absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M.17,0 C.03,.16 .23,.33 .12,.52 C.03,.68 .02,.86 .1,1" fill="none" stroke="#FFCC04" stroke-width="5"/>
+          </svg>
+          <svg class="kronkel-lijn lg:hidden absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M1,.84 C.83,1.03 .66,.79 .46,.9 C.28,1 .14,1.02 0,.87" fill="none" stroke="#FFCC04" stroke-width="4"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="relative z-10 lg:col-start-1 lg:col-span-6 lg:row-start-1 flex flex-col justify-center px-5 lg:pl-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] lg:pr-4 pt-3 pb-12 lg:pt-2 lg:pb-[88px]">
+        <p class="text-[17px] lg:text-xl font-medium text-licht">Coffeeshop in Nijmegen, sinds 1986</p>
+        <h1 class="font-kop text-zon text-[2.85rem] sm:text-6xl lg:text-[clamp(4rem,5.9vw,5.75rem)] leading-[1.02] mt-2 lg:mt-4">Thuiskomen in hartje Nijmegen.</h1>
+        <p class="mt-4 lg:mt-7 text-[17px] lg:text-[21px] leading-[1.45] max-w-[25em] text-licht">Goede producten, heerlijke maaltijden en een ontspannen sfeer. Elke dag open tot één uur &#39;s&nbsp;nachts.</p>
+        <div class="mt-5 lg:mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
+          <a href="https://www.google.com/maps/search/?api=1&query=Vlaamsegas+30,+6511+HR+Nijmegen" target="_blank" rel="noopener"
+             class="knop inline-flex items-center justify-center min-h-[60px] lg:min-h-[68px] px-8 lg:px-10 rounded-full bg-zon text-spar text-lg lg:text-xl font-bold hover:bg-licht w-full sm:w-auto">
+            Route naar de Vlaamsegas
+          </a>
+          <a href="tel:+31243240909" class="onderstreep text-lg font-semibold hidden lg:inline">Of bel 024 324 0909</a>
+        </div>
+        <p class="mt-4 lg:mt-8 text-[15px] lg:text-base text-mos"><span class="text-zon" aria-hidden="true">★</span> 4,6 sterren uit 1752 Google-reviews</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Openingstijden -->
+  <section id="open" aria-labelledby="open-kop" class="relative bg-zon text-spar op-zon">
+    <svg class="absolute bottom-full left-0 w-full h-[34px] lg:h-[70px] block" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,70 L0,38 C210,-6 380,62 640,40 C900,18 1100,-10 1440,34 L1440,70 Z" fill="#FFCC04"/>
+    </svg>
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-10 pb-16 lg:pt-14 lg:pb-24 lg:grid lg:grid-cols-12 lg:gap-10">
+      <div class="lg:col-span-8">
+        <h2 id="open-kop" class="font-kop text-4xl lg:text-6xl leading-none">Elke dag open</h2>
+        <dl class="mt-8 lg:mt-10">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-x-6 gap-y-1 border-t-2 border-spar py-4 lg:py-5">
+            <dt class="text-xl lg:text-2xl font-semibold">Shop</dt>
+            <dd class="font-kop text-[2.55rem] sm:text-5xl lg:text-[4.25rem] leading-none tabular-nums">09:00 tot 01:00</dd>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-x-6 gap-y-1 border-t-2 border-spar py-4 lg:py-5">
+            <dt class="text-xl lg:text-2xl font-semibold">Bar</dt>
+            <dd class="font-kop text-[2.55rem] sm:text-5xl lg:text-[4.25rem] leading-none tabular-nums">11:00 tot 01:00</dd>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-x-6 gap-y-1 border-y-2 border-spar py-4 lg:py-5">
+            <dt class="text-xl lg:text-2xl font-semibold">Keuken</dt>
+            <dd class="font-kop text-[2.55rem] sm:text-5xl lg:text-[4.25rem] leading-none tabular-nums">12:00 tot 22:00</dd>
+          </div>
+        </dl>
+      </div>
+      <address class="not-italic mt-10 lg:mt-0 lg:col-span-3 lg:col-start-10 lg:self-end text-lg lg:text-xl leading-relaxed font-medium">
+        <p>Vlaamsegas 30<br>6511 HR Nijmegen</p>
+        <p class="mt-4"><a class="onderstreep" href="tel:+31243240909">024 324 0909</a><br><a class="onderstreep" href="mailto:info@kronkel.nl">info@kronkel.nl</a></p>
+      </address>
+    </div>
+  </section>
+
+  <!-- De zaak -->
+  <section id="zaak" aria-labelledby="zaak-kop" class="relative pt-24 lg:pt-36 pb-20 lg:pb-32">
+    <svg class="absolute top-0 left-0 w-full h-[34px] lg:h-[70px] block" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 L0,32 C260,74 470,10 760,34 C1010,54 1210,70 1440,28 L1440,0 Z" fill="#FFCC04"/>
+    </svg>
+    <div class="lg:grid lg:grid-cols-12 lg:gap-10 lg:items-end max-w-[1600px] mx-auto">
+      <figure class="lg:col-span-7">
+        <img src="assets/site-03.jpg" width="1920" height="1435" loading="lazy"
+             alt="De lounge van Kronkel: lederen banken en ronde tafels onder roze lampen en paars licht"
+             class="w-full h-[320px] sm:h-[460px] lg:h-[680px] object-cover object-center rounded-br-[90px] lg:rounded-br-[180px]">
+      </figure>
+      <div class="px-5 lg:px-0 lg:col-span-5 lg:pr-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] mt-10 lg:mt-0 lg:pb-6">
+        <h2 id="zaak-kop" class="font-kop text-zon text-4xl sm:text-5xl lg:text-[3.75rem] leading-[1.05]">Zoek een plek uit en blijf nog even.</h2>
+        <p class="mt-6 text-lg lg:text-xl leading-relaxed max-w-[32em]">Kronkel is een shop, een bar en een keuken onder één dak. De kwaliteit staat voorop in alles wat we verkopen, van de rookwaren tot wat er uit onze keuken komt.</p>
+        <p class="mt-4 text-lg lg:text-xl leading-relaxed max-w-[32em]">En er is altijd een plek die bij u past: diep in de bank, aan een lange tafel of bij de haard.</p>
+      </div>
+    </div>
+
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 mt-6 lg:mt-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 lg:items-end">
+      <figure class="lg:col-span-5 lg:col-start-1">
+        <img src="assets/google-04.jpg" width="800" height="450" loading="lazy"
+             alt="Halfronde hoekbank met wanden van oud hout, een lage tafel en een haard"
+             class="w-full aspect-[16/10] object-cover rounded-tr-[70px]">
+        <figcaption class="mt-3 text-mos">De hoekbank bij de haard, tussen oud hout.</figcaption>
+      </figure>
+      <figure class="lg:col-span-7">
+        <img src="assets/google-03.jpg" width="800" height="450" loading="lazy"
+             alt="Houten tafels bij de ramen, met hangende planten en een plantenwand"
+             class="w-full aspect-[16/9] object-cover rounded-bl-[70px] lg:rounded-bl-[120px]">
+        <figcaption class="mt-3 text-mos">Lange tafels aan het raam, onder het groen.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="gasten" aria-labelledby="gasten-kop" class="bg-woud py-20 lg:py-32">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10">
+      <h2 id="gasten-kop" class="text-xl lg:text-2xl font-medium">Wat onze gasten vinden: <span class="text-zon whitespace-nowrap">4,6 sterren</span> uit 1752 Google-reviews</h2>
+
+      <figure class="mt-8 lg:mt-12">
+        <blockquote lang="nl">
+          <p class="font-kop text-zon text-[2.6rem] sm:text-6xl lg:text-[6.5rem] leading-[1.02]">“Beste coffeeshop van Nederland.</p>
+          <p class="mt-5 lg:mt-8 text-xl lg:text-[1.75rem] leading-snug max-w-[34em]">Lief personeel, deskundig advies. Ik zou het liefst elke dag hier zitten. Heerlijk eten en lekker verse milkshakes. Je kunt er fantastisch zitten. (...) Echt een avond uit.”</p>
+        </blockquote>
+        <figcaption class="mt-4 font-semibold text-lg">Mario Van Der Beek</figcaption>
+      </figure>
+
+      <div class="mt-16 lg:mt-24 grid gap-10 lg:grid-cols-12 lg:gap-12">
+        <figure class="lg:col-span-5">
+          <blockquote class="text-xl leading-snug">“Geweldige shop veel aanbod heel vriendelijk personeel knappe vrouw achter de balie leuke locatie mooie stad goeie prijzen niks op aan te merken”</blockquote>
+          <figcaption class="mt-3 font-semibold">Roy Den hartog</figcaption>
+        </figure>
+        <figure class="lg:col-span-3 lg:col-start-7">
+          <blockquote class="text-xl leading-snug">“Fijne winkel vriendelijke medewerkers<br>Ruime keuze&nbsp;(...)”</blockquote>
+          <figcaption class="mt-3 font-semibold">Pater Klompen</figcaption>
+        </figure>
+        <figure class="lg:col-span-3">
+          <blockquote class="text-xl leading-snug">“Snel geholpen, brede keuzes&nbsp;(...)”</blockquote>
+          <figcaption class="mt-3 font-semibold">Gini Bouw</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verhaal -->
+  <section id="verhaal" aria-labelledby="verhaal-kop" class="py-20 lg:py-32">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-x-12">
+      <div class="lg:col-span-6">
+        <h2 id="verhaal-kop" class="font-kop text-zon text-5xl lg:text-7xl leading-[1.02]">Sinds 1986.</h2>
+        <p class="mt-6 text-lg lg:text-xl leading-relaxed max-w-[32em]">Kronkel kent een rijke geschiedenis. Al sinds 1986 is dit de shop waar u thuis kunt komen. Wat er in die jaren is gebeurd en veranderd, leest u terug in ons archief.</p>
+        <ul class="mt-6 text-lg leading-relaxed">
+          <li>Happen &amp; Stappen review (1989)</li>
+          <li>Brood op de Plank</li>
+          <li>Gnoe tekeningen</li>
+          <li>Bongify review</li>
+          <li>High Tea Potcast</li>
+          <li>David Rio Chai</li>
+        </ul>
+        <p class="mt-6"><a class="onderstreep text-lg font-semibold" href="https://www.kronkel.nl/nl/culture/over-kronkel">Lees alles in het archief</a></p>
+      </div>
+      <figure class="lg:col-span-6 mt-10 lg:mt-0 overflow-hidden rounded-tl-[90px] lg:rounded-tl-[160px] h-[280px] sm:h-[400px] lg:h-auto">
+        <img src="assets/site-05.jpg" width="1920" height="1076" loading="lazy"
+             alt="Houten tafel met stoel en lamp voor een wand van oude planken, in warm licht"
+             class="w-full h-full object-cover object-[38%_100%] scale-[1.55] origin-[38%_100%]">
+      </figure>
+
+      <div class="lg:col-span-9 lg:col-start-4 mt-16 lg:mt-24 lg:border-l-[6px] lg:border-zon lg:pl-10">
+        <h3 class="font-kop text-licht text-4xl lg:text-5xl leading-[1.05]">Coffeeshop Sessions: rap in de huiskamer.</h3>
+        <p class="mt-5 text-lg lg:text-xl leading-relaxed max-w-[38em]">In de herfst van 2024 waren de leden van het Rafting Goods-collectief onze eregasten. Mensen kwamen uit het hele land voor een huiskamer-rapconcert in een coffeeshop. Was u er niet bij? We hebben de hele set opgenomen. De tweede pack bevat $KEER&amp;BOO$ en Dookie.</p>
+        <p class="mt-5"><a class="onderstreep text-lg font-semibold" href="https://www.kronkel.nl/nl">Bekijk de Sessions op kronkel.nl</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parkeren -->
+  <section id="parkeren" aria-labelledby="parkeren-kop" class="bg-woud py-20 lg:py-32">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-10 lg:items-end">
+        <h2 id="parkeren-kop" class="lg:col-span-7 font-kop text-zon text-5xl lg:text-7xl leading-[1.02]">Easy parking, easy going.</h2>
+        <p class="lg:col-span-5 mt-5 lg:mt-0 text-lg lg:text-xl leading-relaxed">Komt u met de auto? Kies uw garage, klik op de route en loop rustig naar de Vlaamsegas.</p>
+      </div>
+
+      <ul class="mt-10 lg:mt-14 border-b border-mos/40">
+        <li class="grid grid-cols-[4.5rem_1fr] lg:grid-cols-[7rem_1fr_1.25fr_auto] gap-x-4 lg:gap-x-8 gap-y-1 items-baseline border-t border-mos/40 py-5 lg:py-6">
+          <p class="font-kop text-zon text-3xl lg:text-4xl leading-none row-span-3 lg:row-span-1">3<span class="block font-tekst font-medium text-sm text-mos mt-1">min lopen</span></p>
+          <h3 class="text-xl lg:text-2xl font-semibold">Molenpoort P4</h3>
+          <div class="col-start-2 lg:col-start-auto text-[17px] leading-snug">
+            <p>€4,- per uur, de hele dag</p>
+            <p class="text-mos mt-1">Let op: na 21:00 onbereikbaar door het inrijverbod op de Tweede Walstraat. Uitrijden kan wel.</p>
+          </div>
+          <a class="col-start-2 lg:col-start-auto onderstreep font-semibold mt-1 lg:mt-0" href="https://www.google.com/maps/search/?api=1&query=Molenpoort+P4+Nijmegen" target="_blank" rel="noopener">Route</a>
+        </li>
+        <li class="grid grid-cols-[4.5rem_1fr] lg:grid-cols-[7rem_1fr_1.25fr_auto] gap-x-4 lg:gap-x-8 gap-y-1 items-baseline border-t border-mos/40 py-5 lg:py-6">
+          <p class="font-kop text-zon text-3xl lg:text-4xl leading-none row-span-3 lg:row-span-1">7<span class="block font-tekst font-medium text-sm text-mos mt-1">min lopen</span></p>
+          <h3 class="text-xl lg:text-2xl font-semibold">Keizer Karel Parkeergarage</h3>
+          <div class="col-start-2 lg:col-start-auto text-[17px] leading-snug">
+            <p>08:00 tot 18:00: €3,90 per uur</p>
+            <p>18:00 tot 08:00: €0,50 per uur</p>
+          </div>
+          <a class="col-start-2 lg:col-start-auto onderstreep font-semibold mt-1 lg:mt-0" href="https://www.google.com/maps/search/?api=1&query=Keizer+Karel+Parkeergarage+Nijmegen" target="_blank" rel="noopener">Route</a>
+        </li>
+        <li class="grid grid-cols-[4.5rem_1fr] lg:grid-cols-[7rem_1fr_1.25fr_auto] gap-x-4 lg:gap-x-8 gap-y-1 items-baseline border-t border-mos/40 py-5 lg:py-6">
+          <p class="font-kop text-zon text-3xl lg:text-4xl leading-none row-span-3 lg:row-span-1">7<span class="block font-tekst font-medium text-sm text-mos mt-1">min lopen</span></p>
+          <h3 class="text-xl lg:text-2xl font-semibold">Mariënburg Parkeergarage</h3>
+          <div class="col-start-2 lg:col-start-auto text-[17px] leading-snug">
+            <p>08:00 tot 18:00: €3,90 per uur</p>
+            <p>18:00 tot 08:00: €0,50 per uur</p>
+          </div>
+          <a class="col-start-2 lg:col-start-auto onderstreep font-semibold mt-1 lg:mt-0" href="https://www.google.com/maps/search/?api=1&query=Mari%C3%ABnburg+Parkeergarage+Nijmegen" target="_blank" rel="noopener">Route</a>
+        </li>
+        <li class="grid grid-cols-[4.5rem_1fr] lg:grid-cols-[7rem_1fr_1.25fr_auto] gap-x-4 lg:gap-x-8 gap-y-1 items-baseline border-t border-mos/40 py-5 lg:py-6">
+          <p class="font-kop text-zon text-3xl lg:text-4xl leading-none row-span-3 lg:row-span-1">8<span class="block font-tekst font-medium text-sm text-mos mt-1">min lopen</span></p>
+          <h3 class="text-xl lg:text-2xl font-semibold">Wedren Parkeerterrein</h3>
+          <div class="col-start-2 lg:col-start-auto text-[17px] leading-snug">
+            <p>€2,60 per uur, de hele dag</p>
+            <p class="text-mos mt-1">Let op: dagkaarten zijn niet meer beschikbaar.</p>
+          </div>
+          <a class="col-start-2 lg:col-start-auto onderstreep font-semibold mt-1 lg:mt-0" href="https://www.google.com/maps/search/?api=1&query=Wedren+Parkeerterrein+Nijmegen" target="_blank" rel="noopener">Route</a>
+        </li>
+        <li class="grid grid-cols-[4.5rem_1fr] lg:grid-cols-[7rem_1fr_1.25fr_auto] gap-x-4 lg:gap-x-8 gap-y-1 items-baseline border-t border-mos/40 py-5 lg:py-6">
+          <p class="font-kop text-zon text-3xl lg:text-4xl leading-none row-span-3 lg:row-span-1">10<span class="block font-tekst font-medium text-sm text-mos mt-1">min lopen</span></p>
+          <h3 class="text-xl lg:text-2xl font-semibold">Eiermarkt Parkeergarage</h3>
+          <div class="col-start-2 lg:col-start-auto text-[17px] leading-snug">
+            <p>08:00 tot 18:00: €3,90 per uur</p>
+            <p>18:00 tot 08:00: €0,50 per uur</p>
+          </div>
+          <a class="col-start-2 lg:col-start-auto onderstreep font-semibold mt-1 lg:mt-0" href="https://www.google.com/maps/search/?api=1&query=Eiermarkt+Parkeergarage+Nijmegen" target="_blank" rel="noopener">Route</a>
+        </li>
+        <li class="grid grid-cols-[4.5rem_1fr] lg:grid-cols-[7rem_1fr_1.25fr_auto] gap-x-4 lg:gap-x-8 gap-y-1 items-baseline border-t border-mos/40 py-5 lg:py-6">
+          <p class="font-kop text-zon text-3xl lg:text-4xl leading-none row-span-3 lg:row-span-1">10<span class="block font-tekst font-medium text-sm text-mos mt-1">min lopen</span></p>
+          <h3 class="text-xl lg:text-2xl font-semibold">Gravendal</h3>
+          <div class="col-start-2 lg:col-start-auto text-[17px] leading-snug">
+            <p>09:00 tot 23:00: €3,90 per uur</p>
+            <p class="text-mos mt-1">Op het Joris Ivensplein.</p>
+          </div>
+          <a class="col-start-2 lg:col-start-auto onderstreep font-semibold mt-1 lg:mt-0" href="https://www.google.com/maps/search/?api=1&query=Joris+Ivensplein+Nijmegen" target="_blank" rel="noopener">Route</a>
+        </li>
+        <li class="grid grid-cols-[4.5rem_1fr] lg:grid-cols-[7rem_1fr_1.25fr_auto] gap-x-4 lg:gap-x-8 gap-y-1 items-baseline border-t border-mos/40 py-5 lg:py-6">
+          <p class="font-kop text-zon text-3xl lg:text-4xl leading-none row-span-3 lg:row-span-1">12<span class="block font-tekst font-medium text-sm text-mos mt-1">min lopen</span></p>
+          <h3 class="text-xl lg:text-2xl font-semibold">Kelfkensbos Parkeergarage</h3>
+          <div class="col-start-2 lg:col-start-auto text-[17px] leading-snug">
+            <p>08:00 tot 18:00: €3,90 per uur</p>
+            <p>18:00 tot 08:00: €0,50 per uur</p>
+          </div>
+          <a class="col-start-2 lg:col-start-auto onderstreep font-semibold mt-1 lg:mt-0" href="https://www.google.com/maps/search/?api=1&query=Kelfkensbos+Parkeergarage+Nijmegen" target="_blank" rel="noopener">Route</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Vind ons -->
+  <section id="vind-ons" aria-labelledby="vind-kop" class="py-20 lg:py-32">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-12 lg:items-center">
+      <figure class="lg:col-span-7">
+        <img src="assets/google-01.jpg" width="789" height="526" loading="lazy"
+             alt="De Vlaamsegas bij avond met lichtbollen en de letters van Kronkel in rood en geel"
+             class="w-full aspect-[3/2] object-cover rounded-tr-[90px] rounded-bl-[90px] lg:rounded-tr-[150px] lg:rounded-bl-[150px]">
+      </figure>
+      <div class="lg:col-span-5 mt-10 lg:mt-0">
+        <h2 id="vind-kop" class="font-kop text-zon text-5xl lg:text-[4.25rem] leading-[1.02]">Kijk omhoog en u ziet ons.</h2>
+        <address class="not-italic mt-6 text-xl lg:text-2xl leading-snug">
+          Vlaamsegas 30<br>6511 HR Nijmegen
+        </address>
+        <a href="https://www.google.com/maps/search/?api=1&query=Vlaamsegas+30,+6511+HR+Nijmegen" target="_blank" rel="noopener"
+           class="knop mt-7 inline-flex items-center justify-center min-h-[60px] px-9 rounded-full bg-zon text-spar text-lg font-bold hover:bg-licht w-full sm:w-auto">Plan uw route</a>
+        <p class="mt-6 text-lg"><a class="onderstreep font-semibold" href="tel:+31243240909">024 324 0909</a></p>
+        <p class="mt-1 text-lg"><a class="onderstreep font-semibold" href="mailto:info@kronkel.nl">info@kronkel.nl</a></p>
+        <p class="mt-8 text-mos leading-relaxed max-w-[28em]">Op dit moment hebben we geen vacatures. Denkt u dat u ons team kunt versterken? Stuur gerust een open sollicitatie naar <a class="onderstreep text-licht" href="mailto:info@kronkel.nl">info@kronkel.nl</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-woud text-mos">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-8 flex flex-wrap items-center justify-between gap-x-8 gap-y-2 text-[15px]">
+    <p>© 2026 Kronkel Nijmegen</p>
+    <p>Kronkel is alleen voor bezoekers van 18 jaar en ouder.</p>
+    <p><a class="onderstreep" href="https://www.kronkel.nl/nl/privacy">Privacyverklaring</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: bellen altijd binnen bereik -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-woud/95 backdrop-blur px-3 py-2.5 grid grid-cols-[1.5fr_1fr] gap-2.5 border-t border-mos/20">
+  <a href="tel:+31243240909" class="knop inline-flex items-center justify-center min-h-[54px] rounded-full bg-zon text-spar font-bold text-[17px]">Bel 024 324 0909</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Vlaamsegas+30,+6511+HR+Nijmegen" target="_blank" rel="noopener" class="knop inline-flex items-center justify-center min-h-[54px] rounded-full border-2 border-licht/70 text-licht font-semibold text-[17px]">Route</a>
+</div>
+
+</div>
+</body>
+</html>
