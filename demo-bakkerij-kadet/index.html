@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakkerij Kadet: desembrood en croissants in de Vechtclub, Utrecht</title>
+<meta name="description" content="Buurtbakkerij Kadet aan de Europalaan in Utrecht: desembrood van Nederlands graan, eigen croissants, een klein kafeetje en desemworkshops.">
+<meta property="og:title" content="Bakkerij Kadet: brood waar je voor omrijdt">
+<meta property="og:description" content="Desembrood van Nederlands graan, eigen croissants en een klein kafeetje in de Vechtclub, Utrecht.">
+<meta property="og:image" content="assets/site-15.webp">
+<link rel="icon" href="assets/site-10.webp">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        roze: '#F2A5E5',
+        rood: '#C8090F',
+        diep: '#960A10',
+        lila: '#F6ECF6',
+        eend: '#4F5799',
+        inkt: '#2E0A16'
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        tekst: ['Literata', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { font-family: Literata, Georgia, serif; color: #2E0A16; background: #F6ECF6; }
+  body h1, body h2, body h3, .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-stretch: 92%; font-weight: 800; letter-spacing: -0.012em; line-height: .98; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid #2E0A16; outline-offset: 3px; border-radius: 4px; }
+  .op-donker :focus-visible { outline-color: #F6ECF6; }
+
+  /* De toonbank: tegels zoals de echte balie van Kadet */
+  .tegels {
+    background-color: #FBEFF4;
+    background-size: 288px 216px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='288' height='216'%3E%3Cg stroke='%23FBEFF4' stroke-width='3'%3E%3Crect width='72' height='72' fill='%23B10F24'/%3E%3Crect x='72' width='72' height='72' fill='%23D9476A'/%3E%3Crect x='144' width='72' height='72' fill='%23C41730'/%3E%3Crect x='216' width='72' height='72' fill='%23E0607F'/%3E%3Crect y='72' width='72' height='72' fill='%23D1365A'/%3E%3Crect x='72' y='72' width='72' height='72' fill='%23A80D22'/%3E%3Crect x='144' y='72' width='72' height='72' fill='%23DE5A78'/%3E%3Crect x='216' y='72' width='72' height='72' fill='%23B10F24'/%3E%3Crect y='144' width='72' height='72' fill='%23BD1530'/%3E%3Crect x='72' y='144' width='72' height='72' fill='%23E0607F'/%3E%3Crect x='144' y='144' width='72' height='72' fill='%23A80D22'/%3E%3Crect x='216' y='144' width='72' height='72' fill='%23D1365A'/%3E%3C/g%3E%3C/svg%3E");
+    border-top: 8px solid #2E0A16;
+  }
+
+  .boog { border-radius: 999px 999px 0 0; overflow: hidden; }
+  .logo-rond { clip-path: circle(44% at 50% 50%); }
+
+  .knop { display: inline-flex; align-items: center; justify-content: center; font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 700; border-radius: 999px; transition: transform .18s ease, background-color .18s ease, color .18s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  .knop-rood { background: #C8090F; color: #fff; box-shadow: 0 6px 0 #960A10; }
+  .knop-rood:hover { background: #AE080D; }
+  .knop-rood:active { box-shadow: 0 2px 0 #960A10; }
+
+  /* Krijtbordjes uit de winkel */
+  .bordje { display: inline-block; background: #2E0A16; color: #F6ECF6; font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 500; padding: .4rem .8rem .45rem; border-radius: 5px; line-height: 1.15; }
+  .bordje:nth-child(3n+1) { transform: rotate(-1.5deg); }
+  .bordje:nth-child(3n+2) { transform: rotate(1deg); }
+
+  /* Het raambord met de openingstijden */
+  .raambord { background: #C8090F; color: #fff; transform: rotate(-1.5deg); position: relative; box-shadow: 0 18px 40px -18px rgba(90, 6, 12, .6); }
+  .raambord::before, .raambord::after { content: ""; position: absolute; top: 14px; width: 12px; height: 12px; border-radius: 50%; background: #F6ECF6; box-shadow: inset 0 1px 2px rgba(46, 10, 22, .6); }
+  .raambord::before { left: 14px; }
+  .raambord::after { right: 14px; }
+
+  .link-streep { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .link-streep:hover { text-decoration-thickness: 4px; }
+
+  .veld { width: 100%; background: #fff; border: 2px solid #2E0A16; border-radius: 10px; padding: .8rem 1rem; font: inherit; }
+
+  /* Mobiele actiebalk: zichtbaar zonder JS, met JS verborgen zolang de hoofdknop in beeld is */
+  .actiebalk { transition: transform .25s ease, visibility .25s; }
+  .js .actiebalk.weg { transform: translateY(110%); visibility: hidden; }
+
+  /* Eén moment: de boog schuift bij het laden op de balie */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .boog-in { animation: opbalie .8s cubic-bezier(.2, .9, .25, 1) both; }
+    @keyframes opbalie { from { transform: translateY(70px); } to { transform: none; } }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .knop, .actiebalk { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-lila focus:p-3">Ga naar de inhoud</a>
+
+<div class="bg-inkt text-lila text-center text-xs sm:text-sm py-2 px-3 font-kop">
+  Demo voor Bakkerij Kadet, gemaakt door <a class="underline underline-offset-2" href="https://hagenweb.nl">Hagenweb</a>
+</div>
+
+<header class="relative bg-roze overflow-hidden">
+  <nav class="relative z-10 max-w-[1320px] mx-auto px-5 lg:px-10 pt-3 flex items-center justify-between" aria-label="Hoofdmenu">
+    <a href="#inhoud" aria-label="Bakkerij Kadet, naar boven">
+      <img src="assets/site-10.webp" alt="Logo van Kadet desembrood: een blauwe eend" width="1500" height="1500" class="logo-rond -ml-1.5 w-[76px] h-[76px] lg:w-[96px] lg:h-[96px]">
+    </a>
+    <ul class="flex items-center gap-5 lg:gap-8 font-kop font-semibold text-inkt text-base lg:text-lg">
+      <li class="hidden md:block"><a class="hover:underline underline-offset-4 decoration-2" href="#brood">Brood en croissants</a></li>
+      <li><a class="hover:underline underline-offset-4 decoration-2" href="#workshops">Workshops</a></li>
+      <li class="hidden md:block"><a class="hover:underline underline-offset-4 decoration-2" href="#over-ons">Over ons</a></li>
+      <li><a class="hover:underline underline-offset-4 decoration-2" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="inhoud" class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-x-8 items-end">
+    <div class="lg:col-span-7 pt-3 lg:pt-6 pb-8 lg:pb-16 relative z-10">
+      <p class="font-kop font-semibold text-inkt text-base lg:text-xl">Buurtbakkerij in de Vechtclub, Utrecht</p>
+      <h1 class="text-diep mt-3 text-[3.6rem] sm:text-7xl lg:text-[7rem]">Brood waar je voor omrijdt.</h1>
+      <p class="mt-5 lg:mt-7 text-lg lg:text-[1.35rem] leading-relaxed max-w-[34rem]">Een buurtbakkerij met desembrood van Nederlands graan, onze eigen croissants en een klein kafeetje voor een bakkie erbij.</p>
+      <div class="mt-6 lg:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a id="hoofdknop" class="knop knop-rood text-xl lg:text-2xl px-8 lg:px-10 py-4 lg:py-5" href="https://www.google.com/maps/search/?api=1&query=Bakkerij+Kadet+Europalaan+2b+3526+KS+Utrecht">Plan je route</a>
+        <a class="font-kop font-semibold text-lg link-streep" href="#workshops">Of leer het zelf bakken</a>
+      </div>
+      <p class="mt-6 font-kop font-medium text-base lg:text-lg"><span aria-hidden="true" class="text-diep">★★★★★</span> 4,8 sterren uit 54 Google-reviews</p>
+    </div>
+    <div class="lg:col-span-5 boog-in">
+      <div class="boog mx-auto w-[86%] lg:w-full h-[360px] sm:h-[460px] lg:h-[660px] bg-inkt">
+        <img src="assets/site-15.webp" alt="Vers maanzaadbrood met een open korst op een bakplaat, in laag zonlicht naast een rood geruite theedoek" width="1500" height="2250" class="w-full h-full object-cover object-[55%_45%]">
+      </div>
+    </div>
+  </div>
+  <div class="tegels h-[72px] lg:h-[110px]" role="presentation"></div>
+</header>
+
+<main>
+
+  <!-- Openingstijden: het raambord -->
+  <section aria-labelledby="open" class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-x-8 gap-y-12 pb-20 lg:pb-28">
+    <div class="lg:col-span-6 -mt-6 lg:-mt-12 relative z-10">
+      <div class="raambord px-7 sm:px-10 pt-9 pb-8 sm:pb-10 max-w-[560px]">
+        <p class="kop text-[4.2rem] sm:text-[6rem] leading-[.85]" style="font-stretch:100%">kadet</p>
+        <p class="font-kop font-light tracking-[.3em] sm:tracking-[.36em] text-xl sm:text-3xl mt-1">desembrood</p>
+        <dl class="mt-7 grid grid-cols-[auto_1fr] gap-x-8 gap-y-1 font-kop text-xl sm:text-2xl">
+          <dt>woe - vrij</dt><dd>8.30 - 14.30 uur</dd>
+          <dt>za</dt><dd>9.00 - 13.00 uur</dd>
+          <dt>ma, di, zo</dt><dd>gesloten</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="lg:col-span-5 lg:col-start-8 lg:pt-16">
+      <h2 id="open" class="text-diep text-5xl lg:text-6xl">Vier dagen per week open.</h2>
+      <address class="not-italic mt-6 text-xl leading-relaxed">
+        Europalaan 2b, 3526 KS Utrecht<br>
+        In de Vechtclub
+      </address>
+      <p class="mt-5 text-lg leading-relaxed">“Gratis parkeren voor de deur!” <span class="whitespace-nowrap">schrijft Hessel Winkelman</span> op Google.</p>
+      <p class="mt-6 flex flex-wrap gap-x-7 gap-y-2 font-kop font-semibold text-lg">
+        <a class="link-streep" href="https://www.google.com/maps/search/?api=1&query=Bakkerij+Kadet+Europalaan+2b+3526+KS+Utrecht">Open in Google Maps</a>
+        <a class="link-streep" href="mailto:info@bakkerijkadet.nl">info@bakkerijkadet.nl</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Brood -->
+  <section id="brood" aria-labelledby="brood-kop" class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-x-8 gap-y-10 pb-20 lg:pb-32">
+    <figure class="lg:col-span-7">
+      <img loading="lazy" src="assets/site-04-1800.jpg" alt="Vier planken vol desembroden: naturel, sesam, gemengde zaden en maanzaad" width="1200" height="1800" class="w-full h-[440px] sm:h-[620px] lg:h-[840px] object-cover rounded-t-[32px] rounded-br-[120px] lg:rounded-br-[200px]">
+    </figure>
+    <div class="lg:col-span-5 lg:pt-10">
+      <h2 id="brood-kop" class="text-diep text-5xl lg:text-7xl">Desembrood van Nederlands graan.</h2>
+      <p class="mt-6 text-lg lg:text-xl leading-relaxed max-w-[30rem]">Hier draait alles om desem, van naturel tot een brood dat volzit met zaden en pitten. Op de bordjes in de winkel lees je bijvoorbeeld:</p>
+      <ul class="mt-7 flex flex-wrap gap-2.5 text-lg" aria-label="Broden op de bordjes">
+        <li class="bordje">Naturel</li>
+        <li class="bordje">Zaden en gierst</li>
+        <li class="bordje">Naturel met zaden en pitten</li>
+        <li class="bordje">Rogge</li>
+        <li class="bordje">Volkoren zonnebloempit</li>
+        <li class="bordje">Rozijn-hazelnoot</li>
+        <li class="bordje">Jalapeño</li>
+      </ul>
+      <img loading="lazy" src="assets/site-11.webp" alt="Broden met sesam en zwart zaad op een metalen rek tegen een lila muur" width="1500" height="2250" class="boog mt-10 lg:mt-14 w-[72%] lg:w-[78%] h-[320px] lg:h-[400px] object-cover object-[50%_55%] ml-auto">
+    </div>
+  </section>
+
+  <!-- Croissants -->
+  <section aria-labelledby="croissant-kop" class="max-w-[1320px] mx-auto px-5 lg:px-10 pb-20 lg:pb-32">
+    <div class="grid lg:grid-cols-12 gap-x-8 gap-y-8 items-end">
+      <div class="lg:col-span-6">
+        <h2 id="croissant-kop" class="text-diep text-5xl lg:text-7xl">En dan de croissants.</h2>
+        <p class="mt-6 text-lg lg:text-xl leading-relaxed max-w-[32rem]">Die maken we zelf. In onze reviews komt er eentje steeds terug: de kimchi kaas croissant.</p>
+      </div>
+      <ul class="lg:col-span-6 flex flex-wrap gap-2.5 text-lg lg:justify-end" aria-label="Croissants en broodjes op de bordjes">
+        <li class="bordje">Croissant</li>
+        <li class="bordje">Kaas croissant</li>
+        <li class="bordje">Kimchi kaas croissant</li>
+        <li class="bordje">Pain au chocolat</li>
+        <li class="bordje">Kardemom bullar</li>
+      </ul>
+    </div>
+    <div class="mt-10 lg:mt-14 grid grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-6">
+      <img loading="lazy" src="assets/site-12.webp" alt="Vier gebakjes op een lila plank op een felblauwe houten bank" width="1500" height="2000" class="col-span-6 lg:col-span-5 w-full h-[420px] lg:h-[640px] object-cover object-[50%_60%] rounded-tl-[120px] lg:rounded-tl-[200px] rounded-br-[32px]">
+      <img loading="lazy" src="assets/site-14.webp" alt="Bakplaat vol glanzende kardemombroodjes met suiker" width="1500" height="2000" class="col-span-3 lg:col-span-3 w-full h-[260px] lg:h-[640px] object-cover object-[55%_45%] lg:mt-0 rounded-[24px]">
+      <img loading="lazy" src="assets/google-02.jpg" alt="De toonbank van Kadet met rood-roze tegels en daarop croissants, pain au chocolat en kardemombroodjes" width="1200" height="1600" class="col-span-3 lg:col-span-4 w-full h-[260px] lg:h-[640px] object-cover object-[50%_50%] boog">
+    </div>
+  </section>
+
+  <!-- Workshops -->
+  <section id="workshops" aria-labelledby="workshop-kop" class="op-donker bg-rood text-white">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-x-10 gap-y-12">
+      <div class="lg:col-span-6">
+        <h2 id="workshop-kop" class="text-roze text-[3.4rem] lg:text-8xl">Bak je eigen desem&shy;brood.</h2>
+        <p class="mt-6 text-lg lg:text-xl leading-relaxed max-w-[32rem]">Tijdens de desemworkshop beginnen we bij de basis. In een groepje van maximaal 9 personen, voor €85 per persoon.</p>
+        <ol class="mt-10 space-y-7 max-w-[34rem]">
+          <li class="grid grid-cols-[3.2rem_1fr] gap-x-3">
+            <span class="kop text-roze text-5xl" aria-hidden="true">1</span>
+            <div><h3 class="text-2xl lg:text-3xl leading-tight">Je stelt je eigen deegje samen</h3><p class="mt-2 text-[1.05rem] leading-relaxed">We maken een basis voor je, en daar voeg je naar hartelust andere granen aan toe. Want er is meer dan tarwe.</p></div>
+          </li>
+          <li class="grid grid-cols-[3.2rem_1fr] gap-x-3">
+            <span class="kop text-roze text-5xl" aria-hidden="true">2</span>
+            <div><h3 class="text-2xl lg:text-3xl leading-tight">Je vouwt en shapet</h3><p class="mt-2 text-[1.05rem] leading-relaxed">Daar maken we veel ruimte voor, zodat je het echt onder de knie krijgt. Dat levert heel mooi brood op.</p></div>
+          </li>
+          <li class="grid grid-cols-[3.2rem_1fr] gap-x-3">
+            <span class="kop text-roze text-5xl" aria-hidden="true">3</span>
+            <div><h3 class="text-2xl lg:text-3xl leading-tight">Je bakt het thuis af</h3><p class="mt-2 text-[1.05rem] leading-relaxed">Je deegje gaat mee naar huis in een rijsmandje. We laten zien hoe je het in je eigen oven afbakt, zodat je de volgende dag lekker aan de slag kunt.</p></div>
+          </li>
+        </ol>
+      </div>
+      <div class="lg:col-span-6">
+        <img loading="lazy" src="assets/site-03.webp" alt="Rijzend deeg met zaden en maanzaad in rijsmandjes op een houten werktafel in de bakkerij" width="2500" height="3750" class="boog w-full h-[380px] lg:h-[560px] object-cover object-[50%_70%]">
+        <div class="bg-lila text-inkt">
+          <h3 class="sr-only">Data</h3>
+          <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 p-5 lg:p-7 border-b-2 border-inkt/15">
+            <p><span class="kop block text-3xl lg:text-4xl text-diep">Zondag 15 november</span><span class="block mt-1">11.00 - 14.00 uur, € 85</span></p>
+            <a class="knop knop-rood text-lg px-6 py-3" href="https://www.bakkerijkadet.nl/shop/p/desemworkshop-zondag-15-november-1100-1400" aria-label="Boek de workshop van zondag 15 november">Boek deze dag</a>
+          </div>
+          <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 p-5 lg:p-7">
+            <p><span class="kop block text-3xl lg:text-4xl text-diep">Zondag 20 december</span><span class="block mt-1">11.00 - 14.00 uur, € 85</span></p>
+            <a class="knop knop-rood text-lg px-6 py-3" href="https://www.bakkerijkadet.nl/shop/p/desemworkshop-zondag-15-november-1100-1400-74xzp" aria-label="Boek de workshop van zondag 20 december">Boek deze dag</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Over ons en kafeetje -->
+  <section id="over-ons" aria-labelledby="over-kop" class="bg-roze">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-x-8 gap-y-12 items-start">
+      <div class="lg:col-span-5 lg:order-2 lg:col-start-8">
+        <img loading="lazy" src="assets/site-13.webp" alt="Rood raambord van Kadet desembrood met de openingstijden en droogbloemen erachter, met binnen vaag iemand zichtbaar" width="1500" height="2250" class="w-full h-[420px] lg:h-[620px] object-cover rounded-tr-[120px] lg:rounded-tr-[200px] rounded-bl-[32px]">
+      </div>
+      <div class="lg:col-span-6 lg:order-1">
+        <h2 id="over-kop" class="text-diep text-5xl lg:text-8xl">Lot bakt. Floor regelt de rest.</h2>
+        <div class="mt-7 space-y-5 text-lg lg:text-xl leading-relaxed max-w-[36rem]">
+          <p>In maart 2025 kregen we de kans om samen een minibakkerij te beginnen. Super spannend, maar we sprongen in het diepe. Lot is de sterbakker, Floor regelt alles achter de schermen, en dat blijkt een topcombi.</p>
+          <p>In augustus 2026 konden we binnen de Vechtclub doorschuiven naar een grotere ruimte. Daar runnen we nu onze bakkerij, inclusief klein kafeetje.</p>
+        </div>
+      </div>
+      <div class="lg:col-span-12 lg:order-3 grid lg:grid-cols-12 gap-x-8 gap-y-8 items-center lg:mt-10">
+        <img loading="lazy" src="assets/site-16.webp" alt="Espresso loopt uit de koffiemachine in een lichtblauw kopje" width="1500" height="2250" class="lg:col-span-4 boog w-[78%] lg:w-full h-[340px] lg:h-[440px] object-cover object-[60%_62%]">
+        <div class="lg:col-span-6 lg:col-start-6">
+          <h3 class="text-diep text-4xl lg:text-6xl">Blijf even hangen.</h3>
+          <p class="mt-5 text-lg lg:text-xl leading-relaxed max-w-[32rem]">Kom een bakje koffie drinken en verorber ter plekke wat lekkers. Daar is ons kafeetje voor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section aria-labelledby="review-kop" class="op-donker bg-eend text-lila">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-20 lg:py-28">
+      <h2 id="review-kop" class="text-5xl lg:text-7xl max-w-[16ch]">4,8 sterren uit 54 reviews.</h2>
+      <figure class="mt-10 lg:mt-14 max-w-[1040px]">
+        <blockquote class="kop !font-semibold text-[1.9rem] leading-[1.14] lg:text-[3.2rem] !tracking-[-0.015em]">“Als Duitser ben ik nogal kritisch als het om brood gaat (...) Maar Bakkerij Kadet in Utrecht heeft me écht positief verrast. Het is zonder twijfel het beste brood dat ik tot nu toe in Nederland heb gegeten.”</blockquote>
+        <figcaption class="mt-4 text-lg">Annegret Kobieter</figcaption>
+      </figure>
+      <div class="mt-14 lg:mt-20 lg:columns-3 gap-10 text-lg leading-relaxed">
+        <figure class="break-inside-avoid mb-10">
+          <blockquote>“Het was heerlijk! Het brood is echt van hele goede kwaliteit en de snacks zoals de kimchi kaasstengel en ook alle andere snacks zijn zeker aan te raden. Jammer dat er geen vestiging in Amsterdam zit, maar ik reis graag even om!”</blockquote>
+          <figcaption class="mt-3 font-kop font-semibold">Chantal S</figcaption>
+        </figure>
+        <figure class="break-inside-avoid mb-10">
+          <blockquote>“Vooraf besteld en mijn bestelling lag keurig klaar. Heerlijk versgebakken en overduidelijk goede ingrediënten, een verborgen pareltje in Utrecht! De moeite waard om voor om te rijden. Gratis parkeren voor de deur!”</blockquote>
+          <figcaption class="mt-3 font-kop font-semibold">Hessel Winkelman</figcaption>
+        </figure>
+        <figure class="break-inside-avoid mb-10">
+          <blockquote>“Ik ben fan! Zelf woon ik niet in de buurt maar het is zeker een ritje waard. Onwijs lekkere zuurdesembroden en kleine zoete broodjes. De kimchi kaas croissant is mijn favoriet!”</blockquote>
+          <figcaption class="mt-3 font-kop font-semibold">Tirsa Verhage</figcaption>
+        </figure>
+        <figure class="break-inside-avoid mb-10">
+          <blockquote>“Onwijs blij met deze nieuwe bakker! Na de opening gelijk heel veel verschillende dingen uitgeprobeerd: zuurdesem naturel en volkoren met verschillende soorten pitten, kimchi kaasbroodje, kaasbroodje en pistachekoeken. Ik kan eerlijk gezegd niet kiezen wat ik het lekkerst vond.. Echt alles was onwijs vers en lekker!”</blockquote>
+          <figcaption class="mt-3 font-kop font-semibold">Boyd Winkelman</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="contact-kop" class="max-w-[1320px] mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-x-8 gap-y-12">
+    <div class="lg:col-span-5">
+      <h2 id="contact-kop" class="text-diep text-5xl lg:text-8xl">Heb je een vraag?</h2>
+      <p class="mt-6 text-lg lg:text-xl leading-relaxed max-w-[26rem]">Stuur ons een berichtje, of mail rechtstreeks naar <a class="link-streep" href="mailto:info@bakkerijkadet.nl">info@bakkerijkadet.nl</a>.</p>
+    </div>
+    <form class="lg:col-span-6 lg:col-start-7 grid sm:grid-cols-2 gap-5 text-lg" action="mailto:info@bakkerijkadet.nl" method="post" enctype="text/plain">
+      <label class="block font-kop font-semibold">Voornaam
+        <input class="veld mt-1.5 font-tekst font-normal" type="text" name="voornaam" autocomplete="given-name" required>
+      </label>
+      <label class="block font-kop font-semibold">Achternaam
+        <input class="veld mt-1.5 font-tekst font-normal" type="text" name="achternaam" autocomplete="family-name" required>
+      </label>
+      <label class="block sm:col-span-2 font-kop font-semibold">E-mail
+        <input class="veld mt-1.5 font-tekst font-normal" type="email" name="email" autocomplete="email" required>
+      </label>
+      <label class="block sm:col-span-2 font-kop font-semibold">Bericht
+        <textarea class="veld mt-1.5 font-tekst font-normal" name="bericht" rows="5" required></textarea>
+      </label>
+      <div class="sm:col-span-2 flex flex-wrap items-center gap-x-5 gap-y-3 mt-1">
+        <button class="knop knop-rood text-xl px-8 py-4" type="submit">Verstuur je vraag</button>
+        <p class="text-base">Dit opent je mailprogramma.</p>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="op-donker bg-rood text-white">
+  <div class="tegels h-[72px] lg:h-[110px] !border-t-0 border-b-8 border-inkt" role="presentation"></div>
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-16 lg:pt-24 pb-28 lg:pb-10">
+    <p class="kop text-roze text-[3.4rem] lg:text-[8rem] max-w-[14ch]">Kom langs voor wat lekkers en een bakkie.</p>
+    <div class="mt-12 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-8 text-lg leading-relaxed">
+      <div class="lg:col-span-4">
+        <h2 class="text-2xl !font-bold tracking-normal">Adres</h2>
+        <address class="not-italic mt-2">Bakkerij Kadet<br>Europalaan 2b<br>3526 KS Utrecht</address>
+      </div>
+      <div class="lg:col-span-4">
+        <h2 class="text-2xl !font-bold tracking-normal">Open</h2>
+        <p class="mt-2">Woensdag tot en met vrijdag<br><span class="whitespace-nowrap">8.30 - 14.30 uur</span><br>Zaterdag<br><span class="whitespace-nowrap">9.00 - 13.00 uur</span></p>
+      </div>
+      <div class="lg:col-span-4">
+        <h2 class="text-2xl !font-bold tracking-normal">Contact</h2>
+        <p class="mt-2"><a class="link-streep" href="mailto:info@bakkerijkadet.nl">info@bakkerijkadet.nl</a></p>
+      </div>
+    </div>
+    <p class="mt-12 text-base">Foto's: Elyse Iedema en bezoekers via Google.</p>
+  </div>
+</footer>
+
+<div id="actiebalk" class="actiebalk lg:hidden fixed bottom-0 inset-x-0 z-40 bg-inkt p-2.5 grid grid-cols-[2fr_1fr] gap-2.5">
+  <a class="knop bg-rood text-white text-lg py-3.5" href="https://www.google.com/maps/search/?api=1&query=Bakkerij+Kadet+Europalaan+2b+3526+KS+Utrecht">Plan je route</a>
+  <a class="knop bg-lila text-inkt text-lg py-3.5" href="mailto:info@bakkerijkadet.nl">Mail</a>
+</div>
+
+<script>
+  if ('IntersectionObserver' in window) {
+    var balk = document.getElementById('actiebalk');
+    new IntersectionObserver(function (items) {
+      balk.classList.toggle('weg', items[0].isIntersecting);
+    }).observe(document.getElementById('hoofdknop'));
+  }
+</script>
+</body>
+</html>
