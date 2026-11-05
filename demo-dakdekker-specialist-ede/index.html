@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dakdekker Specialist Ede | Santos staat zelf op uw dak</title>
+<meta name="description" content="Dakdekker in Ede en omgeving. Lekkage, stormschade, pannendak, plat dak, lood en zink. Santos staat zelf op elk dak. Bel 085 004 6656.">
+<link rel="icon" href="assets/logo-oud.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          lei: '#EEF0EC',
+          lei2: '#E2E6E0',
+          pan: '#232A27',
+          pan2: '#2E3632',
+          groen: '#2F7A22',
+          groenlicht: '#8FCB6B',
+          geel: '#F2B705',
+          inkt: '#1B201E',
+          grijs: '#59625D'
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .gevel { clip-path: polygon(0 16%, 50% 0, 100% 16%, 100% 100%, 0 100%); }
+  .nok-boven { clip-path: polygon(0 0, 50% 64px, 100% 0, 100% 100%, 0 100%); }
+  @media (min-width: 1024px) { .nok-boven { clip-path: polygon(0 0, 50% 96px, 100% 0, 100% 100%, 0 100%); } }
+  .knop-geel { transition: transform .2s, background-color .2s, box-shadow .2s; box-shadow: 0 10px 24px -10px rgba(140,100,0,.55); }
+  .knop-geel:hover { background-color: #FFC71F; transform: translateY(-1px); }
+  .knop-geel:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #2F7A22; outline-offset: 3px; }
+  @keyframes omhoog { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes gevelIn { from { opacity: 0; transform: translateY(24px) scale(.98); } to { opacity: 1; transform: none; } }
+  .js .intro > * { animation: omhoog .7s cubic-bezier(.2,.7,.2,1) both; }
+  .js .intro > *:nth-child(2) { animation-delay: .08s; } .js .intro > *:nth-child(3) { animation-delay: .16s; }
+  .js .intro > *:nth-child(4) { animation-delay: .24s; } .js .intro > *:nth-child(5) { animation-delay: .32s; }
+  .js .intro-foto { animation: gevelIn .9s cubic-bezier(.2,.7,.2,1) both; }
+  .belbalk { transition: transform .3s ease; }
+  .belbalk.weg { transform: translateY(110%); }
+  @media (prefers-reduced-motion: reduce) { .js .intro > *, .js .intro-foto { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-lei text-inkt antialiased pb-20 lg:pb-0">
+
+<!-- Demo-balk -->
+<div class="bg-pan text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Dakdekker Specialist Ede, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-geel">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-lei/90 backdrop-blur border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-2.5 shrink-0">
+      <img src="assets/logo-oud.svg" alt="" class="w-9 h-9 lg:w-10 lg:h-10">
+      <span class="font-kop font-extrabold leading-none text-[1.05rem] lg:text-xl tracking-tight">Dakdekker Specialist<span class="text-groen"> Ede</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-[15px]">
+      <a href="#werk" class="hover:text-groen transition-colors">Dakwerk</a>
+      <a href="#santos" class="hover:text-groen transition-colors">Over Santos</a>
+      <a href="#fotos" class="hover:text-groen transition-colors">Projecten</a>
+      <a href="#reviews" class="hover:text-groen transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-groen transition-colors">Contact</a>
+    </nav>
+    <a href="tel:0850046656" class="hidden sm:inline-flex items-center gap-2 font-semibold text-[15px] rounded-full border-2 border-inkt px-4 py-2 hover:bg-inkt hover:text-white transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      085 004 6656
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-5 pb-14 lg:pt-14 lg:pb-24 grid lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+    <div class="lg:col-span-6 order-2 lg:order-1 intro">
+      <p class="font-semibold text-groen mb-3 lg:mb-4">Dakdekker in Ede en omgeving</p>
+      <h1 class="font-kop font-extrabold tracking-[-0.03em] leading-[0.95] text-[2.6rem] sm:text-6xl lg:text-[5.4rem]">Santos staat zelf op uw dak.</h1>
+      <p class="mt-4 lg:mt-6 text-[1.05rem] lg:text-xl text-grijs max-w-[30rem] leading-relaxed">Lekkage, losse pannen of een plat dak dat op is? Bij spoed hoort u binnen een half uur van ons, ook ’s&nbsp;avonds en in het weekend.</p>
+      <div class="mt-6 lg:mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a id="hero-bel" href="tel:0850046656" class="knop-geel inline-flex items-center justify-center gap-3 rounded-full bg-geel text-inkt font-bold text-lg lg:text-xl px-8 py-4 lg:py-5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 085 004 6656
+        </a>
+        <a href="#contact" class="font-semibold underline decoration-2 underline-offset-[6px] decoration-groen hover:text-groen text-center sm:text-left">Gratis dakinspectie aanvragen</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-sm text-grijs">
+        <span class="text-geel tracking-[2px] text-base" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-inkt">5,0</strong> op Google, uit 8 reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-6 order-1 lg:order-2 relative">
+      <img src="assets/site-04.webp" alt="Santos Crisinelli op een pannendak in Ede" class="gevel intro-foto relative w-full max-w-[540px] mx-auto lg:ml-auto lg:mr-0 aspect-[16/10] sm:aspect-[4/3] lg:aspect-[4/4.4] object-cover object-[50%_40%]">
+    </div>
+  </div>
+</section>
+
+<!-- Spoed -->
+<section class="nok-boven bg-pan text-white pt-24 lg:pt-36 pb-16 lg:pb-24 -mt-2">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-5">
+      <img src="assets/google-01.jpg" alt="Santos legt dakpannen op een pannendak" class="w-full aspect-[4/5] object-cover rounded-[28px] rounded-tl-none">
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="font-kop font-extrabold text-4xl lg:text-6xl tracking-[-0.02em] leading-[1.02]">Lekt het nu?</h2>
+      <p class="mt-5 text-lg text-white/75 max-w-xl leading-relaxed">Een natte plek op het plafond of pannen in de tuin na een storm: daar wacht u niet mee. Bel ons en dit gebeurt er.</p>
+      <ul class="mt-9 space-y-6 max-w-xl">
+        <li class="flex gap-5">
+          <span class="mt-1 w-8 h-8 shrink-0 rounded-full bg-groen grid place-items-center"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></span>
+          <p class="text-white/85 leading-relaxed"><strong class="text-white font-semibold block text-lg">Binnen een half uur contact</strong>Bij spoed neemt Santos ’s&nbsp;avonds en in het weekend zelf op.</p>
+        </li>
+        <li class="flex gap-5">
+          <span class="mt-1 w-8 h-8 shrink-0 rounded-full bg-groen grid place-items-center"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></span>
+          <p class="text-white/85 leading-relaxed"><strong class="text-white font-semibold block text-lg">Zo nodig dezelfde dag op uw dak</strong>Minimaal voor een noodreparatie, desnoods met een tijdelijke afdekking.</p>
+        </li>
+        <li class="flex gap-5">
+          <span class="mt-1 w-8 h-8 shrink-0 rounded-full bg-groen grid place-items-center"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5 9-10"/></svg></span>
+          <p class="text-white/85 leading-relaxed"><strong class="text-white font-semibold block text-lg">Eerst water- en winddicht, dan herstel</strong>Daarna zoeken we de oorzaak, zodat het niet opnieuw gaat lekken.</p>
+        </li>
+      </ul>
+      <a href="tel:0850046656" class="mt-10 inline-block font-kop font-extrabold text-4xl sm:text-5xl lg:text-6xl text-geel hover:text-white transition-colors tracking-[-0.02em]">085 004 6656</a>
+    </div>
+  </div>
+</section>
+
+<!-- Dakwerk -->
+<section id="werk" class="py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl">
+      <h2 class="font-kop font-extrabold text-4xl lg:text-6xl tracking-[-0.02em] leading-[1.02]">Pannen, bitumen, lood en zink.</h2>
+      <p class="mt-5 text-lg text-grijs leading-relaxed">Wij repareren, vervangen en onderhouden elk soort dak. Van één gebroken pan tot een complete dakrenovatie.</p>
+    </div>
+
+    <div class="mt-14 lg:mt-20 space-y-16 lg:space-y-24">
+      <article class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <img src="assets/site-03.webp" alt="Nieuwe nokvorsten op een antraciet pannendak" class="lg:col-span-6 w-full aspect-[4/3] object-cover object-top rounded-[28px] rounded-br-none">
+        <div class="lg:col-span-5 lg:col-start-8">
+          <h3 class="font-kop font-bold text-3xl lg:text-4xl tracking-tight">Pannendak</h3>
+          <p class="mt-4 text-grijs leading-relaxed text-lg">Een gebroken pan, verschoven pannen of een nok die loszit. Wij vervangen losse pannen of leggen het hele dak opnieuw, met nieuwe folie en tengels als dat nodig is.</p>
+          <ul class="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 font-medium">
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Gebroken en losse pannen</li>
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Nokvorsten vastzetten of vervangen</li>
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Dakvervanging met nieuwe pannen</li>
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Oude pannen afgevoerd</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <img src="assets/site-10.webp" alt="Nieuw gelegde bitumen dakbedekking op een plat dak" class="lg:col-span-6 lg:col-start-7 lg:order-2 w-full aspect-[4/3] object-cover rounded-[28px] rounded-bl-none">
+        <div class="lg:col-span-5 lg:col-start-1 lg:row-start-1 lg:order-1">
+          <h3 class="font-kop font-bold text-3xl lg:text-4xl tracking-tight">Plat dak</h3>
+          <p class="mt-4 text-grijs leading-relaxed text-lg">Blazen, scheuren of open naden in de bitumen? Wij repareren de plek of vernieuwen de dakbedekking, en voeren de oude laag af.</p>
+          <ul class="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 font-medium">
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Bitumen of dakleer</li>
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Plat dak vernieuwen</li>
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Losse dakranden</li>
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Plat dak isoleren</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <img src="assets/site-08.webp" alt="Strak gezet loodwerk tegen een gemetselde schoorsteen" class="lg:col-span-6 w-full aspect-[4/3] object-cover rounded-[28px] rounded-br-none">
+        <div class="lg:col-span-5 lg:col-start-8">
+          <h3 class="font-kop font-bold text-3xl lg:text-4xl tracking-tight">Lood, zink en goten</h3>
+          <p class="mt-4 text-grijs leading-relaxed text-lg">Los lood bij de schoorsteen, een zinken goot die lekt of een goot die overloopt. Wij maken de overgangen weer waterdicht.</p>
+          <ul class="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 font-medium">
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Lood bij dakramen en muren</li>
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Zinken dakgoten</li>
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Lekkende naden en hoeken</li>
+            <li class="flex gap-2.5"><span class="text-groen">+</span>Voegwerk van schoorstenen</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-20 lg:mt-28 border-t border-inkt/15 pt-10 grid lg:grid-cols-12 gap-8">
+      <h3 class="lg:col-span-4 font-kop font-bold text-2xl lg:text-3xl tracking-tight">Ook voor</h3>
+      <dl class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-7">
+        <div><dt class="font-semibold text-lg">Dakinspectie</dt><dd class="text-grijs mt-1">Gratis. Pannen, nok, lood, goten, schoorsteen en dakramen nagelopen.</dd></div>
+        <div><dt class="font-semibold text-lg">Stormschade</dt><dd class="text-grijs mt-1">Eerst dicht tegen regen en wind, daarna herstel met nieuwe pannen.</dd></div>
+        <div><dt class="font-semibold text-lg">Dakrenovatie</dt><dd class="text-grijs mt-1">Het hele dak vernieuwd, met materiaal van A-kwaliteit en afvoer van het oude.</dd></div>
+        <div><dt class="font-semibold text-lg">Dakisolatie</dt><dd class="text-grijs mt-1">Koude of tochtige zolder? Wij isoleren platte en hellende daken.</dd></div>
+        <div><dt class="font-semibold text-lg">Dakramen</dt><dd class="text-grijs mt-1">Nieuw plaatsen, vernieuwen of een lekkend dakraam herstellen.</dd></div>
+        <div><dt class="font-semibold text-lg">Schoorsteen</dt><dd class="text-grijs mt-1">Nieuwe voegen, een nieuwe kap en het lood rond de voet.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Santos -->
+<section id="santos" class="bg-lei2 py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop font-extrabold text-4xl lg:text-6xl tracking-[-0.02em] leading-[1.02]">Geen wisselende ploegen. Gewoon Santos en zijn vaste team.</h2>
+      <div class="mt-7 space-y-5 text-lg leading-relaxed text-inkt/80 max-w-xl">
+        <p>Santos Crisinelli werkt met zeven vaste dakdekkers. Op uw dak staan dus steeds dezelfde mensen, en Santos staat er zelf bij.</p>
+        <p>Na meer dan 400 klussen ziet hij snel waar een dak zwak wordt. Wij zeggen eerlijk wat we zien, pakken de oorzaak aan en niet alleen het gevolg. Daardoor kunnen we tot 10 jaar garantie geven op materiaal en arbeid.</p>
+      </div>
+    </div>
+    <div class="lg:col-span-6">
+      <div class="grid grid-cols-2 gap-4 lg:gap-5">
+        <img src="assets/site-05.webp" alt="Nieuwe tengels en panlatten op een dak in aanbouw" class="col-span-2 sm:col-span-1 w-full h-full aspect-[4/5] sm:aspect-auto object-cover rounded-[24px] rounded-tr-none">
+        <dl class="col-span-2 sm:col-span-1 grid grid-cols-2 sm:grid-cols-1 gap-4 lg:gap-5">
+          <div class="bg-pan text-white rounded-[20px] p-5 lg:p-6"><dt class="text-white/60 text-sm">Vaste dakdekkers</dt><dd class="font-kop font-extrabold text-4xl lg:text-5xl mt-1">7</dd></div>
+          <div class="bg-white rounded-[20px] p-5 lg:p-6"><dt class="text-grijs text-sm">Klussen gedaan</dt><dd class="font-kop font-extrabold text-4xl lg:text-5xl mt-1">400+</dd></div>
+          <div class="bg-white rounded-[20px] p-5 lg:p-6"><dt class="text-grijs text-sm">Garantie</dt><dd class="font-kop font-extrabold text-2xl lg:text-3xl mt-1 leading-tight">tot 10 jaar</dd></div>
+          <div class="bg-groen text-white rounded-[20px] p-5 lg:p-6"><dt class="text-white/75 text-sm">Veilig werken</dt><dd class="font-kop font-extrabold text-2xl lg:text-3xl mt-1 leading-tight">VCA</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <h2 class="font-kop font-extrabold text-4xl lg:text-6xl tracking-[-0.02em] leading-[1.02] max-w-2xl">Van eerste belletje tot garantiebewijs.</h2>
+    <ol class="mt-12 lg:mt-16 grid md:grid-cols-3 gap-10 md:gap-8 lg:gap-14">
+      <li class="border-t-4 border-inkt pt-6">
+        <span class="font-kop font-extrabold text-6xl text-groen leading-none">1</span>
+        <h3 class="mt-4 font-semibold text-xl">U belt of mailt</h3>
+        <p class="mt-2 text-grijs leading-relaxed">Bij spoed hoort u binnen een half uur van ons. Anders plannen we een moment dat u uitkomt.</p>
+      </li>
+      <li class="border-t-4 border-inkt pt-6">
+        <span class="font-kop font-extrabold text-6xl text-groen leading-none">2</span>
+        <h3 class="mt-4 font-semibold text-xl">Gratis inspectie en offerte</h3>
+        <p class="mt-2 text-grijs leading-relaxed">Santos bekijkt het dak ter plekke. Daarna krijgt u een heldere offerte en de prijs daarop staat vast.</p>
+      </li>
+      <li class="border-t-4 border-inkt pt-6">
+        <span class="font-kop font-extrabold text-6xl text-groen leading-none">3</span>
+        <h3 class="mt-4 font-semibold text-xl">Uitvoering en garantiebewijs</h3>
+        <p class="mt-2 text-grijs leading-relaxed">Na de oplevering ontvangt u een digitaal garantiebewijs met de datum waarop het werk is gedaan.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Foto's en projecten -->
+<section id="fotos" class="bg-pan text-white py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+      <h2 class="font-kop font-extrabold text-4xl lg:text-6xl tracking-[-0.02em] leading-[1.02] max-w-xl">Zo ziet het eruit als wij klaar zijn.</h2>
+      <p class="text-white/70 text-lg max-w-md leading-relaxed">Foto's van het werk, gemaakt op daken in Ede en de regio.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+      <figure class="col-span-2 lg:row-span-2">
+        <img src="assets/site-12.jpg" alt="Opgeleverd antraciet pannendak met dakkapel" class="w-full h-full min-h-[240px] object-cover rounded-[20px]">
+      </figure>
+      <figure ><img src="assets/google-08.jpg" alt="Nok van een pannendak tijdens herstel" class="w-full aspect-square object-cover rounded-[20px]"></figure>
+      <figure ><img src="assets/site-14.webp" alt="Loodwerk onder een dakkapel wordt vernieuwd" class="w-full aspect-square object-cover rounded-[20px]"></figure>
+      <figure ><img src="assets/site-01.webp" alt="Nieuw plat dak op een aanbouw" class="w-full aspect-square object-cover rounded-[20px]"></figure>
+      <figure ><img src="assets/google-04.jpg" alt="Isolatieplaten op een dak tijdens renovatie" class="w-full aspect-square object-cover rounded-[20px]"></figure>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-10 md:gap-8 border-t border-white/15 pt-10">
+      <article >
+        <p class="text-groenlicht font-semibold text-sm">Ede, daklekkage</p>
+        <h3 class="mt-2 font-kop font-bold text-xl">Plat dak deels vernieuwd</h3>
+        <p class="mt-2 text-white/70 leading-relaxed">Lekkend plat dak met een nieuwe ondergrond en gebrande bitumen dakbedekking.</p>
+      </article>
+      <article >
+        <p class="text-groenlicht font-semibold text-sm">Amersfoort, daklekkage</p>
+        <h3 class="mt-2 font-kop font-bold text-xl">Bedrijfshal plaatselijk hersteld</h3>
+        <p class="mt-2 text-white/70 leading-relaxed">Het lek plaatselijk vernieuwd met bitumen, zonder het hele dak te vervangen.</p>
+      </article>
+      <article >
+        <p class="text-groenlicht font-semibold text-sm">Wijchen, nokvorsten</p>
+        <h3 class="mt-2 font-kop font-bold text-xl">Nok gerenoveerd</h3>
+        <p class="mt-2 text-white/70 leading-relaxed">Een nieuwe nokbalk en de nokpannen opnieuw gemonteerd op een pannendak.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+      <h2 class="font-kop font-extrabold text-4xl lg:text-6xl tracking-[-0.02em] leading-[1.02] max-w-2xl">Wat klanten erover zeggen.</h2>
+      <p class="flex items-center gap-3">
+        <span class="font-kop font-extrabold text-5xl">5,0</span>
+        <span class="text-sm text-grijs leading-snug"><span class="text-geel text-base tracking-[2px]" aria-hidden="true">★★★★★</span><br>8 reviews op Google</span>
+      </p>
+    </div>
+    <div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-5 [&>*]:mb-5">
+      <figure class="break-inside-avoid bg-white rounded-[24px] p-7">
+        <blockquote class="text-lg leading-relaxed">"Vanwegen een plotselinge lekkage op de slaapkamer van onze dochter direct gebeld. Dakdekker Specialist Ede stond binnen een paar uur op de stoep om de losgewaaide pan weer vast te zetten."</blockquote>
+        <figcaption class="mt-5 font-semibold">Nick Willems</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-groen text-white rounded-[24px] p-7">
+        <blockquote class="font-kop font-bold text-2xl leading-snug">"Geen gedoe met ingewikkelde offertes, gewoon direct een heldere prijs en prima werk geleverd."</blockquote>
+        <figcaption class="mt-5 font-semibold text-white/85">Sam de Groot</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-[24px] p-7">
+        <blockquote class="text-lg leading-relaxed">"In de knik tussen het hoofddak en de aanbouw bleef na de storm steeds water staan door een kleine scheur in de zinken kilgoot. Santos inspecteerde de goot grondig en heeft de naad ter plekke weer strak gesoldeerd. Zeer transparante offerte, eerlijk advies en hele fijne communicatie."</blockquote>
+        <figcaption class="mt-5 font-semibold">A Google User</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-[24px] p-7">
+        <blockquote class="text-lg leading-relaxed">"Het platte dak van onze garage laten voorzien van naadloos EPDM door Dakdekker Specialist Ede. Deze ervaren dakdekker dacht heel goed mee over de opstand en de zinken daktrim."</blockquote>
+        <figcaption class="mt-5 font-semibold">Sophie Bakker</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white rounded-[24px] p-7">
+        <blockquote class="text-lg leading-relaxed">"Laatst vogelwerende borstels laten plaatsen onder de onderste pannenrij om vogels onder de kap te weerhouden. De montage was binnen een uurtje geklaard en we hebben er geen omkijken meer naar."</blockquote>
+        <figcaption class="mt-5 font-semibold">David van Loon</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-lei2 py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold text-4xl lg:text-6xl tracking-[-0.02em] leading-[1.02]">Even laten kijken?</h2>
+      <p class="mt-5 text-lg text-grijs leading-relaxed">Bel gerust, ook buiten kantoortijd. Liever eerst een gratis inspectie of offerte? Laat uw gegevens achter, dan nemen wij contact met u op.</p>
+      <a href="tel:0850046656" class="knop-geel mt-8 inline-flex items-center gap-3 rounded-full bg-geel text-inkt font-bold text-lg px-7 py-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 085 004 6656
+      </a>
+      <dl class="mt-10 space-y-5">
+        <div><dt class="text-sm text-grijs">E-mail</dt><dd><a href="mailto:info@dakdekkerspecialistede.nl" class="font-semibold text-lg hover:text-groen break-all">info@dakdekkerspecialistede.nl</a></dd></div>
+        <div><dt class="text-sm text-grijs">Adres</dt><dd class="font-semibold text-lg">Galvanistraat 1, 6716 AE Ede</dd></div>
+        <div><dt class="text-sm text-grijs">Bereikbaar</dt><dd class="font-semibold text-lg">Elke dag, 24 uur per dag</dd></div>
+      </dl>
+      <div class="mt-10">
+        <p class="text-sm text-grijs">Wij werken in Ede en de dorpen eromheen</p>
+        <p class="mt-2 font-medium leading-relaxed">Bennekom, Lunteren, Ederveen, Wekerom, Harskamp, Otterlo, Renswoude, Renkum en Wolfheze.</p>
+      </div>
+    </div>
+
+    <form class="lg:col-span-7 bg-white rounded-[28px] p-6 sm:p-10" action="mailto:info@dakdekkerspecialistede.nl" method="post" enctype="text/plain">
+      <h3 class="font-kop font-bold text-2xl lg:text-3xl tracking-tight">Gratis inspectie of offerte aanvragen</h3>
+      <div class="mt-8 grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-sm font-semibold">Naam</span>
+          <input required name="naam" class="mt-2 w-full rounded-xl bg-lei border border-transparent px-4 py-3.5 focus:bg-white focus:border-groen outline-none transition" autocomplete="name"></label>
+        <label class="block"><span class="text-sm font-semibold">Telefoonnummer</span>
+          <input required name="telefoon" type="tel" class="mt-2 w-full rounded-xl bg-lei border border-transparent px-4 py-3.5 focus:bg-white focus:border-groen outline-none transition" autocomplete="tel"></label>
+        <label class="block"><span class="text-sm font-semibold">E-mailadres</span>
+          <input name="email" type="email" class="mt-2 w-full rounded-xl bg-lei border border-transparent px-4 py-3.5 focus:bg-white focus:border-groen outline-none transition" autocomplete="email"></label>
+        <label class="block"><span class="text-sm font-semibold">Postcode en huisnummer</span>
+          <input name="adres" class="mt-2 w-full rounded-xl bg-lei border border-transparent px-4 py-3.5 focus:bg-white focus:border-groen outline-none transition"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold">Wat is er aan de hand met uw dak?</span>
+          <textarea name="omschrijving" rows="5" class="mt-2 w-full rounded-xl bg-lei border border-transparent px-4 py-3.5 focus:bg-white focus:border-groen outline-none transition" placeholder="Bijvoorbeeld: natte plek op het plafond van de slaapkamer, pannendak uit de jaren 80."></textarea></label>
+      </div>
+      <button type="submit" class="mt-7 w-full sm:w-auto rounded-full bg-pan text-white font-bold px-8 py-4 hover:bg-groen transition-colors">Aanvraag versturen</button>
+      <p class="mt-4 text-sm text-grijs">Gratis en vrijblijvend. Wij nemen contact met u op over de werkzaamheden en de kosten.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-pan text-white/70 pt-14 pb-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+    <div>
+      <div class="flex items-center gap-2.5">
+        <span class="bg-white rounded-lg p-1"><img src="assets/logo-oud.svg" alt="" class="w-8 h-8"></span>
+        <span class="font-kop font-extrabold text-white text-xl tracking-tight">Dakdekker Specialist Ede</span>
+      </div>
+      <p class="mt-4 text-sm">Galvanistraat 1, 6716 AE Ede<br><a href="tel:0850046656" class="hover:text-white">085 004 6656</a> &nbsp; <a href="mailto:info@dakdekkerspecialistede.nl" class="hover:text-white">info@dakdekkerspecialistede.nl</a></p>
+    </div>
+    <p class="text-sm">© 2026 Dakdekker Specialist Ede. Website door <a href="https://hagenweb.nl" class="underline hover:text-white">Hagenweb</a>.</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="belbalk lg:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-lei/95 backdrop-blur border-t border-inkt/10">
+  <a href="tel:0850046656" class="flex items-center justify-center gap-3 rounded-full bg-geel text-inkt font-bold text-lg py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Santos: 085 004 6656
+  </a>
+</div>
+
+<script>
+  (function () {
+    var bar = document.querySelector('.belbalk'), knop = document.getElementById('hero-bel');
+    if (!bar || !knop || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) { bar.classList.toggle('weg', e[0].isIntersecting); }).observe(knop);
+  })();
+</script>
+</body>
+</html>
