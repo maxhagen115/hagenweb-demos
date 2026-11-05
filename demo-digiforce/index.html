@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digiforce | Boeken printen vanaf 1 exemplaar, Culemborg</title>
+<meta name="description" content="Digiforce in Culemborg print boeken, readers en lesmateriaal vanaf één exemplaar en verzorgt verpakking en verzending tot bij je klant. Bel 085 071 7770.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#163241',
+          petrol: '#23465a',
+          oranje: { DEFAULT: '#ee7203', dark: '#d46400' },
+          papier: '#f5f7f7',
+          lijn: '#dde5e8',
+          tekst: '#14242e',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'sans-serif'],
+          body: ['"Source Sans 3"', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", sans-serif; }
+  .kop { font-family: Archivo, sans-serif; font-stretch: 118%; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance; }
+  .kop-s { font-family: Archivo, sans-serif; font-stretch: 112%; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; }
+  p { text-wrap: pretty; }
+
+  /* Snijtekens: zoals op een drukvel, rond het beeld */
+  .snij { position: relative; color: #23465a; }
+  .snij::before {
+    content: ""; position: absolute; inset: -18px; pointer-events: none;
+    background:
+      linear-gradient(currentColor,currentColor) left 0 top 18px / 12px 1px no-repeat,
+      linear-gradient(currentColor,currentColor) left 18px top 0 / 1px 12px no-repeat,
+      linear-gradient(currentColor,currentColor) right 0 top 18px / 12px 1px no-repeat,
+      linear-gradient(currentColor,currentColor) right 18px top 0 / 1px 12px no-repeat,
+      linear-gradient(currentColor,currentColor) left 0 bottom 18px / 12px 1px no-repeat,
+      linear-gradient(currentColor,currentColor) left 18px bottom 0 / 1px 12px no-repeat,
+      linear-gradient(currentColor,currentColor) right 0 bottom 18px / 12px 1px no-repeat,
+      linear-gradient(currentColor,currentColor) right 18px bottom 0 / 1px 12px no-repeat;
+  }
+  .snij-licht { color: rgba(255,255,255,.55); }
+
+  /* Schuine uitsnede, zoals de snelheidsstrepen in het logo */
+  .schuin-l { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+  .schuin-r { clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%); }
+
+  .btn { transition: background-color .2s, transform .15s, box-shadow .2s; }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #ee7203; outline-offset: 3px; }
+
+  /* Eén moment beweging: de hoofdfoto schuift in, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .hero-foto { animation: inschuif .9s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes inschuif { from { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); } }
+  }
+</style>
+</head>
+<body class="bg-papier text-tekst antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-tekst text-white/80 text-[13px] text-center py-1.5 px-4">
+  Demo voor Digiforce, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-petrol text-white">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" aria-label="Digiforce, naar boven" class="shrink-0">
+      <img src="assets/logo-oud.png" alt="Digiforce print &amp; logistics" width="268" height="63" class="h-9 md:h-11 w-auto">
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 text-[15px] text-white/85">
+      <a href="#diensten" class="hover:text-white">Diensten</a>
+      <a href="#voor-wie" class="hover:text-white">Voor wie</a>
+      <a href="#platform" class="hover:text-white">Platform</a>
+      <a href="#over" class="hover:text-white">Over Digiforce</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+    <a href="tel:+31850717770" class="flex items-center gap-2 font-semibold text-[15px] md:text-base whitespace-nowrap hover:text-oranje transition-colors">
+      <svg class="w-4 h-4 text-oranje" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span class="hidden sm:inline">085 071 7770</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-9 pb-14 md:pt-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 lg:col-span-6">
+      <p class="text-petrol font-semibold text-[15px] mb-4">Boekdrukkerij en fulfilment in Culemborg</p>
+      <h1 class="kop text-[2.6rem] sm:text-5xl lg:text-[4.1rem] text-ink">Eén boek of duizend. Altijd op tijd.</h1>
+      <p class="mt-5 text-lg md:text-xl leading-relaxed text-tekst/80 max-w-[30rem]">
+        Wij printen boeken, readers en lesmateriaal vanaf één exemplaar en leveren ze zelf bij je klant af.
+        Persoonlijk geregeld, van upload tot levering.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31850717770" class="btn inline-flex items-center gap-3 bg-oranje hover:bg-oranje-dark text-white font-bold text-lg px-7 py-4 rounded-lg shadow-[0_10px_24px_-10px_rgba(238,114,3,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          Bel 085 071 7770
+        </a>
+        <a href="mailto:sales@dfprint.nl?subject=Offerte%20aanvragen" class="font-semibold text-petrol underline decoration-2 decoration-oranje underline-offset-[6px] hover:text-ink">Offerte per mail</a>
+      </div>
+      <p class="mt-7 flex items-center gap-2 text-[15px] text-tekst/70">
+        <span class="flex text-oranje" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="text-tekst">5,0</strong> op Google, uit 4 reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 lg:col-span-6 md:pl-4">
+      <div class="snij mx-[18px] md:mx-0">
+        <div class="hero-foto schuin-l bg-lijn">
+          <img src="assets/site-05.jpg" alt="Een rol vers bedrukt papier loopt door de digitale pers bij Digiforce" width="600" height="400" class="w-full aspect-[5/4] object-cover">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-white border-y border-lijn">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <div class="lg:sticky lg:top-10">
+        <h2 class="kop text-3xl md:text-[2.6rem] text-ink">Print en logistiek, onder één dak.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-tekst/80 max-w-md">
+          Geen grote voorraden, geen restpartijen. Je bestelt precies wat je nodig hebt en wij zorgen dat het
+          snel, correct en netjes bij je klant aankomt.
+        </p>
+        <div class="snij mt-12 mx-[18px] max-w-md">
+          <img src="assets/site-06.jpg" alt="Een gedrukte en geseald ringband met full colour omslag" width="600" height="400" class="w-full aspect-[3/2] object-cover">
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-7">
+      <ul class="divide-y divide-lijn border-y border-lijn">
+        <li class="py-8 md:py-10 grid sm:grid-cols-[13rem_1fr] gap-3 sm:gap-8">
+          <h3 class="kop-s text-xl text-ink">Printen vanaf oplage&nbsp;1</h3>
+          <p class="leading-relaxed text-tekst/80">Bij Digiforce print je al vanaf één exemplaar. Ideaal voor proefdrukken, gepersonaliseerd drukwerk of titels met een beperkte oplage.</p>
+        </li>
+        <li class="py-8 md:py-10 grid sm:grid-cols-[13rem_1fr] gap-3 sm:gap-8">
+          <h3 class="kop-s text-xl text-ink">Short run printing</h3>
+          <p class="leading-relaxed text-tekst/80">Kleine oplages, zonder in te leveren op kwaliteit of levertijd. Van één exemplaar tot enkele honderden, snel en efficiënt geproduceerd.</p>
+        </li>
+        <li class="py-8 md:py-10 grid sm:grid-cols-[13rem_1fr] gap-3 sm:gap-8">
+          <h3 class="kop-s text-xl text-ink">Logistiek en fulfilment</h3>
+          <p class="leading-relaxed text-tekst/80">Wij verzorgen het hele proces, van productie tot verzending. Boeken, readers, lesmateriaal of gepersonaliseerd drukwerk: het komt snel en professioneel bij je klant aan.</p>
+        </li>
+        <li class="py-8 md:py-10 grid sm:grid-cols-[13rem_1fr] gap-3 sm:gap-8">
+          <h3 class="kop-s text-xl text-ink">Online bestellen</h3>
+          <p class="leading-relaxed text-tekst/80">Upload je boek op ons platform en plaats je bestelling met een paar klikken. Snel, veilig en volledig geautomatiseerd.</p>
+        </li>
+      </ul>
+      <div class="mt-10">
+        <p class="text-sm font-semibold text-petrol">Wat we maken</p>
+        <p class="kop-s text-2xl md:text-3xl text-ink mt-2 leading-snug">Softcover, hardcover, brochures, ringbanden en wire-o.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voor wie -->
+<section id="voor-wie" class="bg-ink text-white">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="max-w-2xl">
+      <h2 class="kop text-3xl md:text-[2.6rem]">Voor wie we drukken.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-white/75">Uitgever, distributeur, opleider of auteur: we denken met je mee en zoeken de oplossing die bij jouw manier van werken past.</p>
+    </div>
+    <div class="mt-14 grid md:grid-cols-2 gap-x-16 gap-y-12">
+      <article class="border-t-2 border-white/25 pt-6">
+        <h3 class="kop-s text-2xl">Uitgevers</h3>
+        <p class="mt-3 leading-relaxed text-white/75 max-w-lg">Produceer long tail titels en backlist-boeken al vanaf één exemplaar. Geen voorraadrisico en geen restpartijen, wel volledige controle over productie, distributie en kwaliteit.</p>
+      </article>
+      <article class="border-t-2 border-white/25 pt-6 md:mt-16">
+        <h3 class="kop-s text-2xl">Distributeurs en webshops</h3>
+        <p class="mt-3 leading-relaxed text-white/75 max-w-lg">Koppel je webshop of ERP aan ons platform en wij leveren direct aan je klant. Productie, verpakking en verzending in jouw naam, snel, foutloos en door heel Europa.</p>
+      </article>
+      <article class="border-t-2 border-white/25 pt-6">
+        <h3 class="kop-s text-2xl">Opleiders en trainingsbureaus</h3>
+        <p class="mt-3 leading-relaxed text-white/75 max-w-lg">Bestel readers, lesmappen en cursusmateriaal precies wanneer je het nodig hebt. Per stuk of in bulk, op locatie of bij de deelnemer thuis. Zonder opslag of verouderde voorraad.</p>
+      </article>
+      <article class="border-t-2 border-white/25 pt-6 md:mt-16">
+        <h3 class="kop-s text-2xl">Internationaal printen en leveren</h3>
+        <p class="mt-3 leading-relaxed text-white/75 max-w-lg">Vanuit Culemborg bouwt Digiforce aan een Europees print- en fulfilmentnetwerk. Via ons platform regel je alles centraal, van upload tot levering.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Platform -->
+<section id="platform">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-12 md:gap-14 items-center">
+    <div class="md:col-span-6 order-2 md:order-1">
+      <div class="snij mx-[18px] md:mx-0">
+        <div class="schuin-r">
+          <img src="assets/site-04.jpg" alt="De webapp van Digiforce met een overzicht van bestellingen op een beeldscherm" width="600" height="400" class="w-full aspect-[3/2] object-cover">
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-6 order-1 md:order-2">
+      <p class="text-petrol font-semibold text-[15px] mb-3">printItEasy</p>
+      <h2 class="kop text-3xl md:text-[2.6rem] text-ink">Eindeloze mogelijkheden voor boeken. Eén platform.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-tekst/80 max-w-lg">
+        Met het printplatform van Digiforce heb je direct toegang tot boekproductie. Vanuit Culemborg bouwen we dagelijks aan
+        een internationaal netwerk dat boeken produceert en levert door heel Europa, volledig on-demand en volledig geautomatiseerd.
+      </p>
+      <figure class="mt-9 border-l-4 border-oranje pl-5">
+        <blockquote class="kop-s text-xl text-ink">"Alles geautomatiseerd aanleveren is geen probleem"</blockquote>
+        <figcaption class="mt-2 text-[15px] text-tekst/70">Madelon Kelders, Proefschriftmaken</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Klanten aan het woord -->
+<section class="bg-lijn/60 border-y border-lijn">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-12 items-end">
+    <figure class="lg:col-span-8">
+      <svg class="w-12 h-12 text-oranje mb-6" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M8 36V24c0-8 4-13 12-15l1.5 3.5C17 14 15.5 17 15.3 21H21v15zm19 0V24c0-8 4-13 12-15l1.5 3.5C36 14 34.5 17 34.3 21H40v15z"/></svg>
+      <blockquote class="kop text-[1.9rem] sm:text-4xl lg:text-[2.9rem] !leading-[1.12] text-ink">"Met Digiforce werden kleine orders ineens commercieel interessant voor ons."</blockquote>
+      <figcaption class="mt-6 text-lg text-tekst/75"><strong class="text-tekst font-semibold">Ben Riezouw</strong>, Boekenbouwers</figcaption>
+    </figure>
+    <figure class="lg:col-span-4 bg-white rounded-xl p-7 shadow-[0_18px_40px_-24px_rgba(22,50,65,.45)]">
+      <div class="flex items-center justify-between">
+        <span class="flex text-oranje" aria-label="5 van 5 sterren">
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span class="text-sm text-tekst/60">Google-review</span>
+      </div>
+      <blockquote class="kop-s text-2xl text-ink mt-5">"Super mooi gedaan."</blockquote>
+      <figcaption class="mt-3 text-[15px] text-tekst/70">mahmod Sa</figcaption>
+      <p class="mt-6 pt-5 border-t border-lijn text-[15px] text-tekst/70"><strong class="text-tekst">5,0</strong> gemiddeld uit 4 reviews op Google</p>
+    </figure>
+  </div>
+</section>
+
+<!-- Over Digiforce -->
+<section id="over">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-10 lg:gap-16">
+    <div class="lg:col-span-5">
+      <p class="text-petrol font-semibold text-[15px] mb-3">Wij zijn Digiforce</p>
+      <h2 class="kop text-3xl md:text-[2.6rem] text-ink">Persoonlijke aandacht, van idee tot levering.</h2>
+    </div>
+    <div class="lg:col-span-7 space-y-5 text-lg leading-relaxed text-tekst/80 max-w-2xl">
+      <p>Op zoek naar een partner voor kwalitatieve boekproducties tegen een scherpe prijs? Digiforce is totaalleverancier voor print, afwerking en logistiek, en staat bekend als marktleider in het on-time leveren van boeken en drukwerk.</p>
+      <p>Wat ons anders maakt? We denken met je mee en begeleiden je stap voor stap. Of je nu uitgever, distributeur, auteur of contentmaker bent: je krijgt slimme oplossingen die echt werken.</p>
+      <p>Als grootste printgroep in de Benelux hebben we alles in huis om je volledig te ontzorgen. Een breed pakket aan print- en logistieke diensten, allemaal onder één dak.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="pb-16 md:pb-24">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="bg-petrol text-white rounded-2xl overflow-hidden grid lg:grid-cols-12">
+      <div class="lg:col-span-6 p-8 md:p-12">
+        <h2 class="kop text-3xl md:text-[2.6rem]">Kom gerust langs. De koffie staat klaar.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-white/80 max-w-md">Of vraag direct een vrijblijvende offerte aan. Bel of mail ons, we helpen je graag verder.</p>
+        <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+          <a href="tel:+31850717770" class="btn inline-flex justify-center items-center gap-3 bg-oranje hover:bg-oranje-dark text-white font-bold text-lg px-7 py-4 rounded-lg">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+            Bel 085 071 7770
+          </a>
+          <a href="mailto:sales@dfprint.nl" class="font-semibold underline decoration-2 decoration-oranje underline-offset-[6px] hover:text-oranje">sales@dfprint.nl</a>
+        </div>
+        <dl class="mt-12 grid sm:grid-cols-2 gap-8 text-[15px]">
+          <div>
+            <dt class="font-semibold text-white">Adres</dt>
+            <dd class="mt-2 text-white/80 leading-relaxed">Digiforce<br>Textielweg 12<br>4104 AM Culemborg</dd>
+            <dd class="mt-2"><a href="https://www.google.com/maps/search/?api=1&query=Textielweg+12+4104+AM+Culemborg" class="underline underline-offset-4 text-white/90 hover:text-oranje">Route plannen</a></dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-white">Openingstijden</dt>
+            <dd class="mt-2 text-white/80 leading-relaxed">Maandag t/m vrijdag<br><span class="tabular-nums text-white">9:00 tot 17:00</span><br>Weekend gesloten</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="lg:col-span-6 bg-ink p-8 md:p-12">
+        <h3 class="kop-s text-2xl">Stuur een bericht</h3>
+        <p class="mt-2 text-white/70 text-[15px]">Vertel kort wat je wilt laten drukken. Je bericht gaat naar sales@dfprint.nl.</p>
+        <form action="mailto:sales@dfprint.nl" method="post" enctype="text/plain" class="mt-7 space-y-4">
+          <div>
+            <label for="naam" class="block text-sm font-semibold mb-1.5">Naam</label>
+            <input id="naam" name="Naam" type="text" required autocomplete="name" class="w-full rounded-lg bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:bg-white/15">
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="email" class="block text-sm font-semibold mb-1.5">E-mailadres</label>
+              <input id="email" name="E-mail" type="email" required autocomplete="email" class="w-full rounded-lg bg-white/10 border border-white/20 px-4 py-3 text-white focus:bg-white/15">
+            </div>
+            <div>
+              <label for="tel" class="block text-sm font-semibold mb-1.5">Telefoon <span class="font-normal text-white/50">(optioneel)</span></label>
+              <input id="tel" name="Telefoon" type="tel" autocomplete="tel" class="w-full rounded-lg bg-white/10 border border-white/20 px-4 py-3 text-white focus:bg-white/15">
+            </div>
+          </div>
+          <div>
+            <label for="bericht" class="block text-sm font-semibold mb-1.5">Je vraag</label>
+            <textarea id="bericht" name="Bericht" rows="4" required placeholder="Bijvoorbeeld: 150 softcovers, A5, 200 pagina's" class="w-full rounded-lg bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-white/40 focus:bg-white/15"></textarea>
+          </div>
+          <button type="submit" class="btn w-full sm:w-auto bg-white text-ink hover:bg-oranje hover:text-white font-bold px-7 py-3.5 rounded-lg">Bericht versturen</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-tekst text-white/70 text-[14px]">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <img src="assets/logo-oud.png" alt="Digiforce print &amp; logistics" width="268" height="63" class="h-9 w-auto">
+      <p class="mt-4">Print &amp; Logistics made easy.</p>
+    </div>
+    <div class="leading-relaxed">
+      <p class="font-semibold text-white">Digiforce</p>
+      <p>Textielweg 12<br>4104 AM Culemborg</p>
+    </div>
+    <div class="leading-relaxed">
+      <p><a href="tel:+31850717770" class="hover:text-white">085 071 7770</a></p>
+      <p><a href="mailto:sales@dfprint.nl" class="hover:text-white">sales@dfprint.nl</a></p>
+    </div>
+    <div class="leading-relaxed">
+      <p>KvK 60269812</p>
+      <p>BTW NL853836528B01</p>
+      <p>IBAN NL97 ABNA 0468 1322 60</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <p class="max-w-6xl mx-auto px-5 md:px-8 pt-5 pb-28 md:pb-5 text-white/50">© Digiforce 2026</p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-lijn p-3 flex gap-3">
+  <a href="tel:+31850717770" class="btn flex-1 inline-flex justify-center items-center gap-2 bg-oranje text-white font-bold py-3.5 rounded-lg">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+    Bel 085 071 7770
+  </a>
+  <a href="mailto:sales@dfprint.nl" aria-label="Mail Digiforce" class="btn inline-flex justify-center items-center px-4 rounded-lg border-2 border-petrol text-petrol">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+  </a>
+</div>
+
+</body>
+</html>
