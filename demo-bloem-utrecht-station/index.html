@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLOEM! Utrecht Station | Bloemenwinkel in de Stationshal van Utrecht Centraal</title>
+<meta name="description" content="BLOEM! in de Stationshal van Utrecht Centraal: verse plukboeketten, losse bloemen, planten en kado's. Elke dag open, ook op zondag. Bel 030 307 4465.">
+<meta property="og:title" content="BLOEM! Utrecht Station">
+<meta property="og:description" content="Even een bos mee, voor je instapt. Stationshal 13, Utrecht Centraal.">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d4145a'/%3E%3Cg fill='white' transform='translate(16 16)'%3E%3Cellipse rx='3' ry='8' cy='-6'/%3E%3Cellipse rx='3' ry='8' cy='-6' transform='rotate(45)'/%3E%3Cellipse rx='3' ry='8' cy='-6' transform='rotate(90)'/%3E%3Cellipse rx='3' ry='8' cy='-6' transform='rotate(135)'/%3E%3Cellipse rx='3' ry='8' cy='-6' transform='rotate(180)'/%3E%3Cellipse rx='3' ry='8' cy='-6' transform='rotate(225)'/%3E%3Cellipse rx='3' ry='8' cy='-6' transform='rotate(270)'/%3E%3Cellipse rx='3' ry='8' cy='-6' transform='rotate(315)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='3.4' fill='%23d4145a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        inkt: '#1f2a27',
+        mos: '#5b6863',
+        perron: '#f3f5f2',
+        roze: { DEFAULT: '#d4145a', donker: '#b30f4b', zacht: '#fbe3ec' },
+        bord: '#ffd23f'
+      },
+      fontFamily: {
+        kop: ['Archivo', 'system-ui', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-variation-settings: 'wdth' 72; font-weight: 800; letter-spacing: -0.01em; line-height: .95; text-wrap: balance; }
+  .kop-breed { font-family: 'Archivo', system-ui, sans-serif; font-variation-settings: 'wdth' 100; font-weight: 800; }
+  .tijd { font-family: 'Archivo', system-ui, sans-serif; font-variation-settings: 'wdth' 80; font-weight: 700; font-variant-numeric: tabular-nums; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 28px 28px; }
+  .boog-sm { border-radius: 260px 260px 20px 20px; }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #d4145a; outline-offset: 3px; border-radius: 6px; }
+  .bord-rij[data-vandaag="1"] { background: rgba(255,210,63,.12); }
+  .bord-rij[data-vandaag="1"] .dag::after { content: ' vandaag'; color: #ffd23f; font-size: .7em; letter-spacing: .02em; margin-left: .4em; font-weight: 600; }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-perron text-inkt font-sans">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white px-3 py-2 z-50">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor BLOEM! Utrecht Station, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-bord">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-perron/90 backdrop-blur border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="BLOEM! Utrecht Station, naar boven">
+      <span class="grid place-items-center w-9 h-9 rounded-lg bg-inkt">
+        <svg viewBox="-16 -16 32 32" class="w-6 h-6" aria-hidden="true"><g fill="#fff"><ellipse rx="3" ry="7.5" cy="-6"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(45)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(90)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(135)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(180)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(225)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(270)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(315)"/></g><circle r="3.2" fill="#1f2a27"/></svg>
+      </span>
+      <span class="leading-none">
+        <span class="kop-breed text-[22px] tracking-tight block">BLOEM!</span>
+        <span class="text-[11px] text-mos font-semibold tracking-wide">Utrecht Station</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#assortiment" class="hover:text-roze transition-colors">Assortiment</a>
+      <a href="#open" class="hover:text-roze transition-colors">Openingstijden</a>
+      <a href="#reviews" class="hover:text-roze transition-colors">Reviews</a>
+      <a href="#duurzaam" class="hover:text-roze transition-colors">Duurzaam</a>
+      <a href="#sparen" class="hover:text-roze transition-colors">Sparen</a>
+      <a href="#route" class="hover:text-roze transition-colors">Route</a>
+    </nav>
+    <a href="tel:+31303074465" class="knop inline-flex items-center gap-2 rounded-full bg-inkt text-white px-4 py-2.5 text-[15px] font-semibold hover:bg-roze">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      <span class="hidden sm:inline">030 307 4465</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-8 pb-14 lg:pt-14 lg:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="lg:col-span-6 relative z-10">
+      <p class="text-mos font-semibold text-[15px]">Bloemist in de Stationshal, Utrecht Centraal</p>
+      <h1 class="kop text-[3.6rem] sm:text-7xl lg:text-[6.6rem] mt-3 text-inkt">Even een bos mee, voor je instapt.</h1>
+      <p class="mt-6 text-lg lg:text-xl text-inkt/80 max-w-[30rem] leading-relaxed">Verse plukboeketten, losse bloemen en planten, elke dag van vroeg tot laat. Zelf kiezen of laten samenstellen, en je bent zo weer op weg.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a id="hero-bel" href="tel:+31303074465" class="knop inline-flex items-center gap-3 rounded-full bg-roze hover:bg-roze-donker text-white pl-6 pr-7 py-4 text-lg font-semibold shadow-[0_10px_30px_-10px_rgba(212,20,90,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Bel 030 307 4465
+        </a>
+        <a href="#route" class="font-semibold underline decoration-2 decoration-roze/40 underline-offset-[6px] hover:decoration-roze">Route naar Stationshal 13</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px] text-mos">
+        <span class="flex text-bord" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4 text-inkt/20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="text-inkt">4,2</strong> uit 130 Google-reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-6 relative">
+      <div class="absolute -right-24 -top-10 w-[34rem] h-[34rem] rounded-full bg-roze-zacht hidden lg:block" aria-hidden="true"></div>
+      <figure class="relative boog overflow-hidden aspect-[4/5] sm:aspect-[5/5] lg:aspect-[4/5] max-w-[560px] mx-auto shadow-[0_30px_60px_-30px_rgba(31,42,39,.55)]">
+        <img src="assets/google-01.jpg" alt="De winkel van BLOEM! in de Stationshal van Utrecht Centraal, met manden vol bloemen voor de deur" class="w-full h-full object-cover object-[58%_50%]">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Openingstijden: vertrekbord -->
+<section id="open" class="bg-inkt text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-5xl lg:text-7xl">Open als jij reist.</h2>
+      <p class="mt-5 text-white/75 text-lg leading-relaxed max-w-md">Vroeg op weg naar je werk of laat terug van een verjaardag: van maandag tot en met zaterdag staan we er tot negen uur 's avonds. Op zondag tot zeven uur.</p>
+      <p class="mt-6 text-white/75" id="nu-status">Stationshal 13, Utrecht Centraal</p>
+    </div>
+    <div class="lg:col-span-7">
+      <div class="rounded-2xl bg-[#141c1a] ring-1 ring-white/10 p-2 sm:p-3 shadow-2xl">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-white/10">
+          <span class="kop-breed text-lg tracking-tight">BLOEM! <span class="text-white/50 font-semibold" style="font-variation-settings:'wdth' 80">Utrecht Station</span></span>
+          <span class="tijd text-bord text-lg" id="klok" aria-hidden="true"></span>
+        </div>
+        <table class="w-full text-left">
+          <caption class="sr-only">Openingstijden</caption>
+          <tbody class="tijd text-xl sm:text-2xl">
+            <tr class="bord-rij border-b border-white/5" data-dag="1"><th scope="row" class="dag font-semibold px-4 py-3">Maandag</th><td class="px-4 py-3 text-right text-bord">08:00 – 21:00</td></tr>
+            <tr class="bord-rij border-b border-white/5" data-dag="2"><th scope="row" class="dag font-semibold px-4 py-3">Dinsdag</th><td class="px-4 py-3 text-right text-bord">08:00 – 21:00</td></tr>
+            <tr class="bord-rij border-b border-white/5" data-dag="3"><th scope="row" class="dag font-semibold px-4 py-3">Woensdag</th><td class="px-4 py-3 text-right text-bord">08:00 – 21:00</td></tr>
+            <tr class="bord-rij border-b border-white/5" data-dag="4"><th scope="row" class="dag font-semibold px-4 py-3">Donderdag</th><td class="px-4 py-3 text-right text-bord">08:00 – 21:00</td></tr>
+            <tr class="bord-rij border-b border-white/5" data-dag="5"><th scope="row" class="dag font-semibold px-4 py-3">Vrijdag</th><td class="px-4 py-3 text-right text-bord">08:00 – 21:00</td></tr>
+            <tr class="bord-rij border-b border-white/5" data-dag="6"><th scope="row" class="dag font-semibold px-4 py-3">Zaterdag</th><td class="px-4 py-3 text-right text-bord">08:00 – 21:00</td></tr>
+            <tr class="bord-rij" data-dag="0"><th scope="row" class="dag font-semibold px-4 py-3">Zondag</th><td class="px-4 py-3 text-right text-bord">08:30 – 19:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Assortiment -->
+<section id="assortiment" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
+        <h2 class="kop text-5xl lg:text-7xl">Ambachtelijk, kleurrijk en iedere dag vers.</h2>
+        <p class="mt-6 text-lg text-inkt/80 leading-relaxed max-w-md">Onze bloemen komen vers van de veiling en het assortiment wisselt mee met de seizoenen. Loop binnen en kijk wat er vandaag staat.</p>
+
+        <dl class="mt-10 divide-y divide-inkt/10 border-y border-inkt/10">
+          <div class="py-5 grid grid-cols-[auto_1fr] gap-x-4">
+            <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-roze" aria-hidden="true"></span>
+            <div><dt class="font-semibold text-lg">Plukboeketten</dt><dd class="text-inkt/70 mt-1">Kleurrijke gemengde bossen, klaar om mee te nemen.</dd></div>
+          </div>
+          <div class="py-5 grid grid-cols-[auto_1fr] gap-x-4">
+            <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-roze" aria-hidden="true"></span>
+            <div><dt class="font-semibold text-lg">Losse bloemen</dt><dd class="text-inkt/70 mt-1">Kies je eigen stelen en wij maken er een mooie bos van.</dd></div>
+          </div>
+          <div class="py-5 grid grid-cols-[auto_1fr] gap-x-4">
+            <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-roze" aria-hidden="true"></span>
+            <div><dt class="font-semibold text-lg">Planten voor binnen en buiten</dt><dd class="text-inkt/70 mt-1">Van cactussen en orchideeën tot bloeiende en groene planten.</dd></div>
+          </div>
+          <div class="py-5 grid grid-cols-[auto_1fr] gap-x-4">
+            <span class="mt-1.5 w-2.5 h-2.5 rounded-full bg-roze" aria-hidden="true"></span>
+            <div><dt class="font-semibold text-lg">Potten, vazen en kado's</dt><dd class="text-inkt/70 mt-1">Voor als je net iets meer wilt geven dan een bos bloemen.</dd></div>
+          </div>
+        </dl>
+        <p class="mt-8 text-inkt/80">Heb je een speciale wens? <a href="tel:+31303074465" class="font-semibold text-roze hover:text-roze-donker underline underline-offset-4">Bel ons even</a>, we denken graag met je mee.</p>
+      </div>
+
+      <div class="lg:col-span-7 grid grid-cols-6 gap-4 lg:gap-5">
+        <figure class="col-span-6 rounded-[28px] overflow-hidden aspect-[4/3]">
+          <img src="assets/google-05.jpg" alt="Manden met gerbera's, rozen en zonnebloemen naast een rek met trendy cactussen" class="w-full h-full object-cover">
+        </figure>
+        <figure class="col-span-6 sm:col-span-4 boog-sm overflow-hidden aspect-[3/4]">
+          <img src="assets/google-02.jpg" alt="Interieur van de winkel met etagères vol boeketten in glazen potten, orchideeën en manden met rozen" class="w-full h-full object-cover">
+        </figure>
+        <div class="col-span-6 sm:col-span-2 self-end bg-roze text-white rounded-[22px] p-6">
+          <p class="kop text-3xl">Kleur je dag,</p>
+          <p class="mt-1 text-white/90">of die van een ander.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="kop text-5xl lg:text-7xl max-w-2xl">Wat reizigers over ons zeggen.</h2>
+      <p class="text-mos text-lg"><strong class="kop-breed text-inkt text-3xl mr-1">4,2</strong> gemiddeld uit 130 Google-reviews</p>
+    </div>
+
+    <div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-5 [&>*]:mb-5">
+      <figure class="break-inside-avoid rounded-[22px] bg-perron p-7">
+        <blockquote class="text-lg leading-relaxed">"Super fijne ervaring! Anemiek was heel vriendelijk en nam de tijd om uit te leggen hoe ik mijn pioenrozen moest verzorgen. De pioenrozen waren prachtig en van topkwaliteit. Ze hield ze zelfs voor me in het water terwijl ik een afspraak had. Echt geweldige service!"</blockquote>
+        <figcaption class="mt-5 font-semibold">Triana Bulnes<span class="block text-mos font-normal text-sm mt-0.5">5 van 5 sterren</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-inkt text-white p-7">
+        <blockquote class="kop text-3xl lg:text-4xl leading-[1.05]">"Bloemen blijven lang goed! ‘s avonds 1 minuut voor sluitingstijd gekocht en staan ruim een week later nog als nieuw. Aangenaam verrast door de kwaliteit."</blockquote>
+        <figcaption class="mt-5 font-semibold">Heleen Wel<span class="block text-white/60 font-normal text-sm mt-0.5">5 van 5 sterren</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-perron p-7">
+        <blockquote class="text-lg leading-relaxed">"Zo goed geholpen net! Allemaal potten en planten gekocht en zo goed geholpen door Hala! Een echte topper!! Super blij mee!"</blockquote>
+        <figcaption class="mt-5 font-semibold">John Claridad<span class="block text-mos font-normal text-sm mt-0.5">5 van 5 sterren</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-roze-zacht p-7">
+        <blockquote class="text-lg leading-relaxed">"Ik heb nooit naam van persoon die mij net geholpen heeft kunnen weten, maar zij was heel erg behulpzaam en gaf geen kik toen ik gezegd heb dat ik doof ben maar zorgde juist voor oogcontact wanneer zij praatte. Was echt superfijn detail voor mij. En witte lelies heeft zij zorgzaam ingepakt en ook nog sneller afgemaakt t"</blockquote>
+        <figcaption class="mt-5 font-semibold">Lindsay Thusijanthi Sinniah<span class="block text-mos font-normal text-sm mt-0.5">5 van 5 sterren</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-perron p-7">
+        <blockquote class="text-lg leading-relaxed">"Super bedankt Tamar en Isa voor het mooie boeketje snelle service en vriendelijk geholpen kom vaker nu ik weet dat het zo snel gaat!!!!"</blockquote>
+        <figcaption class="mt-5 font-semibold">nam khoang<span class="block text-mos font-normal text-sm mt-0.5">5 van 5 sterren</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Duurzaam -->
+<section id="duurzaam" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-3xl">
+      <h2 class="kop text-5xl lg:text-7xl">Op weg naar 100% duurzame inkoop.</h2>
+      <p class="mt-6 text-lg text-inkt/80 leading-relaxed">We kijken bij de inkoop niet alleen naar schoonheid en kwaliteit. We houden rekening met de MPS-certificering, die laat zien hoe zwaar bloemen en planten het milieu belasten, en we letten op het land van herkomst.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-6 lg:gap-8">
+      <article class="grid sm:grid-cols-[1fr_1.1fr] bg-white rounded-[28px] overflow-hidden">
+        <img src="assets/site-01.jpg" alt="Medewerker van BLOEM! met een bos rode Red Naomi Futura rozen" class="w-full h-72 sm:h-full object-cover object-[70%_70%]">
+        <div class="p-7 lg:p-8 flex flex-col justify-center">
+          <h3 class="kop text-3xl lg:text-4xl">De duurzaamste rode roos ter wereld.</h3>
+          <p class="mt-4 text-inkt/75 leading-relaxed">Als lange rode roos vind je bij ons exclusief de Red Naomi Futura van kwekerij Porta Nova. Geen rozenkweker ter wereld haalt een lagere CO₂-uitstoot per steel.</p>
+        </div>
+      </article>
+      <article class="grid sm:grid-cols-[1fr_1.1fr] bg-white rounded-[28px] overflow-hidden">
+        <img src="assets/site-02.jpg" alt="Boeket ingepakt in papier met de tekst Made of flower waste" class="w-full h-72 sm:h-full object-cover object-[50%_40%]">
+        <div class="p-7 lg:p-8 flex flex-col justify-center">
+          <h3 class="kop text-3xl lg:text-4xl">Papier van bloemenafval.</h3>
+          <p class="mt-4 text-inkt/75 leading-relaxed">Gebroken stelen en afgesneden bloemstukken gooien we niet weg. Een Nederlandse papierfabriek maakt er het papier van waarin we je bos inpakken. Minder transport, minder uitstoot.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Sparen -->
+<section id="sparen" class="pb-20 lg:pb-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="relative overflow-hidden rounded-[32px] bg-roze text-white px-7 py-12 lg:px-16 lg:py-16 grid lg:grid-cols-12 gap-10 items-center">
+      <svg viewBox="-16 -16 32 32" class="absolute -right-16 -bottom-20 w-[22rem] h-[22rem] opacity-[.12]" aria-hidden="true"><g fill="#fff"><ellipse rx="3" ry="7.5" cy="-6"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(45)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(90)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(135)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(180)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(225)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(270)"/><ellipse rx="3" ry="7.5" cy="-6" transform="rotate(315)"/></g></svg>
+      <div class="lg:col-span-6 relative">
+        <h2 class="kop text-5xl lg:text-7xl">Spaar voor korting en kado's.</h2>
+        <p class="mt-5 text-lg text-white/90 leading-relaxed max-w-md">Elke euro die je in de winkel besteedt, levert een spaarpunt op. Meld je aan en je krijgt direct €2,50 korting op je eerste aankoop. Je punten vervallen niet.</p>
+        <a href="https://app.bloemenzaak.nl/register" class="knop mt-8 inline-flex items-center rounded-full bg-white text-roze hover:bg-inkt hover:text-white px-6 py-3.5 font-semibold">Aanmelden voor sparen</a>
+      </div>
+      <ul class="lg:col-span-6 relative space-y-3">
+        <li class="flex items-baseline justify-between gap-4 rounded-2xl bg-white/10 px-5 py-4"><span class="tijd text-2xl sm:text-3xl whitespace-nowrap">100 punten</span><span class="text-right">€ 5,00 korting</span></li>
+        <li class="flex items-baseline justify-between gap-4 rounded-2xl bg-white/10 px-5 py-4"><span class="tijd text-2xl sm:text-3xl whitespace-nowrap">250 punten</span><span class="text-right">€ 7,50 korting + plukboeket M</span></li>
+        <li class="flex items-baseline justify-between gap-4 rounded-2xl bg-white/10 px-5 py-4"><span class="tijd text-2xl sm:text-3xl whitespace-nowrap">500 punten</span><span class="text-right">€ 12,50 korting + plukboeket L in vaas</span></li>
+        <li class="text-white/80 text-sm pt-1">Liever een fysieke spaarpas? Die haal je gewoon bij ons in de winkel.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Familiebedrijf -->
+<section class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <figure class="lg:col-span-5 w-full boog overflow-hidden aspect-[4/5] max-w-md order-2 lg:order-1">
+      <img src="assets/google-07.jpg" alt="Ingang van BLOEM! in de Stationshal met zonnebloemen in manden voor de deur" class="w-full h-full object-cover object-[35%_50%]">
+    </figure>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <h2 class="kop text-5xl lg:text-7xl">Een familiebedrijf, ook op het station.</h2>
+      <div class="mt-6 space-y-5 text-lg text-inkt/80 leading-relaxed max-w-xl">
+        <p>Kees en Ineke Vrolijk begonnen in 1988 met een bloemenwinkel in Amsterdam, toen nog onder de naam Fleurtiek. Inmiddels hebben hun kinderen Rodrique en Celine het bedrijf overgenomen en zetten ze de familietraditie voort.</p>
+        <p>Op de bloemenveiling in Aalsmeer hebben we ons eigen verdeelcentrum. Daar kopen we in, stellen we boeketten samen en brengen onze chauffeurs alles vers en op tijd naar de winkels. Ook naar die van ons in Utrecht.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Route en contact -->
+<section id="route" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-5">
+        <h2 class="kop text-5xl lg:text-7xl">Je vindt ons in de Stationshal.</h2>
+        <p class="mt-6 text-lg text-inkt/80 leading-relaxed max-w-md">Kom gezellig langs, of bel of mail ons als je iets wilt vragen of een speciale wens hebt.</p>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+        <a href="https://www.google.com/maps/search/?api=1&query=BLOEM!+Stationshal+13+3511+ED+Utrecht" class="group rounded-[22px] bg-white p-7 hover:ring-2 hover:ring-roze transition sm:col-span-2">
+          <p class="text-mos font-semibold">Adres</p>
+          <p class="kop text-4xl mt-2">Stationshal 13</p>
+          <p class="text-lg mt-1">3511 ED Utrecht</p>
+          <p class="mt-4 font-semibold text-roze group-hover:underline underline-offset-4">Open in Google Maps</p>
+        </a>
+        <a href="tel:+31303074465" class="group rounded-[22px] bg-inkt text-white p-7 hover:bg-roze transition">
+          <p class="text-white/60 font-semibold">Bellen</p>
+          <p class="kop text-3xl lg:text-4xl mt-2">030 307 4465</p>
+        </a>
+        <a href="mailto:info@bloemenzaak.nl" class="group rounded-[22px] bg-white p-7 hover:ring-2 hover:ring-roze transition">
+          <p class="text-mos font-semibold">Mailen</p>
+          <p class="kop text-2xl lg:text-3xl mt-2 break-all">info@bloemenzaak.nl</p>
+        </a>
+        <div class="rounded-[22px] bg-white p-7 sm:col-span-2 flex flex-wrap gap-x-10 gap-y-2">
+          <p class="text-mos font-semibold w-full">Openingstijden</p>
+          <p class="text-lg"><span class="font-semibold">Maandag t/m zaterdag</span> 08:00 – 21:00</p>
+          <p class="text-lg"><span class="font-semibold">Zondag</span> 08:30 – 19:00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/70 pb-28 lg:pb-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+    <div>
+      <p class="kop-breed text-white text-4xl tracking-tight">BLOEM!</p>
+      <p class="mt-2">Utrecht Station · Stationshal 13, 3511 ED Utrecht</p>
+    </div>
+    <nav class="flex flex-wrap gap-x-6 gap-y-2 text-[15px]" aria-label="Footer">
+      <a href="#assortiment" class="hover:text-white">Assortiment</a>
+      <a href="#open" class="hover:text-white">Openingstijden</a>
+      <a href="#duurzaam" class="hover:text-white">Duurzaam</a>
+      <a href="#sparen" class="hover:text-white">Sparen</a>
+      <a href="#route" class="hover:text-white">Route</a>
+    </nav>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 border-t border-white/10 pt-6 text-sm flex flex-wrap justify-between gap-3">
+    <p>© BLOEM! 2026</p>
+    <p>Demo door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div id="belbalk" class="lg:hidden fixed bottom-0 inset-x-0 z-40 p-3 transition-transform duration-300 bg-gradient-to-t from-perron via-perron/95 to-perron/0">
+  <div class="flex gap-2">
+    <a href="tel:+31303074465" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-roze text-white py-3.5 font-semibold shadow-lg">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      Bel 030 307 4465
+    </a>
+    <a href="#route" class="knop inline-flex items-center justify-center rounded-full bg-inkt text-white px-5 font-semibold">Route</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Vandaag markeren op het vertrekbord + klok
+  var tijden = { 0: [510, 1140], 1: [480, 1260], 2: [480, 1260], 3: [480, 1260], 4: [480, 1260], 5: [480, 1260], 6: [480, 1260] };
+  var nu = new Date();
+  var dag = nu.getDay();
+  var rij = document.querySelector('.bord-rij[data-dag="' + dag + '"]');
+  if (rij) rij.setAttribute('data-vandaag', '1');
+  var klok = document.getElementById('klok');
+  function tik() {
+    var d = new Date();
+    klok.textContent = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+  }
+  tik(); setInterval(tik, 15000);
+  var min = nu.getHours() * 60 + nu.getMinutes();
+  var t = tijden[dag], status = document.getElementById('nu-status');
+  function hhmm(m) { return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0'); }
+  if (min >= t[0] && min < t[1]) status.textContent = 'Nu open, vandaag tot ' + hhmm(t[1]) + '. Stationshal 13, Utrecht Centraal.';
+  else if (min < t[0]) status.textContent = 'Vandaag open vanaf ' + hhmm(t[0]) + '. Stationshal 13, Utrecht Centraal.';
+  else status.textContent = 'Morgen weer open vanaf ' + hhmm(tijden[(dag + 1) % 7][0]) + '. Stationshal 13, Utrecht Centraal.';
+
+  // Mobiele belbalk pas tonen als de belknop in de hero uit beeld is
+  var balk = document.getElementById('belbalk'), heroBel = document.getElementById('hero-bel');
+  if ('IntersectionObserver' in window && balk && heroBel) {
+    new IntersectionObserver(function (e) {
+      balk.style.transform = e[0].isIntersecting ? 'translateY(110%)' : '';
+    }).observe(heroBel);
+  }
+})();
+</script>
+</body>
+</html>
