@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BackWerk Nijmegen | Vers belegd op Plein 1944</title>
+  <meta name="description" content="BackWerk op Plein 1944 in Nijmegen: vers belegde broodjes, warme en koude snacks, sappen van vers fruit en uitstekende koffie. Open tot 17:00.">
+  <meta property="og:title" content="BackWerk Nijmegen | Vers belegd op Plein 1944">
+  <meta property="og:description" content="Vers belegde broodjes, warme en koude snacks, sappen van vers fruit en uitstekende koffie.">
+  <meta property="og:image" content="assets/site-02.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23566039'/%3E%3Cpath d='M6 26V16a10 10 0 0 1 20 0v10z' fill='%23B5D62B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;800&family=Sofia+Sans+Extra+Condensed:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    document.documentElement.classList.add('js');
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { wand: '#566039', schaduw: '#2B3120', kalk: '#F4F6E8', korst: '#E2B56F', lime: '#B5D62B' },
+          fontFamily: {
+            kop: ['"Sofia Sans Extra Condensed"', 'Arial Narrow', 'sans-serif'],
+            tekst: ['Figtree', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body { text-wrap: pretty; }
+    h1, h2, h3 { font-family: "Sofia Sans Extra Condensed", "Arial Narrow", sans-serif; font-weight: 800; letter-spacing: -0.01em; line-height: 0.92; text-wrap: balance; }
+    :focus-visible { outline: 3px solid #B5D62B; outline-offset: 3px; border-radius: 4px; }
+    .kalk-focus :focus-visible, .kalk-focus:focus-visible { outline-color: #2B3120; }
+
+    /* De boog komt van de muur in de winkel. */
+    .boog { border-radius: 999px 999px 0 0; overflow: hidden; }
+
+    .knop { display: inline-flex; align-items: center; justify-content: center; gap: .65rem; background: #B5D62B; color: #2B3120; font-weight: 800; border-radius: 12px; transition: background-color .2s, transform .2s; }
+    .knop:hover { background: #C8E648; transform: translateY(-2px); }
+    .knop:active { transform: translateY(0) scale(.98); }
+
+    .knop-donker { background: #2B3120; color: #F4F6E8; }
+    .knop-donker:hover { background: #3C4430; }
+
+    .link { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; transition: text-underline-offset .2s; }
+    .link:hover { text-underline-offset: 8px; }
+
+    .sticker { transform: rotate(-8deg); }
+
+    .js .hero-foto img { animation: rijs .9s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes rijs { from { transform: scale(1.07) translateY(18px); } to { transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .js .hero-foto img { animation: none; }
+      .knop, .link { transition: none; }
+    }
+
+    tr.vandaag td { font-weight: 800; }
+    tr .vandaag-label { display: none; }
+    tr.vandaag .vandaag-label { display: inline; }
+  </style>
+</head>
+<body class="bg-kalk text-schaduw font-tekst text-[17px] leading-relaxed antialiased pb-[76px] lg:pb-0">
+  <a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-lime focus:p-3">Direct naar de inhoud</a>
+
+  <div class="bg-schaduw text-kalk text-center text-[13px] py-2 px-4">
+    Demo voor BackWerk, gemaakt door <a class="underline underline-offset-2" href="https://hagenweb.nl">Hagenweb</a>
+  </div>
+
+  <div class="bg-wand text-kalk">
+    <header class="max-w-[1360px] mx-auto px-5 lg:px-10 pt-5 flex items-center justify-between gap-6">
+      <a href="#inhoud" class="flex items-center gap-[5px] font-extrabold text-[24px] leading-none" aria-label="BackWerk, naar boven">
+        <span class="bg-kalk text-schaduw rounded-[7px] px-[7px] pt-[3px] pb-[5px]">back</span><span class="tracking-wide">WERK</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 font-medium" aria-label="Hoofdmenu">
+        <a class="hover:underline underline-offset-4" href="#aanbod">Wat we maken</a>
+        <a class="hover:underline underline-offset-4" href="#zaak">De zaak</a>
+        <a class="hover:underline underline-offset-4" href="#werken">Werken bij</a>
+        <a class="hover:underline underline-offset-4" href="#open">Open en route</a>
+      </nav>
+      <a href="#open" class="md:hidden font-medium underline underline-offset-4">Open en route</a>
+    </header>
+
+    <main id="inhoud">
+      <section class="max-w-[1360px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-x-8 items-end">
+        <div class="lg:col-span-7 pt-6 lg:pt-0 lg:pb-20 lg:self-center">
+          <p class="font-medium text-[17px] lg:text-[19px]">Bakery-cafe in Nijmegen</p>
+          <h1 class="mt-3 text-[84px] sm:text-[120px] lg:text-[clamp(112px,11.3vw,164px)] text-kalk">Vers belegd<br>op Plein 1944.</h1>
+          <p class="mt-4 lg:mt-7 max-w-[30em] text-[17px] lg:text-[20px] leading-snug">Belegde broodjes, warme en koude snacks, sappen van vers fruit en uitstekende koffie. Alles bereid in onze eigen keuken.</p>
+          <div class="mt-5 lg:mt-9 flex items-center gap-x-6 lg:gap-x-7">
+            <a id="hero-bel" class="knop text-[19px] lg:text-[22px] px-6 lg:px-7 py-[16px] lg:py-[18px] whitespace-nowrap" href="tel:+31247676031">
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+              Bel 024 767 6031
+            </a>
+            <a class="link font-semibold text-[18px]" href="https://www.google.com/maps/search/?api=1&query=BackWerk+Plein+1944+101+Nijmegen">Route<span class="hidden sm:inline"> naar de zaak</span></a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative mt-7 lg:mt-8 lg:-ml-10">
+          <figure class="hero-foto boog h-[430px] sm:h-[560px] lg:h-[calc(100dvh-140px)] lg:min-h-[600px] lg:max-h-[860px]">
+            <img class="w-full h-full object-cover object-[53%_30%]" src="assets/site-02.webp" width="1800" height="1200" alt="Lachende medewerker van BackWerk met een vol dienblad verse broodjes in de winkel">
+          </figure>
+          <p class="sticker absolute left-0 bottom-5 lg:-left-10 lg:bottom-14 w-[112px] h-[112px] lg:w-[148px] lg:h-[148px] rounded-full bg-kalk text-schaduw flex flex-col items-center justify-center text-center leading-tight">
+            <span class="font-kop font-extrabold text-[34px] lg:text-[46px] leading-none">4 sterren</span>
+            <span class="text-[12px] lg:text-[14px] font-medium mt-1">368 reviews<br>op Google</span>
+          </p>
+        </div>
+      </section>
+
+      <div class="bg-schaduw text-kalk">
+        <div class="max-w-[1360px] mx-auto px-5 lg:px-10 py-6 lg:py-7 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-x-10 gap-y-2 text-[18px]">
+          <p><strong class="font-semibold">Dinsdag t/m zaterdag</strong> 09:00 tot 17:00</p>
+          <p><strong class="font-semibold">Zondag en maandag</strong> 11:00 tot 17:00</p>
+          <p><strong class="font-semibold">Plein 1944 101</strong>, 6511 JE Nijmegen</p>
+        </div>
+      </div>
+
+      <div class="bg-kalk text-schaduw kalk-focus">
+        <section id="aanbod" class="max-w-[1360px] mx-auto px-5 lg:px-10 pt-20 lg:pt-32">
+          <div class="grid lg:grid-cols-12 gap-x-8 gap-y-5 items-end">
+            <h2 class="lg:col-span-7 text-[72px] lg:text-[128px]">Welk momentje is het?</h2>
+            <p class="lg:col-span-4 lg:col-start-9 text-[19px] lg:pb-3">Alles is vers bereid, tot de ingrediënten aan toe. Je kiest zelf, direct uit de vitrine.</p>
+          </div>
+
+          <!-- Broodjes met Marco -->
+          <article class="mt-14 lg:mt-24 grid lg:grid-cols-12 gap-x-8 gap-y-8">
+            <img loading="lazy" class="lg:col-span-6 w-full aspect-[4/5] object-cover object-[50%_80%] rounded-[10px]" src="assets/google-05.jpg" width="1200" height="1600" alt="Broodje met tomaat, mozzarella en rucola op een dienblad, met koffie en een aardbeiengebakje erachter">
+            <div class="lg:col-span-5 lg:col-start-8 flex flex-col justify-between gap-10 lg:py-6">
+              <div>
+                <h3 class="text-[56px] lg:text-[84px]">Een vers broodje</h3>
+                <p class="mt-5 max-w-[32em]">Van broodje gezond tot broodje zalm en de boule eiersalade op premium zuurdesembrood. Je ziet wat je krijgt, en je pakt het zo mee of eet het hier aan tafel.</p>
+              </div>
+              <blockquote class="border-l-[6px] border-lime pl-6">
+                <p class="font-kop font-bold text-[40px] lg:text-[52px] leading-[1]">"Ze hebben speciaal voor ons 2 verse broodjes zalm gemaakt. Heel lekker."</p>
+                <footer class="mt-4 font-medium">Marco van Ginkel, op Google</footer>
+              </blockquote>
+            </div>
+          </article>
+
+          <!-- Koffie met Patricia -->
+          <article class="mt-20 lg:mt-32 grid lg:grid-cols-12 gap-x-8 gap-y-8 items-center">
+            <div class="lg:col-span-6 order-2 lg:order-1">
+              <h3 class="text-[56px] lg:text-[84px]">Koffie met iets erbij</h3>
+              <p class="mt-5 max-w-[32em]">Uitstekende koffie, en daarnaast een croissant, een chocoladebroodje, een kaasstengel of een pretzel.</p>
+              <blockquote class="mt-9 max-w-[34em] border-l-[6px] border-lime pl-6">
+                <p class="text-[18px]">"Too Good To Go pakketje opgehaald, was net iets te laat maar werd vriendelijk en goed geholpen! Heerlijke smoothie, broodje gezond, 2 croissants, een chocoladebroodje en een kaasstengel. Al mijn favoriete dingen."</p>
+                <footer class="mt-3 font-medium">Patricia Sim Zecha, op Google</footer>
+              </blockquote>
+            </div>
+            <img loading="lazy" class="lg:col-span-5 lg:col-start-8 order-1 lg:order-2 w-full aspect-square object-cover rounded-[10px]" src="assets/google-02.jpg" width="1000" height="1000" alt="Beker koffie met BackWerk-logo naast een broodje met rucola op een houten bord">
+          </article>
+
+          <!-- Warm of koud -->
+          <article class="mt-20 lg:mt-32 grid lg:grid-cols-12 gap-x-8 gap-y-8 items-center">
+            <img loading="lazy" class="lg:col-span-4 w-full aspect-square object-cover rounded-[10px]" src="assets/google-08.jpg" width="1000" height="1000" alt="Twee broodjes met krokante burger, tomaat en rucola op een houten plank">
+            <div class="lg:col-span-6 lg:col-start-6">
+              <h3 class="text-[56px] lg:text-[84px]">Warm of juist koud</h3>
+              <p class="mt-5 max-w-[32em]">Soms moet het gesmolten zijn, soms juist fris. We hebben warme sandwiches en warme en koude snacks, dus je kijkt gewoon waar je zin in hebt.</p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Fruit, breed -->
+        <article class="mt-20 lg:mt-32 relative">
+          <img loading="lazy" class="w-full h-[300px] sm:h-[420px] lg:h-[620px] object-cover object-[50%_72%]" src="assets/site-03.webp" width="1800" height="1200" alt="Houten BackWerk-kratten vol sinaasappels, aardbeien en bananen voor de winkel">
+          <div class="max-w-[1360px] mx-auto px-5 lg:px-10">
+            <div class="bg-lime lg:absolute lg:bottom-0 lg:max-w-[560px] -mt-10 lg:mt-0 relative rounded-t-[10px] lg:rounded-b-none rounded-b-[10px] p-7 lg:p-10">
+              <h3 class="text-[56px] lg:text-[84px]">Vers uit de fruitkist</h3>
+              <p class="mt-4">Onze sappen maken we van uitsluitend vers fruit. Ook voor een smoothie ben je hier aan het juiste adres.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <section id="zaak" class="bg-wand text-kalk mt-0">
+        <div class="max-w-[1360px] mx-auto px-5 lg:px-10 py-20 lg:py-32 grid lg:grid-cols-12 gap-x-8 gap-y-10">
+          <div class="lg:col-span-6 flex flex-col justify-between gap-12">
+            <div>
+              <h2 class="text-[72px] lg:text-[128px]">Of je blijft gewoon even zitten.</h2>
+              <p class="mt-6 max-w-[32em] text-[19px]">BackWerk is een bakery-cafe: een warme, gezellige plek waar je direct kiest wat je eet. Even uitrusten van het winkelen of werken, met je koffie aan tafel op Plein 1944.</p>
+            </div>
+            <figure>
+              <img loading="lazy" class="w-full aspect-[16/10] object-cover object-[50%_20%] rounded-[10px]" src="assets/site-04.webp" width="1771" height="1181" alt="Toonbank met verse broodjes, met op de groene wand de tekst Vers uit eigen keuken">
+              <figcaption class="mt-3 text-[16px]">Vers uit eigen keuken. Zo staat het bij ons op de muur.</figcaption>
+            </figure>
+          </div>
+          <figure class="lg:col-span-5 lg:col-start-8 boog order-first lg:order-none">
+            <img loading="lazy" class="w-full h-full min-h-[460px] object-cover" src="assets/google-06.jpg" width="1200" height="1600" alt="Gasten aan tafels in de zaak, op de voorgrond koffie en een broodje op een ronde houten tafel">
+          </figure>
+        </div>
+      </section>
+
+      <section id="werken" class="bg-kalk text-schaduw kalk-focus">
+        <div class="max-w-[1360px] mx-auto px-5 lg:px-10 py-20 lg:py-32 grid lg:grid-cols-12 gap-x-8 gap-y-8 items-center">
+          <img loading="lazy" class="lg:col-span-7 w-full aspect-[3/2] object-cover rounded-[10px]" src="assets/site-08.webp" alt="Vijf medewerkers van BackWerk poseren vrolijk met gespreide armen voor de winkel">
+          <div class="lg:col-span-4 lg:col-start-9">
+            <h2 class="text-[64px] lg:text-[92px]">Werken bij BackWerk?</h2>
+            <p class="mt-5">Werken hier betekent oog voor detail. Met onze snacks bezorgen we gasten een klein genietmoment in hun dag. Vind jij het belangrijk om daar een glimlach mee op hun gezicht te toveren? Dan ben je bij ons aan het juiste adres.</p>
+            <a class="link inline-block mt-6 font-semibold" href="mailto:info@back-werk.com?subject=Werken%20bij%20BackWerk%20Nijmegen">Mail ons over werken bij BackWerk</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="open" class="bg-korst text-schaduw kalk-focus">
+        <div class="max-w-[1360px] mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-x-8 gap-y-12">
+          <div class="lg:col-span-6">
+            <h2 class="text-[72px] lg:text-[128px]">Kom langs op Plein 1944.</h2>
+            <table class="mt-10 w-full max-w-[520px] text-[19px] lg:text-[21px] tabular-nums">
+              <caption class="sr-only">Openingstijden</caption>
+              <tbody class="divide-y divide-schaduw/25">
+                <tr data-dag="1"><td class="py-[10px]">Maandag <span class="vandaag-label text-[15px]">(vandaag)</span></td><td class="text-right">11:00 tot 17:00</td></tr>
+                <tr data-dag="2"><td class="py-[10px]">Dinsdag <span class="vandaag-label text-[15px]">(vandaag)</span></td><td class="text-right">09:00 tot 17:00</td></tr>
+                <tr data-dag="3"><td class="py-[10px]">Woensdag <span class="vandaag-label text-[15px]">(vandaag)</span></td><td class="text-right">09:00 tot 17:00</td></tr>
+                <tr data-dag="4"><td class="py-[10px]">Donderdag <span class="vandaag-label text-[15px]">(vandaag)</span></td><td class="text-right">09:00 tot 17:00</td></tr>
+                <tr data-dag="5"><td class="py-[10px]">Vrijdag <span class="vandaag-label text-[15px]">(vandaag)</span></td><td class="text-right">09:00 tot 17:00</td></tr>
+                <tr data-dag="6"><td class="py-[10px]">Zaterdag <span class="vandaag-label text-[15px]">(vandaag)</span></td><td class="text-right">09:00 tot 17:00</td></tr>
+                <tr data-dag="0"><td class="py-[10px]">Zondag <span class="vandaag-label text-[15px]">(vandaag)</span></td><td class="text-right">11:00 tot 17:00</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="lg:col-span-5 lg:col-start-8">
+            <div class="overflow-hidden rounded-[10px] aspect-[5/4]">
+              <img loading="lazy" class="w-full h-full object-cover scale-[1.9] origin-[3%_58%]" src="assets/google-03.jpg" width="1600" height="1200" alt="De gevel van BackWerk aan Plein 1944, met het logo boven de ingang">
+            </div>
+            <address class="not-italic mt-7 text-[20px]">
+              <strong class="font-extrabold">BackWerk Nijmegen</strong><br>
+              Plein 1944 101<br>
+              6511 JE Nijmegen
+            </address>
+            <div class="mt-6 flex flex-col items-start gap-3">
+              <a class="knop knop-donker text-[20px] px-7 py-[16px]" href="tel:+31247676031">Bel 024 767 6031</a>
+              <a class="link font-semibold" href="https://www.google.com/maps/search/?api=1&query=BackWerk+Plein+1944+101+Nijmegen">Route naar de zaak</a>
+              <a class="link font-semibold" href="mailto:info@back-werk.com">info@back-werk.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="bg-schaduw text-kalk">
+    <div class="max-w-[1360px] mx-auto px-5 lg:px-10 py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+      <p class="flex items-center gap-[5px] font-extrabold text-[22px] leading-none">
+        <span class="bg-kalk text-schaduw rounded-[7px] px-[7px] pt-[3px] pb-[5px]">back</span><span class="tracking-wide">WERK</span>
+      </p>
+      <p class="text-[15px]">Vers en heerlijk op Plein 1944. Een merk van BackWERK NL B.V.</p>
+    </div>
+  </footer>
+
+  <!-- Belknop altijd binnen bereik op mobiel -->
+  <div id="belbalk" class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-schaduw p-2.5 flex gap-2.5 items-stretch transition-transform duration-200">
+    <a class="knop flex-1 py-[14px] text-[18px]" href="tel:+31247676031">Bel 024 767 6031</a>
+    <a class="flex items-center justify-center px-5 rounded-[12px] border-2 border-kalk/60 text-kalk font-semibold" href="https://www.google.com/maps/search/?api=1&query=BackWerk+Plein+1944+101+Nijmegen">Route</a>
+  </div>
+
+  <script>
+    var rij = document.querySelector('tr[data-dag="' + new Date().getDay() + '"]');
+    if (rij) rij.classList.add('vandaag');
+
+    // De belbalk verschijnt pas als de belknop uit de hero uit beeld is. Zonder JS blijft de balk gewoon staan.
+    var balk = document.getElementById('belbalk');
+    new IntersectionObserver(function (e) {
+      balk.style.transform = e[0].isIntersecting ? 'translateY(100%)' : '';
+    }).observe(document.getElementById('hero-bel'));
+  </script>
+</body>
+</html>
