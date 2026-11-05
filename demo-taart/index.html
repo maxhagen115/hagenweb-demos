@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taart. | Taartenwinkel en bakkerij in Utrecht</title>
+<meta name="description" content="Homemade taarten, gebak en koekjes uit onze eigen bakkerij aan de Händelstraat in Utrecht. Feesttaarten, bruidstaarten, zakelijk en cadeaus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        marine: '#17213f',
+        tegel: '#1f2d5a',
+        mosterd: '#e9b43c',
+        creme: '#f7eedb',
+        wit: '#fffdf8',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'sans-serif'],
+        body: ['Karla', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Karla, sans-serif; }
+  .tegels {
+    background-color: #1f2d5a;
+    background-image:
+      linear-gradient(rgba(255,255,255,.07) 2px, transparent 2px),
+      linear-gradient(90deg, rgba(255,255,255,.07) 2px, transparent 2px);
+    background-size: 64px 64px;
+  }
+  .boog { border-radius: 999px 999px 28px 28px; }
+  .kop { font-family: "Bricolage Grotesque", sans-serif; letter-spacing: -0.025em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .menu-regel { display: flex; align-items: baseline; gap: .5rem; }
+  .menu-regel .stip { flex: 1; border-bottom: 2px dotted rgba(23,33,63,.25); transform: translateY(-4px); }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 3px solid #e9b43c; outline-offset: 3px; border-radius: 6px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+  #tijden li.vandaag { background: #f3dfae; margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; border-radius: 12px; border-color: transparent; }
+</style>
+</head>
+<body class="bg-wit text-marine antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-mosterd focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-mosterd text-marine text-center text-sm py-2 px-4">
+  Demo voor Taart., gemaakt door <a href="https://hagenweb.nl" class="font-bold underline underline-offset-2">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-marine text-creme sticky top-0 z-40 border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="kop text-3xl font-extrabold tracking-tight text-creme">Taart<span class="text-mosterd">.</span></a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#vitrine" class="hover:text-mosterd transition-colors">Taarten</a>
+      <a href="#bestellen" class="hover:text-mosterd transition-colors">Bestellen</a>
+      <a href="#feest" class="hover:text-mosterd transition-colors">Feest &amp; bruiloft</a>
+      <a href="#winkel" class="hover:text-mosterd transition-colors">Winkel</a>
+      <a href="#contact" class="hover:text-mosterd transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31302764410" class="knop inline-flex items-center gap-2 rounded-full border-2 border-mosterd text-mosterd px-4 py-2 text-sm font-bold hover:bg-mosterd hover:text-marine">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">030 276 4410</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="tegels text-creme overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-6 pb-12 md:pt-16 md:pb-20 grid md:grid-cols-[1.15fr_.85fr] gap-6 md:gap-14 items-center">
+    <div class="order-2 md:order-1">
+      <p class="text-mosterd font-bold text-[15px] md:text-base">Taartenwinkel en bakkerij<span class="hidden sm:inline"> aan de Händelstraat</span>, Utrecht</p>
+      <h1 class="kop font-extrabold text-[2.7rem] leading-[0.98] md:text-[4.1rem] lg:text-[4.6rem] mt-2 md:mt-3">Mooie taarten, weinig poespas.</h1>
+      <p class="mt-4 md:mt-5 text-[17px] md:text-xl leading-relaxed text-creme/85 max-w-[30rem]">Homemade taarten, gebak en koekjes uit onze eigen bakkerij. Pure smaken, zo min mogelijk toevoegingen en vers uit de oven.</p>
+      <div class="mt-6 md:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31302764410" class="knop inline-flex items-center gap-3 rounded-full bg-mosterd text-marine px-7 py-4 text-lg font-bold shadow-[0_10px_30px_-10px_rgba(233,180,60,.6)] hover:bg-[#f2c457]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Bel 030 276 4410
+        </a>
+        <a href="#bestellen" class="font-bold underline decoration-mosterd decoration-2 underline-offset-[6px] hover:text-mosterd transition-colors">Zo bestel je een taart</a>
+      </div>
+      <p class="mt-6 md:mt-8 flex items-center gap-2 text-[15px] text-creme/80">
+        <span class="text-mosterd tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-creme">4,7</strong> uit 70 Google-reviews</span>
+      </p>
+    </div>
+    <div class="order-1 md:order-2 relative">
+      <div class="boog overflow-hidden mx-auto w-[56%] md:w-full max-w-[460px] aspect-[4/5] md:aspect-[4/5.2] ring-[6px] md:ring-[10px] ring-marine/60 shadow-[0_30px_60px_-20px_rgba(5,10,30,.7)]">
+        <img src="assets/google-04.jpg" alt="Drielaagse naked cake met verse aardbeien, frambozen, bramen en eetbare bloemen, voor de blauwe tegelwand van Taart." class="w-full h-full object-cover object-[50%_35%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vitrine -->
+<section id="vitrine" class="bg-wit py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="max-w-2xl">
+      <h2 class="kop font-extrabold text-4xl md:text-6xl leading-[1.02]">Wat er vandaag in de vitrine staat.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-marine/80">Appeltaart, frangipane, dubbele brownies, dadelhappen. Alles gebakken in onze eigen bakkerij, achter de winkel. Een greep uit het vaste assortiment:</p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-start">
+      <div class="grid grid-cols-2 gap-4">
+        <img src="assets/google-05.jpg" alt="Vitrine met appeltaart, frangipane, dubbele brownies en dadelhappen met Taart.-bordjes" class="col-span-2 w-full aspect-[4/3] object-cover object-[50%_45%] rounded-[28px]">
+        <img src="assets/google-07.jpg" alt="Aangesneden cheesecake met rood fruit" class="w-full aspect-square object-cover rounded-[22px]">
+        <img src="assets/google-08.jpg" alt="Gebakje met chocolade, slagroom en nootjes" class="w-full aspect-square object-cover object-[50%_40%] rounded-[22px]">
+      </div>
+
+      <div class="bg-creme rounded-[28px] p-7 md:p-10">
+        <h3 class="kop font-bold text-2xl">Taarten</h3>
+        <ul class="mt-4 space-y-3 text-[17px]">
+          <li class="menu-regel"><span>Appeltaart</span><span class="stip"></span><span class="font-bold tabular-nums">vanaf € 12,00</span></li>
+          <li class="menu-regel"><span>Hazelnoot-perentaart</span><span class="stip"></span><span class="font-bold tabular-nums">vanaf € 13,00</span></li>
+          <li class="menu-regel"><span>Wortel-walnoot taart</span><span class="stip"></span><span class="font-bold tabular-nums">vanaf € 13,00</span></li>
+          <li class="menu-regel"><span>Verrassingsbox Taart.</span><span class="stip"></span><span class="font-bold tabular-nums">vanaf € 16,00</span></li>
+        </ul>
+        <h3 class="kop font-bold text-2xl mt-9">Gebak en lekkers</h3>
+        <ul class="mt-4 space-y-3 text-[17px]">
+          <li class="menu-regel"><span>Dadelhappen</span><span class="stip"></span><span class="font-bold tabular-nums">€ 2,10</span></li>
+          <li class="menu-regel"><span>Cupcakes</span><span class="stip"></span><span class="font-bold tabular-nums">€ 2,50</span></li>
+          <li class="menu-regel"><span>Glutenvrije teacake</span><span class="stip"></span><span class="font-bold tabular-nums">€ 2,75</span></li>
+          <li class="menu-regel"><span>Hazelnoot schuim</span><span class="stip"></span><span class="font-bold tabular-nums">vanaf € 3,25</span></li>
+          <li class="menu-regel"><span>Citroen-meringue</span><span class="stip"></span><span class="font-bold tabular-nums">vanaf € 3,35</span></li>
+          <li class="menu-regel"><span>Lemonbars</span><span class="stip"></span><span class="font-bold tabular-nums">vanaf € 8,40</span></li>
+          <li class="menu-regel"><span>Macarons, ook vegan</span><span class="stip"></span><span class="font-bold tabular-nums">vanaf € 8,50</span></li>
+          <li class="menu-regel"><span>Domtoren boterkoek</span><span class="stip"></span><span class="font-bold tabular-nums">€ 11,00</span></li>
+          <li class="menu-regel"><span>Koekjesmix DIY</span><span class="stip"></span><span class="font-bold tabular-nums">vanaf € 12,95</span></li>
+        </ul>
+        <p class="mt-8 text-marine/75 leading-relaxed">Cupcakes met jullie logo kan ook, vanaf € 40,00. Zin in iets bijzonders? Vraag het gerust, we denken graag mee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bestellen -->
+<section id="bestellen" class="bg-marine text-creme py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-12 lg:gap-20">
+      <div class="">
+        <h2 class="kop font-extrabold text-4xl md:text-6xl leading-[1.02]">Zo bestel je een taart.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-creme/80">Wil je zeker weten dat jouw taart er is? Geef je keuze dan twee werkdagen van tevoren aan ons door. Morgen al nodig? Bel even of loop binnen, dan kijken we wat we kunnen doen.</p>
+        <a href="tel:+31302764410" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-mosterd text-marine px-6 py-3.5 font-bold hover:bg-[#f2c457]">Bestel telefonisch: 030 276 4410</a>
+      </div>
+      <ol class="space-y-0">
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-white/15">
+          <span class="kop font-extrabold text-4xl text-mosterd leading-none">1</span>
+          <div>
+            <h3 class="kop font-bold text-2xl">Kies je taart</h3>
+            <p class="mt-2 text-creme/75 leading-relaxed">In de winkel blader je door ons boekje met taarten, of je kijkt vooraf online. Dieetwensen? Vraag het de bakker, die legt het je graag uit.</p>
+          </div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-white/15">
+          <span class="kop font-extrabold text-4xl text-mosterd leading-none">2</span>
+          <div>
+            <h3 class="kop font-bold text-2xl">Geef het twee werkdagen vooraf door</h3>
+            <p class="mt-2 text-creme/75 leading-relaxed">Via de webwinkel, telefonisch of in de winkel. Taart voor dinsdag? Dan moet je bestelling vrijdag vóór 12.00 uur binnen zijn. Je krijgt een orderbevestiging per mail.</p>
+          </div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-b border-white/15">
+          <span class="kop font-extrabold text-4xl text-mosterd leading-none">3</span>
+          <div>
+            <h3 class="kop font-bold text-2xl">Ophalen of laten bezorgen</h3>
+            <p class="mt-2 text-creme/75 leading-relaxed">Je bestelling ligt op de afhaaldag vanaf circa 9.00 uur klaar. Doordeweeks bezorgen we in de gemeente Utrecht, vanaf € 25,00 bestelwaarde. De bezorgkosten zijn € 6,25.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Feest -->
+<section id="feest" class="bg-creme py-20 md:py-28 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-center">
+      <div class="">
+        <h2 class="kop font-extrabold text-4xl md:text-6xl leading-[1.02]">Iets te vieren? Dan bakken we je feesttaart.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-marine/80 max-w-xl">Een verjaardagstaart met naam, een gender reveal, een bloementaart of meerdere smaken voor een groot feest. Voor een bruiloft maken we ook stapeltaarten, bruidstaarten en Sweet Tables: een gevarieerde taartentafel waar iedereen iets lekkers vindt.</p>
+        <p class="mt-4 text-lg leading-relaxed text-marine/80 max-w-xl">Er is veel mogelijk. Kom gerust langs om de mogelijkheden te bespreken.</p>
+        <div class="mt-8 flex flex-wrap gap-x-7 gap-y-4 items-center">
+          <a href="tel:+31302764410" class="knop inline-flex items-center rounded-full bg-marine text-creme px-6 py-3.5 font-bold hover:bg-tegel">Bel ons over je feest</a>
+          <a href="mailto:info@taart-utrecht.nl?subject=Feesttaart" class="font-bold underline decoration-mosterd decoration-2 underline-offset-[6px] hover:text-tegel">Of mail je wensen</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <img src="assets/google-03.jpg" alt="Gender reveal taart met roze en blauwe toefjes en babyfiguurtjes" class="w-full aspect-[3/4] object-cover boog">
+        <div class="grid gap-4 pt-10">
+          <img src="assets/google-06.jpg" alt="Roze verjaardagstaart met aardbeien, frambozen en naam in chocolade" class="w-full aspect-square object-cover rounded-[24px]">
+          <img src="assets/google-02.jpg" alt="Taart met roomkaas en eetbare bloemen" class="w-full aspect-square object-cover rounded-[24px]">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-wit py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="kop font-extrabold text-4xl md:text-6xl leading-[1.02] max-w-2xl">Wat klanten zeggen.</h2>
+      <p class="text-lg"><span class="text-mosterd tracking-[2px]" aria-hidden="true">★★★★★</span> <strong>4,7</strong> uit 70 Google-reviews</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-6 gap-5">
+      <figure class="md:col-span-4 bg-marine text-creme rounded-[28px] p-8 md:p-10">
+        <blockquote class="kop font-medium text-2xl md:text-[1.9rem] leading-snug">"Heerlijke taarten, spoorpunten &amp; brownies, maar ook superleuke cadeaus &amp; kaarten verkrijgbaar bij deze sympathieke winkel. Wil je zeker zijn dat een taart er is, neem dan 2 werkdagen van tevoren contact op. Mijn favoriet is frangipane."</blockquote>
+        <figcaption class="mt-6 font-bold text-mosterd">Geertje Algera</figcaption>
+      </figure>
+      <figure class="md:col-span-2 bg-mosterd rounded-[28px] p-8 flex flex-col justify-between">
+        <blockquote class="kop font-medium text-2xl leading-snug">"Onze gender reveal taart was prachtig en heerlijk! Super!"</blockquote>
+        <figcaption class="mt-6 font-bold">D ve</figcaption>
+      </figure>
+      <figure class="md:col-span-2 bg-creme rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"Afgelopen week twee dadelhappen mee genomen voor thuis, verslavende dadel-gebakjes voor bij de koffie met een heerlijke karamelsmaak!"</blockquote>
+        <figcaption class="mt-5 font-bold">Paulie Clemens</figcaption>
+      </figure>
+      <figure class="md:col-span-2 bg-creme rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"voor mijn verjaardag een feesttaart besteld. ben daarvoor in de winkel geweest. ze hadden een boekje waar ik even in heb gebladerd en mijn keuze heb gemaakt. (...) de taart was precies zoals ik het wilde en had aangegeven."</blockquote>
+        <figcaption class="mt-5 font-bold">Kubra</figcaption>
+      </figure>
+      <figure class="md:col-span-2 bg-creme rounded-[28px] p-8">
+        <blockquote class="text-lg leading-relaxed">"We hadden dieet eisen en toen ik erom vroeg werd alles netjes en duidelijk uitgelegd door de bakker zelf. Je merkt dat de bakker met veel passie en expertise zijn taarten bakt."</blockquote>
+        <figcaption class="mt-5 font-bold">Omied Horati</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Winkel -->
+<section id="winkel" class="bg-creme py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-12 lg:gap-16 items-center">
+      <div class="">
+        <img src="assets/google-01.jpg" alt="De winkel van Taart. met blauwe tegelwand en vitrines vol taarten en gebak" class="w-full aspect-[4/3] object-cover rounded-[28px] lg:rounded-r-[180px]">
+      </div>
+      <div class="">
+        <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.04]">Meer dan taart: een winkel vol Utrechts lekkers.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-marine/80">Haal koffie of thee to-go en neem iets lekkers mee. Op de schappen vind je vooral dingen uit Utrecht: bekers van EchtWaar, het enige echte cakeblik van de Dom, eigen chocolade creaties, koffie van Nordkapp, jam van Twisted en limonade van de Roze Bunker.</p>
+        <p class="mt-4 text-lg leading-relaxed text-marine/80">Daarnaast taartkaarsjes en decoratie, Taart.-cadeaubonnen en cadeaupakketjes in een mooie transparante zak. Stel ze zelf samen of geef je budget door, dan maken wij er iets leuks van.</p>
+      </div>
+    </div>
+
+    <div class="mt-16 tegels text-creme rounded-[32px] p-8 md:p-12 grid md:grid-cols-[1.3fr_auto] gap-8 items-center">
+      <div>
+        <h3 class="kop font-extrabold text-3xl md:text-4xl leading-tight">Taart voor op kantoor?</h3>
+        <p class="mt-3 text-lg leading-relaxed text-creme/80 max-w-2xl">De collega's verrassen met iets anders dan een slagroomtaart of vlaai? We voorzien taarten eventueel van jullie logo, bezorgen ze bij je collega's en betalen op factuur is geen probleem. Ook voor (kerst)pakketten.</p>
+      </div>
+      <div class="flex flex-col gap-3 md:items-end">
+        <a href="mailto:info@taart-utrecht.nl?subject=Zakelijke%20bestelling" class="knop inline-flex justify-center rounded-full bg-mosterd text-marine px-6 py-3.5 font-bold hover:bg-[#f2c457]">Mail voor zakelijk</a>
+        <a href="https://www.taartopjewerk-utrecht.nl" class="font-bold underline decoration-mosterd decoration-2 underline-offset-[6px] hover:text-mosterd text-center">taartopjewerk-utrecht.nl</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="tegels text-creme py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-start">
+    <div>
+      <h2 class="kop font-extrabold text-4xl md:text-6xl leading-[1.02]">Kom langs aan de Händelstraat.</h2>
+      <p class="mt-6 text-xl leading-relaxed">Händelstraat 79a<br>3533 GJ Utrecht</p>
+      <p class="mt-6 text-lg leading-relaxed text-creme/80 max-w-md">Vragen over een taart, een feest of een zakelijke bestelling? Bel of mail ons gerust.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31302764410" class="knop inline-flex items-center gap-3 rounded-full bg-mosterd text-marine px-7 py-4 text-lg font-bold hover:bg-[#f2c457]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Bel 030 276 4410
+        </a>
+        <a href="mailto:info@taart-utrecht.nl" class="font-bold underline decoration-mosterd decoration-2 underline-offset-[6px] hover:text-mosterd">info@taart-utrecht.nl</a>
+      </div>
+      <p class="mt-10 text-creme/75">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Taart.+H%C3%A4ndelstraat+79a+Utrecht" class="font-bold text-creme underline decoration-mosterd decoration-2 underline-offset-[6px] hover:text-mosterd">Route plannen</a>
+        <span class="hidden sm:inline mx-3 text-creme/30">|</span><br class="sm:hidden"><span class="sm:hidden inline-block h-3"></span>
+        <a href="https://www.instagram.com/taart._utrecht/" class="underline underline-offset-4 hover:text-mosterd">Instagram</a>,
+        <a href="https://www.facebook.com/search/top?q=Taart.%20Utrecht" class="underline underline-offset-4 hover:text-mosterd">Facebook</a>,
+        <a href="https://www.tiktok.com/@taartutrecht" class="underline underline-offset-4 hover:text-mosterd">TikTok</a>
+      </p>
+    </div>
+    <div class="bg-creme text-marine rounded-[32px] p-8 md:p-11 shadow-[0_30px_60px_-25px_rgba(5,10,30,.8)]">
+      <h3 class="kop font-extrabold text-3xl">Openingstijden</h3>
+      <ul class="mt-6 text-lg tabular-nums divide-y divide-marine/10" id="tijden">
+        <li data-d="1" class="flex justify-between py-3"><span>Maandag</span><span class="font-bold">09.00 tot 14.00</span></li>
+        <li data-d="2" class="flex justify-between py-3"><span>Dinsdag</span><span class="font-bold">09.00 tot 17.00</span></li>
+        <li data-d="3" class="flex justify-between py-3"><span>Woensdag</span><span class="font-bold">09.00 tot 17.00</span></li>
+        <li data-d="4" class="flex justify-between py-3"><span>Donderdag</span><span class="font-bold">09.00 tot 17.00</span></li>
+        <li data-d="5" class="flex justify-between py-3"><span>Vrijdag</span><span class="font-bold">09.00 tot 17.00</span></li>
+        <li data-d="6" class="flex justify-between py-3"><span>Zaterdag</span><span class="font-bold">09.00 tot 16.00</span></li>
+        <li data-d="0" class="flex justify-between py-3 text-marine/55"><span>Zondag</span><span>gesloten</span></li>
+      </ul>
+      <p class="mt-6 text-marine/70 leading-relaxed">Je bestelling ligt op de afhaaldag vanaf circa 9.00 uur klaar. Bezorgen in de zomervakantie kan beperkt, alleen in telefonisch overleg.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-marine text-creme/60 text-sm pb-24 md:pb-8 pt-8">
+  <div class="max-w-6xl mx-auto px-5 flex flex-wrap gap-x-8 gap-y-2 justify-between">
+    <p><span class="kop font-extrabold text-creme text-lg">Taart<span class="text-mosterd">.</span></span> Händelstraat 79a, Utrecht</p>
+    <p>KvK 99337878 &nbsp;|&nbsp; BTW NL005388869B58</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-marine/95 backdrop-blur border-t border-white/10 p-3 flex gap-3">
+  <a href="tel:+31302764410" class="flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-mosterd text-marine py-3.5 font-bold">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    Bel Taart.
+  </a>
+  <a href="#contact" class="inline-flex justify-center items-center rounded-full border-2 border-creme/40 text-creme px-5 font-bold">Route</a>
+</div>
+
+<script>
+  // Markeer de dag van vandaag in de openingstijden.
+  const vandaag = document.querySelector('#tijden [data-d="' + new Date().getDay() + '"]');
+  if (vandaag) vandaag.classList.add('vandaag');
+</script>
+</body>
+</html>
