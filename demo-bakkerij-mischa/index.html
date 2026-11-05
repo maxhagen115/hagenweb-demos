@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakkerij Mischa: desembrood en koffie in Utrecht</title>
+<meta name="description" content="Bakkerij Mischa aan de Samuel van Houtenstraat in Utrecht. Elke dag vers desembrood, viennoiserie, patisserie en goede koffie. Ook desembrood-workshops.">
+<link rel="icon" href="assets/site-04.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        blauw: '#A9C1D3',
+        mist: '#E7EEF3',
+        bloem: '#FAFAF8',
+        inkt: '#1C2733',
+        korst: '#8F4A17',
+        korstdonker: '#733A10'
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        tekst: ['Newsreader', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Newsreader', Georgia, serif; }
+  .kop { font-family: 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -0.035em; line-height: .92; }
+  .balance { text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 28px 28px; }
+  .gezicht { mix-blend-mode: multiply; }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 3px solid #8F4A17; outline-offset: 3px; border-radius: 6px; }
+  .vandaag { background: #A9C1D3; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-bloem text-inkt antialiased pb-20 md:pb-0">
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-bloem text-[13px] font-kop text-center px-4 py-2">
+  Demo voor Bakkerij Mischa, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-blauw">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="max-w-[1320px] mx-auto px-5 md:px-10 py-5 flex items-center justify-between">
+  <a href="#top" class="flex items-center gap-3" aria-label="Mischa, naar boven">
+    <img src="assets/site-04.jpg" alt="" class="gezicht h-7 md:h-8 w-auto">
+    <span class="kop text-[28px] md:text-[32px] font-extrabold lowercase tracking-[0.12em]">mischa</span>
+  </a>
+  <nav class="hidden md:flex items-center gap-8 font-kop text-[15px] font-medium">
+    <a href="#aanbod" class="hover:text-korst">Aanbod</a>
+    <a href="#langskomen" class="hover:text-korst">Langskomen</a>
+    <a href="#workshop" class="hover:text-korst">Workshop</a>
+    <a href="#gawan" class="hover:text-korst">Over ons</a>
+    <a href="mailto:info@bakkerijmischa.nl" class="hover:text-korst">info@bakkerijmischa.nl</a>
+  </nav>
+  <a href="#langskomen" class="md:hidden font-kop text-[15px] font-medium underline underline-offset-4">Openingstijden</a>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="max-w-[1320px] mx-auto px-5 md:px-10 pt-4 md:pt-10 pb-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+  <div class="md:col-span-6 lg:col-span-6 relative z-10">
+    <p class="font-kop font-medium text-[15px] md:text-base text-korst mb-4 md:mb-6">Bakkerij en koffie in Utrecht</p>
+    <h1 class="kop font-extrabold lowercase text-[64px] sm:text-[84px] lg:text-[118px] balance">gebakken met geduld.</h1>
+    <p class="mt-6 md:mt-8 text-[20px] md:text-[23px] leading-[1.45] max-w-[30ch] pretty">
+      Elke dag vers desembrood, croissants, patisserie en goede koffie. Alles maken we zelf, veelal met biologisch meel.
+    </p>
+    <div class="mt-8 md:mt-10 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
+      <a href="https://www.google.com/maps/search/?api=1&query=Bakkerij+Mischa+Samuel+van+Houtenstraat+22+Utrecht" target="_blank" rel="noopener"
+         id="hoofdknop" class="knop inline-flex items-center justify-center gap-3 bg-korst hover:bg-korstdonker text-white font-kop font-bold text-[18px] md:text-[19px] px-8 py-[18px] rounded-full">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        Plan je route
+      </a>
+      <a href="#workshop" class="font-kop font-medium text-[17px] underline decoration-2 underline-offset-[6px] decoration-blauw hover:decoration-korst">Of leer zelf desembrood bakken</a>
+    </div>
+    <p class="mt-8 flex items-center gap-3 text-[17px]">
+      <span class="text-korst tracking-[2px]" aria-hidden="true">★★★★★</span>
+      <span><strong class="font-medium">4,7</strong> uit 155 Google-reviews</span>
+    </p>
+  </div>
+  <div class="md:col-span-6 relative">
+    <div class="absolute -inset-x-3 -bottom-3 top-10 md:-right-6 md:-bottom-6 bg-blauw boog" aria-hidden="true"></div>
+    <img src="assets/site-01.jpg" alt="Een bak met kaneelbroodjes, kardemombroodjes, croissants en taartjes met room op de toonbank van Mischa"
+         class="relative boog w-full aspect-[4/5] md:aspect-[5/6] object-cover object-[50%_30%]">
+  </div>
+</section>
+
+<!-- Aanbod -->
+<section id="aanbod" class="bg-mist py-20 md:py-32">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="grid md:grid-cols-12 gap-8 items-end mb-12 md:mb-20">
+      <h2 class="kop font-extrabold lowercase text-[48px] md:text-[80px] md:col-span-7 balance">wat er vandaag op de toonbank ligt.</h2>
+      <p class="md:col-span-5 text-[19px] md:text-[21px] leading-[1.5] pretty max-w-[42ch]">
+        Alles wordt hier met de hand gemaakt, altijd met ingrediënten van hoge kwaliteit. Van de eerste korst tot de laatste kop koffie.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-10 md:gap-x-8 md:gap-y-16">
+      <figure class="col-span-2 md:col-span-7 md:row-span-2 flex flex-col">
+        <img src="assets/google-07.jpg" alt="Een houten kast vol desembroden en baguettes, met op de achtergrond gasten in de zitruimte" class="w-full aspect-[4/5] md:aspect-auto md:flex-1 md:min-h-0 object-cover object-[12%_45%] rounded-[28px]">
+        <figcaption class="mt-5 max-w-[46ch]">
+          <h3 class="kop font-bold lowercase text-[30px] md:text-[38px]">desembrood</h3>
+          <p class="mt-2 text-[18px] leading-[1.5]">Het hart van de bakkerij. Rustig gerezen, stevige korst, veelal van biologisch meel.</p>
+        </figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-5">
+        <img src="assets/site-06.jpg" alt="Een croissant met rode vruchten en room op een wit bord in de zon" class="w-full aspect-square object-cover rounded-[28px]">
+        <figcaption class="mt-4">
+          <h3 class="kop font-bold lowercase text-[24px] md:text-[34px]">viennoiserie</h3>
+          <p class="mt-2 text-[16px] md:text-[18px] leading-[1.5]">Croissants zoet en hartig, kaneel- en kardemombroodjes.</p>
+        </figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-5">
+        <img src="assets/site-03.png" alt="Een plak cake met maanzaad op een wit bord" class="w-full aspect-square object-cover rounded-[28px]">
+        <figcaption class="mt-4">
+          <h3 class="kop font-bold lowercase text-[24px] md:text-[34px]">patisserie</h3>
+          <p class="mt-2 text-[16px] md:text-[18px] leading-[1.5]">Verrassend van smaak, of juist heerlijk traditioneel.</p>
+        </figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-12 grid md:grid-cols-12 gap-6 md:gap-8 items-center md:mt-4">
+        <img src="assets/google-04.jpg" alt="Een cappuccino, een espresso met een madeleine en een croissant op een blauwe tafel" class="md:col-span-5 md:col-start-2 w-full aspect-[4/3] md:aspect-[5/4] object-cover object-[50%_60%] rounded-[28px]">
+        <figcaption class="md:col-span-5 md:col-start-8">
+          <h3 class="kop font-bold lowercase text-[30px] md:text-[44px]">en goede koffie.</h3>
+          <p class="mt-3 text-[18px] md:text-[20px] leading-[1.5] max-w-[40ch]">Neem het mee, of blijf zitten. Binnen aan tafel of, met mooi weer, buiten in de patio.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Langskomen -->
+<section id="langskomen" class="py-20 md:py-32">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-12 md:gap-8 items-start">
+    <div class="md:col-span-5 order-2 md:order-1">
+      <img src="assets/google-01.jpg" alt="De etalage van Mischa met de tekst mischa, desembrood en koffie op het raam" class="w-full aspect-[4/5] object-cover object-[50%_35%] rounded-t-[999px] rounded-b-[28px]">
+    </div>
+    <div class="md:col-span-6 md:col-start-7 order-1 md:order-2">
+      <h2 class="kop font-extrabold lowercase text-[48px] md:text-[80px] balance">kom langs.</h2>
+      <p class="mt-5 text-[19px] md:text-[21px] leading-[1.5] max-w-[38ch]">Op dinsdag zijn we dicht. De andere dagen staat de koffie klaar vanaf de ochtend tot drie uur.</p>
+
+      <table class="mt-10 w-full max-w-[460px] text-[19px] md:text-[20px]" aria-label="Openingstijden">
+        <tbody class="[&_td]:py-2.5 [&_td]:px-3 [&_tr]:border-b [&_tr]:border-inkt/15">
+          <tr data-dag="1"><td class="rounded-l-lg">maandag</td><td class="text-right tabular-nums rounded-r-lg">08:00 tot 15:00</td></tr>
+          <tr data-dag="2"><td class="rounded-l-lg">dinsdag</td><td class="text-right rounded-r-lg">gesloten</td></tr>
+          <tr data-dag="3"><td class="rounded-l-lg">woensdag</td><td class="text-right tabular-nums rounded-r-lg">08:00 tot 15:00</td></tr>
+          <tr data-dag="4"><td class="rounded-l-lg">donderdag</td><td class="text-right tabular-nums rounded-r-lg">08:00 tot 15:00</td></tr>
+          <tr data-dag="5"><td class="rounded-l-lg">vrijdag</td><td class="text-right tabular-nums rounded-r-lg">08:00 tot 15:00</td></tr>
+          <tr data-dag="6"><td class="rounded-l-lg">zaterdag</td><td class="text-right tabular-nums rounded-r-lg">09:00 tot 15:00</td></tr>
+          <tr data-dag="0"><td class="rounded-l-lg">zondag</td><td class="text-right tabular-nums rounded-r-lg">10:00 tot 15:00</td></tr>
+        </tbody>
+      </table>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-8 text-[19px] leading-[1.5]">
+        <div>
+          <h3 class="font-kop font-bold text-[17px] mb-2">Bakkerij</h3>
+          <p>Samuel van Houtenstraat 22<br>3515 EB Utrecht</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Bakkerij+Mischa+Samuel+van+Houtenstraat+22+Utrecht" target="_blank" rel="noopener" class="mt-3 inline-block font-kop font-medium text-[16px] text-korst underline underline-offset-4">Open in Google Maps</a>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-[17px] mb-2">Vragen of bestellen</h3>
+          <a href="mailto:info@bakkerijmischa.nl" class="underline underline-offset-4 decoration-blauw decoration-2 hover:decoration-korst">info@bakkerijmischa.nl</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-blauw py-20 md:py-28 overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
+      <h2 class="kop font-extrabold lowercase text-[48px] md:text-[80px] balance max-w-[12ch]">wat gasten zeggen.</h2>
+      <p class="text-[19px] md:text-[21px]"><span class="font-kop font-extrabold text-[44px] md:text-[56px] align-middle mr-2">4,7</span> uit 155 Google-reviews</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5 md:gap-6 items-start">
+      <div class="space-y-5 md:space-y-6">
+        <blockquote class="bg-bloem rounded-[28px] p-7 md:p-10">
+          <p class="text-[22px] md:text-[28px] leading-[1.35] pretty">“Alleen maar lof over deze plek. Ik kom er vaak. Heerlijk brood en patisserie, vriendelijke bediening en met mooi weer kun je lekker in de patio zitten.”</p>
+          <footer class="mt-6 font-kop font-medium text-[16px]">Judigje van Emmerik</footer>
+        </blockquote>
+        <blockquote class="bg-mist rounded-[28px] p-7 md:p-10">
+          <p class="text-[19px] md:text-[21px] leading-[1.45] pretty">“ik zie deze bakery al zó lang voorbij komen dus ik wilde hier echt een keer heen 😭 en honestly het stelde niet teleur!!”</p>
+          <footer class="mt-6 font-kop font-medium text-[16px]">Yaren B</footer>
+        </blockquote>
+      </div>
+      <div class="space-y-5 md:space-y-6 md:mt-24">
+        <blockquote class="bg-mist rounded-[28px] p-7 md:p-10">
+          <p class="text-[19px] md:text-[21px] leading-[1.45] pretty">“Brood van uitstekende kwaliteit. Patisserie die zowel verrassend van smaak als traditioneel is, echt een grote aanrader. [...] Kortom, een bakker die ik nog miste in Utrecht!”</p>
+          <footer class="mt-6 font-kop font-medium text-[16px]">veerle hanssen</footer>
+        </blockquote>
+        <blockquote class="bg-bloem rounded-[28px] p-7 md:p-10">
+          <p class="text-[19px] md:text-[21px] leading-[1.45] pretty">“‘De crispy chillies olie croissant is dat beste hartige snack die ik ooit heb gegeten’ -m'n vriendin. [...] De koffie, het eten, de passievolle mensen achter de balie alles hier klopt.”</p>
+          <footer class="mt-6 font-kop font-medium text-[16px]">Ryan Martens</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Workshop -->
+<section id="workshop" class="py-20 md:py-32">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-12 md:gap-8">
+    <div class="md:col-span-6">
+      <h2 class="kop font-extrabold lowercase text-[48px] md:text-[80px] balance">bak je eigen desembrood.</h2>
+      <p class="mt-6 text-[19px] md:text-[21px] leading-[1.55] max-w-[44ch] pretty">
+        In de desembrood-workshop leer je in drie uur hoe je zelf desembrood bakt: van het mengen van het deeg tot vormen, laten rijzen en bakken. Een van onze bakkers neemt je stap voor stap mee. Je krijgt uitleg over de theorie en gaat vooral zelf aan de slag.
+      </p>
+      <p class="mt-4 text-[19px] md:text-[21px] leading-[1.55] max-w-[44ch]">Ervaring is niet nodig, de workshop is juist voor beginnende bakkers.</p>
+
+      <div class="mt-10 bg-mist rounded-[28px] p-7 md:p-9 max-w-[520px]">
+        <h3 class="font-kop font-bold text-[20px]">Je gaat naar huis met</h3>
+        <ul class="mt-4 space-y-2.5 text-[18px] md:text-[19px] leading-[1.4]">
+          <li class="flex gap-3"><span class="text-korst" aria-hidden="true">●</span>een eigen desemstarter</li>
+          <li class="flex gap-3"><span class="text-korst" aria-hidden="true">●</span>het basisrecept</li>
+          <li class="flex gap-3"><span class="text-korst" aria-hidden="true">●</span>een rijsmandje en een deegkrabber</li>
+          <li class="flex gap-3"><span class="text-korst" aria-hidden="true">●</span>twee broden: één gebakken en één om thuis af te bakken</li>
+        </ul>
+      </div>
+
+      <p class="mt-8 text-[18px] leading-[1.5]">Workshoplocatie: Samuel van Houtenstraat 10, in dezelfde straat als de winkel.</p>
+      <a href="mailto:info@bakkerijmischa.nl?subject=Aanmelding%20desembrood-workshop" class="knop mt-6 inline-flex items-center justify-center bg-inkt hover:bg-korst text-white font-kop font-bold text-[17px] px-7 py-4 rounded-full">Mail ons om te reserveren</a>
+    </div>
+    <div class="md:col-span-5 md:col-start-8 relative self-start mb-10 md:mb-0 md:mt-4">
+      <img src="assets/site-02.jpg" alt="Handen die een deeg voor desembrood vormen op een met bloem bestoven werkbank" class="w-full aspect-[4/5] object-cover object-[60%_50%] rounded-[28px]">
+      <img src="assets/site-05.jpg" alt="Deeg in een rvs kom naast een weegschaal en een blauwe deegkrabber" class="w-[45%] aspect-square object-cover object-[70%_75%] rounded-[24px] border-[6px] border-bloem absolute -bottom-10 -left-3 md:-left-20">
+    </div>
+  </div>
+</section>
+
+<!-- Over Gawan -->
+<section id="gawan" class="bg-mist py-20 md:py-32 mt-10">
+  <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center">
+    <img src="assets/site-04.jpg" alt="Het handgetekende gezichtje van Mischa" class="gezicht w-28 md:w-36 mx-auto">
+    <h2 class="kop font-extrabold lowercase text-[44px] md:text-[72px] mt-8 balance">wie is mischa?</h2>
+    <p class="mt-8 text-[20px] md:text-[24px] leading-[1.55] max-w-[40ch] mx-auto pretty">
+      De bakkerij wordt gerund door Gawan. Na jaren als kok koos hij voor één product: brood. Dat heeft hij van begin tot eind steeds verder verfijnd.
+    </p>
+    <p class="mt-5 text-[20px] md:text-[24px] leading-[1.55] max-w-[40ch] mx-auto pretty">
+      Toen de kans kwam om de voormalige bakkerij Loaf over te nemen, greep hij die meteen. De naam? Die komt van zijn tweede naam: Mischa.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-bloem">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-16 md:py-20 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <p class="kop text-[64px] md:text-[96px] font-extrabold lowercase tracking-[0.1em]">mischa</p>
+      <p class="mt-4 text-[19px] text-bloem/80">desembrood + koffie</p>
+    </div>
+    <div class="md:col-span-3 text-[18px] leading-[1.6]">
+      <h3 class="font-kop font-bold text-[16px] text-blauw mb-3">Adres</h3>
+      <p>Samuel van Houtenstraat 22<br>3515 EB Utrecht</p>
+      <p class="mt-3 text-bloem/80">Workshops: Samuel van Houtenstraat 10</p>
+      <a href="mailto:info@bakkerijmischa.nl" class="mt-3 inline-block underline underline-offset-4 hover:text-blauw">info@bakkerijmischa.nl</a>
+    </div>
+    <div class="md:col-span-4 text-[18px] leading-[1.6]">
+      <h3 class="font-kop font-bold text-[16px] text-blauw mb-3">Open</h3>
+      <p>ma, wo, do, vr: 08:00 tot 15:00<br>za: 09:00 tot 15:00<br>zo: 10:00 tot 15:00<br>di: gesloten</p>
+    </div>
+  </div>
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-6 border-t border-bloem/15 text-[14px] text-bloem/60 font-kop">
+    © 2026 Mischa
+  </div>
+</footer>
+
+<!-- Mobiele actiebalk -->
+<div id="balk" class="md:hidden fixed bottom-0 inset-x-0 z-40 transition-transform duration-300 bg-bloem/95 backdrop-blur border-t border-inkt/10 px-4 py-3 flex gap-3">
+  <a href="https://www.google.com/maps/search/?api=1&query=Bakkerij+Mischa+Samuel+van+Houtenstraat+22+Utrecht" target="_blank" rel="noopener" class="knop flex-1 text-center bg-korst text-white font-kop font-bold text-[16px] py-3.5 rounded-full">Plan je route</a>
+  <a href="mailto:info@bakkerijmischa.nl" class="knop flex-1 text-center border-2 border-inkt font-kop font-bold text-[16px] py-3 rounded-full">Mail ons</a>
+</div>
+
+<script>
+  // Vandaag markeren in de openingstijden
+  var rij = document.querySelector('tr[data-dag="' + new Date().getDay() + '"]');
+  var balk = document.getElementById('balk'), knop = document.getElementById('hoofdknop');
+  if (balk && knop && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { balk.style.transform = e[0].isIntersecting ? 'translateY(110%)' : ''; }).observe(knop);
+  }
+  if (rij) { rij.classList.add('vandaag', 'font-medium'); rij.firstElementChild.textContent += ' (vandaag)'; }
+</script>
+</body>
+</html>
