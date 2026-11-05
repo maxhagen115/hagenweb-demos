@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RTG Reclame Culemborg | Reclame, drukwerk en websites via één aanspreekpunt</title>
+<meta name="description" content="RTG Reclame in Culemborg: advertenties, drukwerk, logo's, websites en social media. Eén aanspreekpunt, sinds 1996. Bel 0345 530 303.">
+<meta property="og:title" content="RTG Reclame Culemborg">
+<meta property="og:description" content="Reclame die klopt. Van visitekaartje tot krantenpagina, via één aanspreekpunt.">
+<meta property="og:image" content="assets/google-03.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2324106B'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23FFD31A' stroke-width='2.4'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Arial' font-weight='700' font-size='14' fill='%23FFD31A'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          inkt: '#24106B',
+          diep: '#170A47',
+          geel: '#FFD31A',
+          lila: '#F1EFF8',
+          grijs: '#4B4766',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; color: #24106B; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; letter-spacing: -0.025em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid #FFD31A; outline-offset: 3px; border-radius: 4px; }
+
+  /* Vel papier met omgevouwen hoek */
+  .vel { clip-path: polygon(0 0, calc(100% - 64px) 0, 100% 64px, 100% 100%, 0 100%); }
+  .ezelsoor { position: absolute; top: 0; right: 0; width: 64px; height: 64px;
+    background: linear-gradient(225deg, transparent 50%, #E9E4FF 50%, #C9C1EE 100%);
+    box-shadow: -6px 6px 14px rgba(10, 4, 40, .35); }
+
+  /* Snijtekens rond het hoofdbeeld */
+  .snij { position: absolute; width: 34px; height: 34px; pointer-events: none; }
+  .snij::before, .snij::after { content: ""; position: absolute; background: rgba(255,255,255,.55); }
+  .snij::before { width: 22px; height: 1.5px; }
+  .snij::after { width: 1.5px; height: 22px; }
+  .snij.lb { top: -28px; left: -28px; } .snij.lb::before { top: 28px; left: 0; } .snij.lb::after { left: 28px; top: 0; }
+  .snij.rb { top: -28px; right: -28px; } .snij.rb::before { top: 28px; right: 0; } .snij.rb::after { right: 28px; top: 0; }
+  .snij.lo { bottom: -28px; left: -28px; } .snij.lo::before { bottom: 28px; left: 0; } .snij.lo::after { left: 28px; bottom: 0; }
+  .snij.ro { bottom: -28px; right: -28px; } .snij.ro::before { bottom: 28px; right: 0; } .snij.ro::after { right: 28px; bottom: 0; }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+
+  .werk img { transition: transform .5s ease; }
+  .werk:hover img { transform: scale(1.03); }
+
+  /* Eén ingang-animatie voor de hero, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-in { animation: in .8s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-in.d2 { animation-delay: .12s; }
+    .js .hero-in.d3 { animation-delay: .24s; }
+    .js .hero-vel { animation: vel 1s cubic-bezier(.2,.7,.2,1) .15s both; }
+  }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes vel { from { opacity: 0; transform: rotate(0deg) translateY(24px); } to { opacity: 1; transform: rotate(2.5deg); } }
+  .hero-vel { transform: rotate(2.5deg); }
+</style>
+</head>
+<body class="bg-white pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-geel focus:text-inkt focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-geel text-inkt text-[13px] text-center py-2 px-4">
+  Demo voor RTG Reclame Culemborg, gemaakt door <a href="https://hagenweb.nl" class="font-semibold underline underline-offset-2">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="bg-inkt text-white">
+  <nav class="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between" aria-label="Hoofdmenu">
+    <a href="#" class="flex items-center gap-3" aria-label="RTG Reclame, naar boven">
+      <svg width="46" height="46" viewBox="0 0 46 46" aria-hidden="true">
+        <circle cx="23" cy="23" r="20.5" fill="none" stroke="#fff" stroke-width="2.2"/>
+        <text x="23" y="31" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="23" fill="#fff">R</text>
+      </svg>
+      <span class="leading-none">
+        <span class="kop block text-[26px] font-extrabold tracking-tight">RTG</span>
+        <span class="block text-[12px] text-white/70 mt-1">reclame, Culemborg</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-[15px]">
+      <a href="#diensten" class="text-white/80 hover:text-white transition-colors">Wat we doen</a>
+      <a href="#werk" class="text-white/80 hover:text-white transition-colors">Werk</a>
+      <a href="#ton" class="text-white/80 hover:text-white transition-colors">Over Ton</a>
+      <a href="#contact" class="text-white/80 hover:text-white transition-colors">Contact</a>
+      <a href="tel:0345530303" class="knop bg-white/10 hover:bg-white/20 rounded-full px-5 py-2.5 font-semibold">0345 530 303</a>
+    </div>
+    <a href="tel:0345530303" class="md:hidden knop bg-geel text-inkt rounded-full px-4 py-2 font-semibold text-sm">Bel ons</a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative bg-inkt text-white overflow-hidden">
+  <div class="absolute inset-0 opacity-[.07] pointer-events-none" style="background-image: radial-gradient(#fff 1px, transparent 1.2px); background-size: 14px 14px;" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 pt-10 pb-16 md:pt-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 lg:col-span-6">
+      <p class="hero-in text-geel font-medium text-[15px] md:text-base">Reclamebureau en drukwerk in Culemborg</p>
+      <h1 class="hero-in d2 kop font-extrabold text-[56px] leading-[.95] sm:text-7xl lg:text-[104px] mt-4">Reclame die klopt.</h1>
+      <p class="hero-in d3 mt-6 text-lg md:text-xl text-white/80 max-w-[30rem] leading-relaxed">
+        Advertentie, drukwerk, website of social media: je regelt het via één aanspreekpunt. Wij denken mee, ontwerpen en voeren het uit.
+      </p>
+      <div class="hero-in d3 mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:0345530303" class="knop inline-flex items-center justify-center gap-3 bg-geel text-inkt rounded-full px-8 py-[18px] text-lg font-bold shadow-[0_10px_30px_-8px_rgba(255,211,26,.55)] hover:shadow-[0_14px_34px_-8px_rgba(255,211,26,.7)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+          Bel 0345 530 303
+        </a>
+        <a href="mailto:info@rtg.nl" class="text-white/85 hover:text-white underline underline-offset-4 decoration-white/40 hover:decoration-geel text-[17px] self-start sm:self-auto">of mail info@rtg.nl</a>
+      </div>
+      <p class="hero-in d3 mt-8 flex items-center gap-2.5 text-[15px] text-white/75">
+        <span class="text-geel tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-white font-semibold">4.9</strong> uit 29 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="md:col-span-6 lg:col-span-6 relative flex justify-center md:justify-end pt-4 pb-6 md:py-0">
+      <div class="hero-vel relative w-[78%] sm:w-[62%] md:w-[86%] lg:w-[78%] max-w-[480px]">
+        <span class="snij lb"></span><span class="snij rb"></span><span class="snij lo"></span><span class="snij ro"></span>
+        <div class="relative shadow-[0_40px_80px_-20px_rgba(8,2,35,.75)]">
+          <div class="vel bg-white">
+            <img src="assets/google-03.png" alt="Een stapel advertenties en drukwerk dat RTG Reclame ontwierp voor ondernemers in Culemborg" class="block w-full aspect-[18/25] object-cover object-top">
+          </div>
+          <span class="ezelsoor" aria-hidden="true"></span>
+        </div>
+        <!-- CMYK-strookje -->
+        <div class="absolute -left-6 md:-left-10 bottom-10 flex flex-col gap-1.5" aria-hidden="true">
+          <span class="block w-3.5 h-3.5 rounded-full bg-[#00A3E0]"></span>
+          <span class="block w-3.5 h-3.5 rounded-full bg-[#E6007E]"></span>
+          <span class="block w-3.5 h-3.5 rounded-full bg-geel"></span>
+          <span class="block w-3.5 h-3.5 rounded-full bg-white"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-10">
+      <div class="md:col-span-5">
+        <h2 class="kop font-extrabold text-4xl md:text-[56px] leading-[1]">Van visitekaartje tot krantenpagina.</h2>
+        <p class="mt-6 text-lg text-grijs leading-relaxed max-w-md">
+          Of je nu zzp'er bent of bij een groot bedrijf werkt: je hoeft niet langs vijf partijen. RTG doet strategie, ontwerp en uitvoering, en je hebt één vast aanspreekpunt.
+        </p>
+        <a href="tel:0345530303" class="mt-8 inline-block font-semibold underline underline-offset-4 decoration-geel decoration-[3px] hover:decoration-inkt">Vraag vrijblijvend een offerte aan</a>
+      </div>
+
+      <div class="md:col-span-7 grid sm:grid-cols-2 gap-x-10 gap-y-12 md:pt-3">
+        <div class="border-t-[3px] border-inkt pt-5">
+          <h3 class="kop font-bold text-2xl">Drukwerk</h3>
+          <p class="mt-2 text-grijs">Ontwerp en levering, ook als het met spoed moet.</p>
+          <ul class="mt-4 space-y-1.5 text-[15.5px]">
+            <li>Visitekaartjes, briefpapier en folders</li>
+            <li>Brochures en huis-aan-huisdrukwerk</li>
+            <li>Raambestickering en signing</li>
+            <li>Je eigen krant</li>
+          </ul>
+        </div>
+        <div class="border-t-[3px] border-inkt pt-5">
+          <h3 class="kop font-bold text-2xl">Adverteren</h3>
+          <p class="mt-2 text-grijs">Pakkend ontwerp, en wij plaatsen het ook.</p>
+          <ul class="mt-4 space-y-1.5 text-[15.5px]">
+            <li>Krant, radio en tv</li>
+            <li>Personeelsadvertenties en campagnes</li>
+            <li>Media-inkoop van advertentieruimte</li>
+            <li>Lokaal op grote landelijke websites</li>
+          </ul>
+        </div>
+        <div class="border-t-[3px] border-inkt pt-5">
+          <h3 class="kop font-bold text-2xl">Online</h3>
+          <p class="mt-2 text-grijs">Gevonden worden, en zichtbaar blijven.</p>
+          <ul class="mt-4 space-y-1.5 text-[15.5px]">
+            <li>Ontwerp, bouw en onderhoud van websites</li>
+            <li>Slim adverteren met Google Ads</li>
+            <li>Social media marketing</li>
+            <li>Je website SEO-proof maken</li>
+          </ul>
+        </div>
+        <div class="border-t-[3px] border-geel pt-5">
+          <h3 class="kop font-bold text-2xl">Ontwerp en meer</h3>
+          <p class="mt-2 text-grijs">Alles waar je naam op komt te staan.</p>
+          <ul class="mt-4 space-y-1.5 text-[15.5px]">
+            <li>Een nieuw logo of je logo aanpassen</li>
+            <li>Bedrijfs- en sportkleding bedrukken</li>
+            <li>Vlaggen, badlakens en kaartspellen</li>
+            <li>Dronefoto's en dronevideo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="bg-lila">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+      <h2 class="kop font-extrabold text-4xl md:text-[56px] leading-[1] max-w-2xl">Gemaakt voor ondernemers uit de buurt.</h2>
+      <p class="text-grijs text-lg max-w-sm">Een greep uit huisstijlen, visitekaartjes en advertenties die bij RTG op tafel lagen.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-5">
+      <figure class="werk col-span-2 md:col-span-8 overflow-hidden rounded-xl bg-white aspect-[850/544] md:aspect-auto md:h-[440px]">
+        <img src="assets/site-10.jpg" alt="Advertentiepagina met La Cubanita en andere lokale ondernemers" class="w-full h-full object-cover">
+      </figure>
+      <figure class="werk col-span-1 md:col-span-4 overflow-hidden rounded-xl bg-white aspect-square md:aspect-auto md:h-[440px]">
+        <img src="assets/site-09.jpg" alt="Visitekaartjes voor onder andere Bart Smit Massagetherapie en Head Personeelsdiensten" class="w-full h-full object-cover object-[62%_50%]">
+      </figure>
+      <figure class="werk col-span-1 md:col-span-4 overflow-hidden rounded-xl bg-white aspect-square md:aspect-auto md:h-[340px]">
+        <img src="assets/google-06.jpg" alt="Advertentie en gevelbanner voor Formido" class="w-full h-full object-cover object-top">
+      </figure>
+      <figure class="werk col-span-2 md:col-span-4 overflow-hidden rounded-xl bg-[#E4E0F2] px-8 pt-8 md:px-10 md:pt-10 h-[260px] md:h-[340px]">
+        <img src="assets/google-04.jpg" alt="Huisstijl met briefpapier, envelop en visitekaartjes voor René van Gameren" class="w-full h-full object-cover object-top shadow-[0_18px_40px_-16px_rgba(36,16,107,.45)]">
+      </figure>
+      <div class="col-span-2 md:col-span-4 rounded-xl bg-inkt text-white p-7 md:p-9 flex flex-col justify-between gap-6 md:h-[340px]">
+        <div>
+          <p class="kop font-bold text-2xl md:text-[30px] leading-tight">Jouw bedrijf hier?</p>
+          <p class="mt-3 text-white/75 leading-relaxed">Vertel waar je naartoe wilt. Wij denken mee over de uiting, de media en het ontwerp.</p>
+        </div>
+        <a href="tel:0345530303" class="knop inline-flex self-start items-center bg-geel text-inkt rounded-full px-6 py-3 font-bold">Bel 0345 530 303</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ton -->
+<section id="ton" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+    <div class="md:col-span-5 relative">
+      <div class="relative rounded-xl overflow-hidden">
+        <img src="assets/google-01.jpg" alt="Het pand van RTG Reclame aan de Pascalweg in Culemborg, met het logo op de gevel" class="w-full aspect-[4/5] object-cover object-[35%_50%]">
+      </div>
+      <div class="absolute -bottom-6 -right-2 md:-right-8 bg-geel text-inkt rounded-xl px-6 py-5 shadow-[0_20px_40px_-18px_rgba(36,16,107,.5)]">
+        <p class="kop font-extrabold text-4xl leading-none">1996</p>
+        <p class="text-sm font-medium mt-1">RTG Reclame opgericht</p>
+      </div>
+    </div>
+    <div class="md:col-span-7 md:pl-4 pt-6 md:pt-0">
+      <h2 class="kop font-extrabold text-4xl md:text-[56px] leading-[1]">Ondernemen met een glimlach.</h2>
+      <div class="mt-8 space-y-5 text-lg text-grijs leading-relaxed max-w-[36rem]">
+        <p>"Sinds 1988 werk ik in de reclame, en dat vind ik nog altijd een geweldig vak. In 1996 ben ik met RTG Reclame begonnen, omdat alles wat met reclame, marketing en communicatie te maken heeft me boeit."</p>
+        <p>"Er zijn in de loop der jaren ontelbaar veel diensten en producten bijgekomen. Wat voorop is blijven staan: leveren waar de klant écht iets aan heeft. We kijken naar je uitingen, je media, je website en je socials, zodat alles aansluit bij jouw doelgroep. We maken het kloppend."</p>
+      </div>
+      <div class="mt-8 flex items-center gap-4">
+        <span class="block w-10 h-[3px] bg-geel" aria-hidden="true"></span>
+        <p><strong class="font-semibold text-inkt">Ton Gommans</strong><span class="text-grijs">, directeur-eigenaar</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section class="bg-diep text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <h2 class="kop font-extrabold text-4xl md:text-[56px] leading-[1] max-w-3xl">Jij hebt het idee. Wij werken het uit.</h2>
+    <ol class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-xl overflow-hidden">
+      <li class="bg-diep p-7 md:p-8">
+        <span class="kop text-geel font-extrabold text-5xl">1</span>
+        <h3 class="kop font-bold text-xl mt-5">Van idee naar concept</h3>
+        <p class="mt-3 text-white/70 leading-relaxed">Je hebt een wens of een opdracht. Wij werken die samen met jou uit tot een concept.</p>
+      </li>
+      <li class="bg-diep p-7 md:p-8">
+        <span class="kop text-geel font-extrabold text-5xl">2</span>
+        <h3 class="kop font-bold text-xl mt-5">Originele ideeën</h3>
+        <p class="mt-3 text-white/70 leading-relaxed">We denken als reclamebureau en als mens met je mee, en kijken vanuit verschillende kanten.</p>
+      </li>
+      <li class="bg-diep p-7 md:p-8">
+        <span class="kop text-geel font-extrabold text-5xl">3</span>
+        <h3 class="kop font-bold text-xl mt-5">De juiste media</h3>
+        <p class="mt-3 text-white/70 leading-relaxed">Je krijgt een voorstel voor media die passen bij je budget en je bedrijf, zodat je zoveel mogelijk mensen bereikt.</p>
+      </li>
+      <li class="bg-diep p-7 md:p-8">
+        <span class="kop text-geel font-extrabold text-5xl">4</span>
+        <h3 class="kop font-bold text-xl mt-5">Wij doen het voor je</h3>
+        <p class="mt-3 text-white/70 leading-relaxed">Website, advertentie, drukwerk: wij voeren het uit. Jij kunt je met je eigen werk bezighouden.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Media -->
+<section class="bg-geel text-inkt overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4">
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1]">Lokaal adverteren, op landelijke sites.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-inkt/80">Je advertentie alleen laten zien aan mensen in jouw regio, op de grote websites die ze elke dag openen. Wij regelen het hele traject.</p>
+    </div>
+    <p class="md:col-span-8 kop font-bold text-[26px] sm:text-3xl md:text-[38px] leading-[1.25] md:leading-[1.2] text-inkt" aria-label="Online werken wij onder andere met deze websites">
+      NU.nl <span class="text-inkt/35">/</span> AD <span class="text-inkt/35">/</span> De Telegraaf <span class="text-inkt/35">/</span> ED <span class="text-inkt/35">/</span> FD <span class="text-inkt/35">/</span> NRC <span class="text-inkt/35">/</span> Het Parool <span class="text-inkt/35">/</span> Trouw <span class="text-inkt/35">/</span> De Volkskrant <span class="text-inkt/35">/</span> Marktplaats <span class="text-inkt/35">/</span> ANWB <span class="text-inkt/35">/</span> Linda.nl <span class="text-inkt/35">/</span> Spotify <span class="text-inkt/35">/</span> 9292 <span class="text-inkt/35">/</span> TVGids <span class="text-inkt/35">/</span> Zoover <span class="text-inkt/35">/</span> Autoscout24 <span class="text-inkt/35">/</span> Smulweb <span class="text-inkt/35">/</span> Dagjeweg.nl <span class="text-inkt/50 font-medium">en vele anderen.</span>
+    </p>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <h2 class="kop font-extrabold text-4xl md:text-[56px] leading-[1] max-w-2xl">"Lost alles op alsof het voor zijn eigen bedrijf is."</h2>
+      <p class="flex items-center gap-3 text-grijs">
+        <span class="kop text-inkt font-extrabold text-5xl leading-none">4.9</span>
+        <span><span class="text-[#E8B400] tracking-[2px]" aria-hidden="true">★★★★★</span><br>uit 29 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <blockquote class="md:col-span-2 rounded-xl bg-lila p-7 md:p-10">
+        <p class="kop font-medium text-[21px] md:text-[27px] leading-snug tracking-normal">"Al 15 jaar laat Kubus Wonen al zijn drukwerk, reclame-uitingen en krantadvertenties verzorgen door Ton Gommans van RTG Reclame. En eerlijk is eerlijk: dat is één van de beste zakelijke keuzes die we ooit hebben gemaakt. Ton denkt altijd mee vanaf het eerste moment, lost alles op alsof het voor zijn eigen bedrijf is en..."</p>
+        <footer class="mt-5 font-semibold">KUBUS WONEN</footer>
+      </blockquote>
+      <blockquote class="rounded-xl bg-inkt text-white p-7">
+        <p class="text-[17px] leading-relaxed">"Topprof ! Ton staat altijd voor je klaar, hij heeft verstand van zaken en hij kan toveren met afbeeldingen. Ik ben blij dat we met onze ondernemingen De Witte Roos Uitvaartverzorging en Uitvaartkrachten Academy op hem kunnen terugvallen daar waar nodig."</p>
+        <footer class="mt-5 font-semibold text-geel">Hanny van Keulen</footer>
+      </blockquote>
+      <blockquote class="rounded-xl bg-lila p-7">
+        <p class="text-[17px] leading-relaxed">"Heb de afgelopen periode veel te maken gehad met RTG Reclamer Culemborg. Dit reclamebureau is een absolute aanrader! Het is in staat om niet alleen strategisch met je mee te denken, maar ook op operationeel ("hands on") gebied. Ook de communicatie verloopt soepel en transparant met korte lijnen. Kortom een prettig, pro..."</p>
+        <footer class="mt-5 font-semibold">WDJ Jongkind</footer>
+      </blockquote>
+      <blockquote class="rounded-xl bg-geel p-7">
+        <p class="text-[17px] leading-relaxed">"Al jarenlang bouwen we samen aan de zichtbaarheid van De Muziektent de Plantage in Culemborg. Dankzij jou creativiteit en inzet staat onze programmering er altijd snaarstrak op. Bedankt voor de fijne samenwerking en de jarenlange support. Op naar nog veel meer mooie seizoenen!"</p>
+        <footer class="mt-5 font-semibold">Ton Spaan</footer>
+      </blockquote>
+      <blockquote class="rounded-xl bg-lila p-7">
+        <p class="text-[17px] leading-relaxed">"Heb al vele jaren vanuit verschillende hoedanigheden ervaring met Ton, de kwaliteit van zijn werk en zijn manier van werken. En die ervaringen zijn buitengewoon goed. Zou willen, dat andere ondernemers eenzelfde houding en prestatie zouden hebben."</p>
+        <footer class="mt-5 font-semibold">Jan Seij</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-lila">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-4xl md:text-[56px] leading-[1]">Kom langs voor een kop koffie.</h2>
+      <p class="mt-6 text-lg text-grijs leading-relaxed max-w-md">We gaan graag voor je aan de slag. Bel of mail, dan spreken we af en praten we verder aan de Pascalweg.</p>
+
+      <div class="mt-8 space-y-3">
+        <a href="tel:0345530303" class="knop flex items-center justify-between gap-4 bg-inkt text-white rounded-xl px-6 py-5 hover:bg-diep">
+          <span><span class="block text-sm text-white/60">Bellen</span><span class="kop font-bold text-2xl">0345 530 303</span></span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFD31A" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+        </a>
+        <a href="mailto:info@rtg.nl" class="knop flex items-center justify-between gap-4 bg-white rounded-xl px-6 py-5 hover:bg-white/70">
+          <span><span class="block text-sm text-grijs">Mailen</span><span class="kop font-bold text-2xl">info@rtg.nl</span></span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+      </div>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="kop font-bold text-lg">Adres</h3>
+          <p class="mt-2 text-grijs leading-relaxed">RTG Reclame<br>Pascalweg 5-03<br>4104 BE Culemborg</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Pascalweg+5-03+4104+BE+Culemborg" class="mt-2 inline-block text-sm font-semibold underline underline-offset-4 decoration-geel decoration-2">Route plannen</a>
+        </div>
+        <div>
+          <h3 class="kop font-bold text-lg">Openingstijden</h3>
+          <dl class="mt-2 text-grijs grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 [font-variant-numeric:tabular-nums]">
+            <dt>ma t/m vr</dt><dd>08.00 - 18.00</dd>
+            <dt>zaterdag</dt><dd>09.00 - 17.00</dd>
+            <dt>zondag</dt><dd>gesloten</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="rounded-xl overflow-hidden">
+        <img src="assets/google-02.jpg" alt="Het bedrijfspand aan de Pascalweg in Culemborg onder een blauwe lucht" class="w-full aspect-[16/8] object-cover object-[50%_40%]">
+      </div>
+      <form class="mt-5 bg-white rounded-xl p-6 md:p-8 grid sm:grid-cols-2 gap-4" action="mailto:info@rtg.nl" method="post" enctype="text/plain">
+        <p class="sm:col-span-2 kop font-bold text-2xl">Liever schrijven? We nemen snel contact op.</p>
+        <label class="block">
+          <span class="text-sm font-medium">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-lg border border-inkt/15 bg-lila/50 px-4 py-3 focus:border-inkt focus:outline-none focus:ring-2 focus:ring-geel">
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Telefoon of e-mail</span>
+          <input name="contact" required class="mt-1.5 w-full rounded-lg border border-inkt/15 bg-lila/50 px-4 py-3 focus:border-inkt focus:outline-none focus:ring-2 focus:ring-geel">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-medium">Waar kunnen we je mee helpen?</span>
+          <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-lg border border-inkt/15 bg-lila/50 px-4 py-3 focus:border-inkt focus:outline-none focus:ring-2 focus:ring-geel" placeholder="Bijvoorbeeld: nieuwe folders, een advertentie in de krant of een website"></textarea>
+        </label>
+        <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+          <p class="text-sm text-grijs">Je hoort vrijblijvend van ons.</p>
+          <button type="submit" class="knop bg-inkt text-white rounded-full px-7 py-3.5 font-bold hover:bg-diep">Verstuur bericht</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-diep text-white/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm">
+    <div>
+      <p class="kop text-white font-extrabold text-2xl">RTG Reclame</p>
+      <p class="mt-1">Reclamebureau in Culemborg, dichtbij Utrecht, Houten, Vianen, Leerdam, Geldermalsen en Tiel.</p>
+    </div>
+    <div class="md:text-right space-y-1">
+      <p>Pascalweg 5-03, 4104 BE Culemborg</p>
+      <p>KvK 11030797, btw NL807584630B01</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-inkt/95 backdrop-blur px-4 py-3 flex gap-3 shadow-[0_-10px_30px_-10px_rgba(23,10,71,.5)]">
+  <a href="tel:0345530303" class="flex-1 text-center bg-geel text-inkt rounded-full py-3.5 font-bold">Bel 0345 530 303</a>
+  <a href="mailto:info@rtg.nl" class="px-5 text-center border border-white/30 text-white rounded-full py-3.5 font-semibold">Mail</a>
+</div>
+
+</body>
+</html>
