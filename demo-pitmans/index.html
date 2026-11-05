@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitmans | Bakkerij, ontbijt en lunch in Nijmegen</title>
+<meta name="description" content="Desembrood, viennoiserie, ontbijt en lunch aan de Van Welderenstraat 113 in Nijmegen. Elke dag open van 8:00 tot 15:00, loop gewoon binnen.">
+<meta property="og:title" content="Pitmans | Bakkerij in Nijmegen">
+<meta property="og:description" content="Bloem, water, zout. En tijd. Elke dag open van 8:00 tot 15:00.">
+<meta property="og:image" content="assets/site-02.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { bloem: '#EFEEE3', omber: '#2B1D17', ossenbloed: '#7E2A1A', kozijn: '#D6C3A1', korst: '#E9DCC3' },
+        fontFamily: { kop: ['"Courier Prime"', 'Courier New', 'monospace'], tekst: ['Karla', 'system-ui', 'sans-serif'] }
+      }
+    }
+  };
+</script>
+<style>
+  :root {
+    --bloem: #EFEEE3; --omber: #2B1D17; --ossenbloed: #7E2A1A; --kozijn: #D6C3A1; --korst: #E9DCC3;
+    /* Geglazuurde tegels van de pui: rood met per tegel een andere tint. */
+    --tegels: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='96'%3E%3Cg stroke='%23551A0F' stroke-width='2'%3E%3Crect x='0' y='0' width='60' height='48' fill='%237E2A1A'/%3E%3Crect x='60' y='0' width='60' height='48' fill='%23752617'/%3E%3Crect x='120' y='0' width='60' height='48' fill='%2384301F'/%3E%3Crect x='180' y='0' width='60' height='48' fill='%237A2818'/%3E%3Crect x='0' y='48' width='60' height='48' fill='%23722515'/%3E%3Crect x='60' y='48' width='60' height='48' fill='%2382301E'/%3E%3Crect x='120' y='48' width='60' height='48' fill='%23772718'/%3E%3Crect x='180' y='48' width='60' height='48' fill='%236F2414'/%3E%3C/g%3E%3C/svg%3E");
+    --tegelrij: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='30'%3E%3Cg stroke='%23150D0A' stroke-width='2'%3E%3Crect x='0' y='0' width='60' height='30' fill='%232B1D17'/%3E%3Crect x='60' y='0' width='60' height='30' fill='%23362520'/%3E%3Crect x='120' y='0' width='60' height='30' fill='%23261A14'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  html { scroll-padding-top: 5.5rem; }
+  body { background: var(--bloem); color: var(--omber); font-family: Karla, system-ui, sans-serif; font-size: 1.125rem; line-height: 1.6; }
+  img { max-width: 100%; height: auto; display: block; }
+  html h1, html h2, html h3 { font-family: "Courier Prime", "Courier New", monospace; font-weight: 700; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  a:focus-visible, summary:focus-visible { outline: 3px solid var(--ossenbloed); outline-offset: 3px; }
+  .op-donker a:focus-visible { outline-color: var(--korst); }
+
+  .kop-groot { font-size: clamp(2.35rem, 5.2vw, 4.75rem); line-height: 1.02; letter-spacing: -0.045em; }
+  .kop-middel { font-size: clamp(1.9rem, 3.4vw, 3.1rem); line-height: 1.06; letter-spacing: -0.035em; }
+  .hero-kop { font-size: clamp(2.2rem, 11vw, 3.5rem); line-height: 0.98; letter-spacing: -0.05em; }
+  @media (min-width: 768px) { .hero-kop { font-size: min(5.6vw, 5.2rem); } }
+  .leesbreedte { max-width: 34em; }
+
+  /* Woordmerk: de letters als toetsen, zoals op het raam van de zaak. */
+  .merk { display: inline-flex; flex-direction: column; align-items: center; gap: .1em; font-size: 12px; line-height: 1; text-decoration: none; color: inherit; }
+  .merk span { display: flex; gap: .15em; }
+  .merk i { width: 2em; height: 2em; display: grid; place-items: center; border: .12em solid currentColor; border-radius: 50%; font-style: normal; font-family: Karla, sans-serif; font-weight: 500; transition: transform .12s ease; }
+  .merk i:hover { transform: translateY(.14em); }
+  .js .merk-laden i { animation: toets .26s ease both; animation-delay: calc(var(--n) * 70ms + 250ms); }
+  @keyframes toets { 50% { transform: translateY(.28em); } }
+
+  .raam { border: 12px solid var(--kozijn); border-bottom-width: 0; border-radius: 999px 999px 0 0; overflow: hidden; background: var(--kozijn); box-shadow: inset 0 0 0 1px rgba(43,29,23,.2); }
+  .raam img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+
+  .tegelrij { height: 30px; background: var(--tegelrij); }
+  .plint { background-color: var(--ossenbloed); background-image: var(--tegels); color: #fff; }
+
+  .knop { display: inline-flex; align-items: center; justify-content: center; min-height: 3.75rem; padding: .85rem 2.1rem; background: var(--ossenbloed); color: #fff; font-family: "Courier Prime", monospace; font-weight: 700; font-size: 1.3rem; letter-spacing: -.02em; text-decoration: none; border-radius: 3px; box-shadow: 0 5px 0 #4F180D; transition: transform .1s ease, box-shadow .1s ease, background-color .2s ease; }
+  .knop:hover { background: #8F3322; }
+  .knop:active { transform: translateY(4px); box-shadow: 0 1px 0 #4F180D; }
+  .knop-klein { min-height: 3.1rem; font-size: 1.1rem; padding: .6rem 1.5rem; }
+  .tekstlink { color: inherit; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .22em; transition: color .2s ease; }
+  .tekstlink:hover { color: var(--ossenbloed); }
+  .op-donker .tekstlink:hover { color: #fff; }
+
+  .getypt { font-family: "Courier Prime", "Courier New", monospace; }
+  .kaartje { background: #F8F6EC; box-shadow: 0 1px 0 rgba(43,29,23,.2), 10px 12px 0 rgba(43,29,23,.13); }
+  .rond { border-radius: 50%; aspect-ratio: 1; object-fit: cover; }
+  .boog { border-radius: 999px 999px 0 0; object-fit: cover; }
+  .schuin { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%); }
+
+  .mobiele-balk { padding-bottom: max(.6rem, env(safe-area-inset-bottom)); transition: transform .2s ease; }
+  .mobiele-balk.weg { transform: translateY(110%); }
+  @media (max-width: 767px) { body { padding-bottom: 4.75rem; } }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-bloem focus:p-3">Naar de inhoud</a>
+
+<div class="bg-omber text-korst text-center text-sm py-1.5 px-4 op-donker">
+  Demo voor Pitmans, gemaakt door <a class="tekstlink" href="https://hagenweb.nl">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-30 bg-bloem border-b border-omber/15">
+  <div class="max-w-[1360px] mx-auto px-5 md:px-10 py-2.5 flex items-center justify-between gap-6">
+    <a href="#inhoud" class="merk merk-laden" aria-label="Pitmans, naar boven">
+      <span><i style="--n:0">P</i><i style="--n:1">I</i><i style="--n:2">T</i></span>
+      <span><i style="--n:3">M</i><i style="--n:4">A</i><i style="--n:5">N</i><i style="--n:6">S</i></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[1.02rem] whitespace-nowrap" aria-label="Hoofdmenu">
+      <a class="tekstlink no-underline hover:underline" href="#brood">Brood</a>
+      <a class="tekstlink no-underline hover:underline" href="#viennoiserie">Viennoiserie</a>
+      <a class="tekstlink no-underline hover:underline" href="#kaart">Op de kaart</a>
+      <a class="tekstlink no-underline hover:underline" href="#over">Over ons</a>
+      <a class="tekstlink no-underline hover:underline" href="#zakelijk">Zakelijk</a>
+      <a class="tekstlink no-underline hover:underline" href="#werken">Werken bij</a>
+      <a class="tekstlink no-underline hover:underline" href="#contact">Contact</a>
+    </nav>
+    <details class="lg:hidden relative">
+      <summary class="list-none cursor-pointer getypt font-bold text-lg py-2 pl-4 [&::-webkit-details-marker]:hidden">Menu</summary>
+      <nav class="absolute right-0 top-full mt-2 w-56 bg-bloem border border-omber/25 p-4 flex flex-col gap-2.5" aria-label="Menu op mobiel">
+        <a class="tekstlink" href="#brood">Brood</a>
+        <a class="tekstlink" href="#viennoiserie">Viennoiserie</a>
+        <a class="tekstlink" href="#kaart">Op de kaart</a>
+        <a class="tekstlink" href="#over">Over ons</a>
+        <a class="tekstlink" href="#zakelijk">Zakelijk</a>
+        <a class="tekstlink" href="#werken">Werken bij</a>
+        <a class="tekstlink" href="#vragen">Vragen</a>
+        <a class="tekstlink" href="#contact">Contact</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero: het raam van de zaak, op de tegelplint -->
+  <section class="max-w-[1360px] mx-auto px-5 md:px-10 pt-7 md:pt-10">
+    <div class="grid md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] gap-8 md:gap-10 items-end">
+      <div class="md:pb-12">
+        <p class="getypt text-lg md:text-xl mb-3 md:mb-5">Bakkerij in Nijmegen</p>
+        <h1 class="hero-kop">Bloem, water,<br>zout. En tijd.</h1>
+        <p class="leesbreedte mt-5 md:mt-7 text-[1.15rem] md:text-[1.3rem] leading-snug md:leading-normal">Iedere dag vers desembrood en viennoiserie, en de hele dag ontbijt en lunch. Loop gewoon binnen aan de Van Welderenstraat.</p>
+        <div class="mt-6 md:mt-8 flex flex-wrap items-center gap-x-7 gap-y-3">
+          <a id="hero-knop" class="knop" href="https://www.google.com/maps/dir/?api=1&amp;destination=Van+Welderenstraat+113,+6511+MH+Nijmegen">Plan je route</a>
+          <a class="tekstlink" href="#kaart">Wat er op de kaart staat</a>
+        </div>
+        <p class="mt-6 text-base">4,7 sterren uit 15 Google-reviews</p>
+      </div>
+      <div class="raam aspect-[47/50] w-full max-w-[560px] md:max-w-none mx-auto">
+        <img src="assets/site-02.jpg" width="1538" height="2048" alt="Een bakker aan het werk, gezien door het raam met het Pitmans-logo">
+      </div>
+    </div>
+  </section>
+
+  <div class="tegelrij" aria-hidden="true"></div>
+  <section class="plint op-donker" aria-label="Openingstijden">
+    <div class="max-w-[1360px] mx-auto px-5 md:px-10 py-6 md:py-8 flex flex-col md:flex-row md:items-baseline gap-x-10 gap-y-1">
+      <p class="getypt font-bold text-[1.6rem] md:text-[2.1rem] leading-tight tracking-tight">Elke dag open van 8:00 tot 15:00.</p>
+      <p class="text-[1.1rem] md:text-xl">We werken zonder reserveringen: loop gewoon binnen.</p>
+    </div>
+  </section>
+
+  <!-- Brood -->
+  <section id="brood" class="max-w-[1360px] mx-auto px-5 md:px-10 pt-20 md:pt-32">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-10 items-start">
+      <img class="md:col-span-7 w-full aspect-[5/6] md:aspect-[5/7] object-cover schuin" loading="lazy" src="assets/site-08.webp" width="1680" height="2101" alt="Handen tillen deeg uit een grote mengkom vol bloem">
+      <div class="md:col-span-5 md:pt-16">
+        <h2 class="kop-groot">Meer heeft goed brood niet nodig.</h2>
+        <p class="leesbreedte mt-7">Bij Pitmans begint alles bij het product. Ons desembrood bestaat uit bloem, water en zout, en we geven het deeg vooral veel tijd. We laten de natuur zoveel mogelijk haar werk doen en grijpen alleen in waar dat nodig is.</p>
+        <p class="leesbreedte mt-4">Ambachtelijk, maar niet ouderwets. Geen onnodige toevoegingen en geen poespas. Wel elke dag vers.</p>
+        <figure class="mt-12 md:mt-16 md:-ml-32 relative">
+          <img class="w-full aspect-[4/3] object-cover md:border-l-[12px] md:border-t-[12px] md:border-bloem" loading="lazy" src="assets/google-02.jpg" width="1600" height="1202" alt="Een bakker vormt een brood, achter rekken met rijsmandjes">
+          <figcaption class="getypt mt-3 text-base md:pl-3">Lange fermentatie, en dan vormen met de hand.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-12 gap-8 md:gap-10 mt-12 md:mt-20 items-center">
+      <p class="md:col-span-5 kop-middel getypt font-bold order-2 md:order-1">Brood reserveren kan niet. Kom op tijd, dan heb je de meeste keuze.</p>
+      <img class="md:col-span-5 md:col-start-8 w-full aspect-[4/5] object-cover object-[50%_72%] boog order-1 md:order-2" loading="lazy" src="assets/google-07.jpg" width="1202" height="1600" alt="Twee desembroden op een houten plank">
+    </div>
+  </section>
+
+  <!-- Viennoiserie -->
+  <section id="viennoiserie" class="max-w-[1360px] mx-auto px-5 md:px-10 pt-20 md:pt-36 pb-20 md:pb-32">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+      <div class="md:col-span-6 md:order-2">
+        <img class="rond w-full max-w-[640px] mx-auto" loading="lazy" src="assets/google-04.jpg" width="1202" height="1600" alt="Een glanzend gedraaid broodje op een wit bord op een eikenhouten tafel">
+      </div>
+      <div class="md:col-span-6 md:order-1">
+        <h2 class="kop-groot">Tussen brood en patisserie in.</h2>
+        <p class="leesbreedte mt-7">Daar zit de viennoiserie, en dat is precies de lekkerste plek. Denk aan croissants, pain au chocolat en andere baksels van rijk, vaak gelamineerd deeg met lekker veel boter.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-12 gap-4 md:gap-10 mt-10 md:mt-16 items-start">
+      <img class="col-span-7 w-full aspect-[4/3] object-cover object-[50%_60%]" loading="lazy" src="assets/google-05.jpg" width="1202" height="1600" alt="Rijen opgerolde croissants op een plank, klaar om te rijzen">
+      <img class="col-span-5 w-full aspect-[4/5] object-cover mt-10 md:mt-24" loading="lazy" src="assets/site-01.webp" width="2000" height="2664" alt="Een rek met gedraaide broodjes en croissants">
+    </div>
+  </section>
+
+  <!-- Op de kaart -->
+  <section id="kaart" class="bg-kozijn">
+    <div class="max-w-[1360px] mx-auto px-5 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-7">
+        <h2 class="kop-groot">De hele dag ontbijt en lunch.</h2>
+        <div class="kaartje getypt mt-9 p-6 md:p-10 max-w-[38rem]">
+          <p class="font-bold text-xl mb-4">Op de kaart</p>
+          <ul class="space-y-3 text-[1.08rem] leading-snug">
+            <li>Ons eigen desembrood en viennoiserie als basis.</li>
+            <li>Favorieten die het hele jaar blijven, en wat het seizoen brengt.</li>
+            <li>Fruit zoveel mogelijk uit de regio.</li>
+            <li>Koffie van goede bonen van Blommers.</li>
+            <li>Vegetarische en vegan opties.</li>
+          </ul>
+        </div>
+        <p class="leesbreedte mt-9">We houden het graag dichtbij, vers en vooral heel erg lekker. We werken zonder reserveringen: loop gewoon binnen en we kijken of er plek is.</p>
+      </div>
+      <img class="md:col-span-5 w-full aspect-[4/5] object-cover boog" loading="lazy" src="assets/google-08.jpg" width="1202" height="1600" alt="Espresso loopt uit de machine in twee witte kopjes">
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="max-w-[1360px] mx-auto px-5 md:px-10 py-20 md:py-32" aria-label="Reviews">
+    <div class="grid md:grid-cols-12 gap-x-10 gap-y-12">
+      <figure class="md:col-span-8">
+        <blockquote class="kop-middel font-kop font-bold">“Fijne mensen, heerlijk brood en goede sfeer! Aanrader voor je dagelijkse brood maar ook de beste croissants en andere lekkernijen”</blockquote>
+        <figcaption class="mt-5">Janina Pieterse, op Google</figcaption>
+      </figure>
+      <div class="md:col-span-4 md:pt-3">
+        <p class="getypt font-bold text-5xl tracking-tight">4,7</p>
+        <p class="mt-1">sterren uit 15 Google-reviews</p>
+      </div>
+      <figure class="md:col-span-5 md:col-start-3">
+        <blockquote class="text-xl leading-snug">“Leuke nieuwe bakkerij in centrum Nijmegen, zuurdesem brood absoluut aanrader!”</blockquote>
+        <figcaption class="mt-3">Thomas Steenbrink, op Google</figcaption>
+      </figure>
+      <figure class="md:col-span-5">
+        <blockquote class="text-xl leading-snug">“Deze mensen zijn erg vriendelijk en ze weten hoe ze brood moeten bakken. Het eten is heel goed, probeer kip dragon en crossiant ❤️”</blockquote>
+        <figcaption class="mt-3">Saad Bassi, op Google</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Over ons en de naam -->
+  <section id="over" class="bg-omber text-korst op-donker">
+    <div class="max-w-[1360px] mx-auto px-5 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+      <img class="md:col-span-5 w-full aspect-[4/5] object-cover object-[50%_55%] boog" loading="lazy" src="assets/google-01.jpg" width="1202" height="1600" alt="Het raam van Pitmans met het logo, waarin de gevels aan de overkant weerspiegelen">
+      <div class="md:col-span-7">
+        <h2 class="kop-groot text-white">De naam zat al in Nijmegen verstopt.</h2>
+        <p class="leesbreedte mt-7">Toen Klein het brood van Boulangerie Karel in Arnhem proefde, was de gedachte vrij snel geboren: zo’n bakkerij hoort ook in Nijmegen. Het idee bleef een tijd op de plank liggen, tot de juiste plek voorbijkwam en Klein &amp; Karel besloten het samen te doen.</p>
+        <p class="leesbreedte mt-4">In 1909 opende Gerret Anneveldt hier de Pitmanschool, waar Nijmegen leerde stenograferen en typen volgens het systeem van Isaac Pitman. Later kwamen daar handelsopleidingen en talen bij en werden er zelfs wedstrijden sneltypen gehouden.</p>
+        <p class="leesbreedte mt-4">Die geschiedenis zie je terug: stenografie duikt op in het ontwerp en de typische oude letterbakken krijgen een nieuwe plek in de bar.</p>
+        <div class="merk mt-10 !text-[24px] md:!text-[34px] text-korst" aria-hidden="true">
+          <span><i>P</i><i>I</i><i>T</i></span>
+          <span><i>M</i><i>A</i><i>N</i><i>S</i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zakelijk en werken bij -->
+  <section class="max-w-[1360px] mx-auto px-5 md:px-10 pt-20 md:pt-32">
+    <div id="zakelijk" class="grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+      <img class="md:col-span-6 w-full aspect-[4/3] md:aspect-[5/6] object-cover object-[50%_70%]" loading="lazy" src="assets/site-05.webp" width="2000" height="2643" alt="Vers gebakken baguettes op een schep voor de oven">
+      <div class="md:col-span-5 md:col-start-8">
+        <h2 class="kop-groot">Ook voor de horeca.</h2>
+        <p class="leesbreedte mt-7">Van blond brood en campagne tot baguettes en andere producten uit onze bakkerij. We leveren in Nijmegen en omgeving en bezorgen is in overleg mogelijk.</p>
+        <p class="leesbreedte mt-4">Kom langs en proef ons brood, of neem contact met ons op.</p>
+        <a class="knop knop-klein mt-7" href="mailto:info@pitmans.nl?subject=Brood%20voor%20de%20horeca">Mail over levering</a>
+      </div>
+    </div>
+    <div id="werken" class="grid md:grid-cols-12 gap-8 md:gap-10 items-end mt-20 md:mt-32">
+      <div class="md:col-span-5 md:order-1 order-2">
+        <h2 class="kop-groot">Liefde voor brood? Kom erbij.</h2>
+        <p class="leesbreedte mt-7">Een nieuwe bakkerij betekent ook een nieuw team. We zoeken mensen met liefde voor brood, koffie en het vak. Mensen die graag aanpakken, nieuwsgierig zijn en blij worden van een plek waar altijd iets gebeurt. Ervaring is mooi, enthousiasme minstens zo belangrijk.</p>
+        <p class="leesbreedte mt-4">Een open sollicitatie mag altijd.</p>
+        <a class="knop knop-klein mt-7" href="mailto:info@pitmans.nl?subject=Solliciteren%20bij%20Pitmans">Mail je sollicitatie</a>
+      </div>
+      <img class="md:col-span-7 md:order-2 order-1 w-full aspect-[4/3] object-cover" loading="lazy" src="assets/google-03.jpg" width="1600" height="1202" alt="Het team van Pitmans in schorten, gezien door het raam met het logo">
+    </div>
+  </section>
+
+  <!-- Vragen -->
+  <section id="vragen" class="max-w-[1360px] mx-auto px-5 md:px-10 pt-20 md:pt-32">
+    <h2 class="kop-groot">Goed om te weten</h2>
+    <div class="mt-10 md:mt-14 md:columns-2 gap-14">
+      <div class="break-inside-avoid border-t border-omber/30 pt-4 pb-8">
+        <h3 class="text-[1.35rem] leading-tight">Kan ik brood reserveren?</h3>
+        <p class="mt-2">Nee, brood reserveren is niet mogelijk. Voor de meeste keuze kun je het beste op tijd langskomen.</p>
+      </div>
+      <div class="break-inside-avoid border-t border-omber/30 pt-4 pb-8">
+        <h3 class="text-[1.35rem] leading-tight">Kan ik reserveren voor ontbijt of lunch?</h3>
+        <p class="mt-2">Nee, we werken zonder reserveringen. Loop gewoon binnen en we kijken of er plek is.</p>
+      </div>
+      <div class="break-inside-avoid border-t border-omber/30 pt-4 pb-8">
+        <h3 class="text-[1.35rem] leading-tight">Houden jullie rekening met allergieën en dieetwensen?</h3>
+        <p class="mt-2">We hebben vegetarische en vegan opties. Met andere allergieën en dieetwensen kunnen we helaas niet altijd rekening houden. Vraag ons gerust wat er mogelijk is.</p>
+      </div>
+      <div class="break-inside-avoid border-t border-omber/30 pt-4 pb-8">
+        <h3 class="text-[1.35rem] leading-tight">Is Pitmans toegankelijk voor mindervaliden?</h3>
+        <p class="mt-2">Ja, het pand is toegankelijk voor rolstoelen. Er is echter geen mogelijkheid om gebruik te maken van het toilet.</p>
+      </div>
+      <div class="break-inside-avoid border-t border-omber/30 pt-4 pb-8">
+        <h3 class="text-[1.35rem] leading-tight">Hoe bewaar ik mijn brood het beste?</h3>
+        <p class="mt-2">In een afgesloten zak of broodtrommel voor een zachte korst, of in de papieren zak voor een krokante korst. Langer bewaren? Vries het vers en gesneden in.</p>
+      </div>
+      <div class="break-inside-avoid border-t border-omber/30 pt-4 pb-8">
+        <h3 class="text-[1.35rem] leading-tight">De volgende dag weer zin in warm en krokant brood?</h3>
+        <p class="mt-2">Piep het ongeveer 10 minuten op in een voorverwarmde oven op 200 graden en het is weer lekker krokant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vrienden -->
+  <section class="max-w-[1360px] mx-auto px-5 md:px-10 pt-14 md:pt-20 pb-20 md:pb-32">
+    <div class="grid md:grid-cols-12 gap-6 md:gap-10 items-baseline">
+      <div class="md:col-span-5">
+        <h2 class="kop-middel">Vrienden van Pitmans</h2>
+        <p class="leesbreedte mt-4">Om ons heen zitten vrienden die ieder op hun eigen manier bezig zijn met goed eten en drinken op mooie plekken in Arnhem en Nijmegen.</p>
+      </div>
+      <ul class="md:col-span-6 md:col-start-7 getypt font-bold text-[1.6rem] md:text-[2rem] leading-snug tracking-tight">
+        <li>Boulangerie Hotel Karel</li>
+        <li>Café Klein</li>
+        <li>Clamato</li>
+        <li>Franco James</li>
+        <li>Bistrot Kareltje</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="grid md:grid-cols-2 items-stretch">
+    <img class="w-full h-72 md:h-full object-cover object-[35%_60%]" loading="lazy" src="assets/google-06.jpg" width="1600" height="1202" alt="De gevel van Pitmans met de rode tegelplint en grote ramen">
+    <div class="bg-kozijn px-5 md:px-14 py-14 md:py-20">
+      <h2 class="kop-groot">Tot zo.</h2>
+      <address class="not-italic mt-8 text-xl leading-relaxed">
+        Van Welderenstraat 113<br>6511 MH Nijmegen
+      </address>
+      <p class="mt-5 text-xl leading-relaxed">Maandag t/m zondag<br>8:00 tot 15:00</p>
+      <p class="mt-5 text-xl"><a class="tekstlink" href="mailto:info@pitmans.nl">info@pitmans.nl</a></p>
+      <a class="knop mt-9" href="https://www.google.com/maps/dir/?api=1&amp;destination=Van+Welderenstraat+113,+6511+MH+Nijmegen">Plan je route</a>
+    </div>
+  </section>
+</main>
+
+<div class="tegelrij" aria-hidden="true"></div>
+<footer class="plint op-donker">
+  <div class="max-w-[1360px] mx-auto px-5 md:px-10 py-9 flex flex-wrap items-center justify-between gap-5">
+    <div class="merk text-white !text-[15px]" aria-hidden="true">
+      <span><i>P</i><i>I</i><i>T</i></span>
+      <span><i>M</i><i>A</i><i>N</i><i>S</i></span>
+    </div>
+    <p class="text-base">© Pitmans 2026</p>
+  </div>
+</footer>
+
+<!-- Op mobiel altijd binnen bereik: geen telefoonnummer bekend, dus route en mail -->
+<div id="mobiele-balk" class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-bloem border-t border-omber/25 mobiele-balk px-3 pt-2.5 flex gap-2.5">
+  <a class="knop knop-klein flex-1 !shadow-none" href="https://www.google.com/maps/dir/?api=1&amp;destination=Van+Welderenstraat+113,+6511+MH+Nijmegen">Plan je route</a>
+  <a class="knop knop-klein !bg-transparent !text-omber border-2 border-omber !shadow-none" href="mailto:info@pitmans.nl">Mail</a>
+</div>
+
+<script>
+  // De vaste balk blijft weg zolang de routeknop in de hero zelf in beeld is.
+  new IntersectionObserver(function (e) {
+    document.getElementById('mobiele-balk').classList.toggle('weg', e[0].isIntersecting);
+  }).observe(document.getElementById('hero-knop'));
+</script>
+</body>
+</html>
