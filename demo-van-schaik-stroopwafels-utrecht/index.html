@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Van Schaik Stroopwafels Utrecht | Vers gebakken op de Vredenburg</title>
+<meta name="description" content="Warme stroopwafels, poffertjes en suikerwafels, vers gebakken op de Vredenburg in Utrecht. Volgens het eigen recept van Van Schaik, sinds 1960.">
+<meta property="og:title" content="Van Schaik Stroopwafels Utrecht">
+<meta property="og:description" content="Warm van de plaat, voor uw ogen gebakken. Vredenburg 1, Utrecht.">
+<meta property="og:image" content="assets/google-04.jpg">
+<link rel="icon" href="assets/site-11.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          choco: '#3B1A10',
+          caramel: { DEFAULT: '#A85A1B', dark: '#8E4A13' },
+          gold: '#A88D5C',
+          paper: '#FCFAF6',
+          dough: '#EFE4D2',
+          ink: '#2A1A14',
+        },
+        fontFamily: {
+          serif: ['"Young Serif"', 'Georgia', 'serif'],
+          sans: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 72px; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* Ruitjespatroon van een stroopwafel */
+  .waffle {
+    background-image:
+      repeating-linear-gradient(45deg, rgba(168,141,92,.16) 0 1.5px, transparent 1.5px 26px),
+      repeating-linear-gradient(-45deg, rgba(168,141,92,.16) 0 1.5px, transparent 1.5px 26px);
+  }
+  .waffle-light {
+    background-image:
+      repeating-linear-gradient(45deg, rgba(168,90,27,.07) 0 1.5px, transparent 1.5px 26px),
+      repeating-linear-gradient(-45deg, rgba(168,90,27,.07) 0 1.5px, transparent 1.5px 26px);
+  }
+  .arch { border-radius: 999px 999px 28px 28px; }
+  .btn { transition: background-color .2s, transform .15s, color .2s, border-color .2s; }
+  .btn:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #A85A1B; outline-offset: 3px; border-radius: 6px; }
+  .today { background: #EFE4D2; }
+  .today td:first-child::after { content: "  vandaag"; font-size: .75rem; color: #A85A1B; font-weight: 600; }
+  /* Eén rustige inkomst van de hero, alleen als JS draait */
+  .js .rise { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+  .js .rise-2 { animation-delay: .12s; }
+  @keyframes rise { from { transform: translateY(14px); opacity: .001; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .js .rise { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-paper text-ink font-sans pb-20 md:pb-0">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-ink text-dough/90 text-[13px] text-center px-4 py-2">
+  Demo voor Van Schaik Stroopwafels Utrecht, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b border-choco/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 shrink-0" aria-label="Van Schaik Stroopwafels, naar boven">
+      <img src="assets/site-11.png" alt="" class="w-11 h-11">
+      <span class="leading-tight">
+        <span class="block font-serif text-choco text-lg">Van Schaik</span>
+        <span class="block text-[12px] text-choco/70">Stroopwafels Utrecht</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-choco/85" aria-label="Hoofdmenu">
+      <a href="#proeven" class="hover:text-caramel">Proeven</a>
+      <a href="#winkel" class="hover:text-caramel">De winkel</a>
+      <a href="#verhaal" class="hover:text-caramel">Sinds 1960</a>
+      <a href="#zakelijk" class="hover:text-caramel">Bakfiets</a>
+      <a href="#langskomen" class="hover:text-caramel">Langskomen</a>
+    </nav>
+    <a href="tel:+31703355909" class="btn hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-choco text-choco px-5 py-2.5 text-[15px] font-semibold hover:bg-choco hover:text-paper">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      070 335 5909
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden waffle-light">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-10 pb-14 md:pt-16 md:pb-20 grid lg:grid-cols-[1.05fr_.95fr] gap-10 lg:gap-16 items-center">
+    <div class="rise">
+      <p class="text-[15px] font-medium text-caramel mb-5">Stroopwafels op de Vredenburg, Utrecht</p>
+      <h1 class="font-serif text-choco text-[2.75rem] leading-[1.05] sm:text-6xl lg:text-[4.6rem] lg:leading-[1.02] tracking-[-0.015em]">
+        Warm van de plaat, voor uw ogen gebakken.
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-ink/80 max-w-[34rem] leading-relaxed">
+        Knapperig, vol stroop en nog warm. Kom langs voor stroopwafels en poffertjes, gebakken volgens het eigen recept van Van Schaik, sinds 1960.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Vredenburg+1,+3511+BA+Utrecht" target="_blank" rel="noopener"
+           class="btn inline-flex items-center gap-3 rounded-full bg-caramel hover:bg-caramel-dark text-white px-8 py-4 text-lg font-semibold shadow-[0_10px_24px_-10px_rgba(168,90,27,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Plan uw route
+        </a>
+        <a href="tel:+31703355909" class="text-choco font-semibold underline decoration-gold decoration-2 underline-offset-[6px] hover:text-caramel">of bel 070 335 5909</a>
+      </div>
+      <p class="mt-9 flex items-center gap-3 text-[15px] text-ink/75">
+        <span class="flex text-caramel" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="text-choco">4,9</strong> uit 446 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="relative rise rise-2 mx-auto w-full max-w-[460px] lg:max-w-none">
+      <div class="arch overflow-hidden aspect-[4/5] lg:aspect-auto lg:h-[600px] bg-dough shadow-[0_30px_60px_-30px_rgba(59,26,16,.55)]">
+        <img src="assets/google-04.jpg" alt="Verse stroopwafel in een puntzak van Van Schaik" class="w-full h-full object-cover object-[50%_45%]">
+      </div>
+      <img src="assets/site-11.png" alt="Logo Van Schaik, sinds 1960" class="absolute -left-4 bottom-10 sm:-left-10 w-28 h-28 sm:w-36 sm:h-36 rounded-full ring-8 ring-paper shadow-xl">
+    </div>
+  </div>
+</section>
+
+<!-- Proeven -->
+<section id="proeven" class="bg-choco text-paper waffle relative">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16 items-end">
+      <div>
+        <h2 class="font-serif text-4xl md:text-5xl leading-tight">Wat er bij ons van de plaat komt</h2>
+      </div>
+      <p class="text-dough/80 text-lg leading-relaxed max-w-xl">
+        Alles wordt vers gebakken, met de beste ingrediënten en zonder toegevoegde kleur- en smaakstoffen of kunstmatige conserveringsmiddelen. U eet het warm in de winkel of loopt ermee de stad in.
+      </p>
+    </div>
+
+    <!-- Warm: de stroopwafel groot, poffertjes en suikerwafels ernaast -->
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-[1.25fr_1fr] gap-5">
+      <article class="md:row-span-2 rounded-[28px] bg-white text-ink overflow-hidden flex flex-col">
+        <img src="assets/site-06.jpg" alt="Warme superwafel in een Van Schaik puntzak" class="w-full aspect-[3/2] object-cover">
+        <div class="p-7 md:p-9 pt-2 md:pt-2 mt-auto">
+          <h3 class="font-serif text-choco text-3xl">Verse stroopwafel</h3>
+          <p class="mt-3 text-ink/75 leading-relaxed max-w-md">Knapperige wafel, warme stroop, net van de plaat. Zin in meer? Neem de superwafel.</p>
+          <img src="assets/site-07.png" alt="Eigen receptuur" class="mt-6 h-10 w-auto">
+        </div>
+      </article>
+      <article class="rounded-[28px] overflow-hidden relative min-h-[300px] group">
+        <img src="assets/google-03.jpg" alt="Poffertjes met boter en poedersuiker in Van Schaik papier" class="absolute inset-0 w-full h-full object-cover object-[50%_55%]">
+        <div class="absolute inset-0 bg-gradient-to-t from-choco/90 via-choco/30 to-transparent"></div>
+        <div class="absolute bottom-0 p-7">
+          <h3 class="font-serif text-3xl">Poffertjes</h3>
+          <p class="mt-1 text-dough/90">Met boter en poedersuiker, warm uit de pan.</p>
+        </div>
+      </article>
+      <article class="rounded-[28px] bg-dough text-ink overflow-hidden grid grid-cols-[1fr_1.1fr] items-center">
+        <div class="p-7">
+          <h3 class="font-serif text-choco text-3xl">Suikerwafels</h3>
+          <p class="mt-2 text-ink/75">Luchtig deeg met knapperige suiker.</p>
+        </div>
+        <img src="assets/site-05.jpg" alt="Twee suikerwafels met poedersuiker" class="w-full h-full object-cover mix-blend-multiply">
+      </article>
+    </div>
+
+    <!-- Om mee te nemen -->
+    <div class="mt-20 md:mt-24">
+      <div class="flex flex-wrap items-end justify-between gap-4 border-b border-gold/40 pb-5">
+        <h3 class="font-serif text-3xl md:text-4xl">Om mee te nemen</h3>
+        <p class="text-dough/75 max-w-md">Een traktatie voor uzelf, een cadeau om weg te geven of om samen van te genieten.</p>
+      </div>
+      <ul class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10">
+        <li class="min-w-0">
+          <div class="rounded-2xl bg-white overflow-hidden"><img src="assets/site-01.jpg" alt="Zakken verse stroopwafels van Van Schaik" class="w-full aspect-[4/3] object-cover"></div>
+          <p class="mt-4 font-serif text-lg sm:text-xl">Stroopwafels</p>
+          <p class="text-dough/70 text-[15px]">Vers verpakt in een zak.</p>
+        </li>
+        <li class="min-w-0">
+          <div class="rounded-2xl bg-white overflow-hidden"><img src="assets/site-02.jpg" alt="Stroopwafelkruimels in een puntzak" class="w-full aspect-[4/3] object-cover"></div>
+          <p class="mt-4 font-serif text-lg sm:text-xl">Stroopwafel&shy;kruimels</p>
+          <p class="text-dough/70 text-[15px]">Om zo uit de zak te snoepen.</p>
+        </li>
+        <li class="min-w-0">
+          <div class="rounded-2xl bg-white overflow-hidden"><img src="assets/site-03.jpg" alt="Zak stroopkoeken van Van Schaik" class="w-full aspect-[4/3] object-cover"></div>
+          <p class="mt-4 font-serif text-lg sm:text-xl">Stroopkoeken</p>
+          <p class="text-dough/70 text-[15px]">Uit eigen bakkerij.</p>
+        </li>
+        <li class="min-w-0">
+          <div class="rounded-2xl bg-white overflow-hidden"><img src="assets/site-14.jpg" alt="Cadeaudoos met verpakte stroopwafels" class="w-full aspect-[4/3] object-cover"></div>
+          <p class="mt-4 font-serif text-lg sm:text-xl">Cadeauartikelen</p>
+          <p class="text-dough/70 text-[15px]">Dozen, blikken en chocolade specials.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- De winkel -->
+<section id="winkel" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-5 lg:gap-6">
+    <div class="lg:col-span-5 lg:pr-6 flex flex-col justify-center">
+      <h2 class="font-serif text-choco text-4xl md:text-5xl leading-tight">Ruik het al op de Vredenburg</h2>
+      <div class="mt-6 space-y-4 text-lg text-ink/80 leading-relaxed max-w-xl">
+        <p>Door de open pui ruikt u het al vanaf de straat. Achter de toonbank bakken we de stroopwafels vers, voor uw ogen, met ingrediënten waar we zelf voor staan.</p>
+        <p>Neem plaats aan de bar met een warme wafel, of zoek tussen de schappen een cadeau uit: van stroopwafels in een blik tot Delfts blauw.</p>
+      </div>
+    </div>
+    <figure class="lg:col-span-7 rounded-[28px] overflow-hidden">
+      <img src="assets/google-05.jpg" alt="De toonbank van Van Schaik in Utrecht met verse stroopwafels" class="w-full h-full object-cover aspect-[4/3]">
+    </figure>
+    <figure class="lg:col-span-4 rounded-[28px] overflow-hidden">
+      <img src="assets/google-01.jpg" alt="Toonbank met zakken stroopwafels en de poffertjespan" class="w-full aspect-[4/5] object-cover">
+    </figure>
+    <figure class="lg:col-span-8 rounded-[28px] overflow-hidden">
+      <img src="assets/google-07.jpg" alt="Houten schappen met Delfts blauwe cadeaus en stroopwafelblikken" class="w-full h-full aspect-[16/10] lg:aspect-auto object-cover">
+    </figure>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-dough waffle-light">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-[.7fr_1.3fr] gap-12 lg:gap-16">
+    <div>
+      <p class="font-serif text-choco text-[6.5rem] leading-none">4,9</p>
+      <p class="mt-3 text-lg text-ink/80">gemiddeld uit 446 reviews op Google</p>
+      <h2 class="mt-8 font-serif text-choco text-3xl md:text-4xl leading-tight">Wat onze klanten zeggen</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 gap-5">
+      <blockquote class="sm:col-span-2 bg-paper rounded-[28px] p-8 md:p-10">
+        <p class="font-serif text-choco text-2xl md:text-[1.7rem] leading-snug">"Beste en lekkerste stroopwafels van Utrecht. Ben met een glimlach geholpen door Ruben en Emma! Ik zal zeker terug gaan!"</p>
+        <footer class="mt-5 text-ink/70 font-medium">Angele Kortram</footer>
+      </blockquote>
+      <blockquote class="bg-paper rounded-[28px] p-7 md:p-8">
+        <p class="text-lg leading-relaxed">"Wij komen hier altijd om met onze dochter poffertjes te eten. Het ontvangst is altijd gastvrij, de poffertjes heerlijk en dat alles voor een fatsoenlijke prijs!"</p>
+        <footer class="mt-4 text-ink/70 font-medium">Peter G.</footer>
+      </blockquote>
+      <div class="grid gap-5">
+        <blockquote class="bg-paper rounded-[28px] p-7 md:p-8">
+          <p class="text-lg leading-relaxed">"De beste stroopwafel in Utrecht. Lekker vers. Veel keuzes."</p>
+          <footer class="mt-4 text-ink/70 font-medium">iliass chikri</footer>
+        </blockquote>
+        <blockquote class="bg-choco text-paper rounded-[28px] p-7 md:p-8" lang="en">
+          <p class="text-lg leading-relaxed">"The poffertjes and stroopwaffel was amazing!"</p>
+          <footer class="mt-4 text-dough/75 font-medium">Travel Foodie Mom</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sinds 1960 -->
+<section id="verhaal" class="relative">
+  <img src="assets/site-09.jpg" alt="Oude foto's van de marktkramen van Van Schaik met Goudse siroopwafels" class="w-full h-40 md:h-56 object-cover">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+    <div>
+      <h2 class="font-serif text-choco text-4xl md:text-5xl leading-tight">Hetzelfde recept als in 1960</h2>
+      <div class="mt-6 space-y-4 text-lg text-ink/80 leading-relaxed max-w-xl">
+        <p>In 1960 begon Herman van Schaik een stroopwafelbakkerij aan de Boomsluiterskade in Den Haag. Met zijn kraam trok hij het hele land door, langs markten, standplaatsen en braderieën.</p>
+        <p>Zijn wafels maakte hij volgens zijn eigen recept: alleen de beste ingrediënten, zonder kleur- en smaakstoffen. In 2000 nam zijn zoon Michel het familiebedrijf over. Er is sindsdien veel veranderd, maar dat recept niet.</p>
+        <p>De stroopwafels om mee te nemen komen uit onze eigen bakkerij in Den Haag. Op de Vredenburg proeft u ze vers.</p>
+      </div>
+      <img src="assets/site-08.png" alt="Handtekening Van Schaik" class="mt-8 h-14 w-auto">
+    </div>
+    <figure class="lg:mt-4">
+      <div class="bg-white p-3 pb-12 rotate-[1.5deg] shadow-[0_24px_50px_-24px_rgba(59,26,16,.5)] max-w-xl mx-auto">
+        <img src="assets/site-10.png" alt="Marktkraam van Van Schaik met goudse siroopwafels, vroeger" class="w-full">
+      </div>
+      <figcaption class="mt-6 text-center text-ink/60 text-[15px]">De kraam van Van Schaik op de markt, in de beginjaren.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Zakelijk -->
+<section id="zakelijk" class="px-5 md:px-8">
+  <div class="max-w-7xl mx-auto rounded-[32px] bg-caramel text-white overflow-hidden relative">
+    <div class="waffle absolute inset-0 opacity-60" aria-hidden="true"></div>
+    <div class="relative grid md:grid-cols-[1.3fr_.7fr] gap-8 items-center p-8 md:p-14">
+      <div>
+        <h2 class="font-serif text-3xl md:text-[2.6rem] leading-tight">Verse stroopwafels op uw feest of opening</h2>
+        <p class="mt-4 text-lg text-white/90 leading-relaxed max-w-2xl">Voor evenementen, winkelopeningen en bedrijfsfeesten komen we met onze klassieke bakfiets. Uw gasten krijgen stroopwafels die ter plekke worden gebakken.</p>
+      </div>
+      <div class="md:justify-self-end">
+        <a href="mailto:info@versestroopwafels.nl?subject=Bakfiets%20voor%20een%20evenement" class="btn inline-flex items-center gap-2 rounded-full bg-paper text-choco hover:bg-white px-7 py-4 font-semibold text-lg">Vraag de bakfiets aan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Langskomen -->
+<section id="langskomen" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <div>
+      <h2 class="font-serif text-choco text-4xl md:text-5xl leading-tight">Kom langs op de Vredenburg</h2>
+      <p class="mt-4 text-lg text-ink/80">Op de hoek met de Lange Elisabethstraat, midden in het centrum.</p>
+
+      <dl class="mt-8 grid sm:grid-cols-2 gap-6 text-lg">
+        <div>
+          <dt class="text-[15px] text-ink/60">Adres</dt>
+          <dd class="mt-1 font-medium text-choco">Vredenburg 1<br>3511 BA Utrecht</dd>
+        </div>
+        <div>
+          <dt class="text-[15px] text-ink/60">Bellen of mailen</dt>
+          <dd class="mt-1 font-medium">
+            <a href="tel:+31703355909" class="text-choco hover:text-caramel underline decoration-gold underline-offset-4">070 335 5909</a><br>
+            <a href="mailto:info@versestroopwafels.nl" class="text-choco hover:text-caramel underline decoration-gold underline-offset-4 break-all">info@versestroopwafels.nl</a>
+          </dd>
+        </div>
+      </dl>
+
+      <table class="mt-10 w-full max-w-md text-[17px]" id="tijden">
+        <caption class="text-left font-serif text-choco text-2xl mb-3">Openingstijden</caption>
+        <tbody class="divide-y divide-choco/10">
+          <tr data-day="1"><td class="py-2.5 px-2 sm:px-3">Maandag</td><td class="py-2.5 px-3 text-right tabular-nums whitespace-nowrap">11:00 tot 18:30</td></tr>
+          <tr data-day="2"><td class="py-2.5 px-2 sm:px-3">Dinsdag</td><td class="py-2.5 px-3 text-right tabular-nums whitespace-nowrap">11:00 tot 18:30</td></tr>
+          <tr data-day="3"><td class="py-2.5 px-2 sm:px-3">Woensdag</td><td class="py-2.5 px-3 text-right tabular-nums whitespace-nowrap">11:00 tot 18:30</td></tr>
+          <tr data-day="4"><td class="py-2.5 px-2 sm:px-3">Donderdag <span class="text-ink/60 text-[15px]">(koopavond)</span></td><td class="py-2.5 px-3 text-right tabular-nums whitespace-nowrap">11:00 tot 20:00</td></tr>
+          <tr data-day="5"><td class="py-2.5 px-2 sm:px-3">Vrijdag</td><td class="py-2.5 px-3 text-right tabular-nums whitespace-nowrap">11:00 tot 18:30</td></tr>
+          <tr data-day="6"><td class="py-2.5 px-2 sm:px-3">Zaterdag</td><td class="py-2.5 px-3 text-right tabular-nums whitespace-nowrap">10:00 tot 18:30</td></tr>
+          <tr data-day="0"><td class="py-2.5 px-2 sm:px-3">Zondag</td><td class="py-2.5 px-3 text-right tabular-nums whitespace-nowrap">12:00 tot 18:30</td></tr>
+        </tbody>
+      </table>
+
+      <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Vredenburg+1,+3511+BA+Utrecht" target="_blank" rel="noopener" class="btn inline-flex items-center gap-3 rounded-full bg-caramel hover:bg-caramel-dark text-white px-7 py-4 text-lg font-semibold">Plan uw route</a>
+        <a href="tel:+31703355909" class="btn inline-flex items-center rounded-full border-2 border-choco text-choco hover:bg-choco hover:text-paper px-7 py-[14px] text-lg font-semibold">Bel ons</a>
+      </div>
+    </div>
+    <figure class="arch overflow-hidden lg:sticky lg:top-28">
+      <img src="assets/google-06.jpg" alt="De winkel van Van Schaik op de Vredenburg in Utrecht, met open pui en bankjes" class="w-full aspect-[4/5] object-cover object-[48%_50%]">
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-choco text-dough/80 waffle">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-[1.2fr_1fr_1fr] gap-10 text-[15px] leading-relaxed">
+    <div class="flex items-start gap-4">
+      <img src="assets/site-11.png" alt="Logo Van Schaik" class="w-16 h-16 rounded-full ring-2 ring-gold/50">
+      <p class="max-w-xs">Het op authentieke wijze bereiden en verkopen van stroopwafels, zodat het voor iedere klant een plezier is.</p>
+    </div>
+    <div>
+      <p class="font-serif text-paper text-lg">Van Schaik Utrecht</p>
+      <p class="mt-2">Vredenburg 1, 3511 BA Utrecht<br>
+        <a href="tel:+31703355909" class="hover:text-white underline underline-offset-4 decoration-gold/60">070 335 5909</a><br>
+        <a href="mailto:info@versestroopwafels.nl" class="hover:text-white underline underline-offset-4 decoration-gold/60">info@versestroopwafels.nl</a></p>
+    </div>
+    <div>
+      <p class="font-serif text-paper text-lg">Ook in Den Haag en Middelburg</p>
+      <p class="mt-2">Hoofdlocatie en bakkerij:<br>Westvlietweg 72D, 2495 AA Den Haag<br>KVK 68609248</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele actiebalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-paper/95 backdrop-blur border-t border-choco/10 p-3 grid grid-cols-2 gap-3">
+  <a href="tel:+31703355909" class="btn flex items-center justify-center gap-2 rounded-full border-2 border-choco text-choco py-3 font-semibold">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bellen
+  </a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Vredenburg+1,+3511+BA+Utrecht" target="_blank" rel="noopener" class="btn flex items-center justify-center gap-2 rounded-full bg-caramel text-white py-3 font-semibold">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+    Route
+  </a>
+</div>
+
+<script>
+  // Markeer de dag van vandaag in de openingstijden
+  var r = document.querySelector('#tijden tr[data-day="' + new Date().getDay() + '"]');
+  if (r) r.classList.add('today');
+</script>
+</body>
+</html>
