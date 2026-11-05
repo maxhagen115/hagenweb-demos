@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moes Nijmegen | Kleine taartjes uit Nijmegen-Oost</title>
+<meta name="description" content="Kleine, verse taartjes van Marloes aan de Daalseweg 33 in Nijmegen. Bestel twee dagen van tevoren en haal op van woensdag tot en met zaterdag.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;500;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        blush: '#FCF3F1',
+        framboos: { DEFAULT: '#B0213B', dark: '#8E1A30' },
+        custard: '#F2C14E',
+        breton: '#2A4F96',
+        bes: '#3B1D24',
+      },
+      fontFamily: {
+        display: ['Antonio', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 5.5rem; }
+  body { text-wrap: pretty; }
+  h1, h2, h3 { text-wrap: balance; }
+  .stripes {
+    background: repeating-linear-gradient(180deg, #2A4F96 0 14px, #ffffff 14px 28px);
+  }
+  .stripe-edge {
+    height: 14px;
+    background: repeating-linear-gradient(90deg, #2A4F96 0 14px, transparent 14px 28px);
+  }
+  .menu-row { display: flex; align-items: baseline; gap: .75rem; }
+  .menu-row .dots { flex: 1; border-bottom: 2px dotted rgba(176,33,59,.35); transform: translateY(-4px); }
+  .btn { transition: background-color .2s, transform .15s; }
+  .btn:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #2A4F96; outline-offset: 3px; border-radius: 6px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="bg-blush text-bes font-sans antialiased pb-20 md:pb-0">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-white px-3 py-2">Naar de inhoud</a>
+
+<div class="bg-bes text-white/90 text-center text-xs sm:text-sm py-2 px-4">
+  Demo voor Moes Nijmegen, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-custard">Hagenweb</a>
+</div>
+
+<header class="bg-blush/95 backdrop-blur sticky top-0 z-30 border-b border-framboos/10">
+  <div class="max-w-6xl mx-auto px-5 flex items-center justify-between h-20">
+    <a href="#top" aria-label="Moes Nijmegen, naar boven">
+      <img src="assets/logo-moes.png" alt="Moes Nijmegen" class="h-11 md:h-14 w-auto">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 font-medium">
+      <a href="#smaken" class="hover:text-framboos">Smaken</a>
+      <a href="#gelegenheden" class="hover:text-framboos">Gelegenheden</a>
+      <a href="#over" class="hover:text-framboos">Over Moes</a>
+      <a href="#bestellen" class="hover:text-framboos">Bestellen</a>
+      <a href="mailto:bestelling@moesnijmegen.nl?subject=Bestelling%20taartjes" class="btn bg-framboos hover:bg-framboos-dark text-white rounded-full px-5 py-2.5">Mail je bestelling</a>
+    </nav>
+    <a href="tel:+31610493197" class="md:hidden text-framboos font-semibold flex items-center gap-2" aria-label="Bel Moes">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg>
+      Bellen
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-6 pb-14 md:pt-16 md:pb-24 grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-6 relative z-10">
+      <p class="font-medium text-framboos">Taartjesbakker in Nijmegen-Oost</p>
+      <h1 class="font-display font-bold uppercase text-framboos leading-[0.96] tracking-tight text-[3.6rem] sm:text-7xl lg:text-[6.2rem] mt-3">
+        Kleine taartjes,<br>groot feest.
+      </h1>
+      <p class="mt-5 text-[1.05rem] sm:text-lg leading-relaxed max-w-md">
+        Marloes bakt kleine, verse taartjes met fruit, chocolade en karamel. Bestel twee dagen van tevoren en haal ze op aan de Daalseweg.
+      </p>
+      <div class="mt-7 md:mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="mailto:bestelling@moesnijmegen.nl?subject=Bestelling%20taartjes" class="btn inline-flex items-center gap-3 bg-framboos hover:bg-framboos-dark text-white text-lg font-semibold rounded-full px-8 py-4 shadow-[0_10px_24px_-10px_rgba(176,33,59,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          Mail je bestelling
+        </a>
+        <a href="tel:+31610493197" class="font-semibold underline decoration-custard decoration-[3px] underline-offset-4 hover:text-framboos">of bel 06 10493197</a>
+      </div>
+      <p class="mt-6 md:mt-8 flex items-center gap-2 text-sm">
+        <span class="text-custard text-lg tracking-tight" aria-hidden="true">★★★★★</span>
+        <span><strong class="font-semibold">4,9</strong> uit 50 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="md:col-span-6 relative">
+      <div class="relative mx-auto w-[88%] sm:w-[70%] md:w-full max-w-[560px] aspect-square">
+        <div class="absolute inset-0 rounded-full bg-custard translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6"></div>
+        <img src="assets/google-04.jpg" alt="Een doos vol mini taartjes van Moes: framboos, meringue, marshmallow, appel-walnoot en aardbei"
+             class="relative w-full h-full object-cover rounded-full border-[10px] border-white shadow-[0_30px_60px_-30px_rgba(59,29,36,.5)]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STREEPBAND -->
+<section aria-label="Zo werkt het" class="relative bg-breton text-white">
+  <div class="stripe-edge bg-white"></div>
+  <ul class="max-w-6xl mx-auto px-5 py-7 grid sm:grid-cols-3 gap-4 sm:gap-8 font-display uppercase text-2xl md:text-3xl tracking-wide">
+    <li class="flex items-center gap-3"><span class="w-3 h-3 rounded-full bg-custard shrink-0"></span>Bestel 2 dagen van tevoren</li>
+    <li class="flex items-center gap-3"><span class="w-3 h-3 rounded-full bg-custard shrink-0"></span>Ophalen in Nijmegen-Oost</li>
+    <li class="flex items-center gap-3"><span class="w-3 h-3 rounded-full bg-custard shrink-0"></span>Kleine individuele taartjes</li>
+  </ul>
+  <div class="stripe-edge bg-white"></div>
+</section>
+
+<!-- SMAKEN -->
+<section id="smaken" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
+    <div class="md:col-span-5 md:sticky md:top-28">
+      <h2 class="font-display font-bold uppercase text-framboos text-5xl md:text-6xl leading-none">Wat er in de vitrine ligt</h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-md">
+        Een vaste kaart met favorieten, aangevuld met specials die meegaan met het seizoen. Elk taartje is klein genoeg om er twee te nemen. Of drie.
+      </p>
+      <div class="mt-10 relative w-64 h-64 md:w-80 md:h-80">
+        <img src="assets/site-07.jpg" alt="Taartje met braam en roze crème, van bovenaf gefotografeerd" loading="lazy"
+             class="w-full h-full object-cover rounded-full border-8 border-white shadow-xl">
+      </div>
+    </div>
+
+    <div class="md:col-span-7">
+      <div class="bg-white rounded-[2rem] p-7 md:p-10 shadow-[0_20px_50px_-30px_rgba(176,33,59,.35)]">
+        <h3 class="font-display uppercase text-3xl text-bes">De favorieten</h3>
+        <p class="text-sm text-bes/70 mt-1">In de shop als mini (4 cm), 6 cm en 8 cm.</p>
+        <ul class="mt-6 space-y-3.5 text-[1.05rem]">
+          <li class="menu-row"><span>Witte chocolade, framboos, pistache</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Mango, passievrucht, meringue</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Room, appel, kaneel, walnoot</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Triple chocolate</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Noten, gezouten karamel</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Koffie karamel</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Pure chocolade, framboos</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Karamel, melkchocolade, goud</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Pistache, framboos</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Melkchocolade, marshmallows</span><span class="dots"></span></li>
+          <li class="menu-row"><span>Bounty <em class="not-italic text-sm font-semibold text-breton">vegan</em></span><span class="dots"></span></li>
+        </ul>
+
+        <div class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-5 border-t-2 border-dashed border-framboos/20 pt-8">
+          <div>
+            <p class="font-display uppercase text-xl text-framboos">Taartje 6 cm</p>
+            <p class="mt-1">€3,50 per stuk</p>
+          </div>
+          <div>
+            <p class="font-display uppercase text-xl text-framboos">Mini taartjes 4 cm</p>
+            <p class="mt-1">€7,50 voor 5 stuks van één smaak</p>
+          </div>
+          <div>
+            <p class="font-display uppercase text-xl text-framboos">Mix doosjes</p>
+            <p class="mt-1">Mini's €21 tot €69, 6 cm €30 tot €82,50</p>
+          </div>
+          <div>
+            <p class="font-display uppercase text-xl text-framboos">Glutenvrij</p>
+            <p class="mt-1">Mini taartjes, 5 stuks voor €7,50. Allergenen? Vraag het gerust.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GELEGENHEDEN -->
+<section id="gelegenheden" class="bg-white">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28 grid md:grid-cols-12 gap-12 items-center">
+    <div class="md:col-span-6 order-2 md:order-1">
+      <img src="assets/google-02.jpg" alt="Open doos met vijf rijen taartjes: passievrucht, wortel, chocolade, framboos, noten en limoen" loading="lazy"
+           class="w-full aspect-[4/3] md:aspect-[5/6] object-cover rounded-t-[999px] rounded-b-[2rem]">
+    </div>
+    <div class="md:col-span-6 order-1 md:order-2">
+      <h2 class="font-display font-bold uppercase text-framboos text-5xl md:text-6xl leading-none">Voor elk feestje een doos</h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-lg">Of het nu om een verjaardag gaat of om de grote dag: een doos taartjes van Moes zet je zo op tafel. Denk je aan iets speciaals? Laat het weten, Marloes denkt graag mee.</p>
+      <dl class="mt-9 space-y-6">
+        <div class="pl-5 border-l-4 border-custard">
+          <dt class="font-semibold text-lg">Verjaardag en visite</dt>
+          <dd class="mt-1 text-bes/80">Een mix doosje met mini's of 6 cm taartjes, zelf de smaken kiezen.</dd>
+        </div>
+        <div class="pl-5 border-l-4 border-custard">
+          <dt class="font-semibold text-lg">Geboorte en zwangerschap</dt>
+          <dd class="mt-1 text-bes/80">Mixdoosjes in roze, blauw, neutraal of een mix. Geïnspireerd door de geboorte van Marloes' eigen dochter.</dd>
+        </div>
+        <div class="pl-5 border-l-4 border-custard">
+          <dt class="font-semibold text-lg">Bruiloft</dt>
+          <dd class="mt-1 text-bes/80">Taartjes van Moes op jullie bruiloft? Mail voor voorbeelden en de mogelijkheden.</dd>
+        </div>
+        <div class="pl-5 border-l-4 border-custard">
+          <dt class="font-semibold text-lg">Horeca</dt>
+          <dd class="mt-1 text-bes/80">Van restaurants en koffiezaakjes tot de kapper in de straat: op steeds meer Nijmeegse plekken eet je een taartje van Moes.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- OVER MOES -->
+<section id="over" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+    <div class="md:col-span-5 relative">
+      <img src="assets/site-06.jpg" alt="Marloes in witte koksjas aan de Waal, met de Waalbrug op de achtergrond" loading="lazy"
+           class="w-full aspect-[4/5] object-cover object-[70%_center] rounded-[2rem]">
+      <img src="assets/site-03.jpg" alt="Marloes spuit meringue op een taartje" loading="lazy"
+           class="hidden sm:block absolute -bottom-10 -left-6 w-28 md:w-36 aspect-[1/2] object-cover rounded-full border-[6px] border-blush">
+    </div>
+    <div class="md:col-span-7">
+      <h2 class="font-display font-bold uppercase text-framboos text-5xl md:text-6xl leading-none">Ik ben Marloes, ook wel Moes</h2>
+      <div class="mt-6 space-y-4 text-lg leading-relaxed max-w-xl">
+        <p>Mijn bijnaam was in mijn hoofd altijd al de naam van mijn droom: een eigen taartenwinkeltje. Klein beginnen, bakken op bestelling. Kleinschalig, vers en vooral lekker.</p>
+        <p>In 2018 begon ik in mijn eigen keuken, al snel kwam er een tweede keuken in huis bij. Sinds 1 januari 2021 vind je Moes op de Daalseweg 33, in het pand dat ik deel met Made by Marn. Op 1 juli 2021 nam ik afscheid van mijn baan bij het Radboudumc om me helemaal op Moes te richten. De beste keuze die ik heb gemaakt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section aria-labelledby="reviews-kop" class="bg-framboos text-white relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 id="reviews-kop" class="font-display font-bold uppercase text-5xl md:text-6xl leading-none">Wat. Een. Feest!</h2>
+      <p class="text-white/90"><span class="text-custard text-xl" aria-hidden="true">★★★★★</span> <strong>4,9</strong> uit 50 Google-reviews</p>
+    </div>
+
+    <figure class="mt-12 max-w-4xl">
+      <blockquote class="text-2xl md:text-[2rem] leading-snug font-medium">
+        "Wat. Een. Feest! Elke keer weer top de taartjes van Moes. Ik rij er graag voor naar Nijmegen. Smaak en presentatie TOP! Echt een aanrader."
+      </blockquote>
+      <figcaption class="mt-4 text-custard font-semibold">Anika van Horssen</figcaption>
+    </figure>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-10 md:gap-8 border-t border-white/25 pt-10">
+      <figure>
+        <blockquote class="leading-relaxed text-white/95">"De taartjes hier zijn wel echt next level (goed). We hadden het al wel gelezen in de reviews dat ze goed waren, maar in het echt blijken ze toch nog onze verwachting te overtreffen. Voor deze gebakjes rijdt ik graag een uurtje om."</blockquote>
+        <figcaption class="mt-3 text-custard font-semibold">onski ski</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="leading-relaxed text-white/95">"Heerlijke taartjes gehaald voor mijn verjaardag met de familie. Ziet er super uit en smaken heerlijk! Aanrader."</blockquote>
+        <figcaption class="mt-3 text-custard font-semibold">Maike Uijen</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="font-display uppercase text-4xl leading-none">"Heerlijke taartjes!"</blockquote>
+        <figcaption class="mt-3 text-custard font-semibold">Line Troost</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- BESTELLEN -->
+<section id="bestellen" class="max-w-6xl mx-auto px-5 py-20 md:py-28">
+  <h2 class="font-display font-bold uppercase text-framboos text-5xl md:text-6xl leading-none max-w-2xl">Zo kom je aan je taartjes</h2>
+
+  <div class="mt-12 grid md:grid-cols-12 gap-12 md:gap-16">
+    <div class="md:col-span-7">
+      <ol class="space-y-8">
+        <li class="flex gap-5">
+          <span class="font-display font-bold text-4xl text-[#D99A22] w-10 shrink-0 leading-none">1</span>
+          <div>
+            <h3 class="font-semibold text-xl">Kies je smaken</h3>
+            <p class="mt-1 text-bes/80 leading-relaxed">Uit de kaart hierboven, als losse taartjes of als mix doosje.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="font-display font-bold text-4xl text-[#D99A22] w-10 shrink-0 leading-none">2</span>
+          <div>
+            <h3 class="font-semibold text-xl">Bestel twee dagen van tevoren</h3>
+            <p class="mt-1 text-bes/80 leading-relaxed">Mail naar <a href="mailto:bestelling@moesnijmegen.nl" class="text-framboos font-semibold underline underline-offset-2">bestelling@moesnijmegen.nl</a> of bel <a href="tel:+31610493197" class="text-framboos font-semibold underline underline-offset-2">06 10493197</a>. Dan weet je zeker dat je niet misgrijpt, want het wil nog wel eens hard lopen.</p>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="font-display font-bold text-4xl text-[#D99A22] w-10 shrink-0 leading-none">3</span>
+          <div>
+            <h3 class="font-semibold text-xl">Ophalen aan de Daalseweg</h3>
+            <p class="mt-1 text-bes/80 leading-relaxed">Woensdag tot en met zaterdag. Geen bestelling? Kom gewoon langs, er staat een klein assortiment in de koelvitrine.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="mt-12 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="mailto:bestelling@moesnijmegen.nl?subject=Bestelling%20taartjes" class="btn inline-flex items-center gap-3 bg-framboos hover:bg-framboos-dark text-white text-lg font-semibold rounded-full px-8 py-4">Mail je bestelling</a>
+        <a href="tel:+31610493197" class="font-semibold underline decoration-custard decoration-[3px] underline-offset-4 hover:text-framboos">of bel 06 10493197</a>
+      </div>
+    </div>
+
+    <aside class="md:col-span-5">
+      <div class="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-30px_rgba(176,33,59,.35)]">
+        <img src="assets/google-01.jpg" alt="De winkelpui aan de Daalseweg 33 met de groene luifel van Made by Marn en het bord van Moes" loading="lazy"
+             class="w-full h-56 object-cover object-[center_60%]">
+        <div class="p-7">
+          <p class="font-display uppercase text-2xl text-framboos">Daalseweg 33</p>
+          <p class="text-bes/80">6521 GG Nijmegen, onder de groene luifel van Made by Marn</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Moes+Nijmegen+Daalseweg+33+Nijmegen" target="_blank" rel="noopener" class="inline-block mt-3 font-semibold text-framboos underline underline-offset-4">Route plannen</a>
+
+          <h3 class="mt-7 font-semibold">Openingstijden</h3>
+          <table class="mt-2 w-full text-[0.98rem] tabular-nums">
+            <tbody class="divide-y divide-framboos/10">
+              <tr><td class="py-1.5">Maandag</td><td class="py-1.5 text-right text-bes/60">Gesloten</td></tr>
+              <tr><td class="py-1.5">Dinsdag</td><td class="py-1.5 text-right text-bes/60">Gesloten</td></tr>
+              <tr><td class="py-1.5">Woensdag</td><td class="py-1.5 text-right">10:00 tot 18:30</td></tr>
+              <tr><td class="py-1.5">Donderdag</td><td class="py-1.5 text-right">10:00 tot 18:30</td></tr>
+              <tr><td class="py-1.5">Vrijdag</td><td class="py-1.5 text-right">10:00 tot 18:30</td></tr>
+              <tr><td class="py-1.5">Zaterdag</td><td class="py-1.5 text-right">09:00 tot 14:00</td></tr>
+              <tr><td class="py-1.5">Zondag</td><td class="py-1.5 text-right text-bes/60">Gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-bes text-white/80">
+  <div class="stripe-edge bg-white"></div>
+  <div class="max-w-6xl mx-auto px-5 py-12 grid sm:grid-cols-3 gap-8 text-sm">
+    <div>
+      <p class="font-display uppercase text-3xl text-white tracking-wide">Moes Nijmegen</p>
+      <p class="mt-1">Kleine taartjes uit Nijmegen</p>
+    </div>
+    <div>
+      <p class="text-white font-semibold">Winkel</p>
+      <p class="mt-1">Daalseweg 33<br>6521 GG Nijmegen</p>
+    </div>
+    <div>
+      <p class="text-white font-semibold">Contact</p>
+      <p class="mt-1"><a href="mailto:bestelling@moesnijmegen.nl" class="hover:text-custard">bestelling@moesnijmegen.nl</a><br><a href="tel:+31610493197" class="hover:text-custard">06 10493197</a></p>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-5 pb-8 text-xs text-white/50">Demo-ontwerp door <a href="https://hagenweb.nl" class="underline">Hagenweb</a></div>
+</footer>
+
+<!-- Mobiele actiebalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-framboos/15 px-4 py-3 flex gap-3">
+  <a href="mailto:bestelling@moesnijmegen.nl?subject=Bestelling%20taartjes" class="btn flex-1 text-center bg-framboos text-white font-semibold rounded-full py-3">Mail je bestelling</a>
+  <a href="tel:+31610493197" class="btn flex-1 text-center border-2 border-framboos text-framboos font-semibold rounded-full py-3">Bel Moes</a>
+</div>
+
+</body>
+</html>
