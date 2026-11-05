@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De Bakkert in Oost | Ambachtelijke desembakkerij Utrecht</title>
+<meta name="description" content="Ambachtelijke desembakkerij aan de Adriaen van Ostadelaan 57 in Utrecht Oost. Brood van meel, water en zout, croissants, cruffins en broodworkshops. Elke dag open vanaf 08:00.">
+<meta property="og:title" content="De Bakkert in Oost">
+<meta property="og:description" content="Niet te serieus. Wel serieus goed. Desembakkerij in Utrecht Oost.">
+<meta property="og:image" content="assets/web/site-05.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        geel: '#FFCD57',
+        geeldiep: '#F5B92E',
+        inkt: '#2B2116',
+        korst: '#9A5A24',
+        bloem: '#FFFBF2',
+        deeg: '#F3E6CC',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        tekst: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-variation-settings: "wdth" 80; letter-spacing: -0.02em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 28px 28px; }
+  .boog-sm { border-radius: 400px 400px 18px 18px; }
+  .korrel::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .35; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.45 0 0 0 0 0.2 0 0 0 .25 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #2B2116; outline-offset: 3px; border-radius: 6px; }
+  .op-geel :focus-visible { outline-color: #2B2116; }
+  .op-donker :focus-visible { outline-color: #FFCD57; }
+  #vaste-bel { transition: transform .3s ease, opacity .3s ease; }
+  .js #vaste-bel.verstopt { transform: translateY(140%); opacity: 0; pointer-events: none; }
+  .vandaag { background: #FFCD57; font-weight: 700; }
+  /* Alleen met JS: zachte binnenkomst van de hero */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .rijs { animation: rijs .9s cubic-bezier(.2,.7,.2,1) both; }
+    .js .rijs-2 { animation-delay: .12s; }
+    .js .rijs-3 { animation-delay: .24s; }
+    @keyframes rijs { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body class="bg-bloem text-inkt antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-inkt focus:text-geel focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-bloem text-[13px] text-center py-2 px-4">
+  Demo voor De Bakkert in Oost, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-geel hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-geel op-geel sticky top-0 z-40 border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="kop text-[26px] font-extrabold leading-none tracking-tight" aria-label="De Bakkert, naar boven">De Bakkert</a>
+    <nav aria-label="Hoofdmenu" class="hidden md:flex items-center gap-7 text-[15px] font-semibold">
+      <a href="#toonbank" class="hover:underline underline-offset-4 decoration-2">Op de toonbank</a>
+      <a href="#verhaal" class="hover:underline underline-offset-4 decoration-2">Ons verhaal</a>
+      <a href="#workshop" class="hover:underline underline-offset-4 decoration-2">Workshop</a>
+      <a href="#bestellen" class="hover:underline underline-offset-4 decoration-2">Bestellen</a>
+      <a href="#open" class="hover:underline underline-offset-4 decoration-2">Openingstijden</a>
+      <a href="tel:+31630904886" class="knop bg-inkt text-geel rounded-full px-5 py-2.5">Bel ons</a>
+    </nav>
+    <details class="md:hidden relative">
+      <summary class="list-none cursor-pointer select-none font-semibold flex items-center gap-2 rounded-full border-2 border-inkt px-4 py-1.5">
+        Menu
+        <svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="2"/></svg>
+      </summary>
+      <nav aria-label="Mobiel menu" class="absolute right-0 mt-3 w-64 bg-bloem rounded-2xl shadow-[0_18px_40px_-12px_rgba(90,60,10,.35)] p-3 flex flex-col text-lg font-semibold">
+        <a href="#toonbank" class="px-3 py-2.5 rounded-lg hover:bg-deeg">Op de toonbank</a>
+        <a href="#verhaal" class="px-3 py-2.5 rounded-lg hover:bg-deeg">Ons verhaal</a>
+        <a href="#workshop" class="px-3 py-2.5 rounded-lg hover:bg-deeg">Workshop</a>
+        <a href="#bestellen" class="px-3 py-2.5 rounded-lg hover:bg-deeg">Bestellen</a>
+        <a href="#open" class="px-3 py-2.5 rounded-lg hover:bg-deeg">Openingstijden</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="bg-geel op-geel relative korrel overflow-hidden">
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 pt-8 pb-14 md:pt-16 md:pb-20 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-7 lg:col-span-7">
+      <p class="rijs font-semibold text-[15px] md:text-base">Desembakkerij in Utrecht Oost</p>
+      <h1 class="rijs rijs-2 kop font-extrabold text-[52px] leading-[.92] sm:text-7xl md:text-[96px] lg:text-[118px] mt-3">
+        <span class="block">Niet te serieus.</span> <span class="block">Wel serieus goed.</span>
+      </h1>
+      <p class="rijs rijs-3 mt-6 text-lg md:text-xl leading-relaxed max-w-[34ch] text-inkt/85">
+        Brood van alleen meel, water en zout, elke dag vers gebakken. En croissants, cruffins en goede koffie erbij.
+      </p>
+      <div class="rijs rijs-3 mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31630904886" class="knop inline-flex items-center gap-3 bg-inkt text-geel rounded-full pl-6 pr-7 py-4 text-lg font-bold shadow-[0_14px_30px_-12px_rgba(43,33,22,.6)] hover:bg-black">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3h3.5l1.7 4.6-2.3 1.5a11 11 0 0 0 6 6l1.5-2.3L20 14.5V18a3 3 0 0 1-3 3A16 16 0 0 1 2 6a3 3 0 0 1 3-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Bel 06 30904886
+        </a>
+        <a href="#open" class="font-semibold underline underline-offset-4 decoration-2 hover:decoration-inkt/40">Openingstijden en route</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px]">
+        <span class="text-inkt tracking-[.1em]" aria-hidden="true">★★★★★</span>
+        <span><strong>4,8</strong> uit 209 Google-reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-5 lg:col-span-5 relative">
+      <img src="assets/web/site-05.jpg" alt="Medewerker zet versgebakken broden en croissants klaar bij het raam van de bakkerij"
+           class="boog w-full aspect-[4/5] md:aspect-[3/4] object-cover object-[50%_40%] shadow-[0_30px_60px_-25px_rgba(90,55,0,.55)]">
+    </div>
+  </div>
+</section>
+
+<!-- Vandaag open -->
+<section id="open" class="scroll-mt-20 bg-bloem">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-12 items-start">
+    <div class="md:col-span-5">
+      <h2 class="kop font-extrabold text-4xl md:text-6xl leading-[.95]">Elke dag open vanaf acht uur.</h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-[42ch]">Ook op zondag. Loop binnen op de Adriaen van Ostadelaan en je ruikt het brood al bij de deur.</p>
+      <address class="not-italic mt-8 text-lg leading-relaxed">
+        <strong class="font-bold">De Bakkert in Oost</strong><br>
+        Adriaen van Ostadelaan 57<br>
+        3583 AB Utrecht
+      </address>
+      <div class="mt-6 flex flex-wrap gap-x-6 gap-y-3 font-semibold">
+        <a href="https://www.google.com/maps/search/?api=1&query=De+Bakkert+Adriaen+van+Ostadelaan+57+Utrecht" class="underline underline-offset-4 decoration-2 decoration-geeldiep hover:decoration-inkt">Route plannen</a>
+        <a href="tel:+31630904886" class="underline underline-offset-4 decoration-2 decoration-geeldiep hover:decoration-inkt">06 30904886</a>
+        <a href="mailto:info@debakkert.nl" class="underline underline-offset-4 decoration-2 decoration-geeldiep hover:decoration-inkt">info@debakkert.nl</a>
+      </div>
+    </div>
+    <div class="md:col-span-4">
+      <h3 class="kop font-bold text-2xl mb-4">Openingstijden</h3>
+      <table class="w-full text-lg tabular-nums">
+        <tbody id="tijden">
+          <tr data-dag="1"><td class="py-2 pl-3 rounded-l-lg">Maandag</td><td class="py-2 pr-3 text-right rounded-r-lg">08:00 tot 14:30</td></tr>
+          <tr data-dag="2"><td class="py-2 pl-3 rounded-l-lg">Dinsdag</td><td class="py-2 pr-3 text-right rounded-r-lg">08:00 tot 14:30</td></tr>
+          <tr data-dag="3"><td class="py-2 pl-3 rounded-l-lg">Woensdag</td><td class="py-2 pr-3 text-right rounded-r-lg">08:00 tot 14:30</td></tr>
+          <tr data-dag="4"><td class="py-2 pl-3 rounded-l-lg">Donderdag</td><td class="py-2 pr-3 text-right rounded-r-lg">08:00 tot 14:30</td></tr>
+          <tr data-dag="5"><td class="py-2 pl-3 rounded-l-lg">Vrijdag</td><td class="py-2 pr-3 text-right rounded-r-lg">08:00 tot 14:30</td></tr>
+          <tr data-dag="6"><td class="py-2 pl-3 rounded-l-lg">Zaterdag</td><td class="py-2 pr-3 text-right rounded-r-lg">08:00 tot 14:00</td></tr>
+          <tr data-dag="0"><td class="py-2 pl-3 rounded-l-lg">Zondag</td><td class="py-2 pr-3 text-right rounded-r-lg">08:00 tot 13:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="md:col-span-3 hidden md:block">
+      <img src="assets/web/site-07.jpg" alt="De gevel van De Bakkert met het logo boven de deur en een bankje voor het raam"
+           class="boog-sm w-full aspect-[3/4] object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Op de toonbank -->
+<section id="toonbank" class="scroll-mt-20 bg-deeg">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="grid md:grid-cols-12 gap-6 items-end">
+      <h2 class="md:col-span-7 kop font-extrabold text-4xl md:text-6xl leading-[.95]">Wat er vandaag op de toonbank ligt.</h2>
+      <p class="md:col-span-5 text-lg leading-relaxed max-w-[44ch]">We bakken met de seizoenen mee, dus het assortiment wisselt. Een greep uit wat je bij ons vindt.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6">
+      <figure class="col-span-2 md:col-span-7 md:row-span-2">
+        <img src="assets/web/site-09.jpg" alt="Rek vol desembroden en meergranenbroden in het zonlicht"
+             class="w-full h-[420px] md:h-[640px] object-cover rounded-[28px]">
+        <figcaption class="mt-4 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 md:gap-6">
+          <span class="kop font-bold text-2xl">Desembrood</span>
+          <span class="text-inkt/75 md:text-right max-w-[46ch]">Van zuurdesem tot meergranen. Alleen meel, water en zout, en de tijd die het nodig heeft.</span>
+        </figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-5">
+        <img src="assets/web/google-08.jpg" alt="Stapel glanzende croissants op een bakplaat"
+             class="w-full h-[220px] md:h-[300px] object-cover object-[50%_45%] rounded-[22px]">
+        <figcaption class="mt-3">
+          <span class="kop font-bold text-xl md:text-2xl">Croissants</span>
+          <span class="block text-inkt/75 text-[15px] md:text-base mt-1">En pain au chocolat, vers uit de oven.</span>
+        </figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-5">
+        <img src="assets/web/google-05.jpg" alt="Twee gevulde cruffins met poedersuiker in een doosje"
+             class="w-full h-[220px] md:h-[300px] object-cover object-[50%_55%] rounded-[22px]">
+        <figcaption class="mt-3">
+          <span class="kop font-bold text-xl md:text-2xl">Cruffins</span>
+          <span class="block text-inkt/75 text-[15px] md:text-base mt-1">De vulling gaat mee met het seizoen.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-10 md:mt-14 grid md:grid-cols-12 gap-6 md:gap-10 items-center">
+      <img src="assets/web/google-04.jpg" alt="Manden met stokbroden en bolletjes op de toonbank"
+           class="md:col-span-5 w-full h-[240px] md:h-[300px] object-cover rounded-[22px]">
+      <div class="md:col-span-7">
+        <p class="kop font-bold text-2xl md:text-3xl">Stokbrood, bolletjes en cinnamon rolls</p>
+        <p class="mt-3 text-lg leading-relaxed max-w-[52ch] text-inkt/85">Rond de feestdagen ligt er ook iets bijzonders, zoals speculaas met sinaasappel. Ligt jouw favoriet er vandaag niet? Bel even, dan hoor je wanneer wel.</p>
+        <a href="tel:+31630904886" class="mt-5 inline-block font-semibold underline underline-offset-4 decoration-2">Bel 06 30904886</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ons verhaal -->
+<section id="verhaal" class="scroll-mt-20 bg-bloem">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+    <div class="md:col-span-5 md:order-2">
+      <h2 class="kop font-extrabold text-[44px] md:text-7xl leading-[.9]">Meel, water en zout.</h2>
+      <p class="mt-6 text-xl leading-relaxed font-medium max-w-[38ch]">Van slechts drie ingrediënten kun je al iets ongelooflijk lekkers maken. Hoe bijzonder is dat?</p>
+      <p class="mt-5 text-lg leading-relaxed max-w-[52ch] text-inkt/85">Bij ons draait alles om smaak. We kiezen voor goede ingrediënten, zorgvuldige leveranciers en werken met de seizoenen. Soms betekent dat: dingen anders doen of net wat meer tijd nemen. Dat proef je terug.</p>
+      <p class="mt-5 text-lg leading-relaxed max-w-[52ch] text-inkt/85">We maken alles zelf en vertellen er graag over. Dus kom langs, proef en ontdek het zelf.</p>
+    </div>
+    <div class="md:col-span-7 md:order-1 grid grid-cols-5 gap-4 md:gap-6 items-end">
+      <img src="assets/web/site-01.jpg" alt="Bakker weegt deegbollen af op de werkbank achter de toonbank"
+           class="col-span-3 w-full aspect-[3/4] object-cover boog-sm">
+      <img src="assets/web/site-03.jpg" alt="Versgebakken desembroden met ingesneden korst, op de achtergrond de ovens"
+           class="col-span-2 w-full aspect-[3/5] object-cover rounded-[22px] mb-10 md:mb-16">
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-inkt op-donker text-bloem relative overflow-hidden" aria-labelledby="reviews-kop">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <h2 id="reviews-kop" class="kop font-extrabold text-4xl md:text-6xl leading-[.95] text-geel">Wat de buurt ervan vindt.</h2>
+      <p class="text-lg"><span class="text-geel tracking-[.1em]" aria-hidden="true">★★★★★</span> <strong>4,8</strong> uit 209 Google-reviews</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-12 gap-10 md:gap-8">
+      <blockquote class="md:col-span-7">
+        <p class="kop font-semibold text-2xl md:text-[34px] leading-snug">“Top Bakker(t), maakt de lekkerste broden die ik ooit heb gegeten. Ik heb hier ook een broodbakcursus gedaan en ook dat kan Nils erg goed! Van zuurdesembrood tot lekkere cinnamon rolls alles smaakt top! De Bakkert is echt een ambachtelijke bakker. Hij maakt alles helemaal zelf. Brood is echt alleen meel, water en zout!”</p>
+        <footer class="mt-5 text-geel font-semibold">Bas</footer>
+      </blockquote>
+      <div class="md:col-span-5 flex flex-col gap-10 md:pl-8 md:border-l border-bloem/15">
+        <blockquote>
+          <p class="text-lg leading-relaxed">“Suuuper lekkere cruffin en croissant hier gehaald! Echt vers en goed gevuld. Ook leuk dat ze voor de cruffinsmaken met het seizoen mee gaan. Nu hebben ze bijvoorbeeld rabarber 😍”</p>
+          <footer class="mt-3 text-geel font-semibold">Amber Tromp</footer>
+        </blockquote>
+        <blockquote>
+          <p class="text-lg leading-relaxed">“Echt mega lekker, assortiment wisselt ook mee met het seizoen/feestdagen. Vandaag cruffins met pumpkin spice en een speculaas met sinasappel gescoord”</p>
+          <footer class="mt-3 text-geel font-semibold">Kaylee</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Workshop -->
+<section id="workshop" class="scroll-mt-20 bg-geel op-geel relative korrel">
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-12">
+    <div class="md:col-span-5">
+      <p class="font-semibold">Workshop: brood bakken, de basis</p>
+      <h2 class="kop font-extrabold text-[44px] md:text-7xl leading-[.9] mt-3">Knoeien mag, leren gegarandeerd.</h2>
+      <p class="mt-6 text-lg leading-relaxed max-w-[44ch]">In één middag van "ik koop mijn brood" naar "ik bak mijn brood". Geen geheimen, wel de trucjes die het verschil maken. En je neemt alles mee naar huis.</p>
+      <img src="assets/web/site-10.jpg" alt="Bakkers aan het werk aan een lange werkbank"
+           class="mt-10 w-full aspect-[4/3] object-cover object-[50%_35%] rounded-[24px]">
+    </div>
+    <div class="md:col-span-7 md:pl-6">
+      <h3 class="kop font-bold text-2xl">Het programma, van 12:00 tot ongeveer 16:00</h3>
+      <ol class="mt-6 relative border-l-2 border-inkt/25 ml-2">
+        <li class="pl-7 pb-8 relative">
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-inkt"></span>
+          <p class="font-bold text-lg tabular-nums">12:00 &nbsp;Meteen aan het deeg</p>
+          <p class="mt-1 leading-relaxed text-inkt/85">Geen lange introductie. We zetten een No Knead-deeg op.</p>
+        </li>
+        <li class="pl-7 pb-8 relative">
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-inkt"></span>
+          <p class="font-bold text-lg">Basis en desem</p>
+          <p class="mt-1 leading-relaxed text-inkt/85">Wat desem precies is, waarom je maag er blijer van wordt dan van supermarktbrood en hoe je een moederdesem levend houdt. Plus bakkerspercentages en het verschil tussen autolyse en kneden.</p>
+        </li>
+        <li class="pl-7 pb-8 relative">
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-inkt"></span>
+          <p class="font-bold text-lg">Kneden, vouwen, vormen</p>
+          <p class="mt-1 leading-relaxed text-inkt/85">Handen in het deeg. Je portioneert, pre-shapet, bebloemt mandjes en oefent de vouwtechnieken.</p>
+        </li>
+        <li class="pl-7 pb-8 relative">
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-bloem border-2 border-inkt"></span>
+          <p class="font-bold text-lg tabular-nums">± 14:15 &nbsp;Pauze</p>
+          <p class="mt-1 leading-relaxed text-inkt/85">Handen droog, iets te eten en te drinken.</p>
+        </li>
+        <li class="pl-7 relative">
+          <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-inkt"></span>
+          <p class="font-bold text-lg">Bakken</p>
+          <p class="mt-1 leading-relaxed text-inkt/85">Je leert desembrood insnijden zoals het hoort, met tips voor afbakken in een Dutch Oven, combisteamer of steenoven.</p>
+        </li>
+      </ol>
+      <div class="mt-10 bg-bloem/70 rounded-[22px] p-6 md:p-7 grid sm:grid-cols-2 gap-x-8 gap-y-4 text-[15px] leading-relaxed">
+        <p><strong>Eten:</strong> eet vooraf een lichte lunch. In de pauze is er iets te knabbelen.</p>
+        <p><strong>Taal:</strong> uitleg in het Nederlands, korte toelichting in het Engels kan.</p>
+        <p><strong>Tijd:</strong> het deeg bepaalt het tempo, dus soms loopt het wat uit.</p>
+        <p><strong>Voucher of tegoedbon?</strong> Vink het aan bij je inschrijving.</p>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="https://www.debakkert.nl/workshops" class="knop inline-flex bg-inkt text-geel rounded-full px-7 py-4 text-lg font-bold">Bekijk data en reserveer</a>
+        <a href="mailto:info@debakkert.nl?subject=Vraag%20over%20de%20broodworkshop" class="font-semibold underline underline-offset-4 decoration-2">Vraag stellen per mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bestellen -->
+<section id="bestellen" class="scroll-mt-20 bg-bloem">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+    <div class="md:col-span-5">
+      <h2 class="kop font-extrabold text-[44px] md:text-7xl leading-[.9]">Zin in meer?</h2>
+      <p class="mt-6 text-lg leading-relaxed max-w-[46ch]">Iets bestellen dat niet in de winkel ligt? Wat lekkers voor een feest, brood voor een groep, of gewoon veel te veel croissants op zaterdagochtend. Of wil je met ons samenwerken? Vertel wat je in gedachten hebt.</p>
+      <p class="mt-4 text-lg leading-relaxed max-w-[46ch] text-inkt/85">Ook voor gewone vragen ben je hier goed: openingstijden, allergenen, of dat ene brood dat er vandaag niet lag.</p>
+      <div class="mt-8 flex flex-col gap-3 text-lg font-semibold">
+        <a href="tel:+31630904886" class="inline-flex items-center gap-3 hover:underline underline-offset-4"><span class="w-10 h-10 rounded-full bg-geel grid place-items-center" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 3h3.5l1.7 4.6-2.3 1.5a11 11 0 0 0 6 6l1.5-2.3L20 14.5V18a3 3 0 0 1-3 3A16 16 0 0 1 2 6a3 3 0 0 1 3-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>06 30904886</a>
+        <a href="mailto:info@debakkert.nl" class="inline-flex items-center gap-3 hover:underline underline-offset-4"><span class="w-10 h-10 rounded-full bg-geel grid place-items-center" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2"/></svg></span>info@debakkert.nl</a>
+      </div>
+    </div>
+    <form class="md:col-span-7 bg-deeg rounded-[28px] p-6 md:p-10 grid sm:grid-cols-2 gap-5" action="mailto:info@debakkert.nl" method="post" enctype="text/plain">
+      <label class="flex flex-col gap-2 font-semibold">Voornaam
+        <input name="voornaam" required autocomplete="given-name" class="font-normal rounded-xl bg-bloem border-2 border-transparent focus:border-inkt focus:outline-none px-4 py-3">
+      </label>
+      <label class="flex flex-col gap-2 font-semibold">Achternaam
+        <input name="achternaam" autocomplete="family-name" class="font-normal rounded-xl bg-bloem border-2 border-transparent focus:border-inkt focus:outline-none px-4 py-3">
+      </label>
+      <label class="flex flex-col gap-2 font-semibold sm:col-span-2">E-mail
+        <input type="email" name="email" required autocomplete="email" class="font-normal rounded-xl bg-bloem border-2 border-transparent focus:border-inkt focus:outline-none px-4 py-3">
+      </label>
+      <label class="flex flex-col gap-2 font-semibold sm:col-span-2">Waar gaat het over?
+        <select name="onderwerp" class="font-normal rounded-xl bg-bloem border-2 border-transparent focus:border-inkt focus:outline-none px-4 py-3">
+          <option>Bestelling voor een feest of groep</option>
+          <option>Samenwerken</option>
+          <option>Workshop</option>
+          <option>Een andere vraag</option>
+        </select>
+      </label>
+      <label class="flex flex-col gap-2 font-semibold sm:col-span-2">Je bericht
+        <textarea name="bericht" rows="5" required placeholder="Bijvoorbeeld: 40 croissants voor zaterdag de 14e" class="font-normal rounded-xl bg-bloem border-2 border-transparent focus:border-inkt focus:outline-none px-4 py-3 placeholder:text-inkt/40"></textarea>
+      </label>
+      <div class="sm:col-span-2 flex flex-wrap items-center gap-4 justify-between">
+        <button type="submit" class="knop bg-inkt text-geel rounded-full px-7 py-4 text-lg font-bold">Verstuur bericht</button>
+        <p class="text-sm text-inkt/70">Liever even bellen? Dat kan ook.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Andere locaties -->
+<section class="bg-deeg" aria-labelledby="locaties-kop">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20">
+    <h2 id="locaties-kop" class="kop font-extrabold text-3xl md:text-5xl leading-[.95]">Je vindt ons ook hier.</h2>
+    <ul class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
+      <li class="border-t-2 border-inkt pt-4">
+        <p class="kop font-bold text-xl">In de Hondekop</p>
+        <p class="mt-1 text-inkt/80">Wisselstraat 7, Utrecht</p>
+        <p class="mt-2 text-[15px] text-inkt/70">Wo t/m zo 08:00 tot 13:30</p>
+      </li>
+      <li class="border-t-2 border-inkt pt-4">
+        <p class="kop font-bold text-xl">Bij de Sluis</p>
+        <p class="mt-1 text-inkt/80">Oude Vleutenseweg 2, Utrecht</p>
+        <p class="mt-2 text-[15px] text-inkt/70">Za en zo 09:00 tot 13:30</p>
+      </li>
+      <li class="border-t-2 border-inkt pt-4">
+        <p class="kop font-bold text-xl">In het Blauwe Huis</p>
+        <p class="mt-1 text-inkt/80">Statendaalder 2, Utrecht</p>
+        <p class="mt-2 text-[15px] text-inkt/70">Ma t/m vr 08:00 tot 13:30, za en zo 08:30 tot 13:30</p>
+      </li>
+      <li class="border-t-2 border-inkt pt-4">
+        <p class="kop font-bold text-xl">In Rigoletto</p>
+        <p class="mt-1 text-inkt/80">Nachtegaallaan 16B, Bilthoven</p>
+        <p class="mt-2 text-[15px] text-inkt/70">Vr 11:00 tot 18:00, za 08:30 tot 17:00</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-geel op-geel relative korrel pb-24 md:pb-0">
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-12 gap-8 items-end">
+    <div class="md:col-span-6">
+      <p class="kop font-extrabold text-6xl md:text-8xl leading-[.85]">De Bakkert</p>
+      <p class="mt-3 font-semibold">Elke dag weer vers gebakken geluk.</p>
+    </div>
+    <div class="md:col-span-3 leading-relaxed">
+      Adriaen van Ostadelaan 57<br>3583 AB Utrecht<br>
+      <a href="tel:+31630904886" class="underline underline-offset-4">06 30904886</a><br>
+      <a href="mailto:info@debakkert.nl" class="underline underline-offset-4">info@debakkert.nl</a>
+    </div>
+    <div class="md:col-span-3 leading-relaxed">
+      Ma t/m vr 08:00 tot 14:30<br>Za 08:00 tot 14:00<br>Zo 08:00 tot 13:00
+    </div>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 py-5 border-t border-inkt/15 text-sm text-inkt/70">
+    © De Bakkert in Oost. Demo-ontwerp door <a href="https://hagenweb.nl" class="underline">Hagenweb</a>.
+  </div>
+</footer>
+
+<!-- Mobiele belknop -->
+<a href="tel:+31630904886" id="vaste-bel" class="md:hidden fixed bottom-4 left-4 right-4 z-40 knop flex items-center justify-center gap-3 bg-inkt text-geel rounded-full py-4 text-lg font-bold shadow-[0_16px_34px_-10px_rgba(43,33,22,.7)]">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3h3.5l1.7 4.6-2.3 1.5a11 11 0 0 0 6 6l1.5-2.3L20 14.5V18a3 3 0 0 1-3 3A16 16 0 0 1 2 6a3 3 0 0 1 3-3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+  Bel De Bakkert
+</a>
+
+<script>
+  // Markeer de dag van vandaag in de openingstijden
+  (function () {
+    var rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+    if (rij) { rij.classList.add('vandaag'); rij.cells[0].textContent += ' (vandaag)'; }
+  })();
+  // Vaste belknop pas tonen als de hero-knop uit beeld is
+  (function () {
+    var vast = document.getElementById('vaste-bel');
+    var hero = document.querySelector('#top a[href^="tel:"]');
+    if (!vast || !hero || !('IntersectionObserver' in window)) return;
+    vast.classList.add('verstopt');
+    new IntersectionObserver(function (e) { vast.classList.toggle('verstopt', e[0].isIntersecting); }).observe(hero);
+  })();
+  // Sluit mobiel menu na klikken
+  document.querySelectorAll('details nav a').forEach(function (a) {
+    a.addEventListener('click', function () { a.closest('details').removeAttribute('open'); });
+  });
+</script>
+</body>
+</html>
