@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily Flowers Hoog Catharijne Utrecht | Bloemen van 06:00 tot 23:00</title>
+<meta name="description" content="Bloemenautomaat van Daily Flowers in Hoog Catharijne, Utrecht. Elke dag open van 06:00 tot 23:00. Godebaldkwartier 54, tussen Xenos en Cinnabon.">
+<meta property="og:title" content="Daily Flowers Hoog Catharijne Utrecht">
+<meta property="og:description" content="Elke dag verse bloemen van 06:00 tot 23:00, midden in Hoog Catharijne.">
+<meta property="og:image" content="assets/google-02.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23A6485A' stroke-width='3'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' text-anchor='middle' fill='%23A6485A'%3EDF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          inkt: '#231A1C',
+          marmer: '#FBF8F7',
+          bloesem: '#F4E1E0',
+          roos: '#A6485A',
+          roosdonker: '#8C3A4B',
+          logoroze: '#D9898C',
+          steel: '#5F6B58',
+        },
+        fontFamily: {
+          kop: ['"Bodoni Moda"', 'Georgia', 'serif'],
+          tekst: ['Jost', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Jost, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 0 0; }
+  .woordmerk { letter-spacing: .32em; }
+  :focus-visible { outline: 3px solid #A6485A; outline-offset: 3px; border-radius: 4px; }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+
+  /* Daglijn */
+  .daglijn { position: relative; height: 14px; border-radius: 999px; background: rgba(255,255,255,.12); }
+  .daglijn .open { position: absolute; top: 0; bottom: 0; left: 25%; width: 70.8333%; border-radius: 999px;
+    background: linear-gradient(90deg, #D9898C, #F4E1E0 55%, #D9898C); }
+  .daglijn .nu { position: absolute; top: -9px; bottom: -9px; width: 2px; background: #fff; display: none; }
+  .daglijn .nu span { position: absolute; top: -26px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+    font-size: 12px; color: #fff; }
+  .js .daglijn .nu { display: block; }
+
+  /* Enige orkestratie: hero bij laden, alleen als JS draait */
+  .js .hero-in { animation: in .9s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in.d2 { animation-delay: .12s; }
+  .js .hero-in.d3 { animation-delay: .24s; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-in { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-marmer text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-white px-4 py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Daily Flowers Hoog Catharijne Utrecht, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-bloesem">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="max-w-6xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between">
+  <a href="#" class="flex flex-col leading-none">
+    <span class="woordmerk text-[15px] md:text-base"><b class="font-semibold">DAILY</b>FLOWERS</span>
+    <span class="text-[12px] text-inkt/60 mt-1.5 tracking-wide">Hoog Catharijne Utrecht</span>
+  </a>
+  <nav class="hidden md:flex items-center gap-8 text-[15px]">
+    <a href="#route" class="hover:text-roos">Route</a>
+    <a href="#tijden" class="hover:text-roos">Openingstijden</a>
+    <a href="#vakjes" class="hover:text-roos">In de vakjes</a>
+    <a href="#bijzonder" class="hover:text-roos">Bijzondere wensen</a>
+    <a href="tel:+31854019679" class="font-medium text-roos hover:text-roosdonker">085 401 9679</a>
+  </nav>
+  <a href="tel:+31854019679" class="md:hidden text-[15px] font-medium text-roos">Bellen</a>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="max-w-6xl mx-auto px-5 md:px-8 pt-2 md:pt-10 pb-16 md:pb-24 grid md:grid-cols-12 gap-8 md:gap-8 items-center">
+  <div class="md:col-span-6 lg:col-span-5">
+    <p class="hero-in text-[15px] text-roos font-medium">Bloemenautomaat in Hoog Catharijne, Utrecht</p>
+    <h1 class="hero-in d2 font-kop text-[2.75rem] leading-[1.02] md:text-[5rem] md:leading-[.98] tracking-[-0.02em] mt-4">Bloemen, van vroeg tot laat.</h1>
+    <p class="hero-in d3 mt-5 text-[17px] md:text-lg leading-relaxed text-inkt/75 max-w-md">Elke dag van 06:00 tot 23:00 pakt u bij ons een vers boeket, een doos rozen of een klein cadeau. Midden in het winkelcentrum, vlak bij het station.</p>
+    <div class="hero-in d3 mt-7 md:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+      <a href="https://www.google.com/maps/search/?api=1&query=Daily+Flowers+Godebaldkwartier+54+Utrecht" target="_blank" rel="noopener"
+         class="knop inline-flex items-center gap-3 bg-roos hover:bg-roosdonker text-white text-lg font-medium px-8 py-4 rounded-full shadow-[0_10px_30px_-10px_rgba(166,72,90,.6)]">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Plan uw route
+      </a>
+      <a href="tel:+31854019679" class="text-[17px] underline underline-offset-4 decoration-logoroze hover:text-roos">of bel 085 401 9679</a>
+    </div>
+    <p class="hero-in d3 mt-6 md:mt-8 flex items-center gap-2 text-[15px] text-inkt/70">
+      <span class="text-roos tracking-[.15em]" aria-hidden="true">★★★★★</span>
+      <span><b class="font-semibold text-inkt">4,7</b> uit 41 Google-reviews</span>
+    </p>
+  </div>
+  <div class="md:col-span-6 lg:col-span-7 relative">
+    <div class="absolute inset-0 boog bg-bloesem translate-x-3 translate-y-3 md:translate-x-6 md:translate-y-6" aria-hidden="true"></div>
+    <img src="assets/google-02.jpg" alt="De Daily Flowers-bloemenautomaat in Hoog Catharijne, met verlichte vakjes vol boeketten voor een muur met roze bloesem"
+         class="relative boog w-full h-[400px] md:h-[600px] object-cover object-[45%_50%]">
+  </div>
+</section>
+
+<!-- Route -->
+<section id="route" class="bg-bloesem/60">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <figure class="order-2 md:order-1">
+      <img src="assets/site-03.jpg" alt="Vooraanzicht van de automaat met het roze DF-logo en bloesemtakken op de muur" loading="lazy"
+           class="w-full aspect-[4/3] object-cover rounded-[28px] rounded-tl-[140px]">
+    </figure>
+    <div class="order-1 md:order-2">
+      <h2 class="font-kop text-4xl md:text-[3.25rem] leading-[1.05] tracking-[-0.015em]">Twee keer rechts, en u staat ervoor.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/75 max-w-lg">Loop vanaf Utrecht Centraal Hoog Catharijne in en sla twee keer rechtsaf. De automaat staat tussen Xenos en Cinnabon, onder het grote roze DF-logo. U kunt hem niet missen.</p>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-8 border-t border-inkt/15 pt-8">
+        <div>
+          <dt class="text-sm text-inkt/55">Adres</dt>
+          <dd class="mt-1.5 text-[17px] leading-snug">Godebaldkwartier 54<br>3511 EM Utrecht</dd>
+        </div>
+        <div>
+          <dt class="text-sm text-inkt/55">Precies hier</dt>
+          <dd class="mt-1.5 text-[17px] leading-snug">Tussen Xenos en Cinnabon, in winkelcentrum Hoog Catharijne</dd>
+        </div>
+      </dl>
+      <a href="https://www.google.com/maps/search/?api=1&query=Daily+Flowers+Godebaldkwartier+54+Utrecht" target="_blank" rel="noopener"
+         class="knop mt-10 inline-flex items-center gap-2 border-2 border-inkt hover:bg-inkt hover:text-white px-6 py-3 rounded-full font-medium">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- Openingstijden / daglijn -->
+<section id="tijden" class="relative bg-inkt text-white overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 items-center">
+    <div class="md:col-span-7">
+      <h2 class="font-kop text-4xl md:text-[3.5rem] leading-[1.04] tracking-[-0.015em]">Om zes uur open.<br> Om elf uur nog steeds.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-white/70 max-w-lg">Vroeg naar kantoor, laat terug van de trein of op weg naar een etentje: de vakjes zijn zeven dagen per week gevuld en open.</p>
+
+      <div class="mt-14 max-w-xl">
+        <div class="daglijn" role="img" aria-label="Open van 06:00 tot 23:00, op een dag van 24 uur">
+          <div class="open"></div>
+          <div class="nu" id="nu"><span id="nu-tekst"></span></div>
+        </div>
+        <div class="relative h-6 mt-3 text-[13px] text-white/55 tabular-nums">
+          <span class="absolute left-0">00:00</span>
+          <span class="absolute left-[25%] -translate-x-1/2 text-bloesem font-medium">06:00</span>
+          <span class="absolute left-[50%] -translate-x-1/2">12:00</span>
+          <span class="absolute left-[95.83%] -translate-x-full md:-translate-x-1/2 text-bloesem font-medium">23:00</span>
+        </div>
+      </div>
+
+      <table class="mt-12 w-full max-w-sm text-[16px] tabular-nums">
+        <caption class="sr-only">Openingstijden</caption>
+        <tbody class="divide-y divide-white/10">
+          <tr><td class="py-2.5 text-white/70">Maandag</td><td class="py-2.5 text-right">06:00 tot 23:00</td></tr>
+          <tr><td class="py-2.5 text-white/70">Dinsdag</td><td class="py-2.5 text-right">06:00 tot 23:00</td></tr>
+          <tr><td class="py-2.5 text-white/70">Woensdag</td><td class="py-2.5 text-right">06:00 tot 23:00</td></tr>
+          <tr><td class="py-2.5 text-white/70">Donderdag</td><td class="py-2.5 text-right">06:00 tot 23:00</td></tr>
+          <tr><td class="py-2.5 text-white/70">Vrijdag</td><td class="py-2.5 text-right">06:00 tot 23:00</td></tr>
+          <tr><td class="py-2.5 text-white/70">Zaterdag</td><td class="py-2.5 text-right">06:00 tot 23:00</td></tr>
+          <tr><td class="py-2.5 text-white/70">Zondag</td><td class="py-2.5 text-right">06:00 tot 23:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="md:col-span-5">
+      <img src="assets/site-01.jpg" alt="Iemand loopt 's avonds naar de verlichte Daily Flowers-automaat" loading="lazy"
+           class="w-full max-w-sm md:max-w-none mx-auto aspect-[3/4] object-cover object-[30%_50%] boog">
+    </div>
+  </div>
+</section>
+
+<!-- In de vakjes -->
+<section id="vakjes" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-8 items-end">
+    <h2 class="md:col-span-7 font-kop text-4xl md:text-[3.25rem] leading-[1.05] tracking-[-0.015em]">Van een grote bos tot een kleine vaas.</h2>
+    <p class="md:col-span-5 text-lg leading-relaxed text-inkt/75">Achter elk verlicht vakje wacht iets moois: een rijk gevuld boeket in de witte Daily Flowers-tas, rode rozen in een doos, of een cadeautje om erbij te geven.</p>
+  </div>
+
+  <ul class="mt-10 flex flex-wrap gap-x-3 gap-y-3 text-[15px]">
+    <li class="px-4 py-2 rounded-lg bg-bloesem">Exclusive Collection</li>
+    <li class="px-4 py-2 rounded-lg bg-bloesem">Rozen</li>
+    <li class="px-4 py-2 rounded-lg bg-bloesem">Flowers in a Box</li>
+    <li class="px-4 py-2 rounded-lg bg-bloesem">Preserved roses</li>
+    <li class="px-4 py-2 rounded-lg bg-bloesem">Boeketten</li>
+  </ul>
+
+  <div class="mt-12 grid grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-3 md:gap-4">
+    <img src="assets/google-06.png" alt="Rode rozen in een zwarte doos met 'With Love' in een vakje van de automaat" loading="lazy"
+         class="col-span-2 md:row-span-2 w-full h-full aspect-[4/3] md:aspect-auto object-cover rounded-2xl">
+    <img src="assets/site-02.jpg" alt="Boeket van roze chrysanten en perzikkleurige trosrozen" loading="lazy" class="w-full aspect-square object-cover rounded-2xl">
+    <img src="assets/site-05.jpg" alt="Boeket van rode rozen en paarse chrysanten" loading="lazy" class="w-full aspect-square object-cover rounded-2xl">
+    <img src="assets/site-07.jpg" alt="Boeket met oranje rozen, calla's en witte trosrozen" loading="lazy" class="w-full aspect-square object-cover rounded-2xl">
+    <img src="assets/site-08.png" alt="Boeket met fuchsia celosia, perzikkleurige rozen en roze trosrozen" loading="lazy" class="w-full aspect-square object-cover rounded-2xl">
+  </div>
+
+  <p class="mt-10 text-[17px] text-inkt/75">Liever laten bezorgen? <a href="https://dailyflowers.nl/" target="_blank" rel="noopener" class="text-roos font-medium underline underline-offset-4 hover:text-roosdonker">Bekijk alle boeketten in de webshop</a></p>
+</section>
+
+<!-- Reviews -->
+<section class="bg-bloesem/60">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-kop text-4xl md:text-[3.25rem] leading-[1.05] tracking-[-0.015em]">Wat Utrecht ervan vindt</h2>
+      <p class="text-[15px] text-inkt/70"><span class="text-roos tracking-[.15em]" aria-hidden="true">★★★★★</span> <b class="font-semibold text-inkt">4,7</b> uit 41 Google-reviews</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-12 gap-5">
+      <figure class="md:col-span-7 md:row-span-2 bg-inkt text-white rounded-[28px] p-8 md:p-12 flex flex-col justify-between">
+        <blockquote class="font-kop text-[1.4rem] md:text-[1.7rem] leading-[1.35]">"Voor ons huwelijk op 9 april 2022 hebben Ivar en zijn team een supermooi pronkstuk als bruidsboeket gemaakt dat helemaal bij mij paste en waar ik vele complimenten over heb gehad.
+Ik kan Daily Flowers ten zeerste aanraden omdat zij niet alleen mooie boeketten maken, maar de service ook echt top is! Ze denken heel goed (...)"</blockquote>
+        <figcaption class="mt-8 text-white/70">B. Angna</figcaption>
+      </figure>
+      <figure class="md:col-span-5 bg-white rounded-2xl p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Super verse bloemen en sierlijke boeketten! Ziet er verzorgd uit en de automaat werkt uitstekend. Echt een aanrader voor een leuk cadeau of gewoon om je huis op te vrolijken💐🤩. Als je Hoog Catharijne inloopt vanaf het station is het twee keer rechts. Kan niet missen."</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">lester timmermans</figcaption>
+      </figure>
+      <figure class="md:col-span-5 bg-white rounded-2xl p-7">
+        <blockquote class="text-[17px] leading-relaxed">"De beste bloemist van Utrecht en Amsterdam. De eigenaren komen zelf langs om het boeket af te geven om zo de kwaliteit te garanderen. Zij hebben ook een unieke vending machine op het winkelcentrum van Hoog Catharijne staan. Dus je kan daar altijd een bloemetje vandaan halen."</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Stefan Laarman</figcaption>
+      </figure>
+      <figure class="md:col-span-6 bg-white rounded-2xl p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Super om op deze manier een prachtig boeket te kunnen kopen. Ik wil graag kwaliteit en dat is nu veel makkelijker op een snelle manier te krijgen. De service van een abonnement op hele bijzondere boeketten met bijpassende vaas bevalt ook heel erg goed!"</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Jacoba Timmermans</figcaption>
+      </figure>
+      <figure class="md:col-span-6 bg-white rounded-2xl p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Top service, prijs kwaliteit verhouding is top! En daarnaast hebben ze een uitstekende service en nog extra moeite voor een verzoek gedaan wat de verassing afmaakte. Echt uitstekend!"</blockquote>
+        <figcaption class="mt-5 text-sm text-inkt/60">Yas Ant</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Bijzondere wensen -->
+<section id="bijzonder" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 items-center">
+  <div class="md:col-span-5">
+    <img src="assets/google-07.jpg" alt="Boeket met blauwe hortensia, oranje celosia en gladiolen in een vaas bij de informatiebalie van Hoog Catharijne" loading="lazy"
+         class="w-full max-w-md mx-auto aspect-[4/5] object-cover rounded-[28px] rounded-br-[140px]">
+  </div>
+  <div class="md:col-span-7">
+    <h2 class="font-kop text-4xl md:text-[3.25rem] leading-[1.05] tracking-[-0.015em]">Iets bijzonders in gedachten?</h2>
+    <p class="mt-6 text-lg leading-relaxed text-inkt/75 max-w-xl">Een bruidsboeket dat helemaal bij u past, of elke keer een bijzonder boeket met een bijpassende vaas via een abonnement. Vertel ons wat u wilt, dan denken we graag met u mee.</p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+      <a href="tel:+31854019679" class="knop inline-flex justify-center items-center gap-3 bg-roos hover:bg-roosdonker text-white text-lg font-medium px-8 py-4 rounded-full">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Bel 085 401 9679
+      </a>
+      <a href="mailto:info@dailyflowers.nl" class="knop inline-flex justify-center items-center border-2 border-inkt hover:bg-inkt hover:text-white px-8 py-4 rounded-full text-lg font-medium">Mail info@dailyflowers.nl</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-inkt text-white/75">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-16 pb-10 grid sm:grid-cols-2 md:grid-cols-4 gap-10 text-[15px]">
+    <div>
+      <p class="woordmerk text-white text-[15px]"><b class="font-semibold">DAILY</b>FLOWERS</p>
+      <p class="mt-2 text-white/55">Hoog Catharijne Utrecht</p>
+    </div>
+    <div>
+      <p class="text-white font-medium">Adres</p>
+      <p class="mt-2 leading-relaxed">Godebaldkwartier 54<br>3511 EM Utrecht<br>Tussen Xenos en Cinnabon</p>
+    </div>
+    <div>
+      <p class="text-white font-medium">Open</p>
+      <p class="mt-2 leading-relaxed">Elke dag<br>06:00 tot 23:00</p>
+    </div>
+    <div>
+      <p class="text-white font-medium">Contact</p>
+      <p class="mt-2 leading-relaxed"><a href="tel:+31854019679" class="hover:text-white">085 401 9679</a><br><a href="mailto:info@dailyflowers.nl" class="hover:text-white">info@dailyflowers.nl</a><br><a href="https://dailyflowers.nl/" target="_blank" rel="noopener" class="hover:text-white">dailyflowers.nl</a></p>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pb-8 text-[13px] text-white/45">Demo-ontwerp door <a href="https://hagenweb.nl" class="underline hover:text-white">Hagenweb</a></div>
+</footer>
+
+<!-- Mobiel: vaste actiebalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-marmer/95 backdrop-blur border-t border-inkt/10 px-4 py-3 grid grid-cols-2 gap-3">
+  <a href="https://www.google.com/maps/search/?api=1&query=Daily+Flowers+Godebaldkwartier+54+Utrecht" target="_blank" rel="noopener" class="knop text-center bg-roos text-white font-medium py-3 rounded-full">Route</a>
+  <a href="tel:+31854019679" class="knop text-center border-2 border-inkt font-medium py-3 rounded-full">Bellen</a>
+</div>
+
+<script>
+  (function () {
+    var d = new Date(), h = d.getHours(), m = d.getMinutes();
+    var nu = document.getElementById('nu'), t = document.getElementById('nu-tekst');
+    if (!nu) return;
+    nu.style.left = ((h * 60 + m) / 1440 * 100) + '%';
+    var open = (h >= 6 && h < 23);
+    t.textContent = 'nu ' + String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + (open ? ', open' : ', gesloten');
+  })();
+</script>
+</body>
+</html>
