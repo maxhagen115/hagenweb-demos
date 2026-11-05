@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>van der Voort Dakwerken | Dakdekker in Ede voor pannendaken</title>
+<meta name="description" content="Dakdekker in Ede. Pannendak renoveren, isoleren, daklekkage en dakreparatie in Ede, Veenendaal, Wageningen, Arnhem en omgeving. Bel 0318 453 350.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23B4161E'/%3E%3Cpath d='M4 20 16 8l12 12' fill='none' stroke='white' stroke-width='3.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          rood: { DEFAULT: '#B4161E', donker: '#8F0F16' },
+          lei: '#1F2326',
+          zink: '#6B7378',
+          kalk: '#EEEDEA',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; color: #1F2326; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-variation-settings: 'wdth' 112; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance; }
+  .kop-smal { font-family: 'Archivo', system-ui, sans-serif; font-variation-settings: 'wdth' 100; font-weight: 700; letter-spacing: -0.01em; }
+  p { text-wrap: pretty; }
+
+  /* De dakvorm: puntgevel met een rode daklijn erboven */
+  .gevel { --nok: 34%; clip-path: polygon(0 var(--nok), 50% 0, 100% var(--nok), 100% 100%, 0 100%); }
+  .gevel-rand { position: relative; padding-top: 16px; }
+  .gevel-rand::before { content: ''; position: absolute; inset: 0; background: #B4161E; --nok: 34%;
+    clip-path: polygon(0 var(--nok), 50% 0, 100% var(--nok), 100% calc(var(--nok) + 22px), 50% 22px, 0 calc(var(--nok) + 22px)); }
+
+  .schuin-boven { clip-path: polygon(0 0, 100% 3.5vw, 100% 100%, 0 100%); }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:hover { background-color: #8F0F16; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #B4161E; outline-offset: 3px; }
+
+  /* Rustige binnenkomst van de hero, alleen als JS draait */
+  .js .in { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+  .js.klaar .in { opacity: 1; transform: none; }
+  .js.klaar .in-2 { transition-delay: .12s; }
+  .js.klaar .in-3 { transition-delay: .24s; }
+  @media (prefers-reduced-motion: reduce) { .js .in { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js'); addEventListener('DOMContentLoaded', () => requestAnimationFrame(() => document.documentElement.classList.add('klaar')));</script>
+</head>
+<body class="bg-white pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-lei text-white/80 text-[12px] sm:text-[13px] text-center py-2 px-3">
+  Demo voor van der Voort Dakwerken, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-white/70">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="border-b border-black/5">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-end gap-2.5 leading-none" aria-label="van der Voort Dakwerken, naar boven">
+      <svg viewBox="0 0 40 28" class="w-10 h-7 shrink-0" aria-hidden="true"><path d="M0 26 20 4l20 22" fill="none" stroke="#B4161E" stroke-width="5"/><path d="M11 26 20 16l9 10z" fill="#1F2326"/></svg>
+      <span>
+        <span class="block font-tekst text-[15px] font-semibold text-zink">van der Voort</span>
+        <span class="block kop text-[22px] tracking-tight">Dakwerken</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-rood transition-colors">Wat wij doen</a>
+      <a href="#werk" class="hover:text-rood transition-colors">Ons werk</a>
+      <a href="#reviews" class="hover:text-rood transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-rood transition-colors">Contact</a>
+    </nav>
+    <a href="tel:0318453350" class="hidden sm:inline-flex items-center gap-2 font-semibold text-[15px] hover:text-rood transition-colors">
+      <svg class="w-4 h-4 text-rood" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      0318 453 350
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-7 md:pt-14 pb-14 md:pb-20 grid lg:grid-cols-12 gap-8 lg:gap-8 items-end">
+    <div class="lg:col-span-5 lg:pb-10">
+      <p class="in font-semibold text-rood text-[15px] mb-4">Dakdekker in Ede</p>
+      <h1 class="in kop text-[2.6rem] sm:text-6xl xl:text-[4.6rem]">Een dak waar u niet meer naar omkijkt.</h1>
+      <p class="in in-2 mt-6 text-lg leading-relaxed text-lei/80 max-w-[30rem]">
+        Cees van der Voort en zijn vaste ploeg renoveren, isoleren en repareren pannendaken in Ede en omgeving. Eerst het hele dak bekijken, dan een eerlijk advies.
+      </p>
+      <div class="in in-3 mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:0318453350" class="knop inline-flex items-center gap-3 bg-rood text-white font-semibold text-lg px-7 py-4 rounded-[3px] shadow-[0_10px_24px_-10px_rgba(180,22,30,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0318 453 350
+        </a>
+        <a href="#contact" class="font-semibold underline decoration-rood decoration-2 underline-offset-[6px] hover:text-rood transition-colors">Vraag een offerte aan</a>
+      </div>
+      <p class="in in-3 mt-6 sm:mt-8 flex items-center gap-3 text-[15px] text-zink">
+        <span class="text-rood tracking-[2px] text-lg" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-lei">4,8</strong> uit 33 reviews op Google en Homeproved</span>
+      </p>
+    </div>
+    <div class="lg:col-span-7">
+      <div class="gevel-rand">
+        <img src="assets/site-02.webp" alt="De ploeg van Van der Voort op de nok van een woning, met een hoogwerker in de straat" class="gevel w-full aspect-[4/3.3] object-cover object-[30%_center]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lekkage -->
+<section class="bg-lei text-white schuin-boven -mt-6 relative">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-24 pb-16 md:pt-28 md:pb-20 grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-7">
+      <h2 class="kop text-3xl md:text-[2.6rem]">Ziet u een natte plek? Wacht niet af.</h2>
+      <blockquote class="mt-6 text-lg md:text-xl leading-relaxed text-white/85 max-w-2xl">
+        <p>"Zodra je de verf van het hout ziet bladderen, onderneem direct actie. Want als je al een druppel water binnen ziet, is het probleem al vergevorderd."</p>
+        <footer class="mt-3 text-base text-white/55">Cees van der Voort</footer>
+      </blockquote>
+    </div>
+    <div class="md:col-span-5 md:pl-10 md:border-l border-white/15">
+      <p class="text-white/80 leading-relaxed">Een lekkage begint zelden bij de pannen zelf. Vaak zit het in een losse nokvorst of in het loodwerk rond de schoorsteen. Wij zoeken eerst de bron en herstellen die, geen losse pleisters.</p>
+      <a href="tel:0318453350" class="knop mt-6 inline-flex items-center gap-3 bg-rood text-white font-semibold px-6 py-3.5 rounded-[3px]">Bel direct: 0318 453 350</a>
+      <p class="mt-3 text-sm text-white/55">Maandag tot en met vrijdag van 08:00 tot 17:00</p>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <div class="lg:sticky lg:top-8">
+        <h2 class="kop text-4xl md:text-5xl">Alles aan uw pannendak.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-lei/75 max-w-md">Al ruim 30 jaar renoveren en isoleren wij pannendaken in Ede, Veenendaal, Wageningen, Arnhem en omgeving. Met eigen vakmensen en vaste aanspreekpunten.</p>
+        <img src="assets/google-06.jpg" alt="Twee vakmensen leggen isolatiefolie op een opengelegd dak" class="mt-10 w-full aspect-[4/4.4] object-cover object-[center_60%] rounded-[3px]">
+      </div>
+    </div>
+    <div class="lg:col-span-7 lg:pt-2">
+      <ul class="divide-y divide-black/10 border-y border-black/10">
+        <li class="py-8 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <h3 class="kop-smal text-xl">Dakrenovatie</h3>
+          <p class="leading-relaxed text-lei/75">Uw pannendak weer als nieuw. We inspecteren al het dak- en zinkwerk, inclusief houtwerk en dakomlijsting, en vervangen wat nodig is. Van nieuwe pannen en panlatten tot de afwerking.</p>
+        </li>
+        <li class="py-8 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <h3 class="kop-smal text-xl">Dakisolatie</h3>
+          <p class="leading-relaxed text-lei/75">Goede isolatie maakt uw huis comfortabeler en zuiniger. We kijken welke oplossing bij uw dak past en isoleren het liefst op het moment dat het dak toch open ligt.</p>
+        </li>
+        <li class="py-8 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <h3 class="kop-smal text-xl">Daklekkage en dakreparatie</h3>
+          <p class="leading-relaxed text-lei/75">Een losse pan, een gescheurde nokvorst of stormschade. We sporen de oorzaak op en repareren snel en vakkundig, van één dakpan tot een heel dakvlak. Stormschade leggen we met foto's vast.</p>
+        </li>
+        <li class="py-8 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <h3 class="kop-smal text-xl">Nokvorsten</h3>
+          <p class="leading-relaxed text-lei/75">Losse nokvorsten zijn een klassieke oorzaak van lekkage. Wij zetten ze vast met flexibele, stormvaste dakmortel die niet scheurt zoals oud cement, inclusief vogelschroot.</p>
+        </li>
+        <li class="py-8 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <h3 class="kop-smal text-xl">Schoorsteen en loodwerk</h3>
+          <p class="leading-relaxed text-lei/75">Een schoorsteen renoveren met nieuw loodwerk, of netjes verwijderen en het dak waterdicht dichtmaken. Opruimen en afvoeren van het puin hoort erbij.</p>
+        </li>
+        <li class="py-8 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <h3 class="kop-smal text-xl">Dakgoten</h3>
+          <p class="leading-relaxed text-lei/75">Lekkende goten vervangen we door nieuwe, met zink beklede dakgoten die tientallen jaren meegaan. Bij elke inspectie kijken we de goten sowieso na.</p>
+        </li>
+        <li class="py-8 grid sm:grid-cols-[13rem_1fr] gap-2 sm:gap-8">
+          <h3 class="kop-smal text-xl">Dakkapellen en Velux</h3>
+          <p class="leading-relaxed text-lei/75">Bestaande dakkapellen repareren of nieuwe plaatsen, en Velux dakramen monteren met een nette afwerking aan de binnenkant.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Als het dak toch open ligt -->
+<section class="bg-kalk">
+  <div class="grid lg:grid-cols-2">
+    <div class="relative min-h-[22rem] lg:min-h-full order-last lg:order-first">
+      <img src="assets/google-02.jpg" alt="Een net gelegd dak met nieuwe rode dakpannen in de avondzon" class="absolute inset-0 w-full h-full object-cover object-[center_65%]">
+    </div>
+    <div class="px-5 md:px-12 lg:px-16 xl:pr-[max(4rem,calc((100vw-80rem)/2+2rem))] py-20 md:py-24">
+      <h2 class="kop text-[2.1rem] sm:text-4xl md:text-5xl">Ligt het dak open? Dan pakken we het in één keer goed aan.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-lei/80 max-w-xl">Een nokvorst die los zit, uitgedroogd loodwerk, een schoorsteen die alleen nog lekkage geeft. Als de steiger toch staat, is dat het moment om het mee te nemen.</p>
+      <p class="mt-4 leading-relaxed text-lei/75 max-w-xl">Dat scheelt u een tweede keer steigers, een tweede keer overlast en een tweede rekening. Daarom inspecteren wij altijd het complete dak voordat we beginnen, van houtwerk tot zinkwerk.</p>
+
+      <div class="mt-10 pt-8 border-t border-black/10 max-w-xl">
+        <h3 class="kop-smal text-xl">Repareren of renoveren?</h3>
+        <p class="mt-3 leading-relaxed text-lei/75">Niet elke reparatie is verstandig. Bij een woning aan de Arnhemseweg in Otterlo was binnen nog niets te zien, terwijl de pannen buiten al jaren eerder vervangen hadden moeten worden. Wij vertellen u eerlijk of uw dak nog jaren mee kan, of dat renoveren per saldo goedkoper is. Geen verkooppraatje.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-6 items-end mb-10 md:mb-14">
+      <h2 class="kop text-4xl md:text-5xl md:col-span-7">Daken bij u in de buurt.</h2>
+      <p class="md:col-span-5 text-lg leading-relaxed text-lei/75">Van jaren 30 woningen tot vooroorlogse villa's en boerderijen. Een greep uit ons werk in de regio.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <img src="assets/site-01.webp" alt="Boerderij met een volledig vernieuwd donker pannendak tussen herfstbomen" class="col-span-2 md:col-span-8 md:row-span-2 w-full h-full aspect-[4/3] md:aspect-auto object-cover object-[center_45%] rounded-[3px]">
+      <img src="assets/google-05.jpg" alt="Hoekwoning met een nieuw zwart pannendak" class="md:col-span-4 w-full aspect-[4/5] md:aspect-[4/3.2] object-cover object-[center_40%] rounded-[3px]">
+      <img src="assets/google-07.jpg" alt="Nieuwe rode dakpannen en een zinken dakgoot, gezien vanaf de steiger" class="md:col-span-4 w-full aspect-[4/5] md:aspect-[4/3.2] object-cover rounded-[3px]">
+      <img src="assets/site-06.webp" alt="Dakdekkers aan het werk op een dak met nieuwe panlatten en isolatie" class="md:col-span-5 w-full aspect-[4/3] object-cover rounded-[3px]">
+      <img src="assets/site-10.webp" alt="Woning met een nieuw donker pannendak, zinken randen en een dakraam" class="md:col-span-3 w-full aspect-[4/3] md:aspect-auto md:h-full object-cover rounded-[3px]">
+      <img src="assets/google-04.jpg" alt="Nieuw dakje met glanzend zwarte pannen en twee ontluchtingen" class="col-span-2 md:col-span-4 w-full aspect-[16/9] md:aspect-auto md:h-full object-cover rounded-[3px]">
+    </div>
+    <p class="mt-10 max-w-4xl leading-relaxed text-lei/75">
+      We werkten onder meer in <strong class="text-lei font-semibold">Ede, Bennekom, Wageningen, Veenendaal, Renkum, Oosterbeek, Rhenen, Amerongen, Otterlo, Lunteren, Wolfheze, Voorthuizen, Apeldoorn en Arnhem</strong>. Staat uw plaats er niet bij? Bel gerust, we kijken graag of het uitkomt.
+    </p>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-kalk py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+      <h2 class="kop text-4xl md:text-5xl max-w-2xl">Wat klanten over Cees en zijn ploeg zeggen.</h2>
+      <p class="flex items-center gap-3 text-zink"><span class="text-rood tracking-[2px] text-xl" aria-hidden="true">★★★★★</span><span><strong class="text-lei text-lg">4,8</strong> uit 33 reviews op Google en Homeproved</span></p>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-5">
+      <figure class="lg:col-span-7 lg:row-span-2 bg-white p-8 md:p-12 rounded-[3px] flex flex-col">
+        <span class="text-rood tracking-[2px]" aria-label="5 van de 5 sterren">★★★★★</span>
+        <blockquote class="mt-5 text-lg md:text-[1.35rem] leading-relaxed md:leading-[1.6] flex-1">
+          "Cees en zijn mannen hebben een nieuw dak op zowel ons huis als onze schuur gemaakt. Ze hebben ook meteen de daken goed geïsoleerd. Het dak was 100 jaar oud en echt aan vervanging toe. Cees heeft in het verleden al meerdere verbouwingen voor ons uitgevoerd dus we wisten al dat hij betrouwbaar en secuur is en ook nog eens heel sympathiek. Ook deze samenwerking verliep weer super, met goede afstemming vooraf, tijdens en na de werkzaamheden. De mannen houden de vaart erin tijdens het werk en werken netjes en precies. Daardoor is de overlast minimaal. We hebben de nieuwe daken nu een paar maanden en hebben gemerkt dat het klimaat in huis veel aangenamer is geworden. We zijn er heel blij mee!"
+        </blockquote>
+        <figcaption class="mt-8 font-semibold">Yvonne Haenen <span class="font-normal text-zink">via Google</span></figcaption>
+      </figure>
+      <figure class="lg:col-span-5 bg-white p-8 rounded-[3px] flex flex-col">
+        <span class="text-rood tracking-[2px]" aria-label="5 van de 5 sterren">★★★★★</span>
+        <blockquote class="mt-4 leading-relaxed">"Wij hebben het dak van ons huis en onze schuur laten renoveren door Cees en zijn ploeg. De jongens werken netjes en secuur en we zijn ontzettend tevreden over het resultaat. Het dak is geisoleerd en ligt er weer netjes bij. Ik kan van der Voort Dakwerken van harte aanbevelen."</blockquote>
+        <figcaption class="mt-auto pt-5 font-semibold">Bert Gerding <span class="font-normal text-zink">via Google</span></figcaption>
+      </figure>
+      <figure class="lg:col-span-5 bg-white p-8 rounded-[3px] flex flex-col">
+        <span class="text-rood tracking-[2px]" aria-label="5 van de 5 sterren">★★★★★</span>
+        <blockquote class="mt-4 leading-relaxed">"We hebben na deskundig advies onze dakpannen laten vervangen door dakwerken van der Voort. Dit is op professionele wijze gedaan tot volle tevredenheid."</blockquote>
+        <figcaption class="mt-auto pt-5 font-semibold">Gert Achterberg <span class="font-normal text-zink">via Homeproved</span></figcaption>
+      </figure>
+      <figure class="lg:col-span-12 bg-lei text-white p-8 md:p-12 rounded-[3px] grid md:grid-cols-12 gap-6">
+        <div class="md:col-span-3">
+          <span class="text-rood tracking-[2px]" aria-label="5 van de 5 sterren">★★★★★</span>
+          <figcaption class="mt-3 font-semibold">Sander Goudswaard <span class="block font-normal text-white/55">via Homeproved</span></figcaption>
+        </div>
+        <blockquote class="md:col-span-9 max-w-3xl leading-relaxed text-white/85">"Na best veel gedoe te hebben gehad de afgelopen jaren met diverse aannemers, nu extra goed onderzoek gedaan wie we wilden vragen voor de klus aan ons dak. Het ging om nieuwe pannen en latten, aanpassen boeiborden, inpakken dak met isolatiedoek, vullen van holle ruimtes met muurisolatie, nieuwe dakramen installeren en oude ophogen, installatie rolluiken en de kozijnafwerking binnen. Uiteindelijk heeft het team van Cees o.l.v. Jan Willem bij ons het dak aangepakt. We hebben geen moment spijt gehad van deze keuze. Zijn team bestaat uit 100% vakmensen. Rustige jongens die heel hard werken. Iedere ochtend stipt op tijd aanwezig en heel fijn in de communicatie. Geen onduidelijkheden, goed overleg en proactief meedenken waar nodig. Van het moment van steigeropbouw tot het wegrijden van het laatste afval, alles was goed verzorgd en netjes. En het resultaat mag er zijn. Enorm blij met de gemaakte keuze voor dit bedrijf."</blockquote>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-4xl md:text-5xl">Even laten kijken naar uw dak?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-lei/75 max-w-lg">Bel ons of laat uw nummer achter. Een offerte is vrijblijvend en we reageren binnen één werkdag. Elk dak is anders, dus een eerlijk bedrag noemen we pas na een inspectie.</p>
+
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-7">
+        <div>
+          <dt class="text-sm text-zink">Telefoon</dt>
+          <dd class="mt-1"><a href="tel:0318453350" class="kop-smal text-2xl hover:text-rood transition-colors">0318 453 350</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-zink">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@vandervoortdakwerken.nl" class="font-semibold underline decoration-black/20 underline-offset-4 hover:text-rood break-all">info@vandervoortdakwerken.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-zink">Adres</dt>
+          <dd class="mt-1 leading-relaxed">Sportlaan 32<br>6717 LB Ede</dd>
+        </div>
+        <div>
+          <dt class="text-sm text-zink">Bereikbaar</dt>
+          <dd class="mt-1 leading-relaxed">Maandag tot en met vrijdag<br>08:00 tot 17:00</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="lg:col-span-6">
+      <form action="mailto:info@vandervoortdakwerken.nl" method="post" enctype="text/plain" class="bg-kalk p-7 md:p-10 rounded-[3px]">
+        <h3 class="kop-smal text-2xl">Liever teruggebeld worden?</h3>
+        <p class="mt-2 text-lei/70">Laat uw naam en nummer achter, dan bellen wij u.</p>
+        <div class="mt-7 grid gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-1.5 w-full bg-white border border-black/15 rounded-[3px] px-4 py-3 focus:border-rood">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Telefoonnummer</span>
+            <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full bg-white border border-black/15 rounded-[3px] px-4 py-3 focus:border-rood">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Waar gaat het om? <span class="font-normal text-zink">(mag kort)</span></span>
+            <input name="vraag" class="mt-1.5 w-full bg-white border border-black/15 rounded-[3px] px-4 py-3 focus:border-rood" placeholder="Bijvoorbeeld: lekkage boven de slaapkamer">
+          </label>
+          <button type="submit" class="knop mt-1 bg-rood text-white font-semibold px-6 py-4 rounded-[3px]">Bel mij terug</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-lei text-white/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <div class="flex items-end gap-2.5 leading-none text-white">
+        <svg viewBox="0 0 40 28" class="w-10 h-7" aria-hidden="true"><path d="M0 26 20 4l20 22" fill="none" stroke="#B4161E" stroke-width="5"/><path d="M11 26 20 16l9 10z" fill="#fff"/></svg>
+        <span><span class="block text-[15px] font-semibold text-white/60">van der Voort</span><span class="block kop text-[22px]">Dakwerken</span></span>
+      </div>
+      <p class="mt-5 max-w-sm leading-relaxed">Pannendaken renoveren, isoleren en repareren in Ede, Veenendaal, Wageningen, Arnhem en omgeving.</p>
+    </div>
+    <div class="md:col-span-4 leading-relaxed">
+      <p class="text-white font-semibold">van der Voort Dakwerken B.V.</p>
+      <p>Sportlaan 32, 6717 LB Ede</p>
+      <p><a href="tel:0318453350" class="hover:text-white">0318 453 350</a></p>
+      <p><a href="mailto:info@vandervoortdakwerken.nl" class="hover:text-white">info@vandervoortdakwerken.nl</a></p>
+    </div>
+    <div class="md:col-span-3 leading-relaxed">
+      <p>Ma t/m vr 08:00 tot 17:00</p>
+      <p>Za en zo gesloten</p>
+      <p class="mt-3">KvK 86855239</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Vaste belknop op mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-black/10 p-3">
+  <a href="tel:0318453350" class="knop flex items-center justify-center gap-3 bg-rood text-white font-semibold text-lg py-3.5 rounded-[3px]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 0318 453 350
+  </a>
+</div>
+
+</body>
+</html>
