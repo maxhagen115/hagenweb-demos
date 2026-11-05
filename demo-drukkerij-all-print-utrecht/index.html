@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drukkerij All Print | Drukwerk voor Utrecht &amp; Culemborg</title>
+<meta name="description" content="Familiedrukkerij All Print: concept, ontwerp, offset en digitaal drukwerk, afwerking en mailing. Alles onder één dak. Bel 030 231 2405.">
+<meta property="og:title" content="Drukkerij All Print | Alles onder één dak">
+<meta property="og:image" content="assets/site-04.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bord: '#1E4E9C',
+          bordd: '#163C7A',
+          inkt: '#0E1E3D',
+          papier: '#F6F7F5',
+          geel: '#FFD100',
+          cyaan: '#00A0DC',
+          magenta: '#E5007E',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Source Serif 4"', 'Georgia', 'serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Source Serif 4', Georgia, serif; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; letter-spacing: -0.02em; }
+  .smal { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 100%; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Rasterpunten zoals de etalage */
+  .raster {
+    background-image: radial-gradient(circle, currentColor 38%, transparent 40%);
+    background-size: 18px 18px;
+    -webkit-mask-image: linear-gradient(115deg, transparent 20%, #000 95%);
+            mask-image: linear-gradient(115deg, transparent 20%, #000 95%);
+  }
+
+  /* Drukvel met snijtekens */
+  .vel { position: relative; }
+  .vel .snij { position: absolute; width: 28px; height: 28px; pointer-events: none; }
+  .vel .snij::before, .vel .snij::after { content: ""; position: absolute; background: currentColor; }
+  .vel .snij::before { width: 100%; height: 1.5px; }
+  .vel .snij::after { width: 1.5px; height: 100%; }
+  .snij.lb { top: -36px; left: -36px; } .snij.lb::before { bottom: 0; } .snij.lb::after { right: 0; }
+  .snij.rb { top: -36px; right: -36px; } .snij.rb::before { bottom: 0; } .snij.rb::after { left: 0; }
+  .snij.lo { bottom: -36px; left: -36px; } .snij.lo::before { top: 0; } .snij.lo::after { right: 0; }
+  .snij.ro { bottom: -36px; right: -36px; } .snij.ro::before { top: 0; } .snij.ro::after { left: 0; }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #FFD100; outline-offset: 3px;
+  }
+
+  .werk { position: relative; overflow: hidden; background: #F6F7F5; }
+  .werk img { transition: transform .5s ease; }
+  .werk:hover img { transform: scale(1.03); }
+  .werk figcaption { position: absolute; left: 0; bottom: 0; background: #fff; color: #0E1E3D; font-family: 'Archivo', system-ui, sans-serif; font-weight: 600; font-size: 14px; padding: 6px 12px; }
+  .js .belbalk { transform: translateY(120%); transition: transform .3s ease; }
+  .js .belbalk.toon { transform: none; }
+  .index-rij { transition: background-color .25s ease; }
+  .index-rij:hover { background-color: #fff; }
+
+  /* Verrijking: alleen als JS de class zet */
+  .js .opkomst { opacity: 0; transform: translateY(18px) rotate(var(--r, 0deg)); transition: opacity .8s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .js .opkomst.zichtbaar { opacity: 1; transform: translateY(0) rotate(var(--r, 0deg)); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .opkomst { opacity: 1; transform: rotate(var(--r, 0deg)); transition: none; }
+    .knop:hover { transform: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="bg-papier text-inkt antialiased">
+
+<!-- Demobalk -->
+<div class="bg-inkt text-white/80 text-[13px] smal">
+  <div class="max-w-7xl mx-auto px-5 py-2 text-center">
+    Demo voor Drukkerij All Print - Utrecht, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-geel">Hagenweb</a>
+  </div>
+</div>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-geel focus:text-inkt focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Kop -->
+<header class="bg-bord text-white sticky top-0 z-40 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3 leading-none" aria-label="Drukkerij All Print, naar boven">
+      <svg viewBox="0 0 24 32" class="w-4 h-6 lg:w-5 lg:h-7 shrink-0" aria-hidden="true"><path d="M12 0C12 0 0 14 0 21a12 12 0 0 0 24 0C24 14 12 0 12 0Z" fill="#fff"/></svg>
+      <span class="kop text-[17px] lg:text-[20px] leading-[0.95]" style="font-stretch:100%;letter-spacing:-0.01em">
+        <b class="font-extrabold">all print</b><br><b class="font-extrabold">drukwerk</b> <span class="font-light">specials</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 smal text-[15px] font-medium text-white/85" aria-label="Hoofdmenu">
+      <a href="#drukwerk" class="hover:text-white">Drukwerk</a>
+      <a href="#werk" class="hover:text-white">Ons werk</a>
+      <a href="#oplage" class="hover:text-white">Druk &amp; print</a>
+      <a href="#familie" class="hover:text-white">Over ons</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+    <a href="tel:+31302312405" class="knop hidden sm:inline-flex items-center gap-2 smal font-bold text-[15px] bg-geel text-inkt px-4 py-2.5 rounded-sm">
+      <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+      030 231 2405
+    </a>
+    <a href="#contact" class="sm:hidden smal font-semibold text-[15px] underline underline-offset-4">Contact</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative bg-bord text-white overflow-hidden">
+  <div class="raster absolute -right-20 top-0 w-[70%] h-full text-cyaan/30" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-10 pb-16 lg:pt-20 lg:pb-28 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <div class="lg:col-span-6">
+      <p class="smal text-[15px] font-medium text-white/75 mb-5">Drukkerij voor Utrecht &amp; Culemborg</p>
+      <h1 class="kop font-extrabold text-[46px] leading-[0.98] sm:text-6xl lg:text-[84px] lg:leading-[0.94]">Drukwerk met een familienaam.</h1>
+      <p class="mt-6 text-lg lg:text-xl leading-relaxed text-white/85 max-w-[32rem]">Van het eerste ontwerp tot de doos bij je voor de deur. Wij doen het allemaal onder één dak, en jij houdt één vast aanspreekpunt.</p>
+      <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4">
+        <a href="tel:+31302312405" class="knop inline-flex justify-center items-center gap-3 bg-geel text-inkt smal font-extrabold text-lg px-7 py-4 rounded-sm shadow-[0_10px_30px_-10px_rgba(10,30,70,.6)] hover:bg-[#ffdc3a]">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+          Bel 030 231 2405
+        </a>
+        <a href="#offerte" class="knop inline-flex justify-center items-center smal font-semibold text-lg px-7 py-[15px] rounded-sm border-2 border-white/40 hover:border-white">Offerte aanvragen</a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 flex justify-center lg:justify-end px-10 sm:px-16 lg:px-12 py-10">
+      <figure class="vel text-white/70 w-full max-w-[520px]" style="transform: rotate(-3deg)">
+        <span class="snij lb"></span><span class="snij rb"></span><span class="snij lo"></span><span class="snij ro"></span>
+        <div class="bg-white p-3 sm:p-4 shadow-[0_30px_60px_-20px_rgba(5,20,50,.65)]">
+          <img src="assets/site-04.jpg" alt="Doos vol gedrukte FC Utrecht-kaarten, gedrukt door All Print" class="w-full aspect-square object-cover" width="600" height="599">
+        </div>
+        <!-- Pasmerk -->
+        <svg viewBox="0 0 40 40" class="absolute -bottom-16 left-1/2 -translate-x-1/2 w-8 h-8" aria-hidden="true">
+          <circle cx="20" cy="20" r="11" fill="none" stroke="#fff" stroke-width="1.5"/>
+          <path d="M20 2v36M2 20h36" stroke="#fff" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="4" fill="#FFD100"/>
+        </svg>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Drukwerk index -->
+<section id="drukwerk" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-8">
+    <div class="lg:col-span-4">
+      <h2 class="kop font-extrabold text-4xl lg:text-5xl leading-[1.02]">Wat mag het zijn?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-inkt/75 max-w-md">Folders, kaarten, visitekaartjes, brochures, kalenders, briefpapier, posters. Zwart-wit, full colour, steunkleuren of goudfolie. You name it, we print it.</p>
+      <p class="mt-5 text-lg leading-relaxed text-inkt/75 max-w-md">Staat het er niet bij? Bel even, dan kijken we wat er kan.</p>
+    </div>
+    <div class="lg:col-span-8 border-t-2 border-inkt">
+      <div class="index-rij grid sm:grid-cols-12 gap-2 sm:gap-6 py-6 px-1 sm:px-4 border-b border-inkt/15">
+        <h3 class="sm:col-span-5 kop font-bold text-2xl lg:text-[28px]">Huisstijl</h3>
+        <p class="sm:col-span-7 text-[17px] text-inkt/70 leading-relaxed">Visitekaartjes, briefpapier, enveloppen, stickers, folders, brochures en mappen.</p>
+      </div>
+      <div class="index-rij grid sm:grid-cols-12 gap-2 sm:gap-6 py-6 px-1 sm:px-4 border-b border-inkt/15">
+        <h3 class="sm:col-span-5 kop font-bold text-2xl lg:text-[28px]">Presentatie</h3>
+        <p class="sm:col-span-7 text-[17px] text-inkt/70 leading-relaxed">Posters, nieuwsbrieven, menukaarten, roll-up banners, showborden op standaard, ringbanden en presentatiemappen.</p>
+      </div>
+      <div class="index-rij grid sm:grid-cols-12 gap-2 sm:gap-6 py-6 px-1 sm:px-4 border-b border-inkt/15">
+        <h3 class="sm:col-span-5 kop font-bold text-2xl lg:text-[28px]">Familie</h3>
+        <p class="sm:col-span-7 text-[17px] text-inkt/70 leading-relaxed">Trouwkaarten, geboortekaarten, kerstkaarten en bedankkaarten. Ook als het ingewikkeld wordt, met boorgat of bijpassende enveloppen.</p>
+      </div>
+      <div class="index-rij grid sm:grid-cols-12 gap-2 sm:gap-6 py-6 px-1 sm:px-4 border-b border-inkt/15">
+        <h3 class="sm:col-span-5 kop font-bold text-2xl lg:text-[28px]">Binnen- en buitenreclame</h3>
+        <p class="sm:col-span-7 text-[17px] text-inkt/70 leading-relaxed">Vlaggen, banners en stickers.</p>
+      </div>
+      <div class="index-rij grid sm:grid-cols-12 gap-2 sm:gap-6 py-6 px-1 sm:px-4 border-b border-inkt/15">
+        <h3 class="sm:col-span-5 kop font-bold text-2xl lg:text-[28px]">Kleding en textiel</h3>
+        <p class="sm:col-span-7 text-[17px] text-inkt/70 leading-relaxed">T-shirts en truien, bedrijfskleding, petten en tassen.</p>
+      </div>
+      <div class="index-rij grid sm:grid-cols-12 gap-2 sm:gap-6 py-6 px-1 sm:px-4 border-b border-inkt/15">
+        <h3 class="sm:col-span-5 kop font-bold text-2xl lg:text-[28px]">Concept &amp; design</h3>
+        <p class="sm:col-span-7 text-[17px] text-inkt/70 leading-relaxed">Nog geen ontwerp? We denken met je mee en zorgen dat je drukwerk de juiste uitstraling krijgt, creatief of juist commercieel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section id="werk" class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+      <h2 class="kop font-extrabold text-4xl lg:text-5xl leading-[1.02] max-w-xl">Vers van de pers.</h2>
+      <p class="text-lg text-inkt/70 max-w-md leading-relaxed">Een greep uit het drukwerk dat bij ons over de tafel ging.</p>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-5">
+      <figure class="werk col-span-2 lg:col-span-6 lg:row-span-2">
+        <img src="assets/site-05.jpg" alt="Uitklapbare trouwkaart met eekhoorns en bijpassende kaartjes" class="w-full h-full aspect-square object-cover" loading="lazy">
+        <figcaption>Trouwkaarten</figcaption>
+      </figure>
+      <figure class="werk lg:col-span-3">
+        <img src="assets/site-06.jpg" alt="Stapel gebonden boeken" class="w-full aspect-square object-cover" loading="lazy">
+        <figcaption>Boeken</figcaption>
+      </figure>
+      <figure class="werk lg:col-span-3">
+        <img src="assets/site-02.jpg" alt="Groene leporello-folders" class="w-full aspect-square object-cover" loading="lazy">
+        <figcaption>Folders</figcaption>
+      </figure>
+      <figure class="werk lg:col-span-3">
+        <img src="assets/site-09.jpg" alt="Gevouwen wondzorgkaarten voor UMC Utrecht" class="w-full aspect-square object-cover" loading="lazy">
+        <figcaption>Zakkaarten</figcaption>
+      </figure>
+      <figure class="werk lg:col-span-3">
+        <img src="assets/site-07.jpg" alt="Tijdschriften van Podium Oost" class="w-full aspect-square object-cover" loading="lazy">
+        <figcaption>Tijdschriften</figcaption>
+      </figure>
+      <figure class="werk lg:col-span-4">
+        <img src="assets/site-03.jpg" alt="Stapels programmaboekjes in paars" class="w-full aspect-square lg:aspect-[4/3] object-cover" loading="lazy">
+        <figcaption>Programmaboekjes</figcaption>
+      </figure>
+      <figure class="werk lg:col-span-4">
+        <img src="assets/site-01.jpg" alt="Opengeslagen catalogi met kerstkaarten" class="w-full aspect-square lg:aspect-[4/3] object-cover" loading="lazy">
+        <figcaption>Catalogi</figcaption>
+      </figure>
+      <figure class="werk col-span-2 lg:col-span-4">
+        <img src="assets/site-08.jpg" alt="Stapel boeken met blauwe omslag" class="w-full aspect-[2/1] lg:aspect-[4/3] object-cover object-[50%_30%]" loading="lazy">
+        <figcaption>Boeken in oplage</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Oplage -->
+<section id="oplage" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <h2 class="kop font-extrabold text-4xl lg:text-5xl leading-[1.02] max-w-3xl">Duizend stuks of vijftig? Allebei goed.</h2>
+    <div class="mt-12 grid md:grid-cols-2 gap-px bg-inkt/15 border border-inkt/15">
+      <div class="bg-papier p-7 lg:p-10">
+        <p class="smal font-semibold text-bord text-[15px] mb-3">Grote oplage</p>
+        <h3 class="kop font-bold text-3xl">Offset drukken</h3>
+        <p class="mt-4 text-[17px] leading-relaxed text-inkt/75">Op onze offsetpersen drukken we grote oplagen in topkwaliteit. Van één PMS-kleur tot full colour, met een steunkleur of een goudfolie als je wilt. Voor bedrijven en overheidsinstellingen, maar net zo goed voor zzp'ers en particulieren.</p>
+      </div>
+      <div class="bg-papier p-7 lg:p-10">
+        <p class="smal font-semibold text-bord text-[15px] mb-3">Kleine oplage</p>
+        <h3 class="kop font-bold text-3xl">Digitaal printen</h3>
+        <p class="mt-4 text-[17px] leading-relaxed text-inkt/75">Een kleine oplage visitekaartjes, flyers of een proefschrift? Onze digitale printers leveren snel en voordelig, in kleur en in zwart-wit, met de kwaliteit van drukwerk. Je kunt er zelfs brochures mee personaliseren.</p>
+      </div>
+    </div>
+
+    <div class="mt-16 grid lg:grid-cols-12 gap-10 lg:gap-8">
+      <div class="lg:col-span-5">
+        <h3 class="kop font-bold text-2xl lg:text-3xl">En daarna maken we het af.</h3>
+        <p class="mt-4 text-[17px] leading-relaxed text-inkt/75">Na het drukken volgt de afwerking. Alles wat je drukwerk nodig heeft om het eindproduct te worden dat je voor ogen had:</p>
+        <ul class="mt-6 flex flex-wrap gap-2 smal text-[15px] font-medium">
+          <li class="border border-inkt/25 px-3 py-1.5">Spot uv-lak</li>
+          <li class="border border-inkt/25 px-3 py-1.5">Lamineren</li>
+          <li class="border border-inkt/25 px-3 py-1.5">Snijden</li>
+          <li class="border border-inkt/25 px-3 py-1.5">Perforeren</li>
+          <li class="border border-inkt/25 px-3 py-1.5">Stansen</li>
+          <li class="border border-inkt/25 px-3 py-1.5">Rillen</li>
+          <li class="border border-inkt/25 px-3 py-1.5">Vouwen</li>
+          <li class="border border-inkt/25 px-3 py-1.5">Brocheren</li>
+          <li class="border border-inkt/25 px-3 py-1.5">Binden</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-6 lg:col-start-7 grid sm:grid-cols-2 gap-8">
+        <div class="border-t-4 border-bord pt-5">
+          <h4 class="kop font-bold text-xl">Mailing</h4>
+          <p class="mt-3 text-[17px] leading-relaxed text-inkt/75">Jij levert je adressenlijst aan. Wij drukken de adressen op papier of envelop en bieden de mailing aan bij de post. Het hele proces uit handen.</p>
+        </div>
+        <div class="border-t-4 border-bord pt-5">
+          <h4 class="kop font-bold text-xl">Voorraad</h4>
+          <p class="mt-3 text-[17px] leading-relaxed text-inkt/75">Omdat we weten wat bij jou snel loopt, drukken we op tijd bij. Je komt niet tekort en betaalt niet voor opslag van wat je nog niet nodig hebt.</p>
+        </div>
+        <div class="border-t-4 border-bord pt-5 sm:col-span-2">
+          <h4 class="kop font-bold text-xl">Netjes voor het milieu</h4>
+          <p class="mt-3 text-[17px] leading-relaxed text-inkt/75">We drukken standaard op FSC-gecertificeerd papier, PEFC-papier kan ook. Met milieuvriendelijke inkt en energiezuinige apparatuur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Familie -->
+<section id="familie" class="bg-inkt text-white py-20 lg:py-28 relative overflow-hidden">
+  <div class="raster absolute -left-10 bottom-0 w-1/2 h-2/3 text-magenta/15 rotate-180" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-8">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-4xl lg:text-5xl leading-[1.02]">Van vader op zoon: de familie Sap.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-white/75 max-w-md">Bij ons spreek je de mensen die je drukwerk ook echt maken. Je hebt één vast aanspreekpunt dat zorgt dat alles vlekkeloos verloopt.</p>
+      <figure class="mt-16 vel text-white/40 mx-8 lg:mx-10" style="transform: rotate(2deg)">
+        <span class="snij lb"></span><span class="snij rb"></span><span class="snij lo"></span><span class="snij ro"></span>
+        <div class="bg-white p-2.5">
+          <img src="assets/google-01.jpg" alt="De winkel van All Print met het blauwe bord drukwerk specials" class="w-full aspect-[16/10] object-cover" loading="lazy">
+        </div>
+      </figure>
+    </div>
+    <ol class="lg:col-span-6 lg:col-start-7 relative border-l-2 border-white/20 ml-2 space-y-10">
+      <li class="pl-8 relative">
+        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyaan"></span>
+        <p class="kop font-extrabold text-geel text-2xl">Na de oorlog</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-white/80">Kort na de Tweede Wereldoorlog wordt de drukkerij opgericht, een van de oudste van Culemborg en Utrecht.</p>
+      </li>
+      <li class="pl-8 relative">
+        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-magenta"></span>
+        <p class="kop font-extrabold text-geel text-2xl">1985</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-white/80">Kees neemt de drukkerij over, na jaren als bedrijfsleider bij grote drukkerijen. Hij vindt dat een drukkerij meer moet doen dan drukken: vakkundig advies en maatwerk. All Print groeit uit tot een begrip in de regio.</p>
+      </li>
+      <li class="pl-8 relative">
+        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-geel"></span>
+        <p class="kop font-extrabold text-geel text-2xl">De eerste computer</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-white/80">Zoon Ralph, opgegroeid tussen de persen, schaft de eerste computer aan. Hij leert het vak van zijn vader en wordt specialist in papier en papierbewerking.</p>
+      </li>
+      <li class="pl-8 relative">
+        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white"></span>
+        <p class="kop font-extrabold text-geel text-2xl">2006</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-white/80">Ralph neemt het stokje over, met zijn vader nog altijd actief in de zaak. Hij introduceert digitaal printen: voordeliger en sneller voor kleine oplagen.</p>
+      </li>
+      <li class="pl-8 relative">
+        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-bord ring-2 ring-white"></span>
+        <p class="kop font-extrabold text-geel text-2xl">Vandaag</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-white/80">Een fullservice drukkerij met een modern machinepark. Concept en design, al het druk- en printwerk en de distributie. Alles onder één dak.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <h2 class="kop font-extrabold text-4xl lg:text-5xl leading-[1.02] max-w-2xl">Wat klanten over ons zeggen.</h2>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-12">
+      <blockquote class="lg:col-span-7 border-l-4 border-geel pl-6">
+        <p class="text-2xl lg:text-[28px] leading-snug">"Bij drukkerij All Print hebben wij héél veel bedrijfsdrukwerk besteld. Brochures, briefpapier, bedrukte enveloppen, contracten, facturen. Waarom? Omdat wij er héél tevreden over zijn. Vriendelijke en behulpzame mensen staat voor de familienaam Sap."</p>
+        <footer class="smal mt-4 font-semibold">Wouter Kalden <span class="font-normal text-inkt/55">via Google</span></footer>
+      </blockquote>
+      <blockquote class="lg:col-span-5 border-l-4 border-bord pl-6 lg:mt-20">
+        <p class="text-xl leading-relaxed">"Wij doen al 30 jaar zaken met de Familie Sap. Altijd correct en vooral ook snel als je om iets verlegen zit. Wij bevelen hen van harte aan."</p>
+        <footer class="smal mt-4 font-semibold">Henk Visscher <span class="font-normal text-inkt/55">via Google</span></footer>
+      </blockquote>
+      <blockquote class="lg:col-span-5 lg:col-start-2 border-l-4 border-bord pl-6">
+        <p class="text-xl leading-relaxed">"Prima contact en altijd snelle service en vriendelijke benadering. Ook met last minute opdrachten werken ze mee. Een keer een druk niet helemaal in orde dan bieden ze een oplossing of de keer erna een korting. Wij zijn blij met All Print!"</p>
+        <footer class="smal mt-4 font-semibold">Saskia Koene <span class="font-normal text-inkt/55">via Google</span></footer>
+      </blockquote>
+      <blockquote class="lg:col-span-5 border-l-4 border-bord pl-6 lg:mt-12">
+        <p class="text-xl leading-relaxed">"Ondanks onze complexe vraag mbt trouwkaarten hebben we precies gekregen waar we naar op zoek waren. Goed papier, mooie drukkleuren en zelfs een boorgat en enveloppen erbij gekregen. Totale service met een goede communicatie en hulpvaardige mensen. Dank!"</p>
+        <footer class="smal mt-4 font-semibold">J. Dankers</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-bord text-white relative overflow-hidden">
+  <div class="raster absolute right-0 top-0 w-1/2 h-full text-cyaan/25" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-10">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-4xl lg:text-6xl leading-[1]">Even bellen?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-white/80 max-w-md">Vertel wat je wilt laten drukken, dan denken we mee over papier, oplage en afwerking. We komen ook graag vrijblijvend bij je langs.</p>
+      <a href="tel:+31302312405" class="knop mt-8 inline-flex items-center gap-3 bg-geel text-inkt smal font-extrabold text-xl px-7 py-4 rounded-sm">
+        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+        030 231 2405
+      </a>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-8 smal text-[16px]">
+        <div>
+          <dt class="text-white/60 text-sm mb-1">E-mail</dt>
+          <dd><a href="mailto:info@drukkerijallprint.nl" class="font-semibold underline underline-offset-4 decoration-white/40 hover:decoration-geel break-all">info@drukkerijallprint.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-white/60 text-sm mb-1">Adres</dt>
+          <dd class="font-semibold">Noteboom 67<br>4101 WS Culemborg</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-white/60 text-sm mb-2">Openingstijden</dt>
+          <dd>
+            <table class="w-full max-w-xs text-[15px]">
+              <tr><td class="py-0.5">Maandag t/m vrijdag</td><td class="text-right font-semibold tabular-nums">09:00 - 17:00</td></tr>
+              <tr><td class="py-0.5 text-white/60">Zaterdag en zondag</td><td class="text-right text-white/60">Gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+      <figure class="mt-12 vel text-white/40 mx-6" style="transform: rotate(-1.5deg)">
+        <span class="snij lb"></span><span class="snij rb"></span><span class="snij lo"></span><span class="snij ro"></span>
+        <div class="bg-white p-2.5"><img src="assets/google-04.jpg" alt="De ontvangstruimte met tafel en blauwe stoelen" class="w-full aspect-[3/2] object-cover"></div>
+        <figcaption class="smal text-sm text-white/70 mt-3">De ontvangstruimte van All Print.</figcaption>
+      </figure>
+    </div>
+
+    <div class="lg:col-span-7" id="offerte">
+      <form class="bg-white text-inkt p-6 sm:p-8 lg:p-10 shadow-[0_30px_60px_-25px_rgba(5,20,50,.6)]" action="mailto:info@drukkerijallprint.nl" method="post" enctype="text/plain">
+        <h3 class="kop font-extrabold text-2xl lg:text-3xl">Offerte aanvragen</h3>
+        <p class="mt-2 text-inkt/65">Vul in wat je weet, de rest bespreken we samen.</p>
+        <div class="mt-7 grid sm:grid-cols-2 gap-5 smal">
+          <label class="block">
+            <span class="text-sm font-semibold">Naam</span>
+            <input type="text" name="naam" required autocomplete="name" class="mt-1.5 w-full border border-inkt/25 bg-papier px-3.5 py-3 rounded-sm focus:border-bord outline-none">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Telefoon of e-mail</span>
+            <input type="text" name="contact" required class="mt-1.5 w-full border border-inkt/25 bg-papier px-3.5 py-3 rounded-sm focus:border-bord outline-none">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Wat wil je laten drukken?</span>
+            <select name="soort" class="mt-1.5 w-full border border-inkt/25 bg-papier px-3.5 py-3 rounded-sm focus:border-bord outline-none">
+              <option>Huisstijl drukwerk</option>
+              <option>Presentatie drukwerk</option>
+              <option>Familie drukwerk</option>
+              <option>Binnen- en buitenreclame</option>
+              <option>Kleding en textiel</option>
+              <option>Concept &amp; design</option>
+              <option>Mailing</option>
+              <option>Iets anders</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">Oplage (ongeveer)</span>
+            <input type="text" name="oplage" class="mt-1.5 w-full border border-inkt/25 bg-papier px-3.5 py-3 rounded-sm focus:border-bord outline-none">
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-sm font-semibold">Toelichting</span>
+            <textarea name="toelichting" rows="4" class="mt-1.5 w-full border border-inkt/25 bg-papier px-3.5 py-3 rounded-sm focus:border-bord outline-none" placeholder="Formaat, papiersoort, deadline..."></textarea>
+          </label>
+        </div>
+        <button type="submit" class="knop mt-6 w-full sm:w-auto bg-bord hover:bg-bordd text-white smal font-bold text-lg px-8 py-4 rounded-sm">Verstuur aanvraag</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/70 smal text-sm pb-24 sm:pb-0">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <p><span class="text-white font-semibold">Drukkerij All Print</span>, alles onder één dak. Utrecht &amp; Culemborg.</p>
+    <p>KVK Utrecht 30168048 <span class="mx-2 text-white/30">|</span> BTW NL001927303B80</p>
+  </div>
+</footer>
+
+<!-- Mobiele belknop -->
+<div class="belbalk sm:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-gradient-to-t from-inkt/40 to-transparent">
+  <a href="tel:+31302312405" class="flex items-center justify-center gap-3 bg-geel text-inkt smal font-extrabold text-lg py-4 rounded-sm shadow-[0_10px_30px_-8px_rgba(5,20,50,.6)]">
+    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+    Bel 030 231 2405
+  </a>
+</div>
+
+<script>
+  (function () {
+    var bar = document.querySelector('.belbalk');
+    function check() { bar.classList.toggle('toon', window.scrollY > 420); }
+    window.addEventListener('scroll', check, { passive: true }); check();
+  })();
+  (function () {
+    var els = document.querySelectorAll('.opkomst');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('zichtbaar'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('zichtbaar'); io.unobserve(en.target); } });
+    }, { threshold: 0.15 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+</body>
+</html>
