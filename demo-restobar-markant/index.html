@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restobar Markant | Restaurant op de Markt in Lichtenvoorde</title>
+<meta name="description" content="Restobar Markant in Lichtenvoorde: Art Nouveau-interieur, gerechtjes om te delen, wijnen, bieren en cocktails en een zonnig terras op de Markt. Bel 0544 375 218.">
+<meta property="og:title" content="Restobar Markant, Lichtenvoorde">
+<meta property="og:image" content="assets/site-01.jpg">
+<link rel="icon" href="assets/logo-oud.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Limelight&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          velvet: '#2A0A14',
+          wine: '#4A1123',
+          bordeaux: '#7A1E38',
+          champagne: '#F2E5CF',
+          brass: '#D6A64F',
+          rose: '#E7A5A6',
+        },
+        fontFamily: {
+          display: ['Limelight', 'Georgia', 'serif'],
+          body: ['Jost', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: radial-gradient(60rem 40rem at 88% 4rem, rgba(122,30,56,.55), rgba(42,10,20,0) 70%) no-repeat, #2A0A14; }
+  .grain::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: .07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .arch { border-radius: 999px 999px 0 0; }
+  .arch-sm { border-radius: 400px 400px 0 0; }
+  .balance { text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+  .btn-brass { transition: background-color .2s, transform .2s; }
+  .btn-brass:hover { background-color: #E5BA67; }
+  .btn-brass:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 2px solid #D6A64F; outline-offset: 3px; border-radius: 4px; }
+  .rule { height: 1px; background: linear-gradient(90deg, #D6A64F, rgba(214,166,79,0)); }
+  /* Eén moment bij laden: alleen als JS draait */
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .9s ease, transform .9s ease; }
+  .js .loaded .reveal { opacity: 1; transform: none; }
+  .js .loaded .reveal.d2 { transition-delay: .15s; }
+  .js .loaded .reveal.d3 { transition-delay: .3s; }
+  @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  .today { color: #D6A64F; }
+</style>
+</head>
+<body class="grain bg-velvet text-champagne font-body antialiased selection:bg-brass selection:text-velvet">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-brass focus:text-velvet focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="relative z-20 bg-champagne text-velvet text-center text-[13px] py-2 px-4">
+  Demo voor Restobar Markant, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-medium">Hagenweb</a>
+</div>
+
+<header class="relative z-20">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between py-4">
+    <a href="#top" aria-label="Restobar Markant, naar boven">
+      <img src="assets/site-10.png" alt="Restobar Markant" class="h-12 sm:h-14 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-champagne/80">
+      <a href="#binnen" class="hover:text-brass transition-colors">Interieur</a>
+      <a href="#kaart" class="hover:text-brass transition-colors">Kaart</a>
+      <a href="#agenda" class="hover:text-brass transition-colors">Agenda</a>
+      <a href="#terras" class="hover:text-brass transition-colors">Terras</a>
+      <a href="#bezoek" class="hover:text-brass transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:+31544375218" class="text-[15px] font-medium border border-brass/60 text-brass rounded-full px-4 py-2 hover:bg-brass hover:text-velvet transition-colors">
+      <span class="hidden sm:inline">Bel </span>0544 375 218
+    </a>
+  </div>
+</header>
+
+<main id="main" class="relative z-10">
+
+  <!-- HERO -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="hero-inner max-w-7xl mx-auto px-5 sm:px-8 pt-2 pb-16 lg:pt-10 lg:pb-24 grid lg:grid-cols-12 gap-7 lg:gap-12 items-center relative">
+      <div class="lg:col-span-7 order-2 lg:order-1">
+        <p class="reveal text-brass text-[15px] sm:text-base tracking-wide">Restobar op de Markt in Lichtenvoorde</p>
+        <h1 class="reveal d2 font-display text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.6rem] xl:text-[5rem] mt-3 balance">Stap binnen in de roaring twenties.</h1>
+        <p class="reveal d2 mt-4 sm:mt-6 text-[17px] sm:text-xl text-champagne/80 max-w-lg leading-relaxed pretty">
+          Een Art Nouveau-interieur, gerechtjes om te delen en de mooiste wijnen, bieren en cocktails. Voor lunch op het terras, een borrel met vrienden of diner met je date.
+        </p>
+        <div class="reveal d3 mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+          <a href="tel:+31544375218" class="btn-brass inline-flex items-center justify-center gap-3 bg-brass text-velvet font-semibold text-lg rounded-full px-8 py-4 shadow-[0_10px_30px_-10px_rgba(214,166,79,.6)]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            Bel om te reserveren
+          </a>
+          <a href="#kaart" class="text-champagne underline decoration-brass/60 underline-offset-[6px] hover:text-brass transition-colors self-start sm:self-auto">Bekijk wat we serveren</a>
+        </div>
+        <p class="reveal d3 mt-8 flex items-center gap-3 text-champagne/75 text-[15px]">
+          <span class="text-brass tracking-[.15em]" aria-hidden="true">★★★★★</span>
+          <span><strong class="text-champagne font-semibold">4,6</strong> op Google uit 70 reviews</span>
+        </p>
+      </div>
+      <div class="lg:col-span-5 order-1 lg:order-2 relative">
+        <div class="relative mx-auto w-full max-w-[34rem]">
+          <div class="absolute -inset-3 sm:-inset-4 arch border border-brass/50 pointer-events-none" aria-hidden="true"></div>
+          <div class="arch overflow-hidden aspect-[16/10] sm:aspect-[5/4] lg:aspect-[4/5] bg-wine">
+            <img src="assets/site-01.jpg" alt="Het interieur van Restobar Markant: gouden beelden, een lamp van veren en fluwelen banken" class="w-full h-full object-cover object-[35%_50%]">
+          </div>
+          <img src="assets/site-07.png" alt="" aria-hidden="true" class="absolute -bottom-6 -left-2 sm:-left-8 w-20 sm:w-32 lg:w-40 rotate-[-12deg] drop-shadow-xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BINNEN -->
+  <section id="binnen" class="relative py-20 lg:py-28 bg-wine/60">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5">
+        <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] balance">Vanaf het plein zie je het niet.</h2>
+        <div class="rule w-24 mt-6"></div>
+        <p class="mt-6 text-lg text-champagne/80 leading-relaxed max-w-md pretty">
+          Achter de gevel aan de Markt wacht een wereld vol sfeer. Ons Art Nouveau-interieur neemt je mee naar de roaring twenties: fluweel, goud, bloemen en kaarslicht. Laat je onderdompelen in de romantiek en spanning van die tijd.
+        </p>
+        <figure class="mt-10 border-l-2 border-brass pl-6 max-w-md">
+          <blockquote class="text-xl leading-snug text-champagne">"Vanaf het plein heb je geen idee hoe mooi het ingericht is, hier kwam ik bij toeval door de website achter."</blockquote>
+          <figcaption class="mt-3 text-[15px] text-champagne/60">Ina Engelbarts, Google-review</figcaption>
+        </figure>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-6 gap-3 sm:gap-4">
+        <div class="col-span-6 sm:col-span-4 rounded-2xl overflow-hidden aspect-[4/3]">
+          <img src="assets/google-06.jpg" alt="Ronde tafel met bloemenstoelen tussen twee gouden beelden" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="col-span-3 sm:col-span-2 arch-sm overflow-hidden aspect-[3/5] sm:aspect-auto">
+          <img src="assets/site-04.jpg" alt="Tafel met rode wijn, een roos en de drank- en borrelkaart" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <div class="col-span-3 sm:col-span-6 rounded-2xl overflow-hidden aspect-[3/5] sm:aspect-[21/8]">
+          <img src="assets/google-03.jpg" alt="De houten bar met fluwelen barkrukken en hanglampen" class="w-full h-full object-cover object-[50%_60%]" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KAART -->
+  <section id="kaart" class="relative py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-end">
+        <div class="lg:col-span-7">
+          <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] balance">Samen eten is gewoon leuker.</h2>
+          <p class="mt-6 text-lg text-champagne/80 leading-relaxed max-w-xl pretty">
+            Onze kaart is gemaakt om te delen en te proeven. Wereldse invloeden naast comfort food waar je echt voor terugkomt. Kies een normale of een kleine portie, dan proef je meer en houd je ruimte voor dessert.
+          </p>
+        </div>
+        <p class="lg:col-span-5 font-display text-2xl text-brass lg:text-right">Laat die flessen maar komen en enjoy the ride.</p>
+      </div>
+
+      <div class="mt-14 grid lg:grid-cols-12 gap-6 lg:gap-8">
+        <article class="lg:col-span-5 bg-wine rounded-3xl p-7 sm:p-9 flex flex-col">
+          <h3 class="font-display text-3xl">Lunch</h3>
+          <p class="mt-1 text-champagne/60">Vanaf 11:00, zaterdag vanaf 10:00</p>
+          <p class="mt-5 text-champagne/85 leading-relaxed pretty">Klassiekers en verrassende gerechten, alles vers bereid. Voor een snelle hap of een uitgebreide lunch met vrienden.</p>
+          <ul class="mt-6 divide-y divide-champagne/10 text-[17px]">
+            <li class="py-3">Ambachtelijke rundvleeskroketten</li>
+            <li class="py-3">Royale uitsmijter</li>
+            <li class="py-3">Softshell pulled beef</li>
+            <li class="py-3">Nagelholt op waldbrood</li>
+            <li class="py-3">Broodje carpaccio of gerookte zalm</li>
+            <li class="py-3">Compleet 12-uurtje</li>
+            <li class="py-3">Zalm tartaar of warme mosterdsoep</li>
+          </ul>
+          <div class="mt-8 rounded-2xl overflow-hidden aspect-[16/10] mt-auto">
+            <img src="assets/site-14.jpg" alt="Een gast leest de lunchkaart op het terras" class="w-full h-full object-cover object-[50%_62%]" loading="lazy">
+          </div>
+        </article>
+
+        <article class="lg:col-span-7 bg-bordeaux/50 rounded-3xl p-7 sm:p-9">
+          <h3 class="font-display text-3xl">Diner</h3>
+          <p class="mt-1 text-champagne/60">Smaak, sfeer en een tikkeltje lef</p>
+          <div class="mt-6 grid sm:grid-cols-2 gap-x-10">
+            <div>
+              <h4 class="text-brass font-medium mt-2">Om te delen</h4>
+              <ul class="mt-2 divide-y divide-champagne/10 text-[17px]">
+                <li class="py-3">Beef tataki met sesam en hoisinsaus</li>
+                <li class="py-3">Zalm tartaar met ponzu</li>
+                <li class="py-3">Spicy tuna met blini en kaviaar</li>
+                <li class="py-3">Korean bbq kip, sushi en buikspek</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-brass font-medium mt-6 sm:mt-2">Robuust</h4>
+              <ul class="mt-2 divide-y divide-champagne/10 text-[17px]">
+                <li class="py-3">Bavette of tournedos met pepersaus</li>
+                <li class="py-3">Runderstoof</li>
+                <li class="py-3">Zalmfilet teriyaki</li>
+                <li class="py-3">Linguine met garnalen en citroenbotersaus</li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-6 text-champagne/80 pretty"><span class="text-brass font-medium">Iets zoets?</span> Cheesecake met bosvruchten, cappizzo met karamelsaus, carrot cake of warme apfelstrudel.</p>
+          <div class="mt-8 grid grid-cols-5 gap-3">
+            <div class="col-span-3 rounded-2xl overflow-hidden aspect-[4/3]">
+              <img src="assets/site-02.jpg" alt="Carpaccio met burrata, gyoza en tartaar op een marmeren tafel" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="col-span-2 arch-sm overflow-hidden aspect-[3/4] sm:aspect-auto">
+              <img src="assets/google-05.jpg" alt="Gerecht met zalm en verse kruiden" class="w-full h-full object-cover" loading="lazy">
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section id="agenda" class="relative py-20 lg:py-28 bg-wine/60">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] balance max-w-2xl">Er is altijd wel iets te vieren.</h2>
+      <p class="mt-5 text-lg text-champagne/75 max-w-xl pretty">Reserveren of tickets voor een van deze avonden en middagen? Bel ons op <a href="tel:+31544375218" class="text-brass underline underline-offset-4 whitespace-nowrap">0544 375 218</a>.</p>
+
+      <div class="mt-14 divide-y divide-brass/25 border-y border-brass/25">
+        <!-- Hap & Stap -->
+        <article class="grid md:grid-cols-12 gap-6 py-10">
+          <div class="md:col-span-3">
+            <p class="font-display text-5xl text-brass leading-none">12 nov</p>
+            <p class="mt-2 text-champagne/60">donderdag, 18:30 tot ± 22:30</p>
+          </div>
+          <div class="md:col-span-6">
+            <h3 class="font-display text-3xl">Hap &amp; Stap Lichtenvoorde</h3>
+            <p class="mt-4 text-champagne/80 leading-relaxed pretty">Samen met onze collega's van Markt 5, De Driehoek en De Koppelpaarden blazen we Hap &amp; Stap nieuw leven in. Wandel van restaurant naar restaurant en geniet op elke locatie van een verrassingsgang met een bijpassend drankje. Bij Markant schuif je aan voor een van de gangen.</p>
+          </div>
+          <div class="md:col-span-3 md:border-l md:border-brass/25 md:pl-6 text-[15px] text-champagne/75 leading-relaxed">
+            <p><span class="text-champagne font-medium">€ 79,- p.p.</span></p>
+            <p class="mt-2">Brood en dips vooraf, 4 gangen, 3 bijpassende drankjes en koffie of thee toe.</p>
+            <p class="mt-2">Koop de tickets voor je hele gezelschap in één keer.</p>
+          </div>
+        </article>
+
+        <!-- Piano Bingo -->
+        <article class="grid md:grid-cols-12 gap-6 py-10">
+          <div class="md:col-span-3">
+            <p class="font-display text-5xl text-brass leading-none">Zondag</p>
+            <p class="mt-2 text-champagne/60">12:00 tot 16:00</p>
+          </div>
+          <div class="md:col-span-6">
+            <h3 class="font-display text-3xl">Piano Bingo Brunch Show</h3>
+            <p class="mt-4 text-champagne/80 leading-relaxed pretty">Een middag vol muziek met een live pianist-zanger, mooie prijzen en een top party vibe. Je begint met een bubbel, daarna schuif je aan voor een 3-gangen lunch op planken. Ondertussen speel je mee met de Piano Bingo en zing je uit volle borst de grootste hits mee.</p>
+          </div>
+          <div class="md:col-span-3 md:border-l md:border-brass/25 md:pl-6 text-[15px] text-champagne/75 leading-relaxed">
+            <p><span class="text-champagne font-medium">€ 35,- p.p.</span> excl. drankjes</p>
+            <ul class="mt-3 space-y-1.5">
+              <li><s class="text-champagne/45">22 november 2026</s> uitverkocht</li>
+              <li class="text-champagne">24 januari 2027</li>
+              <li class="text-champagne">21 februari</li>
+              <li class="text-champagne">7 maart</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Kerst -->
+        <article class="grid md:grid-cols-12 gap-6 py-10">
+          <div class="md:col-span-3">
+            <p class="font-display text-5xl text-brass leading-none">Kerst</p>
+            <p class="mt-2 text-champagne/60">bij Markant</p>
+          </div>
+          <div class="md:col-span-6">
+            <h3 class="font-display text-3xl">Celebrate Christmas at Markant</h3>
+            <p class="mt-4 text-champagne/80 leading-relaxed pretty">Geniet deze kerst van de sfeer van Markant en ons 3-gangen kerstkeuzemenu. Kom gezellig dineren met familie of vrienden, wij zorgen voor een smaakvolle en ontspannen kerst.</p>
+          </div>
+          <div class="md:col-span-3 md:border-l md:border-brass/25 md:pl-6 text-[15px] text-champagne/75 leading-relaxed">
+            <p><span class="text-champagne font-medium">€ 59,50</span> kerstkeuzemenu</p>
+            <dl class="mt-3 space-y-1.5">
+              <div><dt class="inline text-champagne">Kerstavond:</dt> <dd class="inline">lunch vanaf 12:00, diner vanaf 17:00</dd></div>
+              <div><dt class="inline text-champagne">1e Kerstdag:</dt> <dd class="inline">16:00 tot 23:00</dd></div>
+              <div><dt class="inline text-champagne">2e Kerstdag:</dt> <dd class="inline">16:00 tot 23:00</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERRAS -->
+  <section id="terras" class="relative py-20 lg:py-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 relative">
+        <div class="relative max-w-sm mx-auto lg:mx-0">
+          <div class="absolute -inset-3 arch border border-brass/50 pointer-events-none" aria-hidden="true"></div>
+          <div class="arch overflow-hidden aspect-[3/4]">
+            <img src="assets/site-09.jpg" alt="Lachende medewerker brengt twee biertjes naar het terras" class="w-full h-full object-cover object-[50%_30%]" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-6 lg:col-start-7">
+        <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] balance">Het zonnige terras midden op de Markt.</h2>
+        <div class="rule w-24 mt-6"></div>
+        <p class="mt-6 text-lg text-champagne/80 leading-relaxed max-w-lg pretty">Uitgebreid lunchen, samen gerechten delen of gewoon een goed glas wijn, bier of een cocktail in de zon. Ons terras ligt in hartje Lichtenvoorde, en het is een plek waar je graag wat langer blijft zitten.</p>
+        <p class="mt-5 text-lg text-champagne/80 leading-relaxed max-w-lg pretty">Je wordt ontvangen door een markant team van gastvrije mensen, met een lach en alle tijd om het je naar de zin te maken.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="relative py-20 lg:py-28 bg-wine/60">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+        <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] balance max-w-xl">Wat gasten zeggen.</h2>
+        <p class="text-champagne/75"><span class="font-display text-4xl text-brass align-middle">4,6</span> <span class="align-middle">gemiddeld op Google, uit 70 reviews</span></p>
+      </div>
+      <div class="mt-12 grid lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-5">
+          <figure class="bg-bordeaux/45 rounded-3xl p-8 sm:p-10 lg:sticky lg:top-8">
+          <p class="text-brass" aria-label="4 van 5 sterren">★★★★<span class="text-champagne/25">★</span></p>
+          <blockquote class="mt-4 text-2xl sm:text-[1.7rem] leading-snug text-champagne">"Wat een leuk restaurant! Dit verwacht je niet aan de buitenkant maa, de inrichting is gezellig en sfeervol, het personeel is vriendelijk en gastvrij en het eten is heerlijk. Zowel voor de lunch als voor het diner hebben we hier lekker gegeten. Een fijne plek om gezellig te zitten en te genieten. Zeker een aanrader!"</blockquote>
+          <figcaption class="mt-5 text-[15px] text-champagne/60">Wia Schimmel</figcaption>
+        </figure>
+        </div>
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6 items-start">
+          <div class="grid gap-6">
+            <figure class="bg-velvet/70 rounded-2xl p-7">
+                  <p class="text-brass" aria-label="5 van 5 sterren">★★★★★</p>
+                  <blockquote class="mt-4 leading-relaxed text-champagne/90">"Wat een leuk restaurant! Het interieur is echt waanzinnig, het eten super op smaak en de bediening vlot en zeer attent!<br><br>Vanaf het plein heb je geen idee hoe mooi het ingericht is, hier kwam ik bij toeval door de website achter.<br><br>Als niet te grote eters was het erg prettig dat we een wat kleiner gerecht konden bestelle…"</blockquote>
+                  <figcaption class="mt-5 text-[15px] text-champagne/60">Ina Engelbarts</figcaption>
+                </figure>
+            <figure class="bg-velvet/70 rounded-2xl p-7">
+                  <p class="text-brass" aria-label="5 van 5 sterren">★★★★★</p>
+                  <blockquote class="mt-4 leading-relaxed text-champagne/90">"Super leuk ingericht restaurant. Bediening is ook super goed en het eten fantastisch. Dikke 5 sterren zijn verdiend!!<br>Vond het ook leuk dat je kon kiezen uit n normale portie of n kleine portie (welke trouwens ook nog behoorlijk zijn!), hierdoor kon je wat meer gerechtjes proeven en had je ook nog ruimte voor dessert."</blockquote>
+                  <figcaption class="mt-5 text-[15px] text-champagne/60">Liesbeth De Kuijer</figcaption>
+                </figure>
+          </div>
+          <div class="grid gap-6">
+            <figure class="bg-velvet/70 rounded-2xl p-7">
+                  <p class="text-brass" aria-label="4 van 5 sterren">★★★★<span class="text-champagne/25">★</span></p>
+                  <blockquote class="mt-4 leading-relaxed text-champagne/90">"Bezoek aan Lichtenvoorde voor een feestje.<br>Naar aanleiding van alle google reviews voor restaurant Markant gekozen. Vooraf gereserveerd.<br>Zaterdag avond, best druk.<br>Eten kwam redelijk vlot.<br>Shared dining, en zo dus meerdere gerechten geprobeerd.<br>Leuk concept."</blockquote>
+                  <figcaption class="mt-5 text-[15px] text-champagne/60">JJQ Rood</figcaption>
+                </figure>
+            <figure class="bg-velvet/70 rounded-2xl p-7">
+                  <p class="text-brass" aria-label="5 van 5 sterren">★★★★★</p>
+                  <blockquote class="mt-4 leading-relaxed text-champagne/90">"Samen met mijn vader hier genoten van een heerlijke middag. Vanaf het moment dat je binnenkomt, straalt Markant warmte en gezelligheid uit. Het interieur is stijlvol ingericht en het terras is een fijne plek om rustig te genieten. Wat voor ons echt het verschil maakte, was de gastvrijheid van het personeel. Iedereen wa…"</blockquote>
+                  <figcaption class="mt-5 text-[15px] text-champagne/60">Ilvy Weijtmans</figcaption>
+                </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEZOEK -->
+  <section id="bezoek" class="relative py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] balance">Markant betekent opvallend.</h2>
+        <div class="rule w-24 mt-6"></div>
+        <p class="mt-6 text-lg text-champagne/80 leading-relaxed max-w-md pretty">Dat staat in het woordenboek, en wij leggen het graag positief uit: anders en bijzonder zijn, volgens ons eigen kompas. Een plek in hartje Lichtenvoorde waar je je thuis mag voelen, op het terras of binnen in de restobar. Je bent meer dan welkom.</p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="tel:+31544375218" class="btn-brass inline-flex items-center justify-center gap-3 bg-brass text-velvet font-semibold text-lg rounded-full px-8 py-4">Bel 0544 375 218</a>
+          <a href="mailto:info@restobarmarkant.nl" class="inline-flex items-center justify-center rounded-full px-7 py-4 border border-champagne/30 hover:border-brass hover:text-brass transition-colors">info@restobarmarkant.nl</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 lg:col-start-7 grid sm:grid-cols-2 gap-10">
+        <div>
+          <h3 class="font-display text-2xl text-brass">Adres</h3>
+          <address class="not-italic mt-4 text-lg leading-relaxed">Markt 3A<br>7131 DG Lichtenvoorde</address>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Restobar+Markant+Markt+3A+Lichtenvoorde" class="inline-block mt-4 text-champagne underline decoration-brass/60 underline-offset-[6px] hover:text-brass">Plan je route</a>
+          <p class="mt-8 text-champagne/60 text-[15px] leading-relaxed">Honden mogen helaas niet mee naar binnen.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-2xl text-brass">Openingstijden</h3>
+          <dl id="uren" class="mt-4 text-[17px] tabular-nums">
+            <div data-day="1" class="flex justify-between py-2 border-b border-champagne/10"><dt>Maandag</dt><dd class="text-champagne/60">gesloten</dd></div>
+            <div data-day="2" class="flex justify-between py-2 border-b border-champagne/10"><dt>Dinsdag</dt><dd>11:00 tot 22:00</dd></div>
+            <div data-day="3" class="flex justify-between py-2 border-b border-champagne/10"><dt>Woensdag</dt><dd>11:00 tot 22:00</dd></div>
+            <div data-day="4" class="flex justify-between py-2 border-b border-champagne/10"><dt>Donderdag</dt><dd>11:00 tot 22:00</dd></div>
+            <div data-day="5" class="flex justify-between py-2 border-b border-champagne/10"><dt>Vrijdag</dt><dd>11:00 tot 23:00</dd></div>
+            <div data-day="6" class="flex justify-between py-2 border-b border-champagne/10"><dt>Zaterdag</dt><dd>10:00 tot 23:00</dd></div>
+            <div data-day="0" class="flex justify-between py-2"><dt>Zondag</dt><dd>12:00 tot 22:00</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="relative z-10 border-t border-brass/20 pb-28 lg:pb-12 pt-12">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
+    <img src="assets/site-10.png" alt="Restobar Markant" class="h-16 w-auto self-start">
+    <nav class="flex flex-wrap gap-x-7 gap-y-2 text-champagne/70 text-[15px]">
+      <a href="#binnen" class="hover:text-brass">Interieur</a>
+      <a href="#kaart" class="hover:text-brass">Kaart</a>
+      <a href="#agenda" class="hover:text-brass">Agenda</a>
+      <a href="#terras" class="hover:text-brass">Terras</a>
+      <a href="#bezoek" class="hover:text-brass">Contact</a>
+    </nav>
+    <p class="text-champagne/50 text-sm">© 2026 Restobar Markant</p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-30 p-3 bg-velvet/90 backdrop-blur border-t border-brass/20">
+  <div class="flex gap-3">
+    <a href="tel:+31544375218" class="btn-brass flex-1 inline-flex items-center justify-center gap-2 bg-brass text-velvet font-semibold rounded-full py-3.5">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      Bel om te reserveren
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Restobar+Markant+Markt+3A+Lichtenvoorde" class="inline-flex items-center justify-center rounded-full px-5 border border-champagne/30 text-champagne">Route</a>
+  </div>
+</div>
+
+<script>
+  requestAnimationFrame(function () { document.getElementById('top').classList.add('loaded'); });
+  var d = new Date().getDay();
+  var row = document.querySelector('#uren [data-day="' + d + '"]');
+  if (row) { row.classList.add('today'); row.querySelector('dt').insertAdjacentHTML('beforeend', ' <span class="text-[13px] text-champagne/60">(vandaag)</span>'); }
+</script>
+</body>
+</html>
