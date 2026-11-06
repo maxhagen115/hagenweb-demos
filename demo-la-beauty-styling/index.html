@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Beauty Styling, kapsalon in Aalten. Loop maar binnen.</title>
+<meta name="description" content="Kapsalon La Beauty Styling aan de Stationsstraat in Aalten. Dames, heren en kids lopen zonder afspraak binnen, van maandag tot en met zaterdag. Bel 06 48 94 57 99.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E5A4E'/%3E%3Cg fill='none' stroke='%23A6D8C3' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='8' cy='10' r='3.4'/%3E%3Ccircle cx='8' cy='22' r='3.4'/%3E%3Cpath d='M11 12l15 8M11 20l15-8'/%3E%3C/g%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          muur: '#F3F7F5',
+          mint: '#A6D8C3',
+          fles: '#0E5A4E',
+          plank: '#1B2321',
+          steen: '#4A5653',
+        },
+        fontFamily: {
+          kop: ['"Playfair Display"', 'Georgia', 'serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  section[id] { scroll-margin-top: 1.5rem; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  h1, h2, h3, .kop { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 800; letter-spacing: -0.015em; text-wrap: balance; font-variant-numeric: lining-nums; }
+  p, li { text-wrap: pretty; }
+  a, button { transition: background-color .2s, color .2s, transform .15s, border-color .2s; }
+  :focus-visible { outline: 3px solid #0E5A4E; outline-offset: 3px; border-radius: 2px; }
+  .op-donker :focus-visible { outline-color: #A6D8C3; }
+
+  /* Hero en kop op dezelfde lijn als de secties (max 1320px met 3rem marge) */
+  @media (min-width: 1024px) {
+    .kantlijn.kantlijn { padding-left: max(3rem, calc((100vw - 1320px) / 2 + 3rem)); padding-right: max(3rem, calc((100vw - 1320px) / 2 + 3rem)); }
+    .kantlijn-l.kantlijn-l { padding-left: max(3rem, calc((100vw - 1320px) / 2 + 3rem)); padding-right: 2rem; }
+  }
+
+  /* Hoofdknop */
+  .knop { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; background: #0E5A4E; color: #fff; font-weight: 600; border-radius: 999px; box-shadow: 0 14px 28px -14px rgba(14,90,78,.75); }
+  .knop:hover { background: #0A463C; transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px); }
+  .knop-licht { background: #A6D8C3; color: #1B2321; box-shadow: none; }
+  .knop-licht:hover { background: #BEE5D4; }
+
+  /* Tekstlink met knipstippellijn als onderstreping */
+  .knip-link { text-decoration: underline dashed; text-underline-offset: .32em; text-decoration-thickness: 1.5px; font-weight: 600; }
+  .knip-link:hover { text-decoration-style: solid; }
+
+  /* De boog in de hero */
+  .boog { position: relative; width: 100%; aspect-ratio: 800 / 640; }
+  .boog img { position: absolute; left: 2.5%; right: 2.5%; top: 3.125%; bottom: 0; width: 95%; height: 96.875%; object-fit: cover; object-position: 50% 30%; border-radius: 9999px 9999px 0 0; }
+  .boog svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .knip-schaar { offset-path: path("M8 640V392A392 392 0 0 1 792 392V640"); offset-rotate: auto; offset-distance: 84%; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .knip-schaar { animation: knippen 2.2s cubic-bezier(.45,.05,.3,1) .35s backwards; }
+    @keyframes knippen { from { offset-distance: 0%; } to { offset-distance: 84%; } }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* Prijsregels: stippelleider tussen naam en prijs */
+  .prijs { display: flex; align-items: baseline; gap: .6rem; padding: .5rem 0; }
+  .prijs::after { content: none; }
+  .prijs .leider { flex: 1; min-width: 1.5rem; border-bottom: 2px dashed rgba(27,35,33,.38); transform: translateY(-.25em); }
+  .prijs .bedrag { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .prijs .va { font-weight: 400; font-size: .875em; }
+
+  /* Belbalk mobiel: zonder JS altijd zichtbaar, met JS pas als de hero-knop uit beeld is */
+  .belbalk { transition: transform .25s; }
+  .js .belbalk:not(.toon) { transform: translateY(100%); }
+
+  /* Schuine rand barbershop */
+  .schuin { clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%); }
+
+  /* Vandaag gemarkeerd in de openingstijden (alleen met JS) */
+  .vandaag th, .vandaag td { color: #A6D8C3; font-weight: 700; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-muur text-plank font-tekst antialiased pb-[4.5rem] lg:pb-0">
+
+<svg width="0" height="0" class="absolute" aria-hidden="true">
+  <symbol id="schaar" viewBox="0 0 32 32">
+    <g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round">
+      <circle cx="7.5" cy="9.5" r="4"/>
+      <circle cx="7.5" cy="22.5" r="4"/>
+      <path d="M11 11.6 29 21.5M11 20.4 29 10.5"/>
+    </g>
+  </symbol>
+  <symbol id="telefoon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/>
+  </symbol>
+</svg>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Direct naar de inhoud</a>
+
+<div class="op-donker bg-plank text-white/85 text-[13px] text-center px-4 py-1.5">
+  Demo voor La Beauty Styling, gemaakt door <a class="underline underline-offset-2 text-white hover:text-mint" href="https://hagenweb.nl">Hagenweb</a>
+</div>
+
+<header class="relative z-20 lg:absolute lg:w-full lg:left-0">
+  <div class="kantlijn flex items-center justify-between gap-4 px-5 pt-4 lg:pt-7">
+    <a href="#inhoud" class="flex items-center gap-2.5" aria-label="La Beauty Styling, naar boven">
+      <svg class="w-7 h-7 text-fles -rotate-90" aria-hidden="true"><use href="#schaar"/></svg>
+      <span class="kop text-[1.35rem] lg:text-2xl leading-none whitespace-nowrap">La Beauty Styling</span>
+    </a>
+    <nav aria-label="Hoofdmenu" class="flex items-center gap-4 lg:gap-6 text-[15px] font-medium">
+      <a class="hidden lg:inline hover:text-fles" href="#diensten">Diensten</a>
+      <a class="hover:text-fles" href="#prijzen">Prijzen</a>
+      <a class="hover:text-fles" href="#bezoek">Bezoek</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="lg:grid lg:grid-cols-[42%_58%] lg:min-h-[calc(100dvh-2rem)]">
+    <div class="relative z-10 kantlijn-l flex flex-col justify-center px-5 pt-7 pb-8 lg:pt-28 lg:pb-14">
+      <p class="text-[15px] lg:text-lg font-medium text-steen mb-3 lg:mb-5">Kapsalon in Aalten, sinds 2008</p>
+      <h1 class="text-[clamp(3.2rem,17.6vw,4.3rem)] leading-[.95] sm:text-8xl lg:text-[clamp(6.2rem,8.4vw,8.5rem)] lg:leading-[.92] font-black lg:whitespace-nowrap">Loop maar<br>binnen.</h1>
+      <p class="mt-5 lg:mt-8 text-[1.1rem] lg:text-xl leading-relaxed text-steen max-w-[26rem]">Voor dames, heren en kids, gewoon zonder afspraak. Liever een vaste tijd? Bel even, dan plannen we je in.</p>
+      <div class="mt-6 lg:mt-9 flex flex-col items-start gap-4">
+        <a id="hero-knop" href="tel:+31648945799" class="knop text-lg lg:text-xl px-7 py-4 lg:px-9 lg:py-5 w-full sm:w-auto">
+          <svg class="w-5 h-5" aria-hidden="true"><use href="#telefoon"/></svg>
+          Bel 06 48 94 57 99
+        </a>
+        <a href="#prijzen" class="knip-link text-[1.05rem] ml-1 hidden lg:inline">Bekijk de prijslijst</a>
+      </div>
+    </div>
+    <div class="bg-mint flex items-end justify-center px-4 pt-6 sm:px-10 lg:px-6 xl:px-8 lg:pt-16">
+      <div class="boog max-w-[900px]">
+        <img src="assets/team.jpg" width="1085" height="878" alt="Vier teamleden van La Beauty Styling samen achter de balie in de salon in Aalten">
+        <svg viewBox="0 0 800 640" aria-hidden="true">
+          <path d="M8 640V392A392 392 0 0 1 792 392V640" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="13 10"/>
+          <g class="knip-schaar text-plank"><use href="#schaar" x="-24" y="-24" width="48" height="48"/></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Openingstijden als strook -->
+  <section aria-label="Openingstijden" class="bg-white">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-12 py-7 lg:py-8 grid grid-cols-2 lg:grid-cols-[1fr_auto_auto_auto_auto] gap-x-6 lg:gap-x-12 gap-y-5 lg:items-center">
+      <p class="col-span-2 lg:col-span-1 kop text-2xl lg:text-[1.7rem] leading-tight">Vrijdag tot 20:00, zaterdag al vanaf 08:30</p>
+      <p><span class="block text-sm text-steen">Maandag t/m donderdag</span><span class="font-semibold text-lg whitespace-nowrap">09:00 tot 18:00</span></p>
+      <p><span class="block text-sm text-steen">Vrijdag</span><span class="font-semibold text-lg whitespace-nowrap">09:00 tot 20:00</span></p>
+      <p><span class="block text-sm text-steen">Zaterdag</span><span class="font-semibold text-lg whitespace-nowrap">08:30 tot 16:00</span></p>
+      <p><span class="block text-sm text-steen">Zondag</span><span class="font-semibold text-lg whitespace-nowrap">Gesloten</span></p>
+    </div>
+  </section>
+
+  <!-- Wat we doen -->
+  <section id="diensten" class="max-w-[1320px] mx-auto px-5 lg:px-12 pt-16 lg:pt-28 pb-20 lg:pb-32">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-10 items-start">
+      <div class="lg:col-span-7">
+        <h2 class="text-5xl lg:text-7xl leading-[1.02]">Dun of dik, stijl of krullend. Wij weten er raad mee.</h2>
+        <div class="mt-7 lg:mt-10 lg:ml-[calc(100%/7)] max-w-xl space-y-4 text-lg leading-relaxed text-steen">
+          <h3 class="!font-tekst !not-italic !font-semibold !tracking-normal text-plank text-xl">Wassen, knippen en stylen</h3>
+          <p>We knippen altijd mee met je natuurlijke haarval en je eigen stijl. Zo zit je kapsel ook na het wassen nog in model, en krijg je een coupe die echt bij je past.</p>
+          <p>Alleen de puntjes bijknippen of je uitgroei laten doen? Ook daarvoor loop je gewoon binnen.</p>
+        </div>
+      </div>
+      <figure class="lg:col-span-5 lg:mt-16">
+        <img class="w-full aspect-square object-cover rounded-[2px]" src="assets/kleuren.jpg" width="535" height="533" alt="Kapper zet kleur in het haar met folie">
+      </figure>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-10 mt-16 lg:mt-24 items-center">
+      <figure class="lg:col-span-5 order-2 lg:order-1 relative">
+        <img class="w-full aspect-[5/4] object-cover rounded-t-[999px]" src="assets/site-05.jpg" width="800" height="533" alt="Haarverlenging met kleine ringetjes, het bovenhaar opgestoken met een klem">
+      </figure>
+      <div class="lg:col-span-4 order-1 lg:order-2 text-lg leading-relaxed text-steen space-y-3">
+        <h3 class="text-plank text-4xl lg:text-5xl leading-[1.05]">Kleuren, verlengen, krullen</h3>
+        <p>Een nieuwe kleur of een uitgroeibehandeling, extra lengte, een permanent of watergolven: kom langs en vraag je kapper wat bij jouw haar past.</p>
+      </div>
+      <div class="lg:col-span-3 order-3 grid grid-cols-[7rem_1fr] lg:grid-cols-1 gap-5 items-center">
+        <img class="w-28 lg:w-full lg:max-w-[15rem] aspect-[4/5] object-cover rounded-[50%]" src="assets/wenkbrauw.jpg" width="368" height="450" alt="Close-up van een oog met strak gevormde wenkbrauw">
+        <div>
+          <h3 class="text-3xl leading-tight">Epileren met touw</h3>
+          <p class="mt-2 text-steen leading-relaxed">Een draaiend touwtje neemt ook de donshaartjes mee en geeft de strakste wenkbrauwen. Zonder wax die je huid verwarmt of uitrekt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barbershop -->
+  <section id="barbershop" class="op-donker bg-plank text-white overflow-hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+      <div class="lg:col-span-7 relative">
+        <img class="schuin w-full aspect-[3/2] lg:aspect-auto lg:h-[640px] object-cover" src="assets/site-07.jpg" width="800" height="533" alt="Barbershop van La Beauty Styling met twee zwarte barbierstoelen, een grote spiegel en planken vol baardproducten tegen een zwarte wand">
+      </div>
+      <div class="lg:col-span-5 px-5 lg:pl-6 lg:pr-12 xl:pr-20 py-12 lg:py-20">
+        <h2 class="text-5xl lg:text-[4.2rem] leading-[1.02]">De heren zitten hier goed.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-white/80 max-w-md">Onze herenkapper knipt je haar en verzorgt ook je baard of snor. Gewoon binnenlopen kan hier net zo goed.</p>
+        <p class="mt-6 text-lg"><span class="text-white/70">Knippen en stylen</span> <span class="font-semibold text-mint ml-2 whitespace-nowrap">€ 17,50</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prijzen -->
+  <section id="prijzen" class="bg-mint">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-12 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-12">
+      <div class="lg:col-span-5">
+        <h2 class="text-5xl lg:text-7xl leading-[1.02]">Wat het kost</h2>
+        <p class="mt-8 kop !font-black text-[5.2rem] lg:text-[7.5rem] leading-none tracking-tight">€ 17,50</p>
+        <p class="mt-3 text-xl font-medium">Knippen en stylen. Dames en heren betalen hetzelfde.</p>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-x-12 gap-y-9 text-[1.05rem]">
+        <div>
+          <h3 class="text-2xl mb-2">Wassen en föhnen</h3>
+          <p class="prijs"><span>Wassen</span><span class="leider"></span><span class="bedrag"><span class="va">v.a.</span> € 5,-</span></p>
+          <p class="prijs"><span>Föhnen</span><span class="leider"></span><span class="bedrag"><span class="va">v.a.</span> € 15,-</span></p>
+        </div>
+        <div>
+          <h3 class="text-2xl mb-2">Verven</h3>
+          <p class="prijs"><span>Kleuren</span><span class="leider"></span><span class="bedrag"><span class="va">v.a.</span> € 35,-</span></p>
+        </div>
+        <div>
+          <h3 class="text-2xl mb-2">Permanent en watergolven</h3>
+          <p class="prijs"><span>Permanent</span><span class="leider"></span><span class="bedrag"><span class="va">v.a.</span> € 65,-</span></p>
+          <p class="prijs"><span>Watergolven</span><span class="leider"></span><span class="bedrag"><span class="va">v.a.</span> € 20,-</span></p>
+        </div>
+        <div>
+          <h3 class="text-2xl mb-2">Epileren en ontharen</h3>
+          <p class="prijs"><span>Epileren wenkbrauwen</span><span class="leider"></span><span class="bedrag">€ 5,-</span></p>
+          <p class="prijs"><span>Epileren en verven</span><span class="leider"></span><span class="bedrag">€ 7,50</span></p>
+          <p class="prijs"><span>Gezicht</span><span class="leider"></span><span class="bedrag">€ 12,50</span></p>
+        </div>
+        <p class="sm:col-span-2 leading-relaxed">Verlengen en baard of snor staan niet op deze lijst. <a class="knip-link whitespace-nowrap" href="tel:+31648945799">Bel even</a>, dan hoor je wat het kost.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Salon en team -->
+  <section id="salon" class="max-w-[1320px] mx-auto px-5 lg:px-12 pt-16 lg:pt-28 pb-16 lg:pb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-12 items-end">
+      <div class="lg:col-span-6 lg:pb-10">
+        <h2 class="text-6xl lg:text-8xl leading-none">Neem plaats.</h2>
+        <div class="mt-7 space-y-4 text-lg leading-relaxed text-steen max-w-xl">
+          <p>La Beauty Styling is een gezellige, trendy salon en sinds 2008 hét adres in Aalten waar je zonder afspraak terechtkunt voor een goede knipbeurt.</p>
+          <p>Ons enthousiaste team van 5 vaste kappers staat voor je klaar en vertelt je graag over de nieuwste haartrends en wat jouw haar nodig heeft. Want met een goed geknipt kapsel voel je je goed, en dat straal je ook uit.</p>
+        </div>
+      </div>
+      <figure class="lg:col-span-6">
+        <img class="w-full aspect-[9/10] object-cover rounded-tl-[9rem] lg:rounded-tl-[14rem]" src="assets/salon.jpg" width="901" height="998" alt="De wasplaatsen van de salon met zwarte wasbakken en stoelen, en daarachter schappen vol haarproducten en kleuren">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Producten -->
+  <section id="producten" class="bg-white">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-12 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-y-10 lg:gap-x-12 items-center">
+      <figure class="lg:col-span-5 order-2 lg:order-1">
+        <img class="w-full" src="assets/producten.jpg" width="880" height="660" alt="Set Mediceuticals haarverzorging: drie blauwe flessen met doos">
+      </figure>
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <h2 class="text-5xl lg:text-6xl leading-[1.05]">Wat we in je haar doen</h2>
+        <div class="mt-6 grid md:grid-cols-2 gap-x-10 gap-y-6 text-lg leading-relaxed text-steen">
+          <p>Voor styling en verzorging werken we uitsluitend met Trinity Haircare, een van oorsprong Zwitsers merk dat dierproefvrij is.</p>
+          <p>Voor haar en hoofdhuid die extra aandacht vragen, is er Mediceuticals: dermatologische verzorging met behandelingen voor specifieke problemen.</p>
+        </div>
+        <ul class="mt-7 grid sm:grid-cols-2 gap-x-10 gap-y-2 text-[1.05rem]">
+          <li class="border-b-2 border-dashed border-mint py-2">pH-vriendelijk</li>
+          <li class="border-b-2 border-dashed border-mint py-2">SLS-vrij</li>
+          <li class="border-b-2 border-dashed border-mint py-2">Zonder wax, olie en vet</li>
+          <li class="border-b-2 border-dashed border-mint py-2">Beschermt tegen verkleuring</li>
+          <li class="border-b-2 border-dashed border-mint py-2">Geschikt voor elk type haar en hoofdhuid</li>
+          <li class="border-b-2 border-dashed border-mint py-2">Good manufacturing practices certificaat</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bezoek -->
+  <section id="bezoek" class="op-donker bg-fles text-white">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-12 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-12">
+      <div class="lg:col-span-7">
+        <h2 class="text-[3.1rem] sm:text-6xl lg:text-8xl leading-[.98]">Tot zo, aan de Stationsstraat.</h2>
+        <address class="not-italic mt-8 text-xl leading-relaxed">
+          Stationsstraat 4<br>7122 AS Aalten
+        </address>
+        <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-x-8 gap-y-4 items-start">
+          <a href="tel:+31648945799" class="knop knop-licht text-lg px-7 py-4 w-full sm:w-auto">
+            <svg class="w-5 h-5" aria-hidden="true"><use href="#telefoon"/></svg>
+            Bel 06 48 94 57 99
+          </a>
+          <a class="knip-link" href="https://www.google.com/maps/search/?api=1&query=Stationsstraat+4+7122+AS+Aalten">Plan je route</a>
+          <a class="knip-link break-all" href="mailto:info@kapsalonlabeautystyling.nl">info@kapsalonlabeautystyling.nl</a>
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <h3 class="text-3xl mb-4">Openingstijden</h3>
+        <table class="w-full text-[1.05rem]">
+          <tbody id="tijden">
+            <tr data-dag="1" class="border-b border-dashed border-white/35"><th scope="row" class="py-2.5 text-left font-normal">Maandag</th><td class="py-2.5 text-right tabular-nums">09:00 tot 18:00</td></tr>
+            <tr data-dag="2" class="border-b border-dashed border-white/35"><th scope="row" class="py-2.5 text-left font-normal">Dinsdag</th><td class="py-2.5 text-right tabular-nums">09:00 tot 18:00</td></tr>
+            <tr data-dag="3" class="border-b border-dashed border-white/35"><th scope="row" class="py-2.5 text-left font-normal">Woensdag</th><td class="py-2.5 text-right tabular-nums">09:00 tot 18:00</td></tr>
+            <tr data-dag="4" class="border-b border-dashed border-white/35"><th scope="row" class="py-2.5 text-left font-normal">Donderdag</th><td class="py-2.5 text-right tabular-nums">09:00 tot 18:00</td></tr>
+            <tr data-dag="5" class="border-b border-dashed border-white/35"><th scope="row" class="py-2.5 text-left font-normal">Vrijdag</th><td class="py-2.5 text-right tabular-nums">09:00 tot 20:00</td></tr>
+            <tr data-dag="6" class="border-b border-dashed border-white/35"><th scope="row" class="py-2.5 text-left font-normal">Zaterdag</th><td class="py-2.5 text-right tabular-nums">08:30 tot 16:00</td></tr>
+            <tr data-dag="0"><th scope="row" class="py-2.5 text-left font-normal">Zondag</th><td class="py-2.5 text-right">Gesloten</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="op-donker bg-plank text-white/70 text-sm">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-12 py-6 flex flex-col sm:flex-row justify-between gap-1">
+    <p>Kapsalon La Beauty Styling, Stationsstraat 4, 7122 AS Aalten</p>
+    <p>Demo gemaakt door <a class="underline underline-offset-2 hover:text-mint" href="https://hagenweb.nl">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Belknop altijd binnen bereik op mobiel -->
+<div id="belbalk" class="belbalk lg:hidden fixed inset-x-0 bottom-0 z-30 p-2.5 bg-muur/95 border-t border-plank/10">
+  <a href="tel:+31648945799" class="knop w-full text-lg py-3.5">
+    <svg class="w-5 h-5" aria-hidden="true"><use href="#telefoon"/></svg>
+    Bel de salon
+  </a>
+</div>
+
+<script>
+  var rij = document.querySelector('#tijden [data-dag="' + new Date().getDay() + '"]');
+  if (rij) { rij.classList.add('vandaag'); rij.querySelector('th').textContent += ' (vandaag)'; }
+  new IntersectionObserver(function (e) {
+    document.getElementById('belbalk').classList.toggle('toon', !e[0].isIntersecting);
+  }).observe(document.getElementById('hero-knop'));
+</script>
+</body>
+</html>
