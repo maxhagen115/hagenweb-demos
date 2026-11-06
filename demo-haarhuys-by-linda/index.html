@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haarhuys by Linda | Kapsalon in Lichtenvoorde</title>
+<meta name="description" content="Haarhuys by Linda, kapsalon in het centrum van Lichtenvoorde. Knippen, kleuren en styling met persoonlijke aandacht. Bel 0544 397 259 voor een afspraak.">
+<meta property="og:title" content="Haarhuys by Linda | Kapsalon in Lichtenvoorde">
+<meta property="og:image" content="assets/google-08.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23211e1b' stroke='%23b8955a' stroke-width='2'/%3E%3Cpath d='M10 10l12 12M22 10L10 22' stroke='%23b8955a' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@200;300;400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        salon: '#211e1b',
+        salon2: '#2b2724',
+        eiken: '#c9ae8a',
+        eikenlicht: '#e8ddcc',
+        vloer: '#f3efe8',
+        goud: '#b8955a',
+        goudlicht: '#d2b47f',
+        inkt: '#2a2622',
+        gedempt: '#6b6158',
+      },
+      fontFamily: {
+        kop: ['Antonio', 'sans-serif'],
+        tekst: ['Manrope', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Antonio', sans-serif; font-weight: 200; letter-spacing: -0.01em; line-height: 1.04; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 0 0; overflow: hidden; }
+  .boog-klein { border-radius: 400px 400px 0 0; overflow: hidden; }
+  .korrel::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible { outline: 2px solid #b8955a; outline-offset: 3px; border-radius: 4px; }
+  .tijden td { padding: .45rem 0; font-variant-numeric: tabular-nums; }
+  /* Enkele, rustige intro van de hero; alleen als JS draait */
+  .js .hero-in { animation: in .9s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in-2 { animation: in .9s .15s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-in, .js .hero-in-2 { animation: none; } html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-vloer text-inkt pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-goud text-salon px-4 py-2 z-50">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-goud text-salon text-[13px] text-center px-4 py-2">
+  Demo voor Haarhuys by Linda, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-semibold">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-salon text-vloer sticky top-0 z-40 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="Haarhuys by Linda, naar boven">
+      <svg viewBox="0 0 40 40" class="w-9 h-9 shrink-0" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#e8ddcc" stroke-width="1.3"/><g fill="none" stroke="#b8955a" stroke-width="1.6" stroke-linecap="round"><path d="M13 27L26 13M27 27L14 13"/><circle cx="12" cy="11.5" r="2.4"/><circle cx="28" cy="11.5" r="2.4"/></g></svg>
+      <span class="leading-none">
+        <span class="kop block text-[26px] tracking-[0.22em] font-[300]">HAARHUYS</span>
+        <span class="block text-[10px] tracking-[0.3em] text-eiken mt-1 pl-[2px]">by Linda</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[14px] text-vloer/80" aria-label="Hoofdmenu">
+      <a href="#linda" class="hover:text-goudlicht transition-colors">Over Linda</a>
+      <a href="#behandelingen" class="hover:text-goudlicht transition-colors">Behandelingen</a>
+      <a href="#producten" class="hover:text-goudlicht transition-colors">Producten</a>
+      <a href="#reviews" class="hover:text-goudlicht transition-colors">Reviews</a>
+      <a href="#afspraak" class="hover:text-goudlicht transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:+31544397259" class="knop inline-flex items-center gap-2 rounded-full border border-goud/70 px-4 py-2 text-[14px] font-semibold text-goudlicht hover:bg-goud hover:text-salon">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="hidden sm:inline">0544 397 259</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative bg-salon text-vloer overflow-hidden korrel">
+  <div aria-hidden="true" class="absolute -top-40 right-[10%] w-[640px] h-[640px] rounded-full bg-[radial-gradient(circle,rgba(210,180,127,.18),transparent_65%)]"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-6 items-end">
+    <div class="lg:col-span-7 pt-9 md:pt-20 lg:pt-24 lg:pb-28 hero-in">
+      <p class="text-eiken text-[15px] mb-4 md:mb-5">Kapsalon in het centrum van Lichtenvoorde</p>
+      <h1 class="kop text-[64px] sm:text-[92px] lg:text-[128px] xl:text-[144px] text-vloer">Voel je thuis bij&nbsp;Linda.</h1>
+      <p class="mt-8 max-w-[30rem] text-[17px] md:text-[18px] leading-relaxed text-vloer/75">
+        Een warme salon waar je met aandacht geknipt, gekleurd en gestyled wordt. Je loopt binnen als gast en gaat naar huis met haar dat bij je past.
+      </p>
+      <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+        <a href="tel:+31544397259" class="knop inline-flex items-center justify-center gap-3 rounded-full bg-goud text-salon px-8 py-[18px] text-[17px] font-bold shadow-[0_12px_30px_-10px_rgba(184,149,90,.6)] hover:bg-goudlicht">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel voor een afspraak
+        </a>
+        <a href="https://wa.me/31544397259" class="text-[15px] font-medium text-vloer/85 underline decoration-goud/60 underline-offset-[6px] hover:text-goudlicht">Of stuur een WhatsApp</a>
+      </div>
+      <p class="mt-9 flex items-center gap-3 text-[14px] text-vloer/70">
+        <span class="text-goudlicht tracking-[0.15em]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-vloer font-semibold">4,9</strong> uit 15 Google-reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-5 relative hero-in-2">
+      <div class="boog mx-auto w-[86%] sm:w-[70%] lg:w-full max-w-[480px] aspect-[4/5.6] ring-1 ring-eiken/30 ring-offset-[10px] ring-offset-salon">
+        <img src="assets/google-08.jpg" alt="Linda knipt het haar van een klant in de salon" class="w-full h-full object-cover object-[50%_20%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Avondband -->
+<div class="bg-eikenlicht">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-[15px]">
+    <p><strong class="font-semibold">Ook 's avonds geknipt.</strong> Dinsdag en donderdag zijn we open tot 20:30.</p>
+    <a href="#afspraak" class="text-gedempt hover:text-inkt underline underline-offset-4 decoration-goud">Alle openingstijden</a>
+  </div>
+</div>
+
+<!-- Linda -->
+<section id="linda" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-6 order-2 lg:order-1">
+      <h2 class="kop text-[52px] md:text-[76px] text-inkt">Van salon aan huis naar het hart van Lichtenvoorde.</h2>
+      <div class="mt-8 space-y-5 text-[17px] leading-[1.75] text-inkt/80 max-w-[36rem]">
+        <p>Na ruim 21 jaar als kapster in loondienst opende Linda begin 2021 haar eigen salon aan huis. De agenda liep vol, en ze miste de reuring en een team om zich heen.</p>
+        <p>In 2023 zette ze de volgende stap: een eigen, stijlvol ingerichte salon aan de Molendijk, midden in het centrum. Daar ontvangt ze je samen met haar team van ervaren stylisten. Voor een frisse knipbeurt, een nieuwe kleur of een luxe behandeling.</p>
+        <p>Wat er niet veranderd is: persoonlijke aandacht en eerlijk advies. We zijn pas tevreden als jij dat bent.</p>
+      </div>
+      <p class="mt-8 text-[15px] text-gedempt max-w-[34rem]">Elk jaar volgt het team opleidingen, zodat je altijd geknipt en gekleurd wordt volgens de nieuwste technieken.</p>
+    </div>
+    <div class="lg:col-span-6 order-1 lg:order-2 relative">
+      <img src="assets/google-04.jpg" alt="Linda in de deuropening van Haarhuys by Linda aan de Molendijk" class="w-full aspect-[3/2] object-cover rounded-[6px]">
+      <div class="hidden md:block absolute -bottom-16 -left-12 w-[34%] boog-klein border-[6px] border-vloer">
+        <img src="assets/google-03.jpg" alt="De balie met het Haarhuys-logo en de hanglampen in de salon" class="w-full aspect-[3/4] object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Behandelingen -->
+<section id="behandelingen" class="bg-salon text-vloer py-20 md:py-28 relative korrel">
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-[52px] md:text-[76px]">Wat we voor je doen.</h2>
+      <p class="mt-6 text-[17px] leading-relaxed text-vloer/70 max-w-[28rem]">Kom gerust eerst langs voor een adviesgesprek. Samen kijken we wat bij je haar en je dag past.</p>
+      <div class="mt-10 grid grid-cols-2 gap-4">
+        <img src="assets/google-07.jpg" alt="Linda wast het haar van een klant bij de wasbak" class="w-full aspect-[3/4] object-cover rounded-[6px]">
+        <img src="assets/google-05.jpg" alt="Twee klanten bij de wasbakken, met een Previa-poster op de achtergrond" class="w-full aspect-[3/4] object-cover object-[30%_50%] rounded-[6px] mt-10">
+      </div>
+    </div>
+    <div class="lg:col-span-7 lg:pt-4">
+      <ul class="divide-y divide-white/10 border-y border-white/10">
+        <li class="py-9 md:py-11 grid md:grid-cols-[13rem_1fr] gap-3 md:gap-10">
+          <div>
+            <h3 class="kop text-[44px] md:text-[54px] text-goudlicht">Knippen</h3>
+            <p class="text-[14px] text-eiken mt-2">Dames, heren en kids</p>
+          </div>
+          <p class="text-[16px] leading-[1.75] text-vloer/75 md:pt-3">Van een frisse knipbeurt tot een heel nieuwe look. We luisteren goed, ook als je zelf nog niet precies weet hoe je het moet omschrijven, en knippen wat bij je past.</p>
+        </li>
+        <li class="py-9 md:py-11 grid md:grid-cols-[13rem_1fr] gap-3 md:gap-10">
+          <div>
+            <h3 class="kop text-[44px] md:text-[54px] text-goudlicht">Kleuren</h3>
+            <p class="text-[14px] text-eiken mt-2">Spoeling en highlights</p>
+          </div>
+          <p class="text-[16px] leading-[1.75] text-vloer/75 md:pt-3">We kleuren onder meer met de zachte Earth-kleuringen van Previa: natuurlijk, zonder ammonia en met een prachtige glans. Als Schwarzkopf pro-stylist hebben we op kleurgebied nog veel meer mogelijkheden.</p>
+        </li>
+        <li class="py-9 md:py-11 grid md:grid-cols-[13rem_1fr] gap-3 md:gap-10">
+          <div>
+            <h3 class="kop text-[44px] md:text-[54px] text-goudlicht">Styling</h3>
+            <p class="text-[14px] text-eiken mt-2">De finishing touch</p>
+          </div>
+          <p class="text-[16px] leading-[1.75] text-vloer/75 md:pt-3">Voor een feest, een belangrijke dag of gewoon omdat het kan. De finishing touch die je look helemaal afmaakt.</p>
+        </li>
+      </ul>
+      <a href="tel:+31544397259" class="knop mt-10 inline-flex items-center gap-3 rounded-full bg-goud text-salon px-7 py-4 text-[16px] font-bold hover:bg-goudlicht">Bel 0544 397 259</a>
+    </div>
+  </div>
+</section>
+
+<!-- Producten -->
+<section id="producten" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <div class="grid grid-cols-[1.25fr_1fr] lg:block gap-4 items-end">
+          <div class="boog-klein lg:w-[78%]">
+            <img src="assets/google-06.jpg" alt="Kast met Previa Natural Haircare producten in de salon" class="w-full aspect-[3/4] lg:aspect-[2/3] object-cover">
+          </div>
+          <img src="assets/google-02.jpg" alt="Een stylist zet producten in de kast van de salon" class="w-full aspect-[3/4] lg:aspect-[4/3] lg:w-[72%] lg:ml-auto lg:-mt-24 lg:relative lg:border-[6px] lg:border-vloer object-cover object-[40%_50%] rounded-[6px] lg:rounded-[10px]">
+        </div>
+      </div>
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <h2 class="kop text-[52px] md:text-[76px] text-inkt">Goed voor je haar, en voor wat erna komt.</h2>
+        <p class="mt-6 text-[17px] leading-[1.75] text-inkt/80 max-w-[36rem]">In de salon werken we met merken die we zelf vertrouwen. Alles wat we gebruiken, kun je ook mee naar huis nemen.</p>
+
+        <dl class="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+          <div class="sm:col-span-2 bg-eikenlicht rounded-[10px] p-7 md:p-9">
+            <dt class="kop text-[38px] md:text-[44px] font-[300]">Previa Natural Haircare</dt>
+            <dd class="mt-3 text-[16px] leading-[1.75] text-inkt/80 max-w-[34rem]">Een luxe, natuurlijke haarverzorgingslijn uit Italië. Vrij van siliconen, parabenen en sulfaten, en helemaal vegan. Echt een feestje voor je haar.</dd>
+          </div>
+          <div class="border-t border-inkt/15 pt-5">
+            <dt class="kop text-[30px] font-[300]">L'ANZA</dt>
+            <dd class="mt-2 text-[15px] leading-[1.7] text-inkt/75">Al meer dan 35 jaar pionier in professionele haarverzorging, met een uitgebreid groen beleid.</dd>
+          </div>
+          <div class="border-t border-inkt/15 pt-5">
+            <dt class="kop text-[30px] font-[300]">Schwarzkopf</dt>
+            <dd class="mt-2 text-[15px] leading-[1.7] text-inkt/75">Wij zijn je lokale Schwarzkopf pro-stylist, met een breed scala aan kleurmogelijkheden.</dd>
+          </div>
+          <div class="border-t border-inkt/15 pt-5">
+            <dt class="kop text-[30px] font-[300]">Olaplex</dt>
+            <dd class="mt-2 text-[15px] leading-[1.7] text-inkt/75">Het gepatenteerde systeem dat beschadigd haar zichtbaar herstelt.</dd>
+          </div>
+          <div class="border-t border-inkt/15 pt-5">
+            <dt class="kop text-[30px] font-[300]">STMNT</dt>
+            <dd class="mt-2 text-[15px] leading-[1.7] text-inkt/75">Speciaal voor de mannen: de stylinglijn voor een strakke look.</dd>
+          </div>
+        </dl>
+
+        <div class="mt-12">
+          <p class="text-[16px] leading-[1.75] text-inkt/80 bg-eikenlicht/60 rounded-[10px] p-6 md:px-9 max-w-[40rem]"><strong class="font-semibold text-inkt">Ook voor je tools.</strong> Een krultang, warmteborstel, föhn of tondeuse? We hebben er altijd wel een op voorraad die bij je haar past.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Salon beeldstrook -->
+<section aria-label="Foto's van de salon" class="pb-20 md:pb-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-2 md:grid-cols-12 md:h-[480px] gap-4">
+    <img src="assets/site-10.jpg" alt="Overzicht van de salon met kappersstoelen, spiegels en de balie" class="col-span-2 md:col-span-7 w-full aspect-[3/2] md:aspect-auto md:h-full object-cover rounded-[6px]">
+    <img src="assets/google-01.jpg" alt="Het verlichte Haarhuys by Linda logo in de wand" class="col-span-1 md:col-span-5 w-full aspect-square md:aspect-auto md:h-full object-cover object-[60%_50%] rounded-[6px]">
+    <p class="col-span-1 md:hidden self-center kop text-[30px] leading-tight">Molendijk 6-02, Lichtenvoorde</p>
+  </div>
+  <p class="hidden md:block max-w-7xl mx-auto px-8 mt-5 text-[14px] text-gedempt">De salon aan de Molendijk 6-02, midden in Lichtenvoorde.</p>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-eikenlicht py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <h2 class="kop text-[52px] md:text-[76px] text-inkt max-w-[14ch]">Dat zeggen onze klanten.</h2>
+      <p class="text-[15px] text-gedempt"><span class="text-goud tracking-[0.15em]" aria-hidden="true">★★★★★</span> <strong class="text-inkt font-semibold text-[18px]">4,9</strong> uit 15 reviews op Google</p>
+    </div>
+
+    <figure class="mt-14 grid lg:grid-cols-12 gap-8 items-start">
+      <span class="hidden lg:block lg:col-span-1 kop text-[120px] leading-[.6] text-goud" aria-hidden="true">“</span>
+      <div class="lg:col-span-10">
+        <blockquote class="kop font-[300] text-[32px] md:text-[46px] leading-[1.12] text-inkt">Ik durf nergens anders mijn haar te laten knippen. Linda is extreem goed op de hoogte van de laatste trends en technieken en weet mijn haar altijd exact te knippen zoals ik graag zou willen (ondanks mijn soms ietwat vage omschrijvingen).</blockquote>
+        <figcaption class="mt-6 text-[15px] text-gedempt"><strong class="text-inkt font-semibold">Naomi Soer</strong>, 5 sterren op Google</figcaption>
+      </div>
+    </figure>
+
+    <div class="mt-16 grid md:grid-cols-2 gap-x-12 gap-y-10">
+      <figure class="border-t border-inkt/15 pt-6">
+        <blockquote class="text-[17px] leading-[1.7] text-inkt/85">“Een moderne en mooie kapsalon met fijn, professioneel personeel. Ook gezellig en heerlijk om je daar, zoals ik het voel, te laten verwennen en met een goed gevoel naar huis te gaan. 👍🏻☺️”</blockquote>
+        <figcaption class="mt-4 text-[14px] text-gedempt"><strong class="text-inkt font-semibold">Annelies Veltmaat</strong>, 5 sterren</figcaption>
+      </figure>
+      <figure class="border-t border-inkt/15 pt-6">
+        <blockquote class="text-[17px] leading-[1.7] text-inkt/85">“Fijne kapsalon. Gezellige en warme sfeer.<br>Linda is iemand die haar vak verstaat.<br>Knipt al jaren mijn haar.<br>En haar medewerkers zijn allemaal toppers☺️”</blockquote>
+        <figcaption class="mt-4 text-[14px] text-gedempt"><strong class="text-inkt font-semibold">Claudia</strong>, 5 sterren</figcaption>
+      </figure>
+      <figure class="border-t border-inkt/15 pt-6">
+        <blockquote class="text-[17px] leading-[1.7] text-inkt/85">“Zeer vriendelijk personeel, heel fijne sfeer en in deze tijd van alles wordt duurder viel de prijs voor knippen heel erg  mee. Zeker een aanrader.”</blockquote>
+        <figcaption class="mt-4 text-[14px] text-gedempt"><strong class="text-inkt font-semibold">Roberto Bouwmeester</strong>, 4 sterren</figcaption>
+      </figure>
+      <figure class="border-t border-inkt/15 pt-6">
+        <blockquote class="kop font-[300] text-[34px] leading-[1.1] text-inkt">“Zonder woorden, daarom gaan we in Lichtenvoorde wonen”</blockquote>
+        <figcaption class="mt-4 text-[14px] text-gedempt"><strong class="text-inkt font-semibold">Paul Baesjou</strong>, 5 sterren</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Afspraak en contact -->
+<section id="afspraak" class="bg-salon text-vloer py-20 md:py-28 relative overflow-hidden korrel">
+  <div aria-hidden="true" class="absolute -bottom-60 -left-40 w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(210,180,127,.14),transparent_65%)]"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-14 lg:gap-16">
+    <div class="lg:col-span-7">
+      <h2 class="kop text-[60px] md:text-[96px]">Maak je afspraak, wij doen de rest.</h2>
+      <p class="mt-7 text-[17px] leading-relaxed text-vloer/75 max-w-[32rem]">Bel of WhatsApp ons voor een afspraak. Liever per mail? Dat kan ook.</p>
+      <div class="mt-10 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+        <a href="tel:+31544397259" class="knop inline-flex items-center justify-center gap-3 rounded-full bg-goud text-salon px-8 py-[18px] text-[17px] font-bold hover:bg-goudlicht">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 0544 397 259
+        </a>
+        <a href="https://wa.me/31544397259" class="knop inline-flex items-center justify-center rounded-full border border-vloer/30 px-7 py-[17px] text-[16px] font-semibold hover:border-goud hover:text-goudlicht">WhatsApp ons</a>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-2 gap-10 text-[16px]">
+        <div>
+          <h3 class="text-eiken text-[14px] mb-3">Adres</h3>
+          <p class="leading-relaxed">Molendijk 6-02<br>7131 DZ Lichtenvoorde</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Molendijk+6-02+7131+DZ+Lichtenvoorde" class="inline-block mt-3 text-[15px] underline underline-offset-4 decoration-goud/70 hover:text-goudlicht">Route plannen</a>
+        </div>
+        <div>
+          <h3 class="text-eiken text-[14px] mb-3">Mail</h3>
+          <p class="leading-relaxed">Afspraken: <a href="mailto:afspraak@haarhuysbylinda.nl" class="underline underline-offset-4 decoration-goud/70 hover:text-goudlicht break-all">afspraak@haarhuysbylinda.nl</a></p>
+          <p class="leading-relaxed mt-2">Overig: <a href="mailto:info@haarhuysbylinda.nl" class="underline underline-offset-4 decoration-goud/70 hover:text-goudlicht break-all">info@haarhuysbylinda.nl</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="bg-salon2 rounded-[14px] p-7 md:p-9 ring-1 ring-white/10">
+        <h3 class="kop text-[40px] font-[300]">Openingstijden</h3>
+        <table class="tijden mt-5 w-full text-[16px]">
+          <tbody class="divide-y divide-white/10">
+            <tr><td>Maandag</td><td class="text-right text-vloer/50">Gesloten</td></tr>
+            <tr><td>Dinsdag</td><td class="text-right">08:30 tot 20:30</td></tr>
+            <tr><td>Woensdag</td><td class="text-right">08:30 tot 17:30</td></tr>
+            <tr><td>Donderdag</td><td class="text-right">08:30 tot 20:30</td></tr>
+            <tr><td>Vrijdag</td><td class="text-right">08:30 tot 17:30</td></tr>
+            <tr><td>Zaterdag</td><td class="text-right">08:30 tot 15:30</td></tr>
+            <tr><td>Zondag</td><td class="text-right text-vloer/50">Gesloten</td></tr>
+          </tbody>
+        </table>
+        <p class="mt-5 text-[14px] text-vloer/60">Dinsdag- en donderdagavond knippen we door tot half negen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werken bij -->
+<section id="werken" class="py-16 md:py-20 border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-[44px] md:text-[60px] text-inkt">Werken bij Haarhuys?</h2>
+    </div>
+    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-8">
+      <div>
+        <h3 class="font-semibold text-[17px]">Ervaren haarstylist</h3>
+        <p class="mt-2 text-[15px] leading-[1.7] text-inkt/75">Minimaal 3 jaar ervaring, oog voor trends en sterk in knippen en kleuren. Je krijgt een eigen set professionele scharen en tools.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-[17px]">Leerling kapper</h3>
+        <p class="mt-2 text-[15px] leading-[1.7] text-inkt/75">Leer knippen, kleuren en stylen onder begeleiding van ervaren kappers, in een gezellig team.</p>
+      </div>
+      <p class="sm:col-span-2 text-[15px]">Stuur je cv en een korte motivatie naar <a href="mailto:info@haarhuysbylinda.nl" class="font-semibold underline underline-offset-4 decoration-goud">info@haarhuysbylinda.nl</a> of kom gewoon even langs.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-vloer py-10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-[14px] text-gedempt">
+    <p><span class="kop text-[20px] tracking-[0.2em] text-inkt font-[300]">HAARHUYS</span> <span class="ml-1">by Linda, Molendijk 6-02, Lichtenvoorde</span></p>
+    <p><a href="tel:+31544397259" class="hover:text-inkt">0544 397 259</a> <span class="mx-2">/</span> <a href="mailto:info@haarhuysbylinda.nl" class="hover:text-inkt">info@haarhuysbylinda.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-salon/95 backdrop-blur border-t border-white/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31544397259" class="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-goud text-salon py-3.5 font-bold text-[16px]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel voor een afspraak
+  </a>
+  <a href="https://wa.me/31544397259" class="inline-flex items-center justify-center rounded-full border border-vloer/30 text-vloer px-5 font-semibold text-[15px]">WhatsApp</a>
+</div>
+
+</body>
+</html>

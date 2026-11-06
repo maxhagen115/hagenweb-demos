@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hairsalon Brush | Kapsalon aan huis in Barlo, Aalten</title>
+<meta name="description" content="Hairsalon Brush: kapsalon aan huis van Indy in Barlo, Aalten. Eén klant tegelijk, rust en persoonlijke aandacht. Knippen, kleuren, opsteken en bruidskapsels. Bel 06 49582247.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          linnen: '#F1ECE2',
+          muur: '#D5C8A8',
+          muurlicht: '#E4DAC4',
+          brons: '#7A6342',
+          bronsdonker: '#5F4C31',
+          espresso: '#2A231E',
+          mos: '#5E5B3E',
+        },
+        fontFamily: {
+          kop: ['Gloock', 'Georgia', 'serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  .boog-klein { border-radius: 999px 999px 0.75rem 0.75rem; }
+  .prijs { font-variant-numeric: tabular-nums; }
+  .stip { border-bottom: 1px dotted rgba(42,35,30,.35); flex: 1; margin: 0 .5rem .35rem; min-width: 1rem; }
+  .korrel::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .18; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .33 0 0 0 0 .22 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a, button { transition: background-color .2s, color .2s, transform .2s, border-color .2s; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 2px solid #7A6342; outline-offset: 3px; }
+  /* Eén laadmoment in de hero, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-in { animation: in .9s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-in-2 { animation-delay: .12s; }
+    .js .hero-in-3 { animation-delay: .24s; }
+    .js .hero-foto { animation: foto 1.2s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes foto { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-linnen text-espresso antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-espresso focus:text-linnen focus:px-4 focus:py-2 focus:rounded">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-espresso text-linnen/80 text-[13px] text-center py-2 px-4">
+  Demo voor Hairsalon Brush, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-linnen hover:text-muur">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-linnen/90 backdrop-blur border-b border-espresso/10">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="flex items-baseline gap-2 leading-none" aria-label="Hairsalon Brush, naar boven">
+      <span class="font-kop text-[30px] md:text-[34px] tracking-tight">Brush</span>
+      <span class="font-kop italic text-brons text-[15px]">by Indy</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-espresso/80" aria-label="Hoofdmenu">
+      <a href="#werkwijze" class="hover:text-brons">Werkwijze</a>
+      <a href="#tarieven" class="hover:text-brons">Tarieven</a>
+      <a href="#bruiloft" class="hover:text-brons">Bruiloft</a>
+      <a href="#indy" class="hover:text-brons">Over Indy</a>
+      <a href="#contact" class="hover:text-brons">Contact</a>
+    </nav>
+    <a href="#tarieven" class="md:hidden text-[15px] font-semibold underline decoration-brons/50 underline-offset-[6px]">Tarieven</a>
+    <a href="tel:+31649582247" class="knop hidden md:inline-flex items-center gap-2 rounded-full border border-espresso/25 px-4 py-2 text-[14px] font-semibold hover:bg-espresso hover:text-linnen hover:border-espresso">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      06 49582247
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-7 md:pt-14 pb-16 md:pb-24 grid md:grid-cols-12 gap-9 md:gap-8 items-center">
+    <div class="md:col-span-6 lg:col-span-6 relative z-10">
+      <p class="hero-in text-[15px] text-brons font-medium">Kapsalon aan huis in Barlo, Aalten</p>
+      <h1 class="hero-in hero-in-2 font-kop text-[52px] leading-[0.98] sm:text-7xl lg:text-[96px] tracking-[-0.02em] mt-4">
+        Eén stoel. Alle tijd voor jou.
+      </h1>
+      <p class="hero-in hero-in-3 mt-6 text-[18px] leading-relaxed text-espresso/80 max-w-[30rem]">
+        Bij Indy zit je nooit aan de lopende band. Ze werkt één op één, luistert echt naar wat je wilt en neemt de tijd tot het helemaal goed zit.
+      </p>
+      <div class="hero-in hero-in-3 mt-7 md:mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31649582247" class="knop inline-flex items-center gap-3 rounded-full bg-brons hover:bg-bronsdonker text-white px-7 py-4 text-[17px] font-semibold shadow-[0_10px_30px_-10px_rgba(95,76,49,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel voor een afspraak
+        </a>
+        <a href="#tarieven" class="text-[16px] font-semibold underline decoration-brons/50 underline-offset-[6px] hover:decoration-brons">Bekijk de tarieven</a>
+      </div>
+      <p class="hero-in hero-in-3 mt-6 md:mt-8 flex items-center gap-3 text-[15px] text-espresso/75">
+        <span class="text-brons tracking-[0.15em] text-[17px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-espresso font-semibold">5,0</strong> uit 14 Google-reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 lg:col-span-6 relative">
+      <div class="absolute -right-10 top-10 bottom-[-2rem] w-[85%] boog bg-muur hidden md:block" aria-hidden="true"></div>
+      <div class="hero-foto relative mx-auto md:ml-auto md:mr-0 w-[86%] sm:w-[70%] md:w-[88%] lg:w-[82%] aspect-[4/5] boog overflow-hidden shadow-[0_30px_60px_-30px_rgba(42,35,30,.55)]">
+        <img src="assets/google-07.jpg" alt="Indy speldt lachend een haarsieraad in het opgestoken haar van een bruid" class="w-full h-full object-cover object-[50%_30%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" class="relative bg-muurlicht korrel py-20 md:py-28">
+  <div class="relative max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-12 md:gap-10 items-start">
+    <div class="md:col-span-5 md:sticky md:top-28">
+      <h2 class="font-kop text-4xl md:text-5xl leading-[1.05] tracking-[-0.01em]">Geen haast, geen drukte.</h2>
+      <div class="mt-6 space-y-4 text-[17px] leading-[1.7] text-espresso/85 max-w-md">
+        <p>In de salon is er maar één klant tegelijk: jij. Zo is er ruimte voor een goed gesprek, of juist even een moment van stilte. Gewoon tijd voor jezelf.</p>
+        <p>Indy geeft eerlijk advies, maar luistert eerst naar jouw wensen. Samen kom je tot een kapsel dat helemaal bij je past, zodat je met een glimlach de deur uit gaat.</p>
+        <p>Ze werkt met natuurlijke en duurzame producten van Davines en O&amp;M, die zacht zijn voor je haar en hoofdhuid.</p>
+      </div>
+      <ul class="mt-8 grid grid-cols-1 gap-3 text-[15px] font-medium">
+        <li class="flex gap-3 items-baseline"><span class="w-6 h-px bg-brons translate-y-[-4px]"></span>Knippen voor dames, heren en kinderen</li>
+        <li class="flex gap-3 items-baseline"><span class="w-6 h-px bg-brons translate-y-[-4px]"></span>Kleuren, highlights en toners</li>
+        <li class="flex gap-3 items-baseline"><span class="w-6 h-px bg-brons translate-y-[-4px]"></span>Föhnen, opsteken en invlechten</li>
+        <li class="flex gap-3 items-baseline"><span class="w-6 h-px bg-brons translate-y-[-4px]"></span>Bruidskapsels met proefsessie</li>
+      </ul>
+    </div>
+    <div class="md:col-span-7 grid grid-cols-6 gap-4 md:gap-5">
+      <figure class="col-span-6 sm:col-span-4 row-span-2">
+        <img src="assets/google-05.jpg" alt="De zithoek van de salon met twee teddy-fauteuils, kaarslicht en verse bloemen" class="w-full aspect-[4/5] object-cover rounded-2xl">
+        <figcaption class="mt-3 text-[14px] text-espresso/65">De zithoek in de salon in Barlo.</figcaption>
+      </figure>
+      <img src="assets/google-03.jpg" alt="De kappersstoel en de houten productwand in de salon" class="col-span-3 sm:col-span-2 w-full aspect-[3/4] object-cover boog-klein sm:mt-16">
+      <img src="assets/site-07.jpg" alt="De wasbak in de zon, met handdoeken en producten op het rek" class="col-span-3 sm:col-span-2 w-full aspect-[3/4] object-cover rounded-2xl">
+    </div>
+  </div>
+</section>
+
+<!-- TARIEVEN -->
+<section id="tarieven" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-8 items-end">
+      <h2 class="md:col-span-7 font-kop text-4xl md:text-6xl leading-[1.02] tracking-[-0.01em]">Wat Indy voor je doet, en wat het kost.</h2>
+      <p class="md:col-span-5 text-[17px] leading-relaxed text-espresso/80">Duidelijke prijzen, zonder verrassingen. Bij erg lang of dik haar kan er een kleine toeslag bij komen, dat hoor je altijd vooraf.</p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-12 lg:gap-14">
+      <div class="lg:col-span-9 grid sm:grid-cols-2 gap-x-12 gap-y-12">
+
+        <div class="space-y-12"><div>
+          <h3 class="font-kop text-2xl mb-4">Knippen</h3>
+          <ul class="prijs space-y-2.5 text-[15.5px]">
+            <li class="flex items-end"><span>Dames kort, knippen en stylen</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 25,50</span></li>
+            <li class="flex items-end"><span>Dames kort, wassen, knippen, stylen</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 28,00</span></li>
+            <li class="flex items-end"><span>Dames (half)lang, knippen en stylen</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 28,75</span></li>
+            <li class="flex items-end"><span>Dames (half)lang, wassen, knippen, stylen</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 34,50</span></li>
+            <li class="flex items-end"><span>Knippen + krul föhnen, lang haar</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 34,50</span></li>
+            <li class="flex items-end"><span>Heren knippen</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 25,50</span></li>
+            <li class="flex items-end"><span>Heren wassen en knippen</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 28,00</span></li>
+            <li class="flex items-end"><span>Rand knippen / tondeuse</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 23,00</span></li>
+            <li class="flex items-end"><span>Kinderen t/m 12 jaar</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 23,00</span></li>
+            <li class="flex items-end"><span>Baard trimmen</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 9,50</span></li>
+            <li class="flex items-end"><span>Pony knippen</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 9,50</span></li>
+          </ul>
+          <p class="mt-4 text-[13.5px] leading-relaxed text-espresso/65">Erg lang of dik haar: toeslag vanaf € 7,50. Heren: kom je na 8 weken knippen met erg dik haar, dan kan er een toeslag vanaf € 7,50 bij komen.</p>
+        </div>
+        <div>
+          <h3 class="font-kop text-2xl mb-4">Styling</h3>
+          <ul class="prijs space-y-2.5 text-[15.5px]">
+            <li class="flex items-end"><span>Wassen / model föhnen, v.a.</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 23,95</span></li>
+            <li class="flex items-end"><span>Opsteken, v.a.</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 40,00</span></li>
+            <li class="flex items-end"><span>Invlechten</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 20,00</span></li>
+          </ul>
+        </div>
+        </div>
+
+        <div class="space-y-12">
+          <div>
+            <h3 class="font-kop text-2xl mb-4">Kleuren</h3>
+            <ul class="prijs space-y-2.5 text-[15.5px]">
+              <li class="flex items-end"><span>Uitgroei / root shadow</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 45,50</span></li>
+              <li class="flex items-end"><span>Toner geheel</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 45,50</span></li>
+              <li class="flex items-end"><span>Toner kort haar, bij kleuring</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 20,00</span></li>
+              <li class="flex items-end"><span>Toner lang haar, bij kleuring</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 25,00</span></li>
+              <li class="flex items-end"><span>Kleurmasker Chroma ID</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 7,50</span></li>
+              <li class="flex items-end"><span>Toeslag lang/dik haar, v.a.</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 10,00</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-kop text-2xl mb-4">Highlights &amp; lowlights</h3>
+            <ul class="prijs space-y-2.5 text-[15.5px]">
+              <li class="flex items-end"><span>Highlights t/m 12 folies</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 30,00</span></li>
+              <li class="flex items-end"><span>Per extra folie vanaf 12 stuks</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 2,00</span></li>
+              <li class="flex items-end"><span>Kamstreepjes, v.a.</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 30,00</span></li>
+              <li class="flex items-end"><span>Toeslag lang/dik haar, v.a.</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 10,00</span></li>
+            </ul>
+          </div>
+          <div>
+          <h3 class="font-kop text-2xl mb-4">Verzorging &amp; herstel</h3>
+          <ul class="prijs space-y-2.5 text-[15.5px]">
+            <li class="flex items-end"><span>Bondfinity behandeling</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 25,00</span></li>
+            <li class="flex items-end"><span>Instant Infusion Bondextend/Shine</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 11,50</span></li>
+          </ul>
+        </div>
+        </div>
+
+        
+
+        
+
+        <p class="sm:col-span-2 text-[13.5px] leading-relaxed text-espresso/65 border-t border-espresso/10 pt-5">Kom je alleen voor kleuren of een herstelbehandeling, zonder knippen? Dan komt er een toeslag voor model föhnen bij, vanaf € 10,00. Bruidskapsel met proefsessie en haaraccessoires: prijs in overleg.</p>
+      </div>
+
+      <aside class="lg:col-span-3 grid grid-cols-2 lg:grid-cols-1 gap-4 content-start" aria-label="Werk van Indy">
+        <figure>
+          <div class="rounded-2xl overflow-hidden"><img src="assets/site-03.jpg" alt="Lang haar met zachte blonde highlights" class="w-full aspect-square object-cover scale-[1.18]"></div>
+          <figcaption class="mt-2 text-[13.5px] text-espresso/65">Zachte highlights</figcaption>
+        </figure>
+        <figure>
+          <div class="rounded-2xl overflow-hidden"><img src="assets/site-04.jpg" alt="Herenkapsel met korte fade aan de zijkant" class="w-full aspect-square object-cover scale-[1.15]"></div>
+          <figcaption class="mt-2 text-[13.5px] text-espresso/65">Heren, strak bijgewerkt</figcaption>
+        </figure>
+        <figure class="col-span-2 lg:col-span-1">
+          <img src="assets/google-06.jpg" alt="Krullend haar met warme highlights, van achteren gezien" class="w-full aspect-[16/10] lg:aspect-square object-cover object-[35%_35%] rounded-2xl">
+          <figcaption class="mt-2 text-[13.5px] text-espresso/65">Krullen met warme highlights</figcaption>
+        </figure>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- BRUILOFT -->
+<section id="bruiloft" class="bg-espresso text-linnen">
+  <div class="grid lg:grid-cols-2">
+    <div class="relative min-h-[320px] lg:min-h-[640px]">
+      <img src="assets/google-01.jpg" alt="Indy maakt het bruidskapsel af met haarlak" class="absolute inset-0 w-full h-full object-cover object-[60%_40%]">
+    </div>
+    <div class="px-6 md:px-14 py-16 md:py-24 flex flex-col justify-center max-w-xl">
+      <h2 class="font-kop text-4xl md:text-[54px] leading-[1.03] tracking-[-0.01em]">Op je trouwdag zit alles goed.</h2>
+      <p class="mt-6 text-[17px] leading-[1.7] text-linnen/80">Een bruidskapsel maak je niet op de gok. Daarom begint het met een proefsessie, waarin jullie samen kijken wat bij jou, je jurk en je dag past. Ook voor haaraccessoires kun je bij Indy terecht. De prijs bepaal je samen, in overleg.</p>
+      <blockquote class="mt-10 border-l-2 border-muur pl-5">
+        <p class="font-kop text-[21px] leading-snug text-linnen">“Ik ben bij Indy gekomen om mijn haar te laten opsteken voor een bruiloft. Het resultaat was nog veel mooier dan ik had verwacht met mij…”</p>
+        <footer class="mt-3 text-[14px] text-muur">Vera Jansen, Google-review</footer>
+      </blockquote>
+      <a href="tel:+31649582247" class="knop mt-10 self-start inline-flex items-center gap-3 rounded-full bg-muur text-espresso hover:bg-linnen px-6 py-3.5 text-[16px] font-semibold">Bel voor een proefsessie</a>
+    </div>
+  </div>
+</section>
+
+<!-- OVER INDY -->
+<section id="indy" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-12 md:gap-14 items-center">
+    <div class="md:col-span-6 md:order-2">
+      <h2 class="font-kop text-4xl md:text-[56px] leading-[1.03] tracking-[-0.01em]">Hoi, ik ben Indy.</h2>
+      <div class="mt-6 space-y-4 text-[17px] leading-[1.7] text-espresso/85 max-w-lg">
+        <p>Mijn passie voor haar begon al jong. Vanaf mijn 16e heb ik in verschillende kapsalons gewerkt. Daar heb ik het vak geleerd, en ontdekt wat ik zelf belangrijk vind: geen haastwerk, maar rust en echte aandacht voor iedere klant.</p>
+        <p>Sinds juni 2023 heb ik mijn eigen salon aan huis in Barlo. Ik blijf cursussen en trainingen volgen, want het kappersvak staat nooit stil. Zo kan ik voor iedereen een kapsel maken dat echt bij je past.</p>
+      </div>
+      <p class="mt-8 font-kop italic text-2xl text-brons">Je bent altijd welkom. Liefs, Indy</p>
+    </div>
+    <div class="md:col-span-6 md:order-1 relative">
+      <div class="absolute -left-6 -top-6 w-40 h-40 rounded-full bg-muur hidden md:block" aria-hidden="true"></div>
+      <img src="assets/google-08.jpg" alt="Indy werkt met een föhnborstel lange golven in het haar van een klant" class="relative w-full aspect-[5/4] object-cover object-[40%_50%] rounded-[2rem]">
+    </div>
+  </div>
+</section>
+
+<!-- KINDEREN + PRODUCTEN -->
+<section class="pb-20 md:pb-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-6 md:gap-8">
+    <article class="bg-muurlicht rounded-[2rem] overflow-hidden grid sm:grid-cols-5">
+      <img src="assets/site-05.jpg" alt="De speelhoek met speelgoedauto's, een tractor en Bobbi-boekjes" class="sm:col-span-2 w-full h-56 sm:h-full object-cover scale-[1.12]">
+      <div class="sm:col-span-3 p-7 md:p-8 relative bg-muurlicht">
+        <h3 class="font-kop text-[28px] leading-tight">Kinderen? Die zitten hier ook graag.</h3>
+        <p class="mt-3 text-[16px] leading-relaxed text-espresso/80">Er is een hoekje met speelgoed en Bobbi-boekjes, dus wachten is niet erg. Kinderen t/m 12 jaar knippen kost € 23,00.</p>
+      </div>
+    </article>
+    <article class="bg-muurlicht rounded-[2rem] overflow-hidden grid sm:grid-cols-5">
+      <img src="assets/site-02.jpg" alt="De houten wand vol Davines- en O&amp;M-producten" class="sm:col-span-2 w-full h-56 sm:h-full object-cover">
+      <div class="sm:col-span-3 p-7 md:p-8">
+        <h3 class="font-kop text-[28px] leading-tight">Davines en O&amp;M.</h3>
+        <p class="mt-3 text-[16px] leading-relaxed text-espresso/80">Twee merken met natuurlijke ingrediënten en een duurzame visie. Davines uit Italië voor luxe verzorging, O&amp;M uit Australië voor clean beauty en vegan styling.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bg-muur/60 relative korrel py-20 md:py-28">
+  <div class="relative max-w-6xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-kop text-4xl md:text-[56px] leading-[1.03] tracking-[-0.01em] max-w-2xl">Wat klanten over Indy zeggen.</h2>
+      <p class="flex items-center gap-3 text-[15px]"><span class="text-mos tracking-[0.15em] text-lg" aria-hidden="true">★★★★★</span><span><strong class="font-semibold">5,0</strong> uit 14 reviews op Google</span></p>
+    </div>
+    <div class="mt-12 columns-1 md:columns-2 gap-6 [&>*]:break-inside-avoid [&>*]:mb-6">
+      <figure class="bg-linnen rounded-2xl p-7 md:p-9">
+        <blockquote class="font-kop text-[22px] md:text-[26px] leading-snug">“Ik kom al een tijd bij Indy en ze knipt iedere keer weer supergoed! Ik heb vaak veel wensen, maar ze weet er elke keer weer iets moois van te maken. Ze luistert goed, denkt mee en zorgt ervoor dat ik altijd tevreden de deur uit ga. Echt een aanrader!”</blockquote>
+        <figcaption class="mt-5 text-[14px] font-semibold">Dianne Meijnen</figcaption>
+      </figure>
+      <figure class="bg-linnen rounded-2xl p-7">
+        <blockquote class="text-[17px] leading-relaxed">“Net bij Indy geweest om mijn haar te laten knippen. Wat een leuke en spontane meid. En wat heeft ze mijn haar mooi geknipt! Ik kom zeker terug Indy 😃 Dank je wel! Echt een aanrader!”</blockquote>
+        <figcaption class="mt-4 text-[14px] font-semibold">Sylvia Slag</figcaption>
+      </figure>
+      <figure class="bg-linnen rounded-2xl p-7">
+        <blockquote class="text-[17px] leading-relaxed">“Ik ga altijd met plezier naar Indy voor het knippen, kleuren en opsteken. Ze weet precies wat bij me past en zorgt er elke keer weer voor dat ik blij de deur uit ga! Vakkundig én gezellig!”</blockquote>
+        <figcaption class="mt-4 text-[14px] font-semibold">Puck van Hagen</figcaption>
+      </figure>
+      <figure class="bg-linnen rounded-2xl p-7">
+        <blockquote class="text-[17px] leading-relaxed">“Afspraak maken ging makkelijk en snel.<br>Ontvangst vriendelijk, wensen worden goed omgezet in vakkundig knipwerk. Je komt niet weg tot het goed zit en je 100 % tevreden bent.<br>Aanrader en voor herhaling vatbaar”</blockquote>
+        <figcaption class="mt-4 text-[14px] font-semibold">Ferdi Ikink</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-12 md:gap-10">
+    <div class="md:col-span-6">
+      <h2 class="font-kop text-[44px] md:text-[64px] leading-[1] tracking-[-0.02em]">Plan je moment voor jezelf.</h2>
+      <p class="mt-6 text-[17px] leading-[1.7] text-espresso/80 max-w-md">Bel Indy voor een afspraak of stuur een mailtje. Op maandag, dinsdag en donderdag kun je tot 's avonds 20:30 terecht.</p>
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+        <a href="tel:+31649582247" class="knop inline-flex items-center justify-center gap-3 rounded-full bg-brons hover:bg-bronsdonker text-white px-7 py-4 text-[17px] font-semibold">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          06 49582247
+        </a>
+        <a href="mailto:info@hairsalonbrush.nl" class="knop inline-flex items-center justify-center rounded-full border border-espresso/30 hover:border-espresso px-6 py-4 text-[16px] font-semibold">info@hairsalonbrush.nl</a>
+      </div>
+      <address class="not-italic mt-12 text-[16px] leading-relaxed">
+        <span class="font-semibold">Hairsalon Brush</span><br>
+        Markerinkdijk 27<br>
+        7122 RT Barlo, gemeente Aalten
+      </address>
+    </div>
+    <div class="md:col-span-5 md:col-start-8">
+      <div class="bg-muurlicht rounded-[2rem] p-7 md:p-9">
+        <h3 class="font-kop text-[28px]">Openingstijden</h3>
+        <dl class="prijs mt-5 text-[16px] divide-y divide-espresso/10">
+          <div class="flex justify-between py-2.5"><dt>Maandag</dt><dd class="font-semibold">09:00 tot 20:30</dd></div>
+          <div class="flex justify-between py-2.5"><dt>Dinsdag</dt><dd class="font-semibold">09:00 tot 20:30</dd></div>
+          <div class="flex justify-between py-2.5 text-espresso/50"><dt>Woensdag</dt><dd>Gesloten</dd></div>
+          <div class="flex justify-between py-2.5"><dt>Donderdag</dt><dd class="font-semibold">09:00 tot 20:30</dd></div>
+          <div class="flex justify-between py-2.5"><dt>Vrijdag</dt><dd class="font-semibold">09:00 tot 18:00</dd></div>
+          <div class="flex justify-between py-2.5"><dt>Zaterdag</dt><dd class="font-semibold">10:00 tot 17:00</dd></div>
+          <div class="flex justify-between py-2.5 text-espresso/50"><dt>Zondag</dt><dd>Gesloten</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-espresso/10">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-[14px] text-espresso/65">
+    <p class="flex items-baseline gap-2"><span class="font-kop text-2xl text-espresso">Brush</span><span class="font-kop italic text-brons">by Indy</span></p>
+    <p>Markerinkdijk 27, 7122 RT Aalten · <a href="tel:+31649582247" class="hover:text-brons">06 49582247</a></p>
+    <p>Demo door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-brons">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-linnen/95 backdrop-blur border-t border-espresso/10">
+  <a href="tel:+31649582247" class="knop flex items-center justify-center gap-3 rounded-full bg-brons text-white py-3.5 text-[16px] font-semibold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel Indy: 06 49582247
+  </a>
+</div>
+
+</body>
+</html>

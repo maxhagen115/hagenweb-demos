@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kapsalon Dianne | Kapper en krullenkapper in Aalten</title>
+<meta name="description" content="Kapsalon Dianne in Aalten: persoonlijke aandacht, een ontspannen sfeer en officieel krullenkapper. Voor dames, heren en kinderen. Bel 06 430 432 81.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231E2A4A'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='36' text-anchor='middle' fill='%23F5E6E1'%3ED%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,100,1;1,9..144,300..700,100,1&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          poeder: '#F5E6E1',
+          wit: '#FFFBF9',
+          navy: '#1E2A4A',
+          roos: '#A94A52',
+          roosdonker: '#8E3A42',
+          hout: '#C4935E',
+          zacht: '#55607A',
+        },
+        fontFamily: {
+          kop: ['Fraunces', 'Georgia', 'serif'],
+          body: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; }
+  .kop { font-family: 'Fraunces', Georgia, serif; font-variation-settings: 'SOFT' 100, 'WONK' 1; letter-spacing: -0.02em; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .grain::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .35; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .4 0 0 0 0 .4 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  .btn-roos { transition: background-color .2s, transform .2s, box-shadow .2s; box-shadow: 0 10px 24px -10px rgba(169,74,82,.65); }
+  .btn-roos:hover { background-color: #8E3A42; transform: translateY(-1px); }
+  .btn-roos:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #C4935E; outline-offset: 3px; }
+  /* Krullijn tekent zich bij laden, alleen als JS draait */
+  .js .krul path { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: teken 2.4s .3s cubic-bezier(.6,.1,.2,1) forwards; }
+  @keyframes teken { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .js .krul path { animation: none; stroke-dashoffset: 0; } html { scroll-behavior: auto; } }
+  .tijden li.vandaag { background: #FFFBF9; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-poeder text-navy antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 bg-wit px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-navy text-poeder/90 text-[13px] text-center px-4 py-2">
+  Demo voor Kapsalon Dianne, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<header class="relative z-20">
+  <nav class="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between gap-6" aria-label="Hoofdmenu">
+    <a href="#" class="flex flex-col leading-none">
+      <span class="kop text-[2rem] font-medium text-navy">Dianne</span>
+      <span class="text-[12px] tracking-wide text-zacht mt-1">kapsalon in Aalten</span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+      <li><a href="#krullen" class="hover:text-roos transition-colors">Krullen</a></li>
+      <li><a href="#werk" class="hover:text-roos transition-colors">Werk</a></li>
+      <li><a href="#over" class="hover:text-roos transition-colors">Over Dianne</a></li>
+      <li><a href="#reviews" class="hover:text-roos transition-colors">Reviews</a></li>
+      <li><a href="#langskomen" class="hover:text-roos transition-colors">Langskomen</a></li>
+    </ul>
+    <a href="tel:+31643043281" class="inline-flex items-center gap-2 rounded-full border-2 border-navy px-4 py-2 text-[15px] font-semibold hover:bg-navy hover:text-poeder transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 430 432 81</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="relative overflow-hidden grain">
+  <div class="relative max-w-6xl mx-auto px-5 sm:px-8 pt-4 pb-16 lg:pt-10 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-6 items-center">
+    <div class="lg:col-span-6 relative z-10">
+      <p class="text-[15px] font-medium text-roos mb-4">Kapper in Aalten, officieel krullenkapper</p>
+      <h1 class="kop text-[2.9rem] leading-[1.02] sm:text-6xl lg:text-[5.2rem] font-normal text-navy">Krullen mogen hier gewoon krullen.</h1>
+      <p class="mt-6 text-[17px] sm:text-lg leading-relaxed text-zacht max-w-md">In mijn kleine salon neem ik de tijd voor je. Ik knip en kleur voor dames, heren en kinderen, en ik weet precies wat krullen nodig hebben.</p>
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:+31643043281" class="btn-roos inline-flex items-center justify-center gap-3 rounded-full bg-roos text-white px-8 py-4 text-lg font-semibold">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel voor een afspraak
+        </a>
+        <a href="mailto:kapsalon.dianne@gmail.com" class="text-[16px] font-medium underline decoration-hout decoration-2 underline-offset-4 hover:text-roos transition-colors self-start sm:self-auto">of stuur Dianne een mailtje</a>
+      </div>
+      <a href="#reviews" class="mt-8 inline-flex items-center gap-3 text-[15px] text-zacht hover:text-navy transition-colors">
+        <span class="flex text-hout" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="text-navy font-semibold">4,9</strong> uit 17 Google-reviews</span>
+      </a>
+    </div>
+
+    <div class="lg:col-span-6 relative">
+      <div class="relative mx-auto w-[min(88vw,520px)] aspect-square">
+        <!-- Krullijn -->
+        <svg class="krul absolute -left-[18%] -top-[8%] w-[136%] h-[120%] pointer-events-none z-0" viewBox="0 0 600 560" fill="none" aria-hidden="true">
+          <path d="M200 25 C 380 -15, 575 90, 578 260 C 581 380, 545 440, 500 470 C 460 495, 470 548, 518 541 C 562 534, 560 482, 524 486" stroke="#A94A52" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <div class="absolute inset-0 rounded-full overflow-hidden bg-wit shadow-[0_40px_80px_-40px_rgba(30,42,74,.55)] z-10">
+          <img src="assets/site-01.webp" alt="Dianne in haar kapsalon in Aalten, leunend op een kappersstoel" class="w-full h-full object-cover scale-[1.04]">
+        </div>
+        <div class="absolute z-20 -left-2 sm:-left-10 -bottom-6 sm:-bottom-10 w-[38%] aspect-[3/4] boog overflow-hidden border-[6px] border-poeder shadow-[0_24px_40px_-20px_rgba(30,42,74,.6)]">
+          <img src="assets/site-09.webp" alt="Donkere krullen, geknipt in de salon" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KRULLEN -->
+<section id="krullen" class="bg-navy text-poeder relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <div class="relative max-w-[280px] sm:max-w-sm mx-auto lg:mx-0">
+        <div class="boog overflow-hidden aspect-[4/5]">
+          <img src="assets/site-08.webp" alt="Close-up van blonde krullen na een CurlSys-knipbeurt" class="w-full h-full object-cover">
+        </div>
+        <svg class="absolute -right-10 -top-10 w-32 h-32 text-hout" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M20 90 C 10 40, 80 20, 90 60 C 98 92, 50 96, 52 66 C 54 46, 76 48, 74 64" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <p class="text-hout font-medium mb-4">Officieel krullenkapper</p>
+      <h2 class="kop text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">Elke krul telt.</h2>
+      <div class="mt-7 space-y-5 text-[17px] leading-relaxed text-poeder/80 max-w-xl">
+        <p>Krullen hebben een andere aanpak nodig dan steil haar. Daarom knip ik ze volgens de CurlSys-methode. Klanten merken het verschil: ze vertellen me dat ze sindsdien veel meer krul hebben.</p>
+        <p>Ik neem er de tijd voor, en ik laat je zien hoe je je haar thuis verzorgt en welke producten daarbij helpen.</p>
+      </div>
+      <figure class="mt-10 border-l-2 border-hout pl-6 max-w-xl">
+        <blockquote class="kop italic text-2xl leading-snug text-white">"Niemand anders mag aan mijn krullen zitten;) Echt een aanrader voor iedereen die krullen heeft."</blockquote>
+        <figcaption class="mt-3 text-sm text-poeder/70">Elize Wikkerink, Google-review</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- WERK -->
+<section id="werk" class="relative grain">
+  <div class="relative max-w-6xl mx-auto px-5 sm:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-12">
+      <h2 class="kop text-4xl sm:text-5xl lg:col-span-7 leading-[1.05]">Uit de stoel, de deur uit.</h2>
+      <p class="lg:col-span-5 text-zacht text-[17px] leading-relaxed">Knippen, kleuren of een compleet nieuwe look. Een greep uit wat er de afgelopen tijd in de salon gebeurde.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-3 sm:gap-4">
+      <figure class="row-span-2 md:col-span-2 flex flex-col">
+        <div class="overflow-hidden rounded-[1.25rem] flex-1 min-h-[16rem]"><img src="assets/site-12.webp" alt="Lang blond haar met zachte golven" class="w-full h-full object-cover object-[50%_15%]" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-zacht">Zachte golven</figcaption>
+      </figure>
+      <figure class="md:col-span-2">
+        <div class="overflow-hidden rounded-[1.25rem] aspect-[3/4] md:aspect-[4/3]"><img src="assets/site-11.webp" alt="Schouderlang haar in een diep rode kleur" class="w-full h-full object-cover object-[50%_30%]" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-zacht">Een nieuwe kleur</figcaption>
+      </figure>
+      <figure class="md:col-span-2">
+        <div class="overflow-hidden rounded-[1.25rem] aspect-[3/4] md:aspect-[4/3]"><img src="assets/site-10.webp" alt="Opgestoken rood haar met een uitgeschoren patroon in de nek" class="w-full h-full object-cover object-[50%_55%]" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-zacht">Durf: een patroon in de nek</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-2">
+        <div class="overflow-hidden rounded-[1.25rem] aspect-[4/3]"><img src="assets/site-05.webp" alt="Jongen voor en na de knipbeurt" class="w-full h-full object-cover" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-zacht">Ook kinderen zitten hier graag</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-2">
+        <div class="overflow-hidden rounded-[1.25rem] aspect-[4/3]"><img src="assets/site-07.webp" alt="Blond haar met lagen, gezien van achteren in de salon" class="w-full h-full object-cover object-[50%_40%]" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-zacht">Blond met beweging</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- OVER -->
+<section id="over" class="bg-wit">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7 relative">
+      <div class="overflow-hidden rounded-[2rem] rounded-tr-[10rem] aspect-[16/10]">
+        <img src="assets/google-01.jpg" alt="De kapsalon van Dianne: navy muur, houten balie, spiegel en twee kappersstoelen" class="w-full h-full object-cover" loading="lazy">
+      </div>
+    </div>
+    <div class="lg:col-span-5">
+      <h2 class="kop text-4xl sm:text-5xl leading-[1.05]">Aangenaam, Dianne.</h2>
+      <div class="mt-6 space-y-5 text-[17px] leading-relaxed text-zacht">
+        <p>In Aalten vind je mijn kapsalon: klein, gezellig en zonder haast. Persoonlijke aandacht en een ontspannen sfeer staan voorop, zodat je je hier altijd op je gemak voelt.</p>
+        <p>Ik heb meer dan 10 jaar ervaring en knip dames, heren en kinderen. Of je nu komt voor een knipbeurt, een nieuwe kleur of iets heel anders: ik denk mee, geef eerlijk advies en ga door tot het goed is. Zodat je met een glimlach de deur uitgaat.</p>
+        <p>Heb je een vraag? Stuur me gerust een berichtje.</p>
+      </div>
+      <p class="kop italic text-2xl mt-6 text-roos">Dianne Rave-Obbink</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="relative grain">
+  <div class="relative max-w-6xl mx-auto px-5 sm:px-8 py-20 lg:py-28">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <h2 class="kop text-4xl sm:text-5xl leading-[1.05] max-w-xl">Wat klanten over Dianne zeggen.</h2>
+      <p class="text-zacht text-[17px]"><span class="kop text-5xl text-navy align-middle mr-2">4,9</span> gemiddeld uit 17 reviews op Google</p>
+    </div>
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-5 [&>figure]:mb-5">
+      <figure class="break-inside-avoid bg-wit rounded-[1.5rem] p-7">
+        <blockquote class="text-[16px] leading-relaxed">"Ik voel me bij deze kapster op mijn gemak. Dianne is heel vriendelijk en heeft echt passie voor het haar. Ze knipt mijn haar volgens de CurlSys methode en sinds zij mijn haren knipt, heb ik echt veel meer krul! Ze neemt de tijd voor je. Dianne weet ook veel over haarproducten en leert je hoe je je haren thuis het beste"</blockquote>
+        <figcaption class="mt-5 font-semibold">Leonie Mengerink</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-navy text-poeder rounded-[1.5rem] p-7">
+        <blockquote class="kop text-2xl leading-snug">"Gisteren heeft Dianne me geknipt en ik ben super blij met het resultaat! Dianne luistert goed naar je wensen, geeft advies en werkt heel secuur. Bovendien is het altijd gezellig."</blockquote>
+        <figcaption class="mt-5 font-semibold text-hout">Hilde Wikkerink</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-wit rounded-[1.5rem] p-7">
+        <blockquote class="text-[16px] leading-relaxed">"Dianne neemt de tijd, het is altijd gezellig. Ze denkt mee als je een x wat anders wil, ben nu dus ook ontzettend blij met m'n nieuwe coupe!"</blockquote>
+        <figcaption class="mt-5 font-semibold">Ilona</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-wit rounded-[1.5rem] p-7">
+        <blockquote class="text-[16px] leading-relaxed">"Ik kom al jaren bij Dianne voor de Curslys kniptechniek. Ben altijd erg tevreden met het resultaat! Niemand anders mag aan mijn krullen zitten;) Echt een aanrader voor iedereen die krullen heeft."</blockquote>
+        <figcaption class="mt-5 font-semibold">Elize Wikkerink</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-roos text-white rounded-[1.5rem] p-7">
+        <blockquote class="text-[16px] leading-relaxed">"Dit hebben onder een genot van een gebakje die gemaakt is gemaakt door Rudolf uit ijzerlo .<br>Endelijk van de corona kapsel af . "Verleden tijd ".<br>Mooi model geknipt. Ben er blij mee.<br>Succes Dianne."</blockquote>
+        <figcaption class="mt-5 font-semibold">Wilma Rutjes</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- LANGSKOMEN -->
+<section id="langskomen" class="bg-wit">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-4xl sm:text-5xl leading-[1.05]">Kom langs aan de Hagtweg.</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-zacht max-w-md">Bel voor een afspraak. Op dinsdag ben ik tot 21:00 open, handig als je overdag werkt.</p>
+      <dl class="mt-8 space-y-5 text-[17px]">
+        <div>
+          <dt class="text-sm text-zacht">Bellen</dt>
+          <dd><a href="tel:+31643043281" class="kop text-3xl hover:text-roos transition-colors">06 430 432 81</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-zacht">Mailen</dt>
+          <dd><a href="mailto:kapsalon.dianne@gmail.com" class="font-medium underline decoration-hout decoration-2 underline-offset-4 hover:text-roos break-all">kapsalon.dianne@gmail.com</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-zacht">Adres</dt>
+          <dd class="font-medium">Hagtweg 13A<br>7122 JS Aalten<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hagtweg+13A+7122+JS+Aalten" class="inline-block mt-2 text-roos font-semibold hover:underline underline-offset-4">Route plannen</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-8">
+      <div class="bg-poeder rounded-[1.5rem] p-7">
+        <h3 class="kop text-2xl mb-4">Openingstijden</h3>
+        <ul class="tijden text-[16px] tabular-nums">
+          <li data-dag="1" class="flex justify-between py-2 px-3 -mx-3 rounded-lg"><span>Maandag</span><span>09:00 tot 17:00</span></li>
+          <li data-dag="2" class="flex justify-between py-2 px-3 -mx-3 rounded-lg"><span>Dinsdag</span><span class="font-semibold">13:00 tot 21:00</span></li>
+          <li data-dag="3" class="flex justify-between py-2 px-3 -mx-3 rounded-lg text-zacht"><span>Woensdag</span><span>gesloten</span></li>
+          <li data-dag="4" class="flex justify-between py-2 px-3 -mx-3 rounded-lg text-zacht"><span>Donderdag</span><span>gesloten</span></li>
+          <li data-dag="5" class="flex justify-between py-2 px-3 -mx-3 rounded-lg"><span>Vrijdag</span><span>10:00 tot 19:00</span></li>
+          <li data-dag="6" class="flex justify-between py-2 px-3 -mx-3 rounded-lg"><span>Zaterdag</span><span>10:00 tot 14:00</span></li>
+          <li data-dag="0" class="flex justify-between py-2 px-3 -mx-3 rounded-lg text-zacht"><span>Zondag</span><span>gesloten</span></li>
+        </ul>
+      </div>
+
+      <form id="form" class="flex flex-col gap-4" novalidate>
+        <h3 class="kop text-2xl">Stuur een bericht</h3>
+        <label class="flex flex-col gap-1.5 text-sm font-medium">Naam
+          <input name="naam" required class="rounded-xl border border-navy/20 bg-poeder/50 px-4 py-3 text-[16px] font-normal focus:border-navy">
+        </label>
+        <label class="flex flex-col gap-1.5 text-sm font-medium">Telefoon of e-mail
+          <input name="contact" required class="rounded-xl border border-navy/20 bg-poeder/50 px-4 py-3 text-[16px] font-normal focus:border-navy">
+        </label>
+        <label class="flex flex-col gap-1.5 text-sm font-medium">Je vraag
+          <textarea name="bericht" rows="4" required class="rounded-xl border border-navy/20 bg-poeder/50 px-4 py-3 text-[16px] font-normal focus:border-navy"></textarea>
+        </label>
+        <p id="form-fout" class="hidden text-sm text-roos" role="alert">Vul je naam, contactgegevens en vraag in.</p>
+        <button type="submit" class="self-start rounded-full bg-navy text-poeder px-6 py-3 font-semibold hover:bg-roos transition-colors">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-navy text-poeder/80 pb-24 lg:pb-0">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12 flex flex-col md:flex-row gap-8 md:items-end justify-between">
+    <div>
+      <p class="kop text-4xl text-poeder">Dianne</p>
+      <p class="mt-2 text-sm">Kapsalon in Aalten, voor dames, heren en kinderen.</p>
+    </div>
+    <div class="text-sm space-y-1 md:text-right">
+      <p>Hagtweg 13A, 7122 JS Aalten</p>
+      <p><a href="tel:+31643043281" class="hover:text-white">06 430 432 81</a> <span aria-hidden="true">/</span> <a href="mailto:kapsalon.dianne@gmail.com" class="hover:text-white">kapsalon.dianne@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-30 p-3 bg-poeder/90 backdrop-blur border-t border-navy/10">
+  <a href="tel:+31643043281" class="btn-roos flex items-center justify-center gap-3 rounded-full bg-roos text-white py-3.5 text-[17px] font-semibold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Dianne: 06 430 432 81
+  </a>
+</div>
+
+<script>
+  // Markeer vandaag in de openingstijden
+  const dag = new Date().getDay();
+  document.querySelector('.tijden [data-dag="' + dag + '"]')?.classList.add('vandaag', 'font-semibold');
+
+  // Formulier: opent mailprogramma met het bericht
+  document.getElementById('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target;
+    const fout = document.getElementById('form-fout');
+    if (!f.naam.value.trim() || !f.contact.value.trim() || !f.bericht.value.trim()) { fout.classList.remove('hidden'); return; }
+    fout.classList.add('hidden');
+    const body = f.bericht.value + '\n\n' + f.naam.value + '\n' + f.contact.value;
+    location.href = 'mailto:kapsalon.dianne@gmail.com?subject=' + encodeURIComponent('Vraag via de website') + '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kapsalon Kerstje, kapper in Aalten</title>
+<meta name="description" content="Kapsalon Kerstje in Aalten: knippen en kleuren voor dames, heren en kinderen, met eerlijk advies. Ook 's avonds open op woensdag en donderdag. Bel 0543 472 407.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        taupe: { 900: '#3f3a37', 700: '#5e5753', 400: '#a39a92' },
+        steen: '#e9e6e0',
+        licht: '#f6f4f0',
+        oker: { DEFAULT: '#d6a62e', donker: '#b88a1c' },
+        inkt: '#2a2624',
+      },
+      fontFamily: {
+        kop: ['Gloock', 'Georgia', 'serif'],
+        tekst: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .tab { font-variant-numeric: tabular-nums; }
+  .boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  .leader { display: flex; align-items: baseline; gap: .75rem; }
+  .leader::after { content: ""; order: 1; flex: 1; border-bottom: 1px dotted #a39a92; transform: translateY(-.3em); }
+  .leader > :last-child { order: 2; }
+  .js .streek path { stroke-dasharray: 900; stroke-dashoffset: 900; animation: teken 1.1s .3s cubic-bezier(.6,.1,.3,1) forwards; }
+  @keyframes teken { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .js .streek path { animation: none; stroke-dashoffset: 0; }
+  }
+  @media (max-width: 639px) {
+    table.kleur thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    table.kleur tr { display: grid; grid-template-columns: 1fr 1fr; padding: .9rem 0; }
+    table.kleur td { padding: 0 !important; text-align: left !important; }
+    table.kleur td:first-child { grid-column: 1 / -1; font-weight: 600; margin-bottom: .35rem; }
+    table.kleur td:nth-child(2)::before { content: "Zonder knippen"; display: block; font-size: .8rem; color: #5e5753; }
+    table.kleur td:nth-child(3)::before { content: "Met knippen"; display: block; font-size: .8rem; font-weight: 400; color: #5e5753; }
+  }
+  :focus-visible { outline: 3px solid #d6a62e; outline-offset: 3px; border-radius: 4px; }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-steen text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white px-3 py-2 z-50">Naar de inhoud</a>
+
+<div class="bg-inkt text-[#d8d2cb] text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Kapsalon Kerstje Aalten, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-oker">Hagenweb</a>
+</div>
+
+<!-- Hero -->
+<header class="bg-taupe-900 text-licht relative overflow-hidden">
+  <nav class="max-w-6xl mx-auto px-5 sm:px-8 pt-5 flex items-center justify-between gap-4">
+    <a href="#" class="relative inline-block font-kop text-2xl sm:text-[1.7rem] leading-none" aria-label="Kapsalon Kerstje, naar boven">
+      <span class="block text-[0.7rem] font-tekst font-medium tracking-[0.08em] text-taupe-400 mb-1">Kapsalon</span>
+      <span class="relative z-10">Kerstje</span>
+      <svg class="absolute -left-1 -bottom-2 w-[115%] h-3 text-oker" viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 30 3, 70 2, 118 5 C 90 7, 50 9, 6 10 Z" fill="currentColor"/></svg>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm text-[#d8d2cb]">
+      <a href="#salon" class="hover:text-white">De salon</a>
+      <a href="#prijzen" class="hover:text-white">Prijzen</a>
+      <a href="#abonnement" class="hover:text-white">Abonnementen</a>
+      <a href="#afspraak" class="hover:text-white">Afspraak & tijden</a>
+    </div>
+    <a href="tel:+31543472407" class="text-sm font-semibold border border-white/25 rounded-full px-4 py-2 hover:border-oker hover:text-oker transition-colors tab">0543 472 407</a>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-10 md:pt-16 pb-14 md:pb-24 grid md:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-14 items-center">
+    <div id="inhoud">
+      <p class="text-oker font-medium mb-4">Kapper in Aalten</p>
+      <h1 class="font-kop text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.6rem] tracking-[-0.01em]">Niet alleen geknipt. Ook goed geadviseerd.</h1>
+      <p class="mt-6 text-lg text-[#d8d2cb] max-w-md leading-relaxed">Knippen en kleuren voor dames, heren en kinderen. We luisteren eerst, en zeggen eerlijk wat bij u past.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a id="herobel" href="tel:+31543472407" class="inline-flex items-center gap-3 bg-oker text-inkt font-semibold text-lg rounded-full pl-5 pr-7 py-4 shadow-[0_10px_30px_-10px_rgba(214,166,46,.6)] hover:bg-[#e2b440] active:translate-y-px transition">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel voor een afspraak
+        </a>
+        <a href="#prijzen" class="text-[#d8d2cb] underline underline-offset-4 decoration-white/30 hover:text-white hover:decoration-oker">Bekijk de prijzen</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-sm text-[#d8d2cb]">
+        <span class="text-oker tracking-wider" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-white">4,7</strong> uit 67 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="relative mx-auto w-full max-w-[400px] md:max-w-[440px]">
+      <svg class="streek absolute -left-10 bottom-10 w-[130%] z-20 text-oker pointer-events-none" viewBox="0 0 500 90" fill="none" aria-hidden="true">
+        <path d="M10 62 C 120 30, 260 22, 488 30" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>
+      </svg>
+      <div class="boog overflow-hidden aspect-[4/5] bg-taupe-700 relative z-10">
+        <img src="assets/site-02.jpg" alt="Lang, golvend haar met warme highlights" class="w-full h-full object-cover object-[38%_50%]">
+      </div>
+      <p class="relative z-30 mt-4 text-sm text-taupe-400 text-right">Highlights, balayage of gewoon de uitgroei.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Advies & team -->
+<section id="salon" class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-12 md:gap-10">
+    <figure class="md:col-span-7">
+      <svg class="w-10 h-10 text-oker mb-4" viewBox="0 0 40 40" fill="currentColor" aria-hidden="true"><path d="M4 30c0-9 4-16 12-20l2 3c-4 3-6 6-6 9h6v10H4zm18 0c0-9 4-16 12-20l2 3c-4 3-6 6-6 9h6v10H22z"/></svg>
+      <blockquote class="font-kop text-2xl sm:text-[2rem] leading-snug">Ik liet een foto zien en vroeg of het bij mij zou staan, ze gaven goed advies met wat kleine aanpassingen maar daardoor juist een heel mooi resultaat.</blockquote>
+      <figcaption class="mt-5 text-taupe-700">Wouter Stam, via Google <span class="text-oker" aria-label="5 sterren">★★★★★</span></figcaption>
+    </figure>
+    <div class="md:col-span-5 md:pt-16">
+      <h2 class="font-kop text-3xl">Sinds 2008 in Aalten</h2>
+      <p class="mt-4 leading-relaxed text-taupe-700">Met passie en creativiteit doen we elke dag ons vak. We volgen regelmatig cursussen en trainingen, zodat we u goed knip- en kleuradvies kunnen geven met de nieuwste haarmode in het achterhoofd.</p>
+      <p class="mt-4 leading-relaxed text-taupe-700">Maar het mooiste blijft het contact. Mensen vertrouwen je veel toe in de stoel, en dat maakt dit vak zo leuk. Benieuwd wat we voor u kunnen doen? Loop gerust eens binnen.</p>
+    </div>
+  </div>
+
+  <div class="mt-20 md:mt-24 border-t border-taupe-400/40 pt-10 grid md:grid-cols-12 gap-6 items-baseline">
+    <h2 class="md:col-span-3 text-taupe-700 font-medium">Ons team</h2>
+    <p class="md:col-span-9 font-kop text-3xl sm:text-4xl lg:text-5xl leading-tight">Marloes, Jessica, Babs, Kerstje, Lobke, Nienke <span class="text-taupe-700">en</span> Geke.</p>
+    <p class="md:col-start-4 md:col-span-9 text-taupe-700 max-w-xl">Zeven kapsters, ieder met een eigen kwaliteit. Voor mannen, vrouwen en kinderen.</p>
+  </div>
+</section>
+
+<!-- Prijzen -->
+<section id="prijzen" class="bg-licht">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+    <div class="max-w-2xl">
+      <h2 class="font-kop text-4xl sm:text-5xl">Behandelingen en prijzen</h2>
+      <p class="mt-4 text-taupe-700 leading-relaxed">Twijfelt u welke kleurbehandeling bij u past? Loop gerust binnen voor advies. Prijzen met "v/a" zijn vanafprijzen.</p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-14 lg:gap-12">
+      <div class="lg:col-span-5 space-y-12">
+        <div>
+          <h3 class="font-kop text-2xl mb-5">Knippen</h3>
+          <ul class="space-y-3 tab">
+            <li class="leader"><span>Dames</span><span class="font-semibold">€ 34,00</span></li>
+            <li class="leader"><span>Heren</span><span class="font-semibold">€ 30,50</span></li>
+            <li class="leader"><span>Heren, aangepast tarief</span><span class="font-semibold">€ 26,00</span></li>
+            <li class="leader"><span>Kind tot 4 jaar</span><span class="font-semibold">€ 23,20</span></li>
+            <li class="leader"><span>Kind 5 t/m 12 jaar</span><span class="font-semibold">€ 24,90</span></li>
+            <li class="leader"><span>Kind 13 t/m 16 jaar</span><span class="font-semibold">€ 26,70</span></li>
+            <li class="leader"><span>Krullen knippen, Curlsys System</span><span class="font-semibold">€ 91,50</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-kop text-2xl mb-5">Verder</h3>
+          <ul class="space-y-3 tab">
+            <li class="leader"><span>Opsteken</span><span class="font-semibold">v/a € 45,50</span></li>
+            <li class="leader"><span>Permanent</span><span class="font-semibold">v/a € 121,50</span></li>
+            <li class="leader"><span>Highlights los, per stuk</span><span class="font-semibold">€ 4,85</span></li>
+            <li class="leader"><span>Bruidskapsel en bruidsmake-up</span><span class="font-semibold">op aanvraag</span></li>
+          </ul>
+          <p class="mt-3 text-sm text-taupe-700">Losse highlights: in kort haar boven de oren of als extra bij een verfbehandeling.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 min-w-0">
+        <h3 class="font-kop text-2xl mb-5">Kleurarrangementen</h3>
+        <p class="text-sm text-taupe-700 mb-5">Altijd inclusief föhnen.</p>
+        <div>
+          <table class="kleur w-full text-left tab">
+            <thead>
+              <tr class="text-sm text-taupe-700 border-b border-taupe-400/50">
+                <th class="font-medium py-3 pr-4">Behandeling</th>
+                <th class="font-medium py-3 px-3 text-right whitespace-nowrap">Zonder knippen</th>
+                <th class="font-medium py-3 pl-3 text-right whitespace-nowrap">Met knippen</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-taupe-400/30">
+              <tr><td class="py-3.5 pr-4">Uitgroei kleuren</td><td class="py-3.5 px-3 text-right whitespace-nowrap">v/a € 64,95</td><td class="py-3.5 pl-3 text-right font-semibold whitespace-nowrap">v/a € 92,95</td></tr>
+              <tr><td class="py-3.5 pr-4">Heel het haar kleuren<span class="block text-sm text-taupe-700">van kort tot lang haar</span></td><td class="py-3.5 px-3 text-right whitespace-nowrap">v/a € 92,50<span class="block text-sm text-taupe-700">€ 98,95 / € 105,50</span></td><td class="py-3.5 pl-3 text-right font-semibold whitespace-nowrap">v/a € 106,25<span class="block text-sm font-normal text-taupe-700">€ 112,95 / € 119,50</span></td></tr>
+              <tr><td class="py-3.5 pr-4">Toner</td><td class="py-3.5 px-3 text-right whitespace-nowrap">v/a € 49,50</td><td class="py-3.5 pl-3 text-right font-semibold whitespace-nowrap">v/a € 63,50</td></tr>
+              <tr><td class="py-3.5 pr-4">Highlights of balayage</td><td class="py-3.5 px-3 text-right whitespace-nowrap">v/a € 142,95</td><td class="py-3.5 pl-3 text-right font-semibold whitespace-nowrap">v/a € 156,95</td></tr>
+              <tr><td class="py-3.5 pr-4">Highlights of balayage met toner</td><td class="py-3.5 px-3 text-right whitespace-nowrap">v/a € 164,50</td><td class="py-3.5 pl-3 text-right font-semibold whitespace-nowrap">v/a € 178,50</td></tr>
+              <tr><td class="py-3.5 pr-4">Highlights scalp, max. 25</td><td class="py-3.5 px-3 text-right whitespace-nowrap">v/a € 121,50</td><td class="py-3.5 pl-3 text-right font-semibold whitespace-nowrap">v/a € 135,25</td></tr>
+              <tr><td class="py-3.5 pr-4">Highlights scalp, max. 25, met toner</td><td class="py-3.5 px-3 text-right whitespace-nowrap">v/a € 137,50</td><td class="py-3.5 pl-3 text-right font-semibold whitespace-nowrap">v/a € 151,50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abonnementen -->
+<section id="abonnement" class="bg-taupe-900 text-licht">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 items-center">
+    <div class="md:col-span-5">
+      <div class="overflow-hidden rounded-2xl rounded-tl-[5rem] aspect-[4/3] max-w-md mx-auto md:mx-0">
+        <img src="assets/google-01.jpg" alt="Het abonnementenkaartje op tafel in de salon" class="w-full h-full object-cover object-[50%_25%]" loading="lazy">
+      </div>
+    </div>
+    <div class="md:col-span-7">
+      <h2 class="font-kop text-4xl sm:text-5xl leading-tight">Onbeperkt naar de kapper, voor een vast bedrag</h2>
+      <p class="mt-5 text-[#d8d2cb] leading-relaxed max-w-lg">Met een abonnement komt u zo vaak als u wilt. U betaalt per maand en kunt op ieder moment stoppen.</p>
+      <dl class="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 tab max-w-lg">
+        <div class="border-t border-white/20 pt-4"><dt class="text-[#d8d2cb] text-sm">Knippen dame</dt><dd class="font-kop text-3xl mt-1">€ 27,75<span class="font-tekst text-sm text-taupe-400"> p/m</span></dd></div>
+        <div class="border-t border-white/20 pt-4"><dt class="text-[#d8d2cb] text-sm">Knippen heer</dt><dd class="font-kop text-3xl mt-1">€ 26,75<span class="font-tekst text-sm text-taupe-400"> p/m</span></dd></div>
+        <div class="border-t border-white/20 pt-4"><dt class="text-[#d8d2cb] text-sm">Knippen kind, t/m 16 jaar</dt><dd class="font-kop text-3xl mt-1">€ 22,00<span class="font-tekst text-sm text-taupe-400"> p/m</span></dd></div>
+        <div class="border-t border-white/20 pt-4"><dt class="text-[#d8d2cb] text-sm">Kleuren, 1 kleur, alleen uitgroei</dt><dd class="font-kop text-3xl mt-1">€ 40,50<span class="font-tekst text-sm text-taupe-400"> p/m</span></dd></div>
+      </dl>
+      <ul class="mt-10 space-y-2 text-[#d8d2cb] text-sm max-w-lg">
+        <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-oker shrink-0"></span>Altijd 15% korting op alle KMS- en Goldwell-producten (niet in combinatie met andere acties).</li>
+        <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-oker shrink-0"></span>Op ieder moment te beëindigen.</li>
+        <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-oker shrink-0"></span>Plus 3,5% servicekosten per maand, voor een veilige afhandeling van de betalingen.</li>
+      </ul>
+      <a href="tel:+31543472407" class="mt-10 inline-flex items-center gap-2 border border-oker text-oker rounded-full px-6 py-3 font-semibold hover:bg-oker hover:text-inkt transition-colors">Vraag naar een abonnement</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <h2 class="font-kop text-4xl sm:text-5xl max-w-xl">Wat klanten over ons zeggen</h2>
+    <p class="text-taupe-700"><span class="font-kop text-4xl text-inkt">4,7</span> <span class="text-oker">★★★★★</span><br>67 reviews op Google</p>
+  </div>
+  <div class="mt-12 grid md:grid-cols-3 gap-6 md:gap-8 items-start">
+    <figure class="bg-licht rounded-2xl p-7">
+      <blockquote class="leading-relaxed">"Een hele fijne salon waar goed geluisterd wordt naar de wensen maar waar ook een goed advies wordt gegeven. Ervaren hair stylists die goed knippen en die op de hoogte zijn van de laatste trends. Last but not least: prijs en kwaliteit zijn goed in verhouding. Ik blijf hier terugkomen!"</blockquote>
+      <figcaption class="mt-5 text-sm font-semibold">Connie Kellerman</figcaption>
+    </figure>
+    <figure class="bg-oker/90 rounded-2xl p-7 md:mt-14">
+      <blockquote class="font-kop text-xl leading-snug">"Erg fijne kappers! Mijn kinderen gaan zelf erheen en komen altijd mooi geknipt thuis. Ga er zelf ook heen en ze geven goed advies! En knippen en kleuren mooi"</blockquote>
+      <figcaption class="mt-5 text-sm font-semibold">Marit Langenbarg</figcaption>
+    </figure>
+    <figure class="bg-licht rounded-2xl p-7">
+      <blockquote class="leading-relaxed">"Niet alleen, dat het er altijd bere-gezellig is: ze verstaan hun vak ook! Ik krijg mijn haar al jaren gesneden i.p.v. geknipt (past beter bij mij). Door omstandigheden heb ik dat de laatste tijd bij drie andere kappers moeten laten doen. Niemand doet dat zo goed als Kerstje."</blockquote>
+      <figcaption class="mt-5 text-sm font-semibold">Ronald Schimmer</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Afspraak & tijden -->
+<section id="afspraak" class="bg-licht">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop text-4xl sm:text-5xl leading-tight">Tijd voor de kapper?</h2>
+      <p class="mt-5 text-taupe-700 leading-relaxed max-w-md">Een knipafspraak maakt u online of telefonisch. Voor kleuren, permanent of opsteken belt u ons even, dan plannen we genoeg tijd in.</p>
+      <a href="tel:+31543472407" class="mt-8 group inline-block">
+        <span class="block text-sm text-taupe-700">Bel de salon</span>
+        <span class="relative inline-block font-kop text-4xl sm:text-5xl tab">0543 472 407
+          <svg class="absolute -left-1 -bottom-1 w-[104%] h-3 text-oker -z-0 opacity-90 group-hover:opacity-100" viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 30 3, 70 2, 118 5 C 90 7, 50 9, 6 10 Z" fill="currentColor"/></svg>
+        </span>
+      </a>
+      <p class="mt-6"><a href="mailto:info@kapsalonkerstje.nl" class="underline underline-offset-4 decoration-taupe-400 hover:decoration-oker">info@kapsalonkerstje.nl</a></p>
+      <p class="mt-8 text-sm text-taupe-700 border-l-2 border-oker pl-4 max-w-md">Afspraak annuleren of verzetten? Dat kan alleen telefonisch.</p>
+    </div>
+
+    <div class="lg:col-span-6 grid sm:grid-cols-2 gap-10">
+      <div>
+        <h3 class="font-kop text-2xl mb-5">Openingstijden</h3>
+        <table class="w-full text-left tab">
+          <tbody>
+            <tr><td class="py-1.5 pr-4">Maandag</td><td class="py-1.5 text-right">08:30 tot 13:00</td></tr>
+            <tr><td class="py-1.5 pr-4">Dinsdag</td><td class="py-1.5 text-right">08:00 tot 18:00</td></tr>
+            <tr class="font-semibold"><td class="py-1.5 pr-4">Woensdag</td><td class="py-1.5 text-right">08:00 tot 20:00</td></tr>
+            <tr class="font-semibold"><td class="py-1.5 pr-4">Donderdag</td><td class="py-1.5 text-right">10:00 tot 20:00</td></tr>
+            <tr><td class="py-1.5 pr-4">Vrijdag</td><td class="py-1.5 text-right">08:00 tot 18:00</td></tr>
+            <tr class="text-taupe-700"><td class="py-1.5 pr-4">Zaterdag</td><td class="py-1.5 text-right">gesloten</td></tr>
+            <tr class="text-taupe-700"><td class="py-1.5 pr-4">Zondag</td><td class="py-1.5 text-right">gesloten</td></tr>
+          </tbody>
+        </table>
+        <p class="mt-4 text-sm text-taupe-700">Op woensdag en donderdag kunt u ook 's avonds terecht.</p>
+      </div>
+      <div>
+        <h3 class="font-kop text-2xl mb-5">Adres</h3>
+        <address class="not-italic leading-relaxed">Kapsalon Kerstje<br>Lichtenvoordsestraatweg 20<br>7121 AC Aalten</address>
+        <a href="https://www.google.com/maps/search/?api=1&query=Kapsalon+Kerstje+Lichtenvoordsestraatweg+20+Aalten" class="mt-4 inline-block underline underline-offset-4 decoration-taupe-400 hover:decoration-oker" target="_blank" rel="noopener">Route plannen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-taupe-900 text-[#d8d2cb] text-sm">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-wrap items-center justify-between gap-4">
+    <p><span class="font-kop text-lg text-licht">Kerstje</span> &nbsp;Kapsalon in Aalten</p>
+    <p class="tab"><a href="tel:+31543472407" class="hover:text-oker">0543 472 407</a> &nbsp;/&nbsp; <a href="mailto:info@kapsalonkerstje.nl" class="hover:text-oker">info@kapsalonkerstje.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 transition-transform duration-300 bg-taupe-900/95 backdrop-blur border-t border-white/10">
+  <a href="tel:+31543472407" class="flex items-center justify-center gap-3 bg-oker text-inkt font-semibold rounded-full py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel 0543 472 407
+  </a>
+</div>
+
+<script>
+  // Vaste belbalk pas tonen als de belknop in de hero uit beeld is.
+  const balk = document.getElementById('belbalk');
+  new IntersectionObserver(([e]) => { balk.style.transform = e.isIntersecting ? 'translateY(110%)' : ''; })
+    .observe(document.getElementById('herobel'));
+</script>
+</body>
+</html>

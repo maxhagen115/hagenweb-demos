@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kapsalon ter Maat | Dames- en herenkapper in Aalten, sinds 1933</title>
+<meta name="description" content="Kapsalon ter Maat aan de Landstraat in Aalten: een echt familiebedrijf sinds 1933. Dames, heren, krullen en haarwerken. Bel 0543 472 413.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          marine: { DEFAULT: '#1B3560', diep: '#11223F', zacht: '#3D5580' },
+          oranje: { DEFAULT: '#E8930C', licht: '#F6C46B', donker: '#B86F00' },
+          creme: '#FBF8F3',
+          zand: '#F1E9DD',
+          hout: '#B8692E',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 80px; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* De heldenfoto in de vorm van een boog, zoals de lok in het logo */
+  .lok-vorm { border-radius: 58% 42% 1.75rem 1.75rem / 42% 34% 1.75rem 1.75rem; }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px) scale(.98); }
+  a:focus-visible, button:focus-visible { outline: 3px solid #E8930C; outline-offset: 3px; border-radius: 6px; }
+
+  /* Eén moment beweging: de lok zwaait bij het laden over de foto. Zonder JS staat hij gewoon op zijn plek. */
+  @keyframes zwaai { from { transform: rotate(-24deg) translateY(10px); opacity: 0; } to { transform: rotate(0) translateY(0); opacity: 1; } }
+  .js .lok-zwaai { animation: zwaai 1.1s cubic-bezier(.2,.8,.2,1) .25s both; transform-origin: 80% 90%; }
+  @media (prefers-reduced-motion: reduce) { .js .lok-zwaai { animation: none; } html { scroll-behavior: auto; } }
+
+  .vandaag { background: #F6C46B33; }
+  .vandaag td:first-child { font-weight: 700; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-creme text-marine antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded">Direct naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-marine-diep text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor Kapsalon ter Maat, gemaakt door <a href="https://hagenweb.nl" class="text-oranje-licht underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-creme/90 backdrop-blur border-b border-marine/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-[72px] md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="shrink-0" aria-label="Kapsalon ter Maat, naar boven">
+      <img src="assets/site-02.png" alt="Kapsalon ter Maat, Jóuw kapper!" class="h-11 md:h-14 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-[15px]" aria-label="Hoofdmenu">
+      <a href="#verhaal" class="hover:text-oranje-donker transition-colors">Ons verhaal</a>
+      <a href="#haarwerken" class="hover:text-oranje-donker transition-colors">Haarwerken</a>
+      <a href="#team" class="hover:text-oranje-donker transition-colors">Team</a>
+      <a href="#langskomen" class="hover:text-oranje-donker transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:+31543472413" class="knop hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-marine px-5 py-2.5 font-semibold text-[15px] hover:bg-marine hover:text-white">
+      <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="tabular">0543 472 413</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-10 md:pt-16 lg:pt-20 pb-14 md:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="lg:col-span-5 relative z-10">
+      <p class="font-medium text-marine-zacht text-[15px] md:text-base">Dames- en herenkapper in Aalten, sinds 1933</p>
+      <h1 class="font-kop font-extrabold text-[44px] leading-[1.02] sm:text-6xl lg:text-[76px] tracking-[-0.03em] mt-3">
+        Goed geknipt.<br>Koffie erbij.
+      </h1>
+      <p class="mt-6 text-lg md:text-xl leading-relaxed text-marine/80 max-w-md">
+        Een echt familiebedrijf aan de Landstraat, voor dames en heren. Eerst luisteren naar wat u wilt, dan pas de schaar erin.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31543472413" class="knop inline-flex items-center gap-3 rounded-full bg-oranje px-7 py-4 text-lg font-bold text-marine-diep shadow-[0_10px_30px_-10px_rgba(232,147,12,.7)] hover:bg-oranje-licht">
+          <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel voor een afspraak
+        </a>
+        <a href="mailto:info@kapsalontermaat.nl" class="font-semibold underline decoration-oranje decoration-2 underline-offset-4 hover:text-oranje-donker">of mail ons</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-[15px]">
+        <span class="flex text-oranje" aria-hidden="true">
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="font-bold">4,8</strong> uit 64 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-7 relative">
+      <img src="assets/logo-oud.png" alt="" aria-hidden="true" class="lok-zwaai absolute -top-10 -left-6 sm:-top-14 sm:-left-10 w-28 sm:w-44 lg:w-56 z-10 pointer-events-none drop-shadow-[0_8px_16px_rgba(184,111,0,.25)]">
+      <div class="lok-vorm overflow-hidden aspect-[5/4] bg-zand shadow-[0_30px_60px_-30px_rgba(17,34,63,.45)]">
+        <img src="assets/google-04.jpg" alt="Het team van Kapsalon ter Maat rond een statafel in de salon" class="w-full h-full object-cover object-[50%_35%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Het verhaal -->
+<section id="verhaal" class="bg-zand">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-5">
+        <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Begonnen met knippen en scheren. Nooit meer opgehouden.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-marine/80 max-w-prose">
+          Kapsalon ter Maat is een echt familiebedrijf. Wat begon als herenkapper is uitgegroeid tot een volwaardige dames- en herenkapsalon. Inmiddels staat de derde generatie achter de stoel.
+        </p>
+      </div>
+      <ol class="lg:col-span-7 relative border-l-2 border-oranje/60 pl-8 md:pl-10 space-y-10">
+        <li class="relative">
+          <span class="absolute -left-[42px] md:-left-[50px] top-1.5 w-4 h-4 rounded-full bg-oranje ring-4 ring-zand"></span>
+          <p class="font-kop font-extrabold text-3xl md:text-4xl text-oranje-donker tabular">1933</p>
+          <p class="mt-2 text-lg leading-relaxed max-w-xl">Derk ter Maat opent een herenkapsalon, waar volop geknipt en geschoren wordt.</p>
+        </li>
+        <li class="relative">
+          <span class="absolute -left-[42px] md:-left-[50px] top-1.5 w-4 h-4 rounded-full bg-oranje ring-4 ring-zand"></span>
+          <p class="font-kop font-extrabold text-3xl md:text-4xl text-oranje-donker">Daarna</p>
+          <p class="mt-2 text-lg leading-relaxed max-w-xl">Zoon Dick en schoondochter Gerda komen in de zaak.</p>
+        </li>
+        <li class="relative">
+          <span class="absolute -left-[42px] md:-left-[50px] top-1.5 w-4 h-4 rounded-full bg-oranje ring-4 ring-zand"></span>
+          <p class="font-kop font-extrabold text-3xl md:text-4xl text-oranje-donker tabular">1991</p>
+          <p class="mt-2 text-lg leading-relaxed max-w-xl">Kleinzoon Wybe gaat in de kapsalon werken.</p>
+        </li>
+        <li class="relative">
+          <span class="absolute -left-[42px] md:-left-[50px] top-1.5 w-4 h-4 rounded-full bg-marine ring-4 ring-zand"></span>
+          <p class="font-kop font-extrabold text-3xl md:text-4xl">Nu</p>
+          <p class="mt-2 text-lg leading-relaxed max-w-xl">Een dames- en herenkapsalon met een team van negen, waar u ook terecht kunt voor al uw haarwerk.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <figure class="relative">
+    <img src="assets/site-01.jpg" alt="De salon van Kapsalon ter Maat met kappersstoelen, verlichte spiegels en de koffiebar" class="w-full h-[260px] md:h-[420px] object-cover object-[45%_60%]">
+    <figcaption class="absolute bottom-4 right-5 md:bottom-6 md:right-8 bg-creme/95 text-marine text-sm font-medium px-4 py-2 rounded-full">De salon aan de Landstraat 14</figcaption>
+  </figure>
+</section>
+
+<!-- Wat we doen -->
+<section id="diensten" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+    <h2 class="lg:col-span-4 font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Waarvoor u bij ons in de stoel gaat zitten</h2>
+    <div class="lg:col-span-8 divide-y divide-marine/15 border-y border-marine/15">
+      <div class="py-7 md:py-8 grid md:grid-cols-[220px_1fr] gap-2 md:gap-8">
+        <h3 class="font-kop font-bold text-2xl">Dames</h3>
+        <p class="text-lg leading-relaxed text-marine/80">Knippen en stylen. Onze hairstylistes denken met u mee over wat bij u past.</p>
+      </div>
+      <div class="py-7 md:py-8 grid md:grid-cols-[220px_1fr] gap-2 md:gap-8">
+        <h3 class="font-kop font-bold text-2xl">Heren</h3>
+        <p class="text-lg leading-relaxed text-marine/80">Hier begon het allemaal in 1933. Gewoon goed geknipt, precies zoals u het wilt.</p>
+      </div>
+      <div class="py-7 md:py-8 grid md:grid-cols-[220px_1fr] gap-2 md:gap-8">
+        <h3 class="font-kop font-bold text-2xl">Krullen</h3>
+        <p class="text-lg leading-relaxed text-marine/80">Marjan en Jacqueline zijn Curlsys-specialistes: zij knippen krullen zoals krullen geknipt willen worden.</p>
+      </div>
+      <div class="py-7 md:py-8 grid md:grid-cols-[220px_1fr] gap-2 md:gap-8">
+        <h3 class="font-kop font-bold text-2xl">Haarwerken</h3>
+        <p class="text-lg leading-relaxed text-marine/80">Toupets, pruiken en onderhoud van uw haarwerk, voor dames en heren. Discreet en persoonlijk. <a href="#haarwerken" class="font-semibold text-marine underline decoration-oranje decoration-2 underline-offset-4 hover:text-oranje-donker">Lees hoe dat gaat</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Haarwerken -->
+<section id="haarwerken" class="bg-marine-diep text-white relative overflow-hidden">
+  <img src="assets/logo-oud.png" alt="" aria-hidden="true" class="absolute -right-24 -top-20 w-[420px] opacity-[0.07] pointer-events-none">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 relative">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div class="lg:col-span-6">
+        <p class="text-oranje-licht font-medium">Haarwerken bij Kapsalon ter Maat</p>
+        <h2 class="mt-3 font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Nieuw haar, zonder dat de buitenwereld het ziet.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-white/80 max-w-xl">
+          Sommige mensen worden al jong kaal, anderen later of door ziekte. Niet iedereen accepteert dat, en dat hoeft ook niet. Wij zijn gespecialiseerd in haarwerken (toupets), pruiken en het onderhoud ervan. Naast uw aanvullend haar knippen en stylen we ook uw eigen haar.
+        </p>
+        <div class="mt-10 overflow-hidden rounded-[1.75rem] rounded-tl-[7rem] aspect-[16/10]">
+          <img src="assets/site-04.jpg" alt="Een kort, gelaagd haarwerk op een paspop in de salon" class="w-full h-full object-cover object-[20%_40%] scale-[1.04]">
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 lg:pt-4">
+        <dl class="space-y-8">
+          <div>
+            <dt class="font-kop font-bold text-xl text-oranje-licht">Privacy voorop</dt>
+            <dd class="mt-2 text-white/80 leading-relaxed">Niet iedereen praat graag over kaalheid. Onze salon is zo ingericht dat u zich op uw gemak voelt, met een persoonlijke ontvangst en begeleiding. U kunt ook 's avonds komen, en als u dat wenst komen wij bij u thuis of in het ziekenhuis.</dd>
+          </div>
+          <div>
+            <dt class="font-kop font-bold text-xl text-oranje-licht">Eerst een intakegesprek</dt>
+            <dd class="mt-2 text-white/80 leading-relaxed">Binnen 5 dagen, vaak zelfs dezelfde dag. We nemen ruim de tijd, laten u de verschillende haarsoorten zien (echt of synthetisch) en kijken samen wat bij uw uiterlijk past. Geheel vrijblijvend en kosteloos.</dd>
+          </div>
+          <div>
+            <dt class="font-kop font-bold text-xl text-oranje-licht">Kosteloos reserveren</dt>
+            <dd class="mt-2 text-white/80 leading-relaxed">Krijgt u een behandeling waardoor u haar kunt verliezen? Reserveer dan vooraf alvast een haarwerk. Verliest u geen haar, dan zit u nergens aan vast.</dd>
+          </div>
+          <div>
+            <dt class="font-kop font-bold text-xl text-oranje-licht">Levertijd</dt>
+            <dd class="mt-2 text-white/80 leading-relaxed">Op voorraad knippen we het direct op maat. Moeten we bestellen, dan duurt het twee dagen tot een week. Maathaarwerk kan tot 12 weken duren.</dd>
+          </div>
+          <div>
+            <dt class="font-kop font-bold text-xl text-oranje-licht">Garantie en vergoeding</dt>
+            <dd class="mt-2 text-white/80 leading-relaxed">We zijn AHS en SGC erkend en gecertificeerd, en geven 6 maanden garantie op door ons geleverde haarwerken. We hebben contracten met de meeste zorgverzekeraars en regelen de aanvraag indien nodig voor u.</dd>
+          </div>
+        </dl>
+        <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a href="tel:+31543472413" class="knop inline-flex items-center gap-3 rounded-full bg-oranje px-6 py-3.5 font-bold text-marine-diep hover:bg-oranje-licht">
+            Bel en vraag naar Wybe
+          </a>
+          <span class="text-white/70 text-[15px]">Wybe is onze haarwerkspecialist</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05] max-w-2xl">Wat klanten over ons zeggen</h2>
+    <p class="text-lg"><strong class="font-kop text-3xl font-extrabold">4,8</strong> <span class="text-marine/70">uit 64 reviews op Google</span></p>
+  </div>
+
+  <div class="mt-12 grid lg:grid-cols-12 gap-6">
+    <figure class="lg:col-span-7 bg-oranje text-marine-diep rounded-[1.75rem] rounded-tl-[6rem] p-8 md:p-12 flex flex-col justify-between">
+      <blockquote class="font-kop font-semibold text-2xl md:text-[32px] leading-snug tracking-[-0.01em]">
+        "Fijne kapsalon met professionele, vriendelijke en meedenkende kappers. Er hangt altijd een goede sfeer en de klant staat centraal. Kom er heel graag."
+      </blockquote>
+      <figcaption class="mt-8 font-semibold">Michele J.<span class="font-normal opacity-75">, 5 sterren</span></figcaption>
+    </figure>
+    <figure class="lg:col-span-5 bg-zand rounded-[1.75rem] p-8 md:p-10">
+      <blockquote class="text-lg leading-relaxed">"Gezellige kapsalon waar men voor ouderwetse prijzen een goed kapsel kan laten aanmeten. Vriendelijk en servicegericht. Vantevoren een afspraak maken is handig gezien de populariteit. Goede koffie."</blockquote>
+      <figcaption class="mt-6 font-semibold">Arend Visser<span class="font-normal text-marine/60">, 5 sterren</span></figcaption>
+    </figure>
+    <figure class="lg:col-span-4 bg-zand rounded-[1.75rem] p-8">
+      <blockquote class="text-lg leading-relaxed">"Kort gezegd. Ik ga al bijna 32 jaar naar hetzelfde kapper. Aardig personeel"</blockquote>
+      <figcaption class="mt-6 font-semibold">Gloria<span class="font-normal text-marine/60">, 5 sterren</span></figcaption>
+    </figure>
+    <figure class="lg:col-span-4 bg-zand rounded-[1.75rem] p-8">
+      <blockquote class="text-lg leading-relaxed">"Fijne kapper, luistert goed naar je wensen en hangt een fijne sfeer"</blockquote>
+      <figcaption class="mt-6 font-semibold">Henk Bussink<span class="font-normal text-marine/60">, 5 sterren</span></figcaption>
+    </figure>
+    <figure class="lg:col-span-4 bg-zand rounded-[1.75rem] p-8">
+      <blockquote class="text-lg leading-relaxed">"Goed ontvangen met koffie, en een handdruk. Het belangrijkste was knippen! Mooi volgens mijn wensen geknipt. Zal volgende keer teruggaan."</blockquote>
+      <figcaption class="mt-6 font-semibold">Jan Ltop<span class="font-normal text-marine/60">, 4 sterren</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Team -->
+<section id="team" class="bg-zand">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-4">
+        <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Wie u aan de stoel treft</h2>
+        <p class="mt-6 text-lg leading-relaxed text-marine/80">Heeft u een vaste kapper? Hier ziet u op welke dagen ze er zijn.</p>
+      </div>
+      <ul class="lg:col-span-8 grid grid-cols-2 xl:grid-cols-3 gap-x-5 sm:gap-x-10 gap-y-8 sm:gap-y-9">
+        <li class="border-t-2 border-oranje pt-4">
+          <p class="font-kop font-bold text-xl sm:text-2xl">Wybe</p>
+          <p class="font-medium text-oranje-donker text-[15px] sm:text-base leading-snug">Haarwerkspecialist en allround kapper</p>
+          <p class="mt-2 text-marine/75 text-[15px] leading-relaxed">Dinsdag tot en met zaterdag</p>
+        </li>
+        <li class="border-t-2 border-marine/20 pt-4">
+          <p class="font-kop font-bold text-xl sm:text-2xl">Marijke</p>
+          <p class="font-medium text-oranje-donker text-[15px] sm:text-base leading-snug">Teamleider</p>
+          <p class="mt-2 text-marine/75 text-[15px] leading-relaxed">Maandag of zaterdag, woensdag en vrijdag</p>
+        </li>
+        <li class="border-t-2 border-marine/20 pt-4">
+          <p class="font-kop font-bold text-xl sm:text-2xl">Ineke</p>
+          <p class="font-medium text-oranje-donker text-[15px] sm:text-base leading-snug">Hairstyliste</p>
+          <p class="mt-2 text-marine/75 text-[15px] leading-relaxed">Maandag, dinsdag, woensdag en donderdag</p>
+        </li>
+        <li class="border-t-2 border-marine/20 pt-4">
+          <p class="font-kop font-bold text-xl sm:text-2xl">Marjan</p>
+          <p class="font-medium text-oranje-donker text-[15px] sm:text-base leading-snug">Hairstyliste en Curlsys-specialiste</p>
+          <p class="mt-2 text-marine/75 text-[15px] leading-relaxed">Woensdagmorgen, donderdag, vrijdag en zaterdag</p>
+        </li>
+        <li class="border-t-2 border-marine/20 pt-4">
+          <p class="font-kop font-bold text-xl sm:text-2xl">Jacqueline</p>
+          <p class="font-medium text-oranje-donker text-[15px] sm:text-base leading-snug">Hairstyliste en Curlsys-specialiste</p>
+          <p class="mt-2 text-marine/75 text-[15px] leading-relaxed">Maandag, dinsdag, donderdag en vrijdag</p>
+        </li>
+        <li class="border-t-2 border-marine/20 pt-4">
+          <p class="font-kop font-bold text-xl sm:text-2xl">Suzanne</p>
+          <p class="font-medium text-oranje-donker text-[15px] sm:text-base leading-snug">Hairstyliste</p>
+          <p class="mt-2 text-marine/75 text-[15px] leading-relaxed">Maandag of zaterdag, dinsdag en woensdagmiddag en -avond</p>
+        </li>
+        <li class="border-t-2 border-marine/20 pt-4">
+          <p class="font-kop font-bold text-xl sm:text-2xl">Jetske</p>
+          <p class="font-medium text-oranje-donker text-[15px] sm:text-base leading-snug">Hairstyliste</p>
+          <p class="mt-2 text-marine/75 text-[15px] leading-relaxed">Zaterdag</p>
+        </li>
+        <li class="border-t-2 border-marine/20 pt-4">
+          <p class="font-kop font-bold text-xl sm:text-2xl">Veronique</p>
+          <p class="font-medium text-oranje-donker text-[15px] sm:text-base leading-snug">Hairstyliste</p>
+          <p class="mt-2 text-marine/75 text-[15px] leading-relaxed">Maandag</p>
+        </li>
+        <li class="border-t-2 border-marine/20 pt-4">
+          <p class="font-kop font-bold text-xl sm:text-2xl">Angelina</p>
+          <p class="font-medium text-oranje-donker text-[15px] sm:text-base leading-snug">Junior styliste</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Langskomen -->
+<section id="langskomen" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Kom gerust binnen</h2>
+      <p class="mt-6 text-lg leading-relaxed text-marine/80">Bel of mail voor een afspraak, of loop even langs, dan kijken we wanneer u terecht kunt. Op woensdag zijn we open tot 20:00 uur.</p>
+
+      <table class="mt-8 w-full text-lg tabular" aria-label="Openingstijden">
+        <tbody class="divide-y divide-marine/10">
+          <tr data-dag="1"><td class="py-2.5 pl-3 rounded-l-lg">Maandag</td><td class="py-2.5 pr-3 text-right rounded-r-lg">08:00 - 14:00</td></tr>
+          <tr data-dag="2"><td class="py-2.5 pl-3 rounded-l-lg">Dinsdag</td><td class="py-2.5 pr-3 text-right rounded-r-lg"><span class="whitespace-nowrap">08:00 - 12:30</span><span class="hidden sm:inline text-marine/40">, </span><br class="sm:hidden"><span class="whitespace-nowrap">13:30 - 18:00</span></td></tr>
+          <tr data-dag="3"><td class="py-2.5 pl-3 rounded-l-lg">Woensdag</td><td class="py-2.5 pr-3 text-right rounded-r-lg"><span class="whitespace-nowrap">08:00 - 12:30</span><span class="hidden sm:inline text-marine/40">, </span><br class="sm:hidden"><span class="whitespace-nowrap">13:00 - <strong>20:00</strong></span></td></tr>
+          <tr data-dag="4"><td class="py-2.5 pl-3 rounded-l-lg">Donderdag</td><td class="py-2.5 pr-3 text-right rounded-r-lg"><span class="whitespace-nowrap">08:00 - 12:00</span><span class="hidden sm:inline text-marine/40">, </span><br class="sm:hidden"><span class="whitespace-nowrap">13:30 - 18:00</span></td></tr>
+          <tr data-dag="5"><td class="py-2.5 pl-3 rounded-l-lg">Vrijdag</td><td class="py-2.5 pr-3 text-right rounded-r-lg"><span class="whitespace-nowrap">08:00 - 12:00</span><span class="hidden sm:inline text-marine/40">, </span><br class="sm:hidden"><span class="whitespace-nowrap">13:30 - 18:00</span></td></tr>
+          <tr data-dag="6"><td class="py-2.5 pl-3 rounded-l-lg">Zaterdag</td><td class="py-2.5 pr-3 text-right rounded-r-lg">08:00 - 14:00</td></tr>
+          <tr data-dag="0"><td class="py-2.5 pl-3 rounded-l-lg">Zondag</td><td class="py-2.5 pr-3 text-right rounded-r-lg text-marine/50">Gesloten</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="lg:col-span-7 space-y-8">
+      <div class="overflow-hidden rounded-[1.75rem] rounded-tr-[7rem] aspect-[16/9]">
+        <img src="assets/google-06.jpg" alt="Kappersstoelen voor de spiegels in de salon" class="w-full h-full object-cover">
+      </div>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-kop font-bold text-xl">Zonder afspraak?</h3>
+          <p class="mt-2 text-marine/80 leading-relaxed">Proberen mag altijd. Een afspraak voorkomt wachten. Nog nooit bij ons geweest? Kom gerust eens binnen.</p>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-xl">Parkeren</h3>
+          <p class="mt-2 text-marine/80 leading-relaxed">Beperkt in de straat. Op 300 meter parkeert u gratis bij de Albert Heijn en op het Lage Blik. Let op de blauwe zone: met parkeerschijf 1½ uur gratis.</p>
+        </div>
+      </div>
+      <address class="not-italic bg-zand rounded-[1.75rem] p-7 md:p-8 grid sm:grid-cols-2 gap-6 items-center">
+        <div class="text-lg leading-relaxed">
+          <p class="font-kop font-bold text-xl">Kapsalon ter Maat</p>
+          <p>Landstraat 14<br>7121 CR Aalten</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Kapsalon+ter+Maat+Landstraat+14+Aalten" class="mt-2 inline-block font-semibold underline decoration-oranje decoration-2 underline-offset-4 hover:text-oranje-donker">Route plannen</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="tel:+31543472413" class="knop inline-flex justify-center items-center gap-2 rounded-full bg-oranje px-6 py-3.5 font-bold text-marine-diep hover:bg-oranje-licht tabular">Bel 0543 472 413</a>
+          <a href="mailto:info@kapsalontermaat.nl" class="knop inline-flex justify-center items-center rounded-full border-2 border-marine px-6 py-3 font-semibold hover:bg-marine hover:text-white">info@kapsalontermaat.nl</a>
+        </div>
+      </address>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-marine-diep text-white/75">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
+    <div>
+      <p class="font-kop font-bold text-2xl text-white">Kapsalon ter Maat</p>
+      <p class="mt-1 text-oranje-licht italic">Jóuw kapper!</p>
+    </div>
+    <p class="leading-relaxed">Landstraat 14, 7121 CR Aalten<br>
+      <a href="tel:+31543472413" class="hover:text-white tabular">0543 472 413</a> &nbsp;|&nbsp; <a href="mailto:info@kapsalontermaat.nl" class="hover:text-white">info@kapsalontermaat.nl</a></p>
+  </div>
+</footer>
+
+<!-- Belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-creme/95 backdrop-blur border-t border-marine/10 p-3 flex gap-3">
+  <a href="tel:+31543472413" class="flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-oranje py-3.5 font-bold text-marine-diep">
+    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel voor een afspraak
+  </a>
+  <a href="mailto:info@kapsalontermaat.nl" aria-label="Mail Kapsalon ter Maat" class="inline-flex justify-center items-center rounded-full border-2 border-marine w-14">
+    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+  </a>
+</div>
+
+<script>
+  // Markeer vandaag in de openingstijden (alleen verrijking)
+  var rij = document.querySelector('tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag');
+</script>
+</body>
+</html>
