@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rijschool Pascal Holthuis | Rijles in Apeldoorn</title>
+<meta name="description" content="Rustig en persoonlijk rijles in Apeldoorn bij Pascal Holthuis. Rijbewijs halen, overstappen van rijschool of opfrislessen. Bel 06 46765945.">
+<meta property="og:title" content="Rijschool Pascal Holthuis, Apeldoorn">
+<meta property="og:description" content="Rustig de weg op. Rijles bij Pascal Holthuis in Apeldoorn.">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800;125,900&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          asfalt: '#1C2124',
+          weg: { DEFAULT: '#0A82C6', donker: '#0773B1', diep: '#06639A' },
+          logogrijs: '#9C9D9F',
+          beton: '#EDF0F1',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Public Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; color: #1C2124; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance; }
+  .kop-xl { font-stretch: 125%; font-weight: 900; letter-spacing: -0.035em; line-height: .95; }
+  p { text-wrap: pretty; }
+
+  /* De weg uit het logo: foto met schuine rand, blauwe weg ernaast */
+  .hero-foto { clip-path: polygon(19% 0, 100% 0, 100% 100%, 4% 100%); }
+  .weg-lijn { stroke-dasharray: 26 20; }
+  .js .weg-lijn { animation: rijden 2.4s cubic-bezier(.2,.7,.2,1) 1 both; }
+  @keyframes rijden { from { stroke-dashoffset: 460; } to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .js .weg-lijn { animation: none; } html { scroll-behavior: auto; } }
+
+  /* Verticale weg naast de situaties */
+  .wegstrook { background: #0A82C6; }
+  .wegstrook::after { content: ''; position: absolute; inset: 0; left: 50%; width: 3px; margin-left: -1.5px;
+    background: repeating-linear-gradient(to bottom, #fff 0 18px, transparent 18px 34px); }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #0A82C6; outline-offset: 3px; }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-asfalt text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor Rijschool Pascal Holthuis, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-weg">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="relative z-20 bg-white">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 h-[72px] md:h-[88px] flex items-center justify-between gap-6">
+    <a href="#" aria-label="Rijschool Pascal Holthuis, naar boven">
+      <img src="assets/logo.png" alt="Rijschool Pascal Holthuis" class="h-9 md:h-12 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#lessen" class="hover:text-weg-donker transition-colors">Lessen</a>
+      <a href="#pascal" class="hover:text-weg-donker transition-colors">Over Pascal</a>
+      <a href="#geslaagd" class="hover:text-weg-donker transition-colors">Geslaagd</a>
+      <a href="#reviews" class="hover:text-weg-donker transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-weg-donker transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31646765945" aria-label="Bel 06 46765945" class="knop inline-flex items-center gap-2 rounded-md bg-asfalt hover:bg-weg-diep text-white text-[15px] font-semibold p-3 sm:px-4 sm:py-2.5">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 46765945</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-white">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-12 lg:min-h-[640px] lg:h-[calc(100vh-124px)] lg:max-h-[780px]">
+    <div class="lg:col-span-6 xl:col-span-5 relative z-10 flex flex-col justify-center pt-8 pb-10 lg:py-16">
+      <p class="text-[15px] font-medium text-weg-donker mb-4 md:mb-6">Rijschool in Apeldoorn</p>
+      <h1 class="kop kop-xl text-[3.1rem] sm:text-6xl xl:text-[5.4rem]">Rustig de weg op.</h1>
+      <p class="mt-6 text-lg md:text-xl leading-relaxed text-asfalt/80 max-w-[30rem]">
+        Rijles bij Pascal zelf: geduldig, persoonlijk en gezellig. Of u nu net begint, overstapt of na jaren weer achter het stuur wilt.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a id="hero-bel" href="tel:+31646765945" class="knop inline-flex items-center gap-3 rounded-md bg-weg-donker hover:bg-weg-diep text-white text-lg font-semibold pl-5 pr-6 py-4 shadow-[0_10px_24px_-10px_rgba(7,115,177,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel Pascal: 06 46765945
+        </a>
+        <a href="#contact" class="font-semibold underline decoration-2 decoration-weg underline-offset-[6px] hover:text-weg-donker">Plan een kennismakingsles</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-[15px] text-asfalt/75">
+        <span class="flex text-[#F2B01E]" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="text-asfalt font-semibold">4,8</strong> uit 17 Google-reviews</span>
+      </p>
+    </div>
+
+    <!-- Foto met de weg -->
+    <div class="relative h-[340px] sm:h-[440px] -mx-5 md:-mx-8 lg:mx-0 lg:h-auto lg:col-span-6 xl:col-span-7 lg:absolute lg:inset-y-0 lg:right-0 lg:left-[46%] xl:left-[40%]">
+      <img src="assets/google-01.jpg" alt="Pascal Holthuis lachend bij het dak van zijn lesauto met het L-bord"
+           class="hero-foto absolute inset-0 w-full h-full object-cover object-[40%_30%] lg:object-[62%_35%]">
+      <svg class="absolute inset-0 w-full h-full overflow-visible pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <polygon points="13.5,0 21,0 7,100 -5,100" fill="#0A82C6"/>
+        <line x1="17.25" y1="0" x2="1" y2="100" stroke="#fff" stroke-width="4" vector-effect="non-scaling-stroke" class="weg-lijn"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Waar staat u -->
+<section id="lessen" class="bg-beton py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-8">
+    <div class="lg:col-span-4">
+      <h2 class="kop text-4xl md:text-5xl">Waar staat u nu?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-asfalt/80 max-w-md">
+        Iedereen komt met een eigen verhaal in de auto. Pascal kijkt wat u nodig heeft en past de lessen daarop aan.
+      </p>
+      <a href="tel:+31646765945" class="mt-8 inline-flex font-semibold underline decoration-2 decoration-weg underline-offset-[6px] hover:text-weg-donker">Bespreek het even met Pascal</a>
+    </div>
+
+    <div class="lg:col-span-8 relative pl-12 md:pl-20">
+      <div class="wegstrook absolute left-0 top-2 bottom-2 w-7 md:w-9 rounded-sm" aria-hidden="true"></div>
+      <ul class="space-y-14 md:space-y-16">
+        <li>
+          <h3 class="kop text-2xl md:text-[2rem]">U wilt uw rijbewijs halen</h3>
+          <p class="mt-3 text-lg leading-relaxed text-asfalt/80 max-w-2xl">Van de eerste keer achter het stuur tot het examen. Pascal bouwt het stap voor stap op, in uw tempo, zodat u met een gerust gevoel examen doet.</p>
+          <blockquote class="mt-5 border-l-2 border-logogrijs/60 pl-4 text-asfalt/90 italic max-w-xl">
+            "Vandaag mijn rijbewijs in 1x gehaald bij Pascal, een super instructeur."
+            <footer class="not-italic mt-1 text-sm text-asfalt/60">Justian Spijkerbosch</footer>
+          </blockquote>
+        </li>
+        <li>
+          <h3 class="kop text-2xl md:text-[2rem]">U wilt overstappen van rijschool</h3>
+          <p class="mt-3 text-lg leading-relaxed text-asfalt/80 max-w-2xl">Loopt het bij uw huidige rijschool niet lekker? Dan gaat u bij Pascal verder waar u gebleven bent, en werkt u gericht naar het examen toe.</p>
+          <blockquote class="mt-5 border-l-2 border-logogrijs/60 pl-4 text-asfalt/90 italic max-w-xl">
+            "Na een paar lessen gaf hij mij het vertrouwen en plezier dat ik bij de andere rijscholen mistte."
+            <footer class="not-italic mt-1 text-sm text-asfalt/60">Thijn brobbel</footer>
+          </blockquote>
+        </li>
+        <li>
+          <h3 class="kop text-2xl md:text-[2rem]">U wilt weer durven rijden</h3>
+          <p class="mt-3 text-lg leading-relaxed text-asfalt/80 max-w-2xl">Al jaren niet gereden, of onzeker geworden? Met een opfriscursus krijgt u rustig het vertrouwen terug om weer zelf de weg op te gaan.</p>
+          <blockquote class="mt-5 border-l-2 border-logogrijs/60 pl-4 text-asfalt/90 italic max-w-xl">
+            "Had 14 jaar niet gereden en toen heb ik Pascal gebeld voor een opfriscursus. Na 5 lessen gaf hij mij het vertrouwen terug."
+            <footer class="not-italic mt-1 text-sm text-asfalt/60">Jan Blom</footer>
+          </blockquote>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Over Pascal -->
+<section id="pascal" class="py-20 md:py-28 overflow-hidden">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-5 relative">
+      <div class="absolute -left-5 md:-left-8 lg:-left-24 top-10 bottom-[-2.5rem] w-[70%] bg-weg" aria-hidden="true"></div>
+      <img src="assets/google-02.jpg" alt="Pascal Holthuis zwaait vanuit het raam van de grijze lesauto"
+           class="relative w-full aspect-[4/5] object-cover object-[50%_30%] rounded-sm">
+    </div>
+    <div class="lg:col-span-7 lg:pl-6">
+      <h2 class="kop text-4xl md:text-5xl max-w-xl">U krijgt les van Pascal zelf.</h2>
+      <div class="mt-7 space-y-5 text-lg leading-relaxed text-asfalt/80 max-w-xl">
+        <p>Geen wisselende instructeurs: bij deze rijschool zit Pascal elke les naast u. Hij leert u snel kennen, ziet waar u nog moeite mee heeft en daar gaat de volgende les over.</p>
+        <p>Leerlingen noemen hem geduldig, rustig en fijn in de communicatie. En in de auto is er ook ruimte voor gezelligheid. Wie ontspannen achter het stuur zit, leert het meest.</p>
+        <p>U rijdt in de herkenbare grijze lesauto met de blauwe weg op de deur, gewoon in Apeldoorn en omgeving.</p>
+      </div>
+      <dl class="mt-10 grid grid-cols-2 gap-6 max-w-lg border-t border-asfalt/15 pt-8">
+        <div>
+          <dt class="text-sm text-asfalt/60">Google-score</dt>
+          <dd class="kop text-3xl mt-1">4,8 <span class="text-base font-tekst font-normal tracking-normal text-asfalt/60">uit 17 reviews</span></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-asfalt/60">Bereikbaar</dt>
+          <dd class="kop text-3xl mt-1">ma t/m vr</dd>
+          <dd class="text-asfalt/60">08:00 tot 18:00</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Geslaagd -->
+<section id="geslaagd" class="bg-asfalt text-white py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10 md:mb-14">
+      <h2 class="kop text-4xl md:text-5xl">Geslaagd met Pascal.</h2>
+      <p class="text-lg text-white/70 max-w-md">Elk rijbewijs is een feestje. Een paar trotse leerlingen bij de lesauto, net na het examen.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
+      <img src="assets/site-04.jpg" alt="Geslaagde leerling naast de lesauto" class="col-span-2 aspect-[2/1] md:aspect-auto md:h-full w-full object-cover object-[50%_40%]">
+      <img src="assets/site-06.jpg" alt="Gefeliciteerd Joëlle, geslaagd" class="aspect-square w-full object-cover">
+      <img src="assets/site-07.jpg" alt="Gefeliciteerd Rachel, geslaagd" class="aspect-square w-full object-cover">
+      <img src="assets/site-08.jpg" alt="Gefeliciteerd Martijn, geslaagd" class="aspect-square w-full object-cover">
+      <img src="assets/site-09.jpg" alt="Gefeliciteerd Sophie, geslaagd" class="aspect-square w-full object-cover">
+      <img src="assets/site-03.jpg" alt="Geslaagde leerling wijst naar het logo op de lesauto" class="col-span-2 aspect-[2/1] md:aspect-auto md:h-full w-full object-cover object-[50%_40%]">
+      <img src="assets/site-02.jpg" alt="Geslaagde leerling bij de lesauto in de zon" class="col-span-2 aspect-[2/1] w-full object-cover object-[50%_40%]">
+      <img src="assets/site-05.jpg" alt="Geslaagde leerling leunt tegen de lesauto" class="col-span-2 aspect-[2/1] w-full object-cover object-[50%_40%]">
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-5">
+        <h2 class="kop text-4xl md:text-5xl">Wat leerlingen zeggen.</h2>
+        <p class="mt-5 text-lg text-asfalt/75"><strong class="text-asfalt">4,8 sterren</strong> uit 17 reviews op Google.</p>
+        <figure class="mt-10 bg-weg-donker text-white p-7 md:p-9 rounded-sm">
+          <blockquote class="text-xl md:text-2xl leading-snug font-medium">
+            "Had 14 jaar niet gereden en toen heb ik Pascal gebeld voor een opfriscursus.<br>
+            Na 5 lessen gaf hij mij het vertrouwen terug.<br>
+            Hij geeft fijn rustig les echt een aanrader Pascal bedankt.<br>
+            Met vriendelijke groet Lida Blom."
+          </blockquote>
+          <figcaption class="mt-6 text-white/80 text-[15px]">Jan Blom, op Google</figcaption>
+        </figure>
+      </div>
+      <div class="lg:col-span-7 lg:pt-4 divide-y divide-asfalt/10">
+        <figure class="pb-8">
+          <blockquote class="text-lg leading-relaxed">"Vandaag mijn rijbewijs gehaald, met dank aan Pascal. Wat een fijne lessen heb ik bij Pascal mogen volgen. Een echte aanrader voor persoonsgerichte, leerzame en gezellige lessen!"</blockquote>
+          <figcaption class="mt-3 text-[15px] font-semibold">Giovanna Berger <span class="font-normal text-asfalt/55">5 van 5 sterren</span></figcaption>
+        </figure>
+        <figure class="py-8">
+          <blockquote class="text-lg leading-relaxed">"Na het switchen van rijschool hele goede begeleiding gekregen van Pascal en de puntjes op de i kunnen zetten, fijne instructeur en heel fijn in communicatie."</blockquote>
+          <figcaption class="mt-3 text-[15px] font-semibold">Shane Van Der Peppel <span class="font-normal text-asfalt/55">5 van 5 sterren</span></figcaption>
+        </figure>
+        <figure class="py-8">
+          <blockquote class="text-lg leading-relaxed">"Vandaag mijn rijbewijs in 1x gehaald bij Pascal, een super instructeur. Altijd erg geduldig met mij geweest en in de auto is er ook veel ruimte voor gezelligheid en daarmee ook een goede sfeer."</blockquote>
+          <figcaption class="mt-3 text-[15px] font-semibold">Justian Spijkerbosch <span class="font-normal text-asfalt/55">5 van 5 sterren</span></figcaption>
+        </figure>
+        <figure class="pt-8">
+          <blockquote class="text-lg leading-relaxed">"Na jarenlang uitstellen toch weer begonnen met rijlessen, deze keer bij Pascal. Na een paar lessen gaf hij mij het vertrouwen en plezier dat ik bij de andere rijscholen mistte. Hij zag precies wat ik nodig had, en gaf les op een leuke en effectieve manier. Hij heeft me binnen no time klaargestoomd voor mijn examen die (...)"</blockquote>
+          <figcaption class="mt-3 text-[15px] font-semibold">Thijn brobbel <span class="font-normal text-asfalt/55">5 van 5 sterren</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Band -->
+<div class="relative h-[260px] md:h-[420px] overflow-hidden" aria-hidden="false">
+  <img src="assets/site-01.jpg" alt="Pascal wijst naar het logo op het dakbord van de lesauto" class="absolute inset-0 w-full h-full object-cover object-[45%_30%]">
+</div>
+
+<!-- Contact -->
+<section id="contact" class="bg-beton py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-[2.05rem] sm:text-4xl md:text-5xl">Begin met een kennismakingsles.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-asfalt/80 max-w-md">Rij een les mee en ervaar hoe Pascal lesgeeft. Daarna bespreekt u samen wat u nodig heeft. Bellen is het snelst.</p>
+      <a href="tel:+31646765945" class="knop mt-8 inline-flex items-center gap-3 rounded-md bg-weg-donker hover:bg-weg-diep text-white text-lg font-semibold px-6 py-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        06 46765945
+      </a>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-x-8 gap-y-7 text-[16px]">
+        <div>
+          <dt class="text-sm text-asfalt/60 mb-1">E-mail</dt>
+          <dd><a href="mailto:info@pascalholthuis.nl" class="font-medium underline decoration-weg/50 underline-offset-4 hover:text-weg-donker">info@pascalholthuis.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-asfalt/60 mb-1">Adres</dt>
+          <dd>Thorbeckestraat 17<br>7331 RG Apeldoorn</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-sm text-asfalt/60 mb-2">Bereikbaar</dt>
+          <dd>
+            <table class="w-full max-w-xs text-[15px]">
+              <tr><td class="py-0.5 pr-6">Maandag t/m vrijdag</td><td class="tabular-nums">08:00 tot 18:00</td></tr>
+              <tr><td class="py-0.5 pr-6">Zaterdag en zondag</td><td class="text-asfalt/60">Gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@pascalholthuis.nl" method="post" enctype="text/plain" class="lg:col-span-7 bg-white p-6 md:p-10 rounded-sm shadow-[0_20px_50px_-30px_rgba(28,33,36,.35)]">
+      <h3 class="kop text-2xl">Liever een bericht sturen?</h3>
+      <p class="mt-2 text-asfalt/70">Laat uw gegevens achter, dan neemt Pascal contact met u op.</p>
+      <div class="mt-8 grid sm:grid-cols-2 gap-5">
+        <label class="block">
+          <span class="text-sm font-medium">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-asfalt/20 bg-white px-3.5 py-3 focus:border-weg">
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Telefoonnummer</span>
+          <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-md border border-asfalt/20 bg-white px-3.5 py-3 focus:border-weg">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-medium">Waar staat u nu?</span>
+          <select name="situatie" class="mt-1.5 w-full rounded-md border border-asfalt/20 bg-white px-3.5 py-3 focus:border-weg">
+            <option>Ik wil mijn rijbewijs halen</option>
+            <option>Ik wil overstappen van rijschool</option>
+            <option>Ik wil een opfriscursus</option>
+            <option>Iets anders</option>
+          </select>
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-medium">Bericht <span class="font-normal text-asfalt/55">(mag leeg blijven)</span></span>
+          <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-md border border-asfalt/20 bg-white px-3.5 py-3 focus:border-weg"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="knop mt-7 w-full sm:w-auto rounded-md bg-asfalt hover:bg-weg-diep text-white font-semibold px-7 py-3.5">Verstuur bericht</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-asfalt text-white/70 py-12">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[15px]">
+    <div>
+      <p class="kop text-white text-xl">Rijschool Pascal Holthuis</p>
+      <p class="mt-1">Thorbeckestraat 17, 7331 RG Apeldoorn</p>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="tel:+31646765945" class="hover:text-white">06 46765945</a>
+      <a href="mailto:info@pascalholthuis.nl" class="hover:text-white">info@pascalholthuis.nl</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div id="belbalk" class="md:hidden fixed inset-x-0 bottom-0 z-40 transition-transform duration-300 bg-white/95 backdrop-blur border-t border-asfalt/10 p-3">
+  <a href="tel:+31646765945" class="knop flex items-center justify-center gap-3 rounded-md bg-weg-donker text-white font-semibold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Pascal: 06 46765945
+  </a>
+</div>
+
+<script>
+  // Op mobiel: vaste belbalk pas tonen als de belknop in de hero uit beeld is
+  (function () {
+    var bar = document.getElementById('belbalk'), knop = document.getElementById('hero-bel');
+    if (!bar || !knop || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) {
+      bar.style.transform = e[0].isIntersecting ? 'translateY(110%)' : '';
+    }).observe(knop);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YesRijles | Rijschool in Apeldoorn, auto- en motorrijles</title>
+<meta name="description" content="YesRijles is een rijschool in Apeldoorn. Rustig leren rijden met een vaste instructeur, geen wachttijden, ook bij faalangst. Plan een gratis proefles: 06 34688041.">
+<meta property="og:title" content="YesRijles | Rijschool in Apeldoorn">
+<meta property="og:image" content="assets/site-05.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,600;0,800;0,900;1,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          lblauw: '#1473E6',
+          nacht: '#0C2347',
+          oranje: '#FF8A2B',
+          asfalt: '#2A2E35',
+          mist: '#F4F7FB',
+        },
+        fontFamily: {
+          kop: ['Overpass', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: 'Overpass', system-ui, sans-serif; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* Wegmarkering: onderbroken witte streep */
+  .streep {
+    background-image: linear-gradient(90deg, #fff 0 56%, transparent 56% 100%);
+    background-size: 64px 6px;
+    background-repeat: repeat-x;
+    height: 6px;
+  }
+  .streep-v {
+    background-image: linear-gradient(180deg, #fff 0 55%, transparent 55% 100%);
+    background-size: 6px 44px;
+    background-repeat: repeat-y;
+    width: 6px;
+  }
+  .asfalt-korrel {
+    background-color: #2A2E35;
+    background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1.2px), radial-gradient(rgba(0,0,0,.25) 1px, transparent 1.2px);
+    background-size: 7px 7px, 11px 11px;
+    background-position: 0 0, 3px 5px;
+  }
+
+  /* Hero-foto in de vorm van een verkeersbord met een grote afgeronde hoek */
+  .bordvorm { border-radius: 28px 28px 28px 180px; }
+  @media (max-width: 767px) { .bordvorm { border-radius: 22px 22px 22px 96px; } }
+
+  .lbord {
+    background: #1473E6;
+    color: #fff;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 900;
+    border: 5px solid #fff;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px -12px rgba(12,35,71,.45);
+  }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #FF8A2B; outline-offset: 3px;
+  }
+
+  /* Eenmalige entree van de hero, alleen als JS draait */
+  .js .hero-in { animation: in .8s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in.d2 { animation-delay: .12s; }
+  .js .hero-in.d3 { animation-delay: .24s; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-in { animation: none; } html { scroll-behavior: auto; } }
+
+  details summary::-webkit-details-marker { display: none; }
+  details[open] .plus { transform: rotate(45deg); }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-mist text-nacht">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-nacht text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor YesRijles, gemaakt door <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-white/95 backdrop-blur sticky top-0 z-30 border-b border-nacht/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-[68px] flex items-center justify-between gap-6">
+    <a href="#top" class="shrink-0" aria-label="YesRijles, naar boven">
+      <img src="assets/site-03.png" alt="YesRijles.nl" class="h-8 md:h-9 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#over" class="hover:text-lblauw">Over ons</a>
+      <a href="#lessen" class="hover:text-lblauw">Lessen</a>
+      <a href="#tarieven" class="hover:text-lblauw">Tarieven</a>
+      <a href="#motor" class="hover:text-lblauw">Motor</a>
+      <a href="#reviews" class="hover:text-lblauw">Ervaringen</a>
+      <a href="#proefles" class="hover:text-lblauw">Contact</a>
+    </nav>
+    <a href="tel:+31634688041" class="knop inline-flex items-center gap-2 bg-nacht text-white rounded-full px-4 py-2.5 text-[15px] font-semibold hover:bg-lblauw">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline num">06 34688041</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-8 md:pt-16 pb-12 md:pb-20 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+    <div class="md:col-span-6 lg:col-span-5 relative z-10">
+      <p class="hero-in text-lblauw font-semibold text-[15px] md:text-base">Rijschool in Apeldoorn</p>
+      <h1 class="hero-in mt-3 font-black text-[44px] leading-[0.98] md:text-[68px] lg:text-[76px] tracking-[-0.03em]">
+        Rustig leren rijden. In één keer slagen.
+      </h1>
+      <p class="hero-in d2 mt-5 md:mt-7 text-[17px] md:text-lg leading-relaxed text-nacht/75 max-w-[30rem]">
+        Geen wachttijd, een vaste instructeur en uitleg in jouw tempo. Ook bij faalangst, ook 's avonds en in het weekend. Begin met een gratis proefles.
+      </p>
+      <div class="hero-in d3 mt-7 md:mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+        <a href="tel:+31634688041" class="knop inline-flex items-center justify-center gap-3 bg-oranje text-nacht font-kop font-extrabold text-lg md:text-xl rounded-2xl px-7 py-4 md:py-5 shadow-[0_14px_30px_-12px_rgba(255,138,43,.8)] hover:bg-[#ff9a45]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 34688041
+        </a>
+        <a href="#proefles" class="text-center sm:text-left font-semibold text-nacht underline decoration-lblauw decoration-2 underline-offset-[6px] hover:text-lblauw">Gratis proefles aanvragen</a>
+      </div>
+      <a href="#reviews" class="hero-in d3 mt-7 inline-flex items-center gap-3 text-[15px] text-nacht/70 hover:text-nacht">
+        <span class="text-oranje tracking-[2px] text-lg" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-nacht">5,0</strong> op Google, uit 5 reviews</span>
+      </a>
+    </div>
+
+    <div class="md:col-span-6 lg:col-span-7 relative">
+      <div class="relative md:-mr-24 lg:-mr-32">
+        <img src="assets/site-05.jpg" alt="De witte lesauto van YesRijles met dakbord en L-bord in de avondzon" class="bordvorm w-full h-[300px] sm:h-[400px] md:h-[560px] lg:h-[600px] object-cover object-[35%_60%]">
+        <div class="lbord absolute -left-3 md:-left-8 bottom-8 md:bottom-14 w-20 h-20 md:w-28 md:h-28 grid place-items-center text-5xl md:text-7xl leading-none pt-2" aria-hidden="true">L</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASFALTBAND -->
+<section class="asfalt-korrel text-white" aria-label="Waarom YesRijles">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-10 md:py-12">
+    <ul class="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-7">
+      <li>
+        <p class="font-kop font-black text-xl sm:text-2xl md:text-[28px] leading-tight">Geen wachttijd</p>
+        <p class="mt-1 text-white/70 text-[15px]">Je kunt direct starten.</p>
+      </li>
+      <li>
+        <p class="font-kop font-black text-xl sm:text-2xl md:text-[28px] leading-tight">Vanaf 16,5 jaar</p>
+        <p class="mt-1 text-white/70 text-[15px]">Je kunt al beginnen voor je 17e.</p>
+      </li>
+      <li>
+        <p class="font-kop font-black text-xl sm:text-2xl md:text-[28px] leading-tight">Meerdere lessen per week</p>
+        <p class="mt-1 text-white/70 text-[15px]">Handig als je snel wilt.</p>
+      </li>
+      <li>
+        <p class="font-kop font-black text-xl sm:text-2xl md:text-[28px] leading-tight">'s Avonds en in het weekend</p>
+        <p class="mt-1 text-white/70 text-[15px]">Lestijden die passen bij school of werk.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="streep"></div>
+  <div class="h-6"></div>
+</section>
+
+<!-- OVER -->
+<section id="over" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+    <div class="md:col-span-5 order-2 md:order-1">
+      <img src="assets/google-01.jpg" alt="Lesauto van YesRijles, een witte Volkswagen Polo met dakbord YESRIJLES.NL" class="w-full aspect-[4/5] object-cover rounded-[28px]">
+    </div>
+    <div class="md:col-span-7 order-1 md:order-2">
+      <h2 class="font-black text-4xl md:text-[56px] leading-[1.02] tracking-[-0.025em]">Niet alleen je rijbewijs halen. Echt leren autorijden.</h2>
+      <div class="mt-8 space-y-5 text-[17px] md:text-lg leading-[1.7] text-nacht/80 max-w-[36rem]">
+        <p>YesRijles is een nieuwe naam in Apeldoorn, maar de ervaring achter het stuur is er al lang. Na jaren als rijinstructeur, met veel leerlingen die in één keer slaagden, was het tijd voor een eigen rijschool. Gebouwd op kwaliteit en persoonlijke aandacht.</p>
+        <p>Geen standaardpakketten of snelle trucjes. Je leert rijden op een manier die bij jou past: rustig, duidelijk en in jouw tempo. In een moderne lesauto, met een vaste instructeur en eerlijke tarieven.</p>
+        <p>Begin je met gezonde spanning, of kun je niet wachten om de snelweg op te gaan? Je krijgt de begeleiding die je nodig hebt. Gericht op vertrouwen, beheersing en in één keer slagen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESVORMEN -->
+<section id="lessen" class="bg-white py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-8 items-end">
+      <h2 class="md:col-span-7 font-black text-4xl md:text-[56px] leading-[1.02] tracking-[-0.025em]">Voor elke leerling een passende rijles.</h2>
+      <p class="md:col-span-5 text-[17px] leading-relaxed text-nacht/75">Iedere leerling is anders. Daarom zijn er verschillende lesvormen, afgestemd op wat jij nodig hebt.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 border-t-2 border-nacht">
+      <article class="py-8 md:py-10 md:pr-12 border-b border-nacht/15 md:border-r">
+        <h3 class="font-extrabold text-2xl md:text-3xl">Faalangst rijles</h3>
+        <p class="mt-3 text-[17px] leading-relaxed text-nacht/75 max-w-md">Zie je op tegen het rijden of tegen het examen? Je leert in alle rust rijden, met extra begeleiding en de tijd die jij nodig hebt.</p>
+      </article>
+      <article class="py-8 md:py-10 md:pl-12 border-b border-nacht/15">
+        <h3 class="font-extrabold text-2xl md:text-3xl">Opfrislessen</h3>
+        <p class="mt-3 text-[17px] leading-relaxed text-nacht/75 max-w-md">Lang niet gereden of onzeker in het verkeer? Met een paar opfrislessen voel je je weer zeker achter het stuur.</p>
+      </article>
+      <article class="py-8 md:py-10 md:pr-12 border-b border-nacht/15 md:border-r">
+        <h3 class="font-extrabold text-2xl md:text-3xl">Les in jouw taal</h3>
+        <p class="mt-3 text-[17px] leading-relaxed text-nacht/75 max-w-md">Naast Nederlands kan de les ook in het Engels, Farsi, Pashto of Hindi. Zo begrijp je elke aanwijzing meteen.</p>
+      </article>
+      <article class="py-8 md:py-10 md:pl-12 border-b border-nacht/15">
+        <h3 class="font-extrabold text-2xl md:text-3xl">Spoedcursus</h3>
+        <p class="mt-3 text-[17px] leading-relaxed text-nacht/75 max-w-md">Haast met je rijbewijs? Met de spoedcursus kun je binnen enkele weken examen doen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ZO ZIET EEN LES ERUIT -->
+<section class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-black text-4xl md:text-[56px] leading-[1.02] tracking-[-0.025em]">Zo ziet een rijles eruit.</h2>
+      <p class="mt-6 text-[17px] md:text-lg leading-[1.7] text-nacht/80">Elke les begint met een korte uitleg: wat gaan we vandaag oefenen? Tijdens het rijden krijg je stap voor stap aanwijzingen en is er altijd ruimte voor vragen. Na afloop bespreken we wat goed ging en waar je de volgende keer aan werkt.</p>
+      <img src="assets/site-01.jpg" alt="Zijaanzicht van de lesauto van YesRijles op een rustige weg" class="mt-10 w-full aspect-[4/3] object-cover rounded-[28px]">
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="asfalt-korrel text-white rounded-[28px] p-7 md:p-12 relative overflow-hidden">
+        <p class="font-kop font-extrabold text-xl md:text-2xl">Jouw route naar het examen</p>
+        <ol class="mt-8 relative">
+          <div class="streep-v absolute left-[22px] top-3 bottom-3 opacity-70" aria-hidden="true"></div>
+          <li class="relative flex gap-6 pb-9">
+            <span class="relative z-10 shrink-0 w-12 h-12 rounded-xl bg-lblauw border-[3px] border-white grid place-items-center font-kop font-black text-xl">1</span>
+            <div class="pt-1">
+              <h3 class="font-extrabold text-xl md:text-2xl">Kennismaken en de basis</h3>
+              <p class="mt-1 text-white/70">Sturen, schakelen en remmen.</p>
+            </div>
+          </li>
+          <li class="relative flex gap-6 pb-9">
+            <span class="relative z-10 shrink-0 w-12 h-12 rounded-xl bg-lblauw border-[3px] border-white grid place-items-center font-kop font-black text-xl">2</span>
+            <div class="pt-1">
+              <h3 class="font-extrabold text-xl md:text-2xl">Verkeer in de praktijk</h3>
+              <p class="mt-1 text-white/70">Kruispunten, rotondes en voorrang.</p>
+            </div>
+          </li>
+          <li class="relative flex gap-6 pb-9">
+            <span class="relative z-10 shrink-0 w-12 h-12 rounded-xl bg-lblauw border-[3px] border-white grid place-items-center font-kop font-black text-xl">3</span>
+            <div class="pt-1">
+              <h3 class="font-extrabold text-xl md:text-2xl">Drukkere situaties</h3>
+              <p class="mt-1 text-white/70">Stadsverkeer, invoegen en uitvoegen.</p>
+            </div>
+          </li>
+          <li class="relative flex gap-6 pb-9">
+            <span class="relative z-10 shrink-0 w-12 h-12 rounded-xl bg-lblauw border-[3px] border-white grid place-items-center font-kop font-black text-xl">4</span>
+            <div class="pt-1">
+              <h3 class="font-extrabold text-xl md:text-2xl">Snelweg en bijzondere verrichtingen</h3>
+              <p class="mt-1 text-white/70">Met vertrouwen de snelweg op, en de verrichtingen die op het examen terugkomen.</p>
+            </div>
+          </li>
+          <li class="relative flex gap-6">
+            <span class="relative z-10 shrink-0 w-12 h-12 rounded-xl bg-oranje text-nacht border-[3px] border-white grid place-items-center font-kop font-black text-xl">5</span>
+            <div class="pt-1">
+              <h3 class="font-extrabold text-xl md:text-2xl">Klaar voor je examen</h3>
+              <p class="mt-1 text-white/70">Een proefexamen en de laatste tips.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIEVEN -->
+<section id="tarieven" class="bg-white py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-8 items-end">
+      <h2 class="md:col-span-7 font-black text-4xl md:text-[56px] leading-[1.02] tracking-[-0.025em]">Autorijles: heldere pakketten.</h2>
+      <p class="md:col-span-5 text-[17px] leading-relaxed text-nacht/75">Twijfel je welk pakket bij je past? Na je gratis proefles kijken we daar samen naar. Alle pakketten betaal je in termijnen.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-5 md:gap-6 items-stretch">
+      <!-- A -->
+      <article class="rounded-[24px] bg-mist p-7 md:p-8 flex flex-col">
+        <h3 class="font-extrabold text-2xl">Pakket A</h3>
+        <p class="mt-1 text-nacht/60">30 lessen</p>
+        <p class="mt-6 text-sm text-nacht/60">vanaf</p>
+        <p class="font-kop font-black text-5xl num tracking-tight">€1.955</p>
+        <p class="mt-1 text-[15px] text-nacht/70">In 3 termijnen betalen</p>
+        <ul class="mt-6 space-y-2.5 text-[15px] text-nacht/80 flex-1">
+          <li class="flex gap-3"><span class="text-lblauw font-bold">✓</span>Gelijk beginnen</li>
+          <li class="flex gap-3"><span class="text-lblauw font-bold">✓</span>Gratis proefles</li>
+          <li class="flex gap-3"><span class="text-lblauw font-bold">✓</span>Vaste instructeur</li>
+          <li class="flex gap-3"><span class="text-lblauw font-bold">✓</span>Inclusief aanvraag en kosten praktijkexamen bij het CBR</li>
+        </ul>
+        <a href="#proefles" class="knop mt-8 inline-flex justify-center rounded-xl border-2 border-nacht px-5 py-3 font-semibold hover:bg-nacht hover:text-white">Kies pakket A</a>
+      </article>
+      <!-- B -->
+      <article class="rounded-[24px] bg-mist p-7 md:p-8 flex flex-col">
+        <h3 class="font-extrabold text-2xl">Pakket B</h3>
+        <p class="mt-1 text-nacht/60">35 lessen</p>
+        <p class="mt-6 text-sm text-nacht/60">vanaf</p>
+        <p class="font-kop font-black text-5xl num tracking-tight">€2.230</p>
+        <p class="mt-1 text-[15px] text-nacht/70">In 3 termijnen betalen</p>
+        <ul class="mt-6 space-y-2.5 text-[15px] text-nacht/80 flex-1">
+          <li class="flex gap-3"><span class="text-lblauw font-bold">✓</span>Gelijk beginnen</li>
+          <li class="flex gap-3"><span class="text-lblauw font-bold">✓</span>Gratis proefles</li>
+          <li class="flex gap-3"><span class="text-lblauw font-bold">✓</span>Vaste instructeur</li>
+          <li class="flex gap-3"><span class="text-lblauw font-bold">✓</span>Inclusief aanvraag en kosten praktijkexamen bij het CBR</li>
+        </ul>
+        <a href="#proefles" class="knop mt-8 inline-flex justify-center rounded-xl border-2 border-nacht px-5 py-3 font-semibold hover:bg-nacht hover:text-white">Kies pakket B</a>
+      </article>
+      <!-- C -->
+      <article class="rounded-[24px] bg-lblauw text-white p-7 md:p-8 flex flex-col relative">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-extrabold text-2xl">Pakket C</h3>
+            <p class="mt-1 text-white/75">40 lessen</p>
+          </div>
+          <p class="bg-oranje text-nacht font-kop font-extrabold text-sm rounded-lg px-3 py-1.5">Meest gekozen</p>
+        </div>
+        <p class="mt-6 text-sm text-white/75">vanaf</p>
+        <p class="font-kop font-black text-5xl num tracking-tight">€2.505</p>
+        <p class="mt-1 text-[15px] text-white/85">In 4 termijnen betalen</p>
+        <ul class="mt-6 space-y-2.5 text-[15px] text-white/90 flex-1">
+          <li class="flex gap-3"><span class="text-oranje font-bold">✓</span>Gelijk beginnen</li>
+          <li class="flex gap-3"><span class="text-oranje font-bold">✓</span>Gratis proefles</li>
+          <li class="flex gap-3"><span class="text-oranje font-bold">✓</span>Vaste instructeur</li>
+          <li class="flex gap-3"><span class="text-oranje font-bold">✓</span>Inclusief aanvraag en kosten praktijkexamen bij het CBR</li>
+        </ul>
+        <a href="#proefles" class="knop mt-8 inline-flex justify-center rounded-xl bg-white text-nacht px-5 py-3 font-semibold hover:bg-oranje">Kies pakket C</a>
+      </article>
+    </div>
+
+    <!-- Losse tarieven -->
+    <div class="mt-16 grid lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-4">
+        <h3 class="font-extrabold text-2xl md:text-3xl">Losse tarieven auto</h3>
+        <p class="mt-3 text-nacht/70 leading-relaxed">De proefles is gratis als je nog nooit les hebt gehad bij een andere rijschool.</p>
+      </div>
+      <dl class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 text-[16px] num">
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>Proefles</dt><dd class="font-semibold">Gratis</dd></div>
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>Losse rijles</dt><dd class="font-semibold">€ 55</dd></div>
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>Praktijkexamen</dt><dd class="font-semibold">€ 305</dd></div>
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>Herexamen</dt><dd class="font-semibold">€ 305</dd></div>
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>Tussentijdse toets</dt><dd class="font-semibold">€ 250</dd></div>
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>Faalangstexamen</dt><dd class="font-semibold">€ 355</dd></div>
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>BNOR-examen</dt><dd class="font-semibold">€ 355</dd></div>
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>Theorie-examen</dt><dd class="font-semibold">€ 50,50</dd></div>
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>Administratiekosten</dt><dd class="font-semibold">€ 40</dd></div>
+        <div class="flex justify-between py-3 border-b border-nacht/15"><dt>Gezondheidsverklaring</dt><dd class="font-semibold">€ 46,90</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- MOTOR -->
+<section id="motor" class="bg-nacht text-white py-20 md:py-28 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-5">
+      <img src="assets/site-06.jpg" alt="Lesmotor van YesRijles met L-bord" class="w-full aspect-[4/5] object-cover object-[50%_60%] rounded-[28px_28px_120px_28px]">
+    </div>
+    <div class="lg:col-span-7">
+      <p class="text-oranje font-semibold">Categorie A en code 80</p>
+      <h2 class="mt-3 font-black text-4xl md:text-[56px] leading-[1.02] tracking-[-0.025em]">Ook je motorrijbewijs haal je hier.</h2>
+      <p class="mt-6 text-[17px] md:text-lg leading-[1.7] text-white/75 max-w-[36rem]">Motorrijles op jouw niveau, met persoonlijke begeleiding en flexibele lestijden. Veel aandacht voor voertuigbeheersing, verkeersinzicht en zelfvertrouwen op de motor. Zo ben je goed voorbereid op je AVB- en AVD-examen.</p>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl bg-white/[.06] border border-white/10 p-6">
+          <h3 class="font-extrabold text-xl">Yes! Let's go</h3>
+          <p class="text-white/65 text-[15px] mt-1">10 rijlessen (5x blokuur van 100 min), direct beginnen</p>
+          <p class="mt-4 font-kop font-black text-3xl num">€550</p>
+        </div>
+        <div class="rounded-2xl bg-white/[.06] border border-white/10 p-6">
+          <h3 class="font-extrabold text-xl">AVB-pakket</h3>
+          <p class="text-white/65 text-[15px] mt-1">Voertuigbeheersing: 10 rijlessen, inclusief AVB-examen</p>
+          <p class="mt-4 font-kop font-black text-3xl num">€800</p>
+        </div>
+        <div class="rounded-2xl bg-white/[.06] border border-white/10 p-6">
+          <h3 class="font-extrabold text-xl">AVD-pakket</h3>
+          <p class="text-white/65 text-[15px] mt-1">Verkeersdeelneming: 10 rijlessen, inclusief AVD-examen</p>
+          <p class="mt-4 font-kop font-black text-3xl num">€825</p>
+        </div>
+        <div class="rounded-2xl bg-lblauw p-6 relative">
+          <h3 class="font-extrabold text-xl">Yes! Compleet</h3>
+          <p class="text-white/85 text-[15px] mt-1">20 rijlessen, inclusief AVB- en AVD-examen. In 2 termijnen.</p>
+          <p class="mt-4 font-kop font-black text-3xl num"><span class="text-white/55 line-through text-xl font-extrabold mr-2">€1.625</span>€1.475</p>
+        </div>
+      </div>
+      <p class="mt-5 text-white/60 text-[15px]">Prijzen zijn vanafprijzen. Losse motorles (50 min) € 55, AVB-examen € 250, AVD-examen € 275.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <h2 class="font-black text-4xl md:text-[56px] leading-[1.02] tracking-[-0.025em] max-w-2xl">Wat leerlingen zeggen.</h2>
+      <p class="flex items-center gap-3 text-nacht/75">
+        <span class="text-oranje text-2xl tracking-[3px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-nacht text-lg">5,0</strong> op Google, uit 5 reviews</span>
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-12 gap-5 md:gap-6">
+      <figure class="md:col-span-7 md:row-span-2 rounded-[28px] bg-lblauw text-white p-8 md:p-12 flex flex-col justify-center">
+        <span class="font-kop font-black text-7xl leading-none text-oranje h-10" aria-hidden="true">“</span>
+        <blockquote class="mt-4 font-kop font-extrabold text-2xl md:text-[30px] leading-[1.25] tracking-[-0.01em]">
+          <p>Hele goede rijschool!</p>
+          <p class="mt-4 font-tekst font-medium text-lg md:text-xl leading-relaxed text-white/90">Ik ben heel blij met deze rijschool. Rijinstructeur Moneer legt alles rustig en duidelijk uit. Hij neemt de tijd en zorgt ervoor dat je alles goed begrijpt.</p>
+          <p class="mt-4 font-tekst font-medium text-lg md:text-xl leading-relaxed text-white/90">Door zijn goede uitleg voelde ik me zeker tijdens het rijden en ben ik in één keer geslaagd voor mijn rijexamen. Ik raad deze rijschool en Moneer zeker aan!</p>
+        </blockquote>
+        <figcaption class="mt-8 font-semibold">Safina Saberi <span class="text-white/60 font-normal">via Google</span></figcaption>
+      </figure>
+
+      <figure class="md:col-span-5 rounded-[24px] bg-white p-7 md:p-8">
+        <span class="text-oranje tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <blockquote class="mt-3 text-[17px] leading-relaxed">"Door de rijlessen van YES rijles ben ik in 1x geslaagd voor mijn rijbewijs. Moneer heeft mij met veel geduld door de lessen begeleidt, een goede rijinstructeur met veel ervaring. Bedankt voor de prettige tijd!"</blockquote>
+        <figcaption class="mt-5 font-semibold">Danus</figcaption>
+      </figure>
+
+      <figure class="md:col-span-5 rounded-[24px] bg-white p-7 md:p-8">
+        <span class="text-oranje tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <blockquote class="mt-3 text-[17px] leading-relaxed">"Dit is de beste rijschool die je kunt vinden. Ik ben in één keer geslaagd voor mijn rijexamen en kreeg zelfs complimenten. De rijinstructeur is erg geduldig en legt alles tot in detail uit, waardoor je niet kunt zakken."</blockquote>
+        <figcaption class="mt-5 font-semibold">Kaif Imthiaz</figcaption>
+      </figure>
+
+      <figure class="md:col-span-6 rounded-[24px] bg-white p-7 md:p-8">
+        <span class="text-oranje tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <blockquote class="mt-3 text-[17px] leading-relaxed">"Beste rijschool! aardig en geduldige rijinstructeur, ik kan het iedereen aanraden om hier te lessen. Bedankt voor alles moneer."</blockquote>
+        <figcaption class="mt-5 font-semibold">Daniel O</figcaption>
+      </figure>
+
+      <figure class="md:col-span-6 rounded-[24px] bg-white p-7 md:p-8">
+        <span class="text-oranje tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <blockquote class="mt-3 text-[17px] leading-relaxed">"Alles verliep perfect, ik ben in één keer geslaagd en de instructeur was erg aardig. Dankjewel!"</blockquote>
+        <figcaption class="mt-5 font-semibold">jamshid</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROEFLES / CONTACT -->
+<section id="proefles" class="bg-white py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-black text-4xl md:text-[56px] leading-[1.02] tracking-[-0.025em]">Plan je gratis proefles.</h2>
+      <p class="mt-6 text-[17px] md:text-lg leading-[1.7] text-nacht/80">Kennismaken zonder verplichtingen. Bel of app, of laat je gegevens achter. Meestal hoor je binnen één werkdag van ons.</p>
+
+      <div class="mt-9 space-y-3">
+        <a href="tel:+31634688041" class="knop flex items-center gap-4 rounded-2xl bg-oranje text-nacht px-6 py-5 hover:bg-[#ff9a45]">
+          <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          <span><span class="block font-kop font-black text-xl num">06 34688041</span><span class="text-[15px]">Bellen, elke dag van 08:00 tot 20:00</span></span>
+        </a>
+        <a href="https://wa.me/31634688041" class="knop flex items-center gap-4 rounded-2xl bg-mist px-6 py-4 hover:bg-[#e8eef7]">
+          <svg class="w-6 h-6 shrink-0 text-[#1f9e55]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.4 2.5 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+          <span class="font-semibold">Stuur een WhatsApp-bericht</span>
+        </a>
+        <a href="mailto:info@yesrijles.nl" class="knop flex items-center gap-4 rounded-2xl bg-mist px-6 py-4 hover:bg-[#e8eef7]">
+          <svg class="w-6 h-6 shrink-0 text-lblauw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span class="font-semibold">info@yesrijles.nl</span>
+        </a>
+      </div>
+
+      <div class="mt-10 space-y-3">
+        <details class="group border-b border-nacht/15 pb-3">
+          <summary class="cursor-pointer list-none flex justify-between items-center gap-4 font-semibold text-[17px] py-2">Is de proefles echt gratis?<span class="plus text-lblauw text-2xl transition-transform">+</span></summary>
+          <p class="text-nacht/75 leading-relaxed pb-2">Ja, als je nog nooit eerder rijlessen hebt gevolgd bij een andere rijschool. Zo maak je vrijblijvend kennis.</p>
+        </details>
+        <details class="group border-b border-nacht/15 pb-3">
+          <summary class="cursor-pointer list-none flex justify-between items-center gap-4 font-semibold text-[17px] py-2">Hoeveel rijlessen heb ik nodig?<span class="plus text-lblauw text-2xl transition-transform">+</span></summary>
+          <p class="text-nacht/75 leading-relaxed pb-2">Dat verschilt per persoon. Gemiddeld hebben leerlingen tussen de 35 en 45 lessen nodig. We kijken samen wat jij nodig hebt.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <form class="rounded-[28px] bg-mist p-7 md:p-10" action="mailto:info@yesrijles.nl" method="post" enctype="text/plain">
+        <p class="font-kop font-extrabold text-2xl">Proefles aanvragen</p>
+        <p class="mt-1 text-nacht/70">We nemen contact met je op om een moment te plannen.</p>
+        <div class="mt-7 grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-[15px] font-semibold">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-2 w-full rounded-xl border border-nacht/20 bg-white px-4 py-3.5 focus:border-lblauw outline-none">
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-semibold">Telefoonnummer</span>
+            <input name="telefoon" type="tel" required autocomplete="tel" class="mt-2 w-full rounded-xl border border-nacht/20 bg-white px-4 py-3.5 focus:border-lblauw outline-none">
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-[15px] font-semibold">E-mailadres</span>
+            <input name="email" type="email" autocomplete="email" class="mt-2 w-full rounded-xl border border-nacht/20 bg-white px-4 py-3.5 focus:border-lblauw outline-none">
+          </label>
+          <fieldset class="sm:col-span-2">
+            <legend class="text-[15px] font-semibold">Ik wil les voor</legend>
+            <div class="mt-2 flex flex-wrap gap-3">
+              <label class="inline-flex items-center gap-2 rounded-xl bg-white border border-nacht/20 px-4 py-3 cursor-pointer has-[:checked]:border-lblauw has-[:checked]:ring-2 has-[:checked]:ring-lblauw/30"><input type="radio" name="soort" value="auto" checked class="accent-[#1473E6]"> Auto</label>
+              <label class="inline-flex items-center gap-2 rounded-xl bg-white border border-nacht/20 px-4 py-3 cursor-pointer has-[:checked]:border-lblauw has-[:checked]:ring-2 has-[:checked]:ring-lblauw/30"><input type="radio" name="soort" value="motor" class="accent-[#1473E6]"> Motor</label>
+              <label class="inline-flex items-center gap-2 rounded-xl bg-white border border-nacht/20 px-4 py-3 cursor-pointer has-[:checked]:border-lblauw has-[:checked]:ring-2 has-[:checked]:ring-lblauw/30"><input type="radio" name="soort" value="opfrissen" class="accent-[#1473E6]"> Opfrissen</label>
+            </div>
+          </fieldset>
+          <label class="block sm:col-span-2">
+            <span class="text-[15px] font-semibold">Bericht <span class="font-normal text-nacht/55">(mag leeg)</span></span>
+            <textarea name="bericht" rows="4" class="mt-2 w-full rounded-xl border border-nacht/20 bg-white px-4 py-3.5 focus:border-lblauw outline-none" placeholder="Bijvoorbeeld: ik heb last van faalangst, of ik wil graag snel examen doen."></textarea>
+          </label>
+        </div>
+        <button type="submit" class="knop mt-7 w-full sm:w-auto rounded-xl bg-nacht text-white font-kop font-extrabold text-lg px-8 py-4 hover:bg-lblauw">Proefles aanvragen</button>
+      </form>
+
+      <div class="mt-8 grid sm:grid-cols-2 gap-6 text-[15px] leading-relaxed">
+        <div>
+          <p class="font-semibold">Bereikbaar</p>
+          <p class="text-nacht/75">Maandag tot en met zondag<br><span class="num">08:00 tot 20:00</span></p>
+        </div>
+        <div>
+          <p class="font-semibold">Adres</p>
+          <p class="text-nacht/75">Elfenbankje 11, 7324 DC Apeldoorn<br>(geen bezoekadres)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="asfalt-korrel text-white">
+  <div class="h-8"></div>
+  <div class="streep"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <img src="assets/site-03.png" alt="YesRijles.nl" class="h-10 w-auto">
+      <p class="mt-5 text-white/70 max-w-sm">Verkeersschool YesRijles, de rijschool van Apeldoorn en omstreken. Autorijles en motorrijles.</p>
+    </div>
+    <div class="md:col-span-3">
+      <p class="font-semibold">Snel naar</p>
+      <ul class="mt-3 space-y-2 text-white/70">
+        <li><a href="#lessen" class="hover:text-white">Lessen</a></li>
+        <li><a href="#tarieven" class="hover:text-white">Tarieven auto</a></li>
+        <li><a href="#motor" class="hover:text-white">Motorrijles</a></li>
+        <li><a href="#proefles" class="hover:text-white">Gratis proefles</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-4">
+      <p class="font-semibold">Contact</p>
+      <ul class="mt-3 space-y-2 text-white/70">
+        <li><a href="tel:+31634688041" class="hover:text-white num">06 34688041</a></li>
+        <li><a href="mailto:info@yesrijles.nl" class="hover:text-white">info@yesrijles.nl</a></li>
+        <li>Elfenbankje 11, 7324 DC Apeldoorn</li>
+        <li class="num">KvK 90303474</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 pt-5 pb-28 md:pb-5 text-[13px] text-white/50">© 2026 YesRijles</div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-nacht/10 p-3 flex gap-3">
+  <a href="tel:+31634688041" class="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-oranje text-nacht font-kop font-extrabold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel nu
+  </a>
+  <a href="https://wa.me/31634688041" class="inline-flex items-center justify-center gap-2 rounded-xl bg-mist font-semibold px-5 py-3.5">WhatsApp</a>
+</div>
+
+</body>
+</html>

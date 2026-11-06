@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autorijschool Kholmy | Rijles in Apeldoorn</title>
+<meta name="description" content="Rijles in Apeldoorn bij Autorijschool Kholmy. Kies zelf je instructeur: automaat of schakel. Bel 06 44 27 82 69.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#0B2742', 700: '#12345A', 900: '#071B2E' },
+          oranje: { DEFAULT: '#EE7326', 600: '#D9601A' },
+          bord: { DEFAULT: '#0A7CC4', 300: '#5DB4EA' },
+          papier: '#F4F7FA',
+          inkt: '#1B2B3A',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'sans-serif'],
+          sans: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; color: #1B2B3A; background: #F4F7FA; }
+  .kop { font-family: 'Archivo', sans-serif; font-stretch: 118%; font-weight: 850; letter-spacing: -0.01em; line-height: 1; text-wrap: balance; }
+  .kop-smal { font-family: 'Archivo', sans-serif; font-stretch: 100%; font-weight: 700; }
+  p { text-wrap: pretty; }
+  .tab { font-variant-numeric: tabular-nums; }
+
+  /* Woordmerk */
+  .wm { display: inline-flex; flex-direction: column; line-height: 1; }
+  .wm-top { display: flex; justify-content: space-between; color: #EE7326; font-family: 'Archivo', sans-serif; font-stretch: 125%; font-weight: 800; font-size: .27em; margin-bottom: .14em; padding: 0 .05em; }
+  .wm-main { display: flex; align-items: center; font-family: 'Archivo', sans-serif; font-stretch: 125%; font-weight: 900; letter-spacing: -0.01em; }
+  .wm-main svg { width: .86em; height: .86em; margin: 0 .03em; }
+
+  /* Hero-cirkel, als het ronde bord uit het logo */
+  .bordfoto { border-radius: 9999px; box-shadow: 0 0 0 10px #0B2742, 0 0 0 18px #0A7CC4, 0 30px 80px -20px rgba(3, 15, 30, .7); }
+  .wegstreep { background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 56px, transparent 56px 104px); height: 6px; }
+
+  /* Schuine portretten, zoals op hun eigen teamafbeelding */
+  .schuin { clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%); }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #5DB4EA; outline-offset: 3px; }
+
+  .leiders { flex: 1; border-bottom: 2px dotted rgba(11,39,66,.25); margin: 0 .6rem .35rem; }
+
+  /* Eén moment beweging: de cirkel rolt binnen. Alleen als JS draait. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .rol { animation: rol .9s cubic-bezier(.2,.8,.2,1) both .1s; }
+    @keyframes rol { from { transform: translateX(60px) rotate(25deg) scale(.92); opacity: 0; } to { transform: none; opacity: 1; } }
+  }
+  /* Fotomuur: vaste rijen op desktop, zodat er geen gaten ontstaan */
+  .muur .foto { width: 100%; height: 100%; object-fit: cover; border-radius: 1rem; aspect-ratio: 4 / 5; }
+  .muur .foto.breed { aspect-ratio: 16 / 10; }
+  @media (min-width: 1024px) {
+    .muur { grid-auto-rows: 330px; }
+    .muur .foto, .muur .foto.breed { aspect-ratio: auto; }
+  }
+  .vandaag { background: #FFF1E7; }
+  .vandaag td:first-child { color: #D9601A; font-weight: 700; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="antialiased pb-[76px] md:pb-0">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-white px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-navy-900 text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Autorijschool Kholmy, gemaakt door <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-white sticky top-0 z-40 border-b border-navy/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-[68px] lg:h-[84px] flex items-center justify-between gap-6">
+    <a href="#top" aria-label="Autorijschool Kholmy, naar boven" class="text-navy text-[30px] lg:text-[40px]">
+      <span class="wm">
+        <span class="wm-top" aria-hidden="true"><span>A</span><span>U</span><span>T</span><span>O</span><span>R</span><span>I</span><span>J</span><span>S</span><span>C</span><span>H</span><span>O</span><span>O</span><span>L</span></span>
+        <span class="wm-main">KH<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#bord"/></svg>LMY</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold text-navy" aria-label="Hoofdmenu">
+      <a href="#instructeurs" class="hover:text-oranje transition-colors">Instructeurs</a>
+      <a href="#leerlingen" class="hover:text-oranje transition-colors">Leerlingen</a>
+      <a href="#tarieven" class="hover:text-oranje transition-colors">Tarieven</a>
+      <a href="#contact" class="hover:text-oranje transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31644278269" class="knop hidden sm:inline-flex items-center gap-2 bg-navy text-white font-semibold rounded-full px-5 py-2.5 text-[15px] hover:bg-navy-700">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+      06 44 27 82 69
+    </a>
+    <a href="tel:+31644278269" class="sm:hidden inline-flex items-center justify-center w-11 h-11 rounded-full bg-oranje text-white" aria-label="Bel 06 44 27 82 69">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- Herbruikbaar bord uit het logo -->
+<svg width="0" height="0" class="absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bordverloop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1293DA"/><stop offset="1" stop-color="#0558A8"/></linearGradient>
+    <symbol id="bord" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="47" fill="none" stroke="#0A86CF" stroke-width="6"/>
+      <circle cx="50" cy="50" r="39" fill="url(#bordverloop)"/>
+      <polygon points="24,44 54,44 54,30 80,50 54,70 54,56 24,56" fill="#fff" transform="rotate(-45 50 50)" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<main id="main">
+<!-- Hero -->
+<section id="top" class="relative bg-navy text-white overflow-hidden">
+  <div class="absolute -right-40 -top-40 w-[620px] h-[620px] rounded-full bg-bord/10 pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-9 pb-14 lg:pt-20 lg:pb-24 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-8 items-center">
+    <div class="max-w-xl">
+      <p class="text-bord-300 font-semibold text-[15px] lg:text-base mb-4 lg:mb-6">Rijschool in Apeldoorn</p>
+      <h1 class="kop text-[44px] sm:text-6xl lg:text-[76px]">Jij aan het stuur. Wij ernaast.</h1>
+      <p class="mt-5 lg:mt-7 text-[17px] lg:text-xl text-white/80 leading-relaxed max-w-md">Een familierijschool met drie instructeurs. Kies zelf bij wie je lest en in welke auto, en plan vandaag nog je eerste les.</p>
+      <div class="mt-7 lg:mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31644278269" class="knop inline-flex items-center gap-3 bg-oranje hover:bg-oranje-600 text-white font-bold text-lg lg:text-xl rounded-full pl-6 pr-7 py-4 shadow-[0_14px_30px_-10px_rgba(238,115,38,.75)]">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+          Bel 06 44 27 82 69
+        </a>
+        <a href="https://wa.me/31644278269" class="font-semibold text-white underline decoration-white/40 underline-offset-[6px] hover:decoration-oranje">of stuur een WhatsApp</a>
+      </div>
+    </div>
+    <div class="relative flex justify-center lg:justify-end">
+      <div class="rol relative w-[290px] h-[290px] sm:w-[400px] sm:h-[400px] lg:w-[520px] lg:h-[520px]">
+        <img src="assets/google-01.jpg" alt="Leerling met het Kholmy-lesbord naast de oranje lesauto" class="bordfoto w-full h-full object-cover" style="object-position: 64% 45%;">
+        <svg class="absolute -left-2 top-2 lg:left-4 lg:top-6 w-20 h-20 lg:w-28 lg:h-28 drop-shadow-xl" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#fff"/><use href="#bord"/></svg>
+      </div>
+    </div>
+  </div>
+  <div class="relative bg-navy-900 py-5" aria-hidden="true"><div class="wegstreep"></div></div>
+</section>
+
+<!-- Instructeurs -->
+<section id="instructeurs" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.2fr] gap-6 lg:gap-16 items-end mb-12 lg:mb-16">
+      <h2 class="kop text-navy text-4xl sm:text-5xl lg:text-6xl">Kies zelf je instructeur.</h2>
+      <p class="text-lg text-inkt/75 max-w-xl leading-relaxed">Vader, zoon en schoonzoon. Alle drie geven ze les onder de naam Kholmy, elk met een eigen auto en een eigen manier van uitleggen. Jij kiest wat bij je past.</p>
+    </div>
+
+    <div class="divide-y divide-navy/10 border-y border-navy/10">
+      <!-- Abdul Munier -->
+      <article class="grid grid-cols-[110px_1fr] sm:grid-cols-[170px_1fr] lg:grid-cols-[220px_1fr_1.25fr] gap-x-6 lg:gap-x-12 gap-y-5 py-10 lg:py-14 items-start">
+        <img src="assets/team-abdul.jpg" alt="Abdul Munier Kholmy" class="schuin w-full aspect-[3/4.7] object-cover object-top bg-navy/10" loading="lazy">
+        <div>
+          <h3 class="kop text-navy text-2xl sm:text-3xl lg:text-[34px]">Abdul Munier Kholmy</h3>
+          <p class="text-oranje-600 font-semibold mt-2">De oprichter, sinds 2005</p>
+          <dl class="mt-5 space-y-2 text-[15px]">
+            <div class="flex gap-2"><dt class="text-inkt/55 w-16 shrink-0">Auto</dt><dd class="font-semibold text-navy">Ford Puma Hybrid, automaat</dd></div>
+            <div class="flex gap-2"><dt class="text-inkt/55 w-16 shrink-0">Talen</dt><dd class="font-semibold text-navy">Nederlands, Dari, Russisch, Urdu, Pashto</dd></div>
+          </dl>
+        </div>
+        <div class="col-span-2 lg:col-span-1">
+          <p class="text-[17px] leading-relaxed text-inkt/85">Abdul Munier begon Autorijschool Kholmy in 2005 en heeft sindsdien honderden leerlingen naar hun rijbewijs begeleid. Hij staat bekend om zijn effectieve aanpak en zijn gevoel voor humor. Spreek je liever Dari, Russisch, Urdu of Pashto? Dan kan hij het je ook in je eigen taal uitleggen.</p>
+          <a href="https://wa.me/31644278269?text=Hallo%2C%20ik%20wil%20graag%20les%20bij%20Abdul%20Munier%20Kholmy." class="knop mt-6 inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold rounded-full px-5 py-2.5 hover:bg-navy hover:text-white">Les bij Abdul Munier</a>
+        </div>
+      </article>
+
+      <!-- Eghbal -->
+      <article class="grid grid-cols-[110px_1fr] sm:grid-cols-[170px_1fr] lg:grid-cols-[220px_1fr_1.25fr] gap-x-6 lg:gap-x-12 gap-y-5 py-10 lg:py-14 items-start">
+        <img src="assets/team-eghbal.jpg" alt="Eghbal Kholmy" class="schuin w-full aspect-[3/4.7] object-cover object-top bg-navy/10" loading="lazy">
+        <div>
+          <h3 class="kop text-navy text-2xl sm:text-3xl lg:text-[34px]">Eghbal Kholmy</h3>
+          <p class="text-oranje-600 font-semibold mt-2">Eigen rijschool sinds 16 februari 2017</p>
+          <dl class="mt-5 space-y-2 text-[15px]">
+            <div class="flex gap-2"><dt class="text-inkt/55 w-16 shrink-0">Auto</dt><dd class="font-semibold text-navy">Oranje Volkswagen Polo</dd></div>
+          </dl>
+          <figure class="hidden lg:block mt-8 border-l-4 border-oranje pl-5">
+            <blockquote class="text-[15px] leading-relaxed text-inkt/80 italic">"Les gehad van Eghbal. Hele vriendelijke man. Ik ben vaak gewisseld van rijschool omdat veel instructeurs alleen maar op hun telefoon zitten. Eghbal neemt daarin tegen echt de tijd voor je. Ook als je faalangst hebt kun je bij hem terecht. Na 5 rijscholen heb ik gelukkig via Kholmy wel mijn rijbewijs kunnen halen."</blockquote>
+            <figcaption class="mt-2 text-sm font-semibold text-navy">Yruwa, via Google <span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+          </figure>
+        </div>
+        <div class="col-span-2 lg:col-span-1">
+          <p class="text-[17px] leading-relaxed text-inkt/85">Eghbal werkte eerst een half jaar bij zijn vader en startte daarna zijn eigen rijschool. Leerlingen waarderen zijn geduld en zijn kalme aanpak. Hij luistert goed en zorgt dat je je op je gemak voelt in de auto, ook als je het spannend vindt.</p>
+          <a href="https://wa.me/31644278269?text=Hallo%2C%20ik%20wil%20graag%20les%20bij%20Eghbal%20Kholmy." class="knop mt-6 inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold rounded-full px-5 py-2.5 hover:bg-navy hover:text-white">Les bij Eghbal</a>
+          <figure class="lg:hidden mt-8 border-l-4 border-oranje pl-5">
+            <blockquote class="text-[15px] leading-relaxed text-inkt/80 italic">"Les gehad van Eghbal. Hele vriendelijke man. Ik ben vaak gewisseld van rijschool omdat veel instructeurs alleen maar op hun telefoon zitten. Eghbal neemt daarin tegen echt de tijd voor je. Ook als je faalangst hebt kun je bij hem terecht. Na 5 rijscholen heb ik gelukkig via Kholmy wel mijn rijbewijs kunnen halen."</blockquote>
+            <figcaption class="mt-2 text-sm font-semibold text-navy">Yruwa, via Google <span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- Bahram -->
+      <article class="grid grid-cols-[110px_1fr] sm:grid-cols-[170px_1fr] lg:grid-cols-[220px_1fr_1.25fr] gap-x-6 lg:gap-x-12 gap-y-5 py-10 lg:py-14 items-start">
+        <img src="assets/team-bahram.jpg" alt="Bahram Nikyar" class="schuin w-full aspect-[3/4.7] object-cover object-top bg-navy/10" loading="lazy">
+        <div>
+          <h3 class="kop text-navy text-2xl sm:text-3xl lg:text-[34px]">Bahram Nikyar</h3>
+          <p class="text-oranje-600 font-semibold mt-2">Eigen rijschool sinds 2023</p>
+          <dl class="mt-5 space-y-2 text-[15px]">
+            <div class="flex gap-2"><dt class="text-inkt/55 w-16 shrink-0">Auto</dt><dd class="font-semibold text-navy">Zwarte Audi A4</dd></div>
+          </dl>
+        </div>
+        <div class="col-span-2 lg:col-span-1">
+          <p class="text-[17px] leading-relaxed text-inkt/85">Bahram is de schoonzoon van Abdul Munier. Hij liep stage bij Kholmy, rondde daarna zijn opleiding tot rijinstructeur af en heeft sinds 2023 zijn eigen rijschool, onder de naam Autorijschool Kholmy.</p>
+          <a href="https://wa.me/31644278269?text=Hallo%2C%20ik%20wil%20graag%20les%20bij%20Bahram%20Nikyar." class="knop mt-6 inline-flex items-center gap-2 border-2 border-navy text-navy font-semibold rounded-full px-5 py-2.5 hover:bg-navy hover:text-white">Les bij Bahram</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Leerlingen -->
+<section id="leerlingen" class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl mb-12">
+      <h2 class="kop text-navy text-4xl sm:text-5xl lg:text-6xl">Herken je de oranje Polo?</h2>
+      <p class="mt-5 text-lg text-inkt/75 leading-relaxed">Op de achterkant staat: "Bedankt voor uw geduld, ik moet het óók leren." Dit zijn leerlingen van Kholmy bij de lesauto.</p>
+    </div>
+    <div class="muur grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+      <img src="assets/google-05.jpg" alt="Leerling steekt duim op naast de oranje lesauto" class="foto " loading="lazy">
+      <img src="assets/google-02.jpg" alt="Leerling bij de oranje Polo voor CODA in Apeldoorn" class="foto object-[30%_50%]" loading="lazy">
+      <img src="assets/google-08.jpg" alt="Leerling steekt duim op achter de lesauto" class="foto " loading="lazy">
+      <img src="assets/site-12.jpg" alt="Leerling naast de voorkant van de lesauto" class="foto " loading="lazy">
+      <figure class="col-span-2 bg-navy text-white rounded-2xl p-7 lg:p-10 flex flex-col justify-between gap-6">
+        <svg class="w-11 h-11" viewBox="0 0 100 100" aria-hidden="true"><use href="#bord"/></svg>
+        <blockquote class="kop-smal text-xl lg:text-[26px] leading-snug font-semibold">"Ik heb een hele fijne tijd gehad met Kholmy, en in 1 keer geslaagd. Ik heb leuk contact gehad, fijne uitleg gehad en veel geleerd. Deze rijschool is zeker aan te raden!"</blockquote>
+        <figcaption class="text-sm text-white/70">Thomas van Bottenburg, via Google <span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+      </figure>
+      <img src="assets/google-07.jpg" alt="Leerling zit lachend op het dak van de lesauto" class="foto breed col-span-2" loading="lazy">
+      <img src="assets/site-09.jpg" alt="Blije leerling juicht naast de lesauto" class="foto " loading="lazy">
+      <img src="assets/site-07.jpg" alt="Lachende leerling leunt op de lesauto" class="foto " loading="lazy">
+      <img src="assets/google-06.jpg" alt="Leerling naast de lesauto op een parkeerplaats" class="foto " loading="lazy">
+      <img src="assets/site-10.jpg" alt="Leerling bij de lesauto in een winkelstraat" class="foto " loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Tarieven -->
+<section id="tarieven" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-[1fr_1.35fr] gap-14 lg:gap-16">
+      <div>
+        <h2 class="kop text-navy text-4xl sm:text-5xl lg:text-6xl">Tarieven 2026</h2>
+        <p class="mt-5 text-lg text-inkt/75 leading-relaxed max-w-md">Een rijles duurt 50 minuten. Je kunt losse lessen nemen of een pakket met korting.</p>
+        <ul class="mt-10 tab text-[17px]">
+          <li class="flex items-end py-2.5"><span>Rijles (50 min)</span><span class="leiders"></span><span class="font-bold text-navy">€ 65</span></li>
+          <li class="flex items-end py-2.5"><span>Tussentijdse toets</span><span class="leiders"></span><span class="font-bold text-navy">€ 215</span></li>
+          <li class="flex items-end py-2.5"><span>Praktijkexamen</span><span class="leiders"></span><span class="font-bold text-navy">€ 315</span></li>
+          <li class="flex items-end py-2.5"><span>Herexamen</span><span class="leiders"></span><span class="font-bold text-navy">€ 315</span></li>
+          <li class="flex items-end py-2.5"><span>B.N.O.R.</span><span class="leiders"></span><span class="font-bold text-navy">€ 330</span></li>
+          <li class="flex items-end py-2.5"><span>Praktijkexamen faalangst</span><span class="leiders"></span><span class="font-bold text-navy">€ 375</span></li>
+        </ul>
+        <h3 class="kop-smal text-navy text-lg mt-10">Theorie</h3>
+        <ul class="mt-2 tab text-[17px]">
+          <li class="flex items-end py-2.5"><span>Theorie-examen</span><span class="leiders"></span><span class="font-bold text-navy">€ 55</span></li>
+          <li class="flex items-end py-2.5"><span>Theorie-examen met tolk</span><span class="leiders"></span><span class="font-bold text-navy">€ 375</span></li>
+        </ul>
+      </div>
+
+      <div class="lg:pt-4">
+        <h3 class="kop-smal text-navy text-xl mb-6">Pakketten</h3>
+        <div class="space-y-4">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 grid sm:grid-cols-[1fr_auto] gap-6 items-center shadow-[0_20px_50px_-30px_rgba(11,39,66,.35)]">
+            <div>
+              <p class="kop text-navy text-2xl">30 lessen</p>
+              <p class="mt-2 text-inkt/70">30 rijlessen van 50 minuten, tussentijdse toets en je eerste praktijkexamen.</p>
+            </div>
+            <div class="sm:text-right tab">
+              <p class="text-inkt/50 text-sm"><s>€ 2.480</s> <span class="text-oranje-600 font-semibold no-underline">€ 55 korting</span></p>
+              <p class="kop text-navy text-4xl mt-1">€ 2.425</p>
+            </div>
+          </div>
+          <div class="bg-navy text-white rounded-3xl p-6 sm:p-8 grid sm:grid-cols-[1fr_auto] gap-6 items-center shadow-[0_24px_50px_-24px_rgba(11,39,66,.6)]">
+            <div>
+              <p class="kop text-2xl">40 lessen</p>
+              <p class="mt-2 text-white/75">40 rijlessen van 50 minuten, tussentijdse toets en je eerste praktijkexamen.</p>
+            </div>
+            <div class="sm:text-right tab">
+              <p class="text-white/60 text-sm"><s>€ 3.130</s> <span class="text-oranje font-semibold">€ 65 korting</span></p>
+              <p class="kop text-4xl mt-1">€ 3.065</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-3xl p-6 sm:p-8 grid sm:grid-cols-[1fr_auto] gap-6 items-center shadow-[0_20px_50px_-30px_rgba(11,39,66,.35)]">
+            <div>
+              <p class="kop text-navy text-2xl">50 lessen</p>
+              <p class="mt-2 text-inkt/70">50 rijlessen van 50 minuten, tussentijdse toets en je eerste praktijkexamen.</p>
+            </div>
+            <div class="sm:text-right tab">
+              <p class="text-inkt/50 text-sm"><s>€ 3.780</s> <span class="text-oranje-600 font-semibold">€ 75 korting</span></p>
+              <p class="kop text-navy text-4xl mt-1">€ 3.705</p>
+            </div>
+          </div>
+        </div>
+        <p class="mt-6 text-inkt/70">Twijfel je hoeveel lessen je nodig hebt? <a href="tel:+31644278269" class="font-semibold text-navy underline underline-offset-4 decoration-oranje decoration-2 hover:text-oranje-600">Bel even</a>, dan denken we met je mee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-[1fr_1.1fr] gap-14 lg:gap-20">
+    <div>
+      <h2 class="kop text-navy text-4xl sm:text-5xl lg:text-6xl">Plan je eerste les.</h2>
+      <p class="mt-5 text-lg text-inkt/75 leading-relaxed max-w-md">Bel of app ons, dan spreken we je eerste les af. Liever eerst een vraag stellen? Gebruik het formulier.</p>
+
+      <div class="mt-10 space-y-5">
+        <a href="tel:+31644278269" class="knop flex items-center gap-4 group w-fit">
+          <span class="w-14 h-14 rounded-full bg-oranje text-white flex items-center justify-center shrink-0"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg></span>
+          <span><span class="block text-sm text-inkt/60">Bellen</span><span class="kop text-navy text-2xl sm:text-3xl tab group-hover:text-oranje-600 transition-colors">06 44 27 82 69</span></span>
+        </a>
+        <a href="https://wa.me/31644278269" class="knop flex items-center gap-4 group w-fit">
+          <span class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.3-.6-.4Z"/></svg></span>
+          <span><span class="block text-sm text-inkt/60">WhatsApp</span><span class="font-semibold text-navy text-lg group-hover:text-oranje-600 transition-colors">Stuur ons een bericht</span></span>
+        </a>
+        <a href="mailto:info@autorijschoolkholmy.nl" class="knop flex items-center gap-4 group w-fit">
+          <span class="w-14 h-14 rounded-full bg-navy text-white flex items-center justify-center shrink-0"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><span class="block text-sm text-inkt/60">E-mail</span><span class="font-semibold text-navy text-lg group-hover:text-oranje-600 transition-colors break-all">info@autorijschoolkholmy.nl</span></span>
+        </a>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="kop-smal text-navy text-lg">Adres</h3>
+          <p class="mt-2 text-inkt/80 leading-relaxed">Tweelingenlaan 51<br>7324 AP Apeldoorn</p>
+        </div>
+        <div>
+          <h3 class="kop-smal text-navy text-lg">Bereikbaar</h3>
+          <table class="mt-2 text-[15px] tab w-full max-w-[260px]" id="tijden">
+            <tbody>
+              <tr data-dag="1"><td class="py-1 pl-2 rounded-l">Maandag</td><td class="py-1 pr-2 text-right rounded-r">07:00 tot 20:00</td></tr>
+              <tr data-dag="2"><td class="py-1 pl-2 rounded-l">Dinsdag</td><td class="py-1 pr-2 text-right rounded-r">07:00 tot 20:00</td></tr>
+              <tr data-dag="3"><td class="py-1 pl-2 rounded-l">Woensdag</td><td class="py-1 pr-2 text-right rounded-r">07:00 tot 20:00</td></tr>
+              <tr data-dag="4"><td class="py-1 pl-2 rounded-l">Donderdag</td><td class="py-1 pr-2 text-right rounded-r">07:00 tot 20:00</td></tr>
+              <tr data-dag="5"><td class="py-1 pl-2 rounded-l">Vrijdag</td><td class="py-1 pr-2 text-right rounded-r">07:00 tot 20:00</td></tr>
+              <tr data-dag="6"><td class="py-1 pl-2 rounded-l">Zaterdag</td><td class="py-1 pr-2 text-right rounded-r">10:00 tot 16:00</td></tr>
+              <tr data-dag="0"><td class="py-1 pl-2 rounded-l">Zondag</td><td class="py-1 pr-2 text-right rounded-r">10:00 tot 16:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <form action="mailto:info@autorijschoolkholmy.nl" method="post" enctype="text/plain" class="bg-papier rounded-3xl p-6 sm:p-10 self-start">
+      <h3 class="kop text-navy text-2xl sm:text-3xl">Stel je vraag</h3>
+      <div class="mt-8 grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-sm font-semibold text-navy">Naam</span>
+          <input required name="Naam" autocomplete="name" class="mt-2 w-full rounded-xl border border-navy/15 bg-white px-4 py-3 focus:border-bord outline-none"></label>
+        <label class="block"><span class="text-sm font-semibold text-navy">Telefoon</span>
+          <input name="Telefoon" type="tel" autocomplete="tel" class="mt-2 w-full rounded-xl border border-navy/15 bg-white px-4 py-3 focus:border-bord outline-none"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold text-navy">E-mail</span>
+          <input required name="E-mail" type="email" autocomplete="email" class="mt-2 w-full rounded-xl border border-navy/15 bg-white px-4 py-3 focus:border-bord outline-none"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold text-navy">Instructeur</span>
+          <select name="Instructeur" class="mt-2 w-full rounded-xl border border-navy/15 bg-white px-4 py-3 focus:border-bord outline-none">
+            <option>Maakt me niet uit</option>
+            <option>Abdul Munier Kholmy (automaat)</option>
+            <option>Eghbal Kholmy (Volkswagen Polo)</option>
+            <option>Bahram Nikyar (Audi A4)</option>
+          </select></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold text-navy">Bericht</span>
+          <textarea name="Bericht" rows="4" class="mt-2 w-full rounded-xl border border-navy/15 bg-white px-4 py-3 focus:border-bord outline-none"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-7 w-full sm:w-auto bg-navy hover:bg-navy-700 text-white font-bold rounded-full px-8 py-4">Verstuur je vraag</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-navy text-white/75">
+  <div class="wegstreep opacity-60" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14 grid md:grid-cols-[1.3fr_1fr_1fr] gap-10 text-[15px]">
+    <div>
+      <span class="wm text-white text-[34px]">
+        <span class="wm-top" aria-hidden="true"><span>A</span><span>U</span><span>T</span><span>O</span><span>R</span><span>I</span><span>J</span><span>S</span><span>C</span><span>H</span><span>O</span><span>O</span><span>L</span></span>
+        <span class="wm-main">KH<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#bord"/></svg>LMY</span>
+      </span>
+      <p class="mt-5 max-w-xs">Rijles in Apeldoorn, bij de instructeur die jij kiest.</p>
+    </div>
+    <div>
+      <p class="text-white font-semibold">Contact</p>
+      <p class="mt-3 leading-relaxed">Tweelingenlaan 51<br>7324 AP Apeldoorn<br><a href="tel:+31644278269" class="hover:text-oranje">06 44 27 82 69</a><br><a href="mailto:info@autorijschoolkholmy.nl" class="hover:text-oranje">info@autorijschoolkholmy.nl</a></p>
+    </div>
+    <div>
+      <p class="text-white font-semibold">Gegevens</p>
+      <p class="mt-3 leading-relaxed">KvK 68094868<br>BTW NL002384318B36<br>IBAN NL59 RABO 0316 5531 58</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-navy/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31644278269" class="flex-1 inline-flex items-center justify-center gap-2 bg-oranje text-white font-bold rounded-full py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Bel ons
+  </a>
+  <a href="https://wa.me/31644278269" class="inline-flex items-center justify-center gap-2 border-2 border-navy text-navy font-semibold rounded-full px-5 py-3">WhatsApp</a>
+</div>
+
+<script>
+  // Markeer de dag van vandaag in de openingstijden
+  var r = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+  if (r) r.classList.add('vandaag');
+</script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keurslager Harmsen | Vlees & maaltijden in Diepenveen</title>
+<meta name="description" content="Keurslager Harmsen aan de Dorpsstraat in Diepenveen: vers vlees, eigen worst, elke dag meer dan 40 verse maaltijden en buffetten voor uw feest. Familiebedrijf sinds 1910.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          terrazzo: '#EDE7E1',
+          walnoot: '#3B261A',
+          leisteen: '#4D5955',
+          rood: '#C3312A',
+          inkt: '#24190F',
+          zacht: '#6B5B50',
+        },
+        fontFamily: {
+          kop: ['Alegreya', 'Georgia', 'serif'],
+          tekst: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #EDE7E1;
+    /* fijne spikkels, zoals de terrazzovloer in de winkel */
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(59,38,26,.07) 1px, transparent 1.6px),
+      radial-gradient(circle at 70% 80%, rgba(195,49,42,.06) 1.2px, transparent 1.8px),
+      radial-gradient(circle at 50% 50%, rgba(77,89,85,.07) .9px, transparent 1.4px);
+    background-size: 23px 23px, 37px 37px, 17px 17px;
+  }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 0 0; }
+  .bord {
+    background-color: #4D5955;
+    background-image: radial-gradient(ellipse at 30% 0%, rgba(255,255,255,.08), transparent 60%);
+  }
+  .bord-rand { box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #C3312A; outline-offset: 3px; }
+  .uur { font-variant-numeric: tabular-nums; }
+  @media (prefers-reduced-motion: no-preference) {
+    html.js #belbalk { transform: translateY(110%); transition: transform .3s ease; }
+    html.js #belbalk.zichtbaar { transform: none; }
+    html.js .hero-foto { animation: opkomen 1s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes opkomen { from { transform: translateY(24px); clip-path: inset(18% 0 0 0 round 999px 999px 0 0); } to { transform: none; clip-path: inset(0 0 0 0 round 999px 999px 0 0); } }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="font-tekst text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-walnoot text-[#EDE7E1] text-center text-[13px] py-2 px-4">
+  Demo voor Keurslager Harmsen, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="max-w-7xl mx-auto px-5 md:px-8 py-5 flex items-center justify-between gap-6">
+  <a href="#" class="leading-none text-walnoot" aria-label="Keurslager Harmsen, naar boven">
+    <span class="font-kop font-extrabold text-[30px] md:text-[34px] tracking-tight">Harmsen</span>
+    <span class="font-kop italic text-[17px] md:text-[19px] text-zacht ml-1">vlees &amp; maaltijden</span>
+  </a>
+  <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold text-walnoot" aria-label="Hoofdmenu">
+    <a href="#maaltijden" class="hover:text-rood transition-colors">Maaltijden</a>
+    <a href="#catering" class="hover:text-rood transition-colors">Catering</a>
+    <a href="#historie" class="hover:text-rood transition-colors">Historie</a>
+    <a href="#bezoek" class="hover:text-rood transition-colors">Openingstijden</a>
+  </nav>
+  <a href="tel:0570591275" class="knop hidden sm:inline-flex items-center gap-2 border-2 border-walnoot text-walnoot rounded-full px-4 py-2 text-[15px] font-semibold hover:bg-walnoot hover:text-white">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    0570 591 275
+  </a>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 pt-4 md:pt-10 pb-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-end">
+  <div class="md:col-span-6 lg:col-span-7 md:pb-10">
+    <p class="font-kop italic text-[20px] text-rood mb-4">Keurslager in Diepenveen</p>
+    <h1 class="font-kop font-extrabold text-[42px] leading-[1.02] sm:text-6xl lg:text-[80px] lg:leading-[.98] tracking-[-.02em] text-walnoot [text-wrap:wrap]">
+      Nieuwe winkel.<br> Smaak als vanouds.
+    </h1>
+    <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed text-zacht max-w-[34rem]">
+      Vers vlees, worst uit eigen makerij en elke dag meer dan 40 verse maaltijden uit onze eigen keuken. Familie Harmsen, sinds 1910.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+      <a href="tel:0570591275" class="knop inline-flex items-center gap-3 bg-rood text-white rounded-full pl-6 pr-7 py-4 text-[18px] font-bold shadow-[0_10px_24px_-10px_rgba(195,49,42,.7)] hover:bg-[#a92720]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Bel 0570 591 275
+      </a>
+      <a href="#maaltijden" class="font-semibold text-walnoot underline decoration-rood decoration-2 underline-offset-[6px] hover:text-rood">Bekijk de maaltijden</a>
+    </div>
+    <p class="mt-8 flex items-center gap-2 text-[15px] text-zacht">
+      <span class="text-rood tracking-[2px]" aria-hidden="true">★★★★★</span>
+      <span><strong class="text-walnoot">4,6</strong> uit 74 Google-reviews</span>
+    </p>
+  </div>
+  <div class="md:col-span-6 lg:col-span-5">
+    <div class="hero-foto boog overflow-hidden aspect-[4/5] max-h-[78vh] md:max-h-none w-full md:max-w-[560px] md:ml-auto bg-walnoot">
+      <img src="assets/site-05.jpg" alt="De vernieuwde winkel van Keurslager Harmsen: vitrines met vers vlees en maaltijden langs een licht gangpad" class="w-full h-full object-cover object-[46%_50%]">
+    </div>
+  </div>
+</section>
+
+<!-- Maaltijden -->
+<section id="maaltijden" class="bg-white/60 border-y border-walnoot/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-12 items-start">
+      <div class="md:col-span-5 md:sticky md:top-10">
+        <h2 class="font-kop font-extrabold text-4xl md:text-[56px] leading-[1] tracking-[-.015em] text-walnoot">Geen tijd om te koken? Dan kookt onze keuken.</h2>
+        <p class="mt-6 text-[18px] leading-relaxed text-zacht">
+          Naast vers vlees zijn onze maaltijden niet meer weg te denken. Elke dag staan er drie koks in onze eigen keuken, zodat u altijd zo vers mogelijk eet.
+        </p>
+        <p class="mt-4 text-[18px] leading-relaxed text-zacht">
+          Kies uit meer dan 40 complete maaltijden, Hollands, Oosters of Italiaans. Of stel uw bord zelf samen uit losse onderdelen. Het leukst is gewoon even langskomen en kijken.
+        </p>
+      </div>
+      <div class="md:col-span-7 grid grid-cols-2 gap-4 md:gap-5">
+        <figure class="col-span-2">
+          <img src="assets/site-12.jpg" alt="Stamppot andijvie met gehakt en jus op een oranje bord" class="w-full aspect-[16/9] object-cover rounded-[28px]">
+          <figcaption class="mt-2 text-sm text-zacht">Stamppot met gehakt en jus</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/site-14.jpg" alt="Oosterse maaltijd met rijst, babi en loempia" class="w-full aspect-square object-cover rounded-[28px]">
+          <figcaption class="mt-2 text-sm text-zacht">Oosters</figcaption>
+        </figure>
+        <figure class="mt-10">
+          <img src="assets/site-13.jpg" alt="Ovenschotel met kaas in een bakje, klaar om op te warmen" class="w-full aspect-square object-cover rounded-[28px]">
+          <figcaption class="mt-2 text-sm text-zacht">Klaar om op te warmen</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Menubord -->
+    <div class="bord bord-rand mt-20 md:mt-28 rounded-[32px] text-[#EEF0EC] p-7 sm:p-10 md:p-14">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 border-b border-white/20 pb-7">
+        <h3 class="font-kop italic font-bold text-3xl md:text-[44px] leading-tight">Stel uw eigen bord samen</h3>
+        <p class="text-white/70 max-w-sm">Een greep uit ons assortiment. Sommige gerechten zijn er alleen in het seizoen.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-2 sm:gap-y-10 pt-8 text-[16px] leading-[1.8]">
+        <div>
+          <h4 class="font-kop font-bold text-[22px] text-white mb-2">Vlees</h4>
+          <ul class="text-white/80">
+            <li>Gehaktbal</li><li>Rookworst</li><li>Gebraden sukadelapje</li><li>Speklapje</li><li>Gebraden saucijsjes</li><li>Karbonade</li><li>Varkenshaas in champignonroomsaus</li><li>Hachee</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="hidden lg:block font-kop font-bold text-[22px] mb-2 invisible" aria-hidden="true">Vlees</h4>
+          <ul class="text-white/80">
+            <li>Kip pilav</li><li>Hazenpeper</li><li>Indische smoor</li><li>Kip kerrie</li><li>Gehaktballetjes in ketjapsaus</li><li>Naturel gehaktballetje</li><li>Gevulde paprika met gehakt</li>
+          </ul>
+        </div>
+        <div class="mt-8 sm:mt-0">
+          <h4 class="font-kop font-bold text-[22px] text-white mb-2">Aardappel, rijst &amp; pasta</h4>
+          <ul class="text-white/80">
+            <li>Aardappelpuree</li><li>Aardappelpartjes met schil</li><li>Aardappelgratin</li><li>Gekookte aardappels</li><li>Krieltjes</li><li>Aardappeltimbaaltje</li><li>Nasi, bami of groenterijst</li><li>Spaghetti en macaroni</li>
+          </ul>
+        </div>
+        <div class="mt-8 sm:mt-0">
+          <h4 class="font-kop font-bold text-[22px] text-white mb-2">Groente</h4>
+          <ul class="text-white/80">
+            <li>Bloemkool</li><li>Gemengde groente</li><li>Rode kool</li><li>Broccoli</li><li>Snijbonen en sperziebonen</li><li>Spinazie</li><li>Tuinbonen</li><li>Worteltjes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 pt-8 border-t border-white/20 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+        <h4 class="font-kop font-bold text-[22px] text-white shrink-0">Stamppotten</h4>
+        <ul class="flex flex-wrap gap-x-6 gap-y-1 text-white/80 text-[16px]">
+          <li>Zuurkool</li><li>Andijvie</li><li>Boerenkool</li><li>Hutspot</li><li>Snijbonen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ambacht -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+  <div class="md:col-span-7 relative">
+    <img src="assets/site-07.jpg" alt="Slager in schort toont een stuk buikspek op het hakblok, met zelfgemaakte worst op de achtergrond" class="w-full aspect-[4/3] md:aspect-[5/4] object-cover object-[60%_50%] rounded-[28px] md:rounded-r-none md:-ml-[calc((100vw-80rem)/2+2rem)] md:w-[calc(100%+(100vw-80rem)/2+2rem)] xl:rounded-l-none">
+  </div>
+  <div class="md:col-span-5">
+    <h2 class="font-kop font-extrabold text-4xl md:text-[52px] leading-[1.02] tracking-[-.015em] text-walnoot">Verstand van lekker eten</h2>
+    <p class="mt-6 text-[18px] leading-relaxed text-zacht">
+      Onze vleeswaren, worst en vleesspecialiteiten maken we zelf, altijd met verse ingrediënten. Zo kunt u met ons ruime aanbod elke dag iets lekkers op tafel zetten.
+    </p>
+    <p class="mt-4 text-[18px] leading-relaxed text-zacht">
+      We bedenken ook graag nieuwe producten, zoals de Special: een verrassende combinatie van vlees met groenten, kruiden, kaas en fruit.
+    </p>
+    <p class="mt-8 font-kop italic text-[22px] text-walnoot leading-snug border-l-4 border-rood pl-5">
+      Er bestaat geen mooier vak dan het slagersvak. Dat proeft u terug.
+    </p>
+  </div>
+</section>
+
+<!-- Catering -->
+<section id="catering" class="bg-walnoot text-[#F3ECE5]">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="font-kop font-extrabold text-4xl md:text-[52px] leading-[1.02] tracking-[-.015em]">Een feest thuis? Wij zorgen voor het eten.</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-[#F3ECE5]/75">
+        Alles huisgemaakt en dagvers. Kies een van onze buffetten, hapjes-, gourmet- of saladeschotels, of stel zelf iets samen uit ons hele assortiment. Ook voor een groter feest bent u bij ons aan het goede adres.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 items-start">
+        <a href="tel:0570591275" class="knop inline-flex items-center gap-3 bg-rood text-white rounded-full px-6 py-3.5 text-[17px] font-bold hover:bg-[#a92720]">Bel om te bestellen</a>
+        <a href="mailto:info@harmsen.keurslager.nl?subject=Vraag%20over%20catering" class="font-semibold underline decoration-rood decoration-2 underline-offset-[6px] hover:text-white">of mail info@harmsen.keurslager.nl</a>
+      </div>
+    </div>
+    <div class="lg:col-span-8 lg:pl-6">
+      <ul class="divide-y divide-white/15 border-y border-white/15">
+        <li class="py-6 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+          <div>
+            <h3 class="font-kop font-bold text-[26px]">Toscaans buffet</h3>
+            <p class="text-[#F3ECE5]/70 mt-1">Salade caprese, pastasalade, antipasti met parmaham en salami, stokbrood en focaccia, warme tagliatelle, lasagne en Italiaans gekruide gehaktballetjes in tomatensaus.</p>
+          </div>
+          <p class="font-kop italic text-[18px] text-[#F3ECE5]/90 sm:text-right whitespace-nowrap">minimaal 20 personen</p>
+        </li>
+        <li class="py-6 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+          <div>
+            <h3 class="font-kop font-bold text-[26px]">Koud buffet 'Veldzigt'</h3>
+            <p class="text-[#F3ECE5]/70 mt-1">Al jaren een vaste waarde. Rundvleessalade, zalmsalade met paling en garnalen, beenhamschotel, warme varkenshaas in champignonroomsaus en runderlende in rode wijnsaus, vers fruit en een luchtig dessert.</p>
+          </div>
+          <p class="font-kop italic text-[18px] text-[#F3ECE5]/90 sm:text-right whitespace-nowrap">minimaal 20 personen</p>
+        </li>
+        <li class="py-6 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+          <div>
+            <h3 class="font-kop font-bold text-[26px]">Hapjesbuffet</h3>
+            <p class="text-[#F3ECE5]/70 mt-1">Kipsaté, gehaktballetjes in ketjapsaus, broodjes beenham met beenhamsaus, rundvleessalade en stokbrood met kruidenboter.</p>
+          </div>
+          <p class="font-kop italic text-[18px] text-[#F3ECE5]/90 sm:text-right whitespace-nowrap">vanaf 12 personen</p>
+        </li>
+        <li class="py-6 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+          <div>
+            <h3 class="font-kop font-bold text-[26px]">Stamppotbuffet</h3>
+            <p class="text-[#F3ECE5]/70 mt-1">Zuurkool, hutspot en boerenkool met huisgemaakte rookworst en gehaktbal in jus. In de uitvoering 'compleet' ook met hachee, spareribs, zoetzuur en mosterd. Van september tot en met maart.</p>
+          </div>
+          <p class="font-kop italic text-[18px] text-[#F3ECE5]/90 sm:text-right whitespace-nowrap">vanaf 20 personen</p>
+        </li>
+        <li class="py-6 grid sm:grid-cols-[1fr_auto] gap-x-8 gap-y-2">
+          <div>
+            <h3 class="font-kop font-bold text-[26px]">Zelf samenstellen</h3>
+            <p class="text-[#F3ECE5]/70 mt-1">Minder gasten, of niet gevonden wat u zoekt? Stel uw eigen buffet samen uit onze maaltijden. Kom gerust langs in de winkel, dan denken we mee.</p>
+          </div>
+          <p class="font-kop italic text-[18px] text-[#F3ECE5]/90 sm:text-right whitespace-nowrap">vanaf 10 personen</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Historie -->
+<section id="historie" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold text-4xl md:text-[52px] leading-[1.02] tracking-[-.015em] text-walnoot">Vier generaties Harmsen</h2>
+      <figure class="mt-8">
+        <img src="assets/site-10.jpg" alt="Oude familiefoto: de familie Harmsen bij een paard en een kar met het opschrift Harmsen vleeschhouwerij" class="w-full aspect-[3/2] object-cover rounded-[24px] sepia-[.2]">
+        <figcaption class="mt-2 text-sm text-zacht">Waar het begon: worst en spek van de familie Harmsen</figcaption>
+      </figure>
+      <figure class="mt-6 w-3/4 ml-auto -mt-16 relative">
+        <img src="assets/site-11.jpg" alt="De familie Harmsen achter de toonbank van de vernieuwde winkel" class="w-full aspect-[3/2] object-cover rounded-[24px] ring-8 ring-[#EDE7E1]">
+        <figcaption class="mt-2 text-sm text-zacht text-right">En nu, in de vernieuwde winkel</figcaption>
+      </figure>
+    </div>
+    <ol class="lg:col-span-7 relative border-l-2 border-walnoot/15 ml-2 lg:mt-3">
+      <li class="pl-8 pb-9 relative">
+        <span class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-rood ring-4 ring-[#EDE7E1]"></span>
+        <p class="font-kop font-extrabold text-[30px] text-walnoot leading-none">1910</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-zacht">G.J. Harmsen, de eerste generatie, begint een marktbedrijf in worst en spek op Den Nul bij Olst.</p>
+      </li>
+      <li class="pl-8 pb-9 relative">
+        <span class="absolute -left-[7px] top-2.5 w-3 h-3 rounded-full bg-walnoot/40 ring-4 ring-[#EDE7E1]"></span>
+        <p class="font-kop font-extrabold text-[30px] text-walnoot leading-none">1953</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-zacht">De tweede generatie zet het bedrijf voort in Diepenveen, met worst uit eigen makerij vanuit een schuur aan de Olsterweg. In 1957 volgt daar een klein winkeltje.</p>
+      </li>
+      <li class="pl-8 pb-9 relative">
+        <span class="absolute -left-[7px] top-2.5 w-3 h-3 rounded-full bg-walnoot/40 ring-4 ring-[#EDE7E1]"></span>
+        <p class="font-kop font-extrabold text-[30px] text-walnoot leading-none">1971</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-zacht">Na een winkel met worstmakerij in Olst begint Harmsen samen met zoon Gert, de derde generatie, een winkel aan de Olsterweg.</p>
+      </li>
+      <li class="pl-8 pb-9 relative">
+        <span class="absolute -left-[7px] top-2.5 w-3 h-3 rounded-full bg-walnoot/40 ring-4 ring-[#EDE7E1]"></span>
+        <p class="font-kop font-extrabold text-[30px] text-walnoot leading-none">1978</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-zacht">Aankoop van het pand aan de Dorpsstraat, ooit een radio- en tv-zaak. Na de verbouwing een complete keurslagerij met royale worstmakerij, gerund door Gert en Betty.</p>
+      </li>
+      <li class="pl-8 pb-9 relative">
+        <span class="absolute -left-[7px] top-2.5 w-3 h-3 rounded-full bg-walnoot/40 ring-4 ring-[#EDE7E1]"></span>
+        <p class="font-kop font-extrabold text-[30px] text-walnoot leading-none">2005</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-zacht">Een grotere winkel, meer productieruimte en een eigen culinaire keuken voor maaltijden en buffetten.</p>
+      </li>
+      <li class="pl-8 pb-9 relative">
+        <span class="absolute -left-[7px] top-2.5 w-3 h-3 rounded-full bg-walnoot/40 ring-4 ring-[#EDE7E1]"></span>
+        <p class="font-kop font-extrabold text-[30px] text-walnoot leading-none">2011</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-zacht">Zoon Toine, de vierde generatie, neemt de slagerij samen met zijn vrouw Jannemiek over.</p>
+      </li>
+      <li class="pl-8 relative">
+        <span class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-rood ring-4 ring-[#EDE7E1]"></span>
+        <p class="font-kop font-extrabold text-[30px] text-walnoot leading-none">2025</p>
+        <p class="mt-2 text-[17px] leading-relaxed text-zacht">De hele winkel en productieruimte gaan op de schop. Gemak en snelheid staan voorop, zonder het ambacht, de kwaliteit en de gezelligheid van een dorpsslager te verliezen.</p>
+      </li>
+    </ol>
+  </div>
+  <blockquote class="mt-20 md:mt-24 max-w-4xl">
+    <p class="font-kop italic font-medium text-[32px] md:text-[52px] leading-[1.1] text-walnoot">"De winkel is van deze tijd, de smaak als vanouds."</p>
+    <footer class="mt-4 text-zacht">Familie Harmsen</footer>
+  </blockquote>
+</section>
+
+<!-- Reviews -->
+<section class="bg-white/60 border-y border-walnoot/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-24">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+      <h2 class="font-kop font-extrabold text-4xl md:text-[48px] leading-[1.02] tracking-[-.015em] text-walnoot">Wat klanten zeggen</h2>
+      <p class="text-zacht"><span class="text-rood tracking-[2px]" aria-hidden="true">★★★★★</span> <strong class="text-walnoot">4,6</strong> uit 74 reviews op Google</p>
+    </div>
+    <div class="grid md:grid-cols-12 gap-6 md:gap-8 items-start">
+      <figure class="md:col-span-6 bg-rood text-white rounded-[28px] p-8 md:p-10">
+        <blockquote class="font-kop text-[28px] md:text-[34px] leading-[1.15] font-medium">"Gewoon een goeie slager. Heerlijk vlees maar ook de menu’s zijn echt top!"</blockquote>
+        <figcaption class="mt-6 text-white/85 font-semibold">Cecile L, <span class="font-normal">5 sterren</span></figcaption>
+      </figure>
+      <div class="md:col-span-6 grid gap-6 md:gap-8">
+        <figure class="border-l-4 border-walnoot/20 pl-6">
+          <blockquote class="font-kop text-[22px] leading-snug text-walnoot">"Ik haal er nu al 2 maand elke maandag een aantal maaltijden en vind het naast makkelijk ook zeer lekker! Zo veel keuze."</blockquote>
+          <figcaption class="mt-3 text-zacht font-semibold">annita hop, <span class="font-normal">4 sterren</span></figcaption>
+        </figure>
+        <figure class="border-l-4 border-walnoot/20 pl-6">
+          <blockquote class="font-kop text-[22px] leading-snug text-walnoot">"Prachtig bedrijf en lekker eten en vriendelijk personeel"</blockquote>
+          <figcaption class="mt-3 text-zacht font-semibold">Gerrie Everts, <span class="font-normal">4 sterren</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bezoek -->
+<section id="bezoek" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 items-start">
+  <div class="lg:col-span-5">
+    <h2 class="font-kop font-extrabold text-4xl md:text-[52px] leading-[1.02] tracking-[-.015em] text-walnoot">Kom langs aan de Dorpsstraat</h2>
+    <address class="not-italic mt-6 text-[19px] leading-relaxed">
+      Dorpsstraat 6<br>7431 CK Diepenveen
+    </address>
+    <div class="mt-6 flex flex-col gap-3 items-start">
+      <a href="tel:0570591275" class="knop inline-flex items-center gap-3 bg-rood text-white rounded-full px-6 py-3.5 text-[17px] font-bold hover:bg-[#a92720]">Bel 0570 591 275</a>
+      <a href="mailto:info@harmsen.keurslager.nl" class="font-semibold text-walnoot underline decoration-rood decoration-2 underline-offset-[6px] hover:text-rood">info@harmsen.keurslager.nl</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Dorpsstraat+6+7431+CK+Diepenveen" target="_blank" rel="noopener" class="font-semibold text-walnoot underline decoration-walnoot/30 decoration-2 underline-offset-[6px] hover:text-rood">Route in Google Maps</a>
+    </div>
+
+    <h3 class="font-kop font-bold text-[26px] text-walnoot mt-12 mb-3">Openingstijden</h3>
+    <table class="w-full max-w-sm text-[17px] uur">
+      <tbody class="divide-y divide-walnoot/10">
+        <tr><td class="py-2">Maandag</td><td class="py-2 text-right">8:30 – 18:00</td></tr>
+        <tr><td class="py-2">Dinsdag</td><td class="py-2 text-right">8:30 – 18:00</td></tr>
+        <tr><td class="py-2">Woensdag</td><td class="py-2 text-right">8:30 – 18:00</td></tr>
+        <tr><td class="py-2">Donderdag</td><td class="py-2 text-right">8:30 – 18:00</td></tr>
+        <tr><td class="py-2">Vrijdag</td><td class="py-2 text-right">8:30 – 18:00</td></tr>
+        <tr><td class="py-2">Zaterdag</td><td class="py-2 text-right">8:30 – 16:30</td></tr>
+        <tr class="text-zacht"><td class="py-2">Zondag</td><td class="py-2 text-right">gesloten</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="lg:col-span-7">
+    <img src="assets/site-01.jpg" alt="De witte gevel van Keurslager Harmsen aan de Dorpsstraat in Diepenveen, met zwarte luifels" class="w-full aspect-[4/3] lg:aspect-[5/4] object-cover object-[62%_50%] rounded-[28px] lg:rounded-tl-[160px]">
+    <p class="mt-5 text-zacht text-[16px] max-w-lg">Cadeau nodig? Bij ons koopt u de Keurslager-cadeaukaart. De waarde bepaalt u zelf, en hij is te besteden bij elke Keurslager in Nederland.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-walnoot text-[#F3ECE5]/80">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <div>
+      <p class="leading-none text-[#F3ECE5]">
+        <span class="font-kop font-extrabold text-[28px]">Harmsen</span>
+        <span class="font-kop italic text-[17px] text-[#F3ECE5]/70 ml-1">vlees &amp; maaltijden</span>
+      </p>
+      <p class="mt-3 text-[15px]">Keurslager in Diepenveen · Dorpsstraat 6, 7431 CK Diepenveen</p>
+    </div>
+    <p class="text-[15px]"><a href="tel:0570591275" class="hover:text-white">0570 591 275</a> &nbsp; <a href="mailto:info@harmsen.keurslager.nl" class="hover:text-white">info@harmsen.keurslager.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-[#EDE7E1]/95 backdrop-blur border-t border-walnoot/10">
+  <a href="tel:0570591275" class="knop flex items-center justify-center gap-3 bg-rood text-white rounded-full py-3.5 text-[17px] font-bold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel 0570 591 275
+  </a>
+</div>
+
+<script>
+  (function () {
+    var balk = document.getElementById('belbalk');
+    var knop = document.querySelector('main a[href^="tel:"]');
+    if (!balk || !knop || !('IntersectionObserver' in window)) { if (balk) balk.classList.add('zichtbaar'); return; }
+    new IntersectionObserver(function (e) { balk.classList.toggle('zichtbaar', !e[0].isIntersecting); }).observe(knop);
+  })();
+</script>
+</body>
+</html>
