@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keurslagerij Dalhuisen | Keurslager in Colmschate, Deventer</title>
+<meta name="description" content="Keurslagerij Dalhuisen in Winkelcentrum Colmschate, Deventer. Rundvlees van eigen runderen, elke dag verse maaltijden, vleeswaren uit eigen keuken. Bel 0570 514 281.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        inkt: '#1c2550',
+        inktdiep: '#141b3d',
+        rood: '#c62128',
+        rooddonker: '#a51a20',
+        papier: '#fbf8f4',
+        hout: '#9a5b34',
+        zand: '#efe7dc'
+      },
+      fontFamily: {
+        kop: ['"Big Shoulders Display"', 'sans-serif'],
+        tekst: ['Figtree', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* Krijtstreep van het slagersschort */
+  .schort {
+    background-color: #fff;
+    background-image: repeating-linear-gradient(90deg, rgba(28,37,80,.10) 0 2px, transparent 2px 14px);
+  }
+  .schort-donker {
+    background-color: #1c2550;
+    background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 2px, transparent 2px 14px);
+  }
+  .boog { border-radius: 999px 999px 18px 18px; }
+  .stip-lijn { flex: 1; border-bottom: 2px dotted rgba(28,37,80,.25); margin: 0 .6rem .35rem; min-width: 1.5rem; }
+  .dag.vandaag { background: #c62128; color: #fff; }
+  .dag.vandaag .dag-prijs, .dag.vandaag .dag-sub { color: #fff; }
+  .dag .vandaag-label { display: none; }
+  .dag.vandaag .vandaag-label { display: inline-block; }
+  .uur.vandaag { font-weight: 700; color: #c62128; }
+  a, button { transition: background-color .2s, color .2s, transform .2s, border-color .2s; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #c62128; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-papier font-tekst text-inkt pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inktdiep text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor Keurslagerij Dalhuisen, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-white/70">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-white/95 backdrop-blur border-b border-inkt/10 sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-baseline gap-2 leading-none" aria-label="Keurslagerij Dalhuisen, naar boven">
+      <span class="font-kop font-900 text-[30px] md:text-[36px] tracking-tight text-inkt" style="font-weight:900">Dalhuisen</span>
+      <span class="italic text-rood text-[17px] md:text-[19px]">keurslager</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#week" class="hover:text-rood">Weekaanbiedingen</a>
+      <a href="#maaltijden" class="hover:text-rood">Maaltijden</a>
+      <a href="#vlees" class="hover:text-rood">Ons vlees</a>
+      <a href="#feest" class="hover:text-rood">Gourmet &amp; barbecue</a>
+      <a href="#contact" class="hover:text-rood">Openingstijden</a>
+    </nav>
+    <a href="tel:+31570514281" class="knop inline-flex items-center gap-2 rounded-full bg-rood hover:bg-rooddonker text-white font-semibold px-4 md:px-5 py-2.5 text-[15px]">
+      <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      <span class="hidden sm:inline">0570 514 281</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-5 md:pt-14 pb-12 md:pb-20 grid md:grid-cols-12 gap-6 md:gap-10 items-center">
+    <div class="md:col-span-6 lg:col-span-6 order-2 md:order-1">
+      <p class="text-hout font-semibold text-[14px] md:text-[15px] mb-2 md:mb-3">Keurslager in Colmschate, Deventer</p>
+      <h1 class="font-kop font-black uppercase leading-[.88] tracking-[-.01em] text-[46px] sm:text-[72px] lg:text-[104px]" style="font-weight:900">
+        Van eigen runderen, uit eigen keuken.
+      </h1>
+      <p class="mt-4 md:mt-6 text-[17px] md:text-[19px] leading-relaxed text-inkt/80 max-w-[34ch]">
+        Een gezellige slagerij waar je je snel thuis voelt. Met botermals rundvlees, elke dag verse maaltijden en vleeswaren die we zelf maken.
+      </p>
+      <div class="mt-6 md:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31570514281" class="knop inline-flex items-center gap-3 rounded-full bg-rood hover:bg-rooddonker text-white font-semibold text-[18px] px-7 py-4 shadow-[0_10px_24px_-10px_rgba(198,33,40,.7)]">
+          <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Bel 0570 514 281
+        </a>
+        <a href="#contact" class="font-semibold underline decoration-2 decoration-rood/40 underline-offset-[6px] hover:decoration-rood">Openingstijden en route</a>
+      </div>
+      <p class="mt-6 md:mt-8 flex items-center gap-2 text-[15px] text-inkt/75">
+        <span class="text-rood tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-inkt">4,6</strong> uit 53 Google-reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 lg:col-span-6 order-1 md:order-2 relative">
+      <div class="schort absolute -inset-x-5 md:inset-x-auto md:-right-[40vw] md:left-10 top-8 md:top-10 bottom-[-1.25rem] md:bottom-[-4rem] rounded-l-none md:rounded-l-[2rem]" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-[540px]">
+        <img src="assets/google-04.jpg" alt="Drie slagers van Dalhuisen in gestreepte schorten bij de grill, met een schaal zelfgemaakte worst" class="rounded-t-[6rem] rounded-b-2xl md:rounded-[999px_999px_18px_18px] w-full aspect-[2/1] md:aspect-[4/5] object-cover object-[50%_35%] shadow-[0_30px_60px_-30px_rgba(28,37,80,.55)]">
+        <p class="hidden md:block absolute -bottom-5 md:-left-6 bg-white text-inkt text-[14px] font-semibold px-4 py-2.5 rounded-lg shadow-[0_10px_30px_-12px_rgba(28,37,80,.45)]">
+          Winkelcentrum Colmschate, Flora 105
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKBORD -->
+<section id="week" class="schort-donker text-white scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 md:py-24">
+    <div class="grid md:grid-cols-12 gap-8 items-end mb-10 md:mb-14">
+      <h2 class="md:col-span-7 font-kop uppercase text-[46px] md:text-[72px] leading-[.9]" style="font-weight:800">Elke dag van de week een vaste aanbieding.</h2>
+      <p class="md:col-span-5 text-white/75 text-[17px] leading-relaxed max-w-[42ch]">Probeer voordelig de lekkerste producten. Je hoeft niet te wachten op een folder: dit is wat er elke week op de toonbank ligt.</p>
+    </div>
+    <ol class="grid grid-cols-2 lg:grid-cols-3 gap-px bg-white/15 rounded-2xl overflow-hidden" id="weekbord">
+      <li class="dag bg-inkt p-4 sm:p-6 md:p-8" data-dag="1">
+        <div class="flex items-center justify-between"><span class="font-kop text-[24px] sm:text-[30px] uppercase" style="font-weight:800">Maandag</span><span class="vandaag-label text-[13px] font-semibold bg-white text-rood rounded px-2 py-0.5">Vandaag</span></div>
+        <p class="dag-sub text-white/60 mt-1">Verse worstdag</p>
+        <p class="mt-4 sm:mt-6 text-[15px] sm:text-[17px]">Verse worst, 500 gram</p>
+        <p class="dag-prijs font-kop text-[36px] sm:text-[44px] leading-none mt-1 text-[#ff8a8f]" style="font-weight:800">€ 5,00</p>
+      </li>
+      <li class="dag bg-inkt p-4 sm:p-6 md:p-8" data-dag="2">
+        <div class="flex items-center justify-between"><span class="font-kop text-[24px] sm:text-[30px] uppercase" style="font-weight:800">Dinsdag</span><span class="vandaag-label text-[13px] font-semibold bg-white text-rood rounded px-2 py-0.5">Vandaag</span></div>
+        <p class="dag-sub text-white/60 mt-1">Schnitzeldag</p>
+        <p class="mt-4 sm:mt-6 text-[15px] sm:text-[17px]">4 schnitzels</p>
+        <p class="dag-prijs font-kop text-[36px] sm:text-[44px] leading-none mt-1 text-[#ff8a8f]" style="font-weight:800">€ 8,45</p>
+      </li>
+      <li class="dag bg-inkt p-4 sm:p-6 md:p-8 col-span-2 lg:col-span-1" data-dag="3">
+        <div class="flex items-center justify-between"><span class="font-kop text-[24px] sm:text-[30px] uppercase" style="font-weight:800">Woensdag</span><span class="vandaag-label text-[13px] font-semibold bg-white text-rood rounded px-2 py-0.5">Vandaag</span></div>
+        <p class="dag-sub text-white/60 mt-1">Gehaktdag, per 500 gram</p>
+        <dl class="mt-4 sm:mt-6 space-y-1.5 text-[15px] sm:text-[17px]">
+          <div class="flex justify-between gap-4"><dt>Rundergehakt</dt><dd class="dag-prijs font-semibold text-[#ff8a8f]">€ 8,25</dd></div>
+          <div class="flex justify-between gap-4"><dt>Half-om-half gehakt</dt><dd class="dag-prijs font-semibold text-[#ff8a8f]">€ 7,25</dd></div>
+          <div class="flex justify-between gap-4"><dt>Gekruid gehakt</dt><dd class="dag-prijs font-semibold text-[#ff8a8f]">€ 7,25</dd></div>
+        </dl>
+      </li>
+      <li class="dag bg-inkt p-4 sm:p-6 md:p-8" data-dag="4">
+        <div class="flex items-center justify-between"><span class="font-kop text-[24px] sm:text-[30px] uppercase" style="font-weight:800">Donderdag</span><span class="vandaag-label text-[13px] font-semibold bg-white text-rood rounded px-2 py-0.5">Vandaag</span></div>
+        <p class="dag-sub text-white/60 mt-1">Biefstukdag</p>
+        <p class="mt-4 sm:mt-6 text-[15px] sm:text-[17px]">2 botermalse kogelbiefstukken</p>
+        <p class="dag-prijs font-kop text-[36px] sm:text-[44px] leading-none mt-1 text-[#ff8a8f]" style="font-weight:800">€ 8,50</p>
+      </li>
+      <li class="dag bg-inkt p-4 sm:p-6 md:p-8" data-dag="5">
+        <div class="flex items-center justify-between"><span class="font-kop text-[24px] sm:text-[30px] uppercase" style="font-weight:800">Vrijdag</span><span class="vandaag-label text-[13px] font-semibold bg-white text-rood rounded px-2 py-0.5">Vandaag</span></div>
+        <p class="dag-sub text-white/60 mt-1">Kippenpotendag</p>
+        <p class="mt-4 sm:mt-6 text-[15px] sm:text-[17px]">4 gegrilde kippenpoten</p>
+        <p class="dag-prijs font-kop text-[36px] sm:text-[44px] leading-none mt-1 text-[#ff8a8f]" style="font-weight:800">€ 7,80</p>
+      </li>
+      <li class="dag bg-inkt p-4 sm:p-6 md:p-8 col-span-2 lg:col-span-1" data-dag="6">
+        <div class="flex items-center justify-between"><span class="font-kop text-[24px] sm:text-[30px] uppercase" style="font-weight:800">Zaterdag</span><span class="vandaag-label text-[13px] font-semibold bg-white text-rood rounded px-2 py-0.5">Vandaag</span></div>
+        <p class="dag-sub text-white/60 mt-1">Shoarmadag</p>
+        <p class="mt-4 sm:mt-6 text-[15px] sm:text-[17px]">500 gram shoarma, 5 broodjes en een bakje saus</p>
+        <p class="dag-prijs font-kop text-[36px] sm:text-[44px] leading-none mt-1 text-[#ff8a8f]" style="font-weight:800">€ 9,45</p>
+      </li>
+    </ol>
+    <p class="mt-6 text-white/60 text-[15px]">Op zondag zijn we gesloten. Wil je zeker weten dat er genoeg is? <a href="tel:+31570514281" class="text-white underline underline-offset-4 hover:text-white/80">Bel even van tevoren.</a></p>
+  </div>
+</section>
+
+<!-- MAALTIJDEN -->
+<section id="maaltijden" class="scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-7 relative">
+      <img src="assets/site-03.jpg" alt="Toonbank met verse maaltijden, gehaktballen en saté in schalen" class="w-full aspect-[16/10] object-cover rounded-[1.5rem]">
+      <img src="assets/site-09.jpg" alt="Medewerker van Dalhuisen met een grote ovenschotel uit eigen keuken" class="hidden sm:block absolute -bottom-10 -right-4 lg:-right-10 w-[44%] aspect-[4/3] object-cover rounded-2xl border-[6px] border-papier shadow-[0_20px_40px_-20px_rgba(28,37,80,.5)]">
+    </div>
+    <div class="lg:col-span-5 sm:pt-6 lg:pt-0">
+      <h2 class="font-kop uppercase text-[46px] md:text-[64px] leading-[.9]" style="font-weight:800">Binnen ruik je het al.</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-inkt/80 max-w-[48ch]">Als je binnenkomt, ruik je de verse maaltijden. Die maken we elke dag met veel zorg in onze eigen keuken, gewoon in de winkel. Even geen zin of tijd om te koken? Dan neem je bij ons een complete maaltijd mee.</p>
+      <figure class="mt-8 border-l-4 border-rood pl-5">
+        <blockquote class="text-[17px] italic leading-relaxed">"Goede slagerij. Veel keuze voor maaltijden en zelf van dat kleine beetje dat ik maar kan eten, doen ze helemaal niet moeilijk. In de periodes dat ik niet kan koken, heerlijk eten bij hun."</blockquote>
+        <figcaption class="mt-3 text-[15px] font-semibold">Anja Gerritsen <span class="text-rood font-normal ml-1" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ONS VLEES -->
+<section id="vlees" class="bg-white scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-5">
+        <h2 class="font-kop uppercase text-[46px] md:text-[64px] leading-[.9]" style="font-weight:800">Bekend om ons rundvlees.</h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-inkt/80 max-w-[46ch]">Ons rundvlees komt van eigen runderen. De inkoop houden we graag in eigen hand, zodat je altijd weet waar je stukje vlees vandaan komt. Daarnaast vind je in de toonbank:</p>
+        <ul class="mt-6 divide-y divide-inkt/10 border-y border-inkt/10 text-[16px]">
+          <li class="py-3.5"><strong>Kalfsvlees.</strong> Mals, fijn van smaak en snel klaar. Van kalfsschnitzel tot kalfsrib-eye.</li>
+          <li class="py-3.5"><strong>Pork Best varkensvlees.</strong> Uit een keten met veel aandacht voor de gezondheid en het welzijn van de dieren.</li>
+          <li class="py-3.5"><strong>De Boerderijkip en kalkoen.</strong> Filet, schnitzels, kalkoenhaas, en kipdelen die we alvast voor je grillen.</li>
+          <li class="py-3.5"><strong>Lamsvlees.</strong> Mager, met een mooie eigen smaak. Lekker gegrild, gebraden of gestoofd.</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-7">
+        <img src="assets/google-03.jpg" alt="Gemarineerde biefstukjes en spiesen in de toonbank van Dalhuisen" class="w-full aspect-[4/3] lg:aspect-[5/4] object-cover rounded-[1.5rem] rounded-tr-[6rem]">
+      </div>
+    </div>
+
+    <!-- Vleeswaren als menukaart -->
+    <div class="mt-16 md:mt-24 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <div class="lg:col-span-4 lg:sticky lg:top-28">
+        <h3 class="font-kop uppercase text-[38px] md:text-[48px] leading-[.92]" style="font-weight:800">Vleeswaren uit eigen keuken</h3>
+        <p class="mt-4 text-[16px] leading-relaxed text-inkt/75 max-w-[40ch]">Dagvers en zelf gemaakt. Voor op brood, als tussendoortje of op een buffet. Een kleine greep:</p>
+      </div>
+      <ul class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-7">
+        <li>
+          <div class="flex items-end"><h4 class="font-kop text-[26px] uppercase" style="font-weight:700">Runder rosbief</h4><span class="stip-lijn" aria-hidden="true"></span></div>
+          <p class="text-[15px] leading-relaxed text-inkt/75 mt-1">Ouderwets lekker gebraden, nog volgens een oud recept. Dat proef je.</p>
+        </li>
+        <li>
+          <div class="flex items-end"><h4 class="font-kop text-[26px] uppercase" style="font-weight:700">Runderrookvlees</h4><span class="stip-lijn" aria-hidden="true"></span></div>
+          <p class="text-[15px] leading-relaxed text-inkt/75 mt-1">Licht gezouten rundermuis, rustig gerijpt en gerookt in onze eigen rookkast.</p>
+        </li>
+        <li>
+          <div class="flex items-end"><h4 class="font-kop text-[26px] uppercase" style="font-weight:700">Zeeuws spek</h4><span class="stip-lijn" aria-hidden="true"></span></div>
+          <p class="text-[15px] leading-relaxed text-inkt/75 mt-1">Ongeveer 3 dagen gemarineerd in eigengemaakte marinade, daarna afgegrild in de oven.</p>
+        </li>
+        <li>
+          <div class="flex items-end"><h4 class="font-kop text-[26px] uppercase" style="font-weight:700">Achterham</h4><span class="stip-lijn" aria-hidden="true"></span></div>
+          <p class="text-[15px] leading-relaxed text-inkt/75 mt-1">Eigengemaakt, gepekeld met de lekkerste kruidenmelange, gekookt en gerookt.</p>
+        </li>
+        <li>
+          <div class="flex items-end"><h4 class="font-kop text-[26px] uppercase" style="font-weight:700">Magere runderrollade</h4><span class="stip-lijn" aria-hidden="true"></span></div>
+          <p class="text-[15px] leading-relaxed text-inkt/75 mt-1">Mager rundvlees met een eigen melange specerijen, afgegrild in de oven.</p>
+        </li>
+        <li>
+          <div class="flex items-end"><h4 class="font-kop text-[26px] uppercase" style="font-weight:700">Fricandeau</h4><span class="stip-lijn" aria-hidden="true"></span></div>
+          <p class="text-[15px] leading-relaxed text-inkt/75 mt-1">Speciaal geselecteerde varkensfricandeau uit de oven. Heerlijk op brood of een buffet.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FEEST -->
+<section id="feest" class="scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 md:py-28">
+    <div class="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
+      <h2 class="md:col-span-7 font-kop uppercase text-[46px] md:text-[64px] leading-[.9] max-w-[16ch]" style="font-weight:800">Iets te vieren? Wij zorgen voor het vlees.</h2>
+      <p class="md:col-span-5 text-[17px] leading-relaxed text-inkt/80 max-w-[44ch]">Verjaardag, kerst of gewoon een mooie zomeravond. Voor een gourmet-, fondue- of steengrillpakket en voor de barbecue zit je bij ons goed.</p>
+    </div>
+    <div class="mt-10 md:mt-14 grid md:grid-cols-12 gap-6 md:gap-8">
+      <article class="md:col-span-7 md:row-span-2 bg-white rounded-[1.5rem] overflow-hidden flex flex-col">
+        <img src="assets/site-07.jpg" alt="Gourmetplaat met biefstukjes, hamburgertjes, worstjes en spiesjes" class="w-full aspect-[3/2] object-cover">
+        <div class="p-6 md:p-9">
+          <h3 class="font-kop uppercase text-[34px] leading-none" style="font-weight:800">Gourmet, fondue en steengrill</h3>
+          <p class="mt-3 text-[16px] leading-relaxed text-inkt/75 max-w-[52ch]">Voor een avond aan tafel met familie of vrienden stellen we een pakket voor je samen. Vertel hoeveel mensen er komen, dan zorgen wij dat het klopt.</p>
+        </div>
+      </article>
+      <article class="md:col-span-5 bg-white rounded-[1.5rem] overflow-hidden grid grid-cols-5">
+        <img src="assets/site-08.jpg" alt="Slager rolt spek om zelfgemaakte rollades" class="col-span-2 h-full w-full object-cover">
+        <div class="col-span-3 p-6 md:p-7 flex flex-col justify-center">
+          <h3 class="font-kop uppercase text-[30px] leading-none" style="font-weight:800">Barbecue</h3>
+          <p class="mt-3 text-[15px] leading-relaxed text-inkt/75">Steek je de barbecue aan? Kies uit onze barbecuepakketten of stel zelf samen uit de toonbank.</p>
+          <a href="tel:+31570514281" class="mt-5 inline-block font-semibold text-rood underline underline-offset-4 decoration-rood/40 hover:decoration-rood">Pakket bestellen</a>
+        </div>
+      </article>
+      <article class="md:col-span-5 bg-white rounded-[1.5rem] overflow-hidden grid grid-cols-5">
+        <img src="assets/site-10.png" alt="Impressie van catering door Dalhuisen: hapjes, spiesen en grillen op locatie" class="col-span-2 h-full w-full object-cover">
+        <div class="col-span-3 p-6 md:p-7 flex flex-col justify-center">
+          <h3 class="font-kop uppercase text-[30px] leading-none" style="font-weight:800">Catering</h3>
+          <p class="mt-3 text-[15px] leading-relaxed text-inkt/75">Van hapjes tot grillen op locatie. Bel ons, dan denken we graag met je mee.</p>
+          <a href="mailto:info@dalhuisen.keurslager.nl?subject=Catering" class="mt-5 inline-block font-semibold text-rood underline underline-offset-4 decoration-rood/40 hover:decoration-rood">Catering aanvragen</a>
+        </div>
+      </article>
+    </div>
+    <p class="mt-8 text-[16px]">Bestellen kan in de winkel of telefonisch via <a href="tel:+31570514281" class="font-semibold text-rood underline underline-offset-4">0570 514 281</a>.</p>
+  </div>
+</section>
+
+<!-- ACHTER DE TOONBANK -->
+<section id="over" class="schort scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 md:py-28">
+    <div class="bg-white rounded-[2rem] p-6 md:p-12 lg:p-16 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center shadow-[0_30px_60px_-40px_rgba(28,37,80,.45)]">
+      <div class="lg:col-span-5">
+        <img src="assets/google-05.jpg" alt="De eigenaren van Keurslagerij Dalhuisen samen in hun winkel" class="w-full aspect-[4/5] object-cover object-top boog">
+      </div>
+      <div class="lg:col-span-7">
+        <h2 class="font-kop uppercase text-[46px] md:text-[64px] leading-[.9]" style="font-weight:800">Gewoon zien hoe het gemaakt wordt.</h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-inkt/80 max-w-[54ch]">Onze moderne, gezellige slagerij zit in Winkelcentrum Colmschate. Veel van het werk doen we live in de winkel: vlees bewerken, koken en specialiteiten bereiden. Zo zie je elke dag hoe vers en ambachtelijk we werken.</p>
+        <div class="mt-9 grid sm:grid-cols-2 gap-6">
+          <figure class="bg-papier rounded-2xl p-5">
+            <blockquote class="text-[15.5px] leading-relaxed">"Vandaag weer een bezoek gebracht voor een uitgebreide lunch, verse en eerlijke producten, rij er graag een blokje voor om! Goede tips en vooral (h)eerlijke gerechten! Rene je bent een topper!"</blockquote>
+            <figcaption class="mt-3 text-[14px] font-semibold">Dennis Goorman <span class="text-rood font-normal ml-1" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+          </figure>
+          <figure class="bg-papier rounded-2xl p-5">
+            <blockquote class="text-[15.5px] leading-relaxed">"De schouderkarbonades zijn ontzettend mals en geen water in het vlees. Heerlijke jus dus. [...] Prijs kwaliteit dik in orde en ook supervriendelijk. Je kan vooraf bestellen ook handig."</blockquote>
+            <figcaption class="mt-3 text-[14px] font-semibold">Petra Gerritsen Van Der Hoop <span class="text-rood font-normal ml-1" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+          </figure>
+        </div>
+        <p class="mt-6 text-[15px] text-inkt/70">Gemiddeld <strong class="text-inkt">4,6 sterren</strong> uit 53 reviews op Google.</p>
+      </div>
+    </div>
+    <img src="assets/site-02.jpg" alt="Interieur van Keurslagerij Dalhuisen met de lange toonbank en de open keuken" class="mt-8 w-full aspect-[16/7] object-cover rounded-[2rem]">
+  </div>
+</section>
+
+<!-- VACATURE + EXTRA -->
+<section class="scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-8">
+    <div class="lg:col-span-8 bg-inkt text-white rounded-[1.5rem] overflow-hidden grid md:grid-cols-2">
+      <img src="assets/site-04.jpg" alt="Het team van Dalhuisen in schorten, lachend in de keuken" class="w-full h-full min-h-[240px] object-cover">
+      <div class="p-7 md:p-9">
+        <h2 class="font-kop uppercase text-[36px] md:text-[42px] leading-[.92]" style="font-weight:800">Slager of leerling-slager gezocht</h2>
+        <p class="mt-4 text-white/80 text-[15.5px] leading-relaxed">Ervaren vakman of vakvrouw, of juist een leergierige starter die de handen uit de mouwen steekt. Fulltime, parttime of na school.</p>
+        <p class="mt-4 text-white/80 text-[15.5px]">Kom gerust even langs in de winkel, of neem contact op:</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="tel:+31570514281" class="knop rounded-full bg-white text-inkt font-semibold px-5 py-2.5 hover:bg-zand">0570 514 281</a>
+          <a href="mailto:info@dalhuisen.keurslager.nl?subject=Vacature%20slager" class="knop rounded-full border-2 border-white/40 hover:border-white px-5 py-2 font-semibold">Mail ons</a>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-4 grid gap-8">
+      <div class="bg-white rounded-[1.5rem] p-7 border-t-4 border-rood">
+        <h3 class="font-kop uppercase text-[28px] leading-none" style="font-weight:800">Cadeaukaart</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-inkt/75">Een leuk cadeau. Je bepaalt zelf de waarde, en de kaart is bij elke Keurslager in Nederland te besteden.</p>
+      </div>
+      <div class="bg-white rounded-[1.5rem] p-7 border-t-4 border-hout">
+        <h3 class="font-kop uppercase text-[28px] leading-none" style="font-weight:800">Allergie?</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-inkt/75">De allergenendeclaratie van onze producten vind je bij ons in de winkel. Vraag er gerust naar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="schort-donker text-white scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop uppercase text-[46px] md:text-[72px] leading-[.9]" style="font-weight:800">Kom langs in Colmschate.</h2>
+      <address class="not-italic mt-8 text-[18px] leading-relaxed text-white/85">
+        Keurslagerij Dalhuisen<br>
+        Winkelcentrum Colmschate<br>
+        Flora 105, 7422 LS Deventer
+      </address>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center">
+        <a href="tel:+31570514281" class="knop inline-flex justify-center items-center gap-3 rounded-full bg-rood hover:bg-rooddonker text-white font-semibold text-[18px] px-7 py-4">
+          <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Bel 0570 514 281
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Keurslagerij+Dalhuisen+Flora+105+Deventer" class="knop inline-flex justify-center rounded-full border-2 border-white/40 hover:border-white px-6 py-3.5 font-semibold" target="_blank" rel="noopener">Route plannen</a>
+      </div>
+      <p class="mt-6 text-white/75">Of mail naar <a href="mailto:info@dalhuisen.keurslager.nl" class="text-white underline underline-offset-4 hover:text-white/80">info@dalhuisen.keurslager.nl</a></p>
+    </div>
+    <div class="lg:col-span-6">
+      <div class="bg-white text-inkt rounded-[1.5rem] p-7 md:p-10">
+        <h3 class="font-kop uppercase text-[32px] leading-none" style="font-weight:800">Openingstijden</h3>
+        <table class="mt-6 w-full text-[17px]" style="font-variant-numeric: tabular-nums">
+          <tbody class="divide-y divide-inkt/10">
+            <tr class="uur" data-dag="1"><td class="py-2.5">Maandag</td><td class="py-2.5 text-right">08:00 - 18:00</td></tr>
+            <tr class="uur" data-dag="2"><td class="py-2.5">Dinsdag</td><td class="py-2.5 text-right">08:00 - 18:00</td></tr>
+            <tr class="uur" data-dag="3"><td class="py-2.5">Woensdag</td><td class="py-2.5 text-right">08:00 - 18:00</td></tr>
+            <tr class="uur" data-dag="4"><td class="py-2.5">Donderdag</td><td class="py-2.5 text-right">08:00 - 18:00</td></tr>
+            <tr class="uur" data-dag="5"><td class="py-2.5">Vrijdag</td><td class="py-2.5 text-right">08:00 - 19:00</td></tr>
+            <tr class="uur" data-dag="6"><td class="py-2.5">Zaterdag</td><td class="py-2.5 text-right">08:00 - 16:00</td></tr>
+            <tr class="uur" data-dag="0"><td class="py-2.5">Zondag</td><td class="py-2.5 text-right text-inkt/60">Gesloten</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inktdiep text-white/60 text-[14px]">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-8 flex flex-col md:flex-row gap-3 md:items-center justify-between">
+    <p><span class="font-kop text-white text-[22px] mr-1" style="font-weight:900">Dalhuisen</span> <span class="italic text-white/80">keurslager</span>, Flora 105, Deventer</p>
+    <p>Demo gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-t border-inkt/10 p-3 flex gap-3">
+  <a href="tel:+31570514281" class="knop flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-rood text-white font-semibold py-3.5">
+    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel ons
+  </a>
+  <a href="#contact" class="knop inline-flex justify-center items-center rounded-full border-2 border-inkt/20 px-5 font-semibold">Tijden</a>
+</div>
+
+<script>
+  // Verrijking: markeer vandaag op het weekbord en bij de openingstijden.
+  (function () {
+    var d = new Date().getDay();
+    document.querySelectorAll('[data-dag="' + d + '"]').forEach(function (el) { el.classList.add('vandaag'); });
+  })();
+</script>
+</body>
+</html>

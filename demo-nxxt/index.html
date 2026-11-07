@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NXXT Rijschool Apeldoorn | Gratis proefles, bel 055 303 4977</title>
+<meta name="description" content="Rijlessen in Apeldoorn bij NXXT. Gratis proefles, vaste instructeur en we halen je thuis op. Bel 055 303 4977.">
+<meta property="og:title" content="NXXT Rijschool Apeldoorn">
+<meta property="og:description" content="Jij stuurt. Wij zitten ernaast. Gratis proefles in Apeldoorn.">
+<meta property="og:image" content="assets/site-04.webp">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          asfalt: '#16191E',
+          asfalt2: '#22262D',
+          krijt: '#F3F5F7',
+          oranje: '#F07A1A',
+          oranjedonker: '#D9640A',
+          lbord: '#1F95DB',
+          leisteen: '#5A636E',
+        },
+        fontFamily: {
+          kop: ['Overpass', 'system-ui', 'sans-serif'],
+          tekst: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Instrument Sans', system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: 'Overpass', system-ui, sans-serif; letter-spacing: -0.025em; }
+
+  /* Hero-foto met schuine linkerrand, de schuine streep van de X */
+  .schuin { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3.5rem)); }
+  @media (min-width: 1024px) {
+    .schuin { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+  }
+
+  /* Asfalt met een subtiele korrel */
+  .asfaltvlak {
+    background-color: #16191E;
+    background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 5px 5px;
+  }
+  /* Onderbroken middenstreep */
+  .streep-v {
+    background-image: linear-gradient(to bottom, #F3F5F7 0 55%, transparent 55% 100%);
+    background-size: 4px 34px;
+    background-repeat: repeat-y;
+  }
+  .streep-h {
+    background-image: linear-gradient(to right, #F3F5F7 0 55%, transparent 55% 100%);
+    background-size: 44px 4px;
+    background-repeat: repeat-x;
+  }
+  .js .streep-h { animation: rijden 2.6s linear infinite; }
+  @keyframes rijden { to { background-position: 44px 0; } }
+  @media (prefers-reduced-motion: reduce) { .js .streep-h { animation: none; } }
+
+  .lbord {
+    display: inline-grid; place-items: center;
+    background: #1F95DB; color: #fff; font-family: 'Overpass', sans-serif; font-weight: 900;
+    border-radius: 4px; line-height: 1;
+  }
+  .knop { transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #1F95DB; outline-offset: 3px;
+  }
+  .review-wim { white-space: pre-line; }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-krijt text-asfalt antialiased pb-[76px] lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-asfalt text-krijt/80 text-[13px] text-center py-2 px-4">
+  Demo voor NXXT, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-krijt/95 backdrop-blur border-b border-asfalt/10">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-10 h-16 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-2.5" aria-label="NXXT Rijschool Apeldoorn, naar boven">
+      <svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><path d="M13 2 5 10l8 8M25 2l-8 8 8 8" fill="none" stroke="#1F95DB" stroke-width="4.2" stroke-linejoin="miter"/></svg>
+      <span class="kop font-black text-[26px] leading-none tracking-tight pt-1">N<span class="text-oranje">X</span>XT</span>
+      <span class="hidden sm:inline text-[13px] text-leisteen border-l border-asfalt/20 pl-2.5 ml-0.5 leading-tight">Rijschool<br>Apeldoorn</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#beginnen" class="hover:text-oranjedonker">Zo begin je</a>
+      <a href="#les" class="hover:text-oranjedonker">Een les</a>
+      <a href="#aanbod" class="hover:text-oranjedonker">Aanbod en prijzen</a>
+      <a href="#reviews" class="hover:text-oranjedonker">Reviews</a>
+      <a href="#contact" class="hover:text-oranjedonker">Contact</a>
+    </nav>
+    <a href="tel:+31553034977" class="knop inline-flex items-center gap-2 rounded-md bg-asfalt text-white px-4 py-2.5 text-[15px] font-semibold hover:bg-asfalt2">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">055 303 4977</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="flex flex-col lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:min-h-[calc(100dvh-100px)] lg:max-h-[780px]">
+    <div class="order-2 lg:order-1 flex items-center">
+      <div class="w-full max-w-[620px] ml-auto px-5 lg:pl-10 lg:pr-4 pt-4 pb-10 lg:py-16">
+        <p class="flex items-center gap-3 text-[15px] font-semibold text-leisteen">
+          <span class="lbord w-7 h-7 text-[18px] pt-0.5">L</span>
+          Rijschool in Apeldoorn
+        </p>
+        <h1 class="kop font-black text-[44px] leading-[0.98] sm:text-[64px] lg:text-[82px] mt-3 lg:mt-6">
+          Jij stuurt.<br>Wij zitten ernaast.
+        </h1>
+        <p class="mt-4 lg:mt-7 text-[17px] lg:text-[19px] leading-relaxed text-asfalt/80 max-w-[30em]">
+          Een gratis proefles, een vaste instructeur en we halen je thuis op. In je eerste les rijd je al zelf, met de dubbele bediening als vangnet.
+        </p>
+        <div class="mt-6 lg:mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+          <a href="tel:+31553034977" class="knop inline-flex items-center justify-center gap-3 rounded-lg bg-oranje text-asfalt px-7 py-4 text-[18px] font-bold shadow-[0_10px_24px_-10px_rgba(217,100,10,.7)] hover:bg-[#F58A30]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Bel voor een gratis proefles
+          </a>
+          <a href="#proefles" class="text-[16px] font-semibold underline decoration-2 decoration-oranje underline-offset-[6px] hover:text-oranjedonker self-start sm:self-auto">Of vraag hem online aan</a>
+        </div>
+        <p class="mt-7 flex items-center gap-2 text-[15px] text-leisteen">
+          <span class="text-oranje tracking-[2px] text-[17px]" aria-hidden="true">★★★★★</span>
+          <span><strong class="text-asfalt">4,4</strong> op Google, uit 7 reviews</span>
+        </p>
+      </div>
+    </div>
+    <div class="order-1 lg:order-2 relative h-[215px] sm:h-[380px] lg:h-auto">
+      <img src="assets/site-04.webp" alt="Instructrice en leerling juichen boven een zwarte NXXT-lesauto in een bomenlaan" class="schuin absolute inset-0 w-full h-full object-cover object-[50%_42%] lg:object-[50%_55%]">
+    </div>
+  </div>
+</section>
+
+<!-- Zo begin je: de proefles als route -->
+<section id="beginnen" class="asfaltvlak text-krijt">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-10 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-20 items-end">
+      <h2 class="kop font-black text-[38px] sm:text-[52px] leading-[1.02]">Je eerste les,<br>stap voor stap.</h2>
+      <p class="text-[17px] leading-relaxed text-krijt/75 max-w-[36em] lg:pb-2">
+        Spannend, die eerste keer achter het stuur. Daarom begin je bij ons met een gratis proefles, zonder verplichtingen. Zo gaat dat:
+      </p>
+    </div>
+
+    <!-- Route -->
+    <ol class="relative mt-14 lg:mt-20 grid lg:grid-cols-4 gap-0 lg:gap-6">
+      <div class="streep-h hidden lg:block absolute left-0 right-0 top-[27px] h-1 opacity-70" aria-hidden="true"></div>
+      <div class="streep-v lg:hidden absolute left-[26px] top-2 bottom-2 w-1 opacity-60" aria-hidden="true"></div>
+
+      <li class="relative pl-20 lg:pl-0 pb-10 lg:pb-0">
+        <span class="absolute left-0 lg:static kop font-black text-[26px] w-14 h-14 grid place-items-center rounded-full bg-oranje text-asfalt ring-8 ring-asfalt">1</span>
+        <h3 class="kop font-extrabold text-[22px] lg:mt-7">Aanmelden</h3>
+        <p class="mt-2 text-krijt/75 leading-relaxed">Bel ons of laat je gegevens achter. De proefles is gratis.</p>
+      </li>
+      <li class="relative pl-20 lg:pl-0 pb-10 lg:pb-0">
+        <span class="absolute left-0 lg:static kop font-black text-[26px] w-14 h-14 grid place-items-center rounded-full bg-krijt text-asfalt ring-8 ring-asfalt">2</span>
+        <h3 class="kop font-extrabold text-[22px] lg:mt-7">We plannen hem in</h3>
+        <p class="mt-2 text-krijt/75 leading-relaxed">We koppelen je aan een instructeur bij jou in de buurt en bellen je om een dag te kiezen die jou uitkomt.</p>
+      </li>
+      <li class="relative pl-20 lg:pl-0 pb-10 lg:pb-0">
+        <span class="absolute left-0 lg:static kop font-black text-[26px] w-14 h-14 grid place-items-center rounded-full bg-krijt text-asfalt ring-8 ring-asfalt">3</span>
+        <h3 class="kop font-extrabold text-[22px] lg:mt-7">Instappen en rijden</h3>
+        <p class="mt-2 text-krijt/75 leading-relaxed">Je instructeur haalt je voor de deur op en je mag meteen zelf achter het stuur. Via de dubbele bediening kan hij of zij altijd bijspringen. Na afloop zetten we je weer thuis af.</p>
+      </li>
+      <li class="relative pl-20 lg:pl-0">
+        <span class="absolute left-0 lg:static kop font-black text-[26px] w-14 h-14 grid place-items-center rounded-full bg-krijt text-asfalt ring-8 ring-asfalt">4</span>
+        <h3 class="kop font-extrabold text-[22px] lg:mt-7">Een pakket dat past</h3>
+        <p class="mt-2 text-krijt/75 leading-relaxed">Samen met je instructeur kies je een lespakket. Per les ben je dan een stuk goedkoper uit dan met losse lessen, en betalen in termijnen kan in overleg.</p>
+      </li>
+    </ol>
+
+    <!-- Alternatief: direct online -->
+    <div class="mt-16 lg:mt-20 border-t border-krijt/15 pt-10 grid lg:grid-cols-[1fr_1.4fr] gap-6 lg:gap-20">
+      <h3 class="kop font-extrabold text-[24px] leading-tight">Weet je al dat je bij ons wilt lessen?</h3>
+      <div class="text-krijt/75 leading-relaxed max-w-[38em]">
+        <p>Dan kun je ook meteen een rijlespakket bestellen, met korting. Je slaat dan de proefles over en betaalt het pakket in één keer. Binnen 24 uur belt je instructeur je om de eerste lessen af te spreken.</p>
+        <p class="mt-3 text-[15px] text-krijt/55">Let op: na een gratis proefles geldt de online korting niet meer. Kies dus vooraf wat bij je past.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Zo ziet een les eruit -->
+<section id="les" class="bg-white">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-center">
+    <div class="relative">
+      <img src="assets/site-12.jpg" alt="NXXT-instructeur naast een leerling in de lesauto" class="w-full aspect-[4/3] lg:aspect-[5/4] object-cover object-[40%_50%] rounded-xl" loading="lazy">
+      <div class="absolute -bottom-6 right-5 lg:-right-8 bg-oranje text-asfalt rounded-lg px-6 py-5 shadow-[0_18px_40px_-18px_rgba(22,25,30,.55)]">
+        <p class="kop font-black text-[44px] leading-none">2 x 50</p>
+        <p class="text-[15px] font-semibold mt-1">minuten per keer</p>
+      </div>
+    </div>
+    <div class="pt-6 lg:pt-0">
+      <h2 class="kop font-black text-[38px] sm:text-[52px] leading-[1.02]">Zo ziet een les eruit.</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-asfalt/75 max-w-[34em]">Een les duurt 50 minuten. Standaard rijd je twee lesuren achter elkaar, zodat je echt in je ritme komt en sneller leert.</p>
+      <dl class="mt-9 divide-y divide-asfalt/10 border-y border-asfalt/10">
+        <div class="py-4 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-semibold">Vaste instructeur</dt>
+          <dd class="text-asfalt/75">Je rijdt bij dezelfde instructeur, uitzonderingen daargelaten. Die kent jou en weet waar je staat.</dd>
+        </div>
+        <div class="py-4 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-semibold">Handgeschakeld</dt>
+          <dd class="text-asfalt/75">Alle lesauto's zijn handgeschakeld, en je rijdt in onze nieuwste lesauto's.</dd>
+        </div>
+        <div class="py-4 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-semibold">Instructiekaart</dt>
+          <dd class="text-asfalt/75">Je instructeur houdt je vorderingen bij. Zo zie je zelf hoe je toewerkt naar de tussentijdse toets of je praktijkexamen.</dd>
+        </div>
+        <div class="py-4 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-semibold">Direct beginnen</dt>
+          <dd class="text-asfalt/75">Ben je minstens 16,5 jaar? Dan kun je per direct starten.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Aanbod -->
+<section id="aanbod" class="bg-krijt">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-10 py-20 lg:py-28">
+    <h2 class="kop font-black text-[38px] sm:text-[52px] leading-[1.02] max-w-[14ch]">Wat past bij jou?</h2>
+
+    <div class="mt-12 grid lg:grid-cols-12 gap-5">
+      <!-- Rijlessen: groot -->
+      <article class="lg:col-span-7 lg:row-span-2 bg-asfalt text-krijt rounded-2xl overflow-hidden flex flex-col">
+        <div class="p-7 sm:p-10 flex-1">
+          <h3 class="kop font-black text-[30px] sm:text-[36px] leading-tight">Rijlessen voor je B-rijbewijs</h3>
+          <p class="mt-4 text-krijt/75 leading-relaxed max-w-[34em]">Begin met een gratis proefles en kies daarna samen met je instructeur het pakket dat bij jouw tempo past. Hoe groter het pakket, hoe minder je per les betaalt.</p>
+          <p class="mt-8 flex items-baseline gap-3">
+            <span class="text-krijt/60 text-[15px]">rijlessen vanaf</span>
+            <span class="kop font-black text-[56px] sm:text-[68px] leading-none text-oranje">€58,50</span>
+          </p>
+          <ul class="mt-8 flex flex-wrap gap-2" aria-label="Pakketten">
+            <li class="rounded-md border border-krijt/20 px-3.5 py-2 text-[15px]">Start pakket</li>
+            <li class="rounded-md border border-krijt/20 px-3.5 py-2 text-[15px]">Actie pakket</li>
+            <li class="rounded-md border border-krijt/20 px-3.5 py-2 text-[15px]">Top pakket</li>
+            <li class="rounded-md border border-krijt/20 px-3.5 py-2 text-[15px]">Master pakket</li>
+          </ul>
+          <dl class="mt-9 grid sm:grid-cols-2 gap-x-8 gap-y-5 text-[15px]">
+            <div><dt class="font-semibold text-white">Eerst een gratis proefles</dt><dd class="mt-1 text-krijt/65 leading-relaxed">Daarna kies je het pakket met je instructeur, betalen in termijnen kan in overleg.</dd></div>
+            <div><dt class="font-semibold text-white">Of direct online bestellen</dt><dd class="mt-1 text-krijt/65 leading-relaxed">Met korting, zonder proefles. Je instructeur belt je binnen 24 uur.</dd></div>
+          </dl>
+        </div>
+        <div class="streep-h h-1 mx-7 sm:mx-10 opacity-30" aria-hidden="true"></div>
+        <div class="p-7 sm:px-10 sm:py-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <p class="text-krijt/70 text-[15px]">Welk pakket is slim voor jou? We denken graag mee.</p>
+          <a href="tel:+31553034977" class="knop inline-flex justify-center items-center rounded-lg bg-oranje text-asfalt px-5 py-3 font-bold hover:bg-[#F58A30]">Bel 055 303 4977</a>
+        </div>
+      </article>
+
+      <!-- Spoed -->
+      <article class="lg:col-span-5 bg-white rounded-2xl overflow-hidden grid sm:grid-cols-[1fr_1.1fr] lg:grid-cols-1 xl:grid-cols-[0.85fr_1.15fr]">
+        <img src="assets/site-10.jpg" alt="NXXT-lesauto in beweging" class="w-full h-48 sm:h-full lg:h-44 xl:h-full object-cover object-[35%_50%]" loading="lazy">
+        <div class="p-7">
+          <h3 class="kop font-extrabold text-[24px] leading-tight">Spoedopleiding</h3>
+          <p class="mt-3 text-asfalt/75 leading-relaxed">35 lessen plus je praktijkexamen. Heb je je rijbewijs snel nodig, dan kun je dit binnen een maand doen. Zorg wel dat je theorie op tijd binnen is, en dat je agenda die maand leeg is.</p>
+        </div>
+      </article>
+
+      <!-- Opfris -->
+      <article class="lg:col-span-5 bg-white rounded-2xl p-7">
+        <div class="flex items-start justify-between gap-4">
+          <h3 class="kop font-extrabold text-[24px] leading-tight">Opfriscursus</h3>
+          <p class="kop font-black text-[26px] leading-none whitespace-nowrap">€177,50</p>
+        </div>
+        <p class="mt-3 text-asfalt/75 leading-relaxed">Wel een rijbewijs, maar onzeker op de weg? In drie lessen oefen je de bijzondere verrichtingen die je lastig vindt:</p>
+        <ul class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-[15px] font-medium">
+          <li class="flex gap-2"><span class="text-oranje" aria-hidden="true">›</span>Achteruit in een vak parkeren</li>
+          <li class="flex gap-2"><span class="text-oranje" aria-hidden="true">›</span>File parkeren</li>
+          <li class="flex gap-2"><span class="text-oranje" aria-hidden="true">›</span>Straatje keren</li>
+          <li class="flex gap-2"><span class="text-oranje" aria-hidden="true">›</span>Bocht achteruit</li>
+        </ul>
+        <p class="mt-4 text-[14px] text-leisteen">Uit te breiden met losse lessen.</p>
+      </article>
+    </div>
+
+    <p class="mt-6 text-[16px] text-asfalt/75">Rijbewijs voor een aanhanger nodig? Ook voor je <strong class="text-asfalt">BE rijbewijs</strong> kun je bij ons terecht.</p>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-white">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-start">
+    <div class="lg:sticky lg:top-28">
+      <img src="assets/site-05.jpg" alt="Een geslaagde leerling krijgt bloemen van haar instructeur bij de lesauto" class="w-full aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] object-cover object-[50%_40%] rounded-xl" loading="lazy">
+    </div>
+    <div>
+      <h2 class="kop font-black text-[38px] sm:text-[52px] leading-[1.02]">Wat leerlingen zeggen.</h2>
+      <p class="mt-4 flex items-center gap-2 text-[16px] text-leisteen">
+        <span class="text-oranje tracking-[2px] text-[18px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-asfalt">4,4</strong> gemiddeld op Google, uit 7 reviews</span>
+      </p>
+
+      <figure class="mt-10 relative bg-krijt rounded-2xl p-7 sm:p-10">
+        <span class="kop font-black text-oranje text-[90px] leading-none absolute -top-5 left-6" aria-hidden="true">“</span>
+        <blockquote class="review-wim text-[19px] sm:text-[21px] leading-[1.55] font-medium pt-4">Het was een zeer goede rijscool
+Ronnys rijschool uit klarenbeek
+Een super kirel
+Ik zal het zeker aan raden
+Binnen 9 lessen gehald
+En in  2  weken deze dikke ford gekocht
+Bedank jullie
+En ronny zekkkee een goede</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3 text-[15px]">
+          <strong>Wim</strong><span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span><span class="text-leisteen">Google</span>
+        </figcaption>
+      </figure>
+
+      <div class="mt-5 grid sm:grid-cols-2 gap-5">
+        <figure class="border border-asfalt/10 rounded-2xl p-6">
+          <blockquote class="text-[18px] leading-snug font-medium">“Dochter heel fijn in 1x geslaagd. Top rijschool”</blockquote>
+          <figcaption class="mt-4 flex items-center gap-3 text-[15px]"><strong>Martijn van Wijk</strong><span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+        </figure>
+        <figure class="border border-asfalt/10 rounded-2xl p-6">
+          <blockquote class="text-[18px] leading-snug font-medium">“Top rijschool!”</blockquote>
+          <figcaption class="mt-4 flex items-center gap-3 text-[15px]"><strong>Maaike de Kruijff</strong><span class="text-oranje" aria-label="5 van 5 sterren">★★★★★</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Afsluitende band -->
+<section class="relative bg-asfalt overflow-hidden">
+  <img src="assets/site-02.webp" alt="Leerling en instructrice geven elkaar een high five boven de lesauto met open deuren" class="absolute inset-0 w-full h-full object-cover object-[50%_35%] opacity-55" loading="lazy">
+  <div class="absolute inset-0 bg-gradient-to-r from-asfalt via-asfalt/80 to-asfalt/10" aria-hidden="true"></div>
+  <div class="relative max-w-[1280px] mx-auto px-5 lg:px-10 py-20 lg:py-28 text-krijt">
+    <h2 class="kop font-black text-[40px] sm:text-[60px] leading-[1] max-w-[11ch]">Klaar om in te stappen?</h2>
+    <p class="mt-5 text-[18px] text-krijt/80 max-w-[30em]">Bel ons en plan je gratis proefles. Je kunt per direct beginnen.</p>
+    <a href="tel:+31553034977" class="knop mt-8 inline-flex items-center gap-3 rounded-lg bg-oranje text-asfalt px-7 py-4 text-[18px] font-bold hover:bg-[#F58A30]">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      055 303 4977
+    </a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-krijt">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-[1fr_1.1fr] gap-14 lg:gap-20">
+    <div>
+      <h2 class="kop font-black text-[38px] sm:text-[52px] leading-[1.02]">Contact</h2>
+      <p class="mt-4 text-[17px] text-asfalt/75 max-w-[30em]">Bellen is het snelst. Mailen of het formulier invullen mag natuurlijk ook.</p>
+
+      <dl class="mt-9 space-y-6 text-[17px]">
+        <div>
+          <dt class="text-[14px] text-leisteen">Telefoon</dt>
+          <dd><a href="tel:+31553034977" class="kop font-extrabold text-[28px] hover:text-oranjedonker">055 303 4977</a></dd>
+        </div>
+        <div>
+          <dt class="text-[14px] text-leisteen">E-mail</dt>
+          <dd><a href="mailto:info@nxxt.nl" class="font-semibold underline decoration-oranje decoration-2 underline-offset-4 hover:text-oranjedonker">info@nxxt.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-[14px] text-leisteen">Adres</dt>
+          <dd class="font-medium">Gijsbrechtgaarde 202<br>7329 CC Apeldoorn</dd>
+        </div>
+        <div>
+          <dt class="text-[14px] text-leisteen">Bereikbaar</dt>
+          <dd>
+            <table class="mt-1 text-[16px]">
+              <tr><td class="pr-6 py-0.5">Maandag t/m zaterdag</td><td class="font-semibold tabular-nums">09:00 tot 17:00</td></tr>
+              <tr><td class="pr-6 py-0.5">Zondag</td><td class="text-leisteen">Gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="mt-12 border-t border-asfalt/15 pt-8">
+        <h3 class="kop font-extrabold text-[22px]">Vaak gevraagd</h3>
+        <dl class="mt-4 space-y-4 text-[16px]">
+          <div><dt class="font-semibold">Wanneer kan ik mijn eerste rijles volgen?</dt><dd class="text-asfalt/75">Je kunt altijd per direct beginnen.</dd></div>
+          <div><dt class="font-semibold">Heb ik een vaste instructeur?</dt><dd class="text-asfalt/75">Ja, uitzonderingen daargelaten.</dd></div>
+          <div><dt class="font-semibold">Hoe oud moet ik zijn?</dt><dd class="text-asfalt/75">Minstens 16,5 jaar.</dd></div>
+          <div><dt class="font-semibold">En mijn theorie?</dt><dd class="text-asfalt/75">Die haal je zelf, op tijd voor je praktijkexamen.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <form id="proefles" action="mailto:info@nxxt.nl?subject=Aanvraag%20gratis%20proefles" method="post" enctype="text/plain" class="bg-white rounded-2xl p-7 sm:p-10 self-start scroll-mt-24 shadow-[0_30px_60px_-40px_rgba(22,25,30,.45)]">
+      <div class="flex items-center gap-3">
+        <span class="lbord w-9 h-9 text-[22px] pt-0.5" aria-hidden="true">L</span>
+        <h3 class="kop font-black text-[26px] leading-tight">Gratis proefles aanvragen</h3>
+      </div>
+      <p class="mt-3 text-asfalt/70">Laat je gegevens achter, dan bellen we je om een moment te plannen.</p>
+      <div class="mt-7 grid sm:grid-cols-2 gap-5">
+        <label class="block sm:col-span-2">
+          <span class="text-[14px] font-semibold">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-lg border border-asfalt/20 bg-krijt/60 px-4 py-3 focus:border-lbord focus:bg-white outline-none">
+        </label>
+        <label class="block">
+          <span class="text-[14px] font-semibold">Telefoon</span>
+          <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-lg border border-asfalt/20 bg-krijt/60 px-4 py-3 focus:border-lbord focus:bg-white outline-none">
+        </label>
+        <label class="block">
+          <span class="text-[14px] font-semibold">E-mail</span>
+          <input name="email" type="email" autocomplete="email" class="mt-1.5 w-full rounded-lg border border-asfalt/20 bg-krijt/60 px-4 py-3 focus:border-lbord focus:bg-white outline-none">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-[14px] font-semibold">Waar wil je mee beginnen?</span>
+          <select name="interesse" class="mt-1.5 w-full rounded-lg border border-asfalt/20 bg-krijt/60 px-4 py-3 focus:border-lbord focus:bg-white outline-none">
+            <option>Rijlessen B-rijbewijs</option>
+            <option>Spoedopleiding</option>
+            <option>Opfriscursus</option>
+            <option>BE rijbewijs</option>
+          </select>
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-[14px] font-semibold">Opmerking <span class="font-normal text-leisteen">(mag leeg)</span></span>
+          <textarea name="opmerking" rows="3" class="mt-1.5 w-full rounded-lg border border-asfalt/20 bg-krijt/60 px-4 py-3 focus:border-lbord focus:bg-white outline-none"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="knop mt-7 w-full rounded-lg bg-asfalt text-white px-6 py-4 text-[17px] font-bold hover:bg-asfalt2">Proefles aanvragen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-asfalt text-krijt/70">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-10 py-12 flex flex-col md:flex-row gap-8 md:items-end justify-between">
+    <div>
+      <p class="flex items-center gap-2.5">
+        <svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true"><path d="M13 2 5 10l8 8M25 2l-8 8 8 8" fill="none" stroke="#1F95DB" stroke-width="4.2"/></svg>
+        <span class="kop font-black text-[26px] leading-none text-white pt-1">N<span class="text-oranje">X</span>XT</span>
+      </p>
+      <p class="mt-3 text-[15px]">Je rijbewijs haal je bij NXXT. Rijschool in Apeldoorn.</p>
+    </div>
+    <div class="text-[15px] md:text-right space-y-1">
+      <p>Gijsbrechtgaarde 202, 7329 CC Apeldoorn</p>
+      <p><a href="tel:+31553034977" class="hover:text-white">055 303 4977</a> &nbsp;/&nbsp; <a href="mailto:info@nxxt.nl" class="hover:text-white">info@nxxt.nl</a></p>
+      <p class="text-krijt/45 text-[13px] pt-2">© 2026 NXXT. Demo-ontwerp door <a href="https://hagenweb.nl" class="underline hover:text-white">Hagenweb</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-krijt/95 backdrop-blur border-t border-asfalt/10 p-3 flex gap-3">
+  <a href="tel:+31553034977" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-oranje text-asfalt py-3.5 font-bold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 055 303 4977
+  </a>
+  <a href="#proefles" class="knop inline-flex items-center justify-center rounded-lg border-2 border-asfalt px-4 font-semibold">Proefles</a>
+</div>
+
+</body>
+</html>

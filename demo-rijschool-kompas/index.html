@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="nl" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rijschool Kompas | Rijles in Apeldoorn en omgeving</title>
+<meta name="description" content="Rijschool Kompas in Apeldoorn: vaste instructeur, geen wachtlijst, lessen ook 's avonds en in het weekend. Bel 06 41 03 41 54 voor een gratis proefles.">
+<meta property="og:title" content="Rijschool Kompas, Apeldoorn">
+<meta property="og:image" content="assets/troc-weg.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%231360B4' stroke-width='4'/%3E%3Cpath d='M22 9 L13 15 L17 19 Z' fill='%23E1262D'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: '#0E1A33',
+        navy2: '#16264a',
+        kompas: '#1360B4',
+        rood: '#E1262D',
+        roodd: '#C21C23',
+        asfalt: '#EEF1F5',
+        inkt: '#1B2433',
+      },
+      fontFamily: {
+        kop: ['"Barlow Condensed"', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: Figtree, system-ui, sans-serif; color: #1B2433; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .tabnum { font-variant-numeric: tabular-nums; }
+  /* Onderbroken middenstreep, zoals op de weg */
+  .streep { background-image: repeating-linear-gradient(90deg, currentColor 0 34px, transparent 34px 58px); height: 4px; }
+  .streep-v { background-image: repeating-linear-gradient(180deg, currentColor 0 26px, transparent 26px 46px); width: 4px; }
+  /* Schuine vorm van het lesbord */
+  .bord { clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 100%); }
+  @media (min-width: 768px) { .bord { clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%); } }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #E1262D; outline-offset: 3px; }
+  /* Eén laadmoment in de hero, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .in { animation: in .7s cubic-bezier(.2,.7,.2,1) both; }
+    .js .in-2 { animation-delay: .08s; } .js .in-3 { animation-delay: .16s; } .js .in-4 { animation-delay: .24s; }
+    .js .foto-in { animation: foto .9s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes in { from { opacity: 0; transform: translateY(14px); } }
+    @keyframes foto { from { opacity: 0; transform: translateX(30px); } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white pb-[72px] md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white px-3 py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-asfalt text-inkt/80 text-[13px] text-center py-1.5 px-4">
+  Demo voor Rijschool Kompas, gemaakt door <a href="https://hagenweb.nl" class="font-semibold underline underline-offset-2 hover:text-rood">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="inline-flex flex-col leading-none" aria-label="Rijschool Kompas, naar boven">
+      <span class="font-kop font-bold text-rood text-[12px] md:text-[13px] tracking-[0.2em] self-end mr-0.5">RIJSCHOOL</span>
+      <span class="font-kop font-extrabold text-[32px] md:text-[36px] tracking-[0.01em] flex items-center -mt-1">K<svg class="w-[0.66em] h-[0.66em] mx-[0.04em] translate-y-[0.02em]" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="4.5"/><path d="M23.5 8 L12 15.2 L16.8 20 Z" fill="#E1262D"/></svg>MPAS</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-white/80" aria-label="Hoofdmenu">
+      <a href="#waarom" class="hover:text-white">Waarom Kompas</a>
+      <a href="#reviews" class="hover:text-white">Ervaringen</a>
+      <a href="#tarieven" class="hover:text-white">Tarieven</a>
+      <a href="#route" class="hover:text-white">Van 16 naar 18</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+    <a href="tel:+31641034154" class="font-kop font-bold text-lg md:text-xl tracking-wide flex items-center gap-2 hover:text-rood transition-colors">
+      <svg class="w-5 h-5 text-rood" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 41 03 41 54</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="bg-navy text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto md:grid md:grid-cols-12 md:min-h-[calc(100dvh-7.5rem)] md:max-h-[820px]">
+    <div class="md:col-span-6 px-5 md:px-8 pt-10 pb-10 md:py-20 flex flex-col justify-center relative z-10">
+      <p class="in text-white/70 font-medium">Rijschool in Apeldoorn en omgeving</p>
+      <h1 class="in in-2 font-kop font-extrabold text-[58px] leading-[0.92] sm:text-7xl lg:text-[104px] tracking-[-0.01em] mt-3">Wij wijzen je de weg.</h1>
+      <p class="in in-3 mt-6 text-lg md:text-xl text-white/80 max-w-md leading-relaxed">Een vaste instructeur, geen wachtlijst en lessen ook 's avonds en in het weekend. Nooit meer lessen dan je nodig hebt.</p>
+      <div class="in in-4 mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:+31641034154" class="knop inline-flex items-center justify-center gap-3 bg-rood hover:bg-roodd text-white font-semibold text-lg px-7 py-4 rounded-md shadow-[0_10px_30px_-10px_rgba(225,38,45,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel voor je gratis proefles
+        </a>
+        <a href="#tarieven" class="text-white/85 font-medium underline underline-offset-4 decoration-white/30 hover:decoration-white self-start sm:self-auto">Bekijk de tarieven</a>
+      </div>
+      <p class="in in-4 mt-8 flex items-center gap-3 text-sm text-white/75">
+        <span class="flex text-[#F5B83D]" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="text-white font-semibold">5 sterren</strong> uit 33 Google-reviews</span>
+      </p>
+    </div>
+  </div>
+  <div class="relative h-[340px] sm:h-[440px] md:absolute md:h-auto md:top-0 md:bottom-0 md:right-0 md:left-[48%] lg:left-[50%]">
+    <img src="assets/troc-weg.jpg" alt="De lesauto van Rijschool Kompas met lesbord op het dak, op een landweg bij zonsondergang" class="foto-in bord absolute inset-0 w-full h-full object-cover object-[60%_50%]">
+  </div>
+</section>
+
+<!-- Waarom -->
+<section id="waarom" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold text-5xl md:text-6xl leading-[0.95] text-navy">Les op jouw manier, met één vaste instructeur.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80 max-w-xl">Rijschool Kompas is een flexibele rijschool. We stemmen de lessen af op wat jij nodig hebt, zodat je leert in een omgeving waarin je je op je gemak voelt. Kwaliteit, klantvriendelijkheid en natuurlijk veiligheid staan daarbij voorop.</p>
+      <figure class="mt-10 relative">
+        <img src="assets/lesbord-dak.jpg" alt="Het lesbord van Rijschool Kompas op het dak van de lesauto, in een woonwijk" class="w-full aspect-[16/10] object-cover object-[45%_60%] rounded-sm">
+        <div class="streep text-rood absolute -bottom-5 left-0 w-2/3"></div>
+      </figure>
+    </div>
+    <div class="lg:col-span-7 lg:pt-4">
+      <ul class="divide-y divide-navy/10 border-y border-navy/10">
+        <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <h3 class="font-kop font-bold text-2xl text-navy">Vaste instructeur</h3>
+          <p class="text-inkt/75 leading-relaxed">Jong en dynamisch. Je rijdt elke les met dezelfde instructeur, die precies weet waar je staat.</p>
+        </li>
+        <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <h3 class="font-kop font-bold text-2xl text-navy">Niet meer dan nodig</h3>
+          <p class="text-inkt/75 leading-relaxed">Betrouwbaar: je krijgt nooit meer lessen dan je nodig hebt om klaar te zijn voor je examen.</p>
+        </li>
+        <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <h3 class="font-kop font-bold text-2xl text-navy">Duidelijke lessen</h3>
+          <p class="text-inkt/75 leading-relaxed">Kwaliteit betekent bij ons heldere, gestructureerde lessen. Je weet altijd waar je aan werkt.</p>
+        </li>
+        <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <h3 class="font-kop font-bold text-2xl text-navy">Scherpe tarieven</h3>
+          <p class="text-inkt/75 leading-relaxed">Voordelige lespakketten en geen inschrijfgeld. De eerste les is een gratis proefles.</p>
+        </li>
+        <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <h3 class="font-kop font-bold text-2xl text-navy">Geen wachtlijst</h3>
+          <p class="text-inkt/75 leading-relaxed">Wil je beginnen? Dan kan dat gewoon. Je hoeft niet maanden te wachten op je eerste les.</p>
+        </li>
+        <li class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <h3 class="font-kop font-bold text-2xl text-navy">Ook 's avonds en in het weekend</h3>
+          <p class="text-inkt/75 leading-relaxed">School, werk of stage overdag? Je kunt ook in de avond en het weekend les nemen.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-asfalt py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <h2 class="font-kop font-extrabold text-5xl md:text-6xl leading-[0.95] text-navy">Wat leerlingen zeggen</h2>
+      <p class="text-inkt/70"><strong class="text-navy">5 sterren</strong> uit 33 reviews op Google</p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-12 gap-6">
+      <figure class="lg:col-span-7 bg-navy text-white p-8 md:p-12 rounded-sm relative">
+        <svg class="w-12 h-12 text-rood" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M8 34c0-9 4-16 13-20l2 4c-5 3-7 6-7 9h6v13H8zm20 0c0-9 4-16 13-20l2 4c-5 3-7 6-7 9h6v13H28z"/></svg>
+        <blockquote class="mt-6 text-lg md:text-2xl leading-relaxed font-medium">Na vele lessen en 2x te zijn gezakt voor mijn rijexamen, ben ik 5 weken geleden begonnen met lessen bij Gökhan van Rijschool Kompas. Ik voelde mij meteen op mijn gemak en vertrouwd. Direct is voor mij mijn examen aangevraagd en vandaag ben ik geslaagd met dank aan de fijne lessen van Gökhan.</blockquote>
+        <figcaption class="mt-8 text-white/70"><span class="font-semibold text-white">amy jonker</span>, Google-review</figcaption>
+      </figure>
+      <div class="lg:col-span-5 grid gap-6">
+        <figure class="bg-white p-7 rounded-sm">
+          <blockquote class="text-lg leading-relaxed">Super fijne rijinstructeur! Duidelijk, direct en scherp. Hij geeft heldere aanwijzingen en helpt je om te groeien op je verbeterpunten. Ik heb het rijexamen in één keer gehaald, dankzij de goede lessen van Gokhan.</blockquote>
+          <figcaption class="mt-4 text-sm text-inkt/60"><span class="font-semibold text-navy">Sam van der Leek</span>, Google-review</figcaption>
+        </figure>
+        <figure class="bg-white p-7 rounded-sm">
+          <blockquote class="text-lg leading-relaxed">Hele fijne rijinstructeur. Geeft goede aanwijzingen, en geeft goede feedback zodat je goed weet waar je aan kan werken tijdens de lessen.</blockquote>
+          <figcaption class="mt-4 text-sm text-inkt/60"><span class="font-semibold text-navy">Jelleke Vermeulen</span>, Google-review</figcaption>
+        </figure>
+      </div>
+      <figure class="lg:col-span-6 bg-white p-7 rounded-sm">
+        <blockquote class="text-lg leading-relaxed">Rijschool Kompas is de beste Rijschool. Je slagingspercentage voor de eerste keer is echt hoog. Goeie rij instructeur, vertelt alles heel duidelijk en makkelijk vind ik zelf. En bereid je goed voor de examen! Echt een aanrader!! Ik had vandaag mijn examen voor het eerst en ben ook gelijk geslaagd!</blockquote>
+        <figcaption class="mt-4 text-sm text-inkt/60"><span class="font-semibold text-navy">Dogan Hikmet</span>, Google-review</figcaption>
+      </figure>
+      <figure class="lg:col-span-6 bg-white p-7 rounded-sm">
+        <blockquote class="text-lg leading-relaxed">Vandaag mag ik met trots zeggen dat ik mijn rijbewijs heb gehaald en dat was mij zonder de geweldige begeleiding vanuit rijschool kompas nooit gelukt. … Ook jou gun ik je rijbewijs!</blockquote>
+        <figcaption class="mt-4 text-sm text-inkt/60"><span class="font-semibold text-navy">Deïaniera Schattevo</span>, Google-review</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Tarieven -->
+<section id="tarieven" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="font-kop font-extrabold text-5xl md:text-6xl leading-[0.95] text-navy">Tarieven</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80">Eén losse les of een pakket met praktijkexamen erbij. Je betaalt geen inschrijfgeld en je eerste les is een gratis proefles, zodat je eerst kunt kennismaken.</p>
+      <a href="tel:+31641034154" class="knop mt-8 inline-flex items-center gap-2 border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-6 py-3 rounded-md">Bel voor een gratis proefles</a>
+    </div>
+    <div class="lg:col-span-8">
+      <div class="bg-navy text-white rounded-sm overflow-hidden">
+        <div class="streep text-white/25 mx-6 md:mx-10 mt-6"></div>
+        <dl class="px-6 md:px-10 py-4 tabnum">
+          <div class="flex items-baseline justify-between gap-4 py-5 border-b border-white/10">
+            <dt><span class="font-kop font-bold text-2xl md:text-3xl">Losse rijles</span><span class="block text-white/60 text-sm mt-1">60 minuten</span></dt>
+            <dd class="font-kop font-bold text-3xl md:text-4xl">€ 60,-</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 py-5 border-b border-white/10">
+            <dt><span class="font-kop font-bold text-2xl md:text-3xl">Instappakket</span><span class="block text-white/60 text-sm mt-1">10 lessen</span></dt>
+            <dd class="font-kop font-bold text-3xl md:text-4xl">€ 580,-</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 py-5 border-b border-white/10">
+            <dt><span class="font-kop font-bold text-2xl md:text-3xl">Pakket A</span><span class="block text-white/60 text-sm mt-1">20 lessen + praktijkexamen</span></dt>
+            <dd class="font-kop font-bold text-3xl md:text-4xl">€ 1.450,-</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 py-5 border-b border-white/10">
+            <dt><span class="font-kop font-bold text-2xl md:text-3xl">Pakket B</span><span class="block text-white/60 text-sm mt-1">30 lessen + praktijkexamen</span></dt>
+            <dd class="font-kop font-bold text-3xl md:text-4xl">€ 2.030,-</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 py-5 border-b border-white/10">
+            <dt><span class="font-kop font-bold text-2xl md:text-3xl">Pakket C</span><span class="block text-white/60 text-sm mt-1">38 lessen + praktijkexamen</span></dt>
+            <dd class="font-kop font-bold text-3xl md:text-4xl">€ 2.490,-</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 py-5">
+            <dt><span class="font-kop font-bold text-2xl md:text-3xl">Pakket D</span><span class="block text-white/60 text-sm mt-1">45 lessen + praktijkexamen</span></dt>
+            <dd class="font-kop font-bold text-3xl md:text-4xl">€ 2.890,-</dd>
+          </div>
+        </dl>
+        <div class="bg-rood px-6 md:px-10 py-4 flex flex-wrap gap-x-8 gap-y-1 font-semibold">
+          <span>Gratis proefles</span><span>Geen inschrijfgeld</span><span>Geen wachtlijst</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Route 16 tot 18 -->
+<section id="route" class="bg-asfalt py-20 md:py-28 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl">
+      <h2 class="font-kop font-extrabold text-5xl md:text-6xl leading-[0.95] text-navy">Van 16 naar je eigen auto</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80">Met 2toDrive begin je al jong. Zo ziet de route eruit, van je theorie tot de dag dat je alleen de weg op mag.</p>
+    </div>
+
+    <ol class="mt-14 relative grid md:grid-cols-4 gap-10 md:gap-6">
+      <!-- de weg -->
+      <div class="hidden md:flex absolute left-0 right-0 top-[3.25rem] h-14 bg-navy items-center -mx-[50vw] px-[50vw]" aria-hidden="true"><div class="streep text-white/70 w-full"></div></div>
+      <div class="md:hidden absolute top-0 bottom-0 left-[1.6rem] w-14 -ml-7 bg-navy flex justify-center" aria-hidden="true"><div class="streep-v text-white/70 h-full"></div></div>
+
+      <li class="relative pl-20 md:pl-0">
+        <p class="font-kop font-extrabold text-5xl text-navy leading-none md:h-12">16</p>
+        <span class="absolute left-[1.6rem] -translate-x-1/2 top-1 md:static md:translate-x-0 md:mt-3 md:mb-6 flex w-12 h-12 md:w-14 md:h-14 rounded-full bg-rood ring-4 ring-asfalt items-center justify-center text-white font-kop font-bold text-lg" aria-hidden="true">1</span>
+        <h3 class="font-kop font-bold text-2xl text-navy mt-2 md:mt-0">Theorie-examen</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">Ben je 16? Dan mag je theorie-examen doen. Dat gaat over drie dingen: gevaarherkenning, kennis en verkeersinzicht.</p>
+      </li>
+      <li class="relative pl-20 md:pl-0">
+        <p class="font-kop font-extrabold text-5xl text-navy leading-none md:h-12">16½</p>
+        <span class="absolute left-[1.6rem] -translate-x-1/2 top-1 md:static md:translate-x-0 md:mt-3 md:mb-6 flex w-12 h-12 md:w-14 md:h-14 rounded-full bg-rood ring-4 ring-asfalt items-center justify-center text-white font-kop font-bold text-lg" aria-hidden="true">2</span>
+        <h3 class="font-kop font-bold text-2xl text-navy mt-2 md:mt-0">Rijlessen</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">Vanaf 16,5 jaar mag je praktijklessen volgen. Begin met een gratis proefles.</p>
+      </li>
+      <li class="relative pl-20 md:pl-0">
+        <p class="font-kop font-extrabold text-5xl text-navy leading-none md:h-12">17</p>
+        <span class="absolute left-[1.6rem] -translate-x-1/2 top-1 md:static md:translate-x-0 md:mt-3 md:mb-6 flex w-12 h-12 md:w-14 md:h-14 rounded-full bg-rood ring-4 ring-asfalt items-center justify-center text-white font-kop font-bold text-lg" aria-hidden="true">3</span>
+        <h3 class="font-kop font-bold text-2xl text-navy mt-2 md:mt-0">Rijexamen</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">Als je 17 bent, mag je rijexamen doen. Geslaagd? Dan rijd je tot je 18e samen met je coach.</p>
+      </li>
+      <li class="relative pl-20 md:pl-0">
+        <p class="font-kop font-extrabold text-5xl text-navy leading-none md:h-12">18</p>
+        <span class="absolute left-[1.6rem] -translate-x-1/2 top-1 md:static md:translate-x-0 md:mt-3 md:mb-6 flex w-12 h-12 md:w-14 md:h-14 rounded-full bg-kompas ring-4 ring-asfalt items-center justify-center text-white font-kop font-bold text-xl" aria-hidden="true">L</span>
+        <h3 class="font-kop font-bold text-2xl text-navy mt-2 md:mt-0">Alleen de weg op</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">Vanaf je 18e mag je zelfstandig rijden. Het lesbord kan eraf.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop font-extrabold text-5xl md:text-7xl leading-[0.92]">Klaar om te starten?</h2>
+      <p class="mt-6 text-lg text-white/80 max-w-md leading-relaxed">Bel voor een gratis proefles. Liever mailen? Dat kan ook, je krijgt zo snel mogelijk antwoord.</p>
+      <a href="tel:+31641034154" class="knop mt-8 inline-flex items-center gap-3 bg-rood hover:bg-roodd text-white font-semibold text-lg px-7 py-4 rounded-md">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        06 41 03 41 54
+      </a>
+
+      <dl class="mt-12 grid sm:grid-cols-2 gap-8 text-white/80">
+        <div>
+          <dt class="font-kop font-bold text-xl text-white">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@rijschoolkompas.nl" class="underline underline-offset-4 decoration-white/30 hover:decoration-white">info@rijschoolkompas.nl</a></dd>
+        </div>
+        <div>
+          <dt class="font-kop font-bold text-xl text-white">Adres</dt>
+          <dd class="mt-1">Eekhoorn 18<br>7325 CG Apeldoorn</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="font-kop font-bold text-xl text-white">Bereikbaar</dt>
+          <dd class="mt-1 tabnum">Maandag t/m zaterdag van 09:00 tot 17:00<br>Zondag gesloten</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="lg:col-span-6">
+      <img src="assets/site-02.jpg" alt="Lesbord van Rijschool Kompas met telefoonnummer op het dak, op een bosweg in de herfst" class="w-full aspect-[920/268] object-cover object-bottom rounded-sm">
+      <form action="mailto:info@rijschoolkompas.nl" method="post" enctype="text/plain" class="mt-8 grid gap-4">
+        <p class="font-kop font-bold text-2xl">Of laat een bericht achter</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="grid gap-1.5 text-sm text-white/75">Naam
+            <input name="naam" required autocomplete="name" class="bg-white/5 border border-white/20 rounded-md px-4 py-3 text-base text-white focus:border-white focus:outline-none">
+          </label>
+          <label class="grid gap-1.5 text-sm text-white/75">Telefoonnummer
+            <input name="telefoon" type="tel" required autocomplete="tel" class="bg-white/5 border border-white/20 rounded-md px-4 py-3 text-base text-white focus:border-white focus:outline-none">
+          </label>
+        </div>
+        <label class="grid gap-1.5 text-sm text-white/75">Bericht
+          <textarea name="bericht" rows="3" placeholder="Bijvoorbeeld: ik wil graag een proefles plannen." class="bg-white/5 border border-white/20 rounded-md px-4 py-3 text-base text-white placeholder:text-white/35 focus:border-white focus:outline-none"></textarea>
+        </label>
+        <button type="submit" class="knop justify-self-start border-2 border-white/80 hover:bg-white hover:text-navy font-semibold px-6 py-3 rounded-md">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-[#0A1328] text-white/60 text-sm">
+  <div class="streep text-white/10"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col md:flex-row gap-3 md:items-center justify-between">
+    <p><span class="text-white font-semibold">Rijschool Kompas</span>, de rijschool voor Apeldoorn en omgeving</p>
+    <p><a href="tel:+31641034154" class="hover:text-white">06 41 03 41 54</a> <span class="mx-2 text-white/25">|</span> <a href="mailto:info@rijschoolkompas.nl" class="hover:text-white">info@rijschoolkompas.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-navy/95 backdrop-blur border-t border-white/10 p-3 flex gap-3">
+  <a href="tel:+31641034154" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-rood text-white font-semibold py-3.5 rounded-md">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 06 41 03 41 54
+  </a>
+  <a href="mailto:info@rijschoolkompas.nl" class="knop inline-flex items-center justify-center px-4 border border-white/30 text-white rounded-md" aria-label="Mail Rijschool Kompas">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+  </a>
+</div>
+
+</body>
+</html>

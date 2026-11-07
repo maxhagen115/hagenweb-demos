@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verkeersschool Frank Schuurman | Rijschool in Apeldoorn voor auto, motor, brommer en BE</title>
+<meta name="description" content="Rijles in Apeldoorn voor auto, automaat, motor, brommer en aanhanger (BE in 1 dag). Met een vaste instructeur, sinds 1987. Bel 055 366 4363.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bord: '#16296B',
+          bordDonker: '#0F1E52',
+          rood: '#D7141A',
+          roodDonker: '#B30F14',
+          lblauw: '#1E9AD6',
+          asfalt: '#1C2230',
+          mist: '#EEF1F6',
+        },
+        fontFamily: {
+          kop: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
+          tekst: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Instrument Sans", system-ui, sans-serif; color: #1C2230; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, .kop { font-family: "Barlow Condensed", system-ui, sans-serif; text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Wegwijzer-vormen */
+  .bord-rechts { clip-path: polygon(0 0, calc(100% - 1.75rem) 0, 100% 50%, calc(100% - 1.75rem) 100%, 0 100%); }
+  .bord-links  { clip-path: polygon(1.75rem 0, 100% 0, 100% 100%, 1.75rem 100%, 0 50%); }
+  .foto-bord   { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0); }
+  @media (min-width: 1024px) {
+    .foto-bord { clip-path: polygon(9% 0, 100% 0, 100% 100%, 9% 100%, 0 50%); }
+  }
+  .bord-rand { box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 5px #16296B; }
+
+  .wegwijzer a { transition: transform .25s cubic-bezier(.2,.8,.2,1), background-color .2s; }
+  .wegwijzer a:hover { transform: translateX(.5rem); background-color: #0F1E52; }
+  .wegwijzer a:active { transform: translateX(.25rem) scale(.99); }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #1E9AD6; outline-offset: 3px; }
+
+  /* Eén bewegend moment: het fotobord schuift bij laden binnen. Alleen als JS draait. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-foto { animation: inschuiven .9s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes inschuiven { from { transform: translateX(2.5rem); opacity: .0; } to { transform: none; opacity: 1; } }
+  }
+  .tabel td, .tabel th { padding: .7rem .9rem; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-asfalt text-white/80 text-xs sm:text-[13px] text-center px-4 py-2">
+  Demo voor Verkeersschool Frank Schuurman, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-lblauw">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-asfalt/10">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 h-16 lg:h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-2.5 shrink-0" aria-label="Verkeersschool Frank Schuurman, naar boven">
+      <span class="grid place-items-center w-9 h-9 lg:w-10 lg:h-10 bg-lblauw rounded-[5px] text-white kop font-bold text-2xl lg:text-[26px] leading-none" aria-hidden="true">L</span>
+      <span class="leading-none">
+        <span class="block text-[11px] lg:text-xs tracking-wide text-asfalt/70">Verkeersschool</span>
+        <span class="kop block text-[22px] lg:text-2xl font-bold tracking-tight -mt-0.5"><span class="text-bord">Frank</span> <span class="text-rood">Schuurman</span></span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-asfalt/80" aria-label="Hoofdmenu">
+      <a href="#auto" class="hover:text-bord">Auto</a>
+      <a href="#motor" class="hover:text-bord">Motor</a>
+      <a href="#brommer" class="hover:text-bord">Brommer</a>
+      <a href="#aanhanger" class="hover:text-bord">Aanhanger</a>
+      <a href="#contact" class="hover:text-bord">Contact</a>
+    </nav>
+    <a href="tel:+31553664363" class="knop hidden sm:inline-flex items-center gap-2 bg-rood hover:bg-roodDonker text-white font-semibold text-[15px] px-4 py-2.5 rounded-md">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      055 366 4363
+    </a>
+    <a href="tel:+31553664363" class="knop sm:hidden grid place-items-center w-11 h-11 bg-rood text-white rounded-md" aria-label="Bel 055 366 4363">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8 lg:min-h-[620px] items-center">
+    <div class="lg:col-span-5 pt-10 pb-8 lg:py-20 relative z-10">
+      <p class="text-bord font-medium text-[15px] lg:text-base">Rijschool in Apeldoorn, sinds 1987</p>
+      <h1 class="mt-3 text-[56px] leading-[.92] sm:text-7xl lg:text-[96px] font-bold tracking-[-0.01em] text-asfalt">Slagen doe je bij Frank.</h1>
+      <p class="mt-5 text-[17px] lg:text-lg leading-relaxed text-asfalt/80 max-w-[30rem]">Een vaste instructeur die jou kent, lessen op jouw tempo en een goede voorbereiding op het examen. Zodat je de eerste keer slaagt.</p>
+      <div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31553664363" class="knop inline-flex items-center gap-3 bg-rood hover:bg-roodDonker text-white font-semibold text-lg px-6 py-4 rounded-md shadow-[0_10px_24px_-10px_rgba(215,20,26,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 055 366 4363
+        </a>
+        <a href="#rijbewijs" class="font-semibold text-bord underline decoration-2 underline-offset-[6px] decoration-lblauw hover:decoration-bord">Kies je rijbewijs</a>
+      </div>
+      <p class="mt-7 flex items-center gap-2 text-sm text-asfalt/70">
+        <span class="text-[#F2A900] tracking-[2px] text-base" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-asfalt font-semibold">4,6</strong> uit 36 Google-reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-7 lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:w-[56%] -mx-5 lg:mx-0">
+      <div class="hero-foto foto-bord h-[260px] sm:h-[380px] lg:h-full">
+        <img src="assets/google-03.jpg" alt="Een rij zwarte Volkswagen lesauto's van Verkeersschool Frank Schuurman met dakborden" class="w-full h-full object-cover object-[30%_60%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wegwijzer -->
+<section id="rijbewijs" class="bg-mist py-16 lg:py-24">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-8 items-start">
+    <div class="lg:col-span-5">
+      <h2 class="text-4xl lg:text-6xl font-bold leading-[.95] text-asfalt">Welk rijbewijs wil je halen?</h2>
+      <p class="mt-5 text-asfalt/75 leading-relaxed max-w-md">Auto, motor, brommer of aanhanger: je kunt voor alles bij ons terecht, ook voor de theorie. Kies je rijbewijs en lees precies hoe het werkt en vanaf welke leeftijd.</p>
+      <p class="mt-4 text-asfalt/75 leading-relaxed max-w-md">Liever even overleggen? Bel <a href="tel:+31553664363" class="font-semibold text-bord whitespace-nowrap hover:underline">055 366 4363</a>, op werkdagen van 08:00 tot 18:00.</p>
+    </div>
+    <nav class="wegwijzer lg:col-span-7 relative" aria-label="Kies je rijbewijs">
+      <div class="absolute left-7 sm:left-10 top-0 -bottom-4 w-3 sm:w-4 bg-gradient-to-r from-[#C5CBD6] via-white to-[#C5CBD6] rounded-t-full" aria-hidden="true"></div>
+      <ul class="relative space-y-3.5">
+        <li><a href="#auto" class="bord-rechts flex items-center justify-between gap-4 bg-bord text-white pl-6 sm:pl-8 pr-12 py-4 sm:py-5 w-[96%]">
+          <span class="kop text-3xl sm:text-4xl font-bold tracking-wide uppercase">Auto</span>
+          <span class="text-sm sm:text-base text-white/80 text-right">Rijbewijs B, ook automaat</span></a></li>
+        <li class="flex justify-end"><a href="#motor" class="bord-links flex items-center justify-between gap-4 bg-bord text-white pl-12 pr-6 sm:pr-8 py-4 sm:py-5 w-[88%]">
+          <span class="text-sm sm:text-base text-white/80">A1, A2 en A</span>
+          <span class="kop text-3xl sm:text-4xl font-bold tracking-wide uppercase">Motor</span></a></li>
+        <li><a href="#brommer" class="bord-rechts flex items-center justify-between gap-4 bg-bord text-white pl-6 sm:pl-8 pr-12 py-4 sm:py-5 w-[82%]">
+          <span class="kop text-3xl sm:text-4xl font-bold tracking-wide uppercase">Brommer</span>
+          <span class="text-sm sm:text-base text-white/80 text-right">Rijbewijs AM</span></a></li>
+        <li class="flex justify-end"><a href="#aanhanger" class="bord-links flex items-center justify-between gap-4 bg-bord text-white pl-12 pr-6 sm:pr-8 py-4 sm:py-5 w-[92%]">
+          <span class="text-sm sm:text-base text-white/80">BE in 1 dag</span>
+          <span class="kop text-3xl sm:text-4xl font-bold tracking-wide uppercase">Aanhanger</span></a></li>
+        <li><a href="#opleiding" class="bord-rechts flex items-center justify-between gap-4 bg-lblauw text-white pl-6 sm:pl-8 pr-12 py-3.5 w-[70%] sm:w-[64%]">
+          <span class="kop text-2xl sm:text-3xl font-bold tracking-wide uppercase">Theorie</span>
+          <span class="hidden sm:inline text-sm text-white/85 text-right">Auto, motor, brommer</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<!-- Auto -->
+<section id="auto" class="py-16 lg:py-28 scroll-mt-20">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-6 order-2 lg:order-1">
+      <p class="kop text-rood font-semibold text-xl">Rijbewijs B</p>
+      <h2 class="mt-1 text-4xl lg:text-[56px] font-bold leading-[.95]">Autorijles met een vaste instructeur</h2>
+      <p class="mt-5 text-asfalt/80 leading-relaxed max-w-xl">We stemmen de lessen af op jou: we bespreken je wensen, spreken samen af hoe vaak je lest en passen het tempo aan op je vorderingen. Omdat je steeds dezelfde instructeur hebt, weet die precies wanneer je klaar bent voor de volgende stap. En voor het examen.</p>
+      <dl class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-5 max-w-xl">
+        <div class="border-t-2 border-bord pt-3"><dt class="font-semibold">Beginnen vanaf 16,5 jaar</dt><dd class="text-asfalt/70 text-[15px] mt-1">Examen vanaf je 17e, daarna tot je 18e rijden met een coach via 2toDrive.</dd></div>
+        <div class="border-t-2 border-bord pt-3"><dt class="font-semibold">Eerste les gratis</dt><dd class="text-asfalt/70 text-[15px] mt-1">Als je de volledige opleiding bij ons volgt. Kennismaken, de lesauto leren kennen en je wensen bespreken.</dd></div>
+        <div class="border-t-2 border-bord pt-3"><dt class="font-semibold">Lessen van 50 minuten</dt><dd class="text-asfalt/70 text-[15px] mt-1">Of een blokuur van twee lessen achter elkaar. Versneld in 8 weken kan in overleg.</dd></div>
+        <div class="border-t-2 border-bord pt-3"><dt class="font-semibold">Handgeschakeld of automaat</dt><dd class="text-asfalt/70 text-[15px] mt-1">In een Volkswagen Golf of Polo. Met rijbewijs B mag je ook meteen brommer en scooter rijden.</dd></div>
+      </dl>
+    </div>
+    <div class="lg:col-span-6 order-1 lg:order-2 -mx-5 sm:mx-0">
+      <img src="assets/google-05.jpg" alt="Dakbord van Verkeersschool Frank Schuurman met blauw L-bord op een zwarte lesauto" class="w-full aspect-[3/2] object-cover object-left sm:rounded-lg">
+    </div>
+  </div>
+</section>
+
+<!-- Motor -->
+<section id="motor" class="bg-bord text-white py-16 lg:py-28 scroll-mt-20">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+      <div class="lg:col-span-5 -mx-5 sm:mx-0">
+        <img src="assets/google-08.jpg" alt="Vier lesmotoren van Verkeersschool Frank Schuurman, waaronder een oranje KTM Duke" class="w-full aspect-[4/3] object-cover sm:rounded-lg">
+      </div>
+      <div class="lg:col-span-7">
+        <p class="kop text-lblauw font-semibold text-xl">Rijbewijs A1, A2 en A</p>
+        <h2 class="mt-1 text-4xl lg:text-[56px] font-bold leading-[.95]">Motorrijles, de uitrusting krijg je van ons</h2>
+        <p class="mt-5 text-white/80 leading-relaxed max-w-xl">Onze motorinstructeurs zijn KNMV-gediplomeerd (KGI). Je eerste motorles is een privéles, daarna les je met maximaal twee leerlingen. Jas, broek, handschoenen en helm met vizier krijg je van de rijschool. Jij zorgt zelf voor stevige schoenen die je enkels bedekken.</p>
+        <p class="mt-4 text-white/80 leading-relaxed max-w-xl">Heb je nog geen autorijbewijs, dan begin je met theorie. Heb je rijbewijs B al, dan kun je meteen met de motorlessen beginnen.</p>
+      </div>
+    </div>
+    <div class="mt-12 overflow-x-auto">
+      <table class="tabel w-full text-left text-[15px]">
+        <caption class="sr-only">Motorrijbewijzen, leeftijd en lesmotor</caption>
+        <thead class="text-white/60 text-sm">
+          <tr class="border-b border-white/20"><th class="font-medium">Rijbewijs</th><th class="font-medium">Examen vanaf</th><th class="font-medium hidden sm:table-cell">Wat mag je rijden</th><th class="font-medium">Je lest op</th></tr>
+        </thead>
+        <tbody class="divide-y divide-white/10">
+          <tr><td class="kop text-2xl font-bold">A1</td><td>18 jaar <span class="text-white/60 whitespace-nowrap">(lessen vanaf 17)</span></td><td class="hidden sm:table-cell">Lichte motor tot 125 cc en 11 kW</td><td>KTM 125 Duke</td></tr>
+          <tr><td class="kop text-2xl font-bold">A2</td><td>20 jaar</td><td class="hidden sm:table-cell">Middelzware motor tot 35 kW</td><td>Yamaha MT-03</td></tr>
+          <tr><td class="kop text-2xl font-bold">A</td><td>21, 22 of 24 jaar</td><td class="hidden sm:table-cell">Alle motoren, zonder beperking</td><td>Yamaha MT-07</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-4 text-sm text-white/60 max-w-2xl">A2 en A kun je rechtstreeks of getrapt halen. Welke route voor jou geldt hangt af van je leeftijd en welk rijbewijs je al hebt. We leggen het je graag uit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Brommer -->
+<section id="brommer" class="py-16 lg:py-28 scroll-mt-20">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-5">
+      <p class="kop text-rood font-semibold text-xl">Rijbewijs AM</p>
+      <h2 class="mt-1 text-4xl lg:text-[56px] font-bold leading-[.95]">Brommer of scooter, zo snel mogelijk</h2>
+      <p class="mt-5 text-asfalt/80 leading-relaxed">Doe je theorie-examen vóór je 16e verjaardag, dan kun je op je verjaardag meteen beginnen met rijlessen. Je instructeur rijdt zelf op een brommer met je mee. Veiligheidshesjes heeft de rijschool.</p>
+      <p class="mt-4 text-[15px] text-asfalt/65 leading-relaxed">Handig voor later: wie eerst AM haalt, kent de verkeersregels al en heeft praktijkervaring als de auto of motor aan de beurt is.</p>
+    </div>
+    <!-- De weg naar je AM: een wegdek met de mijlpalen -->
+    <div class="lg:col-span-7">
+      <div class="relative bg-asfalt rounded-lg px-6 sm:px-10 py-10 sm:py-12 overflow-hidden">
+        <div class="absolute inset-x-0 top-[74px] h-1 hidden sm:block" style="background: repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 36px, transparent 36px 64px);" aria-hidden="true"></div>
+        <div class="absolute inset-y-0 left-[40px] w-1 sm:hidden" style="background: repeating-linear-gradient(180deg, rgba(255,255,255,.55) 0 28px, transparent 28px 50px);" aria-hidden="true"></div>
+        <ol class="relative grid sm:grid-cols-3 gap-8 sm:gap-6">
+          <li class="flex sm:block items-center gap-5">
+            <span class="grid place-items-center shrink-0 w-9 h-9 sm:w-14 sm:h-14 rounded-full bg-white text-asfalt kop font-bold text-lg sm:text-2xl sm:mb-5 sm:mx-auto">1</span>
+            <span class="sm:text-center sm:block"><span class="kop block text-white text-3xl sm:text-4xl font-bold leading-none">15,5 jaar</span><span class="block text-white/70 mt-1.5 text-[15px]">Theorie-examen doen</span></span>
+          </li>
+          <li class="flex sm:block items-center gap-5">
+            <span class="grid place-items-center shrink-0 w-9 h-9 sm:w-14 sm:h-14 rounded-full bg-white text-asfalt kop font-bold text-lg sm:text-2xl sm:mb-5 sm:mx-auto">2</span>
+            <span class="sm:text-center sm:block"><span class="kop block text-white text-3xl sm:text-4xl font-bold leading-none">16 jaar</span><span class="block text-white/70 mt-1.5 text-[15px]">Praktijklessen en examen</span></span>
+          </li>
+          <li class="flex sm:block items-center gap-5">
+            <span class="grid place-items-center shrink-0 w-9 h-9 sm:w-14 sm:h-14 rounded-full bg-lblauw text-white kop font-bold text-lg sm:text-2xl sm:mb-5 sm:mx-auto">AM</span>
+            <span class="sm:text-center sm:block"><span class="kop block text-white text-3xl sm:text-4xl font-bold leading-none">De weg op</span><span class="block text-white/70 mt-1.5 text-[15px]">Brommer, scooter of snorfiets</span></span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Aanhanger -->
+<section id="aanhanger" class="pb-16 lg:pb-28 scroll-mt-20">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-6 -mx-5 sm:mx-0">
+      <img src="assets/site-06.jpg" alt="Lesauto van Frank Schuurman met een grote aanhangwagen in de huisstijl" class="w-full aspect-[4/3] object-cover object-[45%_45%] sm:rounded-lg">
+    </div>
+    <div class="lg:col-span-6">
+      <p class="kop text-rood font-semibold text-xl">Rijbewijs BE, E achter B</p>
+      <h2 class="mt-1 text-4xl lg:text-[56px] font-bold leading-[.95]">Aanhanger of caravan? BE in één dag</h2>
+      <p class="mt-5 text-asfalt/80 leading-relaxed">Het is een dagopleiding: je krijgt op één dag je rijlessen en doet dezelfde dag je rijexamen. Je leert omgaan met het uitzwenken van de aanhanger, het beperkte zicht, de langere remweg en het grotere formaat van de combinatie.</p>
+      <div class="mt-7 bg-mist rounded-lg p-5 sm:p-6">
+        <p class="font-semibold">Heb je BE nodig? Tel het toegestane gewicht (T.M.M.) van auto en aanhanger op.</p>
+        <ul class="mt-4 space-y-2.5 text-[15px]">
+          <li class="flex items-center justify-between gap-3"><span>3000 kg auto + 700 kg aanhanger</span><span class="kop font-bold text-xl text-bord bg-white px-2.5 rounded">B</span></li>
+          <li class="flex items-center justify-between gap-3"><span>2000 kg auto + 1400 kg aanhanger</span><span class="kop font-bold text-xl text-bord bg-white px-2.5 rounded">B</span></li>
+          <li class="flex items-center justify-between gap-3"><span>2000 kg auto + 1600 kg aanhanger</span><span class="kop font-bold text-xl text-white bg-rood px-2.5 rounded">BE</span></li>
+        </ul>
+        <p class="mt-4 text-sm text-asfalt/65">Samen boven de 3500 kg en een aanhanger zwaarder dan 750 kg? Dan heb je BE nodig. Let ook altijd op hoeveel je auto mag trekken.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- De betere rijopleiding -->
+<section id="opleiding" class="bg-mist py-16 lg:py-28 scroll-mt-20">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-6 lg:order-2 -mx-5 sm:mx-0">
+      <img src="assets/google-02.jpg" alt="Het theorielokaal van de rijschool met rode en blauwe stoelen en verkeersborden aan de muur" class="w-full aspect-[4/3] object-cover sm:rounded-lg">
+    </div>
+    <div class="lg:col-span-6">
+      <h2 class="text-4xl lg:text-[56px] font-bold leading-[.95]">Voor de betere rijopleiding</h2>
+      <p class="mt-5 text-asfalt/80 leading-relaxed max-w-xl">Frank Schuurman begon in 1987 als eenmanszaak. Inmiddels zijn we een van de grootste rijscholen in Apeldoorn. Wat altijd hetzelfde is gebleven:</p>
+      <ul class="mt-7 space-y-4 max-w-xl">
+        <li class="flex gap-4"><span class="mt-1.5 shrink-0 w-3 h-3 bg-rood rotate-45"></span><span><strong class="font-semibold">Een vaste instructeur</strong> die jouw vorderingen persoonlijk bijhoudt.</span></li>
+        <li class="flex gap-4"><span class="mt-1.5 shrink-0 w-3 h-3 bg-rood rotate-45"></span><span><strong class="font-semibold">Goed opgeleide, gemotiveerde instructeurs</strong>, geselecteerd op kwaliteit.</span></li>
+        <li class="flex gap-4"><span class="mt-1.5 shrink-0 w-3 h-3 bg-rood rotate-45"></span><span><strong class="font-semibold">Al sinds 1987 een hoog slagingspercentage.</strong></span></li>
+        <li class="flex gap-4"><span class="mt-1.5 shrink-0 w-3 h-3 bg-rood rotate-45"></span><span><strong class="font-semibold">Sportieve maar degelijke</strong> lesauto's en lesmotoren.</span></li>
+        <li class="flex gap-4"><span class="mt-1.5 shrink-0 w-3 h-3 bg-rood rotate-45"></span><span><strong class="font-semibold">Een eigen theorielokaal</strong> met modern lesmateriaal, voor auto, motor en brommer.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-16 lg:py-28">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="text-4xl lg:text-[56px] font-bold leading-[.95] max-w-xl">Wat leerlingen en ouders zeggen</h2>
+      <p class="flex items-center gap-3"><span class="kop text-5xl font-bold text-bord leading-none">4,6</span><span class="text-sm text-asfalt/70 leading-tight"><span class="text-[#F2A900] tracking-[2px] text-base" aria-hidden="true">★★★★★</span><br>36 reviews op Google</span></p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-2 gap-x-12 gap-y-12">
+      <figure class="md:pr-6">
+        <blockquote class="kop text-[28px] lg:text-[34px] leading-[1.08] font-medium text-asfalt">"Onder de bezielende leiding van Frank mijn BE rijbewijs gehaald. Frank was rustig, vriendelijk en duidelijk, precies wat je wil als rij-instructeur. Dikke aanrader."</blockquote>
+        <figcaption class="mt-4 text-[15px]"><strong class="font-semibold">Pieter Hengst</strong><span class="text-asfalt/60">, 5 sterren op Google</span></figcaption>
+      </figure>
+      <figure class="md:mt-24">
+        <blockquote class="text-lg leading-relaxed text-asfalt/85">"Na een niet zo fijne ervaring met mijn vorige rijschool een aantal jaar geleden had ik een angst ontwikkelt voor het rijden. Samen met mijn instructeur Richard ben ik hier mee aan de slag gegaan. Stapje voor stapje overwon ik mijn angst en voelde ik mij steeds meer comfortabel tijdens het rijden. …"</blockquote>
+        <figcaption class="mt-4 text-[15px]"><strong class="font-semibold">Femke</strong><span class="text-asfalt/60">, 5 sterren op Google</span></figcaption>
+      </figure>
+      <figure>
+        <blockquote class="text-lg leading-relaxed text-asfalt/85">"Gisteren is mijn zoon geslaagd voor zijn rijbewijs. Overgestapt van een andere rijschool, was Frank zo aardig hem de fijne kneepjes van het autorijden bij te brengen. Frank is een hele goede instructeur en mijn dochter gaat in de toekomst zeker ook haar lessen volgen voor auto en motor bij deze rijschool. …"</blockquote>
+        <figcaption class="mt-4 text-[15px]"><strong class="font-semibold">Michèle Wester</strong><span class="text-asfalt/60">, 5 sterren op Google</span></figcaption>
+      </figure>
+      <figure class="md:mt-24 md:pr-6">
+        <blockquote class="kop text-[28px] lg:text-[34px] leading-[1.08] font-medium text-asfalt">"Wat een fijne rijschool, echt heb nu meerdere rijbewijzen hier gehaald met de familie maar de aandacht, de opleiding en ook de humor van de rijschoolhouder is top, dat maakt het halen van je rijbewijs ook gewoon leuk. Ton ook bedankt voor je vakmanschap."</blockquote>
+        <figcaption class="mt-4 text-[15px]"><strong class="font-semibold">G Feenstra</strong><span class="text-asfalt/60">, 5 sterren op Google</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-bord text-white scroll-mt-16">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 lg:gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="text-5xl lg:text-7xl font-bold leading-[.92]">Zullen we een eerste les plannen?</h2>
+      <p class="mt-5 text-white/80 leading-relaxed max-w-md">Bel ons, mail ons of kom langs aan de Ovenbouwershoek. Liever eerst meer informatie? Vraag die gerust vrijblijvend aan.</p>
+      <a href="tel:+31553664363" class="knop mt-8 inline-flex items-center gap-3 bg-rood hover:bg-roodDonker text-white font-semibold text-lg px-6 py-4 rounded-md">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 055 366 4363
+      </a>
+      <dl class="mt-10 space-y-5 text-[15px]">
+        <div><dt class="text-white/55 text-sm">Adres</dt><dd class="mt-0.5"><a class="hover:underline" href="https://www.google.com/maps/search/?api=1&query=Ovenbouwershoek+21+7328+JH+Apeldoorn">Ovenbouwershoek 21<br>7328 JH Apeldoorn</a></dd></div>
+        <div><dt class="text-white/55 text-sm">E-mail</dt><dd class="mt-0.5"><a class="hover:underline" href="mailto:info@frankschuurman.nl">info@frankschuurman.nl</a></dd></div>
+        <div><dt class="text-white/55 text-sm">Bereikbaar</dt><dd class="mt-0.5">Maandag tot en met vrijdag, 08:00 tot 18:00<br><span class="text-white/60">Zaterdag en zondag gesloten</span></dd></div>
+      </dl>
+    </div>
+    <div class="lg:col-span-7">
+      <img src="assets/google-04.jpg" alt="Het pand van Verkeersschool Frank Schuurman aan de Ovenbouwershoek 21 in Apeldoorn" class="w-full aspect-[16/10] object-cover object-[50%_70%] rounded-lg">
+      <form action="mailto:info@frankschuurman.nl" method="post" enctype="text/plain" class="mt-6 bg-white text-asfalt rounded-lg p-6 sm:p-8 grid sm:grid-cols-2 gap-4">
+        <p class="sm:col-span-2 kop text-2xl font-bold">Stuur een bericht</p>
+        <label class="block"><span class="text-sm font-medium">Naam</span>
+          <input required name="naam" autocomplete="name" class="mt-1 w-full rounded-md border border-asfalt/20 px-3 py-2.5 focus:border-bord focus:outline-none focus:ring-2 focus:ring-lblauw/40"></label>
+        <label class="block"><span class="text-sm font-medium">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1 w-full rounded-md border border-asfalt/20 px-3 py-2.5 focus:border-bord focus:outline-none focus:ring-2 focus:ring-lblauw/40"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-medium">Welk rijbewijs?</span>
+          <select name="rijbewijs" class="mt-1 w-full rounded-md border border-asfalt/20 px-3 py-2.5 bg-white focus:border-bord focus:outline-none focus:ring-2 focus:ring-lblauw/40">
+            <option>Auto (B)</option><option>Auto automaat (B)</option><option>Motor (A1, A2 of A)</option><option>Brommer of scooter (AM)</option><option>Aanhanger (BE)</option><option>Theorie</option><option>Weet ik nog niet</option>
+          </select></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-medium">Je vraag</span>
+          <textarea name="bericht" rows="3" class="mt-1 w-full rounded-md border border-asfalt/20 px-3 py-2.5 focus:border-bord focus:outline-none focus:ring-2 focus:ring-lblauw/40"></textarea></label>
+        <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+          <button class="knop bg-bord hover:bg-bordDonker text-white font-semibold px-6 py-3 rounded-md">Bericht versturen</button>
+          <span class="text-sm text-asfalt/60">We nemen op werkdagen contact met je op.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-bordDonker text-white/65 text-sm">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 py-8 flex flex-col md:flex-row gap-4 md:items-center justify-between">
+    <p><span class="text-white font-semibold">Verkeersschool Frank Schuurman</span>, Ovenbouwershoek 21, 7328 JH Apeldoorn</p>
+    <p class="flex flex-wrap gap-x-5 gap-y-1"><a href="tel:+31553664363" class="hover:text-white">055 366 4363</a><a href="mailto:info@frankschuurman.nl" class="hover:text-white">info@frankschuurman.nl</a><a href="https://hagenweb.nl" class="hover:text-white">Website door Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-asfalt/10 p-3 flex gap-3">
+  <a href="tel:+31553664363" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-rood text-white font-semibold py-3.5 rounded-md">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 055 366 4363</a>
+  <a href="mailto:info@frankschuurman.nl" class="knop inline-flex items-center justify-center px-4 border-2 border-bord text-bord font-semibold rounded-md">Mail</a>
+</div>
+
+</body>
+</html>

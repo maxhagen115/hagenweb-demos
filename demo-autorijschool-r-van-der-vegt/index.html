@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autorijschool R van der Vegt | Rijlessen in Apeldoorn</title>
+<meta name="description" content="Rijles in Apeldoorn bij René van der Vegt. Rijopleiding in Stappen met een cijfer na elke les. € 65,- per les, gratis proefles. Bel 06 301 333 35.">
+<meta property="og:title" content="Autorijschool R van der Vegt, Apeldoorn">
+<meta property="og:image" content="assets/site-01.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        geel: '#F7B52C',
+        geeldonker: '#E39E12',
+        asfalt: '#1E2227',
+        asfalt2: '#2B3036',
+        wegwit: '#F4F4F0',
+        eublauw: '#1F56A3',
+        berm: '#61676E',
+      },
+      fontFamily: {
+        kop: ['"Barlow Condensed"', 'sans-serif'],
+        body: ['"Atkinson Hyperlegible"', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Atkinson Hyperlegible", sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  /* gestreepte middenlijn */
+  .middenlijn {
+    background-image: linear-gradient(to bottom, currentColor 0 55%, transparent 55% 100%);
+    background-size: 4px 38px;
+    background-repeat: repeat-y;
+    background-position: center top;
+  }
+  .streep-h {
+    background-image: linear-gradient(to right, currentColor 0 55%, transparent 55% 100%);
+    background-size: 38px 4px;
+    background-repeat: repeat-x;
+  }
+  .kenteken {
+    background: linear-gradient(180deg, #FBC94A 0%, #F2A81B 100%);
+    box-shadow: inset 0 0 0 3px #1E2227, inset 0 0 0 6px rgba(255,255,255,.25), 0 18px 40px -18px rgba(120,70,0,.55);
+  }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #F7B52C; outline-offset: 3px; }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .knop:hover, .knop:active { transform: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-wegwit text-asfalt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-geel text-asfalt px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-black text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Autorijschool R van der Vegt, gemaakt door <a href="https://hagenweb.nl" class="text-geel underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-asfalt text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-20 flex items-center justify-between gap-6">
+    <a href="#top" aria-label="Autorijschool R van der Vegt, naar boven" class="shrink-0">
+      <img src="assets/logo-oud.png" alt="Rijschool R-VD-VEGT" class="h-9 md:h-10 w-auto" width="820" height="173">
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden md:flex items-center gap-8 font-kop text-lg tracking-wide text-white/80">
+      <a href="#tarieven" class="hover:text-geel transition-colors">Tarieven</a>
+      <a href="#werkwijze" class="hover:text-geel transition-colors">Werkwijze</a>
+      <a href="#ervaringen" class="hover:text-geel transition-colors">Ervaringen</a>
+      <a href="#contact" class="hover:text-geel transition-colors">Contact</a>
+    </nav>
+    <a href="#tarieven" class="sm:hidden font-kop text-lg font-semibold text-white/85 underline decoration-geel decoration-2 underline-offset-4">Tarieven</a>
+    <a href="tel:+31630133335" class="knop hidden sm:inline-flex items-center gap-2 border-2 border-geel text-geel hover:bg-geel hover:text-asfalt rounded-lg px-4 py-2 font-kop text-lg font-semibold tracking-wide">
+      <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      06 301 333 35
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative bg-asfalt text-white overflow-hidden grain">
+  <!-- middenlijn op de achtergrond -->
+  <div aria-hidden="true" class="middenlijn text-white/10 absolute top-0 bottom-0 left-[58%] w-1 hidden lg:block"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-10 pt-10 pb-14 md:pt-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="lg:col-span-6 order-1">
+      <p class="font-kop text-geel text-xl tracking-wide">Rijschool in Apeldoorn</p>
+      <h1 class="font-kop font-bold uppercase leading-[.88] tracking-tight text-[3.6rem] sm:text-7xl lg:text-[6.4rem] mt-3">
+        Stap voor stap naar je rijbewijs.
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-white/80 max-w-[34rem] leading-relaxed">
+        Bij René leer je rijden in je eigen tempo. Na elke les krijg je een cijfer, zodat je precies weet waar je staat. Je eerste les is gratis.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:+31630133335" class="knop inline-flex items-center justify-center gap-3 bg-geel hover:bg-[#ffc649] text-asfalt rounded-xl px-7 py-4 font-kop font-bold text-2xl tracking-wide shadow-[0_14px_30px_-12px_rgba(247,181,44,.6)]">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel voor je gratis proefles
+        </a>
+        <a href="mailto:info@rvandervegt.nl?subject=Gratis%20proefles" class="text-white/85 hover:text-geel underline decoration-geel decoration-2 underline-offset-[6px] text-lg font-bold">
+          Of mail René
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 order-2 relative flex justify-center lg:justify-end">
+      <div class="relative w-[82%] sm:w-[60%] lg:w-[78%] max-w-[440px]">
+        <div class="boog overflow-hidden border-[6px] border-asfalt2 shadow-[0_40px_80px_-30px_rgba(0,0,0,.8)]">
+          <img src="assets/site-01.jpg" alt="De zwarte lesauto van Rijschool R van der Vegt met L-bord op het dak" class="w-full aspect-[4/5] object-cover object-[50%_60%]" width="768" height="1024" fetchpriority="high">
+        </div>
+        <img src="assets/logo-oud.png" alt="" aria-hidden="true" class="absolute -left-6 sm:-left-14 -bottom-7 w-[70%] max-w-[300px] -rotate-6 drop-shadow-[0_16px_24px_rgba(0,0,0,.55)]">
+      </div>
+    </div>
+  </div>
+  <!-- wegrand -->
+  <div aria-hidden="true" class="streep-h text-geel h-1 w-full"></div>
+</section>
+
+<!-- Tarieven -->
+<section id="tarieven" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-bold uppercase text-5xl md:text-6xl leading-[.95] tracking-tight">Wat kost rijles bij René?</h2>
+      <p class="mt-5 text-lg text-berm max-w-md leading-relaxed">Duidelijke prijzen, zonder kleine lettertjes. Twijfel je nog? Kom eerst een keer gratis meerijden.</p>
+
+      <dl class="mt-10 border-t-2 border-asfalt">
+        <div class="flex items-baseline justify-between gap-4 py-5 border-b border-asfalt/15">
+          <dt class="text-lg">Rijles <span class="text-berm">(60 minuten)</span></dt>
+          <dd class="font-kop font-bold text-3xl tabular-nums">€ 65,-</dd>
+        </div>
+        <div class="flex items-baseline justify-between gap-4 py-5 border-b border-asfalt/15">
+          <dt class="text-lg">Praktijkexamen</dt>
+          <dd class="font-kop font-bold text-3xl tabular-nums">€ 325,-</dd>
+        </div>
+        <div class="flex items-baseline justify-between gap-4 py-5 border-b border-asfalt/15">
+          <dt class="text-lg">Proefles</dt>
+          <dd class="font-kop font-bold text-3xl">Gratis</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="lg:col-span-7 flex flex-col gap-6 lg:pt-4">
+      <article class="kenteken rounded-2xl p-8 md:p-12 relative overflow-hidden">
+        <div aria-hidden="true" class="absolute left-0 top-0 bottom-0 w-10 md:w-14 bg-eublauw rounded-l-2xl flex items-center justify-center">
+          <span class="font-kop font-semibold text-white tracking-[.3em] text-sm md:text-base [writing-mode:vertical-rl] rotate-180">ACTIE</span>
+        </div>
+        <div class="pl-10 md:pl-14">
+          <h3 class="font-kop font-bold uppercase text-3xl md:text-4xl leading-none">Startpakket</h3>
+          <p class="mt-3 text-lg md:text-xl max-w-md">De eerste 10 rijlessen en je praktijkexamen in één keer.</p>
+          <p class="mt-6 font-kop font-bold text-7xl md:text-8xl leading-none tabular-nums">€ 795,-</p>
+          <a href="tel:+31630133335" class="knop mt-8 inline-flex items-center gap-2 bg-asfalt text-white hover:bg-black rounded-xl px-6 py-3 font-kop font-semibold text-xl tracking-wide">Vraag het pakket aan</a>
+        </div>
+      </article>
+
+      <div class="rounded-2xl bg-white p-7 md:p-8 flex gap-6 items-start shadow-[0_20px_40px_-28px_rgba(30,34,39,.45)]">
+        <div aria-hidden="true" class="shrink-0 w-14 h-14 rounded-xl bg-asfalt text-geel flex items-center justify-center font-kop font-bold text-2xl">+1</div>
+        <div>
+          <h3 class="font-kop font-bold text-2xl md:text-3xl leading-tight">Theorie gehaald vóór je 10e les? Dan krijg je een les cadeau.</h3>
+          <p class="mt-2 text-berm">Haal je theorie-examen voordat je aan je tiende rijles begint, en je ontvangt 1 gratis les.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze RIS -->
+<section id="werkwijze" class="bg-white py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-5 lg:sticky lg:top-10">
+      <img src="assets/site-02.jpg" alt="Logo van Rijopleiding in Stappen (RIS)" class="w-full max-w-md rounded-2xl" width="1836" height="623" loading="lazy">
+      <h2 class="mt-10 font-kop font-bold uppercase text-5xl md:text-6xl leading-[.95] tracking-tight">Je ziet zelf hoe ver je bent.</h2>
+      <p class="mt-5 text-lg text-berm leading-relaxed max-w-md">
+        René leidt op volgens RIS, de Rijopleiding In Stappen. Je leert het rijden in overzichtelijke stappen, en na elke les houdt je cijferkaart bij hoe het gaat. Zo weet je altijd wat je volgende doel is.
+      </p>
+    </div>
+
+    <div class="lg:col-span-7">
+      <h3 class="font-kop font-semibold text-2xl text-berm">Wat RIS je oplevert</h3>
+      <ul class="mt-6 relative">
+        <span aria-hidden="true" class="middenlijn text-geel absolute left-[22px] top-2 bottom-2 w-1"></span>
+        <li class="relative flex gap-6 pb-10">
+          <span aria-hidden="true" class="relative z-10 shrink-0 w-12 h-12 rounded-full bg-asfalt border-4 border-white"></span>
+          <div class="pt-1.5">
+            <p class="font-kop font-bold text-3xl leading-tight">Een hoger slagingspercentage</p>
+          </div>
+        </li>
+        <li class="relative flex gap-6 pb-10">
+          <span aria-hidden="true" class="relative z-10 shrink-0 w-12 h-12 rounded-full bg-asfalt border-4 border-white"></span>
+          <div class="pt-1.5">
+            <p class="font-kop font-bold text-3xl leading-tight">Een aanpak stap voor stap</p>
+          </div>
+        </li>
+        <li class="relative flex gap-6 pb-10">
+          <span aria-hidden="true" class="relative z-10 shrink-0 w-12 h-12 rounded-full bg-asfalt border-4 border-white"></span>
+          <div class="pt-1.5">
+            <p class="font-kop font-bold text-3xl leading-tight">Inzicht in je vooruitgang door een cijferkaart</p>
+          </div>
+        </li>
+        <li class="relative flex gap-6">
+          <span aria-hidden="true" class="relative z-10 shrink-0 w-12 h-12 rounded-full bg-geel border-4 border-white"></span>
+          <div class="pt-1.5">
+            <p class="font-kop font-bold text-3xl leading-tight">Beter voorbereid op het echte verkeer</p>
+          </div>
+        </li>
+      </ul>
+
+      <figure class="mt-14 bg-wegwit rounded-2xl p-8 md:p-10 border-l-[6px] border-geel">
+        <blockquote class="text-xl md:text-2xl leading-relaxed">
+          "Na elke les krijg je cijfers, waardoor je zelf doelen kan stellen. Hierdoor ben ik eerder gemotiveerd om nog meer mijn best te doen."
+        </blockquote>
+        <figcaption class="mt-5 font-kop font-semibold text-xl">Freek Teunen<span class="text-berm font-medium">, leerling</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Ervaringen -->
+<section id="ervaringen" class="py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-5 lg:px-10">
+    <h2 class="font-kop font-semibold text-2xl text-berm">Wat leerlingen over René zeggen</h2>
+    <figure class="mt-6">
+      <blockquote class="font-kop font-bold text-4xl md:text-6xl leading-[1.02] tracking-tight">
+        "René is een gezellige rij-instructeur waardoor ik elke keer weer uitkeek naar een rijles. Ook geeft hij goed en prettig les."
+      </blockquote>
+      <figcaption class="mt-8 flex items-center gap-4">
+        <span aria-hidden="true" class="streep-h text-geel h-1 w-16"></span>
+        <span class="text-lg font-bold">Wendy</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-asfalt text-white relative overflow-hidden grain">
+  <div aria-hidden="true" class="streep-h text-geel h-1 w-full"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-10 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop font-bold uppercase text-5xl md:text-7xl leading-[.92] tracking-tight">Plan je gratis proefles.</h2>
+      <p class="mt-5 text-lg text-white/75 max-w-md leading-relaxed">Bel of mail René, dan spreken jullie samen een moment af voor je eerste les.</p>
+
+      <a href="tel:+31630133335" class="knop mt-8 inline-flex items-center gap-3 bg-geel hover:bg-[#ffc649] text-asfalt rounded-xl px-7 py-4 font-kop font-bold text-2xl tracking-wide">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        06 301 333 35
+      </a>
+
+      <dl class="mt-12 grid sm:grid-cols-2 gap-8 text-lg">
+        <div>
+          <dt class="font-kop font-semibold text-geel text-xl">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@rvandervegt.nl" class="hover:text-geel underline underline-offset-4 decoration-white/30">info@rvandervegt.nl</a></dd>
+        </div>
+        <div>
+          <dt class="font-kop font-semibold text-geel text-xl">Adres</dt>
+          <dd class="mt-1 not-italic">Musketiersveld 235<br>7327 GV Apeldoorn</dd>
+        </div>
+        <div class="sm:col-span-2 border-t border-white/15 pt-6">
+          <dt class="font-kop font-semibold text-geel text-xl">Les afzeggen</dt>
+          <dd class="mt-1 text-white/80">Kun je niet? Bel je les minimaal 24 uur van tevoren af.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@rvandervegt.nl" method="post" enctype="text/plain" class="lg:col-span-6 bg-asfalt2 rounded-2xl p-7 md:p-10 self-start">
+      <h3 class="font-kop font-bold text-3xl">Liever een bericht sturen?</h3>
+      <p class="mt-2 text-white/65">René neemt contact met je op.</p>
+      <div class="mt-7 grid gap-5">
+        <label class="grid gap-2">
+          <span class="font-bold">Naam</span>
+          <input required name="naam" autocomplete="name" class="bg-asfalt border border-white/15 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:border-geel focus:outline-none" placeholder="Je naam">
+        </label>
+        <label class="grid gap-2">
+          <span class="font-bold">Telefoonnummer</span>
+          <input required name="telefoon" type="tel" autocomplete="tel" class="bg-asfalt border border-white/15 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:border-geel focus:outline-none" placeholder="06 ...">
+        </label>
+        <label class="grid gap-2">
+          <span class="font-bold">Bericht</span>
+          <textarea name="bericht" rows="4" class="bg-asfalt border border-white/15 rounded-lg px-4 py-3 text-white placeholder-white/35 focus:border-geel focus:outline-none" placeholder="Bijvoorbeeld: ik wil graag een gratis proefles."></textarea>
+        </label>
+        <button type="submit" class="knop justify-self-start bg-white text-asfalt hover:bg-geel rounded-xl px-6 py-3 font-kop font-bold text-xl tracking-wide">Verstuur bericht</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-black text-white/60">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-sm">
+    <img src="assets/logo-oud.png" alt="Rijschool R-VD-VEGT" class="h-8 w-auto self-start md:self-auto" width="820" height="173" loading="lazy">
+    <p>Autorijschool R van der Vegt, Musketiersveld 235, 7327 GV Apeldoorn</p>
+    <p><a href="tel:+31630133335" class="hover:text-geel">06 301 333 35</a> <span class="mx-2 text-white/25">|</span> <a href="mailto:info@rvandervegt.nl" class="hover:text-geel">info@rvandervegt.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-asfalt/95 backdrop-blur border-t border-white/10">
+  <a href="tel:+31630133335" class="flex items-center justify-center gap-3 bg-geel text-asfalt rounded-xl py-3.5 font-kop font-bold text-xl tracking-wide">
+    <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel René: 06 301 333 35
+  </a>
+</div>
+
+</body>
+</html>
