@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vee- en Vleeshandel Mulder | Halal slagerij en groothandel in Twello</title>
+<meta name="description" content="Ambachtelijke slagerij en groothandel in Twello. Specialist in het halal slachten van schapen, lammeren en geiten. Ook rund, kalf en kip. Voor thuis, horeca en catering.">
+<link rel="icon" href="assets/site-09.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          rood: '#D71F26', bloed: '#A8171C', antraciet: '#2C2C2A',
+          tegel: '#F3F2F0', steen: '#6F6C69'
+        },
+        fontFamily: {
+          kop: ['"Big Shoulders Display"', 'Impact', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; color: #2C2C2A; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: "Big Shoulders Display", Impact, sans-serif; letter-spacing: -0.01em; line-height: .9; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* De mes-snede: schuine rand op de hero-foto */
+  .snede { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+  @media (min-width: 1024px) { .snede { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); } }
+  .schuin-top { clip-path: polygon(0 3.5rem, 100% 0, 100% 100%, 0 100%); }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #D71F26; outline-offset: 3px; }
+  .lijst li { border-bottom: 1px solid rgba(44,44,42,.12); padding: .55rem 0; }
+  .lijst-donker li { border-bottom-color: rgba(255,255,255,.14); }
+  .belbalk { transition: transform .3s ease; }
+  .js .belbalk.verstopt { transform: translateY(110%); }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-foto img { transform: scale(1.06); transition: transform 1.4s cubic-bezier(.2,.7,.2,1); }
+    .js.geladen .hero-foto img { transform: scale(1); }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white pb-20 lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-antraciet text-white/80 text-xs sm:text-sm text-center py-2 px-4">
+  Demo voor Vee En Vleeshandel Mulder B.V., gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white border-b border-antraciet/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 shrink-0" aria-label="Vee- en Vleeshandel Mulder, naar boven">
+      <img src="assets/site-09.png" alt="Logo Mulder Vee en Vlees" class="h-12 lg:h-16 w-auto -my-1">
+      <span class="hidden sm:block leading-tight">
+        <span class="block text-[15px] font-semibold">Vee- en Vleeshandel Mulder</span>
+        <span class="block text-xs text-steen">Slagerij en groothandel, Twello</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#voor-wie" class="hover:text-rood transition-colors">Voor wie</a>
+      <a href="#assortiment" class="hover:text-rood transition-colors">Assortiment</a>
+      <a href="#barbecue" class="hover:text-rood transition-colors">Barbecue &amp; catering</a>
+      <a href="#over-ons" class="hover:text-rood transition-colors">Over ons</a>
+      <a href="#langskomen" class="hover:text-rood transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:+31571276907" class="knop inline-flex items-center gap-2 rounded-md bg-antraciet hover:bg-rood text-white px-4 py-2.5 text-sm font-semibold">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+      <span class="hidden sm:inline">0571 276 907</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden bg-white">
+  <div class="lg:grid lg:grid-cols-12 lg:min-h-[calc(100dvh-7.5rem)] lg:max-h-[820px]">
+    <div class="hero-foto snede relative h-[230px] sm:h-[340px] lg:h-auto lg:col-span-7 lg:col-start-6 lg:row-start-1 overflow-hidden bg-antraciet">
+      <img src="assets/site-08.jpg" alt="De lange vleesvitrine in de winkel van Mulder in Twello, vol lam, rund en kip" class="absolute inset-0 w-full h-full object-cover object-[30%_60%]">
+    </div>
+    <div class="relative lg:col-span-6 lg:col-start-1 lg:row-start-1 flex items-center px-5 sm:px-8 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-0 pt-6 pb-10 lg:py-16 z-10">
+      <div class="max-w-xl">
+        <p class="text-[15px] font-semibold text-rood">Halal slagerij en groothandel in Twello</p>
+        <h1 class="kop mt-3 text-[3.6rem] sm:text-7xl lg:text-[7.25rem] font-black uppercase text-antraciet" style="font-weight:900">Gesneden zoals u het wilt.</h1>
+        <p class="mt-5 text-lg text-antraciet/80 max-w-md leading-relaxed">Vers lam, rund, kalf en kip, door vakmensen op maat gemaakt. Voor uw eigen keuken, uw restaurant of uw feest.</p>
+        <div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a href="tel:+31571276907" class="knop inline-flex items-center gap-3 rounded-md bg-rood hover:bg-bloed text-white px-7 py-4 text-lg font-semibold shadow-[0_10px_24px_-10px_rgba(168,23,28,.7)]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+            Bel 0571 276 907
+          </a>
+          <a href="#langskomen" class="font-semibold underline decoration-rood decoration-2 underline-offset-4 hover:text-rood">Openingstijden en route</a>
+        </div>
+        <p class="mt-7 flex items-center gap-2 text-sm text-steen">
+          <span class="text-rood tracking-tight" aria-hidden="true">★★★★☆</span>
+          <span><strong class="text-antraciet">4,2</strong> op Google, uit 175 reviews</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOOR WIE -->
+<section id="voor-wie" class="bg-tegel py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl">
+      <h2 class="kop text-5xl lg:text-6xl font-black uppercase" style="font-weight:900">Particulier of zakelijk, u bent welkom.</h2>
+      <p class="mt-4 text-lg text-antraciet/75 leading-relaxed">In onze winkel en groothandel helpen we iedereen. Kies hieronder wat bij u past.</p>
+    </div>
+
+    <div class="mt-12 grid gap-5 lg:grid-cols-12 lg:grid-rows-[auto_auto]">
+      <!-- Winkel -->
+      <article class="lg:col-span-7 lg:row-span-2 bg-white rounded-lg overflow-hidden grid sm:grid-cols-2">
+        <img src="assets/google-05.jpg" alt="Volle vitrine met kipfilet, merguez, kippenhartjes en garnering" class="w-full h-72 sm:h-full object-cover">
+        <div class="p-7 lg:p-9 flex flex-col justify-center">
+          <h3 class="kop text-4xl font-black uppercase" style="font-weight:900">Voor thuis</h3>
+          <p class="mt-4 leading-relaxed text-antraciet/80">Loop binnen en kies uit een volle vitrine. Lam, rund, kalf, kip en merguez. Wilt u het anders gesneden, of in een bepaald gewicht? Vraag het aan de toonbank.</p>
+          <dl class="mt-6 text-sm space-y-1.5 bg-tegel rounded-md p-4">
+            <div class="flex justify-between gap-4"><dt class="text-steen">ma</dt><dd class="font-medium">09:00 tot 17:00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-steen">di t/m vr</dt><dd class="font-medium">09:00 tot 18:00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-steen">za</dt><dd class="font-medium">09:00 tot 16:00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-steen">zo</dt><dd class="font-medium">gesloten</dd></div>
+          </dl>
+          <a href="https://www.google.com/maps/search/?api=1&query=Nijverheidsstraat+42+7391+ZV+Twello" class="pt-6 font-semibold text-rood hover:text-bloed underline underline-offset-4">Route naar de winkel</a>
+        </div>
+      </article>
+
+      <!-- Horeca -->
+      <article class="lg:col-span-5 bg-antraciet text-white rounded-lg p-7 lg:p-9">
+        <h3 class="kop text-4xl font-black uppercase" style="font-weight:900">Horeca en catering</h3>
+        <p class="mt-4 leading-relaxed text-white/80">Restaurant, cateraar of bedrijfskeuken? Wij leveren vers vlees op maat gesneden, in het gewicht en de verpakking die bij uw keuken past. Onze verkoopadviseurs denken mee en maken een offerte op maat.</p>
+        <p class="mt-4 text-sm text-white/60">Groothandel open ma t/m vr, 07:00 tot 15:00</p>
+        <a href="mailto:info@muldervlees.nl?subject=Offerte%20horeca" class="knop mt-6 inline-flex rounded-md border-2 border-white/80 hover:bg-white hover:text-antraciet px-5 py-2.5 font-semibold">Vraag een offerte aan</a>
+      </article>
+
+      <!-- Offerdier -->
+      <article class="lg:col-span-5 bg-rood text-white rounded-lg p-7 lg:p-9">
+        <h3 class="kop text-4xl font-black uppercase" style="font-weight:900">Offerdier of slachten in opdracht</h3>
+        <p class="mt-4 leading-relaxed text-white/90">Het hele jaar door kunt u bij ons een offerdier laten slachten. Maak hiervoor even een afspraak. Ook bedrijven die hun slachtingen willen uitbesteden helpen we graag.</p>
+        <a href="tel:+31571276907" class="knop mt-6 inline-flex rounded-md bg-white text-bloed hover:bg-antraciet hover:text-white px-5 py-2.5 font-semibold">Bel voor een afspraak</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ASSORTIMENT -->
+<section id="assortiment" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-end">
+      <h2 class="kop lg:col-span-6 text-5xl lg:text-7xl font-black uppercase" style="font-weight:900">Wat er in de vitrine ligt.</h2>
+      <p class="lg:col-span-5 lg:col-start-8 text-lg text-antraciet/75 leading-relaxed">Een greep uit ons assortiment. Alles kunnen we voor u op maat maken: in stukken, gewichten en verpakkingen naar wens. Staat uw stuk er niet bij? Bel ons gerust.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4">
+      <img src="assets/google-06.jpg" alt="Rundvlees met rozemarijn, peterselie en rode pepers in de vitrine" class="col-span-2 lg:col-span-7 h-56 sm:h-80 w-full object-cover rounded-lg">
+      <img src="assets/google-07.jpg" alt="Bakken met kipfilet, kippendijen, kippenhartjes en merguez" class="col-span-2 lg:col-span-5 h-56 sm:h-80 w-full object-cover rounded-lg">
+    </div>
+
+    <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-10 gap-y-12">
+      <div>
+        <h3 class="kop text-4xl font-black uppercase text-rood" style="font-weight:900">Lam</h3>
+        <p class="mt-2 text-sm text-steen">Onze specialiteit, halal geslacht.</p>
+        <ul class="lijst mt-4 text-[15px]">
+          <li>Lamsrack</li><li>Lamskotelet</li><li>Lamsachterbout</li><li>Lamsnek</li><li>Lamsspareribs</li><li>Lamsrollade</li><li>Lamszadel</li><li>Lamsstoofvlees</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="kop text-4xl font-black uppercase text-rood" style="font-weight:900">Rund</h3>
+        <p class="mt-2 text-sm text-steen">Van gehakt tot T-bone.</p>
+        <ul class="lijst mt-4 text-[15px]">
+          <li>Runder rib eye</li><li>Runderhaas</li><li>Kogelbiefstuk (Simmentaler)</li><li>T-bone steak</li><li>Rundertournedo's</li><li>Runderklapstuk</li><li>Rundergehakt</li><li>Rundertong</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="kop text-4xl font-black uppercase text-rood" style="font-weight:900">Kalf</h3>
+        <p class="mt-2 text-sm text-steen">Mild van smaak, snel klaar.</p>
+        <ul class="lijst mt-4 text-[15px]">
+          <li>Kalfsbiefstuk</li><li>Kalfshaas</li><li>Kalfsschnitzel</li><li>Kalfsoester</li><li>Kalfs rib eye</li><li>Kalfssucade</li><li>Ossobuco</li><li>Kalfsrollade</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="kop text-4xl font-black uppercase text-rood" style="font-weight:900">Kip</h3>
+        <p class="mt-2 text-sm text-steen">Heel, in delen of gemarineerd.</p>
+        <ul class="lijst mt-4 text-[15px]">
+          <li>Hele kip</li><li>Kipfilet</li><li>Kippendijen</li><li>Kippenvleugels</li><li>Kippenlever</li><li>Kippenhart</li><li>Kippenmaag</li><li>Kipschnitzel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BARBECUE & CATERING -->
+<section id="barbecue" class="schuin-top bg-antraciet text-white pt-28 pb-20 lg:pt-36 lg:pb-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <img src="assets/google-04.jpg" alt="Schalen met gemarineerde kip, hamburgers, spiesjes, kofta en merguez, klaar voor de barbecue" class="lg:col-span-5 w-full h-[420px] lg:h-[620px] object-cover rounded-lg">
+    <div class="lg:col-span-6 lg:col-start-7">
+      <h2 class="kop text-5xl lg:text-7xl font-black uppercase" style="font-weight:900">Feest, partij of barbecue? Wij vullen de schalen.</h2>
+      <p class="mt-6 text-lg text-white/80 leading-relaxed max-w-xl">We ondersteunen u graag bij uw catering, feesten en partijen. Voor de barbecue hebben we een ruim assortiment, inclusief premium stukken voor wie het net even beter wil.</p>
+      <ul class="lijst lijst-donker mt-8 grid sm:grid-cols-2 gap-x-10 text-white/90">
+        <li>Tomahawk</li><li>Picanha</li><li>T-bone steak</li><li>Ribeye</li><li>Brisket</li><li>Bavette</li><li class="sm:col-span-2">Diverse lamsspecialiteiten</li>
+      </ul>
+      <a href="tel:+31571276907" class="knop mt-9 inline-flex items-center gap-3 rounded-md bg-rood hover:bg-white hover:text-bloed px-6 py-3.5 font-semibold">Bespreek uw bestelling: 0571 276 907</a>
+    </div>
+  </div>
+</section>
+
+<!-- OVER ONS -->
+<section id="over-ons" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-7">
+      <h2 class="kop text-5xl lg:text-6xl font-black uppercase" style="font-weight:900">Een familiebedrijf met vakmensen.</h2>
+      <div class="mt-6 space-y-4 text-lg text-antraciet/80 leading-relaxed max-w-2xl">
+        <p>Vee- en Vleeshandel Mulder is een familiebedrijf, gespecialiseerd in het islamitisch slachten van schapen, lammeren en geiten. Daarnaast vindt u bij ons een ruim assortiment rundvlees, kalfsvlees en kip.</p>
+        <p>Kwaliteit staat voorop. Ons bedrijf voldoet aan alle HACCP-eisen en onze medewerkers zijn SVO-gecertificeerd. Zo weet u zeker dat uw vlees veilig en verantwoord is verwerkt.</p>
+      </div>
+      <blockquote class="mt-12 border-l-4 border-rood pl-6 lg:pl-8">
+        <p class="kop text-3xl lg:text-[2.75rem] font-extrabold uppercase leading-[0.95]" style="font-weight:800">Of u nu een islamitische of niet-islamitische achtergrond heeft, bij ons bent u altijd van harte welkom.</p>
+      </blockquote>
+    </div>
+    <aside class="lg:col-span-4 lg:col-start-9 self-end">
+      <figure class="bg-tegel rounded-lg p-7 lg:p-8">
+        <div class="flex items-baseline gap-3">
+          <span class="kop text-6xl font-black" style="font-weight:900">4,2</span>
+          <span class="text-sm text-steen leading-snug">gemiddeld op Google<br>uit 175 reviews</span>
+        </div>
+        <blockquote class="mt-6 text-lg leading-relaxed">"Uitstekende productkwaliteit, service en prijzen.Excellent quality cuts of lamb, chicken, and meat. Very good prices."</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="text-rood" aria-label="5 van 5 sterren">★★★★★</span> <strong class="ml-1">Pablo Rojas</strong>, via Google</figcaption>
+      </figure>
+    </aside>
+  </div>
+</section>
+
+<!-- LANGSKOMEN -->
+<section id="langskomen" class="bg-tegel py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-5xl lg:text-[4.25rem] font-black uppercase" style="font-weight:900">Kom langs in Twello.</h2>
+      <address class="not-italic mt-8 text-lg leading-relaxed">
+        Vee- en Vleeshandel Mulder B.V.<br>
+        Nijverheidsstraat 42<br>
+        7391 ZV Twello
+      </address>
+      <div class="mt-6 flex flex-col gap-2 text-lg">
+        <a href="tel:+31571276907" class="font-semibold hover:text-rood">0571 276 907</a>
+        <a href="mailto:info@muldervlees.nl" class="font-semibold hover:text-rood">info@muldervlees.nl</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Nijverheidsstraat+42+7391+ZV+Twello" class="text-rood underline underline-offset-4 hover:text-bloed">Open in Google Maps</a>
+      </div>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-bold">Winkel</h3>
+          <dl class="mt-3 text-[15px] space-y-1.5">
+            <div class="flex justify-between gap-4"><dt class="text-steen">Maandag</dt><dd>09:00 tot 17:00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-steen">Di t/m vr</dt><dd>09:00 tot 18:00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-steen">Zaterdag</dt><dd>09:00 tot 16:00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-steen">Zondag</dt><dd>Gesloten</dd></div>
+          </dl>
+        </div>
+        <div>
+          <h3 class="font-bold">Groothandel</h3>
+          <dl class="mt-3 text-[15px] space-y-1.5">
+            <div class="flex justify-between gap-4"><dt class="text-steen">Ma t/m vr</dt><dd>07:00 tot 15:00</dd></div>
+          </dl>
+          <p class="mt-4 text-sm text-steen leading-relaxed">Offerdier laten slachten? Maak telefonisch een afspraak.</p>
+        </div>
+      </div>
+    </div>
+
+    <form action="mailto:info@muldervlees.nl" method="post" enctype="text/plain" class="lg:col-span-6 lg:col-start-7 bg-white rounded-lg p-7 lg:p-10 self-start">
+      <h3 class="kop text-4xl font-black uppercase" style="font-weight:900">Stuur ons een bericht</h3>
+      <p class="mt-2 text-antraciet/70">Voor een bestelling, offerte of vraag. Haast? Bel ons gewoon even.</p>
+      <div class="mt-7 grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-sm font-medium">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-antraciet/20 bg-tegel/50 px-4 py-3 focus:border-rood"></label>
+        <label class="block"><span class="text-sm font-medium">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-md border border-antraciet/20 bg-tegel/50 px-4 py-3 focus:border-rood"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-medium">E-mail</span>
+          <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-antraciet/20 bg-tegel/50 px-4 py-3 focus:border-rood"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-medium">Waar kunnen we u mee helpen?</span>
+          <textarea name="bericht" rows="5" required class="mt-1.5 w-full rounded-md border border-antraciet/20 bg-tegel/50 px-4 py-3 focus:border-rood" placeholder="Bijvoorbeeld: 4 kilo lamsachterbout voor zaterdag"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-6 w-full sm:w-auto rounded-md bg-antraciet hover:bg-rood text-white px-7 py-3.5 font-semibold">Verstuur bericht</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-antraciet text-white/70">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col sm:flex-row gap-8 sm:items-center justify-between">
+    <div class="flex items-center gap-4">
+      <span class="bg-white rounded-md p-1.5"><img src="assets/site-09.png" alt="Logo Mulder Vee en Vlees" class="h-12 w-auto"></span>
+      <p class="text-sm leading-relaxed">Vee- en Vleeshandel Mulder B.V.<br>Nijverheidsstraat 42, 7391 ZV Twello</p>
+    </div>
+    <p class="text-sm">HACCP en SVO-gecertificeerd. Halal geslacht.</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div id="belbalk" class="belbalk lg:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-t border-antraciet/10 p-3 flex gap-3">
+  <a href="tel:+31571276907" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-md bg-rood text-white py-3.5 font-semibold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Bel 0571 276 907
+  </a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Nijverheidsstraat+42+7391+ZV+Twello" class="inline-flex items-center justify-center rounded-md border-2 border-antraciet/80 px-4 font-semibold">Route</a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  window.addEventListener('load', function () { document.documentElement.classList.add('geladen'); });
+  (function () {
+    var balk = document.getElementById('belbalk');
+    function check() { balk.classList.toggle('verstopt', window.scrollY < 420); }
+    check(); window.addEventListener('scroll', check, { passive: true });
+  })();
+</script>
+</body>
+</html>

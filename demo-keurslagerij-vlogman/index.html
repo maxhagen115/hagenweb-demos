@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keurslagerij Vlogman | Uw keurslager in Vorden</title>
+<meta name="description" content="Keurslagerij Vlogman aan de Zutphenseweg 16 in Vorden. Vers vlees, huisgemaakte specialiteiten, gourmet, BBQ en verhuur. Bel 0575 551 321.">
+<meta property="og:title" content="Keurslagerij Vlogman, verstand van lekker vlees">
+<meta property="og:image" content="assets/winkel-toonbank.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231C2A5A'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-weight='700' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#1C2A5A',
+        inkdeep: '#141F45',
+        rood: '#C8102E',
+        roodhover: '#A50D26',
+        tegel: '#F6F7F8',
+        voeg: '#DDE1E6',
+        lei: '#3D4452',
+      },
+      fontFamily: {
+        slab: ['"Zilla Slab"', 'Georgia', 'serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; color: #1C2A5A; background: #F6F7F8; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .tegels {
+    background-color: #F6F7F8;
+    background-image:
+      linear-gradient(#E8EBEE 1px, transparent 1px),
+      linear-gradient(90deg, #E8EBEE 1px, transparent 1px);
+    background-size: 44px 44px;
+    background-position: -1px -1px;
+  }
+  .hero-foto { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+  @media (min-width: 1024px) {
+    .hero-foto { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+  }
+  .folder { transform: rotate(-2.2deg); box-shadow: 0 30px 50px -20px rgba(20,31,69,.45); }
+  .tape { position:absolute; width: 110px; height: 30px; background: rgba(255,255,255,.65); border: 1px solid rgba(28,42,90,.08); }
+  .bord-rij { border-bottom: 1px dashed rgba(255,255,255,.22); }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #C8102E; outline-offset: 3px; border-radius: 4px;
+  }
+  .js .vandaag { background: #fff; box-shadow: inset 4px 0 0 #C8102E; font-weight: 600; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="antialiased pb-20 lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white px-4 py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkdeep text-white/80 text-[13px] text-center py-1.5 px-4">
+  Demo voor Keurslagerij Vlogman, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-white/90">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-white border-b border-voeg sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-baseline gap-2 shrink-0" aria-label="Keurslagerij Vlogman, naar boven">
+      <span class="font-slab font-bold text-[26px] leading-none tracking-tight text-ink">Vlogman</span>
+      <span class="font-slab italic font-medium text-[17px] text-rood">keurslager</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-lei">
+      <a href="#actie" class="hover:text-rood transition-colors">Actie van de week</a>
+      <a href="#assortiment" class="hover:text-rood transition-colors">Assortiment</a>
+      <a href="#bestellen" class="hover:text-rood transition-colors">Bestellen</a>
+      <a href="#bezoek" class="hover:text-rood transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:0575551321" class="knop hidden sm:inline-flex items-center gap-2 bg-ink hover:bg-inkdeep text-white text-[15px] font-semibold px-4 py-2.5 rounded-md">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      0575 551 321
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="tegels relative overflow-hidden">
+  <div class="lg:grid lg:grid-cols-12 lg:min-h-[640px]">
+    <div class="hero-foto relative h-[300px] sm:h-[400px] lg:h-auto lg:col-start-6 lg:col-span-7 lg:row-start-1">
+      <img src="assets/winkel-toonbank.jpg" alt="Slager Vlogman lachend voor de toonbank met vleeswaren in de winkel in Vorden"
+           class="absolute inset-0 w-full h-full object-cover object-[78%_30%] lg:object-[70%_center]">
+    </div>
+    <div class="relative lg:col-start-1 lg:col-span-6 lg:row-start-1 flex items-center">
+      <div class="w-full max-w-xl px-5 pt-4 pb-10 lg:pb-16 lg:pt-16 lg:pl-8 xl:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-4">
+        <p class="font-medium text-lei text-[15px] mb-3 lg:mb-5">Keurslager aan de Zutphenseweg in Vorden</p>
+        <h1 class="font-slab font-bold text-ink text-[44px] sm:text-6xl lg:text-[76px] leading-[0.95] tracking-[-0.02em]">
+          Verstand van lekker vlees.
+        </h1>
+        <p class="mt-5 lg:mt-7 text-[17px] lg:text-lg leading-relaxed text-lei max-w-[30rem]">
+          Vers vlees, huisgemaakte specialiteiten en eerlijk advies aan de toonbank. Bel uw bestelling door of kom gewoon even langs.
+        </p>
+        <div class="mt-7 lg:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <a href="tel:0575551321" class="knop inline-flex items-center gap-3 bg-rood hover:bg-roodhover text-white font-semibold text-lg px-7 py-4 rounded-md shadow-[0_12px_24px_-10px_rgba(200,16,46,.6)]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Bel 0575 551 321
+          </a>
+          <a href="https://vlogman.keurslager.nl/assortiment" class="font-semibold text-ink underline decoration-2 decoration-rood underline-offset-[6px] hover:text-rood transition-colors">Bestel online</a>
+        </div>
+        <p class="mt-8 flex items-center gap-2.5 text-[15px] text-lei">
+          <span class="text-rood tracking-[0.15em] text-base" aria-hidden="true">★★★★★</span>
+          <span><strong class="text-ink font-semibold">4,8</strong> uit 66 Google-reviews</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Actie van de week -->
+<section id="actie" class="bg-ink text-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+    <div class="lg:col-span-5">
+      <p class="font-slab italic text-[22px] text-white/70 mb-3">Elke week iets anders</p>
+      <h2 class="font-slab font-bold text-[40px] sm:text-5xl leading-[1.02] tracking-[-0.015em]">Deze week aan de toonbank</h2>
+      <p class="mt-6 text-lg leading-relaxed text-white/80 max-w-md">
+        Elke week zetten wij scherpe aanbiedingen uit onze eigen toonbank voor u klaar. Kom langs in de winkel, of bestel vooraf online en haal het op wanneer het u uitkomt.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="https://vlogman.keurslager.nl/" class="knop inline-flex items-center bg-rood hover:bg-roodhover text-white font-semibold px-6 py-3.5 rounded-md">Bestel in de webshop</a>
+        <a href="tel:0575551321" class="font-semibold text-white underline decoration-white/40 underline-offset-[6px] hover:decoration-white">Of bel de winkel</a>
+      </div>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7 flex justify-center">
+      <figure class="relative max-w-[440px] w-full">
+        <span class="tape -top-3 left-1/2 -translate-x-1/2 rotate-[-4deg]" aria-hidden="true"></span>
+        <img src="assets/actie-week-45.jpg" alt="Folder met de aanbiedingen van week 45 bij Keurslagerij Vlogman, onder meer kipfilet, slavinken en een soeppakket"
+             class="folder w-full rounded-sm bg-white">
+        <figcaption class="mt-6 text-center text-sm text-white/60">Aanbiedingen week 45, geldig van 2 tot en met 8 november</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Assortiment -->
+<section id="assortiment" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+      <h2 class="lg:col-span-7 font-slab font-bold text-[40px] sm:text-5xl lg:text-[58px] leading-[1.0] tracking-[-0.02em]">Huisgemaakt, opgeknoopt en vers gesneden.</h2>
+      <p class="lg:col-span-5 text-lg leading-relaxed text-lei">
+        Van een puur stukje vlees tot de fijnste vleeswaren, de lekkerste specialiteiten en kant-en-klare maaltijden. Vraag ons gerust welk stuk het beste past bij uw gerecht.
+      </p>
+    </div>
+
+    <div class="mt-14 lg:mt-20 grid md:grid-cols-2 gap-x-14 gap-y-12">
+      <article class="border-t-4 border-rood pt-6">
+        <h3 class="font-slab font-bold text-[28px] leading-tight">De Kanjerspies</h3>
+        <p class="mt-3 text-lei leading-relaxed max-w-[34rem]">Barbecueën, maar dan anders dan met een speklapje en een karbonade. Een rol vlees uit onze eigen worstmakerij: u snijdt eraf wat u lekker vindt en bakt het even op in een pannetje of een grote partypan.</p>
+      </article>
+      <article class="border-t-4 border-ink pt-6">
+        <h3 class="font-slab font-bold text-[28px] leading-tight">Rollades, op de oude manier geknoopt</h3>
+        <p class="mt-3 text-lei leading-relaxed max-w-[34rem]">Onze welbekende rollades knopen wij op traditionele wijze op. Normaal, licht of pittig gekruid. Iets speciaals nodig? Vraag het aan de toonbank.</p>
+      </article>
+      <article class="border-t-4 border-ink pt-6">
+        <h3 class="font-slab font-bold text-[28px] leading-tight">Gourmet Mix and Match</h3>
+        <p class="mt-3 text-lei leading-relaxed max-w-[34rem]">Stel uw eigen gourmet samen met precies wat u lekker vindt. Ons advies: reken op twee bakjes vlees per persoon. Liever kant-en-klaar? Wij hebben ook complete gourmet- en fondueschotels.</p>
+      </article>
+      <article class="border-t-4 border-rood pt-6">
+        <h3 class="font-slab font-bold text-[28px] leading-tight">BBQ, pannen, tenten en tafels huren</h3>
+        <p class="mt-3 text-lei leading-relaxed max-w-[34rem]">Een feest geven? Reserveer bij ons een gasbarbecue, partypan, koelwagen, partytent of biertafel, met de barbecuepakketten erbij. U krijgt van ons een bevestiging per mail of telefoon.</p>
+      </article>
+    </div>
+
+    <!-- Prijsbord -->
+    <div class="mt-16 lg:mt-24 bg-ink text-white rounded-lg px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+      <div class="flex flex-wrap items-baseline justify-between gap-4 mb-8">
+        <h3 class="font-slab font-bold text-3xl">Het hele assortiment</h3>
+        <a href="https://vlogman.keurslager.nl/assortiment" class="font-semibold underline decoration-rood decoration-2 underline-offset-[6px] hover:text-white/80">Bekijk en bestel online</a>
+      </div>
+      <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 text-[17px] text-white/90">
+        <li class="bord-rij py-3">Rundvlees</li>
+        <li class="bord-rij py-3">Varkensvlees</li>
+        <li class="bord-rij py-3">Tante Door kip</li>
+        <li class="bord-rij py-3">Gehaktproducten</li>
+        <li class="bord-rij py-3">Rollades</li>
+        <li class="bord-rij py-3">Vleeswaren, ook dikker gesneden</li>
+        <li class="bord-rij py-3">Grillproducten, huisgemaakt</li>
+        <li class="bord-rij py-3">Vlugklaar</li>
+        <li class="bord-rij py-3">Maaltijden en soepen</li>
+        <li class="bord-rij py-3">Salades</li>
+        <li class="bord-rij py-3">Kruiden en sauzen</li>
+        <li class="bord-rij py-3">Stokbrood en deegwaren</li>
+        <li class="bord-rij py-3">Gourmet- en fondueschotels</li>
+        <li class="bord-rij py-3">Barbecuepakketten en specialiteiten</li>
+        <li class="bord-rij py-3">Partypannen</li>
+        <li class="bord-rij py-3">Vleespakketten en cadeaubonnen</li>
+        <li class="bord-rij py-3">Kerst, oud en nieuw en Pasen</li>
+        <li class="bord-rij py-3">Verhuur voor uw feest</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="tegels">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-14">
+      <figure class="lg:col-span-7">
+        <p class="text-rood tracking-[0.15em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-5 font-slab font-semibold text-[26px] sm:text-[32px] lg:text-[36px] leading-[1.22] tracking-[-0.01em] text-ink">
+          "De mussen vallen dood van het dak, en ik had zin in een rollade. Slager Vlogman draait zijn hand er niet voor om , om te plekke een schouder filet rollade voor mij te maken. En lekker dat die was! Wat een vakman!"
+        </blockquote>
+        <figcaption class="mt-6 text-lei"><strong class="text-ink font-semibold">Diana Morssink</strong>, via Google</figcaption>
+        <div class="mt-10 flex items-center gap-4 border-t border-voeg pt-6">
+          <span class="font-slab font-bold text-5xl text-ink">4,8</span>
+          <span class="text-lei leading-snug">gemiddeld uit 66 reviews<br>op Google</span>
+        </div>
+      </figure>
+      <div class="lg:col-span-5 space-y-5">
+        <figure class="bg-white rounded-md p-6 border border-voeg">
+          <blockquote class="leading-relaxed">"Aardig personeel , veel kennis . Kon voor een speciaal stukje vlees wel hier terecht , maar niet in Zutphen... Het was de fietstocht waard"</blockquote>
+          <figcaption class="mt-3 text-sm text-lei"><strong class="text-ink">Hunri Beats</strong>, 5 sterren</figcaption>
+        </figure>
+        <figure class="bg-white rounded-md p-6 border border-voeg">
+          <blockquote class="leading-relaxed">"Zeer vriendelijke slagerij, kwam nog net voor sluitings tijd en werd nog netjes geholpen! Dat noemen ze Klantvriendelijkheid !!!"</blockquote>
+          <figcaption class="mt-3 text-sm text-lei"><strong class="text-ink">Peter Gort</strong>, 4 sterren</figcaption>
+        </figure>
+        <figure class="bg-white rounded-md p-6 border border-voeg">
+          <blockquote class="leading-relaxed">"Hele goede slager met goede producten en goede service. Vriendelijk personeel"</blockquote>
+          <figcaption class="mt-3 text-sm text-lei"><strong class="text-ink">Ria van Linschooten</strong>, 5 sterren</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bestellen -->
+<section id="bestellen" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <div class="lg:col-span-7">
+        <h2 class="font-slab font-bold text-[40px] sm:text-5xl leading-[1.02] tracking-[-0.015em]">Bestellen zoals het u uitkomt</h2>
+        <p class="mt-5 text-lg leading-relaxed text-lei max-w-xl">Haal uw boodschappen gewoon aan de toonbank, of zet een bestelling vooraf klaar. Dan ligt alles vers voor u klaar als u binnenkomt.</p>
+      </div>
+      <aside class="lg:col-span-5 bg-rood text-white rounded-md p-7 lg:p-8 relative overflow-hidden">
+        <h3 class="font-slab font-bold text-[28px] leading-tight">De feestdagen komen eraan</h3>
+        <p class="mt-3 leading-relaxed text-white/90">Bestel tijdig uw kerst-, oud en nieuw- of paasmenu. Gourmet, fondue, rollade of een vleespakket als cadeau: wij zorgen dat het vers en op tijd klaarligt.</p>
+        <a href="tel:0575551321" class="knop inline-flex mt-6 bg-white text-rood hover:bg-white/90 font-semibold px-5 py-3 rounded-md">Bel en bestel op tijd</a>
+      </aside>
+    </div>
+    <div class="mt-14 grid md:grid-cols-3 border-t border-voeg">
+      <div class="py-8 md:pr-8 border-b md:border-b-0 md:border-r border-voeg">
+        <h3 class="font-slab font-bold text-2xl">Online bestellen</h3>
+        <p class="mt-3 text-lei leading-relaxed">Kies uw producten in de webshop en haal ze af in de winkel in Vorden.</p>
+        <a href="https://vlogman.keurslager.nl/assortiment" class="inline-block mt-5 font-semibold text-rood hover:text-roodhover underline underline-offset-4">Naar de webshop</a>
+      </div>
+      <div class="py-8 md:px-8 border-b md:border-b-0 md:border-r border-voeg">
+        <h3 class="font-slab font-bold text-2xl">Bel de slager</h3>
+        <p class="mt-3 text-lei leading-relaxed">Persoonlijk advies of een grotere bestelling? Wij denken graag met u mee.</p>
+        <a href="tel:0575551321" class="inline-block mt-5 font-semibold text-rood hover:text-roodhover underline underline-offset-4">0575 551 321</a>
+      </div>
+      <div class="py-8 md:pl-8">
+        <h3 class="font-slab font-bold text-2xl">Kom langs</h3>
+        <p class="mt-3 text-lei leading-relaxed">Aan de toonbank helpen we u graag met advies, ook als u nog niet precies weet wat u zoekt.</p>
+        <a href="#bezoek" class="inline-block mt-5 font-semibold text-rood hover:text-roodhover underline underline-offset-4">Openingstijden en route</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bezoek & contact -->
+<section id="bezoek" class="bg-tegel border-t border-voeg">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-14">
+      <div class="lg:col-span-7">
+        <h2 class="font-slab font-bold text-[40px] sm:text-5xl leading-[1.02] tracking-[-0.015em]">Graag tot ziens in Vorden</h2>
+        <p class="mt-5 text-lg leading-relaxed text-lei max-w-xl">Achter de toonbank aan de Zutphenseweg staat ons team elke dag klaar voor vers vlees en eerlijk vakwerk. Loop gerust binnen en maak kennis.</p>
+        <img src="assets/site-04.jpg" alt="De winkel van Keurslager Vlogman aan de Zutphenseweg 16 in Vorden"
+             class="mt-10 w-full aspect-[16/10] object-cover rounded-md">
+        <div class="mt-8 grid sm:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-slab font-bold text-xl">Adres</h3>
+            <p class="mt-2 text-lei leading-relaxed">Zutphenseweg 16<br>7251 DK Vorden</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Zutphenseweg+16+7251+DK+Vorden" class="inline-block mt-3 font-semibold text-rood hover:text-roodhover underline underline-offset-4">Route in Google Maps</a>
+          </div>
+          <div>
+            <h3 class="font-slab font-bold text-xl">Contact</h3>
+            <p class="mt-2 text-lei leading-relaxed">
+              Winkel: <a href="tel:0575551321" class="text-ink font-semibold hover:text-rood">0575 551 321</a><br>
+              Mobiel: <a href="tel:+31653451705" class="text-ink font-semibold hover:text-rood">06 53451705</a><br>
+              <a href="mailto:bestellingen@vlogman.keurslager.nl" class="text-ink font-semibold hover:text-rood break-all">bestellingen@vlogman.keurslager.nl</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 space-y-10">
+        <div class="bg-white rounded-md border border-voeg overflow-hidden">
+          <h3 class="font-slab font-bold text-2xl px-6 pt-6 pb-4">Openingstijden</h3>
+          <dl class="text-[16px] tabular-nums" id="tijden">
+            <div data-dag="1" class="flex justify-between px-6 py-2.5 border-t border-voeg"><dt>Maandag</dt><dd class="text-lei">Gesloten</dd></div>
+            <div data-dag="2" class="flex justify-between px-6 py-2.5 border-t border-voeg"><dt>Dinsdag</dt><dd>08:00 tot 18:00</dd></div>
+            <div data-dag="3" class="flex justify-between px-6 py-2.5 border-t border-voeg"><dt>Woensdag</dt><dd>08:00 tot 18:00</dd></div>
+            <div data-dag="4" class="flex justify-between px-6 py-2.5 border-t border-voeg"><dt>Donderdag</dt><dd>08:00 tot 18:00</dd></div>
+            <div data-dag="5" class="flex justify-between px-6 py-2.5 border-t border-voeg"><dt>Vrijdag</dt><dd>08:00 tot 18:00</dd></div>
+            <div data-dag="6" class="flex justify-between px-6 py-2.5 border-t border-voeg"><dt>Zaterdag</dt><dd>08:00 tot 16:00</dd></div>
+            <div data-dag="0" class="flex justify-between px-6 py-2.5 border-t border-voeg"><dt>Zondag</dt><dd class="text-lei">Gesloten</dd></div>
+          </dl>
+        </div>
+
+        <form class="bg-white rounded-md border border-voeg p-6" onsubmit="event.preventDefault(); this.querySelector('[data-melding]').hidden = false; this.reset();">
+          <h3 class="font-slab font-bold text-2xl">Stuur ons een bericht</h3>
+          <p class="mt-2 text-sm text-lei">Een vraag, een bestelling of advies nodig? Wij helpen u graag.</p>
+          <label class="block mt-5 text-sm font-semibold" for="naam">Naam</label>
+          <input id="naam" name="naam" required class="mt-1.5 w-full rounded border border-voeg bg-tegel px-3 py-2.5 focus:bg-white">
+          <label class="block mt-4 text-sm font-semibold" for="contact">E-mail of telefoon</label>
+          <input id="contact" name="contact" required class="mt-1.5 w-full rounded border border-voeg bg-tegel px-3 py-2.5 focus:bg-white">
+          <label class="block mt-4 text-sm font-semibold" for="bericht">Bericht</label>
+          <textarea id="bericht" name="bericht" rows="4" required class="mt-1.5 w-full rounded border border-voeg bg-tegel px-3 py-2.5 focus:bg-white"></textarea>
+          <button type="submit" class="knop mt-5 w-full bg-ink hover:bg-inkdeep text-white font-semibold py-3 rounded-md">Bericht versturen</button>
+          <p data-melding hidden class="mt-3 text-sm text-ink">Bedankt, uw bericht is verstuurd. Wij nemen zo snel mogelijk contact met u op.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkdeep text-white/70">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div>
+      <p class="flex items-baseline gap-2">
+        <span class="font-slab font-bold text-[28px] text-white leading-none">Vlogman</span>
+        <span class="font-slab italic text-lg text-white/80">keurslager</span>
+      </p>
+      <p class="mt-3 text-sm">Zutphenseweg 16, 7251 DK Vorden</p>
+    </div>
+    <div class="text-sm md:text-right space-y-1">
+      <p><a href="tel:0575551321" class="hover:text-white">0575 551 321</a> &nbsp;/&nbsp; <a href="mailto:bestellingen@vlogman.keurslager.nl" class="hover:text-white">bestellingen@vlogman.keurslager.nl</a></p>
+      <p>Erkend Keurslager. Website: <a href="https://hagenweb.nl" class="underline hover:text-white">Hagenweb</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-voeg px-4 py-3 flex gap-3">
+  <a href="tel:0575551321" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-rood hover:bg-roodhover text-white font-semibold py-3 rounded-md">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    Bel de winkel
+  </a>
+  <a href="#bezoek" class="knop inline-flex items-center justify-center px-4 border border-voeg text-ink font-semibold rounded-md">Route</a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  var rij = document.querySelector('#tijden [data-dag="' + new Date().getDay() + '"]');
+  if (rij) { rij.classList.add('vandaag'); rij.querySelector('dt').textContent += ' (vandaag)'; }
+</script>
+</body>
+</html>
