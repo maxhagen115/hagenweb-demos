@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="nl" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emn Afbouw | Spackspuiten, stucwerk en airless spuiten uit Culemborg</title>
+<meta name="description" content="Emn Afbouw uit Culemborg werkt uw wanden en plafonds af met spackspuitwerk, stucwerk en airless spuiten. Voor woning en bedrijf, door heel Nederland. Bel 06 14 33 40 35.">
+<meta property="og:title" content="Emn Afbouw: strak tot in de hoek">
+<meta property="og:description" content="Spackspuiten, stucwerk en airless spuiten voor uw woning of bedrijf.">
+<meta property="og:image" content="assets/google-03.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          stuc: '#ECEDEB',
+          wit: '#FAFAF8',
+          gips: '#AEB3B5',
+          merk: '#23507F',
+          nacht: '#12263D',
+          tape: '#F4C22F',
+        },
+        fontFamily: {
+          kop: ['"Alfa Slab One"', 'Georgia', 'serif'],
+          tekst: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  :root { --u: clamp(26px, 3.6vw, 56px); }
+  body { font-family: 'Hanken Grotesk', system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  section[id] { scroll-margin-top: 5.5rem; }
+  :focus-visible { outline: 3px solid #23507F; outline-offset: 3px; }
+  .op-donker :focus-visible { outline-color: #F4C22F; }
+
+  /* De trap uit het logoblokje: snijdt de linkerbovenhoek van een foto weg. */
+  .trap {
+    clip-path: polygon(
+      calc(var(--u) * 3) 0, 100% 0, 100% 100%, 0 100%,
+      0 calc(var(--u) * 3), var(--u) calc(var(--u) * 3),
+      var(--u) calc(var(--u) * 2), calc(var(--u) * 2) calc(var(--u) * 2),
+      calc(var(--u) * 2) var(--u), calc(var(--u) * 3) var(--u)
+    );
+  }
+  .trap-r {
+    clip-path: polygon(
+      0 0, calc(100% - var(--u) * 3) 0, calc(100% - var(--u) * 3) var(--u),
+      calc(100% - var(--u) * 2) var(--u), calc(100% - var(--u) * 2) calc(var(--u) * 2),
+      calc(100% - var(--u)) calc(var(--u) * 2), calc(100% - var(--u)) calc(var(--u) * 3),
+      100% calc(var(--u) * 3), 100% 100%, 0 100%
+    );
+  }
+  .blok { position: absolute; width: calc(var(--u) + 1px); height: calc(var(--u) + 1px); }
+
+  /* Spackstructuur als ondergrond, licht gehouden zodat tekst goed leesbaar blijft. */
+  .spack {
+    background-color: #ECEDEB;
+    background-image: linear-gradient(rgba(236,237,235,.68), rgba(236,237,235,.68)), url('assets/site-15.jpg');
+    background-size: cover, cover;
+    background-position: center;
+  }
+
+  @media (max-width: 1023px) { #contact.spack { background-image: none; } }
+
+  .knop { transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(18,38,61,.55); }
+  .knop:active { transform: translateY(1px); box-shadow: none; }
+
+  /* Eenmalige opbouw van de blokjes bij het laden. Zonder JS staan ze gewoon op hun plek. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .blok-in { animation: blokIn .55s cubic-bezier(.2,.8,.2,1) backwards; }
+    .js .blok-in:nth-of-type(2) { animation-delay: .1s; }
+    .js .blok-in:nth-of-type(3) { animation-delay: .2s; }
+    .js .blok-in:nth-of-type(4) { animation-delay: .3s; }
+    @keyframes blokIn { from { transform: translate(calc(var(--u) * -.6), calc(var(--u) * -.6)) scale(.4); } }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-wit text-nacht antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-tape focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-nacht text-white/85 text-[13px] leading-snug text-center px-4 py-2 op-donker">
+  Demo voor Stukadoor &amp; Schilders Bedrijf, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white font-semibold">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-30 bg-wit/95 backdrop-blur border-b border-nacht/10">
+  <div class="max-w-[1360px] mx-auto px-5 lg:px-10 h-16 lg:h-[76px] flex items-center justify-between gap-6">
+    <a href="#inhoud" class="flex items-center gap-2.5" aria-label="Emn Afbouw, naar boven">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <rect x="20" y="0" width="10" height="10" fill="#AEB3B5"/>
+        <rect x="10" y="10" width="10" height="10" fill="#23507F"/>
+        <rect x="20" y="10" width="10" height="10" fill="#12263D"/>
+        <rect x="0" y="20" width="10" height="10" fill="#AEB3B5"/>
+        <rect x="10" y="20" width="10" height="10" fill="#12263D"/>
+        <rect x="20" y="20" width="10" height="10" fill="#23507F"/>
+      </svg>
+      <span class="font-kop text-[22px] leading-none tracking-wide text-merk">EMN <span class="text-nacht">Afbouw</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 font-medium text-[15px]" aria-label="Hoofdmenu">
+      <a class="hover:text-merk" href="#afwerkingen">Afwerkingen</a>
+      <a class="hover:text-merk" href="#projecten">Projecten</a>
+      <a class="hover:text-merk" href="#over">Over ons</a>
+      <a class="hover:text-merk" href="#contact">Contact</a>
+    </nav>
+    <a href="tel:+31614334035" class="font-bold text-merk whitespace-nowrap text-[15px] lg:text-[17px] hover:underline underline-offset-4">06 14 33 40 35</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="spack overflow-hidden">
+  <div class="max-w-[1360px] mx-auto lg:px-10 lg:grid lg:grid-cols-12 lg:gap-8 lg:min-h-[calc(100vh-112px)] lg:max-h-[800px]">
+    <div class="lg:col-span-6 px-5 lg:px-0 pt-8 pb-8 lg:py-16 flex flex-col justify-center">
+      <p class="font-semibold text-merk text-[15px] lg:text-lg">Stukadoor en schilder in Culemborg</p>
+      <h1 class="font-kop text-[58px] leading-[1.02] lg:text-[clamp(72px,7.2vw,108px)] mt-3 lg:mt-4">Strak tot in de hoek.</h1>
+      <p class="mt-4 lg:mt-7 text-[17px] lg:text-xl leading-relaxed max-w-[30em]">Spackspuiten, stucwerk en airless spuiten voor uw woning of bedrijf. We komen graag even langs en sturen u vrijblijvend een offerte.</p>
+      <div class="mt-6 lg:mt-9 flex flex-col sm:flex-row sm:items-center gap-x-7 gap-y-3">
+        <a id="hero-bel" href="tel:+31614334035" class="knop inline-flex items-center justify-center gap-3 bg-tape text-nacht font-bold text-xl lg:text-[22px] px-7 lg:px-9 py-[18px] lg:py-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 14 33 40 35
+        </a>
+        <a href="#contact" class="font-semibold underline underline-offset-4 decoration-2 decoration-merk/50 hover:decoration-merk text-center sm:text-left">Of vraag een offerte aan</a>
+      </div>
+      <p class="mt-5 lg:mt-7 flex items-center justify-center sm:justify-start gap-2 text-[15px]">
+        <span class="text-merk tracking-[.12em] text-lg leading-none" aria-hidden="true">★★★★★</span>
+        <span>5 sterren uit 2 reviews op Google</span>
+      </p>
+    </div>
+    <div class="lg:col-span-6 relative lg:-mr-10 xl:mr-[calc((1360px-100vw)/2-40px)] ml-5 lg:ml-0 h-[400px] sm:h-[520px] lg:h-auto">
+      <span class="blok blok-in bg-merk" style="left:0;top:calc(var(--u)*2)"></span>
+      <span class="blok blok-in bg-gips" style="left:var(--u);top:var(--u)"></span>
+      <span class="blok blok-in bg-nacht" style="left:calc(var(--u)*2);top:0"></span>
+      <img src="assets/google-03.jpg" alt="Vakman van Emn Afbouw spuit met een airless spuit een wand in een afgeplakte kamer" width="1600" height="1195" class="trap absolute inset-0 w-full h-full object-cover" style="object-position:44% 40%;filter:brightness(1.06) contrast(1.05)">
+    </div>
+  </div>
+</section>
+
+<!-- AFWERKINGEN -->
+<section id="afwerkingen" class="bg-wit py-20 lg:py-32">
+  <div class="max-w-[1360px] mx-auto px-5 lg:px-10">
+    <div class="max-w-[46rem]">
+      <h2 class="font-kop text-[38px] lg:text-[64px] leading-[1.06]">Welke afwerking past bij uw muur?</h2>
+      <p class="mt-5 text-lg lg:text-xl leading-relaxed">Spackspuit- en stucwerk verzorgen we binnen en buiten. Het schilderwerk regelen we erbij met airless spuiten. Twijfelt u? Dan kijken we graag even mee bij u op locatie.</p>
+    </div>
+
+    <article class="mt-14 lg:mt-24 lg:grid lg:grid-cols-12 lg:gap-14 lg:items-center">
+      <div class="lg:col-span-7 overflow-hidden">
+        <img src="assets/google-01-web.jpg" alt="Plafond met fijne spackstructuur en strakke v-naden" width="1400" height="788" decoding="async" class="w-full h-[260px] sm:h-[380px] lg:h-[480px] object-cover" style="transform:scale(1.3);transform-origin:50% 0;filter:brightness(1.22) contrast(1.08)">
+      </div>
+      <div class="lg:col-span-5 mt-7 lg:mt-0">
+        <h3 class="font-kop text-[30px] lg:text-[44px] leading-[1.1] text-merk">Spackspuiten</h3>
+        <p class="mt-3 text-xl lg:text-2xl font-semibold leading-snug">De voordeligste vorm van stucwerk, en ook nog eens snel.</p>
+        <p class="mt-4 text-[17px] leading-relaxed">Spack is een sierpleister die een strakke en sterke afwerking geeft. Aan de wanden hoeft weinig tot niets voorbehandeld te worden en u bepaalt zelf hoe fijn of grof de spack gespoten wordt.</p>
+        <p class="mt-4 text-[17px] leading-relaxed"><strong class="font-semibold">Kies dit als</strong> u een mooie afwerking wilt en de kosten laag wilt houden. Het kan in zowel droge als natte ruimtes, thuis of in uw bedrijfspand.</p>
+      </div>
+    </article>
+
+    <article class="mt-16 lg:mt-28 flex flex-col lg:grid lg:grid-cols-12 lg:gap-14 lg:items-center">
+      <div class="lg:col-span-5 lg:order-1 order-2 mt-7 lg:mt-0 lg:pb-6">
+        <h3 class="font-kop text-[30px] lg:text-[44px] leading-[1.1] text-merk">Stucwerk</h3>
+        <p class="mt-3 text-xl lg:text-2xl font-semibold leading-snug">Glad, zonder structuur op de muur.</p>
+        <p class="mt-4 text-[17px] leading-relaxed">Stuken geeft de muren en plafonds in uw huis een mooie gladde afwerking en een duurzaam eindresultaat. Ook buitengevels werken we af, bijvoorbeeld met fijne spachtelputz.</p>
+        <p class="mt-4 text-[17px] leading-relaxed"><strong class="font-semibold">Kies dit als</strong> u geen behoefte heeft aan structuur. Dan is glad stucwerk de beste keuze.</p>
+      </div>
+      <div class="lg:col-span-6 lg:col-start-7 lg:order-2 order-1 relative">
+        <figure>
+          <img src="assets/site-06.jpg" alt="Trappenhuis met strak gestucte schuine wanden en scherpe lijnen" width="920" height="680" decoding="async" class="trap-r w-full h-[340px] sm:h-[460px] lg:h-[580px] object-cover" style="object-position:30% 50%">
+          <figcaption class="mt-2.5 text-[15px] text-nacht/75">Trappenhuis strak gestuct</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="mt-16 lg:mt-28 lg:grid lg:grid-cols-12 lg:gap-14 lg:items-center">
+      <div class="lg:col-span-7">
+        <figure>
+          <img src="assets/site-10.jpg" alt="Woonkamer met taupe wanden, op de voorgrond de airless spuitmachine" width="920" height="680" decoding="async" class="w-full h-[280px] sm:h-[420px] lg:h-[520px] object-cover" style="object-position:50% 60%">
+          <figcaption class="mt-2.5 text-[15px] text-nacht/75">Wanden strak en glad afgewerkt</figcaption>
+        </figure>
+      </div>
+      <div class="lg:col-span-5 mt-7 lg:mt-0">
+        <h3 class="font-kop text-[30px] lg:text-[44px] leading-[1.1] text-merk">Airless spuiten</h3>
+        <p class="mt-3 text-xl lg:text-2xl font-semibold leading-snug">Snel en efficiënt een nieuwe, frisse kleur.</p>
+        <p class="mt-4 text-[17px] leading-relaxed">We spuiten latex of muurverf op uw wanden en plafonds, zonder strepen of banen. Superglad, en dat in nieuwbouw en in renovatiewoningen.</p>
+        <p class="mt-4 text-[17px] leading-relaxed"><strong class="font-semibold">Kies dit als</strong> uw muren klaar zijn voor kleur, of als u de ruimtes tegelijk met het stucwerk geregeld wilt hebben.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- KLEUR -->
+<section class="bg-stuc pt-20 lg:pt-28 pb-20 lg:pb-32 overflow-hidden">
+  <div class="max-w-[1360px] mx-auto px-5 lg:px-10">
+    <div class="lg:flex lg:items-end lg:justify-between lg:gap-14">
+      <h2 class="font-kop text-[44px] lg:text-[84px] leading-[1.02] max-w-[11em]">In elk gewenst kleur.</h2>
+      <p class="mt-4 lg:mt-0 text-lg lg:text-xl leading-relaxed lg:max-w-[22em] lg:pb-3">Wit is mooi, maar het hoeft niet. Latex of muurverf, zonder strepen of banen. Van zwart tot helemaal roze.</p>
+    </div>
+    <ul class="mt-10 lg:mt-16 grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4 lg:items-end">
+      <li class="lg:col-span-2">
+        <img src="assets/google-02.jpg" alt="Kamer met matzwarte wanden" width="1600" height="1200" decoding="async" class="w-full h-[240px] lg:h-[420px] object-cover" style="object-position:62% 50%">
+        <p class="mt-2 font-medium">Zwart</p>
+      </li>
+      <li class="lg:col-span-2">
+        <img src="assets/google-05.jpg" alt="Slaapkamer met donkerblauwe wanden en een wit plafond" width="1600" height="1200" decoding="async" class="w-full h-[240px] lg:h-[480px] object-cover" style="object-position:58% 50%">
+        <p class="mt-2 font-medium">Donkerblauw</p>
+      </li>
+      <li class="col-span-2 lg:col-span-4 order-first lg:order-none">
+        <img src="assets/site-11.jpg" alt="Volledig roze gespoten interieur met bogen en nissen" width="920" height="680" decoding="async" class="w-full h-[300px] lg:h-[580px] object-cover" style="object-position:68% 50%">
+        <p class="mt-2 font-medium">Roze, van vloer tot plafond</p>
+      </li>
+      <li class="lg:col-span-2">
+        <div class="overflow-hidden"><img src="assets/site-10.jpg" alt="Wand en plafond in een kamer met taupe wanden" width="920" height="680" decoding="async" class="w-full h-[240px] lg:h-[480px] object-cover" style="object-position:100% 50%;transform:scale(1.7);transform-origin:100% 8%"></div>
+        <p class="mt-2 font-medium">Taupe</p>
+      </li>
+      <li class="lg:col-span-2">
+        <img src="assets/site-07.jpg" alt="Keuken met wanden in een warm beige" width="920" height="680" decoding="async" class="w-full h-[240px] lg:h-[420px] object-cover" style="object-position:72% 40%">
+        <p class="mt-2 font-medium">Warm beige</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROJECTEN -->
+<section id="projecten" class="bg-wit py-20 lg:py-32">
+  <div class="max-w-[1360px] mx-auto px-5 lg:px-10">
+    <h2 class="font-kop text-[38px] lg:text-[64px] leading-[1.06] max-w-[14em]">Opgeleverd, van zolder tot bedrijfspand.</h2>
+
+    <div class="mt-10 lg:mt-16 grid grid-cols-2 lg:grid-cols-12 gap-x-3 lg:gap-x-5 gap-y-7 lg:gap-y-10 text-[15px] lg:text-base">
+      <figure class="col-span-2 lg:col-span-7">
+        <img src="assets/site-02.jpg" alt="Zolder met schuine wanden, licht en strak afgewerkt" width="920" height="680" decoding="async" class="w-full h-[280px] lg:h-[500px] object-cover">
+        <figcaption class="mt-2.5"><span class="font-semibold">Zolder licht en strak afgewerkt</span><br><span class="text-nacht/70">Airless spuiten</span></figcaption>
+      </figure>
+      <figure class="col-span-1 lg:col-span-5">
+        <img src="assets/site-01.jpg" alt="Witte moderne woning met een buitengevel in fijne spachtelputz" width="920" height="680" decoding="async" class="w-full h-[190px] lg:h-[500px] object-cover" style="object-position:55% 50%">
+        <figcaption class="mt-2.5"><span class="font-semibold">Buitengevel afgewerkt met fijne spachtelputz</span><br><span class="text-nacht/70">Stucwerk</span></figcaption>
+      </figure>
+
+      <figure class="col-span-1 lg:col-span-5">
+        <img src="assets/site-03.jpg" alt="Bedrijfspand met afgewerkte wandvlakken tussen hoge ramen" width="920" height="680" decoding="async" class="w-full h-[190px] lg:h-[400px] object-cover">
+        <figcaption class="mt-2.5"><span class="font-semibold">Bedrijfspand afgewerkt met spackspuitwerk</span><br><span class="text-nacht/70">Spackspuitwerk</span></figcaption>
+      </figure>
+      <figure class="lg:col-span-3">
+        <img src="assets/site-07.jpg" alt="Keuken met wanden in een warme tint" width="920" height="680" decoding="async" class="w-full h-[190px] lg:h-[400px] object-cover" style="object-position:62% 50%">
+        <figcaption class="mt-2.5 font-semibold">Wanden afgewerkt in warme tint</figcaption>
+      </figure>
+      <figure class="lg:col-span-4">
+        <img src="assets/site-09.jpg" alt="Strak afgewerkte lichte buitengevel onder een houten overkapping" width="920" height="680" decoding="async" class="w-full h-[190px] lg:h-[400px] object-cover">
+        <figcaption class="mt-2.5 font-semibold">Buitengevel strak afgewerkt</figcaption>
+      </figure>
+
+      <figure class="col-span-1 lg:col-span-6">
+        <img src="assets/site-11.jpg" alt="Interieur met bogen en nissen, volledig roze gespoten" width="920" height="680" decoding="async" class="w-full h-[220px] lg:h-[460px] object-cover" style="object-position:40% 50%">
+        <figcaption class="mt-2.5 font-semibold">Volledig interieur in roze afgewerkt</figcaption>
+      </figure>
+      <figure class="col-span-1 lg:col-span-6">
+        <img src="assets/site-12.jpg" alt="Lange ruimte met wanden in lichtgrijs, deur naar een roze ruimte achterin" width="900" height="680" decoding="async" class="w-full h-[220px] lg:h-[460px] object-cover" style="object-position:50% 40%">
+        <figcaption class="mt-2.5 font-semibold">Van roze naar lichtgrijs</figcaption>
+      </figure>
+
+      <figure class="col-span-1 lg:col-span-7">
+        <img src="assets/site-08.jpg" alt="Lichte woonkamer in een nieuwbouwwoning met openslaande deuren naar de tuin" width="920" height="680" decoding="async" class="w-full h-[190px] lg:h-[460px] object-cover" style="object-position:60% 55%">
+        <figcaption class="mt-2.5 font-semibold">Nieuwbouwwoning in drie kleuren afgewerkt</figcaption>
+      </figure>
+      <figure class="col-span-1 lg:col-span-5">
+        <img src="assets/site-14.jpg" alt="Woonkamer van een appartement met strakke witte wanden en plafond" width="920" height="680" decoding="async" class="w-full h-[190px] lg:h-[460px] object-cover" style="object-position:55% 60%">
+        <figcaption class="mt-2.5 font-semibold">Spackspuitwerk in appartement</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- OVER EN REVIEWS -->
+<section id="over" class="bg-merk text-white op-donker py-20 lg:py-32 overflow-hidden">
+  <div class="max-w-[1360px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-14">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop text-[38px] lg:text-[60px] leading-[1.06]">Sinds 2008 bezig met wanden en plafonds.</h2>
+      <p class="mt-6 text-lg lg:text-xl leading-relaxed text-white/90">Emn Afbouw zit in Culemborg, maar we werken door heel Nederland. Voor particulieren en voor ondernemers.</p>
+      <p class="mt-4 text-[17px] lg:text-lg leading-relaxed text-white/90">Een persoonlijke aanpak, goede materialen en vakmanschap: daar draait het bij ons om. We komen graag langs om u te adviseren over wat er bij uw wensen past, want op locatie praat dat een stuk makkelijker.</p>
+      <ul class="mt-8 space-y-3 text-[17px] lg:text-lg font-semibold">
+        <li class="flex gap-3 items-start"><span class="mt-[7px] w-3 h-3 bg-tape shrink-0" aria-hidden="true"></span>Snel en professioneel vakwerk</li>
+        <li class="flex gap-3 items-start"><span class="mt-[7px] w-3 h-3 bg-tape shrink-0" aria-hidden="true"></span>Kwaliteit en afwerking staan voorop</li>
+        <li class="flex gap-3 items-start"><span class="mt-[7px] w-3 h-3 bg-tape shrink-0" aria-hidden="true"></span>Werkzaam door heel Nederland</li>
+      </ul>
+    </div>
+    <div class="lg:col-span-6 mt-12 lg:mt-0 -mr-5 lg:-mr-10 xl:mr-[calc((1360px-100vw)/2-40px)] relative h-[260px] lg:h-auto">
+      <img src="assets/site-04-web.jpg" alt="Stukadoorsspanen vol opgedroogde stuc" width="1400" height="1104" decoding="async" class="trap absolute inset-0 w-full h-full object-cover" style="object-position:60% 55%">
+    </div>
+
+    <div class="lg:col-span-12 mt-14 lg:mt-20 lg:grid lg:grid-cols-12 lg:gap-14 lg:items-start border-t border-white/25 pt-10 lg:pt-14">
+      <blockquote class="lg:col-span-8">
+        <p class="text-tape tracking-[.12em] text-xl leading-none" aria-label="5 van de 5 sterren">★★★★★</p>
+        <p class="mt-4 text-[26px] lg:text-[40px] font-medium leading-[1.25]">&ldquo;Plafond spackspuitwerk laten doen en dit werd heel mooi afgewerkt. Betrouwbaar en professioneel, aanrader!&rdquo;</p>
+        <footer class="mt-4 text-white/85">Chuck Li, 4 jaar geleden</footer>
+      </blockquote>
+      <blockquote class="lg:col-span-4 mt-10 lg:mt-0">
+        <p class="text-tape tracking-[.12em] text-xl leading-none" aria-label="5 van de 5 sterren">★★★★★</p>
+        <p class="mt-4 text-[22px] lg:text-[26px] font-medium leading-snug">&ldquo;Top ervaring met dit bedrijf!&rdquo;</p>
+        <footer class="mt-3 text-white/85">Amir M., 6 jaar geleden</footer>
+        <p class="mt-6 text-[15px] text-white/75">Beide reviews staan op Google, waar u ons vindt als Stukadoor &amp; Schilders Bedrijf.</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="spack py-20 lg:py-32">
+  <div class="max-w-[1360px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-14">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop text-[38px] lg:text-[60px] leading-[1.06]">Zullen we even komen kijken?</h2>
+      <p class="mt-5 text-lg lg:text-xl leading-relaxed max-w-[30em]">Vragen of liever direct een offerte? Op uw verzoek sturen we die vrijblijvend toe, of we komen eerst even langs.</p>
+      <a href="tel:+31614334035" class="knop inline-flex mt-8 bg-tape font-kop text-[28px] sm:text-[36px] lg:text-[44px] leading-none px-6 lg:px-8 py-5 lg:py-6 whitespace-nowrap">06 14 33 40 35</a>
+
+      <dl class="mt-10 grid sm:grid-cols-[8.5rem_1fr] gap-x-6 gap-y-1 sm:gap-y-3 text-[17px]">
+        <dt class="font-semibold mt-3 sm:mt-0">WhatsApp</dt>
+        <dd><a class="underline underline-offset-4 decoration-merk/50 hover:decoration-merk" href="https://api.whatsapp.com/send?phone=31614334035">Direct een bericht sturen</a></dd>
+        <dt class="font-semibold mt-3 sm:mt-0">E-mail</dt>
+        <dd><a class="underline underline-offset-4 decoration-merk/50 hover:decoration-merk" href="mailto:info@emnafbouw.nl">info@emnafbouw.nl</a></dd>
+        <dt class="font-semibold mt-3 sm:mt-0">Adres</dt>
+        <dd>Weidsteeg 61, 4102 AB Culemborg</dd>
+        <dt class="font-semibold mt-3 sm:mt-0">Open</dt>
+        <dd>Maandag t/m zondag, 24 uur geopend</dd>
+      </dl>
+    </div>
+
+    <form action="mailto:info@emnafbouw.nl?subject=Aanvraag%20via%20de%20website" method="post" enctype="text/plain" class="lg:col-span-6 mt-12 lg:mt-0 bg-wit p-6 lg:p-10 text-[17px]">
+      <h3 class="font-kop text-2xl lg:text-[32px] leading-tight">Vraag het direct aan</h3>
+
+      <fieldset class="mt-6">
+        <legend class="font-semibold">Ik wil graag</legend>
+        <div class="mt-2 flex flex-wrap gap-x-6 gap-y-2">
+          <label class="flex items-center gap-2.5"><input type="radio" name="Ik wil graag" value="Een vrijblijvende offerte" checked class="w-5 h-5 accent-merk"> Een vrijblijvende offerte</label>
+          <label class="flex items-center gap-2.5"><input type="radio" name="Ik wil graag" value="Bel me terug" class="w-5 h-5 accent-merk"> Bel me terug</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mt-6">
+        <legend class="font-semibold">Ik ben geïnteresseerd in</legend>
+        <div class="mt-2 flex flex-wrap gap-x-6 gap-y-2">
+          <label class="flex items-center gap-2.5"><input type="checkbox" name="Interesse" value="Spackspuiten" class="w-5 h-5 accent-merk"> Spackspuiten</label>
+          <label class="flex items-center gap-2.5"><input type="checkbox" name="Interesse" value="Stucwerk" class="w-5 h-5 accent-merk"> Stucwerk</label>
+          <label class="flex items-center gap-2.5"><input type="checkbox" name="Interesse" value="Airless spuiten" class="w-5 h-5 accent-merk"> Airless spuiten</label>
+        </div>
+      </fieldset>
+
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block font-semibold">Naam *
+          <input required type="text" name="Naam" autocomplete="name" class="mt-1.5 block w-full font-normal bg-stuc border-0 border-b-2 border-nacht/40 px-3 py-3 focus:border-merk">
+        </label>
+        <label class="block font-semibold">Telefoon *
+          <input required type="tel" name="Telefoon" autocomplete="tel" class="mt-1.5 block w-full font-normal bg-stuc border-0 border-b-2 border-nacht/40 px-3 py-3 focus:border-merk">
+        </label>
+        <label class="block font-semibold">E-mail
+          <input type="email" name="E-mail" autocomplete="email" class="mt-1.5 block w-full font-normal bg-stuc border-0 border-b-2 border-nacht/40 px-3 py-3 focus:border-merk">
+        </label>
+        <label class="block font-semibold">Locatie
+          <input type="text" name="Locatie" class="mt-1.5 block w-full font-normal bg-stuc border-0 border-b-2 border-nacht/40 px-3 py-3 focus:border-merk">
+        </label>
+      </div>
+
+      <label class="mt-5 flex gap-3 items-start text-[15px] leading-snug">
+        <input required type="checkbox" name="Toestemming" value="Ja" class="mt-0.5 w-5 h-5 shrink-0 accent-merk">
+        <span>Hierbij geef ik emnafbouw.nl toestemming om mijn gegevens te gebruiken voor het verwerken van dit formulier. *</span>
+      </label>
+
+      <button type="submit" class="knop mt-6 w-full sm:w-auto bg-merk text-white font-bold text-lg px-8 py-4 hover:bg-nacht">Verstuur aanvraag</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-nacht text-white/80 op-donker text-[15px] pb-[72px] lg:pb-0">
+  <div class="max-w-[1360px] mx-auto px-5 lg:px-10 py-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+    <p class="font-kop text-white text-xl tracking-wide">EMN Afbouw</p>
+    <nav class="flex flex-wrap gap-x-6 gap-y-1" aria-label="Voettekst">
+      <a class="hover:text-white" href="#afwerkingen">Afwerkingen</a>
+      <a class="hover:text-white" href="#projecten">Projecten</a>
+      <a class="hover:text-white" href="#over">Over ons</a>
+      <a class="hover:text-white" href="#contact">Contact</a>
+    </nav>
+    <p>Culemborg, KVK-nummer 08172079</p>
+  </div>
+</footer>
+
+<div id="belbalk" class="lg:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-[1fr_auto] bg-nacht p-2 gap-2 transition-transform duration-200">
+  <a href="tel:+31614334035" class="bg-tape text-nacht font-bold text-lg text-center py-3.5">Bel 06 14 33 40 35</a>
+  <a href="https://api.whatsapp.com/send?phone=31614334035" class="bg-white/10 text-white font-semibold text-center px-4 py-3.5">WhatsApp</a>
+</div>
+
+<script>
+  new IntersectionObserver(function (e) {
+    document.getElementById('belbalk').style.transform = e[0].isIntersecting ? 'translateY(100%)' : '';
+  }).observe(document.getElementById('hero-bel'));
+</script>
+</body>
+</html>

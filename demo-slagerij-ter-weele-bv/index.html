@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slagerij Ter Weele, zelfslachtende slager in Oene</title>
+<meta name="description" content="Zelfslachtende slager aan de Houtweg 8 in Oene. Vers vlees, droge worst, wild en grote stukken voor de barbecue. Bel 0578 641 205.">
+<meta property="og:title" content="Slagerij Ter Weele, zelfslachtende slager in Oene">
+<meta property="og:description" content="Zelf geslacht. Dat proef je. Vers vlees, droge worst en wild aan de Houtweg 8 in Oene.">
+<meta property="og:image" content="assets/site-04.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: { extend: {
+      colors: { fascia:'#141C29', fasciadiep:'#0E141E', lijst:'#E8762C', tegel:'#F6F7F5', krijt:'#D5DAE0' },
+      fontFamily: { kop:['Gloock','Georgia','serif'], tekst:['"Libre Franklin"','system-ui','sans-serif'] }
+    } }
+  };
+</script>
+<style>
+  :root { --schild-punt: 71%; --schild-h: min(21rem,42dvh); }
+  body { font-family:'Libre Franklin',system-ui,sans-serif; color:#1B2230; background:#F6F7F5; }
+  h1,h2,h3,.kop { font-family:'Gloock',Georgia,serif; font-weight:400; letter-spacing:-.01em; text-wrap:balance; }
+  p { text-wrap:pretty; }
+  :focus-visible { outline:3px solid #E8762C; outline-offset:3px; }
+
+  /* Het logoschild, zonder de witte rand van het bestand */
+  .logo { display:block; position:relative; aspect-ratio:1; overflow:hidden;
+          clip-path:polygon(0 0,100% 0,100% var(--schild-punt),50% 100%,0 var(--schild-punt)); }
+  .logo img { position:absolute; width:116.9%; max-width:none; height:auto; left:-8.44%; top:-8.44%; }
+
+  /* De hero-foto als groot schild aan de bovenrand */
+  .hero { position:relative; background:#141C29; border-bottom:8px solid #E8762C; }
+  .schild { position:absolute; z-index:20; top:0; right:1rem; width:calc(100% - 7rem); height:var(--schild-h);
+            background:#E8762C; clip-path:polygon(0 0,100% 0,100% 80%,50% 100%,0 80%); }
+  .schild img { position:absolute; inset:0 5px 5px 5px; width:calc(100% - 10px); height:calc(100% - 7px); object-fit:cover; object-position:6% 50%;
+                clip-path:polygon(0 0,100% 0,100% 79.6%,50% 100%,0 79.6%); }
+  @media (min-width:1024px) {
+    .schild { right:max(2.5rem,calc((100vw - 1320px)/2)); width:min(42vw,600px); height:calc(100% + 5.5rem); }
+    .schild img { inset:0 8px 8px 8px; width:calc(100% - 16px); height:calc(100% - 11px); object-position:9% 50%; }
+  }
+
+  .heroTekst { padding-top:calc(var(--schild-h) - 76px + .9rem); }
+  @media (min-width:1024px) { .heroTekst { padding-top:1.5rem; } }
+
+  /* Witte tegelwand uit de winkel */
+  .tegels { background-color:#F6F7F5;
+            background-image:linear-gradient(#E2E5E1 1px,transparent 1px),linear-gradient(90deg,#E2E5E1 1px,transparent 1px);
+            background-size:76px 76px; }
+
+  /* Krijtborden met oranje rand, zoals in de zaak */
+  .bord { --r:0deg; position:relative; aspect-ratio:4/5; background:#E8762C; transform:rotate(var(--r)); transform-origin:50% 0;
+          clip-path:polygon(50% 0,100% 16%,100% 84%,50% 100%,0 84%,0 16%);
+          }
+  .bord > div { position:absolute; inset:6px; background:#141C29; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center;
+                text-align:center; padding:0 .75rem; gap:.4rem;
+                clip-path:polygon(50% 0,100% 16%,100% 84%,50% 100%,0 84%,0 16%); }
+  .bord h3 { font-size:clamp(1.35rem,3vw,2.3rem); line-height:1.05; }
+  .bord p { font-size:clamp(.875rem,1.5vw,1.08rem); line-height:1.35; color:#D5DAE0; max-width:14em; }
+  .bordhanger { filter:drop-shadow(0 10px 12px rgba(20,28,41,.28)); }
+  .bordhanger:nth-child(even) { margin-top:2.25rem; }
+  @media (min-width:1024px) { .bordhanger:nth-child(even) { margin-top:3.25rem; } }
+  html.js .bord.zwaai { animation:zwaai 1.5s cubic-bezier(.3,.7,.3,1) both; }
+  @keyframes zwaai { 0%{transform:rotate(calc(var(--r) - 3.5deg))} 40%{transform:rotate(calc(var(--r) + 1.6deg))} 70%{transform:rotate(calc(var(--r) - .6deg))} 100%{transform:rotate(var(--r))} }
+
+  .knop { display:inline-flex; align-items:center; justify-content:center; gap:.65rem; background:#E8762C; color:#141C29; font-weight:600;
+          padding:1.05rem 1.6rem; border-radius:3px; transition:background-color .2s,transform .2s; }
+  .knop:hover { background:#F28A45; transform:translateY(-2px); }
+  .knop:active { transform:translateY(1px); }
+  .rustig { text-decoration:underline; text-decoration-color:#E8762C; text-decoration-thickness:2px; text-underline-offset:.3em; transition:color .2s; }
+  .rustig:hover { color:#E8762C; }
+
+  blockquote { hanging-punctuation:first; }
+
+  /* Vaste belknop op mobiel. Zichtbaar zonder JS; met JS pas zodra de heroknop uit beeld is. */
+  .belbalk { position:fixed; z-index:40; left:.75rem; right:.75rem; bottom:.75rem; transition:transform .25s,visibility .25s; box-shadow:0 8px 24px rgba(14,20,30,.35); }
+  html.js .belbalk { transform:translateY(calc(100% + 1.5rem)); visibility:hidden; }
+  html.js .belbalk.toon { transform:none; visibility:visible; }
+  @media (min-width:1024px) { .belbalk { display:none; } }
+
+  @media (prefers-reduced-motion:reduce) {
+    html.js .bord.zwaai { animation:none; }
+    .knop,.belbalk { transition:none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="relative z-30 bg-fasciadiep text-krijt text-xs sm:text-[13px] text-center px-3 py-2">
+  Demo voor Slagerij Ter Weele B.V., gemaakt door <a class="text-white underline underline-offset-2" href="https://hagenweb.nl">Hagenweb</a>
+</div>
+
+<header class="hero text-white">
+  <div class="schild">
+    <img src="assets/site-04.jpg" width="1000" height="750" alt="Slager in witte schort snijdt vlees aan de werkbank, op de achtergrond tillen twee collega's een karkas">
+  </div>
+
+  <div class="relative mx-auto max-w-[1320px] px-4 lg:px-10 lg:min-h-[calc(100dvh-110px)] lg:flex lg:flex-col">
+    <div class="flex items-start gap-10">
+      <a href="#" class="logo w-[76px] lg:w-[112px] shrink-0 relative z-30" aria-label="Slagerij Ter Weele, naar boven">
+        <img src="assets/logo-oud.png" width="180" height="180" alt="Logo ter Weele, zelfslachtende slager">
+      </a>
+      <nav aria-label="Hoofdmenu" class="hidden lg:flex gap-7 pt-7 text-[15px] font-medium">
+        <a class="hover:text-lijst transition-colors" href="#assortiment">Assortiment</a>
+        <a class="hover:text-lijst transition-colors" href="#vak">Het vak</a>
+        <a class="hover:text-lijst transition-colors" href="#barbecue">Barbecue</a>
+        <a class="hover:text-lijst transition-colors" href="#winkel">De winkel</a>
+        <a class="hover:text-lijst transition-colors" href="#langskomen">Langskomen</a>
+      </nav>
+    </div>
+
+    <div class="heroTekst pb-7 lg:pb-14 lg:my-auto lg:max-w-[47%] xl:max-w-[640px]">
+      <p class="text-krijt text-[15px] lg:text-lg mb-2 lg:mb-4">Zelfslachtende slager in Oene</p>
+      <h1 class="text-[3.2rem] leading-[1] sm:text-7xl lg:text-[5.4rem] xl:text-[6.4rem]">Zelf geslacht. Dat proef je.</h1>
+      <p class="mt-3 lg:mt-6 text-[17px] lg:text-xl leading-snug lg:leading-relaxed text-krijt max-w-[32rem]">Vers vlees, droge worst en wild van uw eigen slager. Kom langs, of bel even wat u nodig hebt.</p>
+      <div class="mt-5 lg:mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a id="heroknop" href="tel:+31578641205" class="knop text-lg lg:text-xl w-full sm:w-auto">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.100.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1l-2.300 2.200z"/></svg>
+          Bel 0578 641 205
+        </a>
+        <a href="#langskomen" class="rustig text-[15px] lg:text-base hidden sm:inline">Route en openingstijden</a>
+      </div>
+      <p class="mt-3 lg:mt-6 text-sm lg:text-[15px] text-krijt flex items-center gap-2">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#E8762C"><path d="M12 2.500l2.900 6.300 6.900.8-5.100 4.700 1.400 6.800-6.100-3.500-6.100 3.500 1.400-6.800L2.200 9.600l6.900-.8z"/></svg>
+        4,8 op Google, uit 311 reviews
+      </p>
+    </div>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- De tegelwand met krijtborden -->
+  <section id="assortiment" class="tegels pt-14 lg:pt-28 pb-16 lg:pb-24 overflow-x-clip">
+    <div class="mx-auto max-w-[1320px] px-4 lg:px-10">
+      <div class="max-w-[38rem]">
+        <h2 class="text-4xl lg:text-6xl leading-[1.05]">Dit halen klanten hier.</h2>
+        <p class="mt-4 text-lg leading-relaxed">Dit noemen klanten zelf in hun reviews. Wat er vandaag op de krijtborden staat, ziet u in de winkel, of hoort u als u belt.</p>
+      </div>
+
+      <div class="mt-10 lg:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-x-3 sm:gap-x-6 lg:gap-x-10 gap-y-2 lg:gap-y-6 pb-8">
+        <div class="bordhanger"><article class="bord" style="--r:-1.200deg"><div><h3>Runder&shy;lapjes</h3><p>Kant en klaar. Alleen opwarmen.</p></div></article></div>
+        <div class="bordhanger"><article class="bord" style="--r:.800deg"><div><h3>Wildstoof</h3><p>Rijst of aardappel erbij en u eet.</p></div></article></div>
+        <div class="bordhanger"><article class="bord" style="--r:-.500deg"><div><h3>Spare ribs</h3><p>Ook die hoeft u alleen nog op te warmen.</p></div></article></div>
+        <div class="bordhanger"><article class="bord" style="--r:1.300deg"><div><h3>Ribeye</h3><p>Een stuk van een paar kilo? Dat kan.</p></div></article></div>
+        <div class="bordhanger"><article class="bord" style="--r:1deg"><div><h3>Coleslaw</h3><p>Amerikaans, ook voor een hele tafel.</p></div></article></div>
+        <div class="bordhanger"><article class="bord" style="--r:-.900deg"><div><h3>Melkmoes</h3><p>Ook bekend als kruutmoes. Zelf bereid.</p></div></article></div>
+        <div class="bordhanger"><article class="bord" style="--r:.600deg"><div><h3>Droge worst en copa</h3><p>Runder droge worst, saucisse bologne en meer.</p></div></article></div>
+        <div class="bordhanger"><article class="bord" style="--r:-1.100deg"><div><h3>Kadobon</h3><p>Stijlvol, om iemand blij mee te maken.</p></div></article></div>
+      </div>
+
+      <figure class="mt-10 lg:mt-14">
+        <div class="h-56 sm:h-80 lg:h-[34rem] overflow-hidden"><img loading="lazy" class="w-full h-[116%] object-cover object-top max-w-none" src="assets/google-08.jpg" width="1599" height="899" alt="Rieten manden op de toonbank met verpakte saucisse bologne en runder droge worst, met prijskaartjes en de ter Weele-labels"></div>
+        <figcaption class="mt-3 text-[15px]">Saucisse bologne met grove peperkorrel en runder droge worst, in de mand op de toonbank.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Van de wei tot de toonbank -->
+  <section id="vak" class="bg-white py-16 lg:py-28">
+    <div class="mx-auto max-w-[1320px] px-4 lg:px-10 grid lg:grid-cols-12 gap-6 lg:gap-8">
+      <div class="lg:col-span-5 lg:pr-8 lg:pb-10">
+        <h2 class="text-4xl lg:text-6xl leading-[1.05]">Van de wei tot de toonbank.</h2>
+        <p class="mt-5 text-lg leading-relaxed">Zelfslachtend staat niet voor niets op ons schild. Bij ons komt het vlees niet kant en klaar binnen. We slachten zelf, en daarna snijden en bereiden we het ook zelf.</p>
+        <p class="mt-4 text-lg leading-relaxed">Dat is werk dat u terugziet in de toonbank, en proeft op uw bord.</p>
+      </div>
+      <figure class="lg:col-span-7 lg:row-span-1">
+        <img loading="lazy" class="w-full h-64 lg:h-[26rem] object-cover" src="assets/site-02.jpg" width="1500" height="950" alt="Roodbruine runderen liggend en staand in het hoge gras van een zonnige wei">
+      </figure>
+      <figure class="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-8">
+        <img loading="lazy" class="w-full h-56 lg:h-[30rem] object-cover object-center col-span-2 lg:col-span-1" src="assets/google-06.jpg" width="721" height="1600" alt="Lange rekken vol ringworsten, gehangen op metalen stangen">
+      </figure>
+      <figure class="lg:col-span-8">
+        <img loading="lazy" class="w-full h-64 lg:h-[30rem] object-cover" src="assets/site-03.jpg" width="1000" height="750" alt="Twee rauwe entrecotes op wit slagerspapier met een hakmes en een takje peterselie">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Barbecue -->
+  <section id="barbecue" class="bg-fascia text-white border-y-8 border-lijst">
+    <div class="mx-auto max-w-[1320px] lg:px-10 grid lg:grid-cols-12 items-center gap-0 lg:gap-14">
+      <img loading="lazy" class="lg:col-span-7 w-full h-72 sm:h-96 lg:h-[38rem] object-cover object-bottom lg:-my-2" src="assets/google-02.jpg" width="1600" height="900" alt="Stalen vuurschaal met daarin het ter Weele-logo uitgesneden, met daarop vlees en spiesjes op de plaat en het rooster">
+      <div class="lg:col-span-5 px-4 lg:px-0 py-12 lg:py-20">
+        <h2 class="text-4xl lg:text-[3.4rem] leading-[1.05]">Voor de barbecue mag het wat groter.</h2>
+        <blockquote class="mt-6 text-lg leading-relaxed text-krijt">
+          “Ik heb gisteren voor 12 mensen ribeye op de houtskool BBQ klaargemaakt. Daarvoor heb ik een werkelijk prachtig stuk ribeye van een paar kilo in Oene opgehaald, samen met 1,5 kilo Amerikaanse cowl slaw. Mijn gasten waren lyrisch over de malsheid van de plakjes vlees die ik heb uitgeserveerd en eveneens over de heerlijke…”
+          <footer class="mt-3 text-white font-medium">Coos Paulusma, op Google, 5 van de 5 sterren</footer>
+        </blockquote>
+        <p class="mt-7 text-lg">Iets groots op het vuur? <a class="rustig text-white font-medium" href="tel:+31578641205">Bel even wat u van plan bent.</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- De winkel -->
+  <section id="winkel" class="py-16 lg:py-28 bg-tegel">
+    <div class="mx-auto max-w-[1320px] px-4 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+      <div class="lg:col-span-5 relative">
+        <img loading="lazy" class="w-full h-[30rem] lg:h-[44rem] object-cover object-center" src="assets/google-04.jpg" width="1200" height="1600" alt="Houten winkelkast met schapenvachten, potten op rij, gewei op de plank, boeken en een bronzen stier">
+      </div>
+      <div class="lg:col-span-7">
+        <h2 class="text-4xl lg:text-6xl leading-[1.05] max-w-[14em]">Een winkel om even in rond te kijken.</h2>
+        <p class="mt-5 text-lg leading-relaxed max-w-[36rem]">Houten schappen tot aan het plafond, schapenvachten aan de wand, gewei op de plank en potten op rij. En natuurlijk de krijtborden boven de toonbank.</p>
+        <div class="mt-9 lg:mt-12 grid sm:grid-cols-[1fr_13rem] gap-8 items-end">
+          <blockquote class="kop text-2xl lg:text-[2rem] leading-tight">
+            “Eerste indruk: een toonbank waar je stil van wordt”
+            <footer class="font-tekst text-base mt-4 tracking-normal">tim van wieringen, op Google, 5 van de 5 sterren</footer>
+          </blockquote>
+          <img loading="lazy" class="w-44 sm:w-full" src="assets/site-06.jpg" width="300" height="489" alt="Slager in donkere ter Weele-schort met een mes in de hand, tussen een karkas en een opgezet wild zwijn">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-[1320px] px-4 lg:px-10">
+      <div class="flex flex-wrap items-baseline gap-x-5 gap-y-1">
+        <span class="kop text-7xl lg:text-8xl text-lijst">4,8</span>
+        <h2 class="text-2xl lg:text-3xl">uit 311 reviews op Google</h2>
+      </div>
+      <div class="mt-10 lg:mt-14 grid lg:grid-cols-[5fr_3.6fr_3.6fr] gap-10 lg:gap-x-14">
+        <blockquote class="text-2xl lg:text-[1.9rem] leading-snug kop">
+          “Wow wat een snoeperij! Van alles van droë wors tot copa en vers vlees. Als Zuid-Afrikaanse is dit een lust voor het oog en de maag. Goede prijs kwaliteit en echt vakwerk! Top en zeker aan te raden”
+          <footer class="font-tekst text-base mt-4 tracking-normal">Renée Viljoen, 5 van de 5 sterren</footer>
+        </blockquote>
+        <blockquote class="text-lg leading-relaxed">
+          “Een van de vijf meesterslagers in Nederland. Dat proef je? Rondje om de kerk in Oene te vinden. Wij genieten van de runderlapjes, wildstoof en spare ribs. Alleen opwarmen. Rijst, aardappel erbij en je hebt een heerlijke maaltijd. Twee weken geleden kreeg ik een stijlvolle kado bon en gister besteed. Wat een fantastisch…”
+          <footer class="mt-3 font-medium">L v d L, 5 van de 5 sterren</footer>
+        </blockquote>
+        <blockquote class="text-lg leading-relaxed">
+          “Ik ben getipt door iemand die mij vertelde dat deze slagerij melkmoes, of ook onder de naam 'kruutmoes', zelf bereid en verkoopt. Omdat dit een gerecht is wat ik ken vanuit mijn jeugd en zeer goede herinneringen aan heb, was ik heel blij met deze info. Inmiddels heb ik dit gerecht enkele keren kunnen proeven en is het…”
+          <footer class="mt-3 font-medium">Teuni de Ruiter, 5 van de 5 sterren</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Langskomen -->
+  <section id="langskomen" class="bg-fascia text-white">
+    <div class="h-56 sm:h-72 lg:h-[33rem] overflow-hidden"><img loading="lazy" class="w-full h-[182%] sm:h-[140%] lg:h-full object-cover object-top max-w-none" src="assets/google-01.jpg" width="1600" height="1200" alt="Gevel van de slagerij: bakstenen pand met zeshoekig ter Weele-schild in de nok en de letters Slagerij G. ter Weele boven een oranje lijst"></div>
+    <div class="border-t-8 border-lijst">
+      <div class="mx-auto max-w-[1320px] px-4 lg:px-10 py-14 lg:py-20 grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5">
+          <h2 class="text-4xl lg:text-6xl leading-[1.05]">Rondje om de kerk in Oene.</h2>
+          <address class="not-italic mt-6 text-xl leading-relaxed">Houtweg 8<br>8167 PL Oene</address>
+          <p class="mt-3"><a class="rustig" href="https://www.google.com/maps/search/?api=1&query=Houtweg+8%2C+8167+PL+Oene">Route in Google Maps</a></p>
+          <div class="mt-8">
+            <a href="tel:+31578641205" class="knop text-lg w-full sm:w-auto">Bel 0578 641 205</a>
+          </div>
+          <p class="mt-5"><a class="rustig" href="mailto:winkel@slagerijterweele.nl">winkel@slagerijterweele.nl</a></p>
+        </div>
+        <div class="lg:col-span-6 lg:col-start-7">
+          <h3 class="text-3xl">Openingstijden</h3>
+          <p class="mt-2 text-krijt">Let op: woensdag sluiten we om half één.</p>
+          <table class="mt-6 w-full text-lg">
+            <tbody id="tijden">
+              <tr data-dag="1" class="border-t border-white/15"><th scope="row" class="py-3 text-left font-normal">Maandag</th><td class="py-3 text-right tabular-nums">08:00 tot 18:00</td></tr>
+              <tr data-dag="2" class="border-t border-white/15"><th scope="row" class="py-3 text-left font-normal">Dinsdag</th><td class="py-3 text-right tabular-nums">08:00 tot 18:00</td></tr>
+              <tr data-dag="3" class="border-t border-white/15"><th scope="row" class="py-3 text-left font-normal">Woensdag</th><td class="py-3 text-right tabular-nums text-lijst font-semibold">08:00 tot 12:30</td></tr>
+              <tr data-dag="4" class="border-t border-white/15"><th scope="row" class="py-3 text-left font-normal">Donderdag</th><td class="py-3 text-right tabular-nums">08:00 tot 18:00</td></tr>
+              <tr data-dag="5" class="border-t border-white/15"><th scope="row" class="py-3 text-left font-normal">Vrijdag</th><td class="py-3 text-right tabular-nums">08:00 tot 18:00</td></tr>
+              <tr data-dag="6" class="border-t border-white/15"><th scope="row" class="py-3 text-left font-normal">Zaterdag</th><td class="py-3 text-right tabular-nums">08:00 tot 15:00</td></tr>
+              <tr data-dag="0" class="border-y border-white/15"><th scope="row" class="py-3 text-left font-normal">Zondag</th><td class="py-3 text-right text-krijt">Gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-fasciadiep text-krijt text-sm pb-24 lg:pb-0">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-10 py-7">
+    Slagerij Ter Weele B.V., Houtweg 8, 8167 PL Oene
+  </div>
+</footer>
+
+<a href="tel:+31578641205" class="knop belbalk text-lg" id="belbalk">Bel 0578 641 205</a>
+
+<script>
+  // Alleen verrijking: alles is ook zonder dit script zichtbaar en bruikbaar.
+  const stil = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window) {
+    const balk = document.getElementById('belbalk');
+    new IntersectionObserver(([e]) => balk.classList.toggle('toon', !e.isIntersecting)).observe(document.getElementById('heroknop'));
+    if (!stil) {
+      const zwaai = new IntersectionObserver((items) => items.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('zwaai'); zwaai.unobserve(e.target); }
+      }), { threshold: .3 });
+      document.querySelectorAll('.bord').forEach((b) => zwaai.observe(b));
+    }
+  } else {
+    document.getElementById('belbalk').classList.add('toon');
+  }
+  const vandaag = document.querySelector('#tijden [data-dag="' + new Date().getDay() + '"] th');
+  if (vandaag) { vandaag.classList.add('font-semibold'); vandaag.insertAdjacentHTML('beforeend', ' <span class="text-krijt font-normal">(vandaag)</span>'); }
+</script>
+</body>
+</html>

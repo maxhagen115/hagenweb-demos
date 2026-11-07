@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vleesch van Plante | Boerderijwinkel in Klarenbeek</title>
+<meta name="description" content="Ouderwets vlees van eigen koeien, lokale varkens en Tante Door kip. Boerderijwinkel elke zaterdag open, afhaalvriezer elke dag. Zutphenseweg 38, Klarenbeek.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Bevan&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        deur: '#24382E',
+        salie: '#8FA588',
+        geel: '#F5C518',
+        stro: '#EDE3BE',
+        melk: '#FBFAF3',
+        inkt: '#1B1A14',
+      },
+      fontFamily: {
+        kop: ['Bevan', 'Georgia', 'serif'],
+        tekst: ['"Alegreya Sans"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-padding-top: 1.5rem; }
+  body { font-size: 1.1875rem; line-height: 1.55; font-variant-numeric: lining-nums; }
+  h1, h2, h3 { text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid #F5C518; outline-offset: 3px; }
+  .op-licht :focus-visible { outline-color: #24382E; }
+
+  /* Schuurgevel: de winkel is een schuur op het erf */
+  .gevel { clip-path: polygon(50% 0, 100% 17%, 100% 100%, 0 100%, 0 17%); }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:hover { background-color: #FFD633; }
+  .knop:active { transform: translateY(1px); }
+  .lijn { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; transition: text-decoration-color .2s; }
+  .lijn:hover { text-decoration-color: #F5C518; }
+
+  /* Weekschema */
+  .week { border-collapse: separate; border-spacing: .375rem; width: 100%; table-layout: fixed; }
+  .week th, .week td { padding: 0; }
+  .week .vak { display: block; height: 4.75rem; border-radius: 3px; background: #E9E6D6; }
+  .week .vak.aan { background: #F5C518; }
+  @media (max-width: 767px) {
+    .week, .week tbody, .week thead { display: block; }
+    .week tr { display: grid; grid-template-columns: repeat(7, 1fr); gap: .25rem; }
+    .week tbody tr { margin-top: 1.5rem; }
+    .week thead th:first-child { display: none; }
+    .week tbody th { grid-column: 1 / -1; padding-bottom: .25rem; }
+    .week .vak { height: 3.25rem; }
+  }
+  @media (min-width: 768px) {
+    .week thead th:first-child { width: 30%; }
+    .week tbody th { padding-right: 1rem; vertical-align: middle; }
+  }
+
+  .js #belbalk { transition: transform .2s; }
+  .js #belbalk.verstopt { transform: translateY(100%); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js #belbalk { transition: none; }
+    .knop, .lijn { transition: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-melk text-inkt font-tekst antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-40 focus:bg-geel focus:text-inkt focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-inkt text-stro text-[0.9375rem] leading-snug text-center px-4 py-1.5">
+  Demo voor Vleesch van Plante, gemaakt door <a href="https://hagenweb.nl" class="lijn">Hagenweb</a>
+</div>
+
+<div class="bg-deur text-melk">
+  <header class="max-w-[1440px] mx-auto px-5 md:px-10 flex items-center justify-between gap-6 pt-4 md:pt-5">
+    <a href="#inhoud" aria-label="Vleesch van Plante, naar boven">
+      <img src="assets/site-03.png" alt="Logo van Vleesch van Plante" class="h-14 md:h-[4.5rem] w-auto invert" width="1000" height="744">
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden md:flex items-center gap-8 text-lg font-medium">
+      <a class="lijn decoration-transparent" href="#langskomen">Langskomen</a>
+      <a class="lijn decoration-transparent" href="#verhaal">Van gras tot vriezer</a>
+      <a class="lijn decoration-transparent" href="#winkel">Assortiment</a>
+      <a class="lijn decoration-transparent" href="#workshops">Workshops</a>
+      <a class="lijn decoration-transparent" href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="md:hidden text-lg font-medium lijn decoration-transparent">Contact</a>
+  </header>
+</div>
+
+<main id="inhoud">
+  <!-- Hero -->
+  <div class="bg-deur text-melk">
+  <section class="max-w-[1440px] mx-auto md:grid md:grid-cols-12 md:gap-x-8 md:pl-10 overflow-hidden">
+    <div class="md:col-span-6 px-5 md:px-0 pt-7 md:pt-16 pb-9 md:pb-20">
+      <p class="text-lg md:text-xl text-stro">Boerderijwinkel in Klarenbeek</p>
+      <h1 class="font-kop mt-3 text-[11.4vw] leading-[1.06] md:text-[5.5vw] 2xl:text-[5.25rem] text-melk"><span class="block">Minder vlees.</span> <span class="block">Beter vleesch.</span></h1>
+      <p class="mt-5 md:mt-7 text-xl md:text-[1.4375rem] leading-snug md:leading-[1.4] text-stro max-w-[32rem]">Ouderwets vlees van eigen koeien, die buiten kruidenrijk gras eten zolang het groeit. Diepgevroren, in mooie kleine porties, uit onze boerderijwinkel of afhaalvriezer.</p>
+      <div class="mt-7 md:mt-9 flex flex-col lg:flex-row lg:items-center gap-x-8 gap-y-4">
+        <a href="tel:+31650206002" class="knop inline-flex items-center justify-center bg-geel text-inkt font-bold text-xl md:text-[1.375rem] px-7 py-4 md:py-[1.125rem] rounded-[3px] whitespace-nowrap md:self-start">Bel Mandy: 06 50206002</a>
+        <a href="#langskomen" class="lijn text-lg md:text-xl self-start lg:self-auto">Wanneer kan ik langskomen?</a>
+      </div>
+      <p class="mt-7 md:mt-10 text-lg text-stro">4,9 op Google, uit 44 reviews</p>
+    </div>
+    <div class="md:col-span-6 self-end pl-5 md:pl-0">
+      <img src="assets/google-05.jpg" alt="Bonte koe in hoog gras vol boterbloemen, met de zon door de bomen en water op de achtergrond" class="gevel w-full aspect-square md:aspect-[16/15] object-cover object-[60%_50%]" width="1440" height="1440">
+    </div>
+  </section>
+  </div>
+
+  <!-- Wanneer -->
+  <section id="langskomen" class="op-licht max-w-[1440px] mx-auto px-5 md:px-10 py-16 md:py-28 md:grid md:grid-cols-12 md:gap-x-8 items-start">
+    <div class="md:col-span-8 lg:col-span-8">
+      <h2 class="font-kop text-[2.25rem] leading-[1.12] md:text-[2.75rem] xl:text-[3.5rem]">De winkel op zaterdag, de vriezer elke dag.</h2>
+      <table class="week mt-10 md:mt-12 md:-ml-1.5">
+        <caption class="sr-only">Wanneer de boerderijwinkel en de afhaalvriezer open zijn</caption>
+        <thead>
+          <tr class="text-lg">
+            <th scope="col"><span class="sr-only">Waar</span></th>
+            <th scope="col" class="font-medium pb-1">ma</th>
+            <th scope="col" class="font-medium pb-1">di</th>
+            <th scope="col" class="font-medium pb-1">wo</th>
+            <th scope="col" class="font-medium pb-1">do</th>
+            <th scope="col" class="font-medium pb-1">vr</th>
+            <th scope="col" class="font-medium pb-1">za</th>
+            <th scope="col" class="font-medium pb-1">zo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="text-left font-normal leading-snug"><strong class="font-bold block text-xl">Boerderijwinkel</strong>9.00 tot 15.00 uur</th>
+            <td><span class="vak"><span class="sr-only">dicht</span></span></td>
+            <td><span class="vak"><span class="sr-only">dicht</span></span></td>
+            <td><span class="vak"><span class="sr-only">dicht</span></span></td>
+            <td><span class="vak"><span class="sr-only">dicht</span></span></td>
+            <td><span class="vak"><span class="sr-only">dicht</span></span></td>
+            <td><span class="vak aan"><span class="sr-only">open</span></span></td>
+            <td><span class="vak"><span class="sr-only">dicht</span></span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-left font-normal leading-snug"><strong class="font-bold block text-xl">Afhaalvriezer</strong>wanneer het jou uitkomt</th>
+            <td><span class="vak aan"><span class="sr-only">open</span></span></td>
+            <td><span class="vak aan"><span class="sr-only">open</span></span></td>
+            <td><span class="vak aan"><span class="sr-only">open</span></span></td>
+            <td><span class="vak aan"><span class="sr-only">open</span></span></td>
+            <td><span class="vak aan"><span class="sr-only">open</span></span></td>
+            <td><span class="vak aan"><span class="sr-only">open</span></span></td>
+            <td><span class="vak aan"><span class="sr-only">open</span></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="mt-10 md:mt-12 grid md:grid-cols-2 gap-x-10 gap-y-6 max-w-[52rem]">
+        <p><strong class="font-bold">Op zaterdag</strong> zoek je ter plekke iets lekkers uit, per pakje. Vooraf bestellen hoeft niet. Komt een andere dag beter uit? Dat kan op afspraak.</p>
+        <p><strong class="font-bold">In de afhaalvriezer</strong> pak je zelf je tas, cadeau of online bestelling, op elke dag van de week.</p>
+        <p><strong class="font-bold">Zutphenseweg 38, Klarenbeek.</strong> Aan de N345 tussen Apeldoorn en Zutphen, met voldoende parkeerplek op het erf. Pinnen of contant betalen kan allebei.</p>
+        <p>Ezels Lisa en Emma verwelkomen je al op de oprit. Aan de andere kant grazen koeien met kalfjes en de schapen doen ook mee. Senna laat Mandy weten dat er iemand is en Fay loopt naast haar, allebei achter een hek.</p>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Zutphenseweg+38+7382+AM+Klarenbeek" class="lijn inline-block mt-8 font-medium text-xl">Route naar het erf</a>
+    </div>
+    <figure class="md:col-span-4 mt-12 md:mt-0">
+      <img loading="lazy" src="assets/google-01.jpg" alt="De boerderijwinkel 's avonds, met warm licht achter de ramen en een bistrosetje op de klinkers" class="w-full aspect-[4/5] md:aspect-[17/22] object-cover rounded-[3px]" width="1359" height="1600">
+    </figure>
+  </section>
+
+  <!-- Van gras tot vriezer -->
+  <section id="verhaal" class="bg-deur text-melk">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-10 pt-16 md:pt-28 md:grid md:grid-cols-12 md:gap-x-8">
+      <div class="md:col-span-5">
+        <div class="md:sticky md:top-10">
+          <h2 class="font-kop text-[2.25rem] leading-[1.12] md:text-[2.75rem] xl:text-[3.5rem]">Van gras tot vriezer</h2>
+          <p class="mt-5 text-xl text-stro max-w-[28rem]">Weten wat je eet, zonder toevoegingen, en lokaal. Uitsluitend vrouwelijk vleesch van ouderwetse vleesveerassen die een goed leven hebben gehad. Vrij van antibiotica.</p>
+          <figure class="mt-9">
+            <img loading="lazy" src="assets/google-06.jpg" alt="Zwart-witte koe met kalf naast zich, samen kijkend in de camera in de wei" class="w-full aspect-[4/3] object-cover rounded-[3px]" width="1600" height="1172">
+            <figcaption class="mt-3 text-lg text-stro">Kalf bij de koe, totdat ze er allebei geen behoefte meer aan hebben.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <ol class="md:col-span-6 md:col-start-7 mt-12 md:mt-0 space-y-10 md:space-y-14">
+        <li class="border-t border-salie/50 pt-6">
+          <h3 class="font-kop text-2xl md:text-[1.875rem] leading-tight">Buiten</h3>
+          <p class="mt-3 text-stro max-w-[36rem]">Kruidenrijk gras, frisse lucht, altijd vers drinkwater en overal schaduw. Gemiddeld minder dan 1 koe per hectare, op eigen grond en bij Natuurmonumenten, Staatsbosbeheer, Leisurelands en Landgoed Beekzicht in Voorst. Samen met de dieren beheren we onder de naam NATUURlijk Plante de natuur, meetbaar richting meer biodiversiteit.</p>
+        </li>
+        <li class="border-t border-salie/50 pt-6">
+          <h3 class="font-kop text-2xl md:text-[1.875rem] leading-tight">Binnen, als het gras stopt met groeien</h3>
+          <p class="mt-3 text-stro max-w-[36rem]">Een ruime potstal vol stro, met ventilatie die we kunnen aanpassen. In de winter afwisselend voer: witlofwortel, hooi, aardappel, brok, mais en peen.</p>
+        </li>
+        <li class="border-t border-salie/50 pt-6">
+          <h3 class="font-kop text-2xl md:text-[1.875rem] leading-tight">Een kort, rustig ritje</h3>
+          <p class="mt-3 text-stro max-w-[36rem]">Verdoofde slachting bij zelfslachtende slager Ter Weele, na een kort ontspannen ritje. Diervriendelijk van begin tot eind.</p>
+        </li>
+        <li class="border-t border-salie/50 pt-6">
+          <h3 class="font-kop text-2xl md:text-[1.875rem] leading-tight">Besterven en rijpen</h3>
+          <p class="mt-3 text-stro max-w-[36rem]">Minstens een week besterven en daarna minstens nog een week rijpen. Dat geeft een diepere smaak en maakt het vlees malser. Minder vocht, niet meer. Geen kleurstoffen of e-nummers.</p>
+        </li>
+        <li class="border-t border-salie/50 pt-6">
+          <h3 class="font-kop text-2xl md:text-[1.875rem] leading-tight">Diepgevroren, klaar voor jou</h3>
+          <p class="mt-3 text-stro max-w-[36rem]">Alleen diepgevroren verkrijgbaar en dus lang houdbaar. Alles van het dier, in mooie (kleine) porties en met een ruime voorraad. Voor elke dag of een bijzonder moment.</p>
+        </li>
+      </ol>
+    </div>
+    <img loading="lazy" src="assets/google-02.jpg" alt="Koeien grazen bij een boom langs het water, met de bosrand gespiegeld in de avondzon" class="mt-16 md:mt-24 w-full h-[15rem] md:h-[34rem] object-cover object-[50%_70%]" width="1440" height="788">
+  </section>
+
+  <!-- Winkel -->
+  <section id="winkel" class="op-licht max-w-[1440px] mx-auto px-5 md:px-10 py-16 md:py-28">
+    <div class="md:grid md:grid-cols-12 md:gap-x-8 items-end">
+      <h2 class="md:col-span-7 font-kop text-[2.25rem] leading-[1.12] md:text-[2.75rem] xl:text-[3.5rem]">Wat van dichtbij komt, is het lekkerst.</h2>
+      <p class="md:col-span-4 md:col-start-9 mt-5 md:mt-0">Dat geldt voor ons vlees en voor alles wat ernaast op de plank staat.</p>
+    </div>
+
+    <img loading="lazy" src="assets/google-03.jpg" alt="De boerderijwinkel van binnen: vriezers vol vlees, houten wanden, potten honing en een zwarte hond op een koeienhuid" class="mt-10 md:mt-14 w-full h-[17rem] md:h-[40rem] object-cover object-[50%_62%] rounded-[3px]" width="1600" height="1200">
+
+    <div class="mt-12 md:mt-16 md:grid md:grid-cols-12 md:gap-x-8">
+      <div class="md:col-span-5 space-y-7">
+        <div>
+          <h3 class="font-kop text-2xl leading-tight">Rund</h3>
+          <p class="mt-2">Van onze eigen koeien. Ouderwets vlees, puur en authentiek.</p>
+        </div>
+        <div>
+          <h3 class="font-kop text-2xl leading-tight">Varken</h3>
+          <p class="mt-2">Van lokale buitenvarkens, die alle ruimte hebben, langzaam groeien en zelf hun dag indelen. Slagerij Ter Weele verzorgt het van begin tot in onze winkel.</p>
+        </div>
+        <div>
+          <h3 class="font-kop text-2xl leading-tight">Kip</h3>
+          <p class="mt-2">Een breed assortiment Tante Door kip: volledig Nederlands uit een 100% gesloten keten, antibioticavrij en cocciodiostaticavrij.</p>
+        </div>
+      </div>
+      <div class="md:col-span-6 md:col-start-7 mt-10 md:mt-0">
+        <h3 class="font-kop text-2xl leading-tight">En van de buren</h3>
+        <dl class="mt-3 text-lg md:text-[1.1875rem]">
+          <div class="flex justify-between gap-6 border-b border-inkt/20 py-2.5"><dt>Voorsternaer kaas</dt><dd class="text-right font-medium">familie Lankhorst</dd></div>
+          <div class="flex justify-between gap-6 border-b border-inkt/20 py-2.5"><dt>Verse eitjes</dt><dd class="text-right font-medium">Quicks Chicks</dd></div>
+          <div class="flex justify-between gap-6 border-b border-inkt/20 py-2.5"><dt>Pure honing</dt><dd class="text-right font-medium">Buurman Gerrit uit Klarenbeek</dd></div>
+          <div class="flex justify-between gap-6 border-b border-inkt/20 py-2.5"><dt>Bier</dt><dd class="text-right font-medium">Landgoed Beekzicht</dd></div>
+          <div class="flex justify-between gap-6 border-b border-inkt/20 py-2.5"><dt>Cider, azijn en stroop</dt><dd class="text-right font-medium">Iessel Cider</dd></div>
+          <div class="flex justify-between gap-6 border-b border-inkt/20 py-2.5"><dt>Sauzen</dt><dd class="text-right font-medium">De Kribbe</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="mt-14 md:mt-24 md:grid md:grid-cols-12 md:gap-x-8 items-center">
+      <img loading="lazy" src="assets/google-04.jpg" alt="Houten winkelwand met draadmanden, melkbussen, honing, bier en eieren" class="md:col-span-5 w-full aspect-[4/3] md:aspect-[5/6] object-cover rounded-[3px]" width="1080" height="1443">
+      <div class="md:col-span-6 md:col-start-7 mt-8 md:mt-0">
+        <h3 class="font-kop text-[1.75rem] md:text-[2.5rem] leading-[1.15]">Bestellen, afhalen of laten bezorgen</h3>
+        <p class="mt-5 max-w-[36rem]">Bestel online en haal je pakket op wanneer het jou uitkomt: uit de afhaalvriezer op elke dag, of op zaterdag in de winkel.</p>
+        <p class="mt-4 max-w-[36rem]">Bestel je voor meer dan €100? Dan bezorgt Mandy het bevroren vlees zelf en gratis bij je thuis, binnen de Stedendriehoek. Bezorging is doorgaans op woensdagavond, altijd in overleg. Zet je 06-nummer en e-mailadres bij de bestelling, dan neemt Mandy contact op om het af te stemmen.</p>
+        <a href="https://vleeschvanplante.nl/" class="lijn inline-block mt-6 font-medium text-xl">Naar de webwinkel</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" aria-labelledby="reviews-kop" class="bg-stro op-licht">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-10 py-16 md:py-24 md:grid md:grid-cols-12 md:gap-x-8">
+      <div class="md:col-span-7">
+        <p id="reviews-kop" class="text-xl font-medium">4,9 op Google, uit 44 reviews</p>
+        <blockquote class="mt-5">
+          <p class="font-kop text-[1.75rem] leading-[1.25] md:text-[2.5rem] md:leading-[1.22]">“De smaak van het vlees is echt intenser, supermarkt biefstuk smaakt waterig en naar niks vergeleken met dit!”</p>
+          <footer class="mt-5 text-xl font-medium">Liekepiekee</footer>
+        </blockquote>
+      </div>
+      <div class="md:col-span-4 md:col-start-9 mt-12 md:mt-1 space-y-9">
+        <blockquote>
+          <p>“Telefonisch super vriendelijk al. Wanneer je er komt wordt je met open armen ontvangen. Tijd voor een praatje en een advies. Ik ga er zeker vaker heen!”</p>
+          <footer class="mt-2 font-bold">Anne Peerbolte</footer>
+        </blockquote>
+        <blockquote>
+          <p>“Voor het eerst vlees besteld voor 2e Kerstdag en dat is goed bevallen.”</p>
+          <footer class="mt-2 font-bold">Bram vdS</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshops -->
+  <section id="workshops" class="op-licht max-w-[1440px] mx-auto px-5 md:px-10 py-16 md:py-28">
+    <div class="md:grid md:grid-cols-12 md:gap-x-8 items-end">
+      <h2 class="md:col-span-8 font-kop text-[2.25rem] leading-[1.12] md:text-[2.75rem] xl:text-[3.5rem]">Kom mee koken.</h2>
+      <p class="md:col-span-4 mt-5 md:mt-0">Ontdek waar je eten vandaan komt en hoe je er de beste smaak uit haalt. Altijd hands-on en gezellig, onder begeleiding van Mandy.</p>
+    </div>
+
+    <img loading="lazy" src="assets/site-04.jpg" alt="Een groep van acht mensen snijdt en kookt samen aan een groot kookeiland" class="mt-10 md:mt-14 w-full h-[15rem] md:h-[38rem] object-cover object-[50%_40%] rounded-[3px]" width="2560" height="1354">
+
+    <div class="mt-12 md:mt-20 space-y-14 md:space-y-20">
+      <article class="md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-3">
+          <h3 class="font-kop text-[1.75rem] md:text-[2rem] leading-[1.15]">Koken uit de Streek</h3>
+          <p class="mt-2 text-xl font-bold">vanaf €75,- p.p.</p>
+        </div>
+        <div class="md:col-span-5 md:col-start-4 mt-4 md:mt-0">
+          <p>Kook met de seizoenen mee, met producten rechtstreeks van de boer uit de Veluwse IJsselvallei. Samen bereiden en eten we minstens 3 gangen, knus en huiselijk. Het receptenboek op maat en eventuele restjes gaan mee naar huis.</p>
+          <p class="mt-3">Bij Plante thuis ben je met 8 tot 12 personen, voor €75,- p.p. inclusief btw en thee of koffie, zonder drank. Liever bij jou thuis? Dan neemt Mandy streekproducten en materiaal mee, ook voor kleinere gezelschappen, vanaf €85,- p.p.</p>
+        </div>
+        <figure class="md:col-span-4 md:col-start-9 mt-6 md:mt-0">
+          <img loading="lazy" src="assets/site-07.jpg" alt="Ingevuld evaluatieformulier met de woorden lekker, verzorgd, gezellig, huiselijk, gastvrij en vijf sterren" class="w-full rotate-[-1.5deg] rounded-[2px] shadow-[0_10px_24px_-10px_rgba(36,56,46,.55)]" width="2260" height="1626">
+        </figure>
+      </article>
+
+      <article class="md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-3">
+          <h3 class="font-kop text-[1.75rem] md:text-[2rem] leading-[1.15]">Slowcooking</h3>
+          <p class="mt-2 text-xl font-bold">€75,- p.p.</p>
+        </div>
+        <div class="md:col-span-5 md:col-start-4 mt-4 md:mt-0">
+          <p>Leer wat langzame bereiding voor je kan betekenen, en geniet samen van verwarmende gerechten met pure, lokale ingrediënten. Bij Plante thuis in Klarenbeek.</p>
+        </div>
+        <img loading="lazy" src="assets/site-10.jpg" alt="Groep aan een lange houten tafel, 's avonds onder hanglampen, samen aan het eten" class="md:col-span-4 md:col-start-9 mt-6 md:mt-0 w-full aspect-[3/2] object-cover rounded-[3px]" width="2560" height="1403">
+      </article>
+
+      <article class="md:grid md:grid-cols-12 md:gap-x-8">
+        <div class="md:col-span-3">
+          <h3 class="font-kop text-[1.75rem] md:text-[2rem] leading-[1.15]">Kuilkoken</h3>
+          <p class="mt-2 text-xl font-bold">€95,- p.p.</p>
+        </div>
+        <div class="md:col-span-5 md:col-start-4 mt-4 md:mt-0">
+          <p>De oeroude kunst van Hangi: koken in een kuil, in de buitenlucht, met pure ingrediënten en gezellig samenzijn in de wei bij Plante in Klarenbeek.</p>
+          <blockquote class="mt-4 border-l-[3px] border-geel pl-4">
+            <p>“Wanneer ik terugdenk aan de culinaire ervaringen van 2025, springt één moment er met kop en schouders bovenuit: de kookworkshop kuilkoken van afgelopen zomer.”</p>
+            <footer class="mt-1 font-bold">c la</footer>
+          </blockquote>
+        </div>
+        <img loading="lazy" src="assets/site-06.jpg" alt="Deelnemers bij een lange tafel in de wei bij zonsopkomst, met een kuil en een driepoot op de achtergrond" class="md:col-span-4 md:col-start-9 mt-6 md:mt-0 w-full aspect-[3/2] object-cover object-[60%_50%] rounded-[3px]" width="2000" height="934">
+      </article>
+    </div>
+
+    <div class="mt-14 md:mt-20 md:grid md:grid-cols-12 md:gap-x-8 md:items-center border-t border-inkt/20 pt-8">
+      <p class="md:col-span-8 text-xl">Elke workshop is beschikbaar voor groepen vanaf 8 personen, particulier of zakelijk. Voor grotere groepen zijn er mooie locaties in de regio, zoals De Kribbe in Wilp.</p>
+      <div class="md:col-span-4 md:text-right mt-5 md:mt-0">
+        <a href="mailto:mandy@vleeschvanplante.nl?subject=Workshop%20bij%20Plante" class="lijn font-medium text-xl">Meld je aan via e-mail</a>
+        <p class="mt-1">of bel of app <a class="lijn" href="tel:+31650206002">06 50206002</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-deur text-melk">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-10 py-16 md:py-28 md:grid md:grid-cols-12 md:gap-x-8 items-center">
+      <div class="md:col-span-6">
+        <h2 class="font-kop text-[2.25rem] leading-[1.12] md:text-[2.75rem] xl:text-[3.5rem]"><span class="block">Meer weten?</span> <span class="block">Kom langs, of bel Mandy.</span></h2>
+        <p class="mt-5 text-xl text-stro max-w-[34rem]">Ook voor cadeaubonnen, (kerst)pakketten en catering: van buffet tot foodtruckmenu, en alleen puur vlees op schalen kan ook. Speciale verzoeken zijn bespreekbaar.</p>
+        <div class="mt-8 flex flex-col lg:flex-row lg:items-center gap-x-8 gap-y-4">
+          <a href="tel:+31650206002" class="knop inline-flex items-center justify-center bg-geel text-inkt font-bold text-xl px-7 py-4 rounded-[3px] whitespace-nowrap md:self-start">Bel 06 50206002</a>
+          <a href="mailto:mandy@vleeschvanplante.nl" class="lijn text-lg md:text-xl self-start lg:self-auto">mandy@vleeschvanplante.nl</a>
+        </div>
+        <p class="mt-9 text-stro max-w-[34rem]">Buiten de deur proeven? De BBQ-pakketten bij De Kribbe in Wilp bestaan uitsluitend uit Vleesch van Plante.</p>
+      </div>
+      <figure class="md:col-span-5 md:col-start-8 mt-12 md:mt-0">
+        <img loading="lazy" src="assets/google-08.jpg" alt="Een klant in gesprek aan de toonbank van de boerderijwinkel" class="w-full aspect-[4/3] object-cover rounded-[3px]" width="948" height="721">
+      </figure>
+    </div>
+  </section>
+  </main>
+
+  <footer class="bg-inkt text-stro pb-24 md:pb-0">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-10 py-12 md:py-14 md:grid md:grid-cols-12 md:gap-x-8 items-start text-[1.0625rem]">
+      <img loading="lazy" src="assets/site-03.png" alt="Logo van Vleesch van Plante" class="md:col-span-3 h-28 md:h-32 w-auto invert" width="1000" height="744">
+      <address class="not-italic md:col-span-3 mt-8 md:mt-0">
+        Mandy Plante<br>
+        Zutphenseweg 38<br>
+        7382 AM Klarenbeek<br>
+        <a class="lijn" href="tel:+31650206002">06 50206002</a><br>
+        <a class="lijn" href="mailto:mandy@vleeschvanplante.nl">mandy@vleeschvanplante.nl</a>
+      </address>
+      <p class="md:col-span-3 mt-6 md:mt-0">Keurmerk Echt Veluwe / Erkend Veluws Streekproduct, bedrijfscode VE039. Wij dragen het IJsselmarke-label.</p>
+      <p class="md:col-span-3 mt-6 md:mt-0">
+        KvK: 70434867<br>
+        BTW: NL002115675B98<br>
+        <a class="lijn" href="https://vleeschvanplante.nl/privacystatement/">Privacy</a> en <a class="lijn" href="https://vleeschvanplante.nl/cookiebeleid/">cookies</a>
+      </p>
+    </div>
+  </footer>
+
+<!-- Belknop altijd binnen bereik op mobiel -->
+<div id="belbalk" class="md:hidden fixed inset-x-0 bottom-0 z-30 p-3 bg-deur/95 border-t border-salie/40">
+  <a href="tel:+31650206002" class="knop flex items-center justify-center bg-geel text-inkt font-bold text-xl py-3.5 rounded-[3px]">Bel Mandy: 06 50206002</a>
+</div>
+
+<script>
+  // Verrijking: zolang de belknop in de hero zichtbaar is, is de vaste balk niet nodig.
+  (function () {
+    var heroKnop = document.querySelector('main a[href^="tel:"]');
+    if (!heroKnop || !('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('js');
+    var balk = document.getElementById('belbalk');
+    new IntersectionObserver(function (items) {
+      balk.classList.toggle('verstopt', items[0].isIntersecting);
+    }).observe(heroKnop);
+  })();
+</script>
+</body>
+</html>

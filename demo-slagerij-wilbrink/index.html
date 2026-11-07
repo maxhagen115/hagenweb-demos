@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slagerij Wilbrink | Ambacht sinds 1905 in Beekbergen</title>
+<meta name="description" content="Familieslagerij in het hart van Beekbergen, sinds 1905. Zelf uitgesneden vlees, eigen worstmakerij, Veluws rundvlees en huisgemaakte maaltijden. Bel 055 506 1250.">
+<meta property="og:title" content="Slagerij Wilbrink, sinds 1905 achter het hakblok">
+<meta property="og:description" content="Familieslagerij in het hart van Beekbergen. Zelf uitgesneden vlees, eigen worstmakerij en Veluws rundvlees.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          papier: '#F7E8E0',
+          antraciet: '#262120',
+          rood: '#C22A28',
+          bloed: '#6B1A1E',
+          wit: '#FFF9F5',
+        },
+        fontFamily: {
+          kop: ['Caprasimo', 'Georgia', 'serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+
+  /* De hoofdknop: een klein plankje, met de stippenrand uit het logo */
+  .knop {
+    position: relative; display: inline-flex; align-items: center; justify-content: center; gap: .7rem;
+    background: #C22A28; color: #FFF9F5; font-weight: 700; border-radius: 14px;
+    padding: 1.15rem 1.9rem; font-size: 1.2rem; line-height: 1.1;
+    box-shadow: 0 10px 24px -10px rgba(107, 26, 30, .75);
+    transition: background-color .2s, transform .2s;
+  }
+  .knop::after {
+    content: ''; position: absolute; inset: 5px; border-radius: 10px;
+    border: 2px dotted rgba(255, 249, 245, .55); pointer-events: none;
+  }
+  .knop:hover { background: #A62120; transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+
+  /* Stippellijn, zoals op een prijskaart */
+  .stip {
+    height: 4px; align-self: end; margin-bottom: .42em; min-width: 1.5rem;
+    background-image: radial-gradient(circle, currentColor 1.5px, transparent 1.7px);
+    background-size: 9px 4px; background-repeat: repeat-x; opacity: .55;
+  }
+  .regel { display: grid; grid-template-columns: auto minmax(1.5rem, 1fr) auto; column-gap: .6rem; }
+  .regel .uitleg { grid-column: 1 / -1; }
+
+  /* Assortiment: woorden gescheiden door een stip uit het logo */
+  .woorden li { display: inline-flex; align-items: center; }
+  .woorden li:not(:last-child)::after {
+    content: ''; width: .22em; height: .22em; border-radius: 50%; background: #C22A28; margin: 0 .42em;
+  }
+
+  .boog { border-radius: 999px 999px 18px 18px; }
+  .schuin { clip-path: polygon(0 0, 100% 9%, 100% 100%, 0 100%); }
+
+  .plank { transform: rotate(2.5deg); transform-origin: 50% 5%; }
+  html.js .plank { animation: zak .9s cubic-bezier(.2, .9, .3, 1.15) both; }
+  @keyframes zak {
+    from { transform: translateY(-22px) rotate(-1.5deg); }
+    to { transform: rotate(2.5deg); }
+  }
+
+  /* Belknop mobiel. Zonder JS altijd zichtbaar, met JS pas als de hero-knop uit beeld is */
+  .belbalk { transition: transform .25s ease; }
+  html.js .belbalk { transform: translateY(160%); }
+  html.js .belbalk.zichtbaar { transform: none; }
+
+  .vandaag { font-weight: 700; color: #C22A28; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html.js .plank { animation: none; }
+    .belbalk, .knop { transition: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-papier text-antraciet font-tekst text-[1.0625rem] leading-relaxed">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:block focus:p-3 focus:bg-wit">Naar de inhoud</a>
+
+<div class="bg-antraciet text-wit text-center text-sm py-2 px-4">
+  Demo voor Slagerij Wilbrink, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-semibold">Hagenweb</a>
+</div>
+
+<header class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-4 lg:pt-5 flex items-center justify-between gap-6">
+  <a href="#inhoud" class="flex items-center gap-3" aria-label="Slagerij Wilbrink, naar boven">
+    <img src="assets/logo-oud.png" alt="Logo van Slagerij Wilbrink: stierenkop op een plank, sinds 1905" width="45" height="56" class="w-[38px] h-12 lg:w-[45px] lg:h-14 object-cover object-left rounded-[5px]">
+    <span class="font-kop text-2xl lg:text-[1.7rem] leading-none">Wilbrink</span>
+  </a>
+  <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 font-medium">
+    <a class="hover:text-rood transition-colors" href="#feestdagen">Feestdagen</a>
+    <a class="hover:text-rood transition-colors" href="#toonbank">De toonbank</a>
+    <a class="hover:text-rood transition-colors" href="#ambacht">Het ambacht</a>
+    <a class="hover:text-rood transition-colors" href="#cadeaus">Cadeaus</a>
+    <a class="hover:text-rood transition-colors" href="#langs">Openingstijden</a>
+  </nav>
+  <a href="tel:+31555061250" class="font-bold text-rood whitespace-nowrap">055 506 1250</a>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative z-10 max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)] gap-10 lg:gap-12 items-center pt-7 lg:pt-4">
+  <div class="lg:pb-20">
+    <p class="font-semibold text-rood text-lg mb-3 lg:mb-4">Slagerij in het hart van Beekbergen</p>
+    <h1 class="font-kop text-[12.2vw] sm:text-7xl lg:text-[clamp(4.2rem,6.5vw,6.3rem)] leading-[.98] tracking-[-.01em]"><span class="whitespace-nowrap">Al sinds 1905</span><br>achter het<br>hakblok.</h1>
+    <p class="mt-5 lg:mt-7 text-lg lg:text-xl max-w-[34rem]">Wij snijden zelf uit, maken onze eigen worst en halen ons rundvlees uit de omgeving van Beekbergen. Zo weten we precies wat er in de toonbank ligt.</p>
+    <div class="mt-6 lg:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+      <a id="hoofdknop" href="tel:+31555061250" class="knop w-full sm:w-auto">
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 055 506 1250
+      </a>
+      <a href="#feestdagen" class="font-semibold underline underline-offset-4 decoration-2 decoration-rood hover:text-rood transition-colors">Bekijk de kerstlijst</a>
+    </div>
+    <p class="mt-5 lg:mt-7 flex items-center gap-2.5 text-[.98rem]">
+      <span class="inline-flex text-rood" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path id="ster" d="m12 2 3 6.6 7 .8-5.200 4.800 1.400 7L12 17.600 5.800 21.200l1.400-7L2 9.400l7-.8z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><use href="#ster"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><use href="#ster"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><use href="#ster"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24"><defs><linearGradient id="half"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="currentColor" stop-opacity=".25"/></linearGradient></defs><use href="#ster" fill="url(#half)"/></svg>
+      </span>
+      <span><strong>4,5</strong> op Google, uit 71 reviews</span>
+    </p>
+  </div>
+
+  <div class="flex justify-center lg:justify-end -mb-16 lg:-mb-24">
+    <svg class="plank w-[86%] sm:w-[60%] lg:w-auto lg:h-[min(calc(100svh-120px),790px)] max-w-full" viewBox="0 0 620 860" role="img" aria-label="Slager in schort houdt een plank met vers vlees op slagerspapier vast, in de vorm van de snijplank uit het Wilbrink-logo" style="filter: drop-shadow(0 26px 30px rgba(38,33,32,.32))">
+      <defs>
+        <clipPath id="plankvorm"><rect x="0" y="190" width="620" height="670" rx="44"/></clipPath>
+        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#191615"/>
+          <stop offset="1" stop-color="#191615" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="randen">
+          <stop offset="0" stop-color="#191615"/>
+          <stop offset=".11" stop-color="#191615" stop-opacity="0"/>
+          <stop offset=".89" stop-color="#191615" stop-opacity="0"/>
+          <stop offset="1" stop-color="#191615"/>
+        </linearGradient>
+      </defs>
+      <path fill="#191615" fill-rule="evenodd" d="M245 65a65 65 0 0 1 130 0v85c0 30 20 40 50 40h151a44 44 0 0 1 44 44v582a44 44 0 0 1-44 44H44a44 44 0 0 1-44-44V234a44 44 0 0 1 44-44h151c30 0 50-10 50-40zM310 42a23 23 0 1 0 .01 0z"/>
+      <g clip-path="url(#plankvorm)">
+        <image href="assets/site-07.jpg" x="-10" y="190" width="640" height="670" preserveAspectRatio="xMidYMid slice"/>
+        <rect x="0" y="190" width="620" height="120" fill="url(#fade)"/>
+        <rect x="0" y="190" width="620" height="670" fill="url(#randen)"/>
+      </g>
+      <rect x="26" y="216" width="568" height="618" rx="22" fill="none" stroke="#FFF9F5" stroke-width="6" stroke-linecap="round" stroke-dasharray="0 20"/>
+    </svg>
+  </div>
+</section>
+
+<!-- KERSTBAND -->
+<section class="bg-bloed text-wit">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-24 pb-10 lg:py-12">
+    <div class="lg:max-w-[58%]">
+      <p class="font-kop text-3xl lg:text-[2.6rem] leading-[1.08]">Kerst bij Wilbrink? Bestel uiterlijk zaterdag 19 december.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEESTDAGEN -->
+<section id="feestdagen" class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-28 scroll-mt-4">
+  <div class="grid lg:grid-cols-12 gap-x-12 gap-y-6 items-end">
+    <h2 class="lg:col-span-6 font-kop text-5xl lg:text-7xl leading-[1.02]">Zo staat de kersttafel klaar.</h2>
+    <div class="lg:col-span-6">
+      <p class="max-w-[36rem]">Hier ziet u een greep uit wat u kunt bestellen voor de kerstdagen en oud en nieuw. De overige producten vindt u gewoon in de winkel.</p>
+      <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="https://www.slagerijwilbrink.nl/c/feestdagen-2026" class="knop">Bestel online</a>
+        <p>Of bel <a class="font-bold text-rood whitespace-nowrap" href="tel:+31555061250">055 506 1250</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-14 lg:mt-20 grid lg:grid-cols-3 gap-x-12 gap-y-16 items-start">
+    <div>
+      <img src="assets/site-09.jpg" alt="Gourmetbakjes met rundvlees, gemarineerde kip en buikspek" loading="lazy" class="w-full aspect-[3/2] object-cover rounded-[18px] mb-8">
+      <h3 class="font-kop text-3xl mb-5">Gourmet en fondue</h3>
+          <ul class="space-y-4">
+            <li class="regel"><span class="font-semibold">Gourmet Traditioneel</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 7,98 p.p.</span><span class="uitleg text-[.95rem] opacity-80">Gevarieerd en lekker voor iedereen</span></li>
+            <li class="regel"><span class="font-semibold">Gourmet Bistro</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 9,98 p.p.</span><span class="uitleg text-[.95rem] opacity-80">Lekker luxe</span></li>
+            <li class="regel"><span class="font-semibold">Kindergourmet</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 4,98 p.p.</span><span class="uitleg text-[.95rem] opacity-80">Voor de jonge gourmetter</span></li>
+            <li class="regel"><span class="font-semibold">Fondueschotel</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 6,98 p.p.</span><span class="uitleg text-[.95rem] opacity-80">Compleet fonduepakket</span></li>
+            <li class="regel"><span class="font-semibold">Groentenpakket deluxe</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 14,98</span><span class="uitleg text-[.95rem] opacity-80">Een luxe aanvulling voor uw gourmet, voor 4 personen</span></li>
+          </ul>
+    </div>
+    <div class="lg:pt-20">
+      <h3 class="font-kop text-3xl mb-1">Rollades</h3>
+          <p class="mb-5 opacity-80">Prijzen per 100 gram</p>
+          <ul class="space-y-4">
+            <li class="regel"><span class="font-semibold">Half om half rollade</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 2,29</span><span class="uitleg text-[.95rem] opacity-80">Favoriet op de Veluwe</span></li>
+            <li class="regel"><span class="font-semibold">Doorregen runderrollade</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 2,35</span><span class="uitleg text-[.95rem] opacity-80">Lekkere malse rollade</span></li>
+            <li class="regel"><span class="font-semibold">Toscaanse rollade</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 2,49</span><span class="uitleg text-[.95rem] opacity-80">Speciale varkensfiletrollade</span></li>
+            <li class="regel"><span class="font-semibold">Kiprollade boerderijkip</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 2,69</span><span class="uitleg text-[.95rem] opacity-80">Lekker gekruid</span></li>
+            <li class="regel"><span class="font-semibold">Runderlenderollade</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 3,35</span><span class="uitleg text-[.95rem] opacity-80">Mag lekker rosé blijven</span></li>
+          </ul>
+      <img src="assets/site-12.jpg" alt="Rollade, met touw opgebonden" loading="lazy" class="w-[70%] max-w-[280px] mx-auto mt-8 mix-blend-multiply -rotate-6">
+    </div>
+    <div>
+      <img src="assets/google-07.jpg" alt="Bakken met gemarineerde hapjes in de toonbank van Wilbrink" loading="lazy" class="w-full aspect-[3/2] object-cover object-[20%_100%] rounded-[18px] mb-8">
+      <h3 class="font-kop text-3xl mb-5">Hapjes en salades</h3>
+          <ul class="space-y-4">
+            <li class="regel"><span class="font-semibold">Snacksteen 'Beekbergen'</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 24,90</span><span class="uitleg text-[.95rem] opacity-80">Ronde steen gevuld met circa 48 hapjes</span></li>
+            <li class="regel"><span class="font-semibold">Partypan gemixt</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 36,90</span></li>
+            <li class="regel"><span class="font-semibold">Carpaccio</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 5,99</span><span class="uitleg text-[.95rem] opacity-80">Heerlijk voorgerecht, per portie</span></li>
+            <li class="regel"><span class="font-semibold">Rundvleessalade opgemaakt</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 6,49 p.p.</span><span class="uitleg text-[.95rem] opacity-80">Mooi opgemaakte schaal</span></li>
+            <li class="regel"><span class="font-semibold">Zalmsalade opgemaakt</span><span class="stip"></span><span class="font-semibold whitespace-nowrap">€ 7,49 p.p.</span><span class="uitleg text-[.95rem] opacity-80">Mooi opgemaakte schaal</span></li>
+          </ul>
+    </div>
+  </div>
+  <p class="mt-14">Bestellen voor kerst kan tot en met zaterdag 19 december. Vragen? Mail gerust naar <a class="font-bold text-rood whitespace-nowrap" href="mailto:info@slagerijwilbrink.nl?subject=Bestelling%20feestdagen">info@slagerijwilbrink.nl</a>.</p>
+</section>
+
+<!-- TOONBANK -->
+<section id="toonbank" class="bg-antraciet text-wit scroll-mt-4">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-20 lg:pt-28 pb-10 lg:pb-14">
+    <h2 class="font-kop text-5xl lg:text-7xl leading-[1.02] max-w-[16ch]">Kijk maar wat er in de toonbank ligt.</h2>
+  </div>
+  <div class="overflow-hidden aspect-[5/4] lg:aspect-[16/7]">
+    <img src="assets/google-03.jpg" alt="De toonbank van Slagerij Wilbrink: verse worsten aan het rek voor de witte bakstenen muur, daaronder schappen en bakken vol vers vlees" loading="lazy" class="w-full h-full object-cover object-[50%_70%] scale-[1.4] origin-[72%_88%] lg:scale-100">
+  </div>
+
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-10 lg:pt-14">
+    <ul class="woorden font-kop text-[1.7rem] lg:text-[2.6rem] leading-[1.35] flex flex-wrap" aria-label="Ons assortiment">
+      <li>Vers vlees</li><li>Vlugklaar</li><li>Vleeswaren</li><li>Gourmet</li><li>Rollades</li><li>BBQ</li><li>Snacks &amp; worsten</li><li>Salades</li><li>Maaltijden</li><li>Belegde broodjes</li><li>Cadeaus</li>
+    </ul>
+  </div>
+
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-16 lg:pt-24 grid lg:grid-cols-12 gap-x-12 gap-y-8 items-center">
+    <img src="assets/google-04.jpg" alt="Schappen van Wilbrink met verse worst, kip en gehakt, van dichtbij" loading="lazy" class="lg:col-span-7 w-full aspect-[4/3] object-cover rounded-[18px]">
+    <div class="lg:col-span-5">
+      <h3 class="font-kop text-4xl lg:text-5xl leading-[1.05]">Worst uit onze eigen worstmakerij</h3>
+      <p class="mt-4 max-w-[32rem]">Runderen en varkens snijden we zelf uit. In onze eigen worstmakerij bereiden we op traditionele wijze de lekkerste worsten.</p>
+      <figure class="mt-8 pt-6 relative">
+        <span class="stip absolute top-0 inset-x-0 text-wit"></span>
+        <blockquote class="text-lg font-medium">"Hele vriendelijke medewerkers, groot assortiment (ook hapjes, lekker voor op de camping). De echte aanrader was de huisgemaakte fuet! Ze hebben verschillende smaken, wij hadden de chorizo en die was heerlijk."</blockquote>
+        <figcaption class="mt-3 text-[.95rem] opacity-80">Syrin Wortelboer, 5 van 5 op Google</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-16 lg:pt-28 pb-20 lg:pb-28 grid lg:grid-cols-12 gap-x-12 gap-y-14">
+    <div class="lg:col-span-5">
+      <img src="assets/google-05.jpg" alt="Lange toonbank met bakken vlugklaar richting de witte bakstenen muur" loading="lazy" class="w-full aspect-[4/5] object-cover boog">
+      <h3 class="font-kop text-3xl lg:text-4xl mt-6">Vlugklaar</h3>
+      <p class="mt-3 max-w-[30rem]">Voor de dagen dat het snel moet. De bakken vlugklaar liggen naast het verse vlees, dus u neemt ze zo mee.</p>
+    </div>
+    <div class="lg:col-span-7 lg:pt-32">
+      <img src="assets/google-06.jpg" alt="Toonbank met huisgemaakte maaltijden naast een koelkast vol bakjes" loading="lazy" class="w-full aspect-[4/3] object-cover rounded-[18px]">
+      <h3 class="font-kop text-3xl lg:text-4xl mt-6">Huisgemaakte maaltijden</h3>
+      <p class="mt-3 max-w-[34rem]">Geen zin om te koken? Bij ons vindt u een ruim assortiment aan verse maaltijden, gewoon in eigen huis gemaakt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AMBACHT -->
+<section id="ambacht" class="max-w-[1320px] mx-auto px-5 lg:px-10 py-20 lg:py-32 grid lg:grid-cols-12 gap-x-12 gap-y-14 items-start scroll-mt-4">
+  <div class="lg:col-span-7">
+    <h2 class="font-kop text-5xl lg:text-7xl leading-[1.02] max-w-[14ch]">Van Jannes de slachter tot Lammert.</h2>
+    <ol class="mt-10 lg:mt-14 grid grid-cols-[3.5rem_minmax(0,1fr)] lg:grid-cols-[6.5rem_minmax(0,1fr)] gap-x-5 lg:gap-x-8">
+      <li class="contents">
+        <span class="font-kop text-rood text-2xl lg:text-4xl pb-3">1905</span>
+        <p class="pb-10 text-lg lg:text-xl max-w-[34rem]">Jannes Wilbrink richt de slagerij op. In Beekbergen is hij beter bekend als Jannes de slachter.</p>
+      </li>
+      <li class="contents">
+        <span class="font-kop text-rood text-2xl lg:text-4xl">Nu</span>
+        <p class="text-lg lg:text-xl max-w-[34rem]">Zijn achterkleinzoon Lammert Wilbrink staat met dezelfde passie achter het hakblok.</p>
+      </li>
+    </ol>
+    <div class="mt-14 lg:mt-20 max-w-[36rem]">
+      <h3 class="font-kop text-3xl lg:text-4xl">Echt Veluws rundvlees</h3>
+      <p class="mt-3">Ons rundvlees komt rechtstreeks uit de omgeving van Beekbergen. De dieren zijn in Nederland geboren en gevoed met natuurlijke, lokale producten. Zo weten we altijd precies wat we u verkopen.</p>
+      <p class="mt-3">Vragen over herkomst of allergenen? Bel of mail ons gerust.</p>
+    </div>
+  </div>
+  <div class="lg:col-span-5 aspect-[4/5] overflow-hidden boog">
+    <img src="assets/google-02.jpg" alt="Wand met vleeswaren bij Slagerij Wilbrink: hammen, worsten en gehaktbrood op stalen schappen" loading="lazy" class="w-full h-full object-cover object-[68%_50%] scale-[1.42] origin-[60%_30%] saturate-[.9] contrast-[1.12] brightness-[.97]">
+  </div>
+</section>
+
+<!-- CADEAUS -->
+<section id="cadeaus" class="bg-bloed text-wit overflow-hidden scroll-mt-4">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-x-12 gap-y-12 items-center">
+    <div class="lg:col-span-5 flex justify-center lg:justify-start">
+      <div class="w-[82%] lg:w-[108%] lg:max-w-none lg:-ml-[14%] aspect-square overflow-hidden rounded-full">
+        <img src="assets/site-11.jpg" alt="Ronde schaal rijk gevuld met hapjes, spiesjes en worst" loading="lazy" class="w-full h-full object-cover scale-[1.05]">
+      </div>
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="font-kop text-5xl lg:text-[4.2rem] leading-[1.04] max-w-[15ch]">Een cadeau dat niemand laat staan.</h2>
+      <p class="mt-6 max-w-[36rem] text-lg">Van heerlijke rollades tot rijk gevulde vleesschotels. We stellen ook, geheel in overleg, pakketten op maat samen.</p>
+      <ul class="mt-6 space-y-3 max-w-[36rem]">
+        <li>Voor bedrijven: voeg gerust een product van uw eigen bedrijf toe.</li>
+        <li>Lekkernijen van onze buurman Bakkerij Zoet gaan er ook in.</li>
+        <li>Of iets sterkers van Slijterij 't Keteltje.</li>
+      </ul>
+      <p class="mt-6 max-w-[36rem]">Omdat we alles met zorg en aandacht bereiden, vragen we u om op tijd te bestellen.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="mailto:info@slagerijwilbrink.nl?subject=Cadeaupakket%20op%20maat" class="inline-flex items-center justify-center rounded-[14px] bg-wit text-bloed font-bold px-7 py-4 hover:bg-papier transition-colors">Vraag naar de mogelijkheden</a>
+        <a href="tel:+31555061250" class="font-semibold underline underline-offset-4 decoration-2">Of bel 055 506 1250</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KOM LANGS -->
+<section id="langs" class="bg-antraciet text-wit scroll-mt-4">
+  <div class="bg-bloed">
+    <img src="assets/google-08.jpg" alt="De winkel van Slagerij Wilbrink aan de Dorpstraat in Beekbergen, met Bakkerij Zoet ernaast" loading="lazy" class="w-full aspect-[4/3] lg:aspect-[16/6] object-cover object-[35%_70%] lg:object-[50%_72%] schuin">
+  </div>
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-x-14 gap-y-12 pb-20 lg:pb-28">
+    <div class="lg:col-span-5 bg-papier text-antraciet rounded-[18px] p-7 lg:p-9 -mt-16 lg:-mt-40 relative self-start">
+      <h2 class="font-kop text-3xl lg:text-[2.4rem] leading-tight">Openingstijden</h2>
+      <ul class="mt-5 space-y-2.5" id="tijden">
+        <li class="regel" data-dag="1"><span>Maandag</span><span class="stip"></span><span class="tabular-nums">11:00 - 18:00</span></li>
+        <li class="regel" data-dag="2"><span>Dinsdag</span><span class="stip"></span><span class="tabular-nums">08:30 - 18:00</span></li>
+        <li class="regel" data-dag="3"><span>Woensdag</span><span class="stip"></span><span class="tabular-nums">08:30 - 18:00</span></li>
+        <li class="regel" data-dag="4"><span>Donderdag</span><span class="stip"></span><span class="tabular-nums">08:30 - 18:00</span></li>
+        <li class="regel" data-dag="5"><span>Vrijdag</span><span class="stip"></span><span class="tabular-nums">08:30 - 18:00</span></li>
+        <li class="regel" data-dag="6"><span>Zaterdag</span><span class="stip"></span><span class="tabular-nums">08:00 - 16:00</span></li>
+        <li class="regel" data-dag="0"><span>Zondag</span><span class="stip"></span><span>Gesloten</span></li>
+      </ul>
+      <address class="not-italic mt-8 grid sm:grid-cols-2 gap-6">
+        <div>
+          <p class="font-kop text-2xl">Dorpstraat 50</p>
+          <p>7361 AW Beekbergen</p>
+          <a class="inline-block mt-1 font-semibold text-rood underline underline-offset-4 decoration-2" href="https://www.google.com/maps/search/?api=1&query=Slagerij%20Wilbrink%2C%20Dorpstraat%2050%2C%207361%20AW%20Beekbergen">Plan uw route</a>
+        </div>
+        <div>
+          <a class="font-kop text-2xl block" href="tel:+31555061250">055 506 1250</a>
+          <a class="underline underline-offset-4 break-all" href="mailto:info@slagerijwilbrink.nl">info@slagerijwilbrink.nl</a>
+        </div>
+      </address>
+    </div>
+    <div class="lg:col-span-7 lg:pt-20">
+      <h2 class="font-kop text-5xl lg:text-7xl leading-[1.02] max-w-[15ch]">Kom gerust langs, ook op vakantie.</h2>
+      <div class="mt-8 grid sm:grid-cols-2 gap-8">
+        <figure>
+          <blockquote class="text-lg font-medium">"Ik was hier 2x tijdens mijn vakantie, aardige mensen en super lekker vlees en meer."</blockquote>
+          <figcaption class="mt-3 text-[.95rem] opacity-80">Paul de Langen, 5 van 5 op Google</figcaption>
+        </figure>
+        <figure>
+          <blockquote class="text-lg font-medium">"Goede slager en werd vriendelijk behandeld ook alwas ik geen locale klant."</blockquote>
+          <figcaption class="mt-3 text-[.95rem] opacity-80">wi F, 5 van 5 op Google</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-antraciet text-wit pb-28 lg:pb-10">
+  <div class="max-w-[1320px] mx-auto px-5 lg:px-10 pt-8 flex flex-wrap items-center gap-x-4 gap-y-3 relative">
+    <span class="stip absolute top-0 left-5 right-5 lg:left-10 lg:right-10 text-wit"></span>
+    <img src="assets/logo-oud.png" alt="" width="38" height="48" class="w-[38px] h-12 object-cover object-left rounded-[5px]">
+    <p class="font-kop text-xl">wat Wilbrink snijdt is kwaliteit</p>
+  </div>
+</footer>
+
+<a href="tel:+31555061250" class="belbalk knop lg:hidden fixed bottom-3 inset-x-3 z-20" id="belbalk" aria-label="Bel Slagerij Wilbrink op 055 506 1250">
+  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+  Bel 055 506 1250
+</a>
+
+<script>
+  // Vandaag oplichten in de openingstijden
+  var rij = document.querySelector('#tijden [data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag');
+
+  // Vaste belknop pas tonen als de hero-knop uit beeld is
+  var balk = document.getElementById('belbalk');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) {
+      balk.classList.toggle('zichtbaar', !e[0].isIntersecting);
+    }).observe(document.getElementById('hoofdknop'));
+  } else {
+    balk.classList.add('zichtbaar');
+  }
+</script>
+</body>
+</html>

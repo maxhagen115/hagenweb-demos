@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mooi, Leuk en Lekker | Bijzondere hebbedingetjes in de Walstraat, Deventer</title>
+<meta name="description" content="Cadeau- en woonwinkel in de Walstraat in Deventer. Schilderijen, beelden, kussens, servies, vogelhuisjes, kunstbloemen en chocolade. Moois waar je hebberig van wordt.">
+<meta property="og:title" content="Mooi, Leuk en Lekker in Deventer">
+<meta property="og:description" content="Moois waar je hebberig van wordt. Kom gezellig langs in de Walstraat.">
+<meta property="og:image" content="assets/site-01.jpg">
+<link rel="icon" href="assets/logo-oud.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        mosterd: '#EBB05C',
+        chocola: '#241913',
+        roos: '#AD5463',
+        olijf: '#ABA36F',
+        bes: '#8E1F4B',
+        kraft: '#DCBE92',
+        galerij: '#FBF0DA',
+        pauw: '#123F3C',
+      },
+      fontFamily: {
+        kop: ['Shrikhand', 'Georgia', 'serif'],
+        tekst: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  a, button { transition: background-color .2s, color .2s, transform .2s; }
+  :focus-visible { outline: 3px solid #241913; outline-offset: 3px; border-radius: 4px; }
+  .op-donker :focus-visible { outline-color: #EBB05C; }
+
+  .woord { font-family: 'Shrikhand', Georgia, serif; font-size: clamp(5.5rem, 18vw, 16rem); line-height: .95; font-weight: 400; }
+
+  /* Uithangbord: logo hangt aan de bovenrand en zwaait een keer bij het laden */
+  .bord { transform-origin: top center; animation: zwaai 2.6s ease-out 1; }
+  @keyframes zwaai {
+    0% { transform: rotate(5deg); } 25% { transform: rotate(-3.5deg); }
+    50% { transform: rotate(2deg); } 75% { transform: rotate(-1deg); } 100% { transform: rotate(0); }
+  }
+
+  /* Hero: enorme ronde uitsnede, net als het logo */
+  .hero-rond { aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
+  .hero-rond img { width: 100%; height: 100%; object-fit: cover; object-position: 61% 50%; }
+
+  /* Kartonnen hanglabel, zoals aan elk product in de winkel */
+  .label { position: relative; padding-top: var(--touw, 44px); transform-origin: top center; transition: transform .35s ease; filter: drop-shadow(0 6px 10px rgba(36, 25, 19, .28)); }
+  .label::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: calc(var(--touw, 44px) + 18px); margin-left: -1px; background: var(--touwkleur, #241913); z-index: 2; }
+  .label-karton { position: relative; background: #DCBE92; color: #241913; padding: 2.6rem 1.25rem 1.25rem;
+    clip-path: polygon(24px 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%, 0 24px); }
+  .label-karton::before { content: ""; position: absolute; top: 12px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: #241913; opacity: .85; }
+  @media (hover: hover) { .label:hover { transform: rotate(var(--schuin, 1.5deg)); } }
+
+  .aan-muur { mix-blend-mode: multiply; }
+  @media (max-width: 767px) { #reviews .label { --touw: 32px !important; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .bord { animation: none; }
+    .label, a, button { transition: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-mosterd font-tekst text-chocola text-[17px] leading-relaxed antialiased pb-[72px] md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-chocola focus:text-white focus:p-3">Ga naar de inhoud</a>
+
+<div class="bg-chocola text-white text-center text-[13px] leading-tight py-2 px-4 relative z-20 op-donker">
+  Demo voor Mooi, Leuk en Lekker, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-mosterd">Hagenweb</a>
+</div>
+
+<header class="relative z-10">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 flex items-start justify-between">
+    <a href="#inhoud" class="bord block pt-5 md:pt-7 relative" aria-label="Mooi, Leuk en Lekker, naar boven">
+      <span class="absolute top-0 left-[30%] w-[2px] h-7 bg-chocola" aria-hidden="true"></span>
+      <span class="absolute top-0 right-[30%] w-[2px] h-7 bg-chocola" aria-hidden="true"></span>
+      <img src="assets/logo-oud.svg" alt="Logo Mooi, Leuk en Lekker" width="110" height="110" class="w-[76px] h-[76px] md:w-[110px] md:h-[110px] relative">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 pt-7 font-semibold" aria-label="Hoofdmenu">
+      <a href="#assortiment" class="hover:text-bes">Assortiment</a>
+      <a href="#schilderijen" class="hover:text-bes">Schilderijen</a>
+      <a href="#reviews" class="hover:text-bes">Reviews</a>
+      <a href="#langskomen" class="hover:text-bes">Kom langs</a>
+    </nav>
+    <a href="tel:+31570597442" class="md:hidden pt-6 font-semibold underline underline-offset-4">0570 597 442</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden -mt-[96px] md:-mt-[130px] pt-[116px] md:pt-[170px] md:min-h-[850px]">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 relative z-[1]">
+    <div class="md:w-1/2">
+      <p class="font-semibold text-[14px] min-[380px]:text-[15px] md:text-[17px] mb-2 min-[380px]:mb-3 md:mb-5">Cadeau- en woonwinkel in de Walstraat, Deventer</p>
+      <h1 class="font-kop font-normal text-[clamp(2.6rem,13.6vw,3.4rem)] leading-[1.02] md:text-[clamp(3.4rem,6.3vw,6.1rem)]">Moois waar je hebberig van wordt.</h1>
+      <p class="mt-3 min-[380px]:mt-4 md:mt-7 text-[16px] min-[380px]:text-[18px] md:text-[21px] leading-snug md:leading-normal max-w-[30em]">Struin onder het genot van een chocolaatje tussen kussens, beelden, schilderijen en servies. Voor jezelf of een ander. Tenminste, als je 't weg kan geven.</p>
+      <div class="mt-4 min-[380px]:mt-6 md:mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Walstraat+117,+7411+GL+Deventer" target="_blank" rel="noopener" class="inline-block bg-bes hover:bg-chocola active:translate-y-px text-white font-bold text-[19px] md:text-[21px] px-8 py-4 md:px-10 md:py-5 rounded-full">Plan je route naar de winkel</a>
+        <a href="tel:+31570597442" class="font-semibold underline underline-offset-4 hover:text-bes">of bel 0570 597 442</a>
+      </div>
+      <p class="mt-5 md:mt-8 font-medium flex items-center gap-2">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="#8E1F4B"><path d="M12 2.5l2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17.5l-6 3.3 1.3-6.7-5-4.6 6.8-.8z"/></svg>
+        4,8 op Google, uit 104 reviews
+      </p>
+    </div>
+  </div>
+  <div class="hero-rond mt-8 w-[125vw] -ml-[8vw] -mb-[28vw] md:m-0 md:absolute md:w-[clamp(720px,68vw,1120px)] md:top-[50px] md:left-[calc(50%+40px)]">
+    <img src="assets/site-01.jpg" alt="De winkelpui aan de Walstraat: open deur, het logo op het raam en een tafeltje met spulletjes op straat" width="2560" height="1028" fetchpriority="high">
+  </div>
+</section>
+
+<!-- Mooi -->
+<section id="assortiment" class="bg-roos text-white relative">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 pt-14 md:pt-24 pb-16 md:pb-28 grid md:grid-cols-12 gap-x-10 gap-y-8 items-start">
+    <div class="md:col-span-7 md:order-2">
+      <p class="text-[19px] font-medium mb-1">De naam zegt het eigenlijk al.</p>
+      <h2 class="woord">Mooi</h2>
+      <p class="mt-5 text-[19px] md:text-[21px] leading-normal max-w-[30em]">Schilderijen, beelden, kunstbloemen en servies. Dingen waar je even voor blijft staan, en die je daarna niet meer uit je hoofd krijgt.</p>
+      <img src="assets/site-07.jpg" alt="Tassen, een lamp, glazen, groene engelen onder een stolp en twee vogeltjes op een dienblad, voor een roze wand" width="545" height="465" loading="lazy" class="mt-10 w-full max-w-[520px] md:ml-auto">
+    </div>
+    <div class="md:col-span-5 md:order-1">
+      <img src="assets/google-04.jpg" alt="Oranje en paarse bloemen in handgemaakte witte vazen, met kleurige armbandjes op een marmeren blad" width="900" height="1600" loading="lazy" class="w-full aspect-[3/5] object-cover object-top rounded-t-full">
+    </div>
+  </div>
+</section>
+
+<!-- Leuk -->
+<section class="bg-olijf">
+  <img src="assets/site-02.jpg" alt="De volle winkel: een grote kaart aan de muur, kruiken, een houten beeld, stolpen en roze bloemen" width="2560" height="818" loading="lazy" class="w-full h-[260px] md:h-[440px] object-cover" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 pt-10 md:pt-14 pb-16 md:pb-28 grid md:grid-cols-12 gap-x-10 gap-y-10 items-start">
+    <div class="md:col-span-7">
+      <h2 class="woord">Leuk</h2>
+      <p class="mt-5 text-[19px] md:text-[21px] leading-normal max-w-[30em]">Vogelhuisjes, sierkussens, handtassen, kandelaars, fotolijstjes en keukengerei. Je komt voor één ding en gaat naar huis met iets anders.</p>
+      <p class="mt-5 max-w-[30em]">En het wisselt ook nog: "Er zijn namelijk altijd wel leuke nieuwe spulletjes", schrijft Jacobine.</p>
+      <blockquote class="mt-10 md:mt-14 max-w-[24em] font-kop text-[1.7rem] md:text-[2.3rem] leading-[1.15]">
+        <p>"Het staat er helemaal vol met alleen maar leuke bijzondere dingen."</p>
+        <footer class="font-tekst font-semibold text-[17px] mt-3">Luisa</footer>
+      </blockquote>
+    </div>
+    <div class="md:col-span-5 md:-mt-40 relative">
+      <img src="assets/google-08.jpg" alt="Theelichtcarrousels met vogels, vlinders en ginkgoblaadjes die zacht oplichten op een donkere plank" width="1200" height="1600" loading="lazy" class="w-full aspect-[3/4.6] object-cover rounded-[50%_50%_12px_12px/28%_28%_12px_12px]">
+    </div>
+  </div>
+</section>
+
+<!-- Lekker -->
+<section class="bg-chocola text-white op-donker">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-14 md:py-20 ">
+    <h2 class="woord text-mosterd">Lekker</h2>
+    <p class="mt-6 md:mt-8 md:ml-auto text-[19px] md:text-[21px] leading-normal max-w-[28em]">Rondkijken doe je bij ons met een heerlijk chocolaatje. En chocolade en bonbons neem je ook mee naar huis, als ze de deur tenminste halen.</p>
+  </div>
+</section>
+
+<!-- Schilderijen -->
+<section id="schilderijen" class="bg-galerij">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-16 md:py-28">
+    <div class="grid md:grid-cols-12 gap-x-10 gap-y-10 items-end">
+      <div class="md:col-span-5 md:pb-10">
+        <h2 class="font-kop font-normal text-[2.9rem] md:text-[3.9rem] leading-[1.05]">Schilderijen? Die brengen we zelf langs.</h2>
+        <p class="mt-5 text-[19px] leading-normal max-w-[30em]">We hebben altijd verschillende soorten en formaten schilderijen op voorraad en brengen ze persoonlijk bij je thuis. Haal je iets liever zelf op? Dan krijg je hoge korting.</p>
+      </div>
+      <figure class="md:col-span-7 relative" style="--touw: 40px">
+        <img src="assets/site-06.jpg" alt="Schilderij Mooie bloemen: roze bloesem op een donkere achtergrond, op een ezel" width="1000" height="710" loading="lazy" class="aan-muur w-full">
+        <figcaption class="label -mt-24 ml-auto mr-2 md:mr-10 w-[230px]" style="--schuin: -1.5deg">
+          <div class="label-karton">
+            <h3 class="font-bold leading-tight">Mooie bloemen</h3>
+            <p class="mt-1"><s class="opacity-70">€319,95</s> <strong class="text-bes text-[20px]">€229,95</strong></p>
+            <a class="block mt-2 font-semibold underline underline-offset-2 hover:text-bes" href="mailto:info@mooi-leuk-en-lekker.nl?subject=Schilderij%20Mooie%20bloemen">Mail erover</a>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-16 md:mt-24 grid sm:grid-cols-2 md:grid-cols-12 gap-x-10 gap-y-14 items-start">
+      <figure class="md:col-span-3 relative w-[72%] mx-auto md:w-auto sm:w-auto">
+        <img src="assets/site-05.jpg" alt="Schilderij Majestueuze pauw: een pauw met opengewaaierde staart" width="472" height="1000" loading="lazy" class="w-full">
+        <figcaption class="label -mt-20 mx-auto w-[210px]">
+          <div class="label-karton">
+            <h3 class="font-bold leading-tight">Majestueuze pauw</h3>
+            <p class="mt-1 font-semibold text-[20px]">€349,95</p>
+            <a class="block mt-2 font-semibold underline underline-offset-2 hover:text-bes" href="mailto:info@mooi-leuk-en-lekker.nl?subject=Schilderij%20Majestueuze%20pauw">Mail erover</a>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="md:col-span-5 relative">
+        <img src="assets/site-03.jpg" alt="Schilderij Afrikaanse schoonheid met tulband: portret in warme oranje tinten, op een ezel" width="699" height="1000" loading="lazy" class="aan-muur w-full">
+        <figcaption class="label -mt-20 mr-auto ml-2 w-[230px]" style="--schuin: -1.5deg">
+          <div class="label-karton">
+            <h3 class="font-bold leading-tight">Afrikaanse schoonheid met tulband</h3>
+            <p class="mt-1 font-semibold text-[20px]">€349,95</p>
+            <a class="block mt-2 font-semibold underline underline-offset-2 hover:text-bes" href="mailto:info@mooi-leuk-en-lekker.nl?subject=Schilderij%20Afrikaanse%20schoonheid%20met%20tulband">Mail erover</a>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="md:col-span-4 relative md:mt-24">
+        <img src="assets/site-04.jpg" alt="Schilderij Mexicaanse schoonheid: portret van een vrouw met rozen in het haar, tussen verfspetters" width="670" height="1000" loading="lazy" class="w-full">
+        <figcaption class="label -mt-20 ml-auto mr-2 w-[230px]">
+          <div class="label-karton">
+            <h3 class="font-bold leading-tight">Mexicaanse schoonheid</h3>
+            <p class="mt-1 font-semibold text-[20px]">€189,95 tot €249,95</p>
+            <p class="text-[15px]">60 x 90 of 80 x 120</p>
+            <a class="block mt-2 font-semibold underline underline-offset-2 hover:text-bes" href="mailto:info@mooi-leuk-en-lekker.nl?subject=Schilderij%20Mexicaanse%20schoonheid">Mail erover</a>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-16 md:mt-24 max-w-[760px]">
+      <h3 class="font-kop font-normal text-[1.9rem] md:text-[2.4rem]">En er staat meer.</h3>
+      <ul class="mt-4 grid sm:grid-cols-2 gap-x-12 [font-variant-numeric:tabular-nums]">
+        <li class="flex justify-between gap-4 py-2 border-b border-chocola/25"><span>Mandala in the morning</span><span>€219,95</span></li>
+        <li class="flex justify-between gap-4 py-2 border-b border-chocola/25"><span>Oosterse bloem</span><span>€239,95</span></li>
+        <li class="flex justify-between gap-4 py-2 border-b border-chocola/25"><span>Schoonheid met bloemen</span><span class="whitespace-nowrap"><s class="opacity-60">€329,95</s> <span class="text-bes font-semibold">€239,95</span></span></li>
+        <li class="flex justify-between gap-4 py-2 border-b border-chocola/25"><span>Schoonheid met rode tulband</span><span>€349,95</span></li>
+        <li class="flex justify-between gap-4 py-2 border-b border-chocola/25"><span>Trotse pauw</span><span>€329,95</span></li>
+        <li class="flex justify-between gap-4 py-2 border-b border-chocola/25"><span>Verbaasde koeien</span><span>€189,95</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-pauw text-white op-donker overflow-hidden" style="--touwkleur: #DCBE92">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 pt-16 md:pt-24">
+    <h2 class="font-kop font-normal text-[2.9rem] md:text-[4.4rem] leading-[1.05] max-w-[14em]">"…het was alsof we er al jaren kwamen."</h2>
+    <p class="mt-4 text-[19px]">Ans Bosch, een van de 104 reviews op Google. Gemiddeld een 4,8.</p>
+  </div>
+  <div class="mt-10 md:mt-14 h-[6px] bg-kraft" aria-hidden="true"></div>
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 pb-20 md:pb-28 grid md:grid-cols-3 gap-x-8 lg:gap-x-12 items-start">
+
+    <div>
+      <article class="label" style="--touw: 56px">
+        <div class="label-karton text-[17px]">
+          <p>"Een paar weken geleden met mijn schoonzusje hier geweest , een prachtige winkel met super leuke gezellige eigenaren, het was alsof we er al jaren kwamen.We hebben er hele mooie shawls gekocht voor een mooie prijs, wij komen zeker terug ook al wonen we niet in de buurt."</p>
+          <p class="mt-3 font-bold">Ans Bosch</p>
+        </div>
+      </article>
+      <article class="label" style="--touw: 34px; --schuin: -1.5deg">
+        <div class="label-karton text-[17px]">
+          <p>"Super leuke winkel.  Goede prijzen. Ik ben fan!!"</p>
+          <p class="mt-3 font-bold">Wendy Van Mastrigt</p>
+        </div>
+      </article>
+    </div>
+
+    <div>
+      <article class="label" style="--touw: 110px; --schuin: -1.5deg">
+        <div class="label-karton text-[17px]">
+          <p>"Super mooie bloemen en allerlei mooie decoratie voor een goede prijs. Je wordt hier altijd vriendelijk ontvangen :)"</p>
+          <p class="mt-3 font-bold">Vincent van Empelen</p>
+        </div>
+      </article>
+      <article class="label" style="--touw: 34px">
+        <div class="label-karton text-[17px]">
+          <p>"Als we vanuit de drukke randstad naar Deventer gaan bezoeken we altijd de super leuke winkel Mooi, Leuk en Lekker en kopen we altijd wel iets!"</p>
+          <p class="mt-3 font-bold">DandeGooglefan</p>
+        </div>
+      </article>
+    </div>
+
+    <div>
+      <article class="label" style="--touw: 30px">
+        <div class="label-karton text-[17px]">
+          <p>"Als je nog een geschenk zoekt voor jezelf of te geven, ben je hier op het juiste adres. Ook bronzen beeldjes, klokken, schilderijen, bonbons, horloges, etc."</p>
+          <p class="mt-3 font-bold">Marco</p>
+        </div>
+      </article>
+      <article class="label" style="--touw: 34px; --schuin: -1.5deg">
+        <div class="label-karton text-[17px]">
+          <p>"Heerlijk sfeer proeven in deze leuke winkel met verborgen pareltjes …. Aanrader om binnen te lopen/ontdekken. Hele leuke kristallen druppels gekocht voor de kerstboom 🎄"</p>
+          <p class="mt-3 font-bold">Georgette Verschoore</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Kom langs -->
+<section id="langskomen" class="bg-mosterd">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-16 md:py-28 grid md:grid-cols-12 gap-x-12 gap-y-12 items-start">
+    <div class="md:col-span-7">
+      <h2 class="font-kop font-normal text-[3.4rem] md:text-[6.1rem] leading-[1.02]">Kom gezellig langs.</h2>
+      <p class="mt-5 text-[19px] md:text-[21px] leading-normal"><strong class="font-bold">Walstraat 117</strong>, 7411 GL Deventer</p>
+      <div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Walstraat+117,+7411+GL+Deventer" target="_blank" rel="noopener" class="inline-block bg-bes hover:bg-chocola active:translate-y-px text-white font-bold text-[19px] px-8 py-4 rounded-full">Plan je route</a>
+        <a href="tel:+31570597442" class="font-semibold underline underline-offset-4 hover:text-bes">Bel 0570 597 442</a>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-x-12 gap-y-10">
+        <div>
+          <h3 class="font-bold text-[19px] mb-2">Openingstijden</h3>
+          <table class="w-full [font-variant-numeric:tabular-nums]">
+            <tbody>
+              <tr class="border-b border-chocola/30"><td class="py-1.5">maandag</td><td class="py-1.5 text-right">gesloten</td></tr>
+              <tr class="border-b border-chocola/30"><td class="py-1.5">dinsdag</td><td class="py-1.5 text-right">10:00 – 17:00</td></tr>
+              <tr class="border-b border-chocola/30"><td class="py-1.5">woensdag</td><td class="py-1.5 text-right">10:00 – 17:00</td></tr>
+              <tr class="border-b border-chocola/30"><td class="py-1.5">donderdag</td><td class="py-1.5 text-right">10:00 – 17:00</td></tr>
+              <tr class="border-b border-chocola/30"><td class="py-1.5">vrijdag</td><td class="py-1.5 text-right">10:00 – 17:00</td></tr>
+              <tr class="border-b border-chocola/30"><td class="py-1.5">zaterdag</td><td class="py-1.5 text-right">10:00 – 17:00</td></tr>
+              <tr><td class="py-1.5">zondag</td><td class="py-1.5 text-right">gesloten</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-3 text-[16px] leading-snug">Op koopzondagen (de 1e zondag van de maand) zijn we open. Kijk voor de actuele koopzondagen bij de VVV Deventer.</p>
+        </div>
+        <div class="space-y-7">
+          <div>
+            <h3 class="font-bold text-[19px] mb-1">Met de auto</h3>
+            <p>Q-park Boreelplein is het dichtstbij.</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-[19px] mb-1">Even overleggen?</h3>
+            <p><a href="tel:+31570597442" class="underline underline-offset-4 hover:text-bes">0570 597 442</a><br>
+            <a href="tel:+31683124761" class="underline underline-offset-4 hover:text-bes">06 83 12 47 61</a><br>
+            <a href="mailto:info@mooi-leuk-en-lekker.nl" class="underline underline-offset-4 hover:text-bes break-all">info@mooi-leuk-en-lekker.nl</a></p>
+            <p class="mt-2 text-[16px] leading-snug">We streven ernaar je bericht binnen één werkdag te beantwoorden.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-5">
+      <img src="assets/google-05.jpg" alt="Binnen in de winkel: warm licht, een ronde tafel met een grote vaas en een stenen hoofd, boeketten en kussens op de vloer" width="900" height="1600" loading="lazy" class="w-full aspect-[3/4.6] object-cover object-[50%_60%] rounded-t-full">
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-chocola text-white op-donker">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-7 text-[15px]">
+    <p>© 2026 Mooi, Leuk &amp; Lekker, Walstraat 117, Deventer</p>
+  </div>
+</footer>
+
+<!-- Mobiel: bellen altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-30 bg-chocola p-2.5 grid grid-cols-2 gap-2.5 op-donker">
+  <a href="tel:+31570597442" class="bg-bes text-white font-bold text-center rounded-full py-3 active:translate-y-px">Bel de winkel</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Walstraat+117,+7411+GL+Deventer" target="_blank" rel="noopener" class="border-2 border-mosterd text-mosterd font-bold text-center rounded-full py-2.5 active:translate-y-px">Route</a>
+</div>
+
+</body>
+</html>
