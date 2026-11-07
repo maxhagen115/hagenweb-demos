@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOP! Interieurbouw | Keukens en kasten op maat, gemaakt in Zwolle</title>
+<meta name="description" content="Schuin dak, rare hoek of krappe ruimte? HOP! Interieurbouw ontwerpt, maakt en plaatst keukens en kasten op maat vanuit de eigen werkplaats in Zwolle. Bel 038 206 0040.">
+<meta property="og:title" content="HOP! Interieurbouw: past niet bestaat niet">
+<meta property="og:description" content="Keukens en kasten op maat, gemaakt in Zwolle.">
+<meta property="og:image" content="assets/site-05.png">
+<link rel="icon" href="assets/logo-oud.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        kast: '#8BA3BE',
+        inkt: '#17212C',
+        nis: '#E07E16',
+        eiken: '#B98B45',
+        kalk: '#EEF1F3',
+      },
+      fontFamily: {
+        kop: ['"League Spartan"', 'Futura', 'sans-serif'],
+        tekst: ['"Source Serif 4"', 'Georgia', 'serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  img { display: block; max-width: 100%; height: auto; }
+  a[href="#inhoud"]:not(:focus) { position: absolute; left: -9999px; }
+  body { font-family: "Source Serif 4", Georgia, serif; color: #17212C; background: #EEF1F3; }
+  h1, h2, h3, .kop { font-family: "League Spartan", Futura, sans-serif; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  html:focus-within { scroll-behavior: smooth; }
+  section[id], article[id] { scroll-margin-top: 1rem; }
+  :focus-visible { outline: 3px solid #17212C; outline-offset: 3px; }
+  .op-donker :focus-visible { outline-color: #fff; }
+
+  /* De naad tussen twee kastfronten */
+  .naad { box-shadow: 0 1px 0 rgba(23,33,44,.28), 0 2px 0 rgba(255,255,255,.18); position: relative; z-index: 1; }
+
+  /* De nis: de oranje uitsparing uit de keuken, als knop */
+  .nis {
+    background: #E07E16;
+    box-shadow: inset 0 7px 9px -3px rgba(112,50,0,.6), inset 5px 0 7px -5px rgba(112,50,0,.4), 0 2px 0 rgba(255,255,255,.4);
+    transition: background-color .2s, transform .15s;
+  }
+  .nis:hover { background: #EC8D2A; }
+  .nis:active { transform: translateY(1px); }
+
+  /* De schuine lijn, op de hoek van een dakhelling */
+  .schuin-rechts { clip-path: polygon(0 0, 66% 0, 100% 40%, 100% 100%, 0 100%); }
+  .schuin-links { clip-path: polygon(26% 0, 100% 0, 100% 100%, 0 100%, 0 34%); }
+
+  /* De lade: front met een korte eiken greep */
+  .lade { position: relative; background: #fff; box-shadow: 0 1px 0 rgba(23,33,44,.28), 0 -1px 0 rgba(23,33,44,.12); }
+  .lade::before { content: ""; position: absolute; top: 0; left: 50%; width: 5.5rem; height: 7px; margin-left: -2.75rem; background: #B98B45; border-radius: 0 0 2px 2px; }
+
+  /* De helling: elke stap schuift iets op */
+  @media (min-width: 1024px) { .helling > li { margin-left: calc(var(--i) * 3.2rem); } }
+
+  .sterren { letter-spacing: .08em; }
+
+  /* Eenmalige onthulling van de hero. De eindstand is de normale stand, dus zonder JS staat alles er. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-foto { animation: onthul .9s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes onthul { from { clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 100%, 100% 100%); } }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
+
+  /* Belbalk mobiel: zonder JS altijd zichtbaar, met JS pas als de hero-knop uit beeld is */
+  .js .belbalk { transform: translateY(110%); visibility: hidden; transition: transform .25s, visibility .25s; }
+  .js .belbalk.toon { transform: none; visibility: visible; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="antialiased text-[1.0625rem] leading-[1.6]">
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Direct naar de inhoud</a>
+
+<div class="bg-inkt text-white text-[0.8125rem] leading-snug text-center px-4 py-2 font-kop op-donker">
+  Demo voor HOP! Interieurbouw Keuken Kast Particulier Zakelijk, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-nis">Hagenweb</a>
+</div>
+
+<div class="bg-kast naad">
+  <header class="max-w-[1500px] mx-auto px-5 lg:px-10 pt-4 pb-3 lg:py-5 flex items-center justify-between gap-4">
+    <a href="#" class="flex items-center gap-2.5 shrink-0" aria-label="HOP! Interieurbouw, naar boven">
+      <svg viewBox="6 2 20.4 28" width="26" height="36" class="h-9 lg:h-11 w-auto" aria-hidden="true">
+        <rect x="6" y="2" width="5.4" height="28" fill="#17212C"/>
+        <rect x="21" y="2" width="5.4" height="8" fill="#17212C"/>
+        <path d="M13.6 13h12.8v17H21V19h-7.4z" fill="#17212C"/>
+        <rect x="13.6" y="21.4" width="5.4" height="8.6" fill="#B98B45"/>
+      </svg>
+      <span class="kop font-extrabold text-[1.65rem] lg:text-[1.9rem] leading-none tracking-tight pt-1">HOP!</span>
+    </a>
+    <nav aria-label="Hoofdmenu" class="kop font-semibold text-[0.95rem] lg:text-[1.05rem]">
+      <ul class="flex items-center gap-3 sm:gap-5 lg:gap-8">
+        <li><a class="hover:underline underline-offset-4 decoration-2" href="#keukens">Keukens</a></li>
+        <li><a class="hover:underline underline-offset-4 decoration-2" href="#kasten">Kasten</a></li>
+        <li class="hidden sm:block"><a class="hover:underline underline-offset-4 decoration-2" href="#zakelijk">Zakelijk</a></li>
+        <li class="hidden sm:block"><a class="hover:underline underline-offset-4 decoration-2" href="#werkplaats">Werkplaats</a></li>
+        <li><a class="hover:underline underline-offset-4 decoration-2" href="#werkwijze">Werkwijze</a></li>
+        <li class="hidden sm:block"><a class="hover:underline underline-offset-4 decoration-2" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<main id="inhoud">
+  <section class="bg-kast lg:grid lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:min-h-[calc(100dvh-7.5rem)] lg:max-h-[900px]">
+    <div class="px-5 lg:pl-[max(2.5rem,calc((100vw-1500px)/2+2.5rem))] lg:pr-4 pt-5 pb-8 lg:py-16 flex flex-col justify-center">
+      <p class="kop font-semibold text-base lg:text-xl">Keukens en kasten op maat, uit Zwolle</p>
+      <h1 class="font-extrabold tracking-[-0.035em] leading-[0.92] text-[13.2vw] sm:text-7xl lg:text-[6.1vw] 2xl:text-[5.6rem] mt-3 lg:mt-5">Past niet<br>bestaat niet.</h1>
+      <p class="mt-4 lg:mt-7 text-[1.125rem] lg:text-[1.3rem] leading-[1.42] max-w-[31rem]">Schuin dak, rare hoek of krappe ruimte? Wij ontwerpen, bouwen en plaatsen uw keuken of kast zelf, vanuit onze eigen werkplaats in Zwolle.</p>
+      <div class="mt-6 lg:mt-9 flex flex-col sm:flex-row sm:items-center gap-x-7 gap-y-3">
+        <a id="hero-bel" href="tel:+31382060040" class="nis kop font-bold text-[1.35rem] lg:text-[1.55rem] rounded-[3px] px-7 pt-[1.15rem] pb-[0.95rem] inline-flex items-center justify-center gap-3 text-inkt">
+          <svg viewBox="0 0 24 24" width="24" height="24" class="w-6 h-6 -mt-1" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg>
+          Bel 038 206 0040
+        </a>
+        <a href="#contact" class="kop font-semibold text-[1.1rem] underline underline-offset-4 decoration-2 text-center sm:text-left hover:decoration-nis">Plan een kennismaking</a>
+      </div>
+      <p class="mt-5 lg:mt-7 kop font-medium text-base"><span class="sterren" aria-hidden="true">★★★★★</span> 5 sterren op Google, uit 4 reviews</p>
+    </div>
+    <div class="relative h-[66vw] sm:h-[420px] lg:h-auto">
+      <img src="assets/site-05.png" width="1536" height="1024" alt="Maatwerk keuken in blauw en hout onder een schuin dak, met oranje nissen in de kastenwand" class="hero-foto schuin-rechts absolute inset-0 w-full h-full object-cover object-[35%_center]">
+    </div>
+  </section>
+
+  <section id="schuin" class="bg-kalk py-16 lg:py-28">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-y-10 lg:gap-x-14 items-center">
+      <div class="lg:col-span-6">
+        <img src="assets/site-04.png" loading="lazy" width="1537" height="1023" alt="Lichte kastenwand met een driehoekige boekenkast die de dakhelling onder een dakraam volgt" class="schuin-links w-full aspect-[5/4] object-cover">
+      </div>
+      <div class="lg:col-span-6">
+        <h2 class="font-bold text-[2.5rem] lg:text-[3.6rem] leading-[1] tracking-[-0.025em]">Waar een standaardkeuken ophoudt, beginnen wij.</h2>
+        <p class="mt-5 max-w-[34rem] text-[1.2rem] leading-[1.5]">Schuine wanden, beperkte afmetingen of specifieke wensen? Wij ontwerpen maatwerk dat elke centimeter benut.</p>
+        <figure class="mt-9 border-l-[7px] border-eiken pl-6 max-w-[36rem]">
+          <blockquote class="italic text-[1.15rem] leading-[1.55]">
+            <p>"Samen met hopinterieurs deze prachtige keuken helemaal op maat laten maken.</p>
+            <p class="mt-2">Alle normale keuken verkopers konden niks met ons schuine dak maar bij HOP! Interieur bouw hebben ze dit perfect opgelost.</p>
+            <p class="mt-2">Nogmaals bedankt voor de gave keuken!"</p>
+          </blockquote>
+          <figcaption class="kop font-semibold mt-4">Rens Koesman, op Google <span class="sterren font-normal ml-1" aria-label="5 van de 5 sterren">★★★★★</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="keukens" class="bg-white py-16 lg:py-28">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10">
+      <div class="grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-5">
+        <div class="col-span-2 lg:col-span-4 lg:pr-6 pb-6 lg:pb-0 flex flex-col justify-end">
+          <h2 class="font-bold text-[2.5rem] lg:text-[3.6rem] leading-[1] tracking-[-0.025em]">Elke keuken anders.</h2>
+          <p class="mt-5">Geen vaste kastmaten en geen beperkte materiaalkeuze. De indeling, de afmetingen, het materiaal, de kleur en de afwerking stemmen we af op hoe u kookt, woont en leeft.</p>
+          <p class="mt-3">We werken met houtsoorten, laminaten en afwerkingen die jarenlang mooi blijven, en helpen u kiezen wat past bij uw gebruik en smaak.</p>
+        </div>
+        <figure class="col-span-2 lg:col-span-8">
+          <img src="assets/site-11.jpg" loading="lazy" width="3200" height="2133" alt="Groene keuken met kookeiland, eiken randen en een open eiken kast voor hoge ramen" class="w-full aspect-[3/2] object-cover">
+        </figure>
+
+        <figure class="col-span-2 lg:col-span-5 lg:row-span-2">
+          <img src="assets/site-01.jpg" loading="lazy" width="1440" height="960" alt="Keuken met een wand van donker hout en een antraciet eiland met wijnkoeler" class="w-full h-full aspect-[4/5] lg:aspect-[5/6] object-cover">
+        </figure>
+        <figure class="col-span-1 lg:col-span-4 lg:row-span-2">
+          <img src="assets/site-08.jpg" loading="lazy" width="960" height="1201" alt="Matzwarte keuken met een achterwand en werkblad in marmerlook" class="w-full h-full aspect-[4/5] lg:aspect-auto object-cover">
+        </figure>
+        <figure class="col-span-1 lg:col-span-3">
+          <img src="assets/site-10.jpg" loading="lazy" width="1024" height="768" alt="Close-up van een houten greeplijst tussen antraciet fronten" class="w-full h-full aspect-[4/5] lg:aspect-[4/3] object-cover">
+        </figure>
+        <figure class="col-span-2 lg:col-span-3 bg-kast p-6 flex flex-col justify-center">
+          <blockquote class="italic leading-[1.5] lg:leading-[1.45]">
+            <p>"Super mooie keuken en bijkeuken laten plaatsen in ons nieuwbouw huis. Wij zijn er helemaal blij mee.</p>
+            <p class="mt-2">Wij vonden het fijn dat alles mooi lokaal gemaakt word."</p>
+          </blockquote>
+          <figcaption class="kop font-semibold mt-3"><span class="block">Tycho Wil, op Google</span> <span class="sterren font-normal block" aria-label="5 van de 5 sterren">★★★★★</span></figcaption>
+        </figure>
+
+        <figure class="col-span-2 lg:col-span-7">
+          <img src="assets/site-02.jpg" loading="lazy" width="1440" height="960" alt="Lichte keuken met een lang wit kookeiland met marmeren zijkant" class="w-full aspect-[3/2] object-cover">
+        </figure>
+        <figure class="col-span-2 lg:col-span-5">
+          <img src="assets/site-07.jpg" loading="lazy" width="1265" height="845" alt="Keuken met een koperkleurig eiland, zwart werkblad en een antraciet apparatenwand" class="w-full aspect-[3/2] lg:h-full lg:aspect-auto object-cover">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="kasten" class="bg-kalk py-16 lg:py-28">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-y-10 lg:gap-x-14">
+      <div class="lg:col-span-5">
+        <h2 class="font-bold text-[2.5rem] lg:text-[3.6rem] leading-[1] tracking-[-0.025em]">En alles wat verder op maat moet.</h2>
+        <img src="assets/google-05.jpg" loading="lazy" width="1008" height="627" alt="Witte inbouwkast met een eiken nis voor kleding, laden en eiken grepen" class="mt-8 w-full aspect-[8/5] object-cover">
+      </div>
+      <div class="lg:col-span-7 flex flex-col gap-3 lg:pt-3">
+        <article class="lade px-6 lg:px-10 pt-9 pb-7 lg:pt-11 lg:pb-9">
+          <h3 class="font-bold text-[1.75rem] lg:text-[2.1rem] leading-tight">Kasten</h3>
+          <p class="mt-2 max-w-[38rem]">Een kast op maat benut elke centimeter, ook de lastige hoeken en schuine wanden. We ontwerpen mee en bouwen af, zodat u geen concessies doet aan opbergruimte of uitstraling.</p>
+        </article>
+        <article class="lade px-6 lg:px-10 pt-9 pb-7 lg:pt-11 lg:pb-9">
+          <h3 class="font-bold text-[1.75rem] lg:text-[2.1rem] leading-tight">Interieur voor thuis</h3>
+          <p class="mt-2 max-w-[38rem]">Een complete woonkamer, een badkamerkast of een tv-meubel op maat. Voor iedereen die meer wil dan een standaardoplossing, afgestemd op uw woning.</p>
+        </article>
+        <article id="zakelijk" class="lade px-6 lg:px-10 pt-9 pb-7 lg:pt-11 lg:pb-9">
+          <h3 class="font-bold text-[1.75rem] lg:text-[2.1rem] leading-tight">Zakelijk</h3>
+          <p class="mt-2 max-w-[38rem]">Kantoren en winkels. Een goed zakelijk interieur versterkt uw merk en geeft klanten en medewerkers een prettige plek.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="werkplaats" class="bg-inkt text-white op-donker">
+    <div class="grid lg:grid-cols-12 items-stretch">
+      <div class="lg:col-span-5 relative min-h-[110vw] sm:min-h-[560px] lg:min-h-[780px]">
+        <img src="assets/site-06.jpg" loading="lazy" width="1080" height="1350" alt="Vakman in een zwart HOP-shirt schuurt een paneel in de werkplaats in Zwolle" class="absolute inset-0 w-full h-full object-cover object-[60%_center]">
+      </div>
+      <div class="lg:col-span-7 px-5 lg:px-20 py-14 lg:py-24 flex flex-col justify-center">
+        <h2 class="font-bold text-[2.5rem] lg:text-[4rem] leading-[1] tracking-[-0.025em]">Geen accountmanager. De vakman zelf.</h2>
+        <p class="mt-6 max-w-[36rem] text-[1.2rem] leading-[1.5]">Bij HOP! krijgt u de mensen aan de lijn die uw keuken maken. Geen tussenpersonen, geen wisselende gezichten en geen ingehuurde krachten.</p>
+        <div class="mt-9 grid sm:grid-cols-2 gap-x-10 gap-y-6 max-w-[44rem]">
+          <div>
+            <h3 class="font-semibold text-[1.3rem]">Uit de camperbouw</h3>
+            <p class="mt-1 text-white/85">HOP! is ontstaan uit passie voor perfect maatwerk en 10 jaar ervaring in de high-end camperbouw.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-[1.3rem]">Machine en hand</h3>
+            <p class="mt-1 text-white/85">Moderne CNC-machines maken elk onderdeel millimeternauwkeurig. Daarna werken onze vakmensen het met de hand af.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-[1.3rem]">Alles onder één dak</h3>
+            <p class="mt-1 text-white/85">Van ontwerp tot oplevering gebeurt alles bij ons. Geen uitbesteding, dus wij houden de kwaliteit zelf in de hand.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-[1.3rem]">Uit de regio</h3>
+            <p class="mt-1 text-white/85">We werken samen met lokale leveranciers en bedrijven in de regio Zwolle. Dat houdt de lijnen kort.</p>
+          </div>
+        </div>
+        <figure class="mt-11 border-l-[7px] border-eiken pl-6 max-w-[42rem]">
+          <blockquote class="italic text-[1.15rem] leading-[1.55]">
+            <p>"Het team van HOP! heeft voor ons een super keuken gebouwd. Vanaf de eerste tekening tot de productie zijn we heel goed geholpen.</p>
+            <p class="mt-2">Het leukste vind ik dat alles in Zwolle gemaakt word. Zo hebben we een echte maatwerk keuken gekregen die helemaal bij ons past..."</p>
+          </blockquote>
+          <figcaption class="kop font-semibold mt-4">Bonita van Echten, op Google <span class="sterren font-normal ml-1" aria-label="5 van de 5 sterren">★★★★★</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="werkwijze" class="bg-white py-16 lg:py-28">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10">
+      <h2 class="font-bold text-[2.5rem] lg:text-[3.6rem] leading-[1] tracking-[-0.025em] max-w-[44rem]">Van eerste gesprek tot kookklare keuken.</h2>
+      <p class="mt-5 max-w-[36rem] text-[1.2rem] leading-[1.5]">U weet bij elke stap waar u aan toe bent. Voor een kast op maat gaat het op dezelfde manier.</p>
+      <ol class="helling mt-12 lg:mt-16 flex flex-col">
+        <li style="--i:0" class="grid grid-cols-[3rem_1fr] lg:grid-cols-[4.5rem_19rem_minmax(0,36rem)] gap-x-2 lg:gap-x-6 py-6 border-t border-inkt/25">
+          <span class="kop font-extrabold text-[2.2rem] leading-none text-eiken" aria-hidden="true">1</span>
+          <h3 class="font-semibold text-[1.4rem] leading-tight">Kennismaken in de studio</h3>
+          <p class="col-start-2 lg:col-start-3 mt-1 lg:mt-0">U komt langs in Zwolle. We bespreken uw wensen, u bekijkt materialen en afwerkingen, en u krijgt een eerlijk beeld van wat kan binnen uw budget.</p>
+        </li>
+        <li style="--i:1" class="grid grid-cols-[3rem_1fr] lg:grid-cols-[4.5rem_19rem_minmax(0,36rem)] gap-x-2 lg:gap-x-6 py-6 border-t border-inkt/25">
+          <span class="kop font-extrabold text-[2.2rem] leading-none text-eiken" aria-hidden="true">2</span>
+          <h3 class="font-semibold text-[1.4rem] leading-tight">Ontwerp in 3D</h3>
+          <p class="col-start-2 lg:col-start-3 mt-1 lg:mt-0">Op basis van het gesprek maken we een volledig 3D-ontwerp. U ziet precies hoe het eruitziet voordat er iets geproduceerd wordt. Aanpassen is nu nog eenvoudig.</p>
+        </li>
+        <li style="--i:2" class="grid grid-cols-[3rem_1fr] lg:grid-cols-[4.5rem_19rem_minmax(0,36rem)] gap-x-2 lg:gap-x-6 py-6 border-t border-inkt/25">
+          <span class="kop font-extrabold text-[2.2rem] leading-none text-eiken" aria-hidden="true">3</span>
+          <h3 class="font-semibold text-[1.4rem] leading-tight">Offerte en akkoord</h3>
+          <p class="col-start-2 lg:col-start-3 mt-1 lg:mt-0">U krijgt een heldere, gedetailleerde offerte zonder verborgen kosten. Na uw akkoord plannen we de productie en krijgt u een concrete opleverdatum.</p>
+        </li>
+        <li style="--i:3" class="grid grid-cols-[3rem_1fr] lg:grid-cols-[4.5rem_19rem_minmax(0,36rem)] gap-x-2 lg:gap-x-6 py-6 border-t border-inkt/25">
+          <span class="kop font-extrabold text-[2.2rem] leading-none text-eiken" aria-hidden="true">4</span>
+          <h3 class="font-semibold text-[1.4rem] leading-tight">Opmeten bij u thuis</h3>
+          <p class="col-start-2 lg:col-start-3 mt-1 lg:mt-0">Elke centimeter telt. We meten ter plaatse op en noteren alle details van de ruimte.</p>
+        </li>
+        <li style="--i:4" class="grid grid-cols-[3rem_1fr] lg:grid-cols-[4.5rem_19rem_minmax(0,36rem)] gap-x-2 lg:gap-x-6 py-6 border-t border-inkt/25">
+          <span class="kop font-extrabold text-[2.2rem] leading-none text-eiken" aria-hidden="true">5</span>
+          <h3 class="font-semibold text-[1.4rem] leading-tight">Productie in eigen atelier</h3>
+          <p class="col-start-2 lg:col-start-3 mt-1 lg:mt-0">Uw keuken wordt volledig in ons atelier in Zwolle gemaakt. Geen uitbesteding, geen tussenschakels.</p>
+        </li>
+        <li style="--i:5" class="grid grid-cols-[3rem_1fr] lg:grid-cols-[4.5rem_19rem_minmax(0,36rem)] gap-x-2 lg:gap-x-6 py-6 border-y border-inkt/25">
+          <span class="kop font-extrabold text-[2.2rem] leading-none text-eiken" aria-hidden="true">6</span>
+          <h3 class="font-semibold text-[1.4rem] leading-tight">Montage en oplevering</h3>
+          <p class="col-start-2 lg:col-start-3 mt-1 lg:mt-0">Ons team plaatst alles zorgvuldig. Daarna lopen we het samen met u na, zodat u tevreden bent voordat wij vertrekken.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-kast py-16 lg:py-28">
+    <div class="max-w-[1320px] mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-y-10 lg:gap-x-14">
+      <div class="lg:col-span-6">
+        <h2 class="font-extrabold text-[3rem] lg:text-[4.6rem] leading-[0.96] tracking-[-0.03em]">Lastige ruimte? Bel ons maar.</h2>
+        <p class="mt-5 max-w-[30rem] text-[1.2rem] leading-[1.5]">Vertel wat u voor ogen heeft, dan plannen we een kennismaking in de studio.</p>
+        <a href="tel:+31382060040" class="nis kop font-bold text-[1.35rem] lg:text-[1.55rem] rounded-[3px] px-7 pt-[1.15rem] pb-[0.95rem] mt-7 inline-flex items-center justify-center gap-3 w-full sm:w-auto text-inkt">
+          <svg viewBox="0 0 24 24" width="24" height="24" class="w-6 h-6 -mt-1" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg>
+          Bel 038 206 0040
+        </a>
+        <div class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-7">
+          <div>
+            <h3 class="font-semibold text-[1.2rem]">Mail</h3>
+            <a href="mailto:info@hopinterieurbouw.nl" class="underline underline-offset-2 break-words">info@hopinterieurbouw.nl</a>
+            <p>We reageren binnen één werkdag.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-[1.2rem]">Bereikbaar</h3>
+            <p>Maandag tot en met vrijdag<br>8:30 tot 17:00</p>
+            <p>Zaterdag en zondag gesloten</p>
+          </div>
+          <div class="sm:col-span-2 flex flex-col sm:flex-row gap-5 sm:items-center">
+            <img src="assets/google-01.jpg" loading="lazy" width="460" height="300" alt="Het pand van HOP! Interieurbouw aan de Voltastraat, rode baksteen met wit logo" class="w-full sm:w-[230px] aspect-[5/3] object-cover object-bottom">
+            <div>
+              <h3 class="font-semibold text-[1.2rem]">Langskomen</h3>
+              <p>Voltastraat 27<br>8013 PM Zwolle</p>
+              <p>Bezoek op afspraak mogelijk.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-6">
+        <form action="mailto:info@hopinterieurbouw.nl" method="post" enctype="text/plain" class="bg-white p-6 lg:p-10 kop">
+          <h3 class="font-bold text-[1.75rem] leading-tight">Liever schrijven?</h3>
+          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+            <label class="block font-semibold">Naam
+              <input name="naam" required autocomplete="name" class="mt-1.5 block w-full font-tekst font-normal bg-kalk border border-inkt/30 rounded-[3px] px-3 py-3">
+            </label>
+            <label class="block font-semibold">E-mail
+              <input name="e-mail" type="email" required autocomplete="email" class="mt-1.5 block w-full font-tekst font-normal bg-kalk border border-inkt/30 rounded-[3px] px-3 py-3">
+            </label>
+            <label class="block font-semibold">Telefoon
+              <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 block w-full font-tekst font-normal bg-kalk border border-inkt/30 rounded-[3px] px-3 py-3">
+            </label>
+            <label class="block font-semibold">Bedrijf (als dat van toepassing is)
+              <input name="bedrijf" autocomplete="organization" class="mt-1.5 block w-full font-tekst font-normal bg-kalk border border-inkt/30 rounded-[3px] px-3 py-3">
+            </label>
+          </div>
+          <label class="block font-semibold mt-4">Wat wilt u laten maken?
+            <textarea name="bericht" rows="6" required class="mt-1.5 block w-full font-tekst font-normal bg-kalk border border-inkt/30 rounded-[3px] px-3 py-3"></textarea>
+          </label>
+          <button type="submit" class="mt-5 bg-inkt text-white font-bold text-[1.15rem] rounded-[3px] px-7 pt-4 pb-3 w-full sm:w-auto hover:bg-[#2B3B4C] active:translate-y-px transition-colors">Verstuur bericht</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  </main>
+
+<footer class="bg-inkt text-white/85 kop op-donker px-5 lg:px-10 pt-8 pb-24 md:pb-8 text-[0.95rem]">
+  <div class="max-w-[1320px] mx-auto flex flex-col sm:flex-row justify-between gap-2">
+    <p>HOP! Interieurbouw, Voltastraat 27, 8013 PM Zwolle</p>
+    <p><a class="underline underline-offset-2" href="tel:+31382060040">038 206 0040</a></p>
+  </div>
+</footer>
+
+<a id="belbalk" href="tel:+31382060040" class="belbalk nis kop font-bold text-[1.25rem] fixed bottom-0 inset-x-0 z-20 md:hidden flex items-center justify-center gap-3 pt-5 pb-4 text-inkt">
+  <svg viewBox="0 0 24 24" width="20" height="20" class="w-5 h-5 -mt-1" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1z"/></svg>
+  Bel 038 206 0040
+</a>
+
+<script>
+  (function () {
+    var knop = document.getElementById('hero-bel');
+    var balk = document.getElementById('belbalk');
+    if (!('IntersectionObserver' in window)) { balk.classList.add('toon'); return; }
+    new IntersectionObserver(function (e) {
+      balk.classList.toggle('toon', !e[0].isIntersecting);
+    }).observe(knop);
+  })();
+</script>
+</body>
+</html>

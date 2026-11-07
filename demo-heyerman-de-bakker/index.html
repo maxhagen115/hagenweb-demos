@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heyerman de bakker in Aalten | Vers brood, banket en belegde broodjes</title>
+<meta name="description" content="Heyerman de bakker aan de Hogestraat 6 in Aalten. Vers gebakken in de nacht, dinsdag tot en met zaterdag open van 8:00 tot 13:00. Bel 0543 475 728.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Gloock&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        dooier: '#FFCF1A',
+        boter: '#FFF1BF',
+        bloem: '#FFFCF3',
+        korst: '#E9962B',
+        ochtend: '#5E3415',
+        nacht: '#21140B'
+      },
+      fontFamily: {
+        kop: ['Gloock', 'Georgia', 'serif'],
+        tekst: ['Figtree', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  :root { --koepel: clamp(30px, 6vw, 100px); }
+  html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+  body { font-family: 'Figtree', system-ui, sans-serif; color: #21140B; background: #FFFCF3; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: 'Gloock', Georgia, serif; font-weight: 400; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #21140B; outline-offset: 3px; border-radius: 4px; }
+  .op-donker a:focus-visible { outline-color: #FFCF1A; }
+
+  /* Hero */
+  .kop-hero { font-size: clamp(2.9rem, 12.6vw, 5rem); line-height: .98; letter-spacing: -.015em; }
+  .boog { border-radius: 999px 999px 0 0; }
+  .boog-ring { background: #E9962B; padding: clamp(10px, 1.2vw, 18px) clamp(10px, 1.2vw, 18px) 0; }
+  .boog-foto { filter: brightness(1.22) saturate(1.06) contrast(1.02); }
+  @media (min-width: 1024px) {
+    .kop-hero { font-size: clamp(4.5rem, 7.5vw, 7.25rem); }
+    .hero-boog { height: min(47rem, calc(100dvh - 7.5rem)) !important; min-height: 30rem; }
+  }
+
+  /* Knoppen */
+  .knop { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; background: #21140B; color: #FFCF1A; font-weight: 700; border-radius: 10px; transition: transform .15s ease, background-color .15s ease; }
+  .knop:hover { background: #5E3415; transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  .tekstlink { font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; transition: text-underline-offset .15s ease; }
+  .tekstlink:hover { text-underline-offset: .34em; }
+
+  /* Vitrine: lage boogramen, zoals de gevel */
+  .raam { border-radius: 50% 50% 14px 14px / clamp(44px, 5vw, 76px) clamp(44px, 5vw, 76px) 14px 14px; background: #FFF1BF; }
+
+  /* Prijsbord */
+  .prijsregel { display: flex; align-items: baseline; gap: .6rem; }
+  .prijsregel .stippen { flex: 1; border-bottom: 2px dotted rgba(33, 20, 11, .4); transform: translateY(-.28em); min-width: 1rem; }
+  .sticker { transform: rotate(-9deg); }
+
+  /* De lagen van nacht naar 8:00 */
+  .laag { position: relative; margin-top: calc(var(--koepel) * -1); padding-top: calc(var(--koepel) + clamp(2.5rem, 5vw, 5rem)); padding-bottom: calc(var(--koepel) + clamp(2.5rem, 5vw, 4.5rem)); border-radius: 50% 50% 0 0 / var(--koepel) var(--koepel) 0 0; }
+  .laag-kop { font-size: clamp(2.6rem, 7vw, 6rem); line-height: 1; letter-spacing: -.01em; }
+
+  .vandaag { font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .25em; }
+
+  /* Eén moment bij binnenkomst: de boog rijst op. Zonder JS staat alles er gewoon. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .boog-rijs { animation: rijs .9s cubic-bezier(.2, .8, .2, 1) both; transform-origin: bottom center; }
+    @keyframes rijs { from { transform: translateY(5rem); } to { transform: none; } }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .knop, .tekstlink { transition: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="pb-[68px] lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-bloem focus:p-3">Direct naar de inhoud</a>
+
+<div class="op-donker bg-nacht text-bloem text-center text-[13px] leading-snug px-4 py-2">
+  Demo voor Heyerman de bakker, gemaakt door <a class="underline underline-offset-2 text-dooier font-semibold" href="https://hagenweb.nl">Hagenweb</a>
+</div>
+
+<header class="bg-dooier">
+  <div class="max-w-[1400px] mx-auto px-5 lg:px-10 pt-4 lg:pt-5 flex items-center justify-between gap-6">
+    <a href="#inhoud" aria-label="Heyerman de bakker, naar boven">
+      <img src="assets/logo-donker.png" alt="Heyerman de bakker" width="488" height="56" class="h-6 sm:h-8 w-auto">
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-7 font-medium">
+      <a class="hover:underline underline-offset-4 decoration-2" href="#vitrine">Assortiment</a>
+      <a class="hover:underline underline-offset-4 decoration-2" href="#nacht">Zo bakken wij</a>
+      <a class="hover:underline underline-offset-4 decoration-2" href="#open">Openingstijden</a>
+      <a class="hover:underline underline-offset-4 decoration-2" href="#verhaal">Ons verhaal</a>
+      <a class="hover:underline underline-offset-4 decoration-2" href="#cadeau">Cadeaupakket</a>
+    </nav>
+    <a href="#open" class="lg:hidden tekstlink text-[15px] whitespace-nowrap">Openingstijden</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="bg-dooier overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-[minmax(0,1.32fr)_minmax(0,1fr)] lg:gap-10 xl:gap-16 items-end">
+      <div class="pt-7 pb-8 lg:pt-8 lg:pb-16 lg:self-center">
+        <p class="font-semibold text-[15px] lg:text-[17px]">Uw bakker aan de Hogestraat in Aalten</p>
+        <h1 class="kop-hero mt-3 lg:mt-5">Gebakken terwijl <span class="whitespace-nowrap">Aalten slaapt.</span></h1>
+        <p class="mt-5 lg:mt-7 text-[18px] lg:text-[21px] leading-[1.45] max-w-[33rem]">Onze bakkers werken in de donkere uren van de nacht. Zo begint u de dag met vers brood, broodjes en gebak. Dinsdag tot en met zaterdag open van 8:00 tot 13:00.</p>
+        <div class="mt-6 lg:mt-8 flex flex-col sm:flex-row sm:items-center gap-x-7 gap-y-3">
+          <a href="tel:+31543475728" class="knop text-[19px] lg:text-[22px] px-7 lg:px-9 py-[18px] lg:py-[22px] w-full sm:w-auto">
+            <svg aria-hidden="true" class="w-[22px] h-[22px] shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Bel 0543 475 728
+          </a>
+          <a href="https://heyerman.nl/bestellen/" class="tekstlink text-[17px] text-center sm:text-left">Of bestel via de webshop</a>
+        </div>
+        <p class="mt-5 lg:mt-7 text-[15px] lg:text-[16px] font-medium text-center sm:text-left"><span aria-hidden="true">★</span> 4,3 sterren uit 29 Google-reviews</p>
+      </div>
+      <div class="boog-rijs hero-boog boog boog-ring h-[23rem] sm:h-[32rem] max-w-[34rem] mx-auto lg:max-w-none w-full lg:mt-6">
+        <div class="boog overflow-hidden h-full">
+          <img src="assets/hero-brood.webp" width="1536" height="1111" alt="Mand vol vers brood: kaiserbroodjes, een bol met pompoenpitten, croissants en krakelingen met sesam" class="boog-foto w-full h-full object-cover object-[58%_50%] scale-[1.06]">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vitrine -->
+  <section id="vitrine" class="bg-bloem py-16 lg:py-28">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10">
+      <div class="lg:flex lg:items-end lg:justify-between gap-12">
+        <h2 class="text-[2.6rem] lg:text-[4.25rem] leading-[1.02] max-w-[46rem]">Kom kijken in de vitrine.</h2>
+        <p class="mt-4 lg:mt-0 text-[18px] lg:text-[19px] leading-relaxed max-w-[29rem] lg:pb-2">Knapperig brood, smaakvolle taarten en gebakjes, elke dag vers bereid. Kom wel op tijd: om 13:00 gaat de deur dicht.</p>
+      </div>
+
+      <ul class="mt-10 lg:mt-14 grid grid-cols-2 lg:grid-cols-12 lg:grid-rows-2 gap-3 lg:gap-5">
+        <li class="raam col-span-2 lg:col-span-5 lg:row-span-2 p-6 lg:p-10 flex flex-col">
+          <img src="assets/uit-taart.webp" width="578" height="525" alt="Taart met aardbeien en toefjes slagroom" class="mx-auto w-[74%] lg:w-[92%] my-auto">
+          <h3 class="text-[2.25rem] lg:text-[3.25rem] leading-none mt-6">Banket</h3>
+          <p class="mt-2 lg:text-[18px]">Taarten en gebakjes, volgens klanten een echte aanrader.</p>
+        </li>
+        <li class="raam lg:col-span-4 p-4 lg:p-7 flex flex-col">
+          <img src="assets/uit-brood.webp" width="797" height="599" alt="Bruin brood met havervlokken op de korst" class="mx-auto w-[92%] lg:w-[72%] mt-4 mb-auto">
+          <h3 class="text-[1.75rem] lg:text-[2.25rem] leading-none mt-4">Brood</h3>
+          <p class="mt-1 text-[15px] lg:text-[17px]">Knapperig en vers uit de nacht.</p>
+        </li>
+        <li class="raam lg:col-span-3 p-4 lg:p-7 flex flex-col">
+          <img src="assets/uit-saucijzenbroodje.webp" width="783" height="487" alt="Goudbruin saucijzenbroodje van bladerdeeg" class="mx-auto w-[92%] mt-6 mb-auto">
+          <h3 class="text-[1.75rem] lg:text-[2.25rem] leading-none mt-4">Snacks</h3>
+          <p class="mt-1 text-[15px] lg:text-[17px]">Warm uit de winkeloven.</p>
+        </li>
+        <li class="raam lg:col-span-3 p-4 lg:p-7 flex flex-col">
+          <img src="assets/uit-cake.webp" width="798" height="543" alt="Plakken cake, netjes op elkaar gelegd" class="mx-auto w-[92%] mt-6 mb-auto">
+          <h3 class="text-[1.75rem] lg:text-[2.25rem] leading-none mt-4">Koek en cake</h3>
+          <p class="mt-1 text-[15px] lg:text-[17px]">Voor bij de koffie.</p>
+        </li>
+        <li class="raam lg:col-span-4 p-4 lg:p-7 flex flex-col">
+          <img src="assets/uit-broodje.webp" width="775" height="526" alt="Belegd broodje met zalm, tomaat, komkommer en sla" class="mx-auto w-[92%] lg:w-[74%] mt-6 lg:mt-4 mb-auto">
+          <h3 class="text-[1.75rem] lg:text-[2.25rem] leading-none mt-4">Belegde broodjes</h3>
+          <p class="mt-1 text-[15px] lg:text-[17px]">Klaar om mee te nemen.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Prijsbord -->
+  <section id="prijzen" class="bg-boter pt-16 lg:pt-24">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-10 items-end">
+      <div class="lg:col-span-7 lg:pb-[calc(var(--koepel)+5rem)]">
+        <h2 class="text-[2.6rem] lg:text-[4.25rem] leading-[1.02]">Dit gaat het hardst.</h2>
+        <ul class="mt-8 lg:mt-10 text-[19px] lg:text-[24px] space-y-4 lg:space-y-5 max-w-[42rem]">
+          <li class="prijsregel"><span>Saucijzenbroodje</span><span class="stippen" aria-hidden="true"></span><span class="font-bold tabular-nums whitespace-nowrap">€1,98</span></li>
+          <li class="prijsregel"><span>Stokbrood kaas ui (225 gr)</span><span class="stippen" aria-hidden="true"></span><span class="font-bold tabular-nums whitespace-nowrap">€2,45</span></li>
+          <li class="prijsregel"><span>Plaatcake bosvruchten</span><span class="stippen" aria-hidden="true"></span><span class="font-bold tabular-nums whitespace-nowrap">€4,25</span></li>
+          <li class="prijsregel"><span>Zonnepit bus</span><span class="stippen" aria-hidden="true"></span><span class="font-bold tabular-nums whitespace-nowrap">€1,75 tot €3,35</span></li>
+        </ul>
+        <a href="https://heyerman.nl/bestellen/" class="tekstlink inline-block mt-8 text-[18px]">Bestel via de webshop</a>
+      </div>
+      <div class="lg:col-span-5 relative mt-12 lg:mt-0 max-w-[26rem] lg:max-w-[28rem] mx-auto lg:mr-0 w-full">
+        <div class="boog bg-dooier overflow-hidden h-[24rem] lg:h-[31rem] relative">
+          <img src="assets/uit-brood.webp" width="797" height="599" alt="Heel brood met havervlokken op de korst" class="absolute top-[3.5rem] lg:top-[5rem] -right-[9%] w-[96%] max-w-none rotate-[-4deg] drop-shadow-[0_14px_16px_rgba(94,52,21,.35)]">
+        </div>
+        <p class="sticker absolute left-0 lg:-left-10 bottom-[calc(var(--koepel)+.5rem)] w-[9.5rem] h-[9.5rem] lg:w-[11rem] lg:h-[11rem] rounded-full bg-nacht text-dooier flex flex-col items-center justify-center text-center px-3">
+          <span class="text-[14px] lg:text-[15px] leading-tight font-medium">Koop 3 hele broden en krijg</span>
+          <span class="font-kop text-[2rem] lg:text-[2.5rem] leading-none my-1"><span class="font-tekst font-bold text-[.8em]">€</span>0,60</span>
+          <span class="text-[14px] lg:text-[15px] leading-tight font-medium">korting</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Van nacht naar 8:00 -->
+  <div id="nacht">
+    <section class="laag op-donker bg-nacht text-bloem">
+      <div class="max-w-[1400px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-10 items-end">
+        <div class="lg:col-span-7">
+          <p class="text-dooier font-semibold text-[17px] lg:text-[19px]">Zo gaat dat, elke dag</p>
+          <h2 class="laag-kop mt-3">In de nacht</h2>
+        </div>
+        <p class="lg:col-span-5 mt-5 lg:mt-0 text-[18px] lg:text-[21px] leading-relaxed max-w-[34rem]">Als het buiten nog donker is, staan onze bakkers al aan het werk. Zo begint u de dag met de geur en smaak van versgebakken brood.</p>
+      </div>
+    </section>
+
+    <section class="laag op-donker bg-ochtend text-bloem">
+      <div class="max-w-[1400px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-10 items-end">
+        <h2 class="laag-kop lg:col-span-7">'s Ochtends vroeg</h2>
+        <p class="lg:col-span-5 mt-5 lg:mt-0 text-[18px] lg:text-[21px] leading-relaxed max-w-[34rem]">In onze centrale bakkerij in Varsseveld komt alles in beweging. Onze eigen auto's, met laadkleppen en koelcontainers, brengen alles op tijd naar de winkels.</p>
+      </div>
+    </section>
+
+    <section class="laag bg-korst">
+      <div class="max-w-[1400px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-10 items-center">
+        <h2 class="laag-kop lg:col-span-4">In de winkel</h2>
+        <p class="lg:col-span-4 mt-5 lg:mt-0 text-[18px] lg:text-[21px] leading-relaxed max-w-[34rem]">Elke winkel heeft een eigen oven. Daar bakken we ter plekke saucijzen, appelflappen, kaasbroodjes en meer. De geur ruikt u bij binnenkomst.</p>
+        <img src="assets/uit-saucijzenbroodje.webp" width="783" height="487" alt="" class="lg:col-span-4 mt-8 lg:mt-0 w-[70%] lg:w-full max-w-[26rem] mx-auto rotate-[-5deg] drop-shadow-[0_18px_20px_rgba(94,52,21,.45)]">
+      </div>
+    </section>
+
+    <section id="open" class="laag !pb-0 bg-dooier overflow-hidden">
+      <div class="max-w-[1400px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-10 items-end">
+        <div class="lg:col-span-5 lg:pb-20 relative z-10">
+          <h2 class="laag-kop lg:whitespace-nowrap">8:00,<br>de deur open.</h2>
+          <p class="mt-5 text-[18px] lg:text-[21px] leading-relaxed max-w-[34rem]">Hogestraat 6, 7122 BV Aalten. Onze dames staan klaar met een glimlach en helpen u graag kiezen.</p>
+
+          <table class="mt-7 w-full max-w-[26rem] text-[17px] lg:text-[19px] border-collapse">
+            <caption class="sr-only">Openingstijden winkel Aalten</caption>
+            <tbody id="tijden">
+              <tr data-dag="1" class="border-b border-nacht/25"><th scope="row" class="py-2 text-left font-normal">Maandag</th><td class="py-2 text-right tabular-nums">Gesloten</td></tr>
+              <tr data-dag="2" class="border-b border-nacht/25"><th scope="row" class="py-2 text-left font-normal">Dinsdag</th><td class="py-2 text-right tabular-nums">8:00 tot 13:00</td></tr>
+              <tr data-dag="3" class="border-b border-nacht/25"><th scope="row" class="py-2 text-left font-normal">Woensdag</th><td class="py-2 text-right tabular-nums">8:00 tot 13:00</td></tr>
+              <tr data-dag="4" class="border-b border-nacht/25"><th scope="row" class="py-2 text-left font-normal">Donderdag</th><td class="py-2 text-right tabular-nums">8:00 tot 13:00</td></tr>
+              <tr data-dag="5" class="border-b border-nacht/25"><th scope="row" class="py-2 text-left font-normal">Vrijdag</th><td class="py-2 text-right tabular-nums">8:00 tot 13:00</td></tr>
+              <tr data-dag="6" class="border-b border-nacht/25"><th scope="row" class="py-2 text-left font-normal">Zaterdag</th><td class="py-2 text-right tabular-nums">8:00 tot 13:00</td></tr>
+              <tr data-dag="0"><th scope="row" class="py-2 text-left font-normal">Zondag</th><td class="py-2 text-right tabular-nums">Gesloten</td></tr>
+            </tbody>
+          </table>
+
+          <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-x-7 gap-y-3">
+            <a href="tel:+31543475728" class="knop text-[19px] px-7 py-[18px]">Bel 0543 475 728</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hogestraat+6%2C+7122+BV+Aalten" class="tekstlink text-[17px] text-center sm:text-left">Plan uw route</a>
+            <a href="mailto:info@heyerman.nl" class="tekstlink text-[17px] text-center sm:text-left">info@heyerman.nl</a>
+          </div>
+        </div>
+        <div class="lg:col-span-7 mt-10 lg:mt-0">
+          <img src="assets/site-03.png" width="1390" height="1070" alt="Een bakker met deegroller en een bakster met een bakplaat koekjes, beiden in een schort met het logo van Heyerman de bakker" class="block w-full ml-auto">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Reviews -->
+  <section id="reviews" class="bg-bloem py-16 lg:py-28">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 gap-x-10">
+      <div class="lg:col-span-7">
+        <p class="font-semibold text-[17px]">4,3 sterren uit 29 Google-reviews</p>
+        <figure class="mt-5">
+          <blockquote class="font-kop text-[1.6rem] lg:text-[2.75rem] leading-[1.18]">“Een geweldige bakkerij met heerlijke, ambachtelijke producten! Het brood is altijd vers en smaakvol, en de gebakjes en andere lekkernijen zijn van topkwaliteit. Vooral de verse broodjes en het banket zijn echte aanraders.”</blockquote>
+          <figcaption class="mt-5 text-[17px]"><span class="text-korst" aria-hidden="true">★★★★★</span> <span class="sr-only">5 van 5 sterren.</span> <strong class="font-semibold">Wesley Renes</strong>, een jaar geleden</figcaption>
+        </figure>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9 mt-12 lg:mt-20 space-y-10">
+        <figure>
+          <blockquote class="text-[20px] lg:text-[22px] leading-snug">“Maken lekkere broodjes to go. En nog meer lekkere bakker producten.”</blockquote>
+          <figcaption class="mt-3 text-[16px]"><span class="text-korst" aria-hidden="true">★★★★★</span> <span class="sr-only">5 van 5 sterren.</span> <strong class="font-semibold">Ed Piek</strong>, 5 jaar geleden</figcaption>
+        </figure>
+        <figure>
+          <blockquote class="text-[20px] lg:text-[22px] leading-snug">“Lekker broodje gegeten met kopje koffie, vriendelijk personeel”</blockquote>
+          <figcaption class="mt-3 text-[16px]"><span class="text-korst" aria-hidden="true">★★★★</span> <span class="sr-only">4 van 5 sterren.</span> <strong class="font-semibold">Yvonne te Ronde-Molendijk</strong>, 4 jaar geleden</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ons verhaal -->
+  <section id="verhaal" class="bg-bloem pb-16 lg:pb-28">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10">
+      <figure>
+        <div class="raam overflow-hidden !bg-nacht">
+          <img src="assets/verhaal-winkel.webp" width="1800" height="1193" alt="Oude zwart-witfoto: kinderen achter de toonbank van een winkel, naast een Berkel-weegschaal, met volle schappen op de achtergrond" class="block w-full aspect-[4/3] lg:aspect-[21/10] object-cover object-[50%_18%]">
+        </div>
+        <figcaption class="mt-3 text-[15px]">Achter de toonbank, vroeger.</figcaption>
+      </figure>
+      <div class="mt-8 lg:mt-12 lg:grid lg:grid-cols-12 lg:gap-10">
+        <h2 class="lg:col-span-6 text-[2.6rem] lg:text-[4.25rem] leading-[1.02]">Sinds 1881, nu de vijfde generatie.</h2>
+        <div class="lg:col-span-5 lg:col-start-8 mt-5 lg:mt-2 text-[18px] lg:text-[19px] leading-relaxed space-y-4">
+          <p>In 1881 verhuisde Hendrik Heijerman van Bredevoort naar Varsseveld. Daar opende hij zijn eerste bakkerij met kruidenierswinkel. Sindsdien gaat het vak van generatie op generatie.</p>
+          <p>Nu leiden de broers Harry en Dirk Heijerman de bakkerij. Die is flink gegroeid en gemoderniseerd, maar er wordt nog altijd gebakken met dezelfde passie en precisie als vroeger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cadeau -->
+  <section id="cadeau" class="bg-korst py-16 lg:py-24">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10 lg:grid lg:grid-cols-12 lg:gap-10 items-end">
+      <h2 class="lg:col-span-6 text-[3rem] lg:text-[5.75rem] leading-[.98] tracking-[-.01em]">Geef eens een klomp vol lekkers.</h2>
+      <div class="lg:col-span-5 lg:col-start-8 mt-5 lg:mt-0">
+        <p class="text-[18px] lg:text-[19px] leading-relaxed">Vanaf 15 euro stellen we een cadeaupakket voor u samen, in een gevulde klomp of op een gouden kartonnen ondergrond, feestelijk in doorzichtig folie. Met onze eigen producten en Achterhoekse streekproducten.</p>
+        <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-x-7 gap-y-3">
+          <a href="tel:+31543475728" class="knop text-[18px] px-7 py-4">Bel voor een cadeaupakket</a>
+          <a href="mailto:info@heyerman.nl?subject=Cadeaupakket" class="tekstlink text-[17px] text-center sm:text-left">Of stuur een mail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Winkels -->
+  <section id="winkels" class="bg-bloem py-16 lg:py-24">
+    <div class="max-w-[1400px] mx-auto px-5 lg:px-10">
+      <h2 class="text-[1.5rem] lg:text-[1.75rem]">Niet in Aalten? Heyerman vindt u ook in</h2>
+      <p class="mt-4 font-kop text-[2.3rem] lg:text-[4.75rem] leading-[1.1] tracking-[-.01em]">Varsseveld, Zelhem, Gendringen, Ulft, Dinxperlo, <span class="underline decoration-dooier decoration-[.14em] underline-offset-[.12em]">Aalten</span>, Hengelo (Gld), Winterswijk en Lichtenvoorde.</p>
+      <p class="mt-6 text-[17px] max-w-[38rem] leading-relaxed">Onze hoofdvestiging staat in Varsseveld en Lichtenvoorde is een franchisewinkel. <a class="tekstlink" href="https://heyerman.nl/branches/">Bekijk alle vestigingen</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="op-donker bg-nacht text-bloem pt-14 pb-10">
+  <div class="max-w-[1400px] mx-auto px-5 lg:px-10">
+    <img src="assets/logo-geel.png" alt="Heyerman de bakker" width="488" height="56" class="w-full max-w-[32rem] h-auto">
+    <div class="mt-10 grid sm:grid-cols-3 gap-8 text-[16px] leading-relaxed">
+      <address class="not-italic">
+        Hogestraat 6<br>7122 BV Aalten<br>
+        <a class="underline underline-offset-2" href="https://www.google.com/maps/search/?api=1&query=Hogestraat+6%2C+7122+BV+Aalten">Plan uw route</a>
+      </address>
+      <p>
+        <a class="underline underline-offset-2" href="tel:+31543475728">0543 475 728</a><br>
+        <a class="underline underline-offset-2" href="mailto:info@heyerman.nl">info@heyerman.nl</a>
+      </p>
+      <p>Dinsdag tot en met zaterdag<br>8:00 tot 13:00<br>Maandag en zondag gesloten</p>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+31543475728" class="lg:hidden fixed inset-x-0 bottom-0 z-40 flex items-center justify-center gap-3 h-[68px] bg-nacht text-dooier text-[19px] font-bold border-t-4 border-dooier">
+  <svg aria-hidden="true" class="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+  Bel 0543 475 728
+</a>
+
+<script>
+  // Verrijking: markeer vandaag in de openingstijden.
+  var rij = document.querySelector('#tijden [data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag');
+</script>
+</body>
+</html>

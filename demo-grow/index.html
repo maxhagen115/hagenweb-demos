@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grow Rijopleidingen Apeldoorn: rijles met een vaste instructeur</title>
+<meta name="description" content="Je rijbewijs halen in Apeldoorn bij Grow: een vaste instructeur, je eigen tempo en begin met een proefles. Bel 0570 618 302.">
+<meta property="og:title" content="Grow Rijopleidingen Apeldoorn">
+<meta property="og:description" content="Straks zonder L. Rijles in Apeldoorn met een vaste instructeur.">
+<meta property="og:image" content="assets/hero-weg.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 30 30'%3E%3Crect x='-3' y='-3' width='30' height='30' rx='6' fill='%230E3B2C'/%3E%3Cpath d='M11.3 0v6.2q0 5.1-5.1 5.1H0M24 11.3h-6.2q-5.1 0-5.1 5.1V24' fill='none' stroke='%2393DB1E' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&family=Gabarito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { bos: '#0E3B2C', groen: '#1F8A3E', limoen: '#93DB1E', mist: '#EEF3EC', lblauw: '#1A5FD8', inkt: '#17261F' },
+        fontFamily: { kop: ['Gabarito', 'system-ui', 'sans-serif'], tekst: ['Figtree', 'system-ui', 'sans-serif'] }
+      }
+    }
+  };
+</script>
+<style>
+  html { scroll-padding-top: 1.5rem; }
+  body { font-family: Figtree, system-ui, sans-serif; color: #17261F; background: #fff; font-size: 1.0625rem; line-height: 1.6; margin: 0; }
+  h1, h2, h3, .kop { font-family: Gabarito, system-ui, sans-serif; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  img { display: block; max-width: 100%; }
+
+  /* De sierlijst van de lesauto: donkergroen lijntje met limoen band */
+  .sierlijst { height: 1.5rem; background: linear-gradient(#0E3B2C 0 .3rem, #fff .3rem .45rem, #93DB1E .45rem); }
+
+  /* Het patroon van de autodeuren, vervagend zoals op de bestickering */
+  .patroon { position: absolute; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='92' height='92' viewBox='0 0 92 92'%3E%3Cg fill='none' stroke='%231F8A3E' stroke-width='3'%3E%3Cpath transform='translate(10 10) rotate(-12 12 12)' d='M11.3 0v6.2q0 5.1-5.1 5.1H0M24 11.3h-6.2q-5.1 0-5.1 5.1V24'/%3E%3Cpath transform='translate(56 56) rotate(10 12 12)' d='M11.3 0v6.2q0 5.1-5.1 5.1H0M24 11.3h-6.2q-5.1 0-5.1 5.1V24'/%3E%3C/g%3E%3C/svg%3E");
+    -webkit-mask-image: linear-gradient(to left, #000, transparent 88%); mask-image: linear-gradient(to left, #000, transparent 88%); }
+
+  /* Het L-blok van het dakbord, als letter in de kop */
+  .l-blok { display: inline-flex; align-items: center; justify-content: center; vertical-align: -.07em;
+    width: .86em; height: .86em; margin-left: .04em; border-radius: .07em; background: #1A5FD8; color: #fff; font-weight: 700; font-size: 1em; line-height: 1; }
+  .js .l-blok { animation: blokIn .7s cubic-bezier(.2,.9,.25,1.1) both .1s; }
+  @keyframes blokIn { from { transform: translateX(.9em) rotate(5deg); } to { transform: none; } }
+
+  .knop { display: inline-flex; align-items: center; justify-content: center; gap: .65rem; background: #93DB1E; color: #0E3B2C;
+    font-family: Gabarito, system-ui, sans-serif; font-weight: 800; border-radius: .6rem; padding: 1.05rem 1.6rem; font-size: 1.3rem; line-height: 1.1;
+    border: 0; cursor: pointer; text-decoration: none; box-shadow: 0 .3rem 0 #0E3B2C; transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease; }
+  .knop:hover { background: #A6E83A; transform: translateY(-1px); box-shadow: 0 calc(.3rem + 1px) 0 #0E3B2C; }
+  .knop:active { transform: translateY(.2rem); box-shadow: 0 .1rem 0 #0E3B2C; }
+  .op-bos .knop { box-shadow: 0 .3rem 0 #05201a; }
+
+  a { color: inherit; }
+  .lijn { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .22em; text-decoration-color: #93DB1E; transition: text-decoration-color .15s; }
+  .lijn:hover { text-decoration-color: currentColor; }
+  :focus-visible { outline: 3px solid #1A5FD8; outline-offset: 3px; border-radius: 3px; }
+  .op-bos :focus-visible { outline-color: #93DB1E; }
+
+  .skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 50; }
+  .skip:focus { left: .5rem; }
+
+  /* Hero */
+  .hero { display: grid; grid-template-columns: 1fr; }
+  .hero-foto { height: 25rem; width: 100%; object-fit: cover; object-position: 50% 58%; clip-path: polygon(0 3.2rem, 100% 0, 100% 100%, 0 100%); }
+  @media (min-width: 1024px) {
+    .hero { grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); min-height: calc(100vh - 8.25rem); }
+    .hero-foto { height: 100%; min-height: 100%; position: absolute; inset: 0; object-position: 50% 52%; clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 33%); }
+  }
+
+  /* Citaten */
+  blockquote { margin: 0; }
+  .naam { font-family: Gabarito, system-ui, sans-serif; font-weight: 800; letter-spacing: -.025em; line-height: .95; color: #0E3B2C; }
+
+  /* Route */
+  .stappen { counter-reset: stap; list-style: none; padding: 0; margin: 0; }
+  .stap { counter-increment: stap; position: relative; padding: 0 0 2.25rem 4.25rem; }
+  .stap::before { content: counter(stap); position: absolute; left: 0; top: -.1rem; width: 2.75rem; height: 2.75rem; display: grid; place-items: center;
+    background: #93DB1E; color: #0E3B2C; font-family: Gabarito, sans-serif; font-weight: 800; font-size: 1.3rem; border-radius: .45rem; z-index: 1; }
+  .stap::after { content: ""; position: absolute; left: 1.2rem; top: 2.65rem; bottom: 0; width: .35rem; border-inline: 1.5px solid rgba(255,255,255,.75); }
+  .stap:last-child { padding-bottom: 0; }
+  .stap:last-child::after { display: none; }
+  @media (min-width: 1024px) {
+    .stappen { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.75rem; }
+    .stap { padding: 4.25rem 0 0; }
+    .stap::before { top: 0; }
+    .stap::after { left: 2.75rem; right: -1.75rem; top: 1.2rem; bottom: auto; width: auto; height: .35rem; border-inline: 0; border-block: 1.5px solid rgba(255,255,255,.75); }
+  }
+
+  /* Rijbewijslijst */
+  .code { font-family: Gabarito, system-ui, sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1; color: #0E3B2C; }
+
+  .boog { border-radius: 50% 50% .6rem .6rem / 38% 38% .6rem .6rem; }
+  .schuin-boven { clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%); }
+  .neon { clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); }
+
+  label { display: block; font-weight: 700; margin-bottom: .3rem; color: #0E3B2C; }
+  form input, form select, form textarea { width: 100%; font: inherit; color: inherit; padding: .75rem .85rem; background: #fff; border: 1.5px solid #7E9388; border-radius: .45rem; box-sizing: border-box; }
+  form input:focus, form select:focus, form textarea:focus { border-color: #0E3B2C; }
+
+  .belbalk { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: #0E3B2C; }
+  .belbalk .knop { display: flex; width: 100%; box-sizing: border-box; box-shadow: none; padding: .85rem; font-size: 1.2rem; }
+  @media (min-width: 1024px) { .belbalk { display: none; } }
+  @media (max-width: 1023px) { body { padding-bottom: 4.6rem; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body>
+<a href="#inhoud" class="skip">Naar de inhoud</a>
+
+<div class="bg-bos text-white text-center text-sm py-2 px-4 op-bos">
+  Demo voor Grow, gemaakt door <a class="lijn font-bold" href="https://hagenweb.nl">Hagenweb</a>
+</div>
+
+<header class="max-w-[100rem] mx-auto px-5 lg:px-10 h-[4.5rem] flex items-center justify-between gap-6">
+  <a href="#inhoud" aria-label="Grow Rijopleidingen, naar boven" class="flex items-start no-underline text-bos">
+    <span class="kop font-extrabold text-[2.1rem] leading-none tracking-tight">Grow</span>
+    <svg class="w-[1.05rem] h-[1.05rem] -ml-px -mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M11.3 0v6.2q0 5.1-5.1 5.1H0M24 11.3h-6.2q-5.1 0-5.1 5.1V24"/></svg>
+  </a>
+  <nav aria-label="Hoofdmenu" class="flex items-center gap-6 lg:gap-9 font-kop font-semibold text-bos text-[1.05rem]">
+    <a class="hidden md:inline no-underline hover:underline underline-offset-4 decoration-2 decoration-limoen" href="#instructeurs">Instructeurs</a>
+    <a class="hidden md:inline no-underline hover:underline underline-offset-4 decoration-2 decoration-limoen" href="#route">Zo werkt het</a>
+    <a class="hidden md:inline no-underline hover:underline underline-offset-4 decoration-2 decoration-limoen" href="#rijbewijzen">Rijbewijzen</a>
+    <a class="no-underline hover:underline underline-offset-4 decoration-2 decoration-limoen" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<section class="hero relative overflow-hidden" aria-labelledby="kop">
+  <div class="patroon hidden lg:block left-0 bottom-0 w-[30rem] h-[5.75rem]" style="-webkit-mask-image:linear-gradient(to right,rgba(0,0,0,.55),transparent 80%);mask-image:linear-gradient(to right,rgba(0,0,0,.55),transparent 80%)"></div>
+  <div class="relative px-5 lg:pl-10 xl:pl-[max(2.5rem,calc((100vw-90rem)/2))] pt-5 pb-8 lg:pt-8 lg:pb-28 flex flex-col justify-center">
+    <p class="kop font-semibold text-groen text-lg lg:text-xl mb-2 lg:mb-4">Rijschool in Apeldoorn</p>
+    <h1 id="kop" class="font-black text-bos tracking-[-.035em] leading-[.92] text-[clamp(4rem,18vw,5.5rem)] lg:text-[clamp(5rem,7.4vw,8rem)] m-0" aria-label="Straks zonder L.">
+      <span aria-hidden="true">Straks<br>zonder <span class="l-blok">L</span>.</span>
+    </h1>
+    <p class="mt-5 lg:mt-7 text-[1.15rem] lg:text-xl leading-snug max-w-[29rem]">Bij Grow rijd je elke les met dezelfde instructeur, in je eigen tempo, op de wegen van je examen. Je begint met een proefles.</p>
+    <div class="mt-6 lg:mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+      <a class="knop" href="tel:+31570618302">
+        <svg class="w-6 h-6" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M222 158l-47-21a16 16 0 0 0-15 1l-25 17a76 76 0 0 1-35-35l16-25a16 16 0 0 0 2-15L97 34a16 16 0 0 0-17-9A56 56 0 0 0 32 80c0 79 65 144 144 144a56 56 0 0 0 55-48 16 16 0 0 0-9-18z"/></svg>
+        Bel 0570 618 302
+      </a>
+      <a class="lijn kop font-bold text-bos text-lg" href="#contact">Plan een proefles</a>
+    </div>
+    <p class="mt-5 lg:mt-7 mb-0 text-[1rem] text-inkt"><span class="text-groen" aria-hidden="true">★</span> <strong>4,5</strong> uit 37 Google-reviews</p>
+  </div>
+  <div class="relative">
+    <img class="hero-foto" src="assets/hero-weg.jpg" width="1087" height="1600" fetchpriority="high" alt="Witte lesauto van Grow met L-blok op het dak rijdt langs het plaatsnaambord Apeldoorn">
+  </div>
+</section>
+<div class="sierlijst" aria-hidden="true"></div>
+
+<section id="instructeurs" class="relative overflow-hidden" aria-labelledby="kop-instructeurs">
+  <div class="patroon right-0 top-0 w-[70%] lg:w-[46rem] h-14 lg:h-[5.75rem]"></div>
+  <div class="relative max-w-[90rem] mx-auto px-5 lg:px-10 pt-16 lg:pt-28 pb-16 lg:pb-28 grid lg:grid-cols-12 gap-10 lg:gap-14">
+    <div class="lg:col-span-4">
+      <div class="lg:sticky lg:top-8">
+        <h2 id="kop-instructeurs" class="font-extrabold text-bos text-[clamp(2.4rem,4.2vw,3.75rem)] leading-[1] tracking-tight m-0">Wie er straks naast je zit</h2>
+        <p class="mt-5 max-w-[26rem]">Je rijdt elke les met dezelfde instructeur. Die kent je sterke punten en weet waar je nog aan kunt werken. Leerlingen uit Apeldoorn vertellen het zelf.</p>
+        <img class="mt-8 w-full max-w-[26rem] aspect-[4/5] object-cover object-[50%_55%] rounded-t-[10rem] rounded-b-lg" src="assets/site-02.jpg" loading="lazy" width="683" height="1024" alt="Leerling staat bij een Grow-lesauto in een Apeldoornse straat en plaatst het blauwe L-blok op het dak">
+      </div>
+    </div>
+    <div class="lg:col-span-8 lg:pl-8 space-y-14 lg:space-y-20">
+      <article>
+        <h3 class="naam text-[clamp(3.25rem,7.4vw,6.5rem)] m-0">Melanie en Richard</h3>
+        <div class="mt-6 grid md:grid-cols-2 gap-8 lg:gap-12">
+          <blockquote class="text-lg lg:text-xl leading-snug">
+            <p class="m-0">"Erg fijne rijschool en rijlessen. Melanie en Richard weten precies wanneer ze geduldig moeten zijn en wanneer ze tips kunnen geven. Erg prettige les met altijd ruimte voor een grapje of een leuk gesprekje. Toppers!"</p>
+            <footer class="mt-3 text-base font-bold text-groen">Lot van der Velde, Google-review</footer>
+          </blockquote>
+          <blockquote class="text-lg lg:text-xl leading-snug">
+            <p class="m-0">"Ik heb mijn lessen gevolgd bij Melanie, Melanie is ontzettend geduldig, duidelijk en ze legt alles rustig uit, ze zorgt ervoor dat je je op je gemak voelt in de auto en als iets niet meteen lukt, blijft ze rustig en motiverend..."</p>
+            <footer class="mt-3 text-base font-bold text-groen">Menoa Elijzen, Google-review</footer>
+          </blockquote>
+        </div>
+      </article>
+      <article>
+        <h3 class="naam text-[clamp(3.5rem,8vw,7rem)] m-0">John</h3>
+        <blockquote class="mt-5 max-w-[42rem] text-xl lg:text-[1.4rem] leading-snug">
+          <p class="m-0">"John is een uitstekende instructeur voor het BE rijbewijs. Hij heeft veel kennis en ervaring en weet die op een duidelijke, professionele en prettige manier over te brengen. Hij is geduldig, geeft vertrouwen en weet precies waar hij op moet letten om je optimaal op het examen voor te bereiden."</p>
+          <footer class="mt-3 text-base font-bold text-groen">Jasper Rottier, Google-review</footer>
+        </blockquote>
+      </article>
+      <article class="lg:ml-[12%]">
+        <h3 class="naam text-[clamp(3.5rem,8vw,7rem)] m-0">Zlatko</h3>
+        <blockquote class="mt-5 max-w-[42rem] text-xl lg:text-[1.4rem] leading-snug">
+          <p class="m-0">"Je werd heel erg geholpen en als je vragen had, kon je altijd bellen. Onze instructeur Zlatko was heel eerlijk en leerde ons al zijn tips en tricks op zijn harde en leuke manier. Echt een aanrader"</p>
+          <footer class="mt-3 text-base font-bold text-groen">Ylana Remijnse, Google-review</footer>
+        </blockquote>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="route" class="op-bos bg-bos text-white" aria-labelledby="kop-route">
+  <div class="max-w-[90rem] mx-auto px-5 lg:px-10 py-16 lg:py-24">
+    <div class="grid lg:grid-cols-12 gap-6 lg:gap-14 items-end">
+      <h2 id="kop-route" class="lg:col-span-7 font-extrabold text-[clamp(2.4rem,4.6vw,4.25rem)] leading-[1] tracking-tight m-0">Van proefles tot examen, in vijf stappen</h2>
+      <p class="lg:col-span-5 m-0 text-white/90 max-w-[32rem]"><strong class="kop text-limoen text-xl block mb-1">Rijlessen spannend? Dat snappen we.</strong>Bijna iedereen is zenuwachtig voor de eerste les. Heb je last van faalangst? Dan helpen we je daar stap voor stap doorheen.</p>
+    </div>
+    <ol class="stappen mt-12 lg:mt-16">
+      <li class="stap">
+        <h3 class="font-bold text-[1.4rem] leading-tight m-0">Plan je proefles</h3>
+        <p class="mt-2 mb-0 text-white/85">We kijken naar je voertuigbeheersing, verkeersinzicht, leerstijl en zelfvertrouwen.</p>
+      </li>
+      <li class="stap">
+        <h3 class="font-bold text-[1.4rem] leading-tight m-0">Ontvang je persoonlijk advies</h3>
+        <p class="mt-2 mb-0 text-white/85">Daarna weet je waar je staat en hoeveel lessen bij je passen.</p>
+      </li>
+      <li class="stap">
+        <h3 class="font-bold text-[1.4rem] leading-tight m-0">Volg de lessen op je eigen tempo</h3>
+        <p class="mt-2 mb-0 text-white/85">Doordeweeks, 's avonds of in het weekend. Jij kiest wat uitkomt.</p>
+      </li>
+      <li class="stap">
+        <h3 class="font-bold text-[1.4rem] leading-tight m-0">Tussentijdse toets</h3>
+        <p class="mt-2 mb-0 text-white/85">Niet verplicht, wel handig als je wilt weten hoe ver je bent.</p>
+      </li>
+      <li class="stap">
+        <h3 class="font-bold text-[1.4rem] leading-tight m-0">Examen doen</h3>
+        <p class="mt-2 mb-0 text-white/85">Bij het CBR aan de Antillen 11. De examenroutes heb je dan al met ons geoefend.</p>
+      </li>
+    </ol>
+    <a class="knop mt-12 lg:mt-14" href="#contact">Plan een proefles</a>
+  </div>
+</section>
+
+<section aria-labelledby="kop-wegen">
+  <div class="max-w-[90rem] mx-auto px-5 lg:px-10 pt-16 lg:pt-24 pb-10 lg:pb-4 grid lg:grid-cols-12 gap-6 lg:gap-14 items-end">
+    <h2 id="kop-wegen" class="lg:col-span-7 font-extrabold text-bos text-[clamp(2.4rem,4.6vw,4.25rem)] leading-[1] tracking-tight m-0">Je leert rijden waar je straks ook echt rijdt</h2>
+    <p class="lg:col-span-5 m-0 max-w-[32rem]">Onze instructeurs kennen de Apeldoornse wegen door en door. Van Malkenschoten en richting Beekbergen tot invoegen op de A50. Kies je voor schakelen, automaat of elektrisch? Dat kan allemaal.</p>
+  </div>
+  <img class="schuin-boven w-full h-[19rem] sm:h-[28rem] lg:h-[46rem] object-cover object-[46%_62%]" src="assets/google-02.jpg" loading="lazy" width="1600" height="1067" alt="Grow-lesauto met groen deurpatroon en limoen sierlijst geparkeerd in een Apeldoornse straat met jonge bomen">
+</section>
+<div class="sierlijst" aria-hidden="true"></div>
+
+<section id="rijbewijzen" aria-labelledby="kop-rijbewijzen">
+  <div class="max-w-[90rem] mx-auto px-5 lg:px-10 py-16 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-7">
+      <h2 id="kop-rijbewijzen" class="font-extrabold text-bos text-[clamp(2.4rem,4.6vw,4.25rem)] leading-[1] tracking-tight m-0">Meer dan alleen je autorijbewijs</h2>
+      <dl class="mt-10 m-0 border-t-2 border-bos">
+        <div class="grid grid-cols-[5.5rem_1fr] lg:grid-cols-[8rem_1fr] items-baseline py-5 border-b border-bos/25">
+          <dt class="code text-[2.75rem] lg:text-[3.5rem]">B</dt>
+          <dd class="m-0"><strong class="kop text-xl text-bos block">Auto</strong>Rijles met schakeling, in een automaat of elektrisch.</dd>
+        </div>
+        <div class="grid grid-cols-[5.5rem_1fr] lg:grid-cols-[8rem_1fr] items-baseline py-5 border-b border-bos/25">
+          <dt class="code text-[2.75rem] lg:text-[3.5rem]">BE</dt>
+          <dd class="m-0"><strong class="kop text-xl text-bos block">Aanhanger</strong>Rijden met een aanhanger achter de auto. Lees wat Marc zegt over de opleiding bij John.</dd>
+        </div>
+        <div class="grid grid-cols-[5.5rem_1fr] lg:grid-cols-[8rem_1fr] items-baseline py-4 border-b border-bos/25">
+          <dt class="code text-[2.75rem] lg:text-[3.5rem]">AM</dt>
+          <dd class="m-0"><strong class="kop text-xl text-bos block">Scooter</strong></dd>
+        </div>
+        <div class="grid grid-cols-[5.5rem_1fr] lg:grid-cols-[8rem_1fr] items-baseline py-4 border-b border-bos/25">
+          <dt class="code text-[2.75rem] lg:text-[3.5rem]">A</dt>
+          <dd class="m-0"><strong class="kop text-xl text-bos block">Motor</strong></dd>
+        </div>
+        <div class="grid grid-cols-[5.5rem_1fr] lg:grid-cols-[8rem_1fr] items-baseline py-4 border-b border-bos/25">
+          <dt class="code text-[2.75rem] lg:text-[3.5rem]">C1</dt>
+          <dd class="m-0"><strong class="kop text-xl text-bos block">Camper</strong></dd>
+        </div>
+        <div class="grid grid-cols-[5.5rem_1fr] lg:grid-cols-[8rem_1fr] items-baseline py-4 border-b border-bos/25">
+          <dt class="code text-[2.75rem] lg:text-[3.5rem]">C</dt>
+          <dd class="m-0"><strong class="kop text-xl text-bos block">Vrachtwagen</strong></dd>
+        </div>
+      </dl>
+    </div>
+    <figure class="lg:col-span-5 m-0 lg:pt-6">
+      <img class="boog w-full max-w-[24rem] mx-auto lg:mx-0 aspect-[498/624] object-cover" src="assets/google-04.png" loading="lazy" width="498" height="624" alt="Lesauto van Grow rijdt over een stalen boogbrug, gezien van achteren">
+      <blockquote class="mt-8">
+        <p class="kop font-bold text-bos text-[clamp(1.6rem,2.6vw,2.25rem)] leading-[1.12] tracking-tight m-0">"In één dag geslaagd voor BE door de gedegen opleiding van de zeer ervaren John! Bedankt!"</p>
+        <footer class="mt-3 text-base font-bold text-groen">Marc Schooneman, Google-review</footer>
+      </blockquote>
+    </figure>
+  </div>
+</section>
+
+<section id="contact" class="bg-mist" aria-labelledby="kop-contact">
+  <div class="max-w-[90rem] mx-auto px-5 lg:px-10 py-16 lg:py-24 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-7">
+      <h2 id="kop-contact" class="font-extrabold text-bos text-[clamp(2.4rem,4.6vw,4.25rem)] leading-[1] tracking-tight m-0">Bel even, dan plannen we je proefles</h2>
+      <a class="knop mt-7" href="tel:+31570618302">Bel 0570 618 302</a>
+      <div class="mt-10 grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-bold text-bos text-xl m-0">Hier vind je ons</h3>
+          <address class="not-italic mt-2">
+            Laan van Westenenk 100A<br>7336 AZ Apeldoorn<br>
+            <a class="lijn" href="https://www.google.com/maps/search/?api=1&query=Laan+van+Westenenk+100A+7336+AZ+Apeldoorn">Route bekijken</a><br>
+            <a class="lijn" href="mailto:info@growrijopleidingen.nl">info@growrijopleidingen.nl</a>
+          </address>
+        </div>
+        <div>
+          <h3 class="font-bold text-bos text-xl m-0">Openingstijden</h3>
+          <p class="mt-2 mb-0" style="font-variant-numeric:tabular-nums">Maandag t/m vrijdag: 09:00 tot 17:00<br>Zaterdag en zondag: gesloten</p>
+        </div>
+      </div>
+      <figure class="mt-10 m-0">
+        <img class="neon w-full" src="assets/neonwand.jpg" loading="lazy" width="1044" height="520" alt="Plantenwand met groene neonletters: Grow Rijopleidingen, Get Ready On Wheels">
+      </figure>
+    </div>
+    <div class="lg:col-span-5">
+      <form class="bg-white rounded-xl p-6 lg:p-8 space-y-5" action="mailto:info@growrijopleidingen.nl" method="post" enctype="text/plain">
+        <h3 class="font-extrabold text-bos text-[1.75rem] leading-tight m-0">Liever een bericht sturen?</h3>
+        <div><label for="naam">Naam</label><input id="naam" name="naam" required autocomplete="name"></div>
+        <div><label for="tel">Telefoonnummer</label><input id="tel" name="telefoon" type="tel" required autocomplete="tel"></div>
+        <div><label for="over">Waar gaat het over?</label>
+          <select id="over" name="onderwerp">
+            <option>Proefles autorijbewijs (B)</option>
+            <option>BE-rijbewijs (aanhanger)</option>
+            <option>Scooter, motor, camper of vrachtwagen</option>
+            <option>Iets anders</option>
+          </select>
+        </div>
+        <div><label for="bericht">Je bericht <span class="font-normal">(mag ook leeg)</span></label><textarea id="bericht" name="bericht" rows="4"></textarea></div>
+        <button class="knop w-full" type="submit">Verstuur via e-mail</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="sierlijst" aria-hidden="true"></div>
+<footer class="op-bos bg-bos text-white">
+  <div class="max-w-[90rem] mx-auto px-5 lg:px-10 py-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <span class="kop font-extrabold text-2xl">Grow Rijopleidingen</span>
+    <p class="m-0 text-white/85">Laan van Westenenk 100A, Apeldoorn. <a class="lijn whitespace-nowrap" href="tel:+31570618302">0570 618 302</a></p>
+  </div>
+</footer>
+
+<div class="belbalk op-bos"><a class="knop" href="tel:+31570618302">Bel 0570 618 302</a></div>
+</body>
+</html>

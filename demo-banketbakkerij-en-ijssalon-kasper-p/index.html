@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kasper Paul | Banketbakkerij en ijssalon in Aalten en Lichtenvoorde</title>
+<meta name="description" content="Dagelijks vers slagroomgebak, vruchtengebakjes en taarten, handgemaakte bonbons en ijs. Banketbakkerij en ijssalon Kasper Paul in Aalten en Lichtenvoorde. Bel 0543 472 276.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Gloock&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { pistache:'#A9C5A1', munt:'#F2F6F1', bleek:'#DDE8D8', tegel:'#16302F', aardbei:'#AE2148', aardbeidonker:'#8F1A3A' },
+  fontFamily: { kop:['Gloock','Georgia','serif'], tekst:['Figtree','system-ui','sans-serif'] }
+}}}
+</script>
+<style>
+  body { font-family: Figtree, system-ui, sans-serif; color: #16302F; background: #F2F6F1; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: Gloock, Georgia, serif; font-weight: 400; text-wrap: balance; letter-spacing: -.01em; }
+  p { text-wrap: pretty; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #AE2148; outline-offset: 3px; }
+  .op-donker a:focus-visible, .op-donker button:focus-visible { outline-color: #fff; }
+  .knop { transition: background-color .2s, transform .2s; }
+  .knop:hover { background-color: #8F1A3A; }
+  .knop:active { transform: translateY(1px); }
+  .tekstlink { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; transition: color .2s; }
+  .tekstlink:hover { color: #AE2148; }
+  .op-donker .tekstlink:hover { color: #A9C5A1; }
+
+  /* Geschulpte onderrand van de hero, als de rand van een taartkarton */
+  .schulprand { height: 22px; background: radial-gradient(circle at 22px 0, #A9C5A1 21.5px, transparent 22px) repeat-x; background-size: 44px 22px; }
+
+  /* Eén bewegingsmoment: de taartrand draait een stukje bij het laden */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .draaiplateau { animation: draai 2s cubic-bezier(.16,.8,.24,1) both; transform-origin: 50% 50%; }
+    @keyframes draai { from { transform: rotate(-38deg); } to { transform: rotate(0deg); } }
+  }
+
+  /* Uitsneden uit de collage met vier ijsbakken */
+  .bak { aspect-ratio: 1; overflow: hidden; border-radius: 6px; position: relative; }
+  .bak img { position: absolute; width: 200%; height: 200%; max-width: none; object-fit: cover; }
+
+  #belbalk { transition: transform .25s, background-color .2s; }
+  #belbalk.weg { transform: translateY(160%); }
+  .boog { border-radius: 999px 999px 8px 8px; }
+  .veld { width: 100%; background: #fff; border: 1px solid #fff; border-radius: 6px; padding: .8rem 1rem; color: #16302F; }
+  .vandaag td { font-weight: 700; color: #fff; }
+  .vandaag td:first-child::after { content: " (vandaag)"; font-weight: 400; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Direct naar de inhoud</a>
+
+<!-- Herbruikbare taartrand -->
+<svg width="0" height="0" class="absolute" aria-hidden="true">
+  <defs>
+    <symbol id="taartrand" viewBox="0 0 100 100">
+      <path fill="#fff" d="M95.50 50.00A6.14 6.14 0 0 1 94.18 60.89A6.14 6.14 0 0 1 90.29 71.14A6.14 6.14 0 0 1 84.06 80.17A6.14 6.14 0 0 1 75.85 87.45A6.14 6.14 0 0 1 66.13 92.54A6.14 6.14 0 0 1 55.48 95.17A6.14 6.14 0 0 1 44.52 95.17A6.14 6.14 0 0 1 33.87 92.54A6.14 6.14 0 0 1 24.15 87.45A6.14 6.14 0 0 1 15.94 80.17A6.14 6.14 0 0 1 9.71 71.14A6.14 6.14 0 0 1 5.82 60.89A6.14 6.14 0 0 1 4.50 50.00A6.14 6.14 0 0 1 5.82 39.11A6.14 6.14 0 0 1 9.71 28.86A6.14 6.14 0 0 1 15.94 19.83A6.14 6.14 0 0 1 24.15 12.55A6.14 6.14 0 0 1 33.87 7.46A6.14 6.14 0 0 1 44.52 4.83A6.14 6.14 0 0 1 55.48 4.83A6.14 6.14 0 0 1 66.13 7.46A6.14 6.14 0 0 1 75.85 12.55A6.14 6.14 0 0 1 84.06 19.83A6.14 6.14 0 0 1 90.29 28.86A6.14 6.14 0 0 1 94.18 39.11A6.14 6.14 0 0 1 95.50 50.00Z"/>
+      <circle cx="50" cy="50" r="44.6" fill="none" stroke="#A9C5A1" stroke-width=".55" stroke-linecap="round" stroke-dasharray="0 1.55"/>
+    </symbol>
+    <pattern id="visgraat" width="84" height="84" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <g stroke="#ffffff" stroke-opacity=".05" stroke-width="1"><rect x="0" y="0" width="42" height="14" fill="#1B3836"/><rect x="0" y="14" width="14" height="42" fill="#1B3836"/><rect x="14" y="14" width="42" height="14" fill="#183331"/><rect x="14" y="28" width="14" height="42" fill="#183331"/><rect x="28" y="28" width="42" height="14" fill="#1D3B39"/><rect x="28" y="42" width="14" height="42" fill="#1D3B39"/><rect x="42" y="42" width="42" height="14" fill="#1B3836"/><rect x="42" y="56" width="14" height="42" fill="#1B3836"/><rect x="42" y="-28" width="14" height="42" fill="#1B3836"/><rect x="56" y="56" width="42" height="14" fill="#183331"/><rect x="-28" y="56" width="42" height="14" fill="#183331"/><rect x="56" y="70" width="14" height="42" fill="#183331"/><rect x="56" y="-14" width="14" height="42" fill="#183331"/><rect x="70" y="70" width="42" height="14" fill="#1D3B39"/><rect x="-14" y="70" width="42" height="14" fill="#1D3B39"/><rect x="70" y="0" width="14" height="42" fill="#1D3B39"/></g>
+    </pattern>
+  </defs>
+</svg>
+
+<div class="op-donker bg-tegel text-white/90 text-xs sm:text-sm text-center px-4 py-2 leading-snug">
+  Demo voor Banketbakkerij en ijssalon Kasper Paul Aalten, gemaakt door <a class="tekstlink font-semibold text-white" href="https://hagenweb.nl">Hagenweb</a>
+</div>
+
+<div class="relative bg-pistache [overflow-x:clip]">
+  <header class="relative z-20 mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12 pt-3 lg:pt-5 flex flex-wrap items-center gap-x-10 xl:gap-x-14 gap-y-1">
+    <a href="#inhoud" aria-label="Kasper Paul, banketbakkerij en ijssalon">
+      <img src="assets/logo-donker.png" alt="Kasper Paul, banketbakkerij en ijssalon" class="h-12 lg:h-[68px] w-auto -ml-1">
+    </a>
+    <nav aria-label="Hoofdmenu" class="flex gap-5 lg:gap-8 font-medium text-[15px] lg:text-base w-full sm:w-auto">
+      <a class="hover:underline underline-offset-4 decoration-2" href="#gebak">Gebak</a>
+      <a class="hover:underline underline-offset-4 decoration-2" href="#ijs">IJs</a>
+      <a class="hover:underline underline-offset-4 decoration-2" href="#bestellen">Bestellen</a>
+      <a class="hover:underline underline-offset-4 decoration-2" href="#bezoek">Bezoek</a>
+    </nav>
+  </header>
+
+  <main id="inhoud">
+  <section class="relative">
+    <div class="relative z-10 mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12 pt-6 lg:pt-20 lg:pb-36 lg:min-h-[690px]">
+      <div class="max-w-[35rem]">
+        <p class="font-medium text-[15px] lg:text-lg">Banketbakkerij en ijssalon in Aalten</p>
+        <h1 class="mt-2 lg:mt-4 text-[3.6rem] leading-[1] lg:text-[clamp(4.4rem,6.8vw,6.2rem)] lg:leading-[.98]">Eerst gebak, dan ijs.</h1>
+        <p class="mt-4 lg:mt-7 text-[17px] lg:text-xl leading-relaxed lg:max-w-[25rem] xl:max-w-[29rem]">Dagelijks vers slagroomgebak, vruchtengebakjes en taarten, handgemaakte bonbons en natuurlijk ijs. U vindt het allemaal in onze winkel aan de Bredevoortsestraatweg.</p>
+        <div class="mt-5 lg:mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
+          <a href="tel:+31543472276" class="knop inline-flex items-center gap-3 bg-aardbei text-white font-semibold text-lg lg:text-xl rounded-full px-7 py-4 lg:px-9 lg:py-5 shadow-[0_10px_24px_-10px_rgba(90,15,40,.7)]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Bel 0543 472 276
+          </a>
+          <a href="https://www.kasperpaul.nl/pd-31068-2/product" class="tekstlink font-semibold text-[17px] lg:text-lg">Bestel online</a>
+        </div>
+        <p class="mt-4 lg:mt-7 text-[15px] lg:text-base"><span class="tracking-wide" aria-hidden="true">★</span> 4,5 sterren op Google, uit 169 reviews</p>
+      </div>
+    </div>
+
+    <!-- Taartrand met ijsvitrine -->
+    <div class="relative mt-4 w-[112vw] -ml-[6vw] sm:w-[78vw] sm:ml-[11vw] lg:absolute lg:mt-0 lg:ml-0 lg:w-[52vw] xl:w-[min(58vw,940px)] lg:right-[-5vw] xl:right-[-3vw] lg:-top-[60px] xl:-top-[92px] z-[5]">
+      <div class="relative aspect-square">
+        <svg class="draaiplateau absolute inset-0 w-full h-full" aria-hidden="true"><use href="#taartrand"/></svg>
+        <img src="assets/google-02.jpg" alt="De ijsvitrine vol bakken ijs: aardbei met slagroom, pistache met chocoladestrepen, tiramisu en karamel" class="absolute rounded-full object-cover inset-[8.2%] w-[83.6%] h-[83.6%]" style="object-position: 62% 60%">
+      </div>
+    </div>
+  </section>
+  </main>
+</div>
+<div class="schulprand relative z-[1]" aria-hidden="true"></div>
+
+<!-- GEBAK -->
+<section id="gebak" class="scroll-mt-6 mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12 pt-24 lg:pt-36 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-x-12 gap-y-14 items-start">
+  <div class="lg:col-span-5 relative order-2 lg:order-1 mr-10 sm:mr-28 lg:mr-0 lg:pb-24">
+    <img src="assets/google-06.jpg" loading="lazy" alt="Taart met hazelnoten, schuim en chocolaatjes, met in het midden een chocolaatje met de naam Kasper Paul" class="boog w-full aspect-[4/5] object-cover" style="object-position:50% 50%">
+    <div class="absolute -right-8 sm:-right-20 lg:-right-10 -bottom-10 lg:bottom-0 w-[38%] aspect-[5/7] rounded-md overflow-hidden ring-8 ring-munt">
+      <img src="assets/google-04.jpg" loading="lazy" alt="Roze slof met slagroom, mandarijn, kers en chocolade" class="absolute max-w-none w-[300%] aspect-square" style="right:0;top:-62%">
+    </div>
+  </div>
+  <div class="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 lg:pt-8">
+    <h2 class="text-[2.75rem] leading-[1.05] lg:text-7xl lg:leading-[1.02]">Het lekkerste gebak van de Achterhoek.</h2>
+    <p class="mt-6 text-lg lg:text-xl leading-relaxed max-w-[36rem]">Dat zeggen we niet zomaar. Jarenlange ervaring, vakmanschap en, belangrijker nog, de liefde voor het vak: daar werken we iedere dag mee in de bakkerij.</p>
+    <p class="mt-4 text-lg leading-relaxed max-w-[36rem]">Kasper Paul is leerbedrijf, aangesloten bij Patisserie College en lid van het Gilde van de Betere Banketbakkers.</p>
+
+    <h3 class="mt-12 text-2xl lg:text-3xl">Dit vindt u bij ons</h3>
+    <ul class="mt-4 grid grid-cols-2 gap-x-5 sm:gap-x-10 text-base sm:text-lg font-medium border-t-2 border-tegel">
+      <li class="py-2.5 border-b border-tegel/25">Taarten</li>
+      <li class="py-2.5 border-b border-tegel/25">Brood</li>
+      <li class="py-2.5 border-b border-tegel/25">Gebak</li>
+      <li class="py-2.5 border-b border-tegel/25">Belegde broodjes</li>
+      <li class="py-2.5 border-b border-tegel/25">Sloffen en schnitten</li>
+      <li class="py-2.5 border-b border-tegel/25">Snacks</li>
+      <li class="py-2.5 border-b border-tegel/25">Koeken en cake</li>
+      <li class="py-2.5 border-b border-tegel/25">Chocolade</li>
+      <li class="py-2.5 border-b border-tegel/25">Roomboterkoekjes</li>
+      <li class="py-2.5 border-b border-tegel/25">Glutenvrij</li>
+    </ul>
+    <p class="mt-6"><a href="https://www.kasperpaul.nl/pd-31068-2/product" class="tekstlink font-semibold text-lg">Bekijk het hele assortiment in de webshop</a></p>
+  </div>
+</section>
+
+<!-- IJS -->
+<section id="ijs" class="scroll-mt-6 bg-bleek">
+  <div class="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12 py-20 lg:py-32">
+    <div class="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-end">
+      <div class="lg:col-span-7">
+        <h2 class="text-[2.75rem] leading-[1.05] lg:text-7xl lg:leading-[1.02]">Het moeilijkste is kiezen.</h2>
+        <p class="mt-6 text-lg lg:text-xl leading-relaxed max-w-[36rem]">Ons ijs ligt mooi opgemaakt in de vitrine, met fruit, chocolade of een stukje cake erbovenop. Voor de winkel in Aalten staat een terras. In onze ijssalon in Lichtenvoorde drinkt u er heerlijk een kop koffie met gebak bij.</p>
+        <div class="mt-10 lg:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
+          <div class="bak"><img loading="lazy" src="assets/google-05.jpg" alt="Twee bakken ijs met karamel en chocolade" style="left:0;top:0"></div>
+          <div class="bak"><img loading="lazy" src="assets/google-05.jpg" alt="Twee bakken licht groen ijs met schijfjes appel" style="right:0;top:0"></div>
+          <div class="bak"><img loading="lazy" src="assets/google-05.jpg" alt="Twee bakken wit ijs met rode vruchtensaus" style="left:0;bottom:0"></div>
+          <div class="bak"><img loading="lazy" src="assets/google-05.jpg" alt="Twee bakken wit ijs met schijfjes citroen" style="right:0;bottom:0"></div>
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <img loading="lazy" src="assets/google-07.jpg" alt="Vitrine van dichtbij met onder meer chocolade-ijs, citroenijs en vanille-ijs met cake" class="boog w-full aspect-[4/5] object-cover" style="object-position:50% 70%">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WINKEL EN REVIEWS -->
+<section aria-labelledby="winkel-kop">
+  <img loading="lazy" src="assets/google-03.jpg" alt="De winkel van binnen: toonbank met visgraattegels en eiken lamellen, broodwand en sfeerlampen, met buiten het terras" class="w-full h-[60vw] max-h-[720px] min-h-[300px] object-cover" style="object-position:50% 62%">
+  <div class="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12 pt-16 lg:pt-24 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-x-12 gap-y-14">
+    <figure class="lg:col-span-7">
+      <h2 id="winkel-kop" class="text-[2.75rem] leading-[1.05] lg:text-7xl lg:leading-[1.02]">“Hier wil ik wel elke dag zijn.”</h2>
+      <blockquote class="mt-7 text-lg lg:text-xl leading-relaxed max-w-[36rem]">“Wat een heerlijke delicatessen, ijs, gebak en gastvrij personeel. Een topzaak!! Koffie met slagroom, likeurtje, chocola en water voor de hond. 💚 Hier wil ik wel elke dag zijn.”</blockquote>
+      <figcaption class="mt-3 font-semibold">anita terwindt, 5 van de 5 sterren op Google</figcaption>
+    </figure>
+    <figure class="lg:col-span-4 lg:col-start-9 lg:pt-3 border-t-2 border-tegel pt-6 self-end">
+      <blockquote class="text-lg leading-relaxed">“Banketbakker, ijssalon, chocolaterie en ook nog heel goed brood. Je kan er ook een kop koffie drinken en er is een terras.”</blockquote>
+      <figcaption class="mt-3 font-semibold">Hans Monasso, 5 van de 5 sterren op Google</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- BESTELLEN -->
+<section id="bestellen" class="scroll-mt-6 bg-pistache">
+  <div class="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12 py-20 lg:py-28 grid lg:grid-cols-12 gap-x-12 gap-y-14 items-center">
+    <div class="lg:col-span-7">
+      <h2 class="text-[2.75rem] leading-[1.05] lg:text-6xl">Iets lekkers bestellen?</h2>
+      <dl class="mt-9 border-t-2 border-tegel">
+        <div class="grid sm:grid-cols-[9rem_1fr] gap-x-6 gap-y-1 py-5 border-b border-tegel/25">
+          <dt class="font-kop text-2xl">Bellen</dt>
+          <dd class="text-lg leading-relaxed"><a class="tekstlink font-semibold whitespace-nowrap" href="tel:+31543472276">0543 472 276</a>, tijdens de openingstijden van de bakkerij.</dd>
+        </div>
+        <div class="grid sm:grid-cols-[9rem_1fr] gap-x-6 gap-y-1 py-5 border-b border-tegel/25">
+          <dt class="font-kop text-2xl">Online</dt>
+          <dd class="text-lg leading-relaxed">Kies uw lekkers in <a class="tekstlink font-semibold" href="https://www.kasperpaul.nl/pd-31068-2/product">de webshop</a> en betaal met iDEAL.</dd>
+        </div>
+        <div class="grid sm:grid-cols-[9rem_1fr] gap-x-6 gap-y-1 py-5 border-b border-tegel/25">
+          <dt class="font-kop text-2xl">Langskomen</dt>
+          <dd class="text-lg leading-relaxed">Liever niet online bestellen? <a class="tekstlink font-semibold" href="#bezoek">Kom eens langs in de winkel.</a></dd>
+        </div>
+      </dl>
+      <p class="mt-7 leading-relaxed max-w-[36rem]"><strong class="font-semibold">Vragen over allergenen?</strong> Bel tijdens de openingstijden van de bakkerij met <a class="tekstlink whitespace-nowrap" href="tel:+31543472276">0543 472 276</a>.</p>
+    </div>
+    <div class="lg:col-span-4 lg:col-start-9">
+      <div class="relative aspect-square w-[75%] max-w-[20rem] mx-auto">
+        <svg class="absolute inset-0 w-full h-full" aria-hidden="true"><use href="#taartrand"/></svg>
+        <img loading="lazy" src="assets/site-01.jpg" alt="Slagroomtaart met vers fruit en chocolade" class="absolute rounded-full object-cover inset-[8.2%] w-[83.6%] h-[83.6%]" style="object-position:53% 100%">
+      </div>
+      <h3 class="mt-6 text-2xl lg:text-3xl">Afhalen of laten bezorgen</h3>
+      <p class="mt-1 text-[15px]">Bij een bestelling in de webshop</p>
+      <table class="mt-4 w-full text-lg">
+        <tbody>
+          <tr class="border-t-2 border-tegel"><th scope="row" class="py-2.5 font-normal text-left">Afhalen in de winkel in Aalten</th><td class="py-2.5 text-right font-semibold whitespace-nowrap pl-4">€ 0,00</td></tr>
+          <tr class="border-t border-tegel/25"><th scope="row" class="py-2.5 font-normal text-left">Bezorging in Aalten</th><td class="py-2.5 text-right font-semibold whitespace-nowrap pl-4">€ 7,50</td></tr>
+          <tr class="border-t border-tegel/25"><th scope="row" class="py-2.5 font-normal text-left">Bezorging in de directe omgeving</th><td class="py-2.5 text-right font-semibold whitespace-nowrap pl-4">€ 11,50</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- BEZOEK -->
+<section id="bezoek" class="op-donker scroll-mt-6 relative bg-tegel text-white">
+  <svg class="absolute inset-0 w-full h-full" aria-hidden="true"><rect width="100%" height="100%" fill="url(#visgraat)"/></svg>
+  <div class="relative mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-center">
+      <div class="lg:col-span-5">
+        <h2 class="text-[2.75rem] leading-[1.05] lg:text-7xl lg:leading-[1.02]">Zoek de grote ijshoorn.</h2>
+        <p class="mt-6 text-lg lg:text-xl leading-relaxed">Die staat op de stoep aan de Bredevoortsestraatweg in Aalten, naast het terras. Dan bent u er.</p>
+      </div>
+      <div class="lg:col-span-7">
+        <img loading="lazy" src="assets/google-01.jpg" alt="De gevel van Kasper Paul in Aalten met terras, stoepbord en een grote ijshoorn op de stoep" class="w-full rounded-md aspect-[16/9] object-cover">
+      </div>
+    </div>
+
+    <div class="mt-14 lg:mt-20 grid md:grid-cols-2 lg:grid-cols-12 gap-x-12 gap-y-12">
+      <div class="lg:col-span-4">
+        <h3 class="text-3xl lg:text-4xl">Aalten</h3>
+        <address class="not-italic mt-4 text-lg leading-relaxed">
+          Bredevoortsestraatweg 1<br>7121 BA Aalten<br>
+          <a class="tekstlink" href="tel:+31543472276">0543 472 276</a><br>
+          <a class="tekstlink" href="mailto:info@kasperpaul.nl">info@kasperpaul.nl</a>
+        </address>
+        <p class="mt-3"><a class="tekstlink font-semibold text-lg" href="https://www.google.com/maps/search/?api=1&query=Bredevoortsestraatweg+1,+7121+BA+Aalten">Route naar Aalten</a></p>
+        <table class="mt-6 w-full max-w-[22rem] text-[17px]" id="tijden">
+          <caption class="sr-only">Openingstijden winkel Aalten</caption>
+          <tbody class="text-white/85">
+            <tr data-dag="1" class="border-t border-white/25"><td class="py-1.5">Maandag</td><td class="py-1.5 text-right">Gesloten</td></tr>
+            <tr data-dag="2" class="border-t border-white/25"><td class="py-1.5">Dinsdag</td><td class="py-1.5 text-right tabular-nums">08:30–17:30</td></tr>
+            <tr data-dag="3" class="border-t border-white/25"><td class="py-1.5">Woensdag</td><td class="py-1.5 text-right tabular-nums">08:30–17:30</td></tr>
+            <tr data-dag="4" class="border-t border-white/25"><td class="py-1.5">Donderdag</td><td class="py-1.5 text-right tabular-nums">08:30–17:30</td></tr>
+            <tr data-dag="5" class="border-t border-white/25"><td class="py-1.5">Vrijdag</td><td class="py-1.5 text-right tabular-nums">08:30–17:30</td></tr>
+            <tr data-dag="6" class="border-t border-white/25"><td class="py-1.5">Zaterdag</td><td class="py-1.5 text-right tabular-nums">08:00–17:00</td></tr>
+            <tr data-dag="0" class="border-t border-white/25"><td class="py-1.5">Zondag</td><td class="py-1.5 text-right">Gesloten</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="lg:col-span-3">
+        <h3 class="text-3xl lg:text-4xl">Lichtenvoorde</h3>
+        <address class="not-italic mt-4 text-lg leading-relaxed">
+          Molendijk 10A<br>7131 DZ Lichtenvoorde<br>
+          <a class="tekstlink" href="tel:+31544371086">0544 371 086</a><br>
+          <a class="tekstlink" href="mailto:info@kasperpaul.nl">info@kasperpaul.nl</a>
+        </address>
+        <p class="mt-3"><a class="tekstlink font-semibold text-lg" href="https://www.google.com/maps/search/?api=1&query=Molendijk+10A,+7131+DZ+Lichtenvoorde">Route naar Lichtenvoorde</a></p>
+        <p class="mt-6 text-[17px] leading-relaxed text-white/85">Onze ijssalon, met koffie en gebak. Bel even voor de openingstijden.</p>
+      </div>
+      <form class="md:col-span-2 lg:col-span-5 bg-pistache text-tegel rounded-md p-6 lg:p-8" action="mailto:info@kasperpaul.nl" method="post" enctype="text/plain">
+        <h3 class="text-3xl">Stuur ons een bericht</h3>
+        <div class="mt-5 grid sm:grid-cols-2 gap-4">
+          <label class="block font-medium">Naam<input class="veld mt-1 font-normal" name="naam" required autocomplete="name"></label>
+          <label class="block font-medium">E-mail<input class="veld mt-1 font-normal" type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <label class="mt-4 block font-medium">Bericht<textarea class="veld mt-1 font-normal" name="bericht" rows="4" required></textarea></label>
+        <label class="mt-4 flex gap-3 items-start text-[15px] leading-snug"><input type="checkbox" required class="mt-0.5 w-5 h-5 accent-aardbei shrink-0"> Ik geef toestemming dat Banketbakkerij Kasper Paul mijn gegevens verwerkt.</label>
+        <button class="knop mt-5 bg-aardbei text-white font-semibold rounded-full px-7 py-3.5">Verstuur bericht</button>
+        <p class="mt-3 text-[15px]">Uw bericht opent in uw e-mailprogramma.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="op-donker bg-tegel text-white/85 border-t border-white/15">
+  <div class="mx-auto max-w-[1360px] px-5 sm:px-8 lg:px-12 pt-8 pb-24 md:pb-8 flex flex-col md:flex-row md:items-center justify-between gap-5">
+    <img src="assets/logo-wit.png" alt="Kasper Paul, banketbakkerij en ijssalon" class="h-12 w-auto self-start md:self-auto">
+    <p class="text-[15px]">Copyright 2026, Banketbakkerij Kasper Paul</p>
+  </div>
+</footer>
+
+<!-- Vaste belknop op mobiel -->
+<a id="belbalk" href="tel:+31543472276" class="knop md:hidden fixed z-40 inset-x-3 bottom-3 flex items-center justify-center gap-3 bg-aardbei text-white font-semibold text-lg rounded-full py-3.5 shadow-[0_10px_24px_-8px_rgba(22,48,47,.7)]">
+  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+  Bel 0543 472 276
+</a>
+
+<script>
+  var rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag');
+  var heroKnop = document.querySelector('main a[href^="tel:"]');
+  var balk = document.getElementById('belbalk');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { balk.classList.toggle('weg', e[0].isIntersecting); }).observe(heroKnop);
+  }
+</script>
+</body>
+</html>

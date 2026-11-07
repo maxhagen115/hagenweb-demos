@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakkerij Vaags | Brood en banket in Aalten en Winterswijk</title>
+<meta name="description" content="Ambachtelijk brood, gebak en vlaaien van Bakkerij Vaags in Aalten en Winterswijk. Vandaag besteld voor 17:30 uur, morgen afhalen of laten bezorgen.">
+<link rel="icon" type="image/png" href="assets/bakkertje.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bevan&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { rood: '#D40B1E', roodd: '#A90716', inkt: '#1C1210', blos: '#FCEDEA', baksteen: '#6E2A1E', korst: '#E0A03A' },
+        fontFamily: { kop: ['Bevan', 'Georgia', 'serif'], tekst: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'] }
+      }
+    }
+  };
+</script>
+<style>
+  html { scroll-padding-top: 1rem; }
+  body { font-family: "Hanken Grotesk", system-ui, sans-serif; color: #1C1210; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: Bevan, Georgia, serif; font-weight: 400; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #E0A03A; outline-offset: 3px; border-radius: 4px; }
+
+  /* De luifel: dezelfde rood-witte strepen als boven de winkelpui */
+  .luifel {
+    position: relative; height: 92px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='92'%3E%3Cpath d='M0 0h48v70a24 22 0 0 1-48 0z' fill='%23D40B1E'/%3E%3Cpath d='M48 0h48v70a24 22 0 0 1-48 0z' fill='%23fff'/%3E%3C/svg%3E") repeat-x left top / 96px 92px;
+    filter: drop-shadow(0 6px 6px rgba(28,18,16,.35));
+    transform-origin: top;
+  }
+  .luifel::after { content: ""; position: absolute; inset: 0 0 auto 0; height: 26px; background: linear-gradient(rgba(28,18,16,.28), rgba(28,18,16,0)); }
+  @media (max-width: 767px) { .luifel { height: 58px; background-size: 60px 58px; } .luifel::after { height: 16px; } }
+  .js .luifel { animation: uitrollen .8s cubic-bezier(.2,.9,.3,1.15) .15s backwards; }
+  @keyframes uitrollen { from { transform: scaleY(.08); } to { transform: scaleY(1); } }
+  @media (prefers-reduced-motion: reduce) { .js .luifel { animation: none; } }
+
+  .streep { height: 12px; background: repeating-linear-gradient(90deg, #D40B1E 0 24px, #fff 24px 48px); }
+
+  /* Vitrinekaartje: zoals de kaartjes bij het gebak in de winkel */
+  .kaartje {
+    position: absolute; display: flex; align-items: center; gap: .6rem;
+    background: #fff; padding: .55rem .9rem .55rem .6rem; border-radius: 3px;
+    border: 1px solid #1C1210; outline: 4px solid #fff;
+    color: #D40B1E; font-weight: 700; line-height: 1.15; font-size: .975rem;
+    box-shadow: 0 10px 22px rgba(0,0,0,.4);
+  }
+  .kaartje img { width: 34px; height: auto; flex: none; }
+
+  .knop { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; background: #D40B1E; color: #fff; font-weight: 700; border-radius: 6px; box-shadow: 0 5px 0 #A90716; transition: transform .12s, box-shadow .12s, background-color .2s; }
+  .knop:hover { background: #BF0919; }
+  .knop:active { transform: translateY(4px); box-shadow: 0 1px 0 #A90716; }
+  .knop-wit { background: #fff; color: #D40B1E; box-shadow: 0 5px 0 #A90716; }
+  .knop-wit:hover { background: #FCEDEA; }
+
+  .tijden { font-variant-numeric: tabular-nums; }
+  .olie-foto { -webkit-mask-image: linear-gradient(transparent 5%, #000 28%); mask-image: linear-gradient(transparent 5%, #000 28%); }
+  @media (min-width: 768px) {
+    .olie-foto {
+      -webkit-mask-image: linear-gradient(transparent 5%, #000 28%), linear-gradient(to right, transparent 0, #000 14%);
+      mask-image: linear-gradient(transparent 5%, #000 28%), linear-gradient(to right, transparent 0, #000 14%);
+      -webkit-mask-composite: source-in; mask-composite: intersect;
+    }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white pb-[72px] md:pb-0">
+
+<div class="bg-inkt text-white text-center text-[12px] sm:text-[13px] leading-snug px-2 py-1.5">
+  Demo voor Vaags Brood- en Banketbakkerij, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-korst">Hagenweb</a>
+</div>
+
+<header class="relative z-20 bg-white">
+  <div class="max-w-[1500px] mx-auto px-5 md:px-10 flex items-center justify-between gap-6 h-[64px] md:h-[76px]">
+    <a href="#top" class="flex items-center gap-3" aria-label="Bakkerij Vaags, naar boven">
+      <img src="assets/logo-vaags.png" alt="Logo Vaags Brood- en Banketbakkerij, sinds 1885" width="400" height="400" class="w-[58px] h-[58px] md:w-[104px] md:h-[104px] md:mt-8 md:relative md:z-30">
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden md:flex items-center gap-7 font-semibold text-[15px] lg:text-base">
+      <a class="hover:text-rood transition-colors" href="#brood">Brood</a>
+      <a class="hover:text-rood transition-colors" href="#vitrine">Gebak en taart</a>
+      <a class="hover:text-rood transition-colors" href="#oliebollen">Oliebollen</a>
+      <a class="hover:text-rood transition-colors" href="#bestellen">Bestellen</a>
+      <a class="hover:text-rood transition-colors" href="#sparen">Sparen</a>
+      <a class="hover:text-rood transition-colors" href="#winkels">Winkels</a>
+    </nav>
+    <details class="md:hidden relative">
+      <summary class="list-none cursor-pointer font-semibold px-3 py-2 border-2 border-inkt rounded-md [&::-webkit-details-marker]:hidden">Menu</summary>
+      <nav aria-label="Menu" class="absolute right-0 top-12 w-52 bg-white border-2 border-inkt rounded-md py-2 font-semibold shadow-xl">
+        <a class="block px-4 py-2.5" href="#brood">Brood</a>
+        <a class="block px-4 py-2.5" href="#vitrine">Gebak en taart</a>
+        <a class="block px-4 py-2.5" href="#oliebollen">Oliebollen</a>
+        <a class="block px-4 py-2.5" href="#bestellen">Bestellen</a>
+        <a class="block px-4 py-2.5" href="#sparen">Sparen</a>
+        <a class="block px-4 py-2.5" href="#winkels">Winkels</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="grid lg:grid-cols-[minmax(0,9fr)_minmax(0,15fr)] lg:items-start">
+  <div class="order-2 lg:order-1 px-5 md:px-10 lg:pr-6 xl:pl-[max(2.5rem,calc((100vw-1420px)/2))] pt-5 pb-9 lg:pt-14 lg:pb-10 lg:self-center">
+    <p class="font-semibold text-baksteen text-[15px] lg:text-lg">Brood- en banketbakkerij in Aalten en Winterswijk</p>
+    <h1 class="text-rood mt-2 lg:mt-3 text-[2.6rem] leading-[1.04] md:text-6xl lg:text-[clamp(3rem,4.7vw,5.6rem)] lg:leading-[1.03]">Vers brood, net as vrogger.</h1>
+    <p class="mt-3 lg:mt-5 text-[17px] lg:text-xl leading-snug lg:leading-relaxed max-w-[31rem]">Ambachtelijk brood, gebak en vlaaien van Vaags, sinds 1885. Vandaag besteld voor 17:30 uur, morgen in de winkel of bij u thuis.</p>
+    <div class="mt-5 lg:mt-7 flex flex-wrap items-center gap-x-7 gap-y-4">
+      <a href="tel:+31543472314" class="knop text-xl lg:text-2xl px-7 py-3.5 lg:px-9 lg:py-5 w-full sm:w-auto">Bel 0543 472 314</a>
+      <a href="#bestellen" class="hidden sm:inline font-semibold text-lg underline decoration-2 underline-offset-4 decoration-rood hover:text-rood">Zo bestelt u</a>
+    </div>
+    <p class="mt-5 lg:mt-7 text-[15px] lg:text-base"><span class="text-korst tracking-wide" aria-hidden="true">★★★★★</span> <strong>4,6 sterren</strong> uit 60 Google-reviews</p>
+  </div>
+  <div class="order-1 lg:order-2 relative pt-[22px] lg:pt-[36px]">
+    <img src="assets/team-vaags.jpg" alt="Het hele team van Bakkerij Vaags in rode shirts zwaait voor de winkelpui met het gevelschrift Brood en Banketbakkerij, onder een boog van rode en zwarte ballonnen" width="1200" height="758" class="w-full h-auto block lg:rounded-bl-[120px]">
+    <div class="luifel absolute inset-x-0 top-0" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- Brood -->
+<section id="brood" class="max-w-[1320px] mx-auto px-5 md:px-10 py-16 md:py-28 grid md:grid-cols-12 gap-y-12 md:gap-x-10 items-center">
+  <div class="md:col-span-5">
+    <h2 class="text-inkt text-4xl md:text-[3.4rem] leading-[1.08]">Elke dag kraakvers.</h2>
+    <p class="mt-5 text-lg leading-relaxed max-w-[34rem]">In de manden liggen onze natuurdesems: robuust, spelt met zonnepit en vruchten. Daarnaast witte bollen en de Achterhoekse speltvruchtenslof, gevuld met cranberries, amandelen en rozijnen.</p>
+    <blockquote class="mt-9 border-l-4 border-rood pl-5 max-w-[34rem]">
+      <p class="text-lg leading-relaxed">“Een ouderwetse warme bakker. Die moet je koesteren. Het brood is dan ook elke dag kraakvers en gewoon erg lekker. Een aanrader zijn de gevulde koeken, in klein en groot formaat te krijgen.”</p>
+      <footer class="mt-3 font-semibold"><span class="text-korst" aria-hidden="true">★★★★★</span> Hans Monasso, op Google</footer>
+    </blockquote>
+  </div>
+  <div class="md:col-span-7 md:col-start-6 relative pb-14 md:pb-20 md:pl-16">
+    <img src="assets/google-07.jpg" loading="lazy" alt="Rieten manden vol natuurdesembrood in de winkel, met kaartjes voor spelt zonnepit en vruchten" width="1200" height="1600" class="w-full h-[440px] md:h-[640px] object-cover object-[50%_62%] rounded-t-[200px] md:rounded-t-[320px]">
+    <img src="assets/site-07.jpg" loading="lazy" alt="Bestoven broden op de ovenschieter in de oven" width="800" height="599" class="absolute left-0 bottom-0 w-[62%] md:w-[52%] aspect-[16/9] object-cover object-[60%_80%] rounded-md border-[6px] border-white">
+  </div>
+</section>
+
+<!-- Vitrine -->
+<section id="vitrine" class="bg-inkt text-white">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 pt-16 md:pt-28 pb-16 md:pb-28">
+    <div class="grid md:grid-cols-12 gap-x-10 gap-y-5 items-end">
+      <h2 class="md:col-span-7 text-4xl md:text-[3.4rem] leading-[1.08]">Kom maar kijken in de vitrine.</h2>
+      <p class="md:col-span-5 text-lg leading-relaxed text-white/85">Punten, schelpen, lepelgebak en vlaaien, de punten netjes in het Vaags-papier.</p>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-10 md:gap-x-6 md:gap-y-14">
+      <figure class="relative col-span-2 md:col-span-7">
+        <img src="assets/google-08.jpg" loading="lazy" alt="Vitrine met punten Schwarzwalder kirsch, Zwitserse appel en aardbei" width="1200" height="1600" class="w-full h-[320px] md:h-[560px] object-cover object-[50%_68%] rounded-md">
+        <figcaption class="kaartje left-3 -bottom-5 md:left-6 -rotate-2"><img src="assets/bakkertje.png" alt="">Schwarzwalder kirsch punt</figcaption>
+      </figure>
+      <figure class="relative col-span-1 md:col-span-5">
+        <img src="assets/google-06.jpg" loading="lazy" alt="Vruchtenschelpen en hazelnootgebakjes op een rij" width="1200" height="1600" class="w-full h-[250px] md:h-[560px] object-cover object-[60%_60%] rounded-md">
+        <figcaption class="kaartje left-2 -bottom-5 md:left-6 rotate-1"><img src="assets/bakkertje.png" alt="" class="hidden md:block">Vruchten schelp</figcaption>
+      </figure>
+      <figure class="relative col-span-1 md:col-span-4">
+        <img src="assets/google-04.jpg" loading="lazy" alt="Appelpunten in Vaags-papier in de vitrine" width="1200" height="1600" class="w-full h-[250px] md:h-[420px] object-cover object-[50%_32%] rounded-md">
+      </figure>
+      <figure class="relative col-span-2 md:col-span-8">
+        <img src="assets/google-05.jpg" loading="lazy" alt="Tompouces met slagroom, mandarijn en het logo van De Mol" width="1600" height="900" class="w-full h-[240px] md:h-[420px] object-cover object-[60%_40%] rounded-md">
+      </figure>
+    </div>
+
+    <div class="mt-16 md:mt-24 grid md:grid-cols-12 gap-x-10 gap-y-8 items-start">
+      <div class="md:col-span-5">
+        <h3 class="text-3xl md:text-[2.5rem] leading-[1.12]">Een taart voor een speciale gelegenheid?</h3>
+        <p class="mt-4 text-lg leading-relaxed text-white/85">Vertel ons voor hoeveel personen het is, dan denken we graag met u mee.</p>
+        <a href="tel:+31543472314" class="knop text-lg px-6 py-3.5 mt-6">Bel over uw taart</a>
+      </div>
+      <blockquote class="md:col-span-6 md:col-start-7 bg-white text-inkt rounded-md p-6 md:p-9">
+        <p class="text-lg md:text-xl leading-relaxed">“Voor een speciale gelegenheid taart besteld<br>Er werd meegedacht wat heel fijn was want waren best een grote taart nodig. Werd gezegd waarom niet 2 x 15 personen aan taart. Heel fijn dat er meegedacht werd. En wat was t lekker en supervers!!!! Zelfs de overgebleven stukken waren nog kakelvers.”</p>
+        <footer class="mt-4 font-semibold"><span class="text-korst" aria-hidden="true">★★★★★</span> Petra Oost, op Google</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Oliebollen -->
+<section id="oliebollen" class="bg-rood text-white overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 pt-14 md:pt-20 grid md:grid-cols-12 gap-x-10 items-end">
+    <div class="md:col-span-6 pb-8 md:pb-20">
+      <h2 class="text-4xl md:text-[3.1rem] leading-[1.08]">De oliebollenhut staat er weer.</h2>
+      <p class="mt-5 text-lg leading-relaxed">Voor de kerstdagen vindt u ons op de parkeerplaats bij de winkel in Aalten, met verse oliebollen en appelbeignets om mee te nemen.</p>
+      <dl class="tijden mt-6 text-lg font-semibold space-y-1">
+        <div class="flex gap-3"><dt class="w-24">Vrijdag</dt><dd>8:30 tot 17:00 uur</dd></div>
+        <div class="flex gap-3"><dt class="w-24">Zaterdag</dt><dd>8:30 tot 16:00 uur</dd></div>
+      </dl>
+      <p class="font-kop text-3xl md:text-4xl mt-7">5 + 1 gratis</p>
+    </div>
+    <div class="md:col-span-6">
+      <img src="assets/oliebollen.jpg" loading="lazy" alt="Een berg oliebollen met poedersuiker naast appelbeignets" width="1120" height="393" class="olie-foto block max-w-none w-[calc(100%+2.5rem)] -mx-5 md:mx-0 md:w-[calc(50vw+4rem)] md:-ml-16">
+    </div>
+  </div>
+</section>
+
+<!-- Bestellen -->
+<section id="bestellen" class="max-w-[1320px] mx-auto px-5 md:px-10 py-16 md:py-28">
+  <div class="grid md:grid-cols-12 gap-x-10 gap-y-6 items-end">
+    <p class="md:col-span-7 font-kop text-rood text-[6.2rem] sm:text-[9rem] md:text-[13rem] leading-[.9] tracking-tight tijden">17:30</p>
+    <div class="md:col-span-5 md:pb-4">
+      <h2 class="text-3xl md:text-[2.5rem] leading-[1.12]">Tot die tijd bestelt u voor morgen.</h2>
+      <p class="mt-4 text-lg leading-relaxed">Via de webshop, voor de volgende werkdag. Betalen gaat veilig met iDeal of bij de bezorging. Voor vandaag nog iets nodig? Bel de winkel, dan kijken we wat er kan.</p>
+    </div>
+  </div>
+  <div class="mt-8 flex flex-wrap gap-x-7 gap-y-4 items-center">
+    <a href="https://www.bakkerijvaags.nl/" class="knop text-lg px-7 py-4 w-full sm:w-auto">Naar de webshop</a>
+    <a href="tel:+31543472314" class="font-semibold text-lg underline decoration-2 underline-offset-4 decoration-rood hover:text-rood">Bel Aalten</a>
+    <a href="tel:+31543512516" class="font-semibold text-lg underline decoration-2 underline-offset-4 decoration-rood hover:text-rood">Bel Winterswijk</a>
+  </div>
+
+  <div class="mt-14 md:mt-20 grid md:grid-cols-12 gap-x-10 gap-y-12 border-t-2 border-inkt pt-10">
+    <div class="md:col-span-4">
+      <h3 class="text-2xl md:text-3xl text-inkt">Afhalen</h3>
+      <p class="mt-3 text-lg leading-relaxed">Altijd mogelijk, in Aalten of Winterswijk. U kiest de winkel tijdens het bestellen.</p>
+    </div>
+    <div class="md:col-span-8">
+      <h3 class="text-2xl md:text-3xl text-inkt">Bezorgen</h3>
+      <p class="mt-3 text-lg leading-relaxed max-w-[42rem]">’s Ochtends tussen 9:00 en 13:00 uur, vanaf € 25,-. De bezorgkosten hangen af van de afstand en ziet u bij het bestellen.</p>
+      <table class="mt-6 w-full text-left tijden max-w-[42rem]">
+        <caption class="sr-only">Postcodes waar Bakkerij Vaags bezorgt</caption>
+        <tbody class="[&_tr]:border-b [&_tr]:border-inkt/20 [&_th]:py-2.5 [&_th]:pr-6 [&_th]:font-semibold [&_th]:align-top [&_td]:py-2.5">
+          <tr><th scope="row">Aalten</th><td>7120, 7121, 7122, 7123</td></tr>
+          <tr><th scope="row">Winterswijk</th><td>7100, 7101, 7102, 7103</td></tr>
+          <tr><th scope="row">Winterswijk buurtschappen</th><td>7104 tot en met 7109, 7113, 7115, 7119</td></tr>
+          <tr><th scope="row">Bredevoort</th><td>7126</td></tr>
+        </tbody>
+      </table>
+      <p class="mt-5 text-lg leading-relaxed max-w-[42rem]">Staat uw postcode er niet bij? <a href="mailto:info@bakkerijvaags.nl" class="font-semibold underline decoration-2 underline-offset-4 decoration-rood hover:text-rood">Neem gerust contact op</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Graan -->
+<section id="graan" class="max-w-[1320px] mx-auto px-5 md:px-10 pb-16 md:pb-28 grid md:grid-cols-12 gap-x-10 gap-y-10 items-center">
+  <div class="md:col-span-6 relative pb-12 md:pb-16 md:pr-14 order-2 md:order-1">
+    <img src="assets/site-06.jpg" loading="lazy" alt="Een bakker maakt broden met een korst van granen" width="800" height="599" class="w-full aspect-[4/3] object-cover rounded-br-[110px]">
+    <img src="assets/site-04.jpg" loading="lazy" alt="Glanzende krentenbollen op bakplaten in het rek" width="800" height="600" class="absolute right-0 bottom-0 w-[46%] aspect-square object-cover rounded-md border-[6px] border-white">
+  </div>
+  <div class="md:col-span-5 md:col-start-8 order-1 md:order-2">
+    <h2 class="text-inkt text-4xl md:text-[3.4rem] leading-[1.08]">Met graan van hier.</h2>
+    <p class="mt-5 text-lg leading-relaxed">Samen met de bakkers Ebbers uit Terborg en Kaspers uit Doetinchem, Wehl en Zeddam vormt Vaags de Achterhoekse Bakkers. We bakken “net as vrogger” met oergranen: khorasan, rogge, emmer en rode tarwe.</p>
+    <p class="mt-4 text-lg leading-relaxed">Het graan teelt Jan Steverink, grenzend aan de Oude IJssel. Het wordt gemalen op korenmolen De Vier Winden in Vragender. Daar bakken we het oergranen koekje van, met de Achterhoekse vlag erop gedrukt. Ook de Achterhoekkoek en de speltvruchtenslof komen uit deze samenwerking.</p>
+    <a href="https://www.achterhoeksebakkers.nl" class="inline-block mt-6 font-semibold text-lg underline decoration-2 underline-offset-4 decoration-rood hover:text-rood">Meer op achterhoeksebakkers.nl</a>
+  </div>
+</section>
+
+<!-- Sparen -->
+<section id="sparen" class="bg-blos">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-16 md:py-24 grid md:grid-cols-12 gap-x-10 gap-y-10">
+    <div class="md:col-span-4">
+      <h2 class="text-rood text-4xl md:text-[3.4rem] leading-[1.08]">Sparen voor gratis lekkers.</h2>
+      <p class="mt-5 text-lg leading-relaxed">Bij iedere € 4,00 krijgt u 1 spaarpunt. De punten staan standaard op uw kassabon, dus u hoeft niets bij te houden.</p>
+      <p class="mt-4 text-baksteen leading-relaxed">Vlaai, taart en hazelnootschuimtaartje graag 1 dag van tevoren bestellen.</p>
+    </div>
+    <div class="md:col-span-5">
+      <h3 class="text-2xl text-inkt">Voor iedereen</h3>
+      <ul class="mt-4 tijden">
+        <li class="flex items-baseline gap-5 border-t border-baksteen/30 py-3"><span class="font-kop text-rood text-3xl w-16 flex-none">32</span>10 witte bollen</li>
+        <li class="flex items-baseline gap-5 border-t border-baksteen/30 py-3"><span class="font-kop text-rood text-3xl w-16 flex-none">64</span>Halve hotelcake, kruidcake of ontbijtkoek</li>
+        <li class="flex items-baseline gap-5 border-t border-baksteen/30 py-3"><span class="font-kop text-rood text-3xl w-16 flex-none">96</span>Een 8 persoons vlaai naar keuze</li>
+        <li class="flex items-baseline gap-5 border-t border-baksteen/30 py-3"><span class="font-kop text-rood text-3xl w-16 flex-none">160</span>Een 10 persoons slagroomtaart</li>
+      </ul>
+    </div>
+    <div class="md:col-span-3">
+      <h3 class="text-2xl text-inkt">Glutenarm</h3>
+      <ul class="mt-4 tijden">
+        <li class="flex items-baseline gap-4 border-t border-baksteen/30 py-3"><span class="font-kop text-rood text-3xl w-12 flex-none">32</span>2 koeken</li>
+        <li class="flex items-baseline gap-4 border-t border-baksteen/30 py-3"><span class="font-kop text-rood text-3xl w-12 flex-none">64</span>5 broodjes</li>
+        <li class="flex items-baseline gap-4 border-t border-baksteen/30 py-3"><span class="font-kop text-rood text-3xl w-12 flex-none">96</span>Hazelnootschuim&shy;taartje</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Winkels -->
+<section id="winkels">
+  <div class="relative">
+    <img src="assets/winkel-terras.jpg" loading="lazy" alt="De winkel van Vaags met rode luifels, rode stoelen op het terras en een bloembak aan de lantaarnpaal" width="1600" height="880" class="w-full h-[280px] md:h-[640px] object-cover object-bottom">
+  </div>
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="relative -mt-8 md:-mt-16 bg-white rounded-t-md pt-8 md:pt-12 md:px-12 grid md:grid-cols-12 gap-x-10 gap-y-3 items-end">
+      <h2 class="md:col-span-7 text-rood text-4xl md:text-[3.4rem] leading-[1.08]">Twee keer Vaags.</h2>
+      <blockquote class="md:col-span-5 text-lg md:text-right"><span class="font-semibold">“Heerlijk koffie met gebak.”</span> <footer class="inline text-baksteen">E K, op Google</footer></blockquote>
+    </div>
+    <div class="grid md:grid-cols-2 gap-x-16 gap-y-14 md:px-12 pt-10 pb-16 md:pb-24">
+      <article>
+        <h3 class="text-3xl">Aalten</h3>
+        <p class="mt-3 text-lg leading-relaxed">Hoekstraat 6<br>7122 CH Aalten</p>
+        <table class="tijden mt-5 w-full max-w-[22rem] text-left">
+          <caption class="sr-only">Openingstijden Aalten</caption>
+          <tbody class="[&_th]:font-medium [&_th]:py-1 [&_td]:py-1 [&_td]:text-right">
+            <tr><th scope="row">Maandag</th><td>Gesloten</td></tr>
+            <tr><th scope="row">Dinsdag tot en met vrijdag</th><td>8:00 tot 17:30</td></tr>
+            <tr><th scope="row">Zaterdag</th><td>7:30 tot 16:00</td></tr>
+            <tr><th scope="row">Zondag</th><td>Gesloten</td></tr>
+          </tbody>
+        </table>
+        <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a href="tel:+31543472314" class="knop text-lg px-6 py-3.5">Bel 0543 472 314</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Hoekstraat+6+7122+CH+Aalten" class="font-semibold underline decoration-2 underline-offset-4 decoration-rood hover:text-rood">Route</a>
+        </div>
+      </article>
+      <article>
+        <h3 class="text-3xl">Winterswijk</h3>
+        <p class="mt-3 text-lg leading-relaxed">Weurden 17-1<br>7101 NG Winterswijk</p>
+        <table class="tijden mt-5 w-full max-w-[22rem] text-left">
+          <caption class="sr-only">Openingstijden Winterswijk</caption>
+          <tbody class="[&_th]:font-medium [&_th]:py-1 [&_td]:py-1 [&_td]:text-right">
+            <tr><th scope="row">Maandag</th><td>Gesloten</td></tr>
+            <tr><th scope="row">Dinsdag tot en met vrijdag</th><td>8:30 tot 17:00</td></tr>
+            <tr><th scope="row">Zaterdag</th><td>8:00 tot 16:00</td></tr>
+          </tbody>
+        </table>
+        <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a href="tel:+31543512516" class="knop text-lg px-6 py-3.5">Bel 0543 512 516</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Weurden+17-1+7101+NG+Winterswijk" class="font-semibold underline decoration-2 underline-offset-4 decoration-rood hover:text-rood">Route</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Werken bij -->
+<section id="werken" class="bg-blos">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-x-10 items-center">
+    <div class="md:col-span-7 py-12 md:py-16">
+      <h2 class="text-inkt text-3xl md:text-[2.5rem] leading-[1.12]">Werken bij Vaags?</h2>
+      <p class="mt-3 text-lg leading-relaxed">Wil je deel uitmaken van ons team? Stuur een mail, dan horen we graag van je.</p>
+      <a href="mailto:info@bakkerijvaags.nl?subject=Werken%20bij%20Bakkerij%20Vaags" class="inline-block mt-4 font-semibold text-lg underline decoration-2 underline-offset-4 decoration-rood hover:text-rood">info@bakkerijvaags.nl</a>
+    </div>
+    <div class="md:col-span-5 md:self-stretch">
+      <img src="assets/site-03.jpg" loading="lazy" alt="Handen vormen deegbollen op een bakplaat" width="800" height="600" class="w-full h-[220px] md:h-full object-cover md:rounded-tl-[110px]">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white">
+  <div class="streep" aria-hidden="true"></div>
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-12 md:py-16 grid md:grid-cols-12 gap-y-8 gap-x-10 items-center">
+    <div class="md:col-span-2"><img src="assets/logo-vaags.png" loading="lazy" alt="Logo Vaags" width="400" height="400" class="w-24 md:w-28 bg-white rounded-md p-2"></div>
+    <p class="md:col-span-6 font-kop text-3xl md:text-[2.5rem] leading-tight">Kwaliteit is onze service!</p>
+    <div class="md:col-span-4 leading-relaxed md:text-right">
+      <a class="block font-semibold hover:text-korst" href="mailto:info@bakkerijvaags.nl">info@bakkerijvaags.nl</a>
+      <a class="block hover:text-korst" href="tel:+31543472314">Aalten: 0543 472 314</a>
+      <a class="block hover:text-korst" href="tel:+31543512516">Winterswijk: 0543 512 516</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Belknop mobiel, altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t-2 border-inkt p-2.5 flex gap-2.5">
+  <a href="tel:+31543472314" class="flex-[3] text-center bg-rood text-white font-bold rounded-md py-3 text-[17px]">Bel Aalten</a>
+  <a href="tel:+31543512516" class="flex-[2] text-center border-2 border-inkt font-bold rounded-md py-3 text-[17px]">Winterswijk</a>
+</div>
+
+</body>
+</html>

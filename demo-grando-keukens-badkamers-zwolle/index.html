@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grando Keukens Badkamers Zwolle | Showroom aan de Marsweg</title>
+<meta name="description" content="Keukens en badkamers in Zwolle. Kom kijken in de showroom aan de Marsweg en plan een vrijblijvend adviesgesprek. 4,7 op Google uit 187 reviews.">
+<meta name="theme-color" content="#3E0C2D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%233E0C2D'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23D82B36'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          aubergine: '#3E0C2D',
+          pruim: '#5C2249',
+          logorood: '#D82B36',
+          rooddonker: '#B9202B',
+          kalk: '#F1EBEC',
+          inkt: '#26101E',
+          mauve: '#6B5563',
+          lila: '#D9C8D2'
+        },
+        fontFamily: {
+          kop: ['Gloock', 'Georgia', 'serif'],
+          tekst: ['Outfit', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  section[id] { scroll-margin-top: 1.5rem; }
+
+  /* De huisvorm: een rechte plaat met één grote ronde hoek, als de hoek van een werkblad. */
+  .hoek-lb { border-top-left-radius: clamp(72px, 13vw, 210px); }
+  .hoek-rb { border-top-right-radius: clamp(72px, 13vw, 210px); }
+  .hoek-ro { border-bottom-right-radius: clamp(72px, 13vw, 210px); }
+  .hoek-klein { border-bottom-left-radius: 44px; }
+
+  /* Het blokje uit het logo: rechtsboven de laatste letter. */
+  .blokje { display: inline-block; width: .17em; height: .17em; background: #D82B36; vertical-align: top; margin-left: .05em; margin-top: .14em; }
+
+  .knop { transition: background-color .2s ease, transform .15s ease; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 3px solid #D82B36; outline-offset: 3px; }
+  .op-donker a:focus-visible { outline-color: #fff; }
+
+  .veld { width: 100%; background: #fff; border: 1px solid #CDBEC7; padding: .8rem .9rem; font-size: 1rem; color: #26101E; transition: border-color .2s ease; }
+  input.veld, select.veld { height: 3.25rem; }
+  .veld:hover { border-color: #6B5563; }
+  .veld:focus { border-color: #3E0C2D; }
+
+  /* Eén moment bij het laden: de heldenfoto schuift open. Alleen actief als JS draait. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .held-foto { animation: open 1s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes open { from { clip-path: inset(0 0 0 22%); } to { clip-path: inset(0 0 0 0); } }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  a[href^="tel:"] { white-space: nowrap; }
+  .vandaag { font-weight: 600; color: #26101E; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="font-tekst bg-white text-inkt text-[17px] leading-[1.65] pb-[76px] lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:px-4 focus:py-2">Direct naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-white/85 text-[13px] leading-snug text-center px-4 py-2">
+  Demo voor Grando Keukens Badkamers Zwolle, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<div class="bg-aubergine text-white op-donker">
+  <header class="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-12 h-[72px] lg:h-[84px] flex items-center justify-between">
+    <a href="#inhoud" class="block leading-none" aria-label="Grando Keukens Badkamers Zwolle">
+      <span class="font-bold text-[25px] lg:text-[28px] tracking-[-.01em]">GRANDO<span class="inline-block w-[6px] h-[6px] bg-logorood align-top mt-[3px] ml-[2px]"></span></span>
+      <span class="block text-[11.5px] tracking-[.04em] text-white/75 mt-1">Keukens | Badkamers Zwolle</span>
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-9 text-[16px]">
+      <a href="#keuken" class="hover:text-lila transition-colors">Keukens</a>
+      <a href="#badkamer" class="hover:text-lila transition-colors">Badkamers</a>
+      <a href="#reviews" class="hover:text-lila transition-colors">Reviews</a>
+      <a href="#langskomen" class="hover:text-lila transition-colors">Showroom</a>
+      <a href="tel:+31387200868" class="font-medium underline underline-offset-4 decoration-white/40 hover:decoration-white">038 720 0868</a>
+    </nav>
+    <a href="tel:+31387200868" class="lg:hidden text-[15px] font-medium underline underline-offset-4 decoration-white/40">038 720 0868</a>
+  </header>
+
+  <!-- Hero -->
+  <main id="inhoud">
+  <section class="relative lg:min-h-[calc(100dvh-120px)] flex flex-col lg:block overflow-hidden">
+    <div class="relative z-10 max-w-[1480px] mx-auto w-full px-5 sm:px-8 lg:px-12 pt-5 pb-8 lg:pt-[6vh] lg:pb-16">
+      <div class="lg:w-[42%]">
+        <p class="text-[16px] lg:text-[18px] text-lila">Keukens en badkamers in Zwolle</p>
+        <h1 class="font-kop font-normal text-[clamp(50px,min(17vw,9.6vh),88px)] lg:text-[clamp(72px,min(8.2vw,13vh),126px)] leading-[.98] tracking-[-.015em] mt-3 lg:mt-[2vh]">Koken.<br>Baden.<br>Genieten<span class="blokje" aria-hidden="true"></span></h1>
+        <p class="mt-5 lg:mt-[3.2vh] max-w-[30em] text-[17px] lg:text-[19px] leading-[1.5] text-white/90 font-light">In onze showroom aan de Marsweg zie je met eigen ogen wat er kan, van klassiek tot modern en voor ieder budget. Onze adviseurs nemen er écht de tijd voor.</p>
+        <div class="mt-6 lg:mt-[3.6vh] flex flex-wrap items-center gap-x-7 gap-y-3">
+          <a href="#afspraak" class="knop inline-block bg-logorood hover:bg-rooddonker text-white font-semibold text-[18px] lg:text-[20px] px-8 py-[1.05rem] lg:px-10 lg:py-5 hoek-klein">Plan een adviesgesprek</a>
+          <a href="tel:+31387200868" class="hidden sm:inline-block text-[17px] underline underline-offset-4 decoration-white/40 hover:decoration-white">of bel 038 720 0868</a>
+        </div>
+        <p class="mt-5 lg:mt-[2.6vh] text-[15px] text-white/75">4,7 op Google, uit 187 reviews</p>
+      </div>
+    </div>
+    <div class="held-foto relative lg:absolute lg:top-0 lg:bottom-0 lg:right-0 lg:left-[46%] ml-5 sm:ml-16 lg:ml-0">
+      <img src="assets/web/keuken-messing.jpg" width="2000" height="1500" fetchpriority="high"
+           alt="Keuken met kookeiland in mat zwart, messing lijnen, een witstenen werkblad en een hoge messing kastenwand"
+           class="hoek-lb w-full h-[320px] sm:h-[460px] lg:h-full object-cover object-[52%_60%]">
+    </div>
+  </section>
+</div>
+
+<!-- Keuken -->
+<section id="keuken" class="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-12 pt-20 lg:pt-36">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-end">
+    <figure class="lg:col-span-6 order-2 lg:order-1 -ml-5 sm:-ml-8 lg:-ml-12">
+      <img src="assets/web/google-05.jpg" width="1200" height="1600"
+           alt="Keuken in warm hout met nis en plank, een licht kookeiland met rond werkblad en twee houten barkrukken"
+           class="hoek-ro w-full h-[460px] sm:h-[620px] lg:h-[820px] object-cover object-center">
+    </figure>
+    <div class="lg:col-span-5 lg:col-start-8 order-1 lg:order-2 lg:pb-6">
+      <h2 class="font-kop font-normal text-[44px] lg:text-[68px] leading-[1.04] tracking-[-.01em]">Een keuken die past bij hoe jij woont</h2>
+      <p class="mt-6 max-w-[32em]">Een grote woonkeuken of juist een kleinere ruimte: wij zoeken de oplossing die bij jouw situatie past. Met praktische indelingen, slimme opbergruimte en hoogwaardige materialen, binnen jouw budget.</p>
+      <dl class="mt-10">
+        <div class="border-t border-inkt/20 py-4 lg:py-5 sm:grid sm:grid-cols-[10.5rem_1fr] sm:gap-4 sm:items-baseline">
+          <dt class="font-kop text-[28px] leading-tight">Modern</dt>
+          <dd class="text-mauve mt-1 sm:mt-0">Strakke lijnen, niets te veel.</dd>
+        </div>
+        <div class="border-t border-inkt/20 py-4 lg:py-5 sm:grid sm:grid-cols-[10.5rem_1fr] sm:gap-4 sm:items-baseline">
+          <dt class="font-kop text-[28px] leading-tight">Industrieel</dt>
+          <dd class="text-mauve mt-1 sm:mt-0">Een stoere look met robuuste materialen.</dd>
+        </div>
+        <div class="border-t border-inkt/20 py-4 lg:py-5 sm:grid sm:grid-cols-[10.5rem_1fr] sm:gap-4 sm:items-baseline">
+          <dt class="font-kop text-[28px] leading-tight">Landelijk</dt>
+          <dd class="text-mauve mt-1 sm:mt-0">De gezelligheid van een echte leefkeuken.</dd>
+        </div>
+        <div class="border-y border-inkt/20 py-4 lg:py-5 sm:grid sm:grid-cols-[10.5rem_1fr] sm:gap-4 sm:items-baseline">
+          <dt class="font-kop text-[28px] leading-tight">Greeploos</dt>
+          <dd class="text-mauve mt-1 sm:mt-0">Voor wie houdt van een minimalistische uitstraling.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Badkamer -->
+<section id="badkamer" class="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-12 pt-20 lg:pt-36">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-normal text-[44px] lg:text-[68px] leading-[1.04] tracking-[-.01em]">En een badkamer waar je echt van geniet</h2>
+      <p class="mt-6 max-w-[32em]">Eenvoudig en functioneel, of juist een plek om tot rust te komen. Denk aan stijlvolle douches, praktische wastafels en ruime badmeubels, samengesteld op jouw smaak en de ruimte in jouw woning.</p>
+      <p class="mt-4 max-w-[32em]">Kies je voor een complete badkamer of wil je alleen een paar nieuwe elementen? Allebei prima. We zorgen dat alles tot in de puntjes klopt.</p>
+      <p class="mt-8 font-kop text-[24px] leading-snug max-w-[20em]">Keuken en badkamer tegelijk? Dat is hier de kracht van de combinatie.</p>
+    </div>
+    <figure class="lg:col-span-6 lg:col-start-7 -mr-5 sm:-mr-8 lg:-mr-12">
+      <img src="assets/web/badkamer-goud.jpg" width="1199" height="1500"
+           alt="Badkamer met natuursteen, gouden wandtegels achter een grote spiegel, een zwarte dubbele wastafel op een houten meubel"
+           class="hoek-lb w-full h-[480px] sm:h-[640px] lg:h-[840px] object-cover object-[60%_50%]">
+    </figure>
+  </div>
+</section>
+
+<!-- Bas -->
+<section class="bg-kalk mt-20 lg:mt-36">
+  <div class="max-w-[1480px] mx-auto grid lg:grid-cols-12 lg:gap-8 items-stretch">
+    <div class="lg:col-span-6 px-5 sm:px-8 lg:pl-12 lg:pr-0 py-16 lg:py-28">
+      <blockquote class="font-kop text-[44px] lg:text-[72px] leading-[1.05] tracking-[-.01em]">"Ik vind niets leuker dan klanten te inspireren."</blockquote>
+      <p class="mt-6 font-medium">Bas Velzing, ondernemer Grando Zwolle</p>
+      <div class="mt-10 max-w-[33em] space-y-4">
+        <p>Bij ons word je altijd geholpen door een deskundige adviseur die zijn vak verstaat. Dat advies is persoonlijk en vrijblijvend, en de tijd die het kost nemen we gewoon.</p>
+        <p>Je hoeft het ook niet voor je te zien: voor een realistisch beeld maken we een 3D-ontwerp van jouw keuken of badkamer. Dat geldt net zo goed als je je huidige keuken of badkamer wilt renoveren.</p>
+      </div>
+      <p class="mt-8 text-mauve">Grando Zwolle is 'ondernemer van het jaar'.</p>
+    </div>
+    <figure class="lg:col-span-6 lg:-mt-14 ml-5 sm:ml-16 lg:ml-0">
+      <img src="assets/web/bas-velzing.jpg" width="1800" height="1201"
+           alt="Bas Velzing in blazer achter een marmeren keukenblad in de showroom, met basilicum, brood en een ovenschaal"
+           class="hoek-lb w-full h-[420px] sm:h-[560px] lg:h-full object-cover object-[52%_50%]">
+    </figure>
+  </div>
+</section>
+
+<!-- Het echte werk -->
+<section id="werk" class="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-12 pt-20 lg:pt-36">
+  <div class="lg:flex lg:items-end lg:justify-between lg:gap-12">
+    <h2 class="font-kop font-normal text-[44px] lg:text-[68px] leading-[1.04] tracking-[-.01em] max-w-[13em]">Zo ziet het er in het echt uit</h2>
+    <p class="mt-4 lg:mt-0 max-w-[26em] text-mauve lg:pb-2">Geen studio, gewoon echte ruimtes, van onze pagina op Google. Van warm verlicht tot mat zwart, en van strak tot bloemetjes aan de bar.</p>
+  </div>
+  <div class="mt-10 lg:mt-14 grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-5">
+    <img src="assets/web/google-07.jpg" width="1600" height="1200" alt="Wit kookeiland met warm led-licht onder het werkblad en twee koperkleurige hanglampen" class="col-span-2 lg:col-span-7 w-full h-[280px] sm:h-[420px] lg:h-[560px] object-cover hoek-klein">
+    <img src="assets/web/google-04.jpg" width="1200" height="1600" alt="Greeploze keuken in mat zwart met schiereiland en een snijplank op het werkblad" class="lg:col-span-5 w-full h-[260px] sm:h-[420px] lg:h-[560px] object-cover object-[50%_60%]">
+    <img src="assets/web/google-08.jpg" width="1200" height="1600" alt="Badkamer met twee witte waskommen op een houten meubel, zwarte tegels en een ronde spiegel" class="lg:col-span-4 lg:mt-0 w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover object-[35%_70%]">
+    <img src="assets/web/google-06.jpg" width="1200" height="1600" alt="Bar in donker hout met krukken in bloemenprint, daarachter een kastenwand met twee ovens" class="lg:col-span-4 w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover object-[50%_75%] hoek-klein">
+    <img src="assets/web/site-06.jpg" width="750" height="414" alt="Witte greeploze kastenwand met een donker kookeiland en uitzicht op bloeiende hortensia's" class="lg:col-span-4 w-full h-[260px] sm:h-[420px] lg:h-[520px] object-cover object-[70%_50%]">
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-12 pt-20 lg:pt-36">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-8">
+    <figure class="lg:col-span-7">
+      <blockquote class="font-kop text-[32px] lg:text-[50px] leading-[1.14] tracking-[-.005em]">"Super blij met onze nieuwe badkamer. Fijne samenwerking met Grando. Vanaf dat we kwamen oriënteren tot keuzes maken goed geholpen. We zijn erg blij met het design, hoe snel we konden inplannen, en het resultaat. Altijd bereikbaar en fijne mensen!"</blockquote>
+      <figcaption class="mt-6 font-medium">Viev &amp; Joris, 5 van de 5 sterren op Google</figcaption>
+      <p class="mt-10 lg:mt-14 text-[20px] leading-snug max-w-[26em]"><span class="font-semibold">4,7 op Google</span> uit 187 reviews. En op onze eigen site geven klanten ons gemiddeld een <span class="font-semibold">9,5</span>.</p>
+    </figure>
+    <div class="lg:col-span-4 lg:col-start-9 space-y-9 lg:pt-3">
+      <figure class="border-t border-inkt/20 pt-5">
+        <blockquote>"Wij zijn zeer tevreden over onze nieuwe badkamer en ons toilet, aangeschaft bij Grando. In de winkel werden we uitstekend geholpen door Elise. Ze dacht goed met ons mee, gaf ons alle vrijheid in onze keuzes en niets was haar te gek. Prettig en persoonlijk contact. (...) De installatie verliep ook geweldig. (...)"</blockquote>
+        <figcaption class="mt-3 font-medium">Michiel Cazemier</figcaption>
+      </figure>
+      <figure class="border-t border-inkt/20 pt-5">
+        <blockquote>"Voor zowel onze nieuwe keuken als badkamer zijn wij bij Grando Zwolle terechtgekomen, en daar hebben we geen moment spijt van gehad. (...)"</blockquote>
+        <figcaption class="mt-3 font-medium">Roy Bisselink</figcaption>
+      </figure>
+      <figure class="border-t border-inkt/20 pt-5">
+        <blockquote>"Afgelopen maanden zijn we voor de tweede keer bij Grando Zwolle geweest. In 2020 voor een keuken waar we erg tevreden over waren, toen de enige keukenspecialist die goed mee dacht in onze specifieke situatie en een kwalitatief betaalbare oplossing had. (...)"</blockquote>
+        <figcaption class="mt-3 font-medium">Renze Kuilman</figcaption>
+      </figure>
+      <figure class="border-t border-inkt/20 pt-5">
+        <blockquote>"In onze zoektocht naar een nieuwe badkamer en keuken zijn we dankzij goede reviews bij Grando Zwolle uitgekomen. Wij ervaren Erwin als een zeer bekwaam adviseur. (...) Hij gaat alleen voor tevreden klanten. (...)"</blockquote>
+        <figcaption class="mt-3 font-medium">John Schutten</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Langskomen -->
+<section id="langskomen" class="pt-20 lg:pt-36">
+  <div class="relative">
+    <img src="assets/web/google-03.jpg" width="1600" height="1200"
+         alt="De showroom van Grando Zwolle: een eettafel met groene stoelen en grote rieten hanglampen, met daarachter keukenopstellingen"
+         class="hoek-rb w-[calc(100%-1.25rem)] sm:w-[calc(100%-4rem)] lg:w-[72%] h-[340px] sm:h-[520px] lg:h-[840px] object-cover object-[50%_55%]">
+    <div class="relative lg:absolute lg:right-12 xl:right-[max(3rem,calc((100vw-1480px)/2+3rem))] lg:top-20 bg-kalk lg:w-[500px] mt-0 px-5 sm:px-8 lg:px-11 py-10 lg:py-12">
+      <h2 class="font-kop font-normal text-[40px] lg:text-[52px] leading-[1.05] tracking-[-.01em]">Kom kijken aan de Marsweg</h2>
+      <p class="mt-4">In de showroom zie je vele opstellingen naast elkaar. Liever niet hier? Advies kan ook telefonisch, online of bij je thuis.</p>
+      <address class="not-italic mt-6">
+        Marsweg 33, 8013 PE Zwolle<br>
+        <a href="tel:+31387200868" class="underline underline-offset-4 decoration-inkt/30 hover:decoration-inkt">038 720 0868</a><br>
+        <a href="mailto:contact@grandozwolle.nl" class="underline underline-offset-4 decoration-inkt/30 hover:decoration-inkt">contact@grandozwolle.nl</a>
+      </address>
+      <table class="mt-6 w-full text-mauve [font-variant-numeric:tabular-nums]" id="tijden">
+        <caption class="sr-only">Openingstijden</caption>
+        <tbody>
+          <tr data-dag="1"><th scope="row" class="text-left font-normal py-[3px]">Maandag</th><td class="text-right">gesloten</td></tr>
+          <tr data-dag="2"><th scope="row" class="text-left font-normal py-[3px]">Dinsdag</th><td class="text-right">09:00 - 17:00</td></tr>
+          <tr data-dag="3"><th scope="row" class="text-left font-normal py-[3px]">Woensdag</th><td class="text-right">09:30 - 17:30</td></tr>
+          <tr data-dag="4"><th scope="row" class="text-left font-normal py-[3px]">Donderdag</th><td class="text-right">09:30 - 20:30</td></tr>
+          <tr data-dag="5"><th scope="row" class="text-left font-normal py-[3px]">Vrijdag</th><td class="text-right">09:30 - 17:30</td></tr>
+          <tr data-dag="6"><th scope="row" class="text-left font-normal py-[3px]">Zaterdag</th><td class="text-right">09:30 - 17:00</td></tr>
+          <tr data-dag="0"><th scope="row" class="text-left font-normal py-[3px]">Zondag</th><td class="text-right">gesloten</td></tr>
+        </tbody>
+      </table>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Marsweg+33,+8013+PE+Zwolle" class="inline-block mt-6 font-medium underline underline-offset-4 decoration-inkt/30 hover:decoration-inkt">Routebeschrijving</a>
+    </div>
+  </div>
+</section>
+
+<!-- Afspraak -->
+<section id="afspraak" class="bg-aubergine text-white op-donker mt-20 lg:mt-36">
+  <div class="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-12 py-16 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-8">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-normal text-[46px] lg:text-[76px] leading-[1.02] tracking-[-.01em]">Plan je adviesgesprek</h2>
+      <p class="mt-5 text-white/85 font-light text-[19px] max-w-[26em]">Vrijblijvend, en op een moment dat jou uitkomt.</p>
+      <ol class="mt-10 space-y-5 max-w-[28em]">
+        <li class="grid grid-cols-[2.4rem_1fr]"><span class="font-kop text-[26px] leading-[1.2] text-lila">1</span><span>Je geeft je wensen en contactgegevens door.</span></li>
+        <li class="grid grid-cols-[2.4rem_1fr]"><span class="font-kop text-[26px] leading-[1.2] text-lila">2</span><span>Je kiest een voorkeursdatum en -tijd.</span></li>
+        <li class="grid grid-cols-[2.4rem_1fr]"><span class="font-kop text-[26px] leading-[1.2] text-lila">3</span><span>We bellen je om de afspraak definitief vast te leggen.</span></li>
+        <li class="grid grid-cols-[2.4rem_1fr]"><span class="font-kop text-[26px] leading-[1.2] text-lila">4</span><span>Onze adviseurs maken een opzet van de mogelijkheden.</span></li>
+      </ol>
+      <div class="mt-12 bg-logorood px-7 py-6 max-w-[27em] hoek-klein">
+        <p class="font-kop text-[26px] leading-tight">Stenen werkblad of regendouche cadeau</p>
+        <p class="mt-2 text-[15px] leading-snug">Bij aankoop van een keuken of badkamer. Vraag naar de voorwaarden in de showroom.</p>
+      </div>
+      <p class="mt-8 max-w-[27em] text-white/85">Nog aan het oriënteren? <a href="https://www.grando.nl/inspiratiemagazine" class="underline underline-offset-4 decoration-white/40 hover:decoration-white">Vraag het gratis inspiratiemagazine aan</a>: 84 pagina's met stijltips, trends en noviteiten.</p>
+    </div>
+
+    <form class="lg:col-span-6 lg:col-start-7 bg-kalk text-inkt p-6 sm:p-10 lg:p-12 hoek-rb grid sm:grid-cols-2 gap-x-5 gap-y-5 content-start" action="mailto:contact@grandozwolle.nl?subject=Aanvraag%20adviesgesprek" method="post" enctype="text/plain">
+      <fieldset class="sm:col-span-2">
+        <legend class="font-medium mb-2">Waar gaat het om?</legend>
+        <div class="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2">
+          <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="Interesse" value="Keuken" required class="accent-[#3E0C2D] w-[18px] h-[18px]"> Keuken</label>
+          <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="Interesse" value="Badkamer" class="accent-[#3E0C2D] w-[18px] h-[18px]"> Badkamer</label>
+          <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="Interesse" value="Keuken en badkamer" class="accent-[#3E0C2D] w-[18px] h-[18px]"> Allebei</label>
+        </div>
+      </fieldset>
+      <label class="block sm:col-span-2"><span class="block font-medium mb-1">Naam</span><input class="veld" type="text" name="Naam" autocomplete="name" required></label>
+      <label class="block"><span class="block font-medium mb-1">Telefoonnummer</span><input class="veld" type="tel" name="Telefoon" autocomplete="tel" required></label>
+      <label class="block"><span class="block font-medium mb-1">E-mailadres</span><input class="veld" type="email" name="E-mail" autocomplete="email" required></label>
+      <label class="block"><span class="block font-medium mb-1">Voorkeursdatum</span><input class="veld" type="date" name="Voorkeursdatum"></label>
+      <label class="block"><span class="block font-medium mb-1">Voorkeurstijd</span>
+        <select class="veld" name="Voorkeurstijd">
+          <option>09:30 - 12:00</option>
+          <option>12:00 - 15:00</option>
+          <option>15:00 - 17:00</option>
+          <option>18:00 - 20:00 (donderdag)</option>
+        </select>
+      </label>
+      <label class="block sm:col-span-2"><span class="block font-medium mb-1">Wat zijn je wensen?</span><textarea class="veld" name="Wensen" rows="4"></textarea></label>
+      <div class="sm:col-span-2">
+        <button type="submit" class="knop bg-logorood hover:bg-rooddonker text-white font-semibold text-[18px] px-8 py-4 w-full sm:w-auto hoek-klein cursor-pointer">Verstuur mijn aanvraag</button>
+        <p class="mt-3 text-[15px] text-mauve">Liever meteen iemand spreken? Bel <a href="tel:+31387200868" class="underline underline-offset-4">038 720 0868</a>. Op maandag en zondag zijn we gesloten.</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-inkt text-white/75 text-[15px]">
+  <div class="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-12 py-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+    <p><span class="text-white font-semibold">Grando Keukens Badkamers Zwolle</span>, Marsweg 33, 8013 PE Zwolle</p>
+    <p class="flex flex-wrap gap-x-6 gap-y-1">
+      <a href="https://www.grando.nl/voorwaarden/privacy" class="hover:text-white underline underline-offset-4 decoration-white/30">Privacy</a>
+      <a href="https://www.grando.nl/cookieverklaring" class="hover:text-white underline underline-offset-4 decoration-white/30">Cookies</a>
+      <a href="https://hagenweb.nl" class="hover:text-white underline underline-offset-4 decoration-white/30">Demo door Hagenweb</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Belknop altijd binnen bereik op mobiel -->
+<div class="lg:hidden fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 bg-aubergine text-white font-semibold text-[17px]">
+  <a href="tel:+31387200868" class="knop bg-logorood text-center py-[1.15rem]">Bel ons</a>
+  <a href="#afspraak" class="knop text-center py-[1.15rem]">Plan een gesprek</a>
+</div>
+
+<script>
+  var rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag');
+</script>
+</body>
+</html>
