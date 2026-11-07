@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klusbedrijf Arno Geerlings | Allround klusser in Culemborg</title>
+<meta name="description" content="Kleinschalig klusbedrijf in Culemborg. Badkamers, maatwerk onder schuine wanden, kastwanden, stucwerk, vloeren en schilderwerk. Bel 0345 517 196.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800;125,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          kalk: '#EEEFEC', wit: '#FBFBFA', lei: '#1F2326', steen: '#5C6166',
+          oranje: '#E8870E', roest: '#A85A08', baksteen: '#9C4A33'
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Public Sans"', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-weight: 800; letter-spacing: -0.02em; }
+  .kop-breed { font-stretch: 125%; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Puntdak-uitsnede, zoals de daken in het logo */
+  .gevel { clip-path: polygon(0 26%, 50% 0, 100% 26%, 100% 100%, 0 100%); }
+  .gevel-lijn { position: absolute; inset: auto 0 auto 0; pointer-events: none; }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:hover { background-color: #CF7609; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #E8870E; outline-offset: 3px;
+  }
+
+  /* Eén laadmoment in de hero, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-in { animation: in .7s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-in.d2 { animation-delay: .12s; }
+    .js .hero-foto { animation: dak .9s cubic-bezier(.2,.7,.2,1) .15s both; }
+    @keyframes in { from { opacity: 0; transform: translateY(14px); } }
+    @keyframes dak { from { opacity: 0; transform: translateY(24px) scale(.98); } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-kalk text-lei antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-12 focus:z-50 bg-wit px-4 py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-lei text-[12px] text-white/80 sm:text-[13px]">
+  <div class="mx-auto max-w-6xl px-4 py-2 text-center leading-snug">
+    Demo voor Klusbedrijf Arno Geerlings, gemaakt door <a href="https://hagenweb.nl" class="font-semibold text-white underline decoration-oranje underline-offset-2">Hagenweb</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5">
+  <a href="#" class="group flex flex-col" aria-label="Klusbedrijf Arno Geerlings, naar boven">
+    <svg viewBox="0 0 120 22" class="h-[18px] w-[98px]" aria-hidden="true">
+      <polyline points="2,20 24,4 46,18 66,4 90,18 112,4 118,8" fill="none" stroke="#E8870E" stroke-width="3" stroke-linejoin="miter" transform="translate(1.5,2)"/>
+      <polyline points="2,20 24,4 46,18 66,4 90,18 112,4 118,8" fill="none" stroke="#1F2326" stroke-width="3" stroke-linejoin="miter"/>
+    </svg>
+    <span class="kop mt-1 text-[17px] leading-none sm:text-[19px]">Arno Geerlings</span>
+    <span class="text-[12px] font-medium text-steen">Klusbedrijf in Culemborg</span>
+  </a>
+  <nav class="hidden items-center gap-7 text-[15px] font-medium md:flex" aria-label="Hoofdmenu">
+    <a href="#werkwijze" class="hover:text-roest">Werkwijze</a>
+    <a href="#diensten" class="hover:text-roest">Diensten</a>
+    <a href="#werk" class="hover:text-roest">Werk</a>
+    <a href="#reviews" class="hover:text-roest">Reviews</a>
+    <a href="#contact" class="hover:text-roest">Contact</a>
+  </nav>
+  <a href="tel:+31345517196" class="kop whitespace-nowrap text-[15px] underline decoration-oranje decoration-2 underline-offset-4 sm:text-[17px]">0345 517 196</a>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="mx-auto grid max-w-6xl items-end gap-10 px-5 pb-16 pt-6 md:grid-cols-[1.2fr_1fr] md:gap-14 md:pb-24 md:pt-12">
+  <div class="min-w-0 md:pb-10">
+    <p class="hero-in text-[15px] font-semibold text-roest">Allround klusser in Culemborg</p>
+    <h1 class="hero-in kop mt-3 text-[2.35rem] leading-[1] sm:text-[3.4rem] md:text-[2.75rem] lg:text-[4.3rem]">Twee<br>rechterhanden<br>aan uw huis.</h1>
+    <p class="hero-in d2 mt-6 max-w-md text-[17px] leading-relaxed text-steen sm:text-lg">
+      Een klein klusbedrijf dat meedenkt. U weet vooraf wat er gebeurt, betaalt geen voorrijkosten en elke dag laten we de klus schoon achter.
+    </p>
+    <div class="hero-in d2 mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+      <a href="tel:+31345517196" class="knop kop inline-flex items-center gap-3 rounded-md bg-oranje px-7 py-4 text-lg text-lei shadow-[0_8px_20px_-8px_rgba(168,90,8,.6)]">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 0345 517 196
+      </a>
+      <a href="mailto:info@klusbedrijfgeerlings.nl?subject=Vraag%20over%20een%20klus" class="font-semibold underline decoration-oranje decoration-2 underline-offset-4 hover:text-roest">of mail uw klus</a>
+    </div>
+    <p class="hero-in d2 mt-7 flex items-center gap-2 text-[14px] text-steen">
+      <span class="tracking-[0.15em] text-oranje" aria-hidden="true">★★★★<span class="text-steen/30">★</span></span>
+      4 van 5 sterren uit 8 Google-reviews
+    </p>
+  </div>
+
+  <div class="hero-foto relative">
+    <svg class="gevel-lijn -top-3 left-0 w-full" viewBox="0 0 100 26" preserveAspectRatio="none" aria-hidden="true">
+      <polyline points="0,26 50,0 100,26" fill="none" stroke="#E8870E" stroke-width="1.6" vector-effect="non-scaling-stroke" style="stroke-width:6px"/>
+    </svg>
+    <div class="gevel overflow-hidden bg-lei">
+      <img src="assets/site-03.jpg" alt="Zwarte wenteltrap tegen een rode bakstenen muur" class="aspect-[4/4.2] w-full object-cover object-[30%_50%]">
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-wit">
+  <div class="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-[1.2fr_1fr] md:gap-16 md:py-28">
+    <div>
+      <h2 class="kop text-3xl leading-tight sm:text-[2.6rem]">Uw partner voor elke klus.</h2>
+      <p class="mt-5 max-w-xl text-lg leading-relaxed text-steen">
+        Arno werkt kleinschalig en met professionele materialen. Met vakkennis en een creatieve blik zoekt hij naar een oplossing die werkt, voor een eerlijke prijs.
+      </p>
+      <ul class="mt-10 divide-y divide-lei/10 border-y border-lei/10">
+        <li class="flex gap-5 py-5"><span class="kop mt-1 h-3 w-3 shrink-0 rotate-45 bg-oranje" aria-hidden="true"></span><div><p class="kop text-xl">Advies en duidelijke afspraken vooraf</p><p class="mt-1 text-steen">U weet wat er gebeurt, wanneer, en wat het kost.</p></div></li>
+        <li class="flex gap-5 py-5"><span class="kop mt-1 h-3 w-3 shrink-0 rotate-45 bg-oranje" aria-hidden="true"></span><div><p class="kop text-xl">Creatieve oplossingen voor elke klus</p><p class="mt-1 text-steen">Ook als de ruimte scheef, klein of lastig is.</p></div></li>
+        <li class="flex gap-5 py-5"><span class="kop mt-1 h-3 w-3 shrink-0 rotate-45 bg-oranje" aria-hidden="true"></span><div><p class="kop text-xl">Elke dag schoon achtergelaten</p><p class="mt-1 text-steen">Na elke werkdag ligt alles weer netjes.</p></div></li>
+        <li class="flex gap-5 py-5"><span class="kop mt-1 h-3 w-3 shrink-0 rotate-45 bg-oranje" aria-hidden="true"></span><div><p class="kop text-xl">Geen voorrijkosten, aantrekkelijke prijzen</p><p class="mt-1 text-steen">U betaalt voor het werk, niet voor de rit.</p></div></li>
+      </ul>
+    </div>
+
+    <figure class="self-center border-l-4 border-oranje pl-6 md:pl-8">
+      <blockquote class="space-y-4 text-[17px] leading-relaxed">
+        <p>"Altijd goed om iemand voor een klus in huis te hebben die vooraf aangeeft wat hij gaat doen en dat dan ook daadwerkelijk doet."</p>
+        <p class="text-steen">"Je dankte ons voor het vertrouwen in jou, maar dat we je zonder zorg alleen aan de gang lieten gaan zegt ook over jou meer dan genoeg!"</p>
+      </blockquote>
+      <figcaption class="mt-5 text-[15px]"><span class="font-semibold">Pia &amp; Leon</span>, fam. van Veen, Meteren</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Maatwerk -->
+<section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+  <div class="grid items-center gap-10 md:grid-cols-[1fr_1.15fr] md:gap-16">
+    <figure class="order-2 md:order-1">
+      <div class="overflow-hidden rounded-sm">
+        <img src="assets/site-05.jpg" alt="Zolder met schuine wand en leidingwerk, tijdens een zolderverbouwing" loading="lazy" class="aspect-[4/3] w-full object-cover">
+      </div>
+      <figcaption class="mt-3 text-[14px] text-steen">Zolderverbouwing bij fam. Bos</figcaption>
+    </figure>
+    <div class="order-1 md:order-2">
+      <h2 class="kop text-3xl leading-tight sm:text-[2.6rem]">Waar een standaardoplossing niet past.</h2>
+      <p class="mt-5 max-w-xl text-lg leading-relaxed text-steen">
+        Arno is gespecialiseerd in maatoplossingen voor lastige ruimtes. Een kleine badkamer die toch prettig moet zijn. Kastruimte onder een schuine wand. Een zolder die eindelijk bruikbaar wordt.
+      </p>
+      <dl class="mt-8 grid gap-6 sm:grid-cols-2">
+        <div><dt class="kop text-lg">(Kleine) badkamers</dt><dd class="mt-1 text-steen">Nieuw plaatsen of renoveren, toilet inbegrepen.</dd></div>
+        <div><dt class="kop text-lg">Onder schuine wanden</dt><dd class="mt-1 text-steen">Kastruimte op maat, tot in de hoek.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-lei text-white">
+  <div class="mx-auto max-w-6xl px-5 py-20 md:py-24">
+    <div class="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
+      <div>
+        <h2 class="kop text-3xl leading-tight sm:text-[2.6rem]">Alles wat Arno voor u doet.</h2>
+        <p class="mt-5 text-white/70">Staat uw klus er niet tussen? Bel even, dan hoort u meteen of Arno u kan helpen.</p>
+      </div>
+      <ul class="grid gap-x-10 sm:grid-cols-2">
+        <li class="border-b border-white/15 py-4"><p class="kop text-lg">Toilet &amp; badkamers</p><p class="text-[15px] text-white/60">Nieuw plaatsen en renoveren</p></li>
+        <li class="border-b border-white/15 py-4"><p class="kop text-lg">Kastwanden op maat</p><p class="text-[15px] text-white/60">Ook onder schuine wanden</p></li>
+        <li class="border-b border-white/15 py-4"><p class="kop text-lg">Keukens &amp; kantines op maat</p></li>
+        <li class="border-b border-white/15 py-4"><p class="kop text-lg">Wanden, sierpleisters &amp; stucwerk</p></li>
+        <li class="border-b border-white/15 py-4"><p class="kop text-lg">Laminaat &amp; parket</p></li>
+        <li class="border-b border-white/15 py-4"><p class="kop text-lg">Schilderen &amp; behangen</p></li>
+        <li class="border-b border-white/15 py-4"><p class="kop text-lg">Dakramen &amp; deuren</p><p class="text-[15px] text-white/60">Waaronder deuren afhangen</p></li>
+        <li class="border-b border-white/15 py-4"><p class="kop text-lg">Beveiliging</p></li>
+        <li class="border-b border-white/15 py-4 sm:col-span-2"><p class="kop text-lg">Tuinen aanleggen &amp; onderhouden</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+  <h2 class="kop max-w-2xl text-3xl leading-tight sm:text-[2.6rem]">Uit het werk.</h2>
+  <div class="mt-10 grid gap-4 md:grid-cols-12">
+    <figure class="md:col-span-5 md:row-span-2">
+      <img src="assets/site-07.jpg" alt="Bakstenen muur die wit wordt geverfd, met ladder en wenteltrap" loading="lazy" class="h-full min-h-[280px] w-full rounded-sm object-cover">
+    </figure>
+    <figure class="md:col-span-7">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <img src="assets/site-08.jpg" alt="Achterpui met donkergroene deur tijdens de klus" loading="lazy" class="aspect-[4/3] w-full rounded-sm object-cover">
+          <p class="mt-2 text-[14px] text-steen">Tijdens de klus</p>
+        </div>
+        <div>
+          <img src="assets/site-09.jpg" alt="Dezelfde achterpui met een lichtgrijze deur, opgeleverd" loading="lazy" class="aspect-[4/3] w-full rounded-sm object-cover">
+          <p class="mt-2 text-[14px] text-steen">Opgeleverd</p>
+        </div>
+      </div>
+    </figure>
+    <figure class="flex flex-col justify-center bg-wit p-7 md:col-span-7 md:p-10">
+      <blockquote class="space-y-3 text-[17px] leading-relaxed">
+        <p>"Arno heeft twee rechterhanden, denkt met je mee en weet voor elk probleem een oplossing aan te dragen."</p>
+        <p class="text-steen">"Arno brengt heldere offertes uit met een redelijke prijs voor het uit te voeren werk en hij houdt zich aan de gemaakte afspraken. Ook als drie maanden na oplevering nog iets moet worden aangepast komt hij langs en werkt het af."</p>
+      </blockquote>
+      <figcaption class="mt-5 text-[15px]"><span class="font-semibold">Frans en Ida</span>, fam. Kalsbeek, Culemborg</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-wit">
+  <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <h2 class="kop text-3xl leading-tight sm:text-[2.6rem]">Wat klanten op Google zeggen.</h2>
+      <p class="text-[15px] text-steen"><span class="text-oranje" aria-hidden="true">★★★★</span> 4 van 5 uit 8 reviews</p>
+    </div>
+    <div class="mt-12 grid gap-10 md:grid-cols-[1.3fr_1fr] md:gap-14">
+      <figure>
+        <p class="text-oranje" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote style="text-wrap:balance" class="kop mt-3 text-2xl leading-snug sm:text-[1.9rem]">"Arno Geerlings staat voor vakmanschap en kwaliteit van A tot Z."</blockquote>
+        <p class="mt-4 max-w-xl leading-relaxed text-steen">"Tussen september 2022 en begin januari 2023 heeft Arno diverse grote klussen aan onze woning uitgevoerd. Van precisiesloopwerk tot het aanleggen van nieuwe plafonds, vernieuwing van elektra over twee verdiepingen, leidingwerk voor de keuken, stucwerk, ..."</p>
+        <figcaption class="mt-4 font-semibold">Lidwien Jansen</figcaption>
+      </figure>
+      <div class="space-y-10">
+        <figure class="border-t border-lei/10 pt-6">
+          <p class="text-oranje" aria-label="5 van 5 sterren">★★★★★</p>
+          <blockquote class="mt-2 leading-relaxed">"Prettige samenwerking, alles volgens afspraak uitstekend afgewerkt binnen het tijdplan. Er wordt in oplossingen gedacht en hij lost pro actief problemen op. Wij zijn héél erg blij met het uiteindelijke resultaat."</blockquote>
+          <figcaption class="mt-3 font-semibold">Jan van Eeten</figcaption>
+        </figure>
+        <figure class="border-t border-lei/10 pt-6">
+          <p class="text-oranje" aria-label="5 van 5 sterren">★★★★★</p>
+          <blockquote class="mt-2 leading-relaxed">"Super adres! Betrouwbaar, betaalbaar en deskundige meedenker"</blockquote>
+          <figcaption class="mt-3 font-semibold">André Calis</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-lei text-white">
+  <div class="mx-auto grid max-w-6xl gap-14 px-5 py-20 md:grid-cols-2 md:py-28">
+    <div>
+      <svg viewBox="0 0 100 26" class="h-6 w-24" aria-hidden="true"><polyline points="2,24 50,3 98,24" fill="none" stroke="#E8870E" stroke-width="5"/></svg>
+      <h2 class="kop mt-5 text-3xl leading-tight sm:text-[2.6rem]">Vertel Arno over uw klus.</h2>
+      <p class="mt-5 max-w-md text-lg leading-relaxed text-white/70">Vraag een vrijblijvende offerte aan. Bel, mail of stuur hieronder een bericht.</p>
+      <a href="tel:+31345517196" class="kop kop-breed mt-8 block text-[2rem] leading-none text-oranje hover:text-white sm:text-5xl">0345 517 196</a>
+      <dl class="mt-8 space-y-4 text-[16px]">
+        <div><dt class="text-white/50">Geen gehoor? Mobiel</dt><dd><a href="tel:+31650232755" class="font-semibold hover:text-oranje">06 502 327 55</a></dd></div>
+        <div><dt class="text-white/50">E-mail</dt><dd><a href="mailto:info@klusbedrijfgeerlings.nl" class="font-semibold hover:text-oranje">info@klusbedrijfgeerlings.nl</a></dd></div>
+        <div><dt class="text-white/50">Adres</dt><dd>Beatrixstraat 45, 4101 HJ Culemborg</dd></div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@klusbedrijfgeerlings.nl" method="post" enctype="text/plain" class="self-start rounded-sm bg-white/[0.06] p-6 sm:p-8">
+      <p class="kop text-xl">Of stuur een bericht</p>
+      <label class="mt-6 block text-[15px]">Naam
+        <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-sm border border-white/15 bg-lei px-3.5 py-3 text-white placeholder-white/30 focus:border-oranje">
+      </label>
+      <label class="mt-4 block text-[15px]">Telefoon of e-mail
+        <input name="contact" required class="mt-1.5 w-full rounded-sm border border-white/15 bg-lei px-3.5 py-3 text-white focus:border-oranje">
+      </label>
+      <label class="mt-4 block text-[15px]">Wat is de klus?
+        <textarea name="klus" rows="4" required placeholder="Bijvoorbeeld: kleine badkamer vernieuwen, kastwand onder de schuine wand" class="mt-1.5 w-full rounded-sm border border-white/15 bg-lei px-3.5 py-3 text-white placeholder-white/35 focus:border-oranje"></textarea>
+      </label>
+      <button type="submit" class="knop kop mt-6 w-full rounded-md bg-oranje px-6 py-3.5 text-lei">Verstuur bericht</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-lei pb-24 text-[14px] text-white/50 md:pb-0">
+  <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-3 border-t border-white/10 px-5 py-6">
+    <p>Klusbedrijf Arno Geerlings, Culemborg</p>
+    <p>Demo door <a href="https://hagenweb.nl" class="underline hover:text-white">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Belbalk mobiel -->
+<div class="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-lei/95 p-3 backdrop-blur md:hidden">
+  <a href="tel:+31345517196" class="knop kop flex items-center justify-center gap-3 rounded-md bg-oranje py-3.5 text-lg text-lei">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Arno: 0345 517 196
+  </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Het Bouw Bureau | Bouwbedrijf in Culemborg</title>
+<meta name="description" content="Het Bouw Bureau in Culemborg: tekenen, rekenen en maken onder één dak. Bel 0345 509 066.">
+<meta property="og:title" content="Het Bouw Bureau | Tekenen, rekenen, maken">
+<meta property="og:image" content="assets/google-04.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          inkt: '#16213F',
+          hbb: { DEFAULT: '#2347C5', donker: '#1A389F' },
+          papier: '#F1F3F7',
+          raster: '#D5DCE8',
+          grijs: '#5B6478',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Public Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 125%; font-weight: 800; letter-spacing: -0.02em; line-height: 0.98; text-wrap: balance; }
+  .kop-smal { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-weight: 700; letter-spacing: -0.01em; }
+  p { text-wrap: pretty; }
+
+  /* Tekenpapier met ruitraster */
+  .raster-bg {
+    background-color: #F1F3F7;
+    background-image:
+      linear-gradient(#DCE2EC 1px, transparent 1px),
+      linear-gradient(90deg, #DCE2EC 1px, transparent 1px),
+      linear-gradient(#E7EBF2 1px, transparent 1px),
+      linear-gradient(90deg, #E7EBF2 1px, transparent 1px);
+    background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  }
+
+  /* Huisvorm, zoals de kopgevel van de woonunit */
+  .gevel { clip-path: polygon(0 26%, 50% 0, 100% 26%, 100% 100%, 0 100%); }
+  .gevel-lijn { clip-path: polygon(0 26%, 50% 0, 100% 26%, 100% 100%, 0 100%); }
+
+  /* Maatlijn */
+  .maat { position: relative; height: 1px; background: #2347C5; }
+  .maat::before, .maat::after { content: ''; position: absolute; top: -7px; width: 1px; height: 15px; background: #2347C5; }
+  .maat::before { left: 0; } .maat::after { right: 0; }
+  .maat-tick { position: absolute; top: -7px; width: 1px; height: 15px; background: #2347C5; }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #2347C5; outline-offset: 3px;
+  }
+
+  /* Eén moment beweging: de gevel wordt opgetrokken */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .gevel-in { animation: optrekken 1.1s cubic-bezier(.2,.7,.2,1) both .15s; }
+    @keyframes optrekken {
+      from { clip-path: polygon(0 100%, 50% 100%, 100% 100%, 100% 100%, 0 100%); }
+      to   { clip-path: polygon(0 26%, 50% 0, 100% 26%, 100% 100%, 0 100%); }
+    }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-papier text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-white/80 text-xs sm:text-[13px] text-center py-2 px-4">
+  Demo voor Het Bouw Bureau, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-white/90">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-papier/95 backdrop-blur border-b border-raster sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3" aria-label="Het Bouw Bureau, naar boven">
+      <span class="kop text-[22px] md:text-[26px] leading-none tracking-tight">HBB<span class="text-hbb">.</span></span>
+      <span class="hidden sm:block h-6 w-px bg-raster"></span>
+      <span class="hidden sm:block kop-smal text-[15px] leading-tight">Het Bouw Bureau</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#werkwijze" class="hover:text-hbb transition-colors">Werkwijze</a>
+      <a href="#wie" class="hover:text-hbb transition-colors">Wie we zijn</a>
+      <a href="#contact" class="hover:text-hbb transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31345509066" class="knop inline-flex items-center gap-2 rounded-md border-2 border-inkt px-3.5 py-2 text-sm font-semibold hover:bg-inkt hover:text-white">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="hidden sm:inline">0345 509 066</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="raster-bg border-b border-raster overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-7 pb-14 md:pt-16 md:pb-20 grid md:grid-cols-12 gap-10 md:gap-8 items-end">
+    <div class="md:col-span-6 lg:col-span-5 md:pb-16">
+      <p class="text-[15px] font-medium text-grijs mb-4 md:mb-5">Bouwbedrijf in Culemborg</p>
+      <h1 class="kop text-[40px] sm:text-6xl lg:text-[76px]">Goed getekend. Goed gebouwd.</h1>
+      <p class="mt-5 md:mt-6 text-[17px] md:text-lg leading-relaxed text-inkt/80 max-w-md">
+        Bij Het Bouw Bureau zit tekenen, rekenen en maken onder één dak. Zo gaat uw bouwplan van papier naar de bouwplaats met één vast aanspreekpunt.
+      </p>
+      <div class="mt-7 md:mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31345509066" class="knop inline-flex items-center gap-3 rounded-md bg-hbb hover:bg-hbb-donker text-white px-6 sm:px-7 py-4 text-[17px] sm:text-lg font-semibold shadow-[0_10px_30px_-10px_rgba(35,71,197,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 0345 509 066
+        </a>
+        <a href="mailto:info@hetbouwbureau.nl?subject=Mijn%20bouwplan" class="font-semibold underline decoration-2 decoration-hbb underline-offset-[6px] hover:text-hbb">Mail uw plan</a>
+      </div>
+      <p class="mt-6 md:mt-8 flex items-center gap-2 text-sm text-grijs">
+        <span class="text-hbb tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span>5 sterren op Google (1 review)</span>
+      </p>
+    </div>
+
+    <div class="md:col-span-6 lg:col-span-7 relative">
+      <div class="gevel gevel-in relative aspect-[5/4] md:aspect-[6/5] bg-inkt">
+        <img src="assets/google-04.jpg" alt="Drie medewerkers van Het Bouw Bureau met HBB-helmen bekijken samen een bouwtekening" class="absolute inset-0 w-full h-full object-cover object-[45%_center]">
+      </div>
+      <!-- Maatlijn onder de gevel -->
+      <div class="mt-5" aria-hidden="true">
+        <div class="maat">
+          <span class="maat-tick" style="left:33.33%"></span>
+          <span class="maat-tick" style="left:66.66%"></span>
+        </div>
+        <div class="grid grid-cols-3 text-center mt-2.5 kop-smal text-[13px] sm:text-sm text-hbb">
+          <span>tekenen</span><span>rekenen</span><span>maken</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+    <div class="grid md:grid-cols-12 gap-6 mb-14 md:mb-20">
+      <h2 class="kop text-4xl sm:text-5xl md:col-span-6">Tekenen, rekenen, maken.</h2>
+      <p class="md:col-span-5 md:col-start-8 text-lg leading-relaxed text-grijs self-end">
+        Dat is ons motto, en ook gewoon de volgorde waarin we werken. Omdat alle drie de stappen bij ons gebeuren, hoeft u niet zelf tussen partijen te schakelen.
+      </p>
+    </div>
+
+    <ol class="space-y-20 md:space-y-28">
+      <!-- 1 -->
+      <li class="grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+        <div class="md:col-span-7 relative">
+          <img src="assets/google-05.jpg" alt="Bouwtekeningen en een 3D-tekening van een staalopbouw op tafel, met handen die naar een detail wijzen" class="w-full aspect-[3/2] object-cover rounded-sm" loading="lazy">
+        </div>
+        <div class="md:col-span-5 md:pl-6">
+          <p class="kop text-hbb text-6xl md:text-7xl leading-none">1</p>
+          <h3 class="kop text-3xl md:text-4xl mt-4">Tekenen</h3>
+          <p class="mt-4 text-lg leading-relaxed text-inkt/80 max-w-md">
+            We beginnen aan tafel, met uw wensen en een vel papier. Daaruit groeien plattegronden, details en bouwtekeningen waar u op kunt bouwen. Letterlijk.
+          </p>
+        </div>
+      </li>
+      <!-- 2 -->
+      <li class="grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+        <div class="md:col-span-5 md:order-2 md:col-start-8 relative">
+          <div class="raster-bg border border-raster aspect-[4/3] relative overflow-hidden rounded-sm">
+            <div class="absolute inset-6 sm:inset-10 bg-no-repeat rounded-sm shadow-[0_20px_40px_-20px_rgba(22,33,63,.45)]" style="background-image:url('assets/google-05.jpg'); background-size: 290%; background-position: 73% 96%;" role="img" aria-label="Uitsnede van een 3D-tekening van een staalopbouw"></div>
+            <div class="absolute left-6 right-6 sm:left-10 sm:right-10 bottom-3 sm:bottom-4" aria-hidden="true"><div class="maat"></div></div>
+            <div class="absolute top-6 bottom-6 sm:top-10 sm:bottom-10 right-2.5 sm:right-4 w-px bg-hbb" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="md:col-span-6 md:order-1">
+          <p class="kop text-hbb text-6xl md:text-7xl leading-none">2</p>
+          <h3 class="kop text-3xl md:text-4xl mt-4">Rekenen</h3>
+          <p class="mt-4 text-lg leading-relaxed text-inkt/80 max-w-md">
+            Een tekening moet ook kloppen. Constructie, maten en materiaal rekenen we door voordat er gebouwd wordt, zodat er op de bouwplaats geen verrassingen opduiken.
+          </p>
+        </div>
+      </li>
+      <!-- 3 -->
+      <li class="grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+        <div class="md:col-span-7 relative">
+          <img src="assets/google-03.jpg" alt="Een woonunit met zwarte houten gevel en grote glazen kopgevel, met een man van Het Bouw Bureau ervoor" class="w-full aspect-[3/2] object-cover rounded-sm" loading="lazy">
+        </div>
+        <div class="md:col-span-5 md:pl-6">
+          <p class="kop text-hbb text-6xl md:text-7xl leading-none">3</p>
+          <h3 class="kop text-3xl md:text-4xl mt-4">Maken</h3>
+          <p class="mt-4 text-lg leading-relaxed text-inkt/80 max-w-md">
+            Dan wordt het echt. We bouwen wat we samen getekend en berekend hebben. Zoals deze unit met zwarte houten gevel en een kopgevel vol glas.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Wie we zijn -->
+<section id="wie" class="raster-bg border-y border-raster">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-5 relative">
+      <img src="assets/google-02.jpg" alt="Een medewerker van Het Bouw Bureau in HBB-polo geeft lachend een klant een hand" class="w-full aspect-[4/5] object-cover object-[40%_30%] rounded-sm" loading="lazy">
+    </div>
+    <div class="md:col-span-6 md:col-start-7">
+      <h2 class="kop text-4xl sm:text-5xl">Bouwen begint met een hand.</h2>
+      <div class="mt-6 space-y-4 text-lg leading-relaxed text-inkt/80 max-w-xl">
+        <p>Een bouwplan is vaak een grote stap. Daarom zit u bij ons aan tafel met de mensen die uw project ook echt tekenen, doorrekenen en bouwen.</p>
+        <p>Bouwt u met meerdere partijen? Dan maken we de keuzes per fase overzichtelijk, zodat iedereen weet wanneer wat op tafel ligt.</p>
+      </div>
+      <figure class="mt-10 grid grid-cols-5 gap-5 items-center">
+        <img src="assets/google-01.jpg" alt="Laptop met een presentatie over het besluitvormingsproces, ernaast een blauwe Het Bouw Bureau-lanyard" class="col-span-3 w-full aspect-[3/2] object-cover rounded-sm" loading="lazy">
+        <figcaption class="col-span-2 text-sm leading-snug text-grijs">Uit een van onze presentaties: het besluitvormingsproces, van visiefase tot realisatie.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-inkt text-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14 lg:gap-10">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-4xl sm:text-5xl lg:text-6xl">Heeft u een bouwplan?</h2>
+      <p class="mt-6 text-lg leading-relaxed text-white/75 max-w-md">Bel of mail ons. We luisteren naar uw idee en vertellen eerlijk hoe we het zouden aanpakken.</p>
+      <a href="tel:+31345509066" class="knop mt-8 inline-flex items-center gap-3 rounded-md bg-hbb hover:bg-[#3058e0] text-white px-7 py-4 text-lg font-semibold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Bel 0345 509 066
+      </a>
+
+      <dl class="mt-14 grid sm:grid-cols-2 gap-x-10 gap-y-8 text-[15px]">
+        <div>
+          <dt class="text-white/55 mb-1.5">E-mail</dt>
+          <dd><a href="mailto:info@hetbouwbureau.nl" class="font-semibold underline decoration-hbb decoration-2 underline-offset-4 hover:text-white/80">info@hetbouwbureau.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-white/55 mb-1.5">Adres</dt>
+          <dd class="leading-relaxed">Industrieweg 8<br>4104 AR Culemborg<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Het+Bouw+Bureau+Industrieweg+8+Culemborg" class="underline underline-offset-4 text-white/75 hover:text-white">Route plannen</a></dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-white/55 mb-1.5">Openingstijden</dt>
+          <dd>
+            <table class="w-full max-w-sm tabular-nums">
+              <tr><td class="py-1 pr-6">Maandag t/m vrijdag</td><td class="py-1 text-right">08:30 tot 17:00</td></tr>
+              <tr class="text-white/55"><td class="py-1 pr-6">Zaterdag en zondag</td><td class="py-1 text-right">Gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="lg:col-span-5 lg:col-start-8">
+      <form action="mailto:info@hetbouwbureau.nl" method="post" enctype="text/plain" class="bg-white text-inkt rounded-md p-6 sm:p-8 space-y-5">
+        <p class="kop-smal text-xl">Vertel kort over uw plan</p>
+        <div>
+          <label for="naam" class="block text-sm font-medium mb-1.5">Naam</label>
+          <input id="naam" name="naam" required autocomplete="name" class="w-full rounded border border-raster bg-papier px-3.5 py-3 focus:border-hbb">
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="tel" class="block text-sm font-medium mb-1.5">Telefoon</label>
+            <input id="tel" name="telefoon" type="tel" autocomplete="tel" class="w-full rounded border border-raster bg-papier px-3.5 py-3 focus:border-hbb">
+          </div>
+          <div>
+            <label for="mail" class="block text-sm font-medium mb-1.5">E-mail</label>
+            <input id="mail" name="email" type="email" required autocomplete="email" class="w-full rounded border border-raster bg-papier px-3.5 py-3 focus:border-hbb">
+          </div>
+        </div>
+        <div>
+          <label for="plan" class="block text-sm font-medium mb-1.5">Uw plan</label>
+          <textarea id="plan" name="plan" rows="4" placeholder="Bijvoorbeeld: een aanbouw, een woonunit of een verbouwing" class="w-full rounded border border-raster bg-papier px-3.5 py-3 focus:border-hbb"></textarea>
+        </div>
+        <button type="submit" class="knop w-full rounded-md bg-inkt hover:bg-hbb text-white py-3.5 font-semibold">Verstuur bericht</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-inkt text-white/55 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row gap-3 justify-between text-sm">
+    <p><span class="kop text-white text-base">HBB<span class="text-hbb">.</span></span> &nbsp;Het Bouw Bureau, Industrieweg 8, Culemborg</p>
+    <p>Tekenen, rekenen, maken.</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-papier/95 backdrop-blur border-t border-raster">
+  <a href="tel:+31345509066" class="knop flex items-center justify-center gap-3 rounded-md bg-hbb text-white py-3.5 font-semibold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel 0345 509 066
+  </a>
+</div>
+
+</body>
+</html>

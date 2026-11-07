@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Damen & Groen | Kozijnen, deuren en dakkapellen in Culemborg</title>
+<meta name="description" content="Damen & Groen plaatst kozijnen, deuren, dakkapellen en schuifpuien in Culemborg en Midden-Nederland. Van advies tot afwerking, zonder aanbetaling. Bel 0345 558 997.">
+<meta property="og:title" content="Damen & Groen, voor een nieuwe kijk naar buiten">
+<meta property="og:image" content="assets/site-01.webp">
+<link rel="icon" href="assets/site-08.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          oranje: '#E97F22',
+          oranjedonker: '#C9661A',
+          antraciet: '#2C3236',
+          glas: '#EBEFF0',
+          tekst: '#22282B',
+          zacht: '#5C666B',
+        },
+        fontFamily: {
+          kop: ['Jost', 'system-ui', 'sans-serif'],
+          body: ['"Public Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; color: #22282B; }
+  h1, h2, h3 { font-family: 'Jost', system-ui, sans-serif; text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Boog, zoals in het logo */
+  .boog { border-radius: 999px 999px 0 0; }
+  .boog-lijn {
+    position: absolute; inset: -18px -18px auto -18px; aspect-ratio: 1 / 1;
+    border: 3px solid #E97F22; border-bottom: 0; border-radius: 999px 999px 0 0;
+    clip-path: inset(0 0 50% 0);
+  }
+
+  /* Kozijn met vier ruiten */
+  .kozijn { background: #2C3236; padding: 14px; gap: 14px; border-radius: 6px; box-shadow: 0 30px 60px -30px rgba(44,50,54,.55); }
+  .ruit { position: relative; overflow: hidden; background: #3a4146; min-height: 300px; }
+  .ruit img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .ruit:hover img { transform: scale(1.04); }
+  .ruit::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,24,26,0) 40%, rgba(20,24,26,.82) 100%); }
+  .ruit .label { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 1.5rem; color: #fff; }
+  @media (min-width: 768px) { .kozijn { padding: 20px; gap: 20px; } .ruit { min-height: 360px; } }
+
+  .knop { transition: background-color .2s, transform .15s, box-shadow .2s; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #E97F22; outline-offset: 3px; }
+
+  /* Eén moment bij het laden: de oranje boog tekent zich */
+  .js .boog-lijn { animation: boog 1.1s .2s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes boog { from { clip-path: inset(0 100% 50% 0); } to { clip-path: inset(0 0 50% 0); } }
+  @media (prefers-reduced-motion: reduce) { .js .boog-lijn { animation: none; } .ruit img { transition: none; } }
+
+  .citaat::before { content: "\201C"; font-family: 'Jost', sans-serif; color: #E97F22; font-size: 3.5rem; line-height: 1; display: block; height: 1.6rem; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-antraciet text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Damen &amp; Groen B.V., gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-white/95 backdrop-blur sticky top-0 z-40 border-b border-glas">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between gap-6">
+    <a href="#" class="shrink-0" aria-label="Damen & Groen, naar boven">
+      <img src="assets/site-08.png" alt="Damen & Groen b.v., sinds 1996" class="h-9 sm:h-11 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-tekst" aria-label="Hoofdmenu">
+      <a href="#plaatsen" class="hover:text-oranjedonker">Wat we plaatsen</a>
+      <a href="#materialen" class="hover:text-oranjedonker">Kozijnen</a>
+      <a href="#werkwijze" class="hover:text-oranjedonker">Werkwijze</a>
+      <a href="#reviews" class="hover:text-oranjedonker">Reviews</a>
+      <a href="#contact" class="hover:text-oranjedonker">Contact</a>
+    </nav>
+    <a href="tel:0345558997" class="knop hidden sm:inline-flex items-center gap-2 font-semibold text-antraciet hover:text-oranjedonker">
+      <svg class="w-5 h-5 text-oranje" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      0345 558 997
+    </a>
+    <a href="tel:0345558997" class="sm:hidden w-11 h-11 rounded-full bg-oranje text-white grid place-items-center" aria-label="Bel 0345 558 997">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-y-0 right-0 w-full lg:w-[44%] bg-glas" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-6 pb-14 lg:pt-16 lg:pb-24 grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+    <div class="lg:col-span-6 xl:col-span-6 order-2 lg:order-1">
+      <p class="text-zacht font-medium">Kozijnen, deuren en dakkapellen in Culemborg</p>
+      <h1 class="mt-2 font-kop font-normal text-antraciet text-[2.6rem] leading-[1.02] sm:text-6xl xl:text-[5.4rem] tracking-[-0.02em]">
+        Een nieuwe kijk naar buiten.
+      </h1>
+      <p class="mt-4 lg:mt-6 text-[17px] lg:text-lg text-zacht max-w-md leading-relaxed">
+        Kozijnen, deuren, dakkapellen en schuifpuien op maat. Wij regelen alles, van het eerste advies tot de laatste afwerking. En u betaalt niets vooraf.
+      </p>
+      <div class="mt-6 lg:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:0345558997" class="knop inline-flex items-center gap-3 bg-oranje hover:bg-oranjedonker text-white font-semibold text-lg px-7 py-4 rounded-md shadow-[0_14px_30px_-12px_rgba(233,127,34,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0345 558 997
+        </a>
+        <a href="mailto:info@damenengroen.nl" class="font-medium text-antraciet underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranjedonker">of mail ons</a>
+      </div>
+      <a href="#reviews" class="mt-9 inline-flex items-center gap-3 text-sm text-zacht hover:text-antraciet">
+        <span class="flex text-oranje" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4 opacity-30" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+        </span>
+        <span><strong class="text-antraciet font-semibold">4,2</strong> uit 50 Google-reviews</span>
+      </a>
+    </div>
+    <div class="lg:col-span-6 order-1 lg:order-2 flex justify-center lg:justify-end">
+      <div class="relative w-[56%] sm:w-[50%] lg:w-[88%] max-w-[520px] mt-4 lg:mt-4">
+        <div class="boog-lijn" aria-hidden="true"></div>
+        <div class="boog overflow-hidden aspect-[1/1] sm:aspect-[4/5] lg:aspect-[5/6] bg-antraciet">
+          <img src="assets/site-01.webp" alt="Grote antraciet schuifpui die opent naar een terras met uitzicht over de polder" class="w-full h-full object-cover object-[62%_50%]">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wat we plaatsen: het kozijn -->
+<section id="plaatsen" class="py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-10 lg:mb-14">
+      <h2 class="lg:col-span-6 font-kop text-4xl sm:text-5xl text-antraciet leading-[1.05] tracking-[-0.01em]">Alles wat licht binnenlaat.</h2>
+      <p class="lg:col-span-5 lg:col-start-8 text-zacht text-lg leading-relaxed">
+        Vier vakgebieden, één aanspreekpunt. Wij combineren vakmanschap met modern design en maken alles op maat voor uw woning.
+      </p>
+    </div>
+
+    <div class="kozijn grid md:grid-cols-2">
+      <a href="#materialen" class="ruit group block">
+        <img src="assets/google-07.jpg" alt="Nieuwe witte kozijnen in een karakteristieke bakstenen gevel">
+        <div class="label">
+          <h3 class="font-kop text-3xl">Kozijnen</h3>
+          <p class="mt-1 text-white/85">In kunststof, hout of aluminium.</p>
+        </div>
+      </a>
+      <div class="ruit">
+        <img src="assets/site-04.jpg" alt="Drie antraciet dakkapellen op een pannendak tegen een blauwe lucht">
+        <div class="label">
+          <h3 class="font-kop text-3xl">Dakkapellen</h3>
+          <p class="mt-1 text-white/85">Extra licht en ruimte, geplaatst in één dag.</p>
+        </div>
+      </div>
+      <div class="ruit">
+        <img src="assets/site-05.webp" alt="Strakke antraciet voordeur met hoge glazen zijlichten" style="object-position:50% 40%">
+        <div class="label">
+          <h3 class="font-kop text-3xl">Deuren</h3>
+          <p class="mt-1 text-white/85">Veilig, stijlvol en op maat gemaakt.</p>
+        </div>
+      </div>
+      <div class="ruit">
+        <img src="assets/google-04.jpg" alt="Antraciet schuifpui met zicht op een tuin met loungeset">
+        <div class="label">
+          <h3 class="font-kop text-3xl">Schuifpuien</h3>
+          <p class="mt-1 text-white/85">Meer licht en verbinding met de tuin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kozijnen in drie materialen -->
+<section id="materialen" class="bg-glas py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop text-4xl sm:text-5xl text-antraciet leading-[1.05]">Kozijnen die jaren meegaan.</h2>
+      <p class="mt-5 text-zacht text-lg leading-relaxed max-w-md">
+        Onderhoudsarm, goed geïsoleerd en strak afgewerkt. Kies het materiaal dat bij uw huis past, met dubbel glas, HR++ of triple glas. Wij adviseren u graag.
+      </p>
+      <div class="mt-10 relative">
+        <img src="assets/site-02.webp" alt="Doorsnede van een kunststof kozijnprofiel met triple glas en houtnerf" class="w-full aspect-[4/3] object-cover rounded-md">
+      </div>
+    </div>
+    <div class="lg:col-span-7 lg:pt-4">
+      <article class="py-8 border-t-2 border-antraciet">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="font-kop text-3xl text-antraciet">Kunststof</h3>
+          <span class="text-sm text-zacht">onderhoudsarm en energiezuinig</span>
+        </div>
+        <p class="mt-3 text-tekst/85 leading-relaxed max-w-xl">
+          Duurzaam, milieuvriendelijk en zonder schilderwerk, met een levensduur tot wel 75 jaar. Hoge isolatiewaarde, warmte blijft binnen en geluid buiten. Verkrijgbaar in veel kleuren en levensechte houtnerven.
+        </p>
+      </article>
+      <article class="py-8 border-t border-antraciet/25">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="font-kop text-3xl text-antraciet">Aluminium</h3>
+          <span class="text-sm text-zacht">slank en zeer robuust</span>
+        </div>
+        <p class="mt-3 text-tekst/85 leading-relaxed max-w-xl">
+          Licht, corrosiebestendig en in vrijwel elke kleur, ook verschillend aan binnen- en buitenzijde (bicolor). Met 3 kamers en 3 dichtingen voor optimale geluids- en warmte-isolatie.
+        </p>
+      </article>
+      <article class="py-8 border-t border-antraciet/25">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="font-kop text-3xl text-antraciet">Hout</h3>
+          <span class="text-sm text-zacht">warm en tijdloos</span>
+        </div>
+        <p class="mt-3 text-tekst/85 leading-relaxed max-w-xl">
+          Een warme, authentieke uitstraling met een lange levensduur. Gemaakt van hoogwaardige én eerlijke materialen, voor een sfeervolle woning.
+        </p>
+      </article>
+      <div class="pt-8 border-t border-antraciet/25">
+        <a href="tel:0345558997" class="knop inline-flex items-center gap-2 font-semibold text-antraciet underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranjedonker">Bel voor advies over uw kozijnen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-5 lg:sticky lg:top-28">
+      <div class="relative">
+        <img src="assets/google-03.jpg" alt="Twee monteurs van Damen & Groen plaatsen folie bij een nieuwe dakkapel" class="w-full aspect-[4/5] object-cover object-[50%_45%] rounded-md">
+        <div class="absolute -bottom-6 -right-3 sm:-right-6 bg-oranje text-white px-6 py-5 rounded-md shadow-xl max-w-[15rem]">
+          <p class="font-kop text-4xl leading-none">Sinds 1996</p>
+          <p class="mt-2 text-sm text-white/90">Al bijna 30 jaar kozijnen, deuren en dakkapellen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="font-kop text-4xl sm:text-5xl text-antraciet leading-[1.05] max-w-xl">Van eerste advies tot de laatste afwerking.</h2>
+      <p class="mt-5 text-zacht text-lg leading-relaxed max-w-xl">
+        U heeft één aanspreekpunt en eigen, ervaren monteurs over de vloer. Persoonlijke service, heldere afspraken en een resultaat waar u trots op bent.
+      </p>
+
+      <ol class="mt-12 space-y-0">
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-6 border-t border-antraciet/20">
+          <span class="font-kop text-3xl text-oranje leading-none pt-1">1</span>
+          <div><h3 class="font-kop text-2xl text-antraciet">Advies</h3><p class="mt-1 text-zacht leading-relaxed">We denken met u mee en geven eerlijk advies over de beste oplossing voor uw woning.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-6 border-t border-antraciet/20">
+          <span class="font-kop text-3xl text-oranje leading-none pt-1">2</span>
+          <div><h3 class="font-kop text-2xl text-antraciet">Opmeting</h3><p class="mt-1 text-zacht leading-relaxed">Alles wordt bij u thuis opgemeten en op maat gemaakt. Een vergunning nodig? Dat regelen we mee.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-6 border-t border-antraciet/20">
+          <span class="font-kop text-3xl text-oranje leading-none pt-1">3</span>
+          <div><h3 class="font-kop text-2xl text-antraciet">Montage</h3><p class="mt-1 text-zacht leading-relaxed">Onze monteurs plaatsen alles vakkundig. Een dakkapel staat er vaak in één dag.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-6 border-t border-b border-antraciet/20">
+          <span class="font-kop text-3xl text-oranje leading-none pt-1">4</span>
+          <div><h3 class="font-kop text-2xl text-antraciet">Afwerking</h3><p class="mt-1 text-zacht leading-relaxed">Netjes afgewerkt en opgeruimd opgeleverd, zodat u zorgeloos geniet van een comfortabel en energiezuinig huis.</p></div>
+        </li>
+      </ol>
+
+      <div class="mt-10 bg-antraciet text-white rounded-md p-6 sm:p-8 grid sm:grid-cols-[1fr_auto] gap-6 items-center">
+        <div>
+          <p class="font-kop text-2xl">Betrouwbare service, zonder aanbetaling.</p>
+          <p class="mt-1 text-white/75">Hoogwaardige materialen en maatwerk, voor meer wooncomfort en een lagere energierekening.</p>
+        </div>
+        <a href="tel:0345558997" class="knop inline-flex justify-center items-center gap-2 bg-oranje hover:bg-oranjedonker text-white font-semibold px-6 py-3.5 rounded-md whitespace-nowrap">Maak een afspraak</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-antraciet text-white py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-7">
+        <h2 class="font-kop text-4xl sm:text-5xl leading-[1.05]">Wat klanten zeggen.</h2>
+        <p class="mt-8 font-kop font-light text-3xl sm:text-[2.6rem] leading-[1.15] max-w-2xl citaat">Reageert snel! Concurrerende prijzen! Super vriendelijk! TOP bedrijf!</p>
+        <p class="mt-4 text-white/70">Gurhan Sargin, via Google</p>
+      </div>
+      <div class="lg:col-span-4 lg:col-start-9 lg:text-right">
+        <p class="font-kop text-7xl sm:text-8xl leading-none">4,2</p>
+        <p class="mt-2 text-white/75">gemiddeld uit 50 Google-reviews</p>
+      </div>
+    </div>
+
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-5 [&>*]:mb-5">
+      <figure class="break-inside-avoid bg-white/[.06] border border-white/10 rounded-md p-6">
+        <blockquote class="leading-relaxed text-white/90">"Damen &amp; Groen heeft afgelopen september een mooie grote dakkapel geleverd. Eerste contact met de vertegenwoordiger was top. Het regelen van de vergunning ook top geregeld. De dakkapel is compleet naar onze wens geleverd en de monteurs zijn toppers. Damen &amp; Groen bedankt 👍"</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">Maik Linnenbank</span> <span class="text-white/55">via Google</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white/[.06] border border-white/10 rounded-md p-6">
+        <blockquote class="leading-relaxed text-white/90">"Goede ervaring met het plaatsen van een raam op onze zolder. De verkoper nam de tijd voor ons, heeft ons echt geholpen met de keuze en een plan gemaakt voor de inbouw. Goede afspraken gemaakt, sympathieke groep werklieden, werken netjes en schoon en laten het werk ook opgeruimd achter, komen afspraken na."</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">J. v. Hoof</span> <span class="text-white/55">via Google</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-oranje rounded-md p-6">
+        <blockquote class="leading-relaxed">"Geweldig goede ervaring met Damen &amp;Groen! Ze hebben alle raamkozijn en glas vervangen van ons huis naar zeer grote tevredenheid! Goed en eerlijk advies, perfect werk opgeleverd en keurig afgewerkt."</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">John van den Berg</span> <span class="text-white/80">via Google</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white/[.06] border border-white/10 rounded-md p-6">
+        <blockquote class="leading-relaxed text-white/90">"Tweede keer Damen en Groen ingeschakeld voor het vervangen van kozijnen en deuren. Dit keer 2 deuren laten vervangen, een raam laten vervangen door een deur, een raam laten vervangen en overal cilinders laten aanpassen. Met 3 man waren ze met een paar uur klaar. Nette heren die wel nog een beetje zitten te geinen onderling, goed sfeertje. Regelmatig overleg momentjes en prettig meedenken. Voor een volgende klus nodig ik ze zo weer uit!"</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">Richard</span> <span class="text-white/55">Westervoort</span></figcaption>
+      </figure>
+      <figure class="hidden md:block break-inside-avoid bg-white/[.06] border border-white/10 rounded-md p-6">
+        <blockquote class="leading-relaxed text-white/90">"Mooie dakkapel geplaatst en tevens een ander kozijn vervangen. Advies en offerte waren al super en gisteren was dan de dag van levering, dat was allemaal perfect. Zeer nette monteurs die mee dachten met de plaatsing van de dakkapel en tips gaven over de afwerking (doe ik zelf)."</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">Daan</span> <span class="text-white/55">via Google</span></figcaption>
+      </figure>
+      <figure class="hidden md:block break-inside-avoid bg-white/[.06] border border-white/10 rounded-md p-6">
+        <blockquote class="leading-relaxed text-white/90">"Huis is 45 j oud en kozijnen hadden hun tijd gehad. Op internet 2 fabrikanten en in de buurt eveneens 2 fabrikanten aanbevolen gekregen. 4 gesprekken gevoerd, 4 offertes ontvangen. Damen en Groen werd ons keuze: profesionele indruk, de prijs en de betalingsvoorwaarden hebben de doorslag gegeven. Drie dagen lang gesloopt en gebouwd en wij zijn dik tevreden met het eindresultaat!!!"</blockquote>
+        <figcaption class="mt-4 text-sm"><span class="font-semibold">Pieter</span> <span class="text-white/55">Houten</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Uit het werk -->
+<section class="py-20 lg:py-24" aria-labelledby="werk-titel">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <h2 id="werk-titel" class="font-kop text-4xl sm:text-5xl text-antraciet leading-[1.05]">Uit het werk.</h2>
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <img src="assets/google-05.jpg" alt="Zwarte aanbouw met grote glazen puien in een tuin" class="col-span-2 lg:row-span-2 w-full h-full aspect-[4/3] object-cover rounded-md">
+      <img src="assets/google-01.jpg" alt="Wit kozijn met roedes naast een grijs luik" class="w-full aspect-[4/3] object-cover rounded-md">
+      <img src="assets/google-08.jpg" alt="Grijze woning met witte kozijnen en een boograam" class="w-full aspect-[4/3] object-cover object-left rounded-md">
+      <img src="assets/google-06.jpg" alt="Nieuw wit draaikiepraam van binnen gezien" class="w-full aspect-[4/3] object-cover rounded-md">
+      <img src="assets/google-02.jpg" alt="Achtergevel met nieuwe pui en openslaande deuren naar het terras" class="w-full aspect-[4/3] object-cover rounded-md">
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-glas py-20 lg:py-28 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop text-4xl sm:text-5xl text-antraciet leading-[1.05]">Maak een afspraak.</h2>
+      <p class="mt-5 text-zacht text-lg leading-relaxed max-w-md">We denken graag met u mee en geven eerlijk advies over de beste oplossing voor uw woning.</p>
+
+      <a href="tel:0345558997" class="knop mt-8 inline-flex items-center gap-3 bg-oranje hover:bg-oranjedonker text-white font-semibold text-lg px-7 py-4 rounded-md">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 0345 558 997
+      </a>
+
+      <dl class="mt-10 grid sm:grid-cols-2 gap-8 text-tekst">
+        <div>
+          <dt class="font-kop text-xl text-antraciet">Langskomen</dt>
+          <dd class="mt-2 leading-relaxed text-zacht">Industrieweg 13<br>4104 AP Culemborg</dd>
+          <dd class="mt-3"><a href="mailto:info@damenengroen.nl" class="font-medium text-antraciet underline decoration-oranje decoration-2 underline-offset-4 hover:text-oranjedonker">info@damenengroen.nl</a></dd>
+        </div>
+        <div>
+          <dt class="font-kop text-xl text-antraciet">Openingstijden</dt>
+          <dd class="mt-2 text-zacht">
+            <table class="w-full text-sm [font-variant-numeric:tabular-nums]">
+              <tr><td class="pr-4 py-0.5">ma t/m do</td><td class="text-tekst">09:00 tot 17:00</td></tr>
+              <tr><td class="pr-4 py-0.5">vrijdag</td><td class="text-tekst">09:00 tot 12:00</td></tr>
+              <tr><td class="pr-4 py-0.5">za en zo</td><td>gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+      <p class="mt-8 text-sm text-zacht max-w-md leading-relaxed">We werken in Culemborg en heel Midden-Nederland, waaronder Gelderland, Utrecht, Zuid-Holland, Noord-Holland en Brabant.</p>
+    </div>
+
+    <div class="lg:col-span-7">
+      <form action="mailto:info@damenengroen.nl" method="post" enctype="text/plain" class="bg-white rounded-md p-6 sm:p-10 shadow-[0_30px_60px_-35px_rgba(44,50,54,.45)]" id="formulier">
+        <h3 class="font-kop text-2xl text-antraciet">Liever een bericht sturen?</h3>
+        <p class="mt-1 text-zacht">Laat uw gegevens achter, dan nemen wij contact met u op.</p>
+        <div class="mt-8 grid sm:grid-cols-2 gap-5">
+          <label class="block"><span class="text-sm font-medium text-antraciet">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-2 w-full rounded-md border border-antraciet/20 bg-glas/40 px-4 py-3 focus:border-oranje focus:outline-none focus:ring-2 focus:ring-oranje/30"></label>
+          <label class="block"><span class="text-sm font-medium text-antraciet">Telefoon</span>
+            <input name="telefoon" type="tel" autocomplete="tel" class="mt-2 w-full rounded-md border border-antraciet/20 bg-glas/40 px-4 py-3 focus:border-oranje focus:outline-none focus:ring-2 focus:ring-oranje/30"></label>
+          <label class="block sm:col-span-2"><span class="text-sm font-medium text-antraciet">E-mail</span>
+            <input name="email" type="email" required autocomplete="email" class="mt-2 w-full rounded-md border border-antraciet/20 bg-glas/40 px-4 py-3 focus:border-oranje focus:outline-none focus:ring-2 focus:ring-oranje/30"></label>
+          <fieldset class="sm:col-span-2">
+            <legend class="text-sm font-medium text-antraciet">Waar gaat het over?</legend>
+            <div class="mt-2 flex flex-wrap gap-2">
+              <label class="cursor-pointer"><input type="checkbox" name="onderwerp" value="Kozijnen" class="peer sr-only"><span class="block px-4 py-2 rounded-md border border-antraciet/20 text-sm peer-checked:bg-antraciet peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-oranje">Kozijnen</span></label>
+              <label class="cursor-pointer"><input type="checkbox" name="onderwerp" value="Deuren" class="peer sr-only"><span class="block px-4 py-2 rounded-md border border-antraciet/20 text-sm peer-checked:bg-antraciet peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-oranje">Deuren</span></label>
+              <label class="cursor-pointer"><input type="checkbox" name="onderwerp" value="Dakkapel" class="peer sr-only"><span class="block px-4 py-2 rounded-md border border-antraciet/20 text-sm peer-checked:bg-antraciet peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-oranje">Dakkapel</span></label>
+              <label class="cursor-pointer"><input type="checkbox" name="onderwerp" value="Schuifpui" class="peer sr-only"><span class="block px-4 py-2 rounded-md border border-antraciet/20 text-sm peer-checked:bg-antraciet peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-oranje">Schuifpui</span></label>
+            </div>
+          </fieldset>
+          <label class="block sm:col-span-2"><span class="text-sm font-medium text-antraciet">Bericht</span>
+            <textarea name="bericht" rows="4" class="mt-2 w-full rounded-md border border-antraciet/20 bg-glas/40 px-4 py-3 focus:border-oranje focus:outline-none focus:ring-2 focus:ring-oranje/30"></textarea></label>
+        </div>
+        <button type="submit" class="knop mt-6 w-full sm:w-auto bg-antraciet hover:bg-black text-white font-semibold px-7 py-3.5 rounded-md">Verstuur bericht</button>
+        <p id="formulier-melding" class="mt-4 text-sm text-antraciet hidden" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-white border-t border-glas">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
+    <img src="assets/site-08.png" alt="Damen & Groen b.v., sinds 1996" class="h-10 w-auto self-start">
+    <div class="text-sm text-zacht flex flex-wrap gap-x-8 gap-y-2">
+      <span>Industrieweg 13, 4104 AP Culemborg</span>
+      <a href="tel:0345558997" class="hover:text-antraciet">0345 558 997</a>
+      <a href="mailto:info@damenengroen.nl" class="hover:text-antraciet">info@damenengroen.nl</a>
+    </div>
+  </div>
+  <div class="text-center text-xs text-zacht/80 pb-8">Demo-ontwerp door <a href="https://hagenweb.nl" class="underline hover:text-antraciet">Hagenweb</a></div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-glas p-3 flex gap-3">
+  <a href="tel:0345558997" class="flex-1 inline-flex justify-center items-center gap-2 bg-oranje text-white font-semibold py-3.5 rounded-md">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel ons
+  </a>
+  <a href="mailto:info@damenengroen.nl" class="px-5 inline-flex items-center border border-antraciet/25 text-antraciet font-semibold rounded-md">Mail</a>
+</div>
+
+<script>
+  document.getElementById('formulier').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var m = document.getElementById('formulier-melding');
+    m.textContent = 'Dit is een demo: het formulier verstuurt nog niets. Bel 0345 558 997 of mail info@damenengroen.nl.';
+    m.classList.remove('hidden');
+  });
+</script>
+</body>
+</html>

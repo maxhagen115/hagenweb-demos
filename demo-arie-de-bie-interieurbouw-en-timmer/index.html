@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arie de Bie interieurbouw en timmerwerk | Timmerman in Apeldoorn</title>
+<meta name="description" content="Kasten op maat, tuinkamers, overkappingen en dakrenovaties. Arie de Bie is uw timmerman in Apeldoorn en omgeving. Vrijblijvende inspectie en offerte.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Zilla+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        kalk: '#E9EBE4',
+        kalklicht: '#F5F6F1',
+        inkt: '#1F2723',
+        mos: '#5E6B60',
+        dak: '#A51E29',
+        dakdonker: '#86161F',
+        hout: '#B9713D',
+      },
+      fontFamily: {
+        slab: ['"Zilla Slab"', 'Georgia', 'serif'],
+        sans: ['"Public Sans"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Het puntdak uit het logo als uitsnede */
+  .gable { clip-path: polygon(50% 0, 100% 26%, 100% 100%, 0 100%, 0 26%); }
+  .hero-img { clip-path: polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%); }
+  @media (min-width:1024px){ .hero-img { clip-path: polygon(50% 0, 100% 26%, 100% 100%, 0 100%, 0 26%); } }
+  .roofline { width: 64px; height: 18px; }
+
+  #belbalk { transition: transform .3s ease; }
+  .js #belbalk.verborgen { transform: translateY(110%); }
+  .btn-dak { transition: background-color .2s, transform .15s; }
+  .btn-dak:hover { background-color: #86161F; }
+  .btn-dak:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #B9713D; outline-offset: 3px;
+  }
+
+  /* Eén laadmoment: de hero-foto zakt zacht op zijn plek (alleen met JS) */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-photo { animation: zak .9s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-copy > * { animation: op .7s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-copy > *:nth-child(2) { animation-delay: .08s; }
+    .js .hero-copy > *:nth-child(3) { animation-delay: .16s; }
+    .js .hero-copy > *:nth-child(4) { animation-delay: .24s; }
+    @keyframes zak { from { transform: translateY(-18px); opacity: .0; } to { transform: none; opacity: 1; } }
+    @keyframes op { from { transform: translateY(10px); opacity: .0; } to { transform: none; opacity: 1; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-kalk text-inkt font-sans">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-kalk/80 text-[13px] text-center px-4 py-2">
+  Demo voor Arie de Bie interieurbouw en timmerwerk, gemaakt door
+  <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-hout">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-kalk/95 backdrop-blur border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="shrink-0" aria-label="Arie de Bie, naar boven">
+      <img src="assets/site-01.png" alt="Arie de Bie" class="h-8 lg:h-10 w-auto">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-inkt/80">
+      <a href="#werk" class="hover:text-dak transition-colors">Wat ik maak</a>
+      <a href="#arie" class="hover:text-dak transition-colors">Over Arie</a>
+      <a href="#werkwijze" class="hover:text-dak transition-colors">Werkwijze</a>
+      <a href="#reviews" class="hover:text-dak transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-dak transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31655058077" class="btn-dak inline-flex items-center gap-2 bg-dak text-white rounded-md px-4 py-2.5 text-sm font-semibold">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 55058077</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 pt-4 pb-14 lg:py-20 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <div class="hero-photo order-1 lg:order-2 lg:col-span-6 lg:col-start-7">
+      <div class="relative">
+        <img src="assets/site-05.jpg" alt="Inloopkast op maat in donker hout met warme ledverlichting onder een schuin dak"
+             class="hero-img w-full aspect-[16/8.5] sm:aspect-[16/10] lg:aspect-[4/4.4] object-cover object-[60%_50%]">
+      </div>
+    </div>
+    <div class="hero-copy order-2 lg:order-1 lg:col-span-6 lg:pr-6">
+      <p class="text-mos font-medium text-[15px] flex items-center gap-3">
+        <svg class="roofline text-dak" viewBox="0 0 64 18" fill="none" aria-hidden="true"><path d="M2 16 32 2l30 14" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+        Timmerman in Apeldoorn
+      </p>
+      <h1 class="font-slab font-bold text-[2.45rem] leading-[1.02] sm:text-6xl lg:text-[4.6rem] tracking-[-0.015em] mt-3">
+        Gemaakt op maat. Gebouwd om te blijven.
+      </h1>
+      <p class="mt-4 sm:mt-5 text-[17px] sm:text-lg text-inkt/75 max-w-[34rem] leading-relaxed">
+        Een kast onder de schuine kap of een tuinkamer achter het huis: Arie denkt met u mee, komt zijn afspraken na en levert netjes op.
+      </p>
+      <div class="mt-6 sm:mt-7 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+        <a href="tel:+31655058077" class="btn-dak inline-flex justify-center items-center gap-3 bg-dak text-white rounded-md px-7 py-4 text-lg font-semibold shadow-[0_10px_24px_-12px_rgba(165,30,41,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel Arie: 06 55058077
+        </a>
+        <a href="#contact" class="text-inkt font-semibold underline decoration-hout decoration-2 underline-offset-[6px] hover:text-dak self-start sm:self-auto">Vrijblijvende offerte aanvragen</a>
+      </div>
+      <p class="mt-7 flex items-center gap-2 text-sm text-mos">
+        <span class="text-hout tracking-[2px] text-base" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-inkt font-semibold">5,0</strong> uit 7 Google-reviews</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Wat ik maak -->
+<section id="werk" class="bg-kalklicht border-y border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 pt-16 pb-20 lg:pt-24 lg:pb-28">
+    <div class="max-w-2xl">
+      <h2 class="font-slab font-bold text-4xl lg:text-5xl leading-tight">Binnen en buiten, alles in hout.</h2>
+      <p class="mt-4 text-lg text-inkt/75 leading-relaxed">Houtbouw en timmerwerk is het vak. Dat kan een inloopkast zijn die precies onder uw dakschuinte past, of een tuinkamer, veranda of aanbouw die er jaren tegen kan.</p>
+    </div>
+
+    <!-- Binnen -->
+    <div class="mt-14 grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+      <div class="lg:col-span-4 lg:pb-6 order-2 lg:order-1">
+        <h3 class="font-slab font-semibold text-3xl">Binnen</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Interieurbouw op maat: kasten en inloopkasten voor lastige hoeken en schuine daken, met verlichting erin als u dat wilt. Een tv-wandmeubel, een boekenwand. Ontworpen, gemaakt en gemonteerd door Arie.</p>
+        <ul class="mt-5 space-y-2 text-[15px]">
+          <li class="flex gap-3"><span class="mt-2 h-px w-4 bg-dak shrink-0"></span>Kasten en inloopkasten op maat</li>
+          <li class="flex gap-3"><span class="mt-2 h-px w-4 bg-dak shrink-0"></span>Tv- en wandmeubels</li>
+          <li class="flex gap-3"><span class="mt-2 h-px w-4 bg-dak shrink-0"></span>Bibliotheek- en boekenwanden</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-8 order-1 lg:order-2 grid grid-cols-5 gap-3 lg:gap-4 aspect-[5/2.9]">
+        <figure class="col-span-3 h-full">
+          <img src="assets/google-07.jpg" alt="Witte inloopkast met ledverlichting onder een schuin zolderdak" class="w-full h-full object-cover rounded-md">
+        </figure>
+        <figure class="col-span-2 h-full">
+          <img src="assets/google-08.jpg" alt="Groengrijze boekenwand met kastjes en lades op maat" class="w-full h-full object-cover object-[35%_50%] rounded-md">
+        </figure>
+      </div>
+    </div>
+
+    <!-- Buiten -->
+    <div class="mt-16 lg:mt-24 grid lg:grid-cols-12 gap-6 lg:gap-10">
+      <div class="lg:col-span-8 grid grid-cols-6 gap-3 lg:gap-4">
+        <figure class="col-span-6 sm:col-span-4 row-span-2">
+          <img src="assets/site-03.jpg" alt="Houten tuinkamer met overkapping en dak van shingles" class="w-full h-full min-h-[240px] aspect-[4/3] sm:aspect-auto object-cover rounded-md">
+        </figure>
+        <figure class="col-span-3 sm:col-span-2">
+          <img src="assets/site-07.jpg" alt="Overkapping van douglashout tegen een berging" class="w-full aspect-square object-cover rounded-md">
+        </figure>
+        <figure class="col-span-3 sm:col-span-2">
+          <img src="assets/google-02.jpg" alt="Houten vlonder en traptreden langs een gemetselde tuinmuur" class="w-full aspect-square object-cover rounded-md">
+        </figure>
+        <figure class="col-span-3">
+          <img src="assets/google-06.jpg" alt="Grote pergola van douglashout in een nieuwe tuin" class="w-full aspect-[4/3] object-cover rounded-md">
+        </figure>
+        <figure class="col-span-3">
+          <img src="assets/google-03.jpg" alt="Overkapping met schoren en druivenrank in een stadstuin" class="w-full aspect-[4/3] object-cover object-[50%_30%] rounded-md">
+        </figure>
+      </div>
+      <div class="lg:col-span-4 lg:pt-6">
+        <h3 class="font-slab font-semibold text-3xl">Buiten</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Van tuinschuur tot tuinkamer en van pergola tot een compleet nieuw dak. Bouwkundig sterk en duurzaam, zodat het niet alleen mooi is op de dag van oplevering.</p>
+        <ul class="mt-5 space-y-2 text-[15px]">
+          <li class="flex gap-3"><span class="mt-2 h-px w-4 bg-dak shrink-0"></span>Tuinkamers en veranda's</li>
+          <li class="flex gap-3"><span class="mt-2 h-px w-4 bg-dak shrink-0"></span>Overkappingen, kapschuren en tuinschuren</li>
+          <li class="flex gap-3"><span class="mt-2 h-px w-4 bg-dak shrink-0"></span>Aanbouwen en kleinbouw</li>
+          <li class="flex gap-3"><span class="mt-2 h-px w-4 bg-dak shrink-0"></span>Dakrenovaties</li>
+          <li class="flex gap-3"><span class="mt-2 h-px w-4 bg-dak shrink-0"></span>Houtconstructies op maat</li>
+        </ul>
+        <a href="tel:+31655058077" class="mt-8 inline-flex items-center gap-2 font-semibold text-dak hover:text-dakdonker">
+          Plannen? Bel 06 55058077
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Over Arie -->
+<section id="arie">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-5">
+      <img src="assets/site-02.jpg" alt="Arie de Bie aan het werk op een dak met nieuwe shingles" class="gable w-full max-w-md mx-auto lg:mx-0 aspect-[1/1] sm:aspect-[3/4] object-cover object-[55%_40%]">
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="font-slab font-bold text-4xl lg:text-5xl leading-tight">Mijn naam is Arie de Bie.</h2>
+      <div class="mt-6 space-y-5 text-lg text-inkt/80 leading-relaxed max-w-[38rem]">
+        <p>Sinds 2019 werk ik als zelfstandig timmerman, en dat doe ik met veel plezier. Mijn passie ligt bij het bouwen van mooie houtconstructies, met oog voor het klassieke ambacht.</p>
+        <p>Ik combineer traditioneel vakmanschap met moderne technieken. Efficiënt werken, zonder in te leveren op kwaliteit. En met verantwoorde materialen en slimme oplossingen, goed voor het milieu en voor uw portemonnee.</p>
+      </div>
+      <div class="mt-8 border-l-4 border-hout pl-5 max-w-[38rem]">
+        <p class="font-slab font-semibold text-xl">VLOK-erkend</p>
+        <p class="mt-1 text-inkt/75">Het VLOK-keurmerk staat voor persoonlijke service, kwaliteit en vertrouwen. Aangesloten bedrijven moeten aan strenge eisen voldoen en worden daar regelmatig op gecontroleerd.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-inkt text-kalk">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 pt-20 pb-24 lg:pt-24 lg:pb-28">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5">
+        <h2 class="font-slab font-bold text-4xl lg:text-5xl leading-tight text-white">Van eerste gesprek tot oplevering.</h2>
+        <p class="mt-5 text-kalk/70 leading-relaxed">Duidelijke afspraken en één aanspreekpunt. Arie begeleidt het hele traject en denkt vanaf het begin actief met u mee.</p>
+      </div>
+      <ol class="lg:col-span-7 lg:col-start-6">
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-kalk/15">
+          <span class="font-slab font-bold text-4xl text-hout leading-none">1</span>
+          <div>
+            <h3 class="font-slab font-semibold text-2xl text-white">Kennismaken en inspectie</h3>
+            <p class="mt-2 text-kalk/70 leading-relaxed">U vertelt wat u voor ogen heeft, Arie komt kijken. De inspectie en de offerte zijn altijd vrijblijvend.</p>
+          </div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-kalk/15">
+          <span class="font-slab font-bold text-4xl text-hout leading-none">2</span>
+          <div>
+            <h3 class="font-slab font-semibold text-2xl text-white">Meedenken en offerte</h3>
+            <p class="mt-2 text-kalk/70 leading-relaxed">Wat vindt u mooi, wat past bij het huis? U krijgt eerlijk advies over uitvoering en mogelijkheden, en een nette offerte.</p>
+          </div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-y border-kalk/15">
+          <span class="font-slab font-bold text-4xl text-hout leading-none">3</span>
+          <div>
+            <h3 class="font-slab font-semibold text-2xl text-white">Bouwen en opleveren</h3>
+            <p class="mt-2 text-kalk/70 leading-relaxed">Is er een vergunning nodig? Arie werkt samen met andere vakmensen, zodat u van vergunningaanvraag tot oplevering ontzorgd wordt.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Uitgelicht project -->
+<section id="project">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5 lg:sticky lg:top-28">
+        <p class="text-mos font-medium">Uit het werk</p>
+        <h2 class="font-slab font-bold text-4xl lg:text-5xl leading-tight mt-2">Een nieuw dak op het tuinhuis.</h2>
+        <p class="mt-5 text-lg text-inkt/80 leading-relaxed">De oude golfplaten gingen eraf. Daarna kwam er nieuw houten dakbeschot op, met een waterdichte folie eroverheen. Als laatste zijn er nieuwe shingles op gelegd.</p>
+        <p class="mt-4 text-inkt/70 leading-relaxed">Ook kleine klussen krijgen dezelfde aandacht. Een rotte paal in de tuin wordt bijvoorbeeld vervangen door een nieuwe, netjes op een voet zodat hij droog blijft staan.</p>
+      </div>
+      <div class="lg:col-span-7 grid grid-cols-2 gap-3 lg:gap-4">
+        <img src="assets/site-08.jpg" alt="Arie legt nieuw houten dakbeschot op een tuinhuis" class="col-span-2 w-full aspect-[16/10] object-cover rounded-md">
+        <img src="assets/site-09.jpg" alt="Nieuwe zwarte shingles op het dak van het tuinhuis" class="col-span-2 sm:col-span-1 w-full aspect-[3/2] object-cover rounded-md">
+        <figure class="col-span-2 sm:col-span-1 relative">
+          <img src="assets/google-05.jpg" alt="Voor en na: een rotte houten paal vervangen door een nieuwe paal op een voet" class="w-full aspect-[3/2] object-cover rounded-md">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-kalklicht border-y border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 pt-20 pb-24 lg:pt-24 lg:pb-28">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+      <h2 class="font-slab font-bold text-4xl lg:text-5xl leading-tight max-w-xl">Wat klanten over Arie zeggen.</h2>
+      <p class="flex items-center gap-3 text-mos">
+        <span class="text-hout text-xl tracking-[3px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-inkt">5,0</strong> uit 7 reviews op Google</span>
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-12 gap-5">
+      <figure class="lg:col-span-7 bg-inkt text-kalk rounded-lg p-6 sm:p-8 lg:p-10">
+        <blockquote class="font-slab text-xl sm:text-2xl lg:text-[1.7rem] leading-snug text-white">
+          “Onlangs een prachtig tv wandmeubel laten ontwerpen, produceren en monteren door Arie de Bie.
+          Superfijn hoe hij eerlijk meedenkt en adviseerd in uitvoering en mogelijkheden.
+          Arie komt zijn gemaakte afspraken na, werkt snel en netjes.
+          Ik ben dolgelukkig met mijn prachtige wandkast met sfeerhaard.”
+        </blockquote>
+        <figcaption class="mt-6 text-kalk/70"><span class="text-hout" aria-label="5 sterren">★★★★★</span> Ingrid K.</figcaption>
+      </figure>
+      <figure class="lg:col-span-5 bg-white rounded-lg p-6 sm:p-8 border border-inkt/10">
+        <blockquote class="text-lg leading-relaxed">“Wij hebben een kapschuur inclusief schuurtje door Arie laten bouwen. We zijn ontzettend blij met Arie, hardwerkende man, denkt fijn mee met ideeën en oplossingen. Komt afspraken na. wij kunnen Arie van harte aanbevelen!”</blockquote>
+        <figcaption class="mt-5 text-mos"><span class="text-hout" aria-label="5 sterren">★★★★★</span> M. van Harn</figcaption>
+      </figure>
+      <figure class="lg:col-span-4 bg-white rounded-lg p-6 sm:p-8 border border-inkt/10">
+        <blockquote class="text-lg leading-relaxed">“Arie heeft bij ons een tuinschuur gebouwd. Alles netjes in overleg. Harde werker en betrouwbaar. Werkt netjes en een prettige persoonlijkheid.”</blockquote>
+        <figcaption class="mt-5 text-mos"><span class="text-hout" aria-label="5 sterren">★★★★★</span> Inge de Olde</figcaption>
+      </figure>
+      <figure class="lg:col-span-4 bg-white rounded-lg p-6 sm:p-8 border border-inkt/10">
+        <blockquote class="leading-relaxed">“Heel blij met Arie!
+          Canexel moest vervangen worden door Keralit aan zijgevel op 1e en 2e etage, wat boven glazen serredak is. En boven voordeur.
+          Nette offerte.
+          Denkt met je mee en is heel vriendelijk.
+          Arie levert keurig werk en werkt snel en constructief. Echt een vakman.
+          Was lastig project, maar Arie heeft t goed en v…”</blockquote>
+        <figcaption class="mt-5 text-mos"><span class="text-hout" aria-label="5 sterren">★★★★★</span> Marlies</figcaption>
+      </figure>
+      <figure class="md:col-span-2 lg:col-span-4 bg-white rounded-lg p-6 sm:p-8 border border-inkt/10">
+        <blockquote class="leading-relaxed">“Ik ben in contact gekomen met Arie via een vriend van me waar hij een mooie overkapping heeft gebouwd.
+          Daarna ben ik met Arie in overleg gegaan met mijn vrouw, we hebben aangegeven wat we mooi vonden en zijn met concrete voorbeelden gekomen.
+          Hierop heeft Arie heel goed meegedacht en voorstellen gedaan. Samen zijn we…”</blockquote>
+        <figcaption class="mt-5 text-mos"><span class="text-hout" aria-label="5 sterren">★★★★★</span> Olivier Nuy</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <svg class="roofline text-dak" viewBox="0 0 64 18" fill="none" aria-hidden="true"><path d="M2 16 32 2l30 14" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+      <h2 class="font-slab font-bold text-4xl lg:text-5xl leading-tight mt-4">Vertel Arie wat u wilt laten maken.</h2>
+      <p class="mt-5 text-lg text-inkt/75 leading-relaxed">Plannen voor een kast, aanbouw, dakrenovatie of tuinkamer? Bel even, of stuur een bericht. Arie komt vrijblijvend kijken en maakt een offerte.</p>
+
+      <a href="tel:+31655058077" class="btn-dak mt-8 inline-flex items-center gap-3 bg-dak text-white rounded-md px-7 py-4 text-lg font-semibold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        06 55058077
+      </a>
+
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-6 text-[15px]">
+        <div>
+          <dt class="text-mos">E-mail</dt>
+          <dd class="mt-1 font-medium"><a href="mailto:ariedebie@outlook.com" class="underline decoration-hout underline-offset-4 hover:text-dak">ariedebie@outlook.com</a></dd>
+        </div>
+        <div>
+          <dt class="text-mos">Adres</dt>
+          <dd class="mt-1 font-medium">Deventerstraat 199<br>7322 RE Apeldoorn</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-mos">Openingstijden</dt>
+          <dd class="mt-2">
+            <table class="w-full max-w-xs tabular-nums">
+              <tr><td class="py-0.5">Maandag t/m vrijdag</td><td class="text-right font-medium">08:00 tot 17:00</td></tr>
+              <tr><td class="py-0.5">Zaterdag</td><td class="text-right font-medium">10:00 tot 15:00</td></tr>
+              <tr><td class="py-0.5">Zondag</td><td class="text-right text-mos">Gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="lg:col-span-6 lg:col-start-7 bg-kalklicht border border-inkt/10 rounded-lg p-6 sm:p-10 self-start"
+          action="mailto:ariedebie@outlook.com" method="post" enctype="text/plain">
+      <h3 class="font-slab font-semibold text-2xl">Vrijblijvende offerte aanvragen</h3>
+      <div class="mt-6 grid sm:grid-cols-2 gap-5">
+        <label class="block">
+          <span class="text-sm font-medium">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-inkt/20 bg-white px-4 py-3 focus:border-hout">
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-md border border-inkt/20 bg-white px-4 py-3 focus:border-hout">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-medium">E-mail</span>
+          <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-inkt/20 bg-white px-4 py-3 focus:border-hout">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-medium">Wat wilt u laten maken?</span>
+          <textarea name="bericht" rows="5" required placeholder="Bijvoorbeeld: een inloopkast onder de schuine kap op zolder, ongeveer 4 meter breed." class="mt-1.5 w-full rounded-md border border-inkt/20 bg-white px-4 py-3 focus:border-hout placeholder:text-inkt/40"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="mt-6 w-full sm:w-auto rounded-md bg-inkt text-white font-semibold px-7 py-3.5 hover:bg-black/80 transition-colors">Verstuur aanvraag</button>
+      <p class="mt-4 text-sm text-mos">Liever direct contact? Bel <a href="tel:+31655058077" class="underline underline-offset-2">06 55058077</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-kalk/70 pb-24 md:pb-0">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-sm">
+    <div>
+      <p class="font-slab font-semibold text-lg text-white">Arie de Bie interieurbouw en timmerwerk</p>
+      <p class="mt-1">Deventerstraat 199, 7322 RE Apeldoorn</p>
+    </div>
+    <div class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href="tel:+31655058077" class="hover:text-white">06 55058077</a>
+      <a href="mailto:ariedebie@outlook.com" class="hover:text-white">ariedebie@outlook.com</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-kalk/95 backdrop-blur border-t border-inkt/10 p-3 flex gap-3">
+  <a href="tel:+31655058077" class="btn-dak flex-1 inline-flex justify-center items-center gap-2 bg-dak text-white rounded-md py-3.5 font-semibold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Arie
+  </a>
+  <a href="mailto:ariedebie@outlook.com" class="inline-flex justify-center items-center px-5 rounded-md border border-inkt/25 font-semibold">Mail</a>
+</div>
+
+<script>
+  // Vaste belbalk pas tonen als de hero-knop uit beeld is
+  (function () {
+    var bar = document.getElementById('belbalk');
+    bar.classList.add('verborgen');
+    function check() { bar.classList.toggle('verborgen', window.scrollY < 520); }
+    window.addEventListener('scroll', check, { passive: true }); check();
+  })();
+</script>
+</body>
+</html>

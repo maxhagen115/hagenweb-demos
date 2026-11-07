@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timmer- en onderhoudsbedrijf John van Vrouwerf | Culemborg</title>
+<meta name="description" content="Allround timmer- en onderhoudsbedrijf in Culemborg. Verbouwen, renoveren, keukens, badkamers, schilderwerk en onderhoud. Eén aanspreekpunt. Bel 06 57887175.">
+<meta property="og:title" content="Timmer- en onderhoudsbedrijf John van Vrouwerf">
+<meta property="og:description" content="Een vakman die doet wat hij belooft. Verbouwen, renoveren en onderhoud in Culemborg en omgeving.">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 13 16 3l14 10v17H2z' fill='%232A2A2B'/%3E%3Cpath d='M9 30V18h14v12' fill='%23C9A462'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          antraciet: '#2A2A2B',
+          diep: '#1F1F20',
+          goud: '#C9A462',
+          goudlicht: '#DDBF85',
+          gouddonker: '#8A6A2F',
+          kalk: '#F1F0EC',
+          steen: '#6E6C67',
+          lijn: '#D9D6CE',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['"Fira Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .gevel { clip-path: polygon(0 20%, 50% 0, 100% 20%, 100% 100%, 0 100%); }
+  .gevel-klein { clip-path: polygon(0 34%, 50% 0, 100% 34%, 100% 100%, 0 100%); }
+  /* Foto's van de oude site hebben een grijs kadertje: iets inzoomen verbergt dat. */
+  .zonder-kader { transform: scale(1.025); }
+  .knop { transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #C9A462; outline-offset: 3px; }
+  .galerij figure img { transition: transform .5s ease; }
+  .galerij figure:hover img { transform: scale(1.04); }
+  .js.hero-zichtbaar #belbalk { transform: translateY(110%); }
+  .js .opkomst { animation: opkomst .9s cubic-bezier(.2,.7,.2,1) both; }
+  .js .opkomst-2 { animation-delay: .12s; }
+  @keyframes opkomst { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js.hero-zichtbaar #belbalk { transform: translateY(110%); }
+  .js .opkomst { animation: none; }
+    .knop, .galerij figure img { transition: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-kalk text-antraciet font-tekst text-[17px] leading-relaxed">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-goud text-antraciet px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-diep text-white/80 text-[13px] leading-snug text-center px-4 py-2">
+  Demo voor Timmer- en onderhoudsbedrijf John van Vrouwerf, gemaakt door
+  <a href="https://hagenweb.nl" class="text-goudlicht underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-antraciet text-white sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex flex-col leading-none">
+      <span class="font-kop font-semibold text-[19px] md:text-[21px] tracking-[-0.01em] text-goudlicht">John van Vrouwerf</span>
+      <span class="text-[12px] md:text-[13px] text-white/70 mt-1">Timmer- en onderhoudsbedrijf</span>
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 text-[15px] text-white/80">
+      <a href="#werkwijze" class="hover:text-white transition-colors">Werkwijze</a>
+      <a href="#diensten" class="hover:text-white transition-colors">Diensten</a>
+      <a href="#werk" class="hover:text-white transition-colors">Werk</a>
+      <a href="#advies" class="hover:text-white transition-colors">Advies</a>
+      <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31657887175" class="knop inline-flex items-center gap-2 rounded-md border border-goud/60 px-3 md:px-4 py-2 text-[15px] font-medium text-white hover:bg-goud hover:text-antraciet">
+      <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="hidden sm:inline">06 57887175</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-8 md:pt-16 lg:pt-20 pb-0 lg:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="lg:col-span-5 opkomst">
+      <p class="text-[15px] font-medium text-gouddonker">Timmer- en onderhoudsbedrijf in Culemborg</p>
+      <h1 class="font-kop font-bold text-[42px] leading-[1.02] sm:text-6xl lg:text-[76px] tracking-[-0.03em] mt-3 md:mt-4">Een vakman die doet wat hij belooft.</h1>
+      <p class="mt-5 md:mt-6 text-[17px] md:text-xl text-antraciet/80 max-w-[36ch] md:max-w-[40ch]">
+        Bouwen, verbouwen, renoveren of gewoon goed onderhouden. Van een klemmende deur tot een complete aanbouw. U heeft één aanspreekpunt en alles wordt netjes opgeleverd.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a id="hero-bel" href="tel:+31657887175" class="knop inline-flex items-center justify-center gap-3 rounded-md bg-goud px-7 py-4 text-lg font-semibold text-antraciet shadow-[0_10px_24px_-10px_rgba(138,106,47,.7)] hover:bg-goudlicht">
+          <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Bel John: 06 57887175
+        </a>
+        <a href="#contact" class="text-[16px] font-medium underline decoration-goud decoration-2 underline-offset-[6px] hover:text-gouddonker self-start sm:self-auto">Of vraag een offerte aan</a>
+      </div>
+    </div>
+    <div class="lg:col-span-7 opkomst opkomst-2 -mx-5 md:mx-0">
+      <div class="gevel relative aspect-[4/3.4] sm:aspect-[16/12] lg:aspect-[7/6] bg-antraciet">
+        <img src="assets/google-01.jpg" alt="John van Vrouwerf bij zijn bedrijfsbus met belettering" class="absolute inset-0 w-full h-full object-cover object-[52%_60%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Eén aanspreekpunt + werkwijze -->
+<section id="werkwijze" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.025em] leading-[1.05]">Eén aanspreekpunt, van sloop tot plint.</h2>
+      <div class="mt-7 space-y-5 text-antraciet/85 max-w-[60ch]">
+        <p>Veel klanten kiezen voor John omdat ze niet met vijf partijen willen schakelen. Hij voert niet alleen uit, maar denkt ook mee over slimme oplossingen, duurzame materialen en een logische planning.</p>
+        <p>Timmerwerk, leidingen, elektra, stucwerk, tegels, vloeren en schilderwerk: het komt allemaal onder één dak samen. Zo sluit elk onderdeel netjes aan op het volgende. Met jarenlange ervaring in bouwen, verbouwen en renoveren, vooral in Culemborg en omgeving.</p>
+      </div>
+
+      <ol class="mt-12 border-t border-lijn">
+        <li class="grid grid-cols-[3rem_1fr] gap-4 py-6 border-b border-lijn">
+          <span class="font-kop font-bold text-2xl text-gouddonker">1</span>
+          <div>
+            <h3 class="font-kop font-semibold text-xl">Vooraf duidelijke afspraken</h3>
+            <p class="mt-1 text-antraciet/75">U krijgt een heldere offerte en weet wat er gebeurt, in welke volgorde en wanneer.</p>
+          </div>
+        </li>
+        <li class="grid grid-cols-[3rem_1fr] gap-4 py-6 border-b border-lijn">
+          <span class="font-kop font-bold text-2xl text-gouddonker">2</span>
+          <div>
+            <h3 class="font-kop font-semibold text-xl">Tijdens het werk: korte lijnen</h3>
+            <p class="mt-1 text-antraciet/75">De voortgang blijft helder. Keuzes en eventueel meer- of minderwerk bespreken we tussendoor.</p>
+          </div>
+        </li>
+        <li class="grid grid-cols-[3rem_1fr] gap-4 py-6 border-b border-lijn">
+          <span class="font-kop font-bold text-2xl text-gouddonker">3</span>
+          <div>
+            <h3 class="font-kop font-semibold text-xl">Netjes opgeleverd</h3>
+            <p class="mt-1 text-antraciet/75">Een schone werkplek en een ruimte die gebruiksklaar is. Technisch goed, praktisch en strak afgewerkt.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <figure class="lg:col-span-6 lg:pt-4">
+      <div class="relative overflow-hidden rounded-sm aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[640px]">
+        <img src="assets/site-07.jpg" alt="Bedrijfsbus van John van Vrouwerf voor een woning in de steigers tijdens een verbouwing" class="absolute inset-0 w-full h-full object-cover object-[42%_50%]">
+      </div>
+      <figcaption class="mt-3 text-[14px] text-steen">Bouwen, verbouwen en renoveren: aan het werk op de bouwplaats.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-kalk">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.025em] leading-[1.05]">Groot plan of klein klusje, John pakt het op.</h2>
+      <p class="mt-5 text-antraciet/80 max-w-[58ch]">Een complete woningrenovatie of een raam dat klemt: alles zorgvuldig en praktisch aangepakt.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-x-16 gap-y-14">
+      <div>
+        <h3 class="font-kop font-semibold text-2xl flex items-center gap-3">
+          <span aria-hidden="true" class="inline-block w-7 h-5 bg-antraciet gevel-klein"></span>
+          Verbouwen en renoveren
+        </h3>
+        <dl class="mt-6 border-t border-antraciet/20">
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">Aanbouw en complete verbouwing</dt>
+            <dd class="mt-1 text-antraciet/75">Meer ruimte of een nieuwe indeling. Van sloop en ruwbouw tot kozijnen, isolatie en afwerking, van A tot Z.</dd>
+          </div>
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">Keuken plaatsen</dt>
+            <dd class="mt-1 text-antraciet/75">Oude keuken eruit, leidingen en elektra verleggen, kasten en werkblad plaatsen, apparatuur aansluiten.</dd>
+          </div>
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">Badkamer en toilet</dt>
+            <dd class="mt-1 text-antraciet/75">Leidingwerk, inbouwreservoir, sanitair, tegels, plafond, verlichting en ventilatie.</dd>
+          </div>
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">Zolder en nieuwe indeling</dt>
+            <dd class="mt-1 text-antraciet/75">Isoleren, aftimmeren, een extra kamer, wanden plaatsen of verwijderen en doorbraken.</dd>
+          </div>
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">Vloeren en vloerverwarming</dt>
+            <dd class="mt-1 text-antraciet/75">Vloerverwarming frezen en aansluiten, daarna de vloer strak afwerken.</dd>
+          </div>
+        </dl>
+      </div>
+      <div>
+        <h3 class="font-kop font-semibold text-2xl flex items-center gap-3">
+          <span aria-hidden="true" class="inline-block w-7 h-5 bg-goud gevel-klein"></span>
+          Onderhoud en herstel
+        </h3>
+        <dl class="mt-6 border-t border-antraciet/20">
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">Schilderwerk binnen en buiten</dt>
+            <dd class="mt-1 text-antraciet/75">Wanden, plafonds, kozijnen, deuren en gevelhout. Met goede voorbereiding, zodat het lang mooi blijft.</dd>
+          </div>
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">Kozijnen, ramen en deuren</dt>
+            <dd class="mt-1 text-antraciet/75">Repareren, vervangen of opnieuw stellen. Ook een schuifpui of openslaande tuindeuren.</dd>
+          </div>
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">Daklijsten, boeidelen en gevelbekleding</dt>
+            <dd class="mt-1 text-antraciet/75">Kwetsbare delen aan de buitenkant herstellen, of gevelbekleding plaatsen, bijvoorbeeld Keralit of Trespa.</dd>
+          </div>
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">Overkappingen en schuttingen</dt>
+            <dd class="mt-1 text-antraciet/75">Een houten overkapping in de tuin of een nieuwe schutting, stevig getimmerd.</dd>
+          </div>
+          <div class="py-5 border-b border-antraciet/15">
+            <dt class="font-semibold text-[18px]">De kleine dingen die blijven liggen</dt>
+            <dd class="mt-1 text-antraciet/75">Kieren, klemmende deuren, loszittend beslag, plinten en kleine reparaties aan wanden en plafonds.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.025em] leading-[1.05] max-w-xl">Werk van John</h2>
+      <p class="text-antraciet/75 max-w-md">Keukens, badkamers, overkappingen en verbouwingen in Culemborg en omgeving.</p>
+    </div>
+
+    <div class="galerij mt-12 grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4">
+      <figure class="col-span-2 md:col-span-4 md:row-span-2 relative overflow-hidden rounded-sm aspect-[4/3] md:aspect-auto">
+        <img src="assets/site-06.jpg" alt="Houten overkapping met loungeset in een tuin" class="absolute inset-0 w-full h-full object-cover">
+        <figcaption class="absolute left-0 bottom-0 bg-antraciet text-white text-[14px] px-4 py-2">Houten overkapping in de tuin</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-2 relative overflow-hidden rounded-sm aspect-[4/5] md:aspect-[4/3]">
+        <img src="assets/site-04.jpg" alt="Witte hoekkeuken met donker werkblad en inbouwoven" class="zonder-kader absolute inset-0 w-full h-full object-cover">
+        <figcaption class="absolute left-0 bottom-0 bg-antraciet text-white text-[14px] px-3 py-1.5">Keuken</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-2 relative overflow-hidden rounded-sm aspect-[4/5] md:aspect-[4/3]">
+        <img src="assets/site-01.jpg" alt="Badkamer met dubbele wastafel, inloopdouche en zwarte handdoekradiator" class="zonder-kader absolute inset-0 w-full h-full object-cover">
+        <figcaption class="absolute left-0 bottom-0 bg-antraciet text-white text-[14px] px-3 py-1.5">Badkamer</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-3 relative overflow-hidden rounded-sm aspect-[16/10]">
+        <img src="assets/site-08.jpg" alt="Steiger tegen een rijtjeswoning tijdens het plaatsen van een dakkapel" class="absolute inset-0 w-full h-full object-cover object-[45%_40%]">
+        <figcaption class="absolute left-0 bottom-0 bg-antraciet text-white text-[14px] px-3 py-1.5">Werk aan een dakkapel</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-3 relative overflow-hidden rounded-sm aspect-[16/10]">
+        <img src="assets/site-05.jpg" alt="Witte houten overkapping tegen een woning met rieten dak" class="absolute inset-0 w-full h-full object-cover object-[50%_45%]">
+        <figcaption class="absolute left-0 bottom-0 bg-antraciet text-white text-[14px] px-3 py-1.5">Overkapping aan huis</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-3 relative overflow-hidden rounded-sm aspect-[4/5] md:aspect-[16/10]">
+        <img src="assets/site-02.jpg" alt="Badkamer met ligbad, hangtoilet en donker tegelwerk" class="zonder-kader absolute inset-0 w-full h-full object-cover object-[45%_50%]">
+        <figcaption class="absolute left-0 bottom-0 bg-antraciet text-white text-[14px] px-3 py-1.5">Badkamer en toilet</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-3 relative overflow-hidden rounded-sm aspect-[4/5] md:aspect-[16/10]">
+        <img src="assets/site-03.jpg" alt="Lichte keuken met raam, afzuigkap en donker werkblad" class="zonder-kader absolute inset-0 w-full h-full object-cover object-[55%_50%]">
+        <figcaption class="absolute left-0 bottom-0 bg-antraciet text-white text-[14px] px-3 py-1.5">Keuken</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Advies -->
+<section id="advies" class="bg-antraciet text-white relative overflow-hidden">
+  <div aria-hidden="true" class="absolute -right-24 -bottom-10 w-[520px] h-[420px] bg-white/[0.035] gevel-klein"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.025em] leading-[1.05] max-w-3xl">Eerst weten wat het kost? John rekent met u mee.</h2>
+    <div class="mt-14 grid md:grid-cols-2 gap-12 md:gap-16">
+      <div class="border-t-2 border-goud pt-7">
+        <h3 class="font-kop font-semibold text-2xl text-goudlicht">Verhuizen of verbouwen?</h3>
+        <p class="mt-4 text-white/80 max-w-[52ch]">Twijfelt u? Dan helpt een duidelijk kostenplaatje. John maakt een realistische inschatting van wat het verbouwen van uw woning ongeveer gaat kosten, afgestemd op uw wensen en de huidige situatie. Zo ziet u vooraf het budget, de mogelijkheden en wat eventueel in fases kan.</p>
+      </div>
+      <div class="border-t-2 border-goud pt-7">
+        <h3 class="font-kop font-semibold text-2xl text-goudlicht">Kopersadvies</h3>
+        <p class="mt-4 text-white/80 max-w-[52ch]">Wilt u een huis kopen? Weet dan wat de verbouwing ongeveer gaat kosten voordat u een bod uitbrengt. John gaat op verzoek mee naar de bezichtiging, of beoordeelt de woning aan de hand van de foto's en informatie op Funda. Zo biedt u met meer zekerheid.</p>
+      </div>
+    </div>
+    <div class="mt-14 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+      <a href="tel:+31657887175" class="knop inline-flex items-center justify-center gap-3 rounded-md bg-goud px-7 py-4 text-lg font-semibold text-antraciet hover:bg-goudlicht">Bel John over uw plannen</a>
+      <a href="mailto:info@johnvanvrouwerf.nl?subject=Kosteninschatting%20verbouwing" class="text-white/85 underline decoration-goud decoration-2 underline-offset-[6px] hover:text-white self-start sm:self-auto">of mail: info@johnvanvrouwerf.nl</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-kalk">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.025em] leading-[1.05]">Vertel John wat u van plan bent.</h2>
+      <p class="mt-5 text-antraciet/80 max-w-[44ch]">Bel gerust, of vul het formulier in. U krijgt vrijblijvend advies en desgewenst een duidelijke offerte.</p>
+
+      <a href="tel:+31657887175" class="group mt-10 block">
+        <span class="block text-[15px] text-steen">Telefoon</span>
+        <span class="block font-kop font-bold text-[40px] md:text-5xl tracking-[-0.02em] group-hover:text-gouddonker transition-colors">06 57887175</span>
+      </a>
+      <a href="mailto:info@johnvanvrouwerf.nl" class="group mt-6 block">
+        <span class="block text-[15px] text-steen">E-mail</span>
+        <span class="block text-xl font-medium underline decoration-goud decoration-2 underline-offset-[6px] group-hover:text-gouddonker">info@johnvanvrouwerf.nl</span>
+      </a>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8 border-t border-lijn pt-8">
+        <div>
+          <h3 class="font-semibold">Adres</h3>
+          <address class="not-italic mt-2 text-antraciet/80">Bonkelaarweg 5<br>4105 HG Culemborg</address>
+        </div>
+        <div>
+          <h3 class="font-semibold">Bereikbaar</h3>
+          <table class="mt-2 text-antraciet/80 text-[16px] tabular-nums">
+            <tr><td class="pr-4">ma t/m vr</td><td>07:30 tot 18:00</td></tr>
+            <tr><td class="pr-4">zaterdag</td><td>08:00 tot 13:00</td></tr>
+            <tr><td class="pr-4">zondag</td><td>gesloten</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <form action="mailto:info@johnvanvrouwerf.nl" method="post" enctype="text/plain" class="bg-white p-6 sm:p-8 md:p-10 rounded-sm shadow-[0_30px_60px_-40px_rgba(42,42,43,.45)]">
+        <h3 class="font-kop font-semibold text-2xl">Offerte aanvragen</h3>
+        <div class="mt-7 grid sm:grid-cols-2 gap-5">
+          <label class="block sm:col-span-2">
+            <span class="text-[15px] font-medium">Naam</span>
+            <input name="Naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-lijn bg-kalk/60 px-4 py-3 focus:border-goud focus:bg-white focus:outline-none">
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-medium">Adres</span>
+            <input name="Adres" required autocomplete="street-address" class="mt-1.5 w-full rounded-md border border-lijn bg-kalk/60 px-4 py-3 focus:border-goud focus:bg-white focus:outline-none">
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-medium">Plaats</span>
+            <input name="Plaats" required autocomplete="address-level2" class="mt-1.5 w-full rounded-md border border-lijn bg-kalk/60 px-4 py-3 focus:border-goud focus:bg-white focus:outline-none">
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-medium">E-mailadres</span>
+            <input type="email" name="E-mail" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-lijn bg-kalk/60 px-4 py-3 focus:border-goud focus:bg-white focus:outline-none">
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-medium">Telefoonnummer <span class="font-normal text-steen">(optioneel)</span></span>
+            <input type="tel" name="Telefoon" autocomplete="tel" class="mt-1.5 w-full rounded-md border border-lijn bg-kalk/60 px-4 py-3 focus:border-goud focus:bg-white focus:outline-none">
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-[15px] font-medium">Waar kan John u mee helpen?</span>
+            <textarea name="Bericht" rows="5" required class="mt-1.5 w-full rounded-md border border-lijn bg-kalk/60 px-4 py-3 focus:border-goud focus:bg-white focus:outline-none" placeholder="Bijvoorbeeld: nieuwe badkamer, schilderwerk buiten of een kosteninschatting voor een verbouwing"></textarea>
+          </label>
+        </div>
+        <button type="submit" class="knop mt-7 w-full sm:w-auto rounded-md bg-antraciet px-8 py-4 text-[17px] font-semibold text-white hover:bg-diep">Aanvraag versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-diep text-white/70 text-[15px] pb-20 md:pb-0">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+    <div>
+      <p class="font-kop font-semibold text-xl text-goudlicht leading-none">John van Vrouwerf</p>
+      <p class="mt-1.5">Timmer- en onderhoudsbedrijf</p>
+      <p class="mt-4">Bonkelaarweg 5, 4105 HG Culemborg</p>
+    </div>
+    <div class="md:text-right space-y-1">
+      <p><a href="tel:+31657887175" class="hover:text-white">06 57887175</a> &nbsp;/&nbsp; <a href="mailto:info@johnvanvrouwerf.nl" class="hover:text-white">info@johnvanvrouwerf.nl</a></p>
+      <p>KvK 30247588 &nbsp;/&nbsp; BTW NL001926890B14</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div id="belbalk" class="md:hidden fixed inset-x-0 bottom-0 z-40 transition-transform duration-300 bg-antraciet/95 backdrop-blur px-4 py-3 border-t border-white/10">
+  <a href="tel:+31657887175" class="knop flex items-center justify-center gap-3 rounded-md bg-goud py-3.5 text-[17px] font-semibold text-antraciet">
+    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    Bel John: 06 57887175
+  </a>
+</div>
+
+<script>
+  (function () {
+    var knop = document.getElementById('hero-bel');
+    if (!knop || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) {
+      document.documentElement.classList.toggle('hero-zichtbaar', e[0].isIntersecting);
+    }).observe(knop);
+  })();
+</script>
+</body>
+</html>
