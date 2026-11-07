@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technisch Installatie Buro van Dort | Installatietechniek in Utrecht sinds 1976</title>
+<meta name="description" content="Advies, ontwerp, aanleg en onderhoud van klimaatinstallaties door een eigen vast team servicemonteurs. Technisch Installatie Buro van Dort, Positronweg 2, Utrecht.">
+<link rel="icon" href="assets/logo-oud.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          grafiet: '#25292d',
+          beton: '#eef0f0',
+          aanvoer: '#c8372d',
+          retour: '#1f68a8',
+          staal: '#5f666c',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #25292d; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 82%; letter-spacing: -0.02em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid #1f68a8; outline-offset: 3px; }
+
+  /* Hero: foto met leidingbocht en twee meelopende leidingen */
+  .bocht { --r: clamp(110px, 16vw, 220px); position: relative; }
+  .bocht img { border-bottom-left-radius: var(--r); }
+  .bocht::before, .bocht::after {
+    content: ""; position: absolute; pointer-events: none;
+    border-left: 3px solid; border-bottom: 3px solid;
+  }
+  .bocht::before { left: -16px; bottom: -16px; top: 22%; right: 30%; border-color: #c8372d; border-bottom-left-radius: calc(var(--r) + 16px); }
+  .bocht::after  { left: -30px; bottom: -30px; top: 34%; right: 18%; border-color: #1f68a8; border-bottom-left-radius: calc(var(--r) + 30px); }
+
+  /* Tracé: aanvoer en retour lopen langs de diensten */
+  .trace { position: relative; }
+  .trace::before, .trace::after { content: ""; position: absolute; top: 0; bottom: 0; width: 3px; }
+  .trace::before { left: 0; background: #c8372d; }
+  .trace::after { left: 12px; background: #1f68a8; }
+  .aftak { position: relative; }
+  .aftak::before { content: ""; position: absolute; left: -2.75rem; top: 1.05rem; width: 2rem; height: 3px; background: #1f68a8; }
+  .aftak::after { content: ""; position: absolute; left: -1.05rem; top: calc(1.05rem - 4px); width: 11px; height: 11px; border: 3px solid #1f68a8; background: #fff; border-radius: 50%; }
+  @media (min-width: 768px) {
+    .aftak::before { left: -3.75rem; width: 3rem; }
+  }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px); }
+
+  /* Enige animatie: de leidingen tekenen zich in de hero. Alleen als JS draait. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .bocht::before { animation: lijn 1.1s .2s cubic-bezier(.2,.7,.2,1) both; }
+    .js .bocht::after  { animation: lijn 1.1s .38s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes lijn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-grafiet text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Technisch Installatie Buro van Dort B.V., gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-grafiet/10">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="shrink-0" aria-label="Van Dort, naar boven">
+      <img src="assets/logo-oud.png" alt="Van Dort Technisch Installatie Buro" class="h-9 md:h-10 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-grafiet/80">
+      <a href="#diensten" class="hover:text-aanvoer transition-colors">Wat wij doen</a>
+      <a href="#onderhoud" class="hover:text-aanvoer transition-colors">Onderhoud</a>
+      <a href="#team" class="hover:text-aanvoer transition-colors">Ons team</a>
+      <a href="#contact" class="hover:text-aanvoer transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31302415376" class="knop hidden sm:inline-flex items-center gap-2 border-2 border-grafiet rounded-md px-4 py-2 text-[15px] font-semibold hover:bg-grafiet hover:text-white">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      030 241 5376
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 pt-8 pb-16 md:pt-14 md:pb-24 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
+    <div class="order-1">
+      <p class="text-[15px] font-medium text-staal mb-4">Installatietechniek in Utrecht, sinds 1976</p>
+      <h1 class="kop font-extrabold text-[44px] leading-[1] sm:text-6xl lg:text-[92px] lg:leading-[0.93]">Uw gebouw in vaste handen.</h1>
+      <p class="mt-5 md:mt-7 text-lg md:text-xl leading-relaxed text-grafiet/80 max-w-[30rem]">
+        Wij ontwerpen, installeren en onderhouden klimaatinstallaties. Uitgevoerd door onze eigen monteurs, met een vast team dat uw gebouw kent.
+      </p>
+      <div class="mt-7 md:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31302415376" class="knop inline-flex items-center gap-3 bg-aanvoer text-white rounded-md pl-5 pr-6 py-4 text-lg font-semibold shadow-[0_10px_24px_-10px_rgba(200,55,45,.7)] hover:bg-[#b02e25]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 030 241 5376
+        </a>
+        <a href="#contact" class="font-semibold text-retour underline decoration-2 underline-offset-[6px] hover:text-grafiet">Vraag een offerte aan</a>
+      </div>
+    </div>
+    <div class="order-2 bocht ml-8 mb-8 lg:ml-10">
+      <img src="assets/google-06.jpg" alt="Technische ruimte met rode leidingen, platenwisselaars en afsluiters, aangelegd door Van Dort" class="w-full h-[300px] sm:h-[420px] lg:h-[580px] object-cover object-[50%_40%] rounded-tr-md">
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten" class="bg-beton">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20">
+    <div class="lg:sticky lg:top-28 self-start">
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.02]">Van eerste tekening tot jaarlijkse keuring.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-grafiet/80 max-w-md">
+        Wij zijn uw partner voor alle gebouwinstallaties. Of het nu gaat om een groot systeem in de utiliteitsbouw of een kleinere aanpassing, in nieuwbouw of een bestaand pand: u houdt één partij voor het hele traject.
+      </p>
+    </div>
+
+    <ol class="trace pl-11 md:pl-[4.5rem] space-y-14">
+      <li class="aftak">
+        <p class="text-sm font-semibold text-aanvoer mb-1">Stap 1</p>
+        <h3 class="kop font-bold text-2xl md:text-[30px]">Advies en ontwerp</h3>
+        <p class="mt-3 leading-relaxed text-grafiet/80 max-w-xl">We denken mee over het beste installatieconcept voor uw gebouw en ontwerpen met de nieuwste technieken en software. Het resultaat: een installatie die efficiënt, duurzaam en comfortabel is, en past bij uw gebouw en de mensen die erin werken.</p>
+      </li>
+      <li class="aftak">
+        <p class="text-sm font-semibold text-aanvoer mb-1">Stap 2</p>
+        <h3 class="kop font-bold text-2xl md:text-[30px]">Dimensioneren en detailleren</h3>
+        <p class="mt-3 leading-relaxed text-grafiet/80 max-w-xl">We berekenen verwarming, ventilatie en luchtbevochtiging op de echte behoefte van het gebouw. Daarna werken we het ontwerp uit tot op de plaats van elke leiding, kabel en component. Samen met u, uw architect en uw aannemer, binnen budget en planning.</p>
+      </li>
+      <li class="aftak">
+        <p class="text-sm font-semibold text-aanvoer mb-1">Stap 3</p>
+        <h3 class="kop font-bold text-2xl md:text-[30px]">Klimaatinstallaties aanleggen</h3>
+        <p class="mt-3 leading-relaxed text-grafiet/80 max-w-xl">Verwarming, ventilatie, koeling en luchtbehandeling, compleet geïnstalleerd. Vakkundig gemonteerd, afgesteld en ingeregeld, zodat het binnenklimaat in elk seizoen klopt. No-nonsense, van start tot oplevering.</p>
+      </li>
+      <li class="aftak">
+        <p class="text-sm font-semibold text-aanvoer mb-1">Stap 4</p>
+        <h3 class="kop font-bold text-2xl md:text-[30px]">Beheer, service en onderhoud</h3>
+        <p class="mt-3 leading-relaxed text-grafiet/80 max-w-xl">Preventief onderhoud, periodieke keuringen en het verhelpen van (complexe) storingen. Zo blijven uw installaties veilig, gebruiken ze niet meer energie dan nodig en gaan ze langer mee.</p>
+        <a href="#onderhoud" class="inline-block mt-4 font-semibold text-retour underline decoration-2 underline-offset-[6px] hover:text-grafiet">Zo werkt ons onderhoud</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ONDERHOUD -->
+<section id="onderhoud" class="bg-white">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20 items-center">
+    <figure class="relative">
+      <img src="assets/google-01.jpg" alt="Rood gecoate leidingen met pompen en platenwisselaars in een technische ruimte" class="w-full h-[420px] md:h-[620px] object-cover rounded-md rounded-tr-[120px]">
+      <figcaption class="absolute -bottom-5 left-5 right-12 md:-right-10 md:left-auto md:w-72 bg-grafiet text-white p-5 rounded-md text-[15px] leading-snug">
+        Alle wijzigingen aan uw installaties staan in ons servicesysteem. Daar kunt u ook zelf toegang toe krijgen.
+      </figcaption>
+    </figure>
+    <div class="pt-6 md:pt-0">
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.02]">Onderhoud dat u kunt plannen.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-grafiet/80 max-w-xl">Elke installatie krijgt een eigen onderhoudsplan, afgestemd op uw vastgoedstrategie, de gebruikers en de wet. Zo houdt u grip op kosten en voorkomt u verrassingen.</p>
+      <dl class="mt-10 divide-y divide-grafiet/15 border-y border-grafiet/15">
+        <div class="py-5 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+          <dt class="kop font-bold text-lg">Inventarisatie</dt>
+          <dd class="text-grafiet/80 leading-relaxed">We beoordelen elke installatie volgens NEN 2767: technische staat, prestaties, levensduur en risico's, met een helder overzicht van de conditiescores.</dd>
+        </div>
+        <div class="py-5 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+          <dt class="kop font-bold text-lg">Planning en MJOP</dt>
+          <dd class="text-grafiet/80 leading-relaxed">Na uw akkoord verwerken we de maatregelen in een jaar- en detailplanning en een actueel meerjarenonderhoudsplan, met risicoanalyse.</dd>
+        </div>
+        <div class="py-5 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+          <dt class="kop font-bold text-lg">SMART checklist</dt>
+          <dd class="text-grafiet/80 leading-relaxed">Per installatie een eigen checklist met historie, leveranciersvoorschriften en regelgeving. Zo is elk onderhoudsbezoek volledig en controleerbaar.</dd>
+        </div>
+        <div class="py-5 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+          <dt class="kop font-bold text-lg">Keuringen</dt>
+          <dd class="text-grafiet/80 leading-relaxed">We controleren, vervangen waar nodig, nemen watermonsters en voeren keuringsinspecties uit volgens de NEN-normen.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- SMART MAINTENANCE -->
+<section class="bg-grafiet text-white relative overflow-hidden">
+  <div aria-hidden="true" class="absolute left-0 right-0 top-10 h-[3px] bg-aanvoer/80"></div>
+  <div aria-hidden="true" class="absolute left-0 right-0 top-[52px] h-[3px] bg-retour"></div>
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 pt-24 pb-20 md:pt-32 md:pb-28 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
+    <div>
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.02]">Vervangen vóórdat het stuk gaat.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-white/80 max-w-xl">
+        Dat is smart maintenance. In ons datasysteem houden we bij welke storingen we oplossen. Zo zien we waar onderdelen in de praktijk eerder slijten dan de leverancier opgeeft.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed text-white/80 max-w-xl">
+        Die onderdelen vervangen we op tijd. Dat bespaart kosten en voorkomt klachten van gebruikers door uitval.
+      </p>
+    </div>
+    <figure>
+      <img src="assets/site-07.jpg" alt="Beheerscherm van een warmtepomp- en broninstallatie met temperaturen en drukken" class="w-full rounded-md ring-1 ring-white/15">
+      <figcaption class="mt-3 text-sm text-white/60">Uitlezing van een warmtepomp- en broninstallatie.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="bg-white">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 pt-20 md:pt-28">
+    <div class="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-end">
+      <h2 class="kop font-extrabold text-4xl md:text-5xl leading-[1.02]">Eigen monteurs. Een vast team. Korte lijnen.</h2>
+      <p class="text-lg leading-relaxed text-grafiet/80 max-w-xl">
+        Al het werk doen onze eigen ervaren monteurs. Zij voelen zich verantwoordelijk voor de kwaliteit van hun werk en het comfort van de mensen in uw gebouw. Rustig, grondig, en ze leveren altijd een onderbouwde analyse.
+      </p>
+    </div>
+  </div>
+  <div class="max-w-[1240px] mx-auto md:px-8 mt-12">
+    <img src="assets/google-02.jpg" alt="Spiraalkanalen en geïsoleerde leidingen in een kelder tijdens de aanleg" class="w-full h-[300px] md:h-[520px] object-cover object-[50%_45%] md:rounded-md md:rounded-bl-[160px]">
+  </div>
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20 grid md:grid-cols-3 gap-10 md:gap-14">
+    <div class="border-t-[3px] border-aanvoer pt-5">
+      <h3 class="kop font-bold text-xl">Een vast aanspreekpunt</h3>
+      <p class="mt-2 text-grafiet/80 leading-relaxed">Overdag krijgt u de persoon aan de lijn naar wie u vraagt. Een voorbereid vast team en geregeld contact, zodat u weet waar u aan toe bent.</p>
+    </div>
+    <div class="border-t-[3px] border-retour pt-5">
+      <h3 class="kop font-bold text-xl">Korte lijnen met leveranciers</h3>
+      <p class="mt-2 text-grafiet/80 leading-relaxed">Onderdelen zijn snel geleverd, en we overleggen met onze leveranciers over de beste oplossing voor uw situatie.</p>
+    </div>
+    <div class="border-t-[3px] border-grafiet pt-5">
+      <h3 class="kop font-bold text-xl">Meer dan 50 jaar ervaring</h3>
+      <p class="mt-2 text-grafiet/80 leading-relaxed">Sinds 1976 werken we aan alle typen gebouwinstallaties, met de nieuwste technologie en software.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICERING -->
+<section class="bg-beton">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-14 md:py-16 grid lg:grid-cols-[16rem_1fr] gap-8 lg:gap-14 items-center">
+    <div>
+      <h2 class="kop font-bold text-2xl">Gecertificeerd en aangesloten</h2>
+      <p class="mt-2 text-staal leading-relaxed">Veilig werken en vaste kwaliteit, aantoonbaar.</p>
+    </div>
+    <ul class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <li class="bg-white rounded-md h-28 flex items-center justify-center p-3"><img src="assets/site-02.png" alt="VCA* gecertificeerd, EBN Certification" class="max-h-full w-auto mix-blend-multiply"></li>
+      <li class="bg-white rounded-md h-28 flex items-center justify-center p-3"><img src="assets/site-04.png" alt="ISO 9001 gecertificeerd, EBN Certification" class="max-h-full w-auto mix-blend-multiply"></li>
+      <li class="bg-white rounded-md h-28 flex items-center justify-center p-3"><img src="assets/site-01.jpg" alt="Normec BRL 6000-25" class="max-h-full w-auto mix-blend-multiply"></li>
+      <li class="bg-white rounded-md h-28 flex items-center justify-center p-3"><img src="assets/site-03.jpg" alt="Lid van Techniek Nederland" class="max-h-full w-auto mix-blend-multiply"></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-white">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20">
+    <div>
+      <h2 class="kop font-extrabold text-4xl md:text-6xl leading-[1]">Bel ons. We nemen op.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-grafiet/80 max-w-md">Overdag krijgt u direct de contactpersoon die u zoekt. Buiten werktijd verbindt onze 24/7 servicedesk u door, zodat u altijd geholpen wordt.</p>
+      <a href="tel:+31302415376" class="knop mt-8 inline-flex items-center gap-3 bg-aanvoer text-white rounded-md pl-5 pr-6 py-4 text-lg font-semibold hover:bg-[#b02e25]">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        030 241 5376
+      </a>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-10">
+        <div>
+          <h3 class="kop font-bold text-lg">Adres</h3>
+          <address class="not-italic mt-2 leading-relaxed text-grafiet/80">
+            Positronweg 2<br>3542 AZ Utrecht<br>
+            <a href="mailto:info@vandort.nl" class="text-retour font-medium underline underline-offset-4 hover:text-grafiet">info@vandort.nl</a><br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Positronweg+2+3542+AZ+Utrecht" class="text-retour font-medium underline underline-offset-4 hover:text-grafiet">Routebeschrijving</a>
+          </address>
+        </div>
+        <div>
+          <h3 class="kop font-bold text-lg">Kantoortijden</h3>
+          <table class="mt-2 text-grafiet/80 leading-relaxed tabular-nums">
+            <tr><td class="pr-6">ma t/m vr</td><td>08:00 tot 16:30</td></tr>
+            <tr><td class="pr-6">za en zo</td><td>gesloten</td></tr>
+          </table>
+          <p class="mt-2 text-sm text-staal">Buiten deze tijden: 24/7 servicedesk via hetzelfde nummer.</p>
+        </div>
+      </div>
+      <img src="assets/google-03.jpg" alt="Het kantoor van Van Dort aan de Positronweg 2 in Utrecht" class="mt-12 w-full max-w-md h-48 object-cover rounded-md rounded-bl-[80px]">
+    </div>
+
+    <form action="mailto:info@vandort.nl" method="post" enctype="text/plain" class="bg-beton rounded-md p-6 md:p-10 self-start">
+      <h3 class="kop font-bold text-2xl md:text-3xl">Offerte of advies aanvragen</h3>
+      <p class="mt-2 text-grafiet/75">Vertel kort om welk gebouw of welke installatie het gaat. We nemen contact met u op.</p>
+      <div class="mt-8 space-y-5">
+        <label class="block">
+          <span class="text-sm font-semibold">Naam</span>
+          <input required name="naam" autocomplete="name" class="mt-1.5 w-full rounded-md border border-grafiet/20 bg-white px-4 py-3 focus:border-retour focus:outline-none focus:ring-2 focus:ring-retour/30">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Bedrijf of organisatie</span>
+          <input name="bedrijf" autocomplete="organization" class="mt-1.5 w-full rounded-md border border-grafiet/20 bg-white px-4 py-3 focus:border-retour focus:outline-none focus:ring-2 focus:ring-retour/30">
+        </label>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold">Telefoon</span>
+            <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-md border border-grafiet/20 bg-white px-4 py-3 focus:border-retour focus:outline-none focus:ring-2 focus:ring-retour/30">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold">E-mail</span>
+            <input required name="email" type="email" autocomplete="email" class="mt-1.5 w-full rounded-md border border-grafiet/20 bg-white px-4 py-3 focus:border-retour focus:outline-none focus:ring-2 focus:ring-retour/30">
+          </label>
+        </div>
+        <label class="block">
+          <span class="text-sm font-semibold">Waar kunnen we mee helpen?</span>
+          <textarea name="vraag" rows="5" class="mt-1.5 w-full rounded-md border border-grafiet/20 bg-white px-4 py-3 focus:border-retour focus:outline-none focus:ring-2 focus:ring-retour/30"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="knop mt-7 w-full sm:w-auto bg-grafiet text-white rounded-md px-7 py-4 font-semibold hover:bg-black">Aanvraag versturen</button>
+      <p class="mt-4 text-sm text-staal">Liever direct iemand spreken? Bel <a href="tel:+31302415376" class="underline underline-offset-4">030 241 5376</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-grafiet text-white/75">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-14 grid md:grid-cols-[1.4fr_1fr_1fr] gap-10 text-[15px]">
+    <div>
+      <p class="kop font-bold text-white text-xl">Technisch Installatie Buro van Dort B.V.</p>
+      <p class="mt-3 max-w-sm leading-relaxed">Een betrouwbare partner voor al uw gebouwinstallaties. Sinds 1976 in Utrecht.</p>
+    </div>
+    <div class="leading-relaxed">
+      <p class="text-white font-semibold mb-2">Contact</p>
+      Positronweg 2, 3542 AZ Utrecht<br>
+      <a href="tel:+31302415376" class="hover:text-white">030 241 5376</a><br>
+      <a href="mailto:info@vandort.nl" class="hover:text-white">info@vandort.nl</a>
+    </div>
+    <div class="leading-relaxed">
+      <p class="text-white font-semibold mb-2">Op deze pagina</p>
+      <a href="#diensten" class="block hover:text-white">Wat wij doen</a>
+      <a href="#onderhoud" class="block hover:text-white">Onderhoud</a>
+      <a href="#team" class="block hover:text-white">Ons team</a>
+      <a href="#contact" class="block hover:text-white">Contact</a>
+    </div>
+  </div>
+  <div class="h-[3px] bg-aanvoer"></div>
+  <div class="h-[3px] bg-retour mt-[6px]"></div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-grafiet/10 p-3 flex gap-3">
+  <a href="tel:+31302415376" class="flex-1 inline-flex items-center justify-center gap-2 bg-aanvoer text-white rounded-md py-3.5 font-semibold">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel 030 241 5376
+  </a>
+  <a href="mailto:info@vandort.nl" class="inline-flex items-center justify-center border-2 border-grafiet rounded-md px-4 font-semibold" aria-label="Mail info@vandort.nl">Mail</a>
+</div>
+
+</body>
+</html>

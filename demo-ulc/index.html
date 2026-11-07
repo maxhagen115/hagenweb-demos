@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ULC | Installatietechniek voor de zorg, Utrecht</title>
+<meta name="description" content="ULC ontwerpt, realiseert, beheert en onderhoudt elektrotechnische en werktuigbouwkundige installaties in ziekenhuizen, zorginstellingen en laboratoria. Bel 030 265 0500.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper: '#F3F5F0',
+          ink: '#18261A',
+          brand: '#619525',
+          btn: '#4A7D17',
+          tint: '#E2ECD3',
+          steel: '#5E6A60',
+        },
+        fontFamily: {
+          display: ['Archivo', 'system-ui', 'sans-serif'],
+          sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", system-ui, sans-serif; }
+  .display { font-family: Archivo, system-ui, sans-serif; font-variation-settings: "wdth" 82; letter-spacing: -0.02em; }
+  .balance { text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+  /* Schuine rand, zelfde hoek als de L in het logo */
+  .slant-l { clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%); }
+  .slant-r { clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%); }
+  @media (max-width: 767px) {
+    .slant-l { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); }
+    .slant-r { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+  }
+  .bar { width: 3.2rem; height: .55rem; background: #619525; transform: skewX(-9deg); display: inline-block; }
+  .logo { mix-blend-mode: multiply; }
+  .btn { transition: background-color .2s, transform .15s; }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #619525; outline-offset: 3px; }
+  /* Animatie alleen als JS de class zet */
+  .js .rise { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+  .js .rise.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .rise { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-paper text-ink antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white px-4 py-2 z-50">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-ink text-white/80 text-[13px] text-center py-2 px-4">
+  Demo voor ULC, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-tint">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header>
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3" aria-label="ULC, naar boven">
+      <img src="assets/site-01.jpg" alt="ULC logo" class="logo h-12 w-12 object-contain -ml-1">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-ink/80" aria-label="Hoofdmenu">
+      <a href="#zorg" class="hover:text-btn">Zorg</a>
+      <a href="#disciplines" class="hover:text-btn">Wat wij doen</a>
+      <a href="#werk" class="hover:text-btn">Referenties</a>
+      <a href="#werkenbij" class="hover:text-btn">Werken bij</a>
+      <a href="#contact" class="hover:text-btn">Contact</a>
+    </nav>
+    <a href="tel:0302650500" class="btn hidden sm:inline-flex items-center gap-2 border-2 border-ink/80 rounded-md px-4 py-2 font-semibold text-[15px] hover:bg-ink hover:text-white">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      030 265 0500
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative">
+  <div class="md:grid md:grid-cols-12 md:min-h-[640px] lg:min-h-[700px]">
+    <div class="md:col-span-6 lg:col-span-5 flex items-center px-5 md:pl-10 lg:pl-[max(2.5rem,calc((100vw-1320px)/2+2.5rem))] md:pr-6 pt-4 pb-8 md:py-16 relative z-10">
+      <div class="max-w-xl">
+        <p class="flex items-center gap-3 text-steel font-medium text-[15px] md:text-base">
+          <span class="bar"></span>Installatietechniek voor de zorg, Utrecht
+        </p>
+        <h1 class="display font-extrabold text-[2.9rem] leading-[0.95] sm:text-6xl lg:text-[5.4rem] mt-5 balance">De zorg gaat door. Wij ook.</h1>
+        <p class="mt-6 text-lg md:text-xl leading-relaxed text-ink/80 max-w-[40ch] pretty">
+          Wij ontwerpen, bouwen en onderhouden de technische installaties van ziekenhuizen, zorginstellingen en laboratoria. Terwijl daar dag en nacht gewerkt wordt.
+        </p>
+        <div class="mt-7 md:mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a href="tel:0302650500" class="btn inline-flex items-center gap-3 bg-btn hover:bg-ink text-white font-semibold text-lg rounded-md px-6 md:px-7 py-4 shadow-[0_10px_24px_-10px_rgba(74,125,23,.7)]">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Bel 030 265 0500
+          </a>
+          <a href="#werk" class="font-semibold text-ink underline decoration-brand decoration-2 underline-offset-[6px] hover:text-btn">Bekijk ons werk</a>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-6 lg:col-span-7 relative h-[300px] sm:h-[400px] md:h-auto">
+      <img src="assets/google-05.jpg" alt="Technische ruimte met luchtbehandelingskasten, leidingen en kabelgoten" class="slant-l absolute inset-0 w-full h-full object-cover object-[45%_center]">
+    </div>
+  </div>
+</section>
+
+<!-- Zorg -->
+<section id="zorg" class="pt-20 md:pt-32 pb-20 md:pb-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+      <div class="md:col-span-7 order-2 md:order-1">
+        <img src="assets/google-04.jpg" alt="Hybride operatiekamer met plafondpendels, OK-lampen en monitoren" class="slant-r w-full aspect-[4/3] object-cover">
+      </div>
+      <div class="md:col-span-5 order-1 md:order-2">
+        <h2 class="display font-extrabold text-4xl md:text-5xl leading-[1.02] balance">Thuis in de operatiekamer.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-ink/80 pretty">
+          Operatiekamers, verkoeverruimten, IC-units en SEH-afdelingen. Wij weten wat daar nodig is: de juiste verlichting, schone luchttoevoer, medische gassen en noodstroom die het altijd doet.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-ink/80 pretty">
+          Onze engineers ontwerpen elke installatie eerst virtueel in BIM. Zo vangen we fouten op de tekentafel, en niet op de afdeling. Ook als er last minute iets verandert.
+        </p>
+        <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-3 text-[15px] font-semibold">
+          <li class="flex items-center gap-3"><span class="w-3 h-3 bg-brand -skew-x-[9deg]"></span>Ziekenhuizen</li>
+          <li class="flex items-center gap-3"><span class="w-3 h-3 bg-brand -skew-x-[9deg]"></span>Zorginstellingen</li>
+          <li class="flex items-center gap-3"><span class="w-3 h-3 bg-brand -skew-x-[9deg]"></span>Laboratoria</li>
+          <li class="flex items-center gap-3"><span class="w-3 h-3 bg-brand -skew-x-[9deg]"></span>Nieuwbouw en renovatie</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Disciplines -->
+<section id="disciplines" class="bg-white py-20 md:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4">
+        <h2 class="display font-extrabold text-4xl md:text-5xl lg:text-[2.6rem] leading-[1.02] balance">Van eerste tekening tot jaarlijks onderhoud.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-ink/75 max-w-md pretty">Omdat wij alle elektrotechnische en werktuigbouwkundige installaties zelf kunnen ontwerpen, realiseren, beheren en onderhouden, heeft u één partij voor het hele gebouw.</p>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="border-t-2 border-ink">
+          <div class="group grid sm:grid-cols-12 gap-3 sm:gap-8 py-8 border-b border-ink/15">
+            <h3 class="sm:col-span-5 display font-bold text-2xl md:text-[2rem] leading-tight">Installatietechniek</h3>
+            <p class="sm:col-span-7 text-lg leading-relaxed text-ink/75">Alle elektrotechnische en werktuigbouwkundige installaties in en rondom gebouwen: elektra, verlichting en klimaatbeheersing, ontworpen en gerealiseerd.</p>
+          </div>
+          <div class="grid sm:grid-cols-12 gap-3 sm:gap-8 py-8 border-b border-ink/15">
+            <h3 class="sm:col-span-5 display font-bold text-2xl md:text-[2rem] leading-tight">Brandbeveiliging</h3>
+            <p class="sm:col-span-7 text-lg leading-relaxed text-ink/75">Installaties die brand detecteren, melden en blussen. Van branddetectie tot sprinkler- en watermistinstallaties.</p>
+          </div>
+          <div class="grid sm:grid-cols-12 gap-3 sm:gap-8 py-8 border-b border-ink/15">
+            <h3 class="sm:col-span-5 display font-bold text-2xl md:text-[2rem] leading-tight">Beheer en onderhoud</h3>
+            <p class="sm:col-span-7 text-lg leading-relaxed text-ink/75">Betere prestaties en een langere levensduur voor alle gebouwgebonden installaties. En de zekerheid dat u voldoet aan de wet- en regelgeving.</p>
+          </div>
+        </div>
+        <div class="mt-12 bg-tint rounded-sm p-7 md:p-9">
+          <p class="display font-bold text-xl">Wij werken voor</p>
+          <dl class="mt-5 grid sm:grid-cols-2 gap-x-10 gap-y-6">
+            <div><dt class="font-bold text-lg">Gezondheidszorg</dt><dd class="mt-1 text-ink/75 leading-relaxed">Ziekenhuizen en zorgorganisaties die moeten verduurzamen terwijl de zorgvraag groeit.</dd></div>
+            <div><dt class="font-bold text-lg">Laboratoria</dt><dd class="mt-1 text-ink/75 leading-relaxed">Kritieke omgevingen waar temperatuur, luchtvochtigheid en luchtdruk precies moeten kloppen.</dd></div>
+            <div><dt class="font-bold text-lg">Zakelijk en commercieel vastgoed</dt><dd class="mt-1 text-ink/75 leading-relaxed">Kantoren, winkels en hotels, waar comfort, gezondheid en veiligheid voorop staan.</dd></div>
+            <div><dt class="font-bold text-lg">Maatschappelijk vastgoed</dt><dd class="mt-1 text-ink/75 leading-relaxed">Overheidsgebouwen, scholen en musea, inclusief inbraakbeveiliging en toegangscontrole.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Referenties -->
+<section id="werk" class="py-20 md:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <h2 class="display font-extrabold text-4xl md:text-6xl leading-[1] balance max-w-3xl">Hier draait onze techniek.</h2>
+      <p class="text-lg text-ink/75 max-w-sm pretty">Een greep uit de ziekenhuizen, labs en gebouwen waar wij aan werkten.</p>
+    </div>
+
+    <ul class="mt-12 md:mt-16 grid md:grid-cols-2 gap-x-14 border-t-2 border-ink">
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">OLVG locatie Oost, OK-centrum</p><p class="text-ink/70 mt-1">Puzzelen in de bestaande ruimte</p></div></li>
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">Groene Hart Ziekenhuis Gouda</p><p class="text-ink/70 mt-1">Vernieuwbouw: techniek verplaatsen terwijl de zorg doorgaat</p></div></li>
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">Tergooi MC Hilversum, bouwdeel F</p><p class="text-ink/70 mt-1">Een multifunctioneel gebouw voor de toekomst</p></div></li>
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">OLVG locatie West, laboratoriumgebouw</p><p class="text-ink/70 mt-1">Duurzame keuzes bij nieuwbouw laboratorium</p></div></li>
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">St. Antonius ziekenhuis</p><p class="text-ink/70 mt-1">Afdeling voor afdeling wordt gerenoveerd</p></div></li>
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">Noordwest Ziekenhuisgroep Alkmaar</p><p class="text-ink/70 mt-1">In 3 fasen volledig vernieuwen</p></div></li>
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">De Sax Rotterdam</p><p class="text-ink/70 mt-1">Brandveiligheid op grote hoogte</p></div></li>
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">Naturalis Biodiversity Centre</p><p class="text-ink/70 mt-1">Installaties nu flexibeler, robuust en toekomstgericht</p></div></li>
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">Abdij van Egmond</p><p class="text-ink/70 mt-1">Techniek in dienst van een eeuwenoude traditie</p></div></li>
+      <li class="py-6 border-b border-ink/15 flex gap-5"><span class="mt-2 shrink-0 w-2.5 h-5 bg-brand -skew-x-[9deg]"></span><div><p class="display font-bold text-xl md:text-2xl">Wageningen University &amp; Research</p><p class="text-ink/70 mt-1">Voorbereid op de toekomst</p></div></li>
+    </ul>
+
+    <!-- Actueel -->
+    <div class="mt-20 md:mt-24 grid lg:grid-cols-12 gap-10">
+      <h3 class="lg:col-span-3 display font-extrabold text-3xl leading-tight">Net gebeurd</h3>
+      <div class="lg:col-span-9 grid sm:grid-cols-3 gap-px bg-ink/15 border-y border-ink/15">
+        <article class="bg-paper py-6 sm:pr-6">
+          <time datetime="2026-07-07" class="text-sm font-semibold text-btn">7 juli 2026</time>
+          <p class="mt-2 font-semibold text-lg leading-snug">Eerste paal geslagen voor Innovatievleugel Prinses Máxima Centrum</p>
+        </article>
+        <article class="bg-paper py-6 sm:px-6">
+          <time datetime="2026-07-06" class="text-sm font-semibold text-btn">6 juli 2026</time>
+          <p class="mt-2 font-semibold text-lg leading-snug">Hoogste punt bereikt voor nieuw facilitair gebouw Groene Hart Ziekenhuis</p>
+        </article>
+        <article class="bg-paper py-6 sm:pl-6">
+          <time datetime="2026-05-29" class="text-sm font-semibold text-btn">29 mei 2026</time>
+          <p class="mt-2 font-semibold text-lg leading-snug">ULC Installatietechniek tekent overeenkomst voor volgende fase vernieuwbouw Groene Hart Ziekenhuis</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visie -->
+<section class="bg-btn text-white overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-7">
+      <p class="display font-extrabold text-5xl md:text-7xl leading-[0.95] balance">Samen zorgen voor morgen.</p>
+      <div class="mt-8 grid sm:grid-cols-2 gap-8 text-lg leading-relaxed text-white/90">
+        <p class="pretty">Daar staan ULC en haar medewerkers al meer dan 100 jaar voor. Samen met opdrachtgevers, leveranciers en onderaannemers, want samen kom je tot het beste resultaat.</p>
+        <p class="pretty">Met slimme, energiezuinige oplossingen helpen we (zorg)vastgoed verduurzamen en de CO2-voetafdruk verkleinen. Bijvoorbeeld door minder afval en circulair bouwen.</p>
+      </div>
+    </div>
+    <div class="md:col-span-5">
+      <img src="assets/google-02.jpg" alt="Ontvangstruimte van het ULC-kantoor in Utrecht" class="slant-l w-full aspect-[4/3] object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Werken bij -->
+<section id="werkenbij" class="py-20 md:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+    <div class="md:col-span-6">
+      <img src="assets/google-06.jpg" alt="Twee ULC-collega's aan het werk achter hun schermen op kantoor" class="slant-r w-full aspect-[5/4] object-cover object-[40%_center]">
+    </div>
+    <div class="md:col-span-6">
+      <h2 class="display font-extrabold text-4xl md:text-5xl leading-[1.02] balance">Kom werken bij een familiebedrijf.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-ink/80 pretty">Bij ULC werken ongeveer driehonderd elektrotechnisch en werktuigbouwkundig specialisten. Aan topprojecten, met collega's die voelen als je tweede familie, volop doorgroeimogelijkheden en een prima salaris.</p>
+      <p class="mt-4 text-lg leading-relaxed text-ink/80 pretty">Veel collega's blijven hun hele werkzame leven, en daarna komen hun kinderen. Servicetechnicus, monteur, specialist brandbeveiliging of projectmanager: jong of oud, ervaren of minder ervaren, bij ULC kom je verder.</p>
+      <a href="mailto:info@ulc.nl?subject=Werken%20bij%20ULC" class="btn mt-8 inline-flex items-center gap-2 border-2 border-ink rounded-md px-6 py-3 font-semibold hover:bg-ink hover:text-white">Vraag naar vacatures</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="bg-white py-20 md:py-24">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <h2 class="display font-extrabold text-3xl md:text-4xl leading-tight">Wat mensen over ons zeggen</h2>
+    <div class="mt-10 grid md:grid-cols-12 gap-8 md:gap-12">
+      <figure class="md:col-span-7 border-l-4 border-brand pl-6 md:pl-8">
+        <blockquote class="text-xl md:text-2xl leading-relaxed pretty">"Yusuf was een fantastische hulp samen met zijn collega!!! Op de parkeerplaats van OLVG west was de accu van onze startmotor opeens leeg. Hij was zo lief om te helpen met zijn auto zodat we de startkabels konden gebruiken. Super bedankt Yusuf voor je hulp, we hebben de boot naar Terschelling gehaald."</blockquote>
+        <figcaption class="mt-4 font-semibold">Dominique ter Meulen <span class="font-normal text-steel">via Google</span></figcaption>
+      </figure>
+      <div class="md:col-span-5 flex flex-col gap-8 md:justify-center">
+        <figure class="border-l-4 border-brand pl-6">
+          <blockquote class="text-xl leading-relaxed">"Bedrijf dat veel kennis in huis heeft."</blockquote>
+          <figcaption class="mt-3 font-semibold">Xavier <span class="font-normal text-steel">via Google</span></figcaption>
+        </figure>
+        <figure class="border-l-4 border-brand pl-6">
+          <blockquote class="text-xl leading-relaxed">"Goede service en kennis van zaken."</blockquote>
+          <figcaption class="mt-3 font-semibold">Donald Bongers <span class="font-normal text-steel">via Google</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-ink text-white">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="display font-extrabold text-4xl md:text-6xl leading-[1] balance">Spreek iemand van ons.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-white/80 max-w-lg pretty">Een project in voorbereiding, een vraag over onderhoud of gewoon meer informatie? Bel ons of stuur een bericht, zoals het u het beste uitkomt.</p>
+
+      <a href="tel:0302650500" class="btn mt-8 inline-flex items-center gap-3 bg-brand hover:bg-white hover:text-ink text-white font-semibold text-lg rounded-md px-7 py-4">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        Bel 030 265 0500
+      </a>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-10">
+        <div>
+          <p class="font-bold text-lg">Adres</p>
+          <address class="not-italic mt-2 text-white/80 leading-relaxed">ULC<br>Labradordreef 18<br>3565 AN Utrecht</address>
+          <p class="font-bold text-lg mt-6">E-mail</p>
+          <a href="mailto:info@ulc.nl" class="mt-2 inline-block text-white/90 underline decoration-brand decoration-2 underline-offset-4 hover:text-white">info@ulc.nl</a>
+        </div>
+        <div>
+          <p class="font-bold text-lg">Openingstijden</p>
+          <table class="mt-2 text-white/80 leading-relaxed">
+            <tbody>
+              <tr><td class="pr-6">Maandag t/m vrijdag</td></tr>
+              <tr><td class="tabular-nums">08:30 tot 17:00</td></tr>
+              <tr><td class="pt-2">Zaterdag en zondag</td></tr>
+              <tr><td>Gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <img src="assets/google-01.jpg" alt="Hoofdkantoor van ULC aan de Labradordreef in Utrecht, met het groene logo op de gevel" class="slant-r mt-12 w-full aspect-[16/9] object-cover">
+    </div>
+
+    <div class="lg:col-span-6">
+      <form class="bg-white text-ink rounded-sm p-7 md:p-10" onsubmit="event.preventDefault(); this.querySelector('[data-ok]').hidden=false; this.reset();">
+        <p class="display font-bold text-2xl">Stuur een bericht</p>
+        <p class="mt-2 text-ink/70">Wij nemen binnen kantoortijden contact met u op.</p>
+        <div class="mt-7 grid gap-5">
+          <label class="grid gap-2"><span class="font-semibold">Naam</span><input required name="naam" autocomplete="name" class="border border-ink/25 rounded-sm px-4 py-3 bg-paper focus:border-brand"></label>
+          <label class="grid gap-2"><span class="font-semibold">Organisatie</span><input name="organisatie" autocomplete="organization" class="border border-ink/25 rounded-sm px-4 py-3 bg-paper focus:border-brand"></label>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="grid gap-2"><span class="font-semibold">E-mail</span><input required type="email" name="email" autocomplete="email" class="border border-ink/25 rounded-sm px-4 py-3 bg-paper focus:border-brand"></label>
+            <label class="grid gap-2"><span class="font-semibold">Telefoon</span><input type="tel" name="telefoon" autocomplete="tel" class="border border-ink/25 rounded-sm px-4 py-3 bg-paper focus:border-brand"></label>
+          </div>
+          <label class="grid gap-2"><span class="font-semibold">Waar kunnen wij u mee helpen?</span><textarea required name="bericht" rows="5" class="border border-ink/25 rounded-sm px-4 py-3 bg-paper focus:border-brand"></textarea></label>
+        </div>
+        <button type="submit" class="btn mt-7 w-full bg-btn hover:bg-ink text-white font-semibold text-lg rounded-md px-6 py-4">Verstuur bericht</button>
+        <p data-ok hidden class="mt-4 font-semibold text-btn">Bedankt. Uw bericht is verstuurd, wij nemen contact met u op.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-ink text-white/60 border-t border-white/10">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-8 flex flex-col sm:flex-row gap-3 justify-between text-sm">
+    <p>ULC, Labradordreef 18, 3565 AN Utrecht</p>
+    <p><a href="tel:0302650500" class="hover:text-white">030 265 0500</a> <span class="mx-2">/</span> <a href="mailto:info@ulc.nl" class="hover:text-white">info@ulc.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-paper/95 backdrop-blur border-t border-ink/10 p-3">
+  <a href="tel:0302650500" class="btn flex items-center justify-center gap-3 bg-btn text-white font-semibold text-lg rounded-md py-3.5">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    Bel 030 265 0500
+  </a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.rise').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

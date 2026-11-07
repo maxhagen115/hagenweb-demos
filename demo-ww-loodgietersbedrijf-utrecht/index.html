@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WW Loodgietersbedrijf Utrecht | Loodgieter in Utrecht, dag en nacht bereikbaar</title>
+<meta name="description" content="Loodgieter in Utrecht voor lekkages, verstoppingen, riool, leidingwerk, verwarming en badkamers. Elke dag 24 uur bereikbaar. Bel 06 40022715.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          inkt: '#1B1D33',
+          inkt2: '#25284A',
+          geel: '#F3B843',
+          geeldonker: '#E3A52A',
+          mist: '#EEF0F4',
+          leisteen: '#575B70',
+          lijn: '#D9DCE4',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; color: #1B1D33; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-variation-settings: 'wdth' 118; letter-spacing: -0.02em; }
+  .kop-xl { font-stretch: 122%; font-variation-settings: 'wdth' 122; letter-spacing: -0.035em; line-height: .95; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Huisvorm uit het logo */
+  .huis { clip-path: polygon(50% 0, 100% 24%, 100% 100%, 0 100%, 0 24%); }
+  .huis-klein { clip-path: polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%); }
+
+  .knop-geel { background: #F3B843; color: #1B1D33; transition: background-color .2s, transform .15s; }
+  .knop-geel:hover { background: #FFC85C; }
+  .knop-geel:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #F3B843; outline-offset: 3px; }
+
+  /* Enige animatie: de hero komt rustig binnen, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .in { animation: in .8s cubic-bezier(.2,.7,.2,1) both; }
+    .js .in-2 { animation-delay: .12s; }
+    .js .in-3 { animation-delay: .24s; }
+    @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  }
+
+  .dienst img { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .dienst:hover img { transform: scale(1.04); }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white pb-[76px] md:pb-0">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-geel focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-white/80 text-[12px] sm:text-[13px] text-center px-3 py-2 leading-snug">
+  Demo voor WW Loodgietersbedrijf Utrecht, gemaakt door <a href="https://hagenweb.nl" class="text-geel underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-lijn">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 h-[68px] md:h-[78px] flex items-center justify-between gap-6">
+    <a href="#" class="shrink-0" aria-label="WW Loodgietersbedrijf, naar boven">
+      <img src="assets/site-13.webp" alt="WW Loodgietersbedrijf" class="h-9 md:h-12 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-leisteen" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-inkt">Diensten</a>
+      <a href="#spoed" class="hover:text-inkt">Lekkage nu</a>
+      <a href="#reviews" class="hover:text-inkt">Reviews</a>
+      <a href="#utrecht" class="hover:text-inkt">Werkgebied</a>
+      <a href="#contact" class="hover:text-inkt">Contact</a>
+    </nav>
+    <a href="tel:+31640022715" class="knop-geel rounded-full px-4 md:px-5 py-2.5 font-semibold text-[15px] inline-flex items-center gap-2 whitespace-nowrap">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+      <span class="hidden sm:inline">06 40022715</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 pt-8 md:pt-16 pb-14 md:pb-20 grid md:grid-cols-[1.05fr_.95fr] gap-10 md:gap-14 items-center">
+    <div class="in">
+      <p class="text-leisteen font-medium text-[15px] md:text-base mb-4 md:mb-6">Loodgieter in Utrecht</p>
+      <h1 class="kop kop-xl font-black text-[42px] sm:text-[64px] lg:text-[84px] text-inkt">Lekt het?<br>Bel ons, dag&nbsp;en&nbsp;nacht.</h1>
+      <p class="mt-5 md:mt-7 text-[17px] md:text-[19px] leading-relaxed text-leisteen max-w-[34ch]">
+        Lekkage, verstopping, leidingwerk of een nieuwe badkamer. Wij helpen in heel Utrecht en laten alles netjes en schoon achter.
+      </p>
+      <div class="mt-7 md:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a id="hero-bel" href="tel:+31640022715" class="knop-geel rounded-full pl-6 pr-7 py-4 md:py-[18px] text-[18px] md:text-[19px] font-bold inline-flex items-center gap-3 shadow-[0_10px_30px_-10px_rgba(227,165,42,.8)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+          Bel 06 40022715
+        </a>
+        <a href="mailto:info@wwloodgietersbedrijf.nl" class="font-semibold text-inkt underline decoration-geel decoration-2 underline-offset-[6px] hover:decoration-inkt">Liever mailen?</a>
+      </div>
+      <a href="#reviews" class="mt-8 md:mt-10 inline-flex items-center gap-3 text-[15px] text-leisteen hover:text-inkt">
+        <span class="flex text-geel" aria-hidden="true">
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+          <svg class="w-[18px] h-[18px]" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+        </span>
+        <span><strong class="text-inkt font-semibold">4,9</strong> uit 277 Google-reviews</span>
+      </a>
+    </div>
+
+    <div class="relative in in-2">
+      <div class="absolute inset-0 translate-x-4 translate-y-4 md:translate-x-7 md:translate-y-7 bg-geel huis" aria-hidden="true"></div>
+      <img src="assets/google-08.jpg" alt="Het busje van WW Loodgietersbedrijf aan de gracht, met de Domtoren op de achtergrond"
+           class="relative huis w-full aspect-[4/3.9] md:aspect-[4/4.9] object-cover object-[30%_60%]">
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="bg-mist">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-28">
+    <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16">
+      <div class="lg:sticky lg:top-32 self-start">
+        <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02] text-inkt">Waar kunnen we mee helpen?</h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-leisteen max-w-[42ch]">
+          Wij werken vanuit Utrecht voor particulieren en bedrijven. Voor een klein lek of een complete badkamer: u heeft één aanspreekpunt, die uitlegt wat er nodig is en het netjes uitvoert.
+        </p>
+        <a href="tel:+31640022715" class="mt-7 inline-flex font-semibold text-inkt underline decoration-geel decoration-2 underline-offset-[6px] hover:decoration-inkt">Vertel ons wat er speelt: 06 40022715</a>
+      </div>
+
+      <ul class="divide-y divide-lijn border-y border-lijn">
+        <li class="dienst grid grid-cols-[96px_1fr] sm:grid-cols-[150px_1fr] lg:grid-cols-[200px_1fr] gap-5 sm:gap-7 lg:gap-9 py-6 sm:py-7 items-center">
+          <div class="overflow-hidden rounded-xl aspect-square lg:aspect-[4/3]"><img src="assets/site-07.webp" alt="Lekkende waterleiding bij een buitenkraan, gemarkeerd met geel" class="w-full h-full object-cover"></div>
+          <div>
+            <h3 class="kop font-bold text-[20px] sm:text-[23px] text-inkt">Lekkage en lekdetectie</h3>
+            <p class="mt-2 text-leisteen leading-relaxed">Water waar het niet hoort, een natte muur of een vochtplek in het plafond. We zoeken gericht naar de bron, zodat er niet op goed geluk een muur of vloer open hoeft.</p>
+          </div>
+        </li>
+        <li class="dienst grid grid-cols-[96px_1fr] sm:grid-cols-[150px_1fr] lg:grid-cols-[200px_1fr] gap-5 sm:gap-7 lg:gap-9 py-6 sm:py-7 items-center">
+          <div class="overflow-hidden rounded-xl aspect-square lg:aspect-[4/3]"><img src="assets/site-16.webp" alt="Loodgieter ontstopt de afvoer van een douche" class="w-full h-full object-cover object-left"></div>
+          <div>
+            <h3 class="kop font-bold text-[20px] sm:text-[23px] text-inkt">Verstopping verhelpen</h3>
+            <p class="mt-2 text-leisteen leading-relaxed">Een verstopte wc, gootsteen, douche of afvoer. We zoeken uit waar het vastzit en zorgen dat het weer doorloopt.</p>
+          </div>
+        </li>
+        <li class="dienst grid grid-cols-[96px_1fr] sm:grid-cols-[150px_1fr] lg:grid-cols-[200px_1fr] gap-5 sm:gap-7 lg:gap-9 py-6 sm:py-7 items-center">
+          <div class="overflow-hidden rounded-xl aspect-square lg:aspect-[4/3]"><img src="assets/google-01.jpg" alt="Loodgieter in geel regenpak werkt aan een rioolbuis in een uitgegraven put" class="w-full h-full object-cover"></div>
+          <div>
+            <h3 class="kop font-bold text-[20px] sm:text-[23px] text-inkt">Riool en rioolinspectie</h3>
+            <p class="mt-2 text-leisteen leading-relaxed">Komt de verstopping steeds terug? Dan zit het vaak dieper. We inspecteren het riool, zoeken de oorzaak en graven als het moet.</p>
+          </div>
+        </li>
+        <li class="dienst grid grid-cols-[96px_1fr] sm:grid-cols-[150px_1fr] lg:grid-cols-[200px_1fr] gap-5 sm:gap-7 lg:gap-9 py-6 sm:py-7 items-center">
+          <div class="overflow-hidden rounded-xl aspect-square lg:aspect-[4/3]"><img src="assets/site-15.webp" alt="Loodgieter legt nieuwe waterleidingen in een keuken" class="w-full h-full object-cover"></div>
+          <div>
+            <h3 class="kop font-bold text-[20px] sm:text-[23px] text-inkt">Leidingwerk</h3>
+            <p class="mt-2 text-leisteen leading-relaxed">Nieuwe waterleiding of een bestaande aanpassen? We leggen, verplaatsen en repareren leidingen voor keuken, badkamer en andere ruimtes.</p>
+          </div>
+        </li>
+        <li class="dienst grid grid-cols-[96px_1fr] sm:grid-cols-[150px_1fr] lg:grid-cols-[200px_1fr] gap-5 sm:gap-7 lg:gap-9 py-6 sm:py-7 items-center">
+          <div class="overflow-hidden rounded-xl aspect-square lg:aspect-[4/3]"><img src="assets/site-10.webp" alt="Loodgieter sluit een radiator aan" class="w-full h-full object-cover"></div>
+          <div>
+            <h3 class="kop font-bold text-[20px] sm:text-[23px] text-inkt">Verwarming en cv-leidingen</h3>
+            <p class="mt-2 text-leisteen leading-relaxed">Een radiator erbij, verplaatsen of een lekkende cv-leiding. We leggen aan, passen aan en repareren, in woningen en bedrijfspanden.</p>
+          </div>
+        </li>
+        <li class="dienst grid grid-cols-[96px_1fr] sm:grid-cols-[150px_1fr] lg:grid-cols-[200px_1fr] gap-5 sm:gap-7 lg:gap-9 py-6 sm:py-7 items-center">
+          <div class="overflow-hidden rounded-xl aspect-square lg:aspect-[4/3]"><img src="assets/google-06.jpg" alt="Nieuwe inloopdouche met zwart frame en terrazzo tegels" class="w-full h-full object-cover object-[50%_40%]"></div>
+          <div>
+            <h3 class="kop font-bold text-[20px] sm:text-[23px] text-inkt">Sanitair en badkamer</h3>
+            <p class="mt-2 text-leisteen leading-relaxed">Van een nieuwe kraan of toilet tot een complete badkamerrenovatie. Netjes geplaatst en goed aangesloten.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Spoed -->
+<section id="spoed" class="bg-inkt text-white relative overflow-hidden">
+  <div class="absolute -right-24 -bottom-24 w-[420px] h-[460px] bg-inkt2 huis-klein hidden md:block" aria-hidden="true"></div>
+  <div class="relative max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+    <div>
+      <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02]">Lekkage? Dit kunt u nu al doen.</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-white/75 max-w-[44ch]">Beperk eerst de schade. Bel ons daarna direct, ook 's avonds en in het weekend. We bespreken samen wat er nodig is.</p>
+      <a href="tel:+31640022715" class="knop-geel mt-8 rounded-full pl-6 pr-7 py-4 text-[18px] font-bold inline-flex items-center gap-3">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+        Bel 06 40022715
+      </a>
+      <p class="mt-4 text-white/60 text-[15px]">Elke dag 24 uur bereikbaar.</p>
+    </div>
+    <ol class="space-y-5">
+      <li class="flex gap-5 border-b border-white/15 pb-5">
+        <span class="kop font-black text-geel text-[22px] w-8 shrink-0">1</span>
+        <p class="text-[17px] leading-relaxed"><strong class="font-semibold">Sluit de hoofdkraan</strong> bij een actieve lekkage, als dat veilig kan. Lekt alleen één kraan of toestel, draai dan alleen die afsluitkraan dicht.</p>
+      </li>
+      <li class="flex gap-5 border-b border-white/15 pb-5">
+        <span class="kop font-black text-geel text-[22px] w-8 shrink-0">2</span>
+        <p class="text-[17px] leading-relaxed"><strong class="font-semibold">Houd water weg van stroom.</strong> Komt het in de buurt van elektra, schakel dan die groep uit zonder het natte deel aan te raken.</p>
+      </li>
+      <li class="flex gap-5 border-b border-white/15 pb-5">
+        <span class="kop font-black text-geel text-[22px] w-8 shrink-0">3</span>
+        <p class="text-[17px] leading-relaxed"><strong class="font-semibold">Vang het water op</strong> zonder leidingen verder te belasten.</p>
+      </li>
+      <li class="flex gap-5">
+        <span class="kop font-black text-geel text-[22px] w-8 shrink-0">4</span>
+        <p class="text-[17px] leading-relaxed"><strong class="font-semibold">Maak foto's</strong> van de lekkage en de schade. Handig voor uw verzekeraar, en voor ons.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-white">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
+      <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02] text-inkt max-w-[16ch]">Wat Utrecht over ons zegt</h2>
+      <div class="flex items-center gap-4">
+        <span class="kop kop-xl font-black text-[64px] md:text-[80px] text-inkt">4,9</span>
+        <span class="text-leisteen leading-snug">
+          <span class="flex text-geel mb-1" aria-hidden="true">★★★★★</span>
+          uit 277 reviews<br>op Google
+        </span>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-5 md:gap-6">
+      <figure class="md:col-span-7 bg-mist rounded-2xl p-7 md:p-10 flex flex-col justify-between">
+        <blockquote class="kop font-semibold text-[21px] md:text-[27px] leading-[1.3] text-inkt" style="font-stretch:105%;font-variation-settings:'wdth' 105;letter-spacing:-0.01em">
+          "Goede communicatie. Goede service. Op tijd. Betrouwbaar. Prijs is ook goed. Niet goedkoop, maar dat moet je ook niet willen! Hij heeft meerdere klussen in het gebouw gedaan. Er is alles netjes afgewerkt en schoon achtergelaten. Veel schoner dan je vaak ziet bij klussers/ loodgieters. Ik kan iedereen aanraden voor deze"
+        </blockquote>
+        <figcaption class="mt-8 text-leisteen"><span class="font-semibold text-inkt">Pascal Borkhard</span>, Google, 5 sterren</figcaption>
+      </figure>
+
+      <div class="md:col-span-5 relative md:rounded-2xl md:overflow-hidden md:min-h-[340px]">
+        <img src="assets/google-03.jpg" alt="Uitgegraven rioolbuis in een voortuin met inspectiecamera, op de achtergrond het busje" class="w-full h-60 rounded-2xl md:rounded-none md:absolute md:inset-0 md:h-full object-cover object-[50%_40%]">
+        <figure class="relative -mt-12 mx-4 md:mx-0 md:mt-0 md:absolute md:left-4 md:right-4 md:bottom-4 bg-white rounded-xl p-5 md:p-6 shadow-[0_20px_40px_-20px_rgba(27,29,51,.6)]">
+          <blockquote class="text-[15.5px] leading-relaxed text-inkt">"Perfect geholpen door deze mannen! We hadden een behoorlijke verstopping en hiervoor moesten ze graven en van daaruit al het opgestapelde vuil verwijderen dit hebben ze super gedaan en opgelost!! Zeer vriendelijke mensen en mocht ik ooit weer een loodgieter nodig hebben dan weet ik waar ik moet zijn! Prijs ook zeer net"</blockquote>
+          <figcaption class="mt-3 text-[14px] text-leisteen"><span class="font-semibold text-inkt">zusjes kortekaas</span>, Google, 5 sterren</figcaption>
+        </figure>
+      </div>
+
+      <figure class="md:col-span-4 border border-lijn rounded-2xl p-7">
+        <blockquote class="text-[16.5px] leading-relaxed text-inkt">"Super goede werk van Wissem! Altijd snel, flexibel en mooie werk. Hij heeft een echt fijne badkamer en wc gemaakt voor ons"</blockquote>
+        <figcaption class="mt-5 text-[14px] text-leisteen"><span class="font-semibold text-inkt">Terence Moore</span>, Google, 5 sterren</figcaption>
+      </figure>
+      <figure class="md:col-span-4 border border-lijn rounded-2xl p-7">
+        <blockquote class="text-[16.5px] leading-relaxed text-inkt">"We hadden een lekkage, de mannen waren snel ter plaatste en hebben het lek gevonden. Vervolgens mooie nieuwe tegelvloer in de badkamer geplaatst en nieuwe radiator geplaatst. Allemaal snel en goed gedaan. Heel tevreden 👍"</blockquote>
+        <figcaption class="mt-5 text-[14px] text-leisteen"><span class="font-semibold text-inkt">Rens</span>, Google, 5 sterren</figcaption>
+      </figure>
+      <figure class="md:col-span-4 border border-lijn rounded-2xl p-7">
+        <blockquote class="text-[16.5px] leading-relaxed text-inkt">"Werk langere tijd met deze loodgieter samen. Meer dan tevreden over zijn diensten, levert altijd kwaliteit en eerlijk werk."</blockquote>
+        <figcaption class="mt-5 text-[14px] text-leisteen"><span class="font-semibold text-inkt">Mike Van blommestein</span>, Google, 5 sterren</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section class="bg-mist">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-24">
+    <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02] text-inkt max-w-[18ch]">Zo pakken we het aan</h2>
+    <ol class="mt-10 md:mt-14 grid md:grid-cols-3 gap-10 md:gap-8">
+      <li class="border-t-[3px] border-inkt pt-6">
+        <span class="kop font-black text-[15px] text-leisteen">Stap 1</span>
+        <h3 class="kop font-bold text-[22px] text-inkt mt-2">U neemt contact op</h3>
+        <p class="mt-3 text-leisteen leading-relaxed">Bel of mail. Vertel waar het probleem zit, sinds wanneer het speelt en wat u al geprobeerd heeft. Een foto helpt.</p>
+      </li>
+      <li class="border-t-[3px] border-inkt pt-6">
+        <span class="kop font-black text-[15px] text-leisteen">Stap 2</span>
+        <h3 class="kop font-bold text-[22px] text-inkt mt-2">We bekijken de situatie</h3>
+        <p class="mt-3 text-leisteen leading-relaxed">We komen langs, beoordelen het probleem en bespreken vooraf de aanpak, planning en kosten.</p>
+      </li>
+      <li class="border-t-[3px] border-geel pt-6">
+        <span class="kop font-black text-[15px] text-leisteen">Stap 3</span>
+        <h3 class="kop font-bold text-[22px] text-inkt mt-2">We voeren het netjes uit</h3>
+        <p class="mt-3 text-leisteen leading-relaxed">Komen we iets onverwachts tegen, dan overleggen we eerst. Bij oplevering hoort u wat er is gedaan en welk onderhoud zinvol is.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Werkgebied -->
+<section id="utrecht" class="bg-white">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-28 grid md:grid-cols-[.9fr_1.1fr] gap-12 md:gap-16 items-center">
+    <div class="relative order-2 md:order-1">
+      <img src="assets/google-04.jpg" alt="Het busje van WW Loodgietersbedrijf bij Utrecht Centraal" class="w-full aspect-[4/5] object-cover rounded-2xl">
+    </div>
+    <div class="order-1 md:order-2">
+      <h2 class="kop font-extrabold text-[34px] md:text-[48px] leading-[1.02] text-inkt">In elke wijk van Utrecht</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-leisteen max-w-[48ch]">Iedere buurt heeft zijn eigen woningen en installaties. Van oude stadswoningen tot nieuwbouw: we stemmen het werk af op uw huis.</p>
+      <dl class="mt-9 divide-y divide-lijn border-y border-lijn">
+        <div class="py-5 grid sm:grid-cols-[210px_1fr] gap-1 sm:gap-6">
+          <dt class="kop font-bold text-inkt text-[17px]">Oog in Al en Lombok</dt>
+          <dd class="text-leisteen leading-relaxed">Veel oudere woningen. Lekkages, oude waterleidingen en rioolproblemen.</dd>
+        </div>
+        <div class="py-5 grid sm:grid-cols-[210px_1fr] gap-1 sm:gap-6">
+          <dt class="kop font-bold text-inkt text-[17px]">Tuindorp en Overvecht</dt>
+          <dd class="text-leisteen leading-relaxed">Gezinswoningen en appartementen. Verstoppingen, drukproblemen en lekkages.</dd>
+        </div>
+        <div class="py-5 grid sm:grid-cols-[210px_1fr] gap-1 sm:gap-6">
+          <dt class="kop font-bold text-inkt text-[17px]">Oost en Kanaleneiland</dt>
+          <dd class="text-leisteen leading-relaxed">Oudere panden en grotere complexen. Leidingen, afvoer en waterdruk.</dd>
+        </div>
+        <div class="py-5 grid sm:grid-cols-[210px_1fr] gap-1 sm:gap-6">
+          <dt class="kop font-bold text-inkt text-[17px]">Leidsche Rijn en Vleuten-De Meern</dt>
+          <dd class="text-leisteen leading-relaxed">Nieuwere installaties, waar toch lekkages of afstelproblemen ontstaan.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-inkt text-white">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20">
+    <div>
+      <h2 class="kop kop-xl font-black text-[40px] md:text-[64px]">Bel ons gewoon even.</h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-white/75 max-w-[40ch]">Voor spoed, een vraag of een offerte. Elke dag 24 uur bereikbaar.</p>
+      <a href="tel:+31640022715" class="mt-8 block kop font-black text-geel text-[34px] md:text-[48px] hover:text-white transition-colors" style="font-stretch:112%;font-variation-settings:'wdth' 112">06 40022715</a>
+      <dl class="mt-10 space-y-5 text-[16px]">
+        <div><dt class="text-white/55 text-[14px]">E-mail</dt><dd><a href="mailto:info@wwloodgietersbedrijf.nl" class="underline decoration-geel decoration-2 underline-offset-4 hover:text-geel">info@wwloodgietersbedrijf.nl</a></dd></div>
+        <div><dt class="text-white/55 text-[14px]">Adres</dt><dd>Goeman Borgesiuslaan 77, 3515 ET Utrecht</dd></div>
+        <div><dt class="text-white/55 text-[14px]">Bereikbaar</dt><dd>Maandag tot en met zondag, 24 uur per dag</dd></div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@wwloodgietersbedrijf.nl" method="post" enctype="text/plain" class="bg-white text-inkt rounded-2xl p-6 md:p-9 self-start">
+      <h3 class="kop font-bold text-[22px]">Offerte of vraag</h3>
+      <p class="mt-1 text-leisteen text-[15px]">Beschrijf waar het probleem zit en sinds wanneer. Voor spoed kunt u beter bellen.</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block"><span class="text-[14px] font-medium">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-lg border border-lijn bg-mist/60 px-4 py-3 focus:border-inkt"></label>
+        <label class="block"><span class="text-[14px] font-medium">Telefoon</span>
+          <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-lg border border-lijn bg-mist/60 px-4 py-3 focus:border-inkt"></label>
+      </div>
+      <label class="block mt-4"><span class="text-[14px] font-medium">E-mail</span>
+        <input name="email" type="email" autocomplete="email" class="mt-1.5 w-full rounded-lg border border-lijn bg-mist/60 px-4 py-3 focus:border-inkt"></label>
+      <label class="block mt-4"><span class="text-[14px] font-medium">Waar gaat het om?</span>
+        <select name="onderwerp" class="mt-1.5 w-full rounded-lg border border-lijn bg-mist/60 px-4 py-3 focus:border-inkt">
+          <option>Lekkage of lekdetectie</option>
+          <option>Verstopping</option>
+          <option>Riool</option>
+          <option>Leidingwerk</option>
+          <option>Verwarming of cv-leidingen</option>
+          <option>Sanitair of badkamer</option>
+          <option>Iets anders</option>
+        </select></label>
+      <label class="block mt-4"><span class="text-[14px] font-medium">Bericht</span>
+        <textarea name="bericht" rows="4" required class="mt-1.5 w-full rounded-lg border border-lijn bg-mist/60 px-4 py-3 focus:border-inkt"></textarea></label>
+      <button type="submit" class="mt-6 w-full rounded-full bg-inkt text-white font-semibold py-4 hover:bg-inkt2 transition-colors">Verstuur bericht</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-white border-t border-lijn">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-[14px] text-leisteen">
+    <img src="assets/site-13.webp" alt="WW Loodgietersbedrijf" class="h-8 w-auto self-start md:self-auto">
+    <p>KVK 97248355 <span class="mx-2 text-lijn">|</span> BTW NL867968709B01</p>
+    <p>© WW Loodgietersbedrijf Utrecht</p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk op mobiel -->
+<div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-lijn px-4 py-3">
+  <a href="tel:+31640022715" class="knop-geel rounded-full w-full py-3.5 font-bold text-[17px] flex items-center justify-center gap-2.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Bel 06 40022715, dag en nacht
+  </a>
+</div>
+
+<script>
+  // Belbalk op mobiel verschijnt pas als de hoofdknop uit beeld is (zonder JS altijd zichtbaar)
+  (function () {
+    var balk = document.getElementById('belbalk');
+    var knop = document.getElementById('hero-bel');
+    if (!balk || !knop || !('IntersectionObserver' in window)) return;
+    balk.style.transition = 'transform .3s ease';
+    new IntersectionObserver(function (e) {
+      balk.style.transform = e[0].isIntersecting ? 'translateY(110%)' : 'none';
+    }).observe(knop);
+  })();
+</script>
+</body>
+</html>
