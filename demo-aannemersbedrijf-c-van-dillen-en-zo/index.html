@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aannemersbedrijf C. van Dillen en Zoon B.V. | Aannemer in Culemborg</title>
+<meta name="description" content="Aannemer in Culemborg voor nieuwbouw en renovatie, van woning tot complete flat. Bel 0345 509 060.">
+<meta property="og:title" content="Aannemersbedrijf C. van Dillen en Zoon B.V.">
+<meta property="og:description" content="Bouwen zoals het hoort. Nieuwbouw en renovatie vanuit Culemborg.">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          beton: '#E9ECE8', wit: '#F8F9F7', ink: '#16211A',
+          groen: '#23743A', groendonker: '#1A5A2C', merk: '#3CAC4A', steen: '#5B665E'
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Source Sans 3"', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 5rem; }
+  body { font-family: "Source Sans 3", system-ui, sans-serif; }
+  .kop { font-family: Archivo, system-ui, sans-serif; font-stretch: 125%; font-variation-settings: "wdth" 125; letter-spacing: -0.02em; }
+  .kop-smal { font-family: Archivo, system-ui, sans-serif; font-stretch: 100%; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .gevel { clip-path: polygon(0 18%, 50% 0, 100% 18%, 100% 100%, 0 100%); }
+  .dakje { display:inline-block; width: 1.6rem; height: .8rem; background: #3CAC4A; clip-path: polygon(0 100%, 50% 0, 100% 100%, 82% 100%, 50% 34%, 18% 100%); }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:hover { background-color: #1A5A2C; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #3CAC4A; outline-offset: 3px; }
+  .grain { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E"); }
+  /* Eén bewegingsmoment: de gevel schuift omhoog bij het laden. Alleen als JS de class zet. */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .hero-beeld { animation: rijs .9s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes rijs { from { transform: translateY(28px); clip-path: polygon(0 30%, 50% 30%, 100% 30%, 100% 100%, 0 100%); } to { transform: none; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-beton text-ink antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-wit focus:p-3">Naar de inhoud</a>
+
+<div class="bg-ink text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Aannemersbedrijf C. van Dillen en Zoon B.V., gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-merk">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-40 bg-beton/95 backdrop-blur border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-end gap-2 leading-none" aria-label="Van Dillen en Zoon, naar boven">
+      <span class="dakje mb-[5px]" aria-hidden="true"></span>
+      <span class="kop font-extrabold text-xl md:text-2xl">Van Dillen</span>
+      <span class="kop-smal font-semibold text-steen text-sm md:text-base mb-[1px]">en Zoon</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold" aria-label="Hoofdmenu">
+      <a href="#werk" class="hover:text-groen">Ons werk</a>
+      <a href="#bewoners" class="hover:text-groen">Voor bewoners</a>
+      <a href="#contact" class="hover:text-groen">Contact</a>
+      <a href="tel:0345509060" class="knop bg-groen text-white px-5 py-3 rounded-sm">0345 509 060</a>
+    </nav>
+    <a href="tel:0345509060" class="md:hidden knop bg-groen text-white text-sm font-semibold px-4 py-2.5 rounded-sm">Bellen</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="grain">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-8 md:pt-14 pb-0 grid md:grid-cols-12 gap-8 md:gap-10 items-end">
+    <div class="md:col-span-5 md:pb-24">
+      <p class="text-steen font-semibold text-[15px] mb-4 flex items-center gap-2"><span class="w-6 h-[3px] bg-merk inline-block"></span>Aannemer in Culemborg</p>
+      <h1 class="kop font-black text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.4rem]">Bouwen zoals het hoort.</h1>
+      <p class="mt-6 text-lg md:text-xl text-ink/80 max-w-md leading-relaxed">Wij bouwen nieuw en renoveren, van vrijstaande woning tot complete flat. Netjes gewerkt, en u weet steeds waar u aan toe bent.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:0345509060" class="knop inline-flex items-center gap-3 bg-groen text-white text-lg font-bold px-7 py-4 rounded-sm shadow-[0_10px_24px_-10px_rgba(35,116,58,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0345 509 060
+        </a>
+        <a href="mailto:info@vandillen-bouwgroep.nl" class="font-semibold underline decoration-merk decoration-2 underline-offset-4 hover:text-groen">of mail ons</a>
+      </div>
+    </div>
+    <div class="md:col-span-7 -mx-5 sm:mx-0">
+      <div class="hero-beeld gevel bg-ink">
+        <img src="assets/google-01.jpg" alt="Drie medewerkers van Van Dillen met armen over elkaar in de bouwhal" class="w-full h-[360px] sm:h-[480px] md:h-[640px] object-cover object-[50%_30%] md:object-[50%_22%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-2 bg-merk" aria-hidden="true"></div>
+
+<!-- NIEUWBOUW EN RENOVATIE -->
+<section id="werk" class="bg-wit">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="max-w-2xl">
+      <h2 class="kop font-extrabold text-3xl md:text-5xl leading-[1.05]">Van eerste paal tot nieuwe gevel.</h2>
+      <p class="mt-5 text-lg text-ink/75 leading-relaxed">Wij werken aan twee kanten van het vak: nieuw bouwen en bestaande woningen beter maken. Hieronder ziet u wat dat in de praktijk betekent.</p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-7 relative">
+        <img src="assets/google-02.jpg" alt="Nieuwgebouwde houten woning met zadeldak en zonnepanelen" class="w-full aspect-[4/3] object-cover rounded-sm">
+        <img src="assets/google-05.jpg" alt="Twee nieuwe appartementengebouwen met overdekte parkeerplaatsen, van bovenaf" class="hidden sm:block absolute -bottom-10 -right-6 md:-right-10 w-[44%] aspect-[4/3] object-cover rounded-sm ring-8 ring-wit">
+      </div>
+      <div class="md:col-span-5 sm:pt-10 md:pt-0">
+        <span class="dakje" aria-hidden="true"></span>
+        <h3 class="kop font-extrabold text-2xl md:text-3xl mt-3">Nieuwbouw</h3>
+        <p class="mt-4 text-lg text-ink/75 leading-relaxed">Een vrijstaande woning in hout, of een appartementencomplex met alles erop en eraan. Wij zetten het neer en leveren het op zoals afgesproken.</p>
+        <a href="tel:0345509060" class="mt-6 inline-block font-semibold text-groen underline decoration-2 underline-offset-4 hover:text-groendonker">Bespreek uw bouwplan: 0345 509 060</a>
+      </div>
+    </div>
+
+    <div class="mt-24 md:mt-32 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-5 md:order-1 order-2">
+        <span class="dakje" aria-hidden="true"></span>
+        <h3 class="kop font-extrabold text-2xl md:text-3xl mt-3">Renovatie</h3>
+        <p class="mt-4 text-lg text-ink/75 leading-relaxed">Hele flats en woonblokken in de steigers, terwijl de bewoners er gewoon blijven wonen. Nieuwe gevels, nieuwe kozijnen, zonnepanelen op het dak. Dat vraagt om netjes werken en goed laten weten wat er gebeurt.</p>
+        <a href="#bewoners" class="mt-6 inline-block font-semibold text-groen underline decoration-2 underline-offset-4 hover:text-groendonker">Woont u in een complex waar wij werken?</a>
+      </div>
+      <div class="md:col-span-7 md:order-2 order-1 grid grid-cols-5 gap-3 md:gap-4">
+        <img src="assets/google-08.jpg" alt="Flatgebouw in de steigers tijdens renovatie" class="col-span-3 w-full h-64 md:h-[420px] object-cover rounded-sm">
+        <img src="assets/google-07.jpg" alt="Gerenoveerd woongebouw met nieuwe gevelbekleding en balkons" class="col-span-2 w-full h-64 md:h-[420px] object-cover object-[40%_50%] rounded-sm">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEELDSTROOK -->
+<section aria-label="Uit ons werk" class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+      <h2 class="kop font-extrabold text-3xl md:text-5xl leading-[1.05]">Uit ons werk.</h2>
+      <p class="text-white/70 max-w-sm">Van een atrium met houten spanten tot een complete wijk met zonnepanelen op elk dak.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <img src="assets/google-06.jpg" alt="Atrium met gebogen houten spanten en glazen dak" class="col-span-2 md:col-span-7 md:row-span-2 w-full h-64 md:h-full object-cover rounded-sm">
+      <img src="assets/google-03.jpg" alt="Luchtfoto van een woonwijk met zonnepanelen op de daken" class="md:col-span-5 w-full h-40 md:h-64 object-cover rounded-sm">
+      <img src="assets/google-04.jpg" alt="Nieuw wooncomplex met zonnepanelen, van bovenaf gezien" class="md:col-span-5 w-full h-40 md:h-64 object-cover rounded-sm">
+    </div>
+  </div>
+</section>
+
+<!-- BEWONERS -->
+<section id="bewoners" class="grain bg-beton">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 md:gap-16">
+    <div class="md:col-span-6">
+      <span class="dakje" aria-hidden="true"></span>
+      <h2 class="kop font-extrabold text-3xl md:text-5xl leading-[1.05] mt-3">Wordt er aan uw woning gewerkt?</h2>
+      <p class="mt-6 text-lg text-ink/80 leading-relaxed max-w-xl">Woont u in een flat of complex waar wij bezig zijn? Dan wilt u weten wat er gebeurt en bij wie u terechtkunt. Heeft u een vraag, een zorg of schade gezien: bel of mail ons kantoor en noem uw adres. Wij zoeken het voor u uit.</p>
+      <dl class="mt-8 grid sm:grid-cols-2 gap-6 max-w-xl">
+        <div class="border-t-2 border-ink pt-4">
+          <dt class="text-steen text-sm font-semibold">Bellen</dt>
+          <dd><a href="tel:0345509060" class="kop font-bold text-xl hover:text-groen">0345 509 060</a></dd>
+          <dd class="text-ink/70 mt-1">ma t/m vr, 07:15 tot 16:15</dd>
+        </div>
+        <div class="border-t-2 border-ink pt-4">
+          <dt class="text-steen text-sm font-semibold">Mailen</dt>
+          <dd><a href="mailto:info@vandillen-bouwgroep.nl?subject=Vraag%20als%20bewoner" class="font-bold text-lg break-all hover:text-groen">info@vandillen-bouwgroep.nl</a></dd>
+          <dd class="text-ink/70 mt-1">Zet uw adres in de mail</dd>
+        </div>
+      </dl>
+    </div>
+    <figure class="md:col-span-6 self-center bg-ink text-white p-8 md:p-12 rounded-sm relative">
+      <svg class="w-10 h-10 text-merk mb-6" viewBox="0 0 40 32" fill="currentColor" aria-hidden="true"><path d="M0 32V18C0 8 5 2 15 0l2 5c-6 2-8 6-8 11h7v16zm23 0V18c0-10 5-16 15-18l2 5c-6 2-8 6-8 11h7v16z"/></svg>
+      <blockquote class="text-xl md:text-2xl leading-snug">
+        "Als ik zie hoe van Dillen nu werkt bij en aan de flat waar ik woon ( Soest) dan werken ze zeer netjes. Waar nu de woningbouw in tekort schiet...Communicatie...doet van Dillen dat wel"
+      </blockquote>
+      <figcaption class="mt-8 flex items-center gap-3 text-white/80">
+        <span class="text-merk tracking-wider" aria-label="4 van 5 sterren">★★★★<span class="text-white/25">★</span></span>
+        <span>Georgette van de Pol, Google-review</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-wit">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 md:gap-16">
+    <div class="md:col-span-5">
+      <h2 class="kop font-extrabold text-3xl md:text-5xl leading-[1.05]">Even overleggen?</h2>
+      <p class="mt-5 text-lg text-ink/75 leading-relaxed">Heeft u een bouwplan of een renovatie in gedachten? Bel ons op werkdagen, of laat een bericht achter. Wij nemen contact met u op.</p>
+      <a href="tel:0345509060" class="knop mt-8 inline-flex items-center gap-3 bg-groen text-white text-lg font-bold px-7 py-4 rounded-sm">Bel 0345 509 060</a>
+
+      <div class="mt-12 grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-bold text-steen text-sm">Adres</h3>
+          <p class="mt-2 text-lg leading-relaxed">Industrieweg 8<br>4104 AR Culemborg</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Industrieweg+8+4104+AR+Culemborg" class="mt-2 inline-block font-semibold text-groen underline underline-offset-4" target="_blank" rel="noopener">Route plannen</a>
+        </div>
+        <div>
+          <h3 class="font-bold text-steen text-sm">Openingstijden</h3>
+          <table class="mt-2 text-[17px] tabular-nums">
+            <tr><td class="pr-6">ma t/m vr</td><td>07:15 tot 16:15</td></tr>
+            <tr><td class="pr-6">za en zo</td><td>gesloten</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <form class="md:col-span-7 bg-beton p-6 md:p-10 rounded-sm grid gap-5" action="mailto:info@vandillen-bouwgroep.nl" method="post" enctype="text/plain">
+      <h3 class="kop font-bold text-xl">Stuur een bericht</h3>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <label class="grid gap-1.5 font-semibold text-sm">Naam
+          <input name="naam" required autocomplete="name" class="font-normal text-base bg-wit border border-ink/20 rounded-sm px-4 py-3 focus:border-groen">
+        </label>
+        <label class="grid gap-1.5 font-semibold text-sm">Telefoon
+          <input name="telefoon" type="tel" autocomplete="tel" class="font-normal text-base bg-wit border border-ink/20 rounded-sm px-4 py-3 focus:border-groen">
+        </label>
+      </div>
+      <label class="grid gap-1.5 font-semibold text-sm">E-mail
+        <input name="email" type="email" required autocomplete="email" class="font-normal text-base bg-wit border border-ink/20 rounded-sm px-4 py-3 focus:border-groen">
+      </label>
+      <label class="grid gap-1.5 font-semibold text-sm">Waar gaat het over?
+        <textarea name="bericht" rows="5" required class="font-normal text-base bg-wit border border-ink/20 rounded-sm px-4 py-3 focus:border-groen" placeholder="Bijvoorbeeld: nieuwbouw van een woning, renovatie, of een vraag als bewoner"></textarea>
+      </label>
+      <button type="submit" class="knop justify-self-start bg-ink hover:!bg-groen text-white font-bold px-7 py-4 rounded-sm">Verstuur bericht</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-ink text-white/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <div>
+      <p class="flex items-end gap-2 leading-none text-white"><span class="dakje mb-[5px]" aria-hidden="true"></span><span class="kop font-extrabold text-xl">Van Dillen</span><span class="kop-smal font-semibold text-white/60">en Zoon</span></p>
+      <p class="mt-4 text-sm">Aannemersbedrijf C. van Dillen en Zoon B.V.<br>Industrieweg 8, 4104 AR Culemborg</p>
+    </div>
+    <p class="text-sm"><a href="tel:0345509060" class="hover:text-white">0345 509 060</a><br><a href="mailto:info@vandillen-bouwgroep.nl" class="hover:text-white">info@vandillen-bouwgroep.nl</a></p>
+  </div>
+</footer>
+
+<!-- Belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-beton/95 backdrop-blur border-t border-ink/10 p-3 flex gap-3">
+  <a href="tel:0345509060" class="knop flex-1 text-center bg-groen text-white font-bold py-3.5 rounded-sm">Bel 0345 509 060</a>
+  <a href="mailto:info@vandillen-bouwgroep.nl" class="px-5 py-3.5 font-semibold border-2 border-ink rounded-sm">Mail</a>
+</div>
+
+</body>
+</html>

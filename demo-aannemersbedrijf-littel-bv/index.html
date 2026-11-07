@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aannemersbedrijf Littel B.V. | Wij bouwen aan uw wensen</title>
+<meta name="description" content="Aannemersbedrijf Littel B.V. uit Rumpt: nieuwbouw, verbouw en infra in Midden-Nederland. Eén vast aanspreekpunt van eerste gesprek tot oplevering. Bel 0345 234 501.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          inkt: '#0F2747',
+          bouwblauw: '#17396A',
+          limoen: '#8CC21F',
+          kalk: '#F2F4F5',
+          beton: '#D9DEE3',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Public Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 850; letter-spacing: -0.02em; line-height: .95; text-wrap: balance; }
+  .kop-s { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 110%; font-weight: 750; letter-spacing: -0.01em; line-height: 1.1; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* Puntgevel: de foto als silhouet van een huis met zadeldak */
+  .gevel { clip-path: polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%); }
+  .gevel-lijn { clip-path: polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%); }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(15,39,71,.55); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #8CC21F; outline-offset: 3px; }
+  /* Enige animatie: de gevel schuift bij laden omhoog. Zonder JS gewoon zichtbaar. */
+  html.js .gevel-in { animation: opkomen .9s cubic-bezier(.2,.7,.2,1) both; }
+  html.js .tekst-in { animation: opkomen .7s .1s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes opkomen { from { transform: translateY(28px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { html.js .gevel-in, html.js .tekst-in { animation: none; } html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-kalk text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Direct naar inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-white/80 text-xs sm:text-sm">
+  <div class="mx-auto max-w-7xl px-5 py-2 text-center">
+    Demo voor Aannemersbedrijf Littel B.V., gemaakt door <a href="https://hagenweb.nl" class="font-semibold text-white underline decoration-limoen underline-offset-2">Hagenweb</a>
+  </div>
+</div>
+
+<!-- Navigatie -->
+<header class="bg-white border-b border-beton">
+  <div class="mx-auto max-w-7xl px-5 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-stretch shrink-0" aria-label="Aannemersbedrijf Littel B.V., naar boven">
+      <span class="flex flex-col justify-center bg-limoen px-2.5 py-1 leading-none">
+        <span class="font-tekst text-[9px] md:text-[10px] font-semibold text-inkt tracking-wide">Aannemersbedrijf B.V.</span>
+        <span class="kop text-white text-[26px] md:text-[32px] leading-none" style="letter-spacing:.01em">LITTEL</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#bouwen" class="hover:text-bouwblauw hover:underline decoration-limoen decoration-2 underline-offset-8">Wat we bouwen</a>
+      <a href="#werkwijze" class="hover:underline decoration-limoen decoration-2 underline-offset-8">Werkwijze</a>
+      <a href="#projecten" class="hover:underline decoration-limoen decoration-2 underline-offset-8">Projecten</a>
+      <a href="#reviews" class="hover:underline decoration-limoen decoration-2 underline-offset-8">Ervaringen</a>
+      <a href="#contact" class="hover:underline decoration-limoen decoration-2 underline-offset-8">Contact</a>
+    </nav>
+    <a href="tel:+31345234501" class="knop inline-flex items-center gap-2 rounded-md bg-inkt text-white px-4 py-2.5 text-sm font-semibold">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">0345 234 501</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative overflow-hidden bg-white">
+  <div class="mx-auto max-w-7xl px-5 grid lg:grid-cols-12 gap-8 lg:gap-6 items-end pt-10 md:pt-14 lg:pt-16">
+    <div class="tekst-in lg:col-span-7 pb-4 lg:pb-20 relative z-10">
+      <p class="text-[15px] font-semibold text-bouwblauw mb-5 flex items-center gap-3"><span class="inline-block w-8 h-[3px] bg-limoen"></span>Aannemer in Rumpt, bij Culemborg</p>
+      <h1 class="kop text-[3.2rem] sm:text-7xl xl:text-[5.6rem]">Wij bouwen aan uw wensen.</h1>
+      <p class="mt-6 text-lg md:text-xl text-inkt/75 max-w-[30rem] leading-relaxed">Nieuwbouw, verbouw en infra in Midden-Nederland. Met eigen vakmensen en één vast aanspreekpunt, van het eerste gesprek tot de oplevering.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31345234501" class="knop inline-flex items-center gap-3 rounded-md bg-limoen text-inkt px-7 py-4 text-lg font-bold">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0345 234 501
+        </a>
+        <a href="#contact" class="font-semibold underline decoration-limoen decoration-2 underline-offset-[6px] hover:text-bouwblauw">Plan een kennismaking</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-sm text-inkt/70">
+        <span class="text-limoen text-base tracking-tight" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-inkt">4,9</strong> uit 21 Google-reviews</span>
+      </p>
+    </div>
+    <div class="gevel-in lg:col-span-5 relative">
+      <div class="relative mx-auto max-w-[460px] lg:max-w-none lg:-mr-10 xl:-mr-16">
+        <div class="gevel-lijn absolute -inset-x-3 -top-3 bottom-0 bg-limoen" aria-hidden="true"></div>
+        <img src="assets/google-02.jpg" alt="Wit gestucte woning met rieten kap en zwarte kozijnen, gebouwd door Littel" class="gevel relative w-full aspect-[5/5.6] lg:max-h-[640px] object-cover object-[50%_60%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAT WE BOUWEN -->
+<section id="bouwen" class="py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="max-w-2xl">
+      <h2 class="kop text-4xl md:text-6xl">Van fundering tot nok.</h2>
+      <p class="mt-5 text-lg text-inkt/75 leading-relaxed">Een nieuwe woning, een bedrijfspand, een aanbouw of grondwerk: wij nemen het bouwproces van A tot Z uit handen, volgens uw wensen.</p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-6">
+      <!-- Nieuwbouw -->
+      <article class="lg:col-span-7 bg-white rounded-lg overflow-hidden flex flex-col">
+        <img src="assets/site-12.jpg" alt="Nieuwbouwwoning van rode baksteen met dakkapel en leilindes" class="w-full aspect-[16/8] object-cover object-[45%_50%]">
+        <div class="p-7 md:p-10 grid md:grid-cols-[1fr_auto] gap-8">
+          <div>
+            <h3 class="kop-s text-3xl">Nieuwbouw</h3>
+            <p class="mt-3 text-inkt/75 leading-relaxed max-w-prose">Uw eigen huis of een nieuw bedrijfspand. Er komt veel bij kijken, van vergunning tot leidingwerk en van ontwerp tot dakbedekking. Wij begeleiden u van A tot Z, binnen budget en volgens planning.</p>
+          </div>
+          <ul class="text-[15px] space-y-2 md:pt-1 md:min-w-[12rem]">
+            <li class="flex gap-2"><span class="text-limoen font-bold">/</span>Woningbouw</li>
+            <li class="flex gap-2"><span class="text-limoen font-bold">/</span>Vrijstaande woningen</li>
+            <li class="flex gap-2"><span class="text-limoen font-bold">/</span>Villabouw</li>
+            <li class="flex gap-2"><span class="text-limoen font-bold">/</span>Utiliteitsbouw</li>
+          </ul>
+        </div>
+      </article>
+
+      <div class="lg:col-span-5 grid gap-6">
+        <!-- Verbouw -->
+        <article class="bg-white rounded-lg overflow-hidden grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          <img src="assets/google-06.jpg" alt="Verbouwde woonkamer met dubbelzijdige haard en visgraatvloer" class="w-full h-full min-h-[220px] object-cover">
+          <div class="p-7">
+            <h3 class="kop-s text-3xl">Verbouw</h3>
+            <p class="mt-3 text-inkt/75 leading-relaxed">Een verbouwing, aanbouw of opbouw maakt uw woning of pand helemaal naar wens. En meer ruimte betekent waardevermeerdering.</p>
+          </div>
+        </article>
+        <!-- Infra -->
+        <article class="bg-inkt text-white rounded-lg p-7 md:p-9 relative overflow-hidden">
+          <svg class="absolute -right-6 -bottom-6 w-44 h-44 text-white/[.06]" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M0 20h100M0 40h100M0 60h100M0 80h100M20 0v100M40 0v100M60 0v100M80 0v100"/></svg>
+          <h3 class="kop-s text-3xl text-limoen">Infra</h3>
+          <p class="mt-3 text-white/80 leading-relaxed relative">Infra is meer dan machines aan het werk zetten. Het begint met een goede inventarisatie van wensen en mogelijkheden. Pas als alles duidelijk is, leggen we het vast in een plan en gaan we van start.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM / BELOFTES -->
+<section class="bg-white">
+  <figure class="relative">
+    <img src="assets/google-01.jpg" alt="Het team van Littel met de bedrijfsbusjes voor het pand in Rumpt, van bovenaf gefotografeerd" class="w-full h-[46vh] md:h-[68vh] object-cover object-[50%_45%]">
+  </figure>
+  <div class="mx-auto max-w-7xl px-5 relative">
+    <div class="-mt-20 md:-mt-32 bg-inkt text-white rounded-lg p-6 sm:p-8 md:p-14 grid lg:grid-cols-12 gap-10 shadow-[0_30px_60px_-30px_rgba(15,39,71,.6)]">
+      <div class="lg:col-span-5">
+        <h2 class="kop text-[1.9rem] sm:text-4xl md:text-5xl">Eén aanspreekpunt. Korte lijnen.</h2>
+        <p class="mt-5 text-white/75 leading-relaxed">Naast kwaliteit staat betrouwbaarheid bij ons voorop. Dat lukt alleen als de lijnen kort zijn. Wij hebben onze eigen vakmensen in dienst en werken samen met vaste, gerenommeerde partners voor onder meer ontwerp en installaties.</p>
+      </div>
+      <dl class="lg:col-span-7 lg:pl-10 lg:border-l border-white/15 grid gap-7">
+        <div>
+          <dt class="kop-s text-xl text-limoen">Een vast aanspreekpunt</dt>
+          <dd class="mt-1.5 text-white/80 leading-relaxed">Persoonlijke communicatie en begeleiding tijdens het hele project. U weet altijd bij wie u terecht kunt.</dd>
+        </div>
+        <div>
+          <dt class="kop-s text-xl text-limoen">Ondersteuning en ontzorging</dt>
+          <dd class="mt-1.5 text-white/80 leading-relaxed">Van advies in de ontwerpfase tot alle tussentijdse communicatie en nazorg. Ook vergunningen kunnen wij voor u oppakken.</dd>
+        </div>
+        <div>
+          <dt class="kop-s text-xl text-limoen">Duurzaam bouwen</dt>
+          <dd class="mt-1.5 text-white/80 leading-relaxed">Hoogwaardige materialen, met aandacht voor milieu en leefomgeving. Een woning kan volledig energieneutraal en gasvrij worden gebouwd.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+  <div class="h-20 md:h-28"></div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" class="py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <img src="assets/site-04.jpg" alt="Twee vakmensen van Littel overleggen bij een tekening in de werkplaats" class="w-full rounded-lg aspect-[4/3.4] object-cover object-[45%_50%]">
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <h2 class="kop text-4xl md:text-6xl">Het begint met een goed gesprek.</h2>
+      <p class="mt-5 text-lg text-inkt/75 leading-relaxed max-w-2xl">Wij zetten uw ideaalplaatje om in een concreet bouwplan en nemen daar uitgebreid de tijd voor. In het eerste gesprek vragen we onder meer:</p>
+      <ul class="mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-5 max-w-2xl">
+        <li class="border-t-2 border-inkt pt-3 font-medium">Wat verwacht u van uw nieuwe woning?</li>
+        <li class="border-t-2 border-inkt pt-3 font-medium">Weet u al precies wat u wilt, of kunt u hulp gebruiken?</li>
+        <li class="border-t-2 border-inkt pt-3 font-medium">Wat is uw budget en gewenste tijdpad?</li>
+        <li class="border-t-2 border-inkt pt-3 font-medium">Werkt u met een eigen architect, of regelen wij dat?</li>
+        <li class="border-t-2 border-inkt pt-3 font-medium">Heeft u al een vergunning, of pakken wij dat op?</li>
+      </ul>
+      <div class="mt-10 bg-white rounded-lg p-6 border-l-4 border-limoen max-w-2xl">
+        <p class="font-semibold">Werkt u liever met uw eigen specialisten?</p>
+        <p class="mt-1 text-inkt/75 leading-relaxed">Geen probleem. Wij werken nauw samen met uw architect, bouwkundig tekenaar of installateur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTEN -->
+<section id="projecten" class="bg-white py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="kop text-4xl md:text-6xl max-w-xl">Opgeleverd werk.</h2>
+      <p class="text-inkt/70 max-w-sm">Een kijkje in onze nieuwbouw- en verbouwprojecten, van klassieke villa tot moderne schuurwoning.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <figure class="col-span-2 md:col-span-8 md:row-span-2 relative overflow-hidden rounded-lg group">
+        <img src="assets/site-01.jpg" alt="Woning met bijgebouw, zonnepanelen en zwembad in de tuin" class="w-full h-full min-h-[260px] object-cover transition duration-500 group-hover:scale-[1.02]">
+      </figure>
+      <figure class="col-span-1 md:col-span-4 relative overflow-hidden rounded-lg">
+        <img src="assets/site-05.jpg" alt="Nieuwbouwwoning en bijgebouw in Haaften" class="w-full aspect-[4/3] object-cover">
+        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-inkt/90 to-transparent text-white p-3 pt-10 text-sm font-semibold">Nieuwbouwwoning en bijgebouw Haaften</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-4 relative overflow-hidden rounded-lg">
+        <img src="assets/site-06.jpg" alt="Verbouwde autoshowroom met houten balie en visgraatvloer in Beesd" class="w-full aspect-[4/3] object-cover">
+        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-inkt/90 to-transparent text-white p-3 pt-10 text-sm font-semibold">Verbouwing showroom Beesd</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-4 relative overflow-hidden rounded-lg">
+        <img src="assets/google-07.jpg" alt="Lichte hal met hoge vide en zwarte voordeur" class="w-full aspect-square md:aspect-[4/4.6] object-cover">
+      </figure>
+      <figure class="col-span-1 md:col-span-4 relative overflow-hidden rounded-lg">
+        <img src="assets/site-07.jpg" alt="Mantelzorgwoning met zwarte houten gevel in Beesd" class="w-full aspect-square md:aspect-[4/4.6] object-cover">
+        <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-inkt/90 to-transparent text-white p-3 pt-10 text-sm font-semibold">Mantelzorgwoning Beesd</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-4 relative overflow-hidden rounded-lg">
+        <img src="assets/google-04.jpg" alt="Aanbouw met leien gevel en dakterras naast een oude molen" class="w-full aspect-[4/3] md:aspect-[4/4.6] object-cover">
+      </figure>
+      <figure class="col-span-2 md:col-span-7 relative overflow-hidden rounded-lg">
+        <img src="assets/site-14.jpg" alt="Moderne woning met donkere steen, houten accenten en aangelegde tuin" class="w-full aspect-[16/8] object-cover">
+      </figure>
+      <figure class="col-span-1 md:col-span-5 relative overflow-hidden rounded-lg">
+        <img src="assets/google-08.jpg" alt="Bijgebouw met zwarte houten gevel, eiken staanders en twee garagedeuren" class="w-full h-full aspect-square md:aspect-auto object-cover">
+      </figure>
+      <figure class="col-span-1 md:hidden relative overflow-hidden rounded-lg">
+        <img src="assets/google-05.jpg" alt="Lichte eetkamer met grote ramen en tegelvloer" class="w-full aspect-square object-cover">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+      <h2 class="kop text-4xl md:text-6xl">Wat opdrachtgevers zeggen.</h2>
+      <p class="text-inkt/70"><span class="text-limoen" aria-hidden="true">★★★★★</span> <strong class="text-inkt">4,9</strong> uit 21 reviews op Google</p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-12 gap-6">
+      <figure class="lg:col-span-7 bg-inkt text-white rounded-lg p-8 md:p-12 flex flex-col">
+        <blockquote class="kop-s text-2xl md:text-[2rem] leading-snug" style="font-weight:600">“Met een heel goed gevoel kijken we terug op de bouw van onze woning. De samenwerking was fijn en het contact met de jongens op de bouw altijd prettig en duidelijk.”</blockquote>
+        <figcaption class="mt-auto pt-8 text-white/70"><strong class="text-white">Marc van Vugt</strong>, 5 van 5 sterren</figcaption>
+      </figure>
+      <div class="lg:col-span-5 grid gap-6">
+        <figure class="bg-white rounded-lg p-7">
+          <blockquote class="leading-relaxed">“Wij zijn ontzettend tevreden over Littel als aannemer. Onze beneden verdieping verbouwen was best een grote klus. Vanaf het eerste contact verliep alles prettig en professioneel. Wat wij vooral fijn vonden: alle afspraken werden nagekomen.”</blockquote>
+          <figcaption class="mt-4 text-sm text-inkt/70"><strong class="text-inkt">Rian van Zomeren</strong>, 5 van 5 sterren</figcaption>
+        </figure>
+        <figure class="bg-white rounded-lg p-7">
+          <blockquote class="leading-relaxed">“Fijne organisatie die onze aanbouw heeft verzorgd en om mee te werken. Korte lijnen, zorgvuldig, netjes, vakmanschap op alle disciplines en er wordt fijn gecommuniceerd en meegedacht.”</blockquote>
+          <figcaption class="mt-4 text-sm text-inkt/70"><strong class="text-inkt">erol aksoy</strong>, 5 van 5 sterren</figcaption>
+        </figure>
+      </div>
+      <figure class="lg:col-span-12 border-t-2 border-inkt pt-8 grid md:grid-cols-12 gap-4 items-baseline">
+        <blockquote class="md:col-span-9 kop-s text-2xl md:text-3xl" style="font-weight:600">“Een zeer betrouwbare partner met stuk voor stuk vakbekwame medewerkers. We hadden ons geen beter bouwteam kunnen wensen!”</blockquote>
+        <figcaption class="md:col-span-3 md:text-right text-inkt/70"><strong class="text-inkt">Ron van Halen</strong>, 5 van 5 sterren</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-inkt text-white py-20 md:py-28 relative overflow-hidden">
+  <div class="mx-auto max-w-7xl px-5 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-4xl md:text-6xl">Vrijblijvend kennismaken?</h2>
+      <p class="mt-5 text-lg text-white/75 leading-relaxed max-w-lg">Vertel ons over uw plannen. We bespreken uw wensen, de mogelijkheden en de vervolgstappen naar een concreet bouwplan.</p>
+      <a href="tel:+31345234501" class="knop mt-8 inline-flex items-center gap-3 rounded-md bg-limoen text-inkt px-7 py-4 text-lg font-bold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 0345 234 501
+      </a>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-8 text-[15px]">
+        <div>
+          <h3 class="font-semibold text-limoen">Bezoekadres</h3>
+          <p class="mt-2 text-white/85 leading-relaxed">Aannemersbedrijf Littel B.V.<br>Lageveldweg 5a<br>4156 JK Rumpt</p>
+          <p class="mt-3"><a href="mailto:info@aannemersbedrijflittel.nl" class="underline decoration-limoen underline-offset-4 break-all hover:text-limoen">info@aannemersbedrijflittel.nl</a></p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-limoen">Openingstijden</h3>
+          <dl class="mt-2 grid grid-cols-[auto_1fr] gap-x-5 gap-y-1 text-white/85">
+            <dt>Ma t/m vr</dt><dd class="tabular-nums">08:00 tot 18:00</dd>
+            <dt>Za en zo</dt><dd>Gesloten</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="mt-10 pt-8 border-t border-white/15">
+        <h3 class="font-semibold text-limoen text-[15px]">Werkgebied</h3>
+        <p class="mt-2 text-white/85 leading-relaxed max-w-lg">Actief in Midden-Nederland, onder meer in Beesd, Culemborg, Druten, Geldermalsen, Gorinchem, Leerdam, Nieuwegein, Tiel en Utrecht.</p>
+      </div>
+    </div>
+
+    <form class="lg:col-span-6 bg-white text-inkt rounded-lg p-7 md:p-10 self-start" action="mailto:info@aannemersbedrijflittel.nl" method="post" enctype="text/plain">
+      <h3 class="kop-s text-2xl">Stuur ons een bericht</h3>
+      <p class="mt-2 text-inkt/70 text-[15px]">We nemen zo snel mogelijk contact met u op.</p>
+      <div class="mt-7 grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-sm font-semibold">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-beton bg-kalk px-4 py-3 focus:border-inkt focus:bg-white"></label>
+        <label class="block"><span class="text-sm font-semibold">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-md border border-beton bg-kalk px-4 py-3 focus:border-inkt focus:bg-white"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold">E-mail</span>
+          <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-beton bg-kalk px-4 py-3 focus:border-inkt focus:bg-white"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold">Waar gaat het om?</span>
+          <select name="soort" class="mt-1.5 w-full rounded-md border border-beton bg-kalk px-4 py-3 focus:border-inkt focus:bg-white">
+            <option>Nieuwbouw</option><option>Verbouw, aanbouw of opbouw</option><option>Infra</option><option>Iets anders</option>
+          </select></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold">Uw plannen</span>
+          <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-md border border-beton bg-kalk px-4 py-3 focus:border-inkt focus:bg-white"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-6 w-full rounded-md bg-inkt text-white px-6 py-4 font-semibold hover:bg-bouwblauw">Verstuur bericht</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-[#0A1C34] text-white/60 text-sm">
+  <div class="mx-auto max-w-7xl px-5 py-8 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+    <p>Aannemersbedrijf Littel B.V., Lageveldweg 5a, 4156 JK Rumpt</p>
+    <p><a href="tel:+31345234501" class="hover:text-white">0345 234 501</a> <span class="mx-2 text-white/30">|</span> <a href="mailto:info@aannemersbedrijflittel.nl" class="hover:text-white">info@aannemersbedrijflittel.nl</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk op mobiel -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-beton p-3 flex gap-3">
+  <a href="tel:+31345234501" class="flex-1 inline-flex items-center justify-center gap-2 rounded-md bg-limoen text-inkt py-3.5 font-bold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 0345 234 501
+  </a>
+  <a href="mailto:info@aannemersbedrijflittel.nl" class="inline-flex items-center justify-center rounded-md border-2 border-inkt px-4 font-semibold" aria-label="E-mail sturen">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+  </a>
+</div>
+
+</body>
+</html>

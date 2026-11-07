@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vreugdenhil Bouw | Bouwbedrijf in Culemborg en Oisterwijk</title>
+<meta name="description" content="Vreugdenhil Bouw: nieuwbouw, verbouw, aanbouw en renovatie. Van de fundering tot de laatste plint. Bel 0345 52 52 65.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2334373B'/%3E%3Cpath d='M8 25V14l8-7 8 7v11H8z' fill='none' stroke='%23EE7D1E' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          antraciet: '#34373B',
+          inkt: '#1F2124',
+          oranje: '#EE7D1E',
+          oranjedonker: '#D96C10',
+          beton: '#ECECE9',
+          hout: '#B5773F',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'sans-serif'],
+          tekst: ['"Public Sans"', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', sans-serif; }
+  .kop { font-family: 'Archivo', sans-serif; font-variation-settings: 'wdth' 118; letter-spacing: -0.02em; }
+  .kop-smal { font-family: 'Archivo', sans-serif; font-variation-settings: 'wdth' 100; }
+  .balance { text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+
+  /* Huisvorm uit het logo */
+  .huis { clip-path: polygon(0 26%, 50% 0, 100% 26%, 100% 100%, 0 100%); }
+  .huislijn { clip-path: polygon(0 26%, 50% 0, 100% 26%, 100% 100%, 0 100%, 0 26%, 6px calc(26% + 3px), 6px calc(100% - 6px), calc(100% - 6px) calc(100% - 6px), calc(100% - 6px) calc(26% + 3px), 50% 7px, 6px calc(26% + 3px)); }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #EE7D1E; outline-offset: 3px;
+  }
+
+  /* Eén laadmoment: alleen als JS actief is */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .opkomst { animation: opkomst .9s cubic-bezier(.2,.7,.2,1) both; }
+    html.js .opkomst-2 { animation-delay: .15s; }
+    html.js .opkomst-3 { animation-delay: .3s; }
+    @keyframes opkomst { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-beton text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-white px-4 py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Vreugdenhil Bouw, gemaakt door <a href="https://hagenweb.nl" class="text-oranje font-semibold underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-beton">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 flex items-center justify-between h-20">
+    <a href="#" class="flex items-center gap-3" aria-label="Vreugdenhil Bouw, naar boven">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="7" fill="#34373B"/>
+        <path d="M11 31V18l9-8 9 8v13" fill="none" stroke="#fff" stroke-width="3.2" stroke-linejoin="round"/>
+        <path d="M11 31h12" stroke="#EE7D1E" stroke-width="3.2" stroke-linecap="round"/>
+      </svg>
+      <span class="leading-none">
+        <span class="kop font-extrabold text-[19px] block text-antraciet">Vreugdenhil</span>
+        <span class="kop font-bold text-[15px] block text-oranjedonker mt-0.5">Bouw</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-antraciet" aria-label="Hoofdmenu">
+      <a href="#team" class="hover:text-oranjedonker transition-colors">Ons team</a>
+      <a href="#bouwen" class="hover:text-oranjedonker transition-colors">Wat we bouwen</a>
+      <a href="#projecten" class="hover:text-oranjedonker transition-colors">Projecten</a>
+      <a href="#contact" class="hover:text-oranjedonker transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31345525265" class="knop hidden sm:inline-flex items-center gap-2 border-2 border-antraciet rounded-md px-4 py-2 font-semibold text-antraciet hover:bg-antraciet hover:text-white">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      0345 52 52 65
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-10 lg:gap-6 items-center pt-4 pb-14 lg:pt-10 lg:pb-20">
+    <div class="lg:col-span-6 relative z-10">
+      <p class="opkomst text-[15px] font-semibold text-antraciet/70 mb-5">Bouwbedrijf in Culemborg en Oisterwijk</p>
+      <h1 class="opkomst kop font-black text-[42px] leading-[0.98] sm:text-6xl lg:text-[68px] xl:text-[74px] text-inkt balance">Samen bouwen, tot de laatste plint.</h1>
+      <p class="opkomst opkomst-2 mt-6 text-lg leading-relaxed text-antraciet max-w-[30rem] pretty">Nieuwbouw, verbouw of een aanbouw? Oscar en zijn timmermannen denken mee vanaf het eerste idee en houden u de hele bouw op de hoogte.</p>
+      <div class="opkomst opkomst-3 mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31345525265" class="knop inline-flex items-center gap-3 bg-oranje hover:bg-[#F58F35] text-inkt font-bold text-lg rounded-md pl-5 pr-6 py-4 shadow-[0_10px_24px_-10px_rgba(217,108,16,.7)]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 0345 52 52 65
+        </a>
+        <a href="#contact" class="font-semibold text-antraciet underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranjedonker">Offerte aanvragen</a>
+      </div>
+      <p class="opkomst opkomst-3 mt-8 flex items-center gap-2 text-[15px] text-antraciet/80">
+        <span class="text-oranjedonker tracking-[2px]" aria-hidden="true">★★★★☆</span>
+        <span><strong class="text-inkt">4,2</strong> uit 17 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-6 relative">
+      <div class="relative mx-auto max-w-[640px] lg:ml-auto mr-4 md:mr-7 lg:mr-7 mt-2 lg:mt-0">
+        <div class="absolute inset-0 translate-x-4 -translate-y-4 md:translate-x-7 md:-translate-y-7 bg-oranje huislijn" aria-hidden="true"></div>
+        <img src="assets/site-02.jpg" alt="Nieuw gebouwde woning met verticale houten gevelbekleding tussen de dennenbomen, project Kampinastaete" class="huis relative w-full aspect-[5/4] object-cover object-[50%_60%]">
+        <p class="absolute left-4 bottom-4 bg-inkt/85 text-white text-sm px-3 py-1.5 rounded">Nieuwbouw Kampinastaete</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section id="team" class="bg-antraciet text-white py-20 lg:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-4">
+        <h2 class="kop font-extrabold text-4xl lg:text-5xl leading-[1.02] balance">Deze mensen komen bij u over de vloer.</h2>
+        <p class="mt-6 text-white/75 text-lg leading-relaxed pretty">Al ons personeel is gediplomeerd timmerman. Voor de rest werken we met vaste, gespecialiseerde onderaannemers. We gaan graag een stapje verder voor onze klanten, en dat ziet u terug in het eindresultaat.</p>
+      </div>
+      <ul class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+        <li class="md:mt-0">
+          <img src="assets/site-10.png" alt="Oscar Vreugdenhil in het magazijn" class="w-full aspect-[4/5] object-cover object-top rounded-md">
+          <p class="mt-3 font-semibold">Oscar Vreugdenhil</p>
+          <p class="text-sm text-white/60">Directeur</p>
+        </li>
+        <li class="md:mt-10">
+          <img src="assets/site-07.jpg" alt="Wessel aan het werk met een houten regelwerk" class="w-full aspect-[4/5] object-cover object-top rounded-md">
+          <p class="mt-3 font-semibold">Wessel</p>
+          <p class="text-sm text-white/60">Timmerman</p>
+        </li>
+        <li class="md:mt-4">
+          <img src="assets/site-08.jpg" alt="Henk met de afkortzaag op de bouwplaats" class="w-full aspect-[4/5] object-cover object-top rounded-md">
+          <p class="mt-3 font-semibold">Henk</p>
+          <p class="text-sm text-white/60">Timmerman</p>
+        </li>
+        <li class="md:mt-14">
+          <img src="assets/site-09.jpg" alt="Jordy zaagt een plank op maat" class="w-full aspect-[4/5] object-cover object-[50%_20%] rounded-md">
+          <p class="mt-3 font-semibold">Jordy</p>
+          <p class="text-sm text-white/60">Timmerman</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-16 lg:mt-24 grid md:grid-cols-3 border-t border-white/15">
+      <div class="pt-8 md:pr-10 pb-8 md:pb-0">
+        <h3 class="kop-smal font-bold text-xl text-oranje">Duidelijke offerte</h3>
+        <p class="mt-2 text-white/75 leading-relaxed">Tot in detail gespecificeerd, zodat u vooraf precies weet waar u aan toe bent.</p>
+      </div>
+      <div class="pt-8 md:px-10 pb-8 md:pb-0 border-t md:border-t-0 md:border-l border-white/15">
+        <h3 class="kop-smal font-bold text-xl text-oranje">Binnen planning en budget</h3>
+        <p class="mt-2 text-white/75 leading-relaxed">We houden u voortdurend op de hoogte van hoe het werk ervoor staat.</p>
+      </div>
+      <div class="pt-8 md:pl-10 border-t md:border-t-0 md:border-l border-white/15">
+        <h3 class="kop-smal font-bold text-xl text-oranje">Zekerheid en garantie</h3>
+        <p class="mt-2 text-white/75 leading-relaxed">Hoogwaardige materialen en gecertificeerde vakmensen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wat we bouwen -->
+<section id="bouwen" class="py-20 lg:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <h2 class="kop font-extrabold text-4xl lg:text-6xl leading-[1] max-w-3xl balance">Van de fundering tot de laatste plint.</h2>
+
+    <!-- Nieuwbouw -->
+    <article class="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+      <div class="lg:col-span-7">
+        <img src="assets/site-03.jpg" alt="Nieuwbouwwoning met houten en antraciet gevel, in aanbouw" class="w-full aspect-[4/3] object-cover rounded-md">
+      </div>
+      <div class="lg:col-span-5">
+        <h3 class="kop font-extrabold text-3xl lg:text-4xl">Nieuwbouw</h3>
+        <p class="mt-4 text-lg leading-relaxed text-antraciet pretty">Een eigen huis bouwen is voor veel mensen een lang gekoesterde droom. Heeft u al een bouwkavel of een stuk grond? Dan begeleiden we u vanaf het eerste idee tot aan de sleuteloverdracht.</p>
+        <ol class="mt-8 space-y-5">
+          <li class="flex gap-4"><span class="kop font-black text-oranjedonker text-2xl leading-none w-8 shrink-0">1</span><p><strong>Kennismaken.</strong> We gaan met u in gesprek over uw wensen en de plek.</p></li>
+          <li class="flex gap-4"><span class="kop font-black text-oranjedonker text-2xl leading-none w-8 shrink-0">2</span><p><strong>Een helder plan.</strong> Samen stellen we een ontwerp en een budget op.</p></li>
+          <li class="flex gap-4"><span class="kop font-black text-oranjedonker text-2xl leading-none w-8 shrink-0">3</span><p><strong>Planning en bouw.</strong> Na uw goedkeuring plannen we en gaan we bouwen.</p></li>
+          <li class="flex gap-4"><span class="kop font-black text-oranjedonker text-2xl leading-none w-8 shrink-0">4</span><p><strong>Sleuteloverdracht.</strong> Een woning die doet wat u wilde, en liefst nog meer.</p></li>
+        </ol>
+      </div>
+    </article>
+
+    <!-- Verbouw en aanbouw -->
+    <article class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+      <div class="lg:col-span-5 lg:order-1 order-2">
+        <h3 class="kop font-extrabold text-3xl lg:text-4xl">Verbouw en aanbouw</h3>
+        <p class="mt-4 text-lg leading-relaxed text-antraciet pretty">Een nieuwe badkamer, een dakkapel, een aanbouw aan de achterkant of een complete renovatie. Een goede verbouwing maakt uw huis of bedrijfspand mooier, praktischer en duurzamer. Wij denken mee van het eerste ontwerp tot de laatste afwerking.</p>
+        <p class="mt-4 text-lg leading-relaxed text-antraciet pretty">Ook voor kleine klussen kunt u bij ons terecht.</p>
+        <a href="tel:+31345525265" class="mt-7 inline-block font-semibold underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranjedonker">Bespreek uw plan: 0345 52 52 65</a>
+      </div>
+      <div class="lg:col-span-7 lg:order-2 order-1">
+        <img src="assets/site-06.jpg" alt="Woning met rieten kap, witte gevel en houten carport" class="w-full aspect-[4/3] object-cover rounded-md">
+      </div>
+    </article>
+
+    <!-- Renovatie en onderhoud -->
+    <article class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+      <div class="lg:col-span-7">
+        <img src="assets/site-11.jpg" alt="Vernieuwde dakkapel met zwarte boeidelen op een pannendak" class="w-full aspect-[4/3] object-cover rounded-md">
+      </div>
+      <div class="lg:col-span-5">
+        <h3 class="kop font-extrabold text-3xl lg:text-4xl">Renovatie en onderhoud</h3>
+        <p class="mt-4 text-lg leading-relaxed text-antraciet pretty">Een nieuw dak, dakkapel en goten, isolatie van een vrijstaande woning of het restaureren van kozijnen en ramen. We pakken het vakkundig aan, met oog voor wat er al staat.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Projecten -->
+<section id="projecten" class="bg-white py-20 lg:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <h2 class="kop font-extrabold text-4xl lg:text-6xl leading-[1]">Eerder gebouwd</h2>
+      <p class="text-antraciet/80 max-w-md md:text-right">Woningen, verbouwingen en bedrijfspanden, van Culemborg tot Oisterwijk.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+      <figure class="col-span-2 lg:row-span-2 relative">
+        <img src="assets/site-04.jpg" alt="Woonboerderij met rieten kap en zwarte luiken" class="w-full h-full aspect-[4/3] lg:aspect-auto object-cover rounded-md">
+        <figcaption class="absolute left-2 bottom-2 md:left-3 md:bottom-3 bg-white/95 text-inkt text-xs md:text-sm font-semibold px-3 py-1.5 rounded">Nieuwbouw woonboerderij</figcaption>
+      </figure>
+      <figure class="relative">
+        <img src="assets/site-05.jpg" alt="Woning met rieten kap en overkapping" class="w-full aspect-square object-cover rounded-md">
+        <figcaption class="absolute left-2 bottom-2 md:left-3 md:bottom-3 bg-white/95 text-inkt text-xs md:text-sm font-semibold px-3 py-1.5 rounded">Nieuwbouw woonhuis</figcaption>
+      </figure>
+      <figure class="relative">
+        <img src="assets/site-02.jpg" alt="Houten woning tussen de dennen" class="w-full aspect-square object-cover object-left rounded-md">
+        <figcaption class="absolute left-2 bottom-2 md:left-3 md:bottom-3 bg-white/95 text-inkt text-xs md:text-sm font-semibold px-3 py-1.5 rounded">Kampinastaete</figcaption>
+      </figure>
+      <figure class="col-span-2 relative">
+        <img src="assets/site-01.jpg" alt="Moderne bungalow met natuurstenen gevel en tuin" class="w-full aspect-[2.2/1] object-cover rounded-md">
+        <figcaption class="absolute left-2 bottom-2 md:left-3 md:bottom-3 bg-white/95 text-inkt text-xs md:text-sm font-semibold px-3 py-1.5 rounded">Nieuwbouw bungalow</figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-16 grid lg:grid-cols-12 gap-8">
+      <h3 class="lg:col-span-4 kop font-extrabold text-2xl lg:text-3xl balance">Ook voor bedrijven</h3>
+      <ul class="lg:col-span-8 divide-y divide-inkt/10 border-y border-inkt/10">
+        <li class="flex flex-wrap justify-between gap-x-6 py-4"><span class="font-semibold">Realisatie 30 meetingrooms TomTom</span><span class="text-antraciet/70">Amsterdam</span></li>
+        <li class="flex flex-wrap justify-between gap-x-6 py-4"><span class="font-semibold">Verbouwing kantoor TomTom</span><span class="text-antraciet/70">Eindhoven</span></li>
+        <li class="flex flex-wrap justify-between gap-x-6 py-4"><span class="font-semibold">Toiletgroep Albert Heijn</span><span class="text-antraciet/70">Distributiecentrum Geldermalsen</span></li>
+        <li class="flex flex-wrap justify-between gap-x-6 py-4"><span class="font-semibold">Realisatie massagesalon</span><span class="text-antraciet/70">Den Bosch</span></li>
+        <li class="flex flex-wrap justify-between gap-x-6 py-4"><span class="font-semibold">Realisatie wc-groepen</span><span class="text-antraciet/70">De Meern en Almere</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <h2 class="kop font-extrabold text-4xl lg:text-6xl leading-[1] balance">Wat klanten zeggen</h2>
+      <p class="text-antraciet/80"><span class="text-oranjedonker tracking-[2px]" aria-hidden="true">★★★★☆</span> <strong class="text-inkt">4,2</strong> uit 17 reviews op Google</p>
+    </div>
+    <div class="mt-12 grid lg:grid-cols-12 gap-5">
+      <figure class="lg:col-span-7 lg:row-span-2 bg-antraciet text-white rounded-md p-8 lg:p-12 flex flex-col justify-between">
+        <blockquote class="kop-smal text-xl md:text-2xl lg:text-[30px] leading-snug font-medium pretty">"Ik had een verdiepingsvloer die helemaal doorhing, al jaren het was gewoon gevaarlijk<br>Maar wist niet welke bedrijf mij hiermee kon helpen.<br>Toen eenmaal het contact gelegd was, ging het snel<br>Het team van Vreugdenhil heeft een metalen balken profiel in de muur en plafond geconstrueerd waardoor het voor de komende 50 jaar ..."</blockquote>
+        <figcaption class="mt-8 flex items-center gap-3"><span class="text-oranje" aria-label="5 sterren">★★★★★</span><span class="font-semibold">Hans Van Dongen</span></figcaption>
+      </figure>
+      <figure class="lg:col-span-5 bg-white rounded-md p-8">
+        <blockquote class="text-lg leading-relaxed pretty">"Wij hebben onze achterpui laten doen en wat zijn wij blij met het eindresultaat! De mannen werken hard en netjes. Daarnaast hebben ze ons meerdere keren uit de brand geholpen met andere klussen. Wij kunnen de mannen niet vaak genoeg bedanken hiervoor!"</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3"><span class="text-oranjedonker" aria-label="5 sterren">★★★★★</span><span class="font-semibold">Latoya Molevelt</span></figcaption>
+      </figure>
+      <figure class="lg:col-span-5 bg-white rounded-md p-8">
+        <blockquote class="text-lg leading-relaxed pretty">"Oscar en collega's zijn een fijne en betrouwbare aannemer die vanuit wederzijds vertrouwen heel goed werk levert. Denken vanuit hun ervaring mee in het proces en geven goede vrijblijvende adviezen. Kleine klusjes worden zo snel mogelijk afgewerkt. Ook de communicatie is snel, helder (klant)vriendelijk. ..."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3"><span class="text-oranjedonker" aria-label="5 sterren">★★★★★</span><span class="font-semibold">Christiaan Nijholt</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Achter de schermen -->
+<section class="pb-20 lg:pb-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="bg-white rounded-md overflow-hidden grid md:grid-cols-12 items-center">
+      <div class="md:col-span-7 p-8 lg:p-16">
+        <h2 class="kop font-extrabold text-3xl lg:text-5xl leading-[1.02] balance">Kijk mee op de bouwplaats.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-antraciet max-w-xl pretty">Van de eerste fundering tot de laatste plint: op TikTok laten we dagelijks zien waar we mee bezig zijn. Vakwerk, opleveringen en af en toe een video met een knipoog.</p>
+        <p class="mt-6 font-semibold">Zoek op TikTok naar <span class="text-oranjedonker">Vreugdenhil Bouw</span>.</p>
+      </div>
+      <div class="md:col-span-5 bg-beton/60 p-8 lg:p-12 flex justify-center">
+        <img src="assets/site-14.jpg" alt="Oscar Vreugdenhil met een waterpas in een TikTok-video" class="w-56 lg:w-64 aspect-[9/16] object-cover rounded-[22px] border-[6px] border-inkt shadow-[0_24px_40px_-18px_rgba(31,33,36,.6)]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-antraciet text-white py-20 lg:py-28 relative overflow-hidden">
+  <svg class="absolute -right-24 -bottom-20 w-[420px] text-white/[0.05] hidden md:block" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 38V17L20 4l15 13v21" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 relative grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-black text-5xl lg:text-7xl leading-[0.95]">Kennis maken?</h2>
+      <p class="mt-6 text-lg text-white/80 leading-relaxed max-w-md pretty">Vertel ons wat u wilt bouwen of verbouwen. We denken graag met u mee en maken een offerte die tot in detail is uitgewerkt.</p>
+      <a href="tel:+31345525265" class="knop mt-8 inline-flex items-center gap-3 bg-oranje hover:bg-[#F58F35] text-inkt font-bold text-lg rounded-md pl-5 pr-6 py-4">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Bel 0345 52 52 65
+      </a>
+      <p class="mt-4"><a href="mailto:info@vreugdenhilbouw.nl" class="text-white/85 underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-white">info@vreugdenhilbouw.nl</a></p>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-8 text-white/80">
+        <div>
+          <h3 class="font-semibold text-white">Culemborg</h3>
+          <p class="mt-2 leading-relaxed">Beesdseweg 3-11<br>4104 AW Culemborg<br><a href="tel:+31345525265" class="hover:text-oranje">0345 52 52 65</a></p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Beesdseweg+3-11+4104+AW+Culemborg" class="mt-2 inline-block text-sm text-oranje hover:underline">Plan uw route</a>
+        </div>
+        <div>
+          <h3 class="font-semibold text-white">Oisterwijk</h3>
+          <p class="mt-2 leading-relaxed">Parklaan 5<br>5061 JV Oisterwijk<br><a href="tel:+31135912695" class="hover:text-oranje">013 591 26 95</a></p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Parklaan+5+5061+JV+Oisterwijk" class="mt-2 inline-block text-sm text-oranje hover:underline">Plan uw route</a>
+        </div>
+        <div class="sm:col-span-2">
+          <h3 class="font-semibold text-white">Bereikbaar</h3>
+          <p class="mt-2">Maandag tot en met vrijdag van 07:00 tot 16:00. Zaterdag en zondag gesloten.</p>
+        </div>
+      </div>
+    </div>
+
+    <form action="mailto:info@vreugdenhilbouw.nl" method="post" enctype="text/plain" class="lg:col-span-6 bg-white text-inkt rounded-md p-7 lg:p-10 self-start">
+      <h3 class="kop font-extrabold text-2xl">Offerte aanvragen</h3>
+      <p class="mt-1 text-antraciet/75">We nemen zo snel mogelijk contact met u op.</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block"><span class="text-sm font-semibold">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-inkt/20 bg-beton/50 px-3.5 py-3 focus:border-oranje"></label>
+        <label class="block"><span class="text-sm font-semibold">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-md border border-inkt/20 bg-beton/50 px-3.5 py-3 focus:border-oranje"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold">E-mail</span>
+          <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-inkt/20 bg-beton/50 px-3.5 py-3 focus:border-oranje"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold">Onderwerp</span>
+          <select name="onderwerp" class="mt-1.5 w-full rounded-md border border-inkt/20 bg-beton/50 px-3.5 py-3 focus:border-oranje">
+            <option>Nieuwbouw</option><option>Verbouw</option><option>Aanbouw</option><option>Renovatie</option><option>Iets anders</option>
+          </select></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-semibold">Uw plan in het kort</span>
+          <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-md border border-inkt/20 bg-beton/50 px-3.5 py-3 focus:border-oranje"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-6 w-full bg-inkt hover:bg-antraciet text-white font-bold rounded-md py-4">Verstuur aanvraag</button>
+    </form>
+  </div>
+
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 relative mt-16 pt-8 border-t border-white/15">
+    <h3 class="font-semibold text-white">Werkgebied</h3>
+    <p class="mt-2 text-white/65 leading-relaxed max-w-4xl">Culemborg, Geldermalsen, Gorinchem, Hilvarenbeek, Houten, IJsselstein, Leerdam, Moergestel, Oirschot, Oisterwijk, Tiel, Vianen, Zaltbommel, Zeist en omgeving.</p>
+  </div>
+</section>
+</main>
+
+<footer class="bg-inkt text-white/60 text-sm">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-8 flex flex-col md:flex-row gap-3 justify-between">
+    <p>Vreugdenhil Bouw, Beesdseweg 3-11, 4104 AW Culemborg</p>
+    <p><a href="mailto:info@vreugdenhilbouw.nl" class="hover:text-white">info@vreugdenhilbouw.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-antraciet/95 backdrop-blur px-4 py-3 flex gap-3 shadow-[0_-8px_20px_-10px_rgba(0,0,0,.4)]">
+  <a href="tel:+31345525265" class="flex-1 inline-flex items-center justify-center gap-2 bg-oranje text-inkt font-bold rounded-md py-3.5">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel ons
+  </a>
+  <a href="#contact" class="inline-flex items-center justify-center border-2 border-white/40 text-white font-semibold rounded-md px-5">Offerte</a>
+</div>
+
+</body>
+</html>

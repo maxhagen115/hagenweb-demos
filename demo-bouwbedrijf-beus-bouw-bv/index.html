@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beus Bouw | Aanbouw, veranda en buitenverblijf op maat in Culemborg</title>
+<meta name="description" content="Beus Bouw ontwerpt en bouwt aanbouwen, veranda's, overkappingen, tuinhuizen, tuinkantoren en buitenverblijven op maat in Culemborg en de Betuwe.">
+<meta property="og:title" content="Beus Bouw, bouwbedrijf in Culemborg">
+<meta property="og:image" content="assets/site-01.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%231D211F' stroke='%23C98B45' stroke-width='4'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='24' fill='%23ECEAE4' text-anchor='middle'%3EBB%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        zwart: '#1D211F',
+        naad: '#2A2F2C',
+        douglas: '#C98B45',
+        'douglas-d': '#B47836',
+        kalk: '#ECEAE4',
+        grind: '#D8D4CA',
+        mos: '#5A6450',
+      },
+      fontFamily: {
+        kop: ['Archivo', 'system-ui', 'sans-serif'],
+        body: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 800; letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance; }
+  .kop-m { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .planken {
+    background-color: #1D211F;
+    background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0) 0 62px, rgba(0,0,0,.28) 62px 64px, rgba(255,255,255,.025) 64px 65px);
+  }
+  .gevel { clip-path: polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%); }
+  @media (min-width: 640px) { .gevel { clip-path: polygon(50% 0, 100% 24%, 100% 100%, 0 100%, 0 24%); } }
+  .btn { transition: background-color .2s, transform .15s, color .2s; }
+  .btn:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #C98B45; outline-offset: 3px; }
+  .js .hero-foto { animation: opbouw 1.1s cubic-bezier(.2,.7,.2,1) both .1s; }
+  @keyframes opbouw { from { transform: translateY(24px); filter: brightness(.6); } to { transform: none; filter: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-foto { animation: none; } html { scroll-behavior: auto; } }
+  .tegel img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .tegel:hover img { transform: scale(1.03); }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-kalk text-zwart antialiased pb-[72px] md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-douglas focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-douglas text-zwart text-[13px] text-center px-4 py-2">
+  Demo voor Bouwbedrijf Beus Bouw BV, gemaakt door <a href="https://hagenweb.nl" class="font-semibold underline underline-offset-2">Hagenweb</a>
+</div>
+
+<!-- Hero met navigatie -->
+<header class="planken text-kalk relative overflow-hidden">
+  <nav class="max-w-[1280px] mx-auto px-5 md:px-10 flex items-center justify-between h-16 md:h-20" aria-label="Hoofdmenu">
+    <a href="#" class="flex items-center gap-3" aria-label="Beus Bouw, naar boven">
+      <span class="grid place-items-center w-11 h-11 rounded-full border-2 border-kalk font-kop font-black text-[15px] tracking-tight" style="font-stretch:100%">BB</span>
+      <span class="kop-m text-xl">Beus Bouw</span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-8 text-[15px] text-kalk/80">
+      <li><a class="hover:text-douglas transition-colors" href="#werk">Wat wij bouwen</a></li>
+      <li><a class="hover:text-douglas transition-colors" href="#werkwijze">Werkwijze</a></li>
+      <li><a class="hover:text-douglas transition-colors" href="#reviews">Reviews</a></li>
+      <li><a class="hover:text-douglas transition-colors" href="#showroom">Showroom</a></li>
+      <li><a class="hover:text-douglas transition-colors" href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+31622117833" class="btn hidden sm:inline-flex items-center gap-2 border border-kalk/40 hover:border-douglas hover:text-douglas rounded-full px-4 py-2 text-[15px] font-semibold">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      06 22 11 78 33
+    </a>
+  </nav>
+
+  <div class="max-w-[1280px] mx-auto px-5 md:px-10 grid lg:grid-cols-[1.15fr_1fr] gap-6 lg:gap-14 items-end pt-1 md:pt-10">
+    <div class="pb-10 lg:pb-24 order-2 lg:order-1">
+      <p class="text-douglas font-semibold text-[15px] mb-3 md:mb-4">Bouwbedrijf in Culemborg en de Betuwe</p>
+      <h1 class="kop text-[40px] sm:text-6xl xl:text-[74px]">Een kamer erbij, gewoon in uw tuin.</h1>
+      <p class="mt-5 md:mt-6 md:text-lg text-kalk/80 max-w-[34rem] leading-relaxed">Aanbouw, veranda, overkapping of buitenverblijf. Wij tekenen het, maken het in eigen werkplaats en bouwen het met ons eigen team. Op maat van uw huis, nooit uit een catalogus.</p>
+      <div class="mt-7 md:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31622117833" class="btn inline-flex items-center gap-3 bg-douglas hover:bg-[#d89a54] text-zwart font-bold text-lg rounded-full pl-5 pr-7 py-4 shadow-[0_10px_30px_-10px_rgba(201,139,69,.6)]">
+          <span class="grid place-items-center w-9 h-9 rounded-full bg-zwart text-douglas"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span>
+          Bel 06 22 11 78 33
+        </a>
+        <a href="#contact" class="font-semibold text-kalk underline decoration-douglas decoration-2 underline-offset-[6px] hover:text-douglas transition-colors">Vraag een offerte aan</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-[15px] text-kalk/75">
+        <span class="text-douglas tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-kalk">4,9</strong> uit 30 Google-reviews</span>
+      </p>
+    </div>
+    <div class="relative -mx-5 sm:mx-0 order-1 lg:order-2">
+      <div class="hero-foto gevel relative aspect-[2/1] sm:aspect-[4/3] lg:aspect-[4/4.6] bg-naad">
+        <img src="assets/site-01.webp" alt="Gezin aan tafel in een houten buitenverblijf met glazen wanden, in een groene tuin bij avondlicht" class="absolute inset-0 w-full h-full object-cover object-[42%_60%]">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Over ons -->
+<section class="max-w-[1280px] mx-auto px-5 md:px-10 py-20 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+  <div class="lg:col-span-6 lg:order-2">
+    <h2 class="kop text-4xl md:text-5xl">Geen bouwpakket. Geen standaardmodel.</h2>
+    <div class="mt-7 space-y-5 text-lg leading-relaxed text-zwart/80 max-w-[36rem]">
+      <p>Beus Bouw ontwerpt en bouwt voor mensen die hun woning willen uitbreiden of van hun tuin een plek willen maken waar ze echt zitten. Elk plan volgt de maten en details van uw huis.</p>
+      <p>Wanden en dakelementen maken wij zelf in onze werkplaats in Culemborg. De montage doet ons eigen team. Ontwerp, productie en bouw blijven in dezelfde handen, en u heeft van het eerste bezoek tot de nazorg één vast aanspreekpunt.</p>
+    </div>
+    <dl class="mt-10 grid grid-cols-2 gap-6 max-w-[34rem] border-t border-zwart/15 pt-6">
+      <div><dt class="text-sm text-zwart/60">Reactie op uw aanvraag</dt><dd class="kop-m text-xl mt-1">Binnen één werkdag</dd></div>
+      <div><dt class="text-sm text-zwart/60">Start na akkoord</dt><dd class="kop-m text-xl mt-1">Meestal 2 tot 12 weken</dd></div>
+    </dl>
+  </div>
+  <div class="lg:col-span-6 lg:order-1 relative">
+    <img src="assets/google-03.jpg" alt="Houten veranda met spotjes tegen een bakstenen woning, met kunstgras en plantenbakken" class="w-[78%] aspect-[4/5] object-cover rounded-[4px]">
+    <img src="assets/site-02.webp" alt="Houtmonsters in verschillende kleuren en afwerkingen in de showroom" class="absolute right-0 bottom-[-8%] w-[52%] aspect-square object-cover rounded-[4px] border-[6px] border-kalk">
+  </div>
+</section>
+
+<!-- Wat wij bouwen -->
+<section id="werk" class="bg-grind/60 py-20 md:py-28">
+  <div class="max-w-[1280px] mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+      <h2 class="kop text-4xl md:text-5xl max-w-[16ch]">Zes soorten werk, allemaal op maat.</h2>
+      <p class="text-lg text-zwart/75 max-w-[30rem] leading-relaxed">Elk project begint bij uw woning, uw tuin en hoe u die gebruikt. Vergunning, constructieberekening en fundering regelen wij er gewoon bij.</p>
+    </div>
+
+    <div class="grid md:grid-cols-6 gap-4 md:gap-5">
+      <!-- Aanbouw -->
+      <article class="tegel md:col-span-4 relative overflow-hidden rounded-[4px] bg-zwart text-kalk min-h-[360px] md:min-h-[460px] flex items-end">
+        <img src="assets/site-04.webp" alt="Aanbouw met verticale houten gevelbekleding naast een bakstenen woning" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-zwart/90 via-zwart/30 to-transparent"></div>
+        <div class="relative p-6 md:p-8 max-w-[30rem]">
+          <h3 class="kop-m text-3xl">Aanbouw</h3>
+          <p class="mt-2 text-kalk/85 leading-relaxed">Meer ruimte zonder te verhuizen. Gelijke vloerhoogte, doorlopend daglicht en een gevel die de lijn van uw woning netjes doortrekt.</p>
+        </div>
+      </article>
+      <!-- Veranda -->
+      <article class="tegel md:col-span-2 relative overflow-hidden rounded-[4px] bg-zwart text-kalk min-h-[360px] md:min-h-[460px] flex items-end">
+        <img src="assets/site-10.webp" alt="Veranda met glazen schuifwanden tegen de achtergevel, met loungebank" class="absolute inset-0 w-full h-full object-cover object-[30%_50%]">
+        <div class="absolute inset-0 bg-gradient-to-t from-zwart/90 via-zwart/25 to-transparent"></div>
+        <div class="relative p-6 md:p-7">
+          <h3 class="kop-m text-3xl">Veranda</h3>
+          <p class="mt-2 text-kalk/85 leading-relaxed">Droog zitten in maart, schaduw in juli en met glazen schuifwanden ook in oktober nog een luwe plek.</p>
+        </div>
+      </article>
+      <!-- Overkapping -->
+      <article class="tegel md:col-span-2 relative overflow-hidden rounded-[4px] bg-zwart text-kalk min-h-[360px] md:min-h-[420px] flex items-end">
+        <img src="assets/google-02.jpg" alt="Houten overkapping met glazen wanden en een vlonder in een achtertuin" class="absolute inset-0 w-full h-full object-cover object-[50%_45%]">
+        <div class="absolute inset-0 bg-gradient-to-t from-zwart/90 via-zwart/25 to-transparent"></div>
+        <div class="relative p-6 md:p-7">
+          <h3 class="kop-m text-3xl">Overkapping</h3>
+          <p class="mt-2 text-kalk/85 leading-relaxed">Een vaste, droge plek voor de loungehoek, de auto, de fietsen of het haardhout. In douglas, lariks of eiken.</p>
+        </div>
+      </article>
+      <!-- Tuinkantoor: typografisch -->
+      <article class="md:col-span-2 planken text-kalk rounded-[4px] min-h-[300px] md:min-h-[420px] p-6 md:p-7 flex flex-col justify-between">
+        <svg class="w-14 h-14 text-douglas" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M8 28 32 10l24 18"/><path d="M14 24v30h36V24"/><rect x="21" y="32" width="22" height="12"/></svg>
+        <div>
+          <h3 class="kop-m text-3xl">Tuinkantoor</h3>
+          <p class="mt-2 text-kalk/85 leading-relaxed">Een volwaardige werkplek los van het huis. Geïsoleerd, stil, warm in de winter en koel in de zomer. Elektra, data en ventilatie regelen wij.</p>
+        </div>
+      </article>
+      <!-- Tuinhuis -->
+      <article class="tegel md:col-span-2 relative overflow-hidden rounded-[4px] bg-zwart text-kalk min-h-[360px] md:min-h-[420px] flex items-end">
+        <img src="assets/google-01.jpg" alt="Zwart gebeitst houten tuinhuis met douglas kozijnen en een overkapping met zithoek" class="absolute inset-0 w-full h-full object-cover object-[65%_50%]">
+        <div class="absolute inset-0 bg-gradient-to-t from-zwart/90 via-zwart/25 to-transparent"></div>
+        <div class="relative p-6 md:p-7">
+          <h3 class="kop-m text-3xl">Tuinhuis</h3>
+          <p class="mt-2 text-kalk/85 leading-relaxed">Berging, hobbyruimte of tuinkamer, met dezelfde detaillering als een aanbouw. Ook over tien jaar nog netjes.</p>
+        </div>
+      </article>
+      <!-- Buitenverblijf -->
+      <article class="tegel md:col-span-6 relative overflow-hidden rounded-[4px] bg-zwart text-kalk min-h-[380px] md:min-h-[440px] flex items-end">
+        <img src="assets/google-04.jpg" alt="Houten buitenverblijf met glazen pui in een tuin vol siergras, in de middagzon" class="absolute inset-0 w-full h-full object-cover object-[50%_40%]">
+        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-zwart/95 via-zwart/60 to-zwart/0"></div>
+        <div class="relative p-6 md:p-10 max-w-[32rem]">
+          <h3 class="kop-m text-3xl md:text-4xl">Buitenverblijf</h3>
+          <p class="mt-3 text-kalk/85 leading-relaxed">Een tweede woonkamer, maar dan buiten. Loungen, koken en opbergen onder één dak, met glazen schuifwanden die de ruimte het hele jaar bruikbaar maken.</p>
+          <a href="#contact" class="btn inline-block mt-6 font-semibold underline decoration-douglas decoration-2 underline-offset-[6px] hover:text-douglas">Bespreek uw plan</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Fotoband met review -->
+<section class="relative bg-zwart text-kalk overflow-hidden">
+  <img src="assets/site-07.webp" alt="Zwart gebeitste schuur met zadeldak, douglas frame en wandverlichting bij zonsondergang" class="absolute inset-0 w-full h-full object-cover object-[50%_55%]">
+  <div class="absolute inset-0 bg-gradient-to-r from-zwart/90 via-zwart/60 to-zwart/10"></div>
+  <figure class="relative max-w-[1280px] mx-auto px-5 md:px-10 py-24 md:py-36">
+    <blockquote class="kop-m text-2xl md:text-4xl max-w-[22ch] md:max-w-[26ch] leading-[1.2]">"Kevin heeft mijn schuur gebouwd wat een mooie Mancave is geworden."</blockquote>
+    <figcaption class="mt-6 text-kalk/80 max-w-[34rem] leading-relaxed">
+      "Mijn poort had wat gebreken na een tijdje en deze heeft hij ook weer keurig gerepareerd evenals het stellen van mijn schuifdeur. Top bedrijf en een top service!"
+      <span class="block mt-3 text-douglas font-semibold">Arie de Beuker, via Google</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="max-w-[1280px] mx-auto px-5 md:px-10 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <h2 class="kop text-4xl md:text-5xl">Van eerste schets tot oplevering.</h2>
+      <p class="mt-6 text-lg text-zwart/75 leading-relaxed">Een vast team en een eigen werkplaats. U hoeft zelf geen partijen aan elkaar te knopen en belt steeds met dezelfde persoon.</p>
+      <a href="tel:+31622117833" class="btn mt-8 inline-flex items-center gap-2 bg-zwart text-kalk hover:bg-naad rounded-full px-6 py-3 font-semibold">Plan een gesprek: 06 22 11 78 33</a>
+    </div>
+    <ol class="lg:col-span-8 lg:pl-8">
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-7 border-t border-zwart/15">
+        <span class="kop text-3xl md:text-4xl text-douglas">1</span>
+        <div><h3 class="kop-m text-xl md:text-2xl">Gesprek bij u thuis of in de showroom</h3><p class="mt-2 text-zwart/75 leading-relaxed max-w-[38rem]">We kijken naar uw huis, uw tuin en wat u ermee wilt. Liever eerst materialen zien? Dat kan in Waardenburg.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-7 border-t border-zwart/15">
+        <span class="kop text-3xl md:text-4xl text-douglas">2</span>
+        <div><h3 class="kop-m text-xl md:text-2xl">Schets en een heldere offerte</h3><p class="mt-2 text-zwart/75 leading-relaxed max-w-[38rem]">Materialen, maten en werkzaamheden staan er per onderdeel in. Zo ziet u waar het geld naartoe gaat en kunt u zelf schuiven.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-7 border-t border-zwart/15">
+        <span class="kop text-3xl md:text-4xl text-douglas">3</span>
+        <div><h3 class="kop-m text-xl md:text-2xl">Tekenwerk, berekening en vergunning</h3><p class="mt-2 text-zwart/75 leading-relaxed max-w-[38rem]">Is er een omgevingsvergunning nodig, dan maken wij de bouwtekeningen en de constructieberekening en regelen wij het contact met de gemeente.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-7 border-t border-zwart/15">
+        <span class="kop text-3xl md:text-4xl text-douglas">4</span>
+        <div><h3 class="kop-m text-xl md:text-2xl">Op maat gemaakt in onze werkplaats</h3><p class="mt-2 text-zwart/75 leading-relaxed max-w-[38rem]">Wanden en dakelementen bereiden we voor in Culemborg. Daardoor blijft de bouwtijd bij u thuis kort.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-7 border-y border-zwart/15">
+        <span class="kop text-3xl md:text-4xl text-douglas">5</span>
+        <div><h3 class="kop-m text-xl md:text-2xl">Bouw, oplevering en nazorg</h3><p class="mt-2 text-zwart/75 leading-relaxed max-w-[38rem]">Ons eigen team doet het grondwerk, de fundering, de montage en de afwerking tot in de details. Na de oplevering blijven we bereikbaar.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-grind/60 py-20 md:py-28">
+  <div class="max-w-[1280px] mx-auto px-5 md:px-10">
+    <h2 class="kop text-4xl md:text-5xl max-w-[15ch] mb-12">Wat klanten zeggen.</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
+    <div class="flex flex-col gap-5">
+      <figure class="bg-kalk rounded-[4px] p-7">
+        <p class="text-douglas tracking-[2px] text-sm" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-4 leading-relaxed text-zwart/85">"Extra overkaping aan het huis, tegelwerk, kunstgras, grind en plantenbak laten verzorgen door Beus Bouw. Goede communicatie en snel antwoord. Denken goed mee en zijn niet te beroerd om extra werk aan te pakken. Heel erg tevreden met onze tuin."</blockquote>
+        <figcaption class="mt-5 font-semibold">J G</figcaption>
+      </figure>
+      <figure class="bg-zwart text-kalk rounded-[4px] p-7">
+        <p class="text-douglas tracking-[2px] text-sm" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-4 kop-m text-xl leading-snug">"Wij zijn erg blij met onze overkapping, een mooie verlenging van het huis. De communicatie verliep fijn en snel, de afwerking is netjes en ze leveren goede services!"</blockquote>
+        <figcaption class="mt-5 font-semibold text-douglas">Saskia Plomp</figcaption>
+      </figure>
+    </div>
+    <div class="flex flex-col gap-5">
+      <figure class="bg-kalk rounded-[4px] p-7">
+        <p class="text-douglas tracking-[2px] text-sm" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-4 leading-relaxed text-zwart/85">"Fijne communicatie zowel via mail, telefonisch als via de app. Klus is goed gepland en uitgevoerd door de tuinmannen de de Beus Bouw. Zelfs extra werkzaamheden hebben ze zonder problemen op zich genomen alles was op tijd af. Een klemmende deur is achteraf prima en direct opgelost. We genieten van een veranda en schuur"</blockquote>
+        <figcaption class="mt-5 font-semibold">mevrouw ros</figcaption>
+      </figure>
+      <figure class="rounded-[4px] overflow-hidden">
+        <img src="assets/google-06.jpg" alt="Aangelegde achtertuin met houtlook tegels, kunstgras, verhoogde plantenbakken en een overkapping met loungebank" class="w-full aspect-[4/3] object-cover">
+      </figure>
+    </div>
+    <div class="flex flex-col gap-5">
+      <figure class="bg-kalk rounded-[4px] p-7">
+        <p class="text-douglas tracking-[2px] text-sm" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-4 leading-relaxed text-zwart/85">"Beus Bouw heeft onze hele tuin leeg gehaald en alles keurig afgevoerd, en daarna een mooie overkapping met schuur, 2 verhoogde bloembakken en nieuwe schutting en poort geplaatst.<br><br>Ze hebben ook alles keurig betegeld met de mooie hout look tegels ( ook in de reeds bestaande aluminium veranda die we al hadden).<br><br>Michel,"</blockquote>
+        <figcaption class="mt-5 font-semibold">marco van heteren</figcaption>
+      </figure>
+      <div class="planken text-kalk rounded-[4px] p-7 grid grid-cols-2 gap-6">
+        <div><p class="kop text-5xl">4,9</p><p class="text-sm text-kalk/70 mt-2">uit 30 reviews op Google</p></div>
+        <div><p class="kop text-5xl">9,0</p><p class="text-sm text-kalk/70 mt-2">uit 113 reviews op Trustoo</p></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- Showroom -->
+<section id="showroom" class="planken text-kalk py-20 md:py-28 overflow-hidden">
+  <div class="max-w-[1280px] mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-7 relative">
+      <img src="assets/google-07.jpg" alt="Showroom in Waardenburg met complete opstellingen in hout en glas, bezoekers aan tafel" class="w-full aspect-[16/10] object-cover rounded-[4px]">
+    </div>
+    <div class="lg:col-span-5">
+      <h2 class="kop text-4xl md:text-5xl">Eerst voelen, dan kiezen.</h2>
+      <p class="mt-6 text-lg text-kalk/80 leading-relaxed">In onze showroom in Waardenburg staan complete opstellingen en materiaalmonsters. U vergelijkt houtsoorten, kleuren en afwerkingen naast elkaar en ziet hoe een detail in het echt uitpakt.</p>
+      <p class="mt-6 text-kalk"><span class="font-semibold">Ringweistraat 5, Waardenburg</span><br><span class="text-kalk/70">Bezoek op afspraak</span></p>
+      <a href="tel:+31622117833" class="btn mt-8 inline-flex items-center gap-2 bg-douglas text-zwart hover:bg-[#d89a54] rounded-full px-6 py-3 font-bold">Bel voor een afspraak</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="max-w-[1280px] mx-auto px-5 md:px-10 py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+  <div class="lg:col-span-5">
+    <h2 class="kop text-4xl md:text-5xl">Vertel wat u voor ogen heeft.</h2>
+    <p class="mt-6 text-lg text-zwart/75 leading-relaxed">Bellen kan ook gewoon, van maandag tot en met zaterdag vanaf 6 uur 's ochtends. Op een bericht reageren wij binnen één werkdag.</p>
+    <a href="tel:+31622117833" class="btn mt-8 flex items-center justify-between gap-4 bg-zwart text-kalk hover:bg-naad rounded-[4px] px-6 py-5">
+      <span><span class="block text-sm text-kalk/60">Bel direct</span><span class="kop-m text-2xl">06 22 11 78 33</span></span>
+      <span class="grid place-items-center w-11 h-11 rounded-full bg-douglas text-zwart"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></span>
+    </a>
+    <a href="mailto:info@beusbouw.nl" class="mt-3 flex items-center justify-between gap-4 border border-zwart/20 hover:border-zwart rounded-[4px] px-6 py-4 transition-colors">
+      <span><span class="block text-sm text-zwart/60">Mail</span><span class="font-semibold text-lg">info@beusbouw.nl</span></span>
+    </a>
+    <div class="mt-10 grid sm:grid-cols-2 gap-8 text-[15px]">
+      <div>
+        <h3 class="font-semibold">Kantoor</h3>
+        <p class="mt-2 text-zwart/75 leading-relaxed">Parallelweg West 11<br>4104 AX Culemborg</p>
+        <h3 class="font-semibold mt-5">Showroom</h3>
+        <p class="mt-2 text-zwart/75 leading-relaxed">Ringweistraat 5<br>Waardenburg (op afspraak)</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Bereikbaar</h3>
+        <table class="mt-2 text-zwart/75 [&_td]:py-0.5">
+          <tr><td class="pr-4">ma t/m za</td><td class="tabular-nums">06:00 tot 20:00</td></tr>
+          <tr><td class="pr-4">zondag</td><td>gesloten</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="lg:col-span-7">
+    <form action="mailto:info@beusbouw.nl" method="post" enctype="text/plain" class="bg-grind/60 rounded-[4px] p-6 md:p-10 grid sm:grid-cols-2 gap-5">
+      <label class="block"><span class="text-sm font-semibold">Naam</span>
+        <input required name="naam" autocomplete="name" class="mt-2 w-full bg-kalk border border-zwart/15 rounded-[4px] px-4 py-3 focus:border-douglas outline-none"></label>
+      <label class="block"><span class="text-sm font-semibold">Telefoon</span>
+        <input name="telefoon" type="tel" autocomplete="tel" class="mt-2 w-full bg-kalk border border-zwart/15 rounded-[4px] px-4 py-3 focus:border-douglas outline-none"></label>
+      <label class="block sm:col-span-2"><span class="text-sm font-semibold">E-mailadres</span>
+        <input required name="email" type="email" autocomplete="email" class="mt-2 w-full bg-kalk border border-zwart/15 rounded-[4px] px-4 py-3 focus:border-douglas outline-none"></label>
+      <fieldset class="sm:col-span-2">
+        <legend class="text-sm font-semibold">Waar denkt u aan?</legend>
+        <div class="mt-3 flex flex-wrap gap-2 text-[15px]">
+          <label class="cursor-pointer"><input type="checkbox" name="plan" value="Aanbouw" class="peer sr-only"><span class="block border border-zwart/20 rounded-full px-4 py-2 peer-checked:bg-zwart peer-checked:text-kalk peer-focus-visible:outline peer-focus-visible:outline-douglas">Aanbouw</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="plan" value="Veranda" class="peer sr-only"><span class="block border border-zwart/20 rounded-full px-4 py-2 peer-checked:bg-zwart peer-checked:text-kalk peer-focus-visible:outline peer-focus-visible:outline-douglas">Veranda</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="plan" value="Overkapping" class="peer sr-only"><span class="block border border-zwart/20 rounded-full px-4 py-2 peer-checked:bg-zwart peer-checked:text-kalk peer-focus-visible:outline peer-focus-visible:outline-douglas">Overkapping</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="plan" value="Tuinhuis" class="peer sr-only"><span class="block border border-zwart/20 rounded-full px-4 py-2 peer-checked:bg-zwart peer-checked:text-kalk peer-focus-visible:outline peer-focus-visible:outline-douglas">Tuinhuis</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="plan" value="Tuinkantoor" class="peer sr-only"><span class="block border border-zwart/20 rounded-full px-4 py-2 peer-checked:bg-zwart peer-checked:text-kalk peer-focus-visible:outline peer-focus-visible:outline-douglas">Tuinkantoor</span></label>
+          <label class="cursor-pointer"><input type="checkbox" name="plan" value="Buitenverblijf" class="peer sr-only"><span class="block border border-zwart/20 rounded-full px-4 py-2 peer-checked:bg-zwart peer-checked:text-kalk peer-focus-visible:outline peer-focus-visible:outline-douglas">Buitenverblijf</span></label>
+        </div>
+      </fieldset>
+      <label class="block sm:col-span-2"><span class="text-sm font-semibold">Uw plan in het kort</span>
+        <textarea required name="bericht" rows="5" class="mt-2 w-full bg-kalk border border-zwart/15 rounded-[4px] px-4 py-3 focus:border-douglas outline-none" placeholder="Bijvoorbeeld: een veranda van ongeveer 4 meter breed tegen de achtergevel."></textarea></label>
+      <div class="sm:col-span-2 flex flex-wrap items-center gap-5">
+        <button type="submit" class="btn bg-douglas hover:bg-[#d89a54] text-zwart font-bold rounded-full px-7 py-4">Vraag een offerte aan</button>
+        <p class="text-sm text-zwart/65">Binnen één werkdag persoonlijk contact.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Werkgebied -->
+<section class="border-t border-zwart/10">
+  <div class="max-w-[1280px] mx-auto px-5 md:px-10 py-14 grid md:grid-cols-12 gap-6 items-baseline">
+    <h2 class="kop-m text-2xl md:col-span-4">Werkgebied</h2>
+    <p class="md:col-span-8 text-lg text-zwart/75 leading-relaxed">Vanuit Culemborg werken wij door de hele Betuwe en het Rivierengebied: Culemborg, Geldermalsen, Zaltbommel, Tiel, Beesd, Buren, Meteren, Waardenburg en de dorpen en buitengebieden daaromheen. Woont u net buiten dit gebied? Bel gerust, in het eerste gesprek is snel duidelijk of wij uw plan goed kunnen uitvoeren.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="planken text-kalk/75 text-[15px]">
+  <div class="max-w-[1280px] mx-auto px-5 md:px-10 py-14 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-3 text-kalk">
+        <span class="grid place-items-center w-11 h-11 rounded-full border-2 border-kalk font-kop font-black text-[15px]">BB</span>
+        <span class="kop-m text-xl">Beus Bouw</span>
+      </div>
+      <p class="mt-4 max-w-[26rem] leading-relaxed">Aanbouw, veranda, overkapping, tuinhuis, tuinkantoor en buitenverblijf op maat, in Culemborg en de Betuwe.</p>
+    </div>
+    <div class="md:col-span-4 leading-relaxed">
+      <p>Parallelweg West 11, 4104 AX Culemborg</p>
+      <p><a class="hover:text-douglas" href="tel:+31622117833">06 22 11 78 33</a></p>
+      <p><a class="hover:text-douglas" href="mailto:info@beusbouw.nl">info@beusbouw.nl</a></p>
+      <p class="mt-3">KvK 88783774</p>
+      <p>Erkend leerbedrijf SBB</p>
+    </div>
+    <div class="md:col-span-3 leading-relaxed text-sm text-kalk/55 md:text-right">
+      <p>Bouwbedrijf Beus Bouw BV</p>
+      <p class="mt-3">Demo gemaakt door <a href="https://hagenweb.nl" class="underline hover:text-douglas">Hagenweb</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-zwart/95 backdrop-blur border-t border-kalk/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31622117833" class="btn flex-1 flex items-center justify-center gap-2 bg-douglas text-zwart font-bold rounded-full py-3">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel ons
+  </a>
+  <a href="#contact" class="btn flex-1 flex items-center justify-center border border-kalk/30 text-kalk font-semibold rounded-full py-3">Offerte</a>
+</div>
+
+</body>
+</html>

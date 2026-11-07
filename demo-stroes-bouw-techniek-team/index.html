@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stroes Bouw & Techniek Team | Bouw, techniek en klimaat in Culemborg</title>
+<meta name="description" content="Verbouwen, installeren en verduurzamen met één team uit Culemborg. Badkamers, dakwerk, warmtepompen en airco's. Dag en nacht bereikbaar: 0345 530 679.">
+<meta property="og:title" content="Stroes Bouw & Techniek Team, Culemborg">
+<meta property="og:image" content="assets/site-13.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314336a'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='20' fill='%23ffffff'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#14336a', 700: '#102a58', 900: '#0b1f42' },
+          ink: '#0e1b30',
+          oranje: { DEFAULT: '#e0581b', 600: '#c94b12' },
+          mist: '#eef1f5',
+          lijn: '#c9d2df',
+          groen: '#5aa845'
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          sans: ['"Public Sans"', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; color: #0e1b30; background: #eef1f5; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-weight: 800; letter-spacing: -0.025em; line-height: 1.12; text-wrap: balance; }
+  .kop-m { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 108%; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Blauwdruk-raster, zoals een bouwtekening */
+  .blauwdruk {
+    background-color: #14336a;
+    background-image:
+      linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+    background-position: -1px -1px;
+  }
+
+  /* Hero-foto met schuine rand (dakhelling) */
+  .hero-foto { clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 100%); }
+  @media (min-width: 1024px) { .hero-foto { clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%); } }
+
+  /* Hulplijnen die voorbij de hoeken doorlopen, zoals in het logo */
+  .hulplijn { position: absolute; background: rgba(255,255,255,.35); pointer-events: none; }
+
+  .knop { transition: background-color .2s, transform .15s, box-shadow .2s; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #e0581b; outline-offset: 3px; border-radius: 4px; }
+
+  .foto-zoom img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .foto-zoom:hover img { transform: scale(1.04); }
+
+  /* Animatie alleen als JS draait */
+  .js .opkomst { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .js .opkomst.zichtbaar { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .opkomst { opacity: 1; transform: none; transition: none; }
+    .foto-zoom img, .knop { transition: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="pb-20 md:pb-0">
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-ink text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Stroes Bouw &amp; Techniek Team, gemaakt door <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="blauwdruk text-white border-b border-white/10">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3" aria-label="Stroes, naar boven">
+      <span class="relative inline-block px-1">
+        <span class="absolute -left-2 -right-2 top-0 h-px bg-white/40"></span>
+        <span class="absolute -left-2 -right-2 bottom-0 h-px bg-white/40"></span>
+        <span class="absolute left-0 -top-2 -bottom-2 w-px bg-white/40"></span>
+        <span class="absolute right-0 -top-2 -bottom-2 w-px bg-white/40"></span>
+        <span class="kop leading-[1.08] text-[26px] leading-none tracking-tight block py-1">Stroes</span>
+      </span>
+      <span class="hidden sm:flex flex-col text-[11px] leading-[1.15] font-semibold border-l border-white/25 pl-3">
+        <span class="text-white/85">bouw</span><span class="text-[#ff8a4c]">techniek</span><span class="text-[#8fd178]">klimaat</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-white/85" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-white">Diensten</a>
+      <a href="#projecten" class="hover:text-white">Projecten</a>
+      <a href="#werkwijze" class="hover:text-white">Werkwijze</a>
+      <a href="#reviews" class="hover:text-white">Reviews</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+    <a href="tel:0345530679" class="knop inline-flex items-center gap-2 rounded-md bg-white/10 hover:bg-white/20 border border-white/20 px-4 py-2.5 text-[15px] font-semibold">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">0345 530 679</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="blauwdruk text-white relative overflow-hidden">
+  <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:min-h-[640px]">
+    <div class="relative z-10 px-5 md:px-8 pt-10 pb-10 lg:py-24 lg:pl-[max(2rem,calc((100vw-1320px)/2+2rem))] lg:pr-4 flex flex-col justify-center">
+      <p class="text-[15px] font-semibold text-white/75 mb-5">Bouw, techniek en klimaat in Culemborg</p>
+      <h1 class="kop leading-[1.08] text-[44px] sm:text-6xl xl:text-[76px]">Eén belletje, <span class="whitespace-nowrap">alles geregeld.</span></h1>
+      <p class="mt-6 text-lg leading-relaxed text-white/85 max-w-[30rem]">Van badkamer tot dakgoot, van warmtepomp tot meterkast. Eén team uit Culemborg dat het van A tot Z voor je regelt, met één vast aanspreekpunt. Dag en nacht bereikbaar.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:0345530679" class="knop inline-flex items-center gap-3 rounded-lg bg-oranje hover:bg-oranje-600 px-7 py-[18px] text-lg font-bold shadow-[0_10px_30px_-10px_rgba(224,88,27,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0345 530 679
+        </a>
+        <a href="#contact" class="font-semibold text-white underline decoration-white/40 underline-offset-[6px] hover:decoration-oranje">Vrijblijvende offerte</a>
+      </div>
+      <a href="#reviews" class="mt-9 inline-flex items-center gap-3 text-[15px] text-white/80 hover:text-white w-fit">
+        <span class="flex text-[#ffb547]" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+        </span>
+        <span><strong class="text-white font-semibold">4,8</strong> uit 42 Google-reviews</span>
+      </a>
+    </div>
+
+    <div class="relative h-[340px] sm:h-[440px] lg:h-auto">
+      <img src="assets/site-13.webp" alt="Het team van Stroes in de werkplaats in Culemborg, met collega's aan het werk op de achtergrond" class="hero-foto absolute inset-0 w-full h-full object-cover object-[72%_center]">
+      <!-- hulplijnen -->
+      <span class="hulplijn hidden lg:block left-[16%] -top-0 h-px w-[84%]" style="top:28px"></span>
+      <span class="hulplijn hidden lg:block bottom-7 left-0 h-px w-full" style="left:-40px;width:calc(100% + 40px)"></span>
+      <span class="hulplijn hidden lg:block top-0 bottom-0 w-px" style="left:calc(8% - 1px);top:-40px;bottom:-40px;transform:skewX(-0deg);background:linear-gradient(rgba(255,255,255,.0),rgba(255,255,255,.35) 15%,rgba(255,255,255,.35) 85%,rgba(255,255,255,0))"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Spoed -->
+<section class="bg-navy-900 text-white">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 py-7 md:py-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-10 border-l-4 border-oranje md:border-l-0">
+    <div class="md:border-l-4 md:border-oranje md:pl-6">
+      <h2 class="kop-m leading-[1.12] text-xl md:text-2xl">Lekkage of storing? We komen ook 's nachts.</h2>
+      <p class="text-white/75 mt-1">Onze spoedservice staat 24/7 klaar voor storingen, lekkages en andere acute problemen.</p>
+    </div>
+    <a href="tel:0345530679" class="knop md:ml-auto shrink-0 inline-flex items-center gap-2 font-bold text-lg text-white border-b-2 border-oranje pb-1 hover:text-[#ff8a4c] w-fit">Spoed: 0345 530 679</a>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="py-20 md:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14 md:mb-20">
+      <h2 class="kop leading-[1.08] text-4xl md:text-[56px]">Drie vakken, één team.</h2>
+      <p class="mt-5 text-lg text-ink/75 leading-relaxed">Verbouwen, installeren en verduurzamen hangen in een huis altijd samen. Daarom doen we het allemaal zelf, en klopt het bouwkundig en technisch tot in de puntjes.</p>
+    </div>
+
+    <div class="space-y-20 md:space-y-28">
+      <!-- Bouw -->
+      <article class="opkomst grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+        <div class="md:col-span-7 foto-zoom overflow-hidden rounded-xl aspect-[4/3] md:aspect-[5/4]">
+          <img src="assets/google-01.jpg" alt="Nieuwe badkamer met dubbel wastafelmeubel, ronde verlichte spiegels en staande wandtegels" class="w-full h-full object-cover object-[center_45%]" loading="lazy">
+        </div>
+        <div class="md:col-span-5">
+          <p class="font-semibold text-oranje-600 mb-3">Bouw</p>
+          <h3 class="kop-m leading-[1.12] text-3xl md:text-[40px]">Van verbouw tot nieuwbouw</h3>
+          <p class="mt-5 text-ink/75 leading-relaxed">Een nieuwe badkamer, een leefkeuken of een schuur die woonruimte wordt. Wij denken mee over de indeling, isolatie en ventilatie en nemen elektra, leidingwerk en verwarming direct mee. Van ruwbouw tot de laatste afwerking.</p>
+          <ul class="mt-7 grid grid-cols-2 gap-x-6 text-[15px] font-medium border-t border-lijn">
+            <li class="py-3 border-b border-lijn">Badkamer</li>
+            <li class="py-3 border-b border-lijn">Keuken</li>
+            <li class="py-3 border-b border-lijn">Zolder</li>
+            <li class="py-3 border-b border-lijn">Schuur</li>
+            <li class="py-3 border-b border-lijn">Kantoorruimte</li>
+            <li class="py-3 border-b border-lijn">Renovatie</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Techniek -->
+      <article class="opkomst grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+        <div class="md:col-span-7 md:order-2 foto-zoom overflow-hidden rounded-xl aspect-[4/3] md:aspect-[5/4]">
+          <img src="assets/site-04.webp" alt="Nieuwe koperen dakgoot op een stenen bijgebouw in Zaltbommel" class="w-full h-full object-cover object-[30%_center]" loading="lazy">
+        </div>
+        <div class="md:col-span-5 md:order-1">
+          <p class="font-semibold text-oranje-600 mb-3">Techniek</p>
+          <h3 class="kop-m leading-[1.12] text-3xl md:text-[40px]">Van elektra tot loodgieterswerk</h3>
+          <p class="mt-5 text-ink/75 leading-relaxed">Meterkast, leidingwerk, een laadpaal of een lekkend dak. Onze vakmensen pakken het technische werk in en om het huis aan, ook op het dak: van zink op maat tot een koperen dakgoot.</p>
+          <ul class="mt-7 grid grid-cols-2 gap-x-6 text-[15px] font-medium border-t border-lijn">
+            <li class="py-3 border-b border-lijn">Elektrotechniek</li>
+            <li class="py-3 border-b border-lijn">Loodgieterswerk</li>
+            <li class="py-3 border-b border-lijn">Meterkast</li>
+            <li class="py-3 border-b border-lijn">Laadpaal</li>
+            <li class="py-3 border-b border-lijn">Zinkwerk</li>
+            <li class="py-3 border-b border-lijn">Dakherstel</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Klimaat -->
+      <article class="opkomst grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+        <div class="md:col-span-7 foto-zoom overflow-hidden rounded-xl aspect-[4/3] md:aspect-[5/4]">
+          <img src="assets/google-02.jpg" alt="Zwarte Daikin-airco op een houten latjeswand in een woonkamer" class="w-full h-full object-cover object-[center_30%]" loading="lazy">
+        </div>
+        <div class="md:col-span-5">
+          <p class="font-semibold text-oranje-600 mb-3">Klimaat</p>
+          <h3 class="kop-m leading-[1.12] text-3xl md:text-[40px]">Warm in de winter, koel in de zomer</h3>
+          <p class="mt-5 text-ink/75 leading-relaxed">Een warmtepomp met vloerverwarming, een airco die netjes in het interieur past of zonnepanelen op het dak. We adviseren wat bij je woning past en installeren het compleet.</p>
+          <ul class="mt-7 grid grid-cols-2 gap-x-6 text-[15px] font-medium border-t border-lijn">
+            <li class="py-3 border-b border-lijn">Warmtepompen</li>
+            <li class="py-3 border-b border-lijn">Airco's</li>
+            <li class="py-3 border-b border-lijn">Zonnepanelen</li>
+            <li class="py-3 border-b border-lijn">Vloerverwarming</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Projecten -->
+<section id="projecten" class="bg-white py-20 md:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div class="max-w-xl">
+        <h2 class="kop leading-[1.08] text-4xl md:text-[56px]">Gemaakt in de regio.</h2>
+        <p class="mt-5 text-lg text-ink/75 leading-relaxed">Een greep uit ons werk in Culemborg, Geldermalsen, Zaltbommel, Utrecht en verder.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:auto-rows-[220px]">
+      <figure class="col-span-2 lg:row-span-2 relative foto-zoom overflow-hidden rounded-xl aspect-[4/3] lg:aspect-auto">
+        <img src="assets/site-01.webp" alt="Monteur van Stroes onder een paraplu bij een airco-installatie op een plat dak" class="w-full h-full object-cover" loading="lazy">
+        <figcaption class="absolute inset-x-0 bottom-0 p-5 pt-16 bg-gradient-to-t from-ink/85 to-transparent text-white">
+          <span class="block kop-m text-xl md:text-2xl">Tien airco's van Daikin</span><span class="text-sm text-white/80">Culemborg</span>
+        </figcaption>
+      </figure>
+      <figure class="relative foto-zoom overflow-hidden rounded-xl aspect-square lg:aspect-auto">
+        <img src="assets/site-08.webp" alt="Buitenunit van een warmtepomp in een tuin" class="w-full h-full object-cover" loading="lazy">
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 pt-12 bg-gradient-to-t from-ink/85 to-transparent text-white">
+          <span class="block font-semibold leading-snug">All-electric warmtepomp</span><span class="text-sm text-white/80">Geldermalsen</span>
+        </figcaption>
+      </figure>
+      <figure class="relative foto-zoom overflow-hidden rounded-xl aspect-square lg:aspect-auto">
+        <img src="assets/site-03.webp" alt="Nieuwe zinken dakgoot langs een woning met zwarte houten gevel" class="w-full h-full object-cover" loading="lazy">
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 pt-12 bg-gradient-to-t from-ink/85 to-transparent text-white">
+          <span class="block font-semibold leading-snug">Zink op maat</span><span class="text-sm text-white/80">Dakgoot</span>
+        </figcaption>
+      </figure>
+      <figure class="col-span-2 relative foto-zoom overflow-hidden rounded-xl aspect-[16/9] lg:aspect-auto">
+        <img src="assets/google-05.jpg" alt="Nieuwe dakkapel met zonnepanelen op een rij bakstenen woningen" class="w-full h-full object-cover object-[center_40%]" loading="lazy">
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 pt-12 bg-gradient-to-t from-ink/85 to-transparent text-white">
+          <span class="block font-semibold leading-snug">Dakkapel met zonnepanelen</span>
+        </figcaption>
+      </figure>
+      <figure class="relative foto-zoom overflow-hidden rounded-xl aspect-square lg:aspect-auto">
+        <img src="assets/site-05.webp" alt="Hersteld plat dak met nieuwe bitumen dakbedekking" class="w-full h-full object-cover" loading="lazy">
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 pt-12 bg-gradient-to-t from-ink/85 to-transparent text-white">
+          <span class="block font-semibold leading-snug">Herstelwerk op het dak</span><span class="text-sm text-white/80">Culemborg</span>
+        </figcaption>
+      </figure>
+      <figure class="relative foto-zoom overflow-hidden rounded-xl aspect-square lg:aspect-auto">
+        <img src="assets/google-04.jpg" alt="Nieuw toilet met grijze wandtegels, houten plank en ronde spiegel" class="w-full h-full object-cover object-[center_60%]" loading="lazy">
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 pt-12 bg-gradient-to-t from-ink/85 to-transparent text-white">
+          <span class="block font-semibold leading-snug">Nieuw toilet</span>
+        </figcaption>
+      </figure>
+      <figure class="col-span-2 relative foto-zoom overflow-hidden rounded-xl aspect-[16/9] lg:aspect-auto">
+        <img src="assets/site-09.webp" alt="Twee nieuwe Ferroli-boilers met leidingwerk" class="w-full h-full object-cover object-[center_60%]" loading="lazy">
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 pt-12 bg-gradient-to-t from-ink/85 to-transparent text-white">
+          <span class="block font-semibold leading-snug">Compact en klimaatvriendelijk</span><span class="text-sm text-white/80">Utrecht</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="blauwdruk text-white py-20 md:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="kop leading-[1.08] text-4xl md:text-[56px]">Geen verrassingen achteraf.</h2>
+      <p class="mt-6 text-lg text-white/80 leading-relaxed max-w-md">Je wilt geen verkeerde investering doen. Daarom krijg je bij ons een eerlijke, all-in prijs: materiaal, arbeid en afwerking. Zonder kleine lettertjes.</p>
+      <ul class="mt-10 space-y-5 max-w-md">
+        <li class="flex gap-4"><span class="mt-2 w-2 h-2 bg-oranje shrink-0"></span><span><strong class="font-semibold">Eén vast aanspreekpunt.</strong> <span class="text-white/75">Korte lijnen en afspraken die we nakomen.</span></span></li>
+        <li class="flex gap-4"><span class="mt-2 w-2 h-2 bg-oranje shrink-0"></span><span><strong class="font-semibold">"Nee" kennen we niet.</strong> <span class="text-white/75">We zoeken altijd een passende oplossing.</span></span></li>
+        <li class="flex gap-4"><span class="mt-2 w-2 h-2 bg-oranje shrink-0"></span><span><strong class="font-semibold">Advies op locatie.</strong> <span class="text-white/75">Gratis en vrijblijvend, afgestemd op je woning en budget.</span></span></li>
+      </ul>
+    </div>
+    <ol class="lg:col-span-7 lg:pl-8 space-y-0 border-t border-white/20">
+      <li class="opkomst grid grid-cols-[64px_1fr] md:grid-cols-[96px_1fr] gap-4 py-8 border-b border-white/20">
+        <span class="kop leading-[1.08] text-4xl md:text-5xl text-[#ff8a4c]">1</span>
+        <div><h3 class="kop-m leading-[1.12] text-2xl">Ontwerp</h3><p class="mt-2 text-white/75 leading-relaxed">Jouw wensen staan centraal, aangevuld met onze inzichten en adviezen. Dat is de basis voor een goed eindresultaat.</p></div>
+      </li>
+      <li class="opkomst grid grid-cols-[64px_1fr] md:grid-cols-[96px_1fr] gap-4 py-8 border-b border-white/20">
+        <span class="kop leading-[1.08] text-4xl md:text-5xl text-[#ff8a4c]">2</span>
+        <div><h3 class="kop-m leading-[1.12] text-2xl">Begeleiding</h3><p class="mt-2 text-white/75 leading-relaxed">We helpen je bij het maken van keuzes, zoveel als jij nodig hebt. Zo verloopt het project soepel en blijven we flexibel.</p></div>
+      </li>
+      <li class="opkomst grid grid-cols-[64px_1fr] md:grid-cols-[96px_1fr] gap-4 py-8 border-b border-white/20">
+        <span class="kop leading-[1.08] text-4xl md:text-5xl text-[#ff8a4c]">3</span>
+        <div><h3 class="kop-m leading-[1.12] text-2xl">Kostenbeheersing</h3><p class="mt-2 text-white/75 leading-relaxed">Je krijgt een realistische, gedetailleerde offerte. Is er onderweg iets aan te passen, dan hoor je vooraf wat het kost.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-20 md:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <h2 class="kop leading-[1.08] text-4xl md:text-[56px] max-w-xl">Wat klanten zeggen.</h2>
+      <p class="flex items-baseline gap-3"><span class="kop leading-[1.08] text-5xl text-navy">4,8</span><span class="text-ink/70">gemiddeld uit 42 Google-reviews</span></p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-4">
+      <figure class="lg:col-span-5 lg:row-span-2 bg-navy text-white rounded-xl p-8 md:p-10 flex flex-col">
+        <svg class="w-10 h-10 text-oranje mb-6" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M13 8H7a3 3 0 0 0-3 3v6h6v1a4 4 0 0 1-4 4v3a7 7 0 0 0 7-7V8zm15 0h-6a3 3 0 0 0-3 3v6h6v1a4 4 0 0 1-4 4v3a7 7 0 0 0 7-7V8z"/></svg>
+        <blockquote class="kop-m font-semibold text-2xl md:text-[28px] leading-snug">"Een voormalige kantoorruimte is in iets meer dan een maand volledig getransformeerd tot een volwaardig appartement, inclusief een nieuwe badkamer, keuken, vloerverwarming, boiler, meterkast en laadpaal."</blockquote>
+        <figcaption class="mt-auto pt-8 text-white/80"><span class="font-semibold text-white">Jan Van Bennekom-Minnema</span><br>5 sterren op Google</figcaption>
+      </figure>
+      <figure class="lg:col-span-7 bg-white rounded-xl p-7 md:p-8">
+        <blockquote class="text-[17px] leading-relaxed">"Ik ben ontzettend tevreden over Stroes Bouw &amp; Techniek, die in mei 2025 een nieuwe badkamer en toilet bij ons heeft gemaakt. Vanaf het uitzoeken van de tegels en materialen bij Rocco Stroes in Culemborg tot de oplevering bij ons in Amersfoort verliep alles vakkundig en snel. …"</blockquote>
+        <figcaption class="mt-5 text-sm text-ink/65"><span class="font-semibold text-ink">Saskia van Doorn</span>, 5 sterren</figcaption>
+      </figure>
+      <figure class="lg:col-span-7 bg-white rounded-xl p-7 md:p-8">
+        <blockquote class="text-[17px] leading-relaxed">"Zij hebben diverse dakreparaties uitgevoerd, waaronder het vernieuwen van de kielgoten en het volledig opnieuw in cement zetten van de nokvorsten. Het werk is zeer zorgvuldig en vakkundig uitgevoerd en het eindresultaat ziet er strak en netjes uit. …"</blockquote>
+        <figcaption class="mt-5 text-sm text-ink/65"><span class="font-semibold text-ink">Boris Janssen</span>, 5 sterren</figcaption>
+      </figure>
+      <figure class="lg:col-span-6 bg-white rounded-xl p-7 md:p-8">
+        <blockquote class="text-[17px] leading-relaxed">"We zijn ontzettend tevreden met onze nieuwe badkamer en met de manier waarop alles is verlopen! Vanaf het eerste moment werd er goed met ons meegedacht over de mogelijkheden binnen de beschikbare ruimte. Ook het samenstellen van de kleuren en materialen vonden we erg prettig. …"</blockquote>
+        <figcaption class="mt-5 text-sm text-ink/65"><span class="font-semibold text-ink">Falko Zandstra</span>, 5 sterren</figcaption>
+      </figure>
+      <figure class="lg:col-span-6 bg-white rounded-xl p-7 md:p-8">
+        <blockquote class="text-[17px] leading-relaxed">"Onlangs hebben wij door Stroes twee airco’s laten plaatsen in onze woning. Één in de woonkamer en één in het trappengat. Rocco kwam na de offerteaanvraag langs en we hebben samen even de situatie doorsproken over de mogelijkheden. …"</blockquote>
+        <figcaption class="mt-5 text-sm text-ink/65"><span class="font-semibold text-ink">Edwin Martens</span>, 5 sterren</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Over -->
+<section id="over" class="bg-white py-20 md:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-6 relative">
+      <div class="foto-zoom overflow-hidden rounded-xl aspect-[4/3]">
+        <img src="assets/site-13.webp" alt="Collega's van Stroes aan het werk in de werkplaats" class="w-full h-full object-cover object-[12%_center]" loading="lazy">
+      </div>
+    </div>
+    <div class="lg:col-span-6">
+      <h2 class="kop leading-[1.08] text-4xl md:text-[52px]">Gegroeid door goed werk.</h2>
+      <div class="mt-6 space-y-5 text-lg text-ink/75 leading-relaxed max-w-xl">
+        <p>Stroes is door de jaren heen op een natuurlijke manier gegroeid. Niet door hard te roepen, maar door te doen wat we beloven: meedenken, klaarstaan en het werk van A tot Z goed afleveren.</p>
+        <p>Onze jongens hebben jarenlange ervaring en volgen continu trainingen. Zo ben je verzekerd van vakwerk, of het nu gaat om een nieuwe badkamer, een warmtepomp of herstel van je dak.</p>
+      </div>
+      <p class="mt-8 font-semibold text-navy">Kom gerust langs aan de Randweg 6 in Culemborg.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 md:py-28">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop leading-[1.08] text-4xl md:text-[56px]">Vertel ons over je klus.</h2>
+      <p class="mt-6 text-lg text-ink/75 leading-relaxed max-w-md">Je ontvangt binnen 3 werkdagen een vrijblijvende offerte. Liever eerst even overleggen? Bel ons gewoon.</p>
+      <dl class="mt-10 divide-y divide-lijn border-y border-lijn max-w-md">
+        <div class="py-4 flex justify-between gap-4"><dt class="text-ink/65">Telefoon</dt><dd><a href="tel:0345530679" class="font-semibold text-navy hover:text-oranje-600">0345 530 679</a></dd></div>
+        <div class="py-4 flex justify-between gap-4"><dt class="text-ink/65">E-mail</dt><dd><a href="mailto:info@stroesteam.nl" class="font-semibold text-navy hover:text-oranje-600">info@stroesteam.nl</a></dd></div>
+        <div class="py-4 flex justify-between gap-4"><dt class="text-ink/65">Adres</dt><dd class="text-right font-medium">Randweg 6<br>4104 AC Culemborg</dd></div>
+        <div class="py-4 flex justify-between gap-4"><dt class="text-ink/65">Bereikbaar</dt><dd class="font-medium">24 uur per dag, 7 dagen per week</dd></div>
+      </dl>
+    </div>
+    <form class="lg:col-span-7 bg-white rounded-xl p-6 md:p-10 grid sm:grid-cols-2 gap-5" action="mailto:info@stroesteam.nl" method="post" enctype="text/plain">
+      <label class="block"><span class="text-sm font-semibold">Naam</span>
+        <input name="naam" required autocomplete="name" class="mt-2 w-full rounded-md border border-lijn bg-mist/50 px-4 py-3 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/20"></label>
+      <label class="block"><span class="text-sm font-semibold">Telefoon</span>
+        <input name="telefoon" type="tel" required autocomplete="tel" class="mt-2 w-full rounded-md border border-lijn bg-mist/50 px-4 py-3 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/20"></label>
+      <label class="block"><span class="text-sm font-semibold">E-mail</span>
+        <input name="email" type="email" autocomplete="email" class="mt-2 w-full rounded-md border border-lijn bg-mist/50 px-4 py-3 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/20"></label>
+      <label class="block"><span class="text-sm font-semibold">Waar gaat het om?</span>
+        <select name="soort" class="mt-2 w-full rounded-md border border-lijn bg-mist/50 px-4 py-3 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/20">
+          <option>Verbouwing of renovatie</option><option>Badkamer of keuken</option><option>Elektra of loodgieterswerk</option><option>Dak of dakgoot</option><option>Warmtepomp, airco of zonnepanelen</option><option>Iets anders</option>
+        </select></label>
+      <label class="block sm:col-span-2"><span class="text-sm font-semibold">Je klus</span>
+        <textarea name="bericht" rows="5" placeholder="Wat wil je laten doen, en waar?" class="mt-2 w-full rounded-md border border-lijn bg-mist/50 px-4 py-3 focus:border-navy focus:outline-none focus:ring-2 focus:ring-navy/20"></textarea></label>
+      <div class="sm:col-span-2 flex flex-wrap items-center gap-5 pt-2">
+        <button type="submit" class="knop rounded-lg bg-oranje hover:bg-oranje-600 text-white font-bold px-7 py-4">Offerte aanvragen</button>
+        <span class="text-sm text-ink/60">Vrijblijvend, binnen 3 werkdagen antwoord.</span>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-navy-900 text-white/75">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row gap-8 md:items-center justify-between">
+    <div>
+      <p class="kop leading-[1.08] text-2xl text-white">Stroes</p>
+      <p class="mt-1 text-sm">Bouw &amp; Techniek Team, Randweg 6, 4104 AC Culemborg</p>
+    </div>
+    <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm">
+      <a href="tel:0345530679" class="hover:text-white">0345 530 679</a>
+      <a href="mailto:info@stroesteam.nl" class="hover:text-white">info@stroesteam.nl</a>
+      <a href="#diensten" class="hover:text-white">Diensten</a>
+      <a href="#projecten" class="hover:text-white">Projecten</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 p-3 bg-white/95 backdrop-blur border-t border-lijn grid grid-cols-[1fr_auto] gap-2">
+  <a href="tel:0345530679" class="knop flex items-center justify-center gap-2 rounded-lg bg-oranje text-white font-bold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel direct, ook bij spoed</a>
+  <a href="#contact" class="flex items-center justify-center rounded-lg border border-lijn px-4 font-semibold text-navy">Offerte</a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver((items) => {
+    items.forEach(i => { if (i.isIntersecting) { i.target.classList.add('zichtbaar'); io.unobserve(i.target); } });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.opkomst').forEach(el => io.observe(el));
+  setTimeout(() => document.querySelectorAll('.opkomst').forEach(el => el.classList.add('zichtbaar')), 1200);
+</script>
+</body>
+</html>

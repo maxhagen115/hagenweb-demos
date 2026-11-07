@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Van Santen &amp; Zn | Bouw- en aannemingsbedrijf in Culemborg</title>
+<meta name="description" content="Van Santen & Zn, bouw- en aannemingsbedrijf in Culemborg sinds 1939. Nieuwbouw, verbouw, aanbouw, renovatie, restauratie en utiliteitsbouw. Bel 0345 512 314.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M9 4h16l-5 9H4z' fill='%23353B43'/%3E%3Cpath d='M12 15h16l-6 12H6z' fill='%23C81A20'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        lei: '#353B43', leidiep: '#2A2F36', rood: '#C81A20', rooddiep: '#A9141A',
+        beton: '#E8E8E4', kalk: '#F7F7F5', steen: '#8C9198'
+      },
+      fontFamily: {
+        kop: ['Archivo', 'system-ui', 'sans-serif'],
+        tekst: ['"Public Sans"', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 72%; font-weight: 800; letter-spacing: -0.01em; line-height: .95; text-wrap: balance; }
+  .kop-m { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 85%; font-weight: 700; letter-spacing: -0.005em; }
+  p { text-wrap: pretty; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* Logo-vorm: parallellogram */
+  .schuin { clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%); }
+  .schuin-r { clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%); }
+  section[id] { scroll-margin-top: 5rem; }
+  @media (min-width: 1024px) {
+    .schuin-r { clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%); }
+  }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #C81A20; outline-offset: 3px;
+  }
+
+  /* Eén moment bij laden, alleen als JS de class zet */
+  .js .hero-beeld { transform: translateX(24px); opacity: 0; transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s; }
+  .js .hero-slab { transform: translateX(-24px); opacity: 0; transition: transform .9s .15s cubic-bezier(.2,.7,.2,1), opacity .9s .15s; }
+  .js.klaar .hero-beeld, .js.klaar .hero-slab { transform: none; opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .hero-beeld, .js .hero-slab { transform: none; opacity: 1; transition: none; }
+  }
+</style>
+<script>
+  document.documentElement.classList.add('js');
+  window.addEventListener('DOMContentLoaded', function () {
+    requestAnimationFrame(function () { document.documentElement.classList.add('klaar'); });
+  });
+</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-kalk text-lei antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-leidiep text-white/80 text-xs sm:text-sm text-center py-2 px-4">
+  Demo voor Santen &amp; Zn BV Aannemers- en Bouwbedrijf Van, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-rood-200">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-kalk/95 backdrop-blur sticky top-0 z-40 border-b border-lei/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="Van Santen &amp; Zn, naar boven">
+      <svg viewBox="0 0 44 36" class="w-10 h-8 sm:w-11 sm:h-9 shrink-0" aria-hidden="true">
+        <path d="M12 0h24l-7 13H5z" fill="#353B43"/>
+        <path d="M16 16h28l-9 18H7z" fill="#C81A20"/>
+      </svg>
+      <span class="leading-none">
+        <span class="kop block text-[1.45rem] sm:text-[1.7rem] tracking-tight" style="line-height:1">Van Santen &amp; Zn</span>
+        <span class="block text-[0.68rem] sm:text-xs text-lei/60 mt-1">Bouw- en aannemingsbedrijf</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[0.95rem] font-medium" aria-label="Hoofdmenu">
+      <a href="#werk" class="hover:text-rood transition-colors">Wat we bouwen</a>
+      <a href="#projecten" class="hover:text-rood transition-colors">Projecten</a>
+      <a href="#familie" class="hover:text-rood transition-colors">Familiebedrijf</a>
+      <a href="#contact" class="hover:text-rood transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31345512314" class="knop inline-flex items-center gap-2 font-semibold text-lei hover:text-rood num">
+      <svg class="w-5 h-5 text-rood" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span class="hidden sm:inline">0345 512 314</span>
+      <span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto lg:grid lg:grid-cols-12 lg:min-h-[640px]">
+    <div class="relative z-10 px-5 sm:px-8 pt-8 pb-8 sm:pt-14 lg:pt-24 lg:pb-24 lg:col-span-6 flex flex-col justify-center">
+      <p class="text-sm sm:text-base font-medium text-lei/70">Bouw- en aannemingsbedrijf in Culemborg, sinds 1939</p>
+      <h1 class="kop text-[3.4rem] sm:text-7xl lg:text-[6.2rem] mt-4">Uw bouwwens, ons vakwerk.</h1>
+      <p class="mt-6 text-lg sm:text-xl leading-relaxed text-lei/80 max-w-[30rem]">
+        Van een nieuw kozijn tot een complete boerderij: elke klus krijgt bij ons dezelfde aandacht. Al drie generaties, vanuit de Staalweg in Culemborg.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31345512314" class="knop inline-flex items-center gap-3 bg-rood hover:bg-rooddiep text-white font-semibold text-lg px-7 py-4 shadow-[0_10px_30px_-10px_rgba(200,26,32,.6)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          Bel <span class="num">0345 512 314</span>
+        </a>
+        <a href="#projecten" class="font-semibold underline decoration-rood decoration-2 underline-offset-[6px] hover:text-rood">Bekijk ons werk</a>
+      </div>
+    </div>
+
+    <div class="relative lg:col-span-6 h-[300px] sm:h-[440px] lg:h-auto">
+      <div class="hero-slab hidden lg:block absolute -left-10 bottom-16 w-48 h-40 bg-rood schuin" aria-hidden="true"></div>
+      <div class="hero-beeld absolute inset-0 lg:-right-[max(0px,calc((100vw-80rem)/2))] schuin-r">
+        <img src="assets/google-03.jpg" alt="Verbouwde zolder met eikenhouten kapconstructie, grote glaspui en een lange vergadertafel" class="w-full h-full object-cover object-[40%_50%]">
+      </div>
+      <div class="lg:hidden absolute right-5 top-0 w-24 h-8 bg-rood schuin z-10" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Belofte -->
+<section class="bg-lei text-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-12 gap-10 items-end">
+    <p class="kop text-4xl sm:text-6xl lg:text-7xl lg:col-span-8">
+      Een opdracht is nooit te klein. En niet snel te groot of te moeilijk.
+    </p>
+    <div class="lg:col-span-4 text-white/75 text-lg leading-relaxed space-y-4">
+      <p>Het vervangen van een deur of kozijn krijgt bij ons net zoveel aandacht als een nieuwe woning. U weet zelf het best hoe uw huis of pand eruit moet zien. Wij zorgen dat het er ook zo komt te staan.</p>
+      <p>Met vakmensen, ambachtslieden en gecertificeerd, ervaren personeel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Wat we bouwen -->
+<section id="werk" class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <h2 class="kop text-5xl sm:text-6xl max-w-xl">Wat we bouwen</h2>
+    <p class="mt-5 text-lg text-lei/75 max-w-xl leading-relaxed">Van eenvoudig onderhoud tot grote renovaties, voor particulieren en bedrijven in Culemborg en omstreken.</p>
+
+    <div class="mt-14 sm:mt-20 space-y-20 sm:space-y-28">
+
+      <article class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-7 aspect-[16/10] overflow-hidden bg-beton">
+          <img src="assets/google-07.jpg" alt="Woning met gevelbekleding van hout en een hoge puntgevel" class="w-full h-full object-cover">
+        </div>
+        <div class="lg:col-span-5">
+          <h3 class="kop text-4xl sm:text-5xl">Nieuwbouw, verbouw en aanbouw</h3>
+          <p class="mt-5 text-lg leading-relaxed text-lei/80">Een nieuw huis laten bouwen, een gekochte woning eerst goed verbouwen, of gewoon meer ruimte omdat het gezin groeit? Met een aanbouw of dakkapel blijft u wonen in uw vertrouwde buurt. Van ontwerp tot oplevering kunt u op ons rekenen.</p>
+          <ul class="mt-6 border-t border-lei/15 text-[0.98rem]">
+            <li class="py-3 border-b border-lei/15">Nieuwbouwwoningen en twee-onder-een-kap</li>
+            <li class="py-3 border-b border-lei/15">Verbouwingen en metamorfoses</li>
+            <li class="py-3 border-b border-lei/15">Aanbouw en dakkapel</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-7 lg:order-2 aspect-[16/10] overflow-hidden bg-beton">
+          <img src="assets/google-04.jpg" alt="Boerderijwoning met rieten kap, rode luiken en ronde dakkapellen" class="w-full h-full object-cover object-[50%_60%]">
+        </div>
+        <div class="lg:col-span-5 lg:order-1">
+          <h3 class="kop text-4xl sm:text-5xl">Renovatie en restauratie</h3>
+          <p class="mt-5 text-lg leading-relaxed text-lei/80">Blij met uw woning of pand, maar kan het beter? Een nieuwe badkamer, een woonkeuken, een heel nieuw kantoor of een boerderij die er slecht aan toe is. Wij maken van uw vertrouwde plek weer iets moois, ook bij monumenten en na brandschade.</p>
+          <ul class="mt-6 border-t border-lei/15 text-[0.98rem]">
+            <li class="py-3 border-b border-lei/15">Complete renovatie van boerderijen</li>
+            <li class="py-3 border-b border-lei/15">Woningen met rieten kap</li>
+            <li class="py-3 border-b border-lei/15">Gemeentelijke monumenten in de binnenstad</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-7 aspect-[16/10] overflow-hidden bg-beton">
+          <img src="assets/google-06.jpg" alt="Gerenoveerde kantoorvloer met houten wanden, planten en werkplekken" class="w-full h-full object-cover">
+        </div>
+        <div class="lg:col-span-5">
+          <h3 class="kop text-4xl sm:text-5xl">Utiliteitsbouw</h3>
+          <p class="mt-5 text-lg leading-relaxed text-lei/80">Niet alles wat we bouwen is om in te wonen. Kantoorpanden, showrooms, bedrijfshallen en herbestemmingen: een gebouw dat precies past bij hoe u werkt, voor een betere productie of een prettigere werkplek.</p>
+          <ul class="mt-6 border-t border-lei/15 text-[0.98rem]">
+            <li class="py-3 border-b border-lei/15">Kantoren, showrooms en magazijnen</li>
+            <li class="py-3 border-b border-lei/15">Herbestemming van bestaande panden</li>
+            <li class="py-3 border-b border-lei/15">Renovatie van complete kantoorverdiepingen</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="relative bg-beton px-6 py-12 sm:px-12 sm:py-16 lg:grid lg:grid-cols-12 lg:gap-12 overflow-hidden">
+        <div class="absolute -right-10 -top-6 w-56 h-28 bg-lei/10 schuin" aria-hidden="true"></div>
+        <div class="absolute -right-6 -bottom-6 w-40 h-16 bg-rood schuin hidden sm:block" aria-hidden="true"></div>
+        <h3 class="relative kop text-4xl sm:text-5xl lg:col-span-5">Stallen, veranda's en overkappingen</h3>
+        <div class="relative lg:col-span-6 mt-5 lg:mt-0">
+          <p class="text-lg leading-relaxed text-lei/80">Werk dat in geen hokje past, doen we net zo graag. Een paardenstal met acht boxen, een veranda in plaats van een oude schuur, een glazen overkapping. Ontwerp, bouwkundig en constructief tekenwerk en de vergunningsaanvraag kunnen we in eigen beheer doen.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Projectregister -->
+<section id="projecten" class="bg-leidiep text-white py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="lg:flex lg:items-end lg:justify-between gap-10">
+      <h2 class="kop text-5xl sm:text-6xl">Opgeleverd in de regio</h2>
+      <p class="mt-5 lg:mt-0 text-lg text-white/70 max-w-md leading-relaxed">Een greep uit ons werk, van Vianen tot Varik. Met de architecten waarmee we samenwerkten.</p>
+    </div>
+
+    <div class="mt-12 sm:mt-16 space-y-14">
+      <div>
+        <h3 class="kop-m text-rood text-xl" style="color:#ff5a5f">Renovatie en restauratie</h3>
+        <div class="mt-4 border-t border-white/15">
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Restauratie stadswoning</p>
+            <p class="md:col-span-3 text-white/60">Markt 17a, Culemborg</p>
+            <p class="md:col-span-5 text-white/80">Voormalig kantoor verbouwd tot luxe stadswoning. Gemeentelijk monument in de binnenstad.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Renovatie boerderij</p>
+            <p class="md:col-span-3 text-white/60">Beusichemsedijk 17, Culemborg</p>
+            <p class="md:col-span-5 text-white/80">Complete renovatie van woning en bakhuis (2799 m³): vloeren, kapconstructie, kozijnen, trappen, badkamers, installaties. Architect: Vrij in Culemborg.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Woning met rieten kap</p>
+            <p class="md:col-span-3 text-white/60">Waalbanddijk 58, Varik</p>
+            <p class="md:col-span-5 text-white/80">Renovatie na brand, de woning was gedeeltelijk verwoest. Architect: Synarchi.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Renovatie boerderij</p>
+            <p class="md:col-span-3 text-white/60">Meteren</p>
+            <p class="md:col-span-5 text-white/80">Complete renovatie met dakrenovatie, nieuwe vloeren, kozijnen en installaties. Architect: Van de Lagemaat.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="kop-m text-xl" style="color:#ff5a5f">Utiliteitsbouw</h3>
+        <div class="mt-4 border-t border-white/15">
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Brasserie STREEK</p>
+            <p class="md:col-span-3 text-white/60">Markt 15, Culemborg</p>
+            <p class="md:col-span-5 text-white/80">Voormalige KPN-centrale en winkel verbouwd tot indoor kinderspeeltuin en restaurant. Architect: Synarchi &amp; TOKO.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Herinneringshuis De Einder</p>
+            <p class="md:col-span-3 text-white/60">Rhenoyseweg 7, Rhenoy</p>
+            <p class="md:col-span-5 text-white/80">Rooms-katholieke kerk verbouwd tot uitvaartcentrum. Architect: Synarchi &amp; H. van der Wielen.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Hoofdkantoor CB</p>
+            <p class="md:col-span-3 text-white/60">Erasmusweg 11, Culemborg</p>
+            <p class="md:col-span-5 text-white/80">Volledige renovatie van drie kantoorverdiepingen. Architect: Caetshage.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Middelkoop keukens</p>
+            <p class="md:col-span-3 text-white/60">Beesdseweg 2, Culemborg</p>
+            <p class="md:col-span-5 text-white/80">Nieuwbouw van showroom, kantoor en magazijn voor keukens en badkamers. Architect: L.D. Koel.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Herontwikkeling bedrijfspand</p>
+            <p class="md:col-span-3 text-white/60">Anthonie van Diemstraat 18, Culemborg</p>
+            <p class="md:col-span-5 text-white/80">Eigen ontwikkeling, nu in gebruik als sportschool. Architect: L.D. Koel.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="kop-m text-xl" style="color:#ff5a5f">Nieuwbouw en verbouw</h3>
+        <div class="mt-4 border-t border-white/15">
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Verbouwing woning</p>
+            <p class="md:col-span-3 text-white/60">Leerdamseweg 48, Asperen</p>
+            <p class="md:col-span-5 text-white/80">25 cm gevelisolatie, 20 cm dakisolatie, triple beglazing en zonnepanelen. Architect: Synarchi.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Twee-onder-een-kapwoning</p>
+            <p class="md:col-span-3 text-white/60">Fazantenstraat 31 en 33, Zoelmond</p>
+            <p class="md:col-span-5 text-white/80">Nieuwbouw, eigen ontwikkeling. Architect: Caetshage.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Nieuwbouwwoning Veerweg</p>
+            <p class="md:col-span-3 text-white/60">Veerweg, Culemborg</p>
+            <p class="md:col-span-5 text-white/80">Van magazijn naar woning. Architect: Synarchi.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Nieuwbouwwoonhuis</p>
+            <p class="md:col-span-3 text-white/60">Langendijk 60, Vianen</p>
+            <p class="md:col-span-5 text-white/80">Bestaande woning gesloopt, nieuw huis gebouwd. Architect: Synarchi &amp; H. van der Wielen.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="kop-m text-xl" style="color:#ff5a5f">Stallen, veranda's en overkappingen</h3>
+        <div class="mt-4 border-t border-white/15">
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Paardenstal</p>
+            <p class="md:col-span-3 text-white/60">Beusichemsedijk 17, Culemborg</p>
+            <p class="md:col-span-5 text-white/80">Nieuwbouw met 8 paardenboxen. Ontwerp, tekenwerk en bouwvergunning in eigen beheer.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Veranda</p>
+            <p class="md:col-span-3 text-white/60">Asperen</p>
+            <p class="md:col-span-5 text-white/80">Bestaande schuur gesloopt en het achterhuis aangepast. Eigen ontwerp.</p>
+          </div>
+          <div class="grid md:grid-cols-12 gap-x-6 gap-y-1 py-5 border-b border-white/15">
+            <p class="md:col-span-4 kop-m text-xl">Glazen overkapping</p>
+            <p class="md:col-span-3 text-white/60">Goilberdingerdijk 25, Culemborg</p>
+            <p class="md:col-span-5 text-white/80">Ontwerp: dhr. L. Koel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Familie -->
+<section id="familie" class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-5xl sm:text-6xl">Diep geworteld in Culemborg</h2>
+      <p class="mt-6 text-lg leading-relaxed text-lei/80">Meer dan tachtig jaar bouwen levert veel kennis op. En korte lijnen: u heeft te maken met de familie zelf, die dicht bij de opdrachtgever staat en snel kan schakelen als uw wensen veranderen.</p>
+
+      <ol class="mt-10 relative border-l-2 border-lei/15 ml-2 space-y-9">
+        <li class="pl-8 relative">
+          <span class="absolute -left-[9px] top-2 w-4 h-4 bg-rood schuin" aria-hidden="true"></span>
+          <p class="kop text-4xl num">1939</p>
+          <p class="mt-2 text-lei/80">Opa Cornelis Marinus van Santen begint het bedrijf.</p>
+        </li>
+        <li class="pl-8 relative">
+          <span class="absolute -left-[9px] top-2 w-4 h-4 bg-lei schuin" aria-hidden="true"></span>
+          <p class="kop text-4xl num">1979</p>
+          <p class="mt-2 text-lei/80">Veertig jaar later neemt zijn zoon het stokje over.</p>
+        </li>
+        <li class="pl-8 relative">
+          <span class="absolute -left-[9px] top-2 w-4 h-4 bg-rood schuin" aria-hidden="true"></span>
+          <p class="kop text-4xl num">2013</p>
+          <p class="mt-2 text-lei/80">De derde generatie staat aan het roer.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="lg:col-span-7 grid grid-cols-6 gap-4 content-start">
+      <figure class="col-span-6">
+        <img src="assets/google-08.jpg" alt="Oranje bedrijfsbus van Van Santen & Zn voor het pand aan de Staalweg" class="w-full aspect-[4/3] object-cover object-[50%_55%]">
+      </figure>
+      <p class="hidden sm:block col-span-2 text-sm text-lei/60 pt-3 pr-2">Onze bus voor het pand aan de Staalweg.</p>
+      <figure class="col-span-6 sm:col-span-4 sm:col-start-3 sm:-mt-24 relative">
+        <img src="assets/google-02.jpg" alt="Bouwplaats met bouwbord van Van Santen & Zn voor een bakstenen gebouw met twee puntgevels" class="w-full aspect-[16/10] object-cover border-[6px] border-kalk">
+        <figcaption class="mt-2 text-sm text-lei/60">Ons bord op de bouwplaats.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section class="bg-beton py-20 sm:py-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-10">
+    <h2 class="kop text-5xl sm:text-6xl lg:col-span-4">Niet zomaar een bouwwerk</h2>
+    <div class="lg:col-span-8 grid sm:grid-cols-3 gap-px bg-lei/15 border border-lei/15">
+      <div class="bg-beton p-7">
+        <h3 class="kop-m text-2xl">Persoonlijk contact</h3>
+        <p class="mt-3 text-lei/75 leading-relaxed">Korte lijnen met de familie zelf. We denken met u mee, van eerste idee tot oplevering.</p>
+      </div>
+      <div class="bg-beton p-7">
+        <h3 class="kop-m text-2xl">Afspraken nakomen</h3>
+        <p class="mt-3 text-lei/75 leading-relaxed">Wat we samen afspreken, doen we ook. Dat is de basis van ons bedrijf.</p>
+      </div>
+      <div class="bg-beton p-7">
+        <h3 class="kop-m text-2xl">Kwaliteit van het werk</h3>
+        <p class="mt-3 text-lei/75 leading-relaxed">Vakmensen en ambachtslieden voor elk onderdeel, ook voor renovatie en restauratie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 sm:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-5xl sm:text-6xl">Vertel ons wat u wilt bouwen</h2>
+      <p class="mt-5 text-lg leading-relaxed text-lei/80 max-w-lg">Bel ons voor een kennismaking of offerte. Dan bespreken we samen uw plannen en de mogelijkheden.</p>
+
+      <a href="tel:+31345512314" class="knop mt-8 inline-flex items-center gap-3 bg-rood hover:bg-rooddiep text-white font-semibold text-lg px-7 py-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+        Bel <span class="num">0345 512 314</span>
+      </a>
+
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-7 text-[1.02rem]">
+        <div>
+          <dt class="kop-m text-lg">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@vansantenbouw.nl" class="underline decoration-rood decoration-2 underline-offset-4 hover:text-rood">info@vansantenbouw.nl</a></dd>
+        </div>
+        <div>
+          <dt class="kop-m text-lg">Adres</dt>
+          <dd class="mt-1 text-lei/80">Staalweg 21a<br>4104 AS Culemborg</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="kop-m text-lg">Bereikbaar</dt>
+          <dd class="mt-1 text-lei/80 num">Maandag tot en met vrijdag, 07:15 tot 17:00<br>Zaterdag en zondag gesloten</dd>
+        </div>
+      </dl>
+
+      <figure class="mt-10">
+        <img src="assets/google-01.jpg" alt="Bedrijfspand van Van Santen & Zn aan de Staalweg met roldeur nummer 21" class="w-full aspect-[16/8] object-cover">
+        <figcaption class="mt-2 text-sm text-lei/60">Ons pand aan de Staalweg in Culemborg.</figcaption>
+      </figure>
+    </div>
+
+    <div class="lg:col-span-6">
+      <form class="bg-lei text-white p-7 sm:p-10" action="mailto:info@vansantenbouw.nl" method="post" enctype="text/plain">
+        <h3 class="kop text-3xl sm:text-4xl">Liever schrijven?</h3>
+        <p class="mt-3 text-white/70">Laat uw gegevens achter, dan nemen we contact met u op.</p>
+        <div class="mt-8 space-y-5">
+          <label class="block">
+            <span class="text-sm font-medium text-white/80">Naam</span>
+            <input name="naam" required autocomplete="name" class="mt-2 w-full bg-white/5 border border-white/25 px-4 py-3 text-white placeholder-white/40 focus:border-white">
+          </label>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block">
+              <span class="text-sm font-medium text-white/80">Telefoon</span>
+              <input name="telefoon" type="tel" autocomplete="tel" class="mt-2 w-full bg-white/5 border border-white/25 px-4 py-3 text-white focus:border-white">
+            </label>
+            <label class="block">
+              <span class="text-sm font-medium text-white/80">E-mail</span>
+              <input name="email" type="email" required autocomplete="email" class="mt-2 w-full bg-white/5 border border-white/25 px-4 py-3 text-white focus:border-white">
+            </label>
+          </div>
+          <label class="block">
+            <span class="text-sm font-medium text-white/80">Wat wilt u laten bouwen of verbouwen?</span>
+            <textarea name="bericht" rows="5" class="mt-2 w-full bg-white/5 border border-white/25 px-4 py-3 text-white focus:border-white" placeholder="Bijvoorbeeld: een aanbouw aan de achterkant, ongeveer 4 bij 5 meter"></textarea>
+          </label>
+        </div>
+        <button type="submit" class="knop mt-7 w-full sm:w-auto bg-rood hover:bg-rooddiep text-white font-semibold px-7 py-4">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-leidiep text-white/70 text-sm">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <svg viewBox="0 0 44 36" class="w-9 h-7" aria-hidden="true"><path d="M12 0h24l-7 13H5z" fill="#8C9198"/><path d="M16 16h28l-9 18H7z" fill="#C81A20"/></svg>
+      <span class="kop text-xl text-white">Van Santen &amp; Zn BV</span>
+    </div>
+    <p>Staalweg 21a, 4104 AS Culemborg <span class="mx-2 text-white/30">|</span> KvK 11025424</p>
+    <p class="num"><a href="tel:+31345512314" class="hover:text-white">0345 512 314</a> <span class="mx-2 text-white/30">|</span> <a href="mailto:info@vansantenbouw.nl" class="hover:text-white">info@vansantenbouw.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-kalk/95 backdrop-blur border-t border-lei/15 p-3 flex gap-3">
+  <a href="tel:+31345512314" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-rood text-white font-semibold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+    Bel <span class="num">0345 512 314</span>
+  </a>
+  <a href="mailto:info@vansantenbouw.nl" class="knop inline-flex items-center justify-center px-4 border-2 border-lei font-semibold">Mail</a>
+</div>
+
+</body>
+</html>
