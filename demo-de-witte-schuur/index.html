@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De Witte Schuur | Zorgboerderij, patisserie en boerderijwinkel in Culemborg</title>
+<meta name="description" content="Vers gebak van bijzondere bakkers, groente uit eigen moestuin en een theetuin op de zorgboerderij aan de Prijsseweg in Culemborg. Bel 0345 247 074.">
+<meta property="og:title" content="De Witte Schuur, Culemborg">
+<meta property="og:description" content="Zorgboerderij met patisserie, boerderijwinkel en theetuin.">
+<meta property="og:image" content="assets/site-02.jpg">
+<link rel="icon" href="assets/logo-oud.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          kalk: '#FBFBF8',
+          hout: '#1E211D',
+          houtzacht: '#4A4F47',
+          eigeel: '#F4A901',
+          eigeeldiep: '#D99500',
+          wei: '#E8ECE2',
+          mos: '#3F5A34',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .gevel { clip-path: polygon(50% 0, 100% 24%, 100% 100%, 0 100%, 0 24%); }
+  .boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #F4A901; outline-offset: 3px; border-radius: 6px; }
+  .uren tr.vandaag td { font-weight: 700; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-in { animation: in .8s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-in.d2 { animation-delay: .12s; }
+    .js .hero-in.d3 { animation-delay: .24s; }
+    .js .dak-lijn path { stroke-dasharray: 1400; animation: teken 1.6s .3s ease-out both; }
+    @keyframes in { from { opacity: 0; transform: translateY(14px); } }
+    @keyframes teken { from { stroke-dashoffset: 1400; } to { stroke-dashoffset: 0; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-kalk text-hout font-tekst antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-eigeel focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-hout text-kalk/80 text-xs sm:text-sm text-center py-2 px-4">
+  Demo voor De Witte Schuur, gemaakt door <a href="https://hagenweb.nl" class="text-eigeel underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-kalk/95 backdrop-blur border-b border-hout/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="shrink-0" aria-label="De Witte Schuur, naar boven">
+      <img src="assets/site-01.svg" alt="De Witte Schuur, maakt het voor jou" class="h-11 lg:h-14 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-houtzacht" aria-label="Hoofdmenu">
+      <a href="#patisserie" class="hover:text-hout">Patisserie</a>
+      <a href="#winkel" class="hover:text-hout">Boerderijwinkel</a>
+      <a href="#theetuin" class="hover:text-hout">Theetuin</a>
+      <a href="#zorgboerderij" class="hover:text-hout">Zorgboerderij</a>
+      <a href="#bedrijven" class="hover:text-hout">Voor bedrijven</a>
+      <a href="#bezoek" class="hover:text-hout">Bezoek</a>
+    </nav>
+    <a href="tel:+31345247074" class="knop inline-flex items-center gap-2 rounded-full bg-hout text-kalk px-4 py-2.5 text-sm font-semibold hover:bg-black">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">0345 247 074</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-8 pb-14 lg:pt-14 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="lg:col-span-7 order-1">
+      <p class="hero-in text-[15px] font-medium text-mos">Zorgboerderij met bakkerij en boerderijwinkel in Culemborg</p>
+      <h1 class="hero-in d2 font-kop font-extrabold tracking-[-0.03em] leading-[0.95] text-[3.1rem] sm:text-7xl lg:text-[4rem] xl:text-[4.6rem] mt-4">
+        Bijzondere bakkers.<br class="hidden lg:block"> Bijzonder gebak.
+      </h1>
+      <p class="hero-in d3 mt-6 text-lg sm:text-xl leading-relaxed text-houtzacht max-w-[34ch]">
+        Op onze boerderij bakken deelnemers en patissiers samen taarten, gebak en koekjes. Haal ze vers in de boerderijwinkel, met groente uit eigen moestuin.
+      </p>
+      <div class="hero-in d3 mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:+31345247074" class="knop inline-flex justify-center items-center gap-3 rounded-full bg-eigeel text-hout px-8 py-4 text-lg font-bold shadow-[0_10px_24px_-10px_rgba(217,149,0,.8)] hover:bg-eigeeldiep">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0345 247 074
+        </a>
+        <a href="#bezoek" class="text-center sm:text-left font-semibold underline decoration-eigeel decoration-2 underline-offset-[6px] hover:decoration-hout">Openingstijden en route</a>
+      </div>
+      <p class="hero-in d3 mt-8 flex items-center gap-3 text-[15px] text-houtzacht">
+        <span class="flex text-eigeel" aria-hidden="true">
+          <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        <span><strong class="text-hout">4,6</strong> uit 246 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-5 order-2 relative">
+      <div class="relative mx-auto w-full max-w-[560px]">
+        <!-- getekende dakrand, zoals in het logo -->
+        <svg class="dak-lijn absolute -left-4 -right-4 -top-5 h-[60%] w-[calc(100%+2rem)] text-eigeel pointer-events-none" viewBox="0 0 100 100" fill="none" aria-hidden="true" preserveAspectRatio="none">
+          <path d="M0 100 L0 37 L50 0 L100 37 L100 100" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <div class="gevel relative aspect-[4/4.6] sm:aspect-[4/4.4] overflow-hidden bg-wei">
+          <img src="assets/site-02.jpg" alt="Een deelnemer van De Witte Schuur spuit lachend slagroom op een gebakje in de bakkerij" class="absolute inset-0 w-full h-full object-cover object-[50%_30%]">
+        </div>
+        <p class="absolute -bottom-4 left-4 sm:-left-6 bg-kalk border-2 border-hout rounded-xl px-4 py-2 text-sm font-semibold shadow-[4px_4px_0_#1E211D]">
+          Vers gespoten in onze eigen bakkerij
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATISSERIE -->
+<section id="patisserie" class="bg-wei/70 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-5 lg:sticky lg:top-28">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02]">Uit onze patisserie</h2>
+      <p class="mt-6 text-lg leading-relaxed text-houtzacht max-w-[48ch]">
+        Onze bijzondere bakkers maken samen met de patissiers eerlijke lekkernijen: taarten, gebakjes, koekjes, crackers en kaasstengels.
+        Alles wordt hier op de boerderij gemaakt, en dat proef je.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed text-houtzacht max-w-[48ch]">
+        Een taart voor een verjaardag of een doos gebak voor op het werk? Bel ons, dan zetten we hem voor je klaar.
+      </p>
+
+      <ul class="mt-10 border-t-2 border-hout" aria-label="Een greep uit de vitrine">
+        <li class="flex items-baseline gap-3 py-4 border-b border-hout/15">
+          <span class="font-kop font-bold text-lg sm:text-xl">Chipolata gebakje</span>
+          <span class="flex-1 min-w-4 border-b border-dotted border-hout/30 translate-y-[-4px]"></span>
+          <span class="font-semibold tabular-nums whitespace-nowrap">€ 3,35</span>
+        </li>
+        <li class="flex items-baseline gap-3 py-4 border-b border-hout/15">
+          <span class="font-kop font-bold text-lg sm:text-xl">Bavaroistaart</span>
+          <span class="flex-1 min-w-4 border-b border-dotted border-hout/30 translate-y-[-4px]"></span>
+          <span class="font-semibold tabular-nums whitespace-nowrap">€ 21,79</span>
+        </li>
+        <li class="flex items-baseline gap-3 py-4 border-b border-hout/15">
+          <span class="font-kop font-bold text-lg sm:text-xl">Gesorteerd luxe gebak, 10 stuks</span>
+          <span class="flex-1 min-w-4 border-b border-dotted border-hout/30 translate-y-[-4px]"></span>
+          <span class="font-semibold tabular-nums whitespace-nowrap">€ 30,00</span>
+        </li>
+      </ul>
+
+      <a href="tel:+31345247074" class="knop mt-8 inline-flex items-center gap-2 rounded-full border-2 border-hout px-6 py-3 font-semibold hover:bg-hout hover:text-kalk">
+        Gebak bestellen: 0345 247 074
+      </a>
+    </div>
+
+    <div class="lg:col-span-7 grid grid-cols-6 gap-4 sm:gap-5">
+      <figure class="col-span-6 rounded-2xl overflow-hidden bg-kalk">
+        <img src="assets/site-03.jpg" alt="Zeven verschillende gebakjes van boven gefotografeerd op wit marmer" class="w-full aspect-[4/4] sm:aspect-[5/4] object-cover object-center">
+      </figure>
+      <figure class="col-span-6 sm:col-span-4 rounded-2xl overflow-hidden">
+        <img src="assets/google-05.jpg" alt="De gebakvitrine in de winkel met taarten, tompoucen en een roze frambozen-vanilletaart" class="w-full aspect-[4/3] object-cover object-[50%_70%]">
+      </figure>
+      <div class="col-span-6 sm:col-span-2 rounded-2xl bg-eigeel p-6 flex flex-col justify-end min-h-[9rem]">
+        <p class="font-kop font-bold text-xl leading-snug">Di t/m za vanaf 9:00 vers in de vitrine.</p><p class="mt-2 text-sm font-medium">Maandag vanaf 13:00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOERDERIJWINKEL -->
+<section id="winkel" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <figure class="lg:col-span-5 order-2 lg:order-1">
+        <img src="assets/site-04.jpg" alt="De boerderijwinkel met houten bakken vol groente, fruit en pompoenen" class="boog w-full aspect-[4/5] object-cover">
+      </figure>
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02] max-w-[16ch]">Vers uit de boerderijwinkel</h2>
+        <p class="mt-6 text-lg leading-relaxed text-houtzacht max-w-[56ch]">
+          In onze winkel vind je alles wat we zelf maken en kweken. Daarnaast verkopen we mooie streekproducten.
+          De deelnemers helpen je graag: ze pakken je boodschappen in, vullen de schappen en houden de winkel schoon.
+        </p>
+
+        <div class="mt-10 grid sm:grid-cols-2 gap-8 border-t-2 border-hout pt-6">
+          <div>
+            <h3 class="text-sm font-semibold text-mos">Van eigen erf</h3>
+            <p class="mt-2 font-kop font-bold text-2xl leading-snug">Aardappels, groenten, eieren, fruit, cakes, taarten, snacks en lamsvlees.</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-mos">Uit de streek</h3>
+            <p class="mt-2 font-kop font-bold text-2xl leading-snug">Meel van de molen, jams, sappen, zuivel, kaas en noten.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- moestuin -->
+    <div class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div class="lg:col-span-5">
+        <h3 class="font-kop font-extrabold text-3xl sm:text-4xl tracking-[-0.02em] leading-[1.05]">Uit eigen moestuin, zonder kunstmest</h3>
+        <p class="mt-5 text-lg leading-relaxed text-houtzacht max-w-[50ch]">
+          We kweken op een verantwoorde manier, zonder kunstmest en bestrijdingsmiddelen. De deelnemers zaaien, kweken en verzorgen alle groenten en fruit,
+          en ieder jaar bedenken we samen wat er de grond in gaat.
+        </p>
+      </div>
+      <figure class="lg:col-span-7">
+        <img src="assets/site-05.jpg" alt="Een deelnemer werkt tussen de aardappelplanten in de moestuin" class="w-full aspect-[16/10] object-cover rounded-2xl">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- THEETUIN + REVIEWS -->
+<section id="theetuin" class="bg-wei/70 py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div class="lg:col-span-6">
+        <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02]">Een ijsje op het terras, de kinderen bij de dieren</h2>
+        <p class="mt-6 text-lg leading-relaxed text-houtzacht max-w-[50ch]">
+          In het hoogseizoen zijn de Theetuin en de IJssalon open. Neem een gebakje en wat te drinken onder de leibomen, terwijl de kinderen spelen en de dieren bekijken.
+        </p>
+      </div>
+      <figure class="lg:col-span-6">
+        <img src="assets/google-07.jpg" alt="Het terras met tafel en stoelen onder leibomen voor de witte schuur met boograam" class="w-full aspect-[16/11] object-cover object-[50%_60%] rounded-2xl">
+      </figure>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-12 gap-5 md:items-start">
+      <blockquote class="md:col-span-7 bg-kalk rounded-2xl p-8 lg:p-10 border-2 border-hout shadow-[6px_6px_0_#1E211D]">
+        <p class="font-kop font-bold text-2xl sm:text-3xl leading-snug">"Lekker buiten zitten op terras waar kinderen lekker kunnen spelen. Lekker gebakje met wat te drinken op het terras of een lekker ijsje. Echt een aanrader."</p>
+        <footer class="mt-6 text-houtzacht"><strong class="text-hout">Marcel Van Gaalen</strong>, op Google</footer>
+      </blockquote>
+      <div class="md:col-span-5 grid gap-5">
+        <blockquote class="bg-kalk rounded-2xl p-7">
+          <p class="text-lg leading-relaxed">"Vriendelijk personeel! Fijne plek om te genieten van een ijsje terwijl je kids lekker kunnen spelen en de dieren kunnen bekijken."</p>
+          <footer class="mt-4 text-sm text-houtzacht"><strong class="text-hout">Thouraya aouled messaoud</strong>, op Google</footer>
+        </blockquote>
+        <blockquote class="bg-kalk rounded-2xl p-7">
+          <p class="text-lg leading-relaxed">"Vriendelijke medewerkers (M/V) en een heerlijk zonnetje achter, beschut tegen de wind. Super vers eten en ook heel snel opgediend."</p>
+          <footer class="mt-4 text-sm text-houtzacht"><strong class="text-hout">Doubleyou MC</strong>, over de lunch in het Elisabeth Weeshuis Museum</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZORGBOERDERIJ -->
+<section id="zorgboerderij" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02]">Samen werken en beleven op de boerderij</h2>
+      <p class="mt-6 text-lg leading-relaxed text-houtzacht max-w-[56ch]">
+        De Witte Schuur is een agrarisch familiebedrijf in het buitengebied van Culemborg. Sinds 2008 hebben zo'n 70 (jong)volwassenen met een beperking hier
+        een zinvolle dagbesteding, in een veilige en vertrouwde omgeving. Op de boerderij, in de bakkerij, de winkel, de moestuin en de houtwerkplaats doet
+        iedereen mee op zijn of haar eigen manier.
+      </p>
+
+      <div class="mt-10 pl-6 border-l-4 border-eigeel max-w-[56ch]">
+        <p class="text-lg leading-relaxed">
+          Wij zijn Frans en Sanne van Herwijnen. Voor Frans is De Witte Schuur al van kinds af aan een vertrouwde plek, bij zijn grootouders op de boerderij.
+          Sinds 2024 wonen we hier met onze kinderen, en in 2025 namen we het stokje over van Conny en Frans sr. We willen een plek blijven waar mensen zichzelf
+          mogen zijn, waar iedereen mee kan doen en waar ruimte is om te leren, te groeien en vooral veel plezier te hebben.
+        </p>
+        <p class="mt-4 font-semibold">Frans en Sanne van Herwijnen</p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 flex flex-col gap-5">
+      <figure>
+        <img src="assets/site-06.jpg" alt="Een deelnemer aait samen met een begeleider een zwartwit kalfje in de stal" class="w-full aspect-[4/3] object-cover rounded-2xl">
+      </figure>
+      <blockquote class="bg-hout text-kalk rounded-2xl p-7 lg:p-8">
+        <p class="text-lg leading-relaxed">"Een schitterende zorgboerderij. Enorm fijne sfeer op de locatie. Jet eigenaarsechtpaar heeft een enorme passie om alles in het werk te stellen om het voor alle deelnemers een veilige plek te zijn. De deelnemers zijn hier echt op hun plek"</p>
+        <footer class="mt-4 text-sm text-kalk/70"><strong class="text-eigeel">Peter H. Linker</strong>, op Google</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- landschap -->
+<div class="relative h-[38vh] min-h-[240px] max-h-[460px] overflow-hidden" role="img" aria-label="Schapen in het weiland naast de sloot, met de zwarte schuren van De Witte Schuur op de achtergrond">
+  <img src="assets/google-03.jpg" alt="" class="absolute inset-0 w-full h-full object-cover object-[50%_62%]">
+</div>
+
+<!-- BEDRIJVEN -->
+<section id="bedrijven" class="bg-hout text-kalk py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02]">Voor bedrijven: lunch, gebak en kerstpakketten</h2>
+      <p class="mt-6 text-lg leading-relaxed text-kalk/75 max-w-[48ch]">
+        Een verzorgde lunch, overheerlijk gebak of een high tea voor je team of je klanten? Wij staan voor je klaar.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a href="mailto:winkel@de-witteschuur.nl?subject=Kerstpakketten%20of%20catering" class="knop whitespace-nowrap inline-flex justify-center items-center rounded-full bg-eigeel text-hout px-7 py-4 font-bold hover:bg-eigeeldiep">Mail je aanvraag</a>
+        <a href="tel:+31345247074" class="knop whitespace-nowrap inline-flex justify-center items-center rounded-full border-2 border-kalk/40 px-7 py-4 font-semibold hover:border-kalk">Bel 0345 247 074</a>
+      </div>
+      <p class="mt-4 text-sm text-kalk/60">Of mail direct naar <a href="mailto:winkel@de-witteschuur.nl" class="text-kalk underline underline-offset-4">winkel@de-witteschuur.nl</a></p>
+    </div>
+
+    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-x-10 gap-y-10 lg:pt-3">
+      <div class="sm:col-span-2 border-t border-kalk/20 pt-6">
+        <h3 class="font-kop font-bold text-2xl">Kerstpakketten, gemaakt in Culemborg</h3>
+        <p class="mt-3 leading-relaxed text-kalk/75 max-w-[60ch]">
+          Kleine of grote pakketten voor personeel en relaties, helemaal naar wens samen te stellen. Alle deelnemers dragen eraan bij,
+          en dat maakt elk pakket bijzonder.
+        </p>
+      </div>
+      <div class="border-t border-kalk/20 pt-6">
+        <h3 class="font-kop font-bold text-xl text-eigeel">Uit de bakkerij</h3>
+        <p class="mt-3 leading-relaxed text-kalk/75">Koekjes, crackers, kerstbroden, kaasstengels, gingerbread mannetjes en kerstkransjes.</p>
+      </div>
+      <div class="border-t border-kalk/20 pt-6">
+        <h3 class="font-kop font-bold text-xl text-eigeel">Uit de houtwerkplaats</h3>
+        <p class="mt-3 leading-relaxed text-kalk/75">Houten borrelplanken en kratjes, gemaakt in de houtwerkplaats en het atelier.</p>
+      </div>
+      <div class="sm:col-span-2 border-t border-kalk/20 pt-6">
+        <h3 class="font-kop font-bold text-xl text-eigeel">Netjes ingepakt</h3>
+        <p class="mt-3 leading-relaxed text-kalk/75 max-w-[60ch]">Ons inpakteam pakt alles enthousiast in, ook brievenbuspakketten of een cadeau dat verstuurd moet worden voor de verjaardag van een medewerker.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEZOEK -->
+<section id="bezoek" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02]">Kom langs aan de Prijsseweg</h2>
+      <address class="not-italic mt-6 text-lg leading-relaxed">
+        Prijsseweg 16<br>4105 LE Culemborg
+      </address>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Prijsseweg+16+4105+LE+Culemborg" target="_blank" rel="noopener" class="mt-3 inline-block font-semibold underline decoration-eigeel decoration-2 underline-offset-[6px] hover:decoration-hout">Plan je route</a>
+
+      <h3 class="font-kop font-bold text-xl mt-10">Openingstijden boerderijwinkel</h3>
+      <table class="uren mt-4 w-full max-w-sm text-[17px]">
+        <tbody>
+          <tr data-dag="1" class="border-b border-hout/10"><td class="py-2.5">Maandag</td><td class="py-2.5 text-right tabular-nums">13:00 – 17:30</td></tr>
+          <tr data-dag="2" class="border-b border-hout/10"><td class="py-2.5">Dinsdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 17:30</td></tr>
+          <tr data-dag="3" class="border-b border-hout/10"><td class="py-2.5">Woensdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 17:30</td></tr>
+          <tr data-dag="4" class="border-b border-hout/10"><td class="py-2.5">Donderdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 17:30</td></tr>
+          <tr data-dag="5" class="border-b border-hout/10"><td class="py-2.5">Vrijdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 17:30</td></tr>
+          <tr data-dag="6" class="border-b border-hout/10"><td class="py-2.5">Zaterdag</td><td class="py-2.5 text-right tabular-nums">09:00 – 17:30</td></tr>
+          <tr data-dag="0"><td class="py-2.5">Zondag</td><td class="py-2.5 text-right font-semibold">Gesloten</td></tr>
+        </tbody>
+      </table>
+
+      <div class="mt-10 space-y-2 text-lg">
+        <p><a href="tel:+31345247074" class="font-semibold hover:underline">0345 247 074</a></p>
+        <p><a href="mailto:info@de-witteschuur.nl" class="font-semibold hover:underline">info@de-witteschuur.nl</a></p>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 flex flex-col gap-8">
+      <figure>
+        <img src="assets/google-01.jpg" alt="De witte schuur met de boerderijwinkel in de avond, met lichtjes langs de dakrand en de vlag van De Witte Schuur" class="w-full aspect-[16/10] object-cover object-[50%_60%] rounded-2xl">
+      </figure>
+
+      <form class="bg-wei/70 rounded-2xl p-6 sm:p-8 grid sm:grid-cols-2 gap-5" onsubmit="event.preventDefault(); this.querySelector('[data-bevestiging]').hidden = false; this.reset();">
+        <div class="sm:col-span-2">
+          <h3 class="font-kop font-bold text-2xl">Stuur ons een bericht</h3>
+          <p class="mt-2 text-houtzacht">Een vraag over een bestelling, de winkel, de deelnemers of de boerderij? We nemen zo snel mogelijk contact met je op.</p>
+        </div>
+        <label class="block">
+          <span class="text-sm font-semibold">Naam</span>
+          <input required name="naam" autocomplete="name" class="mt-1.5 w-full rounded-lg border border-hout/20 bg-kalk px-4 py-3 focus:border-hout focus:outline-none">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Telefoonnummer</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-lg border border-hout/20 bg-kalk px-4 py-3 focus:border-hout focus:outline-none">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold">E-mail</span>
+          <input required name="email" type="email" autocomplete="email" class="mt-1.5 w-full rounded-lg border border-hout/20 bg-kalk px-4 py-3 focus:border-hout focus:outline-none">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold">Bericht</span>
+          <textarea required name="bericht" rows="4" class="mt-1.5 w-full rounded-lg border border-hout/20 bg-kalk px-4 py-3 focus:border-hout focus:outline-none"></textarea>
+        </label>
+        <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center gap-4">
+          <button class="knop rounded-full bg-hout text-kalk px-7 py-3.5 font-semibold hover:bg-black">Verstuur bericht</button>
+          <p data-bevestiging hidden class="text-mos font-semibold">Bedankt, je bericht is verstuurd.</p>
+        </div>
+      </form>
+
+      <p class="text-houtzacht">
+        Zin om ons team te versterken in de winkel of de patisserie? Stuur je sollicitatie naar Sanne van Herwijnen via
+        <a href="mailto:info@de-witteschuur.nl?subject=Sollicitatie" class="font-semibold text-hout underline decoration-eigeel decoration-2 underline-offset-4">info@de-witteschuur.nl</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-hout text-kalk/75 pt-14 pb-28 lg:pb-14">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="lg:col-span-2">
+      <img src="assets/site-01.svg" alt="De Witte Schuur" class="h-14 w-auto invert">
+      <p class="mt-4 max-w-[40ch]">Zorgboerderij met patisserie, boerderijwinkel en theetuin in het buitengebied van Culemborg.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-kalk">Adres</p>
+      <p class="mt-2">Prijsseweg 16<br>4105 LE Culemborg</p>
+    </div>
+    <div>
+      <p class="font-semibold text-kalk">Contact</p>
+      <p class="mt-2"><a href="tel:+31345247074" class="hover:text-eigeel">0345 247 074</a><br><a href="mailto:info@de-witteschuur.nl" class="hover:text-eigeel">info@de-witteschuur.nl</a></p>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 mt-12 pt-6 border-t border-kalk/15 text-sm flex flex-col sm:flex-row justify-between gap-2">
+    <p>© De Witte Schuur, Culemborg</p>
+    <p>Demo door <a href="https://hagenweb.nl" class="text-eigeel hover:underline">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- vaste belbalk mobiel -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-kalk/95 backdrop-blur border-t border-hout/10">
+  <div class="flex gap-3">
+    <a href="tel:+31345247074" class="knop flex-1 inline-flex justify-center items-center gap-2 rounded-full bg-eigeel text-hout py-3.5 font-bold">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Bel ons
+    </a>
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Prijsseweg+16+4105+LE+Culemborg" target="_blank" rel="noopener" class="knop inline-flex justify-center items-center rounded-full border-2 border-hout px-5 py-3.5 font-semibold">Route</a>
+  </div>
+</div>
+
+<script>
+  // Markeer de dag van vandaag in de openingstijden
+  var d = new Date().getDay();
+  var rij = document.querySelector('.uren tr[data-dag="' + d + '"]');
+  if (rij) { rij.classList.add('vandaag'); rij.cells[0].textContent += ' (vandaag)'; }
+</script>
+</body>
+</html>

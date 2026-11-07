@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De Ambachterij | Warme bakker in Schoonrewoerd en De Bilt</title>
+<meta name="description" content="Ambachtelijk brood, gebak, taarten, chocolade en ijs van De Ambachterij aan de Dorpsstraat in Schoonrewoerd. Bel 0345 641 412 of bestel online.">
+<meta property="og:title" content="De Ambachterij, warme bakker in Schoonrewoerd">
+<meta property="og:image" content="assets/google-02.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        gevel: '#1B1F1D',
+        goud: '#C6A467',
+        goudlicht: '#D9BE86',
+        marmer: '#F6F5F2',
+        leisteen: '#5F716E',
+        inkt: '#232A28',
+      },
+      fontFamily: {
+        kop: ['Marcellus', 'Georgia', 'serif'],
+        tekst: ['Jost', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; } html.shot { scroll-behavior: auto; }
+  body { font-family: 'Jost', system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* Tegelmotief van de winkelvloer: overlappende cirkels */
+  .tegels {
+    background-color: #1B1F1D;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23C6A467' stroke-width='1.2' stroke-opacity='.55'%3E%3Ccircle cx='0' cy='0' r='28'/%3E%3Ccircle cx='56' cy='0' r='28'/%3E%3Ccircle cx='0' cy='56' r='28'/%3E%3Ccircle cx='56' cy='56' r='28'/%3E%3Ccircle cx='28' cy='28' r='28'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 56px 56px;
+  }
+  .tegels-licht {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%236E807D' stroke-width='1' stroke-opacity='.12'%3E%3Ccircle cx='0' cy='0' r='28'/%3E%3Ccircle cx='56' cy='0' r='28'/%3E%3Ccircle cx='0' cy='56' r='28'/%3E%3Ccircle cx='56' cy='56' r='28'/%3E%3Ccircle cx='28' cy='28' r='28'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 56px 56px;
+  }
+  .boog { border-radius: 999px 999px 0 0; }
+  .knop { transition: background-color .2s, transform .15s, box-shadow .2s; }
+  .knop:hover { background-color: #D9BE86; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 2px solid #C6A467; outline-offset: 3px; }
+  .js .hero-in { animation: in .9s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in-2 { animation: in .9s .12s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-in, .js .hero-in-2 { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-marmer text-inkt antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-goud focus:text-gevel focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-leisteen text-white text-[13px] text-center py-1.5 px-4">
+  Demo voor De Ambachterij, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-medium hover:text-goudlicht">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-gevel text-white border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3 group" aria-label="De Ambachterij, naar boven">
+      <svg viewBox="0 0 48 48" class="w-10 h-10 sm:w-11 sm:h-11 shrink-0" aria-hidden="true">
+        <circle cx="24" cy="24" r="22.5" fill="none" stroke="#C6A467" stroke-width="1.2"/>
+        <text x="24" y="33" text-anchor="middle" font-family="Marcellus, serif" font-size="26" fill="#C6A467">A</text>
+      </svg>
+      <span class="leading-none">
+        <span class="block font-kop text-[19px] sm:text-[22px] tracking-[0.08em] text-goud">DE AMBACHTERIJ</span>
+        <span class="block text-[11px] tracking-[0.18em] text-white/60 mt-1">Bakkers ambacht</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] text-white/80" aria-label="Hoofdmenu">
+      <a href="#vitrine" class="hover:text-goud transition-colors">Assortiment</a>
+      <a href="#bestellen" class="hover:text-goud transition-colors">Bestellen</a>
+      <a href="#reviews" class="hover:text-goud transition-colors">Reviews</a>
+      <a href="#bezoek" class="hover:text-goud transition-colors">Openingstijden</a>
+      <a href="tel:0345641412" class="text-goud font-medium hover:text-goudlicht">0345 641 412</a>
+    </nav>
+    <a href="#bezoek" class="md:hidden text-[14px] text-white/80 underline underline-offset-4 decoration-white/30">Openingstijden</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="bg-gevel text-white relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-end">
+    <div class="pt-10 sm:pt-16 lg:pt-24 lg:pb-28 hero-in">
+      <p class="text-goud text-[15px] tracking-wide">Warme bakker in Schoonrewoerd</p>
+      <h1 class="font-kop text-[42px] leading-[1.05] sm:text-6xl lg:text-[76px] lg:leading-[1.02] mt-4 tracking-[-0.01em]">
+        Een warme bakker, zoals het hoort.
+      </h1>
+      <p class="mt-6 text-[17px] sm:text-lg leading-relaxed text-white/75 max-w-[30rem]">
+        Brood, gebak, taarten, chocolade en ijs, ambachtelijk gemaakt. Kom langs aan de Dorpsstraat of bestel vandaag online voor morgen.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:0345641412" class="knop inline-flex items-center gap-3 bg-goud text-gevel font-semibold text-[17px] px-7 py-4 rounded-sm shadow-[0_10px_30px_-12px_rgba(198,164,103,.6)]">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4Z"/></svg>
+          Bel 0345 641 412
+        </a>
+        <a href="https://www.indeambachterij.nl/" class="text-white text-[16px] underline underline-offset-[6px] decoration-goud/60 hover:decoration-goud">Bestel online</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px] text-white/70">
+        <span class="text-goud tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-white font-medium">4,7</strong> uit 168 Google-reviews</span>
+      </p>
+    </div>
+    <div class="relative hero-in-2 pb-0 lg:pt-14">
+      <div class="tegels absolute -inset-x-6 bottom-0 top-24 lg:top-6 boog opacity-80" aria-hidden="true"></div>
+      <img src="assets/google-02.jpg" alt="Roomboter croissants, kaascroissants en saucijzenbroodjes van De Ambachterij"
+           class="relative boog w-full max-w-[520px] mx-auto aspect-[4/5] object-cover object-center border-[6px] border-b-0 border-gevel">
+    </div>
+  </div>
+</section>
+
+<!-- Prijswinnaars -->
+<section class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+  <div class="max-w-2xl">
+    <h2 class="font-kop text-4xl sm:text-5xl leading-tight">Hier rijden mensen voor om.</h2>
+    <p class="mt-4 text-lg text-inkt/75 leading-relaxed">Twee producten waar Schoonrewoerd trots op mag zijn. De gevulde speculaas viel in de prijzen, en ons ijs laat voorbijgangers keren.</p>
+  </div>
+  <div class="mt-14 grid md:grid-cols-12 gap-10 md:gap-8 items-start">
+    <figure class="md:col-span-7">
+      <div class="bg-white rounded-sm overflow-hidden ring-1 ring-inkt/10">
+        <img src="assets/site-02.jpg" alt="Gevulde speculaas met amandelen en een gouden badge: 1e plaats gevulde speculaas" class="w-full">
+      </div>
+      <figcaption class="mt-5 flex items-baseline justify-between gap-4 border-t border-inkt/15 pt-4">
+        <span>
+          <span class="font-kop text-2xl">Gevulde speculaas</span>
+          <span class="block text-inkt/65 mt-1">Bekroond met een eerste plaats.</span>
+        </span>
+        <span class="font-kop text-2xl text-leisteen whitespace-nowrap">€ 8,50</span>
+      </figcaption>
+    </figure>
+    <figure class="md:col-span-5 md:mt-24">
+      <img src="assets/google-05.jpg" alt="Twee bekertjes ijs van De Ambachterij met een hoorntje erin" class="w-full aspect-[4/5] object-cover object-[50%_60%] rounded-t-[200px] rounded-b-sm">
+      <figcaption class="mt-6">
+        <blockquote class="font-kop text-[22px] leading-snug">“Bij het voorbij rijden het bord ‘beste ijs 2026’ gezien, we zijn omgekeerd. Die prijs hebben meer dan verdiend! Heerlijk en zeer betaalbaar.”</blockquote>
+        <p class="mt-3 text-inkt/65">Lindy en Paul Homan, via Google</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Vitrine -->
+<section id="vitrine" class="bg-marmer tegels-licht border-y border-inkt/10">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+    <div class="grid md:grid-cols-2 gap-6 items-end">
+      <h2 class="font-kop text-4xl sm:text-5xl leading-tight">Wat er in de vitrine ligt</h2>
+      <p class="text-lg text-inkt/75 leading-relaxed md:justify-self-end max-w-md">Van gewoon brood tot echte patisserie. Alles ambachtelijk, ook voor wie op dieet is of een allergie heeft.</p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+      <a href="https://www.indeambachterij.nl/" class="group col-span-2 lg:row-span-2 flex flex-col">
+        <div class="bg-white rounded-sm overflow-hidden ring-1 ring-inkt/10 flex-1 flex items-center"><img src="assets/site-09.jpg" alt="Rood glanzend gebakje op een zanddeegbodem" class="w-full transition-transform duration-500 group-hover:scale-[1.03]"></div>
+        <span class="mt-3 flex items-baseline justify-between gap-4">
+          <span class="font-kop text-3xl">Gebak</span>
+          <span class="text-inkt/60 text-[15px]">“Het gebak is echt patisserie”</span>
+        </span>
+      </a>
+      <a href="https://www.indeambachterij.nl/" class="group">
+        <div class="bg-white rounded-sm aspect-[4/3] overflow-hidden ring-1 ring-inkt/10"><img src="assets/site-10.jpg" alt="Vierkante taart met room, frambozen en roze chocoladeplaatjes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"></div>
+        <span class="font-kop text-xl block mt-3">Taarten</span>
+      </a>
+      <a href="https://www.indeambachterij.nl/" class="group">
+        <div class="bg-white rounded-sm aspect-[4/3] overflow-hidden ring-1 ring-inkt/10"><img src="assets/site-12.jpg" alt="Doos met handgemaakte bonbons" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"></div>
+        <span class="font-kop text-xl block mt-3">Chocolade</span>
+      </a>
+      <a href="https://www.indeambachterij.nl/" class="group">
+        <div class="bg-white rounded-sm aspect-[4/3] overflow-hidden ring-1 ring-inkt/10"><img src="assets/site-04.jpg" alt="Volkorenbrood" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"></div>
+        <span class="font-kop text-xl block mt-3">Brood</span>
+      </a>
+      <a href="https://www.indeambachterij.nl/" class="group">
+        <div class="bg-white rounded-sm aspect-[4/3] overflow-hidden ring-1 ring-inkt/10"><img src="assets/site-08.jpg" alt="Gevulde koek met drie amandelen" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"></div>
+        <span class="font-kop text-xl block mt-3">Zoet &amp; hartig</span>
+      </a>
+    </div>
+
+    <p class="mt-12 text-inkt/70 leading-relaxed max-w-3xl">
+      Verder: broodjes, ontbijt, cake &amp; koekjes, dieet &amp; allergie en in het seizoen alles voor Sinterklaas.
+    </p>
+
+    <!-- Specialiteiten en aanbiedingen -->
+    <div class="mt-16 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-7">
+        <h3 class="font-kop text-3xl">Specialiteiten</h3>
+        <ul class="mt-6 divide-y divide-inkt/10 border-y border-inkt/10 text-[17px]">
+          <li class="flex justify-between gap-4 py-3.5"><span>Gevulde speculaas</span><span class="tabular-nums whitespace-nowrap">€ 8,50</span></li>
+          <li class="flex justify-between gap-4 py-3.5"><span>Speculaasjes roomboter</span><span class="tabular-nums whitespace-nowrap">€ 6,30</span></li>
+          <li class="flex justify-between gap-4 py-3.5"><span>Tulpje</span><span class="tabular-nums whitespace-nowrap">€ 4,15</span></li>
+          <li class="flex justify-between gap-4 py-3.5"><span>Appeltaart</span><span class="tabular-nums whitespace-nowrap">€ 11,70</span></li>
+          <li class="flex justify-between gap-4 py-3.5"><span>Croissants <span class="text-inkt/55 text-[15px]">(aanbieding op vrijdag &amp; zaterdag)</span></span><span class="tabular-nums whitespace-nowrap">€ 1,90</span></li>
+          <li class="flex justify-between gap-4 py-3.5"><span>Saucijzenbroodje</span><span class="tabular-nums whitespace-nowrap">€ 3,00</span></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="bg-leisteen text-white rounded-sm p-8 sm:p-10">
+          <h3 class="font-kop text-3xl">Aanbiedingen</h3>
+          <ul class="mt-6 space-y-5 text-[17px]">
+            <li><span class="font-kop text-goudlicht text-2xl block">4 + 1 gratis</span>Harde broodjes: bij vijf is de goedkoopste gratis.</li>
+            <li><span class="font-kop text-goudlicht text-2xl block">2e halve prijs</span>Bolletjes: bij twee krijgt u op de goedkoopste 50% korting.</li>
+            <li><span class="font-kop text-goudlicht text-2xl block">3 + 1 gratis</span>Snacks: bij vier is de goedkoopste gratis.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bestellen -->
+<section id="bestellen" class="tegels text-white">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+    <div class="bg-gevel border border-goud/40 rounded-sm px-6 py-10 sm:px-14 sm:py-14 grid md:grid-cols-[1.4fr_1fr] gap-8 items-center">
+      <div>
+        <h2 class="font-kop text-4xl sm:text-5xl leading-tight">Vandaag besteld, morgen vers.</h2>
+        <p class="mt-4 text-lg text-white/75 leading-relaxed max-w-xl">Bestel in onze webshop uiterlijk om 23:59 uur, dan heeft u het de volgende dag. Op zondag is de webshop gesloten. Met de postcodecheck ziet u direct of we bij u bezorgen.</p>
+      </div>
+      <div class="flex flex-col items-start md:items-end gap-4">
+        <a href="https://www.indeambachterij.nl/" class="knop inline-flex items-center bg-goud text-gevel font-semibold text-[17px] px-7 py-4 rounded-sm">Naar de webshop</a>
+        <a href="tel:0345641412" class="text-white/80 underline underline-offset-4 decoration-goud/50 hover:text-white">Liever bellen? 0345 641 412</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <h2 class="font-kop text-4xl sm:text-5xl leading-tight max-w-xl">Wat klanten zeggen</h2>
+    <p class="text-[17px] text-inkt/75"><span class="font-kop text-4xl text-inkt align-middle">4,7</span> <span class="text-goud tracking-[2px] align-middle">★★★★★</span> <span class="align-middle">uit 168 reviews op Google</span></p>
+  </div>
+  <div class="mt-12 columns-1 md:columns-2 gap-8 [&>*]:break-inside-avoid [&>*]:mb-8">
+    <figure class="border-t-2 border-goud pt-6">
+      <blockquote class="font-kop text-[22px] leading-snug">“Dit is nou echt een warme bakker, heerlijke produkten! Het gebak is echt patisserie, ze maken alles ambachtelijk en het personeel is vriendelijk en aardig.”</blockquote>
+      <figcaption class="mt-4 text-inkt/65">Fsissie</figcaption>
+    </figure>
+    <figure class="border-t-2 border-inkt/15 pt-6">
+      <blockquote class="text-[18px] leading-relaxed">“Per toeval deze bakkerij ontdekt! Heerlijke broodjes, croissant (wat een verschil met andere bakkers) en gewoon brood meegenomen. Ga hier zeker nog eens voor omrijden.”</blockquote>
+      <figcaption class="mt-4 text-inkt/65">M. L.</figcaption>
+    </figure>
+    <figure class="border-t-2 border-inkt/15 pt-6">
+      <blockquote class="text-[18px] leading-relaxed">“Mooie winkel met fijn personeel, het gebak en de ijsjes zijn altijd heerlijk.”</blockquote>
+      <figcaption class="mt-4 text-inkt/65">Sarah Dkb</figcaption>
+    </figure>
+    <figure class="border-t-2 border-inkt/15 pt-6">
+      <blockquote class="text-[18px] leading-relaxed">“Hele smakelijke producten en enorm aanbod in gebak, brood en koeken. De prijzen zijn stevig maar de prijswinnende producten zijn absoluut het proberen waard.”</blockquote>
+      <figcaption class="mt-4 text-inkt/65">Coen van Veenendaal</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- De winkel -->
+<section class="bg-gevel text-white">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="lg:col-span-8">
+      <img src="assets/google-04.jpg" alt="Interieur van De Ambachterij: eiken broodplanken, marmeren toonbank en vitrines met gebak" class="w-full aspect-[4/3] object-cover rounded-sm">
+    </div>
+    <div class="lg:col-span-4">
+      <h2 class="font-kop text-4xl sm:text-5xl leading-tight">Loop gerust binnen.</h2>
+      <p class="mt-5 text-lg text-white/75 leading-relaxed">Achter de gevel aan de Dorpsstraat vindt u een winkel vol brood op eiken planken, een marmeren toonbank en vitrines met gebak. Buiten onder de bomen staan tafeltjes.</p>
+      <img src="assets/google-07.jpg" alt="De Ambachterij aan de Dorpsstraat in Schoonrewoerd, met tafels buiten onder de bomen" class="mt-8 w-full aspect-[16/10] object-cover object-left rounded-sm">
+    </div>
+  </div>
+</section>
+
+<!-- Bezoek -->
+<section id="bezoek" class="max-w-6xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+  <h2 class="font-kop text-4xl sm:text-5xl leading-tight">Kom langs</h2>
+  <div class="mt-12 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-7">
+      <h3 class="font-kop text-2xl">Winkel Schoonrewoerd</h3>
+      <p class="mt-2 text-[17px] text-inkt/80">Dorpsstraat 32, 4145 KC Schoonrewoerd</p>
+      <dl class="mt-6 border-t border-inkt/15 text-[17px]">
+        <div class="flex justify-between py-3 border-b border-inkt/10"><dt>Maandag t/m vrijdag</dt><dd class="tabular-nums">08:30 tot 17:30</dd></div>
+        <div class="flex justify-between py-3 border-b border-inkt/10"><dt>Zaterdag</dt><dd class="tabular-nums">08:00 tot 15:00</dd></div>
+        <div class="flex justify-between py-3 border-b border-inkt/10 text-inkt/60"><dt>Zondag</dt><dd>Gesloten</dd></div>
+      </dl>
+      <div class="mt-8 flex flex-wrap gap-x-7 gap-y-4 items-center">
+        <a href="tel:0345641412" class="knop inline-flex items-center bg-goud text-gevel font-semibold text-[17px] px-7 py-4 rounded-sm">Bel 0345 641 412</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=De+Ambachterij+Dorpsstraat+32+Schoonrewoerd" class="underline underline-offset-4 decoration-goud hover:text-leisteen">Route plannen</a>
+      </div>
+    </div>
+    <div class="lg:col-span-5 space-y-8">
+      <div class="bg-white rounded-sm p-8 border border-inkt/10">
+        <h3 class="font-kop text-2xl">Winkel De Bilt</h3>
+        <p class="mt-2 text-[17px] text-inkt/80">Hessenweg 141, 3731 JG De Bilt</p>
+        <a href="tel:0302203159" class="mt-4 inline-block font-medium underline underline-offset-4 decoration-goud">030 220 3159</a>
+      </div>
+      <div class="p-8 bg-leisteen/10 rounded-sm">
+        <h3 class="font-kop text-2xl">Een vraag of een taart bestellen?</h3>
+        <p class="mt-2 text-[17px] text-inkt/80">Bel ons of stuur een e-mail:</p><p class="mt-2 text-[17px]"><a href="mailto:info@indeambachterij.nl" class="font-medium underline underline-offset-4 decoration-goud">info@indeambachterij.nl</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="tegels text-white/70 pb-24 md:pb-0">
+  <div class="bg-gevel/95">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12 flex flex-col md:flex-row md:items-end justify-between gap-6 text-[14px]">
+      <div>
+        <p class="font-kop text-2xl tracking-[0.08em] text-goud">DE AMBACHTERIJ</p>
+        <p class="mt-1 tracking-[0.18em] text-[12px] text-white/50">Bakkers ambacht</p>
+      </div>
+      <p>KvK 70947228<br>BTW NL858521507B01<br>Prijzen in euro incl. btw</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-gevel/95 backdrop-blur border-t border-goud/30 px-4 py-3 flex gap-3">
+  <a href="tel:0345641412" class="knop flex-1 inline-flex justify-center items-center gap-2 bg-goud text-gevel font-semibold py-3.5 rounded-sm">
+    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4Z"/></svg>
+    Bel de winkel
+  </a>
+  <a href="https://www.indeambachterij.nl/" class="inline-flex items-center px-4 text-white border border-white/30 rounded-sm">Bestellen</a>
+</div>
+
+</body>
+</html>

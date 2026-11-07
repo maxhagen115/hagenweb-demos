@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SA stukadoor en Afbouw | Stukadoor in Culemborg</title>
+<meta name="description" content="Strak stucwerk en afbouw in Culemborg en omgeving. Muren en plafonds, schilderwerk, verlaagde plafonds, cinewalls en badkamers. Bel Shadi: 06 87 16 83 35.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          kalk: '#F1F2EF',
+          gips: '#E2E5E1',
+          inkt: '#0F2A3D',
+          blauw: '#1A9ED6',
+          geel: '#F4C81E',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          sans: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #F1F2EF; color: #0F2A3D; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-weight: 800; letter-spacing: -0.02em; line-height: 0.98; text-wrap: balance; }
+  .kop-m { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-weight: 700; letter-spacing: -0.01em; }
+  p { text-wrap: pretty; }
+  /* Subtiele stuctextuur */
+  .stuc { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.16 0 0 0 0 0.24 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .boog { border-top-left-radius: clamp(120px, 22vw, 340px); }
+  .boog-r { border-top-right-radius: clamp(90px, 14vw, 200px); }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #1A9ED6; outline-offset: 3px; }
+  .onderstreep { background-image: linear-gradient(#F4C81E, #F4C81E); background-size: 100% 3px; background-position: 0 100%; background-repeat: no-repeat; padding-bottom: 2px; transition: background-size .25s ease; }
+  .onderstreep:hover { background-size: 100% 100%; }
+  /* Eén moment beweging: de hero-foto schuift zacht in (alleen met JS) */
+  .js .hero-foto { animation: inschuif 1s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes inschuif { from { clip-path: inset(0 0 0 18%); } to { clip-path: inset(0 0 0 0); } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .hero-foto { animation: none; }
+    .knop:hover { transform: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="font-sans stuc">
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-kalk/90 text-[13px] text-center px-4 py-2">
+  Demo voor SA stukadoor en Afbouw, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-geel">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-kalk/90 backdrop-blur border-b border-inkt/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-[68px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3 shrink-0" aria-label="SA stukadoor en Afbouw, naar boven">
+      <img src="assets/logo-oud.png" alt="" width="40" height="40" class="w-10 h-10">
+      <span class="leading-none">
+        <span class="kop-m block text-[17px]">SA stukadoor</span>
+        <span class="block text-[13px] text-inkt/60 mt-0.5">en Afbouw, Culemborg</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#werk" class="hover:text-blauw transition-colors">Werk</a>
+      <a href="#diensten" class="hover:text-blauw transition-colors">Diensten</a>
+      <a href="#shadi" class="hover:text-blauw transition-colors">Over Shadi</a>
+      <a href="#ervaringen" class="hover:text-blauw transition-colors">Ervaringen</a>
+      <a href="#contact" class="hover:text-blauw transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31687168335" class="knop hidden sm:inline-flex items-center gap-2 rounded-full bg-inkt text-kalk px-5 py-2.5 text-[15px] font-semibold hover:bg-[#173b54]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      06 87 16 83 35
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-8 lg:gap-6 pt-8 sm:pt-12 lg:pt-16 pb-10 lg:pb-20">
+      <div class="lg:col-span-6 xl:col-span-5 lg:pt-14 relative z-10">
+        <p class="text-[15px] font-medium text-inkt/70 mb-4 sm:mb-6">Stukadoor en afbouw in Culemborg</p>
+        <h1 class="kop text-[44px] sm:text-[64px] lg:text-[76px] xl:text-[84px]">Glad tot in elk hoekje.</h1>
+        <p class="mt-5 sm:mt-7 text-[17px] sm:text-lg leading-relaxed text-inkt/80 max-w-[30rem]">
+          Shadi stuct uw muren en plafonds strak en sausklaar, en verzorgt de afbouw eromheen. Netjes gewerkt, duidelijk afgesproken.
+        </p>
+        <div class="mt-7 sm:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+          <a href="tel:+31687168335" class="knop inline-flex items-center gap-3 rounded-full bg-geel text-inkt pl-6 pr-7 py-4 text-[17px] sm:text-lg font-bold shadow-[0_10px_30px_-10px_rgba(196,150,0,.7)] hover:bg-[#ffd535]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Bel 06 87 16 83 35
+          </a>
+          <a href="#contact" class="onderstreep font-semibold text-[16px]">Offerte aanvragen</a>
+        </div>
+        <a href="#ervaringen" class="mt-8 sm:mt-10 inline-flex items-center gap-3 group">
+          <span class="flex text-geel" aria-hidden="true">
+            <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.5 4.1 1.2 5.9L10 14.8l-5.3 2.9 1.2-5.9L1.4 7.7l6-.7z"/></svg>
+          </span>
+          <span class="text-[15px] text-inkt/75 group-hover:text-inkt"><strong class="text-inkt font-semibold">5,0</strong> uit 90 Google-reviews</span>
+        </a>
+      </div>
+      <div class="lg:col-span-6 xl:col-span-7 relative">
+        <div class="relative -mr-5 sm:-mr-8 lg:-mr-[max(2rem,calc((100vw-80rem)/2+2rem))]">
+          <img src="assets/site-02.jpg" alt="Shadi op de rolsteiger, bezig met het stucen van een plafond" class="hero-foto boog w-full h-[300px] sm:h-[440px] lg:h-[640px] object-cover object-[50%_40%] rounded-bl-2xl lg:rounded-bl-none">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Werk -->
+  <section id="werk" class="bg-gips/70 py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid md:grid-cols-12 gap-6 items-end mb-10 sm:mb-14">
+        <h2 class="kop text-[34px] sm:text-[48px] md:col-span-7">Niet alleen stucwerk. Ook alles wat erbij hoort.</h2>
+        <p class="md:col-span-5 text-[17px] leading-relaxed text-inkt/75 max-w-md">
+          Een cinewall met nissen en spots, een verlaagd plafond, een badkamer of een kleur op de muur. Shadi maakt het af, zodat u er meteen in kunt wonen.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-12 gap-3 sm:gap-4">
+        <figure class="col-span-2 md:col-span-7 md:row-span-2 relative">
+          <img src="assets/google-03.jpg" alt="Cinewall met tv, sfeerhaard en verlichte nissen" class="boog-r w-full h-[360px] sm:h-[480px] md:h-[596px] object-cover rounded-xl" loading="lazy">
+          <figcaption class="absolute left-3 bottom-3 bg-kalk/95 rounded-lg px-3 py-1.5 text-[14px] font-medium">Cinewall op maat</figcaption>
+        </figure>
+        <figure class="col-span-1 md:col-span-5 relative">
+          <img src="assets/google-02.jpg" alt="Badkamer met inloopdouche en messing kranen" class="w-full h-[220px] sm:h-[300px] md:h-[290px] object-cover rounded-xl" loading="lazy">
+          <figcaption class="absolute left-3 bottom-3 bg-kalk/95 rounded-lg px-3 py-1.5 text-[14px] font-medium">Badkamer</figcaption>
+        </figure>
+        <figure class="col-span-1 md:col-span-5 relative">
+          <img src="assets/google-06.jpg" alt="Verlaagd plafond met inbouwspots in een woonkamer" class="w-full h-[220px] sm:h-[300px] md:h-[290px] object-cover object-top rounded-xl" loading="lazy">
+          <figcaption class="absolute left-3 bottom-3 bg-kalk/95 rounded-lg px-3 py-1.5 text-[14px] font-medium">Verlaagd plafond</figcaption>
+        </figure>
+        <figure class="col-span-1 md:col-span-4 relative">
+          <img src="assets/google-05.jpg" alt="Ronde wand in blauwgrijs geschilderd in een lichte woonkamer" class="w-full h-[220px] sm:h-[320px] object-cover rounded-xl" loading="lazy">
+          <figcaption class="absolute left-3 bottom-3 bg-kalk/95 rounded-lg px-3 py-1.5 text-[14px] font-medium">Schilderwerk</figcaption>
+        </figure>
+        <figure class="col-span-1 md:col-span-4 relative">
+          <img src="assets/site-10.jpg" alt="Badkamer met stucwanden, ligbad en hangtoilet" class="w-full h-[220px] sm:h-[320px] object-cover rounded-xl" loading="lazy">
+          <figcaption class="absolute left-3 bottom-3 bg-kalk/95 rounded-lg px-3 py-1.5 text-[14px] font-medium">Badkamerrenovatie</figcaption>
+        </figure>
+        <figure class="col-span-2 md:col-span-4 relative">
+          <img src="assets/site-06.jpg" alt="Okergele lambrisering geschilderd boven een tegelvloer" class="w-full h-[240px] sm:h-[320px] object-cover rounded-xl" loading="lazy">
+          <figcaption class="absolute left-3 bottom-3 bg-kalk/95 rounded-lg px-3 py-1.5 text-[14px] font-medium">Kleur op de muur</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diensten -->
+  <section id="diensten" class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <h2 class="kop text-[34px] sm:text-[48px] max-w-3xl">Van kale muur tot woonklaar.</h2>
+
+      <div class="mt-12 grid lg:grid-cols-12 gap-12 lg:gap-10">
+        <div class="lg:col-span-8 divide-y divide-inkt/15 border-y border-inkt/15">
+          <article class="py-8 grid sm:grid-cols-[13rem_1fr] gap-3 sm:gap-8">
+            <h3 class="kop-m text-2xl">Stucen</h3>
+            <div>
+              <p class="text-[17px] leading-relaxed text-inkt/80">Strakke muren en plafonds, sausklaar of behangklaar. Voor renovatie en nieuwbouw, inclusief spuitwerk voor grote oppervlakken en decoratieve afwerkingen.</p>
+              <ul class="mt-5 flex flex-wrap gap-2 text-[14px]">
+                <li class="rounded-md bg-gips px-3 py-1.5">Strakke afwerking</li>
+                <li class="rounded-md bg-gips px-3 py-1.5">Gestructureerde afwerking</li>
+                <li class="rounded-md bg-gips px-3 py-1.5">Beton ciré</li>
+                <li class="rounded-md bg-gips px-3 py-1.5">Venetiaans stucwerk</li>
+              </ul>
+            </div>
+          </article>
+          <article class="py-8 grid sm:grid-cols-[13rem_1fr] gap-3 sm:gap-8">
+            <h3 class="kop-m text-2xl">Schilderen</h3>
+            <p class="text-[17px] leading-relaxed text-inkt/80">Binnen en buiten. Wanden, plafonds, kozijnen en deuren, met aandacht voor de voorbereiding: beschadigingen herstellen, schuren en reinigen. Ook latex spuiten en advies bij het kiezen van een kleur.</p>
+          </article>
+          <article class="py-8 grid sm:grid-cols-[13rem_1fr] gap-3 sm:gap-8">
+            <h3 class="kop-m text-2xl">Plafonds en wanden</h3>
+            <p class="text-[17px] leading-relaxed text-inkt/80">Verlaagde plafonds met ingebouwde spots, scheidingswanden en gipsplaatwerk. Handig om leidingen weg te werken en een ruimte opnieuw in te delen.</p>
+          </article>
+          <article class="py-8 grid sm:grid-cols-[13rem_1fr] gap-3 sm:gap-8">
+            <h3 class="kop-m text-2xl">Maatwerk</h3>
+            <p class="text-[17px] leading-relaxed text-inkt/80">Cinewalls en mediawanden voor tv en accessoires, kasten die precies passen en timmerwerk dat aansluit op uw interieur.</p>
+          </article>
+        </div>
+
+        <aside class="lg:col-span-4">
+          <div class="bg-inkt text-kalk rounded-2xl p-7 sm:p-8 lg:sticky lg:top-28">
+            <h3 class="kop-m text-xl">Alles op een rij</h3>
+            <ul class="mt-5 grid grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-2.5 text-[16px] text-kalk/85">
+              <li>Stucen</li>
+              <li>Schilderen</li>
+              <li>Latex spuiten</li>
+              <li>Verlaagd plafond</li>
+              <li>Gipsplaatwerk</li>
+              <li>Wanden plaatsen</li>
+              <li>Timmerwerk</li>
+              <li>Cinewall</li>
+              <li>Mediawand op maat</li>
+              <li>Kast op maat</li>
+              <li>Badkamer en toilet renovatie</li>
+              <li>Beton ciré</li>
+            </ul>
+            <p class="mt-7 text-[15px] text-kalk/70 leading-relaxed">Twijfelt u wat er nodig is? Shadi komt kijken en zegt eerlijk hoe uw muren ervoor staan.</p>
+            <a href="tel:+31687168335" class="knop mt-5 inline-flex items-center gap-2 rounded-full bg-geel text-inkt px-5 py-3 font-bold">Bel 06 87 16 83 35</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shadi -->
+  <section id="shadi" class="pb-16 sm:pb-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div class="lg:col-span-5 relative">
+        <img src="assets/google-01.jpg" alt="Shadi met een kleine helper die de muurschuurmachine vasthoudt" class="boog w-full h-[420px] sm:h-[560px] object-cover object-[40%_center] rounded-br-2xl" loading="lazy">
+      </div>
+      <div class="lg:col-span-7">
+        <h2 class="kop text-[34px] sm:text-[48px]">Eén vakman, van begin tot eind.</h2>
+        <div class="mt-6 space-y-4 text-[17px] leading-relaxed text-inkt/80 max-w-xl">
+          <p>Bij SA stukadoor en Afbouw heeft u met Shadi te maken. Hij neemt de tijd om uw wensen te bespreken, adviseert over technieken en materialen en zegt het eerlijk als een muur nog niet goed is.</p>
+          <p>Een goed resultaat begint bij een goede voorbereiding. Daarom werkt hij zorgvuldig en netjes, en komt hij zijn afspraken na. Ook moeilijke klussen, zoals een zolder met schuine wanden of een trapgat van negen meter.</p>
+        </div>
+        <blockquote class="mt-10 border-l-4 border-geel pl-6 max-w-xl">
+          <p class="kop-m text-[22px] sm:text-[26px] leading-snug">"Shadi is de beste stucadoor van Nederland, het eindresultaat is altijd fantastisch."</p>
+          <footer class="mt-3 text-[15px] text-inkt/65">N H, klant</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ervaringen -->
+  <section id="ervaringen" class="bg-gips/70 py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-14">
+        <h2 class="kop text-[34px] sm:text-[48px] max-w-2xl">Wat klanten over Shadi zeggen.</h2>
+        <p class="flex items-center gap-3 text-[16px]">
+          <span class="kop text-[40px] leading-none">5,0</span>
+          <span class="text-inkt/75 leading-tight">gemiddeld uit<br>90 Google-reviews</span>
+        </p>
+      </div>
+
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-4 [&>*]:mb-4">
+        <figure class="break-inside-avoid bg-kalk rounded-xl p-6">
+          <blockquote class="text-[16px] leading-relaxed">"Shadi heeft bij ons de zolder gestuked met scheve wanden en een aantal moelijke hoekjes. We zijn heel tevreden over zijn werk. De communicatie was duidelijk en het werk was snel gedaan. Ik kan hem zeker aanbevelen."</blockquote>
+          <figcaption class="mt-4 text-[14px] font-semibold">birgitta holter</figcaption>
+        </figure>
+        <figure class="break-inside-avoid bg-kalk rounded-xl p-6">
+          <blockquote class="text-[16px] leading-relaxed">"SA stukadoor en Afbouw heeft bij ons de hele woning van stukwerk voorzien en alle wanden gesausd. Wij zijn bijzonder content met het eindresultaat. Shadi is een vakman die meedenkt, goede tips geeft en zeer nauwkeurig werkt. Als je een betrouwbare stukadoor zoekt.... niet verder zoeken !!"</blockquote>
+          <figcaption class="mt-4 text-[14px] font-semibold">Sjef Ravenstein</figcaption>
+        </figure>
+        <figure class="break-inside-avoid bg-inkt text-kalk rounded-xl p-6">
+          <blockquote class="text-[16px] leading-relaxed">"Een perfectionist! Super strak en glad stucwerk. Shadi heeft de gehele zolder gestuct, waardoor mijn dochter een super nette slaapkamer heeft gekregen. Gezien alle kozijnen en deuren waren vervangen, heeft Shadi er ook voor gezorgd dat rondom alles weer strak eruit zag."</blockquote>
+          <figcaption class="mt-4 text-[14px] font-semibold text-geel">Max Visser</figcaption>
+        </figure>
+        <figure class="break-inside-avoid bg-kalk rounded-xl p-6">
+          <blockquote class="text-[16px] leading-relaxed">"Meerdere kamers in mijn huis waren in bijzonder slechte staat. (Gaten in de muur, zanderig metselwerk, etc) Shadi was flexibel, heeft over een langer periode, naar mijn wens, de kamers 1 voor 1 volledig aangepakt en het eindresultaat is absoluut top. Als ik weer een klus heb, bel ik Shadi."</blockquote>
+          <figcaption class="mt-4 text-[14px] font-semibold">Kevin</figcaption>
+        </figure>
+        <figure class="break-inside-avoid bg-kalk rounded-xl p-6">
+          <blockquote class="text-[16px] leading-relaxed">"Wij hebben SA stukadoor en Afbouw ingeschakeld voor meerdere werkzaamheden in huis en zijn ontzettend tevreden. Shadi heeft bij ons de cinewall gestuct en afgewerkt, boven de eettafel een prachtig lampeneiland met spotjes gemaakt en ook op zolder alles strak en professioneel afgewerkt. Zelfs de plek waar eerst de vlier…"</blockquote>
+          <figcaption class="mt-4 text-[14px] font-semibold">Durkey StoryTeller</figcaption>
+        </figure>
+        <figure class="break-inside-avoid bg-kalk rounded-xl p-6">
+          <blockquote class="text-[16px] leading-relaxed">"Shadi, heeft ons gehele huis voorzien van een prachtige stuclaag en heeft hierna de muren voorzien van een mooie kleur muurverf. Geen makkelijke klus, trapgat in huis is wel 9 meter! Hij werkt netjes en levert kwaliteit. SA Stukadoor en Afbouw adviseer ik aan. Shadi bedankt voor jou inzet en uitvoering."</blockquote>
+          <figcaption class="mt-4 text-[14px] font-semibold">Marcel Jeltema</figcaption>
+        </figure>
+        <figure class="hidden md:block break-inside-avoid bg-kalk rounded-xl p-6">
+          <blockquote class="text-[16px] leading-relaxed">"Onwijs fijn dat Shadi ons heeft geholpen met het klaar maken van ons huisje. Een rustige en vriendelijke gast die onwijs fijn meedenkt in oplossingen om een je huis woon klaar te maken. Hij is heel kritisch in wat hij vindt van de huidige staat van een huis. Als een muur niet goed is laat hij weten waarom die niet goed…"</blockquote>
+          <figcaption class="mt-4 text-[14px] font-semibold">Leon Bierling</figcaption>
+        </figure>
+        <figure class="hidden md:block break-inside-avoid bg-kalk rounded-xl p-6">
+          <blockquote class="text-[16px] leading-relaxed">"Wij zijn erg blij met het resultaat van het stucen van de slaapkamerverdieping en het trapgat gestuct door SA Stukdoor en Afbouw. Alles afspraken zijn goed nagekomen en de communicatie verliep prettig. Een echte professional die zijn vak verstaat, en bovendien een hele aardige, rustige persoon, die hard en netjes te we…"</blockquote>
+          <figcaption class="mt-4 text-[14px] font-semibold">Rogier van de Beek</figcaption>
+        </figure>
+        <figure class="hidden md:block break-inside-avoid bg-kalk rounded-xl p-6">
+          <blockquote class="text-[16px] leading-relaxed">"Shadi heeft bij ons stucwerk en schilderwerk gedaan (plafond gespoten). Hij werkt hard, netjes en communiceert heel prettig. Wij bevelen hem aan!"</blockquote>
+          <figcaption class="mt-4 text-[14px] font-semibold">iris soeterbroek</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-inkt text-kalk py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <h2 class="kop text-[38px] sm:text-[54px]">Even bellen?</h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-kalk/75 max-w-md">Vertel wat er moet gebeuren, dan komt Shadi kijken en krijgt u een vrijblijvende offerte.</p>
+        <a href="tel:+31687168335" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-geel text-inkt pl-6 pr-7 py-4 text-lg font-bold">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          06 87 16 83 35
+        </a>
+
+        <dl class="mt-12 grid sm:grid-cols-2 gap-8 text-[16px]">
+          <div>
+            <dt class="text-kalk/55 text-[14px] mb-1.5">WhatsApp en e-mail</dt>
+            <dd><a href="https://wa.me/31687168335" class="hover:text-geel underline underline-offset-4 decoration-kalk/30">Stuur een WhatsApp</a></dd>
+            <dd class="mt-1"><a href="mailto:sastukadoor@gmail.com" class="hover:text-geel underline underline-offset-4 decoration-kalk/30">sastukadoor@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt class="text-kalk/55 text-[14px] mb-1.5">Adres</dt>
+            <dd>Triosingel 26<br>4101 XC Culemborg</dd>
+          </div>
+          <div>
+            <dt class="text-kalk/55 text-[14px] mb-1.5">Bereikbaar</dt>
+            <dd>
+              <table class="text-[15px]">
+                <tr><td class="pr-4">ma t/m vr</td><td>08:00 tot 18:00</td></tr>
+                <tr><td class="pr-4">zaterdag</td><td>12:00 tot 17:00</td></tr>
+                <tr><td class="pr-4">zondag</td><td>gesloten</td></tr>
+              </table>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-kalk/55 text-[14px] mb-1.5">Werkgebied</dt>
+            <dd>Culemborg, Utrecht, Geldermalsen, Tiel, Nieuwegein en omgeving</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="lg:col-span-7">
+        <form action="mailto:sastukadoor@gmail.com" method="post" enctype="text/plain" class="bg-kalk text-inkt rounded-2xl boog-r p-6 sm:p-10">
+          <h3 class="kop-m text-2xl">Offerte aanvragen</h3>
+          <p class="mt-2 text-[15px] text-inkt/70">Liever schrijven? Vul dit in, dan neemt Shadi contact met u op.</p>
+          <div class="mt-7 grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-[14px] font-semibold">Naam</span>
+              <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-lg border border-inkt/20 bg-white px-4 py-3 text-[16px]">
+            </label>
+            <label class="block">
+              <span class="text-[14px] font-semibold">Telefoon</span>
+              <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-lg border border-inkt/20 bg-white px-4 py-3 text-[16px]">
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-[14px] font-semibold">Plaats</span>
+              <input name="plaats" autocomplete="address-level2" class="mt-1.5 w-full rounded-lg border border-inkt/20 bg-white px-4 py-3 text-[16px]">
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-[14px] font-semibold">Wat moet er gebeuren?</span>
+              <textarea name="klus" rows="5" required placeholder="Bijvoorbeeld: zolder stucen, twee wanden en het plafond" class="mt-1.5 w-full rounded-lg border border-inkt/20 bg-white px-4 py-3 text-[16px] placeholder:text-inkt/40"></textarea>
+            </label>
+          </div>
+          <button type="submit" class="knop mt-6 w-full sm:w-auto rounded-full bg-inkt text-kalk px-7 py-3.5 font-semibold hover:bg-[#173b54]">Aanvraag versturen</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-inkt text-kalk/60 border-t border-kalk/10 pb-24 sm:pb-0">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row gap-3 justify-between text-[14px]">
+    <p>SA stukadoor en Afbouw, Triosingel 26, Culemborg</p>
+    <p><a href="tel:+31687168335" class="hover:text-geel">06 87 16 83 35</a> <span class="mx-2 text-kalk/30">/</span> <a href="mailto:sastukadoor@gmail.com" class="hover:text-geel">sastukadoor@gmail.com</a></p>
+  </div>
+</footer>
+
+<!-- Belbalk mobiel -->
+<div class="sm:hidden fixed inset-x-0 bottom-0 z-40 p-3 bg-gradient-to-t from-inkt/25 to-transparent">
+  <div class="flex gap-2">
+    <a href="tel:+31687168335" class="flex-1 flex items-center justify-center gap-2 rounded-full bg-geel text-inkt py-3.5 font-bold shadow-lg">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Bel Shadi
+    </a>
+    <a href="https://wa.me/31687168335" class="flex items-center justify-center rounded-full bg-inkt text-kalk px-5 py-3.5 font-semibold shadow-lg">WhatsApp</a>
+  </div>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+</script>
+</body>
+</html>

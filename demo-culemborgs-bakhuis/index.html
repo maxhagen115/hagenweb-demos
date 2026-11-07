@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Culemborgs Bakhuis | Bakkerij, winkel en Eetkamer aan de Markt in Culemborg</title>
+<meta name="description" content="Brood en banket vers uit eigen oven, gemaakt van eerlijke en pure grondstoffen. Bakkerij, winkel en Eetkamer aan de Markt 2-4 in Culemborg.">
+<meta property="og:title" content="Culemborgs Bakhuis">
+<meta property="og:description" content="Vers uit eigen oven, gewoon op de Markt in Culemborg.">
+<meta property="og:image" content="assets/site-04.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2326231F'/%3E%3Cpath d='M9 26V14a7 7 0 0 1 14 0v12z' fill='%23F4F1EC'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          meel: '#F4F1EC',
+          bloem: '#FBFAF7',
+          antraciet: '#26231F',
+          steen: '#6B645B',
+          rood: { DEFAULT: '#9B2C2C', donker: '#7E2222' },
+          korst: '#C98A43',
+        },
+        fontFamily: {
+          kop: ['"Fira Sans Extra Condensed"', 'Arial Narrow', 'sans-serif'],
+          tekst: ['"Source Serif 4"', 'Georgia', 'serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Serif 4", Georgia, serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 18px 18px; }
+  .korrel {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.13 0 0 0 0 0.1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .knop { transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease; }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #C98A43; outline-offset: 3px; border-radius: 4px; }
+  /* Verrijking: alleen als JS de class zet */
+  @keyframes rijzen { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .js .rijs { animation: rijzen .9s cubic-bezier(.2,.7,.2,1) both; }
+  .js .rijs-2 { animation-delay: .15s; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .rijs { animation: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-meel text-antraciet antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-bloem focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-antraciet text-meel/80 text-center text-[13px] font-kop tracking-wide py-1.5 px-4">
+  Demo voor Culemborgs Bakhuis, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-meel hover:text-korst">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-meel/95 backdrop-blur border-b border-antraciet/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="Culemborgs Bakhuis, naar boven">
+      <svg class="w-[74px] h-6 text-antraciet" viewBox="0 0 74 24" fill="currentColor" aria-hidden="true">
+        <!-- brood -->
+        <path d="M2 23V10.5C2 6.4 5.6 3.5 11 3.5s9 2.9 9 7V23z" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <!-- kop -->
+        <path d="M27 11h16v4.5a8 8 0 0 1-16 0z"/><path d="M43 12.5h2.2a2.6 2.6 0 0 1 0 5.2H42" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M32 2.5c-1.5 1.6 1.5 3 0 5M36.5 1.5c-1.5 1.6 1.5 3 0 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- muffin -->
+        <path d="M54 14h17l-2.4 9H56.4z"/><path d="M53.5 13c0-5 3.6-8.5 9-8.5s9 3.5 9 8.5z" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      </svg>
+      <span class="leading-none">
+        <span class="block font-kop font-medium text-[11px] tracking-[0.22em] text-steen">CULEMBORGS</span>
+        <span class="block font-kop font-extrabold text-[22px] tracking-wide -mt-0.5">BAKHUIS</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 font-kop text-[17px] font-medium" aria-label="Hoofdmenu">
+      <a href="#bestellen" class="hover:text-rood transition-colors">Bestellen</a>
+      <a href="#assortiment" class="hover:text-rood transition-colors">Assortiment</a>
+      <a href="#eetkamer" class="hover:text-rood transition-colors">Eetkamer</a>
+      <a href="#bezoek" class="hover:text-rood transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:+31345520686" class="knop hidden sm:inline-flex items-center gap-2 bg-antraciet text-meel font-kop font-semibold text-[17px] px-5 py-2.5 rounded-md hover:bg-rood">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      0345 520 686
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-7 md:pt-14 pb-14 md:pb-20 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+    <div class="md:col-span-6 rijs">
+      <p class="font-kop font-medium text-[17px] md:text-lg text-steen">Bakkerij, winkel en Eetkamer aan de Markt in Culemborg</p>
+      <h1 class="font-kop font-extrabold uppercase leading-[0.9] tracking-[-0.01em] text-[52px] sm:text-[72px] lg:text-[104px] mt-3">
+        Vers uit eigen oven, gewoon op de Markt.
+      </h1>
+      <p class="mt-5 md:mt-6 text-[17px] md:text-xl leading-relaxed text-antraciet/85 max-w-[40ch]">
+        Brood en banket van eerlijke, pure grondstoffen. Iedere dag opnieuw gebakken, en vanuit de Eetkamer kijkt u zo de bakkerij in.
+      </p>
+      <div class="mt-7 md:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31345520686" class="knop inline-flex items-center gap-3 bg-rood hover:bg-rood-donker text-white font-kop font-bold text-[22px] px-8 py-4 rounded-md shadow-[0_10px_24px_-10px_rgba(126,34,34,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0345 520 686
+        </a>
+        <a href="#bestellen" class="font-kop font-semibold text-[19px] underline decoration-2 decoration-korst underline-offset-[6px] hover:text-rood">Bestel voor morgen</a>
+      </div>
+      <p class="mt-6 md:mt-8 flex items-center gap-2 text-[15px] text-steen">
+        <span class="text-korst tracking-[0.1em]" aria-hidden="true">★★★★☆</span>
+        <span><strong class="text-antraciet font-semibold">4,1</strong> op Google, uit 144 reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 relative rijs rijs-2">
+      <div class="relative mx-auto w-[86%] md:w-full max-w-[520px] md:ml-auto">
+        <div class="absolute -inset-3 md:-inset-4 boog border-2 border-antraciet/15" aria-hidden="true"></div>
+        <img src="assets/site-04.jpg" alt="De bakker haalt een plaat vers desembrood uit de oven" class="boog relative w-full aspect-[4/5] object-cover object-[60%_30%] shadow-[0_30px_60px_-30px_rgba(38,35,31,.55)]" width="800" height="800" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bestellen -->
+<section id="bestellen" class="bg-antraciet text-meel korrel">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 md:py-14 grid md:grid-cols-12 gap-8 items-center">
+    <div class="md:col-span-7">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl leading-none">Vandaag besteld, morgen klaar.</h2>
+      <p class="mt-4 text-lg text-meel/80 max-w-[52ch] leading-relaxed">
+        Bestel in onze webshop tot 15.00 uur. Wij bereiden uw bestelling met zorg en de volgende dag staat hij voor u klaar in de winkel. Bestelt u liever zakelijk, of voor een groter gezelschap? Bel ons even.
+      </p>
+    </div>
+    <div class="md:col-span-5 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 md:justify-end">
+      <a href="http://www.culemborgsbakhuis.nl/" class="knop text-center bg-meel text-antraciet hover:bg-korst hover:text-antraciet font-kop font-bold text-xl px-7 py-3.5 rounded-md">Naar de webshop</a>
+      <a href="tel:+31345520686" class="knop text-center border-2 border-meel/40 hover:border-meel font-kop font-semibold text-xl px-7 py-3 rounded-md">Bestellen per telefoon</a>
+    </div>
+  </div>
+</section>
+
+<!-- Assortiment -->
+<section id="assortiment" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold uppercase text-5xl md:text-6xl leading-[0.92]">Eerlijk en puur, van korst tot kruim.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-antraciet/85 max-w-[46ch]">
+        De geur van vers gebakken brood en banket, gemaakt van de allerbeste grondstoffen. Vers uit onze eigen oven, voor iedere smaak. In de winkel vindt u het hele assortiment, en een hele wand vol desem.
+      </p>
+
+      <ul class="mt-10 border-t border-antraciet/15 font-kop text-[26px] md:text-[30px] font-bold">
+        <li class="flex items-baseline justify-between py-2.5 border-b border-antraciet/15"><span>Grootbrood</span><span class="font-tekst font-normal text-base text-steen">van casino tot kloosterbrood</span></li>
+        <li class="flex items-baseline justify-between py-2.5 border-b border-antraciet/15"><span>Desem</span><span class="font-tekst font-normal text-base text-steen">ons paradepaardje</span></li>
+        <li class="flex items-baseline justify-between py-2.5 border-b border-antraciet/15"><span>Kleinbrood</span></li>
+        <li class="flex items-baseline justify-between py-2.5 border-b border-antraciet/15"><span>Hartig</span></li>
+        <li class="flex items-baseline justify-between py-2.5 border-b border-antraciet/15"><span>Koek en cake</span></li>
+        <li class="flex items-baseline justify-between py-2.5 border-b border-antraciet/15"><span>Bak'thuis</span></li>
+        <li class="flex items-baseline justify-between py-2.5 border-b border-antraciet/15"><span>Specialiteiten</span></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-7">
+      <figure class="relative">
+        <img src="assets/site-03.jpg" alt="De winkel met een wand vol desembroden en rekken met koek" class="w-full aspect-[4/3] lg:aspect-[5/4] object-cover rounded-lg" loading="lazy" width="800" height="800">
+      </figure>
+      <div class="mt-8 grid sm:grid-cols-5 gap-8">
+        <div class="sm:col-span-2">
+          <h3 class="font-kop font-bold text-2xl">Uit de desemwand</h3>
+          <ul class="mt-3 space-y-1.5 text-[17px] text-antraciet/85">
+            <li>Betuws Desem</li>
+            <li>Desem Spelt</li>
+            <li>Meergranen desem</li>
+            <li>Donker desem</li>
+            <li>Desem maisbrood</li>
+            <li>Pain de Arden</li>
+          </ul>
+        </div>
+        <blockquote class="sm:col-span-3 bg-bloem rounded-lg p-6 md:p-7 border-l-4 border-korst">
+          <p class="text-[17px] leading-relaxed italic">"Probeer zeker het desem en laat hem dan wat dikker snijden 15 tot 17mm is lekker. Verder is het overige brood ook lekker, en goed in te vriezen ( na het ontdooien niet droog !)"</p>
+          <footer class="mt-4 font-kop font-semibold text-lg">Menno Tieman <span class="font-tekst font-normal text-sm text-steen">via Google, 5 sterren</span></footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Eetkamer -->
+<section id="eetkamer" class="bg-bloem border-y border-antraciet/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+      <div class="lg:col-span-7">
+        <h2 class="font-kop font-extrabold uppercase text-5xl md:text-6xl leading-[0.92]">Koffie met een kijkje in de bakkerij.</h2>
+      </div>
+      <p class="lg:col-span-5 text-lg leading-relaxed text-antraciet/85 max-w-[46ch]">
+        Bakkerij, winkel en Eetkamer zitten onder één dak. Schuif aan voor een bakje koffie met een vers broodje of een koek, en zie hoe wij met veel passie dagelijks voor u aan de slag gaan.
+      </p>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-5">
+      <figure class="col-span-2 md:col-span-7 md:row-span-2">
+        <img src="assets/site-02.jpg" alt="De Eetkamer onder de houten kap, met planten en tafels bij het raam" class="w-full h-full min-h-[320px] aspect-square md:aspect-auto object-cover rounded-lg" loading="lazy" width="600" height="600">
+      </figure>
+      <figure class="md:col-span-5">
+        <img src="assets/site-06.jpg" alt="Het terras aan de Markt onder de zwarte parasols van het Bakhuis" class="w-full aspect-[4/3] md:aspect-[16/9] object-cover object-left rounded-lg" loading="lazy" width="1920" height="850">
+        <figcaption class="mt-2 text-sm text-steen">Het terras aan de Markt</figcaption>
+      </figure>
+      <figure class="md:col-span-5">
+        <img src="assets/google-07.jpg" alt="Zitbanken en tafels op de zolder van de Eetkamer" class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-lg" loading="lazy" width="1600" height="900">
+        <figcaption class="mt-2 text-sm text-steen">Boven in de Eetkamer</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Review -->
+<section class="bg-antraciet text-meel korrel">
+  <div class="max-w-5xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <blockquote>
+      <p class="font-kop font-bold text-[34px] sm:text-[44px] md:text-[56px] leading-[1.02]">
+        "Een echte bakker, dat zie je en ruik je. Mooi concept. Helemaal met dat bakje koffie met een vers broodje of een koek. En vers betekent hier dus gewoon dat het niet uit de diepvries komt. Dat proef je. Aanrader."
+      </p>
+      <footer class="mt-8 flex flex-wrap items-center gap-x-4 gap-y-1 text-lg">
+        <span class="font-kop font-semibold text-xl">Wim Timmermans</span>
+        <span class="text-meel/60">via Google, 5 sterren</span>
+      </footer>
+    </blockquote>
+    <p class="mt-14 pt-8 border-t border-meel/15 text-meel/70 text-lg">
+      De hele dag ambachtelijk voor u gebakken. U proeft het verschil. Gemiddeld <span class="text-meel font-semibold">4,1 sterren</span> uit 144 Google-reviews.
+    </p>
+  </div>
+</section>
+
+<!-- Bezoek -->
+<section id="bezoek" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop font-extrabold uppercase text-5xl md:text-6xl leading-[0.92]">U vindt ons op de Markt.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-antraciet/85 max-w-[44ch]">
+        Midden in de binnenstad van Culemborg, achter de parasols. Loop binnen voor brood, of neem plaats in de Eetkamer.
+      </p>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-10">
+        <div>
+          <h3 class="font-kop font-bold text-2xl">Openingstijden</h3>
+          <table class="mt-3 w-full text-[17px] [font-variant-numeric:tabular-nums]">
+            <tbody class="divide-y divide-antraciet/10">
+              <tr><td class="py-1.5">maandag</td><td class="py-1.5 text-right">09.30 tot 17.00</td></tr>
+              <tr><td class="py-1.5">dinsdag</td><td class="py-1.5 text-right">08.30 tot 17.00</td></tr>
+              <tr><td class="py-1.5">woensdag</td><td class="py-1.5 text-right">08.30 tot 17.00</td></tr>
+              <tr><td class="py-1.5">donderdag</td><td class="py-1.5 text-right">08.30 tot 17.00</td></tr>
+              <tr><td class="py-1.5">vrijdag</td><td class="py-1.5 text-right">08.30 tot 17.00</td></tr>
+              <tr><td class="py-1.5">zaterdag</td><td class="py-1.5 text-right">08.00 tot 16.00</td></tr>
+              <tr><td class="py-1.5 text-steen">zondag</td><td class="py-1.5 text-right text-steen">gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-2xl">Adres en contact</h3>
+          <address class="mt-3 not-italic text-[17px] leading-relaxed">
+            Culemborgs Bakhuis<br>
+            Markt 2-4<br>
+            4101 BX Culemborg
+          </address>
+          <p class="mt-4 text-[17px] leading-relaxed">
+            <a href="tel:+31345520686" class="font-semibold text-rood hover:underline underline-offset-4">0345 520 686</a><br>
+            <a href="mailto:info@culemborgsbakhuis.nl" class="text-rood hover:underline underline-offset-4 break-all">info@culemborgsbakhuis.nl</a>
+          </p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Culemborgs+Bakhuis+Markt+2-4+4101+BX+Culemborg" class="knop mt-6 inline-flex items-center gap-2 border-2 border-antraciet hover:bg-antraciet hover:text-meel font-kop font-semibold text-lg px-5 py-2.5 rounded-md">Route plannen</a>
+          <p class="mt-6 text-[15px] text-steen leading-relaxed">Zakelijk bestellen of interesse in een baan bij ons? Bel of mail ons gerust.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 grid grid-cols-5 gap-3 md:gap-4 content-start">
+      <img src="assets/google-01.jpg" alt="De open deur van het Bakhuis op de Markt in de avond, met verlichte winkel" class="col-span-5 sm:col-span-3 w-full aspect-[4/5] object-cover object-[30%_50%] rounded-lg" loading="lazy" width="1600" height="1200">
+      <img src="assets/google-08.jpg" alt="Zomer op de Markt in Culemborg, met de rode parasols van het Bakhuis" class="hidden sm:block col-span-2 w-full aspect-[2/5] object-cover object-[18%_50%] rounded-lg sm:mt-16" loading="lazy" width="1600" height="1200">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-antraciet text-meel/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div>
+      <div class="leading-none text-meel">
+        <span class="block font-kop font-medium text-[12px] tracking-[0.22em] text-meel/60">CULEMBORGS</span>
+        <span class="block font-kop font-extrabold text-3xl tracking-wide">BAKHUIS</span>
+      </div>
+      <p class="mt-4 text-[15px]">Markt 2-4, 4101 BX Culemborg<br>
+        <a href="tel:+31345520686" class="hover:text-meel">0345 520 686</a><br><a href="mailto:info@culemborgsbakhuis.nl" class="hover:text-meel">info@culemborgsbakhuis.nl</a></p>
+    </div>
+    <p class="text-sm">Derks bakkerij BV, KvK 11023921<br>&copy; 2026 Culemborgs Bakhuis</p>
+  </div>
+</footer>
+
+<!-- Mobiele actiebalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-meel/95 backdrop-blur border-t border-antraciet/10 p-3 grid grid-cols-5 gap-2">
+  <a href="tel:+31345520686" class="knop col-span-3 flex items-center justify-center gap-2 bg-rood text-white font-kop font-bold text-lg py-3 rounded-md">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel de bakker
+  </a>
+  <a href="#bezoek" class="knop col-span-2 flex items-center justify-center border-2 border-antraciet font-kop font-semibold text-lg py-2.5 rounded-md">Openingstijden</a>
+</div>
+
+<script>document.documentElement.classList.add('js');</script>
+</body>
+</html>

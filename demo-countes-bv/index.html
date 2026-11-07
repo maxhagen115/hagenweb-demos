@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Countes B.V. | Bouw, vastgoedonderhoud en schoonmaak in Culemborg</title>
+<meta name="description" content="Countes uit Culemborg: planmatig onderhoud, renovatie en nieuwbouw in bewoonde staat, met bewonersconsulenten en professionele schoonmaak. Bel 085 080 5983.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#0F1E3A', deep: '#0A1528', soft: '#1C2E52' },
+          kalk: '#F3F4F1',
+          steiger: '#C9CED6',
+          sein: { DEFAULT: '#E5762B', dark: '#C95F17' },
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 5.5rem; }
+  body { -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-variation-settings: 'wdth' 78; font-weight: 800; letter-spacing: -0.015em; line-height: .95; text-wrap: balance; }
+  .kop-mid { font-family: 'Archivo', system-ui, sans-serif; font-variation-settings: 'wdth' 85; font-weight: 700; letter-spacing: -0.01em; }
+  p { text-wrap: pretty; }
+  /* Puntdak: het huis-silhouet rond de hero-foto */
+  .dak { clip-path: polygon(0 26%, 50% 0, 100% 26%, 100% 100%, 0 100%); }
+  .dak-klein { clip-path: polygon(0 40%, 50% 0, 100% 40%, 100% 100%, 0 100%); }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #E5762B; outline-offset: 3px; }
+  /* Verrijking: alleen als JS draait */
+  .js .hero-foto { transform: translateY(16px); opacity: 0; transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s; }
+  .js.geladen .hero-foto { transform: none; opacity: 1; }
+  @media (prefers-reduced-motion: reduce) { .js .hero-foto { transform: none; opacity: 1; transition: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js'); addEventListener('DOMContentLoaded', () => requestAnimationFrame(() => document.documentElement.classList.add('geladen')));</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-kalk text-navy font-sans">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-white px-3 py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-navy-deep text-steiger text-xs sm:text-sm text-center py-2 px-4">
+  Demo voor Countes B.V., gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-sein">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-kalk/95 backdrop-blur border-b border-steiger/60">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-baseline gap-2" aria-label="Countes, naar boven">
+      <span class="kop text-[28px] sm:text-[32px] tracking-tight">Countes</span>
+      <span class="hidden sm:inline text-xs font-medium text-navy/60">Bouw &amp; onderhoud</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#diensten" class="hover:text-sein-dark">Diensten</a>
+      <a href="#bewoners" class="hover:text-sein-dark">Bewoners</a>
+      <a href="#werkwijze" class="hover:text-sein-dark">Werkwijze</a>
+      <a href="#contact" class="hover:text-sein-dark">Contact</a>
+    </nav>
+    <a href="tel:+31850805983" class="knop inline-flex items-center gap-2 rounded-md bg-navy text-white px-4 py-2.5 text-sm font-semibold hover:bg-navy-soft">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">085 080 5983</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-8 sm:pt-14 lg:pt-16 pb-14 lg:pb-20 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+    <div class="lg:col-span-6 relative z-10">
+      <p class="text-[15px] font-medium text-navy/70 mb-4 sm:mb-6">Bouw, onderhoud en schoonmaak in Culemborg</p>
+      <h1 class="kop text-[52px] sm:text-7xl lg:text-[96px]">Wij verbouwen, u woont gewoon door.</h1>
+      <p class="mt-5 sm:mt-7 text-lg sm:text-xl leading-relaxed text-navy/80 max-w-[30rem]">
+        Onderhoud, renovatie en nieuwbouw, planmatig uitgevoerd terwijl er in de woning gewoon wordt geleefd. Met een vast aanspreekpunt voor iedere bewoner.
+      </p>
+      <div class="mt-7 sm:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31850805983" class="knop inline-flex items-center gap-3 rounded-md bg-sein hover:bg-sein-dark text-white px-7 py-4 text-lg font-semibold shadow-[0_10px_24px_-10px_rgba(201,95,23,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 085 080 5983
+        </a>
+        <a href="#contact" class="font-semibold underline decoration-2 decoration-sein underline-offset-[6px] hover:text-sein-dark">Project bespreken</a>
+      </div>
+      <p class="mt-7 flex items-center gap-2 text-sm text-navy/70">
+        <span class="text-sein tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-navy">5,0</strong> op Google</span>
+      </p>
+    </div>
+    <div class="lg:col-span-6 relative mr-3 sm:mr-5 mt-4 lg:mt-0">
+      <div class="absolute inset-0 translate-x-3 translate-y-3 sm:translate-x-5 sm:translate-y-5 bg-navy dak" aria-hidden="true"></div>
+      <div class="hero-foto relative dak aspect-[5/4] sm:aspect-[4/3] lg:aspect-[1/1] bg-navy">
+        <img src="assets/google-03.jpg" alt="Nieuwbouwwoningen in de steigers met een bouwkraan erboven" class="absolute inset-0 w-full h-full object-cover object-[45%_center]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEWONERS EERST -->
+<section id="bewoners" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <figure class="lg:col-span-5 order-2 lg:order-1">
+      <img src="assets/site-04.jpg" alt="Een bewonersconsulent in gesprek met een bewoner aan de keukentafel" class="w-full aspect-[4/5] object-cover object-[28%_center] rounded-sm" loading="lazy">
+    </figure>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <h2 class="kop text-[44px] sm:text-6xl lg:text-7xl">Bewoners staan bij ons op de eerste plek.</h2>
+      <div class="mt-8 grid sm:grid-cols-2 gap-x-10 gap-y-5 text-[17px] leading-relaxed text-navy/80">
+        <p>Renoveren in iemands woning vraagt veel vertrouwen. Daarom werkt Countes met bewonersconsulenten: één vast gezicht dat goed bereikbaar is, duidelijke afspraken maakt en luistert als er vragen of zorgen zijn.</p>
+        <p>Onduidelijke afspraken zorgen voor irritatie, goede communicatie zorgt voor meegaande bewoners. En dat merkt u als opdrachtgever direct: het project loopt soepeler en het vertrouwen groeit.</p>
+      </div>
+      <a href="#contact" class="mt-9 inline-block font-semibold underline decoration-2 decoration-sein underline-offset-[6px] hover:text-sein-dark">Een bewonersconsulent inzetten op uw project</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-14 lg:mb-20">
+      <h2 class="kop text-[44px] sm:text-6xl lg:col-span-7">Van eerste steen tot laatste stofzuigerbeurt.</h2>
+      <p class="lg:col-span-5 text-[17px] leading-relaxed text-navy/75">Countes is ingericht als projectenorganisatie. Wij voeren planmatig onderhoud, groot onderhoud en renovatie uit, bouwen en verbouwen woningen en houden panden schoon.</p>
+    </div>
+
+    <!-- Rij 1 -->
+    <article class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t border-steiger pt-10 lg:pt-14">
+      <img src="assets/site-05.jpg" alt="Gevel van een woongebouw achter steigers met groen veiligheidsnet" class="lg:col-span-7 w-full aspect-[16/10] object-cover rounded-sm" loading="lazy">
+      <div class="lg:col-span-5">
+        <h3 class="kop-mid text-3xl sm:text-4xl">Onderhoud en renovatie in bewoonde staat</h3>
+        <p class="mt-4 text-[17px] leading-relaxed text-navy/80">Planmatig onderhoud, groot onderhoud en complete renovaties, terwijl de bewoners thuis blijven. Ook voor restauratie en schilder- en verfwerk na schade of slijtage kunt u bij ons terecht.</p>
+      </div>
+    </article>
+
+    <!-- Rij 2 -->
+    <article class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t border-steiger pt-10 lg:pt-14 mt-14 lg:mt-20">
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <h3 class="kop-mid text-3xl sm:text-4xl">Nieuwbouw en woningbouw</h3>
+        <p class="mt-4 text-[17px] leading-relaxed text-navy/80">Bouwen doen we het liefst met ons eigen ontwerp en het bouwsysteem dat we zelf hebben ontwikkeld. Van het eerste ontwerp tot de oplevering: veilig, precies en binnen afspraak.</p>
+      </div>
+      <img src="assets/google-02.jpg" alt="Een rij nieuwe woningen met houten gevels aan een klinkerstraat" class="lg:col-span-7 order-1 lg:order-2 w-full aspect-[16/10] object-cover rounded-sm" loading="lazy">
+    </article>
+
+    <!-- Rij 3 en 4: zonder grote foto naast elkaar -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 border-t border-steiger pt-10 lg:pt-14 mt-14 lg:mt-20">
+      <article class="lg:col-span-5">
+        <h3 class="kop-mid text-3xl sm:text-4xl">Werkvoorbereiding en projectondersteuning</h3>
+        <p class="mt-4 text-[17px] leading-relaxed text-navy/80">Onze werkvoorbereiders zorgen dat alles klaarstaat voor de start. Ze calculeren, kopen in en bereiden de werkzaamheden voor, zodat uw project soepel verloopt. Ook voor extra projectondersteuning op uw eigen bouw kunt u ons inschakelen.</p>
+      </article>
+      <article class="lg:col-span-7 grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] gap-6 sm:gap-8 bg-white p-5 sm:p-6 rounded-sm">
+        <img src="assets/site-09.jpg" alt="Bouwschoonmaak: een stofzuiger op een betonvloer in een nieuwbouwwoning" class="w-full h-full min-h-[200px] object-cover rounded-sm" loading="lazy">
+        <div>
+          <h3 class="kop-mid text-3xl sm:text-4xl">Schoonmaak</h3>
+          <p class="mt-4 text-[16px] leading-relaxed text-navy/80">Een schone werkplek doet iets met mensen: minder ziekteverzuim, betere sfeer, gasten die terugkomen. Wij maken schoon alsof het onze eigen werkplek is.</p>
+          <p class="mt-4 text-sm leading-relaxed text-navy/65">Onder meer voor bouw en renovatie, horeca, hotels, industrie, kantoren, loodsen en opslag, media en entertainment, publieke ruimte, recreatie en leisure, transport en logistiek en de zorg.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="kop text-[44px] sm:text-6xl">Zo werken we samen.</h2>
+      <p class="mt-6 text-[17px] leading-relaxed text-steiger">Een transparant proces, zodat u krijgt wat u wilt: binnen budget en op tijd.</p>
+      <a href="tel:+31850805983" class="knop mt-8 inline-flex items-center gap-2 rounded-md bg-sein hover:bg-sein-dark px-6 py-3.5 font-semibold">Bel 085 080 5983</a>
+    </div>
+    <ol class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10">
+      <li class="border-t border-white/15 py-7 flex gap-5">
+        <span class="kop text-5xl text-sein w-8 shrink-0">1</span>
+        <div><h3 class="kop-mid text-2xl">Stuur een verzoek</h3><p class="mt-2 text-steiger leading-relaxed">Geef zo nauwkeurig mogelijk aan welke werkzaamheden u van ons verwacht.</p></div>
+      </li>
+      <li class="border-t border-white/15 py-7 flex gap-5">
+        <span class="kop text-5xl text-sein w-8 shrink-0">2</span>
+        <div><h3 class="kop-mid text-2xl">Bespreek het met ons</h3><p class="mt-2 text-steiger leading-relaxed">Is de opdracht helder, dan lopen we hem samen door.</p></div>
+      </li>
+      <li class="border-t border-white/15 py-7 flex gap-5">
+        <span class="kop text-5xl text-sein w-8 shrink-0">3</span>
+        <div><h3 class="kop-mid text-2xl">Keur het budget goed</h3><p class="mt-2 text-steiger leading-relaxed">U ontvangt een offerte en beslist of die in uw budget past.</p></div>
+      </li>
+      <li class="border-t border-white/15 py-7 flex gap-5">
+        <span class="kop text-5xl text-sein w-8 shrink-0">4</span>
+        <div><h3 class="kop-mid text-2xl">We starten</h3><p class="mt-2 text-steiger leading-relaxed">Samen spreken we een startdatum af.</p></div>
+      </li>
+      <li class="border-t border-white/15 py-7 flex gap-5 sm:col-span-2">
+        <span class="kop text-5xl text-sein w-8 shrink-0">5</span>
+        <div><h3 class="kop-mid text-2xl">Klaar volgens planning</h3><p class="mt-2 text-steiger leading-relaxed max-w-xl">We leggen samen een einddatum vast en evalueren na afloop hoe de opdracht is verlopen.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- REVIEW -->
+<section class="py-20 lg:py-28">
+  <figure class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+    <div class="dak-klein w-14 h-12 bg-sein mx-auto" aria-hidden="true"></div>
+    <blockquote class="kop text-[40px] sm:text-6xl mt-8">"Professioneel en een duidelijke samenwerking!"</blockquote>
+    <figcaption class="mt-6 text-navy/70">Jason Melis, <span class="text-sein tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</span> op Google</figcaption>
+  </figure>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-white border-t border-steiger/60">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-[44px] sm:text-6xl">Laten we het over uw project hebben.</h2>
+      <p class="mt-6 text-[17px] leading-relaxed text-navy/80">Bel ons direct, of laat via het formulier weten waar u aan denkt. Wij nemen zo snel mogelijk contact met u op.</p>
+      <a href="tel:+31850805983" class="mt-8 block kop text-4xl sm:text-5xl hover:text-sein-dark">085 080 5983</a>
+      <a href="mailto:info@countes.nl" class="mt-3 inline-block text-lg font-medium underline decoration-sein decoration-2 underline-offset-4">info@countes.nl</a>
+      <dl class="mt-10 grid grid-cols-2 gap-6 text-[15px] leading-relaxed">
+        <div>
+          <dt class="font-semibold">Adres</dt>
+          <dd class="text-navy/75">Pascalweg 5-2<br>4104 BG Culemborg</dd>
+        </div>
+        <div>
+          <dt class="font-semibold">Bereikbaar</dt>
+          <dd class="text-navy/75">Maandag t/m vrijdag<br>08:30 tot 18:00<br>Weekend gesloten</dd>
+        </div>
+      </dl>
+    </div>
+    <form class="lg:col-span-7 bg-kalk p-6 sm:p-10 rounded-sm grid sm:grid-cols-2 gap-5" onsubmit="event.preventDefault(); this.querySelector('[data-melding]').hidden = false;">
+      <label class="block">
+        <span class="text-sm font-semibold">Naam</span>
+        <input required name="naam" autocomplete="name" class="mt-2 w-full rounded-sm border border-steiger bg-white px-4 py-3 focus:border-navy outline-none">
+      </label>
+      <label class="block">
+        <span class="text-sm font-semibold">Telefoonnummer</span>
+        <input name="telefoon" type="tel" autocomplete="tel" class="mt-2 w-full rounded-sm border border-steiger bg-white px-4 py-3 focus:border-navy outline-none">
+      </label>
+      <label class="block sm:col-span-2">
+        <span class="text-sm font-semibold">E-mailadres</span>
+        <input required name="email" type="email" autocomplete="email" class="mt-2 w-full rounded-sm border border-steiger bg-white px-4 py-3 focus:border-navy outline-none">
+      </label>
+      <label class="block sm:col-span-2">
+        <span class="text-sm font-semibold">Waar gaat het om?</span>
+        <textarea name="bericht" rows="5" class="mt-2 w-full rounded-sm border border-steiger bg-white px-4 py-3 focus:border-navy outline-none" placeholder="Bijvoorbeeld: onderhoud aan 40 woningen, een renovatie of schoonmaak van ons kantoor"></textarea>
+      </label>
+      <div class="sm:col-span-2 flex flex-wrap items-center gap-5">
+        <button class="knop rounded-md bg-navy hover:bg-navy-soft text-white px-7 py-3.5 font-semibold">Verstuur aanvraag</button>
+        <p data-melding hidden class="text-sm font-medium">Dank u. Dit is een demo, dus er is nog niets verstuurd.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-navy-deep text-steiger pb-24 md:pb-0">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-14 grid sm:grid-cols-12 gap-10 items-start">
+    <img src="assets/google-04.jpg" alt="Logo Countes Bouw" class="sm:col-span-3 w-44 rounded-sm">
+    <p class="sm:col-span-5 leading-relaxed">Countes B.V. is uw partner voor bouw, vastgoedonderhoud, bewonersbegeleiding, renovatie, restauratie, schoonmaak en verfopdrachten.</p>
+    <div class="sm:col-span-4 text-sm leading-relaxed">
+      <p class="text-white font-semibold">Countes B.V.</p>
+      <p>Pascalweg 5-2, 4104 BG Culemborg</p>
+      <p><a href="tel:+31850805983" class="hover:text-white">085 080 5983</a> · <a href="mailto:info@countes.nl" class="hover:text-white">info@countes.nl</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-kalk/95 backdrop-blur border-t border-steiger">
+  <a href="tel:+31850805983" class="knop flex items-center justify-center gap-2 rounded-md bg-sein hover:bg-sein-dark text-white py-3.5 font-semibold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Countes: 085 080 5983
+  </a>
+</div>
+
+</body>
+</html>
