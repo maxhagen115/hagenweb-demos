@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keukensale Zwolle | Keukenwinkel aan de Benjamin Franklinstraat</title>
+<meta name="description" content="Keukenwinkel in Zwolle. Kom langs in de showroom aan de Benjamin Franklinstraat 22, krijg persoonlijk advies en een gratis 3D-ontwerp. Bel 038 205 4054.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          inkt: '#1F2A38',
+          diep: '#162030',
+          eiken: '#B98450',
+          eikenlicht: '#D2A577',
+          kalk: '#F1EFEB',
+          rood: '#D4262C',
+          rooddonker: '#B51E24',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 0 0; }
+  /* werkblad: eiken band met nerf */
+  .werkblad {
+    background-color: #B98450;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 2px, transparent 2px 23px),
+      repeating-linear-gradient(90deg, rgba(60,30,10,.08) 0 1px, transparent 1px 61px),
+      linear-gradient(180deg, rgba(255,255,255,.18), rgba(0,0,0,.12));
+  }
+  .knop { transition: background-color .2s, transform .15s, box-shadow .2s; }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #D2A577; outline-offset: 3px; }
+  .gloed { box-shadow: 0 18px 40px -18px rgba(212,38,44,.75); }
+  /* een enkel laadmoment in de hero, alleen met JS */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .in { animation: in .8s cubic-bezier(.2,.7,.2,1) both; }
+    .js .in-2 { animation-delay: .12s; }
+    .js .in-3 { animation-delay: .24s; }
+    .js .in-foto { animation: foto 1.1s cubic-bezier(.2,.7,.2,1) both; }
+  }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes foto { from { opacity: 0; transform: translateY(24px) scale(.98); } to { opacity: 1; transform: none; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-kalk text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-diep text-white/70 text-[13px] text-center py-2 px-4">
+  Demo voor Keukensale Zwolle, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-eikenlicht">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="bg-inkt text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="font-kop font-extrabold text-[22px] md:text-[26px] tracking-tight leading-none" aria-label="Keukensale Zwolle, naar boven">
+      keuken<span class="text-rood" style="filter:brightness(1.15)">sale</span><span class="font-medium text-white/60 ml-1.5">zwolle</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] text-white/80">
+      <a href="#showroom" class="hover:text-white">Showroom</a>
+      <a href="#werkwijze" class="hover:text-white">Zo gaat het</a>
+      <a href="#ervaringen" class="hover:text-white">Ervaringen</a>
+      <a href="#langskomen" class="hover:text-white">Langskomen</a>
+    </nav>
+    <a href="tel:+31382054054" class="knop hidden sm:inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-[15px] font-semibold hover:bg-white hover:text-inkt">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      038 205 4054
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative bg-inkt text-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-8 items-end pt-10 md:pt-16">
+    <div class="md:col-span-6 lg:col-span-6 pb-2 md:pb-24 lg:pb-28">
+      <p class="in text-eikenlicht font-semibold text-[15px] md:text-base">Keukenwinkel in Zwolle</p>
+      <h1 class="in in-2 font-kop font-extrabold text-[44px] leading-[1.02] sm:text-6xl lg:text-[80px] lg:leading-[.98] tracking-[-0.03em] mt-3">
+        Eerst luisteren, dan pas tekenen.
+      </h1>
+      <p class="in in-3 mt-6 text-lg md:text-xl text-white/75 max-w-[30rem] leading-relaxed">
+        Loop binnen in onze showroom en kijk rond tussen echte keukens. Wij nemen de tijd, denken mee over indeling en stijl en maken een gratis 3D-ontwerp.
+      </p>
+      <div class="in in-3 mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31382054054" class="knop gloed inline-flex items-center gap-3 rounded-full bg-rood hover:bg-rooddonker px-7 py-4 text-lg font-bold text-white">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          Bel 038 205 4054
+        </a>
+        <a href="#afspraak" class="font-semibold text-white underline decoration-eiken decoration-2 underline-offset-[6px] hover:decoration-white">Plan een showroombezoek</a>
+      </div>
+      <a href="#ervaringen" class="in in-3 mt-9 inline-flex items-center gap-3 text-[15px] text-white/70 hover:text-white">
+        <span class="flex text-eikenlicht" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4 opacity-60" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+        </span>
+        <span><strong class="text-white font-semibold">4,7</strong> uit 18 Google-reviews</span>
+      </a>
+    </div>
+    <div class="md:col-span-6 lg:col-span-6 relative">
+      <img src="assets/google-03.jpg" alt="Mat donkerblauwe keuken met eiken werkblad en warme hanglampen" class="in-foto boog w-full aspect-[4/5] md:aspect-[5/6] object-cover object-[50%_40%] max-w-[560px] ml-auto">
+    </div>
+  </div>
+  <div class="werkblad h-5 md:h-7"></div>
+</section>
+
+<!-- Showroom -->
+<section id="showroom" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-7 order-2 lg:order-1">
+      <img src="assets/google-04.jpg" alt="Keuken met kookeiland, donkere fronten en eiken werkblad" class="w-full aspect-[4/3] object-cover rounded-[28px] rounded-tl-[120px]">
+    </div>
+    <div class="lg:col-span-5 order-1 lg:order-2">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Van modern tot landelijk, gewoon naast elkaar.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80">
+        In onze keukenwinkel aan de Benjamin Franklinstraat staan verschillende opstellingen en stijlen. Zo vergelijk je in het echt wat bij jou past, en dat tegen een scherpe prijs.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed text-inkt/80">
+        Een keuken is allang niet meer alleen de plek waar je kookt. Je begint er de dag, je zit er met familie of drinkt er rustig koffie. Daarom kijken we niet alleen naar de uitstraling, maar ook naar hoe jij de ruimte gebruikt.
+      </p>
+      <div class="mt-9 border-t border-inkt/15 pt-6">
+        <h3 class="font-semibold text-[15px] text-inkt/60">Apparatuur en materialen van onder andere</h3>
+        <p class="mt-3 font-kop font-medium text-xl md:text-[22px] leading-snug text-inkt">
+          AEG, Bosch, Siemens, Electrolux, Zanussi, Junker, Quooker, GROHE, Novy, Boretti, Stoves, Belling, FG Design en Dekker Zevenhuizen.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-white py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="max-w-2xl">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Zo komt jouw keuken er.</h2>
+      <p class="mt-5 text-lg text-inkt/75 leading-relaxed">Er komt veel kijken bij een nieuwe keuken. Daarom houden we het overzichtelijk, in vier stappen.</p>
+    </div>
+    <ol class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+      <li class="relative">
+        <div class="flex items-center gap-4">
+          <span class="font-kop font-extrabold text-5xl text-eiken leading-none">1</span>
+          <span class="h-px flex-1 bg-inkt/15"></span>
+        </div>
+        <h3 class="mt-5 font-kop font-bold text-2xl lg:text-[22px] lg:min-h-[3.5rem]">Kom langs in de showroom</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Onze adviseurs luisteren naar je wensen en geven persoonlijk advies over stijl, materialen en budget. Geheel vrijblijvend.</p>
+      </li>
+      <li class="relative">
+        <div class="flex items-center gap-4">
+          <span class="font-kop font-extrabold text-5xl text-eiken leading-none">2</span>
+          <span class="h-px flex-1 bg-inkt/15"></span>
+        </div>
+        <h3 class="mt-5 font-kop font-bold text-2xl lg:text-[22px] lg:min-h-[3.5rem]">Gratis 3D-ontwerp</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Na het gesprek maken we een gedetailleerd 3D-ontwerp van je keuken, zodat je het eindresultaat al ziet.</p>
+      </li>
+      <li class="relative">
+        <div class="flex items-center gap-4">
+          <span class="font-kop font-extrabold text-5xl text-eiken leading-none">3</span>
+          <span class="h-px flex-1 bg-inkt/15"></span>
+        </div>
+        <h3 class="mt-5 font-kop font-bold text-2xl lg:text-[22px] lg:min-h-[3.5rem]">Vrijblijvende offerte</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Je krijgt een heldere, gedetailleerde offerte. Geen verborgen kosten, geen verplichtingen. Jij beslist.</p>
+      </li>
+      <li class="relative">
+        <div class="flex items-center gap-4">
+          <span class="font-kop font-extrabold text-5xl text-eiken leading-none">4</span>
+          <span class="h-px flex-1 bg-inkt/15"></span>
+        </div>
+        <h3 class="mt-5 font-kop font-bold text-2xl lg:text-[22px] lg:min-h-[3.5rem]">Bezorging en installatie</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Ga je akkoord, dan regelen wij de rest: van levering tot de volledige installatie van je nieuwe keuken.</p>
+      </li>
+    </ol>
+    <div class="mt-14">
+      <a href="#afspraak" class="knop inline-flex items-center rounded-full bg-inkt hover:bg-diep text-white px-6 py-3.5 font-semibold">Begin met stap 1: plan een bezoek</a>
+    </div>
+  </div>
+</section>
+
+<!-- Fotostrook -->
+<section aria-label="Keukens" class="bg-inkt py-6 md:py-8">
+  <div class="px-5 md:px-8 max-w-[1500px] mx-auto grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+    <img src="assets/google-05.jpg" alt="Antraciet keuken in hoekopstelling met eettafel" class="col-span-2 md:col-span-7 w-full h-60 md:h-[420px] object-cover rounded-2xl">
+    <img src="assets/google-02.jpg" alt="Kookeiland met eiken blad onder een rij gloeilampen" class="md:col-span-5 w-full h-48 md:h-[420px] object-cover object-[50%_60%] rounded-2xl md:rounded-tr-[120px]">
+    <img src="assets/google-08.jpg" alt="Lichte keuken met betonlook fronten en houten balken" class="md:col-span-5 w-full h-48 md:h-[340px] object-cover rounded-2xl">
+    <img src="assets/google-07.jpg" alt="Donkere keuken met open wandrekken en warme spotjes" class="col-span-2 md:col-span-7 w-full h-60 md:h-[340px] object-cover rounded-2xl">
+  </div>
+</section>
+<div class="werkblad h-3 md:h-4"></div>
+
+<!-- Ervaringen -->
+<section id="ervaringen" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05] max-w-xl">Wat klanten over ons zeggen.</h2>
+      <p class="text-inkt/70 text-lg"><strong class="font-kop text-3xl text-inkt mr-1">4,7</strong> uit 18 reviews op Google</p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-12 gap-6 md:gap-8">
+      <figure class="lg:col-span-7 bg-inkt text-white rounded-[28px] p-8 md:p-12 flex flex-col justify-between">
+        <svg class="w-10 h-10 text-eiken" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M13 8c-5 1.5-8 5.6-8 11v6h9v-9H9.4c.4-3 2.2-5 4.6-5.8zm14 0c-5 1.5-8 5.6-8 11v6h9v-9h-4.6c.4-3 2.2-5 4.6-5.8z"/></svg>
+        <blockquote class="mt-6 font-kop font-medium text-2xl md:text-[32px] leading-[1.25] tracking-[-0.01em]">
+          "Vanaf het begin werd er meegedacht. Het ontwerpen van de keuken (en badkamer) was relaxt. Ook later werden we goed geholpen met keuzes maken. Het contact was heel prettig en service achteraf was top. We zijn superblij met de keuken, hij ziet er strak uit. Zeker een aanrader!"
+        </blockquote>
+        <figcaption class="mt-8 text-white/70">Tim Verbruggen, via Google</figcaption>
+      </figure>
+
+      <div class="lg:col-span-5 grid gap-6 md:gap-8">
+        <figure class="bg-white rounded-[22px] p-7 md:p-8">
+          <blockquote class="text-lg leading-relaxed">"Vakkundig advies tijdens het proces. Er wordt goed meegedacht. Wij zijn erg tevreden."</blockquote>
+          <figcaption class="mt-4 text-[15px] font-semibold text-inkt/70">Jos Hogeman</figcaption>
+        </figure>
+        <figure class="bg-white rounded-[22px] p-7 md:p-8">
+          <blockquote class="text-lg leading-relaxed">"We zijn zo goed en fijn geholpen. Door wat gedoe met onze verbouwing klopte te maten niet helemaal, op de deadline dat de keuken op bestelling zou gaan. Keukensale heeft voor ons last minute heel hard gewerkt om toch nog een mooi passend ontwerp te krijgen."</blockquote>
+          <figcaption class="mt-4 text-[15px] font-semibold text-inkt/70">Nikki van Zanen</figcaption>
+        </figure>
+      </div>
+
+      <figure class="lg:col-span-12 bg-white rounded-[22px] p-7 md:p-10 grid md:grid-cols-12 gap-6 items-center">
+        <blockquote class="md:col-span-9 text-lg md:text-xl leading-relaxed">"Voor onze vakantiewoning hebben wij via Keukensale Zwolle een prachtige keuken laten ontwerpen en plaatsen, en we zijn ontzettend tevreden over het hele proces en het eindresultaat! Vanaf het eerste gesprek voelden we ons goed geholpen. Er werd echt geluisterd naar onze wensen en meegedacht over praktische oplossingen."</blockquote>
+        <figcaption class="md:col-span-3 md:text-right text-[15px] font-semibold text-inkt/70">Anne Braam</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Langskomen -->
+<section id="langskomen" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Kom gerust binnenlopen.</h2>
+      <p class="mt-5 text-lg text-inkt/75 leading-relaxed max-w-lg">Zeker weten dat we tijd voor je hebben? Maak een vrijblijvende afspraak. Of loop gewoon binnen, je herkent ons aan de rode gevel.</p>
+      <img src="assets/google-01.jpg" alt="De rode gevel van Keukensale aan de Benjamin Franklinstraat 22 in Zwolle" class="mt-10 w-full aspect-[16/10] object-cover object-[50%_75%] rounded-[24px]">
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-10">
+        <div>
+          <h3 class="font-kop font-bold text-xl">Adres</h3>
+          <address class="not-italic mt-3 text-inkt/80 leading-relaxed">
+            Benjamin Franklinstraat 22<br>8013 NC Zwolle
+          </address>
+          <a href="https://www.google.com/maps/search/?api=1&query=Keukensale+Zwolle+Benjamin+Franklinstraat+22+Zwolle" class="mt-2 inline-block font-semibold underline decoration-eiken decoration-2 underline-offset-4 hover:decoration-inkt" target="_blank" rel="noopener">Route plannen</a>
+          <h3 class="font-kop font-bold text-xl mt-8">Contact</h3>
+          <p class="mt-3 leading-loose">
+            <a href="tel:+31382054054" class="font-semibold hover:text-rood">038 205 4054</a><br>
+            <a href="mailto:zwolle@keukensale.com" class="font-semibold hover:text-rood">zwolle@keukensale.com</a>
+          </p>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-xl">Openingstijden</h3>
+          <dl class="mt-3 text-inkt/80 grid grid-cols-[auto_1fr] gap-x-6 gap-y-1.5 tabular-nums">
+            <dt>Maandag</dt><dd class="text-inkt/50">Gesloten</dd>
+            <dt>Dinsdag</dt><dd>09:30 tot 17:30</dd>
+            <dt>Woensdag</dt><dd>09:30 tot 17:30</dd>
+            <dt>Donderdag</dt><dd>09:30 tot 17:30</dd>
+            <dt>Vrijdag</dt><dd>09:30 tot 17:30</dd>
+            <dt>Zaterdag</dt><dd>09:30 tot 17:00</dd>
+            <dt>Zondag</dt><dd class="text-inkt/50">Gesloten</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6" id="afspraak">
+      <form action="mailto:zwolle@keukensale.com" method="post" enctype="text/plain" class="bg-inkt text-white rounded-[28px] rounded-tr-[120px] p-8 md:p-12 lg:sticky lg:top-8">
+        <h3 class="font-kop font-bold text-3xl md:text-4xl tracking-[-0.02em]">Plan een showroombezoek</h3>
+        <p class="mt-3 text-white/70 leading-relaxed max-w-sm">Laat weten wanneer het je uitkomt. We nemen contact op om de afspraak te bevestigen.</p>
+        <div class="mt-8 grid gap-5">
+          <label class="grid gap-2 text-[15px] font-medium">Naam
+            <input name="naam" required autocomplete="name" class="rounded-xl bg-white/10 border border-white/15 px-4 py-3.5 text-base text-white placeholder-white/40 focus:border-eikenlicht focus:outline-none">
+          </label>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="grid gap-2 text-[15px] font-medium">Telefoon
+              <input name="telefoon" type="tel" required autocomplete="tel" class="rounded-xl bg-white/10 border border-white/15 px-4 py-3.5 text-base text-white focus:border-eikenlicht focus:outline-none">
+            </label>
+            <label class="grid gap-2 text-[15px] font-medium">E-mail
+              <input name="email" type="email" autocomplete="email" class="rounded-xl bg-white/10 border border-white/15 px-4 py-3.5 text-base text-white focus:border-eikenlicht focus:outline-none">
+            </label>
+          </div>
+          <label class="grid gap-2 text-[15px] font-medium">Voorkeursdag
+            <select name="dag" class="rounded-xl bg-white/10 border border-white/15 px-4 py-3.5 text-base text-white focus:border-eikenlicht focus:outline-none">
+              <option class="text-inkt">Dinsdag</option>
+              <option class="text-inkt">Woensdag</option>
+              <option class="text-inkt">Donderdag</option>
+              <option class="text-inkt">Vrijdag</option>
+              <option class="text-inkt">Zaterdag</option>
+            </select>
+          </label>
+          <label class="grid gap-2 text-[15px] font-medium">Waar denk je aan? <span class="text-white/50 font-normal -mt-1">Optioneel, bijvoorbeeld stijl of situatie</span>
+            <textarea name="bericht" rows="3" class="rounded-xl bg-white/10 border border-white/15 px-4 py-3.5 text-base text-white focus:border-eikenlicht focus:outline-none"></textarea>
+          </label>
+          <button type="submit" class="knop gloed mt-2 rounded-full bg-rood hover:bg-rooddonker px-7 py-4 text-lg font-bold">Afspraak aanvragen</button>
+          <p class="text-white/60 text-[15px]">Liever direct contact? Bel <a href="tel:+31382054054" class="text-white font-semibold underline underline-offset-2">038 205 4054</a>.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-diep text-white/60">
+  <div class="werkblad h-3"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-wrap items-center justify-between gap-8">
+    <div class="flex items-center gap-4">
+      <img src="assets/site-03.png" alt="" class="w-14 h-14 object-contain">
+      <div>
+        <p class="font-kop font-extrabold text-2xl text-white tracking-tight leading-none">keuken<span class="text-rood" style="filter:brightness(1.15)">sale</span><span class="font-medium text-white/60 ml-1.5">zwolle</span></p>
+        <p class="mt-2 text-[15px]">Benjamin Franklinstraat 22, 8013 NC Zwolle</p>
+      </div>
+    </div>
+    <p class="text-[15px] leading-relaxed">
+      <a href="tel:+31382054054" class="text-white hover:text-eikenlicht">038 205 4054</a>
+      <span class="mx-2 text-white/30">/</span>
+      <a href="mailto:zwolle@keukensale.com" class="text-white hover:text-eikenlicht">zwolle@keukensale.com</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-inkt/95 backdrop-blur border-t border-white/10 p-3 flex gap-3">
+  <a href="tel:+31382054054" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-rood py-3.5 font-bold text-white">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+    Bellen
+  </a>
+  <a href="#afspraak" class="knop flex-1 inline-flex items-center justify-center rounded-full border border-white/30 py-3.5 font-semibold text-white">Afspraak</a>
+</div>
+
+</body>
+</html>

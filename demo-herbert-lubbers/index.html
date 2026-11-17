@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herbert Lubbers | Tegelzetter in Lichtenvoorde</title>
+<meta name="description" content="Herbert Lubbers tegelt wanden en vloeren voor particulieren en bouwbedrijven in Oost- en Midden-Nederland. Badkamers, vloeren, natuursteen en kitwerk. Bel 06 51171936.">
+<meta property="og:title" content="Herbert Lubbers, tegelzetter in Lichtenvoorde">
+<meta property="og:image" content="assets/site-16.jpg">
+<link rel="icon" href="assets/logo-oud.jpg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        voeg: '#1C1B18',
+        steen: '#ECEBE6',
+        tegel: '#FAFAF7',
+        goud: '#C9A31B',
+        goudd: '#7A6210',
+        grijs: '#57554E',
+      },
+      fontFamily: {
+        kop: ['"Saira Semi Condensed"', 'system-ui', 'sans-serif'],
+        body: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .logo { mix-blend-mode: multiply; }
+  /* Getrapte uitsnede: alsof er tegels zijn uitgehaald */
+  .getrapt {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%, 25% 87.5%, 12.5% 87.5%, 12.5% 75%, 0 75%);
+  }
+  .rasterachter {
+    background-color: #C9A31B;
+    background-image:
+      repeating-linear-gradient(90deg, transparent 0 calc(12.5% - 3px), rgba(28,27,24,.9) calc(12.5% - 3px) 12.5%),
+      repeating-linear-gradient(0deg, transparent 0 calc(12.5% - 3px), rgba(28,27,24,.9) calc(12.5% - 3px) 12.5%);
+  }
+  .wand img { transition: transform .5s ease, filter .5s ease; }
+  .wand figure:hover img { transform: scale(1.04); }
+  .wand figcaption { background: linear-gradient(to top, rgba(28,27,24,.92), rgba(28,27,24,0)); }
+  :focus-visible { outline: 3px solid #C9A31B; outline-offset: 3px; }
+  .knop { transition: background-color .2s ease, transform .15s ease; }
+  .knop:active { transform: translateY(1px); }
+  /* Eén moment beweging: de hero bij laden, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-in { animation: in .7s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-in.d2 { animation-delay: .12s; }
+    .js .hero-in.d3 { animation-delay: .24s; }
+    @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-steen text-voeg antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-goud text-voeg px-4 py-2 font-semibold">Naar de inhoud</a>
+
+<div class="bg-voeg text-steen/80 text-[13px] text-center py-2 px-4">
+  Demo voor Herbert Lubbers, gemaakt door <a href="https://hagenweb.nl" class="text-goud underline underline-offset-2 hover:text-tegel">Hagenweb</a>
+</div>
+
+<header class="bg-steen">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between gap-4 py-3 md:py-4">
+    <a href="#" aria-label="Herbert Lubbers, naar boven">
+      <img src="assets/site-13.png" alt="Tegelzetbedrijf Herbert Lubbers" class="logo h-12 md:h-14 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 font-kop font-semibold text-[17px]">
+      <a href="#werk" class="hover:text-goudd">Werk</a>
+      <a href="#kitwerk" class="hover:text-goudd">Kitwerk</a>
+      <a href="#over" class="hover:text-goudd">Over mij</a>
+      <a href="#advies" class="hover:text-goudd">Advies</a>
+      <a href="#contact" class="hover:text-goudd">Contact</a>
+    </nav>
+    <a href="tel:+31651171936" class="knop hidden sm:inline-flex items-center gap-2 border-2 border-voeg px-4 py-2 rounded-[2px] font-kop font-semibold hover:bg-voeg hover:text-tegel">
+      <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      06 51171936
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-3 pb-16 md:pt-12 md:pb-24 grid md:grid-cols-12 gap-6 md:gap-8 items-center">
+    <div class="md:col-span-6 lg:col-span-6 order-2 md:order-1">
+      <p class="hero-in font-kop font-semibold text-goudd text-lg">Tegelzetter in Lichtenvoorde</p>
+      <h1 class="hero-in d2 font-kop font-bold text-[2.75rem] leading-[0.95] sm:text-6xl lg:text-[5.4rem] tracking-[-0.02em] mt-2 md:mt-3">Tot in de laatste voeg.</h1>
+      <p class="hero-in d3 mt-4 md:mt-6 text-[17px] md:text-xl text-grijs max-w-[30rem] leading-relaxed">
+        Ik tegel wanden en vloeren voor particulieren en bouwbedrijven in Oost- en Midden-Nederland. Met eigen bus, eigen gereedschap en 35 jaar vakmanschap.
+      </p>
+      <div class="hero-in d3 mt-6 md:mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:+31651171936" class="knop inline-flex items-center justify-center gap-3 bg-goud text-voeg font-kop font-bold text-xl px-7 py-3.5 md:py-4 rounded-[2px] shadow-[0_6px_0_#1C1B18] hover:bg-[#d8b12a]">
+          <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel Herbert: 06 51171936
+        </a>
+        <a href="mailto:hjlubbers01@hetnet.nl?subject=Prijsopgave%20tegelwerk" class="font-semibold underline decoration-goud decoration-2 underline-offset-4 hover:text-goudd">Of mail voor een prijsopgave</a>
+      </div>
+    </div>
+    <div class="md:col-span-6 order-1 md:order-2 relative">
+      <div class="rasterachter absolute -right-6 -top-6 w-[62%] aspect-square hidden md:block" aria-hidden="true"></div>
+      <img src="assets/site-16.jpg" alt="Herbert Lubbers met de armen over elkaar voor zijn bus" class="getrapt relative w-full aspect-[16/10] md:aspect-square object-cover object-[50%_25%]" width="1200" height="1200">
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTWAND -->
+<section id="werk" class="bg-voeg text-tegel">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-10 grid md:grid-cols-12 gap-6 items-end">
+    <h2 class="md:col-span-6 font-kop font-bold text-4xl md:text-6xl leading-none tracking-[-0.01em]">Recent werk, tegel voor tegel.</h2>
+    <p class="md:col-span-5 md:col-start-8 text-steen/75 text-lg leading-relaxed">Badkamers, toiletten, keukens, gangen, vloeren en terrassen. Van een complete renovatie in een vakantiewoning tot het kitwerk in een douche.</p>
+  </div>
+  <div class="wand max-w-6xl mx-auto px-[3px] md:px-8 pb-16 md:pb-24">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-[3px] bg-[#000]/0">
+      <figure class="relative col-span-2 row-span-2 overflow-hidden bg-[#2a2924]">
+        <img src="assets/site-15.jpg" alt="Buitenterras met grote lichte tegels" class="w-full h-full object-cover aspect-square md:aspect-auto" loading="lazy">
+        <figcaption class="absolute inset-x-0 bottom-0 p-4 pt-12 font-kop font-semibold text-lg md:text-xl">Buitenterras</figcaption>
+      </figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-07.jpg" alt="Badkamer met vrijstaand bad en houtlook tegels" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Badkamer verbouwde boerderij</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-02.jpg" alt="Badkamer met terrazzo tegels en donkerblauwe wandtegels" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Badkamer Lichtenvoorde</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-01.jpg" alt="Keramisch parket in een lichte woonruimte" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Keramisch parket onderverdieping</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-05.jpg" alt="Terras met tegels in houtlook en bloeiende boom" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Buitenterras in houtlook</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-08.jpg" alt="Badkamer met zwart meubel en houtlook vloer" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Realisatie badkamer</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-03.jpg" alt="Vloer van oude gevelstenen in een veelkleurig verband" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Van gevelsteen tot vloer</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-06.jpg" alt="Badkamer met dubbele wastafel en grote beige tegels" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Complete renovatie badkamer vakantiewoning</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-04.jpg" alt="Vloer van verzaagd aanrechtblad met sierrand" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Aanrechtblad verzagen tot vloer</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-12.jpg" alt="Donkere glanzende tegelvloer in een gang" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Tegels op tegelvloer</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-10.jpg" alt="Inloopdouche met grote tegels, drempelloos" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Renovatie en aanpassing voor rolstoelgebruik</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-09.jpg" alt="Witte wandtegels in ruitpatroon in een nieuwe ruimte" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Diverse ruimtes in nieuw trainingcentrum</figcaption></figure>
+      <figure class="relative overflow-hidden"><img src="assets/site-11.jpg" alt="Strak kitwerk langs een douchegoot" class="w-full aspect-square object-cover" loading="lazy"><figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 font-kop font-semibold leading-tight">Kitwerk in douche</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- WAT IK DOE -->
+<section class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10">
+  <div class="md:col-span-4">
+    <h2 class="font-kop font-bold text-4xl md:text-5xl leading-none">Wat ik voor u tegel</h2>
+    <p class="mt-5 text-grijs text-lg leading-relaxed">Voor particulieren die hun badkamer of vloer laten doen, en voor bouwbedrijven die een vaste vakman zoeken voor het tegelwerk.</p>
+  </div>
+  <dl class="md:col-span-8 grid sm:grid-cols-2 border-t-2 border-voeg">
+    <div class="py-6 sm:pr-8 border-b border-voeg/20">
+      <dt class="font-kop font-bold text-2xl">Badkamers en toiletten</dt>
+      <dd class="mt-2 text-grijs leading-relaxed">Van een nieuwe badkamer tot een complete renovatie, ook aangepast voor rolstoelgebruik.</dd>
+    </div>
+    <div class="py-6 sm:pl-8 sm:border-l border-b border-voeg/20">
+      <dt class="font-kop font-bold text-2xl">Tegelvloeren</dt>
+      <dd class="mt-2 text-grijs leading-relaxed">Gang, keuken, woonkamer of onderverdieping. Keramisch parket, grote tegels, ook over een bestaande tegelvloer heen.</dd>
+    </div>
+    <div class="py-6 sm:pr-8 border-b border-voeg/20">
+      <dt class="font-kop font-bold text-2xl">Natuursteen</dt>
+      <dd class="mt-2 text-grijs leading-relaxed">Marmer, graniet, leisteen of kwartsiet. Elke steen is anders, dus leggen vraagt oog voor kleur en structuur.</dd>
+    </div>
+    <div class="py-6 sm:pl-8 sm:border-l border-b border-voeg/20">
+      <dt class="font-kop font-bold text-2xl">Wanden en keukens</dt>
+      <dd class="mt-2 text-grijs leading-relaxed">Wandtegels in badkamer en keuken, met nette hoeken, plinten en inlays die het geheel afmaken.</dd>
+    </div>
+    <div class="py-6 sm:pr-8 border-b sm:border-b-0 border-voeg/20">
+      <dt class="font-kop font-bold text-2xl">Terrassen</dt>
+      <dd class="mt-2 text-grijs leading-relaxed">Buitentegels, bijvoorbeeld in houtlook, strak doorgelegd van binnen naar buiten.</dd>
+    </div>
+    <div class="py-6 sm:pl-8 sm:border-l border-voeg/20">
+      <dt class="font-kop font-bold text-2xl">Kitwerk</dt>
+      <dd class="mt-2 text-grijs leading-relaxed">Oude kit eruit, alles schoon en opnieuw afgekit. <a href="#kitwerk" class="font-semibold text-voeg underline decoration-goud decoration-2 underline-offset-4">Meer over kitwerk</a></dd>
+    </div>
+  </dl>
+</section>
+
+<!-- KITWERK -->
+<section id="kitwerk" class="bg-tegel">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+    <div class="md:col-span-6 relative">
+      <div class="rasterachter absolute -left-4 -bottom-4 md:-left-6 md:-bottom-6 w-1/3 aspect-square" aria-hidden="true"></div>
+      <img src="assets/site-14.jpg" alt="Herbert Lubbers met een kitpistool in de hand" class="relative w-full aspect-[3/2] object-cover object-[50%_60%]" loading="lazy">
+    </div>
+    <div class="md:col-span-6 md:col-start-7 mt-4 md:mt-0">
+      <h2 class="font-kop font-bold text-4xl md:text-5xl leading-none">Lekt de kit? Dan is het tijd.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-grijs">Een kitvoeg die loslaat in de douche, keuken of wc lijkt klein, maar kan voor lekkage zorgen. Dat wilt u voorkomen.</p>
+      <p class="mt-4 text-lg leading-relaxed text-grijs">Ik haal eerst al het oude kitwerk grondig weg en maak alles schoon. Pas dan hecht nieuwe kit goed. Zo zijn alle voegen, kieren en naden weer duurzaam dicht en blijft uw badkamer of keuken langer mooi.</p>
+      <a href="tel:+31651171936" class="mt-8 inline-flex font-semibold underline decoration-goud decoration-2 underline-offset-4 hover:text-goudd">Bel voor een afspraak: 06 51171936</a>
+    </div>
+  </div>
+</section>
+
+<!-- OVER -->
+<section id="over" class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-28 grid md:grid-cols-12 gap-10 md:gap-8">
+  <div class="md:col-span-5">
+    <h2 class="font-kop font-bold text-4xl md:text-5xl leading-none">Eén vakman, van begin tot eind.</h2>
+    <blockquote class="mt-8 md:mt-12 border-l-[6px] border-goud pl-5 md:pl-6">
+      <p class="font-kop font-semibold text-2xl md:text-[2rem] leading-tight">„De kwaliteit van een interieur wordt meestal bepaald door de mate van afwerking.”</p>
+      <footer class="mt-3 text-grijs">Herbert Lubbers</footer>
+    </blockquote>
+  </div>
+  <div class="md:col-span-6 md:col-start-7 text-lg leading-relaxed text-grijs space-y-5">
+    <p>Ik ben Herbert Lubbers en werk al 35 jaar als tegelzetter. In 2006 ben ik voor mezelf begonnen en ik ben me steeds meer gaan specialiseren in een perfecte afwerking van vloeren en wanden. Smaken veranderen en de eisen worden hoger, dus ik blijf me aanpassen.</p>
+    <p>Overleg vind ik net zo belangrijk als het tegelen zelf: met u, en met de andere aannemers op de bouw. Ik maak altijd een reële schatting van tijd en kosten. Valt iets in de praktijk anders uit, dan komen we er samen uit.</p>
+    <p>Na het werk ruil ik de lijmkam in voor een trombone, bij dweilorkest 'Doktors Swingende Infuustoeters'.</p>
+    <p class="pt-5 border-t border-voeg/20 text-voeg font-kop font-semibold text-xl">35 jaar in het vak, sinds 2006 zelfstandig, met eigen bus en gereedschap.</p>
+  </div>
+</section>
+
+<!-- ADVIES -->
+<section id="advies" class="border-t-2 border-voeg">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="grid md:grid-cols-12 gap-6 items-end">
+      <h2 class="md:col-span-7 font-kop font-bold text-4xl md:text-5xl leading-none">Goed om te weten voordat u kiest</h2>
+      <p class="md:col-span-5 text-grijs text-lg">Tegels bepalen voor lange tijd hoe uw huis eruitziet. Een paar dingen om over na te denken.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-voeg/20 border border-voeg/20">
+      <article class="bg-steen p-6">
+        <h3 class="font-kop font-bold text-xl">Tegel of natuursteen</h3>
+        <p class="mt-3 text-grijs leading-relaxed">Tegels zijn gebakken klei en zand, met of zonder glazuur. Natuursteen wordt uit groeven gehaald en is nooit twee keer gelijk.</p>
+      </article>
+      <article class="bg-steen p-6">
+        <h3 class="font-kop font-bold text-xl">Vloerverwarming</h3>
+        <p class="mt-3 text-grijs leading-relaxed">Tegels en natuursteen op de vloer zijn helemaal terug. Met vloerverwarming voelt de vloer niet meer koud aan.</p>
+      </article>
+      <article class="bg-steen p-6">
+        <h3 class="font-kop font-bold text-xl">De ondergrond</h3>
+        <p class="mt-3 text-grijs leading-relaxed">Beton of cement is ideaal. Over bestaande tegels kan ook. Op hout komt eerst een zwaluwstaartvloer met cement.</p>
+      </article>
+      <article class="bg-steen p-6">
+        <h3 class="font-kop font-bold text-xl">Slijtvast kiezen</h3>
+        <p class="mt-3 text-grijs leading-relaxed">Wordt een ruimte intensief gebruikt, kies dan een slijtvastere tegel. Formaat en legpatroon bepalen de uitstraling.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-voeg text-tegel">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-6">
+      <h2 class="font-kop font-bold text-4xl md:text-6xl leading-none">Plannen met tegels? Bel even.</h2>
+      <p class="mt-5 text-steen/75 text-lg max-w-md">Vertel wat u wilt laten doen, dan kom ik kijken en krijgt u een eerlijke prijsopgave.</p>
+      <a href="tel:+31651171936" class="knop mt-8 inline-flex items-center gap-3 bg-goud text-voeg font-kop font-bold text-2xl md:text-3xl px-7 py-4 rounded-[2px] hover:bg-[#d8b12a]">06 51171936</a>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-6 text-steen/85">
+        <div><dt class="font-kop font-semibold text-goud">E-mail</dt><dd class="mt-1"><a href="mailto:hjlubbers01@hetnet.nl" class="underline underline-offset-4 hover:text-goud">hjlubbers01@hetnet.nl</a></dd></div>
+        <div><dt class="font-kop font-semibold text-goud">Adres</dt><dd class="mt-1">Schatbergstraat 11<br>7131 AN Lichtenvoorde</dd></div>
+        <div><dt class="font-kop font-semibold text-goud">Werkgebied</dt><dd class="mt-1">Oost- en Midden-Nederland</dd></div>
+        <div><dt class="font-kop font-semibold text-goud">KvK</dt><dd class="mt-1">91600990</dd></div>
+      </dl>
+    </div>
+    <form class="md:col-span-5 md:col-start-8 bg-tegel text-voeg p-6 md:p-8 self-start" action="mailto:hjlubbers01@hetnet.nl" method="post" enctype="text/plain">
+      <h3 class="font-kop font-bold text-2xl">Liever een bericht sturen?</h3>
+      <label class="block mt-5"><span class="text-sm font-semibold">Naam</span>
+        <input name="naam" required autocomplete="name" class="mt-1 w-full border border-voeg/30 bg-steen px-3 py-2.5 rounded-[2px] focus:outline-none focus:border-voeg"></label>
+      <label class="block mt-4"><span class="text-sm font-semibold">Telefoon of e-mail</span>
+        <input name="contact" required class="mt-1 w-full border border-voeg/30 bg-steen px-3 py-2.5 rounded-[2px] focus:outline-none focus:border-voeg"></label>
+      <label class="block mt-4"><span class="text-sm font-semibold">Wat wilt u laten tegelen?</span>
+        <textarea name="bericht" rows="4" class="mt-1 w-full border border-voeg/30 bg-steen px-3 py-2.5 rounded-[2px] focus:outline-none focus:border-voeg" placeholder="Bijvoorbeeld: badkamer van 6 m², oude tegels eruit"></textarea></label>
+      <button type="submit" class="knop mt-5 w-full bg-voeg text-tegel font-kop font-bold text-lg py-3 rounded-[2px] hover:bg-[#33312b]">Bericht versturen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-voeg text-steen/60 border-t border-tegel/10">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-8 flex flex-col sm:flex-row justify-between gap-3 text-sm">
+    <p>Herbert Lubbers Tegel- en Natuursteenwerken, Lichtenvoorde</p>
+    <p>Website door <a href="https://hagenweb.nl" class="underline hover:text-goud">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-voeg p-2.5 flex gap-2.5">
+  <a href="tel:+31651171936" class="knop flex-1 flex items-center justify-center gap-2 bg-goud text-voeg font-kop font-bold text-lg py-3 rounded-[2px]">
+    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel Herbert
+  </a>
+  <a href="mailto:hjlubbers01@hetnet.nl?subject=Prijsopgave%20tegelwerk" class="px-5 flex items-center justify-center border border-tegel/30 text-tegel font-kop font-semibold rounded-[2px]">Mail</a>
+</div>
+
+</body>
+</html>
