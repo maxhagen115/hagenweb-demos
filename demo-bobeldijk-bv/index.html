@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bobeldijk BV | Burgers en falafel uit Deventer</title>
+<meta name="description" content="Bobeldijk BV bakt burgers en falafel aan de Staverenstraat in Deventer. Bel 0570 860 100, bereikbaar maandag tot en met vrijdag van 08:30 tot 17:00.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bos: '#04504A',
+          zon: '#FCC917',
+          blad: '#3DA85A',
+          fris: '#F5F7F3',
+          inkt: '#0E2E2A',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'sans-serif'],
+          tekst: ['Figtree', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .zon-ring { background: radial-gradient(circle at 50% 50%, transparent 0 58%, #FCC917 58.5% 100%); }
+  .schuin { clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%); }
+  @media (min-width: 768px) { .schuin { clip-path: polygon(0 12%, 100% 0, 100% 88%, 0 100%); } }
+  #belbalk { transition: transform .3s ease, opacity .3s ease; }
+  .js #belbalk.weg { transform: translateY(140%); opacity: 0; pointer-events: none; }
+  .js .zon-draai { animation: opkomst 1.1s cubic-bezier(.2,.7,.2,1) both; }
+  .js .burger-in { animation: inzoom 1s .15s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes opkomst { from { transform: translateY(18%) rotate(-25deg); } to { transform: none; } }
+  @keyframes inzoom { from { transform: scale(.94); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .zon-draai, .js .burger-in { animation: none; } html { scroll-behavior: auto; } }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #3DA85A; outline-offset: 3px; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-fris text-inkt antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded">Naar de inhoud</a>
+
+<div class="bg-inkt text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Bobeldijk BV, gemaakt door <a href="https://hagenweb.nl" class="text-zon font-semibold underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<header class="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between gap-4">
+  <a href="#" aria-label="Bobeldijk, naar boven">
+    <img src="assets/google-07.png" alt="Bobeldijk" class="h-8 sm:h-10 w-auto">
+  </a>
+  <nav class="flex items-center gap-6 text-[15px] font-medium">
+    <a href="#bakstraat" class="hidden md:inline hover:text-blad transition-colors">Wat wij maken</a>
+    <a href="#contact" class="hidden md:inline hover:text-blad transition-colors">Contact en route</a>
+    <a href="tel:+31570860100" class="inline-flex items-center gap-2 rounded-full border-2 border-bos px-4 py-2 font-semibold text-bos hover:bg-bos hover:text-white transition-colors">
+      <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span class="hidden sm:inline">0570 860 100</span><span class="sm:hidden">Bel</span>
+    </a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-4 pb-16 md:pt-10 md:pb-24 grid md:grid-cols-[1fr_1.05fr] gap-8 md:gap-6 items-center">
+    <div class="order-2 md:order-1">
+      <p class="font-medium text-blad mb-4">Foodproducent in Deventer</p>
+      <h1 class="font-kop font-extrabold text-bos text-[2.9rem] leading-[0.98] sm:text-6xl lg:text-[5.2rem] tracking-[-0.035em]">Goed gebakken, gewoon in Deventer.</h1>
+      <p class="mt-6 text-lg leading-relaxed max-w-md text-inkt/80">Aan de Staverenstraat bakken wij burgers en falafel in onze eigen bakstraat. Een vraag of iets te bespreken? Bel ons gerust.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a id="hero-bel" href="tel:+31570860100" class="inline-flex items-center gap-3 rounded-full bg-zon px-7 py-4 text-lg font-semibold text-inkt shadow-[0_10px_30px_-10px_rgba(180,140,0,.7)] hover:-translate-y-0.5 hover:shadow-[0_14px_34px_-10px_rgba(180,140,0,.8)] active:translate-y-0 transition">
+          <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          Bel 0570 860 100
+        </a>
+        <a href="mailto:info@bobeldijk.nl" class="font-semibold text-bos underline decoration-2 decoration-blad underline-offset-4 hover:text-blad">Of mail info@bobeldijk.nl</a>
+      </div>
+    </div>
+
+    <div class="order-1 md:order-2 relative mx-auto w-[68%] sm:w-[60%] md:w-full max-w-[560px] aspect-square">
+      <div class="zon-draai absolute inset-0 rounded-full zon-ring"></div>
+      <div class="burger-in absolute inset-[8%] rounded-full overflow-hidden bg-[#e9ebec]">
+        <img src="assets/google-01.jpg" alt="Burger met gegrilde aubergine, komkommer, rode ui en spinazie op een maanzaadbol" class="w-full h-full object-cover object-[50%_52%] scale-[1.12]">
+      </div>
+      <svg aria-hidden="true" class="absolute -bottom-2 -left-3 w-[30%] text-blad" viewBox="0 0 100 100"><path fill="currentColor" d="M96 6C40 4 6 34 6 94c50 2 88-28 90-88z"/><path fill="#04504A" d="M20 84C36 58 56 38 84 18 62 40 44 62 26 90z"/></svg>
+    </div>
+  </section>
+
+  <!-- Bakstraat -->
+  <section id="bakstraat" class="relative bg-bos text-white">
+    <div class="schuin">
+      <img src="assets/google-02.jpg" alt="Versgebakken burgers komen dampend uit de oven op de bakstraat" class="w-full h-[52vw] max-h-[620px] min-h-[280px] object-cover object-[50%_60%]">
+    </div>
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24 grid md:grid-cols-[1.1fr_1fr] gap-10 md:gap-20">
+      <div>
+        <h2 class="font-kop font-bold text-4xl sm:text-5xl tracking-[-0.03em] leading-[1.02]">Van de bakstraat, nog dampend.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-white/80 max-w-xl">Bij Bobeldijk komt het eten uit onze eigen productie in Deventer. Burgers gaan rij na rij door de oven en komen er goudbruin weer uit. Zo weten wij precies wat er in ieder product zit en hoe het gebakken is.</p>
+      </div>
+      <div class="flex flex-col gap-6 md:pt-3">
+        <div class="flex gap-5 items-start border-t border-white/15 pt-6">
+          <div class="shrink-0 w-14 h-14 rounded-2xl bg-white grid place-items-center">
+            <svg aria-hidden="true" viewBox="0 0 48 48" class="w-8 h-8 text-bos" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M8 20c0-7 7-12 16-12s16 5 16 12z"/><path d="M7 26h34"/><path d="M9 31h30"/><path d="M10 36c0 2 2 4 5 4h18c3 0 5-2 5-4z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-kop font-bold text-2xl">Burgers</h3>
+            <p class="mt-1 text-white/75 leading-relaxed">Gevormd en gebakken op onze eigen lijn, klaar voor op een stevige bol.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 items-start border-t border-white/15 pt-6">
+          <div class="shrink-0 w-14 h-14 rounded-2xl bg-white grid place-items-center">
+            <img src="assets/site-01.png" alt="" class="w-10 h-10">
+          </div>
+          <div>
+            <h3 class="font-kop font-bold text-2xl">Falafel</h3>
+            <p class="mt-1 text-white/75 leading-relaxed">Krokante balletjes, ook gewoon hier in Deventer gemaakt.</p>
+          </div>
+        </div>
+        <a href="tel:+31570860100" class="self-start mt-2 font-semibold text-zon underline decoration-2 underline-offset-4 hover:text-white">Vraag naar ons aanbod: 0570 860 100</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Review -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28">
+    <figure class="relative md:pl-28">
+      <svg aria-hidden="true" class="absolute -top-6 left-0 w-16 md:w-20 text-zon" viewBox="0 0 64 48" fill="currentColor"><path d="M0 48V28C0 12 8 2 24 0v10c-7 2-10 7-10 14h10v24zm40 0V28C40 12 48 2 64 0v10c-7 2-10 7-10 14h10v24z"/></svg>
+      <blockquote class="font-kop font-bold text-bos text-5xl sm:text-6xl md:text-7xl tracking-[-0.04em] leading-[1] pt-10 md:pt-0">Frisse schone werk omgeving</blockquote>
+      <figcaption class="mt-6 flex items-center gap-3 text-inkt/70">
+        <span class="text-zon text-xl tracking-wider" aria-label="5 van de 5 sterren">★★★★★</span>
+        <span>David Criel, Google-review</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-16 md:py-24 grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16">
+      <div>
+        <h2 class="font-kop font-bold text-bos text-4xl sm:text-5xl tracking-[-0.03em] leading-[1.02]">Langskomen of bellen?</h2>
+        <p class="mt-5 text-lg text-inkt/75 max-w-md leading-relaxed">U vindt ons op het bedrijventerrein aan de Staverenstraat. Op werkdagen zijn wij telefonisch bereikbaar.</p>
+
+        <dl class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+          <div>
+            <dt class="font-semibold text-blad">Adres</dt>
+            <dd class="mt-1 text-lg leading-snug">Staverenstraat 14<br>7418 CJ Deventer</dd>
+            <a href="https://www.google.com/maps/search/?api=1&query=Staverenstraat+14+7418+CJ+Deventer" class="inline-block mt-2 font-semibold text-bos underline decoration-blad decoration-2 underline-offset-4 hover:text-blad">Plan uw route</a>
+          </div>
+          <div>
+            <dt class="font-semibold text-blad">Telefoon en e-mail</dt>
+            <dd class="mt-1 text-lg leading-snug">
+              <a href="tel:+31570860100" class="hover:text-blad">0570 860 100</a><br>
+              <a href="mailto:info@bobeldijk.nl" class="hover:text-blad">info@bobeldijk.nl</a>
+            </dd>
+          </div>
+          <div class="sm:col-span-2">
+            <dt class="font-semibold text-blad">Openingstijden</dt>
+            <dd class="mt-2">
+              <table class="w-full max-w-sm text-lg tabular-nums">
+                <tbody class="divide-y divide-bos/10">
+                  <tr><td class="py-2">Maandag t/m vrijdag</td><td class="py-2 text-right font-semibold">08:30 tot 17:00</td></tr>
+                  <tr class="text-inkt/55"><td class="py-2">Zaterdag en zondag</td><td class="py-2 text-right">Gesloten</td></tr>
+                </tbody>
+              </table>
+            </dd>
+          </div>
+        </dl>
+        <div class="mt-10 rounded-[2rem] overflow-hidden aspect-[16/10]">
+          <img src="assets/google-05.jpg" alt="Het pand van Bobeldijk Food Group aan de Staverenstraat met het logo op de gevel" class="w-full h-full object-cover scale-[1.75] origin-[80%_36%]">
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8">
+
+        <form action="mailto:info@bobeldijk.nl" method="post" enctype="text/plain" class="rounded-[2rem] bg-fris p-6 sm:p-8 grid gap-4">
+          <h3 class="font-kop font-bold text-2xl text-bos">Stuur een bericht</h3>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="grid gap-1.5 text-sm font-medium">Naam
+              <input required name="naam" autocomplete="name" class="rounded-xl border border-bos/20 bg-white px-4 py-3 text-base font-normal focus:border-blad">
+            </label>
+            <label class="grid gap-1.5 text-sm font-medium">E-mail
+              <input required type="email" name="email" autocomplete="email" class="rounded-xl border border-bos/20 bg-white px-4 py-3 text-base font-normal focus:border-blad">
+            </label>
+          </div>
+          <label class="grid gap-1.5 text-sm font-medium">Uw vraag
+            <textarea required name="bericht" rows="4" class="rounded-xl border border-bos/20 bg-white px-4 py-3 text-base font-normal focus:border-blad"></textarea>
+          </label>
+          <button class="justify-self-start rounded-full bg-bos px-6 py-3 font-semibold text-white hover:bg-inkt active:scale-[.98] transition">Bericht versturen</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-bos text-white/75 pb-24 md:pb-0">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm">
+    <p><span class="font-kop font-bold text-white text-lg">Bobeldijk BV</span><br>Staverenstraat 14, 7418 CJ Deventer</p>
+    <p><a href="tel:+31570860100" class="hover:text-zon">0570 860 100</a> <span class="mx-2 text-white/30">|</span> <a href="mailto:info@bobeldijk.nl" class="hover:text-zon">info@bobeldijk.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belknop -->
+<a id="belbalk" href="tel:+31570860100" class="md:hidden fixed bottom-4 inset-x-4 z-40 flex items-center justify-center gap-3 rounded-full bg-zon py-4 text-lg font-semibold text-inkt shadow-[0_12px_30px_-8px_rgba(4,80,74,.55)]">
+  <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+  Bel 0570 860 100
+</a>
+
+<script>
+  (function () {
+    var bar = document.getElementById('belbalk');
+    var held = document.getElementById('hero-bel');
+    if (!bar || !held || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) { bar.classList.toggle('weg', e[0].isIntersecting); }).observe(held);
+  })();
+</script>
+</body>
+</html>

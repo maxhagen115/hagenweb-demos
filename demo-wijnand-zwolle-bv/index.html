@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wijnand Keukens Zwolle | Keukenarchitecten en Modulnova-showroom</title>
+<meta name="description" content="Wijnand Keukens in Zwolle: keukens op maat, ontworpen door onze keukenarchitecten. Officieel Modulnova-dealer. Bezoek de showroom aan het Assiesplein 1 of bel 038 423 1100.">
+<meta property="og:title" content="Wijnand Keukens Zwolle">
+<meta property="og:description" content="Keukens op maat, ontworpen door keukenarchitecten. Showroom aan het Assiesplein in Zwolle.">
+<meta property="og:image" content="assets/site-05.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;1,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          lak: '#1E1B18',
+          lak2: '#2A2622',
+          steen: '#ECE8E2',
+          linnen: '#F6F4F0',
+          eiken: '#A9774A',
+          grafiet: '#2B2824',
+          gedempt: '#6B655D',
+          geel: '#F2B807',
+          geeldonker: '#D9A300'
+        },
+        fontFamily: {
+          kop: ['"Libre Bodoni"', 'Georgia', 'serif'],
+          tekst: ['"Hanken Grotesk"', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Hanken Grotesk", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: "Libre Bodoni", Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.01em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Hero: foto als drie greeploze kastdeuren */
+  .kastwand { position: relative; overflow: hidden; }
+  .kastwand img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .kastwand::before, .kastwand::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 7px; background: #1E1B18; z-index: 2;
+  }
+  .kastwand::before { left: calc(33.333% - 3px); }
+  .kastwand::after { left: calc(66.666% - 3px); }
+  .kastwand .greep { position: absolute; top: 0; height: 5px; background: #F2B807; z-index: 3; left: 33.333%; width: 33.333%; }
+  .kastwand .schaduw { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(90deg, rgba(30,27,24,.18) 0, transparent 6%, transparent 27%, rgba(30,27,24,.16) 33.3%, transparent 39%, transparent 60%, rgba(30,27,24,.16) 66.6%, transparent 72%); }
+
+  /* Eén ingetogen laadmoment, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .deur { transform: translateY(14px); opacity: .001; transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s ease; }
+    html.js.geladen .deur { transform: none; opacity: 1; }
+    html.js .deur:nth-child(2) { transition-delay: .08s; }
+    html.js .deur:nth-child(3) { transition-delay: .16s; }
+    html.js .deur:nth-child(4) { transition-delay: .24s; }
+    html.js .deur:nth-child(5) { transition-delay: .32s; }
+    html.js .kastwand img { transform: scale(1.04); transition: transform 1.6s cubic-bezier(.2,.7,.2,1); }
+    html.js.geladen .kastwand img { transform: none; }
+  }
+
+  .knop { transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid #F2B807; outline-offset: 3px; border-radius: 2px;
+  }
+  .lijn-link { background-image: linear-gradient(currentColor, currentColor); background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat; padding-bottom: 2px; transition: background-size .25s ease; }
+  .lijn-link:hover { background-size: 0% 1px; background-position: 100% 100%; }
+  .stap-nr { font-feature-settings: "lnum"; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-steen text-grafiet font-tekst pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-geel focus:text-lak focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-geel text-lak text-[13px] text-center py-1.5 px-4">
+  Demo voor Wijnand Zwolle B.V., gemaakt door <a href="https://hagenweb.nl" class="font-semibold underline underline-offset-2">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-lak text-linnen">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3" aria-label="Wijnand Keukens, naar boven">
+      <img src="assets/logo-oud.png" alt="" class="w-9 h-9 md:w-10 md:h-10 rounded-md">
+      <span class="text-[17px] md:text-lg tracking-tight"><span class="font-semibold">Wijnand</span> <span class="font-normal text-linnen/70">Keukens</span></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9 text-[15px] text-linnen/80" aria-label="Hoofdmenu">
+      <a href="#architecten" class="hover:text-geel transition-colors">Ontwerp</a>
+      <a href="#projecten" class="hover:text-geel transition-colors">Projecten</a>
+      <a href="#modulnova" class="hover:text-geel transition-colors">Modulnova</a>
+      <a href="#werkwijze" class="hover:text-geel transition-colors">Werkwijze</a>
+      <a href="#showroom" class="hover:text-geel transition-colors">Showroom</a>
+    </nav>
+    <a href="tel:+31384231100" class="knop hidden sm:inline-flex items-center gap-2 border border-linnen/30 hover:border-geel hover:text-geel rounded-full px-5 py-2.5 text-[15px] font-medium">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      038 423 1100
+    </a>
+    <a href="tel:+31384231100" class="sm:hidden text-geel text-[15px] font-medium" aria-label="Bel 038 423 1100">Bellen</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="bg-lak text-linnen overflow-hidden">
+  <div class="max-w-[1320px] mx-auto lg:grid lg:grid-cols-12 lg:gap-10 lg:min-h-[640px]">
+    <div class="px-5 md:px-10 pt-9 pb-10 md:pt-16 lg:pt-24 lg:pb-24 lg:col-span-5 flex flex-col justify-center">
+      <p class="deur text-[15px] text-linnen/60">Keukenarchitecten in Zwolle</p>
+      <h1 class="deur kop text-[44px] leading-[1.04] md:text-[64px] lg:text-[76px] mt-4">Waar een ander stopt, beginnen wij.</h1>
+      <p class="deur text-[17px] md:text-lg leading-relaxed text-linnen/75 mt-6 max-w-[30rem]">
+        Een keuken die opgaat in je huis, ontworpen samen met onze keukenarchitect. Kom kijken in de showroom aan het Assiesplein: we maken graag tijd voor je.
+      </p>
+      <div class="deur mt-8 flex flex-col sm:flex-row sm:items-center gap-5">
+        <a href="tel:+31384231100" class="knop inline-flex items-center justify-center gap-3 bg-geel hover:bg-[#ffc824] text-lak font-semibold text-[17px] rounded-full px-7 py-4 shadow-[0_10px_30px_-10px_rgba(242,184,7,.55)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 038 423 1100
+        </a>
+        <a href="#showroom" class="lijn-link self-start sm:self-auto text-linnen/85 hover:text-linnen text-[16px]">Plan je showroombezoek</a>
+      </div>
+      <p class="deur mt-9 flex items-center gap-3 text-[14px] text-linnen/60">
+        <span class="text-geel tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-linnen font-semibold">4,8</strong> uit 21 Google-reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-7 relative">
+      <div class="kastwand h-[340px] sm:h-[460px] lg:h-full lg:absolute lg:inset-0 lg:-right-[max(0px,calc((100vw-1320px)/2))]">
+        <span class="greep" aria-hidden="true"></span>
+        <span class="schaduw" aria-hidden="true"></span>
+        <img src="assets/site-05.jpg" alt="Showroomkeuken met eikenhouten kookeiland, natuurstenen blad en een grote lamp met bladgoud" style="object-position: 30% 50%">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Keukenarchitecten -->
+<section id="architecten" class="py-20 md:py-32">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+    <div class="lg:col-span-6 lg:pr-8">
+      <h2 class="kop text-[36px] md:text-[52px] leading-[1.08]">Bijzonder leven, koken en genieten. Het begint met het ontwerp.</h2>
+      <div class="mt-8 space-y-5 text-[17px] leading-[1.7] text-grafiet/85 max-w-[36rem]">
+        <p>De keuken is de plek waar je samenkomt. Daarom ontwerpen wij hem niet als los meubel, maar als deel van je interieur. Dat doen onze keukenarchitecten, en zij gaan verder dan alleen de kasten.</p>
+        <p>Je loopt samen stap voor stap alles door: het ontwerp, de apparatuur en de materialen, tot een compleet interieuradvies met kleur- en lichtplan. Zo krijg je precies de sfeer die je zoekt, ook op vragen die je zelf nog niet had bedacht.</p>
+      </div>
+      <figure class="mt-12 border-l-2 border-eiken pl-6 max-w-[34rem]">
+        <blockquote class="kop italic text-[24px] md:text-[28px] leading-snug">“Wij maken wat de klanten zoeken, maar niet wat ze verwachten.”</blockquote>
+        <figcaption class="mt-3 text-[15px] text-gedempt">Jeroen, eigenaar en keukenarchitect</figcaption>
+      </figure>
+    </div>
+    <div class="lg:col-span-6 relative">
+      <img src="assets/site-04.webp" alt="Keukenarchitect van Wijnand Keukens tekent een ontwerp met de hand" class="w-full aspect-[4/5] md:aspect-[5/4] lg:aspect-[4/5] object-cover rounded-t-[200px] md:rounded-t-[999px]" style="object-position: 62% 50%">
+      <p class="absolute -bottom-6 left-6 right-6 md:left-auto md:right-8 md:w-[300px] bg-linnen p-5 text-[15px] leading-relaxed shadow-[0_20px_40px_-20px_rgba(43,40,36,.35)]">
+        Eerst een schets, daarna een gedetailleerde tekening. Je ziet je keuken voordat er iets besteld wordt.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Projecten -->
+<section id="projecten" class="pb-20 md:pb-32 pt-6">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="grid lg:grid-cols-12 gap-8 items-end">
+      <h2 class="kop lg:col-span-7 text-[36px] md:text-[52px] leading-[1.08]">Keukens waar we trots op zijn.</h2>
+      <p class="lg:col-span-5 text-[17px] leading-[1.7] text-grafiet/80 max-w-[34rem]">Van een statig herenhuis tot een villa in Oranjewoud: elke keuken is uniek en persoonlijk, met het accent op culinair genieten. Dat doen we al meer dan dertig jaar.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <img src="assets/site-03.webp" alt="Woonkeuken met donkergrijze kasten, eiken nis en tuindeuren" class="col-span-2 md:col-span-8 w-full h-[260px] md:h-[520px] object-cover">
+      <img src="assets/site-07.webp" alt="Keukeneiland in groene natuursteen in een klassiek huis" class="col-span-1 md:col-span-4 w-full h-[220px] md:h-[520px] object-cover">
+      <img src="assets/site-08.png" alt="Donkere maatwerkkeuken met kookeiland in een herenhuis met hoge ramen" class="col-span-1 md:col-span-4 w-full h-[220px] md:h-[400px] object-cover">
+      <img src="assets/site-01.webp" alt="Keuken in bronskleurig front met marmeren werkblad en wijnklimaatkast" class="col-span-2 md:col-span-5 w-full h-[240px] md:h-[400px] object-cover">
+      <img src="assets/site-09.png" alt="Keukeneiland voor twee hoge boogramen" class="col-span-2 md:col-span-3 w-full h-[240px] md:h-[400px] object-cover" style="object-position: 70% 50%">
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-12 gap-8">
+      <p class="md:col-span-4 text-[15px] text-gedempt">Een greep uit onze projecten</p>
+      <ul class="md:col-span-8 grid sm:grid-cols-2 gap-x-10 text-[17px]">
+        <li class="py-3.5 border-t border-grafiet/15">Maatwerkkeuken aan de rand van de Zwolse binnenstad</li>
+        <li class="py-3.5 border-t border-grafiet/15">Minimalistische Italiaanse designkeuken</li>
+        <li class="py-3.5 border-t border-grafiet/15">Blikvanger in een statig herenhuis</li>
+        <li class="py-3.5 border-t border-grafiet/15">Een villa in Oranjewoud</li>
+        <li class="py-3.5 border-t border-grafiet/15">Een stijlvolle uitbouw</li>
+        <li class="py-3.5 border-t border-grafiet/15">Koken in de buitenlucht, in roestvast staal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Modulnova -->
+<section id="modulnova" class="bg-lak text-linnen py-20 md:py-32 overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <p class="text-[15px] text-geel">Officieel dealer van Modulnova</p>
+      <h2 class="kop text-[36px] md:text-[52px] leading-[1.08] mt-4">Keukens met Italiaanse finesse.</h2>
+      <div class="mt-8 space-y-5 text-[17px] leading-[1.7] text-linnen/75 max-w-[34rem]">
+        <p>Het Italiaanse familiebedrijf Modulnova maakt keukens die tot in het laatste detail zijn doordacht. Van de beste natuurlijke materialen, hoogwaardig afgewerkt, en altijd met oog voor hoe je er echt in leeft.</p>
+        <p>Wij zijn al tien jaar officieel dealer en delen dezelfde visie: de keuken als kloppend hart van het huis. In onze showrooms in Zwolle en Leek vind je het complete assortiment, de meest uitgebreide Modulnova-showrooms van Nederland.</p>
+      </div>
+      <a href="#showroom" class="knop mt-10 inline-flex items-center border border-linnen/30 hover:border-geel hover:text-geel rounded-full px-6 py-3 text-[16px]">Kom het zien in de showroom</a>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2 grid grid-cols-5 gap-3 md:gap-4">
+      <img src="assets/site-15.jpg" alt="Modulnova keuken met stalen eiland, eiken wand en verlichte nis" class="col-span-5 md:col-span-3 w-full h-[240px] md:h-[440px] object-cover">
+      <img src="assets/site-16.jpg" alt="Modulnova keuken in natuursteen onder een kroonluchter" class="hidden md:block md:col-span-2 w-full h-[440px] object-cover md:mt-16" style="object-position: 35% 50%">
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="py-20 md:py-32">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <div class="lg:sticky lg:top-10">
+        <h2 class="kop text-[36px] md:text-[52px] leading-[1.08]">Van eerste schets tot nazorg, in vijf stappen.</h2>
+        <p class="mt-6 text-[17px] leading-[1.7] text-grafiet/80 max-w-[30rem]">We nemen elke stap zorgvuldig, zodat je precies weet waar je aan toe bent. Geen verrassingen achteraf.</p>
+        <img src="assets/site-02.webp" alt="Keuken met donker eiland, eiken hoge kasten en glazen bollamp" class="mt-10 w-full h-[260px] md:h-[340px] object-cover hidden md:block">
+      </div>
+    </div>
+    <ol class="lg:col-span-7">
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-8 border-t border-grafiet/15">
+        <span class="stap-nr kop text-[40px] md:text-[52px] leading-none text-eiken">1</span>
+        <div><h3 class="text-[20px] font-semibold">Kennismaken in de showroom</h3>
+        <p class="mt-2 text-[17px] leading-[1.7] text-grafiet/80">Je vertelt wie je bent, hoe je kookt en leeft en wat je mooi vindt. Je loopt langs de opstellingen en wij maken een eerste schets.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-8 border-t border-grafiet/15">
+        <span class="stap-nr kop text-[40px] md:text-[52px] leading-none text-eiken">2</span>
+        <div><h3 class="text-[20px] font-semibold">Samen ontwerpen</h3>
+        <p class="mt-2 text-[17px] leading-[1.7] text-grafiet/80">Met de keukenarchitect kies je kleuren, texturen, duurzame materialen en inbouwapparatuur. Dat wordt een gedetailleerde tekening die we bijschaven tot hij helemaal klopt.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-8 border-t border-grafiet/15">
+        <span class="stap-nr kop text-[40px] md:text-[52px] leading-none text-eiken">3</span>
+        <div><h3 class="text-[20px] font-semibold">Offerte bespreken</h3>
+        <p class="mt-2 text-[17px] leading-[1.7] text-grafiet/80">In de showroom lopen we de offerte samen door, van materiaal tot arbeid, open en overzichtelijk. Na akkoord volgen technische tekeningen en het inmeten.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-8 border-t border-grafiet/15">
+        <span class="stap-nr kop text-[40px] md:text-[52px] leading-none text-eiken">4</span>
+        <div><h3 class="text-[20px] font-semibold">Montage</h3>
+        <p class="mt-2 text-[17px] leading-[1.7] text-grafiet/80">Op de afgesproken datum plaatst ons ervaren installatieteam je keuken, van kasten tot apparatuur. Tijdens de montage staan we klaar voor je vragen.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] md:grid-cols-[5rem_1fr] gap-4 py-8 border-t border-b border-grafiet/15">
+        <span class="stap-nr kop text-[40px] md:text-[52px] leading-none text-eiken">5</span>
+        <div><h3 class="text-[20px] font-semibold">Nazorg</h3>
+        <p class="mt-2 text-[17px] leading-[1.7] text-grafiet/80">Ook na de oplevering blijven we betrokken. Is er later iets, neem dan gewoon contact op: we denken mee en helpen je verder.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-linnen py-20 md:py-32">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <h2 class="kop text-[36px] md:text-[52px] leading-[1.08] max-w-[40rem]">Eerlijk advies, zeggen onze klanten.</h2>
+      <p class="flex items-center gap-3 text-[16px]">
+        <span class="text-geeldonker text-[20px] tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="font-semibold">4,8</strong> uit 21 reviews op Google</span>
+      </p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <figure class="lg:col-span-6">
+        <blockquote class="kop text-[24px] md:text-[30px] leading-[1.35]">
+          “Een mooie keuken die past bij onze stijl en ons huis. Jaap Jan heeft ons meteen verrast met een schets uit de losse pols. De 3D tekeningen etc maakte het af. Er is echt aandacht aan besteed, voor een goede prijs. De installatie keurig en contact nadien bij vragen ook goed, ze kennen je en dat is erg prettig. (...)”
+        </blockquote>
+        <figcaption class="mt-6 text-[15px] text-gedempt"><span class="text-grafiet font-semibold">Hans K</span>, Google-review, 5 van 5 sterren</figcaption>
+      </figure>
+      <div class="lg:col-span-6 columns-1 md:columns-2 gap-8 [&>figure]:break-inside-avoid">
+        <figure class="mb-10">
+          <blockquote class="text-[16px] leading-[1.7] text-grafiet/85">“Ruim 2 weken genieten wij nu van onze mooie nieuwe keuken. We zijn enorm goed geholpen door Eward. Na een inventariserend gesprek kwam hij terug met drie opzetten. Allemaal mooi! Daarna liep ook alles op rolletjes en was er fijne communicatie. Eerlijk advies kregen we. (...)”</blockquote>
+          <figcaption class="mt-3 text-[15px] font-semibold">Leonie M</figcaption>
+        </figure>
+        <figure class="mb-10">
+          <blockquote class="text-[16px] leading-[1.7] text-grafiet/85">“5 sterren + Voor ons de 2e keer dat we zaken doen met Wijnand Zwolle. Professioneel bedrijf dat prachtige keukens levert en installeert. Ook ditmaal zijn we zeer tevreden. Jeroen en Eward hebben ons super fijn geholpen, zijn betrokken, klantgericht (heerlijke taart op zaterdag), hebben veel kennis en ervaring (...)”</blockquote>
+          <figcaption class="mt-3 text-[15px] font-semibold">Kim Stegeman</figcaption>
+        </figure>
+        <figure class="mb-10">
+          <blockquote class="text-[16px] leading-[1.7] text-grafiet/85">“Wij hebben van de eerste dag info/ verkoop tot laatste dag service heel prettig contact gehad met Wijnand Keukens. Met name verkoper Eward Schoonewille heeft ons fijn geholpen en geadviseerd bij het uitzoeken van onze keuken. Zeer vriendelijk, meedenkend en goed in de communicatie. (...)”</blockquote>
+          <figcaption class="mt-3 text-[15px] font-semibold">Nanda Levert</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Showroom / contact -->
+<section id="showroom" class="py-20 md:py-32">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10">
+    <div class="grid lg:grid-cols-12 gap-4">
+      <img src="assets/google-04.jpg" alt="Showroom van Wijnand Keukens in Zwolle met kookeiland voor een glazen gevel" class="lg:col-span-8 w-full h-[260px] md:h-[480px] object-cover">
+      <img src="assets/google-07.jpg" alt="Keukeneiland met marmeren blad en houten hakblok in de showroom" class="hidden lg:block lg:col-span-4 w-full h-[480px] object-cover" style="object-position: 40% 50%">
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-12 lg:gap-10">
+      <div class="lg:col-span-5">
+        <h2 class="kop text-[36px] md:text-[52px] leading-[1.08]">Laat je inspireren in onze showroom.</h2>
+        <p class="mt-6 text-[17px] leading-[1.7] text-grafiet/80 max-w-[30rem]">Plan je bezoek, dan reserveren onze experts speciaal tijd voor je. Bekijk de opstellingen en krijg vrijblijvend advies. Op donderdag zijn we open tot 21:00.</p>
+
+        <div class="mt-10 grid sm:grid-cols-2 gap-8 text-[16px]">
+          <div>
+            <h3 class="text-[15px] text-gedempt">Adres</h3>
+            <p class="mt-2 leading-relaxed">Wijnand Keukens<br>Assiesplein 1<br>8011 XD Zwolle</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Assiesplein+1+8011+XD+Zwolle" class="lijn-link inline-block mt-3 text-[15px]">Route plannen</a>
+          </div>
+          <div>
+            <h3 class="text-[15px] text-gedempt">Openingstijden</h3>
+            <dl class="mt-2 grid grid-cols-[6rem_1fr] gap-y-1 tabular-nums">
+              <dt>Maandag</dt><dd class="text-gedempt">Gesloten</dd>
+              <dt>Dinsdag</dt><dd>09:30 - 17:00</dd>
+              <dt>Woensdag</dt><dd>09:30 - 17:30</dd>
+              <dt>Donderdag</dt><dd>09:30 - 21:00</dd>
+              <dt>Vrijdag</dt><dd>09:30 - 17:30</dd>
+              <dt>Zaterdag</dt><dd>10:00 - 17:00</dd>
+              <dt>Zondag</dt><dd class="text-gedempt">Gesloten</dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="tel:+31384231100" class="knop inline-flex items-center justify-center gap-3 bg-geel hover:bg-[#ffc824] text-lak font-semibold text-[17px] rounded-full px-7 py-4">Bel 038 423 1100</a>
+          <a href="mailto:info@wijnandkeukens.nl" class="knop inline-flex items-center justify-center border border-grafiet/30 hover:border-grafiet rounded-full px-6 py-4 text-[16px]">info@wijnandkeukens.nl</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 lg:col-start-7">
+        <form id="afspraak" action="mailto:info@wijnandkeukens.nl" method="post" enctype="text/plain" class="bg-linnen p-6 md:p-10" novalidate>
+          <h3 class="kop text-[28px] md:text-[32px] leading-tight">Plan je bezoek</h3>
+          <p class="mt-2 text-[15px] text-gedempt">Laat weten wanneer het je uitkomt, dan nemen we contact met je op om de afspraak te bevestigen.</p>
+          <div class="mt-8 grid sm:grid-cols-2 gap-5">
+            <label class="block">
+              <span class="text-[14px] font-medium">Naam</span>
+              <input name="naam" required autocomplete="name" class="mt-1.5 w-full bg-white border border-grafiet/20 px-4 py-3 text-[16px] focus:border-eiken outline-none">
+            </label>
+            <label class="block">
+              <span class="text-[14px] font-medium">Telefoon</span>
+              <input name="telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full bg-white border border-grafiet/20 px-4 py-3 text-[16px] focus:border-eiken outline-none">
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-[14px] font-medium">E-mail</span>
+              <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full bg-white border border-grafiet/20 px-4 py-3 text-[16px] focus:border-eiken outline-none">
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-[14px] font-medium">Voorkeursdag</span>
+              <select name="dag" class="mt-1.5 w-full bg-white border border-grafiet/20 px-4 py-3 text-[16px] focus:border-eiken outline-none">
+                <option>Dinsdag</option><option>Woensdag</option><option>Donderdag (overdag)</option><option>Donderdagavond</option><option>Vrijdag</option><option>Zaterdag</option>
+              </select>
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-[14px] font-medium">Waar denk je aan? <span class="font-normal text-gedempt">(mag ook leeg)</span></span>
+              <textarea name="wensen" rows="4" class="mt-1.5 w-full bg-white border border-grafiet/20 px-4 py-3 text-[16px] focus:border-eiken outline-none" placeholder="Bijvoorbeeld: nieuwbouw, een kookeiland, Italiaans design"></textarea>
+            </label>
+          </div>
+          <p id="formfout" class="hidden mt-4 text-[15px] text-[#9b2c1c]" role="alert"></p>
+          <button type="submit" class="knop mt-6 w-full sm:w-auto bg-lak hover:bg-lak2 text-linnen font-semibold rounded-full px-7 py-4 text-[16px]">Afspraak aanvragen</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-lak text-linnen/70">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-14 grid md:grid-cols-12 gap-10 text-[15px]">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-3 text-linnen">
+        <img src="assets/logo-oud.png" alt="" class="w-9 h-9 rounded-md">
+        <span class="text-lg tracking-tight"><span class="font-semibold">Wijnand</span> <span class="text-linnen/70">Keukens</span></span>
+      </div>
+      <p class="mt-5 max-w-[24rem] leading-relaxed">Bijzonder leven, koken en genieten. Het begint met een keuken van Wijnand Keukens.</p>
+    </div>
+    <div class="md:col-span-3 leading-relaxed">
+      <p class="text-linnen">Showroom Zwolle</p>
+      <p class="mt-2">Assiesplein 1<br>8011 XD Zwolle</p>
+    </div>
+    <div class="md:col-span-4 leading-relaxed">
+      <p class="text-linnen">Contact</p>
+      <p class="mt-2"><a href="tel:+31384231100" class="hover:text-geel">038 423 1100</a><br><a href="mailto:info@wijnandkeukens.nl" class="hover:text-geel">info@wijnandkeukens.nl</a></p>
+    </div>
+  </div>
+  <div class="border-t border-linnen/10">
+    <p class="max-w-[1320px] mx-auto px-5 md:px-10 py-6 text-[13px] text-linnen/45">Wijnand Zwolle B.V. Demo-ontwerp door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-geel">Hagenweb</a>.</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-lak/95 backdrop-blur border-t border-linnen/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31384231100" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-geel text-lak font-semibold rounded-full py-3.5 text-[16px]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel ons
+  </a>
+  <a href="#showroom" class="knop inline-flex items-center justify-center border border-linnen/30 text-linnen rounded-full px-5 py-3.5 text-[15px]">Bezoek plannen</a>
+</div>
+
+<script>
+  requestAnimationFrame(function () { requestAnimationFrame(function () { document.documentElement.classList.add('geladen'); }); });
+
+  document.getElementById('afspraak').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target, fout = document.getElementById('formfout');
+    var naam = f.naam.value.trim(), tel = f.telefoon.value.trim(), mail = f.email.value.trim();
+    var problemen = [];
+    if (!naam) problemen.push('je naam');
+    if (!tel) problemen.push('je telefoonnummer');
+    if (!/^\S+@\S+\.\S+$/.test(mail)) problemen.push('een geldig e-mailadres');
+    if (problemen.length) {
+      fout.textContent = 'Vul nog in: ' + problemen.join(', ') + '.';
+      fout.classList.remove('hidden');
+      return;
+    }
+    fout.classList.add('hidden');
+    var body = 'Naam: ' + naam + '\nTelefoon: ' + tel + '\nE-mail: ' + mail + '\nVoorkeursdag: ' + f.dag.value + '\n\n' + f.wensen.value;
+    window.location.href = 'mailto:info@wijnandkeukens.nl?subject=' + encodeURIComponent('Showroombezoek plannen') + '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>

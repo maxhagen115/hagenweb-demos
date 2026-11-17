@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oscar Dakbedekking | Dakdekker in Wageningen</title>
+<meta name="description" content="Dakdekker in Wageningen. Specialist in bitumen daken, lekkages en dakonderhoud. Direct contact met de vakman, dag en nacht bereikbaar: 06 15643200.">
+<link rel="icon" href="assets/site-02.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bitumen: '#2b2f35',
+        granulaat: '#3a4048',
+        lood: '#e6e8e6',
+        kalk: '#f6f6f3',
+        goud: '#c9a24a',
+        goudtekst: '#8a6c22',
+      },
+      fontFamily: {
+        kop: ['Archivo', 'sans-serif'],
+        tekst: ['"Source Sans 3"', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Source Sans 3', sans-serif; }
+  .kop { font-family: 'Archivo', sans-serif; font-stretch: 118%; font-weight: 850; letter-spacing: -0.02em; line-height: 0.98; text-wrap: balance; }
+  .kop-smal { font-family: 'Archivo', sans-serif; font-stretch: 110%; font-weight: 750; letter-spacing: -0.01em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* Gevelvorm, het silhouet uit het logo */
+  .gevel { clip-path: polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%); }
+  @media (max-width: 639px) { .gevel-mob { clip-path: polygon(50% 0, 100% 38%, 100% 100%, 0 100%, 0 38%); } }
+  .gevel-klein { clip-path: polygon(50% 0, 100% 45%, 100% 100%, 0 100%, 0 45%); }
+  /* Korrel van bitumen-granulaat */
+  .korrel { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #c9a24a; outline-offset: 3px; }
+  /* Eén ingetogen binnenkomst van de hero, alleen als JS draait */
+  .js .hero-in { animation: in .7s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in-2 { animation: in .7s .12s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-in, .js .hero-in-2 { animation: none; } html { scroll-behavior: auto; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-lood text-bitumen antialiased pb-20 md:pb-0">
+
+<!-- Demo-balk -->
+<div class="bg-goud text-bitumen text-center text-[13px] font-semibold py-1.5 px-4">
+  Demo voor Dakdekker Oscar Dakbedekking, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-bitumen korrel text-kalk">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16 md:h-20">
+    <a href="#top" class="flex items-center gap-3" aria-label="Oscar Dakbedekking, naar boven">
+      <img src="assets/site-02.png" alt="Logo Oscar Dakbedekking" class="h-10 md:h-12 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-kalk/80">
+      <a href="#diensten" class="hover:text-goud transition-colors">Diensten</a>
+      <a href="#werk" class="hover:text-goud transition-colors">Ons werk</a>
+      <a href="#over" class="hover:text-goud transition-colors">Over Oscar</a>
+      <a href="#reviews" class="hover:text-goud transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-goud transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31615643200" class="knop hidden sm:inline-flex items-center gap-2 border border-goud/60 text-goud rounded-md px-4 py-2 font-semibold hover:bg-goud hover:text-bitumen">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      06 15643200
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="bg-bitumen korrel text-kalk overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-[1.1fr_1fr] gap-5 lg:gap-14 lg:items-end pt-4 md:pt-10 lg:pt-10">
+    <div class="hero-in pb-10 lg:pb-24 order-2 lg:order-1">
+      <p class="text-goud font-semibold text-[15px] md:text-base mb-3 md:mb-4">Dakdekker in Wageningen</p>
+      <h1 class="kop text-[2.35rem] sm:text-6xl lg:text-[4.6rem] xl:text-[5rem]">Lekt het dak? Eén belletje is genoeg.</h1>
+      <p class="mt-4 md:mt-7 text-[17px] md:text-xl text-kalk/80 max-w-[34rem] leading-relaxed">
+        Specialist in bitumen daken, lekkages en dakonderhoud. U spreekt direct de vakman, dag en nacht.
+      </p>
+      <div class="mt-6 md:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31615643200" class="knop inline-flex items-center gap-3 bg-goud text-bitumen rounded-md px-7 py-4 text-lg font-bold shadow-[0_10px_30px_-10px_rgba(201,162,74,.6)] hover:bg-[#d6b260]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 15643200
+        </a>
+        <a href="#contact" class="font-semibold text-kalk underline decoration-goud decoration-2 underline-offset-[6px] hover:text-goud">Gratis offerte aanvragen</a>
+      </div>
+      <a href="#reviews" class="mt-6 md:mt-8 inline-flex items-center gap-3 text-[15px] text-kalk/75 hover:text-kalk">
+        <span class="text-goud tracking-[2px] text-lg" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-kalk">5,0</strong> op Google, 24 reviews</span>
+      </a>
+    </div>
+    <div class="hero-in-2 order-1 lg:order-2 lg:self-end">
+      <div class="gevel gevel-mob h-[215px] sm:h-[420px] lg:h-[620px]">
+        <img src="assets/site-01.jpg" alt="Vakman van Oscar Dakbedekking brandt nieuwe bitumen dakbedekking vast op een plat dak" class="w-full h-full object-cover object-[48%_45%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Spoed -->
+<section class="bg-granulaat korrel text-kalk">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20 grid md:grid-cols-[1.4fr_1fr] gap-10 md:gap-16 items-center">
+    <figure>
+      <blockquote class="kop-smal text-2xl sm:text-3xl md:text-[2.4rem] leading-[1.15]">
+        “Wij hadden lekkage aan ons dak 1 belletje en binnen het uur was het vakkundig opgelost.”
+      </blockquote>
+      <figcaption class="mt-5 text-kalk/70"><span class="text-goud" aria-hidden="true">★★★★★</span> Willianne Derks, via Google</figcaption>
+    </figure>
+    <div class="md:border-l md:border-kalk/15 md:pl-12">
+      <h2 class="kop-smal text-xl md:text-2xl text-goud">Lekkage of stormschade?</h2>
+      <p class="mt-3 text-kalk/80 text-lg leading-relaxed">Wacht niet tot het water verder trekt. Wij zijn elke dag 24 uur per dag bereikbaar en komen zo snel mogelijk kijken.</p>
+      <a href="tel:+31615643200" class="knop mt-6 inline-flex items-center gap-2 border-2 border-goud text-goud rounded-md px-5 py-3 font-bold hover:bg-goud hover:text-bitumen">Bel direct: 06 15643200</a>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="scroll-mt-4">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-20">
+      <div>
+        <h2 class="kop text-4xl md:text-6xl">Alles voor uw dak, tot 200 m².</h2>
+        <p class="mt-6 text-lg leading-relaxed max-w-xl text-bitumen/80">
+          Wij richten ons bewust op kleinere dakprojecten. Zo krijgt elke klus de aandacht die hij verdient, van een losse dakpan tot een compleet nieuw plat dak.
+        </p>
+        <div class="mt-10 relative">
+          <div class="rounded-lg overflow-hidden aspect-[4/3] lg:aspect-[5/4]">
+            <img src="assets/site-07.jpg" alt="Nieuw gelegde bitumen dakbedekking met ontluchtingen en een lichtkoepel" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <p class="mt-3 text-sm text-bitumen/60">Nieuwe bitumen dakbedekking, strak gelegd en netjes aangesloten.</p>
+        </div>
+      </div>
+      <div>
+        <div class="bg-bitumen korrel text-kalk rounded-lg p-7 md:p-9">
+          <p class="text-goud font-semibold">Ons specialisme</p>
+          <h3 class="kop-smal text-2xl md:text-3xl mt-2">Bitumen dakbedekking</h3>
+          <p class="mt-3 text-kalk/80 text-lg leading-relaxed">Aanleg en vervanging van bitumen daken. Sterk, waterdicht en duurzaam voor elk plat dak, gelegd met goede materialen.</p>
+        </div>
+        <ul class="mt-4 divide-y divide-bitumen/15 border-b border-bitumen/15">
+          <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="kop-smal text-lg">Daklekkage</h3><p class="text-bitumen/75">Lekkage snel gevonden en verholpen, met een oplossing die blijft.</p></li>
+          <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="kop-smal text-lg">Stormschade</h3><p class="text-bitumen/75">Snelle hulp na een storm, zodat de schade niet groter wordt.</p></li>
+          <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="kop-smal text-lg">Dakinspectie</h3><p class="text-bitumen/75">Grondige inspectie van alle dakonderdelen, met een helder rapport met foto's.</p></li>
+          <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="kop-smal text-lg">Pannendaken</h3><p class="text-bitumen/75">Reparatie en vervanging van dakpannen.</p></li>
+          <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="kop-smal text-lg">Lood- en zinkwerk</h3><p class="text-bitumen/75">Waterdichte aansluitingen rond schoorstenen, dakkapellen en doorvoeren.</p></li>
+          <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="kop-smal text-lg">Dakgoten</h3><p class="text-bitumen/75">Installatie en reparatie van dakgoten en afvoeren.</p></li>
+          <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="kop-smal text-lg">Boeiboorden</h3><p class="text-bitumen/75">Duurzame boeibeplating voor een strak afgewerkt dak.</p></li>
+          <li class="py-5 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6"><h3 class="kop-smal text-lg">Dakisolatie</h3><p class="text-bitumen/75">Energie besparen met goed aangebrachte dakisolatie.</p></li>
+        </ul>
+        <a href="tel:+31615643200" class="mt-8 inline-block font-semibold underline decoration-goud decoration-2 underline-offset-[6px] hover:text-goudtekst">Twijfelt u wat uw dak nodig heeft? Bel en vraag het gewoon.</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="bg-kalk scroll-mt-4">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+      <h2 class="kop text-4xl md:text-6xl max-w-2xl">Zo laten wij een dak achter.</h2>
+      <p class="text-lg text-bitumen/75 max-w-md">Foto's van ons eigen werk, gewoon vanaf het dak genomen. Van kale ondergrond tot strak afgewerkt.</p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+      <figure class="col-span-2 md:col-span-7 md:row-span-2 flex flex-col">
+        <div class="h-[280px] md:h-auto md:flex-1 md:min-h-[520px] rounded-lg overflow-hidden"><img src="assets/google-03.jpg" alt="Nieuwe bitumen dakbedekking over de volle lengte van een smal plat dak tussen het groen" class="w-full h-full object-cover" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-bitumen/65">Nieuwe bitumen dakbedekking, inclusief de dakranden.</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-5">
+        <div class="aspect-[4/3] rounded-lg overflow-hidden"><img src="assets/google-08.jpg" alt="Plat dak met de oude dakbedekking verwijderd tot op de houten ondergrond" class="w-full h-full object-cover" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-bitumen/65">Voor: oude bedekking eraf, tot op het hout.</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-5">
+        <div class="aspect-[4/3] rounded-lg overflow-hidden"><img src="assets/site-11.jpg" alt="Nieuwe onderlaag mechanisch bevestigd op een plat dak" class="w-full h-full object-cover object-[50%_40%]" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-bitumen/65">Nieuwe onderlaag, stevig vastgezet.</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-4">
+        <div class="aspect-[4/3] rounded-lg overflow-hidden"><img src="assets/google-07.jpg" alt="Dakkapel met nieuw loodwerk op een pannendak" class="w-full h-full object-cover" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-bitumen/65">Loodwerk rond een dakkapel.</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-4">
+        <div class="aspect-[4/3] rounded-lg overflow-hidden"><img src="assets/site-10.jpg" alt="Schoorsteen met nieuwe loodslabbe op een pannendak" class="w-full h-full object-cover" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-bitumen/65">Waterdicht rond de schoorsteen.</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-4">
+        <div class="aspect-[16/9] md:aspect-[4/3] rounded-lg overflow-hidden"><img src="assets/site-09.jpg" alt="Pannendak met nette gevelafwerking tegen een blauwe lucht" class="w-full h-full object-cover object-[60%_50%]" loading="lazy"></div>
+        <figcaption class="mt-2 text-sm text-bitumen/65">Pannendak, strak afgewerkt aan de gevel.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Over -->
+<section id="over" class="bg-bitumen korrel text-kalk scroll-mt-4 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <div class="order-2 lg:order-1">
+      <h2 class="kop text-4xl md:text-6xl">Geen callcenter. De vakman zelf.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-kalk/80 max-w-xl">
+        Oscar Dakbedekking is een lokale dakspecialist uit Wageningen. Als u belt, krijgt u de man aan de lijn die ook op uw dak staat. Dat praat makkelijker, en u weet precies waar u aan toe bent.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed text-kalk/80 max-w-xl">
+        Wij houden van eerlijke communicatie, duidelijke prijzen en werk dat jaren meegaat. Van een kleine lekkage tot een complete dakrenovatie.
+      </p>
+      <dl class="mt-10 grid sm:grid-cols-3 gap-6 border-t border-kalk/15 pt-8">
+        <div><dt class="kop-smal text-goud text-lg">Tot 200 m²</dt><dd class="mt-1 text-kalk/70">Kleinere projecten, volle aandacht.</dd></div>
+        <div><dt class="kop-smal text-goud text-lg">Direct contact</dt><dd class="mt-1 text-kalk/70">U spreekt de vakman, geen tussenpersoon.</dd></div>
+        <div><dt class="kop-smal text-goud text-lg">Zonder gedoe</dt><dd class="mt-1 text-kalk/70">Snel gepland, snel uitgevoerd.</dd></div>
+      </dl>
+      <p class="mt-8 text-sm text-kalk/50">KVK 42138699</p>
+    </div>
+    <div class="order-1 lg:order-2 relative">
+      <div class="gevel aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
+        <img src="assets/google-01.jpg" alt="Dakdekker van Oscar Dakbedekking brandt een bitumen strook vast tegen een bakstenen muur" class="w-full h-full object-cover object-[45%_50%]" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section class="bg-lood">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <h2 class="kop text-4xl md:text-6xl max-w-3xl">Van telefoontje tot droog dak.</h2>
+    <ol class="mt-10 md:mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 md:gap-y-12">
+      <li class="border-t-4 border-bitumen pt-4 md:pt-5 grid grid-cols-[2.75rem_1fr] sm:block">
+        <span class="kop text-4xl md:text-5xl text-goudtekst row-span-2">1</span>
+        <h3 class="kop-smal text-xl sm:mt-3">U belt of mailt</h3>
+        <p class="mt-2 text-bitumen/75 leading-relaxed">Vertel kort wat er speelt. Een foto meesturen helpt. U krijgt binnen 24 uur reactie.</p>
+      </li>
+      <li class="border-t-4 border-bitumen pt-4 md:pt-5 grid grid-cols-[2.75rem_1fr] sm:block">
+        <span class="kop text-4xl md:text-5xl text-goudtekst row-span-2">2</span>
+        <h3 class="kop-smal text-xl sm:mt-3">Wij komen kijken</h3>
+        <p class="mt-2 text-bitumen/75 leading-relaxed">We komen langs en bekijken uw dak grondig, zodat we weten wat er echt nodig is.</p>
+      </li>
+      <li class="border-t-4 border-bitumen pt-4 md:pt-5 grid grid-cols-[2.75rem_1fr] sm:block">
+        <span class="kop text-4xl md:text-5xl text-goudtekst row-span-2">3</span>
+        <h3 class="kop-smal text-xl sm:mt-3">Offerte op maat</h3>
+        <p class="mt-2 text-bitumen/75 leading-relaxed">U ontvangt een duidelijke offerte, zonder verborgen kosten of verrassingen achteraf.</p>
+      </li>
+      <li class="border-t-4 border-goud pt-4 md:pt-5 grid grid-cols-[2.75rem_1fr] sm:block">
+        <span class="kop text-4xl md:text-5xl text-goudtekst row-span-2">4</span>
+        <h3 class="kop-smal text-xl sm:mt-3">Uitvoering</h3>
+        <p class="mt-2 text-bitumen/75 leading-relaxed">Wij voeren het werk snel en vakkundig uit, en ronden het netjes af.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-kalk scroll-mt-4">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <h2 class="kop text-4xl md:text-6xl max-w-2xl">Wat klanten zeggen.</h2>
+      <p class="flex items-center gap-3 text-lg"><span class="text-goud text-2xl tracking-[2px]" aria-hidden="true">★★★★★</span><span><strong>5,0</strong> op Google, uit 24 reviews</span></p>
+    </div>
+    <div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-5 [&>*]:mb-5">
+      <figure class="break-inside-avoid bg-lood rounded-lg p-7">
+        <div class="text-goudtekst tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 text-lg leading-relaxed">“Top service. Wij hadden lekkage aan ons dak 1 belletje en binnen het uur was het vakkundig opgelost. Ik kan dit bedrijf aan iedereen aanraden!”</blockquote>
+        <figcaption class="mt-5 font-semibold">Willianne Derks</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-bitumen korrel text-kalk rounded-lg p-7">
+        <div class="text-goud tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 text-lg leading-relaxed">“Maakte tijd om het project helemaal af te ronden. Net werk, vrolijke en geruststellende communicatie.”</blockquote>
+        <figcaption class="mt-5 font-semibold">Michiel Uitdehaag</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-lood rounded-lg p-7">
+        <div class="text-goudtekst tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 text-lg leading-relaxed">“Top bedrijf! Klant gericht en vriendelijk, communitief top in orde, afspraken komen na zoals het hoort .”</blockquote>
+        <figcaption class="mt-5 font-semibold">Reza Banzadeh</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-lood rounded-lg p-7">
+        <div class="text-goudtekst tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 text-lg leading-relaxed">“Hij heb mij gerepareerd netjes op tijd gekomen en netjes communiceren over alles aardig prijs dankjewel yasin vor netjes werk”</blockquote>
+        <figcaption class="mt-5 font-semibold">Turkia Alhamada</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-lood rounded-lg p-7">
+        <div class="text-goudtekst tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</div>
+        <blockquote class="mt-3 text-lg leading-relaxed">“Vriendelijke persoon goed op tijd afspraken na gekomen zeker geen teleurstelling!!”</blockquote>
+        <figcaption class="mt-5 font-semibold">Erhan Topal</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-bitumen korrel text-kalk scroll-mt-4">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-[1fr_1.1fr] gap-14 lg:gap-20">
+    <div>
+      <h2 class="kop text-4xl md:text-6xl">Bel gewoon even.</h2>
+      <p class="mt-6 text-lg text-kalk/80 leading-relaxed max-w-md">Een vraag, een lekkage of een offerte: u krijgt direct de vakman aan de lijn. Ook 's avonds en in het weekend.</p>
+      <a href="tel:+31615643200" class="knop mt-8 inline-flex items-center gap-3 bg-goud text-bitumen rounded-md px-7 py-4 text-lg font-bold hover:bg-[#d6b260]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        Bel 06 15643200
+      </a>
+      <dl class="mt-12 space-y-6 text-lg">
+        <div><dt class="text-kalk/55 text-[15px]">E-mail</dt><dd><a href="mailto:info@oscardakbedekking.nl" class="hover:text-goud underline decoration-kalk/30 underline-offset-4">info@oscardakbedekking.nl</a></dd></div>
+        <div><dt class="text-kalk/55 text-[15px]">Adres</dt><dd>Ooststeeg 41, 6708 AP Wageningen</dd></div>
+        <div><dt class="text-kalk/55 text-[15px]">Bereikbaar</dt><dd>Maandag tot en met zondag, 24 uur per dag</dd></div>
+      </dl>
+    </div>
+
+    <form id="offerte" class="bg-granulaat rounded-lg p-6 md:p-9" action="mailto:info@oscardakbedekking.nl" method="post" enctype="text/plain">
+      <h3 class="kop-smal text-2xl">Gratis offerte aanvragen</h3>
+      <p class="mt-1 text-kalk/70">U krijgt binnen 24 uur een reactie.</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block"><span class="text-[15px] text-kalk/75">Naam</span><input required name="naam" autocomplete="name" class="mt-1 w-full rounded-md bg-bitumen border border-kalk/15 px-4 py-3 text-kalk placeholder-kalk/35 focus:border-goud focus:outline-none"></label>
+        <label class="block"><span class="text-[15px] text-kalk/75">Telefoon</span><input required name="telefoon" type="tel" autocomplete="tel" class="mt-1 w-full rounded-md bg-bitumen border border-kalk/15 px-4 py-3 text-kalk focus:border-goud focus:outline-none"></label>
+        <label class="block"><span class="text-[15px] text-kalk/75">E-mail</span><input name="email" type="email" autocomplete="email" class="mt-1 w-full rounded-md bg-bitumen border border-kalk/15 px-4 py-3 text-kalk focus:border-goud focus:outline-none"></label>
+        <label class="block"><span class="text-[15px] text-kalk/75">Straat en huisnummer</span><input name="adres" autocomplete="street-address" class="mt-1 w-full rounded-md bg-bitumen border border-kalk/15 px-4 py-3 text-kalk focus:border-goud focus:outline-none"></label>
+        <label class="block sm:col-span-2"><span class="text-[15px] text-kalk/75">Wat is er aan de hand?</span><textarea name="omschrijving" rows="4" placeholder="Bijvoorbeeld: lekkage bij de dakkapel, plat dak van ongeveer 20 m²" class="mt-1 w-full rounded-md bg-bitumen border border-kalk/15 px-4 py-3 text-kalk placeholder-kalk/35 focus:border-goud focus:outline-none"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-6 w-full bg-kalk text-bitumen rounded-md px-6 py-4 font-bold text-lg hover:bg-white">Offerte aanvragen</button>
+      <p class="mt-3 text-sm text-kalk/55">Liever direct antwoord? Bel <a href="tel:+31615643200" class="underline">06 15643200</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-[#23272c] text-kalk/70 korrel">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[15px]">
+    <img src="assets/site-02.png" alt="Oscar Dakbedekking" class="h-12 w-auto self-start">
+    <p>Oscar Dakbedekking, Ooststeeg 41, Wageningen. KVK 42138699</p>
+    <p><a href="tel:+31615643200" class="hover:text-goud">06 15643200</a> · <a href="mailto:info@oscardakbedekking.nl" class="hover:text-goud">info@oscardakbedekking.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-bitumen/95 backdrop-blur border-t border-kalk/10 p-3 flex gap-3">
+  <a href="tel:+31615643200" class="flex-1 inline-flex items-center justify-center gap-2 bg-goud text-bitumen rounded-md py-3.5 font-bold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    Bel direct
+  </a>
+  <a href="#offerte" class="inline-flex items-center justify-center rounded-md border border-kalk/25 text-kalk px-4 font-semibold">Offerte</a>
+</div>
+
+</body>
+</html>

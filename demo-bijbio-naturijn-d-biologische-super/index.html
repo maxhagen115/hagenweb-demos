@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BijBio Naturijn, dé biologische supermarkt in Culemborg</title>
+<meta name="description" content="Biologische supermarkt aan de Prijssestraat 6 in Culemborg. Dagelijks vers desem- en gistbrood, groente uit Europa, kaas, zuivel en lokale producten. Alles biologisch.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Gloock&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          petrol: { DEFAULT: '#1B4A53', deep: '#12343B', soft: '#2C5F69' },
+          appel: { DEFAULT: '#A8CF45', dark: '#8DB431' },
+          linnen: '#F2F3EC',
+          riet: '#B9803F',
+        },
+        fontFamily: {
+          kop: ['Gloock', 'Georgia', 'serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; }
+  h1, h2, h3, .kop { font-family: 'Gloock', Georgia, serif; font-weight: 400; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .vorm { clip-path: url(#bvorm); }
+  .grain { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.29 0 0 0 0 0.32 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  a, button { transition: background-color .2s, color .2s, transform .15s, border-color .2s; }
+  a:active, button:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #A8CF45; outline-offset: 3px; border-radius: 6px; }
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .js .reveal { opacity: 1; transform: none; } }
+  .vandaag { background: #A8CF45; color: #12343B; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-linnen text-petrol-deep antialiased grain">
+
+<!-- Logovorm: haak links, B-bogen rechts -->
+<svg width="0" height="0" class="absolute" aria-hidden="true">
+  <clipPath id="bvorm" clipPathUnits="objectBoundingBox">
+    <path d="M0.16,0 C0.05,0.14 0,0.32 0,0.5 C0,0.68 0.05,0.86 0.16,1 L0.74,1 C0.9,1 1,0.89 1,0.75 C1,0.62 0.93,0.54 0.85,0.5 C0.93,0.46 1,0.38 1,0.25 C1,0.11 0.9,0 0.74,0 Z"/>
+  </clipPath>
+</svg>
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="bg-petrol-deep text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor BijBio Naturijn, dé biologische supermarkt, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-appel">Hagenweb</a>
+</div>
+
+<header class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between gap-6">
+  <a href="#" class="flex items-center gap-3" aria-label="BijBio Naturijn, naar boven">
+    <img src="assets/logo-oud.png" alt="Logo BijBio" class="h-12 w-12 md:h-14 md:w-14">
+    <span class="leading-tight">
+      <span class="block kop text-xl md:text-2xl text-petrol">Naturijn</span>
+      <span class="block text-xs md:text-[13px] text-petrol/70">dé biologische supermarkt</span>
+    </span>
+  </a>
+  <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-petrol">
+    <a href="#brood" class="hover:text-riet">Brood</a>
+    <a href="#assortiment" class="hover:text-riet">Assortiment</a>
+    <a href="#lokaal" class="hover:text-riet">Lokaal</a>
+    <a href="#verhaal" class="hover:text-riet">Ons verhaal</a>
+    <a href="#bezoek" class="hover:text-riet">Openingstijden</a>
+  </nav>
+  <a href="tel:+31345510850" class="hidden sm:inline-flex items-center gap-2 font-semibold text-petrol border-2 border-petrol/20 hover:border-petrol rounded-full px-4 py-2">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    0345 510 850
+  </a>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 pt-1 md:pt-10 pb-16 md:pb-24 grid lg:grid-cols-12 gap-5 lg:gap-6 items-center">
+  <div class="lg:col-span-6 order-2 lg:order-1">
+    <p class="text-petrol/75 font-medium mb-2 md:mb-4">Biologische supermarkt in Culemborg</p>
+    <h1 class="text-[2.5rem] leading-[1.02] sm:text-6xl lg:text-[5.2rem] text-petrol tracking-[-0.01em]">Alles biologisch. Gewoon om de hoek.</h1>
+    <p class="mt-4 md:mt-6 text-[17px] md:text-xl leading-relaxed text-petrol-deep/80 max-w-[34rem]">Vers desembrood, groente van het seizoen, kaas, zuivel en alles wat er tussenin zit. Aan de Prijssestraat in de binnenstad van Culemborg.</p>
+    <div class="mt-6 md:mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+      <a href="tel:+31345510850" class="inline-flex items-center gap-3 bg-appel hover:bg-appel-dark text-petrol-deep font-bold text-lg rounded-full pl-5 pr-7 py-4 shadow-[0_10px_30px_-10px_rgba(27,74,83,.55)]">
+        <span class="grid place-items-center w-9 h-9 rounded-full bg-petrol-deep text-appel">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        </span>
+        Bel 0345 510 850
+      </a>
+      <a href="https://www.google.com/maps/search/?api=1&query=BijBio+Naturijn+Prijssestraat+6+Culemborg" target="_blank" rel="noopener" class="font-semibold text-petrol underline decoration-2 decoration-appel underline-offset-[6px] hover:decoration-petrol">Route plannen</a>
+    </div>
+    <p class="mt-6 md:mt-8 flex items-center gap-2 text-[15px] text-petrol-deep/75">
+      <span class="text-riet tracking-[2px]" aria-hidden="true">★★★★★</span>
+      <span><strong class="text-petrol-deep">4,7</strong> uit 22 Google-reviews</span>
+    </p>
+  </div>
+  <div class="lg:col-span-6 order-1 lg:order-2 relative">
+    <div class="vorm aspect-[2/1] sm:aspect-[4/3] lg:aspect-[11/12] w-full lg:ml-auto lg:max-w-[600px]">
+      <img src="assets/google-03.jpg" alt="Broodwand met desembroden en rieten manden vol vers brood bij BijBio Naturijn" class="w-full h-full object-cover object-[45%_50%]">
+    </div>
+  </div>
+</section>
+
+<!-- KERNZIN -->
+<section class="bg-petrol text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid lg:grid-cols-12 gap-10">
+    <p class="lg:col-span-8 kop text-3xl md:text-[2.75rem] leading-[1.15]">Bij ons doe je al je dagelijkse boodschappen. Van verse groente en vers brood tot zuivel, tandenborstels en alles wat er tussenin zit.</p>
+    <div class="lg:col-span-4 lg:pt-3 text-white/80 leading-relaxed space-y-4">
+      <p>BijBio Naturijn heeft zelf het Bio Skal-keurmerk. Dat betekent: alle producten in de winkel zijn biologisch, en regionaal heeft altijd de voorkeur.</p>
+      <p>Glutenvrij, plantaardig, verzorging, schoonmaakmiddelen en zelfs verantwoord honden- en kattenvoer van Yarrah. Het staat hier allemaal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BROOD -->
+<section id="brood" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+    <div class="lg:col-span-5 relative">
+      <img src="assets/google-06.jpg" alt="Rieten mand met spelt-pompoen desem, spelt emmerbrood en volkoren speltbrood van Kruim" class="w-full aspect-[4/5] object-cover rounded-[2rem] reveal">
+      <img src="assets/site-05.jpg" alt="Rond desembrood met zonnebloempitten op een houten plank" class="hidden md:block absolute -bottom-10 -right-10 w-56 aspect-square object-cover rounded-full border-[6px] border-linnen reveal">
+    </div>
+    <div class="lg:col-span-7 lg:pl-6">
+      <h2 class="text-4xl md:text-6xl text-petrol leading-[1.05]">Elke dag vers desem- en gistbrood.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-petrol-deep/80 max-w-[38rem]">Er wordt hier dagelijks brood afgebakken, net als koeken en seitanbroodjes. Daarnaast liggen er verse koeken en gebakjes. Uit het aanbod van twee bakkers die we graag mogen, kiezen we elke dag een mooie selectie.</p>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-px bg-petrol/15 rounded-2xl overflow-hidden">
+        <div class="bg-linnen p-6">
+          <img src="assets/site-12.jpg" alt="Logo Kruim Natuurbrood" class="h-14 w-auto mix-blend-multiply mb-4">
+          <h3 class="text-xl text-petrol">Kruim Natuurbrood</h3>
+          <p class="mt-1 text-petrol-deep/75">Uit Culemborg zelf. Vers op woensdag en zaterdag.</p>
+        </div>
+        <div class="bg-linnen p-6">
+          <img src="assets/site-11.png" alt="Logo Van der Westen Organic family bakery" class="h-20 w-auto mix-blend-multiply mb-1 -mt-3 -ml-3">
+          <h3 class="text-xl text-petrol">Organic Bakery Van der Westen</h3>
+          <p class="mt-1 text-petrol-deep/75">Uit Waspik in Brabant. Elke dag vers.</p>
+        </div>
+      </div>
+
+      <dl class="mt-10 space-y-6 max-w-[38rem]">
+        <div class="grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6 border-t border-petrol/15 pt-5">
+          <dt class="font-semibold text-petrol">Brood bestellen</dt>
+          <dd class="text-petrol-deep/80 leading-relaxed">Uit het hele assortiment, 2 werkdagen van tevoren vóór 14.00 uur. Vraag in de winkel naar het broodboek of kijk op <a href="https://zonnemaire.nl" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-riet">zonnemaire.nl</a>.</dd>
+        </div>
+        <div class="grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6 border-t border-petrol/15 pt-5">
+          <dt class="font-semibold text-petrol">Glutenvrij</dt>
+          <dd class="text-petrol-deep/80 leading-relaxed">Glutenvrij brood en gebak bestel je op aanvraag. Leverbaar op dinsdag en vrijdag.</dd>
+        </div>
+        <div class="grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6 border-t border-petrol/15 pt-5">
+          <dt class="font-semibold text-petrol">Echt Duits brood</dt>
+          <dd class="text-petrol-deep/80 leading-relaxed">Van der Konsequente BioBäcker uit Duitsland, vanaf 4 stuks.</dd>
+        </div>
+      </dl>
+      <a href="tel:+31345510850" class="mt-8 inline-flex items-center gap-2 font-semibold text-petrol underline decoration-2 decoration-appel underline-offset-[6px] hover:decoration-petrol">Brood bestellen? Bel 0345 510 850</a>
+    </div>
+  </div>
+</section>
+
+<!-- ASSORTIMENT -->
+<section id="assortiment" class="bg-white/70">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-12">
+      <h2 class="lg:col-span-7 text-4xl md:text-6xl text-petrol leading-[1.05]">Van eerste levensbehoefte tot iets lekkers extra.</h2>
+      <p class="lg:col-span-5 text-lg text-petrol-deep/80 leading-relaxed">Biologisch en biologisch-dynamisch, zoveel mogelijk van kleine familiebedrijven en zo min mogelijk van grote multinationals.</p>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-5 md:gap-6">
+      <article class="md:col-span-7 md:row-span-2 rounded-[2rem] overflow-hidden bg-petrol text-white flex flex-col">
+        <img src="assets/site-06.jpg" alt="Houten kistjes met peren, meloenen, tomaten, sinaasappels, watermeloenen en bananen" class="w-full aspect-[16/10] object-cover">
+        <div class="p-7 md:p-9">
+          <h3 class="text-3xl">Groente en fruit</h3>
+          <p class="mt-3 text-white/80 leading-relaxed max-w-[34rem]">Groente alleen uit Europa, zoveel mogelijk uit Nederland, dus je eet vanzelf met het seizoen mee. Fruit ook praktisch alleen uit Europa, met bananen en avocado's als uitzondering. Zeven keer per week verse levering: van Odin uit Geldermalsen, Udea en de Lindegaard uit Beusichem met streekproducten uit de Betuwe.</p>
+        </div>
+      </article>
+
+      <article class="md:col-span-5 rounded-[2rem] overflow-hidden bg-linnen grid grid-cols-5">
+        <img src="assets/google-04.jpg" alt="Kaasvitrine met jonge, belegen en oude kaas, geitenkaas en zachte kazen" class="col-span-2 h-full w-full object-cover object-[50%_25%]">
+        <div class="col-span-3 p-6">
+          <h3 class="text-2xl text-petrol">Kaas en zuivel</h3>
+          <p class="mt-2 text-petrol-deep/80 leading-relaxed text-[15px]">Zuivel van koe, geit en schaap en plantaardig. Speciaalkaasjes zoals burrata en blauwschimmel, plantaardige kazen, vlees, vleesvervangers en kant-en-klare maaltijden.</p>
+        </div>
+      </article>
+
+      <article class="md:col-span-5 rounded-[2rem] overflow-hidden bg-linnen grid grid-cols-5">
+        <img src="assets/site-04.jpg" alt="Schappen met zakken gierst, haver, kamut, spelt en quinoa van Nieuwe Band" class="col-span-2 h-full w-full object-cover">
+        <div class="col-span-3 p-6">
+          <h3 class="text-2xl text-petrol">Droogwaren en glutenvrij</h3>
+          <p class="mt-2 text-petrol-deep/80 leading-relaxed text-[15px]">Koffie, thee, granen, pasta, noten en Japanse, Indische, Mexicaanse en Italiaanse ingrediënten. Plus een hele stelling met gegarandeerd glutenvrije droogwaren.</p>
+        </div>
+      </article>
+
+      <article class="md:col-span-12 rounded-[2rem] overflow-hidden bg-riet/15 grid md:grid-cols-12 gap-2 md:gap-10 p-7 md:p-10 items-start">
+        <div class="md:col-span-5">
+          <h3 class="text-3xl text-petrol">Sappen, wijn en bier</h3>
+        </div>
+        <div class="md:col-span-7">
+          <p class="text-petrol-deep/80 leading-relaxed max-w-[36rem]">Fruit- en groentesappen, siropen, wijn en bier, ook alcoholvrij. Veruit de meeste sappen zijn niet gezoet met geraffineerde suiker. Verder verzorging, supplementen en schoonmaakproducten.</p>
+          <p class="mt-5 text-sm text-petrol-deep/65 leading-relaxed max-w-[36rem]">Onder andere Nieuwe Band, Horizon, Vivani, Piramide thee, Simon Levelt, TerraSana, Lima, Yogi tea, Voelkel, Zuiver Zuivel en het eigen merk BijBio Naturijn.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LOKAAL -->
+<section id="lokaal" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 items-center">
+  <div class="lg:col-span-6 lg:order-2">
+    <div class="vorm aspect-[4/3] w-full">
+      <img src="assets/site-08.jpg" alt="Flessen Puur biologisch appel- en perensap van de Lindegaard uit Beusichem, met een bordje lokaal" class="w-full h-full object-cover object-[30%_50%]">
+    </div>
+  </div>
+  <div class="lg:col-span-6 lg:order-1">
+    <h2 class="text-4xl md:text-6xl text-petrol leading-[1.05]">Dichtbij en lokaal.</h2>
+    <p class="mt-6 text-lg leading-relaxed text-petrol-deep/80 max-w-[34rem]">Streekproducten hebben bij ons de voorkeur. Minder transport, een rechtstreekse lijn met de maker, en daardoor ook een gunstigere prijs voor jou.</p>
+    <ul class="mt-8 divide-y divide-petrol/15 border-y border-petrol/15 max-w-[34rem]">
+      <li class="py-4 flex justify-between gap-4"><span class="font-semibold text-petrol">De Lindegaard</span><span class="text-petrol-deep/70 text-right">fruit en streekproducten, Beusichem</span></li>
+      <li class="py-4 flex justify-between gap-4"><span class="font-semibold text-petrol">Kruim Natuurbrood</span><span class="text-petrol-deep/70 text-right">brood, Culemborg</span></li>
+      <li class="py-4 flex justify-between gap-4"><span class="font-semibold text-petrol">Imker Beens</span><span class="text-petrol-deep/70 text-right">honing, Culemborg</span></li>
+      <li class="py-4 flex justify-between gap-4"><span class="font-semibold text-petrol">Thomassen</span><span class="text-petrol-deep/70 text-right">bio-eitjes</span></li>
+      <li class="py-4 flex justify-between gap-4"><span class="font-semibold text-petrol">Johanna Molen</span><span class="text-petrol-deep/70 text-right">meel van de molen</span></li>
+      <li class="py-4 flex justify-between gap-4"><span class="font-semibold text-petrol">Vera Baardolf</span><span class="text-petrol-deep/70 text-right">ansichtkaarten, Culemborg</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- VERHAAL -->
+<section id="verhaal" class="bg-petrol-deep text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="text-4xl md:text-6xl leading-[1.05]">Met elke euro maak je een keuze.</h2>
+      <p class="mt-6 text-lg text-white/75 leading-relaxed">Bij BijBio Naturijn kies je voor:</p>
+      <ul class="mt-5 space-y-3 text-white/90">
+        <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-appel shrink-0"></span>een gezonde en duurzame levensstijl</li>
+        <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-appel shrink-0"></span>een gezonde keten van boer tot bord</li>
+        <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-appel shrink-0"></span>eerlijke relaties met leveranciers</li>
+        <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-appel shrink-0"></span>weten wat je eet</li>
+        <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-appel shrink-0"></span>een goede balans tussen mens en natuur</li>
+        <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-appel shrink-0"></span>groente zoveel mogelijk uit Nederland, en zeker niet van buiten Europa</li>
+      </ul>
+      <p class="mt-8 kop text-2xl text-appel">Winst is toch veel meer dan alleen geld.</p>
+    </div>
+    <div class="lg:col-span-6 lg:col-start-7">
+      <h3 class="text-3xl">Ons verhaal</h3>
+      <ol class="mt-8 relative border-l-2 border-white/15 ml-2 space-y-9">
+        <li class="pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-petrol-deep border-2 border-appel"></span>
+          <p class="kop text-2xl text-appel">1976</p><p class="mt-1 text-white/80 leading-relaxed">Marije Zwaan begint de winkel als De Wende.</p></li>
+        <li class="pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-petrol-deep border-2 border-appel"></span>
+          <p class="kop text-2xl text-appel">Naturijn</p><p class="mt-1 text-white/80 leading-relaxed">Desiree pakt door als Naturijn aan de Tollenstraat. Later komt Maria erbij.</p></li>
+        <li class="pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-petrol-deep border-2 border-appel"></span>
+          <p class="kop text-2xl text-appel">Rond 1996</p><p class="mt-1 text-white/80 leading-relaxed">Verhuizing naar de Prijssestraat 6, waar de winkel nog steeds zit.</p></li>
+        <li class="pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-petrol-deep border-2 border-appel"></span>
+          <p class="kop text-2xl text-appel">3 september 2018</p><p class="mt-1 text-white/80 leading-relaxed">Sascha neemt de winkel over van Maria.</p></li>
+        <li class="pl-8 relative"><span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-appel"></span>
+          <p class="kop text-2xl text-appel">April 2021</p><p class="mt-1 text-white/80 leading-relaxed">De naam wordt BijBio Naturijn, dé biologische supermarkt. 100% zelfstandig.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+    <h2 class="text-4xl md:text-6xl text-petrol leading-[1.05] max-w-2xl">Wat klanten zeggen.</h2>
+    <p class="text-petrol-deep/75"><span class="text-riet tracking-[2px]" aria-hidden="true">★★★★★</span> <strong class="text-petrol-deep">4,7</strong> uit 22 Google-reviews</p>
+  </div>
+  <div class="grid md:grid-cols-12 gap-6">
+    <figure class="md:col-span-7 bg-white rounded-[2rem] p-8 md:p-10">
+      <blockquote class="kop text-2xl md:text-[2rem] leading-snug text-petrol">“Geweldig, dat deze winkel er is in een relatief kleine gemeente als Culemborg. Erg goed is dat ze ook lokale producten verkopen (zoals honing en meel van de molen). Het assortiment is redelijk uitgebreid gezien de grootte van de winkel.”</blockquote>
+      <figcaption class="mt-6 font-semibold text-petrol-deep/80">Valentijn Van der Burgh</figcaption>
+    </figure>
+    <div class="md:col-span-5 grid gap-6">
+      <figure class="bg-appel/30 rounded-[2rem] p-8">
+        <blockquote class="kop text-2xl leading-snug text-petrol">“Heerlijk verse brood, lekkere kaas, kwaliteit groente, en lieve medewerkers :)”</blockquote>
+        <figcaption class="mt-5 font-semibold text-petrol-deep/80">Szilvia Farkas</figcaption>
+      </figure>
+      <figure class="bg-white rounded-[2rem] p-8">
+        <blockquote class="kop text-2xl leading-snug text-petrol">“Zeer vriendelijk personeel en gezellig boodschappen doen”</blockquote>
+        <figcaption class="mt-5 font-semibold text-petrol-deep/80">Gerard Van Riet</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- BEZOEK -->
+<section id="bezoek" class="bg-petrol text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 items-start">
+    <div class="lg:col-span-5">
+      <h2 class="text-4xl md:text-6xl leading-[1.05]">Kom langs aan de Prijssestraat.</h2>
+      <address class="not-italic mt-8 text-lg leading-relaxed text-white/85">
+        BijBio Naturijn<br>Prijssestraat 6<br>4101 CR Culemborg
+      </address>
+      <div class="mt-8 flex flex-col gap-4 items-start">
+        <a href="tel:+31345510850" class="inline-flex items-center gap-3 bg-appel hover:bg-white text-petrol-deep font-bold text-lg rounded-full px-7 py-4">Bel 0345 510 850</a>
+        <a href="mailto:naturijn@bijbio.nl" class="font-semibold underline decoration-2 decoration-appel underline-offset-[6px] hover:text-appel">naturijn@bijbio.nl</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=BijBio+Naturijn+Prijssestraat+6+Culemborg" target="_blank" rel="noopener" class="font-semibold underline decoration-2 decoration-appel underline-offset-[6px] hover:text-appel">Route plannen in Google Maps</a>
+      </div>
+      <p class="mt-8 text-white/75 leading-relaxed max-w-sm">Boodschappen laten bezorgen? Dat kan op aanvraag. Bel of mail ons gerust.</p>
+    </div>
+    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-2xl">Openingstijden</h3>
+        <table class="mt-5 w-full text-[16px]" id="tijden">
+          <tbody>
+            <tr data-dag="1"><td class="py-2 px-3 rounded-l-lg">Maandag</td><td class="py-2 px-3 rounded-r-lg text-right tabular-nums">11:00 - 18:00</td></tr>
+            <tr data-dag="2"><td class="py-2 px-3 rounded-l-lg">Dinsdag</td><td class="py-2 px-3 rounded-r-lg text-right tabular-nums">09:00 - 18:00</td></tr>
+            <tr data-dag="3"><td class="py-2 px-3 rounded-l-lg">Woensdag</td><td class="py-2 px-3 rounded-r-lg text-right tabular-nums">09:00 - 18:00</td></tr>
+            <tr data-dag="4"><td class="py-2 px-3 rounded-l-lg">Donderdag</td><td class="py-2 px-3 rounded-r-lg text-right tabular-nums">09:00 - 18:00</td></tr>
+            <tr data-dag="5"><td class="py-2 px-3 rounded-l-lg">Vrijdag</td><td class="py-2 px-3 rounded-r-lg text-right tabular-nums">09:00 - 18:00</td></tr>
+            <tr data-dag="6"><td class="py-2 px-3 rounded-l-lg">Zaterdag</td><td class="py-2 px-3 rounded-r-lg text-right tabular-nums">09:00 - 17:00</td></tr>
+            <tr data-dag="0"><td class="py-2 px-3 rounded-l-lg">Zondag</td><td class="py-2 px-3 rounded-r-lg text-right">Gesloten</td></tr>
+          </tbody>
+        </table>
+        <p class="mt-4 px-3 text-sm text-white/65">Op alle officiële feestdagen gesloten.</p>
+      </div>
+      <img src="assets/google-01.jpg" alt="Winkelpui van BijBio Naturijn aan de Prijssestraat 6 in Culemborg" class="w-full h-full min-h-72 object-cover object-[40%_50%] rounded-[2rem]">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="max-w-7xl mx-auto px-5 md:px-8 py-10 pb-28 sm:pb-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-sm text-petrol-deep/70">
+  <div class="flex items-center gap-3">
+    <img src="assets/logo-oud.png" alt="" class="h-10 w-10">
+    <span>BijBio Naturijn, dé biologische supermarkt. Prijssestraat 6, Culemborg.</span>
+  </div>
+  <div class="flex gap-6">
+    <a href="tel:+31345510850" class="hover:text-petrol">0345 510 850</a>
+    <a href="mailto:naturijn@bijbio.nl" class="hover:text-petrol">naturijn@bijbio.nl</a>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="sm:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-linnen/95 backdrop-blur border-t border-petrol/10 flex gap-3">
+  <a href="tel:+31345510850" class="flex-1 text-center bg-appel text-petrol-deep font-bold rounded-full py-3.5">Bel 0345 510 850</a>
+  <a href="#bezoek" class="px-5 grid place-items-center rounded-full border-2 border-petrol/25 font-semibold text-petrol">Tijden</a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  var d = new Date().getDay();
+  var rij = document.querySelector('#tijden tr[data-dag="' + d + '"]');
+  if (rij) { rij.classList.add('vandaag', 'font-semibold'); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>

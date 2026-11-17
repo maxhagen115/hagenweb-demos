@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakkerij Gerard van Keulen | Brood & banket aan het Dorpsplein in Beesd</title>
+<meta name="description" content="Brood- en banketbakkerij Gerard van Keulen, Dorpsplein 5C in Beesd. Vers brood, banket en koffie. Bel 0345 681 332.">
+<meta property="og:title" content="Bakkerij Gerard van Keulen">
+<meta property="og:description" content="Een échte bakker, midden in Beesd.">
+<meta property="og:image" content="assets/google-08.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          tegel: '#1d1b1a',
+          voeg: '#2a2725',
+          goud: '#b89b6a',
+          gouddonker: '#8a7149',
+          bloem: '#f3eee6',
+          deeg: '#e8dfd2',
+          korst: '#5b4632',
+          inkt: '#2b2724',
+        },
+        fontFamily: {
+          kop: ['"Young Serif"', 'Georgia', 'serif'],
+          tekst: ['Jost', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Jost, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* De zwarte tegelwand uit de winkel */
+  .tegelwand {
+    background-color: #1d1b1a;
+    background-image:
+      radial-gradient(ellipse 60% 50% at 75% 40%, rgba(184,155,106,.10), transparent 70%),
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(160deg, rgba(255,255,255,.025), transparent 40%);
+    background-size: 100% 100%, 72px 72px, 72px 72px, 72px 72px;
+  }
+
+  /* Zwart prijskaartje zoals in de schappen */
+  .kaartje {
+    display: inline-flex; align-items: center;
+    background: #1d1b1a; color: #f3eee6;
+    font-size: .95rem; letter-spacing: .01em;
+    padding: .45rem .8rem .5rem; border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.25);
+  }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible { outline: 3px solid #b89b6a; outline-offset: 3px; border-radius: 4px; }
+
+  /* Eén moment bij laden: de cirkel komt binnen. Alleen als JS draait. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-rond { animation: rond 1s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-tekst > * { animation: op .7s cubic-bezier(.2,.7,.2,1) both; }
+    .js .hero-tekst > *:nth-child(2) { animation-delay: .08s; }
+    .js .hero-tekst > *:nth-child(3) { animation-delay: .16s; }
+    .js .hero-tekst > *:nth-child(4) { animation-delay: .24s; }
+    @keyframes rond { from { transform: scale(.94); opacity: .2; } }
+    @keyframes op { from { transform: translateY(12px); opacity: 0; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-bloem text-inkt antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-goud focus:text-tegel focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-goud text-tegel text-center text-sm py-2 px-4">
+  Demo voor Bakkerij Gerard van Keulen, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-medium">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="tegelwand text-bloem border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3" aria-label="Bakkerij Gerard van Keulen, naar boven">
+      <img src="assets/logo-oud.png" alt="" width="52" height="52" class="w-12 h-12 md:w-[52px] md:h-[52px] rounded-full">
+      <span class="leading-tight">
+        <span class="block font-kop text-lg md:text-xl">Gerard van Keulen</span>
+        <span class="block text-xs text-goud tracking-wide">brood &amp; banketbakkerij</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] text-bloem/80">
+      <a href="#brood" class="hover:text-goud transition-colors">Brood</a>
+      <a href="#banket" class="hover:text-goud transition-colors">Banket</a>
+      <a href="#reviews" class="hover:text-goud transition-colors">Reviews</a>
+      <a href="#langskomen" class="hover:text-goud transition-colors">Openingstijden</a>
+      <a href="tel:0345681332" class="knop border border-goud/60 text-goud hover:bg-goud hover:text-tegel rounded-full px-5 py-2 font-medium">0345 681 332</a>
+    </nav>
+    <a href="tel:0345681332" class="md:hidden knop text-goud border border-goud/60 rounded-full px-4 py-2 text-sm font-medium">Bellen</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="tegelwand text-bloem overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-7 pb-14 md:py-20 grid md:grid-cols-[1.05fr_1fr] gap-8 md:gap-10 items-center">
+    <div class="hero-tekst order-2 md:order-1">
+      <p class="text-goud text-sm md:text-base mb-2 md:mb-5">Brood &amp; banketbakkerij aan het Dorpsplein in Beesd</p>
+      <h1 class="font-kop text-[2.35rem] leading-[1.05] md:text-[4.4rem] md:leading-[1.02] tracking-tight">Een échte bakker, midden in Beesd.</h1>
+      <p class="mt-4 md:mt-7 text-[17px] md:text-xl text-bloem/75 max-w-md leading-relaxed">Vers brood, banket en hartige snacks, zes dagen per week. Loop gewoon binnen, of bel vooraf als u iets wilt laten klaarzetten.</p>
+      <div class="mt-6 md:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a id="hero-bel" href="tel:0345681332" class="knop inline-flex items-center gap-3 bg-goud hover:bg-[#cbb084] text-tegel font-semibold text-lg rounded-full pl-5 pr-7 py-4 shadow-[0_10px_30px_-10px_rgba(184,155,106,.6)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 0345 681 332
+        </a>
+        <a href="#langskomen" class="text-bloem/85 underline decoration-goud/60 underline-offset-[6px] hover:text-goud">Openingstijden en route</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-sm text-bloem/70">
+        <span class="text-goud tracking-[.15em] text-base" aria-hidden="true">★★★★<span class="opacity-50">★</span></span>
+        <span><strong class="text-bloem font-semibold">4.5</strong> uit 114 Google-reviews</span>
+      </p>
+    </div>
+    <div class="order-1 md:order-2 flex justify-center md:justify-end">
+      <div class="hero-rond relative w-[58vw] max-w-[230px] md:max-w-none md:w-[480px] aspect-square">
+        <div class="absolute -inset-3 md:-inset-5 rounded-full border border-goud/50"></div>
+        <img src="assets/google-08.jpg" alt="De broodwand in de winkel, met het gouden logo op de zwarte tegels" class="w-full h-full object-cover object-[72%_45%] rounded-full shadow-[0_30px_80px_-30px_rgba(0,0,0,.9)]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brood -->
+<section id="brood" class="py-16 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+    <div class="md:col-span-7 relative">
+      <img src="assets/site-05.png" alt="Desembroden en volkorenbollen op een houten schap" class="w-full aspect-[4/3] object-cover rounded-t-[999px] rounded-b-md">
+      <img src="assets/google-01.jpg" alt="De toonbank met broodjes, appelflappen en tulbanden" class="hidden md:block absolute -bottom-10 -right-10 w-56 aspect-square object-cover rounded-md border-[6px] border-bloem shadow-xl">
+    </div>
+    <div class="md:col-span-5 md:pl-6">
+      <h2 class="font-kop text-4xl md:text-5xl leading-tight text-tegel">Elke ochtend vol schappen.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-inkt/80 max-w-prose">Van een stevig Hollands grof tot desem met olijf of walnoot. Vanaf acht uur 's ochtends liggen de planken vol. Twijfelt u? Vraag gerust wat we vandaag hebben.</p>
+      <ul class="mt-7 flex flex-wrap gap-2.5" aria-label="Een greep uit ons brood">
+        <li class="kaartje">Desem olijf</li>
+        <li class="kaartje">Desem walnoot</li>
+        <li class="kaartje">Volkorenbol</li>
+        <li class="kaartje">Speltbrood</li>
+        <li class="kaartje">Hollands grof</li>
+        <li class="kaartje">Maisbrood</li>
+        <li class="kaartje">Krentenbrood met spijs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Banket -->
+<section id="banket" class="bg-deeg py-16 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-5 md:gap-10 items-end">
+      <div class="md:col-span-5">
+        <h2 class="font-kop text-4xl md:text-5xl leading-tight text-tegel">Voor bij de koffie, of voor een feestje.</h2>
+      </div>
+      <p class="md:col-span-6 md:col-start-7 text-lg leading-relaxed text-inkt/80">Vruchtenvlaai, schnitt met aardbeien, gebakjes met slagroom en natuurlijk tompouces. Moet het voor een verjaardag of bezoek? Bel even, dan zetten we het voor u klaar.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-5">
+      <img src="assets/site-02.jpg" alt="Gebakjes met aardbeien, kiwi en chocolade in de vitrine" class="col-span-2 md:col-span-8 w-full h-64 md:h-[460px] object-cover rounded-md">
+      <img src="assets/google-06.jpg" alt="Vlaaien en schnitts met aardbeien in de vitrine" class="col-span-1 md:col-span-4 w-full h-56 md:h-[460px] object-cover object-[50%_40%] rounded-md">
+      <img src="assets/site-06.webp" alt="Appelflappen, saucijzenbroodjes en ander gebak op de toonbank" class="col-span-1 md:hidden w-full h-56 object-cover rounded-md">
+    </div>
+    <ul class="mt-8 flex flex-wrap gap-2.5" aria-label="Een greep uit ons banket">
+      <li class="kaartje">Vruchtenvlaai</li>
+      <li class="kaartje">Vruchtenschnitt</li>
+      <li class="kaartje">Gebakjes</li>
+      <li class="kaartje">Tompouces</li>
+      <li class="kaartje">Appelflappen</li>
+      <li class="kaartje">Hartige snacks</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Even zitten -->
+<section class="py-16 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+    <div class="md:col-span-5 order-2 md:order-1">
+      <h2 class="font-kop text-4xl md:text-5xl leading-tight text-tegel">Even zitten mag ook.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-inkt/80">Een kop koffie met een croissant of een kaasbroodje, binnen aan tafel of op het terrasje voor de winkel. Met uitzicht op het Dorpsplein en de leilindes.</p>
+      <img src="assets/google-02.jpg" alt="Cappuccino met een croissant en een kaasbroodje" class="mt-8 w-full aspect-[16/10] object-cover object-[50%_70%] rounded-md">
+    </div>
+    <div class="md:col-span-7 order-1 md:order-2">
+      <img src="assets/site-01.jpg" alt="Opa, oma en kleinkinderen aan tafel in de bakkerij" class="w-full aspect-[4/3] md:aspect-[5/4] object-cover object-[45%_50%] rounded-t-[999px] rounded-b-md">
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-deeg py-16 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-4">
+      <p class="font-kop text-7xl md:text-8xl text-tegel leading-none">4.5</p>
+      <p class="mt-3 text-goud text-xl tracking-[.15em]" aria-hidden="true">★★★★<span class="opacity-40">★</span></p>
+      <p class="mt-2 text-inkt/75">uit 114 reviews op Google</p>
+      <h2 class="mt-8 font-kop text-3xl leading-snug text-tegel">Wat klanten over ons zeggen.</h2>
+    </div>
+    <div class="md:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-10">
+      <figure class="sm:col-span-2 border-l-2 border-goud pl-6">
+        <blockquote class="font-kop text-[1.35rem] md:text-[1.75rem] leading-snug text-tegel">"Heerlijke broodjes, prettige bediening, ruime keus, service plus een miniterrasje voor de winkel. Voor als je een échte bakker zoekt. Mooie locatie trouwens ook aan de hoofdstraat met al die fraaie leilindes!"</blockquote>
+        <figcaption class="mt-4 text-inkt/70">Johan Hoekstra <span class="text-goud ml-1" aria-label="5 sterren">★★★★★</span></figcaption>
+      </figure>
+      <figure class="border-l-2 border-goud/50 pl-6">
+        <blockquote class="text-lg leading-relaxed">"Heerlijk brood, krentenbrood met spijs. Het kost maar dan heb je ook wat. 1 van de beste bakkers die we hebben bezocht."</blockquote>
+        <figcaption class="mt-3 text-inkt/70">Erik met de Pet <span class="text-goud ml-1" aria-label="5 sterren">★★★★★</span></figcaption>
+      </figure>
+      <figure class="border-l-2 border-goud/50 pl-6">
+        <blockquote class="text-lg leading-relaxed">"Fijne winkel! Heerlijk brood en andere baksels en vriendelijke bediening."</blockquote>
+        <figcaption class="mt-3 text-inkt/70">Joossie R. <span class="text-goud ml-1" aria-label="5 sterren">★★★★★</span></figcaption>
+      </figure>
+      <figure class="border-l-2 border-goud/50 pl-6 sm:col-span-2">
+        <blockquote class="text-lg leading-relaxed">"prima bakker , genoeg keuze prima prijzen, altijd beter dan een supermarkt"</blockquote>
+        <figcaption class="mt-3 text-inkt/70">Kees Mars <span class="text-goud ml-1" aria-label="4 sterren">★★★★<span class="opacity-40">★</span></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Langskomen -->
+<section id="langskomen" class="py-16 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-14">
+    <div class="md:col-span-6">
+      <img src="assets/google-05.jpg" alt="De winkel aan het Dorpsplein in Beesd, tussen de leilindes" class="w-full aspect-[4/3] object-cover rounded-t-[999px] rounded-b-md">
+    </div>
+    <div class="md:col-span-6 md:pt-6">
+      <h2 class="font-kop text-4xl md:text-5xl leading-tight text-tegel">Kom langs aan het Dorpsplein.</h2>
+      <address class="not-italic mt-6 text-lg leading-relaxed">
+        Dorpsplein 5C<br>4153 AG Beesd<br>
+        <a href="https://www.google.com/maps/search/?api=1&query=Dorpsplein+5C+4153+AG+Beesd" class="inline-block mt-2 text-gouddonker underline underline-offset-4 hover:text-korst">Route plannen</a>
+      </address>
+
+      <table class="mt-8 w-full max-w-sm text-[17px] tabular-nums">
+        <caption class="text-left font-kop text-xl text-tegel mb-3">Openingstijden</caption>
+        <tbody class="divide-y divide-inkt/10">
+          <tr><th class="text-left font-normal py-2">Maandag</th><td class="text-right py-2">08:00 tot 18:00</td></tr>
+          <tr><th class="text-left font-normal py-2">Dinsdag</th><td class="text-right py-2">08:00 tot 18:00</td></tr>
+          <tr><th class="text-left font-normal py-2">Woensdag</th><td class="text-right py-2">08:00 tot 18:00</td></tr>
+          <tr><th class="text-left font-normal py-2">Donderdag</th><td class="text-right py-2">08:00 tot 18:00</td></tr>
+          <tr><th class="text-left font-normal py-2">Vrijdag</th><td class="text-right py-2">08:00 tot 18:00</td></tr>
+          <tr><th class="text-left font-normal py-2">Zaterdag</th><td class="text-right py-2">08:00 tot 16:00</td></tr>
+          <tr><th class="text-left font-normal py-2 text-inkt/60">Zondag</th><td class="text-right py-2 text-inkt/60">Gesloten</td></tr>
+        </tbody>
+      </table>
+
+      <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:0345681332" class="knop inline-flex items-center gap-3 bg-tegel hover:bg-voeg text-bloem font-semibold rounded-full px-6 py-3.5">
+          <svg class="w-5 h-5 text-goud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 0345 681 332
+        </a>
+        <a href="mailto:info@bakkerijgerardvankeulen.nl" class="text-gouddonker underline underline-offset-4 hover:text-korst break-all">info@bakkerijgerardvankeulen.nl</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="tegelwand text-bloem/70 pb-24 md:pb-0">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-14 flex flex-col md:flex-row md:items-center justify-between gap-8">
+    <div class="flex items-center gap-4">
+      <img src="assets/logo-oud.png" alt="Logo Gerard van Keulen brood &amp; banketbakkerij" width="64" height="64" class="w-16 h-16 rounded-full">
+      <div>
+        <p class="font-kop text-xl text-bloem">Gerard van Keulen</p>
+        <p class="text-sm">Dorpsplein 5C, 4153 AG Beesd</p>
+      </div>
+    </div>
+    <div class="text-sm space-y-1 md:text-right">
+      <p><a href="tel:0345681332" class="hover:text-goud">0345 681 332</a></p>
+      <p><a href="mailto:info@bakkerijgerardvankeulen.nl" class="hover:text-goud">info@bakkerijgerardvankeulen.nl</a></p>
+      <p class="text-bloem/45">Ma t/m vr 08:00 tot 18:00, za 08:00 tot 16:00</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 transition-transform duration-300 bg-gradient-to-t from-tegel/90 to-transparent">
+  <a href="tel:0345681332" class="knop flex items-center justify-center gap-3 bg-goud text-tegel font-semibold text-lg rounded-full py-3.5 shadow-lg">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel de bakker
+  </a>
+</div>
+
+<script>
+  // Vaste belbalk pas tonen als de belknop in de hero uit beeld is. Zonder JS staat de balk er gewoon.
+  (function () {
+    var knop = document.getElementById('hero-bel'), balk = document.getElementById('belbalk');
+    if (!knop || !balk || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) {
+      balk.style.transform = e[0].isIntersecting ? 'translateY(110%)' : '';
+    }).observe(knop);
+  })();
+</script>
+</body>
+</html>
