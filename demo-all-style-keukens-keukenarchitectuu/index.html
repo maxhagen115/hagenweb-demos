@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Style Keukens, keukenarchitectuur in de regio Arnhem en Nijmegen</title>
+<meta name="description" content="Maatwerkkeukens en keukenrenovaties van A tot Z in de regio Arnhem, Nijmegen en Ede. Eerste afspraak bij u thuis. Bel 06 29 51 27 67.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        lak: '#F3F3F0',
+        leisteen: '#24302E',
+        inkt: '#1B201F',
+        eiken: '#A9805A',
+        rood: '#B3232B',
+        rooddonker: '#951C23',
+      },
+      fontFamily: {
+        kop: ['Archivo', 'system-ui', 'sans-serif'],
+        tekst: ['"Source Serif 4"', 'Georgia', 'serif'],
+      },
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Source Serif 4', Georgia, serif; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 118%; font-variation-settings: "wdth" 118; letter-spacing: -0.02em; }
+  .kop-smal { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 100%; }
+  .balans { text-wrap: balance; }
+  .pretty { text-wrap: pretty; }
+
+  /* Woordmerk naar het oude logo */
+  .woordmerk { font-family: 'Archivo', sans-serif; font-variation-settings: "wdth" 110; line-height: 1; }
+  .woordmerk .rij { display: flex; }
+  .woordmerk .vak { border: 2px solid currentColor; padding: .18em .35em .12em; font-weight: 500; letter-spacing: .02em; }
+  .woordmerk { display: inline-flex; flex-direction: column; align-self: flex-start; }
+  .woordmerk .rij .vak + .vak { flex: 1; text-align: center; }
+  .woordmerk .vol { background: currentColor; }
+  .woordmerk .vol span { color: #F3F3F0; }
+  .woordmerk .sub { font-size: .42em; letter-spacing: .32em; color: #B3232B; margin-top: .45em; font-weight: 600; }
+
+  /* Hero-foto met uitgesneden hoek, als het profiel van een kast */
+  .hero-foto { clip-path: polygon(0 0, 100% 0, 100% 100%, 18% 100%, 18% 88%, 0 88%); }
+  @media (max-width: 767px) { .hero-foto { clip-path: polygon(0 0, 100% 0, 100% 100%, 22% 100%, 22% 86%, 0 86%); } }
+
+  /* Maatlijn */
+  .maat { position: relative; height: 1px; background: #A9805A; }
+  .maat::before, .maat::after { content: ""; position: absolute; top: -7px; width: 1px; height: 15px; background: #A9805A; }
+  .maat::before { left: 0; } .maat::after { right: 0; }
+  .maat-v { position: relative; width: 1px; background: #A9805A; }
+  .maat-v::before, .maat-v::after { content: ""; position: absolute; left: -7px; height: 1px; width: 15px; background: #A9805A; }
+  .maat-v::before { top: 0; } .maat-v::after { bottom: 0; }
+
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #B3232B; outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-lak text-inkt antialiased ">
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-white/80 text-[13px] kop-smal text-center px-4 py-2">
+  Demo voor All Style Keukens - Keukenarchitectuur, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-white/70">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-lak/95 backdrop-blur border-b border-inkt/10">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="woordmerk text-inkt text-[17px] md:text-[19px] shrink-0" aria-label="All Style Keukens, naar boven">
+      <div class="rij"><div class="vak vol"><span>ALL</span></div><div class="vak border-l-0">STYLE</div></div>
+      <div class="rij"><div class="vak border-t-0 w-full text-center">KEUKENS</div></div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 kop-smal text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#visie" class="hover:text-rood transition-colors">Over ons</a>
+      <a href="#keukens" class="hover:text-rood transition-colors">Keukens</a>
+      <a href="#werkwijze" class="hover:text-rood transition-colors">Werkwijze</a>
+      <a href="#projecten" class="hover:text-rood transition-colors">Projecten</a>
+      <a href="#reviews" class="hover:text-rood transition-colors">Reviews</a>
+      <a href="#afspraak" class="hover:text-rood transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31629512767" class="knop hidden sm:inline-flex items-center gap-2 bg-rood hover:bg-rooddonker text-white kop-smal font-semibold text-[15px] px-5 py-3">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      06 29 51 27 67
+    </a>
+    <a href="tel:+31629512767" class="sm:hidden kop-smal font-semibold text-rood text-[15px]" aria-label="Bel 06 29 51 27 67">Bellen</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 pt-8 md:pt-16 pb-14 md:pb-24 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+    <div class="md:col-span-5 relative z-10">
+      <p class="kop-smal text-[15px] text-inkt/70 mb-4 md:mb-6">Keukenarchitectuur in Arnhem, Nijmegen en Ede</p>
+      <h1 class="kop font-semibold text-[42px] leading-[1.02] sm:text-[56px] lg:text-[68px] balans">Uw keuken, tot op de millimeter.</h1>
+      <p class="mt-5 md:mt-7 text-[18px] md:text-[20px] leading-relaxed text-inkt/80 max-w-[30rem] pretty">
+        Wij ontwerpen maatwerkkeukens en renoveren bestaande keukens. Het eerste gesprek is bij u thuis. Daarna regelen wij alles, tot de kookklare oplevering.
+      </p>
+      <div class="mt-7 md:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31629512767" class="knop inline-flex items-center gap-3 bg-rood hover:bg-rooddonker text-white kop-smal font-semibold text-[17px] md:text-[18px] px-7 py-4 md:px-8 md:py-5">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel 06 29 51 27 67
+        </a>
+        <a href="#afspraak" class="kop-smal font-semibold text-[16px] underline underline-offset-[6px] decoration-eiken decoration-2 hover:text-rood">Plan een afspraak</a>
+      </div>
+      <a href="#reviews" class="mt-7 md:mt-9 inline-flex items-center gap-3 text-[15px] text-inkt/75 hover:text-inkt">
+        <span class="text-rood tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="kop-smal font-semibold text-inkt">4,8</strong> uit 29 Google-reviews</span>
+      </a>
+    </div>
+
+    <div class="md:col-span-7 relative md:pl-6">
+      <!-- maatlijn boven -->
+      <div class="hidden md:flex items-center gap-3 mb-4 ml-[18%]">
+        <div class="maat flex-1"></div>
+        <span class="kop-smal text-[12px] text-eiken font-medium whitespace-nowrap">tot op de millimeter</span>
+        <div class="maat w-10"></div>
+      </div>
+      <div class="flex gap-4">
+        <div class="relative flex-1">
+          <img src="assets/site-11.jpg" alt="Door All Style Keukens opgeleverde keuken met zwart kookeiland, licht werkblad en visgraatvloer" class="hero-foto w-full h-[340px] sm:h-[440px] md:h-[600px] object-cover object-[45%_50%]" width="900" height="675">
+        </div>
+        <div class="hidden md:block maat-v my-0"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visie -->
+<section id="visie" class="bg-white border-y border-inkt/10">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 md:gap-10">
+    <div class="md:col-span-7">
+      <h2 class="kop font-semibold text-[34px] md:text-[48px] leading-[1.05] balans">Geen keuken uit de printer.</h2>
+      <div class="mt-8 space-y-5 text-[18px] leading-[1.75] text-inkt/85 max-w-[38rem] pretty">
+        <p>Met onzinnige en misleidende acties verleiden wij geen klanten. Wij verleiden u liever met een mooi ontwerp en een keuken waar goed over is nagedacht, tegen een eerlijke prijs.</p>
+        <p>Omdat wij écht maatwerk leveren, kunnen we bijna iedere kast in hoogte, breedte en diepte op maat laten maken. Zo ontwerpen we de keuken die past bij uw ruimte, en bij u.</p>
+        <p>All Style Keukens is een compact keukenbedrijf met een klein team vakmensen. Met 30 jaar kennis en ervaring vertalen we uw wensen naar een doordacht keukenplan. Ons montageteam doet desgewenst alles: sloop en afvoer van de oude keuken, het aanpassen van leidingwerk en de montage tot en met de kookklare oplevering.</p>
+      </div>
+    </div>
+    <figure class="md:col-span-5 md:pl-8">
+      <div class="flex items-end gap-5">
+        <img src="assets/site-01.png" alt="Getekend portret van keukenontwerper Joost de Graaf" class="w-32 md:w-40 aspect-[4/5] object-cover grayscale" width="657" height="825">
+        <figcaption class="pb-1">
+          <span class="kop-smal font-semibold text-[17px] block">Joost de Graaf</span>
+          <span class="text-[15px] text-inkt/65">Keukenontwerper</span>
+        </figcaption>
+      </div>
+      <blockquote class="mt-8 border-l-2 border-rood pl-6 text-[20px] md:text-[22px] leading-[1.55] italic text-inkt pretty">
+        “Als keukenontwerper vertaal ik de wensen van de klant naar een prachtig keukenplan met een doordacht ontwerp. Kwaliteit én het beste advies zijn steeds onze uitgangspunten, vanaf het ontwerp tot de realisatie.”
+      </blockquote>
+    </figure>
+  </div>
+</section>
+
+<!-- Keukens -->
+<section id="keukens" class="max-w-[1320px] mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid md:grid-cols-12 gap-6 items-end mb-12 md:mb-16">
+    <h2 class="md:col-span-6 kop font-semibold text-[34px] md:text-[48px] leading-[1.05] balans">Elke stijl, altijd op maat.</h2>
+    <p class="md:col-span-5 md:col-start-8 text-[18px] leading-[1.7] text-inkt/80 pretty">Strak en greeploos of sfeervol in echt hout: in onze keukenstudio ziet u de combinaties van materiaal, kleur en uitvoering met eigen ogen. Onze prijzen noemen we gewoon vooraf.</p>
+  </div>
+
+  <div class="grid md:grid-cols-12 gap-x-6 gap-y-12">
+    <article class="md:col-span-7">
+      <img src="assets/site-04.jpg" alt="Moderne keuken met natuurstenen eiland en wit bargedeelte" class="w-full aspect-[16/10] object-cover" width="541" height="304">
+      <div class="mt-5 flex flex-wrap items-baseline justify-between gap-2 border-b border-inkt/15 pb-4">
+        <h3 class="kop font-semibold text-[24px] md:text-[28px]">Moderne keukens</h3>
+        <p class="kop-smal text-[16px]">vanaf <strong class="font-semibold">€ 17.500</strong></p>
+      </div>
+      <p class="mt-3 text-[17px] text-inkt/75 leading-relaxed max-w-[34rem]">Greeploos, glanzend of mat, met verfijnde inbouwapparatuur en slimme kastindelingen.</p>
+    </article>
+
+    <article class="md:col-span-5 md:mt-28">
+      <img src="assets/site-03.jpg" alt="Keuken van massief eiken met grijs werkblad en roestvrijstalen koelkasten" class="w-full aspect-[4/3] object-cover object-[60%_50%]" width="750" height="422">
+      <div class="mt-5 flex flex-wrap items-baseline justify-between gap-2 border-b border-inkt/15 pb-4">
+        <h3 class="kop font-semibold text-[24px] md:text-[28px]">Echte houten keukens</h3>
+        <p class="kop-smal text-[16px]">vanaf <strong class="font-semibold">€ 25.000</strong></p>
+      </div>
+      <p class="mt-3 text-[17px] text-inkt/75 leading-relaxed">Warm, stevig en voor jaren. Echt hout in de uitvoering die bij uw huis past.</p>
+    </article>
+
+    <article class="md:col-span-5">
+      <img src="assets/site-05.jpg" alt="Landelijke witte keuken met kookeiland, paneeldeurtjes en zwarte knoppen" class="w-full aspect-[4/3] object-cover" width="541" height="304">
+      <div class="mt-5 flex flex-wrap items-baseline justify-between gap-2 border-b border-inkt/15 pb-4">
+        <h3 class="kop font-semibold text-[24px] md:text-[28px]">Landelijk & klassiek</h3>
+        <p class="kop-smal text-[16px]">vanaf <strong class="font-semibold">€ 25.000</strong></p>
+      </div>
+      <p class="mt-3 text-[17px] text-inkt/75 leading-relaxed">Paneelfronten, knoppen en een sfeer die past bij een karakteristieke woning.</p>
+    </article>
+
+    <article class="md:col-span-7 bg-leisteen text-white p-8 md:p-12 flex flex-col justify-between">
+      <div>
+        <h3 class="kop font-semibold text-[28px] md:text-[36px] leading-[1.1]">Keukenrenovatie van A tot Z</h3>
+        <p class="mt-4 text-[18px] text-white/80 leading-relaxed max-w-[32rem]">Is uw keuken nog goed, maar oogt hij moe? Dan hoeft u niet alles te vervangen.</p>
+        <ul class="mt-7 grid gap-y-3 text-[17px]">
+          <li class="flex gap-3"><span class="mt-[11px] w-4 h-px bg-eiken shrink-0"></span>Nieuwe fronten</li>
+          <li class="flex gap-3"><span class="mt-[11px] w-4 h-px bg-eiken shrink-0"></span>Nieuwe grepen of knoppen</li>
+          <li class="flex gap-3"><span class="mt-[11px] w-4 h-px bg-eiken shrink-0"></span>Nieuwe aanrechtbladen</li>
+          <li class="flex gap-3"><span class="mt-[11px] w-4 h-px bg-eiken shrink-0"></span>Nieuwe inbouwapparaten</li>
+          <li class="flex gap-3"><span class="mt-[11px] w-4 h-px bg-eiken shrink-0"></span>Uitbreidingen en aanpassingen</li>
+        </ul>
+      </div>
+      <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-white/15 pt-6">
+        <p class="kop-smal text-[16px]">vanaf <strong class="font-semibold text-[22px]">€ 5000</strong></p>
+        <a href="#afspraak" class="kop-smal font-semibold underline underline-offset-[6px] decoration-eiken decoration-2 hover:text-white/70">Vraag een renovatie aan</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-leisteen text-white">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14 lg:gap-10">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-semibold text-[34px] md:text-[48px] leading-[1.05] balans">Van eerste schets tot kookklaar.</h2>
+      <p class="mt-6 text-[18px] leading-[1.7] text-white/80 max-w-[30rem] pretty">Wij werken altijd op afspraak, zodat we alle tijd voor u hebben. U heeft één aanspreekpunt voor het hele traject.</p>
+      <figure class="mt-10 bg-white p-3">
+        <img src="assets/site-02.jpg" alt="Handgetekende ontwerpschets van een keuken met kookeiland" class="w-full aspect-[742/510] object-cover" width="742" height="510">
+      </figure>
+    </div>
+    <ol class="lg:col-span-6 lg:col-start-7 space-y-0">
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-white/15">
+        <span class="kop font-semibold text-eiken text-[22px]">1</span>
+        <div><h3 class="kop font-semibold text-[21px]">Bij u thuis</h3><p class="mt-2 text-[17px] text-white/75 leading-relaxed">De eerste afspraak is bij u thuis. We meten de ruimte op, bespreken uw wensen en de beste opstelling.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-white/15">
+        <span class="kop font-semibold text-eiken text-[22px]">2</span>
+        <div><h3 class="kop font-semibold text-[21px]">Het ontwerp</h3><p class="mt-2 text-[17px] text-white/75 leading-relaxed">Wij maken een compleet en passend keukenontwerp, inclusief apparatuur, werkblad, spoelbak, kraan en verlichting.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-white/15">
+        <span class="kop font-semibold text-eiken text-[22px]">3</span>
+        <div><h3 class="kop font-semibold text-[21px]">In de keukenstudio</h3><p class="mt-2 text-[17px] text-white/75 leading-relaxed">U kiest uitvoering, kleuren, materialen en techniek. Daarna krijgt u een totaalbegroting, die we uitgebreid met u doornemen.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-t border-white/15">
+        <span class="kop font-semibold text-eiken text-[22px]">4</span>
+        <div><h3 class="kop font-semibold text-[21px]">Zien vóór het er staat</h3><p class="mt-2 text-[17px] text-white/75 leading-relaxed">Na uw opdracht maken wij een fotorealistische 3D-weergave en een 360-view. U ontvangt een orderbevestiging met alle afspraken.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-y border-white/15">
+        <span class="kop font-semibold text-eiken text-[22px]">5</span>
+        <div><h3 class="kop font-semibold text-[21px]">Montage en oplevering</h3><p class="mt-2 text-[17px] text-white/75 leading-relaxed">Ervaren monteurs plaatsen uw keuken. We begeleiden alles van A tot Z en sluiten af met een uitgebreide oplevering, met uitleg en advies.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Projecten -->
+<section id="projecten" class="max-w-[1320px] mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-6 mb-10 md:mb-14">
+    <h2 class="kop font-semibold text-[34px] md:text-[48px] leading-[1.05]">Recent opgeleverd.</h2>
+    <p class="text-[17px] text-inkt/70 max-w-[26rem]">Een paar keukens die we hebben ontworpen en geplaatst.</p>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-5">
+    <img src="assets/site-10.jpg" alt="Witte hoekkeuken met hoge kastenwand en donkergroene wand" class="col-span-2 md:col-span-8 md:row-span-2 w-full h-full aspect-[4/3] md:aspect-auto object-cover" width="900" height="675">
+    <img src="assets/site-08.jpg" alt="Zwarte spoelbak en kraan in een licht werkblad met verlichte wandplank" class="md:col-span-4 w-full aspect-[4/3] object-cover" width="900" height="675">
+    <img src="assets/site-12.jpg" alt="Licht werkblad met verlichte plank en zwarte kastenwand" class="md:col-span-4 w-full aspect-[4/3] object-cover" width="900" height="675">
+    <img src="assets/google-01.jpg" alt="Keuken met eiken kastenwand en wit kookeiland met barkrukken" class="col-span-2 md:col-span-5 w-full aspect-[3/2] object-cover" width="1400" height="933">
+    <img src="assets/site-09.jpg" alt="Witte greeploze hoekkeuken met kookplaat en spoelbak tegen een donkere wand" class="md:col-span-4 w-full aspect-square md:aspect-auto md:h-full object-cover" width="900" height="675">
+    <img src="assets/google-04.jpg" alt="Grijze keuken met lichte eiken achterwand achter de kookplaat" class="md:col-span-3 w-full aspect-square md:aspect-auto md:h-full object-cover" width="1600" height="1260">
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-white border-y border-inkt/10">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-10">
+    <div class="lg:col-span-6 lg:sticky lg:top-28 lg:self-start">
+      <div class="flex items-center gap-4">
+        <span class="kop font-semibold text-[56px] md:text-[72px] leading-none">4,8</span>
+        <div>
+          <span class="text-rood tracking-[3px] text-[20px]" aria-hidden="true">★★★★★</span>
+          <p class="text-[15px] text-inkt/70">uit 29 reviews op Google</p>
+        </div>
+      </div>
+      <figure class="mt-10">
+        <blockquote>
+          <p class="kop font-semibold text-[26px] md:text-[32px] leading-[1.15] balans">“Geen keuken uit de printer, maar een keuken met aandacht”</p>
+          <p class="mt-6 text-[18px] leading-[1.75] text-inkt/80 pretty">“Keukenshoppen, we kennen het allemaal. Je loopt een rondje door een showroom, schuift aan bij een verkoper achter een computer, er wordt wat geklikt en ta-da: er rolt een keuken uit. Daar krijg je dan gratis een takenlijst bij. Oude keuken zelf slopen, zelf afvo…”</p>
+        </blockquote>
+        <figcaption class="mt-5 kop-smal text-[15px]"><strong class="font-semibold">Pascal71</strong><span class="text-inkt/60">, Google-review</span></figcaption>
+      </figure>
+    </div>
+    <div class="lg:col-span-5 lg:col-start-8 divide-y divide-inkt/10">
+      <figure class="pb-8">
+        <blockquote class="text-[17px] leading-[1.7] text-inkt/85 pretty">“Joost en jouw team super bedankt! Onze keuken is een prachtig plaatje geworden. We hebben de tips en adviezen als zeer nuttig ervaren en alles is tot in de puntjes verzorgd. We zijn dan ook erg tevreden met het fraaie resultaat en de goede service en begeleiding in het hele traject, van demontage tot volledige afwerkin…”</blockquote>
+        <figcaption class="mt-3 kop-smal text-[15px] font-semibold">Peter</figcaption>
+      </figure>
+      <figure class="py-8">
+        <blockquote class="text-[17px] leading-[1.7] text-inkt/85 pretty">“De afgelopen 15 jaar zijn we een aantal keren verhuisd en daar steeds een nieuwe keuken naar onze eigen smaak gekozen. Elke huis was anders en elke keuken daarom ook. Wat wel elke keer hetzelfde was, dat de keukens steeds door All style Keukens zijn geleverd en dus meer dan naar volle tevredenheid. Kwaliteit, informa…”</blockquote>
+        <figcaption class="mt-3 kop-smal text-[15px] font-semibold">Roel Bakker</figcaption>
+      </figure>
+      <figure class="py-8">
+        <blockquote class="text-[17px] leading-[1.7] text-inkt/85 pretty">“Vanochtend is mijn keukenrenovatie afgerond. Ben helemaal tevreden en blij ermee. Na ons bezoek in de toonzaal bij All style keukens waren we geïnspireerd en enthousiast geworden. Meedenken over mogelijkheden. Het werd een renovatie met wel een nieuwe inductieplaat met afzuiging (Siemens) en een nieuwe stoom-oven-manet…”</blockquote>
+        <figcaption class="mt-3 kop-smal text-[15px] font-semibold">Ans Bosma</figcaption>
+      </figure>
+      <figure class="pt-8">
+        <blockquote class="text-[17px] leading-[1.7] text-inkt/85 pretty"><strong class="kop-smal font-semibold block mb-2 text-inkt">Gedreven keukenontwerper!</strong>“Voor onze woning in Huissen waren we op zoek naar een keukenspecialist die de beperkte ruimte zo effectief mogelijk kon benutten en die alles van begin tot eind zou regelen. Zo kwamen we terecht op de website van All Style Keukens. De daar uitvoerig beschreven werkwijze sprak ons direct aan…”</blockquote>
+        <figcaption class="mt-3 kop-smal text-[15px] font-semibold">Michel Jochems</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Werkgebied -->
+<section class="max-w-[1320px] mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
+  <div class="md:col-span-6">
+    <img src="assets/google-02.jpg" alt="Bus van All Style Keukens op een oprit bij een boerderij" class="w-full aspect-[4/3] object-cover" width="1600" height="1200">
+  </div>
+  <div class="md:col-span-5 md:col-start-8">
+    <h2 class="kop font-semibold text-[34px] md:text-[44px] leading-[1.05] balans">Wij komen bij u thuis.</h2>
+    <p class="mt-6 text-[18px] leading-[1.7] text-inkt/80 pretty">Ons werkgebied ligt op ongeveer 20 km rond Arnhem, Nijmegen en Ede. We leverden onder meer keukens in:</p>
+    <p class="mt-5 kop-smal text-[15px] leading-[1.9] text-inkt/75">Apeldoorn, Bemmel, Bennekom, Doorwerth, Duiven, Ellecom, Elst, Heteren, Heelsum, Huissen, Lent, Beuningen, Nijmegen, Oosterbeek, Renkum, Rheden, Rozendaal, Velp, Wageningen, Westervoort, Wijchen en Zevenaar.</p>
+  </div>
+</section>
+
+<!-- Afspraak -->
+<section id="afspraak" class="bg-leisteen text-white">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14 lg:gap-10">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-semibold text-[34px] md:text-[48px] leading-[1.05] balans">Plan uw eerste afspraak.</h2>
+      <p class="mt-6 text-[18px] leading-[1.7] text-white/80 max-w-[28rem] pretty">Bel of mail ons, of laat uw gegevens achter. Wij nemen contact met u op en komen bij u langs.</p>
+      <a href="tel:+31629512767" class="knop mt-9 inline-flex items-center gap-3 bg-rood hover:bg-rooddonker text-white kop-smal font-semibold text-[18px] px-7 py-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Bel 06 29 51 27 67
+      </a>
+      <dl class="mt-12 grid sm:grid-cols-2 lg:grid-cols-1 gap-8 text-[16px]">
+        <div>
+          <dt class="kop-smal font-semibold text-eiken text-[14px] mb-2">Contact</dt>
+          <dd class="leading-[1.8]"><a href="tel:+31629512767" class="hover:underline">06 29 51 27 67</a><br><a href="mailto:info@allstylekeukens.nl" class="hover:underline">info@allstylekeukens.nl</a><br>Lovinklaan 99, 6821 HZ Arnhem</dd>
+        </div>
+        <div>
+          <dt class="kop-smal font-semibold text-eiken text-[14px] mb-2">Openingstijden</dt>
+          <dd>
+            <table class="text-[15px] leading-[1.8]"><tbody>
+              <tr><td class="pr-6">maandag</td><td class="tabular-nums">13:00 tot 17:00</td></tr>
+              <tr><td class="pr-6">dinsdag t/m zaterdag</td><td class="tabular-nums">10:00 tot 17:00</td></tr>
+              <tr><td class="pr-6">zondag</td><td>gesloten</td></tr>
+            </tbody></table>
+            <p class="mt-3 text-[15px] text-white/65 leading-relaxed max-w-[24rem]">Wij werken uitsluitend op afspraak. De keukenstudio kunt u op afspraak bezoeken van 09.00 tot 21.00 uur.</p>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="lg:col-span-6 lg:col-start-7 bg-lak text-inkt p-6 md:p-10" onsubmit="event.preventDefault(); this.querySelector('[data-melding]').hidden=false;">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="kop-smal text-[14px] font-semibold">Naam</span>
+          <input required name="naam" autocomplete="name" class="mt-2 w-full bg-white border border-inkt/20 px-4 py-3 text-[16px] focus:border-inkt outline-none"></label>
+        <label class="block"><span class="kop-smal text-[14px] font-semibold">Woonplaats</span>
+          <input required name="woonplaats" autocomplete="address-level2" class="mt-2 w-full bg-white border border-inkt/20 px-4 py-3 text-[16px] focus:border-inkt outline-none"></label>
+        <label class="block"><span class="kop-smal text-[14px] font-semibold">E-mail</span>
+          <input required type="email" name="email" autocomplete="email" class="mt-2 w-full bg-white border border-inkt/20 px-4 py-3 text-[16px] focus:border-inkt outline-none"></label>
+        <label class="block"><span class="kop-smal text-[14px] font-semibold">Telefoon</span>
+          <input required type="tel" name="telefoon" autocomplete="tel" class="mt-2 w-full bg-white border border-inkt/20 px-4 py-3 text-[16px] focus:border-inkt outline-none"></label>
+        <label class="block sm:col-span-2"><span class="kop-smal text-[14px] font-semibold">Wanneer wilt u de keuken realiseren?</span>
+          <select name="termijn" class="mt-2 w-full bg-white border border-inkt/20 px-4 py-3 text-[16px] focus:border-inkt outline-none">
+            <option>Binnen 3 maanden</option><option>Binnen 6 maanden</option><option>Binnen 12 maanden</option><option>Na 12 maanden</option>
+          </select></label>
+        <label class="block sm:col-span-2"><span class="kop-smal text-[14px] font-semibold">Toelichting <span class="font-normal text-inkt/55">(optioneel)</span></span>
+          <textarea name="toelichting" rows="4" class="mt-2 w-full bg-white border border-inkt/20 px-4 py-3 text-[16px] focus:border-inkt outline-none" placeholder="Nieuwe keuken of renovatie? Vertel kort wat u voor ogen heeft."></textarea></label>
+      </div>
+      <label class="mt-5 flex gap-3 items-start text-[15px] text-inkt/75"><input required type="checkbox" class="mt-1 accent-rood"> Ik ga akkoord met de privacy policy, zodat u contact met mij kunt opnemen.</label>
+      <button type="submit" class="knop mt-7 w-full bg-inkt hover:bg-leisteen text-white kop-smal font-semibold text-[17px] py-4">Aanvraag versturen</button>
+      <p data-melding hidden class="mt-4 text-[15px] text-inkt">Dit is een demo: het formulier verstuurt nog niets. Bel of mail ons gerust direct.</p>
+      <p class="mt-4 text-[14px] text-inkt/60">Foto of situatieschets meesturen? Mail deze naar <a href="mailto:info@allstylekeukens.nl" class="underline">info@allstylekeukens.nl</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-inkt text-white/65">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-8 pt-12 pb-28 md:pb-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
+    <div class="woordmerk text-white text-[17px]">
+      <div class="rij"><div class="vak" style="background:#fff"><span style="color:#1B201F">ALL</span></div><div class="vak border-l-0">STYLE</div></div>
+      <div class="rij"><div class="vak border-t-0 w-full text-center">KEUKENS</div></div>
+      <div class="sub" style="color:#d1525a">KEUKENARCHITECTUUR</div>
+    </div>
+    <p class="text-[14px] leading-relaxed kop-smal">Lovinklaan 99, 6821 HZ Arnhem<br><a href="tel:+31629512767" class="hover:text-white">06 29 51 27 67</a><br><a href="mailto:info@allstylekeukens.nl" class="hover:text-white">info@allstylekeukens.nl</a><br>KvK 09172118</p>
+  </div>
+</footer>
+
+<!-- Belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-lak/95 backdrop-blur border-t border-inkt/10 p-3 flex gap-3">
+  <a href="tel:+31629512767" class="knop flex-1 inline-flex justify-center items-center gap-2 bg-rood text-white kop-smal font-semibold text-[16px] py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel ons
+  </a>
+  <a href="mailto:info@allstylekeukens.nl" class="inline-flex justify-center items-center px-5 border border-inkt/25 kop-smal font-semibold text-[15px]">Mail</a>
+</div>
+
+</body>
+</html>

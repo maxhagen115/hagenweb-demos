@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spuiterij Lichtenvoorde | Keukens, kasten en meubels spuiten</title>
+<meta name="description" content="Femke en Gertjan spuiten keukenfronten, kasten, deuren, shutters en meubels in de kleur die u kiest. Spuiterij in Lichtenvoorde, ook op locatie. Bel 06 17357906.">
+<meta property="og:title" content="Spuiterij Lichtenvoorde">
+<meta property="og:description" content="Uw keuken als nieuw, zonder nieuwe keuken.">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,600..900&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          grond: '#E7E9E4',
+          wit: '#F7F8F5',
+          inkt: '#17201C',
+          amber: '#F2A516',
+          salie: '#86A897',
+          staal: '#5E6763',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          body: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Figtree', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 125%; font-variation-settings: 'wdth' 125; font-weight: 800; letter-spacing: -0.025em; line-height: 0.98; }
+  .kop-smal { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112%; font-variation-settings: 'wdth' 112; font-weight: 700; letter-spacing: -0.01em; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Hero-foto met schuine rand, als een spuitbaan */
+  .hero-foto { clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%); }
+  @media (min-width: 1024px) {
+    .hero-foto { clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%); }
+  }
+
+  /* Verfstalen */
+  .staal { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; box-shadow: 0 1px 0 rgba(23,32,28,.06), 0 18px 30px -22px rgba(23,32,28,.45); }
+  .staal:hover { transform: translateY(-6px) rotate(-1deg); }
+  @media (min-width: 1024px) {
+    .waaier > :nth-child(even) { margin-top: 3rem; }
+  }
+
+  .knop { transition: transform .2s, background-color .2s, box-shadow .2s; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #F2A516; outline-offset: 3px; }
+
+  /* Korrel van grondverf */
+  .korrel { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.12 0 0 0 0 0.11 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  /* Eén binnenkomst-moment, alleen als JS draait */
+  .js .in { animation: in .8s cubic-bezier(.2,.8,.2,1) both; }
+  .js .in-2 { animation-delay: .12s; }
+  .js .in-3 { animation-delay: .24s; }
+  .js .hero-foto.in { animation-name: veeg; animation-duration: 1.1s; }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes veeg { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .in { animation: none; } .staal, .knop { transition: none; } html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-grond korrel text-inkt font-body pb-20 lg:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-amber focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-wit/80 text-center text-[13px] py-2 px-4">
+  Demo voor Spuiterij Lichtenvoorde, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-amber hover:text-wit">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="relative z-20">
+  <nav class="max-w-7xl mx-auto px-5 lg:px-10 h-20 flex items-center justify-between" aria-label="Hoofdmenu">
+    <a href="#" class="flex items-center gap-3">
+      <span class="grid place-items-center w-10 h-10 rounded-lg bg-inkt">
+        <img src="assets/logo-oud.png" alt="" class="w-7 h-7">
+      </span>
+      <span class="kop-smal text-[15px] leading-tight">Spuiterij<br>Lichtenvoorde</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#werk" class="hover:text-staal">Ons werk</a>
+      <a href="#werkwijze" class="hover:text-staal">Werkwijze</a>
+      <a href="#reviews" class="hover:text-staal">Ervaringen</a>
+      <a href="#contact" class="hover:text-staal">Contact</a>
+      <a href="tel:+31617357906" class="knop inline-flex items-center gap-2 rounded-full border-2 border-inkt px-5 py-2.5 font-semibold hover:bg-inkt hover:text-wit">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        06 17357906
+      </a>
+    </div>
+    <a href="tel:+31617357906" class="md:hidden grid place-items-center w-11 h-11 rounded-full border-2 border-inkt" aria-label="Bel 06 17357906">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    </a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative flex flex-col lg:min-h-[calc(100dvh-7.25rem)] lg:grid lg:grid-cols-12 lg:items-center">
+  <div class="relative z-10 max-w-7xl mx-auto w-full px-5 lg:px-10 pt-2 pb-8 lg:py-16 lg:col-span-12 lg:row-start-1">
+    <div class="lg:w-[56%] xl:w-[54%]">
+      <p class="in text-staal font-medium mb-3 lg:mb-6">Spuiterij in Lichtenvoorde</p>
+      <h1 class="in kop text-[2.15rem] sm:text-6xl lg:text-[4rem] xl:text-[4.6rem]">Uw keuken als nieuw, zonder nieuwe keuken.</h1>
+      <p class="in in-2 mt-4 lg:mt-7 text-[17px] lg:text-xl text-inkt/80 max-w-[34rem] leading-relaxed">
+        Femke en Gertjan spuiten keukenfronten, kasten, deuren en meubels in de kleur die u kiest. In onze spuiterij of bij u thuis.
+      </p>
+      <div class="in in-3 mt-6 lg:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31617357906" class="knop inline-flex items-center gap-3 rounded-full bg-amber px-7 py-4 text-lg font-bold text-inkt shadow-[0_14px_30px_-12px_rgba(196,124,0,.65)] hover:bg-[#f7b437]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Bel 06 17357906
+        </a>
+        <a href="#werk" class="font-semibold underline decoration-2 decoration-amber underline-offset-[6px] hover:decoration-inkt">Bekijk ons werk</a>
+      </div>
+      <p class="in in-3 mt-6 lg:mt-8 flex items-center gap-3 text-[15px] text-staal">
+        <span class="flex text-amber" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+        </span>
+        <span><strong class="text-inkt">4,8</strong> uit 26 Google-reviews</span>
+      </p>
+    </div>
+  </div>
+  <div class="relative order-first lg:order-none lg:absolute lg:inset-y-0 lg:right-0 lg:w-[46%] lg:col-span-12 lg:row-start-1">
+    <img src="assets/google-01.jpg" alt="Rijen strak wit gespoten keukenfronten op een droogrek in de spuiterij"
+         class="in hero-foto w-full h-[52vw] max-h-[380px] lg:max-h-none lg:h-full object-cover object-[50%_60%]">
+  </div>
+</section>
+
+<!-- Kleurenwaaier -->
+<section id="werk" class="max-w-7xl mx-auto px-5 lg:px-10 pt-20 lg:pt-32 pb-12">
+  <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+    <h2 class="kop text-4xl sm:text-5xl lg:col-span-7">Elke klus een eigen kleur.</h2>
+    <p class="lg:col-span-5 text-lg text-inkt/75 leading-relaxed max-w-xl">
+      Een greep uit wat er de afgelopen tijd uit onze spuiterij kwam. Van saliegroene keukenfronten tot lichtgrijze shutters: u kiest de kleur, wij zorgen dat het strak en egaal wordt.
+    </p>
+  </div>
+
+  <div class="waaier mt-12 lg:mt-16 -mx-5 px-5 lg:mx-0 lg:px-0 flex lg:grid lg:grid-cols-5 gap-4 lg:gap-5 overflow-x-auto lg:overflow-visible scroll-pl-5 lg:scroll-pl-0 snap-x snap-mandatory pb-6 lg:pb-0">
+    <figure class="staal snap-start shrink-0 w-[72%] sm:w-[44%] lg:w-auto bg-wit rounded-xl overflow-hidden">
+      <div class="h-24 bg-[#86A897] p-4 flex flex-col justify-end text-inkt">
+        <span class="kop-smal text-lg">Saliegroen</span>
+      </div>
+      <img src="assets/google-02.jpg" alt="Saliegroen gespoten keukenfronten op een droogrek" class="w-full aspect-[4/5] object-cover object-[78%_60%]" loading="lazy">
+      <figcaption class="p-4 text-[15px]"><strong class="font-semibold">Keukenfronten</strong><br><span class="text-staal">Een hele keuken in één nieuwe kleur.</span></figcaption>
+    </figure>
+    <figure class="staal snap-start shrink-0 w-[72%] sm:w-[44%] lg:w-auto bg-wit rounded-xl overflow-hidden">
+      <div class="h-24 bg-[#1F2924] p-4 flex flex-col justify-end text-wit">
+        <span class="kop-smal text-lg">Zwartgroen</span>
+      </div>
+      <img src="assets/google-03.jpg" alt="Hoge donkergroene kastdeuren hangend in de spuitcabine" class="w-full aspect-[4/5] object-cover object-[48%_50%]" loading="lazy">
+      <figcaption class="p-4 text-[15px]"><strong class="font-semibold">Kast- en garderobedeuren</strong><br><span class="text-staal">Hoge deuren, vrij hangend gespoten.</span></figcaption>
+    </figure>
+    <figure class="staal snap-start shrink-0 w-[72%] sm:w-[44%] lg:w-auto bg-wit rounded-xl overflow-hidden">
+      <div class="h-24 bg-[#A9B2B4] p-4 flex flex-col justify-end text-inkt">
+        <span class="kop-smal text-lg">Lichtgrijs</span>
+      </div>
+      <img src="assets/google-04.jpg" alt="Lichtgrijs gespoten shutters in de spuitcabine" class="w-full aspect-[4/5] object-cover object-[60%_50%]" loading="lazy">
+      <figcaption class="p-4 text-[15px]"><strong class="font-semibold">Shutters en luiken</strong><br><span class="text-staal">Lamel voor lamel, overal dezelfde laag.</span></figcaption>
+    </figure>
+    <figure class="staal snap-start shrink-0 w-[72%] sm:w-[44%] lg:w-auto bg-wit rounded-xl overflow-hidden">
+      <div class="h-24 bg-[#EDEAE0] p-4 flex flex-col justify-end text-inkt">
+        <span class="kop-smal text-lg">Gebroken wit</span>
+      </div>
+      <img src="assets/google-07.jpg" alt="Gebroken wit gespoten keukenfronten op een oranje droogrek" class="w-full aspect-[4/5] object-cover object-[62%_60%]" loading="lazy">
+      <figcaption class="p-4 text-[15px]"><strong class="font-semibold">Kastjes en lades</strong><br><span class="text-staal">Rustig en egaal, in de kleur die u kiest.</span></figcaption>
+    </figure>
+    <figure class="staal snap-start shrink-0 w-[72%] sm:w-[44%] lg:w-auto bg-wit rounded-xl overflow-hidden">
+      <div class="h-24 bg-[#C9732E] p-4 flex flex-col justify-end text-inkt">
+        <span class="kop-smal text-lg">Oranje</span>
+      </div>
+      <img src="assets/google-08.jpg" alt="Oranje gespoten plafond met balken en een groene vliering in een woning" class="w-full aspect-[4/5] object-cover object-[50%_30%]" loading="lazy">
+      <figcaption class="p-4 text-[15px]"><strong class="font-semibold">Plafonds en balken</strong><br><span class="text-staal">Op locatie, bij u in huis.</span></figcaption>
+    </figure>
+  </div>
+
+  <p class="mt-10 lg:mt-14 text-staal max-w-2xl">
+    Ook meubels: een tweedehands tafel in een Farrow &amp; Ball-kleur bijvoorbeeld. Twijfelt u of uw stuk geschikt is? <a href="tel:+31617357906" class="text-inkt font-semibold underline decoration-amber decoration-2 underline-offset-4">Bel even</a>, dan kijken we mee.
+  </p>
+</section>
+
+<!-- Waarom spuiten -->
+<section class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-4xl sm:text-5xl">De keuken is goed. Alleen de kleur niet meer.</h2>
+      <div class="mt-6 space-y-4 text-lg text-inkt/80 leading-relaxed max-w-xl">
+        <p>Kastjes die prima sluiten, een indeling die werkt, maar een kleur waar u op uitgekeken bent. Dan hoeft er geen nieuwe keuken in. Wij spuiten de fronten in een kleur die nu bij uw huis past.</p>
+        <p>U kiest de kleur, wij denken mee. Een tint van Farrow &amp; Ball of een eigen keuze: we bespreken het samen tot het klopt.</p>
+      </div>
+    </div>
+    <blockquote class="lg:col-span-5 lg:col-start-8 relative bg-salie/35 rounded-2xl p-7 lg:p-10">
+      <svg class="w-10 h-10 text-amber mb-4" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M13 7C7.5 9 4 13.4 4 19.3 4 23 6.2 25 9 25c2.6 0 4.5-1.9 4.5-4.4 0-2.4-1.7-4.2-4.1-4.2-.5 0-1 .1-1.3.2.6-3 3-5.6 6.3-7L13 7zm14 0c-5.5 2-9 6.4-9 12.3 0 3.7 2.2 5.7 5 5.7 2.6 0 4.5-1.9 4.5-4.4 0-2.4-1.7-4.2-4.1-4.2-.5 0-1 .1-1.3.2.6-3 3-5.6 6.3-7L27 7z"/></svg>
+      <p class="text-xl lg:text-2xl leading-snug font-medium">"Wat een TOP bedrijf. Femke en Gertjan zijn gedreven mensen met hart voor hun zaak. Goede communicatie en vakmanschap gaan bij deze mensen hand in hand. Mijn keuken is weer als nieuw en ik kan er weer jaren tegenaan."</p>
+      <footer class="mt-5 text-staal"><span class="text-amber">★★★★★</span> Dia, Google-review</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-wit">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-24">
+    <h2 class="kop text-4xl sm:text-5xl max-w-3xl">Zo gaat het.</h2>
+    <ol class="mt-12 grid md:grid-cols-3 gap-10 md:gap-8">
+      <li class="border-t-4 border-inkt pt-6">
+        <span class="kop text-5xl text-amber">1</span>
+        <h3 class="kop-smal text-xl mt-4">U belt of mailt</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">Vertel wat u wilt laten spuiten. Een keuken, kasten, deuren of één meubel: we horen het graag.</p>
+      </li>
+      <li class="border-t-4 border-inkt pt-6">
+        <span class="kop text-5xl text-amber">2</span>
+        <h3 class="kop-smal text-xl mt-4">Samen de kleur kiezen</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">We denken mee over kleur en afwerking, zodat het resultaat past bij de rest van uw huis.</p>
+      </li>
+      <li class="border-t-4 border-inkt pt-6">
+        <span class="kop text-5xl text-amber">3</span>
+        <h3 class="kop-smal text-xl mt-4">Wij spuiten</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed">In onze spuiterij aan de Buys Ballotstraat, of op locatie als het om plafonds, balken of een hele woning gaat.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Op locatie -->
+<section class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-28">
+  <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <div class="lg:col-span-7 grid grid-cols-5 gap-3 lg:gap-4">
+      <img src="assets/google-06.jpg" alt="Lege woonruimte met wit gespoten plafond tussen oude eiken balken" class="col-span-3 w-full h-64 sm:h-96 lg:h-[30rem] object-cover rounded-2xl" loading="lazy">
+      <img src="assets/google-05.jpg" alt="Eiken trap met strak gespoten wand, afgeplakt tijdens het werk" class="col-span-2 w-full h-64 sm:h-96 lg:h-[30rem] object-cover rounded-2xl mt-10" loading="lazy">
+    </div>
+    <div class="lg:col-span-5">
+      <h2 class="kop text-4xl sm:text-5xl">Ook een heel huis.</h2>
+      <p class="mt-6 text-lg text-inkt/80 leading-relaxed">Plafonds, balken, wanden, trapgaten: we komen ook bij u op locatie. Alles wordt afgeplakt en afgedekt voordat er gespoten wordt.</p>
+      <blockquote class="mt-8 border-l-4 border-amber pl-5">
+        <p class="text-inkt/85 leading-relaxed">"Voor de aankoop van onze nieuwe woning hadden we onszelf een ambitieuze planning opgelegd: de volledige woning (circa 700m2 aan spuitwerk ) binnen één maand cosmetisch renoveren. Dankzij Spuiterij Lichtenvoorde hebben we die planning zonder problemen gehaald."</p>
+        <footer class="mt-3 text-staal text-[15px]">Rob Bruijstens, Google-review</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Femke en Gertjan + reviews -->
+<section id="reviews" class="bg-salie/30">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-8 items-end">
+      <h2 class="kop text-4xl sm:text-5xl lg:col-span-7">Femke en Gertjan, volgens hun klanten.</h2>
+      <div class="lg:col-span-5 flex items-center gap-4">
+        <span class="kop text-6xl">4,8</span>
+        <span class="text-inkt/75 leading-snug">gemiddeld op Google<br>uit 26 reviews</span>
+      </div>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-start">
+      <figure class="md:col-span-2 lg:col-span-2 lg:row-span-2 bg-inkt text-wit rounded-2xl p-8 lg:p-12">
+        <blockquote class="kop-smal text-xl sm:text-3xl lg:text-[2.2rem] leading-tight">"Femke en Gertjan zijn erg vriendelijke en behulpzame mensen &amp; ze leveren goed werk! Ze dachten fijn met ons mee over de kleur en communiceren prettig en snel. We zijn erg blij met onze gespoten keuken."</blockquote>
+        <figcaption class="mt-8 flex items-center gap-3 text-wit/70"><span class="text-amber">★★★★★</span> Isabel De Jonge-Hilhorst</figcaption>
+      </figure>
+      <figure class="bg-wit rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Onze tweedehands tafel door Femke en Gertjan laten spuiten in een Farrow&amp;Ball kleur. Heel blij met het resultaat! Snelle service en fijne communicatie. Echt een aanrader dus"</blockquote>
+        <figcaption class="mt-5 text-[15px] text-staal"><span class="text-amber">★★★★★</span> Carlien te Welscher</figcaption>
+      </figure>
+      <figure class="bg-wit rounded-2xl p-7">
+        <blockquote class="leading-relaxed">"Heel fijn bedrijf, Femke en Gertjan zijn heel professioneel en super aardig!! Ze denken goed mee, reageren snel maar werken ook nog eens snel. Een heel leuk en gezellig stel die heel mooi werk levert."</blockquote>
+        <figcaption class="mt-5 text-[15px] text-staal"><span class="text-amber">★★★★★</span> Marjolein Wezenberg</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-inkt text-wit">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="kop text-4xl sm:text-6xl">Welke kleur wordt het?</h2>
+      <p class="mt-6 text-lg text-wit/75 leading-relaxed max-w-lg">Bel Femke of Gertjan voor een afspraak of om te overleggen wat er mogelijk is. Mailen kan natuurlijk ook.</p>
+      <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-7">
+        <a href="tel:+31617357906" class="knop inline-flex justify-center items-center gap-3 rounded-full bg-amber px-7 py-4 text-lg font-bold text-inkt hover:bg-[#f7b437]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Bel 06 17357906
+        </a>
+        <a href="mailto:info@spuiterijlichtenvoorde.nl" class="font-semibold underline decoration-amber decoration-2 underline-offset-[6px] hover:text-amber break-all">info@spuiterijlichtenvoorde.nl</a>
+      </div>
+
+      <dl class="mt-14 grid sm:grid-cols-2 gap-10">
+        <div>
+          <dt class="kop-smal text-amber">Spuiterij</dt>
+          <dd class="mt-3 text-wit/85 leading-relaxed">Buys Ballotstraat 13-A<br>7131 PN Lichtenvoorde<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Buys+Ballotstraat+13-A+7131+PN+Lichtenvoorde" class="inline-block mt-2 underline underline-offset-4 hover:text-amber">Route plannen</a>
+          </dd>
+        </div>
+        <div>
+          <dt class="kop-smal text-amber">Openingstijden</dt>
+          <dd class="mt-3">
+            <table class="text-wit/85 tabular-nums">
+              <tr><td class="pr-6 py-0.5">ma t/m do</td><td>09:00 tot 17:00</td></tr>
+              <tr><td class="pr-6 py-0.5">vrijdag</td><td>gesloten</td></tr>
+              <tr><td class="pr-6 py-0.5">za en zo</td><td>gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@spuiterijlichtenvoorde.nl" method="post" enctype="text/plain" class="lg:col-span-5 lg:col-start-8 bg-wit/[.06] rounded-2xl p-6 sm:p-8 space-y-5 self-start">
+      <h3 class="kop-smal text-2xl">Stuur een bericht</h3>
+      <label class="block">
+        <span class="text-[15px] text-wit/75">Naam</span>
+        <input required name="naam" autocomplete="name" class="mt-1.5 w-full rounded-lg bg-wit text-inkt px-4 py-3">
+      </label>
+      <label class="block">
+        <span class="text-[15px] text-wit/75">Telefoon of e-mail</span>
+        <input required name="contact" class="mt-1.5 w-full rounded-lg bg-wit text-inkt px-4 py-3">
+      </label>
+      <label class="block">
+        <span class="text-[15px] text-wit/75">Wat wilt u laten spuiten?</span>
+        <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-lg bg-wit text-inkt px-4 py-3" placeholder="Bijvoorbeeld: 14 keukenfronten, van eiken naar saliegroen"></textarea>
+      </label>
+      <button class="knop w-full rounded-full border-2 border-wit/80 py-3.5 font-semibold hover:bg-wit hover:text-inkt">Verstuur bericht</button>
+    </form>
+  </div>
+
+  <footer class="border-t border-wit/10">
+    <div class="max-w-7xl mx-auto px-5 lg:px-10 py-8 flex flex-col sm:flex-row gap-3 justify-between text-[14px] text-wit/55">
+      <span>Spuiterij Lichtenvoorde, Buys Ballotstraat 13-A, Lichtenvoorde</span>
+      <span>Demo door <a href="https://hagenweb.nl" class="underline hover:text-amber">Hagenweb</a></span>
+    </div>
+  </footer>
+</section>
+
+</main>
+
+<!-- Vaste belknop mobiel -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-30 p-3 bg-grond/90 backdrop-blur border-t border-inkt/10">
+  <a href="tel:+31617357906" class="flex items-center justify-center gap-3 rounded-full bg-amber py-3.5 font-bold text-inkt">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel Spuiterij Lichtenvoorde
+  </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bosveld | Keukens, kasten en deuren op maat in Arnhem</title>
+<meta name="description" content="Familiebedrijf sinds 1956 aan de Sonsbeeksingel in Arnhem. Keukens, kasten op maat, deuren en renovatie, ontworpen met jou en geplaatst door onze eigen vakmensen.">
+<link rel="icon" href="assets/site-10.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          plaat: '#F2F3EF',
+          gevel: '#20272B',
+          steen: '#5B6469',
+          groen: '#6AB02E',
+          donkergroen: '#3D7A17',
+        },
+        fontFamily: {
+          kop: ['"Barlow Condensed"', 'sans-serif'],
+          sans: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Verstekhoek: 45 graden afgezaagde hoek */
+  .verstek { clip-path: polygon(0 0, calc(100% - var(--v, 56px)) 0, 100% var(--v, 56px), 100% 100%, 0 100%); }
+  .verstek-l { clip-path: polygon(var(--v, 40px) 0, 100% 0, 100% 100%, 0 100%, 0 var(--v, 40px)); }
+
+  /* Maatlijn zoals op een werktekening */
+  .maat { position: relative; display: flex; align-items: center; gap: .75rem; min-height: 14px; color: #3D7A17; }
+  .maat::before, .maat::after { content: ""; flex: 1; height: 1.5px; background: currentColor; }
+  .maat:not(:has(span)) { gap: 0; }
+  .maat > span { font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: .95rem; letter-spacing: .02em; white-space: nowrap; }
+  .maat .tick { position: absolute; top: 50%; width: 1.5px; height: 14px; background: currentColor; transform: translateY(-50%); }
+  .maat .tick.l { left: 0; } .maat .tick.r { right: 0; }
+  .maat-v { position: absolute; top: 0; bottom: 0; width: 1.5px; background: #6AB02E; }
+  .maat-v::before, .maat-v::after { content: ""; position: absolute; left: -6px; width: 14px; height: 1.5px; background: #6AB02E; }
+  .maat-v::before { top: 0; } .maat-v::after { bottom: 0; }
+
+  .knop { transition: background-color .2s, transform .15s, box-shadow .2s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #6AB02E; outline-offset: 3px; }
+
+  /* Enige animatie: de maatlijn in de hero wordt getrokken bij laden */
+  .js .teken { transform-origin: top; animation: teken 1.1s .3s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes teken { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @media (prefers-reduced-motion: reduce) { .js .teken { animation: none; } html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-plaat text-gevel font-sans pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-gevel text-white/80 text-xs sm:text-[13px] px-4 py-2 text-center">
+  Demo voor Bosveld interieurbouw, keukens, deuren en kasten op maat, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-groen">Hagenweb</a>
+</div>
+
+<header class="bg-plaat/95 backdrop-blur sticky top-0 z-30 border-b border-gevel/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#" aria-label="Bosveld Keukens, naar boven">
+      <img src="assets/site-10.webp" alt="Bosveld Keukens" class="h-9 md:h-12 w-auto">
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#maken" class="hover:text-donkergroen">Wat we maken</a>
+      <a href="#werkwijze" class="hover:text-donkergroen">Werkwijze</a>
+      <a href="#kwaliteit" class="hover:text-donkergroen">Kwaliteit</a>
+      <a href="#sinds-1956" class="hover:text-donkergroen">Over Bosveld</a>
+      <a href="#afspraak" class="hover:text-donkergroen">Afspraak</a>
+    </nav>
+    <a href="tel:+31264433386" class="knop hidden sm:inline-flex items-center gap-2 font-kop font-semibold text-lg tracking-wide border-2 border-gevel rounded-md px-4 py-1.5 hover:bg-gevel hover:text-white">
+      <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      026 443 3386
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-10 pb-14 md:pt-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="lg:col-span-6 xl:col-span-5">
+      <p class="font-medium text-steen">Keukens, kasten en deuren op maat in Arnhem</p>
+      <h1 class="font-kop font-bold text-[4.25rem] leading-[.9] sm:text-8xl xl:text-[8.5rem] tracking-[-0.01em] mt-3">Past precies.</h1>
+      <p class="mt-6 text-lg leading-relaxed max-w-md text-gevel/85">Al sinds 1956 ontwerpen we samen met jou een keuken of kast die echt in je huis past. Onze eigen vakmensen maken en plaatsen hem.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31264433386" class="knop inline-flex items-center gap-3 bg-groen text-gevel font-kop font-bold text-2xl tracking-wide rounded-md px-7 py-4 shadow-[0_10px_24px_-10px_rgba(61,122,23,.7)] hover:bg-[#7cc23c]">
+          <svg aria-hidden="true" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          Bel 026 443 3386
+        </a>
+        <a href="#afspraak" class="font-semibold underline decoration-groen decoration-2 underline-offset-[6px] hover:text-donkergroen">Of maak een afspraak</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-sm text-steen">
+        <span class="text-groen tracking-[.15em]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-gevel">4,5</strong> uit 92 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-6 xl:col-span-7 relative">
+      <div class="relative ml-auto max-w-[620px] pr-8 md:pr-12">
+        <img src="assets/google-03.jpg" alt="Door Bosveld geplaatste greeploze keuken met zwart werkblad en visgraatvloer" class="verstek w-full aspect-[4/5] lg:aspect-[5/6] object-cover object-[50%_70%]" style="--v:84px">
+        <div class="maat-v teken right-0" aria-hidden="true"></div>
+        <span class="absolute right-[-30px] md:right-[-22px] top-1/2 -translate-y-1/2 rotate-90 font-kop font-semibold text-donkergroen bg-plaat px-2 text-sm md:text-base tracking-wide whitespace-nowrap">op maat</span>
+        <p class="absolute left-0 bottom-0 bg-plaat pt-3 pr-5 text-sm text-steen max-w-[16rem]">Greeploze keuken met zwart werkblad, geplaatst door Bosveld.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAT WE MAKEN -->
+<section id="maken" class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end mb-12">
+      <h2 class="lg:col-span-6 font-kop font-bold text-5xl md:text-6xl leading-[.95]">Van keuken tot kast, alles op maat.</h2>
+      <p class="lg:col-span-5 lg:col-start-8 text-lg text-gevel/80 leading-relaxed">In standaard maten en dessins, maar ook helemaal op maat. Wat je ook wilt laten maken, we brengen de klus van ontwerp tot montage tot een goed eind.</p>
+    </div>
+
+    <div class="grid md:grid-cols-6 gap-5 lg:gap-6">
+      <!-- Keukens -->
+      <article class="md:col-span-6 lg:col-span-4 lg:row-span-2 bg-plaat flex flex-col">
+        <img src="assets/site-14.webp" alt="Lichte keuken met kookeiland en open wandplanken" class="w-full aspect-[16/10] object-cover">
+        <div class="p-7 lg:p-9 grid md:grid-cols-2 gap-8 flex-1">
+          <div>
+            <h3 class="font-kop font-bold text-4xl">Keukens</h3>
+            <p class="mt-3 text-gevel/80 leading-relaxed">De kleine keuken voor een eenpersoonshuishouden, de multifunctionele gezinskeuken of een gezellige houten keuken. Een plek waar je graag samen tijd doorbrengt.</p>
+          </div>
+          <ul class="divide-y divide-gevel/15 border-y border-gevel/15 self-start">
+            <li class="py-3"><span class="font-kop font-semibold text-xl">Modern</span><span class="block text-sm text-steen">Strakke lijnen, slimme opbergruimte</span></li>
+            <li class="py-3"><span class="font-kop font-semibold text-xl">Greeploos</span><span class="block text-sm text-steen">Push-to-open of greeplijst, rustig en makkelijk schoon</span></li>
+            <li class="py-3"><span class="font-kop font-semibold text-xl">Hout</span><span class="block text-sm text-steen">Eiken, noten of fineer, landelijk of juist strak</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Kasten -->
+      <article class="md:col-span-3 lg:col-span-2 bg-gevel text-white flex flex-col">
+        <img src="assets/google-07.jpg" alt="Inbouwkast op maat met ledverlichting, laden en schoenenrekken" class="w-full aspect-[4/3] object-cover object-[50%_45%] verstek-l" style="--v:36px">
+        <div class="p-7">
+          <h3 class="font-kop font-bold text-3xl">Kasten op maat</h3>
+          <p class="mt-2 text-white/75 leading-relaxed">Inbouwkasten met de indeling, verlichting en laden die bij jou passen.</p>
+        </div>
+      </article>
+
+      <!-- Deuren -->
+      <article class="md:col-span-3 lg:col-span-2 bg-plaat flex flex-col sm:flex-row lg:flex-col">
+        <img src="assets/google-06.jpg" alt="Schuifdeurkast op maat tot aan het plafond" class="w-full sm:w-2/5 lg:w-full aspect-[4/3] sm:aspect-auto lg:aspect-[4/3] object-cover object-[50%_35%]">
+        <div class="p-7">
+          <h3 class="font-kop font-bold text-3xl">Deuren</h3>
+          <p class="mt-2 text-gevel/80 leading-relaxed">Binnendeuren en schuifdeuren op maat, vakkundig geplaatst.</p>
+        </div>
+      </article>
+
+      <!-- Renovatie -->
+      <article class="md:col-span-6 bg-groen/15 border-l-4 border-groen p-7 lg:p-9 grid md:grid-cols-12 gap-6 items-center">
+        <h3 class="md:col-span-4 font-kop font-bold text-4xl leading-none">Renovatie</h3>
+        <p class="md:col-span-5 text-gevel/85 leading-relaxed">Je keuken is nog goed, maar oogt gedateerd? Met een keukenrenovatie geven we hem een nieuwe uitstraling. Bosveld werkt hiervoor ook met Portas.</p>
+        <a href="#afspraak" class="md:col-span-3 md:justify-self-end font-semibold underline decoration-groen decoration-2 underline-offset-[6px] hover:text-donkergroen">Vraag naar de mogelijkheden</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <h2 class="font-kop font-bold text-5xl md:text-6xl leading-[.95]">Jouw wensen staan centraal.</h2>
+      <p class="mt-5 text-lg text-gevel/80 leading-relaxed">Onze jarenlange ervaring plus jouw wensen: daar komen de mooiste ontwerpen uit. Ook als de ruimte klein of lastig is.</p>
+    </div>
+    <ol class="lg:col-span-7 lg:col-start-6 space-y-0">
+      <li class="grid grid-cols-[4rem_1fr] gap-4 py-7 border-t border-gevel/15">
+        <span class="font-kop font-bold text-5xl text-groen leading-none">1</span>
+        <div><h3 class="font-kop font-bold text-2xl">We luisteren</h3><p class="mt-1 text-gevel/80 leading-relaxed">Je vertelt wat je wilt en hoe je leeft. We zetten je wensen op een rij en kijken naar de ruimte.</p></div>
+      </li>
+      <li class="grid grid-cols-[4rem_1fr] gap-4 py-7 border-t border-gevel/15">
+        <span class="font-kop font-bold text-5xl text-groen leading-none">2</span>
+        <div><h3 class="font-kop font-bold text-2xl">Ontwerp en offerte</h3><p class="mt-1 text-gevel/80 leading-relaxed">We denken mee, laten je verschillende ontwerpopties zien en sturen een duidelijke offerte.</p></div>
+      </li>
+      <li class="grid grid-cols-[4rem_1fr] gap-4 py-7 border-y border-gevel/15">
+        <span class="font-kop font-bold text-5xl text-groen leading-none">3</span>
+        <div><h3 class="font-kop font-bold text-2xl">Onze eigen monteurs plaatsen</h3><p class="mt-1 text-gevel/80 leading-relaxed">Onze eigen vakmensen voeren de opdracht dagelijks nauwkeurig uit, van ontwerp tot realisatie.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- KWALITEIT -->
+<section id="kwaliteit" class="bg-gevel text-white py-20 lg:py-28 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-10">
+    <div class="lg:col-span-7">
+      <h2 class="font-kop font-bold text-5xl md:text-6xl leading-[.95] max-w-xl">Een keuken is voor de lange termijn. Dat zie je aan de maten.</h2>
+
+      <dl class="mt-14 grid sm:grid-cols-3 gap-10 sm:gap-8">
+        <div>
+          <dt class="sr-only">Kastbodems en legplanken</dt>
+          <dd class="font-kop font-bold text-7xl leading-none">19<span class="text-3xl ml-1 text-groen">mm</span></dd>
+          <div class="maat !text-groen mt-4" aria-hidden="true"><i class="tick l"></i><i class="tick r"></i></div>
+          <p class="mt-3 text-white/75 leading-relaxed">dikke kastbodems en legplanken</p>
+        </div>
+        <div>
+          <dt class="sr-only">Rugwand</dt>
+          <dd class="font-kop font-bold text-7xl leading-none">8<span class="text-3xl ml-1 text-groen">mm</span></dd>
+          <div class="maat !text-groen mt-4" aria-hidden="true"><i class="tick l"></i><i class="tick r"></i></div>
+          <p class="mt-3 text-white/75 leading-relaxed">verzonken rugwand, stevig vastgeschroefd</p>
+        </div>
+        <div>
+          <dt class="sr-only">Diepte onderkasten</dt>
+          <dd class="font-kop font-bold text-7xl leading-none">65<span class="text-3xl ml-1 text-groen">cm</span></dd>
+          <div class="maat !text-groen mt-4" aria-hidden="true"><i class="tick l"></i><i class="tick r"></i></div>
+          <p class="mt-3 text-white/75 leading-relaxed">diepe onderkasten: ruimer werkblad, meer plek voor aansluitingen</p>
+        </div>
+      </dl>
+
+      <div class="mt-14 grid sm:grid-cols-2 gap-8 border-t border-white/15 pt-10">
+        <div>
+          <h3 class="font-kop font-semibold text-2xl">Blum scharnieren</h3>
+          <p class="mt-2 text-white/75 leading-relaxed">Verfijnd, betrouwbaar en gemaakt om lang mee te gaan.</p>
+        </div>
+        <div>
+          <h3 class="font-kop font-semibold text-2xl">Lades naar wens ingedeeld</h3>
+          <p class="mt-2 text-white/75 leading-relaxed">Modules van massief eiken, blank mat gelakt, voor messen, kruiden, thee of koffiecups.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 relative">
+      <img src="assets/site-12.webp" alt="Uittrekbare voorraadkast in walnoot met ruime schappen" class="verstek w-full aspect-[4/5] object-cover object-[30%_40%]" style="--v:64px">
+      <img src="assets/site-02.jpg" alt="Ingebouwde rvs spoelbak in een stenen werkblad" class="hidden sm:block absolute -bottom-10 -right-4 lg:-right-8 w-40 lg:w-44 aspect-square object-cover border-[6px] border-gevel">
+    </div>
+  </div>
+</section>
+
+<!-- SINDS 1956 -->
+<section id="sinds-1956" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+    <figure class="lg:col-span-5 relative">
+      <img src="assets/site-03.jpg" alt="Historische foto: man en jongetje voor een Volkswagen-bus met de tekst Hout Bosveld Bellen" class="w-[94%] sm:w-full max-w-md mx-auto lg:mx-0 bg-white p-3 pb-12 shadow-[0_20px_40px_-20px_rgba(32,39,43,.45)] -rotate-2">
+      <figcaption class="absolute bottom-4 left-[6%] sm:left-6 font-kop text-lg text-steen -rotate-2">De bus van Bosveld, vroeger</figcaption>
+    </figure>
+    <div class="lg:col-span-6 lg:col-start-7">
+      <h2 class="font-kop font-bold text-5xl md:text-7xl leading-[.92]">Hout bestellen?<br>Bosveld bellen.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-gevel/85 max-w-xl">Het stond al op de bus en het staat nog steeds op de gevel. Sinds 1956 is ons familiebedrijf een begrip in Arnhem en omgeving. Inmiddels werkt de 3e generatie enthousiast aan het mooier maken van jouw interieur.</p>
+      <p class="mt-4 text-lg leading-relaxed text-gevel/85 max-w-xl">Kom gerust langs aan de Sonsbeeksingel. In de winkel kun je ook terecht voor hout en plaat op maat, gereedschap en persoonlijk advies.</p>
+      <img src="assets/google-01.jpg" alt="Het winkelpand van Bosveld aan de Sonsbeeksingel in Arnhem" class="mt-10 w-full aspect-[16/7] object-cover object-[60%_50%] verstek-l" style="--v:44px">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bg-white py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+      <h2 class="font-kop font-bold text-5xl md:text-6xl leading-[.95]">Wat klanten zeggen.</h2>
+      <p class="text-steen"><span class="text-groen tracking-[.15em]" aria-hidden="true">★★★★★</span> <strong class="text-gevel">4,5</strong> uit 92 reviews op Google</p>
+    </div>
+    <div class="grid md:grid-cols-12 gap-5 lg:gap-6">
+      <blockquote class="md:col-span-7 bg-plaat p-8 lg:p-10 flex flex-col">
+        <p class="text-xl lg:text-2xl leading-snug">“Het inpassen van een nieuwe keuken met alle moderne functies in de zeer beperkte ruimte (5,5 m2) van de oude keuken was een enorme puzzel. Dankzij het uitgekiende ontwerp van Menno Bosveld is het uiteindelijk gelukt. De keuken is prachtig geworden! Bosveld denkt supergoed mee, heeft ons heel veel ontwerpopties gegeven,”</p>
+        <footer class="mt-auto pt-6 font-kop font-semibold text-xl">Dichter Û</footer>
+      </blockquote>
+      <blockquote class="md:col-span-5 bg-gevel text-white p-8 lg:p-10 flex flex-col">
+        <p class="text-lg leading-relaxed">“Zeer goede ervaring met dit bedrijf: keukenrenovatie. Menno Bosveld heeft een lijst gemaakt van mijn wensen en een duidelijke offerte gestuurd. Interieurbouwer Thomas heeft de renovatie uitgevoerd. Ziet er heel goed uit, geen rommel achtergelaten. Bosveld is een aanrader!”</p>
+        <footer class="mt-auto pt-6 font-kop font-semibold text-xl text-groen">Erik Kemkers</footer>
+      </blockquote>
+      <blockquote class="md:col-span-5 bg-plaat p-8 lg:p-10 flex flex-col">
+        <p class="text-lg leading-relaxed">“We wonen ruim 25 in de buurt. Sinds die tijd vaste klant. Vriendelijk, behulpzaam en vakkundig. Meegegroeid met de tijd door introductie van Portas. We hopen dat jullie hier nog lang blijven.”</p>
+        <footer class="mt-auto pt-6 font-kop font-semibold text-xl">Marijn Pikaar</footer>
+      </blockquote>
+      <blockquote class="md:col-span-7 bg-groen/15 border-l-4 border-groen p-8 lg:p-10 flex flex-col">
+        <p class="text-lg leading-relaxed">“Wij hebben goede ervaring met dit bedrijf. Vriendelijk en vakkundig personeel. Afspraken worden nagekomen. Op 30 juni 2026 zijn de schuifdeuren op maat door Thomas geplaatst. Thomas is een vakman, is rustig, werkt heel secuur, wat wij als zeer prettig hebben ervaren. Dit bedrijf is zeker een aanrader.”</p>
+        <footer class="mt-auto pt-6 font-kop font-semibold text-xl">p kleve</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- AFSPRAAK + CONTACT -->
+<section id="afspraak" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-bold text-5xl md:text-6xl leading-[.95]">Kom langs of bel even.</h2>
+      <p class="mt-5 text-lg text-gevel/80 leading-relaxed max-w-md">Neem je maten, foto's of een schets mee. Dan kijken we samen wat er kan.</p>
+
+      <a href="tel:+31264433386" class="knop mt-8 inline-flex items-center gap-3 bg-groen text-gevel font-kop font-bold text-2xl tracking-wide rounded-md px-7 py-4 hover:bg-[#7cc23c]">
+        <svg aria-hidden="true" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Bel 026 443 3386
+      </a>
+
+      <dl class="mt-10 space-y-6">
+        <div>
+          <dt class="font-kop font-semibold text-xl">Adres</dt>
+          <dd class="mt-1 text-gevel/85"><a href="https://www.google.com/maps/search/?api=1&query=Bosveld+Sonsbeeksingel+71+Arnhem" class="underline decoration-gevel/30 underline-offset-4 hover:decoration-groen">Sonsbeeksingel 71-72<br>6821 AL Arnhem</a></dd>
+        </div>
+        <div>
+          <dt class="font-kop font-semibold text-xl">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@bosveldkeukenseninterieur.nl" class="underline decoration-gevel/30 underline-offset-4 hover:decoration-groen break-all">info@bosveldkeukenseninterieur.nl</a></dd>
+        </div>
+        <div>
+          <dt class="font-kop font-semibold text-xl">Openingstijden</dt>
+          <dd class="mt-2">
+            <table class="text-gevel/85 [font-variant-numeric:tabular-nums]">
+              <tr><td class="pr-8 py-0.5">Maandag t/m vrijdag</td><td>08:00 - 17:00</td></tr>
+              <tr><td class="pr-8 py-0.5">Zaterdag</td><td>09:00 - 17:00</td></tr>
+              <tr><td class="pr-8 py-0.5">Zondag</td><td>Gesloten</td></tr>
+            </table>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form id="formulier" action="mailto:info@bosveldkeukenseninterieur.nl" method="post" enctype="text/plain" class="lg:col-span-6 lg:col-start-7 bg-white p-7 md:p-10 self-start verstek" style="--v:48px">
+      <h3 class="font-kop font-bold text-3xl">Maak een afspraak</h3>
+      <p class="mt-2 text-steen">Laat weten waar je aan denkt, we nemen contact met je op.</p>
+      <div class="mt-8 grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-sm font-medium">Naam</span>
+          <input name="Naam" required autocomplete="name" class="mt-1.5 w-full bg-plaat border border-gevel/15 rounded-md px-4 py-3 focus:border-groen focus:outline-none"></label>
+        <label class="block"><span class="text-sm font-medium">Telefoon</span>
+          <input name="Telefoon" type="tel" required autocomplete="tel" class="mt-1.5 w-full bg-plaat border border-gevel/15 rounded-md px-4 py-3 focus:border-groen focus:outline-none"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-medium">E-mail</span>
+          <input name="E-mail" type="email" autocomplete="email" class="mt-1.5 w-full bg-plaat border border-gevel/15 rounded-md px-4 py-3 focus:border-groen focus:outline-none"></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-medium">Waar gaat het om?</span>
+          <select name="Onderwerp" class="mt-1.5 w-full bg-plaat border border-gevel/15 rounded-md px-4 py-3 focus:border-groen focus:outline-none">
+            <option>Nieuwe keuken</option>
+            <option>Keukenrenovatie</option>
+            <option>Kast op maat</option>
+            <option>Deuren of schuifdeuren</option>
+            <option>Iets anders</option>
+          </select></label>
+        <label class="block sm:col-span-2"><span class="text-sm font-medium">Je vraag of wensen</span>
+          <textarea name="Bericht" rows="4" class="mt-1.5 w-full bg-plaat border border-gevel/15 rounded-md px-4 py-3 focus:border-groen focus:outline-none"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-6 w-full sm:w-auto bg-gevel text-white font-kop font-bold text-xl tracking-wide rounded-md px-8 py-3.5 hover:bg-black">Afspraak aanvragen</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-gevel text-white/70">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12 flex flex-col md:flex-row gap-8 md:items-center justify-between">
+    <div>
+      <p class="font-kop font-bold text-3xl text-white">Bosveld</p>
+      <p class="mt-1">Keukens, kasten en deuren op maat. Familiebedrijf sinds 1956.</p>
+    </div>
+    <div class="text-sm leading-relaxed md:text-right">
+      <p>Sonsbeeksingel 71-72, 6821 AL Arnhem</p>
+      <p><a href="tel:+31264433386" class="hover:text-groen">026 443 3386</a> | <a href="mailto:info@bosveldkeukenseninterieur.nl" class="hover:text-groen">info@bosveldkeukenseninterieur.nl</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd in bereik -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-gevel/95 backdrop-blur p-3 flex gap-3">
+  <a href="tel:+31264433386" class="knop flex-1 inline-flex items-center justify-center gap-2 bg-groen text-gevel font-kop font-bold text-xl tracking-wide rounded-md py-3">
+    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    Bel ons
+  </a>
+  <a href="#afspraak" class="flex-1 inline-flex items-center justify-center border border-white/40 text-white font-kop font-semibold text-xl rounded-md py-3">Afspraak</a>
+</div>
+
+<script>
+  // Formulier zonder backend: open een kant-en-klare e-mail.
+  document.getElementById('formulier').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = new FormData(this), regels = [];
+    f.forEach(function (v, k) { if (v) regels.push(k + ': ' + v); });
+    location.href = 'mailto:info@bosveldkeukenseninterieur.nl?subject=' + encodeURIComponent('Afspraak aanvragen via de website') + '&body=' + encodeURIComponent(regels.join('\n'));
+  });
+</script>
+</body>
+</html>

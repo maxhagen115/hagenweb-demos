@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANAC Bakery Nijmegen | Vers belegde broodjes en koffie aan de Energieweg</title>
+<meta name="description" content="Versgebakken broodjes vanaf €4,50 en koffie vanaf €1,- in de ANAC tankshop, Energieweg 100 in Nijmegen. Grote bestelling? Bel 024 371 52 26.">
+<meta property="og:title" content="ANAC Bakery Nijmegen">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        marine: { DEFAULT: '#14235a', deep: '#0e1a46', soft: '#2a3a74' },
+        ijs: '#e8f2f7',
+        kraft: { DEFAULT: '#c8a57a', licht: '#ead9bf', donker: '#8a6a43' },
+        klaver: '#25a99c',
+        rood: { DEFAULT: '#d9332b', donker: '#b8261f' },
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        tekst: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .beker { clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%); border-radius: 2.5rem 2.5rem 0 0; }
+  .menubord { background-image: radial-gradient(ellipse at 20% 0%, rgba(255,255,255,.07), transparent 60%); }
+  .korrel::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .18;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); mix-blend-mode: multiply; }
+  .btn { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .btn:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #25a99c; outline-offset: 3px; border-radius: 6px; }
+  .js .vandaag { background: #c8a57a; color: #14235a; }
+  .js .vandaag td:first-child::after { content: " vandaag"; font-weight: 500; font-size: .75em; margin-left: .4em; text-transform: lowercase; opacity: .8; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-ijs text-marine antialiased pb-20 md:pb-0">
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-14 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<div class="bg-marine-deep text-white/80 text-center text-xs sm:text-sm py-2 px-4">
+  Demo voor ANAC Bakery, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-kraft-licht">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-30 bg-ijs/90 backdrop-blur border-b border-marine/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-2.5" aria-label="ANAC Bakery, naar boven">
+      <img src="assets/logo-oud.png" alt="" class="w-8 h-8 md:w-9 md:h-9">
+      <span class="font-kop font-extrabold text-xl md:text-2xl tracking-tight leading-none">ANAC <span class="font-medium">Bakery</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 font-medium text-[15px]" aria-label="Hoofdmenu">
+      <a href="#broodjes" class="hover:text-rood transition-colors">Broodjes</a>
+      <a href="#ochtend" class="hover:text-rood transition-colors">Ontbijt en koffie</a>
+      <a href="#bestellen" class="hover:text-rood transition-colors">Grote bestelling</a>
+      <a href="#open" class="hover:text-rood transition-colors">Openingstijden</a>
+    </nav>
+    <a href="tel:+31243715226" class="btn hidden sm:inline-flex items-center gap-2 rounded-full border-2 border-marine px-4 py-2 font-semibold hover:bg-marine hover:text-white">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+      024 371 52 26
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-8 pb-14 md:pt-16 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 relative z-10">
+      <p class="font-medium text-marine/70">Bakery in de ANAC tankshop, Energieweg Nijmegen</p>
+      <h1 class="font-kop font-extrabold text-[2.9rem] leading-[.95] sm:text-6xl lg:text-[4.6rem] tracking-[-0.03em] mt-3">Even tanken.<br>Ook voor jezelf.</h1>
+      <p class="mt-5 text-lg md:text-xl leading-relaxed text-marine/85 max-w-md">Versgebakken broodjes, door ons Bakery-team speciaal voor jou belegd. Broodjes vanaf €4,50, koffie vanaf €1,-. Doordeweeks al open vanaf zes uur.</p>
+      <div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31243715226" class="btn inline-flex items-center gap-3 rounded-full bg-rood text-white px-7 py-4 text-lg font-bold shadow-[0_10px_30px_-10px_rgba(217,51,43,.7)] hover:bg-rood-donker">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+          Bel 024 371 52 26
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=ANAC+Energieweg+100+6541+CZ+Nijmegen" target="_blank" rel="noopener" class="font-semibold underline decoration-2 decoration-kraft underline-offset-4 hover:decoration-rood">Route naar de Energieweg</a>
+      </div>
+      <p class="mt-7 flex items-center gap-2 text-sm text-marine/75">
+        <span class="text-kraft-donker tracking-wider" aria-hidden="true">★★★★☆</span>
+        <span><strong class="text-marine">4,3</strong> op Google, uit 111 reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 relative">
+      <div class="absolute -right-24 -bottom-10 w-[85%] h-[80%] rounded-[3rem] bg-kraft-licht -z-0 hidden md:block" aria-hidden="true"></div>
+      <img src="assets/google-01.jpg" alt="Croissants, muffins en appelflappen met een kop koffie in een ANAC-beker" class="beker relative w-full h-[300px] sm:h-[420px] md:h-[560px] object-cover object-[60%_50%] shadow-[0_30px_60px_-30px_rgba(20,35,90,.6)]">
+    </div>
+  </div>
+</section>
+
+<!-- Menubord -->
+<section id="broodjes" class="px-3 md:px-5 scroll-mt-24">
+  <div class="menubord korrel relative max-w-6xl mx-auto bg-marine text-white rounded-[2rem] md:rounded-[2.5rem] overflow-hidden">
+    <div class="grid lg:grid-cols-12">
+      <div class="lg:col-span-8 px-6 py-12 md:px-12 md:py-16">
+        <h2 class="font-kop font-extrabold text-4xl md:text-6xl tracking-[-0.02em] leading-none">Voor welk broodje ga jij vandaag?</h2>
+        <p class="mt-4 text-white/75 text-lg max-w-xl">Versgebakken en belegd waar je bij staat. Alle broodjes vanaf <strong class="text-kraft-licht">€4,50</strong>.</p>
+        <ul class="mt-8 md:mt-10 grid grid-cols-2 gap-x-5 md:gap-x-10 font-kop text-lg sm:text-2xl md:text-[1.7rem] font-semibold">
+          <li class="py-2.5 border-b border-white/15">Brie</li>
+          <li class="py-2.5 border-b border-white/15 text-kraft-licht">Carpaccio</li>
+          <li class="py-2.5 border-b border-white/15">Ei</li>
+          <li class="py-2.5 border-b border-white/15">Eiersalade</li>
+          <li class="py-2.5 border-b border-white/15">Filet American</li>
+          <li class="py-2.5 border-b border-white/15">Gehaktbal</li>
+          <li class="py-2.5 border-b border-white/15">Gezond</li>
+          <li class="py-2.5 border-b border-white/15">Ham</li>
+          <li class="py-2.5 border-b border-white/15">Kaas</li>
+          <li class="py-2.5 border-b border-white/15">Kipfilet</li>
+          <li class="py-2.5 border-b border-white/15">Oude kaas</li>
+          <li class="py-2.5 border-b border-white/15">Pulled chicken</li>
+          <li class="py-2.5 border-b border-white/15">Roomkaas</li>
+          <li class="py-2.5 border-b border-white/15">Tonijn</li>
+          <li class="py-2.5 border-b border-white/15">Zalm</li>
+          <li class="py-2.5 border-b border-white/15 font-tekst text-sm sm:text-base font-medium text-white/70 flex items-center">En 's ochtends: verse ontbijtjes</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-4 relative bg-marine-deep flex flex-col">
+        <img src="assets/site-02.jpg" alt="Broodje carpaccio met sla en pijnboompitten" class="w-full h-64 lg:h-[55%] object-cover object-center">
+        <figure class="px-6 py-8 md:px-10 md:py-10 flex-1 flex flex-col justify-center">
+          <blockquote class="font-kop text-xl md:text-2xl font-medium leading-snug">“Afgelopen week weer een broodje carpaccio wezen halen en het was weer heerlijk! snel gemaakt en lekker vers! Medewerkster ook erg vriendelijk! Zeker een aanrader!”</blockquote>
+          <figcaption class="mt-5 text-white/70 text-sm"><span class="text-kraft-licht" aria-hidden="true">★★★★★</span> Laura Sylvano, via Google</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ochtend en koffie -->
+<section id="ochtend" class="max-w-6xl mx-auto px-5 py-20 md:py-28 scroll-mt-24">
+  <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-center">
+    <div class="md:col-span-5 order-2 md:order-1">
+      <img src="assets/google-06.jpg" alt="Medewerker van ANAC Bakery reikt een kop koffie aan" class="w-full aspect-[4/5] object-cover object-[50%_35%] rounded-t-[10rem] rounded-b-3xl">
+    </div>
+    <div class="md:col-span-7 order-1 md:order-2">
+      <h2 class="font-kop font-extrabold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.02]">Vroeg op pad? Je ontbijt staat klaar.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-marine/85 max-w-xl">Naast de broodjes liggen er 's ochtends verse ontbijtjes voor je klaar. Doordeweeks gaan we om zes uur open, dus je haalt het makkelijk voor je eerste klus of afspraak.</p>
+      <div class="mt-10 grid grid-cols-2 gap-5 sm:gap-8 max-w-xl">
+        <div class="border-t-4 border-kraft pt-4">
+          <p class="font-kop font-extrabold text-5xl tracking-tight">€1,-</p>
+          <p class="mt-1 font-semibold">Verse koffie, vanaf</p>
+          <p class="mt-2 text-marine/75">Of liever een kop thee? Ook dat schenken we vers.</p>
+        </div>
+        <div class="border-t-4 border-kraft pt-4">
+          <p class="font-kop font-extrabold text-5xl tracking-tight">€4,50</p>
+          <p class="mt-1 font-semibold">Belegd broodje, vanaf</p>
+          <p class="mt-2 text-marine/75">Pak er een drankje bij uit de ANAC tankshop, dan heb je alles in één keer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="bg-white/60 border-y border-marine/10">
+  <div class="max-w-6xl mx-auto px-5 py-20 md:py-28 grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-5">
+      <h2 class="font-kop font-extrabold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.02]">Achter de toonbank: ons Bakery-team.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-marine/85 max-w-md">Geen broodjes uit een koelvak. Ons enthousiaste team belegt jouw broodje als je binnenstapt, precies zoals jij hem wilt. Dat is pas genieten.</p>
+      <a href="#broodjes" class="mt-7 inline-block font-semibold underline decoration-2 decoration-kraft underline-offset-4 hover:decoration-rood">Bekijk alle broodjes</a>
+    </div>
+    <div class="md:col-span-7 grid grid-cols-5 gap-4 items-end">
+      <img src="assets/google-05.jpg" alt="Lachende medewerkster van ANAC Bakery voor de toonbank" class="col-span-3 w-full aspect-[3/4] object-cover object-top rounded-3xl">
+      <img src="assets/site-01.jpg" alt="Medewerkster met een koffiebeker bij de koffiemachine" class="col-span-2 w-full aspect-[3/4] object-cover object-[38%_50%] rounded-3xl mb-10">
+    </div>
+  </div>
+</section>
+
+<!-- Grote bestelling -->
+<section id="bestellen" class="px-3 md:px-5 py-20 md:py-28 scroll-mt-24">
+  <div class="korrel relative max-w-6xl mx-auto bg-kraft rounded-[2rem] md:rounded-[2.5rem] overflow-hidden px-6 py-12 md:px-14 md:py-16 grid md:grid-cols-12 gap-8 items-center">
+    <div class="md:col-span-7 relative">
+      <h2 class="font-kop font-extrabold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.02]">Broodjes voor de hele ploeg?</h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-lg">Bel ons even vooraf, dan maken we alles op tijd voor je klaar. Geef je grote bestelling het liefst door <strong>vóór 11:00 uur</strong>.</p>
+    </div>
+    <div class="md:col-span-5 relative md:text-right">
+      <a href="tel:+31243715226" class="btn inline-flex items-center gap-3 rounded-full bg-marine text-white px-7 py-4 text-lg font-bold hover:bg-marine-deep">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+        Bel 024 371 52 26
+      </a>
+      <p class="mt-4 text-sm">Of mail naar <a href="mailto:info@anaccarwash.com" class="font-semibold underline underline-offset-2">info@anaccarwash.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Openingstijden en adres -->
+<section id="open" class="max-w-6xl mx-auto px-5 pb-20 md:pb-28 scroll-mt-24">
+  <div class="grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-6">
+      <h2 class="font-kop font-extrabold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.02]">Wanneer kun je langs?</h2>
+      <table class="mt-8 w-full text-base sm:text-lg tabular-nums">
+        <tbody class="[&_tr]:border-b [&_tr]:border-marine/10 [&_td]:py-3 [&_td]:px-3 [&_td]:whitespace-nowrap">
+          <tr data-dag="1"><td>Maandag</td><td class="text-right">06:00 tot 17:00</td></tr>
+          <tr data-dag="2"><td>Dinsdag</td><td class="text-right">06:00 tot 17:00</td></tr>
+          <tr data-dag="3"><td>Woensdag</td><td class="text-right">06:00 tot 17:00</td></tr>
+          <tr data-dag="4"><td>Donderdag</td><td class="text-right">06:00 tot 17:00</td></tr>
+          <tr data-dag="5"><td>Vrijdag</td><td class="text-right">06:00 tot 17:00</td></tr>
+          <tr data-dag="6"><td>Zaterdag</td><td class="text-right">08:00 tot 15:30</td></tr>
+          <tr data-dag="0"><td>Zondag</td><td class="text-right">08:00 tot 15:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="md:col-span-5 md:col-start-8 md:pt-24">
+      <div class="rounded-3xl bg-marine text-white p-8 md:p-10">
+        <p class="font-kop font-bold text-2xl">ANAC Bakery</p>
+        <address class="not-italic mt-3 text-white/85 leading-relaxed text-lg">In de ANAC tankshop<br>Energieweg 100<br>6541 CZ Nijmegen</address>
+        <div class="mt-6 space-y-2 text-lg">
+          <p><a href="tel:+31243715226" class="font-semibold hover:text-kraft-licht">024 371 52 26</a></p>
+          <p><a href="mailto:info@anaccarwash.com" class="hover:text-kraft-licht underline underline-offset-2 decoration-white/30">info@anaccarwash.com</a></p>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=ANAC+Energieweg+100+6541+CZ+Nijmegen" target="_blank" rel="noopener" class="btn mt-8 inline-flex rounded-full bg-white text-marine px-6 py-3 font-bold hover:bg-kraft-licht">Plan je route</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-marine-deep text-white/70">
+  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-sm">
+    <div class="flex items-center gap-2.5">
+      <img src="assets/logo-oud.png" alt="" class="w-7 h-7">
+      <span class="font-kop font-extrabold text-lg text-white">ANAC <span class="font-medium">Bakery</span></span>
+    </div>
+    <p>Energieweg 100, 6541 CZ Nijmegen. Tot snel in onze Bakery.</p>
+    <p>Demo door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-ijs/95 backdrop-blur border-t border-marine/10">
+  <a href="tel:+31243715226" class="btn flex items-center justify-center gap-3 rounded-full bg-rood text-white py-3.5 text-lg font-bold hover:bg-rood-donker">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Bel de Bakery
+  </a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  var rij = document.querySelector('tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag', 'font-semibold');
+</script>
+</body>
+</html>

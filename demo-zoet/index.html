@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZOET. | Bruidstaarten en taarten op maat in Nijmegen</title>
+<meta name="description" content="ZOET. maakt bruidstaarten, sweet tables en taarten op maat in Nijmegen. Bakkerij aan de Broerdijk 77A, open woensdag tot en met zaterdag.">
+<meta property="og:title" content="ZOET. | Gemaakt om te vieren">
+<meta property="og:image" content="assets/google-03.jpg">
+<link rel="icon" href="assets/logo-oud.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          blush: '#F8E4E6',
+          rose: '#E3AEB7',
+          ink: '#C13E36',
+          inkdeep: '#9E2F28',
+          cocoa: '#3A1F1D',
+          butter: '#F5C06A',
+          sugar: '#FFFBFA'
+        },
+        fontFamily: {
+          display: ['"Young Serif"', 'Georgia', 'serif'],
+          sans: ['Figtree', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-feature-settings: "ss01"; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Geschulpte taartrand: halve cirkels in de kleur van de sectie erboven */
+  .scallop { height: 22px; background-repeat: repeat-x; background-size: 44px 22px; background-position: center top; }
+  .scallop-blush { background-image: radial-gradient(circle at 22px 0, #F8E4E6 21px, transparent 22px); }
+  .scallop-rose  { background-image: radial-gradient(circle at 22px 0, #E3AEB7 21px, transparent 22px); }
+  .scallop-butter{ background-image: radial-gradient(circle at 22px 0, #F5C06A 21px, transparent 22px); }
+  .scallop-sugar { background-image: radial-gradient(circle at 22px 0, #FFFBFA 21px, transparent 22px); }
+
+  .arch { border-radius: 999px 999px 28px 28px; }
+
+  .btn { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(1px) scale(.98); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #C13E36; outline-offset: 3px; border-radius: 6px;
+  }
+
+  /* Eén rustige entree van de hero, alleen als JS de class zet */
+  .js .rise { opacity: 0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; }
+  .js.ready .rise { opacity: 1; transform: none; }
+  .js.ready .rise.d2 { transition-delay: .12s; }
+  .js.ready .rise.d3 { transition-delay: .24s; }
+  #sticky-cta { transition: transform .3s ease; }
+  .js:not(.past-hero) #sticky-cta { transform: translateY(130%); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .rise { opacity: 1; transform: none; transition: none; }
+    .btn { transition: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-blush text-cocoa font-sans antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-sugar focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-cocoa text-blush text-center text-[13px] py-2 px-4">
+  Demo voor ZOET., gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-butter">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="bg-blush">
+  <nav class="max-w-6xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between" aria-label="Hoofdmenu">
+    <a href="#" class="flex items-center gap-2.5 text-ink" aria-label="ZOET., naar boven">
+      <img src="assets/logo-oud.svg" alt="" width="45" height="48" class="h-12 w-auto">
+      <span class="font-display text-[28px] leading-none tracking-tight">ZOET.</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+      <li><a href="#bruidstaarten" class="hover:text-ink transition-colors">Bruidstaarten</a></li>
+      <li><a href="#op-maat" class="hover:text-ink transition-colors">Taarten op maat</a></li>
+      <li><a href="#bestellen" class="hover:text-ink transition-colors">Bestellen</a></li>
+      <li><a href="#vera" class="hover:text-ink transition-colors">Over Vera</a></li>
+      <li><a href="#langskomen" class="hover:text-ink transition-colors">Langskomen</a></li>
+    </ul>
+    <a href="mailto:zoet.nijmegen@gmail.com" class="btn rounded-full border-2 border-ink text-ink px-5 py-2 text-[15px] font-semibold hover:bg-ink hover:text-white">Mail ons</a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="hero" class="bg-blush overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 pt-4 md:pt-10 pb-14 md:pb-20 grid md:grid-cols-12 gap-8 md:gap-6 items-center">
+    <div class="md:col-span-6 lg:col-span-6 order-1">
+      <p class="rise text-ink font-semibold text-[15px]">Taartenbakkerij in Nijmegen</p>
+      <h1 class="rise d2 font-display text-[3.1rem] leading-[1.02] sm:text-6xl lg:text-[5.4rem] tracking-[-0.02em] mt-3 text-cocoa">
+        Gemaakt om te vieren.
+      </h1>
+      <p class="rise d3 mt-5 text-lg md:text-xl leading-relaxed max-w-[30rem] text-cocoa/85">
+        Bruidstaarten, verjaardagstaarten en zoetigheden, helemaal op maat. Jij vertelt wat je viert, Vera ontwerpt een taart die net zo mooi is als hij smaakt.
+      </p>
+      <div class="rise d3 mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="mailto:zoet.nijmegen@gmail.com?subject=Aanvraag%20taart%20op%20maat" class="btn inline-flex items-center gap-3 rounded-full bg-ink text-white px-8 py-4 text-lg font-semibold shadow-[0_10px_24px_-10px_rgba(193,62,54,.7)] hover:bg-inkdeep">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Vraag je taart aan
+        </a>
+        <a href="#bestellen" class="font-semibold text-ink underline decoration-2 underline-offset-4 hover:text-inkdeep">Zo werkt bestellen</a>
+      </div>
+      <p class="rise d3 mt-8 flex items-center gap-2 text-[15px]">
+        <span class="text-ink tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="font-semibold">4,7</strong> uit 54 Google-reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 order-2 relative flex justify-center md:justify-end">
+      <div class="relative w-[82%] sm:w-[60%] md:w-[92%] lg:w-[84%]">
+        <div class="absolute -inset-3 md:-inset-4 arch bg-rose" aria-hidden="true"></div>
+        <img src="assets/google-03.jpg" alt="Drielaagse witte bruidstaart met handgespoten bloemenrankjes en twee polaroids als topper" class="relative arch w-full aspect-[4/5] object-cover object-[50%_30%]">
+        <img src="assets/logo-oud.svg" alt="" aria-hidden="true" width="128" height="128" class="absolute -left-6 md:-left-10 bottom-8 w-24 md:w-32 bg-sugar rounded-full p-4 shadow-[0_12px_30px_-12px_rgba(158,47,40,.45)] rotate-[-8deg]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scallop scallop-blush bg-sugar" aria-hidden="true"></div>
+
+<!-- Bruidstaarten -->
+<section id="bruidstaarten" class="bg-sugar py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-14 items-start">
+    <div class="md:col-span-5">
+      <img src="assets/site-05.jpg" alt="Bruidspaar snijdt samen een witte bruidstaart met bloemen aan, buiten op een houten tafel" class="w-full aspect-[4/5] object-cover rounded-[28px]">
+      <div class="mt-4 grid grid-cols-2 gap-4">
+        <img src="assets/site-01.jpg" alt="Tweelaagse witte bruidstaart met verse witte rozen" class="w-full aspect-[4/5] object-cover rounded-[22px]">
+        <img src="assets/site-03.jpg" alt="Drielaagse bruidstaart met perzikkleurige bloemen op een boomschijf" class="w-full aspect-[4/5] object-cover object-top rounded-[22px]">
+      </div>
+    </div>
+    <div class="md:col-span-7 md:pt-6">
+      <h2 class="font-display text-4xl md:text-[3.4rem] leading-[1.05] tracking-[-0.015em] text-ink">De taart van jullie dromen</h2>
+      <p class="mt-6 text-lg leading-relaxed max-w-[38rem]">
+        Het samen aansnijden van jullie bruidstaart is een moment dat wordt vastgelegd, gedeeld en onthouden. Daarom is bij ZOET. geen bruidstaart standaard. Smaak, kleur, stijl en afwerking ontwerpen we samen, zodat alles past bij jullie dag.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed max-w-[38rem]">
+        Liever een tafel vol zoetigheden? Een sweet table met gevulde cupcakes, brownies, cheesecakes en cakepops kan ook, los of naast de taart.
+      </p>
+
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-6 max-w-[40rem]">
+        <div class="border-t-2 border-rose pt-4">
+          <dt class="font-display text-xl text-cocoa">Proeven voor je kiest</dt>
+          <dd class="mt-1.5 text-[15.5px] leading-relaxed text-cocoa/80">Met het proefpakket met uitleg kiezen jullie thuis rustig je smaak, van fruit tot chocolade.</dd>
+        </div>
+        <div class="border-t-2 border-rose pt-4">
+          <dt class="font-display text-xl text-cocoa">Meedenken over het ontwerp</dt>
+          <dd class="mt-1.5 text-[15.5px] leading-relaxed text-cocoa/80">Een paar foto's als inspiratie is genoeg. Samen maken we er iets van dat bij jullie past.</dd>
+        </div>
+      </dl>
+
+      <figure class="mt-12 bg-blush rounded-[28px] p-7 md:p-9 max-w-[40rem] relative">
+        <span class="absolute -top-5 left-7 font-display text-7xl leading-none text-ink" aria-hidden="true">“</span>
+        <blockquote class="text-[17px] leading-relaxed">
+          Vera is een kunstenaar als het aankomt op taarten maken! De taart voor onze bruiloft was precies zoals wij voor ogen hadden, ondanks dat Vera van ons maar een paar foto's van Pinterest had ter inspiratie. De taart was zo lekker dat sommige gasten op onze bruiloft meerdere stukken taart hebben gehad!
+        </blockquote>
+        <figcaption class="mt-4 text-[15px] font-semibold">Martijn Elstgeest <span class="font-normal text-cocoa/70">via Google</span></figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<div class="scallop scallop-sugar bg-rose" aria-hidden="true"></div>
+
+<!-- Taarten op maat -->
+<section id="op-maat" class="bg-rose py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-8 items-end">
+      <h2 class="md:col-span-6 font-display text-4xl md:text-[3.4rem] leading-[1.05] tracking-[-0.015em] text-cocoa">Geen standaard taart. Jouw taart.</h2>
+      <p class="md:col-span-6 text-lg leading-relaxed text-cocoa/90 max-w-[34rem]">
+        Jarig, een babyshower, een jubileum of de puppy is eindelijk zindelijk? Elke taart ontwerpen we op maat, met eigen recepten en keuze uit cake en vulling. Inspiratie aanleveren mag altijd. Kopiëren doen we nooit.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      <figure class="col-span-2 row-span-2 relative">
+        <img src="assets/site-14.jpg" alt="Roze verjaardagstaart met rode kersen, strikjes en de tekst happy 22nd birthday" class="w-full h-full aspect-square object-cover rounded-[26px]">
+      </figure>
+      <img src="assets/google-06.jpg" alt="Zwarte taart met fitness-thema: kettlebell en gewichtheffer als topper" class="w-full aspect-square object-cover rounded-[22px]">
+      <img src="assets/site-09.jpg" alt="Taart voor een eerste verjaardag met beertjes, macarons en een gouden 1" class="w-full aspect-square object-cover rounded-[22px]">
+      <img src="assets/google-07.jpg" alt="Blauw gemarmerde taart met gouden blad en bonbons" class="w-full aspect-square object-cover rounded-[22px]">
+      <img src="assets/site-15.jpg" alt="Lichte taart met haasjes, macarons en meringues voor de roze tegelwand" class="w-full aspect-square object-cover rounded-[22px]">
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-12 gap-8 md:gap-12 items-center bg-sugar rounded-[32px] p-5 md:p-8">
+      <img src="assets/site-02.jpg" alt="Cupcakes met roze en bordeauxrode toef en roze cakepops met goudspikkels" class="md:col-span-5 w-full aspect-[4/3] md:aspect-[5/4] object-cover rounded-[24px]">
+      <div class="md:col-span-7 md:pr-6 pb-3 md:pb-0">
+        <h3 class="font-display text-3xl md:text-4xl leading-tight text-ink">Zoetigheden voor erbij</h3>
+        <p class="mt-4 text-lg leading-relaxed max-w-[34rem]">Gevulde cupcakes, brownies, cheesecakes en cakepops. Los te bestellen voor een feestje, of als sweet table die in stijl past bij de rest van je dag.</p>
+        <a href="mailto:zoet.nijmegen@gmail.com?subject=Vraag%20over%20zoetigheden" class="mt-6 inline-block font-semibold text-ink underline decoration-2 underline-offset-4 hover:text-inkdeep">Vraag naar de mogelijkheden</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scallop scallop-rose bg-blush" aria-hidden="true"></div>
+
+<!-- Sinterklaasmenu -->
+<section id="sinterklaas" class="bg-blush py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-8 md:gap-12">
+    <div class="md:col-span-4">
+      <h2 class="font-display text-4xl md:text-5xl leading-[1.05] text-ink">De Sint is weer in het land.</h2>
+      <p class="mt-4 text-lg leading-relaxed">Ook dit jaar een ZOET. Sinterklaasmenu om de heerlijke avondjes helemaal af te maken.</p>
+      <a href="mailto:zoet.nijmegen@gmail.com?subject=Bestelling%20Sinterklaasmenu" class="btn mt-6 inline-block rounded-full border-2 border-ink text-ink px-6 py-3 font-semibold hover:bg-ink hover:text-white">Bestel het Sinterklaasmenu</a>
+    </div>
+    <ul class="md:col-span-8 divide-y-2 divide-rose border-y-2 border-rose">
+      <li class="py-6 grid sm:grid-cols-[1fr_auto] gap-x-6 gap-y-1">
+        <h3 class="font-display text-2xl">Sint taartje</h3>
+        <p class="font-display text-2xl text-ink sm:text-right">€50</p>
+        <p class="text-cocoa/80 sm:col-span-2">Voor 8 tot 10 personen. Speculaas karamel of vanille aardbei. Groter formaat nodig? Geef het aan bij je bestelling.</p>
+      </li>
+      <li class="py-6 grid sm:grid-cols-[1fr_auto] gap-x-6 gap-y-1">
+        <h3 class="font-display text-2xl">Cupcakes</h3>
+        <p class="font-display text-2xl text-ink sm:text-right">€3,50 <span class="font-sans text-base text-cocoa/70">per stuk</span></p>
+        <p class="text-cocoa/80 sm:col-span-2">Vanaf 4 stuks. Speculaas karamel of vanille aardbei.</p>
+      </li>
+      <li class="py-6 grid gap-y-1">
+        <h3 class="font-display text-2xl">Chocolade roomletter S</h3>
+        <p class="text-cocoa/80">Van Callebaut melkchocolade, in het thema superhelden, unicorn, voetbal, chocolate dream, dino's, K-pop Demon Hunters, Sinterklaas of kleurrijk snoepfeest. Ander thema? Kan in overleg, vanaf 5 stuks.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="scallop scallop-blush bg-butter" aria-hidden="true"></div>
+
+<!-- Bestellen -->
+<section id="bestellen" class="bg-butter py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-6 items-end">
+      <h2 class="md:col-span-7 font-display text-4xl md:text-[3.4rem] leading-[1.05] tracking-[-0.015em] text-cocoa">Bestellen in vier stappen</h2>
+      <p class="md:col-span-5 text-lg leading-relaxed">Bestel een taart op maat het liefst 2 tot 4 weken van tevoren. Last minute? Stuur gerust een mailtje, soms is er tussendoor nog plek.</p>
+    </div>
+    <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+      <li>
+        <span class="font-display text-6xl text-ink leading-none">1</span>
+        <h3 class="mt-3 font-display text-2xl">Check je datum</h3>
+        <p class="mt-2 leading-relaxed">Mail ons met je datum. We controleren de beschikbaarheid en bevestigen zo snel mogelijk.</p>
+      </li>
+      <li>
+        <span class="font-display text-6xl text-ink leading-none">2</span>
+        <h3 class="mt-3 font-display text-2xl">Deel je wensen</h3>
+        <p class="mt-2 leading-relaxed">Formaat, cake en vulling, afsmeerstijl en decoratie. Een kleurenpalet, uitnodiging of inspiratiefoto mag je meesturen.</p>
+      </li>
+      <li>
+        <span class="font-display text-6xl text-ink leading-none">3</span>
+        <h3 class="mt-3 font-display text-2xl">Je krijgt een overzicht</h3>
+        <p class="mt-2 leading-relaxed">We beantwoorden elke aanvraag met de hand, het liefst binnen twee werkdagen, met een compleet kostenoverzicht.</p>
+      </li>
+      <li>
+        <span class="font-display text-6xl text-ink leading-none">4</span>
+        <h3 class="mt-3 font-display text-2xl">Aftellen en ophalen</h3>
+        <p class="mt-2 leading-relaxed">Akkoord? Dan is je bestelling definitief. Betalen doe je bij het ophalen in de bakkerij.</p>
+      </li>
+    </ol>
+    <a href="mailto:zoet.nijmegen@gmail.com?subject=Aanvraag%20taart%20op%20maat" class="btn mt-12 inline-flex items-center gap-3 rounded-full bg-ink text-white px-8 py-4 text-lg font-semibold hover:bg-inkdeep">Vraag je taart aan</a>
+  </div>
+</section>
+
+<div class="scallop scallop-butter bg-sugar" aria-hidden="true"></div>
+
+<!-- Vera -->
+<section id="vera" class="bg-sugar py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-16 items-center">
+    <div class="md:col-span-5 md:order-2">
+      <img src="assets/site-04.jpg" alt="Vera in de bakkerij van ZOET. voor de roze tegelwand, met een groene dripcake" class="w-full aspect-[4/5] object-cover object-top arch">
+    </div>
+    <div class="md:col-span-7 md:order-1">
+      <h2 class="font-display text-4xl md:text-[3.4rem] leading-[1.05] tracking-[-0.015em] text-ink">Hoi, ik ben Vera.</h2>
+      <p class="mt-6 text-lg leading-relaxed max-w-[36rem]">
+        Al 8 jaar bruist onze kleine bakkerij in Nijmegen van creativiteit en zoetigheid. Sinds 2025 mag ik mezelf de trotse eigenaresse van ZOET. noemen. Wat ooit een passie was, is nu mijn dagelijkse werk: taarten en zoetigheden maken die mensen blij maken.
+      </p>
+      <p class="mt-4 text-lg leading-relaxed max-w-[36rem]">
+        Elke bestelling is een nieuwe uitdaging. Het mooiste? De glimlach van klanten als ze hun bestelling zien, en het idee dat ik een klein stukje mag bijdragen aan hun mooiste momenten.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="scallop scallop-sugar bg-blush" aria-hidden="true"></div>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-blush py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-display text-4xl md:text-[3.4rem] leading-[1.05] tracking-[-0.015em] text-cocoa max-w-xl">Waar iedereen nog een stukje van wil</h2>
+      <p class="text-lg"><span class="text-ink tracking-[2px]" aria-hidden="true">★★★★★</span> <strong>4,7</strong> uit 54 Google-reviews</p>
+    </div>
+    <div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-5 [&>figure]:mb-5 [&>figure]:break-inside-avoid">
+      <figure class="bg-sugar rounded-[24px] p-7">
+        <blockquote class="leading-relaxed">“Recent een verjaardagstaart gehaald bij Zoet, en twee jaar geleden maakten ze ook onze bruidstaart. Beide taarten waren niet alleen prachtig, maar ook ontzettend lekker! Daarnaast was de service top. Echt een aanrader!”</blockquote>
+        <figcaption class="mt-4 text-[15px] font-semibold">Teun Van Grinsven <span class="font-normal text-cocoa/70">via Google</span></figcaption>
+      </figure>
+      <figure class="bg-ink text-white rounded-[24px] p-7">
+        <blockquote class="font-display text-2xl leading-snug">“We hebben dit weekend voor de derde keer een verjaardagstaart opgehaald bij Zoet. Elke keer ziet de taart er weer prachtig uit en smaakt deze fantastisch.”</blockquote>
+        <p class="mt-3 leading-relaxed text-white/90">“Er is van alles mogelijk, er wordt goed meegedacht en een laatste toevoeging was geen probleem. Alle lof voor Vera!”</p>
+        <figcaption class="mt-4 text-[15px] font-semibold">Bonnie</figcaption>
+      </figure>
+      <figure class="bg-sugar rounded-[24px] p-7">
+        <blockquote class="leading-relaxed">“De taarten zien er prachtig uit en zijn ook nog eens heerlijk! Alles was mogelijk en zo zijn we samen met Vera tot onze droomtaart gekomen. Wij zouden iedereen aanraden om bij ZOET. een bruidstaart af te nemen! Iedereen was er erg over te spreken.”</blockquote>
+        <figcaption class="mt-4 text-[15px] font-semibold">Kimberley de Lorijn <span class="font-normal text-cocoa/70">via Google</span></figcaption>
+      </figure>
+      <figure class="bg-sugar rounded-[24px] p-7">
+        <blockquote class="leading-relaxed">“Al jarenlang bestel ik de meest prachtige en heerlijke thema taarten en cupcakes bij ZOET. Iedere keer is het weer een verrassing hoe mooi en smaakvol het eruit ziet!”</blockquote>
+        <figcaption class="mt-4 text-[15px] font-semibold">Janine</figcaption>
+      </figure>
+      <figure class="bg-sugar rounded-[24px] p-7">
+        <blockquote class="leading-relaxed">“De taarten van ZOET. zijn altijd een feestje. Bij iedere verjaardag staat hier een taart van hen in thema op tafel. Die maken het feestje helemaal af!”</blockquote>
+        <figcaption class="mt-4 text-[15px] font-semibold">Patricia Meeuwissen Span</figcaption>
+      </figure>
+      <figure class="bg-sugar rounded-[24px] p-7">
+        <blockquote class="leading-relaxed">“Onze bruidstaart was perfect, zowel qua smaak als presentatie! ZOET heeft ons heel blij gemaakt. Tijdens de voorbereidingen hebben zo ook aandachtig naar ons geluisterd, want het was precies zoals we graag wouden. We hebben heel veel complimenten gehad over de taart. Dikke 5 sterren!”</blockquote>
+        <figcaption class="mt-4 text-[15px] font-semibold">Bruidspaar L&amp;E</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="scallop scallop-blush bg-cocoa" aria-hidden="true"></div>
+
+<!-- Langskomen & contact -->
+<section id="langskomen" class="bg-cocoa text-blush py-16 md:py-24">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-14">
+    <div class="md:col-span-5">
+      <img src="assets/google-08.png" alt="De roze winkelgevel van ZOET. aan de Broerdijk met een bloeiende magnolia" class="w-full aspect-[4/5] object-cover arch">
+      <div class="mt-10 grid grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-display text-xl text-butter">Adres</h3>
+          <p class="mt-2 leading-relaxed">Broerdijk 77A<br>6523 GR Nijmegen</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=ZOET.%20Broerdijk%2077A%20Nijmegen" class="mt-2 inline-block underline underline-offset-4 hover:text-butter">Route plannen</a>
+        </div>
+        <div>
+          <h3 class="font-display text-xl text-butter">Mail</h3>
+          <a href="mailto:zoet.nijmegen@gmail.com" class="mt-2 inline-block underline underline-offset-4 hover:text-butter break-all">zoet.nijmegen@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-7">
+      <h2 class="font-display text-4xl md:text-[3.4rem] leading-[1.05] tracking-[-0.015em] text-white">Kom langs aan de Broerdijk.</h2>
+      <p class="mt-5 text-lg leading-relaxed text-blush/85 max-w-[34rem]">Je herkent ons aan de roze gevel. Hier haal je je bestelling op en reken je af.</p>
+
+      <div class="mt-10">
+        <div>
+          <h3 class="font-display text-xl text-butter">Openingstijden</h3>
+          <table class="mt-2 w-full max-w-[16rem] text-[15.5px]">
+            <tbody class="[&>tr>td]:py-1">
+              <tr><td>Maandag</td><td class="text-right text-blush/60">gesloten</td></tr>
+              <tr><td>Dinsdag</td><td class="text-right text-blush/60">gesloten</td></tr>
+              <tr><td>Woensdag</td><td class="text-right tabular-nums">09:00 tot 14:00</td></tr>
+              <tr><td>Donderdag</td><td class="text-right tabular-nums">09:00 tot 14:00</td></tr>
+              <tr><td>Vrijdag</td><td class="text-right tabular-nums">09:00 tot 14:00</td></tr>
+              <tr><td>Zaterdag</td><td class="text-right tabular-nums">09:00 tot 12:00</td></tr>
+              <tr><td>Zondag</td><td class="text-right text-blush/60">gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <form action="mailto:zoet.nijmegen@gmail.com?subject=Aanvraag%20via%20de%20website" method="post" enctype="text/plain" class="mt-12 bg-blush text-cocoa rounded-[28px] p-6 md:p-8 grid sm:grid-cols-2 gap-4">
+        <h3 class="sm:col-span-2 font-display text-2xl text-ink">Vraag je taart aan</h3>
+        <label class="grid gap-1.5 text-[15px] font-medium">Naam
+          <input required name="naam" autocomplete="name" class="rounded-xl border-2 border-rose bg-sugar px-4 py-3 font-normal focus:border-ink outline-none">
+        </label>
+        <label class="grid gap-1.5 text-[15px] font-medium">Datum van je feest
+          <input type="date" name="datum" class="rounded-xl border-2 border-rose bg-sugar px-4 py-3 font-normal focus:border-ink outline-none">
+        </label>
+        <label class="sm:col-span-2 grid gap-1.5 text-[15px] font-medium">Wat vier je en wat heb je in gedachten?
+          <textarea required name="wensen" rows="4" class="rounded-xl border-2 border-rose bg-sugar px-4 py-3 font-normal focus:border-ink outline-none" placeholder="Bijvoorbeeld: bruiloft voor 80 gasten, lente, pastelkleuren, lemon poppy"></textarea>
+        </label>
+        <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+          <button type="submit" class="btn rounded-full bg-ink text-white px-7 py-3.5 font-semibold hover:bg-inkdeep">Verstuur via je mail</button>
+          <p class="text-[14px] text-cocoa/70">Opent je mailprogramma. We reageren het liefst binnen twee werkdagen.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-cocoa text-blush/70 border-t border-blush/10 pb-28 md:pb-10 pt-8">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 flex flex-wrap items-center justify-between gap-4 text-[14px]">
+    <p class="flex items-center gap-2"><span class="font-display text-blush text-lg">ZOET.</span> Om te vieren. Broerdijk 77A, Nijmegen</p>
+    <p>Website door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-butter">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: actieknop altijd binnen bereik -->
+<div id="sticky-cta" class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3">
+  <a href="mailto:zoet.nijmegen@gmail.com?subject=Aanvraag%20taart%20op%20maat" class="btn flex items-center justify-center gap-3 rounded-full bg-ink text-white py-4 text-lg font-semibold shadow-[0_10px_30px_-8px_rgba(58,31,29,.6)]">
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    Vraag je taart aan
+  </a>
+</div>
+
+<script>
+  const root = document.documentElement;
+  requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('ready')));
+  const heroBtn = document.querySelector('#hero a[href^="mailto"]');
+  if ('IntersectionObserver' in window && heroBtn) {
+    new IntersectionObserver(([e]) => root.classList.toggle('past-hero', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(heroBtn);
+  } else { root.classList.add('past-hero'); }
+</script>
+</body>
+</html>
