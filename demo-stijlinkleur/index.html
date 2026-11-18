@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StijlinKleur | Interieuradvies en ontwerp door Agnes Wolters, Lichtenvoorde</title>
+<meta name="description" content="Kleur, licht, indeling en styling voor je huis of werkplek. Agnes Wolters van StijlinKleur in Lichtenvoorde, voor elk budget. Bel 06 40 35 76 38.">
+<meta property="og:title" content="StijlinKleur, interieuradvies door Agnes Wolters">
+<meta property="og:image" content="assets/google-05.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231F3A32'/%3E%3Crect x='9' y='7' width='14' height='18' rx='2' fill='%23E2AE34'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        groen: { DEFAULT: '#1F3A32', diep: '#172C26', licht: '#2B4D43' },
+        oker: { DEFAULT: '#E2AE34', donker: '#C9951F', zacht: '#F3DC9C' },
+        linnen: '#EFEBE3',
+        kalk: '#FAF8F4',
+        salie: '#A7B49C',
+        inkt: '#23251F',
+      },
+      fontFamily: {
+        kop: ['"Young Serif"', 'Georgia', 'serif'],
+        body: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 18px 18px; }
+  .staal { box-shadow: 0 1px 0 rgba(31,58,50,.08), 0 18px 30px -18px rgba(31,58,50,.35); }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px) scale(.99); }
+  :focus-visible { outline: 3px solid #E2AE34; outline-offset: 3px; border-radius: 4px; }
+  /* Eén binnenkomst bij laden, alleen als JS de class zet; zonder JS is alles zichtbaar */
+  .js .hero-beeld { animation: binnen 1s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes binnen { from { transform: translateY(24px) rotate(1.5deg); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .hero-beeld { animation: none; }
+    .knop { transition: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-linnen text-inkt antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-3 focus:bg-kalk focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-kalk/80 text-[13px] text-center py-2 px-4">
+  Demo voor StijlinKleur, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-kalk hover:text-oker">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="bg-groen text-kalk">
+  <nav class="max-w-7xl mx-auto px-5 md:px-10 h-20 flex items-center justify-between" aria-label="Hoofdmenu">
+    <a href="#top" class="leading-none group" aria-label="StijlinKleur, naar boven">
+      <span class="font-kop text-2xl md:text-[28px] tracking-tight">Stijl<span class="text-oker">in</span>Kleur</span>
+      <span class="block text-[12px] text-kalk/60 mt-1 tracking-wide">Agnes Wolters</span>
+    </a>
+    <div class="flex items-center gap-8">
+      <ul class="hidden md:flex items-center gap-8 text-[15px] text-kalk/80">
+        <li><a class="hover:text-oker transition-colors" href="#projecten">Projecten</a></li>
+        <li><a class="hover:text-oker transition-colors" href="#werkwijze">Werkwijze</a></li>
+        <li><a class="hover:text-oker transition-colors" href="#agnes">Over Agnes</a></li>
+        <li><a class="hover:text-oker transition-colors" href="#contact">Contact</a></li>
+      </ul>
+      <a href="tel:+31640357638" class="knop hidden sm:inline-flex items-center gap-2 rounded-full border border-kalk/30 px-4 py-2 text-[15px] hover:border-oker hover:text-oker">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        06 40 35 76 38
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="relative bg-groen text-kalk overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 pt-8 md:pt-10 pb-14 md:pb-16 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 lg:col-span-6 order-1">
+      <p class="text-oker-zacht text-[15px] font-medium">Interieuradvies en ontwerp in Lichtenvoorde</p>
+      <h1 class="font-kop text-[44px] leading-[1.02] sm:text-6xl lg:text-[84px] lg:leading-[0.98] tracking-tight mt-4">Thuis begint bij&nbsp;kleur.</h1>
+      <p class="mt-6 text-lg md:text-xl text-kalk/80 max-w-[30rem] leading-relaxed">Agnes helpt je met kleur, licht en indeling. Van een paar goede tips tot een compleet ontwerp, voor elk budget en altijd rond jouw wensen.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31640357638" class="knop inline-flex items-center gap-3 rounded-full bg-oker text-groen-diep font-semibold text-lg px-7 py-4 hover:bg-oker-zacht shadow-[0_14px_30px_-12px_rgba(226,174,52,.6)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel Agnes: 06 40 35 76 38
+        </a>
+        <a href="mailto:info@stijlinkleur.nl?subject=Kennismaking%20StijlinKleur" class="text-kalk underline decoration-oker decoration-2 underline-offset-[6px] hover:text-oker">of mail voor een kennismaking</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-[15px] text-kalk/70">
+        <span class="text-oker tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span>5,0 op Google, uit 2 reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 lg:col-span-5 lg:col-start-8 order-2 relative">
+      <div class="hero-beeld relative mx-auto w-[86%] sm:w-[70%] md:w-full max-w-[460px]">
+        <div class="absolute -left-6 md:-left-10 bottom-10 w-24 md:w-28 h-36 md:h-44 bg-oker rounded-md rotate-[-8deg]" aria-hidden="true"></div>
+        <div class="absolute -right-4 md:-right-8 top-16 w-20 md:w-24 h-28 md:h-36 bg-salie rounded-md rotate-[7deg]" aria-hidden="true"></div>
+        <img src="assets/google-05.jpg" alt="Woonkamer met een handgeschilderde muurschildering van palmbladeren en grassen, grijze hoekbank en een okergeel kussen" class="boog relative w-full aspect-[4/5.4] object-cover object-[30%_60%] shadow-2xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Verfstalen-strip -->
+<section aria-label="Kleuren uit projecten van StijlinKleur" class="bg-groen">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid grid-cols-5 gap-2 md:gap-4 translate-y-8 md:translate-y-10">
+    <div class="staal rounded-t-md bg-oker h-20 md:h-28 p-2 md:p-4 flex items-end"><span class="text-[11px] md:text-sm text-groen-diep font-medium leading-tight">Oker<span class="hidden md:inline">, eetkamer</span></span></div>
+    <div class="staal rounded-t-md bg-[#1C5A4E] h-20 md:h-28 p-2 md:p-4 flex items-end"><span class="text-[11px] md:text-sm text-kalk font-medium leading-tight">Groen<span class="hidden md:inline">, badkamer</span></span></div>
+    <div class="staal rounded-t-md bg-salie h-20 md:h-28 p-2 md:p-4 flex items-end"><span class="text-[11px] md:text-sm text-groen-diep font-medium leading-tight">Salie<span class="hidden md:inline">, muurschildering</span></span></div>
+    <div class="staal rounded-t-md bg-[#D8C9AE] h-20 md:h-28 p-2 md:p-4 flex items-end"><span class="text-[11px] md:text-sm text-groen-diep font-medium leading-tight">Linnen<span class="hidden md:inline">, woonkamer</span></span></div>
+    <div class="staal rounded-t-md bg-[#4A3B30] h-20 md:h-28 p-2 md:p-4 flex items-end"><span class="text-[11px] md:text-sm text-kalk font-medium leading-tight">Noten<span class="hidden md:inline">, keuken</span></span></div>
+  </div>
+</section>
+
+<!-- Voel je thuis -->
+<section class="pt-24 md:pt-36 pb-20 md:pb-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+    <div class="md:col-span-5">
+      <h2 class="font-kop text-4xl md:text-5xl text-groen leading-tight">Voel je thuis.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/85">Waar je leeft en werkt, wil je je prettig voelen. Indeling, kleur, materialen en verlichting bepalen samen de sfeer. Duurzaam, vintage, oud of nieuw: alles kan.</p>
+      <p class="mt-4 text-lg leading-relaxed text-inkt/85">Kom je er zelf niet (helemaal) uit? Dan zet Agnes haar creativiteit en kennis in om jouw ruimte in te richten of te veranderen. Jouw wensen staan daarbij centraal.</p>
+      <p class="mt-8 font-kop text-2xl text-groen leading-snug max-w-sm">"Subtiele veranderingen kunnen grote effecten hebben."</p>
+    </div>
+    <figure class="md:col-span-7">
+      <img src="assets/google-04.jpg" alt="Lichte woonkamer met beige hoekbank, grote glazen pui naar de tuin en een wand met haard en planken" class="w-full aspect-[4/3] object-cover rounded-[18px]">
+    </figure>
+  </div>
+</section>
+
+<!-- Wat je kunt krijgen -->
+<section class="bg-kalk py-20 md:py-28" aria-labelledby="advies-titel">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="grid md:grid-cols-12 gap-8 items-end">
+      <h2 id="advies-titel" class="md:col-span-6 font-kop text-4xl md:text-5xl text-groen leading-tight">Elk advies is anders. Voor elk budget.</h2>
+      <p class="md:col-span-5 md:col-start-8 text-lg text-inkt/80 leading-relaxed">Tijdens een gratis en vrijblijvend kennismakingsgesprek, aan tafel of telefonisch, bepalen jullie samen welk advies het beste bij je past.</p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-5 md:gap-6">
+      <article class="staal rounded-lg bg-oker text-groen-diep flex flex-col">
+        <div class="p-7 md:p-8 flex-1">
+          <h3 class="font-kop text-3xl">Stylingadvies</h3>
+          <p class="mt-4 text-[17px] leading-relaxed">Tips en tricks om meer uit je ruimte te halen. Ook als low budget pakket.</p>
+        </div>
+        <div class="bg-kalk/90 rounded-b-lg px-7 md:px-8 py-4 text-sm font-medium">Voor wie zelf aan de slag wil</div>
+      </article>
+      <article class="staal rounded-lg bg-groen text-kalk flex flex-col md:-translate-y-6">
+        <div class="p-7 md:p-8 flex-1">
+          <h3 class="font-kop text-3xl">Interieuradvies en ontwerp</h3>
+          <p class="mt-4 text-[17px] leading-relaxed text-kalk/85">Een gedegen plan waar je mee aan het werk kunt: indeling, kleur, verlichting en meubels. Ook maatwerk, zoals een wandkast of badkamermeubel.</p>
+        </div>
+        <div class="bg-kalk/90 text-groen-diep rounded-b-lg px-7 md:px-8 py-4 text-sm font-medium">Een compleet plan voor je ruimte</div>
+      </article>
+      <article class="staal rounded-lg bg-salie text-groen-diep flex flex-col">
+        <div class="p-7 md:p-8 flex-1">
+          <h3 class="font-kop text-3xl">3D binnenkijken</h3>
+          <p class="mt-4 text-[17px] leading-relaxed">Extra opties om het ontwerp visueel compleet te maken, zodat je je nieuwe ruimte al ziet voordat er iets verandert.</p>
+        </div>
+        <div class="bg-kalk/90 rounded-b-lg px-7 md:px-8 py-4 text-sm font-medium">Zien voor je bouwt</div>
+      </article>
+    </div>
+
+    <div class="mt-14 md:mt-16 border-t border-groen/15 pt-8 flex flex-wrap gap-x-3 gap-y-3 text-[15px]">
+      <span class="text-inkt/60 mr-2 py-1.5">Agnes denkt mee over</span>
+      <span class="rounded-md bg-linnen px-3 py-1.5">kleurenplan</span>
+      <span class="rounded-md bg-linnen px-3 py-1.5">verlichtingsplan</span>
+      <span class="rounded-md bg-linnen px-3 py-1.5">indeling</span>
+      <span class="rounded-md bg-linnen px-3 py-1.5">styling</span>
+      <span class="rounded-md bg-linnen px-3 py-1.5">moodboards</span>
+      <span class="rounded-md bg-linnen px-3 py-1.5">projectbegeleiding</span>
+      <span class="rounded-md bg-linnen px-3 py-1.5">keuken, badkamer, woonkamer, slaapkamer en werkplek</span>
+    </div>
+  </div>
+</section>
+
+<!-- Projecten -->
+<section id="projecten" class="py-20 md:py-28" aria-labelledby="projecten-titel">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <h2 id="projecten-titel" class="font-kop text-4xl md:text-5xl text-groen leading-tight max-w-2xl">Uit het portfolio</h2>
+
+    <!-- Keuken, groot -->
+    <article class="mt-12 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <img src="assets/site-13.jpg" alt="Moderne keuken met donkere fronten, warm stucwerk en een hanglamp met kooldraadlamp" class="md:col-span-5 w-full aspect-[4/5] object-cover rounded-[18px]">
+      <div class="md:col-span-6 md:col-start-7">
+        <p class="text-sm font-medium text-oker-donker">Indeling, kleur en verlichting</p>
+        <h3 class="font-kop text-3xl md:text-4xl text-groen mt-2">Moderne keuken</h3>
+        <p class="mt-5 text-lg leading-relaxed text-inkt/85">De keuken kozen de opdrachtgevers zelf bij een keukenspeciaalzaak. Agnes dacht mee over de opstelling, het kleurgebruik, de verlichting en de sfeer.</p>
+        <p class="mt-4 text-lg leading-relaxed text-inkt/85">Het is een open keuken die in verbinding staat met de eet- en woonkamer. Dat moest zo blijven, maar het zicht op het aanrecht wilden ze beperken. Een verhoogd gedeelte naar de rest van het huis bleek meteen de beste plek voor de verhoogde vaatwasser.</p>
+      </div>
+    </article>
+
+    <!-- Badkamer -->
+    <article class="mt-20 md:mt-28 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-5 order-2 md:order-1">
+        <p class="text-sm font-medium text-oker-donker">Ontwerp en projectbegeleiding</p>
+        <h3 class="font-kop text-3xl md:text-4xl text-groen mt-2">Badkamer met een knipoog naar de jaren 70</h3>
+        <p class="mt-5 text-lg leading-relaxed text-inkt/85">Eenvoudig, maar met een unieke vintage uitstraling. Dat was in de omgeving niet te vinden, dus gingen Agnes en de opdrachtgevers samen op zoek, tot bij een tegelbedrijf dat precies deze vormen kon leveren.</p>
+        <p class="mt-4 text-lg leading-relaxed text-inkt/85">Het wastafelmeubel, de tussenwand met kast en de indeling zijn van Agnes' hand. Zij begeleidde het project van brainstorm tot uitvoering en stemde af met de vakmensen, zodat de opdrachtgevers ontlast werden.</p>
+      </div>
+      <img src="assets/site-06.jpg" alt="Badkamer met afgeronde witte tegels, koperen kraan, houten wastafelmeubel en een flessengroene muur" class="md:col-span-7 order-1 md:order-2 w-full aspect-[3/2] object-cover rounded-[18px]">
+    </article>
+
+    <!-- Kleine projecten -->
+    <div class="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6">
+      <figure class="col-span-2 md:col-span-7">
+        <img src="assets/google-08.jpg" alt="Eetkamer met okergele stoelen, ovale tafel, zwarte hanglampen en kleurrijke schilderijen" class="w-full aspect-[4/3] object-cover rounded-[14px]">
+        <figcaption class="mt-3"><span class="font-kop text-xl text-groen">Eetkamer</span><span class="block text-inkt/70 mt-1">Een ruimte waar goede verlichting essentieel is.</span></figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-5">
+        <img src="assets/site-07.jpg" alt="Op maat ontworpen wandkast met vintage porselein, een globe en een oude klok" class="w-full aspect-[4/3] md:aspect-[4/4.6] object-cover rounded-[14px]">
+        <figcaption class="mt-3"><span class="font-kop text-xl text-groen">Kastontwerp woonkamer</span><span class="block text-inkt/70 mt-1">Een nieuwe wandkast, kleuren en behang in een kamer vol ramen. De opdrachtgevers waren blij verrast.</span></figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-4">
+        <img src="assets/google-03.jpg" alt="Eethoek met wit-oker bladerbehang, witte tafel en een houten bank" class="w-full aspect-square object-cover rounded-[14px]">
+        <figcaption class="mt-3 font-kop text-lg md:text-xl text-groen">Kleur aan de muur</figcaption>
+      </figure>
+      <figure class="col-span-1 md:col-span-4">
+        <img src="assets/google-06.jpg" alt="Lichte woonkamer met witte bank, wandlijsten met wandlampjes en linnen gordijnen" class="w-full aspect-square object-cover rounded-[14px]">
+        <figcaption class="mt-3 font-kop text-lg md:text-xl text-groen">Rust in licht en lijnen</figcaption>
+      </figure>
+      <figure class="col-span-2 md:col-span-4">
+        <img src="assets/site-10.jpg" alt="3D-ontwerp van een zolder verbouwd tot slaapkamer met badkamer achter glas" class="w-full aspect-[4/3] md:aspect-square object-cover rounded-[14px]">
+        <figcaption class="mt-3"><span class="font-kop text-lg md:text-xl text-groen">Master bedroom in 3D</span><span class="block text-inkt/70 mt-1">Een zolder wordt een eigen plek, met slaapkamer en badkamer.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-kalk py-20 md:py-28" aria-labelledby="werkwijze-titel">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5">
+      <h2 id="werkwijze-titel" class="font-kop text-4xl md:text-5xl text-groen leading-tight">Eerst functioneel, dan sfeer.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80">Een ruimte waar je leeft of werkt moet praktisch zijn. Voor iedereen is dat anders, dus daar begint Agnes mee. Wil je bestaande meubels houden en combineren met nieuwe, of juist alles nieuw? Samen maak je er een harmonieus en persoonlijk interieur van.</p>
+      <img src="assets/site-08.jpg" alt="Kussens in okergeel, zeegroen en grijs met een geel-wit plaid" class="mt-10 w-full aspect-[5/4] object-cover rounded-[14px] hidden md:block">
+    </div>
+    <ol class="md:col-span-6 md:col-start-7 space-y-0">
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-b border-groen/15">
+        <span class="font-kop text-3xl text-oker-donker">1</span>
+        <div><h3 class="font-semibold text-xl text-groen">Kennismaken</h3><p class="mt-1.5 text-inkt/75 leading-relaxed">Gratis en vrijblijvend, aan tafel of telefonisch. Jullie kiezen samen het advies dat bij je past.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-b border-groen/15">
+        <span class="font-kop text-3xl text-oker-donker">2</span>
+        <div><h3 class="font-semibold text-xl text-groen">De ruimte</h3><p class="mt-1.5 text-inkt/75 leading-relaxed">Zodra het pakket gekozen is, bekijkt Agnes de ruimte en meet die in.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-b border-groen/15">
+        <span class="font-kop text-3xl text-oker-donker">3</span>
+        <div><h3 class="font-semibold text-xl text-groen">Plan van eisen</h3><p class="mt-1.5 text-inkt/75 leading-relaxed">Jullie bespreken je wensen en wat er nodig is in de ruimte.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7 border-b border-groen/15">
+        <span class="font-kop text-3xl text-oker-donker">4</span>
+        <div><h3 class="font-semibold text-xl text-groen">Meubilair</h3><p class="mt-1.5 text-inkt/75 leading-relaxed">Wat blijft en wat wordt anders? Persoonlijke vintage "kostbaarheden" krijgen een mooie plek.</p></div>
+      </li>
+      <li class="grid grid-cols-[3.5rem_1fr] gap-4 py-7">
+        <span class="font-kop text-3xl text-oker-donker">5</span>
+        <div><h3 class="font-semibold text-xl text-groen">Sfeer</h3><p class="mt-1.5 text-inkt/75 leading-relaxed">Welke stijl past bij jou? Kleur, licht en materialen vallen op hun plek.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="py-20 md:py-28" aria-labelledby="reviews-titel">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="flex flex-wrap items-baseline justify-between gap-4">
+      <h2 id="reviews-titel" class="font-kop text-4xl md:text-5xl text-groen">Wat klanten zeggen</h2>
+      <p class="text-inkt/70"><span class="text-oker-donker tracking-[2px]" aria-hidden="true">★★★★★</span> 5,0 op Google, uit 2 reviews</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-12 gap-6">
+      <blockquote class="md:col-span-7 bg-groen text-kalk rounded-[18px] p-8 md:p-12">
+        <p class="font-kop text-xl md:text-2xl leading-relaxed">"Samen met Agnes begonnen we aan ons project nieuwe keuken en aanpassing woonkamer. Agnes luisterde eerst goed naar onze wensen. Daarna deelde ze vol enthousiasme haar ideeën, waardoor wij soms tot aangename andere ideeën kwamen om onze kamer en keuken opnieuw in te richten. Tijdens de verbouwing stond ze ook telkens we..."</p>
+        <footer class="mt-8 text-oker-zacht font-medium">Jacqueline Piels, via Google</footer>
+      </blockquote>
+      <blockquote class="md:col-span-5 bg-oker text-groen-diep rounded-[18px] p-8 md:p-12 flex flex-col justify-between">
+        <p class="font-kop text-2xl md:text-3xl leading-snug">"Agnes heeft ons Atelier helemaal naar onze wensen ontworpen. Nog steeds blij mee...."</p>
+        <footer class="mt-8 font-medium">Brenda Rosendahl, via Google</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Over Agnes -->
+<section id="agnes" class="bg-kalk py-20 md:py-28" aria-labelledby="agnes-titel">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-12 items-start">
+    <div class="md:col-span-5">
+      <img src="assets/google-01.jpg" alt="Agnes Wolters aan tafel met kleurstalen, schetsen en een moodboard" class="w-full aspect-[5/4] md:aspect-[4/4.2] object-cover object-[60%_0%] rounded-[18px]">
+    </div>
+    <div class="md:col-span-6 md:col-start-7">
+      <p class="text-oker-donker font-medium">Binnenhuisarchitectuur, sinds 2008</p>
+      <h2 id="agnes-titel" class="font-kop text-4xl md:text-5xl text-groen leading-tight mt-2">De creatieve bezige bij achter StijlinKleur.</h2>
+      <div class="mt-6 space-y-4 text-lg leading-relaxed text-inkt/85 max-w-[38rem]">
+        <p>Als kind was Agnes al altijd aan het tekenen, knutselen en creëren. Haar slaapkamer kreeg keer op keer een metamorfose. Ze ging eerst in de detailhandel werken, maar het bleef kriebelen. Naast haar werk volgde ze een opleiding binnenhuisarchitectuur, en in 2008 begon ze haar eigen ontwerp- en adviesbureau.</p>
+        <p>Ze heeft een voorliefde voor vintage en 2nd hand. Zo krijgt ook een helemaal nieuw interieur een eigen karakter, met jouw persoonlijke kostbaarheden. Een paar mondelinge adviezen of een volledig uitgewerkt plan: jouw wens staat voorop. Agnes prikkelt je graag met haar ideeën, en dat levert vaak verrassende resultaten op.</p>
+        <p>Haar creativiteit zit ook in haar schilderijen en muurschilderingen. Steeds nieuwe onderwerpen, steeds andere technieken.</p>
+      </div>
+      <div class="mt-10 rounded-lg border border-groen/15 p-6 max-w-[38rem]">
+        <p class="font-semibold text-groen">Lid van IN</p>
+        <p class="mt-1 text-inkt/75">Het netwerk van interieurprofessionals: een plek voor inspiratie, verbinding en vakinhoudelijke ontwikkeling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-groen text-kalk py-20 md:py-28" aria-labelledby="contact-titel">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-5">
+      <h2 id="contact-titel" class="font-kop text-4xl md:text-6xl leading-tight">Benieuwd wat kleur voor jouw huis doet?</h2>
+      <p class="mt-6 text-lg text-kalk/80 leading-relaxed max-w-md">Heb je een vraag of wil je een vrijblijvend kennismakingsgesprek? Bel of mail gerust.</p>
+      <a href="tel:+31640357638" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-oker text-groen-diep font-semibold text-lg px-7 py-4 hover:bg-oker-zacht">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        06 40 35 76 38
+      </a>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-6 text-[16px]">
+        <div><dt class="text-kalk/55 text-sm">Ook bereikbaar op</dt><dd class="mt-1"><a class="hover:text-oker" href="tel:+31544377711">0544 37 77 11</a></dd></div>
+        <div><dt class="text-kalk/55 text-sm">E-mail</dt><dd class="mt-1"><a class="hover:text-oker underline decoration-oker/60 underline-offset-4" href="mailto:info@stijlinkleur.nl">info@stijlinkleur.nl</a></dd></div>
+        <div><dt class="text-kalk/55 text-sm">Adres</dt><dd class="mt-1">Frans Halsstraat 16<br>7131 VW Lichtenvoorde</dd></div>
+        <div><dt class="text-kalk/55 text-sm">Openingstijden</dt><dd class="mt-1">Maandag t/m zaterdag<br>9:00 tot 17:00<br><span class="text-kalk/60">Zondag gesloten</span></dd></div>
+      </dl>
+    </div>
+
+    <form id="formulier" action="mailto:info@stijlinkleur.nl" method="post" enctype="text/plain" class="md:col-span-6 md:col-start-7 bg-kalk text-inkt rounded-[18px] p-7 md:p-10 self-start" novalidate>
+      <h3 class="font-kop text-2xl text-groen">Stuur Agnes een bericht</h3>
+      <div class="mt-6 grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-sm font-medium">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-groen/20 bg-white px-4 py-3 focus:border-groen focus:outline-none"></label>
+        <label class="block"><span class="text-sm font-medium">Telefoon of e-mail</span>
+          <input name="contact" required class="mt-1.5 w-full rounded-md border border-groen/20 bg-white px-4 py-3 focus:border-groen focus:outline-none"></label>
+      </div>
+      <label class="block mt-5"><span class="text-sm font-medium">Om welke ruimte gaat het?</span>
+        <select name="ruimte" class="mt-1.5 w-full rounded-md border border-groen/20 bg-white px-4 py-3 focus:border-groen focus:outline-none">
+          <option>Woonkamer</option><option>Keuken</option><option>Badkamer</option><option>Slaapkamer</option><option>Werkplek of atelier</option><option>Iets anders</option>
+        </select></label>
+      <label class="block mt-5"><span class="text-sm font-medium">Je vraag of wens</span>
+        <textarea name="bericht" rows="4" required class="mt-1.5 w-full rounded-md border border-groen/20 bg-white px-4 py-3 focus:border-groen focus:outline-none"></textarea></label>
+      <p id="fout" class="hidden mt-4 text-[15px] text-[#9B2C1F]">Vul je naam, contactgegevens en vraag in.</p>
+      <button type="submit" class="knop mt-6 w-full sm:w-auto rounded-full bg-groen text-kalk font-semibold px-7 py-3.5 hover:bg-groen-licht">Bericht versturen</button>
+      <p class="mt-4 text-sm text-inkt/60">Je mailprogramma opent met je bericht erin.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-groen-diep text-kalk/60 text-sm pb-20 md:pb-0">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 py-8 flex flex-col md:flex-row gap-3 justify-between">
+    <p><span class="font-kop text-kalk text-base">Stijl<span class="text-oker">in</span>Kleur</span>, Agnes Wolters, Lichtenvoorde</p>
+    <p>Demo-ontwerp door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-oker">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-groen/95 backdrop-blur px-4 py-3 flex gap-3 border-t border-kalk/10">
+  <a href="tel:+31640357638" class="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-oker text-groen-diep font-semibold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel Agnes
+  </a>
+  <a href="mailto:info@stijlinkleur.nl" class="inline-flex items-center justify-center rounded-full border border-kalk/30 text-kalk px-5" aria-label="Mail StijlinKleur">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+  </a>
+</div>
+
+<script>
+  // Formulier: controleren en openen in mailprogramma
+  const f = document.getElementById('formulier');
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = new FormData(f);
+    const leeg = ['naam', 'contact', 'bericht'].some((k) => !String(d.get(k) || '').trim());
+    document.getElementById('fout').classList.toggle('hidden', !leeg);
+    if (leeg) return;
+    const body = `Naam: ${d.get('naam')}\nContact: ${d.get('contact')}\nRuimte: ${d.get('ruimte')}\n\n${d.get('bericht')}`;
+    location.href = `mailto:info@stijlinkleur.nl?subject=${encodeURIComponent('Kennismaking via de website')}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+</body>
+</html>

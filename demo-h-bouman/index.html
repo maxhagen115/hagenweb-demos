@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Henk Bouman | Keukenmontage en timmerwerk in Lichtenvoorde</title>
+<meta name="description" content="Henk Bouman, Timmer & Montagebedrijf uit Lichtenvoorde. Keukenmontage, badkamers, interieur, winkelinrichting en timmerwerk op maat. Bel 06 29 24 67 44.">
+<meta property="og:title" content="Henk Bouman | Timmer & Montagebedrijf">
+<meta property="og:image" content="assets/site-07.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        steen: '#E9E8E4',
+        wit: '#F7F7F5',
+        lei: '#22282B',
+        lei2: '#2C3337',
+        eik: '#B4895A',
+        oranje: '#DD6420',
+        oranjedonker: '#C2551A',
+        grijs: '#5E6669',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        sans: ['"Public Sans"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Duimstok: maatstreepjes, elke 10e streep langer */
+  .maatlat {
+    height: 18px;
+    background-image:
+      repeating-linear-gradient(90deg, currentColor 0 1.5px, transparent 1.5px 100px),
+      repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 50px),
+      repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 10px);
+    background-size: 100% 18px, 100% 12px, 100% 7px;
+    background-repeat: repeat-x;
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  /* Hero-foto met verstek-snede */
+  .verstek { clip-path: polygon(0 0, 100% 0, 100% 100%, 14% 100%); }
+  @media (max-width: 1023px) { .verstek { clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%); } }
+
+  .btn { transition: background-color .2s, transform .15s, box-shadow .2s; }
+  .btn:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #DD6420; outline-offset: 3px;
+  }
+
+  /* Eén moment beweging: hero komt binnen. Alleen als JS de class zet. */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .hero-in { animation: in .8s cubic-bezier(.2,.7,.2,1) both; }
+    html.js .hero-in.d2 { animation-delay: .12s; }
+    html.js .hero-in.d3 { animation-delay: .24s; }
+    html.js .hero-foto { animation: foto 1.1s cubic-bezier(.2,.7,.2,1) both; }
+  }
+  @keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes foto { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: none; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-steen text-lei font-sans">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-wit px-4 py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-lei text-steen/80 text-[13px] py-2 px-4 text-center">
+  Demo voor H. Bouman, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-steen/90 backdrop-blur border-b border-lei/10">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 h-16 lg:h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="leading-none">
+      <span class="block font-kop font-extrabold text-[22px] tracking-tight">Henk Bouman</span>
+      <span class="block text-[12px] text-grijs mt-1">Timmer &amp; Montagebedrijf</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#keukens" class="hover:text-oranje transition-colors">Keukens</a>
+      <a href="#meer" class="hover:text-oranje transition-colors">Verbouw &amp; maatwerk</a>
+      <a href="#werk" class="hover:text-oranje transition-colors">Werk</a>
+      <a href="#henk" class="hover:text-oranje transition-colors">Over Henk</a>
+      <a href="#contact" class="hover:text-oranje transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31629246744" class="btn inline-flex items-center gap-2 bg-lei text-white rounded-md px-4 py-2.5 text-[15px] font-semibold hover:bg-oranje">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 29 24 67 44</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-[1240px] mx-auto flex flex-col lg:grid lg:grid-cols-12 lg:min-h-[640px]">
+    <div class="relative z-10 px-5 lg:px-8 pt-6 pb-12 lg:pt-24 lg:pb-24 lg:col-span-6 flex flex-col justify-center order-2">
+      <p class="hero-in text-[15px] font-medium text-grijs">Keukenmontage en timmerwerk in Lichtenvoorde</p>
+      <h1 class="hero-in d2 font-kop font-extrabold tracking-[-0.03em] leading-[0.95] text-[42px] sm:text-[60px] lg:text-[80px] mt-3">
+        Uw keuken, netjes op zijn plek.
+      </h1>
+      <p class="hero-in d3 mt-5 text-[17px] lg:text-[19px] leading-relaxed text-lei/80 max-w-[30rem]">
+        Henk Bouman plaatst en past keukens aan, verbouwt badkamers en maakt timmerwerk op maat. Met goed overleg vooraf en advies over indeling, kleur en materiaal.
+      </p>
+      <div class="hero-in d3 mt-7 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a id="hero-bel" href="tel:+31629246744" class="btn inline-flex items-center gap-3 bg-oranje hover:bg-oranjedonker text-white rounded-md px-7 py-4 text-[18px] font-semibold shadow-[0_10px_24px_-10px_rgba(221,100,32,.7)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Bel Henk: 06 29 24 67 44
+        </a>
+        <a href="#werk" class="font-semibold underline decoration-eik decoration-2 underline-offset-[6px] hover:text-oranje">Bekijk het werk</a>
+      </div>
+      <p class="hero-in d3 mt-8 flex items-center gap-3 text-[14px] text-grijs">
+        <span class="text-oranje tracking-[2px] text-[17px]" aria-hidden="true">★★★★★</span>
+        <span>5 sterren op Google</span>
+      </p>
+    </div>
+    <div class="relative order-1 lg:col-span-6 lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:w-[50vw]">
+      <img src="assets/site-07.jpg" alt="Strakke zwarte keuken met kookeiland en barkrukken, geplaatst door Henk Bouman" class="hero-foto verstek w-full h-[230px] sm:h-[420px] lg:h-full object-cover object-[50%_62%]">
+      <div class="maatlat text-eik absolute left-5 right-5 lg:left-[14%] lg:right-0 bottom-[-1px] lg:bottom-0 hidden lg:block"></div>
+    </div>
+  </div>
+</section>
+
+<div class="maatlat text-lei/25"></div>
+
+<!-- Keukens -->
+<section id="keukens" class="py-20 lg:py-28">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12">
+    <div class="lg:col-span-5 lg:pt-6">
+      <h2 class="font-kop font-bold tracking-[-0.02em] leading-[1.02] text-[38px] lg:text-[54px]">Keukenmontage is het vak.</h2>
+      <p class="mt-6 text-[17px] leading-[1.7] text-lei/80 max-w-[34rem]">
+        Een nieuwe keuken staat of valt met de montage. Henk is daarin gespecialiseerd: hij plaatst uw nieuwe keuken en past een bestaande keuken aan waar dat nodig is.
+      </p>
+      <p class="mt-4 text-[17px] leading-[1.7] text-lei/80 max-w-[34rem]">
+        Twijfelt u nog over de indeling, de kleur of het materiaal? Vraag het gerust. Advies hoort erbij.
+      </p>
+      <ul class="mt-8 border-t border-lei/15 text-[16px]">
+        <li class="py-3.5 border-b border-lei/15 flex justify-between gap-4"><span class="font-semibold">Keuken plaatsen</span><span class="text-grijs text-right">uw nieuwe keuken</span></li>
+        <li class="py-3.5 border-b border-lei/15 flex justify-between gap-4"><span class="font-semibold">Keuken aanpassen</span><span class="text-grijs text-right">uw bestaande keuken</span></li>
+        <li class="py-3.5 border-b border-lei/15 flex justify-between gap-4"><span class="font-semibold">Installatie en elektra</span><span class="text-grijs text-right">in één pakket mogelijk</span></li>
+      </ul>
+    </div>
+    <div class="lg:col-span-7 grid grid-cols-6 gap-3 lg:gap-4">
+      <figure class="col-span-6 sm:col-span-4 row-span-2">
+        <img src="assets/google-06.jpg" alt="Witte hoogglans keuken met kookeiland en inbouwapparatuur" class="w-full h-[380px] sm:h-full sm:min-h-[520px] object-cover rounded-[3px]">
+      </figure>
+      <figure class="col-span-3 sm:col-span-2">
+        <img src="assets/site-02.jpg" alt="Kookeiland met zwart werkblad en verlichting onder de plint" class="w-full h-[180px] sm:h-[252px] object-cover rounded-[3px]">
+      </figure>
+      <figure class="col-span-3 sm:col-span-2 relative">
+        <img src="assets/google-08.jpg" alt="Eiken kookeiland tijdens de montage, vloer nog afgedekt" class="w-full h-[180px] sm:h-[252px] object-cover rounded-[3px]">
+        <figcaption class="absolute left-2 bottom-2 bg-wit/95 text-[12px] font-medium px-2 py-1 rounded-[2px]">Tijdens de montage</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Review -->
+<section class="bg-lei text-steen relative overflow-hidden">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-8">
+    <div class="lg:col-span-3">
+      <p class="text-oranje tracking-[3px] text-[20px]" aria-label="5 van 5 sterren">★★★★★</p>
+      <p class="mt-2 text-[14px] text-steen/60">Google-review</p>
+    </div>
+    <figure class="lg:col-span-9">
+      <blockquote class="font-kop font-semibold tracking-[-0.015em] leading-[1.18] text-[28px] sm:text-[36px] lg:text-[46px]">
+        <p>“Henk heeft bij ons de nieuwe keuken geplaatst. Werkt super netjes, overlegd goed, fijne man om mee te werken.</p>
+        <p class="mt-4 text-eik">We zijn superblij met onze nieuwe keuken.”</p>
+      </blockquote>
+      <figcaption class="mt-8 text-[16px] text-steen/70">Jacco Danen en Melanie van Os</figcaption>
+    </figure>
+  </div>
+  <div class="maatlat text-eik/50"></div>
+</section>
+
+<!-- Meer dan keukens -->
+<section id="meer" class="py-20 lg:py-28">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-6 items-end">
+      <h2 class="lg:col-span-7 font-kop font-bold tracking-[-0.02em] leading-[1.02] text-[38px] lg:text-[54px]">Voor alle klussen in en rond uw huis.</h2>
+      <p class="lg:col-span-5 text-[17px] leading-[1.7] text-lei/80">Naast keukens doet Henk de hele woning, en voor ondernemers de complete winkel. Bijna alles is te maken.</p>
+    </div>
+
+    <div class="mt-14 lg:mt-20 divide-y divide-lei/15 border-y border-lei/15">
+
+      <article class="py-10 lg:py-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-5">
+          <h3 class="font-kop font-bold text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.015em]">Badkamer en toilet</h3>
+          <p class="mt-4 text-[17px] leading-[1.7] text-lei/80">Uw badkamer aanpassen, verbouwen of helemaal renoveren. Ook een toilet of een kleine aanpassing pakt Henk op.</p>
+        </div>
+        <div class="lg:col-span-7 grid grid-cols-5 gap-3 lg:gap-4">
+          <img src="assets/site-08.jpg" alt="Gerenoveerde badkamer met donkere tegelwand, vrijstaand bad en raam" class="col-span-3 w-full h-[280px] lg:h-[380px] object-cover object-[50%_45%] rounded-[3px]">
+          <img src="assets/google-04.jpg" alt="Toilet met donkergrijze tegels en zwevend closet" class="col-span-2 w-full h-[280px] lg:h-[380px] object-cover object-[50%_40%] rounded-[3px]">
+        </div>
+      </article>
+
+      <article class="py-10 lg:py-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-5 lg:order-2">
+          <h3 class="font-kop font-bold text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.015em]">Interieur en winkelinrichting</h3>
+          <p class="mt-4 text-[17px] leading-[1.7] text-lei/80">Verbouwen, vernieuwen of aanpassen: van één ruimte tot de hele woning. Voor ondernemers verzorgt Henk de complete winkelinrichting. Bij specifieke wensen werkt hij samen met een architect.</p>
+        </div>
+        <div class="lg:col-span-7 lg:order-1 grid grid-cols-5 gap-3 lg:gap-4">
+          <img src="assets/site-12.jpg" alt="Winkelinterieur met glazen wanden, toonbank en rode meubels" class="col-span-3 w-full h-[280px] lg:h-[380px] object-cover rounded-[3px]">
+          <img src="assets/site-03.jpg" alt="Eethoek met houten tafel, wandmeubel en hanglampen" class="col-span-2 w-full h-[280px] lg:h-[380px] object-cover object-[40%_50%] rounded-[3px]">
+        </div>
+      </article>
+
+      <article class="py-10 lg:py-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="lg:col-span-5">
+          <h3 class="font-kop font-bold text-[28px] lg:text-[34px] leading-[1.1] tracking-[-0.015em]">Timmerwerk op maat</h3>
+          <p class="mt-4 text-[17px] leading-[1.7] text-lei/80">Bouw, aanbouw en verbouw. Overkappingen, kozijnen, plafonds, deuren en maatwerkkasten. Installatiewerk en elektra kunnen in hetzelfde pakket, zo blijven de lijnen kort.</p>
+        </div>
+        <div class="lg:col-span-7 grid grid-cols-5 gap-3 lg:gap-4">
+          <img src="assets/site-10.jpg" alt="Houten overkapping met verlichting in de avond" class="col-span-3 w-full h-[280px] lg:h-[380px] object-cover rounded-[3px]">
+          <img src="assets/site-11.jpg" alt="Maatwerkkast van hout tijdens de bouw" class="col-span-2 w-full h-[280px] lg:h-[380px] object-cover rounded-[3px]">
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Werk -->
+<section id="werk" class="bg-wit py-20 lg:py-28">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-kop font-bold tracking-[-0.02em] leading-[1.02] text-[38px] lg:text-[54px] max-w-[18ch]">Werk waar Henk trots op is.</h2>
+      <p class="text-[16px] text-grijs max-w-[28rem]">Keukens, badkamers, toiletten, overkappingen en maatwerk. Een greep uit de projecten.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 grid-flow-dense auto-rows-[170px] sm:auto-rows-[230px] lg:auto-rows-[260px] gap-3 lg:gap-4">
+      <figure class="relative row-span-2">
+        <img src="assets/site-09.jpg" alt="Badkamer met donkere tegels, toilet, bad en plant" class="absolute inset-0 w-full h-full object-cover  rounded-[3px]">
+        <figcaption class="absolute left-2 bottom-2 bg-wit/95 text-[13px] font-medium px-2 py-1 rounded-[2px]">Badkamer</figcaption>
+      </figure>
+      <figure class="relative lg:col-span-2">
+        <img src="assets/google-03.jpg" alt="Houten overkapping in een tuin" class="absolute inset-0 w-full h-full object-cover  rounded-[3px]">
+        <figcaption class="absolute left-2 bottom-2 bg-wit/95 text-[13px] font-medium px-2 py-1 rounded-[2px]">Overkapping</figcaption>
+      </figure>
+      <figure class="relative row-span-2 lg:col-start-4 lg:row-start-1">
+        <img src="assets/google-01.jpg" alt="Keuken in een nieuwe aanbouw met houten balkenplafond" class="absolute inset-0 w-full h-full object-cover  rounded-[3px]">
+        <figcaption class="absolute left-2 bottom-2 bg-wit/95 text-[13px] font-medium px-2 py-1 rounded-[2px]">Keuken in aanbouw</figcaption>
+      </figure>
+      <figure class="relative ">
+        <img src="assets/site-04.jpg" alt="Badkamermeubel van hout met waskom en open kast" class="absolute inset-0 w-full h-full object-cover  rounded-[3px]">
+        <figcaption class="absolute left-2 bottom-2 bg-wit/95 text-[13px] font-medium px-2 py-1 rounded-[2px]">Badkamermeubel</figcaption>
+      </figure>
+      <figure class="relative ">
+        <img src="assets/google-05.jpg" alt="Inloopdouche met houtlook tegels en douchegoot" class="absolute inset-0 w-full h-full object-cover  rounded-[3px]">
+        <figcaption class="absolute left-2 bottom-2 bg-wit/95 text-[13px] font-medium px-2 py-1 rounded-[2px]">Inloopdouche</figcaption>
+      </figure>
+      <figure class="relative lg:hidden">
+        <img src="assets/google-02.jpg" alt="Wandafwerking met ingebouwde nisplanken" class="absolute inset-0 w-full h-full object-cover object-[50%_35%] rounded-[3px]">
+        <figcaption class="absolute left-2 bottom-2 bg-wit/95 text-[13px] font-medium px-2 py-1 rounded-[2px]">Wand met nissen</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Over Henk -->
+<section id="henk" class="py-20 lg:py-28">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-5 relative">
+      <img src="assets/site-05.jpg" alt="Henk Bouman aan het werk op het dak van een houten tuinhuis" class="w-full aspect-[4/5] object-cover rounded-t-[200px] rounded-b-[3px]">
+      <div class="maatlat text-eik mt-3"></div>
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="font-kop font-bold tracking-[-0.02em] leading-[1.02] text-[38px] lg:text-[54px]">Eén aanspreekpunt: Henk zelf.</h2>
+      <div class="mt-6 space-y-4 text-[17px] leading-[1.7] text-lei/80 max-w-[36rem]">
+        <p>Henk Bouman is een allround interieurbedrijf uit Lichtenvoorde, gespecialiseerd in keukenmontage en winkelinrichting. Met ruim 23 jaar ervaring in het vak.</p>
+        <p>Overleg, advies en flexibiliteit staan voorop. Uw wens is het uitgangspunt, daarna zoekt Henk samen met u naar wat past. Zo krijgt u maatwerk, met aandacht voor kwaliteit en service.</p>
+      </div>
+      <dl class="mt-10 grid sm:grid-cols-3 gap-6 border-t border-lei/15 pt-6 max-w-[40rem]">
+        <div><dt class="font-kop font-bold text-[20px]">Overleg</dt><dd class="mt-1 text-[15px] text-grijs">Eerst luisteren, dan zagen.</dd></div>
+        <div><dt class="font-kop font-bold text-[20px]">Advies</dt><dd class="mt-1 text-[15px] text-grijs">Over inrichting, kleur en materiaal.</dd></div>
+        <div><dt class="font-kop font-bold text-[20px]">Korte lijnen</dt><dd class="mt-1 text-[15px] text-grijs">Installatie en elektra in één pakket.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-lei text-steen">
+  <div class="maatlat text-eik/50"></div>
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="font-kop font-bold tracking-[-0.02em] leading-[1.02] text-[38px] lg:text-[54px] text-white">Een klus bespreken?</h2>
+      <p class="mt-5 text-[17px] leading-[1.7] text-steen/75 max-w-[30rem]">Bel Henk gerust, vrijblijvend. Liever mailen of een bericht achterlaten kan ook.</p>
+      <a href="tel:+31629246744" class="btn mt-8 inline-flex items-center gap-3 bg-oranje hover:bg-oranjedonker text-white rounded-md px-7 py-4 text-[18px] font-semibold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        06 29 24 67 44
+      </a>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-8 text-[16px]">
+        <div>
+          <dt class="text-[14px] text-steen/55">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@henkbouman.org" class="text-white underline decoration-eik underline-offset-4 hover:text-oranje">info@henkbouman.org</a></dd>
+        </div>
+        <div>
+          <dt class="text-[14px] text-steen/55">Adres</dt>
+          <dd class="mt-1 text-white">Huininkmaat 2<br>7131 TJ Lichtenvoorde</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-[14px] text-steen/55">Bereikbaar</dt>
+          <dd class="mt-1 text-white">Maandag tot en met vrijdag, 07:30 tot 18:00<br><span class="text-steen/60">Zaterdag en zondag gesloten</span></dd>
+        </div>
+      </dl>
+    </div>
+    <div class="lg:col-span-6">
+      <form action="mailto:info@henkbouman.org" method="post" enctype="text/plain" class="bg-lei2 rounded-md p-6 sm:p-8 space-y-5">
+        <p class="font-kop font-semibold text-[22px] text-white">Laat een bericht achter</p>
+        <div>
+          <label for="naam" class="block text-[14px] text-steen/70 mb-1.5">Naam</label>
+          <input id="naam" name="naam" required autocomplete="name" class="w-full bg-steen text-lei rounded-[4px] px-4 py-3 text-[16px]">
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="tel" class="block text-[14px] text-steen/70 mb-1.5">Telefoonnummer</label>
+            <input id="tel" name="telefoon" type="tel" autocomplete="tel" class="w-full bg-steen text-lei rounded-[4px] px-4 py-3 text-[16px]">
+          </div>
+          <div>
+            <label for="mail" class="block text-[14px] text-steen/70 mb-1.5">E-mailadres</label>
+            <input id="mail" name="email" type="email" autocomplete="email" class="w-full bg-steen text-lei rounded-[4px] px-4 py-3 text-[16px]">
+          </div>
+        </div>
+        <div>
+          <label for="bericht" class="block text-[14px] text-steen/70 mb-1.5">Waar gaat het om?</label>
+          <textarea id="bericht" name="bericht" rows="4" required placeholder="Bijvoorbeeld: nieuwe keuken laten plaatsen, badkamer verbouwen" class="w-full bg-steen text-lei rounded-[4px] px-4 py-3 text-[16px] placeholder:text-grijs/70"></textarea>
+        </div>
+        <button type="submit" class="btn w-full bg-white text-lei hover:bg-oranje hover:text-white rounded-md px-6 py-3.5 text-[16px] font-semibold">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-lei text-steen/55 border-t border-white/10 pb-24 md:pb-0">
+  <div class="max-w-[1240px] mx-auto px-5 lg:px-8 py-8 flex flex-wrap justify-between gap-4 text-[14px]">
+    <p><span class="text-white font-kop font-bold">Henk Bouman</span>, Timmer &amp; Montagebedrijf, Lichtenvoorde</p>
+    <p>Demo door <a href="https://hagenweb.nl" class="underline hover:text-oranje">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 transition-transform duration-300 bg-steen/95 backdrop-blur border-t border-lei/10">
+  <a href="tel:+31629246744" class="btn flex items-center justify-center gap-3 bg-oranje text-white rounded-md py-3.5 text-[17px] font-semibold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    Bel Henk: 06 29 24 67 44
+  </a>
+</div>
+
+<script>
+  (function () {
+    var bar = document.getElementById('belbalk'), knop = document.getElementById('hero-bel');
+    if (!('IntersectionObserver' in window) || !bar || !knop) return;
+    new IntersectionObserver(function (e) {
+      bar.style.transform = e[0].isIntersecting ? 'translateY(110%)' : '';
+    }).observe(knop);
+  })();
+</script>
+</body>
+</html>

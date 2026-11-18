@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Restaurant Juntoz | Onbeperkt tapas in Lichtenvoorde</title>
+<meta name="description" content="Restaurant Juntoz aan de Aaltenseweg in Lichtenvoorde: onbeperkt tapas, van sushi rolls en streetfood tot desserts. Bel 0544 745 009 om te reserveren.">
+<meta property="og:title" content="Restaurant Juntoz, Lichtenvoorde">
+<meta property="og:description" content="Kleine bordjes, lange avonden. Onbeperkt tapas aan de Aaltenseweg.">
+<meta property="og:image" content="assets/google-04.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Gloock&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          wijn: '#2A1517',
+          velours: '#3B1D20',
+          fles: '#1E3A2F',
+          goud: '#DDB774',
+          saffraan: '#F2A23C',
+          perkament: '#F4E8D6',
+        },
+        fontFamily: {
+          kop: ['Gloock', 'Georgia', 'serif'],
+          sans: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background:#2A1517; color:#F4E8D6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .grain::before {
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:60; opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .boog { border-radius: 999px 999px 18px 18px; }
+  .gloed { background: radial-gradient(60% 50% at 70% 35%, rgba(242,162,60,.18), transparent 70%), radial-gradient(50% 40% at 10% 90%, rgba(221,183,116,.08), transparent 70%); }
+  .btn-hoofd { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; box-shadow: 0 10px 30px -10px rgba(242,162,60,.55); }
+  .btn-hoofd:hover { background:#F7B55E; transform: translateY(-1px); }
+  .btn-hoofd:active { transform: translateY(1px) scale(.98); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid #F2A23C; outline-offset: 3px; }
+  .num { font-variant-numeric: tabular-nums; }
+  /* Eén laadmoment in de hero, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .in { animation: in .9s cubic-bezier(.2,.7,.2,1) both; }
+    .js .in-2 { animation-delay: .12s; }
+    .js .in-3 { animation-delay: .24s; }
+    .js .in-foto { animation: foto 1.2s cubic-bezier(.2,.7,.2,1) both; }
+  }
+  @keyframes in { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform:none; } }
+  @keyframes foto { from { opacity:0; transform: scale(1.04); } to { opacity:1; transform:none; } }
+  .belbalk { transition: transform .3s ease; }
+  .js .belbalk { transform: translateY(120%); }
+  .js .belbalk.toon { transform: none; }
+  .veld { background: rgba(244,232,214,.06); border:1px solid rgba(221,183,116,.28); border-radius:10px; padding:.8rem 1rem; width:100%; color:#F4E8D6; }
+  .veld::placeholder { color: rgba(244,232,214,.45); }
+  .veld:focus { border-color:#F2A23C; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="grain font-sans">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[70] focus:bg-saffraan focus:text-wijn focus:px-4 focus:py-2 focus:rounded">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-perkament text-wijn text-center text-[13px] py-2 px-4">
+  Demo voor Restaurant Juntoz, gemaakt door <a href="https://hagenweb.nl" class="font-semibold underline underline-offset-2 hover:text-[#9a4a12]">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-wijn/90 backdrop-blur border-b border-goud/15">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-6">
+    <a href="#top" aria-label="Restaurant Juntoz, naar boven"><img src="assets/site-01.png" alt="Restaurant Juntoz" class="h-9 lg:h-11 w-auto"></a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] text-perkament/80" aria-label="Hoofdmenu">
+      <a href="#zo-werkt-het" class="hover:text-goud transition-colors">Tapasdiner</a>
+      <a href="#kaart" class="hover:text-goud transition-colors">De kaart</a>
+      <a href="#drinks" class="hover:text-goud transition-colors">Drinks</a>
+      <a href="#kerst" class="hover:text-goud transition-colors">Kerst & groepen</a>
+      <a href="#contact" class="hover:text-goud transition-colors">Contact</a>
+    </nav>
+    <a href="tel:0544745009" class="hidden sm:inline-flex items-center gap-2 text-goud font-semibold hover:text-saffraan transition-colors num">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      0544 745 009
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden gloed">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-6 pb-14 lg:pt-14 lg:pb-24 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <div class="lg:col-span-6 order-2 lg:order-1">
+      <p class="in text-goud text-[15px] font-medium tracking-wide">Tapasrestaurant aan de Aaltenseweg, Lichtenvoorde</p>
+      <h1 class="in in-2 font-kop text-[42px] leading-[1.02] sm:text-6xl lg:text-[84px] lg:leading-[.98] tracking-tight mt-3 lg:mt-4 text-perkament">Kleine bordjes, lange avonden.</h1>
+      <p class="in in-3 mt-4 lg:mt-6 text-[17px] lg:text-lg leading-relaxed text-perkament/80 max-w-[30rem]">Onbeperkt tapas uit de hele wereld: van sushi rolls en streetfood tot oma's stoofpotje en dessert. Je bestelt via de QR-code op tafel, zo vaak als je wilt.</p>
+      <div class="in in-3 mt-6 lg:mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a href="tel:0544745009" class="btn-hoofd inline-flex items-center gap-3 bg-saffraan text-wijn font-bold text-lg rounded-full pl-6 pr-7 py-4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel en reserveer
+        </a>
+        <a href="#kaart" class="text-perkament font-semibold underline decoration-goud/60 underline-offset-[6px] hover:decoration-saffraan">Bekijk de kaart</a>
+      </div>
+      <p class="in in-3 mt-8 flex items-center gap-3 text-perkament/75 text-[15px]">
+        <span class="text-saffraan tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-perkament font-semibold">4,8</strong> uit 285 Google-reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-6 order-1 lg:order-2 relative">
+      <div class="in-foto relative mx-auto w-[92%] sm:w-[70%] lg:w-[88%] lg:ml-auto">
+        <div class="absolute -inset-3 boog border border-goud/35" aria-hidden="true"></div>
+        <img src="assets/google-04.jpg" alt="Tafel bij Juntoz vol tapas: sushi, curly fries, beef tataki, een burgertje en een glas wijn" class="boog relative w-full aspect-[5/4] sm:aspect-[4/5] lg:aspect-[5/6] object-cover object-[50%_60%]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZO WERKT HET -->
+<section id="zo-werkt-het" class="bg-velours/60 border-y border-goud/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-24">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12">
+      <div class="lg:col-span-4">
+        <h2 class="font-kop text-4xl lg:text-5xl leading-tight text-goud">Zo gaat een avond bij Juntoz</h2>
+        <p class="mt-5 text-perkament/80 leading-relaxed max-w-md">Je betaalt één prijs en bestelt de hele avond kleine gerechtjes bij. Western classics, streetfood, sushi, vis, vlees van de grill en onbeperkt desserts. Proef wat je wilt, bestel nog een rondje van wat je lekker vond.</p>
+        <dl class="mt-8 space-y-3 num">
+          <div class="flex items-baseline justify-between gap-4 border-b border-goud/20 pb-3">
+            <dt class="text-perkament/80">Volwassenen</dt><dd class="font-kop text-3xl text-perkament">€44,75 <span class="font-sans text-sm text-perkament/60">p.p.</span></dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 border-b border-goud/20 pb-3">
+            <dt class="text-perkament/80">Kinderen 4 t/m 10 jaar</dt><dd class="font-kop text-3xl text-perkament">€22,75 <span class="font-sans text-sm text-perkament/60">p.p.</span></dd>
+          </div>
+        </dl>
+        <p class="mt-3 text-sm text-perkament/55">Exclusief dranken.</p>
+      </div>
+
+      <div class="lg:col-span-8 grid sm:grid-cols-2 gap-5">
+        <article class="rounded-2xl bg-wijn p-7 lg:p-9 border border-goud/15">
+          <p class="text-saffraan font-semibold">Dinsdag t/m vrijdag</p>
+          <p class="font-kop text-4xl xl:text-5xl mt-3 num whitespace-nowrap">17:00 <span class="text-goud/70 text-2xl">tot</span> 22:00</p>
+          <p class="mt-5 text-perkament/75 leading-relaxed">Reserveer op het tijdstip dat jou uitkomt en geniet onbeperkt van alle tapasgerechtjes.</p>
+          <p class="mt-4 text-sm text-perkament/55">Maandag zijn we gesloten.</p>
+        </article>
+        <article class="rounded-2xl bg-wijn p-7 lg:p-9 border border-goud/15">
+          <p class="text-saffraan font-semibold">Zaterdag en zondag</p>
+          <div class="mt-3 space-y-3 num">
+            <p><span class="block text-sm text-goud">Early dinner</span><span class="font-kop text-4xl">16:00 <span class="text-goud/70 text-2xl">tot</span> 19:00</span></p>
+            <p><span class="block text-sm text-goud">Late dinner</span><span class="font-kop text-4xl">19:30 <span class="text-goud/70 text-2xl">tot</span> 22:30</span></p>
+          </div>
+          <p class="mt-5 text-perkament/75 leading-relaxed">Drie uur lang onbeperkt genieten. Later aanschuiven mag, de eindtijd blijft wel hetzelfde.</p>
+        </article>
+        <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-dashed border-goud/30 px-7 py-5">
+          <p class="text-perkament/80">Een tafeltje bij het raam? Zeg het als je belt.</p>
+          <a href="tel:0544745009" class="font-semibold text-saffraan hover:text-perkament transition-colors num">Bel 0544 745 009</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SFEER -->
+<section aria-label="De zaal" class="relative">
+  <img src="assets/google-01.jpg" alt="De zaal van Juntoz: wijnwand, gouden lantaarns en okergele stoelen bij kaarslicht" class="w-full h-[62vh] min-h-[380px] max-h-[720px] object-cover object-[50%_45%]">
+  <div class="absolute inset-0 bg-gradient-to-t from-wijn via-wijn/55 to-transparent"></div><div class="absolute inset-0 bg-gradient-to-r from-wijn/70 via-wijn/20 to-transparent"></div>
+  <figure class="absolute bottom-0 inset-x-0">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 pb-10 lg:pb-16">
+      <blockquote class="font-kop text-[26px] sm:text-3xl lg:text-[40px] !leading-[1.25] max-w-3xl text-perkament">"Als je aan komt lopen ziet het er van buiten al heel sfeervol en gezellig uit. Eenmaal binnen een heel vriendelijk ontvangst."</blockquote>
+      <figcaption class="mt-4 text-goud">Spoor_Meester, Google-review</figcaption>
+    </div>
+  </figure>
+</section>
+
+<!-- DE KAART -->
+<section id="kaart" class="relative">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14">
+    <div class="lg:col-span-5">
+      <div class="lg:sticky lg:top-28">
+        <h2 class="font-kop text-4xl lg:text-6xl leading-[1.05] text-goud">Van 1 tot 97.</h2>
+        <p class="mt-5 text-perkament/80 leading-relaxed max-w-md">Zoveel gerechtjes staan er genummerd op onze kaart. Van carpaccio (nummer 1) tot een bolletje aardbeienijs (nummer 97). Kies op nummer, scan de QR-code en de keuken gaat aan de slag.</p>
+        <img src="assets/google-07.jpg" alt="Twee tapasbordjes: zalmtartaar en beef tataki op rode borden" class="mt-8 w-full aspect-[4/3] object-cover rounded-[28px_28px_28px_120px]">
+        <p class="mt-5 text-sm text-perkament/60 leading-relaxed">Met een vlammetje gemarkeerd: Chef's Choice. Er zijn ook vegetarische gerechten. Allergie? Meld het bij je reservering, we hebben een allergenenkaart.</p>
+      </div>
+    </div>
+
+    <ol class="lg:col-span-7 divide-y divide-goud/15 border-y border-goud/15">
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">1-9</span>
+        <div><h3 class="font-kop text-2xl text-perkament">Cold starters</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Carpaccio, zalmwrap, prosciutto melone, salmon tartar, Caribisch gevuld eitje, bruschetta al pomodoro, honey brie, beef tataki, sashimi salmon</p></div>
+      </li>
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">10-16</span>
+        <div><h3 class="font-kop text-2xl text-perkament">Hot starters</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Chorizo kroketje, crispy chicken salad, feta spring rolls, groentebitterbal, Hollands kaaskroketje, chicken wings, Italiaans tomatensoepje</p></div>
+      </li>
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">17-25</span>
+        <div><h3 class="font-kop text-2xl text-perkament">Meat at its finest</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Beef chimichurri, sweet &amp; sour chicken, Thai beef, tournedos, T-bone steak, chicken teriyaki, lamb skewer, beef teriyaki, pepper steak</p></div>
+      </li>
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">26-32</span>
+        <div><h3 class="font-kop text-2xl text-perkament">Streetfood</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Loaded nacho's, Korean BBQ chicken, focaccia pizza, chicken gyoza, gyros wrap, wrap pollo, Thai curry chicken</p></div>
+      </li>
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">33-39</span>
+        <div><h3 class="font-kop text-2xl text-perkament">Classics</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Beef tenderloin bites, oma's stoofpotje, spring rolls, cheesedippers, gehaktballetje saté, crispy chicken burger, chicken saté</p></div>
+      </li>
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">40-46</span>
+        <div><h3 class="font-kop text-2xl text-perkament">Fish &amp; seafood</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Calamaris, chili shrimps, zalmfilet, salt &amp; pepper gamba's, gamba pil pil, kibbeling, tuna melt sandwich</p></div>
+      </li>
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">47-53</span>
+        <div><h3 class="font-kop text-2xl text-perkament">BBQ &amp; grill</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Hotdog, paprika goatcheese, schnitzel, spareribs, speklapje BBQ style, BBQ beef skewer, cheeseburger</p></div>
+      </li>
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">54-65</span>
+        <div><h3 class="font-kop text-2xl text-perkament">Sushi</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Beef carpaccio roll, dragon roll, torched salmon roll, chicken mango maki, tiger salmon roll, cucumber maki, spicy chicken roll, California maki, nigiri beef, surf &amp; turf roll, avocado chicken roll, nigiri flamed salmon</p></div>
+      </li>
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">66-75</span>
+        <div><h3 class="font-kop text-2xl text-perkament">Sides</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Edamame, garlic bread, sweet &amp; sour cucumber, curly fries, boerenfriet, corn ribs, sweet potato fries, garlic mushrooms, noodles, Greek salad</p></div>
+      </li>
+      <li class="py-6 grid grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr] gap-4">
+        <span class="font-kop text-2xl sm:text-3xl text-saffraan num">76-97</span>
+        <div><h3 class="font-kop text-2xl text-perkament">Desserts en ijs, onbeperkt</h3><p class="mt-1.5 text-perkament/65 leading-relaxed">Bastognemousse, Oreo brownie, speculoos cheesecake, monchoutaartje, witte chocolademousse, crème brûlée, espresso tiramisu, spekkoek, dame blanche, apple crumble met vanille-ijs, pistache popdot en zes soorten ijs en sorbet</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section aria-labelledby="reviews-kop" class="bg-velours/60 border-y border-goud/10 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-24">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <h2 id="reviews-kop" class="font-kop text-4xl lg:text-5xl text-goud">Wat gasten zeggen</h2>
+      <p class="text-perkament/75"><span class="text-saffraan tracking-[2px]" aria-hidden="true">★★★★★</span> <strong class="text-perkament">4,8</strong> uit 285 reviews op Google</p>
+    </div>
+    <div class="mt-10 grid lg:grid-cols-12 gap-6">
+      <figure class="lg:col-span-7 rounded-2xl bg-wijn border border-goud/15 p-8 lg:p-12 flex flex-col justify-between">
+        <blockquote class="font-kop text-2xl lg:text-[32px] leading-[1.25]">"Prima eten, zo lekker! Ben bij alle Mundoz geweest. Super concept, staat bij mij op nr 1. Bediening, sfeer, alles is top ! Tafeltje gevraagd bij t raam, top en bestellen via QR code werkt prima"</blockquote>
+        <figcaption class="mt-8 text-goud">Gerdie Maarleveld<span class="text-perkament/50">, 5 sterren</span></figcaption>
+      </figure>
+      <img src="assets/google-02.jpg" alt="Lange tafel met groene stoelen voor een kleurrijke muurschildering" class="lg:col-span-5 w-full h-full min-h-[260px] aspect-[4/3] lg:aspect-auto object-cover rounded-2xl">
+      <img src="assets/google-05.jpg" alt="Rode fluwelen stoelen en een lange chesterfield-bank in de zaal" class="hidden sm:block lg:col-span-5 w-full aspect-[16/10] object-cover rounded-2xl">
+      <figure class="lg:col-span-4 rounded-2xl bg-wijn border border-goud/15 p-8 flex flex-col justify-between">
+        <blockquote class="text-lg leading-relaxed text-perkament/90">"Nette en gezellige etablissement in Lichtenvoorde. Met collega's heerlijk gegeten en gedronken. Vriendelijk en zeer attent personeel en voor herhaling vatbaar."</blockquote>
+        <figcaption class="mt-5 text-goud">Nique<span class="text-perkament/50">, 5 sterren</span></figcaption>
+      </figure>
+      <figure class="lg:col-span-3 rounded-2xl bg-saffraan text-wijn p-8 flex flex-col justify-between">
+        <blockquote class="font-kop text-2xl leading-snug">"Prima zaak goed en lekker gegeten het liep allemaal goed."</blockquote>
+        <figcaption class="mt-5 font-semibold">Peter Janssen<span class="font-normal opacity-70">, 5 sterren</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- DRINKS -->
+<section id="drinks" class="bg-fles relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div class="lg:col-span-6">
+        <h2 class="font-kop text-4xl lg:text-6xl leading-[1.05] text-goud">Goede vrienden laten elkaar niet alleen drinken.</h2>
+        <p class="mt-6 text-perkament/80 leading-relaxed max-w-xl">Bij tapas hoort een goed glas. Onze wijnen zijn met zorg gekozen, met bekende huizen als Masi, Antinori en het Argentijnse Norton. Liever een cocktail? Onze bartender maakt signature cocktails, martini's, mojito's en zijn eigen specials.</p>
+
+        <dl class="mt-10 divide-y divide-perkament/15 border-y border-perkament/15">
+          <div class="py-5 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+            <dt class="font-kop text-xl text-perkament">Wijn</dt>
+            <dd class="text-perkament/70 leading-relaxed">Wit, rosé, rood en bubbels, per glas of per fles. Van Norton uit Mendoza tot Château Sainte Roseline uit de Provence.</dd>
+          </div>
+          <div class="py-5 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+            <dt class="font-kop text-xl text-perkament">Cocktail tree</dt>
+            <dd class="text-perkament/70 leading-relaxed">Zes of negen cocktails in één boom, om samen te delen. Kies uit onder meer pornstar, white chocolate, raspberry en amaretto sour.</dd>
+          </div>
+          <div class="py-5 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+            <dt class="font-kop text-xl text-perkament">Mocktails</dt>
+            <dd class="text-perkament/70 leading-relaxed">Nojito, passion nojito, whatamelon, vir-gin en meer. Alle smaak, geen alcohol.</dd>
+          </div>
+          <div class="py-5 grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-6">
+            <dt class="font-kop text-xl text-perkament">Frozen</dt>
+            <dd class="text-perkament/70 leading-relaxed">Frozen cappuccino in karamel, chocolade of witte chocolade, of een frozen smoothie van mango, passievrucht en aardbei.</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="lg:col-span-6 grid grid-cols-2 gap-4 lg:gap-5">
+        <img src="assets/google-08.jpg" alt="Een cocktail tree met zes cocktails wordt geserveerd voor de wijnwand" class="col-span-2 sm:col-span-1 sm:row-span-2 w-full h-full aspect-[4/5] sm:aspect-auto object-cover rounded-[999px_999px_18px_18px]">
+        <img src="assets/google-03.jpg" alt="Frambozenmojito met verse munt" class="w-full aspect-square object-cover rounded-2xl">
+        <img src="assets/site-12.jpg" alt="Een fles Antinori Bramito della Sala op het terras" class="w-full aspect-square object-cover object-[50%_65%] rounded-2xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KERST, GROEPEN, CADEAU, WERK -->
+<section id="kerst" class="relative">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-7 rounded-[28px] bg-velours border border-goud/20 p-8 lg:p-12 relative overflow-hidden">
+        <div class="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-saffraan/10 blur-2xl" aria-hidden="true"></div>
+        <h2 class="font-kop text-4xl lg:text-5xl text-goud relative">Kerst vier je bij Juntoz</h2>
+        <p class="mt-5 text-perkament/80 leading-relaxed max-w-xl relative">Op kerstavond, eerste en tweede kerstdag geniet je van ons tapasdiner, aangevuld met onze Christmas Specials.</p>
+        <div class="mt-8 grid sm:grid-cols-2 gap-6 relative num">
+          <div>
+            <p class="text-sm text-goud">Early Christmas Dinner</p>
+            <p class="font-kop text-3xl">16:00 <span class="text-goud/70 text-xl">tot</span> 19:00</p>
+            <p class="text-sm text-goud mt-4">Late Christmas Dinner</p>
+            <p class="font-kop text-3xl">19:30 <span class="text-goud/70 text-xl">tot</span> 22:30</p>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-baseline justify-between border-b border-goud/20 pb-2"><span class="text-perkament/80">Volwassenen</span><span class="font-kop text-2xl">€64,75</span></div>
+            <div class="flex items-baseline justify-between border-b border-goud/20 pb-2"><span class="text-perkament/80">Kinderen 4 t/m 10</span><span class="font-kop text-2xl">€42,75</span></div>
+            <p class="text-sm text-perkament/55">Per persoon, exclusief dranken.</p>
+          </div>
+        </div>
+        <div class="mt-9 relative border-t border-goud/20 pt-6 text-perkament/75 text-[15px] leading-relaxed">
+          <p>Reserveren voor kerst gaat alleen online, telefonisch kan helaas niet. Maximaal 16 personen per groep, en geef kinderstoelen door bij je reservering.</p>
+          <a href="https://restaurantjuntoz.nl/kerst/" class="inline-block mt-4 font-semibold text-saffraan underline underline-offset-4 hover:text-perkament">Reserveer je kerstdiner online</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 divide-y divide-goud/15">
+        <div class="pb-8">
+          <h3 class="font-kop text-3xl text-goud">Met een grote groep?</h3>
+          <p class="mt-3 text-perkament/75 leading-relaxed">Kom je met meer dan 16 personen, dan verdelen we jullie over meerdere tafels. Stuur een aanvraag met datum, tijdslot en aantal personen. We laten zo snel mogelijk weten of het lukt.</p>
+          <a href="#contact" class="inline-block mt-3 font-semibold text-saffraan hover:text-perkament transition-colors underline underline-offset-4">Groepsaanvraag doen</a>
+        </div>
+        <div class="py-8">
+          <h3 class="font-kop text-3xl text-goud">Een cadeau dat altijd valt</h3>
+          <p class="mt-3 text-perkament/75 leading-relaxed">Een giftcard van Juntoz koop je in het restaurant, tijdens openingstijden. Kies een bedrag van €25, €50 of €100, of een diner voor 1 of 2 personen.</p>
+        </div>
+        <div class="pt-8">
+          <h3 class="font-kop text-3xl text-goud">Werken bij Juntoz?</h3>
+          <p class="mt-3 text-perkament/75 leading-relaxed">We zoeken collega's voor de keuken en de bediening. Je bent minimaal 16 jaar. Mail je motivatie naar <a href="mailto:info@restaurantjuntoz.nl?subject=Sollicitatie" class="text-perkament underline decoration-goud/60 underline-offset-4 hover:text-saffraan">info@restaurantjuntoz.nl</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-velours/60 border-t border-goud/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop text-4xl lg:text-5xl text-goud">Kom langs</h2>
+      <address class="not-italic mt-6 text-lg leading-relaxed text-perkament/90">
+        Restaurant Juntoz<br>Aaltenseweg 33<br>7131 NA Lichtenvoorde
+      </address>
+      <div class="mt-6 space-y-2 text-lg">
+        <a href="tel:0544745009" class="block font-semibold text-saffraan hover:text-perkament transition-colors num">0544 745 009</a>
+        <a href="mailto:info@restaurantjuntoz.nl" class="block text-perkament/90 hover:text-saffraan transition-colors">info@restaurantjuntoz.nl</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Aaltenseweg+33+7131+NA+Lichtenvoorde" class="inline-block text-[15px] text-perkament/70 underline underline-offset-4 decoration-goud/50 hover:text-saffraan">Route in Google Maps</a>
+      </div>
+
+      <h3 class="font-kop text-2xl text-perkament mt-10">Openingstijden</h3>
+      <table class="mt-4 w-full max-w-sm text-perkament/85 num">
+        <tbody class="divide-y divide-goud/10">
+          <tr><td class="py-2">Maandag</td><td class="py-2 text-right text-perkament/50">Gesloten</td></tr>
+          <tr><td class="py-2">Dinsdag</td><td class="py-2 text-right">17:00 - 22:30</td></tr>
+          <tr><td class="py-2">Woensdag</td><td class="py-2 text-right">17:00 - 22:30</td></tr>
+          <tr><td class="py-2">Donderdag</td><td class="py-2 text-right">17:00 - 22:30</td></tr>
+          <tr><td class="py-2">Vrijdag</td><td class="py-2 text-right">17:00 - 22:30</td></tr>
+          <tr><td class="py-2">Zaterdag</td><td class="py-2 text-right">16:00 - 23:00</td></tr>
+          <tr><td class="py-2">Zondag</td><td class="py-2 text-right">16:00 - 23:00</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="font-kop text-2xl text-perkament mt-10">Parkeren</h3>
+      <p class="mt-3 text-perkament/75 leading-relaxed max-w-md">Gratis parkeren kan bij de Hamalandhal (Van der Meer de Walcherenstraat 3). Van daar loop je in een paar minuten naar ons toe.</p>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="rounded-[28px] bg-wijn border border-goud/15 p-7 lg:p-10">
+        <h3 class="font-kop text-3xl text-goud">Stuur ons een bericht</h3>
+        <p class="mt-2 text-perkament/70">Voor een groepsaanvraag of een vraag. Reserveren voor vandaag? Bel dan even, dat gaat sneller.</p>
+        <form class="mt-8 grid sm:grid-cols-2 gap-5" action="mailto:info@restaurantjuntoz.nl" method="post" enctype="text/plain">
+          <label class="block sm:col-span-2"><span class="text-sm text-perkament/80">Voor- en achternaam</span><input class="veld mt-1.5" name="naam" required autocomplete="name"></label>
+          <label class="block"><span class="text-sm text-perkament/80">Telefoonnummer</span><input class="veld mt-1.5" name="telefoon" type="tel" autocomplete="tel"></label>
+          <label class="block"><span class="text-sm text-perkament/80">E-mail</span><input class="veld mt-1.5" name="email" type="email" required autocomplete="email"></label>
+          <label class="block"><span class="text-sm text-perkament/80">Datum</span><input class="veld mt-1.5" name="datum" type="date"></label>
+          <label class="block"><span class="text-sm text-perkament/80">Tijdslot</span>
+            <select class="veld mt-1.5" name="tijdslot">
+              <option>Di t/m vr, 17:00 tot 22:00</option>
+              <option>Za/zo early, 16:00 tot 19:00</option>
+              <option>Za/zo late, 19:30 tot 22:30</option>
+              <option>Alleen een vraag</option>
+            </select>
+          </label>
+          <label class="block sm:col-span-2"><span class="text-sm text-perkament/80">Bericht en aantal personen</span><textarea class="veld mt-1.5" name="bericht" rows="4"></textarea></label>
+          <div class="sm:col-span-2 flex flex-wrap items-center gap-5">
+            <button type="submit" class="btn-hoofd bg-saffraan text-wijn font-bold rounded-full px-7 py-3.5">Verstuur bericht</button>
+            <p class="text-sm text-perkament/55">Je bericht gaat naar info@restaurantjuntoz.nl.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-goud/15 pb-24 md:pb-0">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-sm text-perkament/60">
+    <img src="assets/site-01.png" alt="Restaurant Juntoz" class="h-10 w-auto self-start">
+    <p>Ook van ons: Restaurant Mundoz in Duiven en IJssel Paviljoen in Zutphen.</p>
+    <p>Aaltenseweg 33, Lichtenvoorde · <a href="tel:0544745009" class="hover:text-saffraan">0544 745 009</a></p>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div id="belbalk" class="belbalk md:hidden fixed bottom-0 inset-x-0 z-50 p-3 bg-gradient-to-t from-wijn via-wijn/95 to-transparent">
+  <a href="tel:0544745009" class="btn-hoofd flex items-center justify-center gap-3 bg-saffraan text-wijn font-bold rounded-full py-4 text-lg">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel en reserveer
+  </a>
+</div>
+
+<script>
+  (function () {
+    var balk = document.getElementById('belbalk');
+    function check() { balk.classList.toggle('toon', window.scrollY > 420); }
+    window.addEventListener('scroll', check, { passive: true }); check();
+  })();
+</script>
+</body>
+</html>
