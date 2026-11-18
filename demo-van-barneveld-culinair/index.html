@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Van Barneveld Culinair | Eventcatering in de regio Groot Amsterdam</title>
+<meta name="description" content="Eventcatering voor zakelijke en privé events in de regio Groot Amsterdam. Vers gekookt, mooi gepresenteerd en tot in de puntjes geregeld. Bel 020 358 5118.">
+<meta property="og:title" content="Van Barneveld Culinair">
+<meta property="og:description" content="Jij viert. Wij regelen de rest. Eventcatering in de regio Groot Amsterdam.">
+<meta property="og:image" content="assets/site-05.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<script>document.documentElement.classList.add('js')</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        tafel: '#151915',
+        schaduw: '#1f251e',
+        salie: { DEFAULT: '#93ab89', licht: '#adc2a4', donker: '#5d7356' },
+        porselein: '#eef1ec',
+        steen: '#a9b3a5',
+        inkt: '#1b2019',
+      },
+      fontFamily: {
+        kop: ['"Big Shoulders Display"', 'Impact', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: "Big Shoulders Display", Impact, sans-serif; font-weight: 800; text-transform: uppercase; line-height: .9; letter-spacing: -.005em; }
+  .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .bord { border-radius: 9999px; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(5,10,5,.8), 0 0 0 10px #1f251e, 0 0 0 11px rgba(147,171,137,.35); }
+  .leader { flex: 1; border-bottom: 1.5px dotted rgba(27,32,25,.35); margin: 0 .6rem; transform: translateY(-.35em); min-width: 1.5rem; }
+  :focus-visible { outline: 2px solid #93ab89; outline-offset: 3px; border-radius: 4px; }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px) scale(.99); }
+
+  /* Eén entree-moment in de hero, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .hero-bord { animation: bordIn 1.2s cubic-bezier(.2,.7,.2,1) both; }
+    html.js .hero-tekst > * { animation: tekstIn .8s cubic-bezier(.2,.7,.2,1) both; }
+    html.js .hero-tekst > *:nth-child(2) { animation-delay: .08s; }
+    html.js .hero-tekst > *:nth-child(3) { animation-delay: .16s; }
+    html.js .hero-tekst > *:nth-child(4) { animation-delay: .24s; }
+    @keyframes bordIn { from { transform: rotate(-14deg) scale(.94); opacity: .2; } to { transform: none; opacity: 1; } }
+    @keyframes tekstIn { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-tafel text-porselein font-sans">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-salie text-inkt px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-salie text-inkt text-[13px] text-center px-4 py-2 leading-snug">
+  Demo voor Van Barneveld Culinair, gemaakt door <a href="https://hagenweb.nl" class="font-semibold underline underline-offset-2">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="relative z-30">
+  <nav class="max-w-[1320px] mx-auto px-5 md:px-10 h-[72px] flex items-center justify-between" aria-label="Hoofdmenu">
+    <a href="#" class="flex items-center gap-3" aria-label="Van Barneveld Culinair, naar boven">
+      <img src="assets/logo-oud.png" alt="" class="w-10 h-10 rounded-full">
+      <span class="kop text-[1.35rem] leading-[.85] tracking-wide">Van Barneveld<br><span class="text-salie">Culinair</span></span>
+    </a>
+    <div class="hidden lg:flex items-center gap-9 text-[15px] text-steen">
+      <a href="#events" class="hover:text-porselein transition-colors">Zakelijk &amp; privé</a>
+      <a href="#werkwijze" class="hover:text-porselein transition-colors">Werkwijze</a>
+      <a href="#keuken" class="hover:text-porselein transition-colors">Keuken</a>
+      <a href="#kerst" class="hover:text-porselein transition-colors">Kerst 2026</a>
+      <a href="#reviews" class="hover:text-porselein transition-colors">Reviews</a>
+    </div>
+    <a href="tel:+31203585118" class="knop hidden sm:inline-flex items-center gap-2 border border-salie/60 text-porselein hover:bg-salie hover:text-inkt rounded-full px-5 py-2.5 text-[15px] font-semibold">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      020 358 5118
+    </a>
+    <a href="tel:+31203585118" class="sm:hidden w-11 h-11 rounded-full border border-salie/60 grid place-items-center" aria-label="Bel 020 358 5118">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    </a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative grain overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 grid lg:grid-cols-[1fr_1fr] items-center gap-6 lg:gap-0 pt-0 pb-16 lg:pt-10 lg:pb-28 lg:min-h-[680px]">
+    <div class="hero-tekst relative z-10 max-w-[560px]">
+      <p class="text-salie font-medium text-[15px] md:text-base mb-3 md:mb-5">Eventcatering in de regio Groot Amsterdam</p>
+      <h1 class="kop text-[3.3rem] sm:text-7xl md:text-[6.2rem] xl:text-[7rem]">Jij viert.<br>Wij regelen<br>de rest.</h1>
+      <p class="mt-5 md:mt-6 text-[17px] md:text-xl text-steen leading-relaxed max-w-[30rem]">Van een walking dinner op een salonboot tot een uitgeserveerd diner voor 300 gasten in een museum. Vers gekookt, mooi gepresenteerd en tot in de puntjes geregeld.</p>
+      <div class="mt-6 md:mt-8">
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a href="tel:+31203585118" class="knop inline-flex items-center gap-3 bg-salie hover:bg-salie-licht text-inkt rounded-full pl-6 pr-7 py-4 text-lg font-bold shadow-[0_14px_30px_-12px_rgba(147,171,137,.6)]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            Bel 020 358 5118
+          </a>
+          <a href="mailto:info@vanbarneveldculinair.nl?subject=Aanvraag%20catering" class="text-porselein underline decoration-salie/60 underline-offset-4 hover:decoration-salie font-medium">of mail je aanvraag</a>
+        </div>
+        <p class="mt-6 flex items-center gap-2 text-[15px] text-steen">
+          <span class="text-salie tracking-[.15em]" aria-hidden="true">★★★★★</span>
+          <span><strong class="text-porselein font-semibold">4,9</strong> op Google, uit 124 reviews</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="relative order-first lg:order-none -mx-5 md:-mx-10 lg:mx-0 h-[170px] sm:h-[260px] lg:h-auto overflow-hidden lg:overflow-visible">
+      <div class="absolute w-[440px] h-[440px] sm:w-[620px] sm:h-[620px] lg:w-[760px] lg:h-[760px] left-1/2 -translate-x-1/2 bottom-[18px] lg:bottom-auto lg:translate-x-0 lg:left-auto lg:-right-[220px] xl:-right-[160px] lg:top-[53%] lg:-translate-y-1/2">
+        <div class="hero-bord bord w-full h-full">
+          <img src="assets/site-05.jpg" alt="Hapjes met gerookte zalm, rosbief en tonijn op een houten plank" class="w-full h-full object-cover scale-110 max-lg:origin-top max-lg:scale-[1.6]">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZAKELIJK OF PRIVÉ -->
+<section id="events" class="bg-schaduw">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 pt-20 md:pt-28 pb-20 md:pb-32">
+    <div class="grid md:grid-cols-[1fr_1.1fr] gap-6 md:gap-16 items-end mb-12 md:mb-16">
+      <h2 class="kop text-5xl md:text-7xl">Geen event is hetzelfde.<br><span class="text-salie">Onze voorstellen ook niet.</span></h2>
+      <p class="text-steen text-lg leading-relaxed max-w-[34rem]">Een netwerkborrel op een salonboot in de grachten, een productlancering in een museum, een jubileumfeest in een kerk of een bruiloft op een landgoed. Smaak is de basis. Het verschil zit in hoe alles samenkomt: stijlvolle presentatie, strakke organisatie en rust achter de schermen.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+      <article class="group relative rounded-[28px] overflow-hidden bg-tafel">
+        <div class="aspect-[16/10] overflow-hidden">
+          <img src="assets/site-02.jpg" alt="Tonijn in sesamkorst met radijs en kruiden" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+        </div>
+        <div class="p-7 md:p-10">
+          <h3 class="kop text-4xl md:text-5xl">Zakelijke events</h3>
+          <p class="mt-4 text-steen leading-relaxed max-w-[34rem]">Een luxe fine dining op locatie of een premium barbecue voor het team. Voor bedrijfsfeesten, netwerkbijeenkomsten, productlanceringen en lunches. We koken vers en met finesse, presenteren met stijl en zorgen dat alles voor en achter de schermen vlekkeloos loopt.</p>
+          <ul class="mt-6 flex flex-wrap gap-2 text-sm text-porselein/90">
+            <li class="border border-salie/30 rounded-md px-3 py-1">Bedrijfsfeest</li>
+            <li class="border border-salie/30 rounded-md px-3 py-1">Netwerkborrel</li>
+            <li class="border border-salie/30 rounded-md px-3 py-1">Productlancering</li>
+            <li class="border border-salie/30 rounded-md px-3 py-1">Lunch op kantoor</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="group relative rounded-[28px] overflow-hidden bg-tafel lg:mt-20">
+        <div class="aspect-[16/10] overflow-hidden">
+          <img src="assets/google-07.jpg" alt="Schaal met kreeft, rucola en tomaatjes" class="w-full h-full object-cover object-[50%_55%] transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+        </div>
+        <div class="p-7 md:p-10">
+          <h3 class="kop text-4xl md:text-5xl">Privé events</h3>
+          <p class="mt-4 text-steen leading-relaxed max-w-[34rem]">Een zesgangendiner aan lange tafels in de tuin, of een luxe walking dinner op je bruiloft. Momenten die je maar één keer viert. We beginnen bij jouw verhaal: wie komen er, op welke locatie, welke sfeer past bij deze dag? Zo kun jij je richten op wat telt: samen zijn.</p>
+          <ul class="mt-6 flex flex-wrap gap-2 text-sm text-porselein/90">
+            <li class="border border-salie/30 rounded-md px-3 py-1">Bruiloft</li>
+            <li class="border border-salie/30 rounded-md px-3 py-1">Jubileum</li>
+            <li class="border border-salie/30 rounded-md px-3 py-1">Verjaardag</li>
+            <li class="border border-salie/30 rounded-md px-3 py-1">Familiefeest</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" class="relative grain">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-20 md:py-32 grid lg:grid-cols-[.9fr_1.1fr] gap-14 lg:gap-24">
+    <div>
+      <h2 class="kop text-5xl md:text-7xl">Geen copy&#8209;paste menu's.</h2>
+      <p class="mt-6 text-steen text-lg leading-relaxed max-w-[28rem]">Elke aanvraag begint met een gesprek. Daarna maken we een culinair concept dat past bij jouw event, je gasten en de locatie. Voor een event waar nog lang over nagepraat wordt.</p>
+      <a href="tel:+31203585118" class="knop mt-8 inline-flex items-center gap-2 border border-salie/60 hover:bg-salie hover:text-inkt rounded-full px-6 py-3 font-semibold">Plan een gesprek: 020 358 5118</a>
+    </div>
+    <ol class="relative border-l border-salie/30 pl-8 md:pl-12 space-y-12">
+      <li class="relative">
+        <span class="absolute -left-[3.05rem] md:-left-[4.05rem] top-0 w-9 h-9 rounded-full bg-salie text-inkt grid place-items-center kop text-xl">1</span>
+        <h3 class="kop text-3xl md:text-4xl">Gesprek met een eventmanager</h3>
+        <p class="mt-3 text-steen leading-relaxed max-w-[34rem]">Eén vast aanspreekpunt dat alles wil weten over je gasten, je locatie en je wensen. Diezelfde persoon bewaakt het hele traject en denkt met je mee.</p>
+      </li>
+      <li class="relative">
+        <span class="absolute -left-[3.05rem] md:-left-[4.05rem] top-0 w-9 h-9 rounded-full bg-salie text-inkt grid place-items-center kop text-xl">2</span>
+        <h3 class="kop text-3xl md:text-4xl">Concept met onze chefs</h3>
+        <p class="mt-3 text-steen leading-relaxed max-w-[34rem]">Samen met de keuken stellen we een voorstel op maat samen. Vegan, vegetarisch of glutenvrij? We koken voor alle dieetwensen, zonder in te leveren op smaak of uitstraling.</p>
+      </li>
+      <li class="relative">
+        <span class="absolute -left-[3.05rem] md:-left-[4.05rem] top-0 w-9 h-9 rounded-full bg-salie text-inkt grid place-items-center kop text-xl">3</span>
+        <h3 class="kop text-3xl md:text-4xl">Laat dat maar aan ons over</h3>
+        <p class="mt-3 text-steen leading-relaxed max-w-[34rem]">Op de dag zelf koken we vers, presenteren we met aandacht en zorgen we dat de service vanzelfsprekend voelt. Wij regelen de rest.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- KEUKEN -->
+<section id="keuken" class="bg-schaduw overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-20 md:py-32 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <div class="relative order-2 lg:order-1 h-[380px] sm:h-[520px]">
+      <div class="bord absolute w-[300px] h-[300px] sm:w-[440px] sm:h-[440px] left-0 top-0">
+        <img src="assets/site-03.jpg" alt="Tonijn op een koperkleurig bord, van bovenaf" class="w-full h-full object-cover scale-[1.6]" loading="lazy">
+      </div>
+      <div class="absolute w-[190px] h-[190px] sm:w-[260px] sm:h-[260px] right-0 sm:right-6 bottom-0 rounded-full overflow-hidden ring-[10px] ring-schaduw">
+        <img src="assets/site-01.jpg" alt="Dessert met framboos, witte chocolade en bloem" class="w-full h-full object-cover" loading="lazy">
+      </div>
+    </div>
+    <div class="order-1 lg:order-2">
+      <h2 class="kop text-5xl md:text-7xl">Van de bouillon<br>tot de vinaigrette.</h2>
+      <div class="mt-8 space-y-5 text-steen text-lg leading-relaxed max-w-[34rem]">
+        <p>Onze oprichter en chef <span class="text-porselein font-medium">Sjoerd van Barneveld</span> leerde het vak in de keukens van toprestaurants als Aan de Poel. En dat proef je. Alles uit onze keuken is vers, verfijnd en met aandacht bereid.</p>
+        <p>We maken echt alles zelf. Sinds 2014 verzorgt ons team de catering voor eventlocaties, bedrijven en families in de regio Groot Amsterdam, met beeldschone borden, doordachte styling en bijzonder servies.</p>
+      </div>
+      <p class="mt-10 kop text-3xl md:text-4xl text-salie">Smaken verschillen.<br>Onze kwaliteit niet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BEELDSTROOK -->
+<section aria-label="Foto's van ons werk" class="py-4 md:py-6">
+  <div class="flex gap-3 md:gap-4 overflow-x-auto snap-x px-5 md:px-10 pb-2 [scrollbar-width:none]">
+    <img src="assets/google-02.jpg" alt="Schaal vol hapjes met garnalen, rosbief en gevulde champignons" class="snap-start shrink-0 h-[300px] md:h-[440px] w-[230px] md:w-[330px] object-cover object-[50%_70%] rounded-[20px]" loading="lazy">
+    <img src="assets/site-04.jpg" alt="Rosé gebraden rund met jus en groenten op een zwart bord" class="snap-start shrink-0 h-[300px] md:h-[440px] w-[300px] md:w-[440px] object-cover rounded-[20px]" loading="lazy">
+    <img src="assets/google-06.jpg" alt="Bruschetta met tomaat en mozzarella en hapjes in schaaltjes" class="snap-start shrink-0 h-[300px] md:h-[440px] w-[330px] md:w-[560px] object-cover rounded-[20px]" loading="lazy">
+    <img src="assets/google-04.jpg" alt="Voorgerecht met gestreepte biet en kiemgroente in een witte schaal" class="snap-start shrink-0 h-[300px] md:h-[440px] w-[300px] md:w-[500px] object-cover object-[25%_50%] rounded-[20px]" loading="lazy">
+    <img src="assets/google-05.jpg" alt="Open broodje met gerookte zalm, kwarteleitje en zalmkuit" class="snap-start shrink-0 h-[300px] md:h-[440px] w-[300px] md:w-[440px] object-cover rounded-[20px]" loading="lazy">
+  </div>
+</section>
+
+<!-- KERST -->
+<section id="kerst" class="py-20 md:py-28">
+  <div class="max-w-[1180px] mx-auto px-4 md:px-10">
+    <div class="bg-porselein text-inkt rounded-[32px] px-6 py-12 md:px-16 md:py-16 relative overflow-hidden">
+      <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16">
+        <div>
+          <p class="text-salie-donker font-semibold">Kerst 2026</p>
+          <h2 class="kop text-5xl md:text-7xl mt-2">Samen het jaar mooi afsluiten.</h2>
+          <p class="mt-6 text-inkt/75 text-lg leading-relaxed">Van kersthapjes en een winters buffet tot een uitgeserveerd diner met privé chef. Onze chefs stelden een aanbod samen voor ieder gezelschap.</p>
+          <div class="mt-8 rounded-2xl bg-white/70 p-5 text-[15px] leading-relaxed text-inkt/80">
+            <p><strong class="text-inkt">Bezorging</strong> tot en met 24 december en van 27 tot en met 31 december. Op 25 en 26 december zijn we gesloten.</p>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 items-center">
+            <a href="mailto:info@vanbarneveldculinair.nl?subject=Kerstbestelling" class="knop inline-flex items-center bg-inkt hover:bg-schaduw text-porselein rounded-full px-6 py-3.5 font-semibold">Bestel per mail</a>
+            <a href="tel:+31203585118" class="font-semibold underline underline-offset-4 decoration-salie-donker/50 hover:decoration-salie-donker">of bel 020 358 5118</a>
+          </div>
+        </div>
+
+        <ul class="divide-y divide-inkt/10">
+          <li class="py-5 first:pt-0">
+            <div class="flex items-baseline"><h3 class="kop text-2xl md:text-3xl">Kersthapjes</h3><span class="leader" aria-hidden="true"></span><span class="font-semibold tabular-nums whitespace-nowrap">€ 8,00 <span class="font-normal text-inkt/60 text-sm">p.p.</span></span></div>
+            <p class="mt-1.5 text-inkt/70 text-[15px] leading-relaxed">3 hapjes per persoon, vanaf 20 personen. Onder meer gamba met mango en chili, vitello tonnato en eendenrillette op brioche.</p>
+          </li>
+          <li class="py-5">
+            <div class="flex items-baseline"><h3 class="kop text-2xl md:text-3xl">Winters buffet</h3><span class="leader" aria-hidden="true"></span><span class="font-semibold tabular-nums whitespace-nowrap">€ 29,00 <span class="font-normal text-inkt/60 text-sm">p.p.</span></span></div>
+            <p class="mt-1.5 text-inkt/70 text-[15px] leading-relaxed">Vanaf 15 personen. Ouderwetse runderhachee, stoof van wild, kabeljauw met mosterdsaus, boerenkoolstamppot en panna cotta met stoofpeer.</p>
+          </li>
+          <li class="py-5">
+            <div class="flex items-baseline"><h3 class="kop text-2xl md:text-3xl">Kerstbuffet</h3><span class="leader" aria-hidden="true"></span><span class="font-semibold tabular-nums whitespace-nowrap">€ 30,00 <span class="font-normal text-inkt/60 text-sm">p.p.</span></span></div>
+            <p class="mt-1.5 text-inkt/70 text-[15px] leading-relaxed">Vanaf 15 personen. Koude voorgerechten en warme gerechten, van rosbief met chimichurri tot zeebaars met beurre blanc en parelhoenrollade.</p>
+          </li>
+          <li class="py-5">
+            <div class="flex items-baseline"><h3 class="kop text-2xl md:text-3xl">Kerst walking diner</h3><span class="leader" aria-hidden="true"></span><span class="font-semibold tabular-nums whitespace-nowrap">€ 52,50 <span class="font-normal text-inkt/60 text-sm">p.p.</span></span></div>
+            <p class="mt-1.5 text-inkt/70 text-[15px] leading-relaxed">Vanaf 25 personen, inclusief privé chef(s). Burrata met truffel, kalfstartaar, rosé gebraden rund en trifle met speculaascrumble.</p>
+          </li>
+          <li class="py-5">
+            <div class="flex items-baseline"><h3 class="kop text-2xl md:text-3xl">Uitgeserveerd 3&#8209;gangendiner</h3><span class="leader" aria-hidden="true"></span><span class="font-semibold tabular-nums whitespace-nowrap">€ 52,50 <span class="font-normal text-inkt/60 text-sm">p.p.</span></span></div>
+            <p class="mt-1.5 text-inkt/70 text-[15px] leading-relaxed">Vanaf 25 personen, inclusief privé chef(s). Keuze uit rib eye, kabeljauw of hasselback pompoen, met champagnemousse als dessert.</p>
+          </li>
+          <li class="py-5">
+            <div class="flex items-baseline"><h3 class="kop text-2xl md:text-3xl">Dessertsupplement</h3><span class="leader" aria-hidden="true"></span><span class="font-semibold tabular-nums whitespace-nowrap">€ 4,50 <span class="font-normal text-inkt/60 text-sm">p.st.</span></span></div>
+            <p class="mt-1.5 text-inkt/70 text-[15px] leading-relaxed">Vanaf 15 personen. Mix van mini cheesecake met bosvruchten en panna cotta met stoofpeer.</p>
+          </li>
+          <li class="pt-5 text-sm text-inkt/60 leading-relaxed">Alle prijzen excl. btw. Diners met privé chef op aanvraag, afhankelijk van de beschikbaarheid van onze chefs. Parkeerkosten worden 1 op 1 doorberekend.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bg-schaduw relative grain">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-20 md:py-32">
+    <div class="grid lg:grid-cols-[.85fr_1.15fr] gap-12 lg:gap-20 items-start">
+      <div class="lg:sticky lg:top-10">
+        <p class="kop text-[7rem] md:text-[10rem] leading-[.8] text-salie">4,9</p>
+        <p class="mt-5 text-steen text-lg">gemiddeld op Google, uit 124 reviews</p>
+        <figure class="mt-12">
+          <blockquote class="kop text-[1.9rem] md:text-[2.3rem] leading-[1.02] normal-case font-semibold">"Van Barneveld heeft het Spaanse buffet tijdens onze nieuwjaarsborrel geleverd. Goede en snelle communicatie vooraf. Levering top, ondanks de sneeuw. Gerechten waren heerlijk en hapjes zagen er mooi uit. Alle gasten waren enthousiast. Voor herhaling vatbaar."</blockquote>
+          <figcaption class="mt-5 text-steen"><span class="text-salie tracking-[.15em]" aria-label="5 van 5 sterren">★★★★★</span> Marjo Frank, Google</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 items-start">
+        <div class="space-y-6">
+        <figure class="bg-tafel rounded-2xl p-7">
+          <div class="text-salie text-sm tracking-[.15em]" aria-label="5 van 5 sterren">★★★★★</div>
+          <blockquote class="mt-3 leading-relaxed text-porselein/90">"Fantastische service, heerlijke schalen, pintxos en allerlei hapjes besteld voor een verjaardag, alles in goed en erg vriendelijk overleg, alle gasten waren erg te spreken, ook over de hoeveelheid t.o.v. de prijs! Top!"</blockquote>
+          <figcaption class="mt-4 text-sm text-steen">Nathalie, Google</figcaption>
+        </figure>
+        <figure class="bg-tafel rounded-2xl p-7">
+          <div class="text-salie text-sm tracking-[.15em]" aria-label="5 van 5 sterren">★★★★★</div>
+          <blockquote class="mt-3 leading-relaxed text-porselein/90">"Fantastisch bedrijf. Alles was heerlijk, heel mooi klaargemaakt op keurige schalen. Fijn contact met kantoor, doen wat je vraagt, zijn keurig op tijd en ook nog eens super lieve mensen."</blockquote>
+          <figcaption class="mt-4 text-sm text-steen">Smitje, Google</figcaption>
+        </figure>
+        <figure class="border border-salie/25 rounded-2xl p-7">
+          <blockquote class="leading-relaxed text-porselein/90">"Van Barneveld verrijkt onze vaartochten met hun heerlijke eten. Ze zijn altijd flexibel, helpen ons ook graag bij bijzondere wensen en zijn zorgvuldig en netjes. Het is fijn om zoveel vertrouwen te hebben in een collega, we kunnen altijd op ze rekenen. Daarnaast zijn ook de eigenaren, chefs en kantoorpersoneel bijzonder vriendelijk. Wij willen ze nooit meer kwijt!"</blockquote>
+          <figcaption class="mt-4 text-sm text-steen">Rederij Nassau</figcaption>
+        </figure>
+        </div>
+        <div class="space-y-6 md:mt-16">
+        <figure class="bg-tafel rounded-2xl p-7">
+          <div class="text-salie text-sm tracking-[.15em]" aria-label="5 van 5 sterren">★★★★★</div>
+          <blockquote class="mt-3 leading-relaxed text-porselein/90">"Voor mijn boeklanceringsfeestje heb ik catering bij Van Barneveld Culinair ingekocht. Voor mij de eerste bestelling maar zeker voor herhaling vatbaar. Ik heb heeeel veel complimenten over de hapjes gekregen."</blockquote>
+          <figcaption class="mt-4 text-sm text-steen">saskia brak, Google</figcaption>
+        </figure>
+        <figure class="bg-tafel rounded-2xl p-7">
+          <div class="text-salie text-sm tracking-[.15em]" aria-label="5 van 5 sterren">★★★★★</div>
+          <blockquote class="mt-3 leading-relaxed text-porselein/90">"We hebben een geweldige ervaring met Barneveld catering. Alles op tijd geleverd en weer opgehaald. Alle gerechten waren voortreffelijk. Alle lof! Een echte aanrader."</blockquote>
+          <figcaption class="mt-4 text-sm text-steen">Eddie Gerritsen, Google</figcaption>
+        </figure>
+        <figure class="border border-salie/25 rounded-2xl p-7">
+          <blockquote class="leading-relaxed text-porselein/90">"Van Barneveld is een topcateraar als het gaat om het trakteren van onze gasten op een overheerlijke lunch. Of het nu gaat om luxe broodjes of het serveren van een uitgebreid buffet, alles is altijd mogelijk, smakelijk en goed verzorgd. Ook voor ondersteuning tijdens een van onze vele evenementen draaien ze hun hand niet om. Door de diversiteit van onze gasten uit alle delen van de wereld hebben we samen met Van Barneveld een Banquetingboek samengesteld waardoor we elke keer weer een verrassende lunch kunnen serveren. Hele fijne samenwerking met een super team!"</blockquote>
+          <figcaption class="mt-4 text-sm text-steen">Hospitality team, Hitachi Construction Machinery Europe</figcaption>
+        </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative overflow-hidden">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-20 md:py-32 grid lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20">
+    <div>
+      <h2 class="kop text-6xl md:text-8xl">Smaakt dat<br>naar meer?</h2>
+      <p class="mt-6 text-steen text-lg leading-relaxed max-w-[30rem]">Vertel ons over je event en je krijgt een voorstel op maat. We denken graag met je mee, zakelijk of privé.</p>
+      <a href="tel:+31203585118" class="knop mt-8 inline-flex items-center gap-3 bg-salie hover:bg-salie-licht text-inkt rounded-full pl-6 pr-7 py-4 text-lg font-bold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Bel 020 358 5118
+      </a>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-7 text-[15px]">
+        <div>
+          <dt class="text-steen">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@vanbarneveldculinair.nl" class="text-porselein underline decoration-salie/50 underline-offset-4 hover:decoration-salie break-all">info@vanbarneveldculinair.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-steen">Bereikbaar</dt>
+          <dd class="mt-1">Elke dag van 07:00 tot 22:00</dd>
+        </div>
+        <div>
+          <dt class="text-steen">Adres</dt>
+          <dd class="mt-1">Ambachtenstraat 47<br>1191 JM Ouderkerk aan de Amstel</dd>
+        </div>
+        <div>
+          <dt class="text-steen">Werkgebied</dt>
+          <dd class="mt-1">Regio Groot Amsterdam</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@vanbarneveldculinair.nl" method="post" enctype="text/plain" class="bg-schaduw rounded-[28px] p-7 md:p-10 space-y-5 self-start">
+      <h3 class="kop text-3xl">Vraag een voorstel aan</h3>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-sm text-steen">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-xl bg-tafel border border-white/10 focus:border-salie px-4 py-3 outline-none"></label>
+        <label class="block"><span class="text-sm text-steen">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-xl bg-tafel border border-white/10 focus:border-salie px-4 py-3 outline-none"></label>
+      </div>
+      <label class="block"><span class="text-sm text-steen">E-mail</span>
+        <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl bg-tafel border border-white/10 focus:border-salie px-4 py-3 outline-none"></label>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <label class="block"><span class="text-sm text-steen">Soort event</span>
+          <select name="soort" class="mt-1.5 w-full rounded-xl bg-tafel border border-white/10 focus:border-salie px-4 py-3 outline-none">
+            <option>Zakelijk event</option><option>Privé event</option><option>Kerstbestelling</option><option>Iets anders</option>
+          </select></label>
+        <label class="block"><span class="text-sm text-steen">Datum en aantal gasten</span>
+          <input name="datum_gasten" placeholder="bijv. 12 december, 40 gasten" class="mt-1.5 w-full rounded-xl bg-tafel border border-white/10 focus:border-salie px-4 py-3 outline-none placeholder:text-steen/50"></label>
+      </div>
+      <label class="block"><span class="text-sm text-steen">Vertel over je event</span>
+        <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-xl bg-tafel border border-white/10 focus:border-salie px-4 py-3 outline-none"></textarea></label>
+      <button type="submit" class="knop w-full bg-porselein hover:bg-white text-inkt rounded-full py-4 font-bold">Verstuur aanvraag</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-white/10 pb-24 sm:pb-0">
+  <div class="max-w-[1320px] mx-auto px-5 md:px-10 py-10 flex flex-col md:flex-row gap-6 md:items-center justify-between text-sm text-steen">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo-oud.png" alt="" class="w-8 h-8 rounded-full">
+      <span class="kop text-lg text-porselein tracking-wide">Van Barneveld Culinair</span>
+    </div>
+    <p>Ambachtenstraat 47, 1191 JM Ouderkerk aan de Amstel</p>
+    <p>© 2026 Van Barneveld Culinair</p>
+  </div>
+</footer>
+
+<!-- Mobiele actiebalk -->
+<div class="sm:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-tafel/90 backdrop-blur border-t border-white/10 flex gap-3">
+  <a href="tel:+31203585118" class="knop flex-1 inline-flex justify-center items-center gap-2 bg-salie text-inkt rounded-full py-3.5 font-bold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bellen
+  </a>
+  <a href="mailto:info@vanbarneveldculinair.nl?subject=Aanvraag%20catering" class="knop flex-1 inline-flex justify-center items-center border border-salie/60 rounded-full py-3.5 font-semibold">Mailen</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitstop Barneveld | Snackbar & catering aan de Compagnieweg</title>
+<meta name="description" content="Snackbar en catering in Barneveld. Patat, snacks, broodjes en uitsmijters aan de Compagnieweg 12-B, en catering voor lunch, buffet, hapjes en de snackwagen. Bel 0342 423 984.">
+<meta property="og:title" content="Pitstop Barneveld: verstand van lekker eten">
+<meta property="og:image" content="assets/google-03.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ultra&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          asfalt: '#1F1D1A',
+          asfalt2: '#2C2A26',
+          geel: '#FFD400',
+          friet: '#FBF9F4',
+          karton: '#EFE9DD',
+          steen: '#6B665E',
+        },
+        fontFamily: {
+          kop: ['Ultra', 'Georgia', 'serif'],
+          sans: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: 'Ultra', Georgia, serif; letter-spacing: -0.01em; line-height: 1.02; }
+
+  /* Wegmarkering: gele streepjes op asfalt */
+  .markering {
+    height: 14px;
+    background: repeating-linear-gradient(90deg, #FFD400 0 56px, transparent 56px 96px);
+  }
+
+  /* Hero-bord: rond, met gele ring, als een wiel */
+  .bord {
+    border-radius: 9999px;
+    box-shadow: 0 0 0 14px #FFD400, 0 0 0 30px #2C2A26, 0 40px 80px -20px rgba(0,0,0,.6);
+  }
+  .bord img { border-radius: 9999px; }
+
+  /* Schuine rand onder secties */
+  .schuin-onder { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), 0 100%); }
+
+  .knop { transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #FFD400; outline-offset: 3px;
+  }
+
+  .vandaag { background: #FFD400; color: #1F1D1A; }
+  .vandaag td:first-child::after { content: ' (vandaag)'; font-weight: 500; }
+
+  /* Animatie alleen als JS de class zet */
+  html.js .rol-in { animation: rol 1.1s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes rol { from { transform: translateX(30%) rotate(120deg); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { html.js .rol-in { animation: none; } html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-friet text-asfalt font-sans">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-geel px-4 py-2 font-semibold">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-geel text-asfalt text-center text-[13px] py-1.5 px-4 font-medium">
+  Demo voor Pitstop Barneveld, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-bold">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="bg-asfalt text-friet">
+  <nav class="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between gap-6" aria-label="Hoofdmenu">
+    <a href="#" class="flex items-baseline gap-2 leading-none" aria-label="Pitstop Barneveld, naar boven">
+      <span class="kop text-geel text-[28px] md:text-[32px]">Pitstop</span>
+      <span class="hidden sm:inline text-[13px] font-semibold text-friet/60">Barneveld</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-[15px] font-medium text-friet/80">
+      <li><a href="#snackbar" class="hover:text-geel transition-colors">Snackbar</a></li>
+      <li><a href="#catering" class="hover:text-geel transition-colors">Catering</a></li>
+      <li><a href="#reviews" class="hover:text-geel transition-colors">Reviews</a></li>
+      <li><a href="#contact" class="hover:text-geel transition-colors">Contact</a></li>
+    </ul>
+    <a href="tel:0342423984" class="knop inline-flex items-center gap-2 rounded-full border-2 border-geel text-geel px-4 py-2 text-[15px] font-bold hover:bg-geel hover:text-asfalt">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+      <span class="hidden sm:inline">0342 423 984</span><span class="sm:hidden">Bel</span>
+    </a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="relative bg-asfalt text-friet overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-[1.05fr_1fr] items-center gap-10 md:gap-6 pt-10 pb-16 md:pt-8 md:pb-20">
+    <div class="relative z-10 max-w-xl">
+      <p class="text-geel font-semibold text-[15px] md:text-base mb-4">Snackbar &amp; catering in Barneveld</p>
+      <h1 class="kop text-[46px] sm:text-[60px] lg:text-[84px]">Verstand van lekker eten.</h1>
+      <p class="mt-6 text-[17px] md:text-lg text-friet/80 leading-relaxed max-w-md">
+        Knapperige patat, warme broodjes en een stevige uitsmijter aan de Compagnieweg. En voor uw lunch, borrel of feest koken we gewoon mee.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:0342423984" class="knop inline-flex items-center gap-3 rounded-full bg-geel text-asfalt pl-6 pr-7 py-4 text-lg font-extrabold shadow-[0_10px_30px_-10px_rgba(255,212,0,.6)] hover:bg-[#FFE04D]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+          Bel 0342 423 984
+        </a>
+        <a href="#catering" class="font-semibold text-friet underline decoration-geel decoration-2 underline-offset-[6px] hover:text-geel">Catering bekijken</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px] text-friet/70">
+        <span class="text-geel tracking-wider" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-friet">4,5</strong> uit 196 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="relative h-[380px] sm:h-[500px] md:h-[640px]">
+      <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-[8%] md:left-[6%] w-[300px] h-[300px] sm:w-[440px] sm:h-[440px] md:w-[570px] md:h-[570px]">
+        <div class="bord rol-in w-full h-full overflow-hidden">
+          <img src="assets/google-03.jpg" alt="Bord met patat, een loempia en pindasaus op een donkere picknicktafel" class="w-full h-full object-cover object-[48%_52%] scale-[1.35]" style="transform-origin:48% 52%">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="markering absolute bottom-0 left-0 right-0 opacity-90"></div>
+</section>
+
+<!-- SNACKBAR -->
+<section id="snackbar" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-10">
+    <div class="lg:col-span-5 relative">
+      <img src="assets/google-05.jpg" alt="Uitsmijter met ham, kaas en gebakken eieren op brood, met salade" class="w-full aspect-[4/5] object-cover rounded-[28px]">
+      <img src="assets/google-04.jpg" alt="Hamburger speciaal met gebakken ei, uien en champignons" class="hidden sm:block absolute -bottom-10 -right-6 lg:-right-14 w-[48%] aspect-square object-cover rounded-full border-[10px] border-friet">
+    </div>
+
+    <div class="lg:col-span-7 lg:pl-10">
+      <h2 class="kop text-[38px] md:text-[56px]">Even een pitstop.</h2>
+      <p class="mt-5 text-lg text-steen leading-relaxed max-w-xl">
+        Van een frietje tot gebakken aardappels, van een kroket tot een loempia met of zonder saus. Alles vers klaargemaakt, om mee te nemen of om rustig aan tafel te eten.
+      </p>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-10">
+        <div>
+          <h3 class="font-extrabold text-lg">Op de kaart</h3>
+          <ul class="mt-4 divide-y divide-asfalt/10 border-y border-asfalt/10 text-[17px]">
+            <li class="py-2.5">Patat</li>
+            <li class="py-2.5">Snacks</li>
+            <li class="py-2.5">Warme en koude broodjes</li>
+            <li class="py-2.5">Uitsmijters</li>
+            <li class="py-2.5">Schotels</li>
+            <li class="py-2.5">Lunch</li>
+            <li class="py-2.5">Dranken</li>
+          </ul>
+          <a href="https://fresto.nl/app/uploads/sites/2/2025/03/Bestellijst-Pitstop-2025.pdf" target="_blank" rel="noopener" class="mt-5 inline-block font-semibold underline decoration-geel decoration-[3px] underline-offset-[6px] hover:decoration-asfalt">Bekijk de bestellijst (pdf)</a>
+        </div>
+
+        <div>
+          <h3 class="font-extrabold text-lg">Openingstijden</h3>
+          <table class="mt-4 w-full text-[17px] tabular-nums" id="tijden">
+            <tbody class="divide-y divide-asfalt/10 border-y border-asfalt/10">
+              <tr data-dag="1"><td class="py-2.5 pl-2">Maandag</td><td class="py-2.5 pr-2 text-right">15:00 - 18:30</td></tr>
+              <tr data-dag="2"><td class="py-2.5 pl-2">Dinsdag</td><td class="py-2.5 pr-2 text-right">10:00 - 18:30</td></tr>
+              <tr data-dag="3"><td class="py-2.5 pl-2">Woensdag</td><td class="py-2.5 pr-2 text-right">10:00 - 18:30</td></tr>
+              <tr data-dag="4"><td class="py-2.5 pl-2">Donderdag</td><td class="py-2.5 pr-2 text-right">10:00 - 18:30</td></tr>
+              <tr data-dag="5"><td class="py-2.5 pl-2">Vrijdag</td><td class="py-2.5 pr-2 text-right">10:00 - 18:30</td></tr>
+              <tr data-dag="6"><td class="py-2.5 pl-2">Zaterdag</td><td class="py-2.5 pr-2 text-right">10:00 - 13:30</td></tr>
+              <tr data-dag="0"><td class="py-2.5 pl-2">Zondag</td><td class="py-2.5 pr-2 text-right text-steen">Gesloten</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-5 text-[15px] text-steen">Compagnieweg 12-B, Barneveld. Liever vooraf bestellen? Bel <a href="tel:0342423984" class="font-semibold text-asfalt underline underline-offset-2">0342 423 984</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATERING -->
+<section id="catering" class="bg-karton py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-end">
+      <h2 class="kop lg:col-span-7 text-[38px] md:text-[56px]">Wij koken, u heeft een feest.</h2>
+      <p class="lg:col-span-5 text-lg text-steen leading-relaxed">
+        Lunch op de zaak, een borrel, receptie of de bruiloft van uw dochter. We maken alles zelf en vers, denken mee over uw wensen en houden rekening met uw budget.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-12 gap-5 md:gap-6">
+      <!-- Lunch -->
+      <article class="md:col-span-7 md:row-span-2 bg-friet rounded-[28px] overflow-hidden flex flex-col">
+        <img src="assets/google-06.jpg" alt="Planken vol belegde broodjes en croissants" class="w-full aspect-[16/10] md:aspect-auto md:flex-1 md:min-h-[320px] object-cover">
+        <div class="p-7 md:p-10">
+          <h3 class="kop text-[28px] md:text-[34px]">Lunch op locatie</h3>
+          <p class="mt-4 text-[17px] leading-relaxed text-asfalt/80 max-w-xl">
+            Bij ons begint de lunch vroeg, met broodjes warm uit de oven. Belegd met kaas, ham, rosbief, kipfilet of eiersalade, en naar wens aangevuld met soep, fruit, rauwkost, melk of jus. Van eenvoudig tot een luxe zakenlunch, netjes en op tijd bij u afgeleverd.
+          </p>
+        </div>
+      </article>
+
+      <!-- Hapjes -->
+      <article class="md:col-span-5 bg-asfalt text-friet rounded-[28px] overflow-hidden grid grid-rows-[auto_1fr]">
+        <img src="assets/google-07.jpg" alt="Dienblad met hapjes in glaasjes: garnalen, ham met tomaat en saté" class="w-full aspect-[16/9] object-cover">
+        <div class="p-7 md:p-8">
+          <h3 class="kop text-[26px] text-geel">Hapjes</h3>
+          <p class="mt-3 text-[16px] leading-relaxed text-friet/80">
+            Zalmwrapjes, rosbiefrolletjes met oude kaas en rucola, een toastje met likkepot of het altijd geliefde gevulde eitje. Of juist vlammetjes en loempiaatjes. U kent uw gasten, wij verzorgen het.
+          </p>
+        </div>
+      </article>
+
+      <!-- Buffet -->
+      <article class="md:col-span-5 bg-friet rounded-[28px] overflow-hidden grid grid-rows-[auto_1fr]">
+        <img src="assets/google-02.jpg" alt="Belegde bolletjes op een houten plank bij een buffet" class="w-full aspect-[16/9] object-cover">
+        <div class="p-7 md:p-8">
+          <h3 class="kop text-[26px]">Warm &amp; koud buffet</h3>
+          <p class="mt-3 text-[16px] leading-relaxed text-asfalt/80">
+            Verjaardag, vrijgezellenfeest of zakelijke receptie: laat het buffet aan ons over. Alles vers en zelfgemaakt, zodat u aandacht heeft voor uw gasten. Ook voor BBQ kunt u bij ons terecht.
+          </p>
+        </div>
+      </article>
+
+      <!-- Snackwagen -->
+      <article class="md:col-span-12 bg-asfalt text-friet rounded-[28px] overflow-hidden grid md:grid-cols-[1.1fr_1fr] items-stretch">
+        <div class="p-7 md:p-12 order-2 md:order-1 flex flex-col justify-center">
+          <h3 class="kop text-[30px] md:text-[44px]">De snackwagen aan huis</h3>
+          <p class="mt-4 text-[17px] leading-relaxed text-friet/80 max-w-lg">
+            Niets brengt zoveel sfeer als de geur van verse friet. Onbeperkt friet en snacks voor uw gasten, met keuze uit kroket, frikandel, kaassoufflé of kipcorn en diverse sauzen.
+          </p>
+          <div class="mt-8 flex flex-wrap items-end gap-x-8 gap-y-4">
+            <p><span class="kop text-geel text-[44px] leading-none">€ 10,50</span> <span class="block sm:inline mt-1 sm:mt-0 text-friet/70">p.p., vanaf 50 personen</span></p>
+            <a href="#contact" class="knop inline-flex items-center rounded-full border-2 border-geel text-geel px-5 py-2.5 font-bold hover:bg-geel hover:text-asfalt">Snackwagen aanvragen</a>
+          </div>
+        </div>
+        <img src="assets/site-03.png" alt="De snackwagen op een evenement, met mensen die in de rij staan voor friet" class="order-1 md:order-2 w-full h-full min-h-[240px] object-cover">
+      </article>
+    </div>
+
+    <div class="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+      <a href="#contact" class="knop inline-flex items-center rounded-full bg-asfalt text-friet px-7 py-4 text-[17px] font-bold hover:bg-asfalt2">Catering aanvragen</a>
+      <a href="https://fresto.nl/app/uploads/sites/2/2025/03/Bestellijst-Pitstop-2025.pdf" target="_blank" rel="noopener" class="font-semibold underline decoration-asfalt/40 decoration-2 underline-offset-[6px] hover:decoration-asfalt">Bestellijst met buffetten, hapjes en BBQ (pdf)</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bg-asfalt text-friet py-20 md:py-28 relative">
+  <div class="markering absolute top-0 left-0 right-0 opacity-90"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="kop text-[38px] md:text-[56px] max-w-2xl">Dat zeggen de gasten.</h2>
+      <p class="text-friet/70 text-[17px]"><span class="kop text-geel text-[40px] align-middle">4,5</span> <span class="ml-2">uit 196 reviews op Google</span></p>
+    </div>
+
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-6 [&>figure]:mb-6">
+      <figure class="break-inside-avoid bg-geel text-asfalt rounded-[24px] p-8">
+        <div aria-label="5 van 5 sterren" class="tracking-wider">★★★★★</div>
+        <blockquote class="mt-4 text-[19px] leading-snug font-semibold">"Heel prettig ontvangen bij snackbar Pitstop. Vanaf het eerste moment hadden we er al een goed gevoel bij en bij de eerste hap werd dat bevestigd! Heerlijke patatjes en met name de Crizly met pindasaus is een absolute aanrader! Tot de volgende keer!"</blockquote>
+        <figcaption class="mt-5 font-bold">Mike Brunekreef</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-asfalt2 rounded-[24px] p-8">
+        <div aria-label="4 van 5 sterren" class="tracking-wider text-geel">★★★★<span class="text-friet/25">★</span></div>
+        <blockquote class="mt-4 text-[22px] leading-snug font-semibold">"Heerlijke uitsmijter pitstop gegeten. Echt een aanrader"</blockquote>
+        <figcaption class="mt-5 font-bold text-friet/80">Rick Hop Dienstverlening</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-asfalt2 rounded-[24px] p-8">
+        <div aria-label="5 van 5 sterren" class="tracking-wider text-geel">★★★★★</div>
+        <blockquote class="mt-4 text-[17px] leading-relaxed text-friet/90">"Goede snackbar ,tijdje geleden liep ik per toeval langs, was op weg wandelwn naar bushalte via een andere route kwam mij goed uit want ik had "trek".Grote patat met een hamburger speciaal. Patat was lekker knapperig,hamburger lekker,vriendelijk personeel,hoefde ook niet lang te wachten op de bestelling..."</blockquote>
+        <figcaption class="mt-5 font-bold text-friet/80">Reinhard Abt</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-asfalt2 rounded-[24px] p-8">
+        <div aria-label="5 van 5 sterren" class="tracking-wider text-geel">★★★★★</div>
+        <blockquote class="mt-4 text-[17px] leading-relaxed text-friet/90">"Zeer verzorgd eten en snackbar. Maar ook voor een biefstuk, spareribs enz kun je hier terecht. Vriendelijke bediening. Alles  van goede kwaliteit. Foto van boerenuitsmijter, zeer lekker."</blockquote>
+        <figcaption class="mt-5 font-bold text-friet/80">Peter Theofiel Deckx</figcaption>
+      </figure>
+      <figure class="break-inside-avoid border-2 border-friet/15 rounded-[24px] p-8">
+        <div aria-label="5 van 5 sterren" class="tracking-wider text-geel">★★★★★</div>
+        <blockquote class="mt-4 text-[17px] leading-relaxed text-friet/90">"Lekker eten. Ruime menukaart met broodjes, frietjes etc. Ook staat er een schnitzel en dergelijke op menu. Perfect voor een snelle pitstop ;-) Nette en snelle bediening."</blockquote>
+        <figcaption class="mt-5 font-bold text-friet/80">Isa Bel</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="kop text-[38px] md:text-[56px]">Kom langs of bel even.</h2>
+      <p class="mt-5 text-lg text-steen leading-relaxed max-w-md">Bestellen, een vraag over catering of gewoon even checken of we open zijn: we helpen u graag.</p>
+
+      <dl class="mt-10 space-y-6 text-[17px]">
+        <div>
+          <dt class="text-[14px] font-semibold text-steen">Telefoon</dt>
+          <dd><a href="tel:0342423984" class="kop text-[30px] hover:underline decoration-geel decoration-4 underline-offset-4">0342 423 984</a></dd>
+        </div>
+        <div>
+          <dt class="text-[14px] font-semibold text-steen">E-mail</dt>
+          <dd><a href="mailto:info@pitstopbarneveld.nl" class="font-semibold underline decoration-geel decoration-[3px] underline-offset-4">info@pitstopbarneveld.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-[14px] font-semibold text-steen">Adres</dt>
+          <dd>Compagnieweg 12-B<br>3771 NH Barneveld<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Compagnieweg+12-B+3771+NH+Barneveld" target="_blank" rel="noopener" class="mt-1 inline-block font-semibold underline decoration-geel decoration-[3px] underline-offset-4">Route plannen</a>
+          </dd>
+        </div>
+      </dl>
+      <img src="assets/google-01.jpg" alt="De etalage van Pitstop snackbar met de witte truck op het raam" class="mt-10 w-full aspect-[16/10] object-cover rounded-[28px]">
+    </div>
+
+    <div class="lg:col-span-7">
+      <form action="mailto:info@pitstopbarneveld.nl" method="post" enctype="text/plain" class="bg-karton rounded-[28px] p-7 md:p-12">
+        <h3 class="kop text-[28px] md:text-[34px]">Catering aanvragen</h3>
+        <p class="mt-3 text-steen">Vertel kort wat u zoekt, dan nemen we contact met u op.</p>
+        <div class="mt-8 grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-[15px] font-semibold">Naam</span>
+            <input required name="naam" autocomplete="name" class="mt-2 w-full rounded-xl border-2 border-transparent bg-friet px-4 py-3 focus:border-asfalt outline-none">
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-semibold">Telefoon</span>
+            <input name="telefoon" type="tel" autocomplete="tel" class="mt-2 w-full rounded-xl border-2 border-transparent bg-friet px-4 py-3 focus:border-asfalt outline-none">
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-[15px] font-semibold">E-mail</span>
+            <input required name="email" type="email" autocomplete="email" class="mt-2 w-full rounded-xl border-2 border-transparent bg-friet px-4 py-3 focus:border-asfalt outline-none">
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-semibold">Waarvoor?</span>
+            <select name="soort" class="mt-2 w-full rounded-xl border-2 border-transparent bg-friet px-4 py-3 focus:border-asfalt outline-none">
+              <option>Lunch op locatie</option>
+              <option>Warm &amp; koud buffet</option>
+              <option>Hapjes</option>
+              <option>BBQ</option>
+              <option>Snackwagen</option>
+              <option>Iets anders</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-[15px] font-semibold">Datum en aantal personen</span>
+            <input name="datum" placeholder="bijv. 14 juni, 60 personen" class="mt-2 w-full rounded-xl border-2 border-transparent bg-friet px-4 py-3 placeholder:text-steen/60 focus:border-asfalt outline-none">
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-[15px] font-semibold">Uw wensen</span>
+            <textarea name="bericht" rows="4" class="mt-2 w-full rounded-xl border-2 border-transparent bg-friet px-4 py-3 focus:border-asfalt outline-none"></textarea>
+          </label>
+        </div>
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <button type="submit" class="knop rounded-full bg-asfalt text-friet px-7 py-4 font-bold hover:bg-asfalt2">Aanvraag versturen</button>
+          <span class="text-[15px] text-steen">Liever direct? Bel <a href="tel:0342423984" class="font-semibold text-asfalt underline underline-offset-2">0342 423 984</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-asfalt text-friet/70">
+  <div class="markering"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-12 pb-28 md:pb-12 grid sm:grid-cols-[1.4fr_1fr_1fr] gap-10 text-[15px]">
+    <div>
+      <p class="kop text-geel text-[34px]">Pitstop</p>
+      <p class="mt-2">Snackbar &amp; catering in Barneveld.<br>Verstand van lekker eten.</p>
+    </div>
+    <div>
+      <p class="font-bold text-friet">Contact</p>
+      <p class="mt-2">Compagnieweg 12-B<br>3771 NH Barneveld<br>
+        <a href="tel:0342423984" class="hover:text-geel">0342 423 984</a><br>
+        <a href="mailto:info@pitstopbarneveld.nl" class="hover:text-geel">info@pitstopbarneveld.nl</a></p>
+    </div>
+    <div>
+      <p class="font-bold text-friet">Open</p>
+      <p class="mt-2 tabular-nums">Ma 15:00 - 18:30<br>Di t/m vr 10:00 - 18:30<br>Za 10:00 - 13:30<br>Zo gesloten</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-asfalt/95 backdrop-blur px-4 py-3 border-t border-friet/10">
+  <a href="tel:0342423984" class="flex items-center justify-center gap-3 rounded-full bg-geel text-asfalt py-3.5 font-extrabold text-[17px]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+    Bel 0342 423 984
+  </a>
+</div>
+
+<script>
+  document.documentElement.classList.add('js');
+  var rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+  if (rij) rij.classList.add('vandaag', 'font-semibold');
+</script>
+</body>
+</html>

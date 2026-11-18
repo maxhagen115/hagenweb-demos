@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mauk catering | BBQ, buffetten en feesten uit Voorthuizen</title>
+<meta name="description" content="Mauk catering uit Voorthuizen: BBQ-pakketten vanaf €12,50 p.p., buffetten, hapjes en broodjes. Ambachtelijk bereid in eigen keuken. Bel Mauk: 06 38392102.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        karamel: '#C8975A',
+        kraft: '#E9D6B8',
+        houtskool: '#2B2019',
+        gloed: '#E7B46E',
+        papier: '#FAF6EF',
+        rook: '#6E5E50',
+      },
+      fontFamily: {
+        kop: ['"Big Shoulders Display"', 'Impact', 'sans-serif'],
+        tekst: ['Jost', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Jost, system-ui, sans-serif; }
+  .kop { font-family: "Big Shoulders Display", Impact, sans-serif; letter-spacing: -0.005em; line-height: .9; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 28px 28px; }
+  .grain { position: relative; isolation: isolate; }
+  .grain::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .18;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.17 0 0 0 0 0.12 0 0 0 0 0.09 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .stippel { flex: 1; border-bottom: 2px dotted currentColor; opacity: .35; transform: translateY(-5px); margin: 0 .5rem; }
+  .knop { transition: transform .2s ease, background-color .2s ease, color .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #2B2019; outline-offset: 3px;
+  }
+  .op-donker a:focus-visible, .op-donker button:focus-visible { outline-color: #E7B46E; }
+  .logo-licht { mix-blend-mode: multiply; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .knop:hover { transform: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-papier text-houtskool antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-houtskool focus:text-papier focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-houtskool text-kraft text-center text-[13px] py-2 px-4">
+  Demo voor Mauk catering, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-gloed">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="bg-karamel">
+  <nav class="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between gap-6" aria-label="Hoofdmenu">
+    <a href="#" class="shrink-0" aria-label="Mauk catering, naar boven">
+      <img src="assets/google-02.jpg" alt="Mauk catering" class="logo-licht h-20 w-20 md:h-24 md:w-24 object-cover scale-[1.35]" width="96" height="96">
+    </a>
+    <ul class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+      <li><a href="#bbq" class="hover:underline underline-offset-4 decoration-2">BBQ</a></li>
+      <li><a href="#buffetten" class="hover:underline underline-offset-4 decoration-2">Buffetten</a></li>
+      <li><a href="#feesten" class="hover:underline underline-offset-4 decoration-2">Feesten</a></li>
+      <li><a href="#over-mauk" class="hover:underline underline-offset-4 decoration-2">Over Mauk</a></li>
+      <li><a href="#contact" class="hover:underline underline-offset-4 decoration-2">Contact</a></li>
+    </ul>
+    <a href="tel:+31638392102" class="knop inline-flex items-center gap-2 rounded-full border-2 border-houtskool px-4 py-2 text-sm font-semibold hover:bg-houtskool hover:text-karamel">
+      <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+      <span class="hidden sm:inline">06 38392102</span><span class="sm:hidden">Bel</span>
+    </a>
+  </nav>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="bg-karamel grain overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-6 md:pt-14 pb-14 md:pb-24 grid md:grid-cols-12 gap-10 md:gap-8 items-center">
+    <div class="md:col-span-6 lg:col-span-6">
+      <p class="text-[15px] font-medium text-houtskool/80">Catering uit Voorthuizen, op de Veluwe</p>
+      <h1 class="kop font-black uppercase text-[64px] sm:text-[84px] lg:text-[118px] mt-3">Uw gasten aan tafel. Mauk aan de grill.</h1>
+      <p class="mt-6 text-lg md:text-xl leading-relaxed max-w-md">BBQ, buffetten, hapjes en broodjes. Vers en ambachtelijk bereid in eigen keuken, zodat u zelf kunt genieten van uw gasten.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31638392102" class="knop inline-flex items-center gap-3 rounded-full bg-houtskool text-papier pl-6 pr-7 py-4 text-lg font-semibold shadow-[0_10px_30px_-10px_rgba(43,32,25,.6)] hover:bg-black">
+          <svg aria-hidden="true" class="h-5 w-5 text-gloed" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+          Bel Mauk: 06 38392102
+        </a>
+        <a href="#bbq" class="font-semibold underline decoration-2 underline-offset-[6px] hover:decoration-houtskool/40">Bekijk de BBQ-pakketten</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px]">
+        <span class="text-houtskool tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong>4,9</strong> uit 35 Google-reviews</span>
+      </p>
+    </div>
+    <div class="md:col-span-6 lg:col-span-5 lg:col-start-8 relative">
+      <img src="assets/site-02.jpg" alt="Mauk in zijn MAUK-shirt deelt een dienblad bier uit aan gasten op een feestwagen" class="boog w-full aspect-[4/5] object-cover object-[45%_center] shadow-[0_30px_60px_-25px_rgba(43,32,25,.7)]" width="990" height="843">
+    </div>
+  </div>
+</section>
+
+<!-- VAKANTIEPARK -->
+<section class="bg-papier">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24 grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-5 order-2 md:order-1">
+      <img src="assets/site-09.jpg" alt="Spiesjes op de barbecue" class="w-full aspect-[4/3] object-cover rounded-[28px] rounded-tr-[120px]" width="800" height="500">
+    </div>
+    <div class="md:col-span-6 md:col-start-7 order-1 md:order-2">
+      <h2 class="kop font-extrabold uppercase text-5xl md:text-7xl">Weekendje weg op de Veluwe?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-rook max-w-xl">Zit u met familie of vrienden op een vakantiepark in de buurt? Bestel een BBQ-pakket bij Mauk. U krijgt alles op tijd en gekoeld aangeleverd, met salades, sauzen en stokbrood met huisgemaakte kruidenboter. Een barbecue huren kan ook.</p>
+      <figure class="mt-8 border-l-4 border-karamel pl-5">
+        <blockquote class="text-lg leading-relaxed">"Spullen werden op tijd en gekoeld afgeleverd. Eten was verzorgd en lekker. Echt een aanrader."</blockquote>
+        <figcaption class="mt-2 text-sm text-rook">Jack Willemse, op recreatiepark De IJsvogel, via Google</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- BBQ MENUKAART -->
+<section id="bbq" class="bg-houtskool text-papier op-donker grain scroll-mt-4">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <div class="lg:col-span-4">
+        <div class="lg:sticky lg:top-8">
+          <h2 class="kop font-black uppercase text-6xl md:text-8xl text-gloed">De BBQ&#8209;kaart</h2>
+          <p class="mt-5 text-lg leading-relaxed text-kraft/90">Een ruim aanbod van verse producten voor de BBQ, Green Egg of buitenkeuken. Alle prijzen zijn per persoon.</p>
+          <img src="assets/site-07.jpg" alt="Vlees en worstjes op het rooster van de barbecue" class="mt-8 w-full aspect-[16/10] object-cover rounded-t-[999px] rounded-b-2xl" width="800" height="500">
+          <dl class="mt-8 space-y-3 text-[15px] text-kraft/90">
+            <div class="flex"><dt>Wegwerp borden en bestek</dt><span class="stippel" aria-hidden="true"></span><dd class="font-semibold text-papier">€ 0,75 p.p.</dd></div>
+            <div class="flex"><dt>Echte borden en bestek</dt><span class="stippel" aria-hidden="true"></span><dd class="font-semibold text-papier">€ 1,25 p.p.</dd></div>
+            <div class="flex"><dt>Barbecue huren, incl. gas en schoonmaak</dt><span class="stippel" aria-hidden="true"></span><dd class="font-semibold text-papier">€ 45,00</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-12 gap-y-12">
+        <article class="border-t-2 border-gloed/50 pt-5">
+          <div class="flex items-baseline justify-between"><h3 class="kop font-extrabold uppercase text-4xl">Pakket A</h3><p class="kop font-extrabold text-4xl text-gloed">€12,50</p></div>
+          <p class="mt-3 text-kraft/90 leading-relaxed">Kipdrumstick, runder hamburger, saté van kip, BBQ-worst. Met aardappelsalade, stokbrood met huisgemaakte kruidenboter, knoflooksaus en cocktailsaus.</p>
+        </article>
+        <article class="border-t-2 border-gloed/50 pt-5">
+          <div class="flex items-baseline justify-between"><h3 class="kop font-extrabold uppercase text-4xl">Pakket B</h3><p class="kop font-extrabold text-4xl text-gloed">€15,00</p></div>
+          <p class="mt-3 text-kraft/90 leading-relaxed">Saté van varkenshaas, runder hamburger, kipfilet, gemarineerde speklap, karbonade. Met rundvleessalade, stokbrood met kruidenboter, satésaus, knoflooksaus en cocktailsaus.</p>
+        </article>
+        <article class="border-t-2 border-gloed/50 pt-5">
+          <div class="flex items-baseline justify-between"><h3 class="kop font-extrabold uppercase text-4xl">Pakket C</h3><p class="kop font-extrabold text-4xl text-gloed">€17,50</p></div>
+          <p class="mt-3 text-kraft/90 leading-relaxed">Kippendij spies, shaslick spies, runder hamburger, karbonade, biefstuk spies. Met rundvleessalade, aardappelsalade, stokbrood met kruidenboter, alioli, satésaus, knoflooksaus en cocktailsaus.</p>
+        </article>
+        <article class="border-t-2 border-gloed/50 pt-5">
+          <div class="flex items-baseline justify-between"><h3 class="kop font-extrabold uppercase text-4xl">Pakket D</h3><p class="kop font-extrabold text-4xl text-gloed">€20,00</p></div>
+          <p class="mt-3 text-kraft/90 leading-relaxed">Peppersteak, biefstuk spies, yakitori spies, shaslick spies, runder hamburger. Met rundvleessalade, aardappelsalade, stokbrood met kruidenboter en tapenade, knoflooksaus en cocktailsaus.</p>
+        </article>
+        <article class="border-t-2 border-gloed/50 pt-5">
+          <div class="flex items-baseline justify-between"><h3 class="kop font-extrabold uppercase text-4xl">Pakket E</h3><p class="kop font-extrabold text-4xl text-gloed">€22,50</p></div>
+          <p class="mt-3 text-kraft/90 leading-relaxed">Kalfsentrecote, mediterrane kipspies, gamba spies, varkenshaas omwikkeld met spek, biefstuk spies. Met rundvleessalade, pastasalade, stokbrood met kruidenboter, alioli, knoflooksaus en cocktailsaus.</p>
+        </article>
+        <article class="border-t-2 border-gloed/50 pt-5">
+          <div class="flex items-baseline justify-between"><h3 class="kop font-extrabold uppercase text-4xl">Pakket F <span class="text-xl align-middle text-kraft/70 normal-case font-bold">(vis)</span></h3><p class="kop font-extrabold text-4xl text-gloed">€25,00</p></div>
+          <p class="mt-3 text-kraft/90 leading-relaxed">Gamba spies, kabeljauwfilet, zalmmoot, tonijnsteak, groentespies. Met vissalade, stokbrood met kruidenboter, alioli, knoflooksaus, cocktailsaus en uiensaus.</p>
+        </article>
+
+        <div class="sm:col-span-2 mt-2 rounded-3xl bg-karamel text-houtskool p-7 md:p-9 grid md:grid-cols-[1fr_auto] gap-6 items-center">
+          <div>
+            <h3 class="kop font-extrabold uppercase text-4xl">Liever zelf samenstellen?</h3>
+            <p class="mt-2 leading-relaxed max-w-lg">Kies los uit vlees, vis en salades, van ribeye en lamskotelet tot gamba spies en Griekse salade. Mauk stelt samen met u een pakket samen. Prijs op aanvraag.</p>
+          </div>
+          <a href="tel:+31638392102" class="knop justify-self-start inline-flex items-center gap-2 rounded-full bg-houtskool text-papier px-6 py-3.5 font-semibold hover:bg-black">Bel voor een pakket op maat</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUFFETTEN -->
+<section id="buffetten" class="bg-papier scroll-mt-4">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-black uppercase text-6xl md:text-8xl">Onbezorgd aan het buffet</h2>
+      <p class="mt-5 text-lg leading-relaxed text-rook max-w-md">Verse producten van hoge kwaliteit, alles ambachtelijk bereid in onze eigen keuken. Zo heeft u de tijd en ruimte om van uw gasten te genieten. In Voorthuizen bezorgen wij gratis.</p>
+      <img src="assets/site-08.jpg" alt="Schotel met gerookte vis, zalm en Hollandse garnalen" class="mt-8 w-full aspect-[4/3] object-cover rounded-[28px] rounded-bl-[120px]" width="800" height="500">
+    </div>
+    <div class="lg:col-span-7 lg:pt-4">
+      <ul class="divide-y-2 divide-houtskool/10 border-y-2 border-houtskool/10">
+        <li class="py-7">
+          <div class="flex items-baseline"><h3 class="kop font-extrabold uppercase text-4xl">Buffet A</h3><span class="stippel" aria-hidden="true"></span><p class="kop font-extrabold text-4xl text-[#9A6B33]">€18,50</p></div>
+          <p class="mt-2 text-rook leading-relaxed">Saté van kipfilet, varkensrollade in jus, gehaktballetjes in jachtsaus, krieltjes uit de oven, aardappelsalade, rundvleessalade en stokbrood met kruidenboter.</p>
+        </li>
+        <li class="py-7">
+          <div class="flex items-baseline"><h3 class="kop font-extrabold uppercase text-4xl">Buffet B</h3><span class="stippel" aria-hidden="true"></span><p class="kop font-extrabold text-4xl text-[#9A6B33]">€20,00</p></div>
+          <p class="mt-2 text-rook leading-relaxed">Kippendijrollade, gehaktballetjes in zoetzure saus, varkenshaas in champignonroomsaus, aardappelpartjes uit de oven, rundvleessalade, aardappelsalade, stokbrood met kruidenboter en alioli.</p>
+        </li>
+        <li class="py-7">
+          <div class="flex items-baseline"><h3 class="kop font-extrabold uppercase text-4xl">Buffet C</h3><span class="stippel" aria-hidden="true"></span><p class="kop font-extrabold text-4xl text-[#9A6B33]">€22,50</p></div>
+          <p class="mt-2 text-rook leading-relaxed">Saté van varkenshaas, gehaktballetjes in ketjapsaus, kipfilet in zoetzure saus, rendang (rund) met Chinese wokgroente, nasi, atjar en kroepoek.</p>
+        </li>
+        <li class="py-7">
+          <div class="flex items-baseline"><h3 class="kop font-extrabold uppercase text-4xl">Stamppotbuffet</h3><span class="stippel" aria-hidden="true"></span><p class="kop font-extrabold text-4xl text-[#9A6B33]">€18,50</p></div>
+          <p class="mt-2 text-rook leading-relaxed">Boerenkool, zuurkool en hutspot met rookworst, spek en balgehakt in de jus. Met mosterd, piccalilly en augurk.</p>
+        </li>
+      </ul>
+      <p class="mt-6 text-[15px] text-rook">Prijzen per persoon. Wegwerp borden en bestek € 0,75 p.p., echte borden en bestek € 1,25 p.p. Ook een buffet stelt u zelf samen, met soepen, salades en stoofpotjes. Dessert in overleg.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEESTEN, HAPJES, BROODJES -->
+<section id="feesten" class="bg-kraft grain scroll-mt-4">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28">
+    <h2 class="kop font-black uppercase text-6xl md:text-8xl max-w-4xl">Van borrelplank tot bruiloft</h2>
+
+    <div class="mt-12 md:mt-16 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <img src="assets/site-10.jpg" alt="Bruschetta met geroosterde groenten en feta" class="md:col-span-7 w-full aspect-[16/10] object-cover rounded-[28px]" width="800" height="500">
+      <div class="md:col-span-5">
+        <h3 class="kop font-extrabold uppercase text-4xl md:text-5xl">Hapjes en tapas</h3>
+        <p class="mt-4 text-lg leading-relaxed">Een compleet tapasbuffet, een lekkere borrelplank of luxe warme borrelhapjes: alles kan. Van gevulde eitjes tot wraps en van kaasplanken tot warme gehaktballetjes. Geweldig toch, als iemand dit voor u regelt.</p>
+      </div>
+    </div>
+
+    <div class="mt-14 md:mt-20 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-5 md:order-1 order-2">
+        <h3 class="kop font-extrabold uppercase text-4xl md:text-5xl">Belegde broodjes</h3>
+        <p class="mt-4 text-lg leading-relaxed">Een lunch voor uw team of een kleine bijeenkomst? Mauk maakt broodjes van de beste ingrediënten, van klassiek tot verrassend, op tijd en naar wens.</p>
+        <figure class="mt-6 border-l-4 border-houtskool/30 pl-5">
+          <blockquote class="leading-relaxed">"MAUK heeft voor ons hele personeel een uitgebreid buffet gemaakt en op onze locatie afgeleverd. Heerlijk gegeten."</blockquote>
+          <figcaption class="mt-2 text-sm text-rook">Dave van Maanen, Vloerenhuis Amsterdam</figcaption>
+        </figure>
+      </div>
+      <img src="assets/site-11.jpg" alt="Lange tafel met belegde broodjes, croissants en wraps naast karaffen met ijsthee" class="md:col-span-7 md:order-2 order-1 w-full aspect-[16/11] object-cover object-[center_60%] rounded-[28px] rounded-tl-[140px]" width="1600" height="1260">
+    </div>
+
+    <div class="mt-14 md:mt-20 rounded-[28px] bg-houtskool text-papier op-donker p-8 md:p-14 grid md:grid-cols-12 gap-8 items-end">
+      <div class="md:col-span-8">
+        <h3 class="kop font-extrabold uppercase text-4xl md:text-6xl text-gloed">Bruiloften, feesten en partijen</h3>
+        <p class="mt-4 text-lg leading-relaxed text-kraft/90 max-w-2xl">Een verjaardag, jubileum, bedrijfsfeest of de mooiste dag van uw leven. Mauk regelt het eten en desgewenst alles eromheen: aankleding van de locatie, tenten, tafels en stoelen, servies, glazen, bestek, bloemen en muziek.</p>
+      </div>
+      <div class="md:col-span-4 md:justify-self-end">
+        <a href="tel:+31638392102" class="knop inline-flex items-center gap-2 rounded-full bg-karamel text-houtskool px-6 py-4 font-semibold hover:bg-gloed">Bespreek uw feest met Mauk</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVER MAUK -->
+<section id="over-mauk" class="bg-papier scroll-mt-4">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-5">
+      <img src="assets/site-01.jpg" alt="Portret van Mauk van Ginkel op de Veluwse heide" class="boog w-full aspect-[4/5] object-cover object-[55%_center]" width="1920" height="1280">
+    </div>
+    <div class="lg:col-span-7">
+      <h2 class="kop font-black uppercase text-6xl md:text-8xl">Met de paplepel ingegoten</h2>
+      <div class="mt-6 space-y-5 text-lg leading-relaxed max-w-2xl">
+        <p>"Ik ben opgegroeid in een slagersgezin. Thuis was er altijd aandacht voor lekker en verantwoord eten, en het was er een zoete inval: iedereen kon aanschuiven als er eten op tafel stond. Zo heb ik geleerd dat samen eten de vriendschap versterkt.</p>
+        <p>Mijn ervaring deed ik op in diverse restaurants. Begonnen in de afwaskeuken en stap voor stap omhooggeklommen tot achter de kachel. In 2018 begon ik MAUK Catering. Goed gastheerschap, veel enthousiasme en maatwerk: daar sta ik voor."</p>
+      </div>
+      <p class="mt-6 font-semibold">Mauk van Ginkel</p>
+
+      <div class="mt-10 rounded-3xl bg-kraft p-7 md:p-8">
+        <h3 class="kop font-extrabold uppercase text-3xl">Mauks specialiteiten</h3>
+        <ul class="mt-4 grid sm:grid-cols-2 gap-x-8 gap-y-4 text-[15px]">
+          <li><strong class="font-semibold">Kippendijen rollade</strong><br><span class="text-rook">Uit de oven of draaiend aan het spit</span></li>
+          <li><strong class="font-semibold">Kogelbiefstuk (Scotch prime beef)</strong><br><span class="text-rook">Met peper, zout en kruidenboter</span></li>
+          <li><strong class="font-semibold">Saté van varkenshaas</strong><br><span class="text-rook">Met onze exclusieve marinade</span></li>
+          <li><strong class="font-semibold">Huisgemaakte hamburger (rund)</strong><br><span class="text-rook">Met sla, tomaat en augurk</span></li>
+          <li><strong class="font-semibold">Pastasalade met chorizo</strong><br><span class="text-rook">Ook als vegetarische variant</span></li>
+          <li><strong class="font-semibold">Gamba spies</strong><br><span class="text-rook">Met knoflook en versgemalen peper</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bg-karamel grain">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-4">
+        <p class="kop font-black text-[120px] md:text-[180px] leading-none">4,9</p>
+        <p class="mt-2 text-lg"><span class="tracking-[2px]" aria-hidden="true">★★★★★</span><br>uit 35 reviews op Google</p>
+        <blockquote class="mt-10 kop font-extrabold uppercase text-3xl md:text-4xl leading-[1]">"Samen eten is olie voor de vriendschap."</blockquote>
+        <p class="mt-3 text-[15px]">Felix Timmermans, Vlaams schrijver</p>
+      </div>
+      <div class="lg:col-span-8 grid md:grid-cols-2 gap-6">
+        <figure class="rounded-3xl bg-papier p-7">
+          <blockquote class="leading-relaxed">"Tijdens het lustrumweekend van het 45 jarig bestaan van de Fiat 500 Club Nederland heeft Mauk Catering het dinerbuffet en ontbijtbuffet voor 540 deelnemers verzorgd. Vooraf hebben we aangegeven wat we ongeveer in gedachten hadden en Mauk gevraagd hier een plan voor te maken. Hij weet waar hij het over heeft."</blockquote>
+          <figcaption class="mt-4 text-sm"><strong class="font-semibold">Sonja Garthoff</strong><span class="text-rook">, 5 sterren op Google</span></figcaption>
+        </figure>
+        <figure class="rounded-3xl bg-papier p-7">
+          <blockquote class="leading-relaxed">"Wij hebben met 14 personen gebruik gemaakt van Mauk Catering voor een bbq tijdens een weekend op recreatiepark de ijsvogel, we zijn erg blij met de services van Mauk. Alles was goed geregeld en het vlees was heerlijk. 🤤"</blockquote>
+          <figcaption class="mt-4 text-sm"><strong class="font-semibold">Linda Adriaans</strong><span class="text-rook">, 5 sterren op Google</span></figcaption>
+        </figure>
+        <figure class="rounded-3xl bg-papier p-7">
+          <blockquote class="leading-relaxed">"Mauk heeft de catering voor onze bruiloft verzorgd. Mauk heeft heerlijk gekookt, netjes op tijd, warm eten, tussentijds nog gecheckt. Echt top!"</blockquote>
+          <figcaption class="mt-4 text-sm"><strong class="font-semibold">Willemijn van de Geest</strong><span class="text-rook">, 5 sterren op Google</span></figcaption>
+        </figure>
+        <figure class="rounded-3xl bg-papier p-7">
+          <blockquote class="leading-relaxed">"Afgelopen weekend zaten we op recreatiepark de ijsvogel tgv ons 30 jarig huwelijk met kinderen en kleinkinderen. BBQ besteld bij Maud catering door tip van het park. Spullen werden op tijd en gekoeld afgeleverd. Eten was verzorgd en lekker. Echt een aanrader."</blockquote>
+          <figcaption class="mt-4 text-sm"><strong class="font-semibold">Jack Willemse</strong><span class="text-rook">, 5 sterren op Google</span></figcaption>
+        </figure>
+        <figure class="md:col-span-2 rounded-3xl bg-houtskool text-papier p-7">
+          <blockquote class="leading-relaxed md:text-lg max-w-3xl">"Top BBQ van Mauk Catering! Alles was heerlijk, vers en perfect verzorgd. Vriendelijke service en alles tot in de puntjes geregeld. Zeker een aanrader. Wij waren een weekendje met de gehele familie op de Boshoek makkelijk te combineren met Mauk."</blockquote>
+          <figcaption class="mt-4 text-sm"><strong class="font-semibold text-gloed">Wim Schreurs</strong><span class="text-kraft/80">, 5 sterren op Google</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-houtskool text-papier op-donker scroll-mt-4">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-black uppercase text-6xl md:text-8xl text-gloed">Wat mag Mauk voor u koken?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-kraft/90 max-w-lg">Bel of mail met uw datum, aantal gasten en wensen. Mauk denkt mee en maakt een voorstel op maat.</p>
+      <a href="tel:+31638392102" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-karamel text-houtskool pl-6 pr-7 py-4 text-lg font-semibold hover:bg-gloed">
+        <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+        Bel Mauk: 06 38392102
+      </a>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-6 text-[15px]">
+        <div><dt class="text-kraft/60">E-mail</dt><dd class="mt-1"><a href="mailto:info@maukcatering.nl" class="text-lg underline underline-offset-4 decoration-gloed/60 hover:text-gloed">info@maukcatering.nl</a></dd></div>
+        <div><dt class="text-kraft/60">Bereikbaar</dt><dd class="mt-1 text-lg">Elke dag van 09:00 tot 22:00</dd></div>
+        <div><dt class="text-kraft/60">Adres</dt><dd class="mt-1 text-lg">Apeldoornsestraat 36<br>3781 PN Voorthuizen</dd></div>
+      </dl>
+      <img src="assets/site-03.jpg" alt="Gestencilde Mauk catering stempel op een houten plank" class="mt-10 w-full aspect-[16/8] object-cover object-[68%_40%] rounded-[28px]" width="1600" height="1200">
+    </div>
+
+    <div class="lg:col-span-6">
+      <form action="mailto:info@maukcatering.nl" method="post" enctype="text/plain" class="rounded-[28px] bg-papier text-houtskool p-7 md:p-10 space-y-5">
+        <h3 class="kop font-extrabold uppercase text-4xl">Vraag een voorstel aan</h3>
+        <div>
+          <label for="naam" class="block text-sm font-medium">Naam</label>
+          <input id="naam" name="Naam" required autocomplete="name" class="mt-1.5 w-full rounded-xl border-2 border-houtskool/15 bg-white px-4 py-3 focus:border-karamel">
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="telefoon" class="block text-sm font-medium">Telefoon</label>
+            <input id="telefoon" name="Telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-xl border-2 border-houtskool/15 bg-white px-4 py-3 focus:border-karamel">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium">E-mail</label>
+            <input id="email" name="E-mail" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border-2 border-houtskool/15 bg-white px-4 py-3 focus:border-karamel">
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="soort" class="block text-sm font-medium">Waar gaat het om?</label>
+            <select id="soort" name="Soort" class="mt-1.5 w-full rounded-xl border-2 border-houtskool/15 bg-white px-4 py-3 focus:border-karamel">
+              <option>BBQ-pakket</option>
+              <option>Buffet</option>
+              <option>Hapjes en tapas</option>
+              <option>Belegde broodjes</option>
+              <option>Bruiloft of feest</option>
+              <option>Iets anders</option>
+            </select>
+          </div>
+          <div>
+            <label for="gasten" class="block text-sm font-medium">Aantal gasten</label>
+            <input id="gasten" name="Aantal gasten" type="number" min="1" inputmode="numeric" class="mt-1.5 w-full rounded-xl border-2 border-houtskool/15 bg-white px-4 py-3 focus:border-karamel">
+          </div>
+        </div>
+        <div>
+          <label for="bericht" class="block text-sm font-medium">Datum, locatie en wensen</label>
+          <textarea id="bericht" name="Bericht" rows="4" class="mt-1.5 w-full rounded-xl border-2 border-houtskool/15 bg-white px-4 py-3 focus:border-karamel"></textarea>
+        </div>
+        <button type="submit" class="knop w-full rounded-full bg-houtskool text-papier px-6 py-4 font-semibold hover:bg-black">Verstuur aanvraag</button>
+        <p class="text-sm text-rook">Uw aanvraag opent in uw e-mailprogramma. Liever direct contact? Bel <a href="tel:+31638392102" class="underline">06 38392102</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-karamel">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[15px]">
+    <img src="assets/google-02.jpg" alt="Mauk catering" class="logo-licht h-24 w-24 object-cover scale-[1.35]" width="96" height="96">
+    <p>Apeldoornsestraat 36, 3781 PN Voorthuizen<br><a href="tel:+31638392102" class="underline underline-offset-2">06 38392102</a> &nbsp;|&nbsp; <a href="mailto:info@maukcatering.nl" class="underline underline-offset-2">info@maukcatering.nl</a></p>
+    <p class="text-houtskool/70">&copy; 2026 Mauk catering</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-houtskool/95 backdrop-blur p-3 flex gap-3 op-donker">
+  <a href="tel:+31638392102" class="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-karamel text-houtskool py-3.5 font-semibold">
+    <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg>
+    Bel Mauk
+  </a>
+  <a href="mailto:info@maukcatering.nl" class="inline-flex items-center justify-center rounded-full border-2 border-kraft/40 text-papier px-5 py-3 font-semibold">Mail</a>
+</div>
+</body>
+</html>

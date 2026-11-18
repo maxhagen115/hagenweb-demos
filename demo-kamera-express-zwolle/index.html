@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kamera Express Zwolle | Foto- en videospecialist aan de Dijkstraat</title>
+  <meta name="description" content="Kamera Express Zwolle, de foto- en videospecialist aan de Dijkstraat 49. Camera's, lenzen, tassen en accessoires, pasfoto's en afdrukken. Bel 038 833 0199.">
+  <meta property="og:title" content="Kamera Express Zwolle">
+  <meta property="og:description" content="Foto- en videospecialist aan de Dijkstraat 49 in Zwolle.">
+  <meta property="og:image" content="assets/site-01.jpg">
+  <link rel="icon" href="assets/logo-oud.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            oranje: '#EF7A1A',
+            oranjedonker: '#D9650A',
+            grafiet: '#24272B',
+            toonbank: '#ECEEF0',
+            staal: '#5C6169',
+          },
+          fontFamily: {
+            kop: ['"Barlow Condensed"', 'sans-serif'],
+            sans: ['Figtree', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid #EF7A1A; outline-offset: 3px; border-radius: 6px; }
+
+    /* Het logo als zoeker: dikke rand, afgeronde hoeken, tabje rechtsboven. */
+    .zoeker { position: relative; border: 10px solid #24272B; border-radius: 30px; background: #24272B; }
+    .zoeker::before {
+      content: ""; position: absolute; top: -28px; right: 14%; width: 22%; height: 22px;
+      background: #24272B; border-radius: 8px 8px 0 0;
+    }
+    .zoeker img { border-radius: 20px; display: block; }
+    @media (max-width: 640px) {
+      .zoeker { border-width: 7px; border-radius: 22px; }
+      .zoeker::before { top: -20px; height: 16px; }
+      .zoeker img { border-radius: 15px; }
+    }
+
+    /* Rustige intro-animatie, alleen als JS de class zet. */
+    .js .intro > * { animation: omhoog .7s cubic-bezier(.2,.7,.2,1) both; }
+    .js .intro > *:nth-child(2) { animation-delay: .06s; }
+    .js .intro > *:nth-child(3) { animation-delay: .12s; }
+    .js .intro > *:nth-child(4) { animation-delay: .18s; }
+    .js .intro > *:nth-child(5) { animation-delay: .24s; }
+    .js .zoeker-wrap { animation: inzoom .9s cubic-bezier(.2,.7,.2,1) both .1s; }
+    @keyframes omhoog { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes inzoom { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .js .intro > *, .js .zoeker-wrap { animation: none; } html { scroll-behavior: auto; } }
+
+    .vandaag { background: #EF7A1A; color: #24272B; }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white text-grafiet font-sans pb-20 md:pb-0">
+
+  <!-- Demo-balk -->
+  <div class="bg-grafiet text-white/80 text-[13px] text-center px-4 py-2">
+    Demo voor Kamera Express Zwolle, gemaakt door <a href="https://hagenweb.nl" class="text-white font-semibold underline underline-offset-2 hover:text-oranje">Hagenweb</a>
+  </div>
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-12 focus:left-4 bg-white px-3 py-2 z-50">Naar de inhoud</a>
+
+  <header class="relative z-20">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="assets/logo-oud.png" alt="Kamera Express logo" class="w-11 h-11 md:w-12 md:h-12">
+        <span class="font-kop font-bold text-[22px] leading-none tracking-tight">Kamera Express<span class="block font-semibold text-staal text-[17px] mt-0.5">Zwolle</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+        <a href="#winkel" class="hover:text-oranjedonker transition-colors">De winkel</a>
+        <a href="#pasfotos" class="hover:text-oranjedonker transition-colors">Pasfoto's</a>
+        <a href="#balie" class="hover:text-oranjedonker transition-colors">Aan de balie</a>
+        <a href="#bezoek" class="hover:text-oranjedonker transition-colors">Openingstijden</a>
+        <a href="tel:0388330199" class="ml-2 inline-flex items-center gap-2 rounded-full border-2 border-grafiet px-4 py-2 font-semibold hover:bg-grafiet hover:text-white transition-colors">038 833 0199</a>
+      </nav>
+      <a href="tel:0388330199" class="md:hidden inline-flex items-center gap-2 rounded-full border-2 border-grafiet px-3.5 py-1.5 text-sm font-semibold" aria-label="Bel 038 833 0199">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        Bellen
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-5 md:px-8 pt-4 md:pt-10 pb-16 md:pb-24 grid md:grid-cols-12 gap-12 md:gap-10 items-center">
+        <div class="intro md:col-span-5 relative z-10">
+          <p class="font-medium text-staal text-[15px] md:text-base">Foto- en videospecialist in Zwolle</p>
+          <h1 class="font-kop font-bold text-[54px] leading-[.92] md:text-[88px] md:leading-[.88] tracking-[-0.01em] mt-3">Eerst in de hand, dan pas in de tas.</h1>
+          <p class="mt-5 md:mt-7 text-[17px] md:text-lg leading-relaxed text-grafiet/85 max-w-[30rem]">Camera's, lenzen en tassen pakt u bij ons gewoon zelf op. Twijfelt u? Vraag het aan de toonbank. En voor een pasfoto loopt u zo binnen aan de Dijkstraat.</p>
+          <div class="mt-7 md:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+            <a id="hero-bel" href="tel:0388330199" class="inline-flex items-center gap-3 rounded-full bg-oranje px-7 py-4 text-lg font-semibold text-grafiet shadow-[0_10px_24px_-10px_rgba(217,101,10,.8)] hover:bg-oranjedonker hover:text-white active:translate-y-px transition-colors">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+              Bel 038 833 0199
+            </a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Dijkstraat+49+8011+XS+Zwolle" target="_blank" rel="noopener" class="font-semibold underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranjedonker">Route naar de Dijkstraat</a>
+          </div>
+          <p class="mt-7 flex items-center gap-2 text-[15px] text-staal">
+            <span class="flex text-oranje" aria-hidden="true">
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+              <svg class="w-4 h-4 text-grafiet/20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+            </span>
+            <span><strong class="text-grafiet font-semibold">4 van 5</strong> uit 358 Google-reviews</span>
+          </p>
+        </div>
+
+        <div class="md:col-span-7 relative">
+          <div class="absolute rounded-full bg-oranje aspect-square w-[105%] md:w-[88%] -right-[30%] md:-right-[16%] top-1/2 -translate-y-1/2" aria-hidden="true"></div>
+          <div class="zoeker-wrap relative pt-7 md:pl-6">
+            <div class="zoeker shadow-[0_30px_60px_-30px_rgba(36,39,43,.6)]">
+              <img src="assets/site-01.jpg" alt="De winkel van Kamera Express Zwolle met oranje vitrines vol camera's en lenzen" class="w-full aspect-[4/3] object-cover object-[50%_45%]">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- De winkel -->
+    <section id="winkel" class="bg-toonbank py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-5 md:px-8">
+        <div class="grid md:grid-cols-12 gap-6 md:gap-10 items-end">
+          <h2 class="md:col-span-6 font-kop font-bold text-[44px] leading-[.95] md:text-[64px]">Een winkel om in rond te kijken.</h2>
+          <p class="md:col-span-5 md:col-start-8 text-[17px] leading-relaxed text-grafiet/80">Op een website ziet u een plaatje. Bij ons in Zwolle voelt u hoe zwaar een lens is, hoe een grip in uw hand ligt en of die tas echt bij uw spullen past. Neem de tijd, er is genoeg te zien.</p>
+        </div>
+
+        <div class="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-5">
+          <figure class="col-span-2 md:col-span-7 md:row-span-2">
+            <img src="assets/google-02.png" alt="Toonbank met camera's, lenzen en drones in de stellingen erachter" class="w-full h-full min-h-[240px] aspect-[4/3] md:aspect-auto object-cover rounded-2xl">
+            <figcaption class="mt-3 font-kop font-semibold text-xl">Camera's, lenzen en drones achter de toonbank</figcaption>
+          </figure>
+          <figure class="col-span-2 md:col-span-5">
+            <img src="assets/google-04.jpg" alt="Wand vol cameratassen en rugzakken" class="w-full aspect-[16/10] object-cover rounded-2xl">
+            <figcaption class="mt-3 font-kop font-semibold text-xl">Een hele wand met tassen en rugzakken</figcaption>
+          </figure>
+          <figure class="md:col-span-2 md:col-start-8">
+            <img src="assets/google-06.jpg" alt="Leestafel met krukken in de winkel" class="w-full aspect-square object-cover rounded-2xl">
+            <figcaption class="mt-3 font-kop font-semibold text-lg leading-tight">Even zitten en bladeren</figcaption>
+          </figure>
+          <figure class="md:col-span-3">
+            <img src="assets/google-05.png" alt="Ruime winkelvloer met camerariemen en de pasfotohoek" class="w-full aspect-square md:aspect-[3/2] object-cover rounded-2xl">
+            <figcaption class="mt-3 font-kop font-semibold text-lg leading-tight">Riemen, statieven en de pasfotohoek</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advies -->
+    <section class="py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-12 md:gap-10 items-center">
+        <div class="md:col-span-6 relative order-2 md:order-1">
+          <img src="assets/site-03.jpg" alt="Medewerker van Kamera Express geeft een klant advies aan de toonbank" class="w-full aspect-[2/1] object-cover rounded-2xl">
+          <div class="absolute -bottom-10 right-4 md:-right-8 w-28 md:w-40 rounded-2xl overflow-hidden bg-white ring-[6px] ring-white shadow-[0_20px_40px_-20px_rgba(36,39,43,.5)]">
+            <img src="assets/site-02.png" alt="Medewerker van Kamera Express in zwarte polo met logo" class="w-full aspect-[3/4] object-cover object-top">
+          </div>
+        </div>
+        <div class="md:col-span-5 md:col-start-8 order-1 md:order-2">
+          <h2 class="font-kop font-bold text-[44px] leading-[.95] md:text-[60px]">Even overleggen aan de toonbank.</h2>
+          <p class="mt-6 text-[17px] leading-relaxed text-grafiet/80">Wat wilt u vastleggen: de kinderen op het sportveld, een verre reis of uw eerste bruiloft als fotograaf? Vertel het aan de toonbank, dan pakken we er een paar camera's bij die passen. Zo vergelijkt u ze naast elkaar, in het echt.</p>
+          <p class="mt-4 text-[17px] leading-relaxed text-grafiet/80">Liever eerst even bellen of iets op voorraad is? Dat kan natuurlijk ook.</p>
+          <a href="tel:0388330199" class="mt-7 inline-flex items-center gap-2 font-semibold underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranjedonker">Bel de winkel: 038 833 0199</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pasfoto's -->
+    <section id="pasfotos" class="bg-oranje py-20 md:py-28 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+        <div class="md:col-span-5">
+          <h2 class="font-kop font-bold text-[48px] leading-[.92] md:text-[72px]">Pasfoto nodig? Loop gerust binnen.</h2>
+          <p class="mt-6 text-[17px] md:text-lg leading-relaxed max-w-md">Voor uw paspoort, rijbewijs of ID-kaart maken we de pasfoto in de pasfotohoek achter in de winkel. U kijkt mee en kiest zelf de foto die u het mooist vindt.</p>
+        </div>
+        <div class="md:col-span-7">
+          <img src="assets/site-07.jpg" alt="Een klant poseert voor een pasfoto in de pasfotohoek" class="w-full aspect-[2/1] object-cover rounded-2xl">
+          <figure class="relative bg-white rounded-2xl p-7 md:p-9 -mt-12 mx-3 md:mx-10 shadow-[0_24px_50px_-28px_rgba(36,39,43,.55)]">
+            <div class="flex text-oranje mb-4" aria-label="5 van 5 sterren">
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+            </div>
+            <blockquote class="text-[17px] md:text-[19px] leading-relaxed">"Vandaag een pasfoto laten maken, personeel was erg vriendelijk en behulpzaam. Er werd rustig de tijd genomen en er werden meerdere foto's gemaakt totdat ik eentje leuk vond. Ook de pasfoto op 1 maat groter laten afdrukken was geen probleem. Helemaal blij mee."</blockquote>
+            <figcaption class="mt-4 text-[15px] text-staal"><span class="font-semibold text-grafiet">eliza klaassen</span>, via Google</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aan de balie -->
+    <section id="balie" class="py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-4">
+          <div class="md:sticky md:top-10">
+            <h2 class="font-kop font-bold text-[44px] leading-[.95] md:text-[60px]">Ook voor uw foto's, film en oude video's.</h2>
+            <p class="mt-6 text-[17px] leading-relaxed text-grafiet/80">Niet alleen voor nieuwe spullen. Neem mee wat u heeft en vraag aan de balie wat er mogelijk is.</p>
+          </div>
+        </div>
+        <ul class="md:col-span-8 md:col-start-5 divide-y divide-grafiet/15 border-y border-grafiet/15">
+          <li class="grid grid-cols-[110px_1fr] sm:grid-cols-[220px_1fr] gap-5 sm:gap-8 py-6 sm:py-7 items-center">
+            <img src="assets/site-10.jpg" alt="Klant bestelt afdrukken aan het fotoscherm in de winkel" class="w-full aspect-[4/3] sm:aspect-[2/1] object-cover rounded-xl">
+            <div>
+              <h3 class="font-kop font-bold text-[26px] sm:text-3xl leading-none">Foto's afdrukken</h3>
+              <p class="mt-2 text-grafiet/80 leading-relaxed">Uw foto's van telefoon of camera op papier, aan het fotoscherm in de winkel.</p>
+            </div>
+          </li>
+          <li class="grid grid-cols-[110px_1fr] sm:grid-cols-[220px_1fr] gap-5 sm:gap-8 py-6 sm:py-7 items-center">
+            <img src="assets/site-04.jpg" alt="Sensor van een Canon camera wordt gereinigd" class="w-full aspect-[4/3] sm:aspect-[2/1] object-cover rounded-xl">
+            <div>
+              <h3 class="font-kop font-bold text-[26px] sm:text-3xl leading-none">Sensor reinigen</h3>
+              <p class="mt-2 text-grafiet/80 leading-relaxed">Vlekjes op elke foto op dezelfde plek? Dan zit er stof op de sensor. Breng uw camera mee.</p>
+            </div>
+          </li>
+          <li class="grid grid-cols-[110px_1fr] sm:grid-cols-[220px_1fr] gap-5 sm:gap-8 py-6 sm:py-7 items-center">
+            <img src="assets/site-08.jpg" alt="Hand houdt een rolletje analoge film vast" class="w-full aspect-[4/3] sm:aspect-[2/1] object-cover rounded-xl">
+            <div>
+              <h3 class="font-kop font-bold text-[26px] sm:text-3xl leading-none">Analoge film</h3>
+              <p class="mt-2 text-grafiet/80 leading-relaxed">Nog een rolletje in de kast of fotografeert u weer analoog? Kom ermee langs.</p>
+            </div>
+          </li>
+          <li class="grid grid-cols-[110px_1fr] sm:grid-cols-[220px_1fr] gap-5 sm:gap-8 py-6 sm:py-7 items-center">
+            <img src="assets/site-09.jpg" alt="Hand houdt een oude videoband vast" class="w-full aspect-[4/3] sm:aspect-[2/1] object-cover rounded-xl">
+            <div>
+              <h3 class="font-kop font-bold text-[26px] sm:text-3xl leading-none">Video digitaliseren</h3>
+              <p class="mt-2 text-grafiet/80 leading-relaxed">Oude videobanden met vakanties en verjaardagen, straks gewoon terug te kijken op uw laptop of tv.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Bezoek -->
+    <section id="bezoek" class="bg-grafiet text-white">
+      <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-12 md:gap-10">
+        <div class="md:col-span-6">
+          <h2 class="font-kop font-bold text-[44px] leading-[.95] md:text-[64px]">Tot ziens aan de Dijkstraat.</h2>
+          <img src="assets/google-01.jpg" alt="De gevel van Kamera Express aan de Dijkstraat in Zwolle, in herfstlicht" class="mt-10 w-full aspect-[3/2] md:aspect-[5/4] object-cover object-[50%_60%] rounded-2xl">
+        </div>
+        <div class="md:col-span-5 md:col-start-8 md:pt-4">
+          <div class="grid sm:grid-cols-2 md:grid-cols-1 gap-10">
+            <address class="not-italic text-lg leading-relaxed">
+              <h3 class="font-kop font-semibold text-2xl text-oranje mb-2">Adres</h3>
+              Dijkstraat 49<br>8011 XS Zwolle
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Dijkstraat+49+8011+XS+Zwolle" target="_blank" rel="noopener" class="block mt-2 text-base font-semibold underline decoration-oranje decoration-2 underline-offset-[6px] hover:text-oranje">Plan uw route</a>
+            </address>
+            <div>
+              <h3 class="font-kop font-semibold text-2xl text-oranje mb-2">Openingstijden</h3>
+              <table class="w-full max-w-sm text-[16px] tabular-nums">
+                <tbody id="tijden">
+                  <tr data-dag="1"><td class="py-1.5 pl-3 rounded-l-md">Maandag</td><td class="py-1.5 pr-3 text-right rounded-r-md">09:30 tot 18:00</td></tr>
+                  <tr data-dag="2"><td class="py-1.5 pl-3 rounded-l-md">Dinsdag</td><td class="py-1.5 pr-3 text-right rounded-r-md">09:30 tot 18:00</td></tr>
+                  <tr data-dag="3"><td class="py-1.5 pl-3 rounded-l-md">Woensdag</td><td class="py-1.5 pr-3 text-right rounded-r-md">09:30 tot 18:00</td></tr>
+                  <tr data-dag="4"><td class="py-1.5 pl-3 rounded-l-md">Donderdag</td><td class="py-1.5 pr-3 text-right rounded-r-md">09:30 tot 18:00</td></tr>
+                  <tr data-dag="5"><td class="py-1.5 pl-3 rounded-l-md">Vrijdag</td><td class="py-1.5 pr-3 text-right rounded-r-md">09:30 tot 18:00</td></tr>
+                  <tr data-dag="6"><td class="py-1.5 pl-3 rounded-l-md">Zaterdag</td><td class="py-1.5 pr-3 text-right rounded-r-md">09:00 tot 17:00</td></tr>
+                  <tr data-dag="0"><td class="py-1.5 pl-3 rounded-l-md">Zondag</td><td class="py-1.5 pr-3 text-right rounded-r-md">11:00 tot 17:00</td></tr>
+                </tbody>
+              </table>
+              <p class="mt-3 pl-3 text-sm text-white/60">Ook op zondag open.</p>
+            </div>
+          </div>
+          <div class="mt-12 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-4">
+            <a href="tel:0388330199" class="inline-flex justify-center items-center gap-3 rounded-full bg-oranje px-7 py-4 text-lg font-semibold text-grafiet hover:bg-white transition-colors">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+              038 833 0199
+            </a>
+            <a href="mailto:info@kamera-express.nl" class="inline-flex justify-center items-center rounded-full border-2 border-white/40 px-7 py-4 text-lg font-semibold hover:border-white transition-colors">info@kamera-express.nl</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-grafiet text-white/60 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col md:flex-row gap-3 justify-between text-sm">
+      <p><span class="text-white font-semibold">Kamera Express Zwolle</span>, de foto- en videospecialist. Dijkstraat 49, 8011 XS Zwolle.</p>
+      <p>Demo door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a></p>
+    </div>
+  </footer>
+
+  <!-- Mobiele belbalk -->
+  <div id="belbalk" class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-white/95 backdrop-blur border-t border-grafiet/10 transition-transform duration-300">
+    <a href="tel:0388330199" class="flex justify-center items-center gap-3 rounded-full bg-oranje py-3.5 text-[17px] font-semibold text-grafiet active:translate-y-px">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      Bel de winkel: 038 833 0199
+    </a>
+  </div>
+
+  <script>
+    // Markeer de dag van vandaag in de openingstijden.
+    var rij = document.querySelector('#tijden tr[data-dag="' + new Date().getDay() + '"]');
+    if (rij) { rij.classList.add('vandaag'); rij.classList.add('font-semibold'); }
+
+    // Mobiele belbalk pas tonen als de belknop in de hero uit beeld is.
+    var balk = document.getElementById('belbalk'), heroBel = document.getElementById('hero-bel');
+    if (balk && heroBel && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (e) {
+        balk.style.transform = e[0].isIntersecting ? 'translateY(110%)' : '';
+      }).observe(heroBel);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PopUp Italian | De Italiaan op locatie in Barneveld</title>
+<meta name="description" content="PopUp Italian verzorgt Italiaanse catering op uw feest: pizza uit de houtoven, borrelplanken, walking dinner en meer. Bel 06 21345353.">
+<link rel="icon" href="assets/logo-oud.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          tent: '#1B1A17',
+          tent2: '#25231F',
+          linnen: '#F2EDE3',
+          linnen2: '#E8E1D3',
+          basilico: '#5DBB3F',
+          basilicodk: '#3F8F27',
+          pomodoro: '#D9442B',
+          inkt: '#2A2722',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Karla', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Karla, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .oven-boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  .logo-blend { mix-blend-mode: lighten; }
+
+  /* Lichtsnoer */
+  .bulb { fill: #F6C76B; filter: drop-shadow(0 0 6px rgba(246,199,107,.9)) drop-shadow(0 0 16px rgba(246,199,107,.45)); }
+  .js .bulb { animation: gloei 3.6s ease-in-out infinite; }
+  .js .bulb:nth-of-type(3n) { animation-delay: -1.2s; }
+  .js .bulb:nth-of-type(3n+1) { animation-delay: -2.4s; }
+  @keyframes gloei { 0%,100% { opacity: 1; } 50% { opacity: .72; } }
+  @media (prefers-reduced-motion: reduce) { .js .bulb { animation: none; } html { scroll-behavior: auto; } }
+
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px) scale(.98); }
+  :focus-visible { outline: 3px solid #5DBB3F; outline-offset: 3px; border-radius: 6px; }
+
+  .menuregel { border-bottom: 1px dashed rgba(42,39,34,.25); }
+  .korrel::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-linnen text-inkt antialiased pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-basilico text-tent px-4 py-2 rounded">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-basilico text-tent text-center text-[13px] py-1.5 px-4 font-medium">
+  Demo voor PopUp Italian, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 font-bold">Hagenweb</a>
+</div>
+
+<!-- HERO -->
+<header class="relative bg-tent text-linnen overflow-hidden korrel">
+  <nav class="relative max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between pt-4">
+    <a href="#" class="flex items-center gap-2" aria-label="PopUp Italian, naar boven">
+      <img src="assets/logo-oud.png" alt="Logo PopUp Italian" class="logo-blend w-16 h-16 sm:w-20 sm:h-20 -ml-2">
+    </a>
+    <div class="flex items-center gap-6 text-[15px]">
+      <a href="#menu" class="hidden md:inline hover:text-basilico transition-colors">Wat we serveren</a>
+      <a href="#reviews" class="hidden md:inline hover:text-basilico transition-colors">Reviews</a>
+      <a href="#contact" class="hidden md:inline hover:text-basilico transition-colors">Contact</a>
+      <a href="tel:+31621345353" class="knop hidden sm:inline-flex items-center gap-2 border border-linnen/30 rounded-full px-4 py-2 hover:border-basilico hover:text-basilico">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        06 21345353
+      </a>
+    </div>
+  </nav>
+
+  <!-- Lichtsnoer -->
+  <svg class="absolute left-0 right-0 top-[92px] w-full h-24 pointer-events-none" viewBox="0 0 1440 100" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+    <path d="M-10 8 Q 360 80 720 22 T 1450 14" fill="none" stroke="#5a554c" stroke-width="1.5"/>
+  </svg>
+  <svg class="absolute left-0 right-0 top-[92px] w-full h-24 pointer-events-none" viewBox="0 0 1440 100" preserveAspectRatio="xMidYMin slice" aria-hidden="true" id="lampjes"></svg>
+
+  <div id="inhoud" class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 pt-[4.5rem] sm:pt-24 pb-14 md:pb-24 grid md:grid-cols-[1.05fr_.95fr] gap-8 md:gap-14 items-center">
+    <div>
+      <p class="text-linnen/70 text-[15px] mb-4">Italiaanse catering op locatie, vanuit Barneveld</p>
+      <h1 class="font-kop font-extrabold text-[2.9rem] leading-[.98] sm:text-6xl lg:text-[5.2rem] tracking-[-0.03em]">De Italiaan komt naar u toe.</h1>
+      <p class="mt-5 sm:mt-6 text-lg text-linnen/80 max-w-md leading-relaxed">Wij zetten de tent op, stoken de oven en bakken de pizza's ter plekke. U viert feest, wij zorgen voor het eten en de sfeer.</p>
+      <div class="mt-7 sm:mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="tel:+31621345353" class="knop inline-flex items-center gap-3 bg-basilico text-tent font-bold text-lg rounded-full pl-5 pr-7 py-4 shadow-[0_10px_30px_-10px_rgba(93,187,63,.7)] hover:bg-[#6fcc50]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 06 21345353
+        </a>
+        <a href="mailto:welkom@popupitalian.nl" class="underline underline-offset-4 decoration-linnen/40 hover:decoration-basilico hover:text-basilico transition-colors">of mail uw datum</a>
+      </div>
+      <a href="#reviews" class="mt-6 sm:mt-9 inline-flex items-center gap-3 text-[15px] text-linnen/75 hover:text-linnen">
+        <span class="text-[#F6C76B] tracking-[2px] text-lg" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-linnen">5,0</strong> uit 74 Google-reviews</span>
+      </a>
+    </div>
+
+    <div class="relative">
+      <div class="oven-boog overflow-hidden aspect-[1/1] sm:aspect-[4/5] md:aspect-[5/6] ring-1 ring-linnen/10 shadow-[0_40px_80px_-30px_rgba(0,0,0,.8)]">
+        <img src="assets/google-01.jpg" alt="De zwarte tent van PopUp Italian met pizzaoven en lichtsnoeren in de avond" class="w-full h-full object-cover object-[38%_50%]">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- MENU -->
+<section id="menu" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1fr_1.1fr] gap-14 lg:gap-20">
+    <div>
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02]">Wat er op tafel komt</h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-md text-inkt/80">Van een losse borrel tot een compleet diner. Alles wordt vers bereid, op uw feest, waar uw gasten bij staan.</p>
+
+      <ul class="mt-10">
+        <li class="menuregel py-5">
+          <h3 class="font-kop font-bold text-2xl">Pizza diner</h3>
+          <p class="mt-1 text-inkt/75 leading-relaxed">Verse pizza's uit de houtgestookte oven, ter plekke gebakken en meteen op tafel.</p>
+        </li>
+        <li class="menuregel py-5">
+          <h3 class="font-kop font-bold text-2xl">Borrelplanken en bruschetta</h3>
+          <p class="mt-1 text-inkt/75 leading-relaxed">Italiaanse vleeswaren, kaas, olijven, vers brood uit de oven. Om bij te staan en te praten.</p>
+        </li>
+        <li class="menuregel py-5">
+          <h3 class="font-kop font-bold text-2xl">Driegangendiner</h3>
+          <p class="mt-1 text-inkt/75 leading-relaxed">Vooraf bijvoorbeeld caprese, dan pizza's in alle soorten, en ijs of tiramisu na.</p>
+        </li>
+        <li class="menuregel py-5">
+          <h3 class="font-kop font-bold text-2xl">Walking dinner</h3>
+          <p class="mt-1 text-inkt/75 leading-relaxed">Kleine Italiaanse gerechten die rondgaan, ook voor een grote groep gasten.</p>
+        </li>
+      </ul>
+      <p class="mt-8 text-inkt/80">Iets anders in gedachten? <a href="tel:+31621345353" class="font-bold underline underline-offset-4 decoration-basilico decoration-2 hover:text-basilicodk">Bel ons</a>, we denken graag mee.</p>
+    </div>
+
+    <div class="grid grid-cols-6 grid-rows-[auto_auto_auto] gap-3 sm:gap-4 self-start">
+      <figure class="col-span-6 sm:col-span-4 row-span-2 rounded-2xl overflow-hidden aspect-[4/5]">
+        <img src="assets/google-04.jpg" alt="Pizza met burrata, tomaatjes en basilicum op een feest onder een tent" class="w-full h-full object-cover" loading="lazy">
+      </figure>
+      <figure class="col-span-3 sm:col-span-2 rounded-2xl overflow-hidden aspect-square sm:aspect-[3/4] sm:mt-10">
+        <img src="assets/google-03.jpg" alt="Borrelplank met ham, salami, kaas, vijgen, druiven en pizzabrood" class="w-full h-full object-cover" loading="lazy">
+      </figure>
+      <figure class="col-span-3 sm:col-span-2 rounded-2xl overflow-hidden aspect-square sm:aspect-[3/4]">
+        <img src="assets/google-08.jpg" alt="Hapje van rosbief met saus in een houten bootje" class="w-full h-full object-cover" loading="lazy">
+      </figure>
+      <figure class="col-span-6 rounded-2xl overflow-hidden aspect-[16/9]">
+        <img src="assets/google-02.jpg" alt="Gedekte tafel met een schaal caprese en carpaccio" class="w-full h-full object-cover object-[50%_75%]" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- OVEN -->
+<section class="relative bg-tent text-linnen overflow-hidden">
+  <div class="grid md:grid-cols-2 items-stretch">
+    <div class="relative min-h-[320px] md:min-h-[560px]">
+      <img src="assets/google-05.jpg" alt="De roestvrijstalen houtoven van PopUp Italian met basilicum in tomatenblikken" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+    </div>
+    <div class="px-5 sm:px-10 lg:px-16 py-16 md:py-20 flex flex-col justify-center max-w-xl">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02]">De oven komt mee.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-linnen/80">Een echte houtgestookte pizzaoven op uw feest. Gasten zien hun pizza ontstaan, ruiken het hout en staan er vanzelf omheen. Zo wordt het eten een deel van de avond.</p>
+      <div class="mt-8 border-l-4 border-basilico pl-5">
+        <h3 class="font-kop font-bold text-2xl">Kinderen bakken hun eigen pizza</h3>
+        <p class="mt-2 text-linnen/75 leading-relaxed">Deeg uitrollen, beleg erop en zelf de oven in. Een vaste favoriet in de reviews.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.2fr_.8fr] gap-12 lg:gap-16 items-center">
+    <div class="relative pb-16 sm:pb-24">
+      <figure class="rounded-2xl overflow-hidden aspect-[4/3]">
+        <img src="assets/google-06.jpg" alt="Het team van PopUp Italian voor hun tent met de pizzaoven" class="w-full h-full object-cover" loading="lazy">
+      </figure>
+      <figure class="absolute right-[-4px] sm:right-[-24px] bottom-0 w-[52%] sm:w-[44%] rounded-xl overflow-hidden aspect-[4/3] ring-[6px] ring-linnen shadow-[0_24px_40px_-20px_rgba(42,39,34,.6)]">
+        <img src="assets/google-07.jpg" alt="Drie teamleden achter de buffettafel met borden carpaccio en verse basilicum" class="w-full h-full object-cover" loading="lazy">
+      </figure>
+    </div>
+    <div>
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02]">Gastvrij, vlot en met plezier in het vak.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80">Ons team staat in het zwart achter de oven en loopt rond met de borden. Het eten komt naar u toe, u hoeft zelf nergens aan te denken. Vanaf het eerste telefoontje denken we mee over uw menu, uw gasten en uw locatie.</p>
+      <a href="tel:+31621345353" class="knop mt-8 inline-flex items-center gap-2 font-bold border-2 border-inkt rounded-full px-6 py-3 hover:bg-inkt hover:text-linnen">Bespreek uw feest</a>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bg-linnen2/70 py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-12">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.02] max-w-xl">Wat gasten na het feest zeggen</h2>
+      <p class="flex items-center gap-3 text-lg"><span class="text-[#D99A1E] tracking-[2px]" aria-hidden="true">★★★★★</span><span><strong>5,0</strong> uit 74 reviews op Google</span></p>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-5">
+      <figure class="md:col-span-7 md:row-span-2 bg-tent text-linnen rounded-3xl p-8 sm:p-10 flex flex-col justify-between">
+        <blockquote class="font-kop font-medium text-xl sm:text-[1.9rem] leading-snug tracking-[-0.01em]">"Wil je een perfect feestje in Italiaanse sferen? Boek dit voor je feestje! Ons feest was helemaal top door de heerlijke borrelplanken, bruchettas, verse pizza en tiramisu. Maar het eten was niet alleen top. De uitstraling was ook zeer bepalend: zo'n pizza oven en prachtige opmaak van alles! En: de hartelijke bediening!"</blockquote>
+        <figcaption class="mt-8 flex items-center gap-3 text-linnen/75"><span class="text-[#F6C76B]" aria-hidden="true">★★★★★</span> Annemarie Hubers</figcaption>
+      </figure>
+      <figure class="md:col-span-5 bg-linnen rounded-3xl p-7">
+        <blockquote class="leading-relaxed">"Voor mijn 50e verjaardag hebben we PopUp Italian gevraagd om een Italiaans walking dinner voor ruim 70 gasten te verzorgen. En wat een geweldige keuze was dat. Vanaf het eerste contact met Bert voelde het goed: enthousiast, betrokken, flexibel en met een duidelijke passie voor lekker eten. Er werd actief meegedacht ..."</blockquote>
+        <figcaption class="mt-4 font-bold">Jaco Vaneman</figcaption>
+      </figure>
+      <figure class="md:col-span-5 bg-linnen rounded-3xl p-7">
+        <blockquote class="leading-relaxed">"PopUp italian heeft bij ons voor de catering gezorgd toen wij 25 jaar getrouwd waren. Het was helemaal top! Van voor tot achter goed voor mekaar. Het is ook leuk om ze aan het werk te zien. Wij zijn dol op Italiaans eten en het sfeertje wat erbij komt kijken. Zeker een aanrader."</blockquote>
+        <figcaption class="mt-4 font-bold">Katrien Van Kooten</figcaption>
+      </figure>
+      <figure class="md:col-span-6 bg-linnen rounded-3xl p-7">
+        <blockquote class="leading-relaxed">"Op 29 augustus hebben wij een feest gehouden en daarbij PopUp Italian als cateraar in gehuurd. Wij hebben een Pizza diner gekozen. Het was voortreffelijk georganiseerd en we hebben heerlijk gegeten. Wat ook als heel leuk werd ervaren is de mogelijkheid voor de kinderen hun eigen pizza te bakken."</blockquote>
+        <figcaption class="mt-4 font-bold">Peter Jan de Moor</figcaption>
+      </figure>
+      <figure class="md:col-span-6 bg-linnen rounded-3xl p-7">
+        <blockquote class="leading-relaxed">"Wij hadden een tuinfeest waar Popup Italian het eten heeft verzorgd. Was super! Het 3 gangen diner liep lekker door met vooraf caprese, alle soorten pizza's en ijs na. Heerlijk allemaal. Door de vlotte bediening kwam alles vanzelf naar je toe, heel relaxt. Kinderen mochten zelf pizza's maken."</blockquote>
+        <figcaption class="mt-4 font-bold">Sjoukje Luijken - Van Rooijen</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative bg-tent text-linnen py-20 md:py-28 korrel overflow-hidden">
+  <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14">
+    <div>
+      <h2 class="font-kop font-extrabold text-4xl sm:text-6xl tracking-[-0.03em] leading-[1]">Een feest op de planning?</h2>
+      <p class="mt-6 text-lg leading-relaxed text-linnen/80 max-w-md">Vertel ons de datum, het aantal gasten en wat voor feest het wordt. Dan maken we samen een plan dat past.</p>
+      <a href="tel:+31621345353" class="knop mt-8 inline-flex items-center gap-3 bg-basilico text-tent font-bold text-lg rounded-full pl-5 pr-7 py-4 hover:bg-[#6fcc50]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 06 21345353
+      </a>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-8 text-[15px]">
+        <div>
+          <dt class="text-linnen/55">E-mail</dt>
+          <dd class="mt-1 text-lg"><a href="mailto:welkom@popupitalian.nl" class="hover:text-basilico underline underline-offset-4 decoration-linnen/30">welkom@popupitalian.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-linnen/55">Bereikbaar</dt>
+          <dd class="mt-1 text-lg">Elke dag van 09:00 tot 22:00</dd>
+        </div>
+        <div>
+          <dt class="text-linnen/55">Adres</dt>
+          <dd class="mt-1 text-lg">Amersfoortsestraat 126<br>3772 CL Barneveld</dd>
+        </div>
+      </dl>
+    </div>
+
+    <form id="aanvraag" class="bg-tent2 rounded-3xl p-6 sm:p-9 ring-1 ring-linnen/10 self-start" action="mailto:welkom@popupitalian.nl" method="post" enctype="text/plain">
+      <h3 class="font-kop font-bold text-2xl">Liever een bericht sturen?</h3>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block sm:col-span-2"><span class="text-sm text-linnen/70">Naam</span>
+          <input required name="naam" autocomplete="name" class="mt-1 w-full rounded-xl bg-tent border border-linnen/15 px-4 py-3 focus:border-basilico focus:outline-none"></label>
+        <label class="block"><span class="text-sm text-linnen/70">Telefoon of e-mail</span>
+          <input required name="contact" class="mt-1 w-full rounded-xl bg-tent border border-linnen/15 px-4 py-3 focus:border-basilico focus:outline-none"></label>
+        <label class="block"><span class="text-sm text-linnen/70">Datum van het feest</span>
+          <input name="datum" type="date" class="mt-1 w-full rounded-xl bg-tent border border-linnen/15 px-4 py-3 focus:border-basilico focus:outline-none [color-scheme:dark]"></label>
+        <label class="block sm:col-span-2"><span class="text-sm text-linnen/70">Aantal gasten en wensen</span>
+          <textarea name="bericht" rows="4" class="mt-1 w-full rounded-xl bg-tent border border-linnen/15 px-4 py-3 focus:border-basilico focus:outline-none"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-6 w-full sm:w-auto font-bold border-2 border-linnen/80 rounded-full px-7 py-3 hover:bg-linnen hover:text-tent">Verstuur aanvraag</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-[#141311] text-linnen/60 text-sm">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8 flex flex-wrap items-center justify-between gap-4">
+    <p><span class="text-linnen font-bold">PopUp Italian</span>, de Italiaan op locatie. Amersfoortsestraat 126, Barneveld</p>
+    <p>Website: demo door <a href="https://hagenweb.nl" class="underline hover:text-basilico">Hagenweb</a></p>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-tent/95 backdrop-blur border-t border-linnen/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31621345353" class="knop flex-1 inline-flex justify-center items-center gap-2 bg-basilico text-tent font-bold rounded-full py-3">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel ons
+  </a>
+  <a href="mailto:welkom@popupitalian.nl" class="knop inline-flex justify-center items-center border border-linnen/30 text-linnen rounded-full px-5 py-3">Mail</a>
+</div>
+
+<script>
+  // Lampjes langs het snoer (zelfde curve als het snoer)
+  (function () {
+    var svg = document.getElementById('lampjes');
+    if (!svg) return;
+    var ns = 'http://www.w3.org/2000/svg';
+    function q(t, a, b, c) { return (1 - t) * (1 - t) * a + 2 * (1 - t) * t * b + t * t * c; }
+    function punt(x) {
+      // segment 1: (-10,8) ctrl (360,80) eind (720,22); segment 2: gespiegeld ctrl (1080,-36) eind (1450,14)
+      var t, y;
+      if (x <= 720) { t = (x + 10) / 730; y = q(t, 8, 80, 22); }
+      else { t = (x - 720) / 730; y = q(t, 22, -36, 14); }
+      return y;
+    }
+    for (var x = 40; x < 1440; x += 80) {
+      var y = punt(x);
+      var draad = document.createElementNS(ns, 'line');
+      draad.setAttribute('x1', x); draad.setAttribute('y1', y);
+      draad.setAttribute('x2', x); draad.setAttribute('y2', y + 7);
+      draad.setAttribute('stroke', '#5a554c'); draad.setAttribute('stroke-width', '2');
+      svg.appendChild(draad);
+      var lamp = document.createElementNS(ns, 'ellipse');
+      lamp.setAttribute('cx', x); lamp.setAttribute('cy', y + 12);
+      lamp.setAttribute('rx', 4); lamp.setAttribute('ry', 6);
+      lamp.setAttribute('class', 'bulb');
+      svg.appendChild(lamp);
+    }
+  })();
+</script>
+</body>
+</html>
