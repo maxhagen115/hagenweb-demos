@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JtM Meubels | Maatwerk in staal en hout, Doetinchem</title>
+<meta name="description" content="Maatwerk kasten, stalen deuren en meubels van staal en hout. Ontworpen en gemaakt in onze werkplaats aan de Spinbaan 19 in Doetinchem. Bel 06 43280400.">
+<meta property="og:title" content="JtM Meubels, ambachtelijk Hout & Staal">
+<meta property="og:image" content="assets/google-02.jpg">
+<link rel="icon" href="assets/site-01.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          staal: '#1c2427',
+          petrol: { DEFAULT: '#2c5a60', dark: '#21474c', licht: '#cfdcdb' },
+          koper: '#b37a62',
+          beton: '#e7e6e1',
+          kalk: '#f4f3ef',
+        },
+        fontFamily: {
+          kop: ['"Big Shoulders Display"', 'sans-serif'],
+          sans: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: "Big Shoulders Display", sans-serif; letter-spacing: -0.01em; line-height: .92; }
+
+  /* Hero: foto in een stalen kader met een verspringende hoek */
+  .frame { position: relative; border: 12px solid #1c2427; background: #1c2427; }
+  .frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .stap { position: absolute; top: -12px; left: -12px; background: #e7e6e1;
+          border-right: 12px solid #1c2427; border-bottom: 12px solid #1c2427; }
+
+  /* Galerij opgebouwd als een stalen wandkast */
+  .kast { display: grid; gap: 10px; padding: 10px; background: #1c2427;
+          grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+  .kast figure { position: relative; margin: 0; overflow: hidden; background: #2a3336; }
+  .kast img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .kast figure:hover img { transform: scale(1.04); }
+  .kast figcaption { position: absolute; left: 0; bottom: 0; right: 0; padding: 1.6rem .8rem .6rem;
+          color: #f4f3ef; font-size: .8rem; line-height: 1.3;
+          background: linear-gradient(to top, rgba(28,36,39,.85), rgba(28,36,39,0)); }
+  .k1 { grid-column: span 2; grid-row: span 2; }
+  .k1 img { object-position: 78% center; }
+  .k2, .k3 { grid-row: span 2; }
+  .k8 { grid-row: span 2; } .k7 { grid-row: span 2; }
+  @media (min-width: 768px) {
+    .kast { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 120px; }
+    .k1 { grid-column: 1 / span 3; grid-row: 1 / span 3; }
+    .k2 { grid-column: 4 / span 1; grid-row: 1 / span 3; }
+    .k3 { grid-column: 5 / span 2; grid-row: 1 / span 2; }
+    .k4 { grid-column: 5 / span 2; grid-row: 3 / span 2; }
+    .k8 { grid-column: 1 / span 2; grid-row: 4 / span 3; }
+    .k6 { grid-column: 3 / span 2; grid-row: 4 / span 3; }
+    .k7 { grid-column: 5 / span 2; grid-row: 5 / span 2; }
+  }
+
+  .knop { transition: background-color .2s ease, transform .15s ease; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #b37a62; outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-beton text-staal font-sans">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-kalk focus:p-3">Naar de inhoud</a>
+
+<div class="bg-staal text-kalk/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor JtM Meubels - ambachtelijk Hout &amp; Staal, gemaakt door
+  <a href="https://hagenweb.nl" class="underline underline-offset-2 text-kalk hover:text-koper">Hagenweb</a>
+</div>
+
+<header class="border-b border-staal/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-20 md:h-24">
+    <a href="#" class="flex items-center gap-3" aria-label="JtM Meubels, naar boven">
+      <img src="assets/site-01.png" alt="Logo JtM Meubels, hout en staal" class="h-14 md:h-16 w-auto">
+      <span class="leading-tight hidden sm:block">
+        <span class="kop block text-2xl font-800 font-extrabold">JtM Meubels</span>
+        <span class="block text-xs text-staal/60">ambachtelijk hout &amp; staal</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#maken" class="hover:text-petrol">Wat we maken</a>
+      <a href="#werk" class="hover:text-petrol">Werk</a>
+      <a href="#werkplaats" class="hover:text-petrol">Werkplaats</a>
+      <a href="#reviews" class="hover:text-petrol">Reviews</a>
+      <a href="#contact" class="hover:text-petrol">Contact</a>
+    </nav>
+    <a href="tel:+31643280400" class="knop inline-flex items-center gap-2 border-2 border-staal px-4 py-2.5 font-semibold text-sm hover:bg-staal hover:text-kalk">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      <span class="hidden sm:inline">06 43280400</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section class="max-w-7xl mx-auto px-5 sm:px-8 pt-5 md:pt-14 pb-16 md:pb-24">
+  <div class="grid lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-12 items-center">
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <p class="text-petrol font-semibold mb-2 sm:mb-4">Meubelmaker in Doetinchem</p>
+      <h1 class="kop font-extrabold text-[3.3rem] sm:text-7xl xl:text-[6.2rem]">Uw idee, in staal en hout.</h1>
+      <p class="mt-4 sm:mt-6 sm:text-lg leading-relaxed text-staal/80 max-w-md">
+        Kasten, stalen deuren en meubels die precies passen. Samen uitgewerkt en gemaakt in onze eigen werkplaats aan de Spinbaan.
+      </p>
+      <div class="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31643280400" class="knop inline-flex items-center gap-3 bg-petrol hover:bg-petrol-dark text-kalk text-lg font-semibold px-7 py-4">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Bel Jeroen: 06 43280400
+        </a>
+        <a href="#werk" class="font-semibold underline decoration-koper decoration-2 underline-offset-[6px] hover:text-petrol">Bekijk ons werk</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-sm text-staal/70">
+        <span class="text-koper tracking-[0.15em] text-base" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-staal">5,0 op Google</strong>, uit 30 reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <div class="frame aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/13]">
+        <img src="assets/google-02.jpg" alt="Wandkast van zwart staal en eikenhout met verspringende vakken en een wijnrek, tegen een groene muur">
+        <div class="stap w-[24%] h-[20%]" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAT WE MAKEN -->
+<section id="maken" class="bg-kalk py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl mb-14 md:mb-20">
+      <h2 class="kop font-extrabold text-5xl md:text-6xl">Wat we maken</h2>
+      <p class="mt-5 text-lg text-staal/75 leading-relaxed">Geen catalogus, maar maatwerk. Heeft u zelf een idee, of een ruimte die om iets bijzonders vraagt? Dan horen we dat graag.</p>
+    </div>
+
+    <div class="space-y-20 md:space-y-28">
+      <!-- Kasten -->
+      <article class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+        <div class="md:col-span-6 lg:col-span-5">
+          <img src="assets/site-07.jpg" alt="Roomdivider van zwart staal met eiken vakken en zwarte deurtjes" class="w-full aspect-[4/5] object-cover">
+        </div>
+        <div class="md:col-span-6 lg:col-span-6 lg:col-start-7">
+          <h3 class="kop font-bold text-4xl md:text-5xl">Kasten</h3>
+          <p class="mt-5 text-lg leading-relaxed text-staal/80 max-w-[34rem]">Wandkasten, boekenkasten, roomdividers, tv-meubels en keukenkasten. Van staal en hout, met RAL-kleur panelen of verlichting, hangend of zwevend. Altijd op maat van uw muur en uw spullen.</p>
+          <p class="mt-4 text-staal/60">Voor thuis, maar ook voor hotels en restaurants, zoals Hotel de Wereld in Wageningen en Villa Ruimzicht.</p>
+        </div>
+      </article>
+
+      <!-- Deuren -->
+      <article class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+        <div class="md:col-span-6 lg:col-span-7 md:order-2">
+          <img src="assets/google-05.jpg" alt="Zwarte stalen deuren met glas in een lichte woonkamer" class="w-full aspect-[16/11] object-cover">
+        </div>
+        <div class="md:col-span-6 lg:col-span-5 md:order-1">
+          <h3 class="kop font-bold text-4xl md:text-5xl">Stalen deuren</h3>
+          <p class="mt-5 text-lg leading-relaxed text-staal/80">Taatsdeuren, scharnierdeuren, schuifdeuren en ensuite. Ook deuren die in een bestaand kozijn passen, met bijzonder glas of zijpanelen.</p>
+          <p class="mt-4 text-lg leading-relaxed text-staal/80">Ons sterke punt zijn de special coatings. Die poedercoats kopen we rechtstreeks in bij een gespecialiseerd bedrijf in Spanje. Wilt u de kleuren in het echt zien? Maak een afspraak.</p>
+        </div>
+      </article>
+
+      <!-- Specials -->
+      <article class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+        <div class="md:col-span-6 lg:col-span-6">
+          <img src="assets/google-06.jpg" alt="Bar met een eikenhouten blad en een stalen bovenrek met flessen en planten" class="w-full aspect-[4/3] object-cover">
+        </div>
+        <div class="md:col-span-6 lg:col-span-5 lg:col-start-8">
+          <h3 class="kop font-bold text-4xl md:text-5xl">Specials</h3>
+          <p class="mt-5 text-lg leading-relaxed text-staal/80">De klussen waar onze handen van gaan jeuken. Een bar, een trapleuning, een stalen plafond, een zwevend bed van massief eiken of een kaastrolley voor een restaurant.</p>
+          <p class="mt-4 text-staal/60">Hoe gekker de vraag, hoe leuker de uitdaging.</p>
+        </div>
+      </article>
+
+      <!-- Buiten -->
+      <article class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+        <div class="md:col-span-6 lg:col-span-7 md:order-2">
+          <img src="assets/google-08.jpg" alt="Terras met stalen pergola, houten plantenbakken en bankjes voor de werkplaats" class="w-full aspect-[16/11] object-cover">
+        </div>
+        <div class="md:col-span-6 lg:col-span-5 md:order-1">
+          <h3 class="kop font-bold text-4xl md:text-5xl">Buiten</h3>
+          <p class="mt-5 text-lg leading-relaxed text-staal/80">Loungebanken, buitenkeukens van staal en eiken, windschermen en complete terrassen. Languit liggen of dineren in de avondzon, in de maat die bij uw tuin of terras past.</p>
+          <p class="mt-4 text-staal/60">Ook voor horeca, zoals terrassen in Doetinchem en Zutphen.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIJ ALS WANDKAST -->
+<section id="werk" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10 md:mb-14">
+      <h2 class="kop font-extrabold text-5xl md:text-6xl max-w-xl">Uit de werkplaats, bij u thuis</h2>
+      <p class="text-staal/70 max-w-sm">Een greep uit wat we de laatste jaren maakten. Elk stuk is één keer gemaakt, voor één plek.</p>
+    </div>
+    <div class="kast">
+      <figure class="k1"><img src="assets/google-03.jpg" alt="Grote wandkast van staal en eiken in de werkplaats, klaar voor levering"><figcaption>Wandkast van staal en eiken, net klaar in de werkplaats</figcaption></figure>
+      <figure class="k2"><img src="assets/site-10.jpg" alt="Open kast van zwart staal met donker eiken vakken"><figcaption>Open kast, staal en eiken</figcaption></figure>
+      <figure class="k3"><img src="assets/site-03.jpg" alt="Restaurantkast met blokken hout in verschillende tinten en spiegels"><figcaption>Kast voor een restaurant</figcaption></figure>
+      <figure class="k4"><img src="assets/site-05.jpg" alt="Zwart dressoir met deuren en lades in de werkplaats"><figcaption>Dressoir in RAL-kleur</figcaption></figure>
+      <figure class="k6"><img src="assets/site-06.jpg" alt="Hoge zwarte stalen kast met deurtjes en open vakken"><figcaption>Stalen kast met open vakken</figcaption></figure>
+      <figure class="k7"><img src="assets/site-04.jpg" alt="Wandkast met zwarte onderkasten en verlichte eiken vakken"><figcaption>Wandkast met verlichting</figcaption></figure>
+      <figure class="k8"><img src="assets/site-11.jpg" alt="Notenhouten boekenkast met zwart stalen frame"><figcaption>Notenhouten boekenkast</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- WERKPLAATS + WERKWIJZE -->
+<section id="werkplaats" class="bg-staal text-kalk py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <div class="lg:col-span-7">
+        <img src="assets/google-07.jpg" alt="De werkplaats aan de Spinbaan met werkbanken, gereedschapswand en grote stalen ramen" class="w-full aspect-[4/3] object-cover">
+      </div>
+      <div class="lg:col-span-5">
+        <h2 class="kop font-extrabold text-5xl md:text-6xl">Passie voor vorm, kleur &amp; ambacht</h2>
+        <p class="mt-6 text-lg leading-relaxed text-kalk/80">Alles ontstaat in onze werkplaats aan de Spinbaan in Doetinchem. Daar ontwerpt en maakt Jeroen ter Maat elk stuk, en daar bent u welkom om mee te kijken. Op afspraak.</p>
+
+        <ol class="mt-10 space-y-7">
+          <li class="grid grid-cols-[3rem_1fr] gap-4">
+            <span class="kop text-4xl text-koper font-bold">1</span>
+            <div><h3 class="font-semibold text-lg">Uw idee</h3><p class="text-kalk/70 mt-1">Een schets, een foto of alleen een plek in huis. Bel of mail, dan bespreken we wat er kan.</p></div>
+          </li>
+          <li class="grid grid-cols-[3rem_1fr] gap-4">
+            <span class="kop text-4xl text-koper font-bold">2</span>
+            <div><h3 class="font-semibold text-lg">Samen uitwerken</h3><p class="text-kalk/70 mt-1">We werken het ontwerp samen verder uit: maten, houtsoort, staal en kleur.</p></div>
+          </li>
+          <li class="grid grid-cols-[3rem_1fr] gap-4">
+            <span class="kop text-4xl text-koper font-bold">3</span>
+            <div><h3 class="font-semibold text-lg">Maken en plaatsen</h3><p class="text-kalk/70 mt-1">We maken het in de werkplaats en leveren en plaatsen het bij u.</p></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-5">
+        <p class="flex items-center gap-3 text-staal/70">
+          <span class="text-koper tracking-[0.15em] text-lg" aria-hidden="true">★★★★★</span>
+          <span><strong class="text-staal">5,0 op Google</strong>, uit 30 reviews</span>
+        </p>
+        <figure class="mt-8">
+          <blockquote class="kop font-bold text-[2.4rem] md:text-5xl leading-[1.02]">
+            "Het begon allemaal met een idee in mijn hoofd, Jeroen heeft dat prachtig vertaald!"
+          </blockquote>
+          <figcaption class="mt-6 text-staal/80">
+            <p class="text-base leading-relaxed">"JTM Meubels heeft in januari 2021 bij ons het nieuwe winkel interieur gemaakt en geplaatst. Het begon allemaal met een idee in mijn hoofd, Jeroen heeft dat prachtig vertaald! Wij zijn erg tevreden en raden JTM meubels echt aan!"</p>
+            <p class="mt-3 font-semibold text-staal">Jonathan Vos</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-staal/15 border border-staal/15 self-start">
+        <figure class="bg-kalk p-7">
+          <blockquote class="leading-relaxed">"Wij waren voor onze nieuwe woning op zoek naar een flessenrek en een kast van 3 meter hoog. Samen met Jeroen de eigen ontwerpen verder uitgewerkt. Jeroen heeft eea perfect geleverd en geplaatst. We zijn er erg blij mee."</blockquote>
+          <figcaption class="mt-4 font-semibold">Cor Schaake</figcaption>
+        </figure>
+        <figure class="bg-kalk p-7">
+          <blockquote class="leading-relaxed">"Jeroen heeft een bar voor ons kantoor (Advies Anno Nu) gemaakt, eentje die precies bij ons interieur past, van staal met een witte coating en hout dat prachtig matcht. We zijn er superblij mee!"</blockquote>
+          <figcaption class="mt-4 font-semibold">Iris Meulendijks</figcaption>
+        </figure>
+        <figure class="bg-kalk p-7">
+          <blockquote class="leading-relaxed">"Beste Jeroen, dank je voor de perfecte afhandeling van mijn opdracht. Ik ben zeer tevreden over de uitvoering de snelle levering en de kwaliteit van de tafel. Ik zal zeker JtM aanbevelen voor het maken en leveren van alle speciaal meubelen die maakt. Nogmaals dank en tot de volgende opdracht."</blockquote>
+          <figcaption class="mt-4 font-semibold">Gerrit Fij</figcaption>
+        </figure>
+        <figure class="bg-kalk p-7">
+          <blockquote class="leading-relaxed">"We hebben de afgelopen periode een nieuwe bar, een uitgiftebuffet, stalen deuren voor het tochtportaal en een roomdivider laten ontwerpe en maken door Jeroen ter Maat. Over alles heel tevreden; de geofreerde prijs staat helemaal in verhouding tot de geleverde kwaliteit. …"</blockquote>
+          <figcaption class="mt-4 font-semibold">J. Smeltink</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-petrol-licht/60 py-20 md:py-28 border-t border-staal/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-14">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-extrabold text-5xl md:text-7xl">Vertel ons wat u voor ogen heeft.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-staal/80 max-w-lg">Bel Jeroen direct, of kom langs in de werkplaats om materialen en kleuren in het echt te zien. Bezoek is op afspraak.</p>
+      <a href="tel:+31643280400" class="knop mt-8 inline-flex items-center gap-3 bg-petrol hover:bg-petrol-dark text-kalk text-lg font-semibold px-7 py-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Bel 06 43280400
+      </a>
+
+      <dl class="mt-12 grid sm:grid-cols-2 gap-x-8 gap-y-7">
+        <div>
+          <dt class="text-sm text-staal/60">E-mail</dt>
+          <dd class="mt-1 font-semibold"><a href="mailto:info@jtmmeubels.nl" class="underline decoration-koper decoration-2 underline-offset-4 hover:text-petrol">info@jtmmeubels.nl</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-staal/60">Werkplaats</dt>
+          <dd class="mt-1 font-semibold">Spinbaan 19<br>7005 AD Doetinchem</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="text-sm text-staal/60">Wanneer</dt>
+          <dd class="mt-1 font-semibold">Maandag tot en met vrijdag, op afspraak.<br><span class="font-normal text-staal/70">Zaterdag en zondag gesloten.</span></dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="lg:col-span-6 relative">
+      <img src="assets/google-01.jpg" alt="Het pand van JtM Meubels aan de Spinbaan 19 in Doetinchem, met het bord Maatwerk Meubels" class="w-full aspect-[16/10] object-cover border-[10px] border-staal">
+      <form class="mt-8 bg-kalk p-6 sm:p-8 space-y-4" action="mailto:info@jtmmeubels.nl" method="post" enctype="text/plain">
+        <p class="font-semibold text-lg">Of stuur een bericht</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <label class="block text-sm">Naam
+            <input name="naam" required class="mt-1 w-full bg-white border border-staal/20 px-3 py-2.5 focus:border-petrol outline-none">
+          </label>
+          <label class="block text-sm">Telefoon of e-mail
+            <input name="contact" required class="mt-1 w-full bg-white border border-staal/20 px-3 py-2.5 focus:border-petrol outline-none">
+          </label>
+        </div>
+        <label class="block text-sm">Wat wilt u laten maken?
+          <textarea name="bericht" rows="4" required class="mt-1 w-full bg-white border border-staal/20 px-3 py-2.5 focus:border-petrol outline-none"></textarea>
+        </label>
+        <button type="submit" class="knop bg-staal hover:bg-petrol text-kalk font-semibold px-6 py-3">Bericht versturen</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-staal text-kalk/70 pt-14 pb-28 md:pb-10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row gap-10 md:items-center md:justify-between">
+    <div class="flex items-center gap-4">
+      <img src="assets/site-01.png" alt="Logo JtM Meubels" class="h-20 w-auto">
+      <div>
+        <p class="kop text-3xl font-extrabold text-kalk">JtM Meubels</p>
+        <p class="text-sm">Ambachtelijk hout &amp; staal, Doetinchem</p>
+      </div>
+    </div>
+    <div class="text-sm space-y-1 md:text-right">
+      <p>Spinbaan 19, 7005 AD Doetinchem</p>
+      <p><a href="tel:+31643280400" class="hover:text-kalk">06 43280400</a> &nbsp;|&nbsp; <a href="mailto:info@jtmmeubels.nl" class="hover:text-kalk">info@jtmmeubels.nl</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-[1fr_auto] bg-staal border-t border-kalk/10">
+  <a href="tel:+31643280400" class="flex items-center justify-center gap-2 bg-petrol text-kalk font-semibold py-4">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Bel Jeroen
+  </a>
+  <a href="mailto:info@jtmmeubels.nl" class="flex items-center px-6 text-kalk font-semibold">Mail</a>
+</div>
+
+</body>
+</html>

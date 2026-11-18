@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knoet Keukenfronten.com | Fronten op maat voor je IKEA-keuken, uit Wehl</title>
+<meta name="description" content="Knoet maakt fronten, lades en zijpanelen die precies passen op IKEA Metod en Faktum. Fineer, Arpa Fenix en extreem mat. Offerte binnen 48 uur.">
+<link rel="icon" href="assets/logo-oud.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#1E2840',
+        paper: '#F3F3F0',
+        stone: '#E4E1DA',
+        oak: '#C79C6E',
+        accent: { DEFAULT: '#14806B', dark: '#0F6A58' },
+      },
+      fontFamily: {
+        display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+        sans: ['"Instrument Sans"', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  /* Komgreep: een halve-cirkel uitsparing in de bovenrand, zoals de greep in een front */
+  .komgreep {
+    -webkit-mask: radial-gradient(circle at 50% 0, transparent var(--g, 44px), #000 calc(var(--g, 44px) + 1px));
+            mask: radial-gradient(circle at 50% 0, transparent var(--g, 44px), #000 calc(var(--g, 44px) + 1px));
+  }
+  @media (max-width: 640px) { .komgreep { --g: 28px; } }
+  .komgreep-sm { --g: 18px; }
+  .btn { transition: background-color .2s, transform .15s, color .2s, border-color .2s; }
+  .btn:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #14806B; outline-offset: 3px; border-radius: 4px; }
+  .swatch { box-shadow: inset 0 0 0 1px rgba(30,40,64,.08); }
+  /* Eén entree bij laden, alleen als JS de class zet */
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes open { from { clip-path: inset(0 0 100% 0 round 36px); } to { clip-path: inset(0 0 0 0 round 0); } }
+  .js .hero-text > * { animation: rise .8s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-text > *:nth-child(2) { animation-delay: .08s; }
+  .js .hero-text > *:nth-child(3) { animation-delay: .16s; }
+  .js .hero-text > *:nth-child(4) { animation-delay: .24s; }
+  .js .hero-text > *:nth-child(5) { animation-delay: .32s; }
+  .js .hero-img { animation: open 1.1s cubic-bezier(.7,0,.2,1) both; }
+  @media (prefers-reduced-motion: reduce) { .js .hero-text > *, .js .hero-img { animation: none; } html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-paper text-ink font-sans pb-16 md:pb-0">
+
+<!-- Demobalk -->
+<div class="bg-ink text-white/80 text-xs sm:text-sm text-center px-4 py-2">
+  Demo voor Knoet Keukenfronten.com, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-oak">Hagenweb</a>
+</div>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-12 focus:left-4 bg-white px-3 py-2 z-50">Naar de inhoud</a>
+
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="Knoet Keukenfronten.com, naar boven">
+      <span class="font-display font-700 tracking-[0.18em] text-lg border-2 border-ink px-2.5 py-0.5 leading-tight font-bold">KNOET</span>
+      <span class="hidden sm:inline text-sm text-ink/60">keukenfronten.com</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#werkwijze" class="hover:text-accent">Zo werkt het</a>
+      <a href="#materialen" class="hover:text-accent">Materialen</a>
+      <a href="#projecten" class="hover:text-accent">Projecten</a>
+      <a href="#reviews" class="hover:text-accent">Reviews</a>
+      <a href="#contact" class="hover:text-accent">Contact</a>
+    </nav>
+    <div class="flex items-center gap-5">
+      <a href="tel:+31262005102" class="font-medium hover:text-accent"><span class="md:hidden">Bel</span><span class="hidden md:inline">026 200 5102</span></a>
+      <a href="mailto:info@keukenfronten.com?subject=Offerte%20aanvraag%20fronten&body=Hoi%20Knoet%2C%0A%0AHierbij%20mijn%20IKEA-ontwerp.%20Graag%20ontvang%20ik%20een%20offerte.%0A%0A" class="btn hidden sm:inline-flex bg-ink text-white text-sm font-semibold px-4 py-2.5 rounded-md hover:bg-accent">Offerte aanvragen</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section id="top" class="max-w-7xl mx-auto px-5 md:px-8 pt-4 md:pt-14 pb-16 md:pb-24">
+  <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <div class="hero-text lg:col-span-5 order-2 lg:order-1">
+      <p class="text-sm md:text-base text-ink/60 mb-2 md:mb-4">Fronten voor IKEA Metod en Faktum, uit Wehl</p>
+      <h1 class="font-display font-bold text-[2.4rem] leading-[1.02] sm:text-6xl xl:text-7xl tracking-[-0.03em]">Dezelfde kasten. Een heel andere keuken.</h1>
+      <p class="mt-4 md:mt-6 text-base md:text-lg text-ink/75 max-w-md leading-relaxed">Wij maken fronten, lades en zijpanelen die precies op je IKEA-kasten passen. In echt houtfineer, Fenix of extreem mat, en waar nodig op maat.</p>
+      <div class="mt-6 md:mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+        <a href="mailto:info@keukenfronten.com?subject=Offerte%20aanvraag%20fronten&body=Hoi%20Knoet%2C%0A%0AHierbij%20mijn%20IKEA-ontwerp.%20Graag%20ontvang%20ik%20een%20offerte.%0A%0A" class="btn inline-flex justify-center items-center bg-accent text-white font-semibold text-lg px-7 py-4 rounded-md hover:bg-accent-dark shadow-[0_10px_30px_-12px_rgba(20,128,107,.7)]">Stuur je IKEA-ontwerp</a>
+        <a href="tel:+31262005102" class="font-medium underline underline-offset-4 decoration-ink/30 hover:decoration-accent">of bel 026 200 5102</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-sm text-ink/70">
+        <span class="text-oak text-base tracking-wider" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-ink">4,6</strong> op Google, uit 31 reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <div class="hero-img relative">
+        <img src="assets/google-01.png" alt="Keuken met zwarte hoge kasten en een kookeiland van berken multiplex, drie barkrukken en hanglampen" class="komgreep w-full h-[226px] sm:h-[400px] lg:h-[600px] object-cover object-[0%_50%] sm:object-[15%_50%] lg:object-[30%_50%] rounded-[28px] lg:rounded-[36px]">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOOR / NA -->
+<section class="bg-stone/60">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-4">
+      <h2 class="font-display font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Je IKEA-kasten blijven. De buitenkant maken wij.</h2>
+      <p class="mt-6 text-ink/75 leading-relaxed">Onze fronten en deuren hebben exact dezelfde maten en boorgaten als die van IKEA. Je koopt de kasten bij IKEA, de fronten bij ons. Zo krijg je een keuken die eruitziet als maatwerk, op een betaalbaar en betrouwbaar systeem.</p>
+    </div>
+    <div class="lg:col-span-8 grid grid-cols-5 gap-3 md:gap-5 items-end">
+      <figure class="col-span-2">
+        <img src="assets/site-07.jpg" alt="Kale witte IKEA-kasten zonder fronten, met een trapje ervoor" class="w-full aspect-[4/5] object-cover rounded-2xl grayscale-[30%]">
+        <figcaption class="mt-3 text-sm text-ink/60">Voor: de kale IKEA-kasten</figcaption>
+      </figure>
+      <figure class="col-span-3">
+        <img src="assets/google-03.jpg" alt="Kookeiland met eiken fineer fronten en lijstgrepen in een lichte woonkamer" class="w-full aspect-[4/4.2] object-cover object-[45%_50%] rounded-2xl">
+        <figcaption class="mt-3 text-sm text-ink/60">Na: eiken fineer met lijstgreep</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze" class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+      <div class="lg:col-span-5">
+        <h2 class="font-display font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Zo werkt het</h2>
+        <p class="mt-5 text-white/70 max-w-md leading-relaxed">Vier stappen, en je hoeft het niet alleen uit te zoeken. Wij denken mee over meer dan alleen de fronten.</p>
+        <figure class="mt-10">
+          <img src="assets/site-08.jpg" alt="3D-schets van een keuken met lichte eiken fronten en een kookeiland" class="w-full rounded-2xl bg-white">
+          <figcaption class="mt-3 text-sm text-white/55">Een 3D-schets laat zien hoe je keuken eruit komt te zien.</figcaption>
+        </figure>
+      </div>
+      <ol class="lg:col-span-7 lg:pl-6 divide-y divide-white/15 border-y border-white/15">
+        <li class="py-8 grid grid-cols-[2.25rem_1fr] md:grid-cols-[3.5rem_1fr] gap-3 md:gap-4">
+          <span class="font-display text-3xl font-bold text-oak">1</span>
+          <div>
+            <h3 class="font-display text-2xl font-semibold">Maak je ontwerp bij IKEA</h3>
+            <p class="mt-2 text-white/70 leading-relaxed">Ontwerp je keuken in de IKEA keukenplanner, of maak een afspraak bij IKEA om hem samen te stellen.</p>
+          </div>
+        </li>
+        <li class="py-8 grid grid-cols-[2.25rem_1fr] md:grid-cols-[3.5rem_1fr] gap-3 md:gap-4">
+          <span class="font-display text-3xl font-bold text-oak">2</span>
+          <div>
+            <h3 class="font-display text-2xl font-semibold">Binnen 48 uur een offerte</h3>
+            <p class="mt-2 text-white/70 leading-relaxed">Stuur ons het IKEA-ontwerp en je krijgt binnen 48 uur een duidelijke offerte.</p>
+            <a href="mailto:info@keukenfronten.com?subject=Offerte%20aanvraag%20fronten" class="mt-3 inline-block text-oak font-medium underline underline-offset-4 hover:text-white">Ontwerp mailen</a>
+          </div>
+        </li>
+        <li class="py-8 grid grid-cols-[2.25rem_1fr] md:grid-cols-[3.5rem_1fr] gap-3 md:gap-4">
+          <span class="font-display text-3xl font-bold text-oak">3</span>
+          <div>
+            <h3 class="font-display text-2xl font-semibold">Voel de stalen thuis</h3>
+            <p class="mt-2 text-white/70 leading-relaxed">Is de offerte naar wens, dan ontvang je een samplepakket met alle opties. Zo kies je met daglicht in je eigen huis.</p>
+            <a href="mailto:info@keukenfronten.com?subject=Samplepakket%20bestellen" class="mt-3 inline-block text-oak font-medium underline underline-offset-4 hover:text-white">Samples bestellen</a>
+          </div>
+        </li>
+        <li class="py-8 grid grid-cols-[2.25rem_1fr] md:grid-cols-[3.5rem_1fr] gap-3 md:gap-4">
+          <span class="font-display text-3xl font-bold text-oak">4</span>
+          <div>
+            <h3 class="font-display text-2xl font-semibold">Samen elk front doorlopen</h3>
+            <p class="mt-2 text-white/70 leading-relaxed">Online of in de showroom in Wehl bespreken we het hele keukenontwerp. Daarna leveren we binnen 6 tot 8 weken.</p>
+            <a href="mailto:info@keukenfronten.com?subject=Afspraak%20inplannen" class="mt-3 inline-block text-oak font-medium underline underline-offset-4 hover:text-white">Afspraak inplannen</a>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALEN -->
+<section id="materialen" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+    <div class="lg:col-span-6">
+      <h2 class="font-display font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Kies je materiaal, je kleur en je greep</h2>
+      <p class="mt-5 text-ink/75 max-w-lg leading-relaxed">Van echt houtfineer tot zijdezacht Fenix. Hieronder een greep uit de kleuren. Op een scherm is kleur altijd een indicatie, daarom sturen we je graag de echte stalen.</p>
+    </div>
+    <figure class="lg:col-span-6">
+      <img src="assets/google-04.jpg" alt="Twee medewerkers hangen kleurstalen op aan de stalenwand in de showroom" class="w-full aspect-[16/9] object-cover rounded-2xl">
+    </figure>
+  </div>
+
+  <div class="mt-16 grid md:grid-cols-2 gap-x-14 gap-y-14">
+    <div >
+      <div class="flex items-baseline justify-between gap-4 border-b border-ink/15 pb-3">
+        <h3 class="font-display text-2xl font-semibold">Fineer hout</h3>
+        <span class="text-sm text-ink/55">toplaag van echt hout</span>
+      </div>
+      <ul class="mt-6 grid grid-cols-3 sm:grid-cols-6 gap-3 text-xs text-ink/70">
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#CDA97C]"></span><span class="block mt-2 leading-tight">Light oak</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#9C6D45]"></span><span class="block mt-2 leading-tight">Mid brown oak</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#614532]"></span><span class="block mt-2 leading-tight">Dark brown oak</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#2F2A26]"></span><span class="block mt-2 leading-tight">Black oak</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#6E4A32]"></span><span class="block mt-2 leading-tight">American walnut</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#4A3324]"></span><span class="block mt-2 leading-tight">Dark walnut</span></li>
+      </ul>
+    </div>
+
+    <div >
+      <div class="flex items-baseline justify-between gap-4 border-b border-ink/15 pb-3">
+        <h3 class="font-display text-2xl font-semibold">Arpa Fenix</h3>
+        <span class="text-sm text-ink/55">vingerafdrukvrij, zijdezacht</span>
+      </div>
+      <ul class="mt-6 grid grid-cols-3 sm:grid-cols-6 gap-3 text-xs text-ink/70">
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#ECEAE5]"></span><span class="block mt-2 leading-tight">Bianco Kos</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#CFC2AB]"></span><span class="block mt-2 leading-tight">Beige Arizona</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#6F675E]"></span><span class="block mt-2 leading-tight">Castoro Ottawa</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#4F5B4B]"></span><span class="block mt-2 leading-tight">Verde Comodoro</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#3E5567]"></span><span class="block mt-2 leading-tight">Blu Fes</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#232323]"></span><span class="block mt-2 leading-tight">Nero Ingo</span></li>
+      </ul>
+      <p class="mt-5 text-sm text-ink/70 leading-relaxed">Voor, achter en aan de zijkanten bekleed met Fenix. Krassen poets je weg met warmte, en het is makkelijk schoon te houden.</p>
+    </div>
+
+    <div >
+      <div class="flex items-baseline justify-between gap-4 border-b border-ink/15 pb-3">
+        <h3 class="font-display text-2xl font-semibold">Extreem mat</h3>
+        <span class="text-sm text-ink/55">vijf kleuren</span>
+      </div>
+      <ul class="mt-6 grid grid-cols-3 sm:grid-cols-6 gap-3 text-xs text-ink/70">
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#F5F5F2]"></span><span class="block mt-2 leading-tight">Snow White</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#DCD3C4]"></span><span class="block mt-2 leading-tight">Linen Beige</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#9A9893]"></span><span class="block mt-2 leading-tight">Stone Grey</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#4E6379]"></span><span class="block mt-2 leading-tight">Denim Blue</span></li>
+        <li><span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#262626]"></span><span class="block mt-2 leading-tight">Spider Black</span></li>
+      </ul>
+    </div>
+
+    <div >
+      <div class="flex items-baseline justify-between gap-4 border-b border-ink/15 pb-3">
+        <h3 class="font-display text-2xl font-semibold">De greep</h3>
+        <span class="text-sm text-ink/55">bij fineer hout</span>
+      </div>
+      <ul class="mt-6 grid grid-cols-3 sm:grid-cols-6 gap-3 text-xs text-ink/70">
+        <li>
+          <span class="swatch relative block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#CDA97C] overflow-hidden"><span class="absolute top-0 inset-x-0 h-3 bg-[#A9845A]"></span></span>
+          <span class="block mt-2 leading-tight">Japandi greep</span>
+        </li>
+        <li>
+          <span class="swatch komgreep komgreep-sm block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#CDA97C]"></span>
+          <span class="block mt-2 leading-tight">Komgreep</span>
+        </li>
+        <li>
+          <span class="swatch block aspect-[4/3] sm:aspect-[3/4] rounded-md bg-[#CDA97C]"></span>
+          <span class="block mt-2 leading-tight">Rechte afwerking</span>
+        </li>
+      </ul>
+      <p class="mt-5 text-sm text-ink/70 leading-relaxed">Liever hoogglans? Snow White is er ook in hoogglans.</p>
+    </div>
+  </div>
+
+  <div class="mt-14 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+    <a href="mailto:info@keukenfronten.com?subject=Samplepakket%20bestellen" class="btn inline-flex justify-center bg-ink text-white font-semibold px-6 py-3.5 rounded-md hover:bg-accent">Bestel een samplepakket</a>
+    <p class="text-sm text-ink/60">Alle fronten zijn er voor IKEA Metod en Faktum.</p>
+  </div>
+</section>
+
+<!-- MAATWERK -->
+<section class="bg-stone/60">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <figure class="lg:col-span-5">
+      <img src="assets/google-07.jpg" alt="Koffiehoek in een eiken kast met verlichting en twee houten planken met servies" class="w-full aspect-[4/5] object-cover rounded-t-[200px] rounded-b-2xl">
+    </figure>
+    <div class="lg:col-span-7">
+      <h2 class="font-display font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Past het net niet? Dan zagen we het op maat.</h2>
+      <p class="mt-5 text-ink/75 max-w-xl leading-relaxed">We zagen alles zelf op maat. Daardoor kunnen we meer dan de standaard IKEA-maten.</p>
+      <dl class="mt-10 grid sm:grid-cols-3 gap-8 sm:gap-6">
+        <div class="border-t-2 border-ink pt-4">
+          <dt class="font-display text-xl font-semibold">Losse fronten</dt>
+          <dd class="mt-2 text-sm text-ink/70 leading-relaxed">Fronten voor kasten en lades zijn ook los te koop, met dezelfde maten en boorgaten als IKEA.</dd>
+        </div>
+        <div class="border-t-2 border-ink pt-4">
+          <dt class="font-display text-xl font-semibold">Deuren op maat</dt>
+          <dd class="mt-2 text-sm text-ink/70 leading-relaxed">Een deurtje langer of hoger dan standaard? Dat maken we.</dd>
+        </div>
+        <div class="border-t-2 border-ink pt-4">
+          <dt class="font-display text-xl font-semibold">Zijpanelen</dt>
+          <dd class="mt-2 text-sm text-ink/70 leading-relaxed">Zij- en bedekkingspanelen in dezelfde kleur en hetzelfde materiaal als je fronten, ook op maat.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTEN -->
+<section id="projecten" class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+    <h2 class="font-display font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05] max-w-xl">Keukens die we afmaakten</h2>
+    <p class="text-ink/65 max-w-sm">Allemaal IKEA-kasten van binnen. Van buiten niet te zien.</p>
+  </div>
+
+  <div class="mt-12 grid md:grid-cols-12 gap-4 md:gap-5">
+    <figure class="md:col-span-7">
+      <img src="assets/google-02.jpg" alt="Keuken met lichte houten fronten met lijstgrepen, olijfgroene muur en een tegelvloer" class="w-full h-[280px] md:h-[460px] object-cover rounded-2xl">
+    </figure>
+    <figure class="md:col-span-5">
+      <img src="assets/google-08.jpg" alt="Roze matte keukenfronten met een mintgroene koelkast en een kat op de vloer" class="w-full h-[280px] md:h-[460px] object-cover object-[40%_50%] rounded-2xl">
+    </figure>
+  </div>
+
+  <ul class="mt-5 grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+    <li >
+      <img src="assets/site-01.jpg" alt="Dressoir van dark walnut met komgrepen" class="w-full aspect-[3/2] object-cover object-left rounded-xl">
+      <p class="mt-3 text-sm font-medium">Dark walnut met komgreep</p>
+    </li>
+    <li >
+      <img src="assets/site-02.jpg" alt="Lichte eiken keuken met Japandi greep" class="w-full aspect-[3/2] object-cover object-left rounded-xl">
+      <p class="mt-3 text-sm font-medium">Japandi greep light oak</p>
+    </li>
+    <li >
+      <img src="assets/site-03.jpg" alt="Keuken met kookeiland in mid brown oak" class="w-full aspect-[3/2] object-cover object-left rounded-xl">
+      <p class="mt-3 text-sm font-medium">Mid Brown Oak met Japandi greep</p>
+    </li>
+    <li >
+      <img src="assets/site-04.jpg" alt="Lange keuken met grijze Arpa Fenix fronten" class="w-full aspect-[3/2] object-cover object-left rounded-xl">
+      <p class="mt-3 text-sm font-medium">Arpa Fenix 0717 Castoro Ottawa</p>
+    </li>
+    <li >
+      <img src="assets/site-05.jpg" alt="Keuken met kookeiland in American walnut fineer met komgrepen" class="w-full aspect-[3/2] object-cover object-left rounded-xl">
+      <p class="mt-3 text-sm font-medium">Fineer American Walnut met komgrepen</p>
+    </li>
+    <li >
+      <img src="assets/site-06.jpg" alt="Keuken met American walnut hoge kasten en Linen Beige onderkasten" class="w-full aspect-[3/2] object-cover object-left rounded-xl">
+      <p class="mt-3 text-sm font-medium">American Walnut en Linen Beige mat</p>
+    </li>
+  </ul>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="bg-stone/60">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <h2 class="font-display font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05] max-w-2xl">"Van begin tot eind werd er super fijn meegedacht."</h2>
+      <p class="text-ink/70 shrink-0"><span class="text-oak tracking-wider" aria-hidden="true">★★★★★</span> <strong class="text-ink">4,6</strong> uit 31 Google-reviews</p>
+    </div>
+
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-5 [&>*]:break-inside-avoid [&>*]:mb-5">
+      <blockquote class="bg-paper rounded-2xl p-7">
+        <p class="leading-relaxed">Super service en hele mooie fronten! Wij hebben gekozen voor de mid brown oak keukenfronten voor onze Metod kastjes van Ikea. Van begin tot eind werd er super fijn meegedacht, waardoor de keuken helemaal naar onze smaak is! Erg klantvriendelijk en makkelijk bereikbaar voor vragen. Kortom: een echte aanrader! :)</p>
+        <footer class="mt-5 text-sm"><strong>Pascalle Tang</strong> <span class="text-ink/55">op Google, 5 sterren</span></footer>
+      </blockquote>
+      <blockquote class="bg-ink text-white rounded-2xl p-7">
+        <p class="leading-relaxed">Wij zijn heel blij met de service en kwaliteit van de fronten van Knoet! Wij hebben al aardig wat huizen verbouwd en dit was onze vierde keuken, maar nog hadden we heel veel aan de tips die Silke ons heeft gegeven. O.a. over een aparte koffiehoek, we zijn hier nog elke dag heel blij mee! De fronten zelf zijn echt stuk…</p>
+        <footer class="mt-5 text-sm"><strong>Sophie van S</strong> <span class="text-white/55">op Google, 5 sterren</span></footer>
+      </blockquote>
+      <blockquote class="bg-paper rounded-2xl p-7">
+        <p class="leading-relaxed">Ik raad Knoet Keukenfronten aan als je op zoek bent naar frontjes op een Ikea keuken:</p>
+        <p class="mt-3 leading-relaxed">- Aan de hand van een model programma maakt Knoet een 3D-schets van de keuken, zodat je een goed idee krijgt hoe deze eruit komt te zien.</p>
+        <p class="mt-3 leading-relaxed">- Er wordt goed meegedacht met de mogelijkheden in de keuken, meer dan alleen de frontjes. Bijv…</p>
+        <footer class="mt-5 text-sm"><strong>Alexander Atkinson</strong> <span class="text-ink/55">op Google, 5 sterren</span></footer>
+      </blockquote>
+      <blockquote class="bg-paper rounded-2xl p-7">
+        <p class="font-display text-xl font-semibold">Mooi resultaat!</p>
+        <p class="mt-2 leading-relaxed">Knoet keukenfronten hebben een heel mooi product afgeleverd. Na een online meeting met een medewerker hebben we elk front uitvoerig besproken. De fineerrichting, draairichting en afmetingen werden tot in detail bekeken. De levering verliep ook heel vlot. Het is wel een erg grote kist maar gelukkig was e…</p>
+        <footer class="mt-5 text-sm"><strong>Maja De Hondt</strong> <span class="text-ink/55">op Google, 5 sterren</span></footer>
+      </blockquote>
+      <blockquote class="bg-paper rounded-2xl p-7">
+        <p class="leading-relaxed">We bevelen Knoet van harte aan voor wie op zoek is naar prachtige keukenfrontjes en een uitstekende service. Het contact met Silke verliep vanaf het eerste moment heel goed, ze nam duidelijk de tijd voor ons, zelfs in het weekend was ze beschikbaar. Ze dacht ook het hele proces mee: van het bestellen van de keuken bij…</p>
+        <footer class="mt-5 text-sm"><strong>David Hielkema</strong> <span class="text-ink/55">op Google, 5 sterren</span></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- OVER -->
+<section class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+  <div class="lg:col-span-5 lg:order-2">
+    <h2 class="font-display font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">De mooiste IKEA-keukens nog mooier maken.</h2>
+    <p class="mt-5 text-ink/75 leading-relaxed max-w-md">Dat doen we elke dag, met veel passie. Vanuit Wehl helpen we je van eerste ontwerp tot de kist met fronten bij je voor de deur. Langs komen in de showroom kan, graag even op afspraak. Dan hebben we alle tijd voor je.</p>
+    <a href="mailto:info@keukenfronten.com?subject=Afspraak%20showroom%20Wehl" class="mt-7 inline-block font-medium underline underline-offset-4 decoration-ink/30 hover:decoration-accent">Afspraak maken voor de showroom</a>
+  </div>
+  <div class="lg:col-span-7 lg:order-1 grid grid-cols-5 gap-4">
+    <img src="assets/site-10.jpg" alt="Medewerker van Knoet trekt lachend een palletwagen met plaatmateriaal door de werkplaats" class="col-span-3 w-full h-[260px] md:h-[420px] object-cover object-[35%_50%] rounded-2xl">
+    <img src="assets/google-06.jpg" alt="Werkplaats met stapels plaatmateriaal en een medewerker aan de machine" class="col-span-2 w-full h-[260px] md:h-[420px] object-cover object-[62%_50%] rounded-2xl mt-10">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="font-display font-bold text-4xl md:text-5xl tracking-[-0.02em] leading-[1.05]">Stuur je ontwerp, binnen 48 uur heb je een offerte.</h2>
+      <div class="mt-10 space-y-6">
+        <div>
+          <p class="text-sm text-white/55">Bellen</p>
+          <a href="tel:+31262005102" class="font-display text-3xl font-semibold hover:text-oak">026 200 5102</a>
+        </div>
+        <div>
+          <p class="text-sm text-white/55">Mailen</p>
+          <a href="mailto:info@keukenfronten.com" class="text-xl font-medium hover:text-oak">info@keukenfronten.com</a>
+        </div>
+        <div>
+          <p class="text-sm text-white/55">Showroom (op afspraak)</p>
+          <p class="text-lg">Radonstraat 4, 7031 GT Wehl</p>
+        </div>
+      </div>
+      <table class="mt-10 text-sm w-full max-w-xs">
+        <caption class="text-left text-white/55 mb-2">Openingstijden</caption>
+        <tbody class="[&_td]:py-1">
+          <tr><td>Maandag t/m donderdag</td><td class="text-right tabular-nums">09:00 tot 17:00</td></tr>
+          <tr><td>Vrijdag</td><td class="text-right tabular-nums">09:30 tot 17:00</td></tr>
+          <tr class="text-white/55"><td>Zaterdag en zondag</td><td class="text-right">gesloten</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form class="lg:col-span-7 bg-paper text-ink rounded-3xl p-6 md:p-10" action="mailto:info@keukenfronten.com" method="post" enctype="text/plain">
+      <h3 class="font-display text-2xl font-semibold">Offerte aanvragen</h3>
+      <p class="mt-2 text-sm text-ink/65">Vertel kort wat je zoekt. Je IKEA-ontwerp kun je daarna meesturen per mail.</p>
+      <div class="mt-8 grid sm:grid-cols-2 gap-5">
+        <label class="block">
+          <span class="text-sm font-medium">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-md border border-ink/20 bg-white px-4 py-3 focus:border-accent focus:outline-none">
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">E-mailadres</span>
+          <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-md border border-ink/20 bg-white px-4 py-3 focus:border-accent focus:outline-none">
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-md border border-ink/20 bg-white px-4 py-3 focus:border-accent focus:outline-none">
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">IKEA-systeem</span>
+          <select name="systeem" class="mt-1.5 w-full rounded-md border border-ink/20 bg-white px-4 py-3 focus:border-accent focus:outline-none">
+            <option>Metod</option>
+            <option>Faktum</option>
+            <option>Weet ik nog niet</option>
+          </select>
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-medium">Je vraag of wens</span>
+          <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-md border border-ink/20 bg-white px-4 py-3 focus:border-accent focus:outline-none" placeholder="Bijvoorbeeld: nieuwe keuken of renovatie, welk materiaal je mooi vindt"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="btn mt-7 w-full sm:w-auto bg-accent text-white font-semibold text-lg px-8 py-4 rounded-md hover:bg-accent-dark">Offerte aanvragen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-ink text-white/60 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-sm">
+    <p><span class="font-display font-bold tracking-[0.18em] text-white border border-white/70 px-2 py-0.5 mr-3">KNOET</span> Keukenfronten.com, Radonstraat 4, Wehl</p>
+    <p>Volg ons op Instagram <a href="https://www.instagram.com/knoet/" class="text-white hover:text-oak">@knoet</a></p>
+  </div>
+</footer>
+
+<!-- Vaste actiebalk op mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-paper/95 backdrop-blur border-t border-ink/10 p-3 grid grid-cols-2 gap-3">
+  <a href="tel:+31262005102" class="btn text-center border-2 border-ink font-semibold py-3 rounded-md">Bel ons</a>
+  <a href="mailto:info@keukenfronten.com?subject=Offerte%20aanvraag%20fronten" class="btn text-center bg-accent text-white font-semibold py-3 rounded-md">Offerte</a>
+</div>
+
+<script>document.documentElement.classList.add('js');</script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweers Witgoed Doetinchem | Witgoed, bezorging en reparatie</title>
+<meta name="description" content="Witgoedwinkel en reparatie in Doetinchem. Advies in de showroom, bezorgd en aangesloten door onze eigen monteur, en uw oude apparaat gaat mee. Bel 0314 310 205.">
+<meta property="og:image" content="assets/google-08.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%230E2A4B'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%232E9BD6' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          emaille: '#F2F5F7',
+          marine: { DEFAULT: '#0E2A4B', 700: '#173A63', 900: '#0A1F38' },
+          swoosh: '#2E9BD6',
+          oranje: { DEFAULT: '#F39200', 600: '#DB8300' },
+          staal: '#5B6B7C',
+        },
+        fontFamily: {
+          kop: ['Archivo', 'system-ui', 'sans-serif'],
+          tekst: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: Archivo, system-ui, sans-serif; font-stretch: 118%; font-weight: 820; letter-spacing: -0.02em; line-height: 0.98; text-wrap: balance; }
+  .kop-smal { font-family: Archivo, system-ui, sans-serif; font-stretch: 105%; font-weight: 700; letter-spacing: -0.01em; }
+  p { text-wrap: pretty; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  /* De patrijspoort: ronde wasmachinedeur rond de foto */
+  .poort { position: relative; aspect-ratio: 1; border-radius: 9999px; padding: clamp(14px, 2.2vw, 26px);
+    background: linear-gradient(145deg, #ffffff 0%, #dfe6ec 55%, #c9d3dc 100%);
+    box-shadow: 0 30px 60px -25px rgba(14,42,75,.45), inset 0 2px 0 #fff, inset 0 -3px 8px rgba(14,42,75,.12); }
+  .poort::before { content: ""; position: absolute; inset: clamp(8px, 1.3vw, 15px); border-radius: 9999px;
+    border: 2px solid rgba(14,42,75,.10); pointer-events: none; }
+  .poort img { width: 100%; height: 100%; object-fit: cover; border-radius: 9999px;
+    box-shadow: inset 0 0 0 4px #0E2A4B; outline: 6px solid #0E2A4B; outline-offset: -6px; }
+  .poort .glans { position: absolute; inset: clamp(14px, 2.2vw, 26px); border-radius: 9999px; pointer-events: none;
+    background: radial-gradient(ellipse 60% 40% at 28% 18%, rgba(255,255,255,.35), transparent 60%); }
+
+  .btn { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(1px) scale(.99); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #2E9BD6; outline-offset: 3px; border-radius: 6px; }
+
+  /* Verrijking: alleen als JS de class zet. Eén moment: de deur draait open. */
+  @keyframes deur { from { transform: rotate(-14deg) scale(.94); opacity: .2; } to { transform: none; opacity: 1; } }
+  @keyframes op { from { transform: translateY(12px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .js .hero-deur { animation: deur 1s cubic-bezier(.2,.8,.2,1) both; }
+  .js .hero-tekst > * { animation: op .7s ease both; }
+  .js .hero-tekst > *:nth-child(2) { animation-delay: .08s; }
+  .js .hero-tekst > *:nth-child(3) { animation-delay: .16s; }
+  .js .hero-tekst > *:nth-child(4) { animation-delay: .24s; }
+  .js .hero-tekst > *:nth-child(5) { animation-delay: .32s; }
+  .belbalk { transition: transform .3s ease; }
+  .js .belbalk.verstopt { transform: translateY(120%); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .js .hero-deur, .js .hero-tekst > * { animation: none; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-emaille text-marine font-tekst">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-marine-900 text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Sweers Witgoed Doetinchem, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-oranje">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-emaille/90 backdrop-blur border-b border-marine/10">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 h-[68px] flex items-center justify-between gap-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="Sweers Witgoed, naar boven">
+      <svg viewBox="0 0 48 48" class="w-10 h-10 shrink-0" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="#0E2A4B"/>
+        <circle cx="24" cy="24" r="13" fill="#F2F5F7"/>
+        <path d="M8 30 C 14 40, 34 42, 42 26" fill="none" stroke="#2E9BD6" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="leading-none">
+        <span class="kop block text-[19px] tracking-tight">Sweers</span>
+        <span class="block text-[12px] font-semibold tracking-[0.18em] text-swoosh mt-0.5">WITGOED</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-semibold" aria-label="Hoofdmenu">
+      <a href="#reparatie" class="hover:text-swoosh transition-colors">Reparatie</a>
+      <a href="#bezorging" class="hover:text-swoosh transition-colors">Bezorging</a>
+      <a href="#showroom" class="hover:text-swoosh transition-colors">Showroom</a>
+      <a href="#garantie" class="hover:text-swoosh transition-colors">Garantie</a>
+      <a href="#reviews" class="hover:text-swoosh transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-swoosh transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31314310205" class="btn hidden sm:inline-flex items-center gap-2 rounded-full bg-marine text-white px-5 py-2.5 text-[15px] font-semibold hover:bg-marine-700">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="tabular">0314 310 205</span>
+    </a>
+    <a href="tel:+31314310205" class="sm:hidden text-[15px] font-semibold underline underline-offset-4 decoration-swoosh tabular">0314 310 205</a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- HERO -->
+<section id="top" class="relative overflow-hidden">
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-8 pt-6 pb-14 sm:pt-14 lg:pt-16 lg:pb-24 grid lg:grid-cols-[1.05fr_1fr] gap-8 lg:gap-12 items-center">
+    <div class="hero-tekst order-2 lg:order-1">
+      <p class="text-[15px] sm:text-base font-semibold text-staal">Witgoedwinkel en reparatie in Doetinchem</p>
+      <h1 class="kop mt-3 text-[46px] sm:text-[76px] lg:text-[92px]">Gewoon goed witgoed.</h1>
+      <p class="mt-4 sm:mt-6 max-w-[34rem] text-[17px] sm:text-[20px] leading-relaxed text-marine/80">
+        Advies in onze showroom, bezorgd en aangesloten door onze eigen monteur, en uw oude apparaat nemen we mee. Gaat er iets stuk? Dan komen we het repareren.
+      </p>
+      <div class="mt-7 sm:mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31314310205" class="btn inline-flex items-center gap-3 rounded-full bg-oranje text-marine-900 pl-5 pr-7 py-4 text-[19px] font-bold shadow-[0_14px_30px_-12px_rgba(243,146,0,.75)] hover:bg-oranje-600">
+          <span class="grid place-items-center w-9 h-9 rounded-full bg-marine-900 text-oranje">
+            <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          </span>
+          <span>Bel <span class="tabular">0314 310 205</span></span>
+        </a>
+        <a href="#showroom" class="text-[17px] font-semibold underline decoration-swoosh decoration-2 underline-offset-[6px] hover:text-swoosh">Kom langs in de showroom</a>
+      </div>
+      <a href="#reviews" class="mt-8 inline-flex items-center gap-3 text-[15px] text-marine/75 hover:text-marine">
+        <span class="flex text-oranje" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6L10 14.8 4.6 17.8l1.2-6L1.4 7.7l6-.7z"/></svg>
+        </span>
+        <span><strong class="text-marine">4,8</strong> uit 47 Google-reviews</span>
+      </a>
+    </div>
+
+    <div class="order-1 lg:order-2 relative mx-auto w-full max-w-[200px] sm:max-w-[440px] lg:max-w-[560px]">
+      <div class="poort hero-deur">
+        <img src="assets/google-08.jpg" alt="Marco Sweers achter het stuur van de Sweers Witgoed bus" class="object-[66%_45%]" width="1600" height="1067">
+        <span class="glans"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KAPOT OF NIEUW -->
+<section id="reparatie" class="bg-white">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-24">
+    <h2 class="kop text-[36px] sm:text-[54px] max-w-3xl">Kapot, of toe aan iets nieuws?</h2>
+    <p class="mt-4 max-w-2xl text-[18px] leading-relaxed text-marine/75">Voor allebei belt u hetzelfde nummer. Wij kijken eerlijk wat het slimst is: repareren of vervangen.</p>
+
+    <div class="mt-12 grid lg:grid-cols-2 gap-6">
+      <article class="group relative overflow-hidden rounded-[28px] bg-marine text-white">
+        <div class="aspect-[16/10] overflow-hidden">
+          <img src="assets/google-03.png" alt="Marco repareert een geopende droger, met zijn gereedschapskoffer ernaast" class="w-full h-full object-cover object-[50%_55%] scale-[1.32]" loading="lazy">
+        </div>
+        <div class="p-7 sm:p-10">
+          <h3 class="kop text-[28px] sm:text-[36px]">Reparatie aan huis</h3>
+          <p class="mt-4 text-[17px] leading-relaxed text-white/80 max-w-[34rem]">
+            Wasmachine, droger of vaatwasser in storing? Bel of app, en de monteur komt bij u langs. Sweers Witgoed en Pomper Witgoed zijn samengegaan, dus we hebben meer reparatiecapaciteit en zijn sneller bij u.
+          </p>
+          <a href="tel:+31314310205" class="mt-7 inline-flex items-center gap-2 font-semibold text-oranje hover:text-white">Reparatie aanvragen: <span class="tabular underline underline-offset-4">0314 310 205</span></a>
+        </div>
+      </article>
+
+      <article class="group relative overflow-hidden rounded-[28px] bg-emaille">
+        <div class="aspect-[16/10] overflow-hidden">
+          <img src="assets/google-02.png" alt="De showroom van Sweers Witgoed met een rij Siemens wasmachines en drogers" class="w-full h-full object-cover object-[40%_60%]" loading="lazy">
+        </div>
+        <div class="p-7 sm:p-10">
+          <h3 class="kop text-[28px] sm:text-[36px]">Nieuw apparaat</h3>
+          <p class="mt-4 text-[17px] leading-relaxed text-marine/80 max-w-[34rem]">
+            Wassen, drogen, afwassen, koelen en koken. We verkopen alleen merken waar we zelf vertrouwen in hebben, met laagsteprijsgarantie op ons kernassortiment. Persoonlijk advies, niet opdringerig: u kiest zelf.
+          </p>
+          <a href="#bezorging" class="mt-7 inline-flex items-center gap-2 font-semibold underline decoration-swoosh decoration-2 underline-offset-[6px] hover:text-swoosh">Zo gaat de bezorging</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- BEZORGING: echt een volgorde -->
+<section id="bezorging" class="relative">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20">
+    <div>
+      <h2 class="kop text-[36px] sm:text-[54px]">Wij zetten hem neer. En nemen de oude mee.</h2>
+      <p class="mt-5 text-[18px] leading-relaxed text-marine/75 max-w-[30rem]">Binnen Gelderland bezorgt onze eigen bezorgdienst, zonder extra kosten. Daarbuiten leveren we via DHL tot aan de drempel, ook zonder extra kosten.</p>
+      <dl class="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 max-w-md">
+        <div>
+          <dt class="text-[14px] text-staal">Levertijd in Gelderland</dt>
+          <dd class="kop-smal text-[26px] mt-1">4 tot 7 werkdagen</dd>
+        </div>
+        <div>
+          <dt class="text-[14px] text-staal">Bezorgkosten</dt>
+          <dd class="kop-smal text-[26px] mt-1">Geen</dd>
+        </div>
+        <div class="col-span-2">
+          <dt class="text-[14px] text-staal">Betalen</dt>
+          <dd class="text-[17px] mt-1 font-semibold">Bij levering met PIN, of via iDEAL in3 en Klarna</dd>
+        </div>
+      </dl>
+    </div>
+
+    <ol class="relative space-y-0">
+      <li class="grid grid-cols-[56px_1fr] gap-5 pb-10 relative">
+        <span class="kop grid place-items-center w-14 h-14 rounded-full bg-white ring-4 ring-swoosh/30 text-[22px] relative z-10">1</span>
+        <span class="absolute left-[27px] top-14 bottom-0 w-[2px] bg-marine/15" aria-hidden="true"></span>
+        <div class="pt-2">
+          <h3 class="kop-smal text-[22px]">Advies en bestellen</h3>
+          <p class="mt-2 text-[17px] leading-relaxed text-marine/75">In de showroom, telefonisch of per e-mail. U krijgt uitleg over de verschillen, en de factuur digitaal.</p>
+        </div>
+      </li>
+      <li class="grid grid-cols-[56px_1fr] gap-5 pb-10 relative">
+        <span class="kop grid place-items-center w-14 h-14 rounded-full bg-white ring-4 ring-swoosh/30 text-[22px] relative z-10">2</span>
+        <span class="absolute left-[27px] top-14 bottom-0 w-[2px] bg-marine/15" aria-hidden="true"></span>
+        <div class="pt-2">
+          <h3 class="kop-smal text-[22px]">Bezorgen, ook naar boven</h3>
+          <p class="mt-2 text-[17px] leading-relaxed text-marine/75">Moet de machine de trap op? Daarvoor hebben we een elektrische traploper, de StairMobil. Zo brengt de monteur hem veilig boven, voor €19 per keer.</p>
+        </div>
+      </li>
+      <li class="grid grid-cols-[56px_1fr] gap-5 pb-10 relative">
+        <span class="kop grid place-items-center w-14 h-14 rounded-full bg-white ring-4 ring-swoosh/30 text-[22px] relative z-10">3</span>
+        <span class="absolute left-[27px] top-14 bottom-0 w-[2px] bg-marine/15" aria-hidden="true"></span>
+        <div class="pt-2">
+          <h3 class="kop-smal text-[22px]">Vakkundig plaatsen</h3>
+          <p class="mt-2 text-[17px] leading-relaxed text-marine/75">We zetten het apparaat op zijn plek en leggen uit hoe het werkt. Installatie en inbouw zijn niet bij de prijs inbegrepen, vraag er gerust naar.</p>
+        </div>
+      </li>
+      <li class="grid grid-cols-[56px_1fr] gap-5 relative">
+        <span class="kop grid place-items-center w-14 h-14 rounded-full bg-marine text-white text-[22px] relative z-10">4</span>
+        <div class="pt-2">
+          <h3 class="kop-smal text-[22px]">Oude apparaat mee</h3>
+          <p class="mt-2 text-[17px] leading-relaxed text-marine/75">Uw oude machine en het verpakkingsmateriaal nemen we mee en verwerken we milieuvriendelijk.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- SHOWROOM -->
+<section id="showroom" class="bg-white">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-24">
+    <div class="grid lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-16 items-center">
+      <div class="relative">
+        <img src="assets/google-06.jpg" alt="Een rij Miele wasmachines en drogers in de showroom" class="w-full aspect-[4/3] object-cover rounded-[28px] rounded-tr-[180px]" loading="lazy">
+        <div class="hidden sm:block absolute -bottom-10 -left-6 w-44 lg:w-52">
+          <div class="poort !p-3">
+            <img src="assets/google-07.jpg" alt="Het display van een Siemens iQ500 wasmachine" class="object-[45%_50%]" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="kop text-[36px] sm:text-[54px]">Eerst even zien en voelen?</h2>
+        <p class="mt-5 text-[18px] leading-relaxed text-marine/75 max-w-[32rem]">In onze showroom aan de Innovatieweg staat een ruime selectie apparaten opgesteld. Kom kijken, draai aan de knoppen en krijg persoonlijk advies.</p>
+        <p class="mt-4 text-[18px] leading-relaxed text-marine/75 max-w-[32rem]">Liever in de middag of avond langskomen? Bel even, dan spreken we een moment af.</p>
+
+        <div class="mt-9 border-t border-marine/10 pt-6">
+          <p class="text-[14px] text-staal">Merken die u bij ons vindt</p>
+          <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 kop-smal text-[21px] sm:text-[24px]">
+            <li>Siemens</li><li>Bosch</li><li>Miele</li><li>Liebherr</li><li>Smeg</li><li>Beko</li>
+          </ul>
+        </div>
+        <div class="mt-6 border-t border-marine/10 pt-6">
+          <p class="text-[14px] text-staal">Voor</p>
+          <p class="mt-2 text-[18px] font-semibold">Wassen, drogen, afwassen, koelen en koken</p>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Innovatieweg+40-09+7007+CD+Doetinchem" class="mt-9 inline-flex items-center gap-2 font-semibold underline decoration-swoosh decoration-2 underline-offset-[6px] hover:text-swoosh">Innovatieweg 40-09, Doetinchem: route plannen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIE -->
+<section id="garantie" class="bg-marine text-white relative overflow-hidden">
+  <svg class="absolute right-[-200px] top-[-120px] w-[700px] opacity-[.12] pointer-events-none" viewBox="0 0 700 700" aria-hidden="true">
+    <circle cx="350" cy="350" r="300" fill="none" stroke="#2E9BD6" stroke-width="40"/>
+    <circle cx="350" cy="350" r="200" fill="none" stroke="#2E9BD6" stroke-width="6"/>
+  </svg>
+  <div class="relative mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-24">
+    <div class="grid lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-20 items-start">
+      <div>
+        <h2 class="kop text-[36px] sm:text-[54px]">Langer zorgeloos.</h2>
+        <p class="mt-5 text-[18px] leading-relaxed text-white/75 max-w-[30rem]">Op alle producten zit minimaal 2 jaar fabrieksgarantie. Veel merken bij ons geven zelf al langer, na registratie van het apparaat bij de fabrikant.</p>
+        <p class="mt-4 text-[18px] leading-relaxed text-white/75 max-w-[30rem]">Op producten waar we genoeg vertrouwen in hebben, geven we daarnaast extra garantie bovenop de standaard 2 jaar. We werken vanuit vertrouwen, redelijk en billijk.</p>
+      </div>
+      <ul class="divide-y divide-white/15 border-y border-white/15">
+        <li class="flex items-baseline justify-between gap-6 py-6">
+          <span class="text-[18px] sm:text-[20px] font-semibold">Liebherr</span>
+          <span class="kop text-[36px] sm:text-[60px] whitespace-nowrap text-white tabular">10 jaar</span>
+        </li>
+        <li class="flex items-baseline justify-between gap-6 py-6">
+          <span class="text-[18px] sm:text-[20px] font-semibold">Siemens extraKlasse</span>
+          <span class="kop text-[36px] sm:text-[60px] whitespace-nowrap text-white tabular">5 jaar</span>
+        </li>
+        <li class="flex items-baseline justify-between gap-6 py-6">
+          <span class="text-[18px] sm:text-[20px] font-semibold">Beko Selective Line</span>
+          <span class="kop text-[36px] sm:text-[60px] whitespace-nowrap text-white tabular">5 jaar</span>
+        </li>
+        <li class="flex items-baseline justify-between gap-6 py-6">
+          <span class="text-[18px] sm:text-[20px] font-semibold">Overige merken, minimaal</span>
+          <span class="kop text-[36px] sm:text-[60px] whitespace-nowrap text-swoosh tabular">2 jaar</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-24">
+    <div class="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-14 items-end">
+      <div>
+        <h2 class="kop text-[36px] sm:text-[54px]">"Marco geappt en 2 uur later was hij er al."</h2>
+        <p class="mt-5 text-[17px] text-marine/75">Jacqueline Giezen, over haar wasmachine</p>
+        <p class="mt-8 flex items-baseline gap-3">
+          <span class="kop text-[64px] tabular">4,8</span>
+          <span class="text-[17px] text-marine/75">uit 47 reviews op Google</span>
+        </p>
+      </div>
+      <img src="assets/google-01.png" alt="Marco Sweers leunt tegen de witte Sweers Witgoed bus" class="w-full aspect-[16/9] object-cover object-[40%_45%] rounded-[28px] rounded-bl-[160px]" loading="lazy">
+    </div>
+
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-6 [&>figure]:mb-6">
+      <figure class="break-inside-avoid rounded-[22px] bg-white p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Sommige bedrijven verdienen eigenlijk 10 sterren. Wat een verschrikkelijk aardige mensen, een topservice, en de zoon met een vriend waren ook niet beroerd om de vriezer even op z’n plek te zetten omdat ik zelf even geblesseerd was. Echt top!"</blockquote>
+        <figcaption class="mt-5 font-semibold">Hans Vanden bos <span class="font-normal text-staal">via Google</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-marine text-white p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Je wordt goed geadviseerd, niet opdringerig, de keuze wordt aan je zelf overgelaten. Er wordt goed werk geleverd, het oude product wordt meegenomen en milieu vriendelijk verwerkt.. Bij een volgende aankoop gaan we zeker weer naar Zweers Witgoed."</blockquote>
+        <figcaption class="mt-5 font-semibold">Sylvia Pietersen</figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-white p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Marco van Sweers Witgoed leverd zeer goede service<br>Snelle levering en vakkundig geplaatst<br>Echt een aanrader om hier al je apparatuur te bestellen<br>Voor mij zeker een 10+"</blockquote>
+        <figcaption class="mt-5 font-semibold">Esther Wezenberg <span class="font-normal text-staal">via Google</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-white p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Super goede snelle service en levering , zeer tevreden. Ik had op de zaak al de wasmachine en droger door Marco laten plaatsen. Nu ging thuis de vaatwasser stuk, hij was snel bij ons en vandaag de nieuwe vaatwasser geplaatst. Helemaal tevreden!"</blockquote>
+        <figcaption class="mt-5 font-semibold">Rachel Vierwind</figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-white p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Goeie vlotte service en uit voorraad geleverd ! Obbink heeft slechte services beter naar Sweers gaan. Goed en vakkundig geholpen met een wasdroger"</blockquote>
+        <figcaption class="mt-5 font-semibold">Ray <span class="font-normal text-staal">via Google</span></figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-white p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Fijn geholpen door Marco. Goed advies en duidelijke uitleg. Droger is snel geleverd en de oude droger ook weer meegenomen. Gaan hier voortaan heen voor alle witgoed/elektra."</blockquote>
+        <figcaption class="mt-5 font-semibold">Bernadet Teunissen</figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-white p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Heel behulpzaam en vriendelijk. Makkelijk contact (zowel telefonisch als via whatsapp). Nieuwe vaarwasser snel geplaatst! Heel tevreden, we komen hier de volgende keer weer terug."</blockquote>
+        <figcaption class="mt-5 font-semibold">Romy Schepers</figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-white p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Snel en vakkundig storing vaatwasser  opgelost als we weer een storing of een nieuw apparaat nodig hebben gaan we zeker naar marco sweers toe"</blockquote>
+        <figcaption class="mt-5 font-semibold">Gerbert Hagelstein</figcaption>
+      </figure>
+      <figure class="break-inside-avoid rounded-[22px] bg-white p-7">
+        <blockquote class="text-[17px] leading-relaxed">"Helaas onze wasmachine was niet meer te maken 😒 totaalos. optie een nieuwe gekocht bij Sweers Witgoed . Prima service snelle levering  goede uitleg , wij zijn er blij mee"</blockquote>
+        <figcaption class="mt-5 font-semibold">Peter Janssen <span class="font-normal text-staal">via Google</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-white">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 lg:gap-20">
+    <div>
+      <h2 class="kop text-[36px] sm:text-[54px]">Even bellen is het snelst.</h2>
+      <p class="mt-5 text-[18px] leading-relaxed text-marine/75 max-w-[30rem]">Voor een reparatie, een advies of een nieuw apparaat. Mailen of het formulier invullen kan natuurlijk ook.</p>
+      <a href="tel:+31314310205" class="btn mt-8 inline-flex items-center gap-1.5 rounded-full bg-oranje text-marine-900 px-7 py-4 text-[19px] font-bold hover:bg-oranje-600">
+        Bel <span class="tabular">0314 310 205</span>
+      </a>
+
+      <div class="mt-12 grid sm:grid-cols-2 gap-10">
+        <div>
+          <h3 class="text-[14px] text-staal">Adres</h3>
+          <p class="mt-2 text-[17px] leading-relaxed">Innovatieweg 40-09<br>7007 CD Doetinchem</p>
+          <h3 class="mt-6 text-[14px] text-staal">E-mail</h3>
+          <a href="mailto:info@sweerswitgoed.nl" class="mt-2 inline-block text-[17px] font-semibold underline decoration-swoosh decoration-2 underline-offset-4 hover:text-swoosh">info@sweerswitgoed.nl</a>
+        </div>
+        <div>
+          <h3 class="text-[14px] text-staal">Openingstijden</h3>
+          <table class="mt-2 text-[17px] tabular w-full max-w-[16rem]">
+            <tbody>
+              <tr><td class="py-0.5 pr-4">Maandag</td><td>09:00 tot 17:00</td></tr>
+              <tr><td class="py-0.5 pr-4">Dinsdag</td><td>09:00 tot 17:00</td></tr>
+              <tr><td class="py-0.5 pr-4">Woensdag</td><td>09:00 tot 17:00</td></tr>
+              <tr><td class="py-0.5 pr-4">Donderdag</td><td>09:00 tot 17:00</td></tr>
+              <tr><td class="py-0.5 pr-4">Vrijdag</td><td>09:00 tot 17:00</td></tr>
+              <tr><td class="py-0.5 pr-4">Zaterdag</td><td>09:00 tot 13:00</td></tr>
+              <tr class="text-staal"><td class="py-0.5 pr-4">Zondag</td><td>Gesloten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <form class="rounded-[28px] bg-emaille p-7 sm:p-10 self-start" action="mailto:info@sweerswitgoed.nl" method="post" enctype="text/plain">
+      <h3 class="kop-smal text-[26px]">Stuur een bericht</h3>
+      <p class="mt-2 text-[16px] text-marine/70">We nemen zo snel mogelijk contact met u op.</p>
+      <div class="mt-7 grid gap-5">
+        <label class="grid gap-1.5">
+          <span class="text-[15px] font-semibold">Naam</span>
+          <input name="naam" required autocomplete="name" class="rounded-xl border border-marine/15 bg-white px-4 py-3 text-[17px] focus:border-swoosh">
+        </label>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="grid gap-1.5">
+            <span class="text-[15px] font-semibold">Telefoon</span>
+            <input name="telefoon" type="tel" required autocomplete="tel" class="rounded-xl border border-marine/15 bg-white px-4 py-3 text-[17px] focus:border-swoosh">
+          </label>
+          <label class="grid gap-1.5">
+            <span class="text-[15px] font-semibold">Waar gaat het over?</span>
+            <select name="onderwerp" class="rounded-xl border border-marine/15 bg-white px-4 py-3 text-[17px] focus:border-swoosh">
+              <option>Reparatie</option>
+              <option>Nieuw apparaat</option>
+              <option>Showroombezoek</option>
+              <option>Iets anders</option>
+            </select>
+          </label>
+        </div>
+        <label class="grid gap-1.5">
+          <span class="text-[15px] font-semibold">Uw bericht</span>
+          <textarea name="bericht" rows="4" placeholder="Bijvoorbeeld: merk en type van uw machine, en wat er mis is" class="rounded-xl border border-marine/15 bg-white px-4 py-3 text-[17px] focus:border-swoosh"></textarea>
+        </label>
+        <button type="submit" class="btn justify-self-start rounded-full bg-marine text-white px-7 py-3.5 text-[17px] font-semibold hover:bg-marine-700">Bericht versturen</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-marine-900 text-white/70 pb-24 sm:pb-0">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 py-12 flex flex-col md:flex-row gap-8 md:items-center md:justify-between text-[15px]">
+    <div>
+      <p class="kop text-white text-[20px]">Sweers Witgoed</p>
+      <p class="mt-1">Innovatieweg 40-09, 7007 CD Doetinchem</p>
+    </div>
+    <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+      <a href="#reparatie" class="hover:text-white">Reparatie</a>
+      <a href="#bezorging" class="hover:text-white">Bezorging</a>
+      <a href="#garantie" class="hover:text-white">Garantie</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+    <p>Retour binnen 14 dagen na ontvangst. Prijzen inclusief btw.</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="belbalk sm:hidden fixed inset-x-0 bottom-0 z-40 p-3 bg-gradient-to-t from-emaille via-emaille/95 to-transparent">
+  <a href="tel:+31314310205" class="btn flex items-center justify-center gap-2 rounded-full bg-oranje text-marine-900 py-4 text-[18px] font-bold shadow-[0_10px_30px_-10px_rgba(14,42,75,.5)]">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel <span class="tabular">0314 310 205</span>
+  </a>
+</div>
+
+<script>
+  (function () {
+    var bar = document.querySelector('.belbalk');
+    function check() { bar.classList.toggle('verstopt', window.scrollY < 520); }
+    check(); window.addEventListener('scroll', check, { passive: true });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De Elstar Catering | Catering, zalen en feesten in Barneveld</title>
+<meta name="description" content="De Elstar Catering in Barneveld verzorgt bedrijfsfeesten, bruiloften, jubilea en buurtfeesten voor 10 tot 5000 personen. Eigen zalen, kookstudio, lunchroom en snackbar. Doen we gewoon.">
+<meta property="og:title" content="De Elstar Catering, Barneveld">
+<meta property="og:description" content="Feest voor 50 of 5000? Doen we gewoon.">
+<meta property="og:image" content="assets/google-01.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23C8106A'/%3E%3Cpath d='M7 22 L9 11 L13 16 L16 9 L19 16 L23 11 L25 22 Z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          magenta: { DEFAULT: '#C8106A', dark: '#A50C57', soft: '#F3E3EA' },
+          pruim: { DEFAULT: '#2A1421', mid: '#6E5A65', deep: '#1F0E18' },
+          bloes: '#FBF6F8',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-optical-sizing: auto; }
+  .hero-foto { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%); object-position: 50% 78%; }
+  @media (min-width: 1024px) { .hero-foto { clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%); object-position: 60% center; } }
+  .boog { border-radius: 999px 999px 1.25rem 1.25rem; }
+  .knop { transition: background-color .2s, transform .15s; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #C8106A; outline-offset: 3px;
+  }
+  .js .intro > * { animation: op 0.7s cubic-bezier(.2,.7,.2,1) both; }
+  .js .intro > *:nth-child(2) { animation-delay: .08s; }
+  .js .intro > *:nth-child(3) { animation-delay: .16s; }
+  .js .intro > *:nth-child(4) { animation-delay: .24s; }
+  .js .intro > *:nth-child(5) { animation-delay: .32s; }
+  @keyframes op { from { transform: translateY(14px); opacity: .001; } }
+  @media (prefers-reduced-motion: reduce) { .js .intro > * { animation: none; } html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-bloes text-pruim antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-pruim-deep text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor De Elstar Catering, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-magenta-soft">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-bloes/90 backdrop-blur border-b border-pruim/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3" aria-label="De Elstar Catering, naar boven">
+      <svg viewBox="0 0 40 32" class="w-9 h-7 text-magenta" aria-hidden="true">
+        <path d="M4 27 L6.5 9 L13.5 17 L20 4 L26.5 17 L33.5 9 L36 27 Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+        <circle cx="6.5" cy="7" r="2.2" fill="currentColor"/><circle cx="20" cy="2.6" r="2.2" fill="currentColor"/><circle cx="33.5" cy="7" r="2.2" fill="currentColor"/>
+      </svg>
+      <span class="leading-none">
+        <span class="kop block font-extrabold text-[19px] md:text-[21px] tracking-tight">De Elstar Catering</span>
+        <span class="block text-[12.5px] text-magenta font-semibold mt-1">Doen we gewoon.</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#vieren" class="hover:text-magenta">Feesten</a>
+      <a href="#keuken" class="hover:text-magenta">Keuken</a>
+      <a href="#zalen" class="hover:text-magenta">Zalen</a>
+      <a href="#snackbar" class="hover:text-magenta">Lunchroom &amp; snackbar</a>
+      <a href="#contact" class="hover:text-magenta">Contact</a>
+    </nav>
+    <a href="tel:+31342421006" class="knop inline-flex items-center gap-2 rounded-full bg-magenta hover:bg-magenta-dark text-white font-semibold px-4 md:px-5 py-2.5 text-[15px]">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">0342 421 006</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 lg:min-h-[640px] items-center">
+    <div class="intro lg:col-span-6 lg:pr-6 pt-9 pb-8 lg:py-20 relative z-10">
+      <p class="text-[15px] font-semibold text-magenta">Catering en feesten in Barneveld</p>
+      <h1 class="kop font-extrabold tracking-[-0.035em] leading-[0.95] text-[44px] sm:text-[62px] lg:text-[76px] mt-4">
+        <span class="block">Feest voor 50 of&nbsp;5000?</span> <span class="block mt-1 lg:mt-2">Doen we gewoon.</span>
+      </h1>
+      <p class="mt-6 text-[18px] md:text-[19px] leading-relaxed text-pruim-mid max-w-[30rem]">
+        Bedrijfsfeest, bruiloft, jubileum of buurtfeest. Jij vertelt wat je wilt vieren, wij regelen het eten, de zaal en de rest.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:+31342421006" class="knop inline-flex items-center gap-3 rounded-full bg-magenta hover:bg-magenta-dark text-white font-semibold text-[18px] px-7 py-4 shadow-[0_10px_30px_-10px_rgba(200,16,106,.6)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0342 421 006
+        </a>
+        <a href="mailto:info@elstarcatering.nl" class="font-semibold underline decoration-magenta decoration-2 underline-offset-[6px] hover:text-magenta">Of mail je plan</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-[15px] text-pruim-mid">
+        <span class="text-magenta tracking-[2px]" aria-hidden="true">★★★★<span class="text-pruim/20">★</span></span>
+        <span><strong class="text-pruim font-semibold">4 sterren</strong> uit 200 Google-reviews</span>
+      </p>
+    </div>
+    <div class="lg:col-span-6 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[54%] -mx-5 md:-mx-8 lg:mx-0">
+      <img src="assets/google-01.jpg" alt="Volle feesttent met gedekte ronde tafels en honderden gasten tijdens een evenement van De Elstar Catering" class="hero-foto w-full h-[300px] sm:h-[420px] lg:h-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Wat heb je te vieren -->
+<section id="vieren" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-[38px] md:text-[52px] leading-[1] tracking-[-0.03em]">Wat heb je te vieren?</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-pruim-mid max-w-[34rem]">
+        Een bedrijfsfeest, jubileum, bruiloft of belangrijk familiemoment. Voor 50, 500 of 5000 man. Wij maken er een moment van dat je gasten nog lang onthouden.
+      </p>
+      <p class="mt-4 text-[18px] leading-relaxed text-pruim-mid max-w-[34rem]">
+        Kom gerust met een uitdagend plan of een ingewikkeld idee. Daar houden we van. Zullen we een afspraak maken?
+      </p>
+      <div class="mt-10 rounded-2xl bg-pruim text-white p-7 md:p-8">
+        <h3 class="kop font-bold text-[22px]">Daarom De Elstar Catering</h3>
+        <ul class="mt-5 space-y-3 text-[16.5px] text-white/85">
+          <li class="flex gap-3"><span class="text-[#F07BB3] font-bold" aria-hidden="true">✓</span>Dertig jaar ervaring in catering</li>
+          <li class="flex gap-3"><span class="text-[#F07BB3] font-bold" aria-hidden="true">✓</span>Voor 10 tot 5000 personen</li>
+          <li class="flex gap-3"><span class="text-[#F07BB3] font-bold" aria-hidden="true">✓</span>Hoogstaande culinaire kwaliteit</li>
+          <li class="flex gap-3"><span class="text-[#F07BB3] font-bold" aria-hidden="true">✓</span>Uitdagend of complex: we dóen het gewoon</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 grid sm:grid-cols-2 gap-10 sm:gap-8 lg:pt-3">
+      <div>
+        <h3 class="text-[15px] font-semibold text-magenta pb-4 border-b-2 border-magenta">Voor bedrijven</h3>
+        <ul class="kop font-bold text-[22px] md:text-[30px] leading-tight tracking-[-0.02em]">
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Bedrijfsevents</li>
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Bedrijfsrestaurant</li>
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Locaties</li>
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Zaalverhuur</li>
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Kookstudio</li>
+        </ul>
+        <p class="mt-5 text-[16px] leading-relaxed text-pruim-mid">Open dagen, dealerdagen, personeelsfeesten en relatie-evenementen. Compleet geregeld, zodat jij bij je gasten kunt zijn.</p>
+      </div>
+      <div>
+        <h3 class="text-[15px] font-semibold text-magenta pb-4 border-b-2 border-magenta">Voor thuis en de buurt</h3>
+        <ul class="kop font-bold text-[22px] md:text-[30px] leading-tight tracking-[-0.02em]">
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Feesten</li>
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Bruiloften</li>
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Buurtfeesten</li>
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Jubilea</li>
+          <li class="py-2.5 md:py-3.5 border-b border-pruim/10">Zaalverhuur</li>
+        </ul>
+        <p class="mt-5 text-[16px] leading-relaxed text-pruim-mid">Morgen een feest voor de hele straat? Of je huwelijksjubileum gewoon thuis? Doen we gewoon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Keuken -->
+<section id="keuken" class="bg-magenta-soft/60 py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="lg:col-span-7 grid grid-cols-6 gap-3 md:gap-4">
+      <img src="assets/google-06.jpg" alt="Bord met vijf amuses: gevulde soesjes, lepeltjes met rucola en pijnboompitten en een garnaal" class="col-span-6 w-full aspect-[16/10] object-cover rounded-[1.25rem]">
+      <img src="assets/google-02.jpg" alt="Verse salade met komkommer en tomaat en drie bakjes huisgemaakte salades" class="col-span-3 w-full aspect-[4/3] object-cover rounded-[1.25rem]">
+      <img src="assets/google-04.jpg" alt="Schaal met gourmetvlees: kipfilet, biefstuk, slavinken en saté" class="col-span-3 w-full aspect-[4/3] object-cover rounded-[1.25rem]">
+    </div>
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-[38px] md:text-[52px] leading-[1] tracking-[-0.03em]">Zo serveren wij.</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-pruim-mid">
+        Hoogstaande culinaire kwaliteit, van een fijn amuse-bord tot een stevig buffet. We hebben menu's, arrangementen en losse gerechten.
+      </p>
+      <dl class="mt-8 space-y-6">
+        <div class="pl-5 border-l-4 border-magenta">
+          <dt class="kop font-bold text-[22px]">Vanuit onze keuken</dt>
+          <dd class="mt-1 text-[16.5px] text-pruim-mid leading-relaxed">Bereid in onze eigen keuken in Barneveld en geserveerd op jouw locatie of in onze zalen.</dd>
+        </div>
+        <div class="pl-5 border-l-4 border-magenta">
+          <dt class="kop font-bold text-[22px]">Live cooking</dt>
+          <dd class="mt-1 text-[16.5px] text-pruim-mid leading-relaxed">De koks staan tussen je gasten en bereiden het eten ter plekke. Lekker, en meteen een belevenis.</dd>
+        </div>
+      </dl>
+      <p class="mt-8 text-[16.5px] leading-relaxed">
+        Speciale dieetwensen of vragen over allergenen? <a href="tel:+31342421006" class="font-semibold text-magenta underline underline-offset-4">Bel</a> of <a href="mailto:info@elstarcatering.nl" class="font-semibold text-magenta underline underline-offset-4">mail</a> ons gerust, we denken graag mee.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Zalen -->
+<section id="zalen" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-end">
+      <h2 class="lg:col-span-6 kop font-extrabold text-[38px] md:text-[52px] leading-[1] tracking-[-0.03em]">Geen locatie? Kom naar ons.</h2>
+      <p class="lg:col-span-5 lg:col-start-8 text-[18px] leading-relaxed text-pruim-mid">
+        Aan de Harselaarseweg hebben we eigen zalen met bar, voor een kerstdiner met collega's, een verjaardag of een bijeenkomst. En een eigen kookstudio.
+      </p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-12 gap-4 md:gap-5">
+      <figure class="md:col-span-7">
+        <img src="assets/google-07.jpg" alt="Feestzaal met gedekte ronde tafels, kandelaars en een groot scherm met welkomstbericht" class="w-full aspect-[16/9] md:aspect-auto md:h-[440px] object-cover rounded-[1.25rem]">
+      </figure>
+      <figure class="md:col-span-5">
+        <img src="assets/google-05.jpg" alt="Zaal met houten bar, statafels en ronde tafels met kaarsen" class="w-full aspect-[4/3] md:aspect-auto md:h-[440px] object-cover object-[35%_center] boog">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Klantverhalen -->
+<section class="bg-pruim text-white py-20 md:py-28 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <h2 class="kop font-extrabold text-[38px] md:text-[52px] leading-[1] tracking-[-0.03em] max-w-2xl">Wat klanten na hun feest zeiden.</h2>
+    <div class="mt-14 grid md:grid-cols-12 gap-x-10 gap-y-12">
+      <figure class="md:col-span-7">
+        <blockquote class="kop font-bold text-[30px] md:text-[44px] leading-[1.08] tracking-[-0.02em] text-[#F7A8CC]">“De Elstar Catering is een no-nonsense partij en dat past bij ons!”</blockquote>
+        <figcaption class="mt-5 text-white/70 text-[16px]">Michel Smink, Smink-bedrijven Nijkerk, over een feestweekend voor relaties en personeel</figcaption>
+      </figure>
+      <figure class="md:col-span-5 md:pt-4">
+        <blockquote class="kop font-bold text-[26px] md:text-[30px] leading-[1.12]">“Het was net een sprookje!”</blockquote>
+        <figcaption class="mt-4 text-white/70 text-[16px]">Diederik en Lizette van der Zande, over hun bruiloft</figcaption>
+      </figure>
+      <figure class="md:col-span-4 border-t border-white/15 pt-6">
+        <blockquote class="kop font-bold text-[22px] leading-snug">“We kijken echt terug op een fantastisch feest!”</blockquote>
+        <figcaption class="mt-3 text-white/65 text-[15px]">Wim Brouwer, 25-jarig huwelijksjubileum thuis</figcaption>
+      </figure>
+      <figure class="md:col-span-4 border-t border-white/15 pt-6">
+        <blockquote class="kop font-bold text-[22px] leading-snug">“De Elstar Catering maakt haar beloften meer dan waar!”</blockquote>
+        <figcaption class="mt-3 text-white/65 text-[15px]">Directie Bouwbedrijf Van Middendorp</figcaption>
+      </figure>
+      <figure class="md:col-span-4 border-t border-white/15 pt-6">
+        <blockquote class="kop font-bold text-[22px] leading-snug">“We hebben onbezorgd van ons jubileumfeestje genoten!”</blockquote>
+        <figcaption class="mt-3 text-white/65 text-[15px]">Bouwmachines Midden Nederland, 10-jarig jubileum</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Snackbar & lunchroom -->
+<section id="snackbar" class="py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="kop font-extrabold text-[38px] md:text-[52px] leading-[1] tracking-[-0.03em]">Of gewoon even een snelle hap.</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-pruim-mid">
+        In ons pand aan de Harselaarseweg zitten ook onze lunchroom en snackbar. Eten om mee te nemen of lekker hier aan tafel.
+      </p>
+      <div class="relative mt-9">
+        <img src="assets/google-03.jpg" alt="Het pand van De Elstar aan de Harselaarseweg in Barneveld, met lunchroom en snackbar" class="w-full aspect-[16/10] object-cover rounded-[1.25rem]">
+        <img src="assets/google-08.jpg" alt="Bakje verse patat" class="absolute -bottom-8 right-4 w-[30%] aspect-[3/4] object-cover rounded-xl ring-[6px] ring-bloes">
+      </div>
+      <div class="mt-16">
+        <h3 class="kop font-bold text-[22px]">Openingstijden</h3>
+        <table class="mt-3 w-full max-w-sm text-[16px] tabular-nums">
+          <tbody class="divide-y divide-pruim/10">
+            <tr><td class="py-2">Maandag tot en met vrijdag</td><td class="py-2 text-right font-semibold">08:30 tot 18:00</td></tr>
+            <tr><td class="py-2">Zaterdag</td><td class="py-2 text-right font-semibold">08:30 tot 17:00</td></tr>
+            <tr><td class="py-2">Zondag</td><td class="py-2 text-right text-pruim-mid">Gesloten</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="lg:col-span-7">
+      <p class="flex items-baseline gap-3">
+        <span class="kop font-extrabold text-[64px] leading-none text-magenta">4</span>
+        <span class="text-[17px] text-pruim-mid">sterren uit 200 reviews op Google</span>
+      </p>
+      <div class="mt-8 columns-1 md:columns-2 gap-5 [&>figure]:break-inside-avoid [&>figure]:mb-5">
+        <figure class="bg-white rounded-2xl p-6 shadow-[0_8px_30px_-18px_rgba(42,20,33,.35)]">
+          <p class="text-magenta text-[15px] tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</p>
+          <blockquote class="mt-3 text-[16.5px] leading-relaxed">“Prima cafetaria om eten te bestellen om mee te nemen of daar te nuttigen. Gezellig druk. Ook met werk hier geweest voor kerst diner.”</blockquote>
+          <figcaption class="mt-4 text-[14.5px] font-semibold">Eddy Laseur</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl p-6 shadow-[0_8px_30px_-18px_rgba(42,20,33,.35)]">
+          <p class="text-magenta text-[15px] tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</p>
+          <blockquote class="mt-3 text-[16.5px] leading-relaxed">“Even een snelle hap. Patat vonden wij erg lekker. Je kan er prima zitten, vlot en netjes geholpen!”</blockquote>
+          <figcaption class="mt-4 text-[14.5px] font-semibold">M. L.</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl p-6 shadow-[0_8px_30px_-18px_rgba(42,20,33,.35)]">
+          <p class="text-magenta text-[15px] tracking-[2px]" aria-label="4 van 5 sterren">★★★★<span class="text-pruim/20">★</span></p>
+          <blockquote class="mt-3 text-[16.5px] leading-relaxed">“Ik heb de snackbar bezocht en dat was prima eten. Leuke dame die ons hielp aan de balie, beetje grappen en grollen maakt het gewoon leuk.”</blockquote>
+          <figcaption class="mt-4 text-[14.5px] font-semibold">michel eijlander</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl p-6 shadow-[0_8px_30px_-18px_rgba(42,20,33,.35)]">
+          <p class="text-magenta text-[15px] tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</p>
+          <blockquote class="mt-3 text-[16.5px] leading-relaxed">“Lekker gegeten met mijn kids en manlief❤... lieve personeel ook!! Bedankt namens familie kaplan”</blockquote>
+          <figcaption class="mt-4 text-[14.5px] font-semibold">Ilknur Kaplan</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl p-6 shadow-[0_8px_30px_-18px_rgba(42,20,33,.35)]">
+          <p class="text-magenta text-[15px] tracking-[2px]" aria-label="5 van 5 sterren">★★★★★</p>
+          <blockquote class="mt-3 text-[16.5px] leading-relaxed">“Erg gezellig en klantvriendelijkheid. Goed eten.”</blockquote>
+          <figcaption class="mt-4 text-[14.5px] font-semibold">Sjaak vermeulen</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-magenta text-white py-20 md:py-28 pb-28 md:pb-28">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="kop font-extrabold text-[44px] md:text-[64px] leading-[0.98] tracking-[-0.035em]">Vertel wat je wilt vieren.</h2>
+      <p class="mt-6 text-[18px] leading-relaxed text-white/90 max-w-[30rem]">
+        Bel even, mail of vul het aanvraagformulier in. Dan denken we met je mee en maken we een plan.
+      </p>
+      <a href="tel:+31342421006" class="knop mt-9 inline-flex items-center gap-3 rounded-full bg-white text-magenta hover:bg-magenta-soft font-semibold text-[18px] px-7 py-4">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 0342 421 006
+      </a>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-8 text-[16.5px]">
+        <div>
+          <dt class="font-semibold text-white/70 text-[14.5px]">Adres</dt>
+          <dd class="mt-1.5 leading-relaxed">Harselaarseweg 59<br>3771 MA Barneveld<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Harselaarseweg+59+3771+MA+Barneveld" class="underline underline-offset-4 hover:text-magenta-soft">Route plannen</a></dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-white/70 text-[14.5px]">E-mail</dt>
+          <dd class="mt-1.5"><a href="mailto:info@elstarcatering.nl" class="underline underline-offset-4 hover:text-magenta-soft">info@elstarcatering.nl</a></dd>
+          <dt class="font-semibold text-white/70 text-[14.5px] mt-6">Open</dt>
+          <dd class="mt-1.5 leading-relaxed tabular-nums">Ma tot vr 08:30 tot 18:00<br>Za 08:30 tot 17:00<br>Zondag gesloten</dd>
+        </div>
+      </dl>
+    </div>
+    <form class="lg:col-span-6 bg-white text-pruim rounded-[1.5rem] p-6 md:p-9 shadow-[0_30px_60px_-30px_rgba(42,20,33,.6)]" action="mailto:info@elstarcatering.nl" method="post" enctype="text/plain">
+      <h3 class="kop font-bold text-[24px]">Feest aanvragen</h3>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block"><span class="text-[14.5px] font-semibold">Naam</span>
+          <input required name="naam" autocomplete="name" class="mt-1.5 w-full rounded-xl border border-pruim/15 bg-bloes px-4 py-3 focus:border-magenta"></label>
+        <label class="block"><span class="text-[14.5px] font-semibold">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-xl border border-pruim/15 bg-bloes px-4 py-3 focus:border-magenta"></label>
+        <label class="block sm:col-span-2"><span class="text-[14.5px] font-semibold">E-mail</span>
+          <input required name="email" type="email" autocomplete="email" class="mt-1.5 w-full rounded-xl border border-pruim/15 bg-bloes px-4 py-3 focus:border-magenta"></label>
+        <label class="block"><span class="text-[14.5px] font-semibold">Wat vier je?</span>
+          <select name="gelegenheid" class="mt-1.5 w-full rounded-xl border border-pruim/15 bg-bloes px-4 py-3 focus:border-magenta">
+            <option>Bedrijfsevent</option><option>Bruiloft</option><option>Jubileum</option><option>Buurtfeest</option><option>Familiefeest</option><option>Iets anders</option>
+          </select></label>
+        <label class="block"><span class="text-[14.5px] font-semibold">Aantal gasten</span>
+          <input name="gasten" inputmode="numeric" class="mt-1.5 w-full rounded-xl border border-pruim/15 bg-bloes px-4 py-3 focus:border-magenta"></label>
+        <label class="block sm:col-span-2"><span class="text-[14.5px] font-semibold">Vertel er iets over</span>
+          <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-xl border border-pruim/15 bg-bloes px-4 py-3 focus:border-magenta" placeholder="Datum, locatie, wensen"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-6 w-full rounded-full bg-pruim hover:bg-pruim-deep text-white font-semibold text-[17px] px-6 py-4">Aanvraag versturen</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-pruim-deep text-white/70 text-[14.5px] pb-24 md:pb-0">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-10 flex flex-col md:flex-row gap-4 md:items-center justify-between">
+    <p><span class="kop font-bold text-white">De Elstar Catering</span>, Harselaarseweg 59, <span class="whitespace-nowrap">3771 MA</span> Barneveld</p>
+    <p><a href="tel:+31342421006" class="hover:text-white">0342 421 006</a> <span class="mx-2 text-white/30">|</span> <a href="mailto:info@elstarcatering.nl" class="hover:text-white">info@elstarcatering.nl</a></p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-bloes/95 backdrop-blur border-t border-pruim/10 grid grid-cols-[1fr_auto] gap-2">
+  <a href="tel:+31342421006" class="knop flex items-center justify-center gap-2 rounded-full bg-magenta text-white font-semibold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 0342 421 006
+  </a>
+  <a href="mailto:info@elstarcatering.nl" class="flex items-center justify-center rounded-full border-2 border-pruim/15 px-5 font-semibold">Mail</a>
+</div>
+
+</body>
+</html>
