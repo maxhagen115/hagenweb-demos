@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catering Ede | Vers belegde broodjes, lunch, borrelplanken en high tea</title>
+<meta name="description" content="Catering Ede maakt vers belegde broodjes, lunchpakketten, borrelplanken, high tea en catering op bestelling. Bezorgd in en rond Ede. Bel 06 41827114.">
+<meta property="og:title" content="Catering Ede">
+<meta property="og:description" content="Vers belegd, waar u maar wilt. Broodjes, lunch, borrelplanken en high tea uit Ede.">
+<meta property="og:image" content="assets/site-05.jpg">
+<link rel="icon" href="assets/site-10.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  document.documentElement.classList.add('js');
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          munt: { licht: '#EAF4EE', DEFAULT: '#6CBF9B' },
+          groen: { DEFAULT: '#1F7A55', donker: '#17603F' },
+          antraciet: '#2E3130',
+          korst: '#B9773B',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; color: #2E3130; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: "Bricolage Grotesque", system-ui, sans-serif; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 3px solid #6CBF9B; outline-offset: 3px; border-radius: 6px; }
+
+  /* Logo: monogram uitgesneden uit het originele logo */
+  .monogram { width: 34px; height: 47px; background: url("assets/site-10.jpg") no-repeat; background-size: 57px auto; background-position: -8.7px -5.3px; mix-blend-mode: multiply; }
+
+  /* Boog met dubbele lijn, naar de binnenlijn in het CE-logo */
+  .boog { border-radius: 999px 999px 28px 28px; }
+  .boog-lijn { border: 2px solid #6CBF9B; border-radius: 999px 999px 40px 40px; padding: 12px; }
+
+  .knop { transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-1px); }
+  .knop:active { transform: translateY(1px); }
+
+  .foto { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .tegel:hover .foto { transform: scale(1.04); }
+
+  /* Eén laadmoment in de hero, alleen als JS draait */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js .hero-tekst > * { animation: op .7s cubic-bezier(.2,.7,.2,1) both; }
+    html.js .hero-tekst > *:nth-child(2) { animation-delay: .06s; }
+    html.js .hero-tekst > *:nth-child(3) { animation-delay: .12s; }
+    html.js .hero-tekst > *:nth-child(4) { animation-delay: .18s; }
+    html.js .hero-beeld { animation: beeld 1s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes op { from { transform: translateY(14px); opacity: .01; } }
+    @keyframes beeld { from { transform: translateY(24px) scale(.98); opacity: .01; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-antraciet text-white/80 text-[13px] text-center px-4 py-2">
+  Demo voor Catering-ede, gemaakt door <a href="https://hagenweb.nl" class="text-white underline underline-offset-2 hover:text-munt">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-antraciet/10">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 h-[72px] flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3" aria-label="Catering Ede, naar boven">
+      <span class="monogram shrink-0" aria-hidden="true"></span>
+      <span class="font-kop font-extrabold text-[19px] tracking-tight leading-none">Catering Ede</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#assortiment" class="hover:text-groen">Assortiment</a>
+      <a href="#leverancier" class="hover:text-groen">Voor bedrijven</a>
+      <a href="#bezorgen" class="hover:text-groen">Bezorgen</a>
+      <a href="#contact" class="hover:text-groen">Contact</a>
+    </nav>
+    <a href="tel:+31641827114" class="knop inline-flex items-center gap-2 rounded-full bg-groen hover:bg-groen-donker text-white font-semibold text-[15px] px-4 sm:px-5 py-2.5">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">06 41827114</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 pt-8 pb-14 lg:pt-12 lg:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="hero-tekst lg:col-span-7">
+      <p class="font-medium text-groen text-[15px] mb-4">Catering in Ede</p>
+      <h1 class="font-kop font-extrabold text-[44px] leading-[1.02] sm:text-6xl lg:text-[80px] tracking-[-0.03em]">Vers belegd,<br class="hidden lg:block"> waar u maar wilt.</h1>
+      <p class="mt-6 text-lg leading-relaxed text-antraciet/80 max-w-[30rem]">Broodjes, lunchpakketten, borrelplanken en high tea. Pas gemaakt als u bestelt en bezorgd wanneer het u uitkomt. Apart verpakken? Geen probleem.</p>
+      <div>
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a href="tel:+31641827114" class="knop inline-flex items-center gap-3 rounded-full bg-groen hover:bg-groen-donker text-white font-semibold text-lg px-7 py-4 shadow-[0_10px_24px_-10px_rgba(31,122,85,.7)]">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Bel 06 41827114
+          </a>
+          <a href="mailto:nunziella@catering-ede.nl" class="font-semibold underline decoration-munt decoration-2 underline-offset-[6px] hover:text-groen">Of mail uw wensen</a>
+        </div>
+        <a href="#reviews" class="mt-8 inline-flex items-center gap-3 group">
+          <span class="flex text-munt" aria-hidden="true">
+            <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+          </span>
+          <span class="text-[15px]"><strong class="font-semibold">4,9</strong> <span class="text-antraciet/70 group-hover:text-antraciet">uit 34 Google-reviews</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-beeld lg:col-span-5 flex justify-center lg:justify-end">
+      <div class="boog-lijn w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[440px]">
+        <div class="boog overflow-hidden aspect-[4/5] bg-munt-licht">
+          <img src="assets/site-05.jpg" alt="Stokbroodjes belegd met eiersalade, roomkaas met bieslook en mozzarella" class="w-full h-full object-cover object-[50%_60%]" width="1536" height="2048">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Assortiment -->
+<section id="assortiment" class="bg-munt-licht py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="max-w-2xl">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.025em] leading-[1.05]">Wat mag het zijn?</h2>
+      <p class="mt-4 text-lg text-antraciet/80 leading-relaxed">Van een snelle lunch op kantoor tot een high tea voor een verjaardag. Alles wordt klaargemaakt op bestelling, met oog voor detail en rekening met allergieën en dieetwensen.</p>
+    </div>
+
+    <!-- Broodjes: de hoofdzaak -->
+    <article class="mt-12 grid md:grid-cols-12 gap-0 bg-white rounded-[28px] overflow-hidden">
+      <div class="md:col-span-7 aspect-[4/3] md:aspect-auto md:min-h-[420px] overflow-hidden">
+        <img src="assets/site-06.png" alt="Een mand vol verse broodjes: witte kaiserbroodjes en meergranen" class="w-full h-full object-cover">
+      </div>
+      <div class="md:col-span-5 p-8 lg:p-12 flex flex-col justify-center">
+        <h3 class="font-kop font-bold text-3xl tracking-tight">Belegde broodjes</h3>
+        <p class="mt-4 leading-relaxed text-antraciet/80">Het begint bij goed brood. Knapperige broodjes, zachte bolletjes of gesneden brood voor een sandwich, allemaal van zorgvuldig gekozen ingrediënten. Daarop komt royaal beleg, dagelijks vers gesmeerd.</p>
+        <p class="mt-3 leading-relaxed text-antraciet/80">Iets weglaten of juist toevoegen? Zeg het gerust, dan maken we het zo.</p>
+        <a href="tel:+31641827114" class="mt-6 self-start font-semibold text-groen underline decoration-2 underline-offset-[6px] hover:text-groen-donker">Bestel broodjes: 06 41827114</a>
+      </div>
+    </article>
+
+    <!-- De rest: onregelmatig raster -->
+    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-5">
+
+      <article class="tegel lg:col-span-5 bg-white rounded-[28px] overflow-hidden flex flex-col">
+        <div class="aspect-[5/4] overflow-hidden"><img src="assets/site-03.jpg" alt="Ronde borrelplank met kaas, worst, olijven, druiven en crackers" class="foto w-full h-full object-cover"></div>
+        <div class="p-7">
+          <h3 class="font-kop font-bold text-2xl tracking-tight">Borrelplanken</h3>
+          <p class="mt-2 text-antraciet/80 leading-relaxed">Kaas, worst, olijven, fruit en wat knapperigs erbij. Voor de vrijdagmiddagborrel of een feestje thuis.</p>
+        </div>
+      </article>
+
+      <article class="tegel lg:col-span-7 bg-white rounded-[28px] overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] overflow-hidden"><img src="assets/google-07.jpg" alt="Gedekte tafel met etagères vol scones, sandwiches, gebakjes en quiche" class="foto w-full h-full object-cover"></div>
+        <div class="p-7">
+          <h3 class="font-kop font-bold text-2xl tracking-tight">High tea</h3>
+          <p class="mt-2 text-antraciet/80 leading-relaxed">Hartig en zoet, van sandwiches en quiche tot scones en petitfours. Thuis bezorgd, en makkelijk aan te passen aan de wensen van iedereen aan tafel.</p>
+        </div>
+      </article>
+
+      <article class="tegel lg:col-span-3 bg-white rounded-[28px] overflow-hidden flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/site-02.jpg" alt="Belegde broodjes met kaas, komkommer, ham en tuinkers" class="foto w-full h-full object-cover"></div>
+        <div class="p-7">
+          <h3 class="font-kop font-bold text-2xl tracking-tight">Lunchpakketten</h3>
+          <p class="mt-2 text-antraciet/80 leading-relaxed">Een dag op pad of een volle werkdag? Wij stellen uw lunchpakket samen en bezorgen het in overleg op het tijdstip dat u kiest.</p>
+        </div>
+      </article>
+
+      <article class="tegel lg:col-span-3 bg-white rounded-[28px] overflow-hidden flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/site-01.jpg" alt="Schalen met wraps, sandwiches en stokbrood, met fruit op de achtergrond" class="foto w-full h-full object-cover"></div>
+        <div class="p-7">
+          <h3 class="font-kop font-bold text-2xl tracking-tight">Catering op maat</h3>
+          <p class="mt-2 text-antraciet/80 leading-relaxed">Een diner thuis, een bedrijfsevent of een groot feest. Van stamppot tot stoofvlees, van pastasalade tot curry: we luisteren eerst naar uw wensen.</p>
+        </div>
+      </article>
+
+      <article class="tegel lg:col-span-3 bg-white rounded-[28px] overflow-hidden flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/google-01.png" alt="Doos met gebakjes, cupcakes en taartjes met meringue" class="foto w-full h-full object-cover"></div>
+        <div class="p-7">
+          <h3 class="font-kop font-bold text-2xl tracking-tight">Traktaties</h3>
+          <p class="mt-2 text-antraciet/80 leading-relaxed">Saucijzenbroodjes, taart of bonbons. Iets te vieren op het werk? Wij zorgen dat iedereen meegeniet, ook met allergieën.</p>
+        </div>
+      </article>
+      <article class="tegel lg:col-span-3 bg-white rounded-[28px] overflow-hidden flex flex-col">
+        <div class="aspect-[4/3] overflow-hidden"><img src="assets/google-03.jpg" alt="Croissant met ham en kaas op een houten plank" class="foto w-full h-full object-cover object-[50%_8%]"></div>
+        <div class="p-7">
+          <h3 class="font-kop font-bold text-2xl tracking-tight">Ontbijtservice</h3>
+          <p class="mt-2 text-antraciet/80 leading-relaxed">De dag goed beginnen, voor uzelf of als verrassing voor een ander. Vraag gerust wat er mogelijk is.</p>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- Voor bedrijven -->
+<section id="leverancier" class="py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-10">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.025em] leading-[1.05]">Elke dag lunch op kantoor, zonder gedoe.</h2>
+      <p class="mt-5 text-lg text-antraciet/80 leading-relaxed">Vele bedrijven zijn u al voorgegaan en laten hun lunch door Catering Ede verzorgen. U plant ruim vooruit of belt op het laatste moment, en wij zorgen dat het er staat.</p>
+      <div class="mt-8 rounded-[24px] overflow-hidden aspect-[4/3] lg:aspect-[5/4]">
+        <img src="assets/site-08.jpg" alt="Salade met sla, rauwe ham, mozzarella, olijven en zongedroogde tomaat" class="w-full h-full object-cover">
+      </div>
+    </div>
+    <div class="lg:col-span-7 lg:pl-10">
+      <dl class="divide-y divide-antraciet/10 border-y border-antraciet/10">
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-kop font-bold text-xl">Snel besteld</dt>
+          <dd class="text-antraciet/80 leading-relaxed">Via mail, telefoon of WhatsApp. Met de handige bestellijst kiezen u en uw collega's in een paar minuten.</dd>
+        </div>
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-kop font-bold text-xl">Ook op korte termijn</dt>
+          <dd class="text-antraciet/80 leading-relaxed">Vandaag nog nodig? We streven naar een levertijd van 45 tot 60 minuten.</dd>
+        </div>
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-kop font-bold text-xl">Op uw tijdstip</dt>
+          <dd class="text-antraciet/80 leading-relaxed">Bezorging op afspraak kan vaak op het moment dat u kiest.</dd>
+        </div>
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-kop font-bold text-xl">Eén factuur</dt>
+          <dd class="text-antraciet/80 leading-relaxed">Liever per week of per maand een factuur dan betalen bij aflevering? Dat kan.</dd>
+        </div>
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-kop font-bold text-xl">Iets extra's</dt>
+          <dd class="text-antraciet/80 leading-relaxed">Vaste klanten krijgen regelmatig extra korting of gratis producten.</dd>
+        </div>
+        <div class="py-6 grid sm:grid-cols-[13rem_1fr] gap-1 sm:gap-6">
+          <dt class="font-kop font-bold text-xl">Uw wensen tellen</dt>
+          <dd class="text-antraciet/80 leading-relaxed">U wordt altijd vriendelijk te woord gestaan en persoonlijke wensen gaan altijd mee in de bestelling.</dd>
+        </div>
+      </dl>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="mailto:nunziella@catering-ede.nl?subject=Vaste%20leverancier" class="knop inline-flex items-center rounded-full bg-groen hover:bg-groen-donker text-white font-semibold px-6 py-3.5">Maak vrijblijvend een afspraak</a>
+        <a href="https://wa.me/31641827114" class="font-semibold underline decoration-munt decoration-2 underline-offset-[6px] hover:text-groen">Of stuur een WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bezorgen -->
+<section id="bezorgen" class="pb-20 lg:pb-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="rounded-[32px] border-2 border-munt p-3">
+      <div class="rounded-[22px] bg-antraciet text-white px-7 py-10 lg:px-14 lg:py-14 grid lg:grid-cols-3 gap-10">
+        <div>
+          <h2 class="font-kop font-extrabold text-3xl sm:text-4xl tracking-[-0.02em] leading-[1.1]">Zo komt het bij u.</h2>
+          <p class="mt-4 text-white/75 leading-relaxed">Bestellingen en leveringen buiten openingstijden kunnen op afspraak.</p>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-lg text-munt">Bezorgkosten</h3>
+          <ul class="mt-4 space-y-3 text-[17px]">
+            <li class="flex justify-between gap-4 border-b border-white/15 pb-3"><span>Binnen Ede <span class="text-white/60 text-sm">(vanaf € 30)</span></span><span class="font-semibold tabular-nums">€ 3,00</span></li>
+            <li class="flex justify-between gap-4 border-b border-white/15 pb-3"><span>Buiten Ede <span class="text-white/60 text-sm">(tot 12 km)</span></span><span class="font-semibold tabular-nums">€ 6,25</span></li>
+            <li class="flex justify-between gap-4"><span>Verder dan 12 km</span><span class="font-semibold">op aanvraag</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-kop font-bold text-lg text-munt">Openingstijden</h3>
+          <ul class="mt-4 space-y-3 text-[17px]">
+            <li class="flex justify-between gap-4 border-b border-white/15 pb-3"><span>Ma t/m vr</span><span class="font-semibold tabular-nums whitespace-nowrap">09:00 tot 14:00</span></li>
+            <li class="flex justify-between gap-4 border-b border-white/15 pb-3"><span>Za en zo</span><span class="font-semibold">gesloten</span></li>
+          </ul>
+          <p class="mt-4 text-white/75 text-[15px] leading-relaxed">Kerstsluiting: van 24 december 2026 tot en met 3 januari 2027.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="bg-munt-licht py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.025em] leading-[1.05] max-w-xl">Wat klanten ervan vonden.</h2>
+      <p class="text-[15px]"><strong class="font-kop text-3xl font-extrabold">4,9</strong> <span class="text-antraciet/70">gemiddeld uit 34 reviews op Google</span></p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-12 gap-5 items-start">
+      <figure class="lg:col-span-7 bg-white rounded-[28px] p-8 lg:p-12">
+        <blockquote class="font-kop font-semibold text-2xl lg:text-[30px] leading-[1.25] tracking-[-0.01em]">"High tea besteld als verassing voor een verjaardag, echt een aanrader! Alles was vers, smaakte heerlijk en er was meer dan genoeg. Het kon gemakkelijk aangepast worden op de wensen van iedereen. Ik ga hier zeker vaker wat bestellen! :)"</blockquote>
+        <figcaption class="mt-6 font-semibold">Esmé <span class="font-normal text-antraciet/60">via Google, 5 sterren</span></figcaption>
+      </figure>
+
+      <div class="lg:col-span-5 grid gap-5">
+        <figure class="bg-white rounded-[28px] p-7">
+          <blockquote class="leading-relaxed">"Goede broodjes tegen de juiste prijs. Alles wordt vers gemaakt waardoor je soms even moet wachten. Maar hierdoor lekker vers brood. …"</blockquote>
+          <figcaption class="mt-4 font-semibold text-[15px]">Giovanni B. <span class="font-normal text-antraciet/60">via Google, 5 sterren</span></figcaption>
+        </figure>
+        <figure class="bg-white rounded-[28px] p-7">
+          <blockquote class="leading-relaxed">"We zijn heel tevreden over de samenwerking met Nunziella van Made Delicious! We kijken terug op een geslaagde kookworkshop en een heerlijk buffet. Haar flexibiliteit hebben we als erg prettig ervaren. Onze wensen waren haar uitgangspunt, het klopt helemaal wat daarover op de website staat."</blockquote>
+          <figcaption class="mt-4 font-semibold text-[15px]">Meet Inn <span class="font-normal text-antraciet/60">via Google, 5 sterren</span></figcaption>
+        </figure>
+      </div>
+
+      <figure class="lg:col-span-6 bg-white rounded-[28px] p-7 lg:p-9">
+        <blockquote class="leading-relaxed">"Vandaag een uitstekende High Tea gehad, mijn dochter en ik zijn samen 100 jaar geworden dit jaar. Natuurlijk hebben wij dit gevierd! Een heerlijk high tea besteld bij Catering Ede. Alles heerlijk vers en smaakt uitstekend, wat een keuze. …"</blockquote>
+        <figcaption class="mt-4 font-semibold text-[15px]">Anja van Genderen <span class="font-normal text-antraciet/60">via Google, 5 sterren</span></figcaption>
+      </figure>
+      <figure class="lg:col-span-6 bg-white rounded-[28px] p-7 lg:p-9">
+        <blockquote class="leading-relaxed">"Wij zochten een cateraar die een vegetarisch diner kon verzorgen op locatie. Uiteindelijk kwamen we uit bij Made-Delicious, en dat was een goede keus! De samenwerking met Nunziella liep erg prettig. Onze wensen waren geen probleem en ze heeft een enorm gevarieerd menu neergezet. …"</blockquote>
+        <figcaption class="mt-4 font-semibold text-[15px]">Hanna V. <span class="font-normal text-antraciet/60">via Google, 5 sterren</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Over -->
+<section id="over" class="py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <div class="boog-lijn max-w-[400px] mx-auto lg:mx-0">
+        <div class="boog overflow-hidden aspect-[4/5]">
+          <img src="assets/google-06.jpg" alt="Salade met avocado, gerookte zalm, Parmezaanse kaas en zonnebloempitten" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.025em] leading-[1.05]">Gemaakt als u bestelt. Niets gaat verloren.</h2>
+      <p class="mt-5 text-lg text-antraciet/80 leading-relaxed max-w-2xl">Catering Ede begon in 2017 vanuit liefde voor het vak en voor goed eten. Er wordt pas gebakken en bereid als u bestelt. Zo krijgt u het verst mogelijke product, en blijft er niets over om weg te gooien.</p>
+      <blockquote class="mt-8 border-l-4 border-munt pl-6 max-w-2xl">
+        <p class="font-kop font-semibold text-xl lg:text-2xl leading-snug">"Catering Ede levert kwalitatief hoogstaande etenswaren, afgestemd op de wensen van de klant, ontzorgt de klant en voorkomt onnodige voedselverspilling."</p>
+        <footer class="mt-3 text-antraciet/60 text-[15px]">Onze missie</footer>
+      </blockquote>
+      <p class="mt-8 text-antraciet/80 leading-relaxed max-w-2xl">Met elke bestelling steunt u een lokale ondernemer. Samen maken we de wereld een stukje beter.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-munt-licht py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.025em] leading-[1.05]">Vertel ons wat u nodig heeft.</h2>
+      <p class="mt-5 text-lg text-antraciet/80 leading-relaxed">Laat weten wat u zoekt, voor hoeveel personen en wanneer. U krijgt zo snel mogelijk een vrijblijvende offerte, afgestemd op uw gelegenheid en smaak.</p>
+
+      <ul class="mt-10 space-y-5 text-lg">
+        <li>
+          <span class="block text-sm text-antraciet/60">Bellen</span>
+          <a href="tel:+31641827114" class="font-kop font-bold text-2xl hover:text-groen">06 41827114</a>
+        </li>
+        <li>
+          <span class="block text-sm text-antraciet/60">Mailen</span>
+          <a href="mailto:nunziella@catering-ede.nl" class="font-semibold hover:text-groen break-all">nunziella@catering-ede.nl</a>
+        </li>
+        <li>
+          <span class="block text-sm text-antraciet/60">WhatsApp</span>
+          <a href="https://wa.me/31641827114" class="font-semibold hover:text-groen">Stuur een bericht</a>
+        </li>
+        <li>
+          <span class="block text-sm text-antraciet/60">Adres</span>
+          <span class="font-semibold">Bonnetstraat 7, 6718 XN Ede</span>
+        </li>
+      </ul>
+    </div>
+
+    <form class="lg:col-span-7 bg-white rounded-[28px] p-7 lg:p-10 grid sm:grid-cols-2 gap-5" action="mailto:nunziella@catering-ede.nl" method="post" enctype="text/plain">
+      <label class="block sm:col-span-2">
+        <span class="text-[15px] font-semibold">Naam</span>
+        <input name="naam" type="text" autocomplete="name" class="mt-2 w-full rounded-xl border border-antraciet/20 bg-white px-4 py-3 focus:border-groen focus:outline-none focus:ring-2 focus:ring-munt/60">
+      </label>
+      <label class="block">
+        <span class="text-[15px] font-semibold">E-mail</span>
+        <input name="email" type="email" required autocomplete="email" class="mt-2 w-full rounded-xl border border-antraciet/20 bg-white px-4 py-3 focus:border-groen focus:outline-none focus:ring-2 focus:ring-munt/60">
+      </label>
+      <label class="block">
+        <span class="text-[15px] font-semibold">Telefoon <span class="font-normal text-antraciet/50">(mag ook leeg)</span></span>
+        <input name="telefoon" type="tel" autocomplete="tel" class="mt-2 w-full rounded-xl border border-antraciet/20 bg-white px-4 py-3 focus:border-groen focus:outline-none focus:ring-2 focus:ring-munt/60">
+      </label>
+      <label class="block sm:col-span-2">
+        <span class="text-[15px] font-semibold">Uw wensen</span>
+        <textarea name="bericht" rows="5" placeholder="Bijvoorbeeld: high tea voor 8 personen, vrijdag 12 december, één persoon glutenvrij." class="mt-2 w-full rounded-xl border border-antraciet/20 bg-white px-4 py-3 placeholder:text-antraciet/40 focus:border-groen focus:outline-none focus:ring-2 focus:ring-munt/60"></textarea>
+      </label>
+      <div class="sm:col-span-2 flex flex-wrap items-center gap-4">
+        <button type="submit" class="knop rounded-full bg-groen hover:bg-groen-donker text-white font-semibold px-7 py-3.5">Verstuur uw aanvraag</button>
+        <p class="text-sm text-antraciet/60">U krijgt een vrijblijvende offerte.</p>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-white pt-14 pb-28 md:pb-14">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[15px]">
+    <div class="flex items-center gap-3">
+      <span class="monogram" aria-hidden="true"></span>
+      <div>
+        <p class="font-kop font-extrabold text-lg leading-tight">Catering Ede</p>
+        <p class="text-antraciet/60">Oog voor detail, klaargemaakt op bestelling.</p>
+      </div>
+    </div>
+    <p class="text-antraciet/60">Bonnetstraat 7, 6718 XN Ede, <a href="tel:+31641827114" class="hover:text-groen">06 41827114</a></p>
+    <p class="text-antraciet/60">© 2026 Catering Ede</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-antraciet/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31641827114" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-groen text-white font-semibold py-3.5">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel om te bestellen
+  </a>
+  <a href="https://wa.me/31641827114" class="knop inline-flex items-center justify-center rounded-full border-2 border-groen text-groen font-semibold px-5">WhatsApp</a>
+</div>
+
+</body>
+</html>

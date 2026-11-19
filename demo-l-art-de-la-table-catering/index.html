@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’ Art de la table catering | Maatwerk in catering uit Voorthuizen</title>
+<meta name="description" content="Catering en evenementen op maat vanuit Voorthuizen, sinds 1998. Bel 06 51834222 of mail info@artdelatable.nl.">
+<link rel="icon" href="assets/site-01.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          kool: '#3c3d3f',
+          koold: '#2f3032',
+          krijt: '#f3f2ec',
+          olijf: '#7a7a2c',
+          olijfd: '#5d5d1f',
+          linnen: '#e9e9e1',
+          inkt: '#2a2b2c',
+        },
+        fontFamily: {
+          kop: ['Gloock', 'Georgia', 'serif'],
+          tekst: ['Karla', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Karla, system-ui, sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .krijtvlak {
+    background-color: #3c3d3f;
+    background-image:
+      radial-gradient(ellipse at 70% 40%, rgba(255,255,255,.06), transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .linnenvlak {
+    background-color: #e9e9e1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .2 0 0 0 0 .1 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .knop { transition: background-color .2s, transform .2s; }
+  #vaste-bel { transition: transform .3s, opacity .3s; }
+  #vaste-bel.weg { transform: translateY(140%); opacity: 0; pointer-events: none; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid #a3a34a; outline-offset: 3px;
+  }
+  /* Eén moment beweging: het bord wordt gedekt bij laden. Alleen als JS draait. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .dek { animation: dek .9s cubic-bezier(.2,.7,.2,1) both; }
+    .js .dek-2 { animation-delay: .15s; }
+    .js .dek-3 { animation-delay: .3s; }
+    @keyframes dek { from { opacity: 0; transform: translateY(14px) scale(.97); } to { opacity: 1; transform: none; } }
+  }
+  .menu-lijn { background-image: radial-gradient(circle, #7a7a2c 1px, transparent 1.5px); background-size: 8px 4px; background-repeat: repeat-x; background-position: 0 70%; }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-linnen text-inkt antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-krijt focus:px-4 focus:py-2">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-olijfd text-krijt text-[13px] text-center px-4 py-2">
+  Demo voor L’ Art de la table catering, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 hover:text-white">Hagenweb</a>
+</div>
+
+<header class="krijtvlak text-krijt">
+  <nav class="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between py-4" aria-label="Hoofdmenu">
+    <a href="#" class="flex items-center gap-3">
+      <img src="assets/site-01.png" alt="" class="w-10 h-10">
+      <span class="font-kop text-lg leading-none">L’ Art de la table</span>
+    </a>
+    <div class="flex items-center gap-7 text-[15px]">
+      <a href="#maatwerk" class="hidden md:inline text-krijt/80 hover:text-white">Over ons</a>
+      <a href="#menu" class="hidden md:inline text-krijt/80 hover:text-white">Werkwijze</a>
+      <a href="#contact" class="hidden md:inline text-krijt/80 hover:text-white">Contact</a>
+      <a href="tel:+31651834222" class="knop hidden sm:inline-flex items-center gap-2 border border-krijt/40 rounded-full px-4 py-2 hover:bg-krijt hover:text-kool">06 51834222</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-6 pb-16 md:pt-12 md:pb-24 grid md:grid-cols-[1.05fr_1fr] gap-10 md:gap-6 items-center">
+    <div>
+      <p class="text-krijt/70 text-[15px] tracking-wide mb-5">Catering en evenementen in Voorthuizen</p>
+      <h1 class="font-kop text-[3.2rem] leading-[1.02] sm:text-7xl lg:text-[5.6rem] tracking-[-0.01em]">Uw feest, onze tafel.</h1>
+      <p class="mt-6 text-lg sm:text-xl text-krijt/85 max-w-md leading-relaxed">Al sinds 1998 verzorgen wij catering op maat. Wij dekken de tafel, u geniet van uw dag. Beste kwaliteit, voor een betaalbare prijs.</p>
+      <div class="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a id="hero-bel" href="tel:+31651834222" class="knop inline-flex items-center gap-3 bg-olijf hover:bg-[#8c8c34] text-white text-lg font-semibold rounded-full pl-5 pr-7 py-4 shadow-[0_10px_30px_-10px_rgba(122,122,44,.8)]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>
+          Bel 06 51834222
+        </a>
+        <a href="mailto:info@artdelatable.nl" class="text-krijt underline decoration-krijt/40 underline-offset-[6px] hover:decoration-krijt">of mail uw wensen</a>
+      </div>
+    </div>
+
+    <!-- Gedekte tafel: bord met logo, vork en mes -->
+    <div class="relative flex items-center justify-center" aria-hidden="true">
+      <div class="flex items-center gap-4 sm:gap-7">
+        <svg class="dek dek-2 h-56 sm:h-80 md:h-[22rem] w-auto text-krijt/75" viewBox="0 0 40 300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 6v58M20 6v58M32 6v58"/>
+          <path d="M8 64c0 14 5 22 12 24 7-2 12-10 12-24"/>
+          <path d="M17 88h6l2 196a5 5 0 01-10 0z"/>
+        </svg>
+        <div class="dek relative w-[15rem] h-[15rem] sm:w-[22rem] sm:h-[22rem] md:w-[24rem] md:h-[24rem] rounded-full border-2 border-krijt/70 grid place-items-center shadow-[0_30px_60px_-20px_rgba(0,0,0,.55)] bg-[#46474a]/60">
+          <div class="absolute inset-[9%] rounded-full border border-krijt/35"></div>
+          <div class="absolute inset-[13%] rounded-full border border-dashed border-krijt/20"></div>
+          <img src="assets/site-01.png" alt="" class="relative w-[62%] max-w-[201px] h-auto drop-shadow-[0_8px_18px_rgba(0,0,0,.45)]">
+        </div>
+        <svg class="dek dek-3 h-56 sm:h-80 md:h-[22rem] w-auto text-krijt/75" viewBox="0 0 40 300" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 6c-12 10-14 60-12 110h12z"/>
+          <path d="M14 116h8v168a4 4 0 01-8 0z"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+</header>
+
+<main id="inhoud">
+
+  <!-- Maatwerk -->
+  <section id="maatwerk" class="linnenvlak">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid md:grid-cols-12 gap-10">
+      <div class="md:col-span-5">
+        <h2 class="font-kop text-4xl sm:text-5xl leading-[1.05] text-kool">Maatwerk, sinds 1998.</h2>
+        <div class="mt-6 w-16 h-[3px] bg-olijf"></div>
+        <p class="mt-8 text-[17px] leading-relaxed text-inkt/75 max-w-xs">Catering en evenementen vanuit Voorthuizen, in de gemeente Barneveld.</p>
+        <a href="tel:+31651834222" class="mt-4 inline-block font-kop text-2xl text-olijfd hover:text-kool">06 51834222</a>
+      </div>
+      <div class="md:col-span-7 md:pt-2 space-y-5 text-lg leading-[1.75] max-w-[62ch]">
+        <p class="text-xl sm:text-2xl leading-snug text-kool font-medium">Een onvergetelijke dag begint aan tafel. Daarom maken wij geen standaardpakket, maar catering die past bij u, uw gasten en uw gelegenheid.</p>
+        <p>L’ Art de la table verzorgt al sinds 1998 catering en evenementen vanuit Voorthuizen. We volgen onze passie voor goed eten en een mooi gedekte tafel. Dat merkt u: u krijgt uitsluitend de beste kwaliteit, voor een prijs die betaalbaar blijft.</p>
+        <p>Benieuwd wat wij voor uw dag kunnen betekenen? Bel of mail ons, dan denken we graag met u mee.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menukaart: werkwijze -->
+  <section id="menu" class="bg-kool krijtvlak text-krijt">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-20 items-center">
+      <div>
+        <h2 class="font-kop text-4xl sm:text-5xl leading-[1.05]">Het menu van uw dag.</h2>
+        <p class="mt-6 text-lg text-krijt/80 leading-relaxed max-w-md">Maatwerk klinkt groot, maar de weg ernaartoe is eenvoudig. In drie gangen van eerste telefoontje naar een gedekte tafel.</p>
+        <a href="tel:+31651834222" class="knop mt-8 inline-flex items-center gap-3 bg-olijf hover:bg-[#8c8c34] text-white font-semibold rounded-full px-6 py-3.5">Bel voor de eerste gang</a>
+      </div>
+
+      <div class="relative bg-krijt text-inkt rounded-[2px] px-7 sm:px-12 py-12 shadow-[0_40px_80px_-30px_rgba(0,0,0,.7)] md:rotate-[1.2deg]">
+        <div class="absolute inset-3 border border-olijf/40 pointer-events-none"></div>
+        <img src="assets/site-01.png" alt="" class="w-16 h-16 mx-auto">
+        <p class="font-kop text-3xl text-center mt-4 text-kool">Menu</p>
+        <p class="text-center text-sm text-olijfd italic mt-1">voor uw gelegenheid</p>
+
+        <ol class="mt-10 space-y-9">
+          <li>
+            <div class="flex items-baseline gap-3">
+              <h3 class="font-kop text-xl sm:text-2xl text-kool whitespace-nowrap">Voorgerecht</h3>
+              <span class="menu-lijn flex-1 h-4" aria-hidden="true"></span>
+              <span class="text-olijfd font-semibold">uw wensen</span>
+            </div>
+            <p class="mt-2 text-[16px] leading-relaxed text-inkt/80">U belt of mailt ons en vertelt over uw dag: de gelegenheid, uw gasten, wat u lekker vindt en waar het moet gebeuren.</p>
+          </li>
+          <li>
+            <div class="flex items-baseline gap-3">
+              <h3 class="font-kop text-xl sm:text-2xl text-kool whitespace-nowrap">Hoofdgerecht</h3>
+              <span class="menu-lijn flex-1 h-4" aria-hidden="true"></span>
+              <span class="text-olijfd font-semibold">op maat</span>
+            </div>
+            <p class="mt-2 text-[16px] leading-relaxed text-inkt/80">Wij stellen catering samen die precies bij u past. Geen standaardpakket, wel de beste kwaliteit voor een betaalbare prijs.</p>
+          </li>
+          <li>
+            <div class="flex items-baseline gap-3">
+              <h3 class="font-kop text-xl sm:text-2xl text-kool whitespace-nowrap">Dessert</h3>
+              <span class="menu-lijn flex-1 h-4" aria-hidden="true"></span>
+              <span class="text-olijfd font-semibold">uw dag</span>
+            </div>
+            <p class="mt-2 text-[16px] leading-relaxed text-inkt/80">Op de dag zelf verzorgen wij de tafel. U hoeft alleen nog te genieten, samen met uw gasten.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="linnenvlak">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <h2 class="font-kop text-4xl sm:text-5xl leading-[1.05] text-kool">Vertel ons over uw dag.</h2>
+        <p class="mt-5 text-lg leading-relaxed max-w-md">Een telefoontje is vaak het snelst. Liever eerst op papier? Mail ons of vul het formulier in.</p>
+
+        <dl class="mt-10 space-y-6 text-[17px]">
+          <div>
+            <dt class="text-sm text-olijfd font-semibold">Mobiel</dt>
+            <dd><a href="tel:+31651834222" class="font-kop text-3xl text-kool hover:text-olijfd">06 51834222</a></dd>
+          </div>
+          <div>
+            <dt class="text-sm text-olijfd font-semibold">Vast</dt>
+            <dd><a href="tel:+31342443605" class="text-xl text-kool hover:text-olijfd">0342 443605</a></dd>
+          </div>
+          <div>
+            <dt class="text-sm text-olijfd font-semibold">E-mail</dt>
+            <dd><a href="mailto:info@artdelatable.nl" class="text-xl text-kool underline decoration-olijf/50 underline-offset-4 hover:text-olijfd">info@artdelatable.nl</a></dd>
+          </div>
+          <div>
+            <dt class="text-sm text-olijfd font-semibold">Adres</dt>
+            <dd class="leading-relaxed">
+              <a href="https://www.google.com/maps/search/?api=1&query=Verbindingsweg+36+3781+LS+Voorthuizen" target="_blank" rel="noopener" class="hover:text-olijfd">Verbindingsweg 36<br>3781 LS Voorthuizen</a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-sm text-olijfd font-semibold">Bereikbaar</dt>
+            <dd>Elke dag, maandag tot en met zondag</dd>
+          </div>
+        </dl>
+      </div>
+
+      <form class="lg:col-span-7 bg-krijt p-6 sm:p-10 rounded-[4px] shadow-[0_30px_60px_-35px_rgba(60,61,63,.6)] space-y-5"
+            action="mailto:info@artdelatable.nl" method="post" enctype="text/plain">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold text-kool">Naam</span>
+            <input name="Naam" required autocomplete="name" class="mt-1.5 w-full bg-white border border-kool/20 rounded-[3px] px-4 py-3 focus:border-olijf">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-kool">Telefoon</span>
+            <input name="Telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full bg-white border border-kool/20 rounded-[3px] px-4 py-3 focus:border-olijf">
+          </label>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold text-kool">Soort gelegenheid</span>
+            <input name="Gelegenheid" placeholder="Bijvoorbeeld een verjaardag of bedrijfsfeest" class="mt-1.5 w-full bg-white border border-kool/20 rounded-[3px] px-4 py-3 focus:border-olijf placeholder:text-inkt/40">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-kool">Datum</span>
+            <input name="Datum" type="date" class="mt-1.5 w-full bg-white border border-kool/20 rounded-[3px] px-4 py-3 focus:border-olijf">
+          </label>
+        </div>
+        <label class="block">
+          <span class="text-sm font-semibold text-kool">Uw wensen</span>
+          <textarea name="Wensen" rows="5" placeholder="Aantal gasten, locatie, wat u in gedachten heeft" class="mt-1.5 w-full bg-white border border-kool/20 rounded-[3px] px-4 py-3 focus:border-olijf placeholder:text-inkt/40"></textarea>
+        </label>
+        <button type="submit" class="knop w-full sm:w-auto bg-olijf hover:bg-olijfd text-white font-semibold rounded-full px-8 py-4">Verstuur aanvraag</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="krijtvlak text-krijt/80 pb-24 sm:pb-0">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12 flex flex-col sm:flex-row gap-6 sm:items-center justify-between">
+    <div class="flex items-center gap-4">
+      <img src="assets/site-01.png" alt="Logo L’ Art de la table, maatwerk in catering sinds 1998" class="w-16 h-16">
+      <div>
+        <p class="font-kop text-xl text-krijt">L’ Art de la table catering</p>
+        <p class="text-sm">Verbindingsweg 36, 3781 LS Voorthuizen</p>
+      </div>
+    </div>
+    <p class="text-sm">© L’ Art de la table catering</p>
+  </div>
+</footer>
+
+<!-- Mobiele belknop -->
+<a id="vaste-bel" href="tel:+31651834222" class="knop sm:hidden fixed bottom-4 inset-x-4 z-40 flex items-center justify-center gap-3 bg-olijf hover:bg-olijfd text-white font-semibold rounded-full py-4 shadow-[0_12px_30px_-8px_rgba(40,40,10,.7)]">
+  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>
+  Bel 06 51834222
+</a>
+
+<script>
+  (function () {
+    var hero = document.getElementById('hero-bel'), vast = document.getElementById('vaste-bel');
+    if (!('IntersectionObserver' in window) || !hero || !vast) return;
+    new IntersectionObserver(function (e) { vast.classList.toggle('weg', e[0].isIntersecting); }).observe(hero);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vallei Catering, catering uit Ede voor de hele Vallei</title>
+<meta name="description" content="Belegde broodjes, lunches, buffetten, borrelplanken en warme maaltijden. Vers bereid in onze eigen keuken in Ede en bezorgd in de hele Vallei-regio.">
+<link rel="icon" href="assets/logo-oud.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          blauw: '#1E3157',
+          tomaat: '#C8382B',
+          tomaatdonker: '#A72C21',
+          linnen: '#F1F3F7',
+          inkt: '#1A2233',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Source Sans 3", system-ui, sans-serif; color: #1A2233; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Het theedoek-motief uit hun eigen foto's */
+  .theedoek {
+    background-color: #fff;
+    background-image:
+      linear-gradient(90deg, rgba(30,49,87,.55) 50%, transparent 50%),
+      linear-gradient(rgba(30,49,87,.55) 50%, transparent 50%);
+    background-size: 28px 28px;
+  }
+  .theedoek-fijn { background-size: 14px 14px; }
+  .theedoek-wit {
+    background-image:
+      linear-gradient(90deg, rgba(255,255,255,.045) 50%, transparent 50%),
+      linear-gradient(rgba(255,255,255,.045) 50%, transparent 50%);
+    background-size: 36px 36px;
+  }
+
+  .ovaal { border-radius: 50%; }
+
+  .knop { transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease; }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #C8382B; outline-offset: 3px;
+  }
+
+  .menu-regel { border-bottom: 2px dotted rgba(30,49,87,.25); }
+
+  /* Eén moment van beweging: de hero bij het laden, alleen als JS draait */
+  .js .intro-in { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+  .js .intro-foto { opacity: 0; transform: scale(.96) rotate(-2deg); transition: opacity .9s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
+  .js.klaar .intro-in, .js.klaar .intro-foto { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .intro-in, .js .intro-foto { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+<script>
+  document.documentElement.classList.add('js');
+  window.addEventListener('DOMContentLoaded', function () {
+    requestAnimationFrame(function () { document.documentElement.classList.add('klaar'); });
+  });
+</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white pb-20 md:pb-0">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<!-- Demobalk -->
+<div class="bg-inkt text-white/80 text-[13px] leading-snug text-center px-4 py-2">
+  Demo voor Vallei catering / Pakhuis catering - Maaltijden, Catering - Regio Ede Veenendaal, gemaakt door
+  <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-white/70">Hagenweb</a>
+</div>
+
+<!-- Navigatie -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-blauw/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-6">
+    <a href="#top" class="shrink-0" aria-label="Vallei Catering, naar boven">
+      <img src="assets/logo-oud.svg" alt="Vallei Catering" class="h-11 md:h-14 w-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-blauw">
+      <a href="#aanbod" class="hover:text-tomaat transition-colors">Aanbod</a>
+      <a href="#voor-wie" class="hover:text-tomaat transition-colors">Zakelijk en particulier</a>
+      <a href="#werkwijze" class="hover:text-tomaat transition-colors">Zo werkt het</a>
+      <a href="#foodbook" class="hover:text-tomaat transition-colors">Foodbook</a>
+      <a href="#contact" class="hover:text-tomaat transition-colors">Contact</a>
+    </nav>
+    <a href="tel:0318529498" class="knop inline-flex items-center gap-2 rounded-full bg-blauw text-white px-4 md:px-5 py-2.5 text-[15px] font-semibold hover:bg-inkt">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">0318 529 498</span><span class="sm:hidden">Bellen</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-8 pb-14 md:pt-16 md:pb-24 grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-6 items-center">
+    <div class="relative z-10">
+      <p class="intro-in text-[15px] md:text-base font-semibold text-tomaat">Catering uit Ede, voor de hele Vallei</p>
+      <h1 class="intro-in mt-3 font-extrabold text-blauw text-[3.1rem] leading-[.95] md:text-[5.2rem] tracking-[-0.03em]" style="transition-delay:.08s">
+        Wij koken.<br>U schuift aan.
+      </h1>
+      <p class="intro-in mt-6 text-lg md:text-xl leading-relaxed text-inkt/80 max-w-[30rem]" style="transition-delay:.16s">
+        Broodjes, lunches, buffetten en warme maaltijden, vers bereid in onze eigen keuken. Wij bezorgen, bouwen op en halen weer op.
+      </p>
+      <div class="intro-in mt-8 flex flex-wrap items-center gap-x-6 gap-y-4" style="transition-delay:.24s">
+        <a href="tel:0318529498" class="knop inline-flex items-center gap-3 rounded-full bg-tomaat text-white pl-6 pr-7 py-4 text-lg font-bold shadow-[0_10px_24px_-10px_rgba(200,56,43,.7)] hover:bg-tomaatdonker">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0318 529 498
+        </a>
+        <a href="#contact" class="font-semibold text-blauw underline decoration-2 decoration-tomaat/60 underline-offset-[6px] hover:decoration-tomaat">
+          Of vraag een offerte aan
+        </a>
+      </div>
+    </div>
+
+    <div class="intro-foto relative mr-4 mb-5 md:mr-8 md:mb-8">
+      <div class="theedoek absolute ovaal inset-0 translate-x-4 translate-y-5 md:translate-x-8 md:translate-y-8" aria-hidden="true"></div>
+      <img src="assets/google-04.jpg" alt="Houten plank met gesneden varkenshaas, kroketten, saté, groenten, brood en sausjes"
+           class="relative ovaal w-full aspect-[5/4] object-cover object-[55%_50%] border-[6px] border-white">
+    </div>
+  </div>
+</section>
+
+<!-- Aanbod als menukaart -->
+<section id="aanbod" class="bg-linnen">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 class="font-extrabold text-blauw text-4xl md:text-5xl tracking-tight leading-[1.02]">Van een broodje bij de vergadering tot een buffet voor het hele bedrijf</h2>
+      <p class="mt-5 text-lg leading-relaxed text-inkt/80 max-w-xl">
+        Alles komt uit onze eigen keuken, met verse producten en waar het kan uit de streek. Eenvoudig of luxe, voor een kleine vergadering of een groot evenement.
+      </p>
+
+      <ul class="mt-10 text-blauw">
+        <li class="menu-regel py-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+          <span class="kop text-xl md:text-2xl font-bold">Belegde broodjes</span>
+          <span class="text-inkt/70 sm:text-right">van eenvoudig tot luxe</span>
+        </li>
+        <li class="menu-regel py-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+          <span class="kop text-xl md:text-2xl font-bold">Lunches</span>
+          <span class="text-inkt/70 sm:text-right">voor vergaderingen en trainingen</span>
+        </li>
+        <li class="menu-regel py-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+          <span class="kop text-xl md:text-2xl font-bold">Uitgebreide buffetten</span>
+          <span class="text-inkt/70 sm:text-right">koud, warm of feestelijk</span>
+        </li>
+        <li class="menu-regel py-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+          <span class="kop text-xl md:text-2xl font-bold">Borrelplanken</span>
+          <span class="text-inkt/70 sm:text-right">voor de vrijdagmiddag of een feest</span>
+        </li>
+        <li class="menu-regel py-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+          <span class="kop text-xl md:text-2xl font-bold">Salades</span>
+          <span class="text-inkt/70 sm:text-right">als bijgerecht of als lunch</span>
+        </li>
+        <li class="py-4 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+          <span class="kop text-xl md:text-2xl font-bold">Warme maaltijden</span>
+          <span class="text-inkt/70 sm:text-right">dagelijks, ook voor diners</span>
+        </li>
+      </ul>
+
+      <p class="mt-8 flex gap-3 items-start text-inkt/80 max-w-xl">
+        <span class="mt-1.5 inline-block w-3 h-3 rounded-sm bg-tomaat shrink-0" aria-hidden="true"></span>
+        Allergieën, dieetwensen of geloofsvoorkeuren? Geef het door, wij houden er rekening mee.
+      </p>
+    </div>
+
+    <figure class="lg:col-span-6 relative self-center">
+      <img src="assets/google-05.jpg" alt="Plank met gegrilde spiesjes, kippenpootjes, paté, worst, verse groenten en brood"
+           class="w-full aspect-[4/5] md:aspect-[4/4.4] object-cover object-[60%_50%] rounded-t-[999px] rounded-b-2xl">
+      <div class="theedoek theedoek-fijn absolute -bottom-4 left-8 right-8 h-4 rounded-b-md" aria-hidden="true"></div>
+    </figure>
+  </div>
+</section>
+
+<!-- Voor wie -->
+<section id="voor-wie" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <h2 class="font-extrabold text-blauw text-4xl md:text-5xl tracking-tight leading-[1.02] max-w-3xl">Op kantoor, in de fabriek of gewoon thuis</h2>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-14 md:gap-10 lg:gap-16">
+      <article>
+        <img src="assets/google-02.jpg" alt="Lunchbuffet met broodjes, croissants, beleg en salades op een kantoor"
+             class="w-full aspect-[4/3] object-cover object-[40%_60%] rounded-2xl">
+        <h3 class="mt-7 text-2xl md:text-3xl font-bold text-blauw">Voor bedrijven</h3>
+        <p class="mt-3 text-lg leading-relaxed text-inkt/80 max-w-lg">
+          Zakelijke lunches, vergaderingen, trainingen en evenementen. Wij leveren aan kantoren, fabrieken, scholen,
+          zorginstellingen, evenementenlocaties en tijdelijke werkplekken. U bepaalt per dag wat u nodig heeft, wij regelen de rest.
+        </p>
+      </article>
+      <article class="md:mt-24">
+        <img src="assets/google-07.jpg" alt="Buffettafel met witte bolletjes, warme kroketten en schalen vers fruit"
+             class="w-full aspect-[4/3] object-cover rounded-2xl">
+        <h3 class="mt-7 text-2xl md:text-3xl font-bold text-blauw">Voor particulieren</h3>
+        <p class="mt-3 text-lg leading-relaxed text-inkt/80 max-w-lg">
+          Een verjaardag, een borrel, een diner of een feest thuis. Klein of groot, wij stellen het samen met u
+          samen en zorgen dat het eten op tijd en netjes klaarstaat.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-blauw text-white relative overflow-hidden">
+  <div class="theedoek-wit absolute inset-0" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4">
+        <h2 class="font-extrabold text-4xl md:text-5xl tracking-tight leading-[1.02]">Geen keuzemenu. Gewoon iemand aan de lijn.</h2>
+        <p class="mt-5 text-lg leading-relaxed text-white/80">
+          Bij ons krijgt u direct een medewerker te spreken die u verder helpt. Met eigen productie en eigen bezorging dekken we de hele Vallei-regio.
+        </p>
+      </div>
+      <div class="lg:col-span-8 lg:pl-10"><ol class="grid gap-px bg-white/15 rounded-2xl overflow-hidden">
+        <li class="bg-blauw p-7 md:p-9 flex gap-6">
+          <span class="kop text-5xl md:text-6xl font-extrabold text-tomaat leading-none w-12 shrink-0">1</span>
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold">U belt of mailt</h3>
+            <p class="mt-2 text-white/80 leading-relaxed">Vertel waar het voor is, voor hoeveel mensen en wanneer. Twijfelt u nog? Wij denken mee.</p>
+          </div>
+        </li>
+        <li class="bg-blauw p-7 md:p-9 flex gap-6">
+          <span class="kop text-5xl md:text-6xl font-extrabold text-tomaat leading-none w-12 shrink-0">2</span>
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold">Samen stellen we het menu samen</h3>
+            <p class="mt-2 text-white/80 leading-relaxed">Maatwerk, met oog voor allergieën en dieetwensen. Ons Foodbook helpt bij het kiezen.</p>
+          </div>
+        </li>
+        <li class="bg-blauw p-7 md:p-9 flex gap-6">
+          <span class="kop text-5xl md:text-6xl font-extrabold text-tomaat leading-none w-12 shrink-0">3</span>
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold">Wij bezorgen, bouwen op en halen op</h3>
+            <p class="mt-2 text-white/80 leading-relaxed">U hoeft alleen nog aan te schuiven. Na afloop halen we alles weer bij u op.</p>
+          </div>
+        </li>
+      </ol></div>
+    </div>
+  </div>
+</section>
+
+<!-- Klanten -->
+<section class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <p class="text-lg text-inkt/70 max-w-2xl">Al jarenlang verzorgen wij catering in de Vallei-regio. Onder andere voor:</p>
+    <ul class="mt-6 grid grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 kop font-bold text-blauw text-lg sm:text-2xl md:text-3xl tracking-tight leading-tight">
+      <li class="menu-regel py-4 md:py-5">Marin</li>
+      <li class="menu-regel py-4 md:py-5">Rheinmetall</li>
+      <li class="menu-regel py-4 md:py-5">ARBO opleidingen</li>
+      <li class="menu-regel py-4 md:py-5">Bochane</li>
+      <li class="menu-regel py-4 md:py-5">Eriks</li>
+      <li class="menu-regel py-4 md:py-5">Eurofins</li>
+      <li class="menu-regel py-4 md:py-5">Ziekenhuis Gelderse Vallei</li>
+      <li class="menu-regel py-4 md:py-5">Heijmans</li>
+      <li class="menu-regel py-4 md:py-5">Wageningen University &amp; Research</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Vers en duurzaam -->
+<section class="bg-linnen">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <div class="relative order-2 lg:order-1">
+      <img src="assets/google-03.jpg" alt="Borrelplank met brie, salami, olijven, amandelen, pita en crackers"
+           class="w-full aspect-square object-cover ovaal">
+      <div class="absolute -top-3 -left-3 md:-top-6 md:-left-6 w-24 h-24 md:w-32 md:h-32 theedoek theedoek-fijn rounded-full -z-0 border-4 border-linnen" aria-hidden="true"></div>
+    </div>
+    <div class="order-1 lg:order-2">
+      <h2 class="font-extrabold text-blauw text-4xl md:text-5xl tracking-tight leading-[1.02]">Vers gemaakt. En wat over is, gaat niet verloren.</h2>
+      <div class="mt-8 space-y-8 max-w-xl">
+        <div>
+          <h3 class="text-xl font-bold text-blauw">Ambacht in onze eigen keuken</h3>
+          <p class="mt-2 text-lg leading-relaxed text-inkt/80">We combineren gemak met ambacht. Onze gerechten maken we met aandacht, met verse en duurzame producten en zoveel mogelijk uit de streek.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-blauw">Restvoedsel wordt biodiesel</h3>
+          <p class="mt-2 text-lg leading-relaxed text-inkt/80">Al het restvoedsel uit onze keuken gaat in een swillcontainer van Re-Food. Die halen het op en maken er biodiesel van. Zo gooien we geen eten zomaar weg.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Foodbook + review -->
+<section id="foodbook" class="bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14 lg:gap-16 items-start">
+    <div class="lg:col-span-7 rounded-3xl bg-tomaat text-white p-8 md:p-12 relative overflow-hidden">
+      <div class="theedoek-wit absolute inset-0" aria-hidden="true"></div>
+      <div class="relative">
+        <h2 class="font-extrabold text-4xl md:text-5xl tracking-tight leading-[1.02]">Bekijk ons Foodbook</h2>
+        <p class="mt-5 text-lg leading-relaxed text-white/90 max-w-lg">
+          In onze folders vindt u het hele aanbod met prijzen, met of zonder btw. Er is een versie voor zakelijke en een voor particuliere klanten.
+          Hulp nodig bij het kiezen? Wij helpen u graag het menu samen te stellen.
+        </p>
+        <a href="mailto:info@valleicatering.nl?subject=Graag%20ontvang%20ik%20het%20Foodbook"
+           class="knop mt-8 inline-flex items-center gap-2 rounded-full bg-white text-tomaat px-6 py-3.5 font-bold hover:bg-linnen">
+          Foodbook aanvragen per mail
+        </a>
+      </div>
+    </div>
+
+    <figure class="lg:col-span-5 lg:pt-6">
+      <svg class="w-12 h-12 text-tomaat" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true"><path d="M8 34c0-9 4-16 13-20l2 4c-5 3-7 6-7 10h6v12H8zm20 0c0-9 4-16 13-20l2 4c-5 3-7 6-7 10h6v12H28z"/></svg>
+      <blockquote class="mt-4 kop text-2xl md:text-[2rem] font-bold leading-snug text-blauw tracking-tight">
+        "Echt oprecht, bizar goed eten voor mooie prijs. Geen Chinese troep, gewoon top ! Net restaurant gedeelte en schone toiletten."
+      </blockquote>
+      <figcaption class="mt-5 text-inkt/70">Menno Zelf, Google-review, 5 van 5 sterren</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-linnen">
+  <div class="theedoek h-3" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-5">
+      <h2 class="font-extrabold text-blauw text-4xl md:text-5xl tracking-tight leading-[1.02]">Waar mogen we voor koken?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-inkt/80">Bel ons of stuur een bericht. U krijgt meteen iemand van ons team aan de lijn.</p>
+
+      <a href="tel:0318529498" class="mt-8 kop block text-4xl md:text-5xl font-extrabold text-tomaat tracking-tight hover:text-tomaatdonker">0318 529 498</a>
+      <a href="mailto:info@valleicatering.nl" class="mt-2 inline-block text-lg font-semibold text-blauw underline decoration-2 decoration-tomaat/50 underline-offset-4 hover:decoration-tomaat">info@valleicatering.nl</a>
+
+      <div class="mt-10 grid sm:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-bold text-blauw">Keuken en kantoor</h3>
+          <p class="mt-2 text-inkt/80 leading-relaxed">Darwinstraat 9B<br>6718 XR Ede</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Darwinstraat+9B+6718+XR+Ede" class="mt-2 inline-block text-sm font-semibold text-blauw underline underline-offset-4">Route plannen</a>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-blauw">Openingstijden</h3>
+          <dl class="mt-2 text-inkt/80 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 tabular-nums">
+            <dt>ma t/m vr</dt><dd>08:00 tot 15:00</dd>
+            <dt>zaterdag</dt><dd>10:00 tot 12:00</dd>
+            <dt>zondag</dt><dd>gesloten</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <h3 class="text-lg font-bold text-blauw">Wij bezorgen onder andere in</h3>
+        <p class="mt-2 text-inkt/80 leading-relaxed">Ede, Bennekom, Veenendaal, Barneveld, Renswoude, Rhenen, Scherpenzeel, Wageningen en de Utrechtse Heuvelrug.</p>
+      </div>
+    </div>
+
+    <form class="lg:col-span-7 bg-white rounded-3xl p-7 md:p-10 shadow-[0_30px_60px_-30px_rgba(30,49,87,.35)]" action="mailto:info@valleicatering.nl" method="post" enctype="text/plain">
+      <h3 class="text-2xl font-bold text-blauw">Offerte aanvragen</h3>
+      <p class="mt-1 text-inkt/70">Vul in wat u al weet, de rest bespreken we samen.</p>
+      <div class="mt-7 grid sm:grid-cols-2 gap-5">
+        <label class="block">
+          <span class="text-sm font-semibold text-blauw">Naam</span>
+          <input name="naam" required autocomplete="name" class="mt-1.5 w-full rounded-xl border border-blauw/20 bg-linnen/60 px-4 py-3 focus:border-blauw focus:bg-white">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold text-blauw">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-xl border border-blauw/20 bg-linnen/60 px-4 py-3 focus:border-blauw focus:bg-white">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold text-blauw">E-mail</span>
+          <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border border-blauw/20 bg-linnen/60 px-4 py-3 focus:border-blauw focus:bg-white">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold text-blauw">Datum</span>
+          <input name="datum" type="date" class="mt-1.5 w-full rounded-xl border border-blauw/20 bg-linnen/60 px-4 py-3 focus:border-blauw focus:bg-white">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold text-blauw">Aantal personen</span>
+          <input name="personen" type="number" min="1" inputmode="numeric" class="mt-1.5 w-full rounded-xl border border-blauw/20 bg-linnen/60 px-4 py-3 focus:border-blauw focus:bg-white">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold text-blauw">Waar is het voor?</span>
+          <textarea name="bericht" rows="4" placeholder="Bijvoorbeeld een lunch voor een training, een buffet voor een jubileum of een borrel thuis" class="mt-1.5 w-full rounded-xl border border-blauw/20 bg-linnen/60 px-4 py-3 focus:border-blauw focus:bg-white placeholder:text-inkt/40"></textarea>
+        </label>
+      </div>
+      <button type="submit" class="knop mt-7 w-full sm:w-auto rounded-full bg-blauw text-white px-8 py-4 font-bold text-lg hover:bg-inkt">Aanvraag versturen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-blauw text-white/80">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div>
+      <p class="kop text-2xl font-extrabold text-white">Vallei Catering</p>
+      <p class="mt-1 text-sm">Voorheen Pakhuis catering. Catering uit Ede, sinds 1970.</p>
+    </div>
+    <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm">
+      <a href="tel:0318529498" class="hover:text-white">0318 529 498</a>
+      <a href="mailto:info@valleicatering.nl" class="hover:text-white">info@valleicatering.nl</a>
+      <span>Darwinstraat 9B, Ede</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-t border-blauw/10 p-3 flex gap-3">
+  <a href="tel:0318529498" class="knop flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-tomaat text-white py-3.5 font-bold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel ons
+  </a>
+  <a href="mailto:info@valleicatering.nl" class="knop inline-flex items-center justify-center rounded-full border-2 border-blauw text-blauw px-5 py-3 font-bold">Mail</a>
+</div>
+
+</body>
+</html>

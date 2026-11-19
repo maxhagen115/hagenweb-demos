@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catering Groep Nederland | Catering met lef en liefde</title>
+<meta name="description" content="Catering voor bruiloften, bedrijfsfeesten, barbecues en diners. Catering Groep Nederland kookt, serveert en denkt met u mee. Bel 0318 611 862.">
+<meta property="og:image" content="assets/web/site-11.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        linnen: '#EDEFE6',
+        schort: '#3F4D36',
+        schortdonker: '#2C3626',
+        inkt: '#1B2117',
+        saffraan: '#E9AE2F',
+        hout: '#C89B6D',
+      },
+      fontFamily: {
+        kop: ['"Bricolage Grotesque"', 'sans-serif'],
+        tekst: ['"Instrument Sans"', 'sans-serif'],
+      },
+    },
+  },
+};
+document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Instrument Sans", sans-serif; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 28px 28px; }
+  .boog-breed { border-radius: 50% 50% 22px 22px / 60% 60% 22px 22px; object-position: 45% 30%; }
+  @media (min-width: 640px) { .boog-breed { border-radius: 50% 50% 28px 28px / 38% 38% 28px 28px; object-position: 45% center; } }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  :focus-visible { outline: 3px solid #E9AE2F; outline-offset: 3px; }
+  .woordmerk .v { writing-mode: vertical-rl; transform: rotate(180deg); }
+  /* Animatie alleen als JS draait */
+  .js .hero-in { animation: in .9s cubic-bezier(.2,.7,.2,1) both; }
+  .js .hero-in.d2 { animation-delay: .12s; }
+  .js .hero-in.d3 { animation-delay: .24s; }
+  @keyframes in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .js .hero-in { animation: none; } html { scroll-behavior: auto; } }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-linnen text-inkt antialiased">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-saffraan focus:p-3">Naar de inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-inkt text-linnen/80 text-center text-[13px] py-2 px-4">
+  Demo voor Catering Groep Nederland, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-linnen hover:text-saffraan">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-linnen/90 backdrop-blur border-b border-schort/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 h-[72px] flex items-center justify-between gap-6">
+    <a href="#top" class="woordmerk flex items-stretch gap-1.5 font-kop font-extrabold leading-[.82] text-schort" aria-label="Catering Groep Nederland, naar boven">
+      <span class="text-[22px] tracking-tight">CATERING<br>GROEP</span>
+      <span class="v text-[8px] tracking-[.12em] font-bold bg-schort text-linnen px-[3px] py-[2px] text-center">NEDERLAND</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium" aria-label="Hoofdmenu">
+      <a href="#gelegenheden" class="hover:text-schort/70">Gelegenheden</a>
+      <a href="#setting" class="hover:text-schort/70">Tent en aankleding</a>
+      <a href="#reviews" class="hover:text-schort/70">Reviews</a>
+      <a href="#contact" class="hover:text-schort/70">Contact</a>
+    </nav>
+    <a href="tel:0318611862" class="knop inline-flex items-center gap-2 rounded-full bg-schort text-linnen px-4 py-2.5 text-[15px] font-semibold hover:bg-schortdonker">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">0318 611 862</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 pt-5 pb-14 lg:pt-16 lg:pb-24 grid lg:grid-cols-12 gap-6 lg:gap-12 items-center">
+    <div class="lg:col-span-5 relative z-10 order-2 lg:order-1">
+      <p class="hero-in font-medium text-schort/80 text-[15px] mb-3 lg:mb-5">Catering uit Veenendaal, voor heel Nederland</p>
+      <h1 class="hero-in d2 font-kop font-extrabold text-schort text-[44px] leading-[.95] sm:text-[68px] lg:text-[84px] tracking-[-.035em]">Met lef en liefde op tafel.</h1>
+      <p class="hero-in d3 mt-4 lg:mt-6 text-[17px] lg:text-lg leading-relaxed text-inkt/80 max-w-[30rem]">Bruiloft in de tuin, barbecue met het hele bedrijf of een diner in een volle zaal: wij koken, serveren en denken met u mee. U hoeft alleen te genieten.</p>
+      <div class="hero-in d3 mt-6 lg:mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+        <a href="tel:0318611862" class="knop inline-flex items-center gap-3 rounded-full bg-saffraan text-inkt px-7 py-4 text-lg font-semibold shadow-[0_10px_30px_-10px_rgba(167,113,10,.6)] hover:bg-[#f2bb42]">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 0318 611 862
+        </a>
+        <a href="mailto:info@cateringgroep.nl" class="font-semibold text-schort underline decoration-2 decoration-saffraan underline-offset-[6px] hover:decoration-schort">Of mail uw plannen</a>
+      </div>
+      <a href="#reviews" class="hero-in d3 mt-9 inline-flex items-center gap-3 text-[15px] text-inkt/75 hover:text-inkt">
+        <span class="flex text-saffraan" aria-hidden="true">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.25 4.1 1 5.8L10 14.9l-5.25 2.75 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.25 4.1 1 5.8L10 14.9l-5.25 2.75 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.25 4.1 1 5.8L10 14.9l-5.25 2.75 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.25 4.1 1 5.8L10 14.9l-5.25 2.75 1-5.8L1.5 7.7l5.9-.9z"/></svg><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.25 4.1 1 5.8L10 14.9l-5.25 2.75 1-5.8L1.5 7.7l5.9-.9z"/></svg>
+        </span>
+        <span><strong class="font-semibold text-inkt">4,9</strong> uit 64 Google-reviews</span>
+      </a>
+    </div>
+    <div class="lg:col-span-7 relative order-1 lg:order-2">
+      <div class="absolute -right-24 -top-10 w-[70%] aspect-square rounded-full bg-schort/[.07] hidden lg:block" aria-hidden="true"></div>
+      <img src="assets/web/site-11.jpg" alt="Bruidspaar proost lachend met een medewerker van Catering Groep Nederland in groen schort" class="boog-breed relative w-full h-[210px] sm:h-[460px] lg:h-[640px] object-cover object-[45%_center] shadow-[0_30px_60px_-30px_rgba(44,54,38,.55)]">
+    </div>
+  </div>
+</section>
+
+<!-- Gelegenheden -->
+<section id="gelegenheden" class="bg-schort text-linnen pt-20 pb-24 lg:pt-28 lg:pb-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="max-w-2xl">
+      <h2 class="font-kop font-extrabold text-[40px] sm:text-[52px] leading-[1] tracking-[-.03em]">Elk feest vraagt iets anders.</h2>
+      <p class="mt-5 text-lg text-linnen/75 leading-relaxed">Wij passen ons aan uw dag aan, niet andersom. Dit is waar we het vaakst voor gevraagd worden.</p>
+    </div>
+
+    <!-- Bruiloften -->
+    <article class="mt-16 lg:mt-20 grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+      <div class="lg:col-span-7 grid grid-cols-5 gap-3">
+        <img src="assets/web/site-09.jpg" alt="Medewerker in groen schort serveert hapjes aan gasten in een tuin" decoding="async" class="col-span-3 h-[260px] sm:h-[380px] w-full object-cover rounded-[22px]">
+        <img src="assets/web/google-07.jpg" alt="Lange gedekte tafel buiten met bloemen en wijnglazen" decoding="async" class="col-span-2 h-[260px] sm:h-[380px] w-full object-cover rounded-t-full rounded-b-[22px]">
+      </div>
+      <div class="lg:col-span-5 lg:pb-4">
+        <h3 class="font-kop font-bold text-3xl sm:text-4xl tracking-tight">Bruiloften</h3>
+        <p class="mt-4 text-linnen/80 leading-relaxed max-w-md">Van de toost na de ceremonie tot het diner aan lange tafels. Wij zorgen voor het eten, de bediening en een team dat vriendelijk en spontaan is, ook als het weer niet meewerkt.</p>
+      </div>
+    </article>
+
+    <!-- Bedrijf -->
+    <article class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+      <div class="lg:col-span-5 lg:order-1 order-2 lg:pb-4">
+        <h3 class="font-kop font-bold text-3xl sm:text-4xl tracking-tight">Bedrijfsfeesten en barbecues</h3>
+        <p class="mt-4 text-linnen/80 leading-relaxed max-w-md">Een bbq voor het team of een feest op meerdere vestigingen. Wij nemen het werk uit handen, van grill tot buffet, zodat u tijd heeft voor uw collega's.</p>
+      </div>
+      <div class="lg:col-span-7 lg:order-2 order-1 grid grid-cols-5 gap-3">
+        <img src="assets/web/site-01.jpg" alt="Volle zomerse borrel onder schaduwdoeken en lampionnen" decoding="async" class="col-span-3 h-[260px] sm:h-[380px] w-full object-cover rounded-[22px]">
+        <img src="assets/web/google-05.jpg" alt="Kok schept een buffet op in een feesttent" decoding="async" class="col-span-2 h-[260px] sm:h-[380px] w-full object-cover object-[60%_center] rounded-t-full rounded-b-[22px]">
+      </div>
+    </article>
+
+    <!-- Diners -->
+    <article class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+      <div class="lg:col-span-7 grid grid-cols-5 gap-3">
+        <img src="assets/web/site-06.jpg" alt="Bediening tijdens een diner met uitzicht op de Erasmusbrug bij avond" decoding="async" class="col-span-3 h-[260px] sm:h-[380px] w-full object-cover rounded-[22px]">
+        <img src="assets/web/site-03.jpg" alt="Serveerster zet borden op tafel bij een diner in een tent" decoding="async" class="col-span-2 h-[260px] sm:h-[380px] w-full object-cover object-[30%_center] rounded-t-full rounded-b-[22px]">
+      </div>
+      <div class="lg:col-span-5 lg:pb-4">
+        <h3 class="font-kop font-bold text-3xl sm:text-4xl tracking-tight">Diners en gala's</h3>
+        <p class="mt-4 text-linnen/80 leading-relaxed max-w-md">Een uitgeserveerd diner in een zaal, op een dakterras of in een tent. Rustig aan tafel, met bediening die weet wanneer ze er moet zijn.</p>
+      </div>
+    </article>
+
+    <!-- Buffet -->
+    <article class="mt-20 lg:mt-28 grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+      <div class="lg:col-span-5 lg:order-1 order-2 lg:pb-4">
+        <h3 class="font-kop font-bold text-3xl sm:text-4xl tracking-tight">Buffetten en hapjes</h3>
+        <p class="mt-4 text-linnen/80 leading-relaxed max-w-md">Vers opgemaakt in houten kratten en aardewerken schalen. Verzorgd, hygiënisch en zo mooi dat gasten er eerst een foto van maken.</p>
+      </div>
+      <div class="lg:col-span-7 lg:order-2 order-1 grid grid-cols-5 gap-3">
+        <img src="assets/web/google-02.jpg" alt="Buffet met vleeswaren, kaas, druiven en wraps op houten kratten" decoding="async" class="col-span-3 h-[260px] sm:h-[380px] w-full object-cover rounded-[22px]">
+        <img src="assets/web/google-06.jpg" alt="Salades en couscous in schalen naast een houten krat met de tekst Met lef en liefde" decoding="async" class="col-span-2 h-[260px] sm:h-[380px] w-full object-cover object-[55%_center] rounded-t-full rounded-b-[22px]">
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Quote band -->
+<section class="relative isolate">
+  <img src="assets/web/google-03.jpg" alt="Een volle zaal met ronde, gedekte tafels van bovenaf gezien" decoding="async" class="absolute inset-0 -z-10 w-full h-full object-cover">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-schortdonker/90 via-schortdonker/60 to-schortdonker/20"></div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 py-28 lg:py-40">
+    <figure class="max-w-2xl text-linnen">
+      <blockquote class="font-kop font-bold text-[34px] sm:text-[48px] leading-[1.05] tracking-[-.02em]">"Alles tot in de puntjes verzorgd en heerlijk gegeten."</blockquote>
+      <figcaption class="mt-6 text-linnen/80">Peter Van Pelt, op Google</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Setting -->
+<section id="setting" class="pt-20 pb-24 lg:pt-28 lg:pb-32">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
+      <h2 class="font-kop font-extrabold text-schort text-[40px] sm:text-[52px] leading-[1] tracking-[-.03em]">Ook de plek moet kloppen.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80">Lekker eten is de basis. Maar een feest is ook de tent waarin u zit, de tafels, de bloemen en het licht. Daar denken we net zo graag over mee.</p>
+      <figure class="mt-10 border-l-4 border-saffraan pl-5">
+        <blockquote class="leading-relaxed text-inkt/85">"Van te voren was er wat stress over het weer maar dat hebben ze echt super goed opgelost door snel tenten neer te zetten en weer af te breken."</blockquote>
+        <figcaption class="mt-3 text-sm font-semibold text-schort">Rosanne Diepeveen, over haar bruiloft</figcaption>
+      </figure>
+    </div>
+    <div class="lg:col-span-7 grid grid-cols-2 gap-3 sm:gap-4">
+      <img src="assets/web/google-08.jpg" alt="Transparante feesttent op een grasveld met gasten binnen" decoding="async" class="col-span-2 w-full h-[240px] sm:h-[400px] object-cover rounded-[22px]">
+      <img src="assets/web/google-04.jpg" alt="Tent aangekleed met ballonnen in blauw, groen en oranje en grote bloemstukken" decoding="async" class="w-full h-[220px] sm:h-[340px] object-cover rounded-[22px]">
+      <img src="assets/web/google-01.jpg" alt="Lounge in een tent met houten tafels, roze verlichting en bloemen" decoding="async" class="w-full h-[220px] sm:h-[340px] object-cover rounded-[22px]">
+      <img src="assets/web/site-04.jpg" alt="Lange gedekte tafel in een tent met blauwe ballonnen en bloemen" decoding="async" class="col-span-2 w-full h-[240px] sm:h-[360px] object-cover rounded-[22px]">
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="bg-[#E2E6D8] py-20 lg:py-28 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <div class="lg:col-span-5 order-2 lg:order-1">
+      <img src="assets/web/site-10.jpg" alt="Lachende kok in de keuken van Catering Groep Nederland" decoding="async" class="boog w-full max-w-[440px] mx-auto h-[480px] sm:h-[560px] object-cover object-top">
+    </div>
+    <div class="lg:col-span-7 order-1 lg:order-2">
+      <h2 class="font-kop font-extrabold text-schort text-[40px] sm:text-[52px] leading-[1] tracking-[-.03em]">Gezichten die u onthoudt.</h2>
+      <p class="mt-6 text-lg leading-relaxed text-inkt/80 max-w-xl">Gasten noemen ons team vaak bij naam in hun reviews. Dat zegt genoeg: wij sturen mensen die het naar hun zin hebben, op tijd zijn en meedenken met uw wensen. In de keuken en tussen uw gasten.</p>
+      <div class="mt-10 grid sm:grid-cols-2 gap-6 max-w-2xl">
+        <figure class="bg-linnen rounded-[18px] p-6">
+          <blockquote class="leading-relaxed">"CGN (topper Sjoerd) nam alles uit handen"</blockquote>
+          <figcaption class="mt-3 text-sm font-semibold text-schort">Emile Vermeulen</figcaption>
+        </figure>
+        <figure class="bg-linnen rounded-[18px] p-6">
+          <blockquote class="leading-relaxed">"Het personeel was super vriendelijk en lekker spontaan."</blockquote>
+          <figcaption class="mt-3 text-sm font-semibold text-schort">Rosanne Diepeveen</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+      <h2 class="font-kop font-extrabold text-schort text-[40px] sm:text-[52px] leading-[1] tracking-[-.03em] max-w-xl">Wat gasten en opdrachtgevers zeggen.</h2>
+      <p class="flex items-baseline gap-3"><span class="font-kop font-extrabold text-6xl text-schort tracking-tight">4,9</span><span class="text-inkt/75">gemiddeld uit 64 reviews op Google</span></p>
+    </div>
+    <div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-5 [&>figure]:mb-5">
+      <figure class="break-inside-avoid bg-white/70 rounded-[18px] p-7">
+        <p class="text-saffraan tracking-[.2em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-3 leading-relaxed">"Super verzorgd,  op tijd aanwezig,  hapjes zien er verzorgd en prachtig uit en smaken top. Hygiënisch en zeer goede communicatie. Meedenkend met je wensen."</blockquote>
+        <figcaption class="mt-4 font-semibold text-schort">Mariska Lantinga</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-schort text-linnen rounded-[18px] p-7">
+        <p class="text-saffraan tracking-[.2em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-3 leading-relaxed">"Catering groep Nederland onder leiding van Nadine heeft onze bruiloft echt top verzorgd. Van te voren was er wat stress over het weer maar dat hebben ze echt super goed opgelost door snel tenten neer te zetten en weer af te breken. Het eten was ook heerlijk. Het personeel was super vriendelijk en lekker spontaan. Echt…"</blockquote>
+        <figcaption class="mt-4 font-semibold text-saffraan">Rosanne Diepeveen</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white/70 rounded-[18px] p-7">
+        <p class="text-saffraan tracking-[.2em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-3 leading-relaxed">"Waanzinnig goede catering.  Alles tot in de puntjes verzorgd en heerlijk gegeten. Alleen maar complimenten gehad, al mijn gasten waren uiterst tevreden. Een échte aanrader!"</blockquote>
+        <figcaption class="mt-4 font-semibold text-schort">Peter Van Pelt</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white/70 rounded-[18px] p-7">
+        <p class="text-saffraan tracking-[.2em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-3 leading-relaxed">"Ik zocht voor de bbq van mijn werk een catering bedrijf die het 'werk' uit onze handen kon nemen. Door zelf niet het vlees te beheren, hadden wij meer tijd voor teambuilding. En dat was een schot in de roos! CGN (topper Sjoerd) nam alles uit handen en wist (met 36 graden volle zon) een hele mooie BBQ buffet neer te zet…"</blockquote>
+        <figcaption class="mt-4 font-semibold text-schort">Emile Vermeulen</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-white/70 rounded-[18px] p-7">
+        <p class="text-saffraan tracking-[.2em]" aria-label="5 van 5 sterren">★★★★★</p>
+        <blockquote class="mt-3 leading-relaxed">"Vorig jaar kwamen wij in contact met Catering Groep Nederland toen wij opzoek waren naar een passende cateraar. Zij hebben dat jaar op meerdere bedrijfslocaties binnen Nederland een volledige barbecue verzorgd voor ons, dit was top! Na het succes van deze barbecues hebben wij hen ook benadert om de catering te verzorg…"</blockquote>
+        <figcaption class="mt-4 font-semibold text-schort">Kim van Straalen</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-schort text-linnen pt-20 pb-28 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 class="font-kop font-extrabold text-[40px] sm:text-[52px] leading-[1] tracking-[-.03em]">Vertel ons over uw feest.</h2>
+      <p class="mt-5 text-lg text-linnen/80 leading-relaxed">Bel ons even, dan denken we direct mee over datum, aantal gasten en wat u voor ogen heeft.</p>
+      <a href="tel:0318611862" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-saffraan text-inkt px-7 py-4 text-lg font-semibold hover:bg-[#f2bb42]">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Bel 0318 611 862
+      </a>
+      <dl class="mt-12 grid sm:grid-cols-2 gap-8 text-[15px]">
+        <div>
+          <dt class="font-kop font-bold text-lg text-saffraan">E-mail</dt>
+          <dd class="mt-2"><a href="mailto:info@cateringgroep.nl" class="underline underline-offset-4 decoration-linnen/40 hover:decoration-saffraan">info@cateringgroep.nl</a></dd>
+          <dt class="mt-6 font-kop font-bold text-lg text-saffraan">Adres</dt>
+          <dd class="mt-2 leading-relaxed">Wiltonstraat 61<br>3905 KW Veenendaal</dd>
+        </div>
+        <div>
+          <dt class="font-kop font-bold text-lg text-saffraan">Bereikbaar</dt>
+          <dd class="mt-2">
+            <table class="w-full tabular-nums">
+              <tbody class="[&_td]:py-0.5">
+                <tr><td>Maandag</td><td class="text-right">09:00 tot 17:30</td></tr>
+                <tr><td>Dinsdag</td><td class="text-right">09:00 tot 17:30</td></tr>
+                <tr><td>Woensdag</td><td class="text-right">09:00 tot 17:30</td></tr>
+                <tr><td>Donderdag</td><td class="text-right">09:00 tot 17:30</td></tr>
+                <tr><td>Vrijdag</td><td class="text-right">09:00 tot 17:30</td></tr>
+                <tr class="text-linnen/60"><td>Zaterdag</td><td class="text-right">gesloten</td></tr>
+                <tr class="text-linnen/60"><td>Zondag</td><td class="text-right">gesloten</td></tr>
+              </tbody>
+            </table>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div class="lg:col-span-7">
+      <form action="mailto:info@cateringgroep.nl" method="post" enctype="text/plain" class="bg-linnen text-inkt rounded-[26px] p-6 sm:p-10 grid sm:grid-cols-2 gap-5">
+        <h3 class="sm:col-span-2 font-kop font-bold text-2xl text-schort">Liever schrijven?</h3>
+        <label class="block">
+          <span class="text-sm font-semibold">Naam</span>
+          <input required name="naam" autocomplete="name" class="mt-1.5 w-full rounded-xl border border-schort/20 bg-white px-4 py-3 focus:border-schort focus:outline-none">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Telefoon</span>
+          <input name="telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-xl border border-schort/20 bg-white px-4 py-3 focus:border-schort focus:outline-none">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold">E-mail</span>
+          <input required name="email" type="email" autocomplete="email" class="mt-1.5 w-full rounded-xl border border-schort/20 bg-white px-4 py-3 focus:border-schort focus:outline-none">
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Soort feest</span>
+          <select name="gelegenheid" class="mt-1.5 w-full rounded-xl border border-schort/20 bg-white px-4 py-3 focus:border-schort focus:outline-none">
+            <option>Bruiloft</option>
+            <option>Bedrijfsfeest of barbecue</option>
+            <option>Diner of gala</option>
+            <option>Buffet of hapjes</option>
+            <option>Iets anders</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold">Datum</span>
+          <input name="datum" type="date" class="mt-1.5 w-full rounded-xl border border-schort/20 bg-white px-4 py-3 focus:border-schort focus:outline-none">
+        </label>
+        <label class="block sm:col-span-2">
+          <span class="text-sm font-semibold">Wat heeft u voor ogen?</span>
+          <textarea name="bericht" rows="4" class="mt-1.5 w-full rounded-xl border border-schort/20 bg-white px-4 py-3 focus:border-schort focus:outline-none" placeholder="Aantal gasten, locatie, wensen"></textarea>
+        </label>
+        <div class="sm:col-span-2 flex flex-wrap items-center justify-between gap-4">
+          <p class="text-sm text-inkt/65">We reageren op werkdagen.</p>
+          <button type="submit" class="knop rounded-full bg-schort text-linnen px-7 py-3.5 font-semibold hover:bg-schortdonker">Aanvraag versturen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Gevel -->
+<section class="relative">
+  <img src="assets/web/site-08.jpg" alt="Gevel van het pand van Catering Groep Nederland met de naam in grote letters" decoding="async" class="w-full h-[260px] sm:h-[520px] object-cover object-[30%_45%]">
+</section>
+
+</main>
+
+<footer class="bg-inkt text-linnen/70 pt-12 pb-28 md:pb-12 text-sm">
+  <div class="max-w-7xl mx-auto px-5 lg:px-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div class="woordmerk flex items-stretch gap-1.5 font-kop font-extrabold leading-[.82] text-linnen">
+      <span class="text-[22px] tracking-tight">CATERING<br>GROEP</span>
+      <span class="v text-[8px] tracking-[.12em] font-bold bg-linnen text-inkt px-[3px] py-[2px] text-center">NEDERLAND</span>
+    </div>
+    <p class="flex flex-col md:flex-row gap-1 md:gap-5"><span>Wiltonstraat 61, 3905 KW Veenendaal</span><a href="tel:0318611862" class="hover:text-saffraan">0318 611 862</a><a href="mailto:info@cateringgroep.nl" class="hover:text-saffraan">info@cateringgroep.nl</a></p>
+    <p>Met lef en liefde.</p>
+  </div>
+</footer>
+
+<!-- Mobiele belbalk -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-linnen/95 backdrop-blur border-t border-schort/15 flex gap-3">
+  <a href="tel:0318611862" class="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-saffraan text-inkt py-3.5 font-semibold">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel ons
+  </a>
+  <a href="mailto:info@cateringgroep.nl" class="inline-flex items-center justify-center rounded-full border-2 border-schort text-schort px-5 font-semibold">Mail</a>
+</div>
+
+</body>
+</html>

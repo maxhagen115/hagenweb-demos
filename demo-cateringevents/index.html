@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cateringevents | Catering en foodtrucks uit Leusden</title>
+<meta name="description" content="Foodtrucks, buffetten, bbq en luxe hapjes voor uw feest of bedrijfsevent. Sinds 1996, vanuit Leusden in heel Midden-Nederland. Bel 033 465 5452.">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        avond: '#1B2130', avond2: '#252D40', amber: '#F2A516', amberdk: '#D88E05',
+        papier: '#FBF8F2', inkt: '#151A24', mist: '#A9B0C0', lijn: '#E7E0D2'
+      },
+      fontFamily: {
+        kop: ['"Big Shoulders Display"', 'Impact', 'sans-serif'],
+        tekst: ['"Public Sans"', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .kop { font-family: 'Big Shoulders Display', Impact, sans-serif; letter-spacing: -0.005em; line-height: .92; }
+  .balans { text-wrap: balance; }
+  .mooi { text-wrap: pretty; }
+  .boog { border-radius: 999px 999px 18px 18px; }
+  .lamp { fill: #F2A516; filter: drop-shadow(0 0 6px rgba(242,165,22,.85)); }
+  .draad { fill: none; stroke: #5B6378; stroke-width: 1.5; }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #F2A516; outline-offset: 3px; border-radius: 6px;
+  }
+  .menu-regel { border-bottom: 1px dashed #D6CDBb; }
+  .prijs { font-variant-numeric: tabular-nums; }
+  /* Lichtjes gaan alleen flikkeren als JS de class zet en de bezoeker beweging toestaat */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .lamp { animation: gloei 3.2s ease-in-out infinite; }
+    .js .lamp:nth-child(3n) { animation-delay: .8s; }
+    .js .lamp:nth-child(3n+1) { animation-delay: 1.6s; }
+  }
+  @keyframes gloei { 0%,100% { opacity: 1; } 50% { opacity: .55; } }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-papier text-inkt">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-amber text-inkt px-4 py-2 font-semibold">Direct naar inhoud</a>
+
+<!-- Demo-balk -->
+<div class="bg-amber text-inkt text-[13px] text-center py-2 px-4">
+  Demo voor Cateringevents, gemaakt door <a href="https://hagenweb.nl" class="font-semibold underline underline-offset-2">Hagenweb</a>
+</div>
+
+<!-- Header -->
+<header class="bg-avond text-papier">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 h-[84px] flex items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-3 shrink-0" aria-label="Cateringevents, naar boven">
+      <span class="bg-white rounded-full w-[60px] h-[60px] grid place-items-center overflow-hidden">
+        <img src="assets/logo-oud.png" alt="Logo Cateringevents.nl, sinds 1996" class="w-[58px] h-auto">
+      </span>
+      <span class="kop text-[26px] font-extrabold uppercase hidden sm:block">Cateringevents</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-mist" aria-label="Hoofdmenu">
+      <a href="#aanbod" class="hover:text-papier transition-colors">Aanbod</a>
+      <a href="#werkwijze" class="hover:text-papier transition-colors">Zo werkt het</a>
+      <a href="#buffetten" class="hover:text-papier transition-colors">Buffetten en bbq</a>
+      <a href="#reviews" class="hover:text-papier transition-colors">Reviews</a>
+      <a href="#contact" class="hover:text-papier transition-colors">Contact</a>
+    </nav>
+    <a href="tel:+31334655452" class="knop inline-flex items-center gap-2 border border-amber/60 text-amber rounded-full px-4 py-2.5 text-[15px] font-semibold hover:bg-amber hover:text-inkt">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">033 465 5452</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<!-- Hero -->
+<section class="relative bg-avond text-papier overflow-hidden">
+  <!-- lichtsnoer -->
+  <svg class="absolute top-0 left-0 w-full h-[70px] md:h-[90px] pointer-events-none" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path class="draad" d="M0 8 Q 180 70 360 14 Q 540 76 720 12 Q 900 74 1080 14 Q 1260 72 1440 8"/>
+    <g>
+      <circle class="lamp" cx="60" cy="27" r="4"/><circle class="lamp" cx="130" cy="38" r="4"/><circle class="lamp" cx="200" cy="40" r="4"/><circle class="lamp" cx="270" cy="33" r="4"/>
+      <circle class="lamp" cx="420" cy="31" r="4"/><circle class="lamp" cx="490" cy="42" r="4"/><circle class="lamp" cx="560" cy="43" r="4"/><circle class="lamp" cx="630" cy="34" r="4"/>
+      <circle class="lamp" cx="780" cy="30" r="4"/><circle class="lamp" cx="850" cy="41" r="4"/><circle class="lamp" cx="920" cy="43" r="4"/><circle class="lamp" cx="990" cy="34" r="4"/>
+      <circle class="lamp" cx="1140" cy="31" r="4"/><circle class="lamp" cx="1210" cy="41" r="4"/><circle class="lamp" cx="1280" cy="41" r="4"/><circle class="lamp" cx="1350" cy="31" r="4"/>
+    </g>
+  </svg>
+
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-14 md:pb-24 grid md:grid-cols-[1.05fr_.95fr] gap-10 md:gap-14 items-center">
+    <div>
+      <p class="text-mist text-[15px] md:text-base mb-5">Catering en foodtrucks uit Leusden, sinds 1996</p>
+      <h1 class="kop font-black uppercase text-[64px] sm:text-[84px] lg:text-[120px] balans">U viert.<br>Wij koken.</h1>
+      <p class="mt-6 text-[17px] md:text-lg text-papier/85 max-w-[30rem] mooi">
+        Een friettruck op uw verjaardag, een buffet voor de familiedag of hapjes op de zaak. Wij bezorgen, bouwen op en nemen na afloop de afwas mee.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31334655452" class="knop inline-flex items-center gap-3 bg-amber text-inkt rounded-full pl-6 pr-7 py-4 text-lg font-bold shadow-[0_10px_30px_-10px_rgba(242,165,22,.7)] hover:bg-[#FFB627]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+          Bel 033 465 5452
+        </a>
+        <a href="#contact" class="text-papier underline decoration-amber decoration-2 underline-offset-[6px] font-medium hover:text-amber transition-colors">of vraag een offerte aan</a>
+      </div>
+      <p class="mt-8 flex items-center gap-3 text-[15px] text-mist">
+        <span class="text-amber tracking-[2px] text-lg" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-papier font-semibold">5,0</strong> uit 104 Google-reviews</span>
+      </p>
+    </div>
+
+    <div class="relative mx-auto w-full max-w-[460px] md:max-w-none">
+      <div class="boog overflow-hidden aspect-[4/5] md:aspect-[5/6] ring-1 ring-white/10 shadow-[0_40px_80px_-30px_rgba(0,0,0,.7)]">
+        <img src="assets/crop-foodtruck-avond.jpg" alt="Twee mannen lachen bij een verlichte foodtruck op het gras, met een lichtsnoer erboven" class="w-full h-full object-cover object-[50%_60%]">
+      </div>
+      <p class="absolute -bottom-4 left-4 md:-left-8 bg-papier text-inkt rounded-xl px-4 py-3 text-[14px] leading-snug shadow-xl max-w-[220px] rotate-[-2deg]">
+        <span class="kop text-[26px] font-black block">15+</span>foodtrucks en kramen om uit te kiezen
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Aanbod -->
+<section id="aanbod" class="py-20 md:py-28">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8">
+    <div class="max-w-[42rem]">
+      <h2 class="kop font-black uppercase text-[52px] md:text-[76px] balans">Wat mag het zijn?</h2>
+      <p class="mt-4 text-lg text-inkt/75 mooi">Van een snackkraam voor honderd collega's tot een Italiaans buffet voor dertig gasten. Bij ons is bijna alles mogelijk, voor elk budget en op elk tijdstip.</p>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-16 items-start">
+      <!-- Foodtrucks uitgelicht -->
+      <article class="relative">
+        <div class="rounded-[20px] overflow-hidden aspect-[4/3] lg:aspect-[5/4]">
+          <img src="assets/google-01.jpg" alt="Een oude rode brandweerwagen omgebouwd tot foodtruck, met een kok achter de werkbank" class="w-full h-full object-cover object-[40%_50%]">
+        </div>
+        <div class="hidden sm:block absolute -top-8 -right-4 lg:-right-10 w-[40%] rounded-2xl overflow-hidden border-[6px] border-papier shadow-[0_20px_40px_-20px_rgba(27,33,48,.5)] rotate-[2deg]">
+          <img src="assets/crop-tuktuk.jpg" alt="Oranje tuktuk met groene deur op een feest in de tuin" class="w-full aspect-[3/2] object-cover">
+        </div>
+        <div class="mt-8 max-w-[36rem]">
+          <h3 class="kop font-extrabold uppercase text-[40px]">Foodtrucks en kramen</h3>
+          <p class="mt-3 text-inkt/80 mooi">Een brandweerwagen vol verse friet, een tuktuk, een hotdogfiets of een complete snackwagen. Kies uit meer dan 15 mogelijkheden. Ze staan op tijd klaar, zodat uw gasten niet lang in de rij hoeven.</p>
+          <a href="tel:+31334655452" class="mt-5 inline-block font-semibold underline decoration-amber decoration-2 underline-offset-4 hover:text-amberdk">Bel en vraag welke truck nog vrij is</a>
+        </div>
+      </article>
+
+      <!-- Menubord -->
+      <div class="bg-avond text-papier rounded-[20px] p-7 md:p-10">
+        <p class="text-amber font-semibold">Liever klassiek?</p>
+        <ul class="mt-4 divide-y divide-white/10">
+          <li class="py-5">
+            <h3 class="kop font-extrabold uppercase text-[28px]">Buffetten</h3>
+            <p class="text-mist mt-1">Hollands, Italiaans, Indisch, Grieks of Frans. Inclusief servies, bestek en warmhoudschalen.</p>
+          </li>
+          <li class="py-5">
+            <h3 class="kop font-extrabold uppercase text-[28px]">Barbecue</h3>
+            <p class="text-mist mt-1">Wij brengen de gasbarbecue, vers vlees en salades. U bakt zelf, of onze bbq-chef doet het.</p>
+          </li>
+          <li class="py-5">
+            <h3 class="kop font-extrabold uppercase text-[28px]">Luxe hapjes</h3>
+            <p class="text-mist mt-1">Amuses, kaasplanken en borrelplanken, gemaakt van de beste ingrediënten.</p>
+          </li>
+          <li class="py-5">
+            <h3 class="kop font-extrabold uppercase text-[28px]">Lunch</h3>
+            <p class="text-mist mt-1">Van losse broodjes tot een compleet verzorgde vergaderlunch.</p>
+          </li>
+          <li class="py-5">
+            <h3 class="kop font-extrabold uppercase text-[28px]">Walking dinner</h3>
+            <p class="text-mist mt-1">Een gezellige avond met hapjes en drankjes. U stelt zelf het menu samen.</p>
+          </li>
+          <li class="pt-5">
+            <h3 class="kop font-extrabold uppercase text-[28px]">Mini festival</h3>
+            <p class="text-mist mt-1">Uw eigen festival op locatie. Ideaal als bedrijfsfeest of bruiloft.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Werkwijze -->
+<section id="werkwijze" class="bg-[#F3EDE1] py-20 md:py-24">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16">
+    <div>
+      <h2 class="kop font-black uppercase text-[48px] md:text-[64px] balans">U hoeft nergens aan te denken</h2>
+      <p class="mt-4 text-inkt/75 text-lg mooi">Geen boodschappen, geen gesjouw, geen afwas. Wij doen zo'n 950 events per jaar en weten precies wat er nodig is.</p>
+    </div>
+    <ol class="grid sm:grid-cols-2 gap-x-10 gap-y-10">
+      <li>
+        <span class="kop font-black text-amberdk text-[56px] block">1</span>
+        <h3 class="font-bold text-lg mt-1">U belt of mailt</h3>
+        <p class="text-inkt/75 mt-1 mooi">Vertel ons wat u viert, met hoeveel mensen en waar. Ook met spoed voor morgen denken we mee.</p>
+      </li>
+      <li>
+        <span class="kop font-black text-amberdk text-[56px] block">2</span>
+        <h3 class="font-bold text-lg mt-1">Wij bezorgen en bouwen op</h3>
+        <p class="text-inkt/75 mt-1 mooi">Op tijd, met servies, bestek en alles wat erbij hoort. Thuis, op de zaak of op het buurtfeest.</p>
+      </li>
+      <li>
+        <span class="kop font-black text-amberdk text-[56px] block">3</span>
+        <h3 class="font-bold text-lg mt-1">U geniet van uw gasten</h3>
+        <p class="text-inkt/75 mt-1 mooi">Onze mensen bakken, serveren en houden de rij kort. U hoeft alleen gastheer of gastvrouw te zijn.</p>
+      </li>
+      <li>
+        <span class="kop font-black text-amberdk text-[56px] block">4</span>
+        <h3 class="font-bold text-lg mt-1">Wij ruimen op</h3>
+        <p class="text-inkt/75 mt-1 mooi">Na afloop nemen we alles weer mee, inclusief de afwas.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Fotomuur -->
+<section class="py-20 md:py-28" aria-labelledby="sfeer">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <h2 id="sfeer" class="kop font-black uppercase text-[48px] md:text-[64px]">Zo ziet dat eruit</h2>
+      <p class="text-inkt/70 max-w-[24rem]">Echte foto's van onze events, gemaakt door ons en door gasten.</p>
+    </div>
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 md:grid-rows-[260px_260px] gap-3 md:gap-4">
+      <figure class="col-span-2 md:row-span-2 rounded-2xl overflow-hidden aspect-[4/3] md:aspect-auto">
+        <img src="assets/google-08.jpg" alt="Zonnig bedrijfsfeest met veel gasten en een hotdogfiets met Amerikaanse hotdogs" class="w-full h-full object-cover">
+      </figure>
+      <figure class="rounded-2xl overflow-hidden aspect-square md:aspect-auto">
+        <img src="assets/google-07.jpg" alt="Drie houten planken met Franse en Hollandse kazen, druiven en compote" class="w-full h-full object-cover">
+      </figure>
+      <figure class="rounded-2xl overflow-hidden aspect-square md:aspect-auto">
+        <img src="assets/google-06.jpg" alt="Poke bowl met verse zalm, avocado, mais en komkommer" class="w-full h-full object-cover">
+      </figure>
+      <figure class="rounded-2xl overflow-hidden aspect-square md:aspect-auto">
+        <img src="assets/site-05.jpg" alt="Etagère met tomaat-mozzarellahapjes en geitenkaastoastjes op een feesttafel" class="w-full h-full object-cover">
+      </figure>
+      <figure class="rounded-2xl overflow-hidden aspect-square md:aspect-auto">
+        <img src="assets/google-02.jpg" alt="Rij milkshakes met slagroom en grappige snoepgezichtjes" class="w-full h-full object-cover object-[50%_60%]">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Buffetten en prijzen -->
+<section id="buffetten" class="pb-20 md:pb-28">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 grid lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-start">
+    <div>
+      <h2 class="kop font-black uppercase text-[48px] md:text-[64px] balans">Een greep uit onze buffetten</h2>
+      <p class="mt-4 text-inkt/75 mooi">Prijzen per persoon, inclusief 9% btw. Altijd inclusief servies, bestek, afwas en bezorging.</p>
+      <ul class="mt-8 text-[17px]">
+        <li class="menu-regel flex items-baseline justify-between gap-4 py-3"><span><strong class="font-semibold">Basta Pasta</strong><span class="block text-[15px] text-inkt/65">Pasta met kip en groenten in peperroomsaus</span></span><span class="prijs font-semibold shrink-0">€ 15,50</span></li>
+        <li class="menu-regel flex items-baseline justify-between gap-4 py-3"><span><strong class="font-semibold">Buffet Indisch</strong><span class="block text-[15px] text-inkt/65">Indische balletjes in satésaus, kroepoek, seroendeng</span></span><span class="prijs font-semibold shrink-0">€ 16,95</span></li>
+        <li class="menu-regel flex items-baseline justify-between gap-4 py-3"><span><strong class="font-semibold">Buffet Hollands</strong><span class="block text-[15px] text-inkt/65">Stamppot met gehaktbal, rookworst of klapstuk</span></span><span class="prijs font-semibold shrink-0">€ 17,95</span></li>
+        <li class="menu-regel flex items-baseline justify-between gap-4 py-3"><span><strong class="font-semibold">Buffet Italiaans</strong><span class="block text-[15px] text-inkt/65">Carpaccio, antipasti, penne met gamba's</span></span><span class="prijs font-semibold shrink-0">€ 22,95</span></li>
+        <li class="menu-regel flex items-baseline justify-between gap-4 py-3"><span><strong class="font-semibold">Buffet USA</strong><span class="block text-[15px] text-inkt/65">Huisgemaakte spareribs, kippenkluifjes, XXL hotdog</span></span><span class="prijs font-semibold shrink-0">€ 25,95</span></li>
+        <li class="menu-regel flex items-baseline justify-between gap-4 py-3"><span><strong class="font-semibold">Grieks Buffet</strong><span class="block text-[15px] text-inkt/65">Moussaka, gyros met pita, kipspiesjes</span></span><span class="prijs font-semibold shrink-0">€ 27,50</span></li>
+      </ul>
+      <p class="mt-6 text-inkt/75">Liever een offerte op maat? <a href="#contact" class="font-semibold underline decoration-amber decoration-2 underline-offset-4">Vraag het ons</a>.</p>
+    </div>
+
+    <div class="bg-avond text-papier rounded-[20px] overflow-hidden">
+      <img src="assets/site-03.jpg" alt="Kipspiesjes met paprika en courgette en worstjes op een gasbarbecue" class="w-full aspect-[16/10] object-cover object-[40%_60%]">
+      <div class="p-7 md:p-9">
+        <h3 class="kop font-black uppercase text-[40px]">Bbq op locatie</h3>
+        <p class="mt-2 text-mist mooi">Barbecue met gas, buffettafel, borden en bestek, salades, stokbrood en sauzen. Publiekslieveling: de malste spareribs van Nederland.</p>
+        <dl class="mt-6 grid grid-cols-3 gap-3 text-center">
+          <div class="rounded-xl bg-avond2 py-4"><dt class="text-[14px] text-mist">Basis</dt><dd class="kop font-extrabold text-[25px] sm:text-[30px] prijs mt-1">€ 21,50</dd></div>
+          <div class="rounded-xl bg-amber text-inkt py-4"><dt class="text-[14px] font-medium">Standaard</dt><dd class="kop font-extrabold text-[25px] sm:text-[30px] prijs mt-1">€ 23,50</dd></div>
+          <div class="rounded-xl bg-avond2 py-4"><dt class="text-[14px] text-mist">Luxe</dt><dd class="kop font-extrabold text-[25px] sm:text-[30px] prijs mt-1">€ 29,50</dd></div>
+        </dl>
+        <p class="mt-4 text-[14px] text-mist">Per persoon, vanaf 25 personen. Standaard wordt het meest gekozen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="relative bg-avond text-papier py-20 md:py-28 overflow-hidden">
+  <svg class="absolute top-0 left-0 w-full h-[60px] pointer-events-none" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <path class="draad" d="M0 6 Q 360 56 720 10 Q 1080 56 1440 6"/>
+    <g><circle class="lamp" cx="120" cy="22" r="3.5"/><circle class="lamp" cx="240" cy="30" r="3.5"/><circle class="lamp" cx="360" cy="31" r="3.5"/><circle class="lamp" cx="480" cy="27" r="3.5"/><circle class="lamp" cx="600" cy="19" r="3.5"/>
+    <circle class="lamp" cx="840" cy="19" r="3.5"/><circle class="lamp" cx="960" cy="27" r="3.5"/><circle class="lamp" cx="1080" cy="31" r="3.5"/><circle class="lamp" cx="1200" cy="30" r="3.5"/><circle class="lamp" cx="1320" cy="22" r="3.5"/></g>
+  </svg>
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="kop font-black uppercase text-[48px] md:text-[64px] balans max-w-[36rem]">Wat gasten zeggen</h2>
+      <p class="flex items-center gap-3 text-mist"><span class="text-amber text-xl tracking-[2px]" aria-hidden="true">★★★★★</span><span><strong class="text-papier">5,0</strong> uit 104 reviews op Google</span></p>
+    </div>
+
+    <figure class="mt-12 max-w-[56rem]">
+      <blockquote class="text-[22px] md:text-[30px] leading-snug font-medium mooi">
+        "Het was gister ontzettend heet maar toch heeft Hidde er een groot succes van gemaakt. Respect dat hij met die buiten temperatuur toch met een brede lach achter de kraam stond. Echt een topper!! Lekker duidelijk, goede communicatie, een prettige energie en wat een snelheid!"
+      </blockquote>
+      <figcaption class="mt-5 text-amber font-semibold">Lydia Krijgsman - Berghuis</figcaption>
+    </figure>
+
+    <div class="mt-14 columns-1 md:columns-2 lg:columns-3 gap-5 [&>figure]:mb-5">
+      <figure class="break-inside-avoid bg-avond2 rounded-2xl p-6">
+        <blockquote class="text-papier/90 mooi">"wat was het geweldig 3 oktober op mijn 60 ste verjaardag had echt veel mensen maar niemand heeft lang in de rij gestaan en dat deed hij in zijn eentje geweldig gewoon en wat een keus en lekkere patat iedereen heeft er goed van genoten heel veel dank"</blockquote>
+        <figcaption class="mt-4 text-[15px] text-mist">Monika Van graffijland</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-avond2 rounded-2xl p-6">
+        <blockquote class="text-papier/90 mooi">"Fantastisch! Voor een 50 jarig huwelijksfeest hadden wij voor 30 personen een Italiaans buffet met antipasti voor en tiramisu als nagerecht besteld. Het was meer dan voldoende en van uitstekende kwaliteit. Het werd goed op tijd geleverd op mooie schalen en de warmhoudschalen werkten ook uitstekend! De broodjes voor de lunch diezelfde dag op een andere locatie waren ook heerlijk en mooi opgediend en goed op tijd geleverd. Dit bedrijf krijgt van ons een 10!!"</blockquote>
+        <figcaption class="mt-4 text-[15px] text-mist">Else van Erkel</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-avond2 rounded-2xl p-6">
+        <blockquote class="text-papier/90 mooi">"Voor onze familiedag hadden wij 2 foodtrucks gereserveerd. Communicatie ging prima. Vragen werden snel beantwoord. Op de dag zelf waren ze lekker op tijd aanwezig om voor te bereiden en het eten op tijd klaar te hebben voor ruim 100 personen. Vriendelijk personeel en we hebben heerlijk gegeten!"</blockquote>
+        <figcaption class="mt-4 text-[15px] text-mist">Yolanda van Jaarsveld</figcaption>
+      </figure>
+      <figure class="break-inside-avoid bg-avond2 rounded-2xl p-6">
+        <blockquote class="text-papier/90 mooi">"Wat een geweldige ervaring met Catering Events uit Leusden! Alles was perfect geregeld. Ze waren keurig op tijd aanwezig en de versgebakken friet en snacks waren heerlijk. De kwaliteit van het eten was top en viel bij iedereen erg in de smaak. Een extra compliment voor Chantal: wat een vriendelijke en professionele service! Ze dacht mee, was gastvrij en zorgde ervoor dat alles soepel verliep."</blockquote>
+        <figcaption class="mt-4 text-[15px] text-mist">Amda Azzihmed</figcaption>
+      </figure>
+      <figure class="hidden md:block break-inside-avoid bg-avond2 rounded-2xl p-6">
+        <blockquote class="text-papier/90 mooi">"Al jaren huren wij Cateringevents in voor tijdens de musicalavond van groep 8. Hoogtepunt van het jaar voor leerlingen en leerkrachten. Goed georganiseerd en heerlijke frietjes."</blockquote>
+        <figcaption class="mt-4 text-[15px] text-mist">Celine van Noort</figcaption>
+      </figure>
+      <figure class="hidden md:block break-inside-avoid bg-avond2 rounded-2xl p-6">
+        <blockquote class="text-papier/90 mooi">"Graag willen mijn man en ik jullie hartelijk bedanken voor de heerlijke patat en alles wat er bij hoort. Mede dankzij jullie is ons feest een succes geworden. Er waren alleen maar complimenten. Zeker ook complimenten naar Hidde die zo vriendelijk en vrolijk voor ons bakte. Bedankt!!!"</blockquote>
+        <figcaption class="mt-4 text-[15px] text-mist">Margot Lanting</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 md:py-28">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20">
+    <div>
+      <h2 class="kop font-black uppercase text-[52px] md:text-[76px] balans">Wat gaat u vieren?</h2>
+      <p class="mt-4 text-lg text-inkt/75 mooi">Bel ons, dan denken we direct met u mee. Of het nu voor morgen is of voor over een jaar.</p>
+      <a href="tel:+31334655452" class="knop mt-8 inline-flex items-center gap-3 bg-amber text-inkt rounded-full pl-6 pr-7 py-4 text-lg font-bold hover:bg-[#FFB627]">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+        Bel 033 465 5452
+      </a>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-8 text-[16px]">
+        <div>
+          <dt class="font-bold">E-mail</dt>
+          <dd class="mt-1"><a href="mailto:info@cateringevents.nl" class="underline decoration-amber decoration-2 underline-offset-4 hover:text-amberdk">info@cateringevents.nl</a></dd>
+        </div>
+        <div>
+          <dt class="font-bold">Adres</dt>
+          <dd class="mt-1 text-inkt/80">Plantageweg 21C<br>3833 AZ Leusden</dd>
+        </div>
+        <div class="sm:col-span-2">
+          <dt class="font-bold">Telefonisch bereikbaar</dt>
+          <dd class="mt-1 text-inkt/80">
+            <table class="text-left"><tbody>
+              <tr><td class="pr-6 py-0.5">Ma t/m vr</td><td class="prijs whitespace-nowrap">9:00 tot 20:00</td></tr>
+              <tr><td class="pr-6 py-0.5">Zaterdag</td><td class="prijs whitespace-nowrap">10:00 tot 20:00</td></tr>
+              <tr><td class="pr-6 py-0.5">Zondag</td><td>alleen per mail</td></tr>
+            </tbody></table>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form action="mailto:info@cateringevents.nl" method="post" enctype="text/plain" class="bg-white rounded-[20px] p-7 md:p-10 shadow-[0_30px_60px_-35px_rgba(27,33,48,.35)] ring-1 ring-lijn">
+      <h3 class="kop font-extrabold uppercase text-[34px]">Offerte aanvragen</h3>
+      <p class="text-inkt/70 mt-1 text-[15px]">We reageren zo snel mogelijk met een voorstel.</p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block"><span class="text-[14px] font-semibold">Naam</span>
+          <input name="Naam" required autocomplete="name" class="mt-1.5 w-full rounded-lg border border-lijn bg-papier px-4 py-3 focus:border-amber"></label>
+        <label class="block"><span class="text-[14px] font-semibold">Telefoon</span>
+          <input name="Telefoon" type="tel" autocomplete="tel" class="mt-1.5 w-full rounded-lg border border-lijn bg-papier px-4 py-3 focus:border-amber"></label>
+        <label class="block"><span class="text-[14px] font-semibold">Datum van het feest</span>
+          <input name="Datum" type="date" class="mt-1.5 w-full rounded-lg border border-lijn bg-papier px-4 py-3 focus:border-amber"></label>
+        <label class="block"><span class="text-[14px] font-semibold">Aantal gasten</span>
+          <input name="Gasten" type="number" min="1" inputmode="numeric" class="mt-1.5 w-full rounded-lg border border-lijn bg-papier px-4 py-3 focus:border-amber"></label>
+        <label class="block sm:col-span-2"><span class="text-[14px] font-semibold">Waar heeft u interesse in?</span>
+          <select name="Interesse" class="mt-1.5 w-full rounded-lg border border-lijn bg-papier px-4 py-3 focus:border-amber">
+            <option>Foodtruck of kraam</option><option>Buffet</option><option>Barbecue</option><option>Luxe hapjes</option><option>Lunch</option><option>Walking dinner</option><option>Mini festival</option><option>Weet ik nog niet</option>
+          </select></label>
+        <label class="block sm:col-span-2"><span class="text-[14px] font-semibold">Vertel kort over uw feest</span>
+          <textarea name="Bericht" rows="4" class="mt-1.5 w-full rounded-lg border border-lijn bg-papier px-4 py-3 focus:border-amber"></textarea></label>
+      </div>
+      <button type="submit" class="knop mt-6 w-full bg-avond text-papier rounded-full py-4 font-bold text-lg hover:bg-avond2">Offerte aanvragen</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-avond text-mist">
+  <div class="max-w-[1240px] mx-auto px-5 md:px-8 pt-14 pb-[110px] md:pb-14 flex flex-col md:flex-row md:items-center justify-between gap-8">
+    <div class="flex items-center gap-5">
+      <span class="bg-white rounded-full w-[96px] h-[96px] grid place-items-center overflow-hidden shrink-0">
+        <img src="assets/logo-oud.png" alt="Logo Cateringevents.nl" class="w-[92px] h-auto">
+      </span>
+      <p class="text-[15px] leading-relaxed">Cateringevents<br>Uw partner voor elk feest, sinds 1996<br>Plantageweg 21C, 3833 AZ Leusden</p>
+    </div>
+    <div class="text-[15px] md:text-right leading-relaxed">
+      <a href="tel:+31334655452" class="text-papier font-semibold hover:text-amber">033 465 5452</a><br>
+      <a href="mailto:info@cateringevents.nl" class="hover:text-papier">info@cateringevents.nl</a><br>
+      <span class="text-[13px]">© Cateringevents</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Vaste belbalk mobiel -->
+<div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-avond/95 backdrop-blur border-t border-white/10 px-4 py-3 flex gap-3">
+  <a href="tel:+31334655452" class="flex-1 inline-flex items-center justify-center gap-2 bg-amber text-inkt rounded-full py-3.5 font-bold">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>
+    Bel ons
+  </a>
+  <a href="mailto:info@cateringevents.nl" class="inline-flex items-center justify-center px-5 rounded-full border border-white/25 text-papier font-semibold">Mail</a>
+</div>
+
+</body>
+</html>

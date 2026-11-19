@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yellow Kitchen Catering | Catering uit Leusden voor feest, bedrijf en event</title>
+  <meta name="description" content="Yellow Kitchen verzorgt buffetten, hapjes, lunches, BBQ en walking dinners, vers bereid met lokale producten. Catering uit Leusden voor particulier, zakelijk en events. Bel 06 48 07 40 89.">
+  <meta property="og:title" content="Yellow Kitchen Catering">
+  <meta property="og:description" content="Eten is genieten. Persoonlijke catering uit Leusden.">
+  <meta property="og:image" content="assets/site-08.jpg">
+  <link rel="icon" href="assets/logo-oud.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            geel: '#FFD21A',
+            inkt: '#2A2620',
+            olijf: '#4A5638',
+            papier: '#FFFDF7',
+            boter: '#FFF3C2',
+          },
+          fontFamily: {
+            kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+            tekst: ['Figtree', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Figtree, system-ui, sans-serif; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    .kop { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-optical-sizing: auto; }
+    :focus-visible { outline: 3px solid #2A2620; outline-offset: 3px; border-radius: 6px; }
+    .op-donker :focus-visible { outline-color: #FFD21A; }
+    .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+    .knop:hover { transform: translateY(-2px); }
+    .knop:active { transform: translateY(1px) scale(.98); }
+    .belknop { box-shadow: 0 10px 0 -2px #2A2620; }
+    .belknop:hover { box-shadow: 0 12px 0 -2px #2A2620; }
+    .belknop:active { box-shadow: 0 4px 0 -2px #2A2620; }
+
+    /* Hero: foto in een cirkel, als het logo */
+    .hero-schijf { aspect-ratio: 1; border-radius: 9999px; }
+    .hero-foto { aspect-ratio: 1; border-radius: 9999px; object-fit: cover; object-position: 30% 30%; }
+
+    /* Vaste belbalk op mobiel: met JS pas zichtbaar na de hero, zonder JS altijd */
+    .plakbalk { transition: transform .3s ease; }
+    .js .plakbalk { transform: translateY(120%); }
+    .js .plakbalk.toon { transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .plakbalk { transition: none; }
+      .knop, .knop:hover { transition: none; transform: none; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-papier text-inkt antialiased">
+
+  <a href="#inhoud" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-geel focus:px-4 focus:py-2 focus:rounded-md">Naar de inhoud</a>
+
+  <!-- Demo-balk -->
+  <div class="bg-inkt text-papier text-[13px] text-center px-4 py-2">
+    Demo voor Yellow Kitchen Catering, gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 decoration-geel hover:text-geel">Hagenweb</a>
+  </div>
+
+  <!-- Header -->
+  <header class="relative z-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between py-4">
+      <a href="#" class="flex items-center gap-3" aria-label="Yellow Kitchen Catering, naar boven">
+        <span class="grid place-items-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-inkt">
+          <img src="assets/logo-oud.png" alt="Logo Yellow Kitchen catering" class="w-12 h-12 sm:w-14 sm:h-14">
+        </span>
+        <span class="kop font-bold text-lg leading-tight hidden sm:block">Yellow Kitchen<br><span class="font-medium text-inkt/60 text-sm">catering</span></span>
+      </a>
+      <nav aria-label="Hoofdmenu" class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+        <a href="#voor-wie" class="hover:underline underline-offset-4 decoration-2 decoration-geel">Voor wie</a>
+        <a href="#keuken" class="hover:underline underline-offset-4 decoration-2 decoration-geel">Onze keuken</a>
+        <a href="#menu" class="hover:underline underline-offset-4 decoration-2 decoration-geel">Wat we koken</a>
+        <a href="#reviews" class="hover:underline underline-offset-4 decoration-2 decoration-geel">Reviews</a>
+        <a href="#offerte" class="hover:underline underline-offset-4 decoration-2 decoration-geel">Offerte</a>
+      </nav>
+      <a href="tel:+31648074089" class="knop inline-flex items-center gap-2 rounded-full border-2 border-inkt px-4 py-2 text-sm font-semibold hover:bg-inkt hover:text-papier">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        <span class="hidden sm:inline">06 48 07 40 89</span><span class="sm:hidden">Bel</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="inhoud">
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-8 lg:gap-6 items-center pt-2 pb-16 lg:pt-8 lg:pb-24">
+        <div class="lg:col-span-6 relative z-10 order-2 lg:order-1">
+          <p class="text-[15px] font-semibold text-olijf mb-3 lg:mb-4">Catering uit Leusden, voor feest, bedrijf en event</p>
+          <h1 class="kop font-extrabold text-[clamp(2.6rem,6.4vw,5.25rem)] leading-[.95] tracking-[-0.035em]">
+            Eten is genieten.<br> Wij koken, u&nbsp;geniet.
+          </h1>
+          <p class="mt-5 text-lg sm:text-xl leading-relaxed text-inkt/80 max-w-[34rem]">
+            Buffetten, hapjes, lunches en walking dinners, vers bereid met lokale producten van het seizoen. Afgestemd op uw gasten, uw wensen en uw budget.
+          </p>
+          <div class="mt-7 lg:mt-9 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+            <a href="tel:+31648074089" class="knop belknop inline-flex items-center justify-center gap-3 rounded-full bg-geel px-8 py-5 text-lg font-bold text-inkt hover:bg-[#ffdb4a]">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+              Bel 06 48 07 40 89
+            </a>
+            <a href="#offerte" class="font-semibold underline underline-offset-[6px] decoration-2 decoration-geel hover:decoration-inkt self-center sm:self-auto">Of vraag een offerte aan</a>
+          </div>
+          <p class="mt-8 flex items-center gap-3 text-[15px]">
+            <span class="flex text-[#E8B400]" aria-hidden="true">
+              <svg viewBox="0 0 20 20" class="w-5 h-5" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+              <svg viewBox="0 0 20 20" class="w-5 h-5" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+              <svg viewBox="0 0 20 20" class="w-5 h-5" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+              <svg viewBox="0 0 20 20" class="w-5 h-5" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+              <svg viewBox="0 0 20 20" class="w-5 h-5" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 14.9l-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+            </span>
+            <span><strong class="font-bold">4,8</strong> uit 25 Google-reviews</span>
+          </p>
+        </div>
+
+        <div class="lg:col-span-6 relative order-1 lg:order-2">
+          <div class="relative mx-auto w-[min(62vw,560px)] lg:w-[min(88vw,560px)]">
+            <div class="hero-schijf absolute inset-0 bg-geel translate-x-[7%] -translate-y-[4%]" aria-hidden="true"></div>
+            <div class="hero-schijf absolute inset-0 border-2 border-inkt -translate-x-[3%] translate-y-[3%]" aria-hidden="true"></div>
+            <img src="assets/site-08.jpg" alt="De kok van Yellow Kitchen richt met een glimlach een buffet in met verse salades in aardewerken schalen" class="hero-foto relative w-full">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voor wie -->
+    <section id="voor-wie" class="bg-boter py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="max-w-2xl mb-14 lg:mb-20">
+          <h2 class="kop font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-[-0.03em] leading-[1]">Welk moment wilt u vieren?</h2>
+          <p class="mt-5 text-lg leading-relaxed text-inkt/80">Thuis in de tuin, op kantoor of op een veld onder de lampjes. Wij denken mee, van het eerste idee tot de laatste schaal.</p>
+        </div>
+
+        <div class="space-y-16 lg:space-y-20">
+          <!-- Particulier -->
+          <article class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-7">
+              <img src="assets/site-14.jpg" alt="Lange gedekte tafel met bloemen in een tuin naast een zwemvijver, met lampionnen erboven" class="w-full aspect-[16/9] object-cover rounded-[2rem]" loading="lazy">
+            </div>
+            <div class="lg:col-span-5">
+              <h3 class="kop font-bold text-3xl sm:text-4xl tracking-[-0.02em]">Voor uw feest thuis</h3>
+              <p class="mt-4 text-lg leading-relaxed text-inkt/80">Herkenbare, eerlijke gerechten en hapjes die er prachtig uitzien. Wij koken met passie, afgestemd op uw wensen, uw budget en het seizoen. Flexibel, open en altijd met een creatief idee erbij.</p>
+              <ul class="mt-6 flex flex-wrap gap-2 text-[15px] font-medium">
+                <li class="rounded-full bg-papier px-4 py-1.5">Tuinfeest</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Bruiloft</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">21 diner</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Verjaardag</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Borrel</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Jubileum</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Zakelijk -->
+          <article class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-5 lg:order-2 lg:col-start-8">
+              <img src="assets/site-15.jpg" alt="Schaal met toastjes met paddenstoelen en gebakken kwarteleitjes" class="w-full max-w-md lg:max-w-none mx-auto aspect-[4/5] object-cover rounded-t-full rounded-b-[2rem]" loading="lazy">
+            </div>
+            <div class="lg:col-span-6 lg:order-1 lg:col-start-1 lg:row-start-1">
+              <h3 class="kop font-bold text-3xl sm:text-4xl tracking-[-0.02em]">Voor uw bedrijf</h3>
+              <p class="mt-4 text-lg leading-relaxed text-inkt/80">Een lunch bij de vergadering, iets warms bij overwerk of een borrel die mensen onthouden. Ambachtelijk en verantwoord. Wilt u meer dan eten alleen? Dan verzorgen wij ook de aankleding en de ontvangst. Wat we beloven, doen we, met dat beetje extra.</p>
+              <ul class="mt-6 flex flex-wrap gap-2 text-[15px] font-medium">
+                <li class="rounded-full bg-papier px-4 py-1.5">Vergadering</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Overwerk</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Crewcatering</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Receptie</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Personeelsfeest</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Events -->
+          <article class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="lg:col-span-7">
+              <img src="assets/site-09.jpg" alt="Stretchtent met lichtsnoeren bij avond op een grasveld" class="w-full aspect-[16/9] object-cover rounded-[2rem]" loading="lazy">
+            </div>
+            <div class="lg:col-span-5">
+              <h3 class="kop font-bold text-3xl sm:text-4xl tracking-[-0.02em]">Voor uw event</h3>
+              <p class="mt-4 text-lg leading-relaxed text-inkt/80">Organiseert u een evenement en zoekt u een partner die uw gasten ontvangt en verzorgt? Wij regelen het eten, en desgewenst ook de complete inrichting en aankleding. Dat kunt u met een gerust hart aan ons overlaten.</p>
+              <ul class="mt-6 flex flex-wrap gap-2 text-[15px] font-medium">
+                <li class="rounded-full bg-papier px-4 py-1.5">Eventservice</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Partyverhuur</li>
+                <li class="rounded-full bg-papier px-4 py-1.5">Hosting van gasten</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Onze keuken -->
+    <section id="keuken" class="op-donker bg-olijf text-papier py-20 lg:py-28 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto w-[min(80vw,440px)]">
+            <div class="absolute -inset-4 sm:-inset-6 rounded-full border-2 border-geel/70" aria-hidden="true"></div>
+            <img src="assets/site-05.png" alt="De kok van Yellow Kitchen in een groene koksjas achter een werkbank met verse kruiden en courgettes" class="relative w-full aspect-square object-cover object-top rounded-full" loading="lazy">
+          </div>
+        </div>
+        <div class="lg:col-span-7">
+          <h2 class="kop font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-[-0.03em] leading-[1]">Koken zoals koken bedoeld is.</h2>
+          <div class="mt-7 space-y-5 text-lg leading-relaxed text-papier/85 max-w-[38rem]">
+            <p>Yellow Kitchen staat voor kleurrijke gerechten, elke dag vers bereid. Liefst biologisch, met producten van het seizoen en uit de buurt. Wat je van dichtbij haalt, is gewoon lekkerder.</p>
+            <p>We koken met liefde en met aandacht voor uw wensen. Maximaal smaak, minimum waste. Met ruim 10 jaar ervaring bij particulieren en bedrijven weten we wat werkt, en we bedenken graag iets nieuws.</p>
+          </div>
+          <dl class="mt-10 grid sm:grid-cols-3 gap-6 sm:gap-8 border-t border-papier/20 pt-8">
+            <div>
+              <dt class="kop font-bold text-xl text-geel">Vers en lokaal</dt>
+              <dd class="mt-1 text-papier/75">Dagelijks bereid, met seizoensproducten.</dd>
+            </div>
+            <div>
+              <dt class="kop font-bold text-xl text-geel">Dieetwensen</dt>
+              <dd class="mt-1 text-papier/75">Allergieën en speciale wensen? Alles kan, niks hoeft.</dd>
+            </div>
+            <div>
+              <dt class="kop font-bold text-xl text-geel">Op maat</dt>
+              <dd class="mt-1 text-papier/75">Afgestemd op uw gasten, budget en sfeer.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wat we koken -->
+    <section id="menu" class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-6">
+          <h2 class="kop font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-[-0.03em] leading-[1]">Wat zullen we voor u koken?</h2>
+          <p class="mt-5 text-lg leading-relaxed text-inkt/80 max-w-[34rem]">Een greep uit wat we het liefst maken. Alles is een startpunt: we stellen het samen met u op maat.</p>
+          <ul class="mt-10 kop font-bold text-[clamp(1.6rem,3.4vw,2.6rem)] leading-[1.15] tracking-[-0.02em]">
+            <li class="border-b-2 border-inkt/10 py-2.5">Borrelhapjes</li>
+            <li class="border-b-2 border-inkt/10 py-2.5">Buffetten</li>
+            <li class="border-b-2 border-inkt/10 py-2.5">Walking dinner</li>
+            <li class="border-b-2 border-inkt/10 py-2.5">BBQ</li>
+            <li class="border-b-2 border-inkt/10 py-2.5">Lunch</li>
+            <li class="border-b-2 border-inkt/10 py-2.5">High tea en high wine</li>
+            <li class="border-b-2 border-inkt/10 py-2.5">Grazing table</li>
+            <li class="border-b-2 border-inkt/10 py-2.5">Kaasfondue</li>
+            <li class="border-b-2 border-inkt/10 py-2.5">21 diner</li>
+            <li class="py-2.5">Spaanse avond</li>
+          </ul>
+        </div>
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-5 content-start lg:pt-24">
+          <img src="assets/site-04.jpg" alt="Toastjes met tapenade en gebakken kwarteleitjes op een houten plank" class="col-span-2 w-full aspect-[16/10] object-cover rounded-[2rem]" loading="lazy">
+          <img src="assets/site-13.jpg" alt="Zwarte schaaltjes met salade, opgerolde ham, radijs en eetbare viooltjes" class="w-full aspect-[3/4] object-cover rounded-[2rem]" loading="lazy">
+          <img src="assets/site-12.jpg" alt="Glaasjes dessert met rood fruit en schuimpjes op bloemetjesbordjes" class="w-full aspect-[3/4] object-cover rounded-[2rem] mt-10" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="bg-geel py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-16">
+          <h2 class="kop font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-[-0.03em] leading-[1] max-w-2xl">Wat gasten er later nog over zeggen</h2>
+          <p class="text-lg"><strong class="kop font-extrabold text-3xl align-middle">4,8</strong> <span class="align-middle">uit 25 reviews op Google</span></p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-5">
+          <figure class="lg:col-span-7 lg:row-span-2 bg-inkt text-papier rounded-[2rem] p-8 sm:p-12 flex flex-col justify-between">
+            <blockquote class="kop font-bold text-2xl sm:text-3xl lg:text-[2.1rem] leading-[1.2] tracking-[-0.015em]">
+              "Wij en onze gasten hebben genoten van een overheerlijke BBQ. Het was voortreffelijk bereid en de presentatie echt heel mooi gedaan. Heerlijk vlees, vis en meer dan prima salades en sausjes. Bij het doorgeven en bespreken van dieetwensen en allergieën merkten we echt dat daar 100% aandacht voor is. Kortom een aanrader."
+            </blockquote>
+            <figcaption class="mt-8 flex items-center gap-3 text-papier/80"><span class="text-geel" aria-label="5 van 5 sterren">★★★★★</span> Evert</figcaption>
+          </figure>
+
+          <figure class="lg:col-span-5 bg-papier rounded-[2rem] p-8">
+            <blockquote class="text-lg leading-relaxed">"Heerlijk gegeten (Spaanse avond). Fijne samenwerking, flexibel in aanpassingen, denkt mee én hele leuke mensen. Hebben paar jaar geleden de hapjes voor feest gemaakt en nu een 4 gangen diner voor 60 personen."</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3 font-semibold"><span class="text-[#C99A00]" aria-label="5 van 5 sterren">★★★★★</span> Femke Wessels</figcaption>
+          </figure>
+
+          <figure class="lg:col-span-5 bg-papier rounded-[2rem] p-8">
+            <blockquote class="text-lg leading-relaxed">"Fantastisch lekker en goed Italiaans zomers eten. Zag er prachtig uit! Mijn gasten waren erg tevreden (en ik ook!) en weken later kreeg ik nog steeds complimenten voor de catering."</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3 font-semibold"><span class="text-[#C99A00]" aria-label="5 van 5 sterren">★★★★★</span> Ellen Jumelet</figcaption>
+          </figure>
+
+          <figure class="lg:col-span-6 bg-papier rounded-[2rem] p-8">
+            <blockquote class="text-lg leading-relaxed">"Wij hadden een fantastische avond met buffet, in overleg in flowerpower sfeer gepresenteerd. Alles was even lekker en gelukkig was het ook ruim bemeten. Echt een aanrader!"</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3 font-semibold"><span class="text-[#C99A00]" aria-label="5 van 5 sterren">★★★★★</span> Marieke Adegeest</figcaption>
+          </figure>
+
+          <figure class="lg:col-span-6 bg-papier rounded-[2rem] p-8">
+            <blockquote class="text-lg leading-relaxed">"Yellow Kitchen heeft voor ons heerlijke pintxos en paella verzorgd, die er fantastisch uitzagen. Echt een aanrader!"</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3 font-semibold"><span class="text-[#C99A00]" aria-label="5 van 5 sterren">★★★★★</span> Berlinda Harkink</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inrichting -->
+    <section class="relative">
+      <img src="assets/site-02.jpg" alt="Lange houten tafels met kruisstoelen, kaarsen en glaswerk onder lichtsnoeren aan de rand van een bos" class="w-full h-[70vh] min-h-[420px] max-h-[760px] object-cover">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="relative -mt-28 sm:-mt-40 lg:-mt-56 bg-papier rounded-[2rem] p-8 sm:p-12 max-w-2xl shadow-[0_30px_60px_-30px_rgba(42,38,32,.45)]">
+          <h2 class="kop font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-[-0.03em] leading-[1.02]">Ook de tafel staat klaar.</h2>
+          <p class="mt-5 text-lg leading-relaxed text-inkt/80">Glaswerk, servies, tafels, de complete inrichting en aankleding: ook daarvoor bent u bij ons aan het juiste adres. Wij geven advies en denken mee over de sfeer, zodat eten en plek bij elkaar passen.</p>
+          <a href="#offerte" class="mt-6 inline-block font-semibold underline underline-offset-[6px] decoration-2 decoration-geel hover:decoration-inkt">Vraag vrijblijvend een offerte aan</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offerte en contact -->
+    <section id="offerte" class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-5">
+          <h2 class="kop font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-[-0.03em] leading-[1]">Vertel ons over uw feest.</h2>
+          <p class="mt-5 text-lg leading-relaxed text-inkt/80">Bel of mail ons, of vul het formulier in. We denken graag mee en sturen u een vrijblijvende offerte.</p>
+
+          <a href="tel:+31648074089" class="knop belknop mt-8 inline-flex items-center gap-3 rounded-full bg-geel px-7 py-4 text-lg font-bold">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            Bel 06 48 07 40 89
+          </a>
+
+          <dl class="mt-12 space-y-6 text-lg">
+            <div>
+              <dt class="text-sm font-semibold text-olijf">E-mail</dt>
+              <dd><a href="mailto:info@yellowkitchen.nl" class="font-semibold underline underline-offset-4 decoration-geel decoration-2 hover:decoration-inkt">info@yellowkitchen.nl</a></dd>
+            </div>
+            <div>
+              <dt class="text-sm font-semibold text-olijf">Adres</dt>
+              <dd>Ardennen 15<br>3831 EW Leusden</dd>
+            </div>
+            <div>
+              <dt class="text-sm font-semibold text-olijf">Bereikbaar</dt>
+              <dd>Elke dag van 09:30 tot 21:30</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="lg:col-span-7">
+          <form id="offerteformulier" action="mailto:info@yellowkitchen.nl" method="post" enctype="text/plain" class="bg-boter rounded-[2rem] p-6 sm:p-10 grid sm:grid-cols-2 gap-5">
+            <div class="sm:col-span-2">
+              <label for="naam" class="block text-sm font-semibold mb-1.5">Naam</label>
+              <input id="naam" name="naam" required autocomplete="name" class="w-full rounded-xl border-2 border-inkt/15 bg-papier px-4 py-3 focus:border-inkt focus:outline-none">
+            </div>
+            <div>
+              <label for="telefoon" class="block text-sm font-semibold mb-1.5">Telefoon</label>
+              <input id="telefoon" name="telefoon" type="tel" autocomplete="tel" class="w-full rounded-xl border-2 border-inkt/15 bg-papier px-4 py-3 focus:border-inkt focus:outline-none">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-semibold mb-1.5">E-mail</label>
+              <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-xl border-2 border-inkt/15 bg-papier px-4 py-3 focus:border-inkt focus:outline-none">
+            </div>
+            <div>
+              <label for="soort" class="block text-sm font-semibold mb-1.5">Soort gelegenheid</label>
+              <select id="soort" name="gelegenheid" class="w-full rounded-xl border-2 border-inkt/15 bg-papier px-4 py-3 focus:border-inkt focus:outline-none">
+                <option>Feest thuis</option>
+                <option>Bruiloft</option>
+                <option>Zakelijk</option>
+                <option>Event</option>
+                <option>Anders</option>
+              </select>
+            </div>
+            <div>
+              <label for="gasten" class="block text-sm font-semibold mb-1.5">Aantal gasten</label>
+              <input id="gasten" name="gasten" inputmode="numeric" class="w-full rounded-xl border-2 border-inkt/15 bg-papier px-4 py-3 focus:border-inkt focus:outline-none">
+            </div>
+            <div class="sm:col-span-2">
+              <label for="bericht" class="block text-sm font-semibold mb-1.5">Datum, plek en wensen</label>
+              <textarea id="bericht" name="bericht" rows="5" class="w-full rounded-xl border-2 border-inkt/15 bg-papier px-4 py-3 focus:border-inkt focus:outline-none" placeholder="Bijvoorbeeld: tuinfeest op zaterdag, BBQ, twee gasten vegetarisch"></textarea>
+            </div>
+            <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+              <p class="text-sm text-inkt/65">Uw bericht opent in uw e-mailprogramma.</p>
+              <button type="submit" class="knop rounded-full bg-inkt text-papier px-7 py-4 font-bold hover:bg-olijf">Offerte aanvragen</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="op-donker bg-inkt text-papier/80 pb-28 lg:pb-12 pt-14">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
+      <div class="flex items-center gap-4">
+        <img src="assets/logo-oud.png" alt="Logo Yellow Kitchen catering" class="w-16 h-16">
+        <p class="kop font-bold text-papier text-lg leading-snug">Eten is genieten,<br>lekker, gezond en verantwoord.</p>
+      </div>
+      <div class="text-[15px] leading-relaxed">
+        <p>Yellow Kitchen Catering, Ardennen 15, 3831 EW Leusden</p>
+        <p><a href="tel:+31648074089" class="hover:text-geel">06 48 07 40 89</a> &nbsp;|&nbsp; <a href="mailto:info@yellowkitchen.nl" class="hover:text-geel">info@yellowkitchen.nl</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vaste belknop op mobiel -->
+  <div id="plakbalk" class="plakbalk lg:hidden fixed inset-x-0 bottom-0 z-40 p-3 bg-gradient-to-t from-papier via-papier/95 to-papier/0">
+    <a href="tel:+31648074089" class="flex items-center justify-center gap-3 rounded-full bg-geel py-4 text-lg font-bold text-inkt shadow-[0_6px_0_-1px_#2A2620]">
+      <svg aria-hidden="true" viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      Bel Yellow Kitchen
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      var balk = document.getElementById('plakbalk');
+      function check() { balk.classList.toggle('toon', window.scrollY > 520); }
+      window.addEventListener('scroll', check, { passive: true }); check();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakker de Graaf & Catering | Lunch, hapjes en gebak in Amersfoort</title>
+<meta name="description" content="Bakker de Graaf in Amersfoort: lunch voor op het werk, hapjesschalen, soep, gebak en taarten. Bel 033 461 2352, op werkdagen van 07:00 tot 13:00.">
+<meta property="og:image" content="assets/site-01.jpg">
+<link rel="icon" href="assets/logo-oud.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bloem: '#FBFAF8',
+          korst: '#3E2A20',
+          kaneel: '#6B5246',
+          goud: '#E3962B',
+          goudd: '#C97F18',
+          ruit: '#C8392F',
+          deeg: '#F3EDE6',
+        },
+        fontFamily: {
+          kop: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+          tekst: ['Figtree', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .ruit {
+    background-color: #fff;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(200,57,47,.55) 0 14px, transparent 14px 28px),
+      repeating-linear-gradient(90deg, rgba(200,57,47,.55) 0 14px, transparent 14px 28px);
+  }
+  .ruit-klein {
+    background-color: #fff;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(200,57,47,.5) 0 8px, transparent 8px 16px),
+      repeating-linear-gradient(90deg, rgba(200,57,47,.5) 0 8px, transparent 8px 16px);
+  }
+  .boog { border-radius: 999px 999px 0 0; }
+  .knop { transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .knop:hover { transform: translateY(-2px); }
+  .knop:active { transform: translateY(1px); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #3E2A20; outline-offset: 3px;
+  }
+  /* Eén laadmoment: de hero-foto zakt rustig op het kleedje. Alleen met JS en zonder reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero-foto { animation: zak .9s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes zak { from { transform: translateY(-18px); } to { transform: none; } }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-bloem text-korst font-tekst">
+
+<a href="#inhoud" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3">Naar de inhoud</a>
+
+<div class="bg-korst text-white/85 text-xs sm:text-sm text-center py-2 px-4">
+  Demo voor Bakker de Graaf &amp; Catering B.V., gemaakt door <a href="https://hagenweb.nl" class="underline underline-offset-2 text-white hover:text-goud">Hagenweb</a>
+</div>
+
+<header class="sticky top-0 z-30 bg-bloem/95 backdrop-blur border-b border-korst/10">
+  <div class="max-w-6xl mx-auto px-5 h-16 sm:h-20 flex items-center justify-between gap-4">
+    <a href="#" class="flex items-center gap-3">
+      <img src="assets/logo-oud.png" alt="Logo Bakker de Graaf: broodmand op een geruit kleedje" class="h-11 w-11 sm:h-14 sm:w-14 mix-blend-multiply">
+      <span class="leading-none">
+        <span class="block text-[11px] sm:text-xs text-kaneel font-medium">bakker</span>
+        <span class="block font-kop font-extrabold text-xl sm:text-2xl tracking-tight text-goudd">de Graaf</span>
+        <span class="block text-[11px] sm:text-xs text-kaneel font-medium">catering</span>
+      </span>
+    </a>
+    <nav aria-label="Hoofdmenu" class="hidden md:flex items-center gap-8 text-[15px] font-medium text-kaneel">
+      <a href="#aanbod" class="hover:text-korst">Aanbod</a>
+      <a href="#momenten" class="hover:text-korst">Klanten</a>
+      <a href="#bestellen" class="hover:text-korst">Bestellen</a>
+    </nav>
+    <a href="tel:+31334612352" class="knop inline-flex items-center gap-2 rounded-full border-2 border-korst px-4 py-2 text-sm font-semibold hover:bg-korst hover:text-white">
+      <svg aria-hidden="true" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      <span class="hidden sm:inline">033 461 2352</span><span class="sm:hidden">Bel</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 pt-8 sm:pt-14 lg:pt-16 pb-16 lg:pb-24 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+    <div class="lg:col-span-7 order-1">
+      <p class="text-kaneel font-medium">Bakker en traiteur in Amersfoort</p>
+      <h1 class="font-kop font-extrabold text-[2.75rem] leading-[1] sm:text-6xl lg:text-[5.5rem] tracking-[-0.03em] mt-3 lg:max-w-[40rem]">
+        Vers gebakken, keurig op tijd.
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-kaneel leading-relaxed max-w-[30rem]">
+        Lunch voor op het werk, hapjesschalen, gebak en taarten. Vers gemaakt aan de Radonweg, voor op kantoor, op een feestje of gewoon thuis.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a href="tel:+31334612352" class="knop inline-flex items-center gap-3 rounded-full bg-goud hover:bg-goudd px-7 py-4 text-lg font-semibold text-korst shadow-[0_10px_24px_-10px_rgba(201,127,24,.8)]">
+          <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 033 461 2352
+        </a>
+        <a href="mailto:info@bakkerdegraaf.nl" class="font-semibold underline decoration-goud decoration-2 underline-offset-4 hover:text-goudd">Of mail uw bestelling</a>
+      </div>
+      <p class="mt-8 flex items-center gap-2 text-sm text-kaneel">
+        <span class="text-goud text-base tracking-[2px]" aria-hidden="true">★★★★★</span>
+        <span><strong class="text-korst">4.8</strong> op Google, uit 119 reviews</span>
+      </p>
+    </div>
+
+    <div class="lg:col-span-5 order-2 relative">
+      <div class="relative mx-auto max-w-[30rem] lg:max-w-none">
+        <div class="hero-foto relative z-10 mx-6 sm:mx-10 boog overflow-hidden aspect-[4/4.4] shadow-[0_30px_50px_-30px_rgba(62,42,32,.6)]">
+          <img src="assets/site-01.jpg" alt="Versgebakken broodjes en stokbrood op een bakplaat" class="h-full w-full object-cover object-[35%_50%]">
+        </div>
+        <div class="ruit relative -mt-10 h-24 sm:h-28 rounded-[6px] rotate-[-2deg] shadow-[0_12px_30px_-18px_rgba(200,57,47,.7)]" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aanbod -->
+  <section id="aanbod" class="bg-deeg py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="max-w-2xl">
+        <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.05]">Wat er uit onze keuken komt</h2>
+        <p class="mt-5 text-lg text-kaneel leading-relaxed">Van een broodje voor één tot schalen voor de hele afdeling. Vertel ons wat u nodig heeft, dan maken wij het klaar.</p>
+      </div>
+
+      <!-- Lunch: groot -->
+      <article class="mt-14 grid md:grid-cols-12 gap-6 md:gap-10 items-center">
+        <div class="md:col-span-7 grid grid-cols-5 gap-3 sm:gap-4">
+          <img src="assets/google-04.png" alt="Belegde meergranenbroodjes met mozzarella, tomaat, ei en avocado" class="col-span-3 aspect-square w-full object-cover rounded-2xl">
+          <img src="assets/site-02.jpg" alt="Lunch op kantoor: twee belegde broodjes, melk en fruit" class="col-span-2 self-end aspect-[3/4] w-full object-cover object-[30%_50%] rounded-2xl">
+        </div>
+        <div class="md:col-span-5">
+          <h3 class="font-kop font-bold text-3xl sm:text-[2.5rem] tracking-[-0.02em] leading-tight">Lunch op het werk</h3>
+          <p class="mt-4 text-kaneel text-lg leading-relaxed">Belegde broodjes met verse groente, zalm, kaas of ham, met melk, sap en fruit erbij. Wij maken het klaar, u hoeft alleen nog aan tafel.</p>
+          <a href="tel:+31334612352" class="mt-6 inline-block font-semibold underline decoration-goud decoration-2 underline-offset-4 hover:text-goudd">Lunch bestellen: 033 461 2352</a>
+        </div>
+      </article>
+
+      <div class="ruit-klein h-3 my-16 lg:my-20 rounded-sm opacity-70" aria-hidden="true"></div>
+
+      <!-- Hapjes + Soep: twee kolommen ongelijk -->
+      <div class="grid md:grid-cols-12 gap-14 md:gap-10">
+        <article class="md:col-span-7">
+          <div class="relative">
+            <img src="assets/google-05.jpg" alt="Drie volle hapjesschalen met gevulde eieren, zalm, sandwiches en spiesjes op tafel" class="aspect-[4/3] w-full object-cover rounded-2xl">
+            <img src="assets/site-05.jpg" alt="Bitterballen" class="absolute -bottom-6 -right-3 sm:-right-6 w-[38%] aspect-square object-cover rounded-2xl ring-8 ring-deeg">
+          </div>
+          <h3 class="mt-10 font-kop font-bold text-3xl tracking-[-0.02em]">Hapjes en borrel</h3>
+          <p class="mt-3 text-kaneel text-lg leading-relaxed max-w-xl">Schalen vol gevulde eieren, zalm, sandwiches en spiesjes, keurig opgemaakt en klaar om neer te zetten. En bitterballen erbij voor de borrel.</p>
+        </article>
+        <article class="md:col-span-5 md:pt-24">
+          <img src="assets/site-10.jpg" alt="Kom tomatensoep met balletjes en peterselie naast een stuk brood" class="aspect-[16/10] w-full object-cover object-[60%_50%] rounded-2xl">
+          <img src="assets/site-08.jpg" alt="Pastasalade met rucola, paprika en Parmezaanse kaas" class="mt-4 aspect-[16/7] w-[85%] ml-auto object-cover rounded-2xl">
+          <h3 class="mt-6 font-kop font-bold text-3xl tracking-[-0.02em]">Soep en salade</h3>
+          <p class="mt-3 text-kaneel text-lg leading-relaxed">Tomatensoep met balletjes en een frisse pastasalade. Lekker bij de lunch, of als warme aanvulling op een koude dag.</p>
+        </article>
+      </div>
+
+      <div class="ruit-klein h-3 my-16 lg:my-20 rounded-sm opacity-70" aria-hidden="true"></div>
+
+      <!-- Gebak + bakkerij -->
+      <div class="grid md:grid-cols-12 gap-14 md:gap-10 items-start">
+        <article class="md:col-span-5 md:order-2">
+          <img src="assets/site-07.jpg" alt="Gebak met aardbeien en slagroom, vruchtentaartjes, roze koeken en tompouces" class="aspect-[4/5] w-full object-cover object-[20%_50%] rounded-2xl">
+          <h3 class="mt-6 font-kop font-bold text-3xl tracking-[-0.02em]">Gebak en taart</h3>
+          <p class="mt-3 text-kaneel text-lg leading-relaxed">Vruchtenvlaai, aardbeienschnitt, taartjes en koeken. Voor een verjaardag, een geboorte of gewoon bij de koffie. Ook met een naam of uw eigen ontwerp.</p>
+        </article>
+        <article class="md:col-span-7 md:order-1 md:pt-16">
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            <img src="assets/site-03.jpg" alt="Appelflappen met suiker, één opengebroken" class="col-span-2 aspect-[16/9] w-full object-cover rounded-2xl">
+            <img src="assets/site-11.jpg" alt="Saucijzenbroodjes van bladerdeeg" class="col-span-2 aspect-[16/6] w-[80%] object-cover rounded-2xl">
+          </div>
+          <h3 class="mt-6 font-kop font-bold text-3xl tracking-[-0.02em]">Uit de bakkerij</h3>
+          <p class="mt-3 text-kaneel text-lg leading-relaxed max-w-xl">Vers brood en broodjes, appelflappen en saucijzenbroodjes. Simpel, eerlijk en precies zoals het hoort.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Momenten / reviews -->
+  <section id="momenten" class="py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-4 lg:sticky lg:top-32 self-start">
+          <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.05]">Wat klanten bij ons bestelden</h2>
+          <p class="mt-5 text-lg text-kaneel leading-relaxed">Een kraamtraktatie, een taart op het werk, kerstbrood voor het ontbijt. In hun eigen woorden.</p>
+          <p class="mt-6 flex items-center gap-2 text-kaneel">
+            <span class="text-goud tracking-[2px]" aria-hidden="true">★★★★★</span>
+            <span><strong class="text-korst">4.8</strong> uit 119 Google-reviews</span>
+          </p>
+        </div>
+
+        <div class="lg:col-span-8 grid sm:grid-cols-2 gap-5">
+          <figure class="sm:col-span-2 bg-deeg rounded-3xl p-7 sm:p-10">
+            <p class="font-kop font-bold text-goudd">Kraamtraktatie</p>
+            <blockquote class="mt-3 font-kop font-medium text-2xl sm:text-[1.75rem] leading-snug tracking-[-0.01em]">"Wij bestelden Spakenburgs hart met de naam van ons kindje erop als kraamtraktatie. Super leuk en makkelijk om uit te delen en blijft lang goed. En, niet onbelangrijk, smaakt heerlijk!"</blockquote>
+            <figcaption class="mt-5 text-kaneel"><strong class="text-korst font-semibold">Nicole Bijkerk</strong>, 5 sterren</figcaption>
+          </figure>
+
+          <figure class="bg-white border border-korst/10 rounded-3xl p-7">
+            <p class="font-kop font-bold text-goudd">Geboortetaart, eigen ontwerp</p>
+            <blockquote class="mt-3 leading-relaxed">"Ik laat voor elke geboorte van onze kleinkinderen een geboorte taart maken. N.a.v. een eigen ontwerp. Nu kon ik niet meer terecht bij de bakker waar ik het voorheen liet maken. Ik kwam online terecht bij “warme Bakker de Graaf” . Wat is dat goed bevallen ! Makkelijk te bestellen, en de volgende dag al op tijd in huis."</blockquote>
+            <figcaption class="mt-5 text-kaneel"><strong class="text-korst font-semibold">Marga Henschen</strong>, 5 sterren</figcaption>
+          </figure>
+
+          <div class="grid gap-5 content-start">
+            <figure class="bg-white border border-korst/10 rounded-3xl p-7">
+              <p class="font-kop font-bold text-goudd">Verjaardagstaart, bezorgd op het werk</p>
+              <blockquote class="mt-3 leading-relaxed">"Een verjaardags taart besteld en laten bezorgen op mijn werk, zelf lag ik ziek op bed maar kreeg een foto toegestuurd met blije gezichten."</blockquote>
+              <figcaption class="mt-5 text-kaneel"><strong class="text-korst font-semibold">Marieke Bast</strong>, 5 sterren</figcaption>
+            </figure>
+            <figure class="bg-white border border-korst/10 rounded-3xl p-7">
+              <p class="font-kop font-bold text-goudd">Service</p>
+              <blockquote class="mt-3 leading-relaxed">"Prima, hartstikke goede service en belangrijker… het smaakte uitstekend !"</blockquote>
+              <figcaption class="mt-5 text-kaneel"><strong class="text-korst font-semibold">Mike Neijndorff</strong>, 5 sterren</figcaption>
+            </figure>
+          </div>
+
+          <figure class="sm:col-span-2 bg-korst text-white rounded-3xl p-7 sm:p-10 grid sm:grid-cols-[1fr_auto] gap-6 items-center">
+            <div>
+              <p class="font-kop font-bold text-goud">Kerstbrood</p>
+              <blockquote class="mt-3 font-kop font-medium text-xl sm:text-2xl leading-snug">"Mmmm, wat een lekker kerstbrood! De spijs proeft lekker en we proeven ook een vleugje citroen, lekker fris van smaak. Hij was bestemd voor het kerstontbijt, maar zoals je ziet... we konden er niet afblijven :-)"</blockquote>
+              <figcaption class="mt-5 text-white/75"><strong class="text-white font-semibold">Louise de Blecourt</strong>, 5 sterren</figcaption>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- De doos -->
+  <section class="ruit py-16 lg:py-24">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="bg-bloem rounded-[2rem] overflow-hidden grid md:grid-cols-2 shadow-[0_30px_60px_-30px_rgba(120,30,20,.55)]">
+        <img src="assets/google-06.jpg" alt="Witte gebaksdoos met het logo van Bakker de Graaf catering en de broodmand" class="h-72 md:h-full w-full object-cover object-[50%_55%]">
+        <div class="p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
+          <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.05]">Herkent u de doos?</h2>
+          <p class="mt-5 text-lg text-kaneel leading-relaxed">De mand op het geruite kleedje staat op elke doos die bij ons de deur uit gaat. Komt hij binnen op kantoor of bij u thuis, dan weet iedereen wat er in zit: iets lekkers van Bakker de Graaf.</p>
+          <a href="#bestellen" class="knop mt-8 self-start inline-flex items-center rounded-full border-2 border-korst px-6 py-3 font-semibold hover:bg-korst hover:text-white">Zo bestelt u</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bestellen / contact -->
+  <section id="bestellen" class="py-20 lg:py-28">
+    <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <div class="lg:col-span-6">
+        <h2 class="font-kop font-extrabold text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.05]">Bestellen gaat het snelst met een belletje</h2>
+        <p class="mt-5 text-lg text-kaneel leading-relaxed max-w-lg">We zijn bereikbaar op werkdagen van 07:00 tot 13:00. Mailen kan natuurlijk ook.</p>
+
+        <a href="tel:+31334612352" class="knop mt-8 inline-flex items-center gap-3 rounded-full bg-goud hover:bg-goudd px-7 py-4 text-lg font-semibold text-korst">
+          <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Bel 033 461 2352
+        </a>
+
+        <dl class="mt-12 grid sm:grid-cols-2 gap-x-10 gap-y-8">
+          <div>
+            <dt class="font-kop font-bold text-lg">E-mail</dt>
+            <dd class="mt-1 text-kaneel"><a href="mailto:info@bakkerdegraaf.nl" class="underline decoration-goud decoration-2 underline-offset-4 hover:text-korst">info@bakkerdegraaf.nl</a></dd>
+          </div>
+          <div>
+            <dt class="font-kop font-bold text-lg">Adres</dt>
+            <dd class="mt-1 text-kaneel not-italic">Radonweg 14<br>3812 RL Amersfoort</dd>
+          </div>
+          <div class="sm:col-span-2">
+            <dt class="font-kop font-bold text-lg">Openingstijden</dt>
+            <dd class="mt-2">
+              <table class="w-full max-w-sm text-kaneel [font-variant-numeric:tabular-nums]">
+                <tbody class="divide-y divide-korst/10">
+                  <tr><td class="py-2">Maandag tot en met vrijdag</td><td class="py-2 text-right text-korst font-semibold">07:00 tot 13:00</td></tr>
+                  <tr><td class="py-2">Zaterdag en zondag</td><td class="py-2 text-right">Gesloten</td></tr>
+                </tbody>
+              </table>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="lg:col-span-6">
+        <form action="mailto:info@bakkerdegraaf.nl" method="post" enctype="text/plain" class="bg-deeg rounded-[2rem] p-7 sm:p-10">
+          <h3 class="font-kop font-bold text-2xl sm:text-3xl tracking-[-0.01em]">Liever schrijven?</h3>
+          <p class="mt-2 text-kaneel">Zet erin wat u wilt bestellen, voor wanneer en waar het heen moet.</p>
+          <div class="mt-7 grid sm:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-sm font-semibold">Naam</span>
+              <input name="naam" required autocomplete="name" class="mt-1 w-full rounded-xl border border-korst/15 bg-white px-4 py-3 focus:border-korst">
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold">Telefoon</span>
+              <input name="telefoon" type="tel" autocomplete="tel" class="mt-1 w-full rounded-xl border border-korst/15 bg-white px-4 py-3 focus:border-korst">
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-sm font-semibold">E-mail</span>
+              <input name="email" type="email" required autocomplete="email" class="mt-1 w-full rounded-xl border border-korst/15 bg-white px-4 py-3 focus:border-korst">
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-sm font-semibold">Uw bestelling</span>
+              <textarea name="bestelling" rows="5" required placeholder="Bijvoorbeeld: lunch voor 12 personen, donderdag om 12:00 op kantoor" class="mt-1 w-full rounded-xl border border-korst/15 bg-white px-4 py-3 placeholder:text-kaneel/60 focus:border-korst"></textarea>
+            </label>
+          </div>
+          <button type="submit" class="knop mt-6 w-full sm:w-auto rounded-full bg-korst hover:bg-black/80 px-7 py-3.5 font-semibold text-white">Bestelling versturen</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-korst/10 pb-24 md:pb-0">
+  <div class="ruit-klein h-3" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-5 py-10 flex flex-col sm:flex-row gap-6 sm:items-center justify-between text-sm text-kaneel">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo-oud.png" alt="" class="h-10 w-10 mix-blend-multiply">
+      <span>Bakker de Graaf &amp; Catering B.V.<br>Radonweg 14, 3812 RL Amersfoort</span>
+    </div>
+    <div class="flex flex-col sm:items-end gap-1">
+      <a href="tel:+31334612352" class="hover:text-korst">033 461 2352</a>
+      <a href="mailto:info@bakkerdegraaf.nl" class="hover:text-korst">info@bakkerdegraaf.nl</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiel: belknop altijd binnen bereik -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 p-3 bg-bloem/95 backdrop-blur border-t border-korst/10">
+  <a href="tel:+31334612352" class="flex items-center justify-center gap-3 rounded-full bg-goud px-6 py-3.5 font-semibold text-korst">
+    <svg aria-hidden="true" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Bel 033 461 2352
+  </a>
+</div>
+
+</body>
+</html>
