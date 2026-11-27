@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diensten | Briljant Schoonmaak Nijmegen</title>
+<meta name="description" content="Schoonmaak, glazenwasserij, bedrijfshygiëne, servicediensten en facilitair. Alles voor een schoon en verzorgd bedrijfspand.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 26'%3E%3Cpath d='M7 1.5h18l5.5 7.5L16 24.5 1.5 9z' fill='%231448A0'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { inkt: '#0E1F33', kobalt: '#1448A0', kobaltdiep: '#0D3478', glas: '#EEF4FA', ijs: '#CFE0F2', staal: '#56677B' },
+  fontFamily: { kop: ['Fraunces','Georgia','serif'], tekst: ['Figtree','system-ui','sans-serif'] },
+} } };
+</script>
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  @media (prefers-reduced-motion: no-preference) { html:focus-within { scroll-behavior: smooth; } }
+  .belbalk { transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+  .js .belbalk:not(.toon) { transform: translateY(160%); }
+  body { font-family: Figtree, system-ui, sans-serif; }
+  .font-kop { font-variation-settings: 'SOFT' 50; }
+  h1, h2, h3 { text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+  :focus-visible { outline: 2px solid #1448A0; outline-offset: 3px; }
+  /* geslepen vorm: afgeschuinde hoeken als een facet */
+  .facet { --c: clamp(28px, 6vw, 88px); clip-path: polygon(var(--c) 0, 100% 0, 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, 0 100%, 0 var(--c)); }
+  .facet-sm { --c: 22px; }
+  .facet-r { --c: clamp(24px, 5vw, 64px); clip-path: polygon(0 0, calc(100% - var(--c)) 0, 100% var(--c), 100% 100%, 0 100%); }
+  .btn-facet { clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
+  /* glans over de hero-foto, eenmalig */
+  .glint { position: relative; overflow: hidden; }
+  .glint::after { content: ''; position: absolute; inset: -10% -60%; pointer-events: none;
+    background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.55) 49%, rgba(255,255,255,.15) 52%, transparent 58%);
+    transform: translateX(-80%); }
+  .js .glint::after { animation: glans 1.8s cubic-bezier(.2,.7,.2,1) .5s 1 both; }
+  @keyframes glans { to { transform: translateX(80%); } }
+  /* reveal: alleen als JS draait */
+  .js [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .js [data-reveal].in { opacity: 1; transform: none; }
+  .dienst-rij .pijl { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+  .dienst-rij:hover .pijl { transform: translateX(6px) rotate(-45deg); }
+  .dienst-rij .lijn { transform: scaleX(0); transform-origin: left; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .dienst-rij:hover .lijn, .dienst-rij:focus-visible .lijn { transform: scaleX(1); }
+  .site-header.scrolled { box-shadow: 0 10px 30px -20px rgba(14,31,51,.35); }
+  @media (prefers-reduced-motion: reduce) {
+    .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+    .js .glint::after { animation: none; }
+  }
+</style>
+  <script src="/teller.js" defer></script>
+</head>
+<body class="bg-white text-inkt antialiased">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:px-4 focus:py-2">Naar de inhoud</a>
+<div class="bg-glas text-staal text-xs sm:text-[13px] text-center px-4 py-2 border-b border-ijs">
+  Demo voor Briljant Schoonmaak en Bedrijfshygiëne BV, gemaakt door <a href="https://hagenweb.nl" class="text-kobalt font-semibold underline underline-offset-2">Hagenweb</a>
+</div>
+
+<header class="site-header sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-ijs transition-shadow">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 h-[68px] lg:h-[76px] flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center gap-2.5 text-kobalt" aria-label="Briljant, naar de homepage">
+      <span class="w-8 h-7 block"><svg viewBox="0 0 32 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M7 1.5h18l5.5 7.5L16 24.5 1.5 9z"/><path d="M1.5 9h29M11 1.5 8 9l8 15.5L24 9l-3-7.5M16 1.5 11.5 9M16 1.5 20.5 9"/></svg></span>
+      <span class="leading-none">
+        <span class="block font-kop italic text-[28px] tracking-tight text-kobalt">Briljant</span>
+        <span class="block text-[10.5px] tracking-[.08em] text-staal mt-0.5">schoonmaak &amp; bedrijfshygiëne</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-9 text-[15px] font-medium" aria-label="Hoofdmenu">
+<a href="index.html" class="relative py-2 transition-colors hover:text-kobalt ">Home</a>
+<a href="diensten.html" class="relative py-2 transition-colors hover:text-kobalt text-kobalt after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-[2px] after:bg-kobalt" aria-current="page">Diensten</a>
+<a href="over-ons.html" class="relative py-2 transition-colors hover:text-kobalt ">Over ons</a>
+<a href="contact.html" class="relative py-2 transition-colors hover:text-kobalt ">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="tel:+31243500740" class="hidden sm:inline-flex btn-facet items-center gap-2 bg-kobalt text-white px-5 py-3 text-sm font-semibold hover:bg-kobaltdiep active:translate-y-px transition">
+        <span class="w-4 h-4"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>024 350 0740</a>
+      <details class="md:hidden group">
+        <summary class="list-none cursor-pointer w-11 h-11 grid place-items-center border border-ijs text-inkt" aria-label="Menu openen">
+          <svg viewBox="0 0 24 24" class="w-5 h-5 group-open:hidden" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+          <svg viewBox="0 0 24 24" class="w-5 h-5 hidden group-open:block" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </summary>
+        <nav class="absolute left-0 right-0 top-full h-[calc(100dvh-68px)] bg-white border-t border-ijs px-6 pt-4 pb-28 overflow-auto" aria-label="Mobiel menu">
+<a href="index.html" class="block py-3 border-b border-ijs font-kop text-2xl ">Home</a>
+<a href="diensten.html" class="block py-3 border-b border-ijs font-kop text-2xl text-kobalt" aria-current="page">Diensten</a>
+<a href="over-ons.html" class="block py-3 border-b border-ijs font-kop text-2xl ">Over ons</a>
+<a href="contact.html" class="block py-3 border-b border-ijs font-kop text-2xl ">Contact</a>
+          <p class="mt-8 text-staal text-sm">Ma t/m vr, 07:00 tot 15:30</p>
+          <a href="mailto:info@briljant-schoonmaak.nl" class="mt-2 block font-semibold text-kobalt">info@briljant-schoonmaak.nl</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<!-- Paginakop -->
+<section class="bg-glas relative overflow-hidden">
+  <svg class="absolute right-[-60px] bottom-[-140px] w-[460px] text-ijs pointer-events-none" viewBox="0 0 32 26" fill="none" stroke="currentColor" stroke-width=".1" aria-hidden="true"><path d="M7 1.5h18l5.5 7.5L16 24.5 1.5 9z"/><path d="M1.5 9h29M11 1.5 8 9l8 15.5L24 9l-3-7.5M16 1.5 11.5 9M16 1.5 20.5 9"/></svg>
+  <div class="relative max-w-[1320px] mx-auto px-5 sm:px-8 pt-14 pb-14 lg:pt-20 lg:pb-20">
+    <p class="text-staal font-medium">Diensten</p>
+    <h1 class="mt-3 font-kop font-medium text-5xl sm:text-7xl tracking-[-0.03em] leading-[1] max-w-[14ch]">Van vloer tot dakgoot.</h1>
+    <p class="mt-6 text-lg text-inkt/75 leading-relaxed max-w-[52ch]">U schakelt ons in voor periodiek en dagelijks, regulier en incidenteel schoonmaakwerk. En voor alles wat uw pand verder verzorgd houdt.</p>
+  </div>
+</section>
+
+<!-- Subnavigatie -->
+<nav class="sticky top-[68px] lg:top-[76px] z-30 bg-white/95 backdrop-blur border-b border-ijs" aria-label="Diensten op deze pagina">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 flex gap-7 overflow-x-auto whitespace-nowrap text-[15px] font-medium [scrollbar-width:none]">
+    <a href="#schoonmaak" class="py-4 hover:text-kobalt">Schoonmaak</a>
+    <a href="#glazenwasserij" class="py-4 hover:text-kobalt">Glazenwasserij</a>
+    <a href="#bedrijfshygiene" class="py-4 hover:text-kobalt">Bedrijfshygiëne</a>
+    <a href="#servicediensten" class="py-4 hover:text-kobalt">Servicediensten</a>
+    <a href="#facilitair" class="py-4 hover:text-kobalt pr-5">Facilitair</a>
+  </div>
+</nav>
+
+<!-- Schoonmaak -->
+<section id="schoonmaak" class="scroll-mt-32">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-16">
+    <div class="lg:col-span-4">
+      <h2 data-reveal class="font-kop font-medium text-4xl sm:text-5xl tracking-[-0.02em]">Schoonmaak</h2>
+      <p data-reveal class="mt-5 text-inkt/75 leading-relaxed max-w-[40ch]">Bureaus, kantines en toiletten, ramen, tapijt, vloeren, zonwering, computers, dakgoten en trappenhuizen. Het resultaat? Vanzelfsprekend briljant.</p>
+    </div>
+    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-px bg-ijs border border-ijs">
+      <div data-reveal class="bg-white p-7 sm:p-9">
+        <h3 class="font-kop italic text-2xl text-kobalt">Dagelijks en regulier</h3>
+        <p class="mt-2 text-staal text-[15px]">Het vaste onderhoud van uw kantoren en gebouwen.</p>
+        <ul class="mt-6 space-y-3">
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Schoonmaakonderhoud van kantoren en gebouwen</li>
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Reiniging van dakgoten en zonwering</li>
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Vloeronderhoud</li>
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Industriële reiniging</li>
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Tapijtreiniging</li>
+        </ul>
+      </div>
+      <div data-reveal class="bg-white p-7 sm:p-9">
+        <h3 class="font-kop italic text-2xl text-kobalt">Eenmalig en bij calamiteiten</h3>
+        <p class="mt-2 text-staal text-[15px]">Als er net gebouwd is, of als er iets gebeurd is.</p>
+        <ul class="mt-6 space-y-3">
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Schoonmaak na nieuw- of verbouw</li>
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Gevelreiniging</li>
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Graffiti en leuzen verwijderen</li>
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Brand- en roetreiniging</li>
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Waterschade</li>
+          <li class="flex gap-3"><span class="mt-2.5 w-2 h-2 rotate-45 border border-kobalt shrink-0"></span>Calamiteitendienst</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Glazenwasserij -->
+<section id="glazenwasserij" class="scroll-mt-32 bg-glas">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div class="lg:col-span-5">
+        <h2 data-reveal class="font-kop font-medium text-4xl sm:text-5xl tracking-[-0.02em]">Glazenwasserij</h2>
+        <p data-reveal class="mt-5 text-inkt/75 leading-relaxed max-w-[46ch]">Schone ramen geven uw pand een verzorgde uitstraling en zijn prettig voor wie erachter werkt. Wij wassen ze op het moment en de manier die u het beste uitkomt.</p>
+        <p data-reveal class="mt-4 text-inkt/75 leading-relaxed max-w-[46ch]">Het water lost het vuil op en laat een streeploos oppervlak achter, waardoor ramen minder snel weer vuil worden. Zonder chemicaliën, dus 100% milieuvriendelijk.</p>
+      </div>
+      <div data-reveal class="lg:col-span-7 facet aspect-[4/3]">
+        <img src="assets/google-03.png" alt="Glazenwasser van Briljant in de hoogwerker voor een kantoorpand" class="w-full h-full object-cover object-[45%_25%]" loading="lazy">
+      </div>
+    </div>
+
+    <div class="mt-16 lg:mt-20 grid md:grid-cols-3 border-t border-inkt/15">
+      <article data-reveal class="py-8 md:pr-10">
+        <h3 class="font-kop text-2xl">Met de hand</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Waar de Arboregels het toelaten, wassen we uw ramen handmatig.</p>
+      </article>
+      <article data-reveal class="py-8 md:px-10 md:border-l border-t md:border-t-0 border-inkt/10">
+        <h3 class="font-kop text-2xl">Met de telescoop</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Een lichtgewicht steel met een slang op onze aanhanger. Alle gladde oppervlakken tot 15 meter, de derde en vierde etage, gewoon vanaf de grond.</p>
+      </article>
+      <article data-reveal class="py-8 md:pl-10 md:border-l border-t md:border-t-0 border-inkt/10">
+        <h3 class="font-kop text-2xl">Met de hoogwerker</h3>
+        <p class="mt-3 text-inkt/75 leading-relaxed">Voor ramen boven de vierde etage, of als u dat liever heeft. Ook dan met de hand gewassen, streeploos en glanzend.</p>
+      </article>
+    </div>
+
+    <div data-reveal class="mt-10 bg-white facet facet-sm p-7 sm:p-10 grid lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-4">
+        <h3 class="font-kop font-medium text-3xl leading-tight">Waarom de telescoop?</h3>
+        <p class="mt-3 text-staal leading-relaxed">Veel glazenwassers laten standaard een hoogwerker komen of werken met hoge ladders. Wij hoeven niet te sjouwen, dus zijn we sneller en goedkoper klaar.</p>
+      </div>
+      <ul class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10 gap-y-5">
+        <li class="border-t border-ijs pt-4"><span class="font-semibold block">Tot 15 meter hoogte</span><span class="text-staal text-[15px]">Vier etages, vanaf de grond</span></li>
+        <li class="border-t border-ijs pt-4"><span class="font-semibold block">2 tot 4 keer zo snel</span><span class="text-staal text-[15px]">Geen ladders of zwaar materieel</span></li>
+        <li class="border-t border-ijs pt-4"><span class="font-semibold block">Meer dan glas</span><span class="text-staal text-[15px]">Gevelbeplating, kozijnen, gevelreclame en zonwering</span></li>
+        <li class="border-t border-ijs pt-4"><span class="font-semibold block">Elke plek bereikbaar</span><span class="text-staal text-[15px]">Zonder zware en dure hulpmiddelen</span></li>
+        <li class="border-t border-ijs pt-4"><span class="font-semibold block">Beter resultaat</span><span class="text-staal text-[15px]">Streeploos, minder herbevuiling</span></li>
+        <li class="border-t border-ijs pt-4"><span class="font-semibold block">Milieuvriendelijk</span><span class="text-staal text-[15px]">Zonder chemicaliën</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Bedrijfshygiëne -->
+<section id="bedrijfshygiene" class="scroll-mt-32">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 lg:gap-16">
+    <div class="lg:col-span-5">
+      <h2 data-reveal class="font-kop font-medium text-4xl sm:text-5xl tracking-[-0.02em]">Bedrijfshygiëne</h2>
+      <p data-reveal class="mt-5 text-inkt/75 leading-relaxed max-w-[44ch]">Met stijlvolle dispensers en houders maakt u het medewerkers en bezoekers makkelijk om het pand hygiënisch te houden. Ze nodigen uit tot gebruik en zorgen voor een verzorgde, opgeruimde ruimte. U huurt ze bij ons.</p>
+      <div data-reveal class="mt-10 border-l-2 border-kobalt pl-6">
+        <h3 class="font-kop text-2xl">Complete toilethygiëne</h3>
+        <p class="mt-2 text-inkt/75 leading-relaxed max-w-[42ch]">Neemt u een abonnement, dan krijgt u twee keer per jaar gratis een dieptereiniging van uw toiletgroep met de fantomat-methode.</p>
+      </div>
+    </div>
+    <div class="lg:col-span-7">
+      <h3 data-reveal class="text-staal font-medium">Een greep uit het assortiment</h3>
+      <ul data-reveal class="mt-4 grid sm:grid-cols-2 border-t border-inkt/15">
+        <li class="py-4 border-b border-inkt/10 sm:pr-6">Non-woven handdoekdispensers</li>
+        <li class="py-4 border-b border-inkt/10">Papierrol handdoekdispensers</li>
+        <li class="py-4 border-b border-inkt/10 sm:pr-6">Zeepautomaten</li>
+        <li class="py-4 border-b border-inkt/10">Toiletpapierdispensers</li>
+        <li class="py-4 border-b border-inkt/10 sm:pr-6">Luchtverfrisser-dispensers</li>
+        <li class="py-4 border-b border-inkt/10">Toiletborstelhouders en afvalbakken</li>
+        <li class="py-4 border-b border-inkt/10 sm:pr-6">Dameshygiëne</li>
+        <li class="py-4 border-b border-inkt/10">Toiletbrilreiniger-dispensers</li>
+        <li class="py-4 border-b border-inkt/10 sm:col-span-2 text-kobalt font-medium">Dieptereiniging met de fantomat-methode</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Servicediensten en facilitair -->
+<section class="bg-glas">
+  <div class="max-w-[1320px] mx-auto px-5 sm:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-16 lg:gap-20">
+    <div id="servicediensten" class="scroll-mt-32">
+      <h2 data-reveal class="font-kop font-medium text-4xl sm:text-5xl tracking-[-0.02em]">Servicediensten</h2>
+      <p data-reveal class="mt-5 text-inkt/75 leading-relaxed max-w-[48ch]">In en rond uw pand zijn er altijd klussen die niet bij uw kernwerk horen. Wij nemen ze over, zodat uw mensen zich bezig kunnen houden met waar uw bedrijf om draait.</p>
+      <ul data-reveal class="mt-8 flex flex-wrap gap-2">
+        <li class="bg-white px-4 py-2.5 border border-ijs">Bezorg- en koeriersdiensten</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Interne verhuizing</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Saus- en schilderwerk</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Ongediertebestrijding</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Bouwtechnisch demontagewerk</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Klussenservice</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Catering- en kantinediensten</li>
+      </ul>
+    </div>
+    <div id="facilitair" class="scroll-mt-32">
+      <h2 data-reveal class="font-kop font-medium text-4xl sm:text-5xl tracking-[-0.02em]">Facilitair</h2>
+      <p data-reveal class="mt-5 text-inkt/75 leading-relaxed max-w-[48ch]">Bezoekers voelen zich welkom in een gebouw dat schoon is en waar ze meteen de weg vinden. Wij leveren de aankleding in de stijl van uw bedrijf.</p>
+      <ul data-reveal class="mt-8 flex flex-wrap gap-2">
+        <li class="bg-white px-4 py-2.5 border border-ijs">Inloopmatten</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Vlaggen</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Reclamepanelen</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Stoepborden</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Kliklijsten</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Parkeerborden</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Bewegwijzering binnen en buiten</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Roll-up banners</li>
+        <li class="bg-white px-4 py-2.5 border border-ijs">Spandoeken</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="max-w-[1320px] mx-auto px-5 sm:px-8 py-20 lg:py-24 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+  <div>
+    <h2 data-reveal class="font-kop font-medium text-4xl sm:text-5xl tracking-[-0.02em] leading-[1.05] max-w-[18ch]">Wat kan Briljant voor uw pand doen?</h2>
+    <p data-reveal class="mt-4 text-inkt/75 max-w-[48ch] leading-relaxed">Vertel ons wat u nodig heeft. We maken een afspraak voor een offerte op maat, vrijblijvend.</p>
+  </div>
+  <div data-reveal class="flex flex-col sm:flex-row gap-4 shrink-0">
+    <a href="contact.html" class="btn-facet inline-flex justify-center items-center bg-kobalt text-white px-7 py-4 text-lg font-semibold hover:bg-kobaltdiep active:translate-y-px transition">Offerte aanvragen</a>
+    <a href="tel:+31243500740" class="inline-flex justify-center items-center px-7 py-4 text-lg font-semibold border border-inkt/20 hover:border-kobalt hover:text-kobalt transition">024 350 0740</a>
+  </div>
+</section>
+
+</main>
+<footer class="bg-inkt text-white/75 relative overflow-hidden">
+  <svg class="absolute -right-24 -bottom-24 w-[520px] text-white/[.04] pointer-events-none" viewBox="0 0 32 26" fill="none" stroke="currentColor" stroke-width=".25" aria-hidden="true"><path d="M7 1.5h18l5.5 7.5L16 24.5 1.5 9z"/><path d="M1.5 9h29M11 1.5 8 9l8 15.5L24 9l-3-7.5M16 1.5 11.5 9M16 1.5 20.5 9"/></svg>
+  <div class="relative max-w-[1320px] mx-auto px-5 sm:px-8 pt-16 pb-28 md:pb-12 grid gap-12 md:grid-cols-12">
+    <div class="md:col-span-5">
+      <a href="index.html" class="inline-flex items-center gap-2.5 text-white">
+        <span class="w-8 h-7 block text-ijs"><svg viewBox="0 0 32 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M7 1.5h18l5.5 7.5L16 24.5 1.5 9z"/><path d="M1.5 9h29M11 1.5 8 9l8 15.5L24 9l-3-7.5M16 1.5 11.5 9M16 1.5 20.5 9"/></svg></span>
+        <span class="font-kop italic text-3xl">Briljant</span>
+      </a>
+      <p class="mt-4 max-w-[34ch] leading-relaxed">Schoonmaak en Bedrijfshygiëne BV. Schoonmaak, glazenwassen, bedrijfshygiëne, servicediensten en facilitair voor bedrijven in Nijmegen.</p>
+    </div>
+    <div class="md:col-span-3 text-[15px] leading-relaxed">
+      <h2 class="text-white font-semibold mb-3">Contact</h2>
+      <address class="not-italic">Kerkenbos 10117<br>6546 BJ Nijmegen</address>
+      <a href="tel:+31243500740" class="block mt-3 hover:text-white">024 350 0740</a>
+      <a href="mailto:info@briljant-schoonmaak.nl" class="block hover:text-white">info@briljant-schoonmaak.nl</a>
+    </div>
+    <div class="md:col-span-2 text-[15px] leading-relaxed">
+      <h2 class="text-white font-semibold mb-3">Bereikbaar</h2>
+      <p>Ma t/m vr<br>07:00 tot 15:30</p>
+      <p class="mt-2">Za en zo gesloten</p>
+    </div>
+    <nav class="md:col-span-2 text-[15px] leading-relaxed" aria-label="Footermenu">
+      <h2 class="text-white font-semibold mb-3">Pagina's</h2>
+      <a href="index.html" class="block hover:text-white">Home</a><a href="diensten.html" class="block hover:text-white">Diensten</a><a href="over-ons.html" class="block hover:text-white">Over ons</a><a href="contact.html" class="block hover:text-white">Contact</a>
+    </nav>
+  </div>
+  <div class="relative border-t border-white/10">
+    <p class="max-w-[1320px] mx-auto px-5 sm:px-8 py-5 pb-28 md:pb-5 text-xs text-white/50">Briljant Schoonmaak en Bedrijfshygiëne BV, Nijmegen</p>
+  </div>
+</footer>
+
+<a href="tel:+31243500740" class="belbalk md:hidden fixed z-40 bottom-4 left-4 right-4 btn-facet flex items-center justify-center gap-2.5 bg-kobalt text-white py-4 font-semibold shadow-[0_16px_40px_-12px_rgba(20,72,160,.7)] active:translate-y-px">
+  <span class="w-5 h-5"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span>Bel 024 350 0740
+</a>
+
+<script>
+  (function () {
+    var els = [].slice.call(document.querySelectorAll('[data-reveal]'));
+    var bel = document.querySelector('.belbalk'), heroBel = document.querySelector('main a[href^="tel:"]');
+    var tik = false;
+    function update() {
+      tik = false;
+      var grens = innerHeight * 0.94;
+      els = els.filter(function (el) {
+        if (el.getBoundingClientRect().top < grens) { el.classList.add('in'); return false; }
+        return true;
+      });
+      var toon = !heroBel || heroBel.getBoundingClientRect().bottom < 0 || heroBel.getBoundingClientRect().top > innerHeight;
+      if (location.pathname.indexOf('contact') > -1) toon = true;
+      bel.classList.toggle('toon', toon);
+    }
+    addEventListener('scroll', function () { if (!tik) { tik = true; requestAnimationFrame(update); } }, { passive: true });
+    addEventListener('resize', update);
+    update();
+    var h = document.querySelector('.site-header');
+    addEventListener('scroll', function () { h.classList.toggle('scrolled', scrollY > 10); }, { passive: true });
+  })();
+</script>
+
+</body>
+</html>
